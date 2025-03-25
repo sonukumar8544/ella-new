@@ -146,6 +146,7 @@ div.quiz-recommended-product .recommended_atc_btn {
   width: 75% !important;
   font-size: 16px;
 }
+div.quiz-recommended-product .recommended_atc_btn:hover,
 .final_result
   button.quiz_bundle_prodct.product-form__submit.button.button--primary:hover {
   border: 2px solid #232323c7;
