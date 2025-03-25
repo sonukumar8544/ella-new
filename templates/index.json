@@ -2761,6 +2761,58 @@
     },
     "tiktok_video_cpMxra": {
       "type": "tiktok__video",
+      "blocks": {
+        "tiktok_video_aD68ED": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        },
+        "tiktok_video_fKRARG": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        },
+        "tiktok_video_Nnyr8m": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        },
+        "tiktok_video_kjLpEX": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        },
+        "tiktok_video_FfLWDD": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        },
+        "tiktok_video_QfrjDH": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/d8b98420cb6742ada41895e0b09bda9a.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "tiktok_video_aD68ED",
+        "tiktok_video_fKRARG",
+        "tiktok_video_Nnyr8m",
+        "tiktok_video_kjLpEX",
+        "tiktok_video_FfLWDD",
+        "tiktok_video_QfrjDH"
+      ],
       "settings": {
         "container": "container",
         "padding_full_width": 0,
@@ -2780,7 +2832,7 @@
         "section_title_enable_underline": true,
         "section_title_underline_style": "2",
         "section_title_underline_color": "",
-        "section_description": "Join us on TikTok for exclusive releases, unboxing and try-on videos, reviews, and more from our top brands and stylists.",
+        "section_description": "Join us on Instagram for exclusive releases",
         "section_description_font_size": 16,
         "section_description_font_size_mb": 14,
         "section_description_font_weight": "500",
@@ -2788,18 +2840,18 @@
         "section_description_margin_top": 25,
         "section_description_max_width": 530,
         "button_type": "button",
-        "button_text": "Shop now",
+        "button_text": "",
         "button_link": "",
         "button_text_transform": "capitalize",
         "button_font_weight": "600",
         "button_font_size": 16,
         "button_width": 190,
         "button_margin_top": 50,
-        "button_text_color": "#fff",
+        "button_text_color": "#ffffff",
         "button_border_color": "#232323",
         "button_background_color": "#232323",
         "button_gradient_color": "",
-        "button_text_color_hover": "#fff",
+        "button_text_color_hover": "#ffffff",
         "button_border_color_hover": "#232323",
         "button_background_color_hover": "#232323",
         "button_gradient_color_hover": "",
@@ -2813,11 +2865,11 @@
         "link_text_color_hover": "#191919",
         "link_image_width": 100,
         "link_margin_top": 50,
-        "arrow_color": "#333",
+        "arrow_color": "#333333",
         "arrow_bg_color": "",
-        "arrow_border_color": "#333",
+        "arrow_border_color": "#333333",
         "arrow_button_size": 35,
-        "number_color": "#333",
+        "number_color": "#333333",
         "number_font_size": 16,
         "mg_top_desktop": 50,
         "mg_top_tablet": 50,
