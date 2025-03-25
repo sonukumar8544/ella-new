@@ -7349,13 +7349,14 @@ $(document)
             data: JSON.stringify(payload),
             dataType: "json",
             contentType: "application/json",
-            success: function (response) {
+            success: function () {
                 $.ajax({
                     type: "GET",
                     url: "/cart.js",
                     dataType: "json",
                     success: function (cart) {
                         halo.updateSidebarCart(cart);
+                        halo.openCartDrawer(); // Ensure the drawer opens
                         setTimeout(() => {
                             $target.removeClass("is-loading");
                         }, 2500);
@@ -7376,4 +7377,5 @@ $(document)
         $target.removeClass("is-loading");
     }
   });
+
 })(jQuery);
