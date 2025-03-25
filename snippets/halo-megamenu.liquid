@@ -36,7 +36,7 @@
                                 <div class="site-nav dropdown{% if show_label_blink %} menu-lv-blink{% endif %}" data-gridItem>
                                     <div class="site-nav-list">
                                         <a href="{{ childlink.url }}" class="site-nav-title{% if childlink.links != blank %} menu_mobile_link_2{% endif %}{% if sale_item_lv2 contains childtitle %} active-sale{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                            <span class="text{% if childlink.current %} site-nav-active{% endif %}">{{ childlink.title | escape }}</span> <b>AAAAA</b>
+                                            <span class="text{% if childlink.current %} site-nav-active{% endif %}">{{ childlink.title | escape }}</span> 
                                             {%- if childlink.links != blank -%}
                                             <span class="icon-dropdown" data-toggle-menu-mb="">{% render 'icon-caret-right' %}</span>
                                             {%- endif -%}
