@@ -1,6 +1,727 @@
+<!-- Take-a-quiz -->
+
+{% style %}
+  @media(min-width:769px){
+    .final_result,
+    .take-a-quiz-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+
+  }
+    @media(max-width:768px){
+      .final_result ,
+    .take-a-quiz-{{ section.id }}{
+      padding-top: {{ section.settings.mpadding_top }}px;
+      padding-bottom: {{ section.settings.mpadding_bottom }}px;
+
+  }
+{% endstyle %}
+
+<link rel="stylesheet" href="{{ 'quiz.css' | asset_url }}">
+
+<div class="my-quiz take-a-quiz-{{ section.id }}">
+  <div class="Quiz_container">
+    <form class="quiz-form" id="wellness-quiz">
+      {% render 'quiz_timer' %}
+      <div class="quiz_details">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'quiz_information' %}
+              {% render 'quiz_information', settings: block.settings, index: forloop.index %}
+            {% when 'quiz_user_mobile' %}
+              {% render 'quiz_user_mobile', settings: block.settings, index: forloop.index %}
+            {% when 'quiz_user_single_option' %}
+              {% render 'quiz_user_single_option', settings: block.settings, index: forloop.index %}
+            {% when 'quiz_user_multi_option' %}
+              {% render 'quiz_user_multi_option', settings: block.settings, index: forloop.index %}
+            {% when 'quiz_selected_collection' %}
+              {% render 'quiz_selected_collection', settings: block.settings, index: forloop.index %}
+          {% endcase %}
+        {% endfor %}
+
+        {% if section.settings.quiz_result_page != '' or section.settings.quiz_result_content != '' %}
+          <div class="tab quiz_result_page quiz_common_footer4" data-next-quiz-move="final_result">
+            <div class="quiz-title quiz_result_page">
+              <h2>{{ section.settings.quiz_result_page }}</h2>
+              <p>{{ section.settings.quiz_result_content }}</p>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if section.settings.quiz_previous_btn != '' or section.settings.quiz_next_btn != '' %}
+          <div class="button-groups">
+            <div class="buttons-inner">
+              <button type="button" class="cstm__pre d-none" id="prevBtn">
+                {{ section.settings.quiz_previous_btn }}
+              </button>
+              <button type="button" class="cstm__next quizTimer_start" id="nextBtn">
+                {{ section.settings.quiz_next_btn }}
+              </button>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="tab final_result container">
+  {% if section.settings.quiz_back_btn != blank -%}
+    <button class="backtoStart">
+      {{ section.settings.quiz_back_btn }}
+    </button>
+  {% endif %}
+  <link rel="stylesheet" href="{{ 'quiz-recommended-product.css' | asset_url }}">
+  {% for block in section.blocks %}
+    {% render 'Quiz-recommended-product', block: block %}
+  {% endfor %}
+</div>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="{{ 'quiz.js' | asset_url }}"></script>
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+  "name": "Quiz",
+  "settings": [
+     {
+      "type": "header",
+      "content": "Header Settings"
+    },
+     {
+      "type": "color",
+      "id": "progress_color",
+      "label": "Quiz Progress Color ",
+       "default":"#008000"
+    },
+     {
+      "type": "text",
+      "id": "quiz_back_btn",
+      "label": "Quiz Back to Start",
+      "default": "Start Again"
+    },
+    {
+      "type": "header",
+      "content": "Footer Settings"
+    },
+    {
+      "type": "text",
+      "id": "quiz_result_page",
+      "label": "Quiz Result Page Title",
+      "default": "Your Quiz Results"
+    },
+    {
+      "type": "textarea",
+      "id": "quiz_result_content",
+      "label": "Quiz Result Page Content",
+      "default": "Here is some information about your quiz results."
+    },
+    {
+      "type": "text",
+      "id": "quiz_previous_btn",
+      "label": "Previous Button Text",
+      "default": "Previous"
+    },
+    {
+      "type": "text",
+      "id": "quiz_next_btn",
+      "label": "Next Button Text",
+      "default": "Next"
+    },
+     {
+            "type": "color",
+            "id": "text_color",
+            "label": "Color",
+            "default": "#000"
+    },
+
+  {
+    "type": "header",
+    "content": "Desktop Padding"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "label": "Padding Top",
+    "min": 10,
+    "max": 250,
+    "step": 10,
+    "default": 30
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "label": "Padding Bottom",
+    "min": 10,
+    "max": 250,
+    "step": 10,
+    "default": 30
+  },
+     {
+    "type": "header",
+    "content": "Padding Bottom"
+  },
+    {
+    "type": "range",
+    "id": "mpadding_top",
+    "label": "Padding Top",
+    "min": 10,
+    "max": 250,
+    "step": 10,
+    "default": 30
+  },
+  {
+    "type": "range",
+    "id": "mpadding_bottom",
+    "label": "Padding Bottom",
+    "min": 10,
+    "max": 250,
+    "step": 10,
+    "default": 30
   }
+  ],
+  "blocks": [
+    {
+      "type": "quiz_information",
+      "name": "Email Info",
+      "limit": 1,
+      "settings": [
+         {
+      "type": "image_picker",
+      "id": "shoplogo",
+      "label": "Shop Logo",
+      "info": "Upload a logo for your quiz."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Quiz Title",
+      "default": "Welcome to the Quiz",
+      "info": "The main title of the quiz."
+    },
+    {
+      "type": "textarea",
+      "id": "sub_content",
+      "label": "Sub Content",
+      "default": "Please fill out the form to participate in the quiz.",
+      "info": "Additional information displayed below the title."
+    },
+      ]
+    },
+    {
+      "type": "quiz_user_mobile",
+      "name": "Mobile Details",
+      "limit": 1,
+      "settings": [
+        {
+      "type": "header",
+      "content": "Mobile Settings"
+        },
+        {
+      "type": "text",
+      "id": "user_info_title",
+      "label": "User Info Title",
+      "default": "Enter Your Information",
+      "info": "The title displayed at the top of the user information section."
+      },
+      {
+      "type": "text",
+      "id": "mobile_placeholder",
+      "label": "Mobile Placeholder",
+      "default": "Enter your mobile number",
+      "info": "Placeholder text for the mobile number input field."
+       },
+      ]
+    },
+    {
+      "type": "quiz_user_single_option",
+      "name": "Single Option Quiz",
+      "settings": [
+    {
+      "type": "text",
+      "id": "quiz-select_option",
+      "label": "Custom ID",
+      "info": "Collection ID and custom ID both are same"
+    },
+    {
+      "type": "text",
+      "id": "next_quiz_option_id",
+      "label": "Next Quiz Option ID",
+      "info": "corrent quiz to move next quiz Id"
+      },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quiz Title",
+      "info": "The main heading for this quiz block."
+    },
+    {
+      "type": "checkbox",
+      "id": "left_enable",
+      "label": "Enable Left Alignment",
+      "default": false,
+      "info": "Check this to align the quiz items to the left."
+    },
+    {
+      "type": "text",
+      "id": "select_title1",
+      "label": "Option 1 Title",
+      "default": "Option"
+    },
+    {
+      "type": "text",
+      "id": "select_option1",
+      "label": "Option 1",
+      "default": "Option 1"
+    },
+    {
+      "type": "text",
+      "id": "select_title2",
+      "label": "Option 2 Title",
+      "default": "Option 2 Title"
+    },
+    {
+      "type": "text",
+      "id": "select_option2",
+      "label": "Option 2",
+      "default": "Option 2"
+    },
+    {
+      "type": "text",
+      "id": "select_title3",
+      "label": "Option 3 Title",
+      "default": "Option 3 Title"
+    },
+    {
+      "type": "text",
+      "id": "select_option3",
+      "label": "Option 3",
+      "default": "Option 3"
+    },
+    {
+      "type": "text",
+      "id": "select_title4",
+      "label": "Option 4 Title",
+      "default": "Option 4 Title"
+    },
+    {
+      "type": "text",
+      "id": "select_option4",
+      "label": "Option 4",
+      "default": "Option 4"
+    },
+    {
+      "type": "text",
+      "id": "select_title5",
+      "label": "Option 5 Title",
+      "default": "Option 5 Title"
+    },
+    {
+      "type": "text",
+      "id": "select_option5",
+      "label": "Option 5",
+      "default": "Option 5"
+    },
+    {
+      "type": "text",
+      "id": "select_title6",
+      "label": "Option 6 Title",
+      "default": "Option 6 Title"
+    },
+    {
+      "type": "text",
+      "id": "select_option6",
+      "label": "Option 6",
+      "default": "Option 6"
+    }
+      ]
+    },
+    {
+      "type": "quiz_user_multi_option",
+      "name": "Multi-Option Quiz",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Custom Multi Checkbox ID",
+          "id": "cstm_multi_checkboxid",
+          "info": "Collection ID and Custom Multi Checkbox ID both are same"
+        },
+        {
+        "type": "text",
+        "id": "next_quiz_option_id",
+        "label": "Next Quiz Option ID",
+        "info": "corrent quiz to move next quiz Id"
+        },
+        {
+          "type": "text",
+          "label": "Quiz Checkbox Title",
+          "id": "quiz_checkbox_title",
+          "info": "Content here"
+        },
+       {
+          "type": "text",
+          "label": "Quiz Answer",
+          "id": "quiz_checkbox_answer",
+          "info": "quiz_answer"
+        },
+        {
+          "type": "checkbox",
+          "label": "Enable Custom Checkbox Style",
+          "id": "checkbox_enable",
+          "default": false
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 1",
+          "id": "quiz_checkbox1",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 2",
+          "id": "quiz_checkbox2",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 3",
+          "id": "quiz_checkbox3",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 4",
+          "id": "quiz_checkbox4",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 5",
+          "id": "quiz_checkbox5",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 6",
+          "id": "quiz_checkbox6",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 7",
+          "id": "quiz_checkbox7",
+          "info": "Content here"
+        },
+        {
+          "type": "text",
+          "label": "Checkbox Option 8",
+          "id": "quiz_checkbox8",
+          "info": "Content here"
+        }
+      ]
+    },
+    {
+      "type": "quiz_selected_collection",
+      "name": "Selected Collection Quiz",
+      "limit": 1,
+      "settings": [
+      {
+      "type": "text",
+      "id": "cstm_id",
+      "label": "Custom Id"
+     },
+      {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Select Your Goal"
+    },
+    {
+    "type": "header",
+    "content": "Quiz Collection 0"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection_image0",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection0",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "data-next-questionid0",
+      "label": "Question Id",
+      "default": "Skin Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 1"
+        },
+    {
+      "type": "image_picker",
+      "id": "collection_image1",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection1",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid1",
+      "label": "Question Id",
+      "default": "Gut Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 2"
+        },
+        {
+      "type": "image_picker",
+      "id": "collection_image2",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection2",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid2",
+      "label": "Question Id",
+      "default": "Bone Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 3"
+        },
+    {
+      "type": "image_picker",
+      "id": "collection_image3",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection3",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid3",
+      "label": "Question Id",
+      "default": "Eye health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 4"
+        },
+    {
+      "type": "image_picker",
+      "id": "collection_image4",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection4",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid4",
+      "label": "Question Id",
+      "default": "Immune Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 5"
+        },
+         {
+      "type": "image_picker",
+      "id": "collection_image5",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection5",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid5",
+      "label": "Question Id",
+      "default": "Muscle health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 6"
+        },
+    {
+      "type": "image_picker",
+      "id": "collection_image6",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection6",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid6",
+      "label": "Question Id",
+      "default": "Brain Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 7"
+        },
+         {
+      "type": "image_picker",
+      "id": "collection_image7",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection7",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid7",
+      "label": "Question Id",
+      "default": "Heart Health"
+    },
+{
+          "type": "header",
+          "content": "Quiz Collection 8"
+        },
+         {
+      "type": "image_picker",
+      "id": "collection_image8",
+      "label": "Collection Image"
+    },
+    {
+      "type": "text",
+      "id": "quiz_collection8",
+      "label": "Quiz Collection",
+      "default": "Collection"
+    },
+         {
+      "type": "text",
+      "id": "data-next-questionid8",
+      "label": "Question Id",
+      "default": "Hair Care"
+    },
+{
+"type": "header",
+"content": "Quiz Collection 9"
+},
+{
+"type": "image_picker",
+"id": "collection_image9",
+"label": "Collection Image"
+},
+{
+"type": "text",
+"id": "quiz_collection9",
+"label": "Quiz Collection",
+"default": "Collection"
+},
+{
+"type": "text",
+"id": "data-next-questionid9",
+"label": "Question Id",
+"default": "Hormone Health"
+},
+        {
+"type": "header",
+"content": "Quiz Collection 10"
+},
+{
+"type": "image_picker",
+"id": "collection_image10",
+"label": "Collection Image"
+},
+{
+"type": "text",
+"id": "quiz_collection10",
+"label": "Quiz Collection",
+"default": "Collection"
+},
+{
+"type": "text",
+"id": "data-next-questionid10",
+"label": "Question Id",
+"default": "Health Aging"
+}
+      ]
+    },
+    {
+      "type": "quiz_bundle",
+      "name": "Quiz Recommended Product",
+      "settings": [
+          {
+    "type": "header",
+    "content": "Collection Settings"
+  },
+    {
+      "type": "richtext",
+      "id": "quiz_recom_title_offer",
+      "label": "Offer Title",
+    },
+     {
+      "type": "richtext",
+      "id": "quiz_recom_title",
+      "label": "Title",
+    },
+  {
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection",
+    "info": "Collection Link Here"
+  },
+    {
+    "type": "text",
+    "id": "usa-bundle-tag",
+    "label": "USA Bundle Tag",
+    "info": "Like.. usa-bundle-quiz-skin-health"
+  },
+         {
+    "type": "text",
+    "id": "ca-bundle-tag",
+    "label": "CAD Bundle Tag",
+    "info": "Like.. ca_bundle_quiz_skin_health"
+  },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quiz",
+      "blocks": [
+        {
+          "type": "quiz_user_single_option"
+        },
+        {
+          "type": "quiz_user_multi_option"
+        },
+        {
+          "type": "quiz_selected_collection"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
