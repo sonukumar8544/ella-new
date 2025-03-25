@@ -1,0 +1,54 @@
+{% assign settings = block.settings %}
+{% if settings.collection != blank %}
+  <div class="container quiz-recommended-product {% if settings.collection != blank %}{{ settings.collection }}{% endif %}">
+    {% if settings.quiz_recom_title_offer != blank or settings.quiz_recom_title != blank %}
+     {% render 'quiz_timer' %}
+      <div class="halo-block-header text-left block-title--style4">
+        {% if settings.quiz_recom_title_offer != blank %}
+          <div class="title">
+            <span class="text">{{ settings.quiz_recom_title_offer }}</span>
+          </div>
+        {% endif %}
+        {% if settings.quiz_recom_title != blank %}
+          <div class="title offer_title">
+            <span class="text">{{ settings.quiz_recom_title }}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="quiz_bundle_grid quiz_init" data-product-count="{{ collections[settings.collection].products.size }}">
+      {% assign skin_bundle = settings.collection %}
+      {% for product in collections[skin_bundle].products %}
+        {% if localization.available_countries.size > 1 %}
+          {% assign currency = localization.country.currency.iso_code %}
+
+          {% assign valid_currencies = 'DKK,AUD,CZK,EUR,GBP,CAD' | split: ',' %}
+          {% assign show_product = false %}
+
+          {% if valid_currencies contains currency %}
+            {% assign show_product = true %}
+          {% endif %}
+
+          {% assign has_usa_bundle = false %}
+          {% assign has_ca_bundle = false %}
+
+          {% for tag in product.tags %}
+            {% if tag == settings['usa-bundle-tag'] %}
+              {% assign has_usa_bundle = true %}
+            {% elsif tag == settings['ca-bundle-tag'] %}
+              {% assign has_ca_bundle = true %}
+            {% endif %}
+          {% endfor %}
+
+          {% if has_usa_bundle and currency == 'USD' or has_usa_bundle and currency == 'DKK' or has_usa_bundle and currency == 'AUD' or has_usa_bundle and currency == 'CZK' or has_usa_bundle and currency == 'EUR' or has_usa_bundle and currency == 'GBP' %}
+            {% render 'Quiz-recommended-bundle', product: product %}
+          {% elsif has_ca_bundle and currency == 'CAD' %}
+            {% render 'Quiz-recommended-bundle', product: product %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+{% render 'quiz_bundle_atc', settings: block.settings %}
+  </div>
+{% endif %}
