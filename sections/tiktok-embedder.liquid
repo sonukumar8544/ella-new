@@ -206,19 +206,6 @@
         <source src="{{ block.settings.tiktokvideo }}" type="video/mp4">
     </video>
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("tiktokVideo");
-            video.addEventListener("click", function() {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        });
-    </script>
                                     </div>
                                 {% else %}
                                   {% if block.settings.tiktokvideo  != blank %}
