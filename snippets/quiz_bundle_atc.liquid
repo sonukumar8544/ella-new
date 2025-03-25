@@ -1,0 +1,42 @@
+{% assign filtered_product_count = 0 %}
+{% assign skin_bundle = settings.collection %}
+
+{% assign usa_currencies = 'USD,DKK,AUD,CZK,EUR,GBP' | split: ',' %}
+{% assign product_variant_ids = '' %}
+<!-- Create a string to store variant IDs -->
+
+{% for product in collections[skin_bundle].products %}
+  {% assign currency = localization.country.currency.iso_code %}
+  {% assign has_valid_bundle = false %}
+  {% for tag in product.tags %}
+    {% if tag == settings['usa-bundle-tag'] and usa_currencies contains currency %}
+      {% assign has_valid_bundle = true %}
+    {% elsif tag == settings['ca-bundle-tag'] and currency == 'CAD' %}
+      {% assign has_valid_bundle = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_valid_bundle %}
+    {% assign filtered_product_count = filtered_product_count | plus: 1 %}
+
+    {% if product.variants.size > 0 %}
+      {% if product.tags contains 'usa-quiz-bundle-atc' or product.tags contains 'ca_quiz_bundle_atc' %}
+        <!-- This Tag usa-quiz-bundle-atc will assign in bundle product which is not Add to cart with bundle -->
+      {% else %}
+        {% assign first_variant_id = product.variants.first.id %}
+        {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
+        {% assign qty_index = forloop.index0 %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if filtered_product_count > 1 %}
+  <button
+    class="quiz_bundle_prodct product-form__submit button button--primary"
+    data-variant-ids="{{ product_variant_ids | strip_newlines | strip }}"
+    data-qtys="{{ qty_index }}"
+  >
+    {{ 'Add All To Cart' }}
+  </button>
+{% endif %}
