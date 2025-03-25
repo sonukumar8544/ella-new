@@ -198,24 +198,24 @@
                     {% for block in section.blocks %}
                         {% if block.type == 'tiktok_video' %}
                             <div class="halo-item tiktok-video-column{% if swipe_on_mobile == 'slider' %} slider__slide{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"{% if settings.banner_animation == 'effect_fade_up' %} style="--animation-order: {{ forloop.index }};"{% endif %}>
-                                {% if block.settings.tiktokvideo != blank %}
+                                {% if block.settings.tiktok_video_embede_code != blank %}
                                     <div class="tiktok-video-wrap" data-tiktok-video-wrapper>
-                                        <!-- <iframe height="585" width="100%" data-src="https://www.tiktok.com/player/v1/{{ block.settings.tiktok_video_embede_code }}?&music_info=1&description=1&autoplay=1" allow="fullscreen" title="Tiktok video"></iframe> -->
-                                      <video muted loop id="tiktokVideo" width="100%" height="100%" class="videoclas" playsinline poster="//www.dorco.in/cdn/shop/files/1_3.jpg?v=1673366541">
-        <source src="{{ block.settings.tiktokvideo }}" type="video/mp4">
-    </video>
+                                        <iframe height="585" width="100%" data-src="https://www.tiktok.com/player/v1/{{ block.settings.tiktok_video_embede_code }}?&music_info=1&description=1&autoplay=1" allow="fullscreen" title="Tiktok video"></iframe>
+                                    
                                     </div>
-                                 
-   
-{% else %}
-
-{%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
-  {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
-  <div class="placeholder" style="--height_placeholder: 570px;">
-      {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-  </div>
-   {% endif %}
-              
+                                {% else %}
+                                  {% if block.settings.tiktokvideo  != blank %}
+                                    <video muted="" loop="" id="" width="100%" height="100%" class="videoclas" controls="" playsinline="" poster="//www.dorco.in/cdn/shop/files/1_3.jpg?v=1673366541">
+                                    <source src="{{ block.settings.tiktokvideo }}&autoplay=1" controls="" type="video/mp4">
+                                    </video>
+                                   {% else %}
+                             {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+                                    {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
+                                    <div class="placeholder" style="--height_placeholder: 570px;">
+                                        {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+                                    </div>
+                                     {% endif %}
+                                {% endif %}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -301,18 +301,6 @@
         customElements.define('tiktok-videos-component', TiktokVideosComponent);
     });
 </script>
- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("tiktokVideo");
-            video.addEventListener("click", function() {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        });
-    </script>
 {% schema %}
 {
     "name": "t:sections.tiktok_embedder.name",
