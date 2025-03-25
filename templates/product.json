@@ -14,6 +14,7 @@
       "blocks": {
         "2e8c7c14-a0ad-4930-a1d8-3def05310426": {
           "type": "breadcrumb",
+          "disabled": true,
           "settings": {
             "breadcrumb_layout": "full",
             "breadcrumb_alignment": "left",
@@ -27,64 +28,43 @@
             "breadcrumb_mg_bottom_mobile": 10
           }
         },
-        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
-          "type": "title",
-          "settings": {
-            "fontsize_text": 20,
-            "fontsize_text_mb": 18,
-            "color_title": "#232323",
-            "spacing_top": 0,
-            "spacing_bottom": 10
-          }
-        },
-        "0e4ea696-4820-4c98-aaa6-806d41782a3d": {
-          "type": "meta",
-          "settings": {
-            "show_sold_in": true,
-            "sold_in_number": "3,5,6,7,8,10,12,15",
-            "sold_in_hours": "10,15,16,17,18,20,25,35",
-            "color_text_sold_in": "#e95144",
-            "spacing_top": 0,
-            "spacing_bottom": 14
-          }
-        },
-        "4036f89b-c2c5-49a4-9d6b-2fd29ce7c46c": {
-          "type": "short_description",
-          "settings": {
-            "show_short_description": true,
-            "word_number": "17",
-            "fontsize_text": 12,
-            "color_text": "#3c3c3c",
-            "spacing_top": 0,
-            "spacing_bottom": 12
-          }
-        },
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b": {
           "type": "info",
           "settings": {
             "show_vendor": true,
-            "show_sku": true,
+            "show_sku": false,
             "show_barcode": false,
-            "show_availability": true,
-            "show_product_type": true,
-            "stock_level_display": "none",
+            "show_availability": false,
+            "show_product_type": false,
+            "stock_level_display": "show",
             "enable_border_top": false,
             "enable_border_bottom": false,
             "color_border": "#e6e6e6",
             "spacing_top": 0,
-            "spacing_bottom": 18
+            "spacing_bottom": 0
+          }
+        },
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 29,
+            "fontsize_text_mb": 20,
+            "color_title": "#333333",
+            "spacing_top": 0,
+            "spacing_bottom": 10
           }
         },
         "4f95b592-8369-4ab0-b30d-24e463fb6890": {
           "type": "price",
           "settings": {
-            "fontsize_text": 18,
+            "fontsize_text": 20,
             "spacing_top": 0,
             "spacing_bottom": 17
           }
         },
         "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c": {
           "type": "hot_stock",
+          "disabled": true,
           "settings": {
             "hot_stock_style": "2",
             "spacing_top": 0,
@@ -93,6 +73,7 @@
         },
         "bd3a641e-98d0-4da1-ab57-d5e4b0391995": {
           "type": "countdown",
+          "disabled": true,
           "settings": {
             "spacing_top": 0,
             "spacing_bottom": 20
@@ -102,7 +83,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "show_variant_image_group": false,
+            "show_variant_image_group": true,
             "enable_border_top": false,
             "enable_border_bottom": false,
             "color_border": "#e6e6e6",
@@ -311,10 +292,8 @@
       },
       "block_order": [
         "2e8c7c14-a0ad-4930-a1d8-3def05310426",
-        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
-        "0e4ea696-4820-4c98-aaa6-806d41782a3d",
-        "4036f89b-c2c5-49a4-9d6b-2fd29ce7c46c",
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b",
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
         "4f95b592-8369-4ab0-b30d-24e463fb6890",
         "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c",
         "bd3a641e-98d0-4da1-ab57-d5e4b0391995",
@@ -340,8 +319,8 @@
         "container": "default",
         "padding_full_width": 0,
         "show_sticky_info": true,
-        "media_fit": "cover",
-        "product_image_ratio": "square",
+        "media_fit": "unset",
+        "product_image_ratio": "adapt",
         "portrait_aspect_ratio": 101,
         "video_layout": "thumbnail",
         "zoomed_image": true,
@@ -359,32 +338,32 @@
         "thumnail_layout": "3",
         "thumbnail_to_show": 4,
         "enable_sticky": true,
-        "sidebar_layout": "layout_2",
+        "sidebar_layout": "layout_1",
         "sidebar_collapse": "collapse",
         "sidebar_collapse_default": "expand",
         "sidebar_position": "left",
         "sidebar_heading_font": "font_1",
-        "sidebar_heading_font_size": 14,
+        "sidebar_heading_font_size": 16,
         "sidebar_heading_font_weight": "700",
         "sidebar_heading_text_transform": "uppercase",
         "show_badge": true,
         "show_subtotal": true,
-        "subtotal_style": "1",
+        "subtotal_style": "2",
         "show_sticky_add_to_cart": true,
         "sticky_atc_layout": "1",
-        "enable_sticky_add_to_cart_always_mobile": false,
+        "enable_sticky_add_to_cart_always_mobile": true,
         "show_sticky_vendor": false,
         "show_quick_order_list": false,
         "show_image": false,
         "show_sku": false,
         "show_tab": true,
         "tab_layout": "horizontal",
-        "tab_layout_mobile": "popup",
+        "tab_layout_mobile": "vertical",
         "icon_style_layout": "style_1",
         "title_font_size": 18,
         "title_font_size_mb": 16,
         "font_weight_title": "600",
-        "title_text_transform": "none",
+        "title_text_transform": "capitalize",
         "title_padding_top_bottom": 15,
         "tab_border_color": "#000000",
         "tab_border_color_rgb": "",
@@ -393,7 +372,7 @@
         "block_title": "Frequenly Bought Together",
         "block_title_align": "left",
         "product_style": "2",
-        "block_image_ratio": "adapt",
+        "block_image_ratio": "square",
         "bundle_discount": true,
         "bundle_discount_text": "Get a [discount]% discount buying these products together",
         "bundle_discount_text_color": "#232323",
@@ -413,9 +392,9 @@
         "padding_bottom": 70,
         "padding_bottom_tablet": 40,
         "padding_bottom_mobile": 30,
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
+        "mg_top_desktop": 15,
+        "mg_top_tablet": 15,
+        "mg_top_mobile": 10,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
