@@ -1,0 +1,281 @@
+<!-- quiz_selected_collection -->
+{% if settings.heading != blank %}
+  <div
+    class="tab quiz_user_selected_collection cstm__select_collection {% if settings.cstm_id != blank %} {{ settings.cstm_id  }} {% endif %}"
+    {% if settings.heading != blank %}
+      id="{{ settings.cstm_id }}"
+    {% endif %}
+    data-next-quiz-move=""
+    data-progressbar="{{ index }}"
+  >
+    <div class="tab-group selected_collection_option">
+      <h2 class="tab-title">{{ settings.heading }}</h2>
+      <div class="quiz-list quiz-collection-icons with-icons">
+        {% if settings.quiz_collection0 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection0 | handle}}"
+              name="{{ settings.heading | handle}}"
+              value="{{ settings.quiz_collection0 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid1 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection0 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image0 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image0 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection0 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection0 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection1 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection1 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection1 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid1 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection1 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image1 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image1 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection1 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection1 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection2 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection2 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection2 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid2 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection2 | handle  }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image2 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image2 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection2 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection2 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection3 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection3 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection3 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid3 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection3 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image3 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image3 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection3 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection3 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection4 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection4 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection4 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid4 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection4 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image4 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image4 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection4 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection4 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection5 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection5 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection5 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid5 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection5 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image5 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image5 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection5 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection5 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection6 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection6 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection6 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid6 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection6 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image6 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image6 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection6 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection6 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection7 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection7 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection7 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid7 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection7 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image7 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image7 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection7 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection7 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection8 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection8 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection8 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid8 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection8 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image8 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image8 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection8 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection8 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection9 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection9 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection9 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid9 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection9 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image8 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image9 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection9 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection9 }}</p>
+            </label>
+          </div>
+        {% endif %}
+        {% if settings.quiz_collection10 != blank %}
+          <div class="quiz-items quiz-grid-collection">
+            <input
+              type="radio"
+              id="{{ settings.quiz_collection10 | handle}}"
+              name="{{ settings.heading | handle }}"
+              value="{{ settings.quiz_collection10 | handle }}"
+              data-next-questionid="{{ settings.data-next-questionid10 | handle}}"
+            >
+            <label for="{{ settings.quiz_collection10 | handle }}" class="custom-label selected_quiz_title">
+              {% if settings.collection_image10 != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ settings.collection_image10 | img_url: 'medium' }}"
+                  alt="{{ settings.quiz_collection10 }}"
+                  title=""
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <p class="name">{{ settings.quiz_collection10 }}</p>
+            </label>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
