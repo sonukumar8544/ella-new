@@ -7346,14 +7346,14 @@
             items: items
         };
 
-        $2.ajax({
+        $(document).ajax({
             type: "POST",
             url: "/cart/add.js",
             data: JSON.stringify(payload),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
-                $2.ajax({
+                $(document).ajax({
                     type: "GET",
                     url: "/cart.js",
                     dataType: "json",
