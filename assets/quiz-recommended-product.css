@@ -150,9 +150,16 @@ div.quiz-recommended-product .recommended_atc_btn {
 .final_result
   button.quiz_bundle_prodct.product-form__submit.button.button--primary {
   width: 200px;
-  padding: 11px 0;
-  font-size: 18px;
-  margin-bottom: 20px;
+  background-color: transparent;
+  color: #006a91;
+  border: 2px solid rgb(0, 106, 145);
+  padding: 9px 7px;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 10px auto 15px;
+  font-size: 16px;
 }
 @media (min-width: 1200px) {
   .final_result
