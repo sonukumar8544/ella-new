@@ -147,6 +147,7 @@
         },
         "a1438504-9611-4f43-9874-38faee88940a": {
           "type": "megamenu_style_2",
+          "disabled": true,
           "settings": {
             "layout_block": "custom_width",
             "header_custom_width_size": 1200,
@@ -165,18 +166,21 @@
         },
         "a894da66-74e2-4e0b-ae8a-4f4179bf3bcf": {
           "type": "megamenu_style_4",
+          "disabled": true,
           "settings": {
             "layout_block": "custom_width",
             "header_custom_width_size": 1200,
-            "item": "",
+            "item": "sale",
             "column": 5,
-            "menu_text_left": "",
+            "menu_text_left": "all-products-usa",
             "menu_text_left_sale": "On Sale",
             "show_banner_1": true,
+            "banner_1": "shopify://shop_images/CoQ10_is_Essential_for_Cardiovascular_Health-01_780x_13b84ff5-0a28-4759-8449-63fc4303c95b.webp",
             "banner_url_1": "",
             "show_banner_2": true,
+            "banner_2": "shopify://shop_images/Lower_Cholesterol_1500_900-01_780x_eec2c952-d382-4fbf-9626-cd4af55ccf7d.webp",
             "banner_url_2": "",
-            "show_az_brand": true,
+            "show_az_brand": false,
             "az_brand_title": "All Brands A-Z",
             "az_brand_link_text": "See All Brands",
             "az_brand_url": "",
@@ -186,13 +190,12 @@
         },
         "4910f55a-213a-4e1b-9b5c-13897e08a8c5": {
           "type": "megamenu_style_3",
-          "disabled": true,
           "settings": {
             "layout_block": "custom_width",
             "header_custom_width_size": 1200,
             "mega_tyle": "style1",
-            "item": "WE ACADEMY",
-            "column": 5,
+            "item": "shop",
+            "column": 3,
             "show_banner_1": true,
             "banner_url_1": "",
             "show_banner_2": true,
