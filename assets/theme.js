@@ -3037,7 +3037,7 @@
             halo.actionAddToCart($target, variantId, qty);
             
         },
-
+// ATC ella
         initAddToCart: function() {
             $doc.off('click.addToCart').on('click.addToCart', '[data-btn-addtocart]', (event) => {
                 event.preventDefault();
