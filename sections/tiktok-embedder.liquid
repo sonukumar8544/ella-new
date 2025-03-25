@@ -201,13 +201,20 @@
                                 {% if block.settings.tiktok_video_embede_code != blank %}
                                     <div class="tiktok-video-wrap" data-tiktok-video-wrapper>
                                         <iframe height="585" width="100%" data-src="https://www.tiktok.com/player/v1/{{ block.settings.tiktok_video_embede_code }}?&music_info=1&description=1&autoplay=1" allow="fullscreen" title="Tiktok video"></iframe>
+                                    
                                     </div>
                                 {% else %}
-                                    {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+                                  {% if block.settings.tiktokvideo  != blank %}
+                                    <video muted="" loop="" id="" width="100%" height="100%" class="videoclas" controls="" playsinline="" poster="//www.dorco.in/cdn/shop/files/1_3.jpg?v=1673366541">
+                                    <source src="{{ block.settings.tiktokvideo }}&autoplay=1" controls="" type="video/mp4">
+                                    </video>
+                                   {% else %}
+                             {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
                                     {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
                                     <div class="placeholder" style="--height_placeholder: 570px;">
                                         {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
                                     </div>
+                                     {% endif %}
                                 {% endif %}
                             </div>
                         {% endif %}
@@ -1028,6 +1035,12 @@
                     "id": "tiktok_video_embede_code",
                     "label": "t:sections.tiktok_embedder.blocks.tiktok_video.embed_code",
                     "info": "t:sections.tiktok_embedder.blocks.tiktok_video.info__1"
+                },
+              {
+                    "type": "text",
+                    "id": "tiktokvideo",
+                    "label": "Video",
+                    "info": "Video Link"
                 }
             ]
         }
