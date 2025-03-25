@@ -11,10 +11,512 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "quiz_nx6gmx": {
+      "type": "Quiz",
+      "blocks": {
+        "quiz_information_KrYNgG": {
+          "type": "quiz_information",
+          "settings": {
+            "shoplogo": "shopify://shop_images/Wellness_Logo_860ede71-8866-4e18-a5a7-e1485e8cd12e.png",
+            "title": "Your Wellness, Your Way",
+            "sub_content": "Get personalized supplements recommended- FOR YOU"
+          }
+        },
+        "quiz_user_mobile_Wrdnah": {
+          "type": "quiz_user_mobile",
+          "settings": {
+            "user_info_title": "Enter Your Information",
+            "mobile_placeholder": "Enter your mobile number"
+          }
+        },
+        "quiz_user_single_option_VrHrj4": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "",
+            "next_quiz_option_id": "",
+            "heading": "What is your Age?",
+            "left_enable": false,
+            "select_title1": "",
+            "select_option1": "18-24",
+            "select_title2": "",
+            "select_option2": "25-34",
+            "select_title3": "",
+            "select_option3": "35-44",
+            "select_title4": "",
+            "select_option4": "45-54",
+            "select_title5": "",
+            "select_option5": "55+",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_user_single_option_T7TXkL": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "",
+            "next_quiz_option_id": "",
+            "heading": "What is your Gender?",
+            "left_enable": false,
+            "select_title1": "",
+            "select_option1": "Male",
+            "select_title2": "",
+            "select_option2": "Female",
+            "select_title3": "",
+            "select_option3": "Non-binary",
+            "select_title4": "",
+            "select_option4": "Prefer not to say",
+            "select_title5": "",
+            "select_option5": "",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_selected_collection_mkUNXd": {
+          "type": "quiz_selected_collection",
+          "settings": {
+            "cstm_id": "",
+            "heading": "What are your health goals?",
+            "collection_image0": "shopify://shop_images/Skin_health_Cart.png",
+            "quiz_collection0": "Skin Health",
+            "data-next-questionid0": "Skin Health",
+            "collection_image1": "shopify://shop_images/Gut_Health_Cart.png",
+            "quiz_collection1": "Gut Health",
+            "data-next-questionid1": "Gut Health",
+            "collection_image2": "shopify://shop_images/Bone_health_f2370b1a-8523-4473-bbbe-b9a60ab3620c.png",
+            "quiz_collection2": "Bone Health",
+            "data-next-questionid2": "Bone Health",
+            "collection_image3": "shopify://shop_images/Eye_Health_Cart.png",
+            "quiz_collection3": "Eye health",
+            "data-next-questionid3": "Eye health",
+            "collection_image4": "shopify://shop_images/Immune_Health_cart.png",
+            "quiz_collection4": "Immune Health",
+            "data-next-questionid4": "Immune Health",
+            "collection_image5": "shopify://shop_images/Muscle_Health_b0b78349-d1c6-4c42-b2a0-0ea21ceed5f8.png",
+            "quiz_collection5": "Muscle health",
+            "data-next-questionid5": "Muscle health",
+            "collection_image6": "shopify://shop_images/Brain_Health_82249579-132b-42f9-a3fa-69ce0312f595.png",
+            "quiz_collection6": "Brain Health",
+            "data-next-questionid6": "Brain Health",
+            "collection_image7": "shopify://shop_images/Heart_health_cart.png",
+            "quiz_collection7": "Heart Health",
+            "data-next-questionid7": "Heart Health",
+            "collection_image8": "shopify://shop_images/6105_1ANA4_1729619956957.png",
+            "quiz_collection8": "Hormone Health",
+            "data-next-questionid8": "Hormone Health",
+            "collection_image9": "shopify://shop_images/Health_Aging.png",
+            "quiz_collection9": "Healthy Aging",
+            "data-next-questionid9": "Healthy Aging",
+            "quiz_collection10": "",
+            "data-next-questionid10": ""
+          }
+        },
+        "quiz_user_single_option_igFhyn": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "skin-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "heading": "How would you best describe your skin health?",
+            "left_enable": true,
+            "select_title1": "Very Healthy",
+            "select_option1": "My skin is clear, radiant, and free from any issues.",
+            "select_title2": "Generally Healthy",
+            "select_option2": "My skin is mostly clear with occasional minor concerns.",
+            "select_title3": "Moderately Healthy ",
+            "select_option3": "My skin has some issues like dryness, oiliness, or mild breakouts.",
+            "select_title4": "Unhealthy ",
+            "select_option4": "My skin frequently has severe issues, such as chronic acne, irritation, or other persistent problems.",
+            "select_title5": "Not Sure",
+            "select_option5": "I'm uncertain about the current state of my skin health.",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_user_multi_option_8GUw6M": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "gut-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "How would you best describe your Gut Health?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Irregular Bowel Movements",
+            "quiz_checkbox2": "Occasional Constipation",
+            "quiz_checkbox3": "Usually Constipated",
+            "quiz_checkbox4": "Digestive Disorders",
+            "quiz_checkbox5": "Gas & Bloating",
+            "quiz_checkbox6": "None of the above",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_zhp8JJ": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "bone-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "How often do you experience bone related issues?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Bone Loss",
+            "quiz_checkbox2": "Swelling Between Joints",
+            "quiz_checkbox3": "Bone Softening",
+            "quiz_checkbox4": "Bone Weakness",
+            "quiz_checkbox5": "Bone Stiffness",
+            "quiz_checkbox6": "Reduced Range Of Motion",
+            "quiz_checkbox7": "None of the above",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_CfKXKw": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "eye-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "Do you experience any eye discomfort?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Blurred Vision",
+            "quiz_checkbox2": "Burning Sensation Around My Eyes",
+            "quiz_checkbox3": "Sensitive To Light",
+            "quiz_checkbox4": "Eye Twitching",
+            "quiz_checkbox5": "Watery Eyes",
+            "quiz_checkbox6": "None of the above",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_GiJFxr": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "immune-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "What immunity-related issues do you experience?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Fatigue",
+            "quiz_checkbox2": "Slow wound healing",
+            "quiz_checkbox3": "Frequent Infections",
+            "quiz_checkbox4": "Trouble absorbing supplements",
+            "quiz_checkbox5": "None of the above",
+            "quiz_checkbox6": "",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_GEibBR": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "muscle-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "What best describe your Muscle Health?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Muscle Fatigue",
+            "quiz_checkbox2": "Muscle Weakness",
+            "quiz_checkbox3": "Muscle Cramps",
+            "quiz_checkbox4": "Muscle Stiffness",
+            "quiz_checkbox5": "None of the above",
+            "quiz_checkbox6": "",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_YT3PTY": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "brain-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "What issues do you usually face?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Brain Fog",
+            "quiz_checkbox2": "Trouble Focusing",
+            "quiz_checkbox3": "Mood Swings",
+            "quiz_checkbox4": "None of the above",
+            "quiz_checkbox5": "",
+            "quiz_checkbox6": "",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_XVR4im": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "heart-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "Do you experience any of the following?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Shortness Of Breath",
+            "quiz_checkbox2": "Persistent Coughing Or Wheezing",
+            "quiz_checkbox3": "Chest Pain",
+            "quiz_checkbox4": "High Blood Pressure",
+            "quiz_checkbox5": "Hot Flashes",
+            "quiz_checkbox6": "None of the above",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_single_option_PBDYUb": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "hormone-health",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "heading": "How long have you been experiencing hormonal imbalances?",
+            "left_enable": false,
+            "select_title1": "",
+            "select_option1": "Since a month",
+            "select_title2": "",
+            "select_option2": "Since a quarter",
+            "select_title3": "",
+            "select_option3": "Since an year",
+            "select_title4": "",
+            "select_option4": "I am unsure",
+            "select_title5": "",
+            "select_option5": "",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_user_multi_option_T733AM": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "healthy-aging",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "Which one of the following best describe your Healthy Aging Goals?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Strength Loss",
+            "quiz_checkbox2": "Flexibility",
+            "quiz_checkbox3": "Nutrient Absorption",
+            "quiz_checkbox4": "Changed Libido",
+            "quiz_checkbox5": "Stress Management",
+            "quiz_checkbox6": "Statin Medication Side Effects",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_multi_option_TzhNLD": {
+          "type": "quiz_user_multi_option",
+          "settings": {
+            "cstm_multi_checkboxid": "quiz_common_footer1",
+            "next_quiz_option_id": "quiz_common_footer2",
+            "quiz_checkbox_title": "What supplements are currently a part of your health routine?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Multivitamins",
+            "quiz_checkbox2": "Antioxidants",
+            "quiz_checkbox3": "Stress Relievers",
+            "quiz_checkbox4": "Gym Supplements",
+            "quiz_checkbox5": "I don’t take any supplements right now",
+            "quiz_checkbox6": "",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_user_single_option_j9McdJ": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "quiz_common_footer2",
+            "next_quiz_option_id": "quiz_common_footer3",
+            "heading": "On the scale of 1-5, what does your Activity Level look like?",
+            "left_enable": false,
+            "select_title1": "",
+            "select_option1": "1",
+            "select_title2": "",
+            "select_option2": "2",
+            "select_title3": "",
+            "select_option3": "3",
+            "select_title4": "",
+            "select_option4": "4",
+            "select_title5": "",
+            "select_option5": "5",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_user_single_option_W7eETE": {
+          "type": "quiz_user_single_option",
+          "settings": {
+            "quiz-select_option": "quiz_common_footer3",
+            "next_quiz_option_id": "quiz_common_footer4",
+            "heading": "What does your current energy pattern look like?",
+            "left_enable": true,
+            "select_title1": "Low Energy",
+            "select_option1": " Do you often feel fatigued throughout the day?",
+            "select_title2": "Afternoon Crash",
+            "select_option2": "Do you begin your day with high energy, only to experience a dip in the afternoon?",
+            "select_title3": "Morning Grogginess ",
+            "select_option3": "Are your mornings marked by grogginess and trouble concentrating?",
+            "select_title4": "Night Thriver ",
+            "select_option4": "Do you stay up past your bed time and find it difficultly in falling asleep?",
+            "select_title5": "God’s Favorite",
+            "select_option5": "God’s Favorite Is your energy consistently steady throughout the day?",
+            "select_title6": "",
+            "select_option6": ""
+          }
+        },
+        "quiz_user_multi_option_PYnKwA": {
+          "type": "quiz_user_multi_option",
+          "disabled": true,
+          "settings": {
+            "cstm_multi_checkboxid": "hair-care",
+            "next_quiz_option_id": "quiz_common_footer1",
+            "quiz_checkbox_title": "How would you describe your hair health?",
+            "checkbox_enable": true,
+            "quiz_checkbox1": "Hair Fall",
+            "quiz_checkbox2": "Thin Hair",
+            "quiz_checkbox3": "Split-ends",
+            "quiz_checkbox4": "Scalp related issues",
+            "quiz_checkbox5": "Fizziness",
+            "quiz_checkbox6": "None of the above",
+            "quiz_checkbox7": "",
+            "quiz_checkbox8": ""
+          }
+        },
+        "quiz_bundle_nYPVgp": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "skin-health",
+            "usa-bundle-tag": "usa-bundle-quiz-skin-health",
+            "ca-bundle-tag": "ca_bundle_quiz_skin_health"
+          }
+        },
+        "quiz_bundle_87dGtR": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "gut-health",
+            "usa-bundle-tag": "usa-bundle-quiz-gut-health",
+            "ca-bundle-tag": "ca_bundle_quiz_gut_health"
+          }
+        },
+        "quiz_bundle_peWzUP": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "brain-health",
+            "usa-bundle-tag": "usa-bundle-quiz-brain-health",
+            "ca-bundle-tag": "ca_bundle_quiz_brain_health"
+          }
+        },
+        "quiz_bundle_NJ7QKn": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>\"Get Up to 30% Off by adding all to the Cart!\"</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "eye-health",
+            "usa-bundle-tag": "usa-bundle-quiz-eye-health",
+            "ca-bundle-tag": "ca_bundle_quiz_eye_health"
+          }
+        },
+        "quiz_bundle_mCzzzn": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "bone-health",
+            "usa-bundle-tag": "usa-bundle-quiz-bone-health",
+            "ca-bundle-tag": "ca_bundle_quiz_bone_health"
+          }
+        },
+        "quiz_bundle_cBMRdy": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "muscle-health",
+            "usa-bundle-tag": "usa-bundle-quiz-muscle-health",
+            "ca-bundle-tag": "ca_bundle_quiz_muscle_health"
+          }
+        },
+        "quiz_bundle_hqkjdw": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "heart-health",
+            "usa-bundle-tag": "usa-bundle-quiz-heart-health",
+            "ca-bundle-tag": "ca_bundle_quiz_heart_health"
+          }
+        },
+        "quiz_bundle_HewgVi": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "immune-health",
+            "usa-bundle-tag": "usa-bundle-quiz-immune-health",
+            "ca-bundle-tag": "ca_bundle_quiz_immune_health"
+          }
+        },
+        "quiz_bundle_yJTYP3": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "hormone-health",
+            "usa-bundle-tag": "usa-bundle-quiz-hormone-health",
+            "ca-bundle-tag": "ca_bundle_quiz_hormone_health"
+          }
+        },
+        "quiz_bundle_Ncz9Mt": {
+          "type": "quiz_bundle",
+          "settings": {
+            "quiz_recom_title_offer": "<h2>Get Up to 30% Off by adding all to the Cart!</h2>",
+            "quiz_recom_title": "<h2>We have picked the Right Products that will help you on<br/>\"Your Wellness Journey!\"</h2>",
+            "collection": "healthy-aging",
+            "usa-bundle-tag": "usa-bundle-quiz-healthy-aging",
+            "ca-bundle-tag": "ca_bundle_quiz_healthy_aging"
+          }
+        }
+      },
+      "block_order": [
+        "quiz_information_KrYNgG",
+        "quiz_user_mobile_Wrdnah",
+        "quiz_user_single_option_VrHrj4",
+        "quiz_user_single_option_T7TXkL",
+        "quiz_selected_collection_mkUNXd",
+        "quiz_user_single_option_igFhyn",
+        "quiz_user_multi_option_8GUw6M",
+        "quiz_user_multi_option_zhp8JJ",
+        "quiz_user_multi_option_CfKXKw",
+        "quiz_user_multi_option_GiJFxr",
+        "quiz_user_multi_option_GEibBR",
+        "quiz_user_multi_option_YT3PTY",
+        "quiz_user_multi_option_XVR4im",
+        "quiz_user_single_option_PBDYUb",
+        "quiz_user_multi_option_T733AM",
+        "quiz_user_multi_option_TzhNLD",
+        "quiz_user_single_option_j9McdJ",
+        "quiz_user_single_option_W7eETE",
+        "quiz_user_multi_option_PYnKwA",
+        "quiz_bundle_nYPVgp",
+        "quiz_bundle_87dGtR",
+        "quiz_bundle_peWzUP",
+        "quiz_bundle_NJ7QKn",
+        "quiz_bundle_mCzzzn",
+        "quiz_bundle_cBMRdy",
+        "quiz_bundle_hqkjdw",
+        "quiz_bundle_HewgVi",
+        "quiz_bundle_yJTYP3",
+        "quiz_bundle_Ncz9Mt"
+      ],
+      "settings": {
+        "progress_color": "#008000",
+        "quiz_back_btn": "Start Again",
+        "quiz_result_page": "Curating your unique results...",
+        "quiz_result_content": "We have picked the Right Products that will help you on \"Your Wellness Journey!\"",
+        "quiz_previous_btn": "Previous",
+        "quiz_next_btn": "Next",
+        "text_color": "#000000",
+        "padding_top": 70,
+        "padding_bottom": 10,
+        "mpadding_top": 30,
+        "mpadding_bottom": 10
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "quiz_nx6gmx"
   ]
 }
