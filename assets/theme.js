@@ -7320,9 +7320,18 @@
             }
         }
     }
-
-
-  // ===================
+// ==========================ATC
+$2(document)
+      .off("click", ".cart_grid_list button.recommended_atc_btn")
+      .on("click", ".cart_grid_list button.recommended_atc_btn", function () {
+        $2(this).addClass("is-loading");
+        const variantId = $2(this).attr("data-variantid");
+        let $target = $2(this);
+        halo.actionAddToCart($target, variantId, 1),
+           halo.updateSidebarCart(cart);
+                         $body.addClass('cart-sidebar-show');
+        cartSavings();
+      });
  // ===================
 $(document)
   .off("click", ".quiz_bundle_prodct")
