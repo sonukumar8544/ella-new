@@ -198,7 +198,7 @@
                     {% for block in section.blocks %}
                         {% if block.type == 'tiktok_video' %}
                             <div class="halo-item tiktok-video-column{% if swipe_on_mobile == 'slider' %} slider__slide{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"{% if settings.banner_animation == 'effect_fade_up' %} style="--animation-order: {{ forloop.index }};"{% endif %}>
-                                {% if block.settings.tiktok_video_embede_code != blank or block.settings.tiktokvideo  != blank %}
+                                {% if block.settings.tiktokvideo  != blank %}
                                     <div class="tiktok-video-wrap" data-tiktok-video-wrapper>
                                         <!-- <iframe height="585" width="100%" data-src="https://www.tiktok.com/player/v1/{{ block.settings.tiktok_video_embede_code }}?&music_info=1&description=1&autoplay=1" allow="fullscreen" title="Tiktok video"></iframe> -->
                                     <video muted loop id="tiktokVideo" width="100%" height="100%" class="videoclas" playsinline poster="//www.dorco.in/cdn/shop/files/1_3.jpg?v=1673366541">
