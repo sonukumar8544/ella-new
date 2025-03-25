@@ -40,8 +40,8 @@
           {{ product.metafields.custom.product_short_description.value | split: '|' | last }}
         </p>
       {% endif %}
-      {% render 'okendo-reviews-product-rating-summary', product: product -%}
-      {% comment %} {% endcomment %}
+       {% comment %} {% render 'okendo-reviews-product-rating-summary', product: product -%}
+     {% endcomment %}
       <div class="product-price price-item ">
         {% render 'price', product: product %}
       </div>
