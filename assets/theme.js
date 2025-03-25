@@ -7326,8 +7326,8 @@
   $(document)
   .off("click", ".quiz_bundle_prodct")
   .on("click", ".quiz_bundle_prodct", function () {
-    const $2target1 = $2(this);
-    $2target1.addClass("is-loading");
+    const $2target1 = $(this);
+    $target1.addClass("is-loading");
 
     const variantIds = $2(this).attr("data-variant-ids")
       .split(",")
@@ -7360,7 +7360,7 @@
                     success: function (cartData) {
                         halo.updateSidebarCart(cartData);
                         setTimeout(() => {
-                            $2target1.removeClass("is-loading");
+                            $target1.removeClass("is-loading");
                         }, 2500);
                     },
                     error: function (error) {
@@ -7371,12 +7371,12 @@
             error: function (error) {
                 console.error("Error adding items to cart", error);
                 console.log("An error occurred while adding items to your cart.");
-                $2target1.removeClass("is-loading");
+                $target1.removeClass("is-loading");
             }
         });
     } else {
         console.log("No Bundle products selected to add to cart.");
-        $2target1.removeClass("is-loading");
+        $target1.removeClass("is-loading");
     }
   });
 })(jQuery);
