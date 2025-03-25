@@ -63,7 +63,7 @@ div.quiz-recommended-product .bundle_grid_list {
   position: relative;
 }
 .bundle_grid_list .price__saved,
-.bundle_grid_list .price-item.price-item--saved {
+.bundle_grid_list dd.price__label_sale.price__label_percent {
   display: none;
 }
 div.quiz-recommended-product .bundle_grid_list .productbadgenew {
