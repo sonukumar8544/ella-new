@@ -151,7 +151,7 @@
                                             <div class="site-nav-sub">
                                                 <div class="nav-title-mobile text-center"><span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span> {{ childlink.title | escape }}</div>
                                                 <ul class="list-unstyled">
-                                                    <li class="site-nav-item menu-lv-3 text-left navigation_all_mobile d-none"><a href="{{ childlink.url }}" class="site-nav-link m-zero link link-underline link--text focus-inset link-effect caption-large"><span class="text  p-relative">{{ 'general.navigation.go_to' | t }} {{ childlink.title | escape }}</span></a></li>
+                                                    <li class="site-nav-item menu-lv-3 text-left navigation_all_mobile d-none"><a href="{{ childlink.url }}" class="site-nav-link m-zero link link-underline link--text focus-inset link-effect caption-large"><span class="text  p-relative deepa">{{ 'general.navigation.go_to' | t }} {{ childlink.title | escape }}</span></a></li>
                                                     {%- for grandchildlink in childlink.links -%}
                                                         {% assign grandchildtitle = grandchildlink.title | escape | downcase | handle %}
                                                         <li class="site-nav-item text-left{% if sale_item_lv3 contains grandchildtitle %} active-sale{% endif %}">
