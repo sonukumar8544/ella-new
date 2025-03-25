@@ -7354,7 +7354,7 @@ $(document)
                     type: "GET",
                     url: "/cart.js",
                     dataType: "json",
-                    success: function (cartData) {
+                    success: function (cart) {
                         halo.updateSidebarCart(cart);
                         setTimeout(() => {
                             $target.removeClass("is-loading");
