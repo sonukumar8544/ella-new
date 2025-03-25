@@ -122,7 +122,7 @@
             "text_alignment": "left",
             "text_alignment_mb": "left",
             "enable_content_fullwidth": false,
-            "border_color_content": "#fff",
+            "border_color_content": "#ffffff",
             "bg_color_content": "rgba(0,0,0,0)",
             "profile_spacing_bottom": 50,
             "profile_name": "",
@@ -183,7 +183,7 @@
             "button_slide_2": "Shop Collection",
             "link_2": "#",
             "min_width_banner_button": 285,
-            "color_button": "#fff",
+            "color_button": "#ffffff",
             "border_button": "#ffffff",
             "bg_button": "#086b92",
             "bg_button_gradient": "",
@@ -692,36 +692,38 @@
     "16409351508cd2f3e1": {
       "type": "product-tab-block",
       "blocks": {
+        "b7fd904c-c2a4-4aa9-945b-b59d2287b827": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Best Seller",
+            "collection": "all-products"
+          }
+        },
         "7db97806-e2ac-4a14-8be2-44180f395afe": {
           "type": "ProductTabs",
           "settings": {
             "title": "Trend Now",
-            "collection": "collection-home-05-trend-now"
-          }
-        },
-        "b7fd904c-c2a4-4aa9-945b-b59d2287b827": {
-          "type": "ProductTabs",
-          "settings": {
-            "title": "Editor's Picks",
-            "collection": "collection-home-05-editors-pick"
+            "collection": "bone-health"
           }
         },
         "dbcc4240-58bf-4c15-9e06-9da0f128eb97": {
           "type": "ProductTabs",
           "settings": {
-            "title": "Most Viewed",
-            "collection": "collection-home-05-most-viewed"
+            "title": "Bundle",
+            "collection": "health-goals"
           }
         }
       },
       "block_order": [
-        "7db97806-e2ac-4a14-8be2-44180f395afe",
         "b7fd904c-c2a4-4aa9-945b-b59d2287b827",
+        "7db97806-e2ac-4a14-8be2-44180f395afe",
         "dbcc4240-58bf-4c15-9e06-9da0f128eb97"
       ],
       "settings": {
         "container": "container",
         "padding_full_width": 0,
+        "product_bg": "#fff",
+        "product_bg_gradient": "",
         "product_block_layout": "grid",
         "product_block_limit": 6,
         "product_block_title": "",
@@ -734,6 +736,12 @@
         "border_color_title2": "#232323",
         "color_title": "#232323",
         "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
         "image_behavior": "none",
         "product_block_per_row": "4",
         "product_block_infinite_scroll": true,
@@ -742,6 +750,9 @@
         "product_block_dots_mb": true,
         "product_block_arrows": true,
         "product_block_arrows_mb": false,
+        "product_block_arrows_custom_position": false,
+        "product_block_progress_bar": false,
+        "enable_infinite": true,
         "product_block_show": "5",
         "product_block_per_view": "4",
         "show_half": true,
@@ -752,6 +763,7 @@
         "position": "left",
         "width_banner": 20,
         "tab_title_style": "style_2",
+        "layout_mobile": "grid",
         "mg_bottom_title_tab": 24,
         "type_tab_font": "font_2",
         "separation": false,
@@ -768,11 +780,13 @@
         "border_tab_radius": 3,
         "min_width_tab": 5,
         "border_width_tab": 3,
+        "tab_align": "center",
         "color_tab": "#969696",
         "border_color_tab": "#232323",
         "bg_color_tab": "rgba(0,0,0,0)",
         "bg_color_gradient_tab": "",
         "color_tab_active": "#232323",
+        "border_color_tab_active": "",
         "bg_color_tab_active": "rgba(0,0,0,0)",
         "bg_color_gradient_tab_active": "",
         "mg_top_desktop": 45,
