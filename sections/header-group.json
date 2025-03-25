@@ -132,7 +132,6 @@
         },
         "9102477c-87bc-4af7-b787-d1992e42120e": {
           "type": "megamenu_style_1",
-          "disabled": true,
           "settings": {
             "layout_block": "custom_width",
             "header_custom_width_size": 1200,
@@ -190,6 +189,7 @@
         },
         "4910f55a-213a-4e1b-9b5c-13897e08a8c5": {
           "type": "megamenu_style_3",
+          "disabled": true,
           "settings": {
             "layout_block": "custom_width",
             "header_custom_width_size": 1200,
@@ -207,21 +207,6 @@
             "show_banner_5": true,
             "banner_url_5": ""
           }
-        },
-        "bbeab1fb-1169-4177-a156-24e1aa8986b6": {
-          "type": "megamenu_style_1",
-          "disabled": true,
-          "settings": {
-            "layout_block": "custom_width",
-            "header_custom_width_size": 1400,
-            "item": "Demos",
-            "column": 5,
-            "show_banner_1": false,
-            "banner_url_1": "",
-            "show_product": false,
-            "product_title": "Featured Products",
-            "product_collection": ""
-          }
         }
       },
       "block_order": [
@@ -231,8 +216,7 @@
         "9102477c-87bc-4af7-b787-d1992e42120e",
         "a1438504-9611-4f43-9874-38faee88940a",
         "a894da66-74e2-4e0b-ae8a-4f4179bf3bcf",
-        "4910f55a-213a-4e1b-9b5c-13897e08a8c5",
-        "bbeab1fb-1169-4177-a156-24e1aa8986b6"
+        "4910f55a-213a-4e1b-9b5c-13897e08a8c5"
       ],
       "settings": {
         "container": "1770",
