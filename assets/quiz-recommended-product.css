@@ -62,7 +62,10 @@ div.quiz-recommended-product .bundle_grid_list {
   box-shadow: 1px 0 6px 4px #e6e6e6;
   position: relative;
 }
-
+.bundle_grid_list .price__saved,
+.bundle_grid_list .price-item.price-item--saved {
+  display: none;
+}
 div.quiz-recommended-product .bundle_grid_list .productbadgenew {
   position: absolute;
   background-color: #006a91;
