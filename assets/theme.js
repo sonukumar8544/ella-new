@@ -7328,7 +7328,7 @@ $(document)
         const variantId = $(this).attr("data-variantid");
         let $target = $(this);
         halo.actionAddToCart($target, variantId, 1),
-           halo.updateSidebarCart(cart);
+           // halo.updateSidebarCart(cart);
                          $body.addClass('cart-sidebar-show');
         cartSavings();
       });
