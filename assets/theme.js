@@ -7346,19 +7346,19 @@
             items: items
         };
 
-        $(document).ajax({
+        $doc.ajax({
             type: "POST",
             url: "/cart/add.js",
             data: JSON.stringify(payload),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
-                $(document).ajax({
+                $doc.ajax({
                     type: "GET",
                     url: "/cart.js",
                     dataType: "json",
                     success: function (cartData) {
-                        halo.updateSidebarCart(cartData);
+                        halo.updateSidebarCart(cart);
                         setTimeout(() => {
                             $target1.removeClass("is-loading");
                         }, 2500);
