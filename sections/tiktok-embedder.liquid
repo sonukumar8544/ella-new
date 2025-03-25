@@ -206,18 +206,7 @@
     </video>
                                     </div>
                                  
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.getElementById("tiktokVideo");
-            video.addEventListener("click", function() {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        });
-    </script>
+   
 {% else %}
 
 {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
@@ -312,6 +301,18 @@
         customElements.define('tiktok-videos-component', TiktokVideosComponent);
     });
 </script>
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("tiktokVideo");
+            video.addEventListener("click", function() {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        });
+    </script>
 {% schema %}
 {
     "name": "t:sections.tiktok_embedder.name",
