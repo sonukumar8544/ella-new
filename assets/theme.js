@@ -7326,10 +7326,10 @@
   $(document)
   .off("click", ".quiz_bundle_prodct")
   .on("click", ".quiz_bundle_prodct", function () {
-    const $2target1 = $(this);
+    const $target1 = $(this);
     $target1.addClass("is-loading");
 
-    const variantIds = $2(this).attr("data-variant-ids")
+    const variantIds = $(this).attr("data-variant-ids")
       .split(",")
       .map(id => id.trim())
       .filter(Boolean);
