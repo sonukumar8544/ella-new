@@ -7323,18 +7323,17 @@
 
 
   // ===================
-  $(document)
+ // ===================
+$(document)
   .off("click", ".quiz_bundle_prodct")
   .on("click", ".quiz_bundle_prodct", function () {
-    const $target1 = $(this);
-    $target1.addClass("is-loading");
+    const $target = $(this);
+    $target.addClass("is-loading");
 
-    const variantIds = $(this).attr("data-variant-ids")
+    const variantIds = $target.attr("data-variant-ids")
       .split(",")
       .map(id => id.trim())
       .filter(Boolean);
-
-    // console.log("variantIds>>>", variantIds);
 
     if (variantIds.length > 0) {
         let items = variantIds.map(variantId => ({
@@ -7342,25 +7341,23 @@
             quantity: 1 
         }));
 
-        const payload = {
-            items: items
-        };
+        const payload = { items };
 
-        $doc.ajax({
+        $.ajax({
             type: "POST",
             url: "/cart/add.js",
             data: JSON.stringify(payload),
             dataType: "json",
             contentType: "application/json",
             success: function (response) {
-                $doc.ajax({
+                $.ajax({
                     type: "GET",
                     url: "/cart.js",
                     dataType: "json",
                     success: function (cartData) {
-                        halo.updateSidebarCart(cart);
+                        halo.updateSidebarCart(cartData);
                         setTimeout(() => {
-                            $target1.removeClass("is-loading");
+                            $target.removeClass("is-loading");
                         }, 2500);
                     },
                     error: function (error) {
@@ -7371,12 +7368,12 @@
             error: function (error) {
                 console.error("Error adding items to cart", error);
                 console.log("An error occurred while adding items to your cart.");
-                $target1.removeClass("is-loading");
+                $target.removeClass("is-loading");
             }
         });
     } else {
         console.log("No Bundle products selected to add to cart.");
-        $target1.removeClass("is-loading");
+        $target.removeClass("is-loading");
     }
   });
 })(jQuery);
