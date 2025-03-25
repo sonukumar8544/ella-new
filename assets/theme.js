@@ -7356,7 +7356,7 @@ $(document)
                     dataType: "json",
                     success: function (cart) {
                         halo.updateSidebarCart(cart);
-                        halo.openCartDrawer(); // Ensure the drawer opens
+                         $body.addClass('cart-sidebar-show');
                         setTimeout(() => {
                             $target.removeClass("is-loading");
                         }, 2500);
