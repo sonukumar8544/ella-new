@@ -59,7 +59,7 @@
         {%- endfor -%}
     </ul>
 {%- else -%}
-  <!-- without menu and dropdown-->
+  <!-- Halo-dropdownmenu without menu and dropdown-->
   {%- unless link.title == 'Contact us' %}
     <a {% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="{{ link.url }}"{% endif %} class="menu-lv-1__action header__menu-item list-menu__item link link--text focus-inset link-effect"{% if link.current %} aria-current="page"{% endif %}><span class="text{%- if link.current %} header__active-menu-item{% endif %} p-relative">{{ link.title | escape }}</span>
         {%- if new_label_1 contains title -%}
