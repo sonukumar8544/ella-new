@@ -1,4 +1,5 @@
-<ul class="{{ listClass }} text-{{alignment}}" role="list">
+
+<!--halo-navigation-list --><ul class="{{ listClass }} text-{{alignment}}" role="list">
     {%- liquid
         if search.terms != blank and template.suffix == 'ajax_mega_menu'
             assign hide_menu_load = false
@@ -105,6 +106,7 @@
             endfor
         -%}
         {%- if check_menu -%}
+          <!--halo-megamenu -->
             {% render 'halo-megamenu'
                 container: container,
                 size_container: size_container,
@@ -161,6 +163,7 @@
 
             %}
         {%- else -%}
+          <!--halo-dropdownmenu -->
             {% render 'halo-dropdownmenu'
                 link: link,
                 title: title,
