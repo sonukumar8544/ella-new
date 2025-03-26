@@ -1144,7 +1144,7 @@
             "profile_title_fs": 18,
             "profile_title_fs_mb": 17,
             "profile_title_fw": "normal",
-            "sub_heading": "Find the perfect supplement for your health concerns in under 2 minutes.",
+            "sub_heading": "",
             "letter_spacing_sub_title": "",
             "font_size_sub_heading": 22,
             "sub_heading_spacing_bottom": 20,
@@ -1161,11 +1161,11 @@
             "line_height_heading": 40,
             "heading_spacing_bottom": 20,
             "color_heading": "#3c3c3c",
-            "slide-des": "",
-            "font_size_des": 16,
-            "line_height_des": 22,
+            "slide-des": "Find the perfect supplement for your health concerns in under 2 minutes.",
+            "font_size_des": 18,
+            "line_height_des": 30,
             "des_spacing_bottom": 50,
-            "color_des": "#ffffff",
+            "color_des": "#3c3c3c",
             "sub_heading_mb": "",
             "font_size_sub_heading_mb": 20,
             "sub_heading_spacing_bottom_mb": 20,
@@ -1186,19 +1186,19 @@
             "enable_button_link": false,
             "enable_underline": true,
             "font_size_link": 36,
-            "button_slide": "",
-            "link": "shopify://collections",
+            "button_slide": "Let’s Get Started with the Quiz",
+            "link": "shopify://pages/wellness-quiz",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "",
             "min_width_banner_button": 200,
-            "color_button": "#274b4f",
-            "border_button": "#f4ad57",
-            "bg_button": "#f4ad57",
+            "color_button": "#086b92",
+            "border_button": "#086b92",
+            "bg_button": "rgba(0,0,0,0)",
             "bg_button_gradient": "",
-            "color_button_hover": "#274b4f",
-            "border_button_hover": "#f19627",
-            "bg_button_hover": "#f19627",
+            "color_button_hover": "#232323",
+            "border_button_hover": "#3c3c3c",
+            "bg_button_hover": "rgba(0,0,0,0)",
             "bg_button_gradient_hover": "",
             "use_contrasting_colors": false,
             "lb_product_1": "",
@@ -1802,7 +1802,7 @@
         "spotlight_bg": "#f2f3f9",
         "spotlight_bg_gradient": "",
         "enable_custom_position_title": false,
-        "spotlight_block_title": "Featured On Ella",
+        "spotlight_block_title": "Shop with Confidence",
         "enable_border_title": false,
         "color_title": "#000000",
         "color_title_mb": "",
@@ -1873,7 +1873,7 @@
         "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1": {
           "type": "text",
           "settings": {
-            "text": "Experience the optimal gut health transformation with Wellness Extract's holistic Gut Health kit, designed to deep cleanse, heal, and nourish your digestive system.\n\nOur powerful gut health pack features three most effective natural dietary supplements for complete gut and immune support: Bovine Colostrum, Eannatto Vitamin E Tocotrienols, and Cell Dtox.\n\nBovine Colostrum: A nutrient-rich pre-milk fluid from cows, loaded with over 700 nutrients,lactoferrin, growth factors and antibodies that helps boost immunity, reduces gut inflammation, promotes balanced gut microbiome and support gut health.",
+            "text": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
             "text_size": 16,
             "text_size_mb": 15,
             "text_font_weight": "400",
@@ -1882,11 +1882,31 @@
             "text_color": "#3c3c3c",
             "text_width": "1140px"
           }
+        },
+        "button_hqbDei": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "Explore Our Story",
+            "button_link": "#",
+            "margin_top_button": 30,
+            "enable_underline_button": false,
+            "button_color": "#086b92",
+            "button_border_color": "#086b92",
+            "button_bg_color": "rgba(0,0,0,0)",
+            "button_bg_gradient": "",
+            "button_color_hover": "#000",
+            "button_border_color_hover": "#000",
+            "button_bg_color_hover": "#fff",
+            "button_bg_gradient_hover": "",
+            "button_width": "270px"
+          }
         }
       },
       "block_order": [
         "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-0",
-        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1"
+        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1",
+        "button_hqbDei"
       ],
       "settings": {
         "container": "container",
@@ -1969,7 +1989,7 @@
         "heading_LBV7K4": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": " Our USPs",
             "heading_size": 30,
             "heading_size_mb": 22,
             "heading_line_height": 1.1,
@@ -1979,7 +1999,7 @@
         "text_C9hELA": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "text": "<p>Content Here</p>",
             "text_size": 16,
             "text_size_mb": 14,
             "text_font_weight": "400",
@@ -2025,13 +2045,13 @@
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "Free Shipping US Order $499",
+            "text": "✔️ Patented, Proven Ingredients",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<span style=\"display: block;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
             "link": ""
           }
         },
@@ -2043,13 +2063,13 @@
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "90 Day Free Returns",
+            "text": "✔️ Expert-Formulated",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<span style=\"display: block;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
             "link": ""
           }
         },
@@ -2061,13 +2081,13 @@
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "Lifetime Warranty Guarantee*",
+            "text": "✔️ US-Sourced, GMP-Certified",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<span style=\"display: block;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
             "link": ""
           }
         },
@@ -2079,13 +2099,13 @@
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "Free In-Store Pickup / Giftcard",
+            "text": "✔️ FDA-Inspected Facility",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<span style=\"display: block;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
             "link": ""
           }
         }
