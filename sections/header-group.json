@@ -23,22 +23,66 @@
             "btn_bg_color": "#ffffff",
             "btn_bg_color_gradient": ""
           }
+        },
+        "announcement_PXhTQQ": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Why settle? Mix &amp; match your favorite supplements and design a bundle just for you!\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_UPwLfY": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p> Bulk Up, Save Big | 15% Off 3+ Products\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_3pNXXW": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p> Grab 3, Save 15%! – The more you bundle, the more you save! Personalize your health routine today. Start Shopping\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_7K94yJ": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p> Bundle. Save. Thrive. – Choose any 3 supplements, get 15% OFF, and build a wellness routine that works for you! Shop &amp; Save</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
         }
       },
       "block_order": [
-        "announcement_3cLqPQ"
+        "announcement_3cLqPQ",
+        "announcement_PXhTQQ",
+        "announcement_UPwLfY",
+        "announcement_3pNXXW",
+        "announcement_7K94yJ"
       ],
       "settings": {
         "layout": "scroll",
-        "enable_close": true,
+        "enable_close": false,
         "color_text": "#ffffff",
         "bg_color_text": "#2f4a4e",
         "bg_color_text_gradient": "",
         "font_size_text": 14,
         "font_style_text": "normal",
         "font_weight_text": "500",
-        "arrow_active": false,
-        "content_max_width": 38,
+        "arrow_active": true,
+        "content_max_width": 71,
         "padding_top": 0,
         "padding_top_tablet": 0,
         "padding_top_mobile": 0,
