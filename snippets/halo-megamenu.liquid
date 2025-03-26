@@ -7,6 +7,7 @@
         endif
     endif
 -%}
+{{ link.links }}
 {%- unless link.links == 'Contact us' %}
 <li class="menu-lv-item menu-lv-1 has-megamenu dropdown{% if sale_item_lv1 contains title %} menu-sale{% endif %} block_layout--{{container}}"{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} no-effect-cursor{% endif %}>
     {%- if link.links != blank -%}
