@@ -29,7 +29,7 @@
         .header-mobile--icon .header__icon--wishlist .wishlist-count-bubble {top: -8px;}
     }
 </style>
-
+<!--header-navigation-utility -->
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-navigation-wrapper"{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} no-effect-cursor{% endif %}>
 <div class="header-navigation header-nav-utility">
     <div class="container container-{{ section.settings.container }} d-flex flex-jc-between flex-align-center p-static o-unset{% if section.settings.sticky_header_width == 'full' %} sticky-container-full{% endif %}">
