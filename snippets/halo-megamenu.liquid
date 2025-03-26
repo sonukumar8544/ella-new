@@ -7,8 +7,8 @@
         endif
     endif
 -%}
-{{ link.links }}
-{%- unless link.links == 'Contact us' %}
+
+
 <li class="menu-lv-item menu-lv-1 has-megamenu dropdown{% if sale_item_lv1 contains title %} menu-sale{% endif %} block_layout--{{container}}"{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} no-effect-cursor{% endif %}>
     {%- if link.links != blank -%}
         <a class="menu-lv-1__action header__menu-item list-menu__item link focus-inset menu_mobile_link link-effect" href="{{ link.url }}">{% if check_vertical == true %}{% assign img = link.handle | downcase | replace: ' ', '-' | append: '.png' | file_url %}<span class="icon-img"><img src="{{ img }}" alt="{{ link.title }}" onError="style.display = 'none';"></span>{% endif %}
@@ -38,7 +38,7 @@
                                 <div class="site-nav dropdown{% if show_label_blink %} menu-lv-blink{% endif %}" data-gridItem>
                                     <div class="site-nav-list">
                                         <a href="{{ childlink.url }}" class="site-nav-title{% if childlink.links != blank %} menu_mobile_link_2{% endif %}{% if sale_item_lv2 contains childtitle %} active-sale{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                                            <h4 class="text{% if childlink.current %} site-nav-active{% endif %}">{{ childlink.title | escape }}</h4> 
+                                            <h4 class="text{% if childlink.current %} site-nav-active{% endif %}">{{ childlink.title | escape }}--{{ forloop.index }}</h4> 
                                             {%- if childlink.links != blank -%}
                                             <span class="icon-dropdown" data-toggle-menu-mb="">{% render 'icon-caret-right' %}</span>
                                             {%- endif -%}
@@ -755,4 +755,4 @@
         </a>
     {%- endif -%}
 </li>
-  {% endunless %}
+ {%- unless link.links == 'Contact us' %} {% endunless %}
