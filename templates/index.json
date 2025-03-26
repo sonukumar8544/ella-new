@@ -1895,9 +1895,9 @@
             "button_border_color": "#086b92",
             "button_bg_color": "rgba(0,0,0,0)",
             "button_bg_gradient": "",
-            "button_color_hover": "#000",
-            "button_border_color_hover": "#000",
-            "button_bg_color_hover": "#fff",
+            "button_color_hover": "#000000",
+            "button_border_color_hover": "#000000",
+            "button_bg_color_hover": "#ffffff",
             "button_bg_gradient_hover": "",
             "button_width": "270px"
           }
@@ -2109,13 +2109,51 @@
             "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
             "link": ""
           }
+        },
+        "text_CYkF7r": {
+          "type": "Text",
+          "settings": {
+            "icon_type": "image",
+            "icon": "",
+            "icon_width": 30,
+            "icon_height": 30,
+            "icon_mg_right": 20,
+            "text": "✔️ GRAS Approved (Generally Recognized As Safe)",
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "mg_bottom_text": 6,
+            "font_weight_text": "400",
+            "font_style_text": "normal",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "link": ""
+          }
+        },
+        "text_TA8wpw": {
+          "type": "Text",
+          "settings": {
+            "icon_type": "image",
+            "icon": "",
+            "icon_width": 30,
+            "icon_height": 30,
+            "icon_mg_right": 20,
+            "text": "✔️Third-Party Tested",
+            "font_size_text": 16,
+            "font_size_text_mb": 16,
+            "mg_bottom_text": 6,
+            "font_weight_text": "400",
+            "font_style_text": "normal",
+            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "text_NVUyMT",
         "text_6wrBKi",
         "text_jFPWkm",
-        "text_rqJzEn"
+        "text_rqJzEn",
+        "text_CYkF7r",
+        "text_TA8wpw"
       ],
       "settings": {
         "container": "container",
