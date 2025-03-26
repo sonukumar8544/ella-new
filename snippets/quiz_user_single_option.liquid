@@ -1,0 +1,175 @@
+<!-- quiz_user_single_option -->
+{% if settings.heading != '' %}
+  <div
+    class="tab quiz-select_option-option  cstm__signle_option {% if settings.quiz-select_option != blank %} {{ settings.quiz-select_option | handle }} {% endif %}"
+    id="{{ settings.quiz-select_option | handle }}"
+    {% if settings['quiz-select_option'] != blank %}
+      data-selected-collection-optionid="{{ settings.quiz-select_option |handle }}"
+    {% endif %}
+    data-next-quiz-move="{% if settings.next_quiz_option_id != blank %}{{ settings.next_quiz_option_id |handle }}{% endif %}"
+    data-progressbar="{{ index }}"
+  >
+    <h2 class="tab-title">{{ settings.heading }}</h2>
+    <div class="quiz-list {% if settings.left_enable == true %}left-align half-width{% endif %}">
+      {% if settings.select_title1 != '' or settings.select_option1 != '' %}
+        <div class="quiz-items">
+          <input
+            type="radio"
+            id="{{ settings.select_title1 | handle }}-{{ settings.select_option1 | handle }}"
+            name="{{ settings.heading | handle}}"
+            value="{{ settings.select_title1 | handle }}-{{ settings.select_option1 | handle }}"
+          >
+          <label
+            for="{{ settings.select_title1 | handle }}-{{ settings.select_option1 | handle }}"
+            class="custom-label option_select_option name"
+          >
+            {% if settings.select_title1 != '' %}
+              <p
+                class=""
+                data-question-value="{{ settings.select_title1 | handle }}"
+              >
+                <span class="sub-title">{{ settings.select_title1 }}</span>
+              </p>
+            {% endif %}
+            {% if settings.select_option1 != '' %}
+              <p
+                class="singleContent"
+                data-answer-value="{{ settings.select_option1 | handle }}"
+              >
+                {{ settings.select_option1 }}
+              </p>
+            {% endif %}
+          </label>
+        </div>
+      {% endif %}
+
+      {% if settings.select_title2 != '' or settings.select_option2 != '' %}
+        <div class="quiz-items">
+          <input
+            type="radio"
+            name="{{ settings.heading | handle}}"
+            id="{{ settings.select_title2 | handle }}-{{ settings.select_option2 | handle }}"
+            value="{{ settings.select_title2 | handle }}-{{ settings.select_option2 | handle }}"
+          >
+          <label
+            for="{{ settings.select_title2 | handle }}-{{ settings.select_option2 | handle }}"
+            class="custom-label option_select_option name"
+          >
+            {% if settings.select_title2 != '' %}
+              <p
+                class=""
+                data-question-value="{{ settings.select_title2 | handle }}"
+              >
+                <span class="sub-title">{{ settings.select_title2 }}</span>
+              </p>
+            {% endif %}
+            {% if settings.select_option2 != '' %}
+              <p
+                class="singleContent"
+                data-answer-value="{{ settings.select_option2 | handle }}"
+              >
+                {{ settings.select_option2 }}
+              </p>
+            {% endif %}
+          </label>
+        </div>
+      {% endif %}
+
+      {% if settings.select_title3 != '' or settings.select_option3 != '' %}
+        <div class="quiz-items">
+          <input
+            type="radio"
+            id="{{ settings.select_title3 | handle }}-{{ settings.select_option3 | handle }}"
+            value="{{ settings.select_title3 | handle }}-{{ settings.select_option3 | handle }}"
+            name="{{ settings.heading | handle}}"
+          >
+          <label
+            for="{{ settings.select_title3 | handle }}-{{ settings.select_option3 | handle }}"
+            class="custom-label option_select_option name"
+          >
+            {% if settings.select_title3 != '' %}
+              <p
+                class=""
+                data-question-value="{{ settings.select_title3 | handle }}"
+              >
+                <span class="sub-title">{{ settings.select_title3 }}</span>
+              </p>
+            {% endif %}
+            {% if settings.select_option3 != '' %}
+              <p
+                class="singleContent"
+                data-answer-value="{{ settings.select_option3 | handle }}"
+              >
+                {{ settings.select_option3 }}
+              </p>
+            {% endif %}
+          </label>
+        </div>
+      {% endif %}
+
+      {% if settings.select_title4 != '' or settings.select_option4 != '' %}
+        <div class="quiz-items">
+          <input
+            type="radio"
+            id="{{ settings.select_title4 | handle }}-{{ settings.select_option4 | handle }}"
+            value="{{ settings.select_title4 | handle }}-{{ settings.select_option4 | handle }}"
+            name="{{ settings.heading | handle}}"
+          >
+          <label
+            for="{{ settings.select_title4 | handle }}-{{ settings.select_option4 | handle }}"
+            class="custom-label option_select_option name"
+          >
+            {% if settings.select_title4 != '' %}
+              <p
+                class=""
+                data-question-value="{{ settings.select_title4 | handle }}"
+              >
+                <span class="sub-title">{{ settings.select_title4 }}</span>
+              </p>
+            {% endif %}
+            {% if settings.select_option4 != '' %}
+              <p
+                class="singleContent"
+                data-answer-value="{{ settings.select_option4 | handle }}"
+              >
+                {{ settings.select_option4 }}
+              </p>
+            {% endif %}
+          </label>
+        </div>
+      {% endif %}
+
+      {% if settings.select_title5 != '' or settings.select_option5 != '' %}
+        <div class="quiz-items">
+          <input
+            type="radio"
+            id="{{ settings.select_title5 | handle }}-{{ settings.select_option5 | handle }}"
+            value="{{ settings.select_title5 | handle }}-{{ settings.select_option5 | handle }}"
+            name="{{ settings.heading | handle}}"
+          >
+          <label
+            for="{{ settings.select_title5 | handle }}-{{ settings.select_option5 | handle }}"
+            class="custom-label option_select_option name"
+          >
+            {% if settings.select_title5 != '' %}
+              <p
+                class=""
+                data-question-value="{{ settings.select_title5 | handle }}"
+              >
+                <span class="sub-title">{{ settings.select_title5 }}</span>
+              </p>
+            {% endif %}
+            {% if settings.select_option5 != '' %}
+              <p
+                class="singleContent"
+                data-answer-value="{{ settings.select_option5 | handle }}"
+              >
+                {{ settings.select_option5 }}
+              </p>
+            {% endif %}
+          </label>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

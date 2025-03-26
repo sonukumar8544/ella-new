@@ -3037,7 +3037,7 @@
             halo.actionAddToCart($target, variantId, qty);
             
         },
-
+// ATC ella
         initAddToCart: function() {
             $doc.off('click.addToCart').on('click.addToCart', '[data-btn-addtocart]', (event) => {
                 event.preventDefault();
@@ -7320,4 +7320,71 @@
             }
         }
     }
+// ==========================ATC
+$(document)
+      .off("click", ".cart_grid_list button.recommended_atc_btn")
+      .on("click", ".cart_grid_list button.recommended_atc_btn", function () {
+        $(this).addClass("is-loading");
+        const variantId = $(this).attr("data-variantid");
+        let $target = $(this);
+        halo.actionAddToCart($target, variantId, 1),
+           // halo.updateSidebarCart(cart);
+                         $body.addClass('cart-sidebar-show');
+        cartSavings();
+      });
+ // ===================
+$(document)
+  .off("click", ".quiz_bundle_prodct")
+  .on("click", ".quiz_bundle_prodct", function () {
+    const $target = $(this);
+    $target.addClass("is-loading");
+
+    const variantIds = $target.attr("data-variant-ids")
+      .split(",")
+      .map(id => id.trim())
+      .filter(Boolean);
+
+    if (variantIds.length > 0) {
+        let items = variantIds.map(variantId => ({
+            id: variantId,
+            quantity: 1 
+        }));
+
+        const payload = { items };
+
+        $.ajax({
+            type: "POST",
+            url: "/cart/add.js",
+            data: JSON.stringify(payload),
+            dataType: "json",
+            contentType: "application/json",
+            success: function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/cart.js",
+                    dataType: "json",
+                    success: function (cart) {
+                        halo.updateSidebarCart(cart);
+                         $body.addClass('cart-sidebar-show');
+                        setTimeout(() => {
+                            $target.removeClass("is-loading");
+                        }, 2500);
+                    },
+                    error: function (error) {
+                        console.error("Error fetching updated cart data", error);
+                    }
+                });
+            },
+            error: function (error) {
+                console.error("Error adding items to cart", error);
+                console.log("An error occurred while adding items to your cart.");
+                $target.removeClass("is-loading");
+            }
+        });
+    } else {
+        console.log("No Bundle products selected to add to cart.");
+        $target.removeClass("is-loading");
+    }
+  });
+
 })(jQuery);

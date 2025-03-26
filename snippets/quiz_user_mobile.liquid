@@ -1,0 +1,156 @@
+<!-- quiz_user_mobile -->
+
+<div class="tab" data-block-id="" data-progressbar="{{ index }}">
+  {% if settings.user_info_title != blank %}
+    <div class="tab-group quiz_user_info_min">
+      <h2 class="tab-title">{{ settings.user_info_title }}</h2>
+      <div class="email-field phone-input">
+        <input
+          type="text"
+          id="phone"
+          class="phone-input"
+          name="phone"
+          oninput="this.value = this.value.replace(/[^0-9+]/g, '');"
+          required
+          placeholder=""
+          minlength="10"
+          maxlength="15"
+          pattern="\d{1,15}"
+        >
+
+        <span id="error-message" style="color: red; display: none;font-size: 13px;">Enter Valid Phone Number.</span>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
+{% style %}
+  .iti__flag {
+    display: block !important;
+  }
+
+  /* Phone Input Styles */
+  #cstm__phone_number .iti {
+    position: relative;
+    width: 100%;
+  }
+  
+  #cstm__phone_number .iti__selected-flag {
+    display: flex;
+    align-items: center;
+  }
+
+  #cstm__phone_number input {
+    padding-left: 75px !important;
+    width: 100%;
+  }
+ #cstm__phone_number .iti--separate-dial-code .iti__selected-flag {
+    background: rgb(7 123 161 / 8%);
+}
+  #cstm__phone_number .iti__country-list {
+    z-index: 99999;
+  }
+
+  #cstm__phone_number input::placeholder {
+    font-size: 15px;
+  }
+
+  /* @media(max-width: 1024px){
+    #cstm__phone_number input {
+     
+    }
+  } */
+{% endstyle %}
+
+<script>
+  //   $(document).on("click", ".iti__country-list .iti__country", function () {
+  //     let selectedDialCode = $(this).find(".iti__dial-code").text().trim();
+  //     let phoneInput = $("#phone");
+  //     let currentValue = phoneInput.val();
+  //     let newValue = currentValue.replace(/^\+\d+/, "").trim();
+  //     phoneInput.val(selectedDialCode + newValue);
+  // });
+  // mobile input 
+  $(document).ready(function () {
+    var input = $("#phone");
+
+    if (input.length) {
+        var iti = window.intlTelInput(input[0], {
+            initialCountry: "auto",
+            geoIpLookup: function (success, failure) {
+                $.get("https://ipapi.co/json", function (data) {
+                    success(data.country_code);
+                }).fail(failure);
+            },
+            separateDialCode: true, // Hides country code in UI
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+        });
+
+        // Track phone input changes
+        input.on("input", function () {
+            var selectedCountryData = iti.getSelectedCountryData();
+            var phoneValue = $(this).val().trim();
+
+            phoneValue = phoneValue.replace(/^\+\d*/, "").trim(); // Remove any existing country code
+            $(this).attr("data-full-phone", `+${selectedCountryData.dialCode}${phoneValue}`);
+        });
+    }
+});
+
+    // mobile input 
+</script>
+
+
+<!-- <style>
+  .quiz_user_info_min div:empty{display:block !important;}
+  .phone-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+    
+  }
+
+  .quiz_user_info_min .iti {
+  position: relative;
+  }
+
+  .quiz_user_info_min .iti__flag-container {
+  position: absolute;
+  top: 35%;
+  left: 1px;
+  transform: translateY(-50%);
+  z-index: 1;
+  }
+
+  .quiz_user_info_min .iti__selected-flag {
+  display: flex;
+  width: auto;
+  height: 45px;
+  background-size: cover;
+  }
+  .quiz_user_info_min input  {
+  padding-left: 90px !important;
+  }
+
+  .quiz_user_info_min .iti__country-list {
+  z-index: 99999;
+  }
+  .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag,
+  .iti--separate-dial-code .iti__selected-flag{
+  background: none;
+  }
+  .quiz_user_info_min input::placeholder {
+  font-size: 15px;
+  }
+  @media(max-width: 1024px){
+    .phone-input{
+      padding-left: 0px;
+    }
+  }
+</style> -->
