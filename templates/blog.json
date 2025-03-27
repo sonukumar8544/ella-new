@@ -7,218 +7,141 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
-    "sections": {
-      "blog_page_banner_c9NWK9": {
-        "type": "blog-page-banner",
-        "settings": {
-          "background_image": "shopify://shop_images/Group_900.png",
-          "banner_title": "",
-          "banner_subtitle": ""
-        }
-      },
-      "career_banner_4jGQnE": {
-        "type": "career-banner",
-        "blocks": {
-          "block_DXjJVX": {
-            "type": "block",
-            "settings": {
-              "image": "shopify://shop_images/Group_669.png",
-              "title": "HEALTH HUB",
-              "subtitle": "",
-              "description": "ram aam khata hai",
-              "button_link": "",
-              "button_text": "",
-              "reverse_direction": false
-            }
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "275addbb-56b4-4828-a499-03e58376b7c4": {
+          "type": "category",
+          "settings": {
+            "heading": "Categories",
+            "type": "1_level",
+            "link_list": ""
           }
         },
-        "block_order": [
-          "block_DXjJVX"
-        ],
-        "disabled": true,
-        "custom_css": [
-          ".career-two-col-banner-right-container {display: none;}",
-          ".career-two-col-banner-block-title {font-size: 25px; background: #36454f; color: white; padding: 0px 20px; border-radius: 12px; cursor: pointer;}",
-          "@media (max-width: 768px) {.career-two-col-banner-block-title {margin-top: 40px; max-width: 300px; margin-left: auto; margin-right: auto; }}",
-          ".career-two-col-banner-blocks-wrapper {padding-top: 50px; padding-bottom: 20px;}",
-          ".career-two-col-banner-block-right {display: none;}",
-          ".career-two-col-banner-block-left {width: 100%;}"
-        ],
-        "settings": {
-          "main_title": "",
-          "main_color": "",
-          "main_image": "shopify://shop_images/Group_47.png",
-          "main_image_green": true
-        }
-      },
-      "main": {
-        "type": "main-blog",
-        "blocks": {
-          "275addbb-56b4-4828-a499-03e58376b7c4": {
-            "type": "category",
-            "settings": {
-              "show_block": true,
-              "heading": "Categories",
-              "type": "3_level",
-              "link_list": "blog-page-catogry"
-            }
-          },
-          "55c8959f-8115-4017-bf9e-6937d51df687": {
-            "type": "recent_post",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "heading": "RECENT ARTICLES",
-              "number": 5
-            }
-          },
-          "6543713f-63f0-4882-ad34-5a2cdf3308dd": {
-            "type": "product_block",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "heading": "Featured Products",
-              "product_block_collection": "all-products-old",
-              "product_block_layout": "grid",
-              "product_block_limit": 4,
-              "product_block_dots": false,
-              "product_block_arrows": true
-            }
-          },
-          "5ad48b09-ec51-476a-b52c-e12ce0707c61": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "heading": "",
-              "link": ""
-            }
-          },
-          "74038a9b-b77e-4134-88bb-bcd7f06fdda1": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "heading": "",
-              "link": ""
-            }
-          },
-          "9bcdee17-7ee7-4353-b16c-f7b04bdf5b84": {
-            "type": "text",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "heading": "Custom Block",
-              "text": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... or whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from Theme Editor.</p>"
-            }
-          },
-          "580588b2-a150-4670-9def-6bc2575c20ea": {
-            "type": "recent_tag",
-            "disabled": true,
-            "settings": {
-              "show_block": true,
-              "show_tag_count": false,
-              "heading": "Blog Tags",
-              "number": 10
-            }
+        "55c8959f-8115-4017-bf9e-6937d51df687": {
+          "type": "recent_post",
+          "settings": {
+            "heading": "RECENT ARTICLES",
+            "number": 5
           }
         },
-        "block_order": [
-          "275addbb-56b4-4828-a499-03e58376b7c4",
-          "55c8959f-8115-4017-bf9e-6937d51df687",
-          "6543713f-63f0-4882-ad34-5a2cdf3308dd",
-          "5ad48b09-ec51-476a-b52c-e12ce0707c61",
-          "74038a9b-b77e-4134-88bb-bcd7f06fdda1",
-          "9bcdee17-7ee7-4353-b16c-f7b04bdf5b84",
-          "580588b2-a150-4670-9def-6bc2575c20ea"
-        ],
-        "settings": {
-          "show_breadcrumb": true,
-          "breadcrumb_alignment": "left",
-          "breadcrumb_bg": "",
-          "breadcrumb_gradient": "",
-          "breadcrumb_bg_mb": "#f6f6f6",
-          "breadcrumb_gradient_mb": "",
-          "show_page_title": false,
-          "page_title_alignment": "left",
-          "container": "container",
-          "mg_top_desktop": 60,
-          "mg_top_tablet": 40,
-          "mg_top_mobile": 20,
-          "mg_bottom_desktop": 20,
-          "mg_bottom_tablet": 15,
-          "mg_bottom_mobile": 10,
-          "show_sidebar": true,
-          "show_collapse": true,
-          "enable_sticky": true,
-          "sidebar_layout": "layout_2",
-          "sidebar_collapse_default": "expand",
-          "sidebar_position": "right",
-          "sidebar_heading_font": "font_1",
-          "sidebar_heading_font_size": 18,
-          "sidebar_heading_font_weight": "900",
-          "sidebar_heading_text_transform": "uppercase",
-          "image_ratio": "adapt",
-          "portrait_aspect_ratio": 70,
-          "limit": 8,
-          "item_per_row": "4",
-          "show_placeholder": false,
-          "show_date": true,
-          "show_author": true,
-          "show_comment": false,
-          "show_summary": true,
-          "show_read_more": true,
-          "blog_text_align": "left",
-          "background_color": "#ffffff",
-          "title_color": "#374650",
-          "text_color": "#374650",
-          "info_color": "#374650",
-          "title_font_size": 16,
-          "title_mobile_font_size": 15,
-          "title_font_weight": "600",
-          "title_text_transform": "capitalize",
-          "text_font_size": 14,
-          "text_font_weight": "400",
-          "text_text_transform": "none",
-          "info_font_size": 12,
-          "info_font_weight": "400",
-          "info_text_transform": "none",
-          "info_font_style": "normal"
+        "6543713f-63f0-4882-ad34-5a2cdf3308dd": {
+          "type": "product_block",
+          "settings": {
+            "heading": "Featured Products",
+            "product_block_collection": "collection-home-1-2",
+            "product_block_layout": "grid",
+            "product_block_limit": 4,
+            "product_block_dots": false,
+            "product_block_arrows": true
+          }
+        },
+        "5ad48b09-ec51-476a-b52c-e12ce0707c61": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": ""
+          }
+        },
+        "74038a9b-b77e-4134-88bb-bcd7f06fdda1": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": ""
+          }
+        },
+        "9bcdee17-7ee7-4353-b16c-f7b04bdf5b84": {
+          "type": "text",
+          "settings": {
+            "heading": "Custom Block",
+            "text": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... or whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from Theme Editor.</p>"
+          }
+        },
+        "580588b2-a150-4670-9def-6bc2575c20ea": {
+          "type": "recent_tag",
+          "settings": {
+            "heading": "Blog Tags",
+            "show_tag_count": false,
+            "number": 10
+          }
         }
       },
-      "take_a_quize_section_MgcbnJ": {
-        "type": "take-a-quize-section",
-        "custom_css": [
-          "@media only screen and (max-width: 768px) {#read-more-btn {display: none; } img {max-width: 520px; }}",
-          "@media only screen and (max-width: 639px) {img {max-width: 320px; }}",
-          "@media only screen and (min-width: 639px) {img {max-width: 500px; }}",
-          "@media (min-width: 768px) {h1 {font-size: 30px !important; }}",
-          "@media (max-width: 768px) {h1 {font-size: 21px !important; }}"
-        ],
-        "settings": {
-          "custom_class": "",
-          "background_image": "shopify://shop_images/Rectangle_437_10.png",
-          "left_image": "shopify://shop_images/Vitamin_E_Supplements_from_Wellness_Extract.png",
-          "mobile_image": "shopify://shop_images/3_products.psd_9.png",
-          "right_title_1": "",
-          "right_title_2": "",
-          "right_title_3": "",
-          "right_title": "Get Personalized Wellness Picks",
-          "right_subtitle": "Answer a few questions, and we’ll find the perfect supplement fit for you",
-          "button_text": "TAKE WELLNESS QUIZ",
-          "button_link": "https://wellnessextract-ca.myshopify.com/pages/wellness-quiz",
-          "new_tab": false,
-          "product_alt_tag_desktop": "",
-          "desktop_slider_rating_image": ""
-        }
+      "block_order": [
+        "275addbb-56b4-4828-a499-03e58376b7c4",
+        "55c8959f-8115-4017-bf9e-6937d51df687",
+        "6543713f-63f0-4882-ad34-5a2cdf3308dd",
+        "5ad48b09-ec51-476a-b52c-e12ce0707c61",
+        "74038a9b-b77e-4134-88bb-bcd7f06fdda1",
+        "9bcdee17-7ee7-4353-b16c-f7b04bdf5b84",
+        "580588b2-a150-4670-9def-6bc2575c20ea"
+      ],
+      "settings": {
+        "container": "container",
+        "padding_full_width": 0,
+        "show_breadcrumb": true,
+        "breadcrumb_alignment": "left",
+        "breadcrumb_bg": "",
+        "breadcrumb_gradient": "",
+        "breadcrumb_bg_mb": "#f6f6f6",
+        "breadcrumb_gradient_mb": "",
+        "show_page_title": true,
+        "page_title_alignment": "left",
+        "show_collapse": false,
+        "enable_sticky": false,
+        "sidebar_layout": "layout_2",
+        "sidebar_collapse_default": "expand",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_2",
+        "sidebar_heading_font_size": 13,
+        "sidebar_heading_font_weight": "900",
+        "sidebar_heading_text_transform": "uppercase",
+        "image_ratio": "adapt",
+        "portrait_aspect_ratio": 70,
+        "limit": 7,
+        "item_per_row": "1",
+        "show_placeholder": false,
+        "show_date": true,
+        "show_author": true,
+        "show_comment": true,
+        "show_summary": true,
+        "show_read_more": false,
+        "blog_text_align": "left",
+        "background_color": "#ffffff",
+        "title_color": "#232323",
+        "text_color": "#3c3c3c",
+        "info_color": "#999999",
+        "title_font_size": 20,
+        "title_mobile_font_size": 18,
+        "title_font_weight": "600",
+        "title_text_transform": "capitalize",
+        "text_font_size": 13,
+        "text_font_weight": "400",
+        "text_text_transform": "none",
+        "info_font_size": 12,
+        "info_font_weight": "400",
+        "info_text_transform": "none",
+        "info_font_style": "italic",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
       }
     },
-    "order": [
-      "blog_page_banner_c9NWK9",
-      "career_banner_4jGQnE",
-      "main",
-      "take_a_quize_section_MgcbnJ"
-    ]
-  }
-  
+    "blog_page_banner_jHhyaJ": {
+      "type": "blog-page-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/Group_900.png",
+        "banner_title": "",
+        "banner_subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blog_page_banner_jHhyaJ"
+  ]
+}
