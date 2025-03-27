@@ -8032,9 +8032,6 @@ body.is-custom-information .background-overlay {
 }
 
 /* menu CSS */
-.menu-dropdown__column-3
-  dd.price__label_sale.price__label_percent
-  .price__label_sale
-  .label_sale {
+.menu-dropdown__column-3 .price__label_sale .label_sale {
   display: none;
 }
