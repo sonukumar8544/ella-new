@@ -1968,6 +1968,14 @@ h6 a {
   text-transform: inherit;
 }
 
+p,
+.p{
+    font-size: 16px;
+    line-height: 26px;
+    font-family: Lato;
+    color:#36454f;
+}
+
 .hidden {
   display: none !important;
 }

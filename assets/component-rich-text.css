@@ -230,6 +230,13 @@
 
 .rich-text__blocks.enable_column.pad-65 .rich-text__text+.button {
     margin-left: 132px;
+    border-radius: 12px;
+}
+
+.rich-text__blocks.enable_column.pad-65 .rich-text__text+.button:hover {
+    color: white;
+    background-color: #086b92;
+    border: 1px solid #086b92;
 }
 
 .rich-text__blocks.enable_column.text-center.pad-65 .rich-text__text+.button,

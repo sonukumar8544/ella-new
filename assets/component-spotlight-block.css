@@ -113,11 +113,19 @@
 
 .spotlight-inner .spotlight-button.custom-button-style {
     color: var(--color-button-style);
-    background: var(--bg-color-button-style);
+    /* background: var(--bg-color-button-style); */
+    border-radius: 12px;
     border: 1px solid var(--border-color-button-style);
     text-transform: var(--text-transform-button-style);
     font-size: var(--font-size-button-style);
     min-width: var(--button-width-style);
+}
+
+.spotlight-inner .spotlight-button.custom-button-style:hover {
+    color: white;
+    background-color: #086b92;
+    border: 1px solid #086b92;
+   
 }
 
 .btn_1_br_outside .spotlight-inner .spotlight-button.custom-button-style:after {
