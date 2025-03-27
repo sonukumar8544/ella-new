@@ -11,7 +11,7 @@
 					itemsToShow = parseInt(self.data('rows')),
 					autoplay = self.data('autoplay'),
 					autoplaySpeed = self.data('autoplay-speed'),
-					// itemTotal = self.find('.halo-item').length;
+					itemTotal = self.find('.halo-item').length;
 
 	            if (self.not('.slick-initialized')) {
 	                self.slick({
