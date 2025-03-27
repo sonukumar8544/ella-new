@@ -1498,7 +1498,7 @@
       "settings": {
         "container": "fullwidth",
         "padding_full_width": 0,
-        "slideshow_background": "",
+        "slideshow_background": "#f8f8f8",
         "slideshow_background_gradient": "",
         "autoplay": true,
         "slideshow_speed": "5000",
@@ -1555,9 +1555,9 @@
         "number_desktop_size": 24,
         "number_mobile_size": 16,
         "lookbook_truncate": "1",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 10,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
