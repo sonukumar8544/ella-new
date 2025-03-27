@@ -11,13 +11,13 @@
 					itemsToShow = parseInt(self.data('rows')),
 					autoplay = self.data('autoplay'),
 					autoplaySpeed = self.data('autoplay-speed'),
-					itemTotal = self.find('.halo-item').length;
+					// itemTotal = self.find('.halo-item').length;
 
 	            if (self.not('.slick-initialized')) {
 	                self.slick({
 	                    slidesToShow: itemsToShow,
 	                    slidesToScroll: 1,
-	                    dots: dataDots && itemTotal > itemsToShow,
+	                    // dots: dataDots && itemTotal > itemsToShow,
 						// get infinite() {
 						//     if (autoplay == true) {
 						//         return this.infinite = true;
