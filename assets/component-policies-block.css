@@ -2,6 +2,9 @@
 .cstm_policies__block {
   padding-top: 5px;
 }
+.cstm_policies__block .halo-item .policies-text:hover {
+  text-decoration: none;
+}
 
 .policies-block .policies-content .policies-text,
 .policies-block .halo-item .policies-text {
