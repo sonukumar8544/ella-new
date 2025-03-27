@@ -131,7 +131,7 @@
                     <details-modal class="header__iconItem header__search ml-0{% if block.settings.show_search_sticky%}{% if block.settings.show_search %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_search %} show-main-menu{% endif %}{% endif %}">
                             <details class="search_details search_details--popup">
                                 <summary class="header__icon header__icon--search header__icon--summary link link--text focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}" data-search-menu-sticky-form data-search-menu>
-                                    <span class="text-center">{% render 'icon-search', class: 'modal__toggle-open icon icon-search w-h-26' %}</span>
+                                    <span class="text-center">{% render 'search_Icon', class: 'modal__toggle-open icon icon-search w-h-26' %}</span>
                                 </summary>
                                 <div class="search-modal modal__content p-fixed top-0 bottom-0 left-0 right-0 w-100 h-100v m-zero zi-101{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
                                     <div class="search-modal__content search-modal__content-bottom d-block p-relative maw-100 text-center" tabindex="-1">
