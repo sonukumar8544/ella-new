@@ -25,7 +25,7 @@
 						    	return this.infinite = dataCenterMode;
 						    }
 						},
-						centerMode: dataCenterMode,
+						// centerMode: dataCenterMode,
 						
 	                    speed: 800,
 	                    nextArrow: window.arrows.icon_next,
