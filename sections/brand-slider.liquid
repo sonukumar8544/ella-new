@@ -260,12 +260,12 @@
                 .section-block-{{section.id}} .halo-block-header{margin-bottom: 0}
             {%- endif -%}
         {%- endif -%}
-            .section-block-{{section.id}} .halo-row .halo-item{padding-left: var(--item-distance-style);padding-right: var(--item-distance-style)}
+            /* .section-block-{{section.id}} .halo-row .halo-item{padding-left: var(--item-distance-style);padding-right: var(--item-distance-style)} */
         {%- if section.settings.brand_layout == 'grid' -%}
             .section-block-{{section.id}} .brands-grid .halo-item {padding: var(--item-distance-style)}
             .section-block-{{section.id}} .halo-row {margin-left: var(--row-distance-style);margin-right: var(--row-distance-style)}
         {%- else -%}
-            /* .section-block-{{section.id}} .halo-row .slick-list {margin-left: var(--row-distance-style);margin-right: var(--row-distance-style)} */
+            .section-block-{{section.id}} .halo-row .slick-list {margin-left: var(--row-distance-style);margin-right: var(--row-distance-style)}
         {%- endif -%}
         {%- if section.settings.brand_item_border == 'box_shadow' -%}
             .section-block-{{ section.id }} .halo-item {padding: var(--item-distance-style)}
