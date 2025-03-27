@@ -4,93 +4,90 @@
 {{ 'component-grid.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-    assign padding_full_width = section.settings.padding_full_width
-    assign padding_top = section.settings.mg_top_desktop | append: 'px'
-    assign padding_bottom = section.settings.mg_bottom_desktop | append: 'px'
-    assign padding_top_tablet = section.settings.mg_top_tablet | append: 'px'
-    assign padding_bottom_tablet = section.settings.mg_bottom_tablet | append: 'px'
-    assign padding_top_mobile = section.settings.mg_top_mobile | append: 'px'
-    assign padding_bottom_mobile = section.settings.mg_bottom_mobile | append: 'px'
-    assign show_breadcrumb = section.settings.show_breadcrumb
-    assign breadcrumb_alignment = section.settings.breadcrumb_alignment
-    assign breadcrumb_bg = section.settings.breadcrumb_bg
-    assign breadcrumb_gradient = section.settings.breadcrumb_gradient
-    assign breadcrumb_bg_mb = section.settings.breadcrumb_bg_mb
-    assign breadcrumb_gradient_mb = section.settings.breadcrumb_gradient_mb
-    assign show_page_title = section.settings.show_page_title
-    assign page_title_alignment = section.settings.page_title_alignment
-    assign container = section.settings.container
-    assign item_per_row = section.settings.item_per_row
-    assign media_size = section.settings.image_ratio
-    assign portrait_aspect_ratio = section.settings.portrait_aspect_ratio | append: '%'
-    assign blog_text_align = section.settings.blog_text_align
-    assign show_date = section.settings.show_date
-    assign show_author = section.settings.show_author
-    assign show_comment = section.settings.show_comment
-    assign show_summary = section.settings.show_summary
-    assign show_read_more = section.settings.show_read_more
-    assign show_placeholder = section.settings.show_placeholder
-    if section.settings.limit != blank 
-        assign limit = section.settings.limit 
-    else 
-        assign limit = 3 
-    endif
-    assign has_sidebar = false
-    for block in section.blocks
-        case block.type
-            when 'category', 'recent_post', 'recent_tag', 'product_block', 'image', 'text'
-                assign has_sidebar = true
-        endcase
-    endfor
-    if has_sidebar
-        assign show_collapse = section.settings.show_collapse
-        assign sidebar_position = section.settings.sidebar_position
-        assign sidebar_collapse_default = section.settings.sidebar_collapse_default
-        assign enable_sticky = section.settings.enable_sticky
-        assign sidebar_heading_font = section.settings.sidebar_heading_font
-        assign sidebar_heading_font_size = section.settings.sidebar_heading_font_size
-        assign sidebar_heading_font_weight = section.settings.sidebar_heading_font_weight
-        assign sidebar_heading_text_transform = section.settings.sidebar_heading_text_transform
-        assign sidebar_heading_margin_top = sidebar_heading_font_size | times: settings.line_height | minus: sidebar_heading_font_size | divided_by: 2
-    endif
-    assign background_color = section.settings.background_color
-    assign title_color = section.settings.title_color
-    assign info_color = section.settings.info_color
-    assign text_color = section.settings.text_color
-    assign title_font_size = section.settings.title_font_size | append: 'px'
-    assign title_mobile_font_size = section.settings.title_mobile_font_size | append: 'px'
-    assign title_font_weight = section.settings.title_font_weight
-    assign title_text_transform = section.settings.title_text_transform
-    assign text_font_size = section.settings.text_font_size | append: 'px'
-    assign text_font_weight = section.settings.text_font_weight
-    assign text_text_transform = section.settings.text_text_transform
-    assign info_font_size = section.settings.info_font_size | append: 'px'
-    assign info_font_weight = section.settings.info_font_weight
-    assign info_text_transform = section.settings.info_text_transform
-    assign info_font_style = section.settings.info_font_style
+  assign padding_top = section.settings.mg_top_desktop | append: 'px'
+  assign padding_bottom = section.settings.mg_bottom_desktop | append: 'px'
+  assign padding_top_tablet = section.settings.mg_top_tablet | append: 'px'
+  assign padding_bottom_tablet = section.settings.mg_bottom_tablet | append: 'px'
+  assign padding_top_mobile = section.settings.mg_top_mobile | append: 'px'
+  assign padding_bottom_mobile = section.settings.mg_bottom_mobile | append: 'px'
+  assign show_breadcrumb = section.settings.show_breadcrumb
+  assign breadcrumb_alignment = section.settings.breadcrumb_alignment
+  assign breadcrumb_bg = section.settings.breadcrumb_bg
+  assign breadcrumb_gradient = section.settings.breadcrumb_gradient
+  assign breadcrumb_bg_mb = section.settings.breadcrumb_bg_mb
+  assign breadcrumb_gradient_mb = section.settings.breadcrumb_gradient_mb
+  assign show_page_title = section.settings.show_page_title
+  assign page_title_alignment = section.settings.page_title_alignment
+  assign container = section.settings.container
+  assign item_per_row = section.settings.item_per_row
+  assign media_size = section.settings.image_ratio
+  assign portrait_aspect_ratio = section.settings.portrait_aspect_ratio | append: '%'
+  assign blog_text_align = section.settings.blog_text_align
+  assign show_date = section.settings.show_date
+  assign show_author = section.settings.show_author
+  assign show_comment = section.settings.show_comment
+  assign show_summary = section.settings.show_summary
+  assign show_read_more = section.settings.show_read_more
+  assign show_placeholder = section.settings.show_placeholder
+  if section.settings.limit != blank
+    assign limit = section.settings.limit
+  else
+    assign limit = 3
+  endif
+  assign show_sidebar = section.settings.show_sidebar
+  if show_sidebar
+    assign show_collapse = section.settings.show_collapse
+    assign sidebar_position = section.settings.sidebar_position
+    assign sidebar_collapse_default = section.settings.sidebar_collapse_default
+    assign enable_sticky = section.settings.enable_sticky
+  endif
+  if show_sidebar and section.blocks.size > 0
+    assign sidebar_heading_font = section.settings.sidebar_heading_font
+    assign sidebar_heading_font_size = section.settings.sidebar_heading_font_size
+    assign sidebar_heading_font_weight = section.settings.sidebar_heading_font_weight
+    assign sidebar_heading_text_transform = section.settings.sidebar_heading_text_transform
+    assign sidebar_heading_margin_top = sidebar_heading_font_size | times: settings.line_height | minus: sidebar_heading_font_size | divided_by: 2
+  endif
+  assign background_color = section.settings.background_color
+  assign title_color = section.settings.title_color
+  assign info_color = section.settings.info_color
+  assign text_color = section.settings.text_color
+  assign title_font_size = section.settings.title_font_size | append: 'px'
+  assign title_mobile_font_size = section.settings.title_mobile_font_size | append: 'px'
+  assign title_font_weight = section.settings.title_font_weight
+  assign title_text_transform = section.settings.title_text_transform
+  assign text_font_size = section.settings.text_font_size | append: 'px'
+  assign text_font_weight = section.settings.text_font_weight
+  assign text_text_transform = section.settings.text_text_transform
+  assign info_font_size = section.settings.info_font_size | append: 'px'
+  assign info_font_weight = section.settings.info_font_weight
+  assign info_text_transform = section.settings.info_text_transform
+  assign info_font_style = section.settings.info_font_style
 -%}
-
+<div class="filter-blog-popups">
+  <div class="filter-btn-atction">Explore Categories</div>
+</div>
 <div data-section-id="{{ section.id }}" data-section-type="blog-layout-default" id="BlogSection-{{ section.id }}" data-section="{{ section.id }}" class="main-blog-block blog-layout-default">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
         {%- if show_breadcrumb -%}
-            <div class="hide-on-desktop">
+            <div class="hide-on-desktop hide-mobile-bradecrun">
                 {% render 'breadcrumb', alignment: breadcrumb_alignment %}
             </div>
         {%- endif -%}
-        {%- if has_sidebar -%}
-            <div class="header-with-sidebar{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if show_sidebar -%}
+            <div id="blog-page-heading-title" class="header-with-sidebar{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
         {% endif %}
             {%- if show_page_title -%}
                 <h1 class="page-header text-{{ page_title_alignment }}">
                     {{ blog.title | escape }}
                 </h1>
             {%- endif -%}
-            {%- if has_sidebar -%}
-                <div class="sidebar-toogle" data-sidebar>
-                    {% render 'icon-sidebar' %}
+            {%- if show_sidebar and section.blocks.size > 0 -%}
+                <div class="blog-filter-mobile-wrapper" data-sidebar>
+                    <button class="filter-btn-mob">Explore Categories</button>
                 </div>
             {%- endif -%}
-        {% if has_sidebar %}
+        {% if show_sidebar %}
             </div>
         {% endif %}
         {%- if show_breadcrumb -%}
@@ -99,75 +96,398 @@
             </div>
         {%- endif -%}
         
-        <div class="halo-blog-content halo-grid-content">
-            {%- if has_sidebar -%}
-                {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
-                <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--vertical sidebar--{{ section.settings.sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
-                    <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
-                        <span class="visually-hidden">{{ 'general.common.close' | t }}</span>
-                        {% render 'icon-close' %}
-                    </a>
-                    <div class="halo-sidebar-header text-left">
-                        <span class="title">
-                            {{ 'sections.sidebar.title' | t }}
-                        </span>
-                    </div>
-                    <div class="halo-sidebar-wrapper custom-scrollbar {% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                        {% render 'sidebar',
-                            section: section,
-                            show_collapse: show_collapse,
-                            sidebar_collapse: sidebar_collapse_default
-                        %}
-                    </div>
-                </div>
-            {%- endif -%}
-            {%- paginate blog.articles by limit -%}
-                <div class="page-content main-blog {% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                    {% comment %} {%- if has_sidebar -%}
-                        <div class="sidebar-toogle" data-sidebar>
-                            {% render 'icon-sidebar' %}
-                        </div>
-                    {%- endif -%} {% endcomment %}
-                    <div class="blog-row blog-block-item column-{{ item_per_row }}">
-                        {%- for article in blog.articles -%}
-                            {% if forloop.first == true %}
-                                {%- assign first = true -%}
-                            {% else %}
-                                {%- assign first = false -%}
-                            {% endif %}
-                            <div class="item{% if forloop.first == true %} item--first{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--color-summary-style: {{ text_color }}">
-                                {% render 'article-card-3',
-                                    article: article,
-                                    media_size: media_size,
-                                    portrait_aspect_ratio: portrait_aspect_ratio,
-                                    blog_text_align: blog_text_align,
-                                    show_author: show_author,
-                                    show_date: show_date,
-                                    show_summary: show_summary,
-                                    show_read_more: show_read_more,
-                                    show_comment: show_comment,
-                                    show_placeholder: show_placeholder,
-                                    first: first,
-                                    catewords: 30
-                                %}
-                            </div>
-                        {%- endfor -%}
-                    </div>
-                    {%- if paginate.pages > 1 -%}
-                        {%- render 'pagination',
-                            paginate: paginate,
-                            class: 'pagination-wrapper'
-                        -%}
-                    {%- endif -%}
-                </div>
-            {%- endpaginate -%}
+        {%- assign selected_category = search.params.view | default: 'wellness' -%}
+
+        {%- liquid
+  assign query_key = 'view'
+  assign query_value = blank
+  assign page_url = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: request.host | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&'
+
+  if page_url contains '?'
+    assign query_string = page_url | split: '?' | last
+    assign qry_parts = query_string | split: '&'
+    for part in qry_parts
+      assign key_and_value = part | split: '='
+      if key_and_value[0] == query_key
+        assign query_value = key_and_value[1] | strip | strip_newlines
+      endif
+    endfor
+  endif
+
+  assign selected_category = query_value | default: 'wellness'
+-%}
+<div class="halo-blog-content halo-grid-content">
+  {% comment %} {%- if show_sidebar and section.blocks.size > 0 -%} {% endcomment %}
+    {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
+
+    <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--vertical sidebar--{{ section.settings.sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
+      <div class="sidebar-filter-blog">
+        <h2>All Categories <span class="blog-filter-btn-popup" style="color: #232323; font-size: 20px;" >X</span></h2>
+        <div class="filters-list">
+          <a href="{{ blog.url }}?view=wellness" class="blog-cat-filter filter-btn{% if selected_category == 'wellness' %} active{% endif %}" data-category="wellness">All Blogs</a>
+          <a href="{{ blog.url }}?view=bonehealth" class="blog-cat-filter filter-btn{% if selected_category == 'bonehealth' %} active{% endif %}" data-category="bonehealth">Bone Health</a>
+          <a href="{{ blog.url }}?view=brainhealth" class="blog-cat-filter filter-btn{% if selected_category == 'brainhealth' %} active{% endif %}" data-category="brainhealth">Brain Health</a>
+          <a href="{{ blog.url }}?view=colostrum" class="blog-cat-filter filter-btn{% if selected_category == 'colostrum' %} active{% endif %}" data-category="colostrum">Colostrum</a>
+          <a href="{{ blog.url }}?view=news" class="blog-cat-filter filter-btn{% if selected_category == 'news' %} active{% endif %}" data-category="news">Company News</a>
+          <a href="{{ blog.url }}?view=detox" class="blog-cat-filter filter-btn{% if selected_category == 'detox' %} active{% endif %}" data-category="detox">Detox</a>
+          <a href="{{ blog.url }}?view=eyehealth" class="blog-cat-filter filter-btn{% if selected_category == 'eyehealth' %} active{% endif %}" data-category="eyehealth">Eye Health</a>
+          <a href="{{ blog.url }}?view=guthealth" class="blog-cat-filter filter-btn{% if selected_category == 'guthealth' %} active{% endif %}" data-category="guthealth">Gut Health</a>
+          <a href="{{ blog.url }}?view=healthyaging" class="blog-cat-filter filter-btn{% if selected_category == 'healthyaging' %} active{% endif %}" data-category="healthyaging">Healthy Aging</a>
+          <a href="{{ blog.url }}?view=hearthealth" class="blog-cat-filter filter-btn{% if selected_category == 'hearthealth' %} active{% endif %}" data-category="hearthealth">Heart Health</a>
+          <a href="{{ blog.url }}?view=immunehealth" class="blog-cat-filter filter-btn{% if selected_category == 'immunehealth' %} active{% endif %}" data-category="immunehealth">Immune Health</a>
+          <a href="{{ blog.url }}?view=menshealth" class="blog-cat-filter blog-cat-filter filter-btn{% if selected_category == 'menshealth' %} active{% endif %}" data-category="menshealth">Men’s Health</a>
+          <a href="{{ blog.url }}?view=skinhealth" class="blog-cat-filter filter-btn{% if selected_category == 'skinhealth' %} active{% endif %}" data-category="skinhealth">Skin Health</a>
+          <a href="{{ blog.url }}?view=vitamine" class="blog-cat-filter filter-btn{% if selected_category == 'vitamine' %} active{% endif %}" data-category="vitamine">Vitamin E</a>
+          <a href="{{ blog.url }}?view=weightmanagement" class="blog-cat-filter filter-btn{% if selected_category == 'weightmanagement' %} active{% endif %}" data-category="weightmanagement">Weight Management</a>
+          <a href="{{ blog.url }}?view=womenshealth" class="blog-cat-filter filter-btn{% if selected_category == 'womenshealth' %} active{% endif %}" data-category="womenshealth">Women’s Health</a>
         </div>
+      </div>
     </div>
+ {% comment %} {%- endif -%}  {% endcomment %}
+
+  <div class="five-latest-blog"></div>
+  <div id="blog-page-card-wrapper-banner" class="page-content main-blog {% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+  <div id="blog-page-card-wrapper" class="blog-row blog-block-item column-1">
+        {% paginate blog.articles by 500 %}
+          {%- for article in blog.articles -%}
+            {% assign articletags = article.tags | join: ',' | downcase %}
+            {%- if articletags contains selected_category -%}
+                <div class="item{% if forloop.first == true %} item--first{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" 
+                   style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--color-summary-style: {{ text_color }}"
+                   data-page-item>
+                {% render 'article-card-3',
+                  article: article,
+                  media_size: media_size,
+                  portrait_aspect_ratio: portrait_aspect_ratio,
+                  blog_text_align: blog_text_align,
+                  show_author: show_author,
+                  show_date: show_date,
+                  show_summary: show_summary,
+                  show_read_more: show_read_more,
+                  show_comment: show_comment,
+                  show_placeholder: show_placeholder,
+                  first: first,
+                  catewords: 30
+                %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {% endpaginate %}
+      </div>
+    
+      <div class="pagination">
+  <button class="pagination__arrow prev" id="prevPage" disabled>
+    ← Previous
+  </button>
+  
+  <div class="pagination__numbers" id="pageNumbers">
+    <span>1</span>
+  </div>
+  
+  <button class="pagination__arrow next" id="nextPage">
+    Next →
+  </button>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Show sidebar when clicking on .filter-blog-popups
+    document.querySelector(".filter-blog-popups").addEventListener("click", function () {
+      document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar").style.display = "block";
+    });
+
+    // Hide sidebar when clicking on .blog-filter-btn-popup
+    document.querySelector(".blog-filter-btn-popup").addEventListener("click", function () {
+      document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar").style.display = "none";
+    });
+  });
+</script>
+
+<style>
+   @media (max-width: 1023.9px){ 
+  .halo-blog-content.halo-grid-content .page-sidebar{
+    display: none;
+  }
+ }
+
+ @media (min-width: 1024px){
+  .filter-blog-popups{
+    display: none !important;
+  }
+ }
+
+ .filter-blog-popups {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    margin-top: 12px;
+}
+
+.filter-btn-atction{
+  border: 1px solid #006a91;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #006a91;
+}
+
+ .blog-filter-btn-popup{
+  padding: 0px 5px;
+  border-radius: 6px;
+  cursor: pointer;
+ }
+
+ @media (min-width: 1024px){
+  .blog-filter-btn-popup{
+ display: none;
+ }
+ }
+
+
+
+
+
+  .blog-filter-mobile-wrapper {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+@media (min-width: 1024px){
+  .blog-filter-mobile-wrapper{
+    display: none !important;
+  }
+}
+
+button.filter-btn-mob {
+    border: 1px solid #006a91;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #006a91;
+}
+
+ @media (max-width: 1024px) {
+    .hide-mobile-bradecrun{
+       display: none !important;
+    }
+
+ }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .pagination__numbers {
+    display: flex;
+    gap: 0.5rem;
+  }
+  @media (max-width: 1024px){
+     .pagination__numbers span,
+  .pagination__numbers a {
+    padding: 0.5rem 0.2rem !important;
+  }
+  }
+
+  .pagination__numbers span,
+  .pagination__numbers a {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .pagination__numbers .active {
+    background: #086b92;
+    color: #fff;
+  }
+
+  .filters-list .active{
+    background: #086b92;
+    color: white;
+  }
+
+  .pagination__numbers .ellipsis {
+    pointer-events: none;
+  }
+
+  .pagination button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: none;
+  }
+
+  .pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  [data-page-item] {
+    display: none;
+  }
+</style>
+
+
+
+
+<script>
+  const itemsPerPage = 12;
+  let currentPage = 1;
+  const allItems = Array.from(document.querySelectorAll('[data-page-item]'));
+  const totalItems = allItems.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  function updatePagination() {
+    // Show/hide items
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    
+    allItems.forEach((item, index) => {
+      item.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+    });
+
+    // Update page numbers
+    let pagesHTML = '';
+    const maxVisiblePages = 2; // Number of pages to show before/after current
+    
+    // Always show first page
+    pagesHTML += createPageLink(1);
+    
+    // Add ellipsis if needed
+    if(currentPage - maxVisiblePages > 2) {
+      pagesHTML += '<span class="ellipsis">...</span>';
+    }
+
+    // Middle pages
+    for(let i = Math.max(2, currentPage - maxVisiblePages); 
+        i <= Math.min(totalPages - 1, currentPage + maxVisiblePages); 
+        i++) {
+      pagesHTML += createPageLink(i);
+    }
+
+    // Add ellipsis if needed
+    if(currentPage + maxVisiblePages < totalPages - 1) {
+      pagesHTML += '<span class="ellipsis">...</span>';
+    }
+
+    // Always show last page if different from first
+    if(totalPages > 1) {
+      pagesHTML += createPageLink(totalPages);
+    }
+
+    document.getElementById('pageNumbers').innerHTML = pagesHTML;
+
+    // Update button states
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages;
+  }
+
+  function createPageLink(page) {
+    return page === currentPage 
+      ? `<span class="active">${page}</span>`
+      : `<a onclick="goToPage(${page})">${page}</a>`;
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    updatePagination();
+  }
+
+  document.getElementById('prevPage').addEventListener('click', () => {
+    if(currentPage > 1) goToPage(currentPage - 1);
+  });
+
+  document.getElementById('nextPage').addEventListener('click', () => {
+    if(currentPage < totalPages) goToPage(currentPage + 1);
+  });
+
+  // Initial load
+  updatePagination();
+</script>  </div>
+</div>
+    </div>
+  </div>
 </div>
 
 <style type="text/css" media="screen">
+.filter-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 550;
+    color: #374650;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    padding: 5px; 
+}
+
+.filter-btn:hover {
+    background-color: #086b92;
+    color: #fff;
+    border-color: #086b92;
+    border-radius: 6px;
+}
+
+.blog-cat-filter.active { 
+    background-color: #086b92;
+    color: #fff;
+    border: 2px solid #086b92;
+    border-radius: 6px;
+}
+
+.sidebar-filter-blog a {
+    margin-right: 10px;
+}
+
+div.sidebar-filter-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.main-blog .blog-content .blog-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.main-blog .blog-content .blog-info img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    object-fit: cover;
+    border: 2px solid #2f698e;
+}
+.main-blog .blog-content .blog-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20px !important;
+}
+.blog-layout-default .blog-block-item .blog-title a {
+    display: block;
+}
+.filters-list a .filter-btn {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    margin: inherit;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+}
+
+.filters-list a:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
+
     :root {
-        {% if has_sidebar %}
+        {% if show_sidebar and section.blocks.size > 0 %}
             {% if sidebar_heading_font == 'font_1' %}
                 --sidebar-heading-font: var(--font-heading-family);
             {% elsif sidebar_heading_font == 'font_2' %}
@@ -181,7 +501,7 @@
         padding-bottom: {{ padding_bottom }};
     }
 
-    {% if has_sidebar %}
+    {% if show_sidebar and section.blocks.size > 0 %}
         #BlogSection-{{ section.id }} .sidebarBlock-heading{
             font-family: var(--sidebar-heading-font);
             font-size: {{ sidebar_heading_font_size | append: 'px' }};
@@ -246,13 +566,6 @@
     }
 
     @media (min-width: 1025px) {
-        {% if container == 'fullwidth' %}
-            #BlogSection-{{ section.id }} > .container-full {
-                padding-left: {{ padding_full_width | append: 'px' }};
-                padding-right: {{ padding_full_width | append: 'px' }};
-            }
-        {% endif %}
-
         #BlogSection-{{ section.id }} .breadcrumb-container {
             position: relative;
         }
@@ -267,5 +580,296 @@
             background: {% if breadcrumb_gradient != blank and breadcrumb_gradient != 'rgba(0,0,0,0)' %}{{ breadcrumb_gradient }}{% elsif breadcrumb_bg != blank and breadcrumb_bg != 'rgba(0,0,0,0)' %}{{ breadcrumb_bg }}{% endif %};
             z-index: -1;
         }
+        
     }
+
+    div#blog-page-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+   }
+    #blog-page-card-wrapper .item{
+        min-width: auto;
+        max-width: 33%;
+    }
+#blog-page-card-wrapper .article-item {
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0px 10px 15px 0px #00000021;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #2f698e73;
+    border-radius: 6px;
+    overflow: hidden;
+}
+    #blog-page-card-wrapper .blog-image{
+       width: 100% !important;
+       position: relative;
+    }
+    #blog-page-card-wrapper .blog-content {
+       width: 100% !important;
+       margin-top: 10px !important;
+       padding-left: 0;
+    }
+
+  .blog-page-banner-block-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .blog-page-banner-block-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e8e8e8;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  div #blog-page-card-wrapper .blog-content{
+    position: relative;
+    padding: 15px;
+  }
+div #blog-page-card-wrapper .blog-content:before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #f8d7869c;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 0px;
+    transition: all 0.6s;
+}
+#blog-page-card-wrapper .article-item:hover .blog-content:before {
+    height: 100%;
+}
+.blog-text-inner {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 1023.9px){
+    .halo-blog-content.halo-grid-content .page-sidebar{
+        display: none;
+    }
+}
+.halo-blog-content.halo-grid-content .page-sidebar {
+    margin-top: 0;
+    width: 100%;
+    border: 1px solid #2f698e30;
+    flex: 0 0 20%;
+    top: 120px;
+}
+.halo-blog-content.halo-grid-content #blog-page-card-wrapper-banner {
+    flex: 0 0 80%;
+    padding-left: 25px;
+}
+div.sidebar-filter-blog h2 {
+    background: #2f698e;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.filters-list {
+    padding: 0px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-height: 65vh;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+#blog-page-card-wrapper .blog-image .blog-editor-card {
+    gap: 7px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9;
+    background: #fff;
+    border-radius: 20px 30px 30px 20px;
+    overflow: hidden;
+    padding: 0px 10px 0px 0px;
+}
+
+#blog-page-card-wrapper .blog-image .blog-editor-card img {
+    max-height: 30px;
+    width: auto;
+    object-fit: cover;
+}
+.filters-list a {
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito-Sans-Klaviyo-Hosted';
+}
+/* .filters-list a:before {
+    display: inline-block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #2f698e;
+    border-radius: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    left: 5px;
+} */
+
+  @media (min-width: 768px) {
+    .blog-page-banner-block-wrapper.reverse-layout {
+      flex-direction: row-reverse;
+    }
+
+    .blog-banner-description-bottom {
+      display: none;
+    }
+
+  }
+
+  .blog-page-banner-block-left-text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+    min-width: 350px;
+  }
+
+  .blog-page-banner-block-left-text-section h2 {
+    font-size: 20px !important;
+    margin-bottom: 10px;
+  }
+
+  .blog-page-banner-block-left-text-section p {
+    font-size: 16px;
+    color: #4d565b;
+  }
+
+  .blog-page-banner-block-right-image-section {
+    flex: 1;
+    text-align: right;
+    max-width: 520px;
+  }
+
+  .blog-page-banner-block-right-image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+ @media (max-width: 1023px) {
+    .main-blog .blog-content .blog-info {
+    flex-wrap: wrap;
+    gap: 4px 8px !important;
+    font-size: 10px !important;
+}
+}
+  @media (max-width: 768px) {
+    .blog-page-banner-block-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .blog-small-banner-desc {
+      display: none;
+    }
+
+    /* Change the order of the elements */
+    .blog-page-banner-block-left-text-section h2 {
+      order: 1;
+    }
+
+    .blog-page-banner-block-left-text-section h2 {
+      padding-bottom: 20px;
+      max-width: 90%;
+      font-size: 24px !important;
+      font-weight: bold;
+    }
+
+    p.blog-banner-description-bottom {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .blog-page-banner-block-right-image-section {
+      order: 2;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .blog-page-banner-block-left-text-section p {
+      order: 3;
+    }
+
+    .blog-page-banner-block-left-text-section {
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+
+    .blog-page-banner-block-right-image-section img {
+      max-width: 100%;
+    }
+  }
+@media (max-width: 767.5px) {
+
+.main-blog .blog-content .blog-summary, .main-blog .blog-content .blog-info{
+    margin-bottom: 10px !important;
+}
+.blog-des-sec .blog-summary {
+    margin: 10px auto;
+    font-size: 14px;
+}
+.blog-text-inner h3.blog-title {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+    min-height: unset !important;
+    -webkit-line-clamp: 2;
+}
+
+.blog-des-sec .blog-title {
+    font-size: 14px;
+    line-height: 20px;
+}
+    .blogs-inner-items {
+    padding: 10px;
+    }
+      .blog-des-sec{
+    padding: 15px 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 639px) {
+  .main-blog .blog-content .blog-info img{
+    width: 26px;
+    height: 26px;
+  }
+
+  #blog-page-card-wrapper .item{
+    max-width: 100% !important;
+  }
+  }
 </style>
+
+<script>
+$(function(){
+		$('.background-overlay').on("click", function () {
+		$('body').removeClass("open-mobile-sidebar");
+		});
+		}); 
+</script>
