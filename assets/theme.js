@@ -7036,7 +7036,7 @@
                                     },
                                     get initialSlide() {
                                         if(itemToShow !== 1.5 && itemToShow == 2.5 || itemToShow == 3.5) {
-                                            return this.initialSlide = 1;
+                                            return this.initialSlide = 0.5;
                                         } else {
                                             return this.initialSlide = 0;
                                         }
