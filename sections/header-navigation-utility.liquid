@@ -114,7 +114,17 @@
                         </a> 
                     {%- endif -%}                              
                 {%- endif -%}
-
+<!-- cart Icon -->
+                {%- if block.settings.show_cart or block.settings.show_cart_sticky -%}
+                    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset cart-icon-bubble stroke-icon{% if block.settings.show_cart_sticky%}{% if block.settings.show_cart %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_cart %} show-main-menu{% endif %}{% endif %} text-center" {% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
+                        {% render 'icon-cart-03', class: 'w-h-24 stroke-w-10' %}
+                        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                        <div class="cart-count-bubble p-relative top-auto right-auto">
+                            <span class="text" aria-hidden="true" data-cart-count>{%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- else -%}{{ 'sections.cart.item_99' | t }}{%- endif -%}</span>
+                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                        </div>
+                    </a>
+                {%- endif -%}
 
               <!-- Search Icon -->
                 {%- if block.settings.show_search or block.settings.show_search_sticky -%}
@@ -178,16 +188,7 @@
                         </a>
                     {%- endif -%}
                 {%- endif -%}
-                {%- if block.settings.show_cart or block.settings.show_cart_sticky -%}
-                    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset cart-icon-bubble stroke-icon{% if block.settings.show_cart_sticky%}{% if block.settings.show_cart %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_cart %} show-main-menu{% endif %}{% endif %} text-center" {% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
-                        {% render 'icon-cart-03', class: 'w-h-24 stroke-w-10' %}
-                        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-                        <div class="cart-count-bubble p-relative top-auto right-auto">
-                            <span class="text" aria-hidden="true" data-cart-count>{%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- else -%}{{ 'sections.cart.item_99' | t }}{%- endif -%}</span>
-                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                        </div>
-                    </a>
-                {%- endif -%}
+              
             </div>
         {%- endcase -%}
     {%- endfor -%}
