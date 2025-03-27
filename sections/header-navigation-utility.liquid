@@ -101,13 +101,13 @@
                                         {{ customer | avatar }}
                                     </account-icon>
                                 {%- else -%}
-                                    {%- liquid
+                                   {% comment %} {%- liquid
                                         if customer
                                             echo 'customer.account_fallback' | t
                                         else
                                             echo 'customer.sign_in' | t
                                         endif
-                                    -%}
+                                    -%}{% endcomment %}
                                 {%- endif -%}
                             </span>
                         </a> 
