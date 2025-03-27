@@ -101,6 +101,7 @@
                                         {{ customer | avatar }}
                                     </account-icon>
                                 {%- else -%}
+                                  {% render 'login_Icon' %}
                                    {% comment %} {%- liquid
                                         if customer
                                             echo 'customer.account_fallback' | t
