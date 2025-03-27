@@ -86,19 +86,8 @@
             </div>
             {%- when 'header_icons' -%}
             <div class="header-icons header-item header-item--side d-flex flex-align-center flex-wrap fs-0 pt-2 pb-5{% if block.settings.show_search_sticky == false and block.settings.show_customer_sticky == false and block.settings.show_wishlist_sticky == false and block.settings.show_cart_sticky == false and block.settings.show_language_currency_sticky == false %} show-main-menu{% endif %}{% if block.settings.show_language_currency == false and block.settings.show_search == false and block.settings.show_customer == false and block.settings.show_wishlist == false and block.settings.show_cart == false %} hide-main-menu{% endif %}" style="--header_icons_color: {{block.settings.header_icons_color}};--header_icons_color_hover: {{block.settings.header_icons_color_hover}};--cart_count_bubble_bg: {% if block.settings.cart_count_bubble_bg_gradient != blank %}{{ block.settings.cart_count_bubble_bg_gradient }}{% else %}{{ block.settings.cart_count_bubble_bg }}{% endif %};--cart_count_bubble_color: {{block.settings.cart_count_bubble_color}};--cart_count_bubble_font_size: {% if block.settings.text_font_size <= 12 %}{{block.settings.text_font_size | append: 'px'}}{% else %} {{block.settings.text_font_size | minus: 2 | append: 'px'}}{% endif %};--text_font_size: {{block.settings.text_font_size | append: 'px' }}">
-                {%- if block.settings.show_language_currency or block.settings.show_language_currency_sticky -%}
-                <div class="header-language_currency language_currency_style_1 d-inline-block{% if block.settings.show_language_currency_sticky %}{% if block.settings.show_language_currency %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_language_currency %} show-main-menu{% endif %}{% endif %}">
-                    <div class="top-language-currency ft-0 d-flex sticky_effect{% if settings.enable_currencies %} enable-currency{% endif %}">
-                        {%- if settings.enable_multilang_shopify -%}
-                            {% render 'halo-top-language' %}
-                        {%- endif -%}
-                        {%- if settings.enable_currencies -%}
-                            {% render 'halo-top-currency' %}
-                        {%- endif -%}
-                    </div>
-                </div>
-                {%- endif -%}
-                {%- if shop.customer_accounts_enabled -%}
+              <!-- loginIcon  -->
+               {%- if shop.customer_accounts_enabled -%}
                     {%- if block.settings.show_customer or block.settings.show_customer_sticky -%}
                         {% if routes.account_login_url contains '/account/login' %}
                             {% assign is_contained = true %}
@@ -124,6 +113,20 @@
                         </a> 
                     {%- endif -%}                              
                 {%- endif -%}
+              
+              {%- if block.settings.show_language_currency or block.settings.show_language_currency_sticky -%}
+                <div class="header-language_currency language_currency_style_1 d-inline-block{% if block.settings.show_language_currency_sticky %}{% if block.settings.show_language_currency %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_language_currency %} show-main-menu{% endif %}{% endif %}">
+                    <div class="top-language-currency ft-0 d-flex sticky_effect{% if settings.enable_currencies %} enable-currency{% endif %}">
+                        {%- if settings.enable_multilang_shopify -%}
+                            {% render 'halo-top-language' %}
+                        {%- endif -%}
+                        {%- if settings.enable_currencies -%}
+                            {% render 'halo-top-currency' %}
+                        {%- endif -%}
+                    </div>
+                </div>
+                {%- endif -%}
+               
                 {%- if block.settings.show_search or block.settings.show_search_sticky -%}
                     <details-modal class="header__iconItem header__search ml-0{% if block.settings.show_search_sticky%}{% if block.settings.show_search %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_search %} show-main-menu{% endif %}{% endif %}">
                             <details class="search_details search_details--popup">
