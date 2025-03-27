@@ -26,6 +26,7 @@
         },
         "announcement_PXhTQQ": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p>Why settle? Mix &amp; match your favorite supplements and design a bundle just for you!\n</p>",
             "btn_color": "#f84248",
@@ -36,6 +37,7 @@
         },
         "announcement_UPwLfY": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Bulk Up, Save Big | 15% Off 3+ Products\n</p>",
             "btn_color": "#f84248",
@@ -46,6 +48,7 @@
         },
         "announcement_3pNXXW": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Grab 3, Save 15%! – The more you bundle, the more you save! Personalize your health routine today. Start Shopping\n</p>",
             "btn_color": "#f84248",
@@ -56,6 +59,7 @@
         },
         "announcement_7K94yJ": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Bundle. Save. Thrive. – Choose any 3 supplements, get 15% OFF, and build a wellness routine that works for you! Shop &amp; Save</p>",
             "btn_color": "#f84248",
@@ -73,10 +77,10 @@
         "announcement_7K94yJ"
       ],
       "settings": {
-        "layout": "scroll",
+        "layout": "slider",
         "enable_close": false,
-        "color_text": "#ffcb4a",
-        "bg_color_text": "#374650",
+        "color_text": "#fff",
+        "bg_color_text": "#353333",
         "bg_color_text_gradient": "",
         "font_size_text": 14,
         "font_style_text": "normal",
@@ -98,8 +102,8 @@
           "type": "logo",
           "settings": {
             "logo_position": "always",
-            "logo": "shopify://shop_images/Heading_2_Link_Wellness_Extract_USA.png",
-            "logo_width": 195,
+            "logo": "shopify://shop_images/logo-d.png",
+            "logo_width": 170,
             "logo_width_fixed": 100,
             "logo_text": "",
             "logo_font_size": 20,
@@ -114,7 +118,7 @@
             "menu": "we-usa-mega-kapil",
             "menu_top_spacing": 22,
             "menu_bottom_spacing": 22,
-            "grid_gap_menu_item": 10,
+            "grid_gap_menu_item": 14,
             "alignment": "center",
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
@@ -127,7 +131,7 @@
             "sale_item_1": "Take Wellness Quiz",
             "sale_item_2": "Shop",
             "sale_item_3": "",
-            "sale_item_color": "#fff",
+            "sale_item_color": "#ffffff",
             "label_position": "main_menu",
             "show_label_blink": true,
             "new_label_1": "",
@@ -167,7 +171,7 @@
             "show_cart_sticky": true,
             "header_icons_color": "#ffffff",
             "header_icons_color_hover": "#ffffff",
-            "cart_count_bubble_color": "#fff",
+            "cart_count_bubble_color": "#ffffff",
             "cart_count_bubble_bg": "#d69e12",
             "cart_count_bubble_bg_gradient": "",
             "wishlist_color_item": "#ffffff",
@@ -182,7 +186,7 @@
             "item": "SHOP",
             "column": 3,
             "show_banner_1": true,
-            "banner_1": "shopify://shop_images/Story_p0cHE_1738908419504.jpg",
+            "banner_1": "shopify://shop_images/New_ella_menu_Image.png",
             "banner_url_1": "shopify://collections/all-products",
             "show_product": true,
             "product_title": "Featured Products",
@@ -269,7 +273,7 @@
         "header_navigation_bg": "#086b92",
         "header_navigation_bg_gradient": "",
         "sticky_header_type": "always",
-        "sticky_header_width": "default",
+        "sticky_header_width": "full",
         "mg_top_desktop": 9,
         "mg_top_tablet": 9,
         "mg_top_mobile": 2,

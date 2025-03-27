@@ -9,108 +9,13 @@
  */
 {
   "sections": {
-    "6cbca2ce-2310-4606-bb04-09ee74d1d97e": {
-      "type": "policies-block",
-      "blocks": {
-        "8e1d1801-2df9-49eb-9455-2b1cd66ccc0c": {
-          "type": "Text",
-          "settings": {
-            "icon_type": "text",
-            "icon": "",
-            "icon_width": 23,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": " POTENT & PURE, (USA-Made Supplements) <br><b>See What’s Trending →</b>",
-            "font_size_text": 15,
-            "font_size_text_mb": 15,
-            "mg_bottom_text": 0,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "",
-            "link": "shopify://collections/best-seller-prouct"
-          }
-        },
-        "044503cd-52c1-4af3-8077-be921f131033": {
-          "type": "Text",
-          "settings": {
-            "icon_type": "text",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": " Not Sure What You Need? Take the Quiz!  <br><b>Find My Formula → </b>",
-            "font_size_text": 15,
-            "font_size_text_mb": 15,
-            "mg_bottom_text": 0,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "",
-            "link": "shopify://pages/wellness-quiz"
-          }
-        },
-        "16eb8900-abdc-40a0-bfc5-c69705db1f6b": {
-          "type": "Text",
-          "disabled": true,
-          "settings": {
-            "icon_type": "text",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "Know Your ingredients JUST LANDED! <br><b>Shop New Arrivals →</b>",
-            "font_size_text": 15,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 0,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "8e1d1801-2df9-49eb-9455-2b1cd66ccc0c",
-        "044503cd-52c1-4af3-8077-be921f131033",
-        "16eb8900-abdc-40a0-bfc5-c69705db1f6b"
-      ],
-      "settings": {
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "policies_block_swipe_on_mobile": "slider",
-        "spacing_tablet": 15,
-        "spacing_mobile": 10,
-        "policies_bg": "#eaaf66",
-        "policies_bg_gradient": "",
-        "border": "none",
-        "border_color": "#000000",
-        "border_item": "style_2",
-        "item_color_border": "#2f4a4e",
-        "align_items": "center",
-        "text_align_items": "center",
-        "enable_item_distance": true,
-        "item_padding_top": 8,
-        "item_padding_bottom": 8,
-        "item_padding_left_right": 20,
-        "item_radius": 0,
-        "bg_color_block": "#eaaf66",
-        "border_block": "#eaaf66",
-        "color_block": "#2f4a4e",
-        "color_icon": "#3c3c3c",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
-      }
-    },
     "16321237356a896dad": {
       "type": "slide-show",
       "blocks": {
         "image_XnpQqB": {
           "type": "image",
           "settings": {
-            "image_slide": "shopify://shop_images/contactus_img.png",
+            "image_slide": "shopify://shop_images/New_Ella_banner_Home.png",
             "image_slide_mb": "shopify://shop_images/Website_Banner_Womens_Day__CA_Mobi.jpg",
             "alignment": "center",
             "enable_custom_position": true,
@@ -119,7 +24,7 @@
             "enable_position_outside_image": false,
             "enable_border_line": false,
             "padding_vertical": 35,
-            "content_width": 620,
+            "content_width": 545,
             "text_alignment": "left",
             "text_alignment_mb": "left",
             "enable_content_fullwidth": false,
@@ -139,25 +44,25 @@
             "sub_heading": "",
             "letter_spacing_sub_title": "",
             "font_size_sub_heading": 30,
-            "sub_heading_spacing_bottom": 20,
+            "sub_heading_spacing_bottom": 41,
             "sub_heading_font": "font_2",
             "font_weight_sub_heading": "400",
             "border_sub_heading": "none",
             "sub_title_position": "sub_title_above",
             "color_sub_heading": "#ff8b21",
-            "heading": "One Goal: A Healthier You",
+            "heading": "One Goal: <br>A Healthier You",
             "letter_spacing_heading": "",
             "enable_border_heading": false,
             "font_style_heading": "normal",
-            "font_size_heading": 40,
-            "line_height_heading": 39,
-            "heading_spacing_bottom": 15,
-            "color_heading": "#086b92",
-            "slide-des": "Clinically proven formulas for mind & body wellness.",
-            "font_size_des": 18,
-            "line_height_des": 22,
+            "font_size_heading": 60,
+            "line_height_heading": 77,
+            "heading_spacing_bottom": 40,
+            "color_heading": "#ffffff",
+            "slide-des": "Clinically proven formulas<br> for mind & body wellness.",
+            "font_size_des": 38,
+            "line_height_des": 46,
             "des_spacing_bottom": 26,
-            "color_des": "#086b92",
+            "color_des": "#ffffff",
             "sub_heading_mb": "",
             "font_size_sub_heading_mb": 20,
             "sub_heading_spacing_bottom_mb": 20,
@@ -477,6 +382,101 @@
         "lookbook_truncate": "1",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "6cbca2ce-2310-4606-bb04-09ee74d1d97e": {
+      "type": "policies-block",
+      "blocks": {
+        "8e1d1801-2df9-49eb-9455-2b1cd66ccc0c": {
+          "type": "Text",
+          "settings": {
+            "icon_type": "text",
+            "icon": "",
+            "icon_width": 0,
+            "icon_height": 0,
+            "icon_mg_right": 0,
+            "text": " POTENT & PURE, (USA-Made Supplements) See What’s Trending →",
+            "font_size_text": 16,
+            "font_size_text_mb": 15,
+            "mg_bottom_text": 0,
+            "font_weight_text": "500",
+            "font_style_text": "normal",
+            "description": "",
+            "link": "shopify://collections/best-seller-prouct"
+          }
+        },
+        "044503cd-52c1-4af3-8077-be921f131033": {
+          "type": "Text",
+          "settings": {
+            "icon_type": "text",
+            "icon": "",
+            "icon_width": 0,
+            "icon_height": 0,
+            "icon_mg_right": 0,
+            "text": " Not Sure What You Need? Take the Quiz!  Find My Formula →",
+            "font_size_text": 16,
+            "font_size_text_mb": 15,
+            "mg_bottom_text": 0,
+            "font_weight_text": "400",
+            "font_style_text": "normal",
+            "description": "",
+            "link": "shopify://pages/wellness-quiz"
+          }
+        },
+        "16eb8900-abdc-40a0-bfc5-c69705db1f6b": {
+          "type": "Text",
+          "disabled": true,
+          "settings": {
+            "icon_type": "text",
+            "icon": "",
+            "icon_width": 30,
+            "icon_height": 30,
+            "icon_mg_right": 20,
+            "text": "Know Your ingredients JUST LANDED! <br><b>Shop New Arrivals →</b>",
+            "font_size_text": 15,
+            "font_size_text_mb": 16,
+            "mg_bottom_text": 0,
+            "font_weight_text": "400",
+            "font_style_text": "normal",
+            "description": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8e1d1801-2df9-49eb-9455-2b1cd66ccc0c",
+        "044503cd-52c1-4af3-8077-be921f131033",
+        "16eb8900-abdc-40a0-bfc5-c69705db1f6b"
+      ],
+      "settings": {
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "policies_block_swipe_on_mobile": "scroll",
+        "spacing_tablet": 14,
+        "spacing_mobile": 5,
+        "policies_bg": "#fcc537",
+        "policies_bg_gradient": "",
+        "border": "none",
+        "border_color": "#000000",
+        "border_item": "style_2",
+        "item_color_border": "#2f4a4e",
+        "align_items": "center",
+        "text_align_items": "center",
+        "enable_item_distance": true,
+        "item_padding_top": 6,
+        "item_padding_bottom": 13,
+        "item_padding_left_right": 0,
+        "item_radius": 0,
+        "bg_color_block": "rgba(0,0,0,0)",
+        "border_block": "rgba(0,0,0,0)",
+        "color_block": "#000000",
+        "color_icon": "#3c3c3c",
+        "mg_top_desktop": 9,
+        "mg_top_tablet": 5,
         "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
@@ -3251,8 +3251,8 @@
     }
   },
   "order": [
-    "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
     "16321237356a896dad",
+    "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
     "1642989489e5f98f1a",
     "16409351508cd2f3e1",
     "brand_slider_8dyJxH",

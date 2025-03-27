@@ -1,10 +1,31 @@
 {{ 'component-megamenu.css' | asset_url | stylesheet_tag: preload: true }}
 {% style %}
+  
 @media screen and (min-width: 1025px) {
     .header-nav-utility .header-item--side {
         min-width: 200px !important;
     }
+  .cstm-take-wellness-quiz{
+   font-weight: 600;
+    border-radius: 4px;
+    color: #000000;
+    background: #fff;
+    padding: 5px 8px;
+    font-size: 16px;
+  }
+ .header-nav-utility{ padding: 0px 65px;}
 }
+ @media screen and (max-width: 1024px) {
+   
+  .cstm-take-wellness-quiz{
+     font-weight: 600;
+    border-radius: 4px;
+   color: #fff;
+    background: #086b92;
+    padding: 4px 8px;
+    font-size: 16px;
+  }
+  }
   {% endstyle %}
   {%- liquid
         assign mg_top_desktop = section.settings.mg_top_desktop
@@ -64,7 +85,9 @@
                                 {%- assign logo_width_img = logo_width | append: 'x' -%}
                                 {%- assign logo_width_retina = logo_width | times: 2 | append: 'x'  -%}
                                 {%- assign logo_height = logo_width | divided_by: logo.aspect_ratio | round -%}
-                                <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: logo_width_retina }} 2x" src="{{ logo | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
+                              
+                              <img src="{{ logo | img_url: logo_width_img }}" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
+                                <!-- <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: 'master' }}" src="{{ logo | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}"> -->
                             {%- elsif block.settings.logo_text != blank -%}
                                 <span class="header__heading-text {{ block.settings.logo_text_transform }} d-block">{{ block.settings.logo_text }}</span>
                             {%- else -%}
