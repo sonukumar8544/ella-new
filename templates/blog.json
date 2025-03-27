@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "blog_page_banner_jHhyaJ": {
+      "type": "blog-page-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/Group_900.png",
+        "banner_title": "",
+        "banner_subtitle": ""
+      }
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -130,18 +138,10 @@
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
       }
-    },
-    "blog_page_banner_jHhyaJ": {
-      "type": "blog-page-banner",
-      "settings": {
-        "background_image": "shopify://shop_images/Group_900.png",
-        "banner_title": "",
-        "banner_subtitle": ""
-      }
     }
   },
   "order": [
-    "main",
-    "blog_page_banner_jHhyaJ"
+    "blog_page_banner_jHhyaJ",
+    "main"
   ]
 }
