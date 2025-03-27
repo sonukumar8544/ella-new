@@ -26,7 +26,7 @@
 						    }
 						},
 						centerMode: dataCenterMode,
-						centerPadding: "10%",
+						// centerPadding: "10%",
 	                    speed: 800,
 	                    nextArrow: window.arrows.icon_next,
                         prevArrow: window.arrows.icon_prev,
