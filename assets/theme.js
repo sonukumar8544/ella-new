@@ -7008,7 +7008,7 @@
                         mobileFirst: true,
                         adaptiveHeight: true,
                         infinite: true,
-                        slidesToShow: 1.5,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         arrows: itemArrows,
                         nextArrow: window.arrows.icon_next,
