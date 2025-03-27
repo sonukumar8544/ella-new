@@ -331,7 +331,15 @@
             .section-block-{{section.id}} .halo-block-header .view_all {float: right;text-align: right;margin-bottom: 5px}
             {%- endif -%}
             {%- if section.settings.title_align == 'center' -%}
-            .section-block-{{section.id}} .halo-block-header .view_all {text-align: left}
+                .section-block-{{section.id}} .halo-block-header .view_all {
+                border: 1px solid;
+                padding: 8px 14px;
+                text-decoration: none;
+                border-radius: 4px;
+                text-align: left;
+                
+}
+              
             {%- endif -%}
         {%- endif -%}
         {%- if section.settings.container == 'fullwidth' -%}
