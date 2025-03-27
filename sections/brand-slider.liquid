@@ -178,11 +178,11 @@
         .section-block-{{ section.id }} .brands-block .slick-dotted {margin-bottom: 40px}
     {%- if section.blocks.size > 0 -%}
         .section-block-{{section.id}} .halo-item .text {display: block;text-align: center;margin-top: -5px;visibility: visible !important;font-size: {{ section.settings.fontsize_text | append: 'px' }};font-weight: {{ section.settings.font_weight_title }};margin-bottom: {{ section.settings.margin_bottom_title | append: 'px' }};font-style: var(--font-heading-style)}
-        .section-block-{{section.id}} .halo-item:hover .text{text-decoration: underline;text-underline-offset: 0.3rem}
+        .section-block-{{section.id}} .halo-item:hover .text{text-decoration: none;text-underline-offset: 0.3rem}
         .section-block-{{section.id}} .halo-item .description{display: block;text-align: center;}
 
         .brand-slider .halo-item .text {color: var(--title_color)}
-        /* .brand-slider .halo-item:hover .text {color: var(--title_color_hover)} */
+        .brand-slider .halo-item:hover .text {color: var(--title_color); text-decoration:none;}
         .brand-slider .halo-item .description {color: var(--color_des)}
     {%- endif -%}
 
