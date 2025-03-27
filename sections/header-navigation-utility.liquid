@@ -1,6 +1,12 @@
 {{ 'component-megamenu.css' | asset_url | stylesheet_tag: preload: true }}
-
-{%- liquid
+{% style %}
+@media screen and (min-width: 1025px) {
+    .header-nav-utility .header-item--side {
+        min-width: 210px;
+    }
+}
+  {% endstyle %}
+  {%- liquid
         assign mg_top_desktop = section.settings.mg_top_desktop
         assign mg_top_tablet = section.settings.mg_top_tablet
         assign mg_top_mobile = section.settings.mg_top_mobile 
