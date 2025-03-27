@@ -37,7 +37,7 @@
 	                            breakpoint: 1200,
 	                            settings: {
 									infinite: false,
-									centerMode: false,
+									// centerMode: false,
 	                                slidesToShow: 4,
 	                                slidesToScroll: 4,
 	                                arrows: dataArrows,
