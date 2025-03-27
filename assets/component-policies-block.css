@@ -2,6 +2,11 @@
 .cstm_policies__block {
   padding-top: 5px;
 }
+
+.policies-block .policies-content .policies-text,
+.policies-block .halo-item .policies-text {
+  font-family: var(--font-body-family);
+}
 .policies-block .halo-item {
   text-align: center;
 }
