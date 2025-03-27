@@ -121,6 +121,8 @@ option.soldout {
         flex-wrap: wrap;
         margin-left: -15px;
         margin-right: -15px;
+        justify-content: center;
+        padding-top: 20px;
     }
 
     .halo-item {
