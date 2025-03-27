@@ -7008,7 +7008,7 @@
                         mobileFirst: true,
                         adaptiveHeight: true,
                         infinite: true,
-                        slidesToShow: 1,
+                        slidesToShow: 1.5,
                         slidesToScroll: 1,
                         arrows: itemArrows,
                         nextArrow: window.arrows.icon_next,
@@ -7036,7 +7036,7 @@
                                     },
                                     get initialSlide() {
                                         if(itemToShow !== 1.5 && itemToShow == 2.5 || itemToShow == 3.5) {
-                                            return this.initialSlide = 0.5;
+                                            return this.initialSlide = 1;
                                         } else {
                                             return this.initialSlide = 0;
                                         }
