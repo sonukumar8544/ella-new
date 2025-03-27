@@ -2,7 +2,7 @@
 {{ 'component-grid.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-fancybox.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-fancybox.css' | asset_url | stylesheet_tag }}</noscript>
-<script src="{{ 'fancybox.js' | asset_url }}" defer="defer"></script>
+<script defer src="{{ 'fancybox.js' | asset_url }}" defer="defer"></script>
 
 {{ 'article-gallery-lookbook-style.css' | asset_url | stylesheet_tag }}
 {{ 'lookbook-script.js' | asset_url | script_tag }}
@@ -15,7 +15,7 @@
     assign padding_top_mobile = section.settings.mg_top_mobile | append: 'px'
     assign padding_bottom_mobile = section.settings.mg_bottom_mobile | append: 'px'
     assign container = section.settings.container
-    assign padding_full_width = section.settings.padding_full_width
+    assign media_size = section.settings.image_ratio
     assign show_breadcrumb = section.settings.show_breadcrumb
     assign breadcrumb_alignment = section.settings.breadcrumb_alignment
     assign breadcrumb_bg = section.settings.breadcrumb_bg
@@ -35,18 +35,14 @@
     assign title_mobile_font_size = section.settings.title_mobile_font_size | append: 'px'
     assign title_font_weight = section.settings.title_font_weight
     assign title_text_transform = section.settings.title_text_transform
-    assign has_sidebar = false
-    for block in section.blocks
-        case block.type
-            when 'category', 'recent_post', 'recent_tag', 'product_block', 'image', 'text'
-                assign has_sidebar = true
-        endcase
-    endfor
-    if has_sidebar
+    assign show_sidebar = section.settings.show_sidebar
+    if show_sidebar
         assign show_collapse = section.settings.show_collapse
         assign sidebar_position = section.settings.sidebar_position
         assign sidebar_collapse_default = section.settings.sidebar_collapse_default
         assign enable_sticky = section.settings.enable_sticky
+    endif
+    if show_sidebar and section.blocks.size > 0
         assign sidebar_heading_font = section.settings.sidebar_heading_font
         assign sidebar_heading_font_size = section.settings.sidebar_heading_font_size
         assign sidebar_heading_font_weight = section.settings.sidebar_heading_font_weight
@@ -64,18 +60,12 @@
     assign info_font_weight = section.settings.info_font_weight
     assign info_text_transform = section.settings.info_text_transform
     assign info_font_style = section.settings.info_font_style
+    assign titlee = article.title
+    assign imageee = article.image
 -%}
 
 <style type="text/css" media="screen">
     :root {
-        {% if has_sidebar %}
-            {% if sidebar_heading_font == 'font_1' %}
-                --sidebar-heading-font: var(--font-heading-family);
-            {% elsif sidebar_heading_font == 'font_2' %}
-                --sidebar-heading-font: var(--font-body-family);
-            {% endif %}
-        {% endif %}
-
         {% if title_font == 'font_1' %}
             --title-font-{{ section.id }}: var(--font-heading-family);
         {% elsif title_font == 'font_2' %}
@@ -96,7 +86,7 @@
         text-transform: {{ title_text_transform }};
     }
 
-    {% if has_sidebar %}
+    {% if show_sidebar and section.blocks.size > 0 %}
         #ArticleSection-{{ section.id }} .sidebarBlock-heading{
             font-family: var(--sidebar-heading-font);
             font-size: {{ sidebar_heading_font_size | append: 'px' }};
@@ -131,6 +121,10 @@
     }
 
     @media (max-width: 1024px) {
+        .singleblg-page-banner-block-left-text-section h1{
+            font-size: 32px!important;
+            line-height: 40px !important;
+        }
         #ArticleSection-{{ section.id }}{
             padding-top: {{ padding_top_tablet }};
             padding-bottom: {{ padding_bottom_tablet }};
@@ -155,13 +149,6 @@
     }
 
     @media (min-width: 1025px) {
-        {% if container == 'fullwidth' %}
-            #ArticleSection-{{ section.id }} > .container-full {
-                padding-left: {{ padding_full_width | append: 'px' }};
-                padding-right: {{ padding_full_width | append: 'px' }};
-            }
-        {% endif %}
-
         #ArticleSection-{{ section.id }} .breadcrumb-container {
             position: relative;
         }
@@ -178,15 +165,31 @@
         }
     }
 </style>
+<div id="image-wrapper-ind-blogs">
+  <div class="singleblg-page-banner-block-section">
+    <div class="singleblg-page-banner-block-wrapper">
+      <div class="singleblg-page-banner-block-left-text-section">
+        <h1>{{ article.title }}</h1>
+      </div>
+      <div class="blocks-small-banner">
+        {% if article.image %}
+            <div class="singleblg-page-banner-block-right-image-section">
+             <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.title }}">
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
 
-<article data-section-id="{{ section.id }}" data-section-type="article-template" id="ArticleSection-{{ section.id }}" data-section="{{ section.id }}" class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+<article id="blog_page_single" data-section-id="{{ section.id }}" data-section-type="article-template" id="ArticleSection-{{ section.id }}" data-section="{{ section.id }}" class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
         {%- if show_breadcrumb -%}
             {% render 'breadcrumb',
                 alignment: breadcrumb_alignment
             %}
         {%- endif -%}
-        {%- if has_sidebar -%}
+        {%- if show_sidebar -%}
             <div class="header-with-sidebar{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
         {% endif %}
             {%- if show_page_title -%}
@@ -194,16 +197,19 @@
                     {{ blog.title | escape }}
                 </h1>
             {%- endif -%}
-            {%- if has_sidebar -%}
-                <div class="sidebar-toogle" data-sidebar>
-                    {% render 'icon-sidebar' %}
+            {%- if show_sidebar and section.blocks.size > 0 -%}
+                <div class="blog-filter-mobile-details" data-sidebar>
+                    <button class="filter-btn-mob-details">Recent Posts</button>
                 </div>
+                {% comment %} <div class="sonu-1 sidebar-toogle" data-sidebar>
+                    {% render 'icon-sidebar' %}
+                </div> {% endcomment %}
             {%- endif -%}
-        {% if has_sidebar %}
+        {% if show_sidebar %}
             </div>
         {% endif %}
         <div class="halo-article-block">
-            {%- if has_sidebar -%}
+            {%- if show_sidebar and section.blocks.size > 0 -%}
                 {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
                 <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--vertical sidebar--{{ section.settings.sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
                     <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
@@ -225,590 +231,796 @@
                 </div>
             {%- endif -%}
             <div class="page-content">
-                <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                    <div class="article-header">
-                        <div class="article-heading text-left">
-                            <h3 class="title">
-                                {{ article.title }}
-                            </h3>
-                            {%- if show_author or show_date or blog.comments_enabled? -%}
-                                <div class="info">
-                                    {%- if show_author -%}
-                                        <span class="info-item author">
-                                            <span>{{ 'blogs.article.by' | t }}</span>
-                                            <span class="text">{{ article.author }}</span>
-                                        </span>
-                                    {%- endif -%}
-                                    {%- if show_date -%}
-                                        <span class="info-item date">
-                                            {{ article.published_at | date: "%d %b %Y" }}
-                                        </span>
-                                    {%- endif -%}
-                                    {%- if blog.comments_enabled? -%}
-                                        <a class="info-item comment" href="{{ article.url }}#comments">
-                                            {{ 'blogs.article.comments' | t: count: article.comments_count }}
-                                        </a>      
-                                    {%- endif -%}
-                                </div>
-                            {%- endif -%}
-                        </div>
-                        {%- if article.image and show_main_img -%}
-                            <div class="article-image">
-                                <a href="{{ article.url }}" class="image">
-                                    <img srcset="{% if article.image.width >= 350 %}{{ article.image | img_url: '350x' }} 350w,{% endif %}
-                                    {% if article.image.width >= 700 %}{{ article.image | img_url: '700x' }} 700w,{% endif %}
-                                    {% if article.image.width >= 749 %}{{ article.image | img_url: '749x' }} 749w,{% endif %}
-                                    {% if article.image.width >= 1498 %}{{ article.image | img_url: '1498x' }} 1498w,{% endif %}
-                                    {% if article.image.width >= 1100 %}{{ article.image | img_url: '1100x' }} 1100w,{% endif %}
-                                    {% if article.image.width >= 2200 %}{{ article.image | img_url: '2200x' }} 2200w,{% endif %}"
-                                    sizes="(min-width: 1200px) 1100px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                                    src="{{ article.image | img_url: '1100x' }}"
-                                    {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
-                                    width="{{ article.image.width }}"
-                                    height="{{ article.image.height }}"
-                                    alt="{{ article.image.alt | escape }}">
+              <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                  <div class="article-header">
+
+                    <div class="author-top">
+                      {% assign blogauthor = article.author %}
+                      <div class="blog-author-details"> 
+                      {% if blogauthor == 'Sarika Jassal' or blogauthor == 'Divya Katyal' or blogauthor == 'Pragya Soni' or blogauthor == 'Pooja Rawat' %}
+                        <h3>
+                            <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}"> 
+                             <span class="blog-author">
+                             <span><i>By </i> {{ article.author }}</span>
+                             <span class="by-auth">Author</span>
+                             </span>
+                            </a>
+                        </h3>
+                        {% if blogauthor == 'Sarika Jassal' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Sarika.jpg?v=1737525344" width="40px" alt="sarika jassal">
+                            {% elsif blogauthor == "Divya Katyal" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Divya.jpg?v=1737525344" width="40px" alt="divya">
+                                {% elsif blogauthor == "Pragya Soni" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pragya.jpg?v=1738648479" width="40px" alt="divya">
+                                {% elsif blogauthor == "Pooja Rawat" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pooja-2.jpg?v=1739511048" width="40px" alt="divya">
+
+                            {% else %}
+                            <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_5_7935c512-a1c4-45fd-baaa-b6063fd0ed2c.png?v=1738731314" width="40px" alt="divya">
+                        {% endif %}
+                        {% else %}
+                        <h3>
+                            <span class="blog-author">
+                             <span><i>By </i>{{ article.author }}</span>
+                             <span class="by-auth">Author</span> 
+                            </span>
+                        </h3>
+                      {% endif %}
+                      </div>
+                      {% for tag in article.tags %}
+                        {% if tag == "felicia" %}
+                            <div class="blog-editor">
+                                <img src="https://wellnessextract.com/cdn/shop/files/Felicia_300x300.jpg?v=1737439340" width="40px" alt="sarika jassal">
+                            <h3>
+                                <a href="https://wellnessextract.com/pages/dr-felicia"> 
+                                 <span class="blog-author">
+                                   <span><i>Reviewed By: </i> Dr. Felicia</span>
+                                   {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                 </span>
                                 </a>
+                            </h3>
                             </div>
-                        {%- endif -%}
+                        {% endif %}
+                    {% endfor %}
                     </div>
-                    <div class="article-body">
-                        <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                            {{ article.content }}
-                        </div>
-                        {%- for block in section.blocks -%}
-                            {%- if block.type == 'image_gallery' -%}
-                                {%- liquid
-                                    assign swipe = block.settings.image_gallery_swipe_on_mobile
-                                    assign column = block.settings.column
-                                    assign column_mb = block.settings.column_mb
-                                    assign type_image_gallery = block.settings.type_image_gallery
-                                    assign image_gallery_title = block.settings.image_gallery_title
-                                    assign color_title = block.settings.color_title
-                                    assign fontsize_title = block.settings.fontsize_title
-                                    assign fontsize_title_mb = block.settings.fontsize_title_mb
-                                    assign margin_bottom_title = block.settings.margin_bottom_title
 
-                                    assign lookbook_style = block.settings.lookbook_style
-                                    assign dot_desktop_size = block.settings.dot_desktop_size | append: 'px'
-                                    assign dot_mobile_size = block.settings.dot_mobile_size | append: 'px'
-                                    assign dot_shadow_color = block.settings.dot_shadow_color | color_modify: 'alpha', 0.5
-                                    assign dot_outer_color = block.settings.dot_outer_color
-                                    assign show_dot_number = block.settings.show_dot_number
-                                    assign show_dot_number_mobile = block.settings.show_dot_number_mobile
-                                    assign dot_inner_color = block.settings.dot_inner_color
-                                    assign number_desktop_size = block.settings.number_desktop_size | append: 'px'
-                                    assign number_mobile_size = block.settings.number_mobile_size | append: 'px'
-                                    assign enable_lookbook_width = block.settings.enable_lookbook_width
-                                    assign lookbook_width = block.settings.lookbook_width | append: 'px'
-                                    assign lookbook_truncate = block.settings.lookbook_truncate
-                                    assign show_plus_icon = block.settings.show_plus_icon
-                                    assign item_distance = block.settings.item_distance
-                                -%}
-                                <div class="articleGallery-block articleGallery-{{ section.id }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="articleGallery-{{ section.id }}-{{ block.id }}">
-                                    {% if image_gallery_title != blank %}
-                                        <div class="halo-block-header text-left" style="
-                                                --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}">   
-                                            <h3 class="title"
-                                                style="--color-title: {{ color_title }};
-                                                --fontsize-title: {{ fontsize_title | append: 'px' }};
-                                                --fontsize_title_mb: {{ fontsize_title_mb | append: 'px' }};"
-                                            >
-                                                <span class="text">
-                                                    {{ image_gallery_title }}
-                                                </span>
-                                            </h3>
-                                        </div>
-                                    {% endif %}
-                                    <div class="halo-row column-{{ column }}
-                                        {% if swipe == 'slider' %} articleGallery-slider{% endif %}
-                                        {% if item_distance == 0 %} not-distance{% endif %}
-                                        {% if swipe == 'scroll' %} scroll-snap-mobile disable-srollbar{% endif %}
-                                        {% if column_mb == '2' %} column-mb-2{% endif %}"
-                                        data-col="{{ column }}"
-                                        data-show-lookbook-container
-                                        style="--row-distance-style: {{ item_distance | prepend: '-' | append: 'px' }};
-                                        --item-distance-style: {{ item_distance | append: 'px' }};"
-                                    >
-                                        {% for i in (1..8) %}
-                                            {% capture image %}image_{{ i }}{% endcapture %}
-                                            {% capture show_image %}show_image_{{ i }}{% endcapture %}
-                                            {% capture link %}link_{{ i }}{% endcapture %}
+                      <div class="article-heading text-left d-none">
+                          <h2 class="title">
+                              {{ article.title }}
+                          </h2>
+                          {%- if show_author or show_date or blog.comments_enabled? -%}
+                              <div class="info">
+                                  {%- if show_author -%}
+                                      <span class="info-item author">
+                                          <span>{{ 'blogs.article.by' | t }}</span>
+                                          <span class="text">{{ article.author }}</span>
+                                      </span>
+                                  {%- endif -%}
+                                  {%- if show_date -%}
+                                      <span class="info-item date">
+                                          {{ article.published_at | date: "%d %b %Y" }}
+                                      </span>
+                                  {%- endif -%}
+                                  {%- if blog.comments_enabled? -%}
+                                      <a class="info-item comment" href="{{ article.url }}#comments">
+                                          {{ 'blogs.article.comments' | t: count: article.comments_count }}
+                                      </a>      
+                                  {%- endif -%}
+                              </div>
+                          {%- endif -%}
+                      </div>
+                      {%- if article.image and show_main_img -%}
+                          <div class="article-image">
+                              <a href="{{ article.url }}" class="image">
+                                 <img srcset="{% if article.image.width >= 350 %}{{ article.image | img_url: '350x' }} 350w,{% endif %}
+                                  {% if article.image.width >= 700 %}{{ article.image | img_url: '700x' }} 700w,{% endif %}
+                                  {% if article.image.width >= 749 %}{{ article.image | img_url: '749x' }} 749w,{% endif %}
+                                  {% if article.image.width >= 1498 %}{{ article.image | img_url: '1498x' }} 1498w,{% endif %}
+                                  {% if article.image.width >= 1100 %}{{ article.image | img_url: '1100x' }} 1100w,{% endif %}
+                                  {% if article.image.width >= 2200 %}{{ article.image | img_url: '2200x' }} 2200w,{% endif %}"
+                                  sizes="(min-width: 1200px) 1100px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+                                  src="{{ article.image | img_url: '1100x' }}"
+                                  {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
+                                  width="{{ article.image.width }}"
+                                  height="{{ article.image.height }}"
+                                  alt="{{ article.image.alt | escape }}">
+                              </a>
+                          </div>
+                      {%- endif -%}
+                  </div>
+                  <div class="article-body">
+                      <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                        <div id="table-of-contents"></div>
+                        <style>
 
-                                            {% capture product_1 %}lb_product_{{ i }}_1{% endcapture %}
-                                            {% capture left_1 %}horizontal_pos_{{ i }}_1{% endcapture %}
-                                            {% capture top_1 %}vertical_pos_{{ i }}_1{% endcapture %}
-                                            {% capture lookbook_pos_1 %}lookbook_pos_{{ i }}_1{% endcapture %}
+@media (max-width: 1024px) {
+    .header-with-sidebar {
+        display: flex;
+        flex-direction: row-reverse !important;
+    }
+}
+@media (min-width: 1024.1px) {
+    .header-with-sidebar {
+        display: none !important; 
+    }
+}
 
-                                            {% capture product_2 %}lb_product_{{ i }}_2{% endcapture %}
-                                            {% capture left_2 %}horizontal_pos_{{ i }}_2{% endcapture %}
-                                            {% capture top_2 %}vertical_pos_{{ i }}_2{% endcapture %}
-                                            {% capture lookbook_pos_2 %}lookbook_pos_{{ i }}_2{% endcapture %}
+.filter-btn-mob-details{
+    border: 1px solid #006a91;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #006a91;
+}
+                              @media (max-width: 500px) {
+                                  .author-top {
+                                    align-items: start;
+                                    flex-direction: column;
+                                    gap: 12px !important;
+                                    align-items: start !important;
+                                  }
+                                }
+                            .blog-author-details {
+                               display: flex;
+                               gap: 10px;
+                            }
+                            .blog-editor {
+                               display: flex;
+                               gap: 12px;
+                               align-items: center;
+                            }
+                            .article-info-details {
+                              margin-top: 20px;
+                              margin-bottom: 15px;
+                              font-style: italic;
+                            }
+                            .article-info-details p {
+                              margin: 5px 0;
+                              font-size: 16px;
+                              color: #36454f;
+                            }
+                            .article-info-details .highlight {
+                              font-weight: bold;
+                              color: #086b92;
+                            }
+                          </style>
+                           
+                          {% assign word_count = article.content | strip_html | split: " " | size %}
+                          {% assign reading_time = word_count | divided_by: 200 %}
+                          {% if word_count > 0 and reading_time == 0 %}
+                            {% assign reading_time = 1 %}
+                          {% endif %} 
+                          
+                          <div class="article-info-details">
+                            {% comment %} <p>Total Words: <span class="highlight">{{ word_count }}</span></p> {% endcomment %}
+                            <p>Estimated Reading Time: <span class="highlight">{{ reading_time }} minute{% if reading_time > 1 %}s{% endif %}</span></p>
+                          </div>
+                          
+                      {{ article.content }}
+                      </div>
+                      {%- for block in section.blocks -%}
+                        {%- if block.type == 'image_gallery' -%}
+                            {%- liquid
+                                assign swipe = block.settings.image_gallery_swipe_on_mobile
+                                assign column = block.settings.column
+                                assign column_mb = block.settings.column_mb
+                                assign type_image_gallery = block.settings.type_image_gallery
+                                assign image_gallery_title = block.settings.image_gallery_title
+                                assign color_title = block.settings.color_title
+                                assign fontsize_title = block.settings.fontsize_title
+                                assign fontsize_title_mb = block.settings.fontsize_title_mb
+                                assign margin_bottom_title = block.settings.margin_bottom_title
 
-                                            {%- if block.settings[show_image] -%}
-                                                <div class="halo-item">
-                                                    <div class="imgGallery-item lookbook-image-item {% if enable_lookbook_width %}width-restricted{% endif %}" data-lookbook-item-container
-                                                        style="
-                                                            --dot-desktop-size: {{ dot_desktop_size }};
-                                                            --dot-mobile-size: {{ dot_mobile_size }};
-                                                            --dot-shadow-color: {{ dot_shadow_color }};
-                                                            --dot-outer-color: {{ dot_outer_color }};
-                                                            --dot-inner-color: {{ dot_inner_color }};
-                                                            --dot-number-desktop-size: {{ number_desktop_size }};
-                                                            --dot-number-mobile-size: {{ number_mobile_size }};
-                                                            --max-width: {{ lookbook_width }};
-                                                            --des-max-width: {% if des_width > 0 %}{{ des_width | append: 'px' }}{% else %}unset{% endif %};
-                                                            --truncate-line: {{ lookbook_truncate }};
-                                                        "
-                                                    >
-                                                        <div class="img-box">
-                                                        {% if block.settings[image] != blank %}
-                                                            {%- assign preview_img = block.settings[image] -%}
-                                                            <a
-                                                                {% if type_image_gallery == 'link' %}
-                                                                    {% if block.settings[link] == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings[link] }}"{% endif %} class="image-zoom adaptive_height"
-                                                                {% else %}
-                                                                    href="{{ preview_img | img_url: 'master' }}" data-fancybox="article-images" class="image-zoom adaptive_height fancybox"
-                                                                {% endif %}
-                                                                style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%">
-                                                                    <img {% render 'lazyload',preview_img: preview_img %} />
-                                                                    {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
-                                                            </a>
-                                                        {% else %}
-                                                            <a {% if block.settings[link] == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings[link] }}"{% endif %} class="image-zoom">
-                                                                {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
-                                                                {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
-                                                                <div class="placeholder" style="--height_placeholder: 270px;">
-                                                                    {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
-                                                                </div>
-                                                            </a>
-                                                        {% endif %}
-                                                        </div>
-                                                        {% if block.settings[product_1] != blank or block.settings[product_2] != blank %}
-                                                        <lookbook-wrapper>
-                                                            {% if block.settings[product_1] != blank %}
-                                                                {% assign top = block.settings[top_1] | append: '%' %}
-                                                                {% assign left = block.settings[left_1] | append: '%' %}
+                                assign lookbook_style = block.settings.lookbook_style
+                                assign dot_desktop_size = block.settings.dot_desktop_size | append: 'px'
+                                assign dot_mobile_size = block.settings.dot_mobile_size | append: 'px'
+                                assign dot_shadow_color = block.settings.dot_shadow_color | color_modify: 'alpha', 0.5
+                                assign dot_outer_color = block.settings.dot_outer_color
+                                assign show_dot_number = block.settings.show_dot_number
+                                assign show_dot_number_mobile = block.settings.show_dot_number_mobile
+                                assign dot_inner_color = block.settings.dot_inner_color
+                                assign number_desktop_size = block.settings.number_desktop_size | append: 'px'
+                                assign number_mobile_size = block.settings.number_mobile_size | append: 'px'
+                                assign enable_lookbook_width = block.settings.enable_lookbook_width
+                                assign lookbook_width = block.settings.lookbook_width | append: 'px'
+                                assign lookbook_truncate = block.settings.lookbook_truncate
+                                assign show_plus_icon = block.settings.show_plus_icon
+                                assign item_distance = block.settings.item_distance
+                            -%}
+                            <div class="articleGallery-block articleGallery-{{ section.id }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="articleGallery-{{ section.id }}-{{ block.id }}">
+                                {% if image_gallery_title != blank %}
+                                    <div class="halo-block-header text-left" style="
+                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}">   
+                                        <h3 class="title"
+                                            style="--color-title: {{ color_title }};
+                                            --fontsize-title: {{ fontsize_title | append: 'px' }};
+                                            --fontsize_title_mb: {{ fontsize_title_mb | append: 'px' }};"
+                                        >
+                                            <span class="text">
+                                                {{ image_gallery_title }}
+                                            </span>
+                                        </h3>
+                                    </div>
+                                {% endif %}
+                                <div class="halo-row column-{{ column }}
+                                    {% if swipe == 'slider' %} articleGallery-slider{% endif %}
+                                    {% if item_distance == 0 %} not-distance{% endif %}
+                                    {% if swipe == 'scroll' %} scroll-snap-mobile disable-srollbar{% endif %}
+                                    {% if column_mb == '2' %} column-mb-2{% endif %}" 
+                                    data-col="{{ column }}" 
+                                    data-show-lookbook-container
+                                    style="--row-distance-style: {{ item_distance | prepend: '-' | append: 'px' }}; 
+                                    --item-distance-style: {{ item_distance | append: 'px' }};"
+                                >
+                                    {% for i in (1..8) %}
+                                        {% capture image %}image_{{ i }}{% endcapture %}
+                                        {% capture show_image %}show_image_{{ i }}{% endcapture %}
+                                        {% capture link %}link_{{ i }}{% endcapture %}
 
-                                                                {% render 'lookbook-modal-wrapper',
-                                                                    lookbook_style: lookbook_style,
-                                                                    top: top,
-                                                                    left: left,
-                                                                    show_dot_number: show_dot_number,
-                                                                    show_dot_number_mobile: show_dot_number_mobile,
-                                                                    lookbook_pos: block.settings[lookbook_pos_1],
-                                                                    product: block.settings[product_1],
-                                                                    show_plus_icon: show_plus_icon,
-                                                                    num: 1,
-                                                                %}
+                                        {% capture product_1 %}lb_product_{{ i }}_1{% endcapture %}
+                                        {% capture left_1 %}horizontal_pos_{{ i }}_1{% endcapture %}
+                                        {% capture top_1 %}vertical_pos_{{ i }}_1{% endcapture %}
+                                        {% capture lookbook_pos_1 %}lookbook_pos_{{ i }}_1{% endcapture %}
+
+                                        {% capture product_2 %}lb_product_{{ i }}_2{% endcapture %}
+                                        {% capture left_2 %}horizontal_pos_{{ i }}_2{% endcapture %}
+                                        {% capture top_2 %}vertical_pos_{{ i }}_2{% endcapture %}
+                                        {% capture lookbook_pos_2 %}lookbook_pos_{{ i }}_2{% endcapture %}
+
+                                        {%- if block.settings[show_image] -%}
+                                            <div class="halo-item">
+                                                <div class="imgGallery-item lookbook-image-item {% if enable_lookbook_width %}width-restricted{% endif %}" data-lookbook-item-container
+                                                    style="
+                                                        --dot-desktop-size: {{ dot_desktop_size }};
+                                                        --dot-mobile-size: {{ dot_mobile_size }};
+                                                        --dot-shadow-color: {{ dot_shadow_color }};
+                                                        --dot-outer-color: {{ dot_outer_color }};
+                                                        --dot-inner-color: {{ dot_inner_color }};
+                                                        --dot-number-desktop-size: {{ number_desktop_size }};
+                                                        --dot-number-mobile-size: {{ number_mobile_size }};
+                                                        --max-width: {{ lookbook_width }};
+                                                        --des-max-width: {% if des_width > 0 %}{{ des_width | append: 'px' }}{% else %}unset{% endif %};
+                                                        --truncate-line: {{ lookbook_truncate }};
+                                                    "
+                                                >   
+                                                    <div class="img-box">
+                                                    {% if block.settings[image] != blank %}
+                                                        {%- assign preview_img = block.settings[image] -%}
+                                                        <a 
+                                                            {% if type_image_gallery == 'link' %}
+                                                                {% if block.settings[link] == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings[link] }}"{% endif %} class="image-zoom adaptive_height"
+                                                            {% else %}
+                                                                href="{{ preview_img | img_url: 'master' }}" data-fancybox="images" class="image-zoom adaptive_height fancybox"
                                                             {% endif %}
-                                                            {% if block.settings[product_2] != blank %}
-                                                                {% assign top = block.settings[top_2] | append: '%' %}
-                                                                {% assign left = block.settings[left_2] | append: '%' %}
-
-                                                                {% render 'lookbook-modal-wrapper',
-                                                                    lookbook_style: lookbook_style,
-                                                                    top: top,
-                                                                    left: left,
-                                                                    show_dot_number: show_dot_number,
-                                                                    show_dot_number_mobile: show_dot_number_mobile,
-                                                                    lookbook_pos: block.settings[lookbook_pos_2],
-                                                                    product: block.settings[product_2],
-                                                                    show_plus_icon: show_plus_icon,
-                                                                    num: 2,
-                                                                %}
-                                                            {% endif %}
-                                                        </lookbook-wrapper>
+                                                            style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%">
+                                                                <img {% render 'lazyload',preview_img: preview_img %} />
+                                                                {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                        </a>
+                                                    {% else %}
+                                                        <a {% if block.settings[link] == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings[link] }}"{% endif %} class="image-zoom">
+                                                            <div class="not_img" style="--height_not_img: 370px">290 x 370px</div>
+                                                        </a>
                                                     {% endif %}
                                                     </div>
-                                                </div>
-                                            {%- endif -%}
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            {%- elsif block.type == 'lookbook_banner' -%}
-                                {%- liquid
-                                    assign image = block.settings.image
-                                    assign preview_img = block.settings.image
-                                    assign margin_bottom = block.settings.margin_bottom
+                                                    {% if block.settings[product_1] != blank or block.settings[product_2] != blank %}
+                                                    <lookbook-wrapper>
+                                                        {% if block.settings[product_1] != blank %}
+                                                            {% assign top = block.settings[top_1] | append: '%' %}
+                                                            {% assign left = block.settings[left_1] | append: '%' %}
 
-                                    assign content_max_width = block.settings.content_max_width | append: 'px'
-
-                                    assign title = block.settings.title_text
-                                    assign title_fs = block.settings.title_fs | append: 'px'
-                                    assign title_fs_mb = block.settings.title_fs_mb | append: 'px'
-                                    assign title_color = block.settings.title_color
-                                    assign title_fw = block.settings.title_fw
-                                    assign title_margin_bottom = block.settings.title_margin_bottom | append: 'px'
-
-                                    assign button_1_text = block.settings.button_1_text
-                                    assign button_1_text_color = block.settings.button_1_text_color
-                                    assign button_1_background_color = block.settings.button_1_background_color
-                                    assign button_1_background_gradient_color = block.settings.button_1_background_gradient_color
-                                    assign button_1_border_color = block.settings.button_1_border_color
-                                    assign button_1_text_color_hover = block.settings.button_1_text_color_hover
-                                    assign button_1_background_color_hover = block.settings.button_1_background_color_hover
-                                    assign button_1_background_gradient_color_hover = block.settings.button_1_background_gradient_color_hover
-                                    assign button_1_border_color_hover = block.settings.button_1_border_color_hover
-                                    assign button_1_width = block.settings.button_1_width | append: 'px'
-                                    assign button_1_fs = block.settings.button_1_fs | append: 'px'
-                                    assign button_1_fs_mb = block.settings.button_1_fs_mb | append: 'px'
-                                    assign button_1_fw = block.settings.button_1_fw
-                                    assign link_1 = block.settings.link_1
-
-                                    assign button_2_text = block.settings.button_2_text
-                                    assign button_2_text_color = block.settings.button_2_text_color
-                                    assign button_2_background_color = block.settings.button_2_background_color
-                                    assign button_2_background_gradient_color = block.settings.button_2_background_gradient_color
-                                    assign button_2_border_color = block.settings.button_2_border_color
-                                    assign button_2_text_color_hover = block.settings.button_2_text_color_hover
-                                    assign button_2_background_color_hover = block.settings.button_2_background_color_hover
-                                    assign button_2_background_gradient_color_hover = block.settings.button_2_background_gradient_color_hover
-                                    assign button_2_border_color_hover = block.settings.button_2_border_color_hover
-                                    assign button_2_width = block.settings.button_2_width | append: 'px'
-                                    assign button_2_fs = block.settings.button_2_fs | append: 'px'
-                                    assign button_2_fs_mb = block.settings.button_2_fs_mb | append: 'px'
-                                    assign button_2_fw = block.settings.button_2_fw
-                                    assign link_2 = block.settings.link_2
-                                -%}
-
-                                <div class="articleLookbook-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
-                                    style="--lookbook-margin-bottom: {{ margin_bottom | append: 'px' }}";
-                                >
-                                    <div class="articleLookbook-item">
-                                        {%- if image != blank -%}
-                                            <a class="image image-zoom image-adapt adaptive_height" href="javascript:void(0)" style="padding-top: {{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}">
-                                                <img {% render 'lazyload',preview_img: preview_img %} />
-                                                {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
-                                            </a>
-                                        {%- else -%}
-                                            <a role="link" aria-disabled="true" class="image">
-                                                <div class="placeholder" style="--height_placeholder: 520px;">
-                                                    {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
-                                                </div>
-                                            </a>
-                                        {%- endif -%}
-                                        {% if title != blank or button_1_text != blank or button_2_text != blank %}
-                                            <div class="articleLookbook-item-content text-center" style="--max-width: {{ content_max_width }};">
-                                                {% if title != blank %}
-                                                    <h3 class="lookbook-banner-title text-center"
-                                                        style="
-                                                            --title-color: {% if title_color != blank and title_color != 'rgba(0,0,0,0)' %}{{ title_color }}{% endif %};
-                                                            --title-fs: {{ title_fs }};
-                                                            --title-fs-mb: {{ title_fs_mb }};
-                                                            --title-fw: {{ title_fw }};
-                                                            --title-mg-bottom: {{ title_margin_bottom }};
-                                                            "
-                                                    >
-                                                        <span class="text">
-                                                            {{ title }}
-                                                        </span>
-                                                    </h3>
-                                                {% endif %}
-                                                {% if button_1_text != blank or button_2_text != blank %}
-                                                    <div class="lookbook-banner-btns-wrapper">
-                                                        {% if button_1_text != blank %}
-                                                            <a class="button" role="button"{% if link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ link_1 }}"{% endif %}
-                                                                style="
-                                                                    --btn-width: {{ button_1_width }};
-                                                                    --btn-fs: {{ button_1_fs }};
-                                                                    --btn-fs-mb: {{ button_1_fs_mb }};
-                                                                    --btn-fw: {{ button_1_fw }};
-                                                                    --btn-text-color: {% if button_1_text_color != blank and button_1_text_color != 'rgba(0,0,0,0)' %}{{ button_1_text_color }}{% endif %};
-                                                                    --btn-border-color: {% if button_1_border_color != blank and button_1_border_color != 'rgba(0,0,0,0)' %}{{ button_1_border_color }}{% endif %};
-                                                                    --btn-bg: {% if button_1_background_gradient_color != blank and button_1_background_gradient_color != 'rgba(0,0,0,0)' %}{{ button_1_background_gradient_color }}{% elsif button_1_background_color != blank and button_1_background_color != 'rgba(0,0,0,0)' %}{{ button_1_background_color }}{% endif %};
-                                                                    --btn-text-hover-color: {% if button_1_text_color_hover != blank and button_1_text_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_text_color_hover }}{% endif %};
-                                                                    --btn-border-hover-color: {% if button_1_border_color_hover != blank and button_1_border_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_border_color_hover }}{% endif %};
-                                                                    --btn-hover-bg: {% if button_1_background_gradient_color_hover != blank and button_1_background_gradient_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_background_gradient_color_hover }}{% elsif button_1_background_color_hover != blank and button_1_background_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_background_color_hover }}{% endif %};
-                                                                "
-                                                            >
-                                                                {{ button_1_text }}
-                                                            </a>
+                                                            {% render 'lookbook-modal-wrapper',
+                                                                lookbook_style: lookbook_style,
+                                                                top: top,
+                                                                left: left,
+                                                                show_dot_number: show_dot_number,
+                                                                show_dot_number_mobile: show_dot_number_mobile,
+                                                                lookbook_pos: block.settings[lookbook_pos_1],
+                                                                product: block.settings[product_1],
+                                                                show_plus_icon: show_plus_icon,
+                                                                num: 1,
+                                                            %}  
                                                         {% endif %}
-                                                        {% if button_2_text != blank %}
-                                                            <a class="button" role="button"{% if link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ link_2 }}"{% endif %}
-                                                                style="
-                                                                    --btn-width: {{ button_2_width }};
-                                                                    --btn-fs: {{ button_2_fs }};
-                                                                    --btn-fs-mb: {{ button_2_fs_mb }};
-                                                                    --btn-fw: {{ button_2_fw }};
-                                                                    --btn-text-color: {% if button_2_text_color != blank and button_2_text_color != 'rgba(0,0,0,0)' %}{{ button_2_text_color }}{% endif %};
-                                                                    --btn-border-color: {% if button_2_border_color != blank and button_2_border_color != 'rgba(0,0,0,0)' %}{{ button_2_border_color }}{% endif %};
-                                                                    --btn-bg: {% if button_2_background_gradient_color != blank and button_2_background_gradient_color != 'rgba(0,0,0,0)' %}{{ button_2_background_gradient_color }}{% elsif button_2_background_color != blank and button_2_background_color != 'rgba(0,0,0,0)' %}{{ button_2_background_color }}{% endif %};
-                                                                    --btn-text-hover-color: {% if button_2_text_color_hover != blank and button_2_text_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_text_color_hover }}{% endif %};
-                                                                    --btn-border-hover-color: {% if button_2_border_color_hover != blank and button_2_border_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_border_color_hover }}{% endif %};
-                                                                    --btn-hover-bg: {% if button_2_background_gradient_color_hover != blank and button_2_background_gradient_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_background_gradient_color_hover }}{% elsif button_2_background_color_hover != blank and button_2_background_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_background_color_hover }}{% endif %};
-                                                                "
-                                                            >
-                                                                {{ button_2_text }}
-                                                            </a>
+                                                        {% if block.settings[product_2] != blank %}
+                                                            {% assign top = block.settings[top_2] | append: '%' %}
+                                                            {% assign left = block.settings[left_2] | append: '%' %}
+
+                                                            {% render 'lookbook-modal-wrapper',
+                                                                lookbook_style: lookbook_style,
+                                                                top: top,
+                                                                left: left,
+                                                                show_dot_number: show_dot_number,
+                                                                show_dot_number_mobile: show_dot_number_mobile,
+                                                                lookbook_pos: block.settings[lookbook_pos_2],
+                                                                product: block.settings[product_2],
+                                                                show_plus_icon: show_plus_icon,
+                                                                num: 2,
+                                                            %}  
                                                         {% endif %}
-                                                    </div>
+                                                    </lookbook-wrapper>
                                                 {% endif %}
+                                                </div>
                                             </div>
-                                        {% endif %}
-                                    </div>
+                                        {%- endif -%}
+                                    {% endfor %}
                                 </div>
-                            {%- elsif block.type == 'block_quote' -%}
-                                {%- liquid
-                                    assign enable_bg_color = block.settings.enable_bg_color
-                                    assign bg_color_content = block.settings.bg_color_content
-                                    assign title = block.settings.title
-                                    assign color_title = block.settings.color_title
-                                    assign fontsize_title = block.settings.fontsize_title
-                                    assign margin_bottom_title = block.settings.margin_bottom_title
-                                    assign content = block.settings.content
-                                    assign color_content = block.settings.color_content
-                                    assign fontsize_content = block.settings.fontsize_content
-                                    assign margin_bottom = block.settings.margin_bottom
-                                -%}
-                                <div class="articleBlockQuote{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
-                                    style="--quote-margin-bottom: {{ margin_bottom | append: 'px' }}";
-                                >
-                                    <div class="articleBlockQuote-header"
-                                        style="--quote-color-title: {{ color_content }};
-                                        --quote-fontsize-title: {{ fontsize_title | append: 'px' }};
-                                        --quote-margin-bottom-title: {{ margin_bottom_title | append: 'px' }}"
-                                    >
-                                        <h3 class="title">{{ title }}</h3>
-                                    </div>
-                                    <div class="articleBlockQuote-content{% if enable_bg_color %} has-bg{% endif %}"
-                                        style="--quote-color-content: {{ color_content }};
-                                        --quote-bg-color-content: {{ bg_color_content }};
-                                        --quote-fontsize-content: {{ fontsize_content | append: 'px' }}"
-                                    >
-                                        {{ content }}
-                                    </div>
-                                </div>
-                            {%- elsif block.type == 'product_block' -%}
-                                {% assign position = block.settings.position %}
-                                {% if position == 'content' %}
-                                    {% render 'halo-side-product-block',
-                                        block: block,
-                                        show_collapse: false,
-                                        sidebar_collapse: sidebar_collapse_default,
-                                        position: position
-                                    %}
-                                {% endif %}
-                            {%- endif -%}
-                        {%- endfor -%}
-                        {%- if show_tags -%}
-                            {%- if article.tags.size > 0 -%}
-                                <div class="article-tag{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                                    <div class="article-tag-row">
-                                        <div class="tag-header">
-                                            {% render 'icon-tag-solid' %}
-                                            <span>{{ 'blogs.article.tags' | t }}</span>
+                            </div>
+                          {%- elsif block.type == 'lookbook_banner' -%}
+                              {%- liquid
+                                  assign image = block.settings.image
+                                  assign preview_img = block.settings.image
+                                  assign margin_bottom = block.settings.margin_bottom
+
+                                  assign content_max_width = block.settings.content_max_width | append: 'px'
+
+                                  assign title = block.settings.title_text
+                                  assign title_fs = block.settings.title_fs | append: 'px'
+                                  assign title_fs_mb = block.settings.title_fs_mb | append: 'px'
+                                  assign title_color = block.settings.title_color
+                                  assign title_fw = block.settings.title_fw
+                                  assign title_margin_bottom = block.settings.title_margin_bottom | append: 'px'
+
+                                  assign button_1_text = block.settings.button_1_text
+                                  assign button_1_text_color = block.settings.button_1_text_color
+                                  assign button_1_background_color = block.settings.button_1_background_color
+                                  assign button_1_background_gradient_color = block.settings.button_1_background_gradient_color
+                                  assign button_1_border_color = block.settings.button_1_border_color
+                                  assign button_1_text_color_hover = block.settings.button_1_text_color_hover
+                                  assign button_1_background_color_hover = block.settings.button_1_background_color_hover
+                                  assign button_1_background_gradient_color_hover = block.settings.button_1_background_gradient_color_hover
+                                  assign button_1_border_color_hover = block.settings.button_1_border_color_hover
+                                  assign button_1_width = block.settings.button_1_width | append: 'px'
+                                  assign button_1_fs = block.settings.button_1_fs | append: 'px'
+                                  assign button_1_fs_mb = block.settings.button_1_fs_mb | append: 'px'
+                                  assign button_1_fw = block.settings.button_1_fw
+                                  assign link_1 = block.settings.link_1
+                                
+                                  assign button_2_text = block.settings.button_2_text
+                                  assign button_2_text_color = block.settings.button_2_text_color
+                                  assign button_2_background_color = block.settings.button_2_background_color
+                                  assign button_2_background_gradient_color = block.settings.button_2_background_gradient_color
+                                  assign button_2_border_color = block.settings.button_2_border_color
+                                  assign button_2_text_color_hover = block.settings.button_2_text_color_hover
+                                  assign button_2_background_color_hover = block.settings.button_2_background_color_hover
+                                  assign button_2_background_gradient_color_hover = block.settings.button_2_background_gradient_color_hover
+                                  assign button_2_border_color_hover = block.settings.button_2_border_color_hover
+                                  assign button_2_width = block.settings.button_2_width | append: 'px'
+                                  assign button_2_fs = block.settings.button_2_fs | append: 'px'
+                                  assign button_2_fs_mb = block.settings.button_2_fs_mb | append: 'px'
+                                  assign button_2_fw = block.settings.button_2_fw
+                                  assign link_2 = block.settings.link_2
+                            -%}
+
+                              <div class="articleLookbook-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                  style="--lookbook-margin-bottom: {{ margin_bottom | append: 'px' }}";
+                              > 
+                                <div class="articleLookbook-item">
+                                    {%- if image != blank -%}
+                                        <a class="image image-zoom image-adapt adaptive_height" href="javascript:void(0)" style="padding-top: {{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}">
+                                            <img {% render 'lazyload',preview_img: preview_img %} />
+                                            {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                        </a>
+                                    {%- else -%}
+                                        <a class="image" href="javascript:void(0)">
+                                            <div class="not_img" style="--height_not_img: 520px">
+                                            930 x 520px
+                                            </div>  
+                                        </a>
+                                    {%- endif -%}
+                                    {% if title != blank or button_1_text != blank or button_2_text != blank %}
+                                        <div class="articleLookbook-item-content text-center" style="--max-width: {{ content_max_width }};">
+                                            {% if title != blank %}
+                                                <h3 class="lookbook-banner-title text-center"
+                                                    style="
+                                                        --title-color: {% if title_color != blank and title_color != 'rgba(0,0,0,0)' %}{{ title_color }}{% endif %};
+                                                        --title-fs: {{ title_fs }};
+                                                        --title-fs-mb: {{ title_fs_mb }};
+                                                        --title-fw: {{ title_fw }};
+                                                        --title-mg-bottom: {{ title_margin_bottom }};
+                                                        "
+                                                >
+                                                    <span class="text">
+                                                        {{ title }}
+                                                    </span>
+                                                </h3>
+                                            {% endif %}
+                                            {% if button_1_text != blank or button_2_text != blank %}
+                                                <div class="lookbook-banner-btns-wrapper">
+                                                    {% if button_1_text != blank %}
+                                                        <a class="button" role="button"{% if link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ link_1 }}"{% endif %}
+                                                            style="
+                                                                --btn-width: {{ button_1_width }};
+                                                                --btn-fs: {{ button_1_fs }};
+                                                                --btn-fs-mb: {{ button_1_fs_mb }};
+                                                                --btn-fw: {{ button_1_fw }};
+                                                                --btn-text-color: {% if button_1_text_color != blank and button_1_text_color != 'rgba(0,0,0,0)' %}{{ button_1_text_color }}{% endif %};
+                                                                --btn-border-color: {% if button_1_border_color != blank and button_1_border_color != 'rgba(0,0,0,0)' %}{{ button_1_border_color }}{% endif %};
+                                                                --btn-bg: {% if button_1_background_gradient_color != blank and button_1_background_gradient_color != 'rgba(0,0,0,0)' %}{{ button_1_background_gradient_color }}{% elsif button_1_background_color != blank and button_1_background_color != 'rgba(0,0,0,0)' %}{{ button_1_background_color }}{% endif %};
+                                                                --btn-text-hover-color: {% if button_1_text_color_hover != blank and button_1_text_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_text_color_hover }}{% endif %};
+                                                                --btn-border-hover-color: {% if button_1_border_color_hover != blank and button_1_border_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_border_color_hover }}{% endif %};
+                                                                --btn-hover-bg: {% if button_1_background_gradient_color_hover != blank and button_1_background_gradient_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_background_gradient_color_hover }}{% elsif button_1_background_color_hover != blank and button_1_background_color_hover != 'rgba(0,0,0,0)' %}{{ button_1_background_color_hover }}{% endif %};
+                                                            "
+                                                        >
+                                                            {{ button_1_text }}
+                                                        </a>
+                                                    {% endif %}
+                                                    {% if button_2_text != blank %}
+                                                        <a class="button" role="button"{% if link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ link_2 }}"{% endif %}
+                                                            style="
+                                                                --btn-width: {{ button_2_width }};
+                                                                --btn-fs: {{ button_2_fs }};
+                                                                --btn-fs-mb: {{ button_2_fs_mb }};
+                                                                --btn-fw: {{ button_2_fw }};
+                                                                --btn-text-color: {% if button_2_text_color != blank and button_2_text_color != 'rgba(0,0,0,0)' %}{{ button_2_text_color }}{% endif %};
+                                                                --btn-border-color: {% if button_2_border_color != blank and button_2_border_color != 'rgba(0,0,0,0)' %}{{ button_2_border_color }}{% endif %};
+                                                                --btn-bg: {% if button_2_background_gradient_color != blank and button_2_background_gradient_color != 'rgba(0,0,0,0)' %}{{ button_2_background_gradient_color }}{% elsif button_2_background_color != blank and button_2_background_color != 'rgba(0,0,0,0)' %}{{ button_2_background_color }}{% endif %};
+                                                                --btn-text-hover-color: {% if button_2_text_color_hover != blank and button_2_text_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_text_color_hover }}{% endif %};
+                                                                --btn-border-hover-color: {% if button_2_border_color_hover != blank and button_2_border_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_border_color_hover }}{% endif %};
+                                                                --btn-hover-bg: {% if button_2_background_gradient_color_hover != blank and button_2_background_gradient_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_background_gradient_color_hover }}{% elsif button_2_background_color_hover != blank and button_2_background_color_hover != 'rgba(0,0,0,0)' %}{{ button_2_background_color_hover }}{% endif %};
+                                                            "
+                                                        >
+                                                            {{ button_2_text }}
+                                                        </a>
+                                                    {% endif %}
+                                                </div>
+                                            {% endif %}
                                         </div>
-                                        <ul class="tag-list list-unstyled clearfix">
-                                            {%- for tag in article.tags -%}
-                                                <li class="item">
-                                                    <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
-                                                    <span class="text">{{ tag }}</span>
-                                                    </a>
-                                                </li>
-                                            {%- endfor -%}
-                                        </ul>
-                                    </div>
-                                </div>
-                            {%- endif -%}
-                        {%- endif -%}
-                        {%- if show_share -%}
-                            <div class="article-social text-left{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                                {% render 'halo-share', product: article %}
-                            </div>
-                        {%- endif -%}
-                    </div>
-                </div>
-                {%- if show_next_prev -%}
-                    {%- if blog.next_article or blog.previous_article -%}
-                        <div class="article__pagination{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                            <div class="article__pagination--item article__pagination--prev">
-                                <a class="button button--secondary button--prev" href="{{ blog.previous_article }}" {% unless blog.previous_article %}disabled{% endunless %}>
-                                    <span class="text"> {{ 'blogs.article.prev_post' | t }}</span>
-                                </a>
-                            </div>
-                            <div class="article__pagination--item article__pagination--next">
-                                <a class="button button--secondary button--next" href="{{ blog.next_article }}" {% unless blog.next_article %}disabled{% endunless %}>
-                                    <span class="text">{{ 'blogs.article.next_post' | t }} </span>
-                                </a>
-                            </div>
-                        </div> 
-                    {%- endif -%}
-                {%- endif -%}
-                {%- if blog.comments_enabled? -%}
-                    <div class="article-template__comment-wrapper background-secondary{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                        <div id="comments" class="page-width page-width--narrow">
-                            {%- if article.comments_count > 0 -%}
-                                {%- assign anchorId = '#Comments-' | append: article.id -%}
-                                <div class="halo-block-header">
-                                    <h3 id="Comments-{{ article.id }}" class="title text-left">
-                                        <span class="text">
-                                            {{ 'blogs.article.comments' | t: count: article.comments_count }}
-                                        </span>
-                                    </h3>
-                                </div>
-                                {%- paginate article.comments by 5 -%}
-                                    <div class="article-template__comments">
-                                        {%- if comment.status == 'pending' and comment.content -%}
-                                            <article id="{{ comment.id }}" class="article-template__comments-comment">
-                                                <h4 class="comment-author">
-                                                    {{ comment.author }}
-                                                </h4>
+                                    {% endif %}
+                                </div> 
+                              </div>
+                          {%- elsif block.type == 'block_quote' -%}
+                              {%- liquid
+                                  assign enable_bg_color = block.settings.enable_bg_color
+                                  assign bg_color_content = block.settings.bg_color_content
+                                  assign title = block.settings.title
+                                  assign color_title = block.settings.color_title
+                                  assign fontsize_title = block.settings.fontsize_title
+                                  assign margin_bottom_title = block.settings.margin_bottom_title
+                                  assign content = block.settings.content
+                                  assign color_content = block.settings.color_content
+                                  assign fontsize_content = block.settings.fontsize_content
+                                  assign margin_bottom = block.settings.margin_bottom
+                              -%}
+                              <div class="articleBlockQuote{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                  style="--quote-margin-bottom: {{ margin_bottom | append: 'px' }}";
+                              >
+                                  <div class="articleBlockQuote-header"
+                                      style="--quote-color-title: {{ color_content }};
+                                      --quote-fontsize-title: {{ fontsize_title | append: 'px' }};
+                                      --quote-margin-bottom-title: {{ margin_bottom_title | append: 'px' }}" 
+                                  >
+                                      <h3 class="title">{{ title }}</h3>
+                                  </div>
+                                  <div class="articleBlockQuote-content{% if enable_bg_color %} has-bg{% endif %}"
+                                      style="--quote-color-content: {{ color_content }};
+                                      --quote-bg-color-content: {{ bg_color_content }};
+                                      --quote-fontsize-content: {{ fontsize_content | append: 'px' }}" 
+                                  >
+                                      {{ content }}
+                                  </div>
+                              </div>
+                          {%- elsif block.type == 'product_block' -%}
+                              {% assign position = block.settings.position %}
+                              {% if position == 'content' %}
+                                  {% render 'halo-side-product-block',
+                                      block: block,
+                                      show_collapse: false,
+                                      sidebar_collapse: sidebar_collapse_default,
+                                      position: position
+                                  %}
+                              {% endif %}
+                          {%- endif -%}
+                      {%- endfor -%}
+                      {%- if show_tags -%}
+                          {%- if article.tags.size > 0 -%}
+                              <div class="article-tag{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                                  <div class="article-tag-row">
+                                      <div class="tag-header">
+                                          {% render 'icon-tag-solid' %}
+                                          <span>{{ 'blogs.article.tags' | t }}</span>
+                                      </div>
+                                      <ul class="tag-list list-unstyled clearfix">
+                                          {%- for tag in article.tags -%}
+                                              <li class="item">
+                                                <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                                                  <span class="text">{{ tag }}</span>
+                                                </a>
+                                              </li>
+                                          {%- endfor -%}
+                                      </ul>
+                                  </div>
+                              </div>
+                          {%- endif -%}
+                      {%- endif -%}
+                      {%- if show_share -%}
+                          <div id="share-indivisual-blog" class="article-social text-left{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                              {% render 'halo-share', product: article %}
+                          </div>
+                      {%- endif -%}
+                  </div>
+              </div>
+              {%- if show_next_prev -%}
+                  {%- if blog.next_article or blog.previous_article -%}
+                      <div class="article__pagination{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                          <div class="article__pagination--item article__pagination--prev">
+                              <a class="button button--secondary button--prev" href="{{ blog.previous_article }}" {% unless blog.previous_article %}disabled{% endunless %}>
+                                  <span class="text"> {{ 'blogs.article.prev_post' | t }}</span>
+                              </a>
+                          </div>
+                          <div class="article__pagination--item article__pagination--next">
+                              <a class="button button--secondary button--next" href="{{ blog.next_article }}" {% unless blog.next_article %}disabled{% endunless %}>
+                                  <span class="text">{{ 'blogs.article.next_post' | t }} </span>
+                              </a>
+                          </div>
+                      </div> 
+                  {%- endif -%}
+              {%- endif -%}
+              {%- if blog.comments_enabled? -%}
+                  <div class="article-template__comment-wrapper background-secondary{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                      <div id="comments" class="page-width page-width--narrow">
+                          {%- if article.comments_count > 0 -%}
+                              {%- assign anchorId = '#Comments-' | append: article.id -%}
+                              <div class="halo-block-header">
+                                  <h3 id="Comments-{{ article.id }}" class="title text-left">
+                                      <span class="text">
+                                          {{ 'blogs.article.comments' | t: count: article.comments_count }}
+                                      </span>
+                                  </h3>
+                              </div>
+                              {%- paginate article.comments by 5 -%}
+                                  <div class="article-template__comments">
+                                      {%- if comment.status == 'pending' and comment.content -%}
+                                          <article id="{{ comment.id }}" class="article-template__comments-comment">
+                                              <h4 class="comment-author">
+                                                  {{ comment.author }}
+                                              </h4>
+                                              <div class="comment-body {{ comment.status }}">
+                                                  {{ comment.content }}
+                                              </div>
+                                          </article>
+                                      {%- endif -%}
+
+                                      {%- for comment in article.comments -%}
+                                          <article id="{{ comment.id }}" class="article-template__comments-comment">
+                                              <div class="comment-user">
+                                                {% render 'icon-account-2' %}
+                                              </div>
+                                              <div class="comment-content">
+                                                <div class="comment-created-at">
+                                                    <span class="comment-date">{{ comment.created_at | date: "%d %b %Y"   }}</span>
+                                                    <span class="comment-author">{{ comment.author }}</span>
+                                                </div>
                                                 <div class="comment-body {{ comment.status }}">
                                                     {{ comment.content }}
                                                 </div>
-                                            </article>
-                                        {%- endif -%}
-
-                                        {%- for comment in article.comments -%}
-                                            <article id="{{ comment.id }}" class="article-template__comments-comment">
-                                                <div class="comment-user">
-                                                    {% render 'icon-account-2' %}
-                                                </div>
-                                                <div class="comment-content">
-                                                    <div class="comment-created-at">
-                                                        <span class="comment-date">{{ comment.created_at | date: "%d %b %Y"   }}</span>
-                                                        <span class="comment-author">{{ comment.author }}</span>
-                                                    </div>
-                                                    <div class="comment-body {{ comment.status }}">
-                                                        {{ comment.content }}
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        {%- endfor -%}
-                                        {% render 'pagination',
-                                            paginate: paginate,
-                                            class: 'order-pagination pagination-wrapper text-center',
-                                            anchor: anchorId
-                                        %}
-                                    </div>
-                                {%- endpaginate -%}
-                            {%- endif -%}
-                            {%- form 'new_comment', article -%}
-                                {%- liquid
-                                    assign post_message = 'blogs.article.success'
-                                    if blog.moderated? and comment.status == 'unapproved'
-                                        assign post_message = 'blogs.article.success_moderated'
-                                    endif
-                                -%}
-                                <div class="halo-block-header">
-                                    <h3 class="title text-left">
-                                        <span class="text">
-                                            {{ 'blogs.article.comment_form_title' | t }}
-                                        </span>
-                                    </h3>
-                                </div>
-                                {%- if form.errors -%}
-                                    {%- if form.errors -%}
-                                        <div class="form-message" role="alert">
-                                            <div class="alertBox alertBox--error">
-                                                <div class="alertBox-message">
-                                                    <ul>
-                                                        {%- for field in form.errors -%}
-                                                            <li>
-                                                                <a href="#CommentForm-{{ field }}" class="link">
-                                                                    {%- if form.errors.translated_fields[field] contains 'author' -%}
-                                                                        {{ 'blogs.article.name' | t }}
-                                                                    {%- elsif form.errors.translated_fields[field] contains 'body'-%}
-                                                                        {{ 'blogs.article.message' | t }}
-                                                                    {%- else -%}
-                                                                        {{ form.errors.translated_fields[field] }}
-                                                                    {%- endif -%}
-                                                                    {{ form.errors.messages[field] }}
-                                                                </a>
-                                                            </li>
-                                                        {%- endfor -%}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    {%- endif -%}
-                                {%- elsif form.posted_successfully? -%}
-                                    <div class="form-message" role="status">
-                                        <div class="alertBox alertBox--success">
-                                            <p class="alertBox-message">
-                                                {{ post_message | t }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                {%- endif -%}
-                                <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
-                                    <div class="article-template__comment-fields form-field-group clearfix">
-                                        <div class="form-field{% if form.errors contains "author" %} form-field--error{% endif %}">
-                                            <label class="form-label" for="CommentForm-author">
-                                                {{ 'blogs.article.name' | t }}
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="comment[author]"
-                                                id="CommentForm-author"
-                                                class="form-input form-input-hiddenPlaceholder{% if form.errors contains "author" %} form-field--error{% endif %}"
-                                                autocomplete="name"
-                                                value="{{ form.author }}"
-                                                aria-required="true"
-                                                {% if form.errors contains 'author' %}
-                                                    aria-invalid="true"
-                                                    aria-describedby="CommentForm-author-error"
-                                                {% endif %}
-                                                placeholder="{{ 'blogs.article.name' | t }}"
-                                            >
-                                        </div>
-                                        <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                                            <label class="form-label" for="CommentForm-email">
-                                                {{ 'blogs.article.email' | t }}
-                                            </label>
-                                            <input
-                                                type="email"
-                                                name="comment[email]"
-                                                id="CommentForm-email"
-                                                autocomplete="email"
-                                                class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
-                                                value="{{ form.email }}"
-                                                autocorrect="off"
-                                                autocapitalize="off"
-                                                aria-required="true"
-                                                {% if form.errors contains 'email' %}
-                                                    aria-invalid="true"
-                                                    aria-describedby="CommentForm-email-error"
-                                                {% endif %}
-                                                placeholder="{{ 'blogs.article.email' | t }}"
-                                            >
-                                        </div>
-                                    </div>
-                                    <div class="form-field{% if form.errors contains "body" %} form-field--error{% endif %}">
-                                        <label class="form-label" for="CommentForm-body">{{ 'blogs.article.message' | t }}</label>
-                                        <textarea
-                                            rows="3"
-                                            name="comment[body]"
-                                            id="CommentForm-body"
-                                            class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
-                                            aria-required="true"
-                                            {% if form.errors contains 'body' %}
-                                                aria-invalid="true"
-                                                aria-describedby="CommentForm-body-error"
-                                            {% endif %}
-                                            placeholder="{{ 'blogs.article.message' | t }}"
-                                        >
-                                            {{ form.body }}
-                                        </textarea>
-                                    </div>
-                                </div>
-                                <div class="form-actions text-left">
-                                    {%- if blog.moderated? -%}
-                                        <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated' | t }}</p>
-                                    {%- else -%}
-                                        <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated-all' | t }}</p>
-                                    {%- endif -%}
-                                    <input type="submit" class="button button--primary" value="{{ 'blogs.article.post' | t }}">
-                                </div>
-                            {%- endform -%}
-                        </div>
-                    </div>
-                {%- endif -%}
+                                              </div>
+                                          </article>
+                                      {%- endfor -%}
+                                      {% render 'pagination',
+                                          paginate: paginate,
+                                          class: 'order-pagination pagination-wrapper text-center',
+                                          anchor: anchorId
+                                      %}
+                                  </div>
+                              {%- endpaginate -%}
+                          {%- endif -%}
+                          {%- form 'new_comment', article -%}
+                              {%- liquid
+                                  assign post_message = 'blogs.article.success'
+                                  if blog.moderated? and comment.status == 'unapproved'
+                                      assign post_message = 'blogs.article.success_moderated'
+                                  endif
+                              -%}
+                              <div class="halo-block-header">
+                                  <h3 class="title text-left">
+                                      <span class="text">
+                                        {{ 'blogs.article.comment_form_title' | t }}
+                                      </span>
+                                  </h3>
+                              </div>
+                              {%- if form.errors -%}
+                                  {%- if form.errors -%}
+                                      <div class="form-message" role="alert">
+                                          <div class="alertBox alertBox--error">
+                                              <div class="alertBox-message">
+                                                  <ul>
+                                                      {%- for field in form.errors -%}
+                                                          <li>
+                                                              <a href="#CommentForm-{{ field }}" class="link">
+                                                                  {%- if form.errors.translated_fields[field] contains 'author' -%}
+                                                                      {{ 'blogs.article.name' | t }}
+                                                                  {%- elsif form.errors.translated_fields[field] contains 'body'-%}
+                                                                      {{ 'blogs.article.message' | t }}
+                                                                  {%- else -%}
+                                                                      {{ form.errors.translated_fields[field] }}
+                                                                  {%- endif -%}
+                                                                  {{ form.errors.messages[field] }}
+                                                              </a>
+                                                          </li>
+                                                      {%- endfor -%}
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  {%- endif -%}
+                              {%- elsif form.posted_successfully? -%}
+                                  <div class="form-message" role="status">
+                                      <div class="alertBox alertBox--success">
+                                          <p class="alertBox-message">
+                                              {{ post_message | t }}
+                                          </p>
+                                      </div>
+                                  </div>
+                              {%- endif -%}
+                              <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
+                                  <div class="article-template__comment-fields form-field-group clearfix">
+                                      <div class="form-field{% if form.errors contains "author" %} form-field--error{% endif %}">
+                                          <label class="form-label" for="CommentForm-author">
+                                              {{ 'blogs.article.name' | t }}
+                                          </label>
+                                          <input
+                                              type="text"
+                                              name="comment[author]"
+                                              id="CommentForm-author"
+                                              class="form-input form-input-hiddenPlaceholder{% if form.errors contains "author" %} form-field--error{% endif %}"
+                                              autocomplete="name"
+                                              value="{{ form.author }}"
+                                              aria-required="true"
+                                              {% if form.errors contains 'author' %}
+                                                  aria-invalid="true"
+                                                  aria-describedby="CommentForm-author-error"
+                                              {% endif %}
+                                              placeholder="{{ 'blogs.article.name' | t }}"
+                                          >
+                                      </div>
+                                      <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
+                                          <label class="form-label" for="CommentForm-email">
+                                              {{ 'blogs.article.email' | t }}
+                                          </label>
+                                          <input
+                                              type="email"
+                                              name="comment[email]"
+                                              id="CommentForm-email"
+                                              autocomplete="email"
+                                              class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
+                                              value="{{ form.email }}"
+                                              autocorrect="off"
+                                              autocapitalize="off"
+                                              aria-required="true"
+                                              {% if form.errors contains 'email' %}
+                                                  aria-invalid="true"
+                                                  aria-describedby="CommentForm-email-error"
+                                              {% endif %}
+                                              placeholder="{{ 'blogs.article.email' | t }}"
+                                          >
+                                      </div>
+                                  </div>
+                                  <div class="form-field{% if form.errors contains "body" %} form-field--error{% endif %}">
+                                      <label class="form-label" for="CommentForm-body">{{ 'blogs.article.message' | t }}</label>
+                                      <textarea
+                                          rows="3"
+                                          name="comment[body]"
+                                          id="CommentForm-body"
+                                          class="form-input form-input-hiddenPlaceholder{% if form.errors contains "email" %} form-field--error{% endif %}"
+                                          aria-required="true"
+                                          {% if form.errors contains 'body' %}
+                                              aria-invalid="true"
+                                              aria-describedby="CommentForm-body-error"
+                                          {% endif %}
+                                          placeholder="{{ 'blogs.article.message' | t }}"
+                                      >
+                                          {{ form.body }}
+                                      </textarea>
+                                  </div>
+                              </div>
+                              <div class="form-actions text-left">
+                                  {%- if blog.moderated? -%}
+                                      <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated' | t }}</p>
+                                  {%- else -%}
+                                      <p class="form-note article-template__comment-warning">{{ 'blogs.article.moderated-all' | t }}</p>
+                                  {%- endif -%}
+                                  <input type="submit" class="button button--primary" value="{{ 'blogs.article.post' | t }}">
+                              </div>
+                          {%- endform -%}
+                      </div>
+                  </div>
+              {%- endif -%}
             </div>
         </div>
     </div>
 </article>
+
+<style>
+
+/* TOC Wrapper Styling */
+.toc-wrapper {
+    border: 1px solid #ddd;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* Title Styling */
+.toc-wrapper h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #086b92;
+    font-weight: bold;
+}
+
+/* List Styling */
+.toc-wrapper ul li{
+    color: #086b92;
+}
+.toc-wrapper ul {
+    padding: 0;
+}
+
+/* H2 Styling */
+.toc-wrapper .toc-h2 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* H3 Styling (Indented for hierarchy) */
+.toc-wrapper .toc-h3 {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/* Link Styling */
+.toc-wrapper li a {
+    text-decoration: none;
+    color: #086b92;
+    font-size: 16px;
+    display: block;
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tocContainer = document.getElementById("table-of-contents");
+    const headings = document.querySelectorAll(".article-content h2");
+
+    if (headings.length === 0) return;
+
+    const tocWrapper = document.createElement("div");
+    tocWrapper.classList.add("toc-wrapper");
+
+    const tocTitle = document.createElement("h3");
+    tocTitle.textContent = "Table of Contents";
+    tocWrapper.appendChild(tocTitle);
+
+    const tocList = document.createElement("ul");
+    let h2Counter = 0, h3Counter = 0;
+
+    headings.forEach((heading, index) => {
+        if (heading.tagName === "H2") {
+            h2Counter++;
+            h3Counter = 0; // Reset H3 counter for a new H2 section
+        } 
+
+        const anchorId = "section-" + index;
+        heading.id = anchorId;
+
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = "#" + anchorId;
+
+        // Create numbering format
+        if (heading.tagName === "H2") {
+            link.textContent = `${heading.innerText}`;
+            listItem.classList.add("toc-h2");
+        }
+
+        listItem.appendChild(link);
+        tocList.appendChild(listItem);
+    });
+
+    tocWrapper.appendChild(tocList);
+    tocContainer.appendChild(tocWrapper);
+});
+</script>
+
+
 
 {% render 'schema',
     article: article
@@ -820,38 +1032,8 @@
     "settings":
     [
         {
-            "type": "select",
-            "id": "container",
-            "label": "t:sections.layout.container.option",
-            "default": "container",
-            "options": [
-                {
-                    "value": "container",
-                    "label": "t:sections.layout.container.option1"
-                },
-                {
-                    "value": "1170",
-                    "label": "t:sections.layout.container.option4"
-                },
-                {
-                    "value": "1770",
-                    "label": "t:sections.layout.container.option3"
-                },
-                {
-                    "value": "fullwidth",
-                    "label": "t:sections.layout.container.option2"
-                }
-            ]
-        },
-        {
-            "type": "range",
-            "id": "padding_full_width",
-            "label": "t:sections.layout.container.padding_full_width",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.fontsize.fontsize_title.unit",
-            "default": 0
+            "type": "header",
+            "content": "t:settings_schema.general.name"
         },
         {
             "type": "checkbox",
@@ -866,22 +1048,22 @@
             "options": [
             {
                 "value": "left",
-                "label": "t:settings_schema.typography.settings.type_button_font.left"
+                "label": "t:sections.general.settings.breadcrumb.options__1"
             },
             {
                 "value": "center",
-                "label": "t:settings_schema.typography.settings.type_button_font.center"
+                "label": "t:sections.general.settings.breadcrumb.options__2"
             },
             {
                 "value": "right",
-                "label": "t:settings_schema.typography.settings.type_button_font.right"
+                "label": "t:sections.general.settings.breadcrumb.options__3"
             }],
             "default": "left"
         },
         { 
             "type": "color",
             "id": "breadcrumb_bg",
-            "label": "t:settings_schema.colors.settings.colors_name.background_color_2"
+            "label": "t:settings_schema.colors.settings.colors_name.background_color"
         },
         {
             "type": "color_background",
@@ -912,21 +1094,119 @@
             "options": [
             {
                 "value": "left",
-                "label": "t:settings_schema.typography.settings.type_button_font.left"
+                "label": "t:sections.general.settings.page-title.options__1"
             },
             {
                 "value": "center",
-                "label": "t:settings_schema.typography.settings.type_button_font.center"
+                "label": "t:sections.general.settings.page-title.options__2"
             },
             {
                 "value": "right",
-                "label": "t:settings_schema.typography.settings.type_button_font.right"
+                "label": "t:sections.general.settings.page-title.options__3"
             }],
             "default": "left"
         },
         {
+            "type": "select",
+            "id": "container",
+            "label": "t:sections.layout.container.option",
+            "default": "container",
+            "options": [
+                {
+                    "value": "container",
+                    "label": "t:sections.layout.container.option1"
+                },
+                {
+                    "value": "1170",
+                    "label": "t:sections.layout.container.option4"
+                },
+                {
+                    "value": "1770",
+                    "label": "t:sections.layout.container.option3"
+                },
+                {
+                    "value": "fullwidth",
+                    "label": "t:sections.layout.container.option2"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "t:sections.layout.margin_top"
+        },
+        {
+            "type": "range",
+            "id": "mg_top_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mg_top_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mg_top_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
+            "type": "header",
+            "content": "t:sections.layout.margin_bottom"
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 0
+        },
+        {
             "type":"header",
             "content":"t:sections.main-sidebar.settings.header__1.content"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_sidebar",
+            "label": "t:sections.main-sidebar.settings.general.label__1",
+            "default": true
         },
         {
             "type": "checkbox",
@@ -983,17 +1263,17 @@
             [
                 {
                   "value": "left",
-                  "label": "t:settings_schema.typography.settings.type_button_font.left"
+                  "label": "t:sections.general.settings.page-title.options__1"
                 },
                 {
                   "value": "right",
-                  "label": "t:settings_schema.typography.settings.type_button_font.right"
+                  "label": "t:sections.general.settings.page-title.options__3"
                 }
             ]
         },
         {
             "type": "paragraph",
-            "content": "t:sections.main-sidebar.settings.general.paragraph__2"
+            "content": "t:sections.main-sidebar.settings.general.paragraph__1.content"
         },
         {
             "type": "select",
@@ -1058,7 +1338,7 @@
             "default": "uppercase",
             "options": [
             {
-                "value": "none",
+                "value": "normal",
                 "label": "t:settings_schema.typography.settings.text_transform.options__1"
             },
             {
@@ -1117,7 +1397,7 @@
         {
             "type": "color",
             "id": "background_color",
-            "label": "t:settings_schema.colors.settings.colors_name.background_color_2"
+            "label": "t:settings_schema.colors.settings.colors_name.background_color"
         },
         {
             "type": "paragraph",
@@ -1387,74 +1667,6 @@
             "id": "info_color",
             "label": "t:sections.general.settings.color.label__15",
             "default": "#999999"
-        },
-        {
-            "type": "header",
-            "content": "t:settings_schema.typography.settings.type_button_font.padding_top"
-        },
-        {
-            "type": "range",
-            "id": "mg_top_desktop",
-            "label": "t:sections.layout.mg_desktop.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mg_top_tablet",
-            "label": "t:sections.layout.mg_tablet.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mg_top_mobile",
-            "label": "t:sections.layout.mg_mobile.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
-        },
-        {
-            "type": "header",
-            "content": "t:settings_schema.typography.settings.type_button_font.padding_bottom"
-        },
-        {
-            "type": "range",
-            "id": "mg_bottom_desktop",
-            "label": "t:sections.layout.mg_desktop.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mg_bottom_tablet",
-            "label": "t:sections.layout.mg_tablet.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "mg_bottom_mobile",
-            "label": "t:sections.layout.mg_mobile.label",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "unit": "t:sections.layout.mg_desktop.unit",
-            "default": 0
         }
     ],
     "blocks": [
@@ -1462,6 +1674,16 @@
             "type": "category",
             "name": "t:sections.main-sidebar.blocks.category.name",
             "settings": [
+                {
+                    "type":"header",
+                    "content":"t:settings_schema.general.name"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.category.settings.general.label__1",
+                    "default": true
+                },
                 {
                     "type": "text",
                     "id": "heading",
@@ -1471,7 +1693,7 @@
                 {
                     "type": "select",
                     "id": "type",
-                    "label": "t:sections.main-sidebar.blocks.category.settings.general.type",
+                    "label": "t:sections.main-sidebar.blocks.category.settings.general.label__3",
                     "default": "1_level",
                     "options": [
                         {
@@ -1501,6 +1723,16 @@
             "name": "t:sections.main-sidebar.blocks.recent-post.name",
             "settings": [
                 {
+                    "type":"header",
+                    "content":"t:settings_schema.general.name"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.recent-post.settings.general.label__1",
+                    "default": true
+                },
+                {
                     "type": "text",
                     "id": "heading",
                     "label": "t:sections.image-banner.blocks.image.settings.content.label__19",
@@ -1522,16 +1754,26 @@
             "name": "t:sections.main-sidebar.blocks.recent-tags.name",
             "settings": [
                 {
-                    "type": "text",
-                    "id": "heading",
-                    "label": "t:sections.image-banner.blocks.image.settings.content.label__19",
-                    "default": "Blog Tags"
+                    "type":"header",
+                    "content":"t:settings_schema.general.name"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.recent-tags.settings.general.label__1",
+                    "default": true
                 },
                 {
                     "type": "checkbox",
                     "id": "show_tag_count",
                     "label": "t:sections.main-sidebar.blocks.recent-tags.settings.general.label__4",
                     "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "t:sections.image-banner.blocks.image.settings.content.label__19",
+                    "default": "Blog Tags"
                 },
                 {
                     "type": "range",
@@ -1549,10 +1791,14 @@
             "name": "t:sections.main-sidebar.blocks.product_block.name",
             "settings": [
                 {
-                    "type": "text",
-                    "id": "heading",
-                    "label": "t:sections.image-banner.blocks.image.settings.content.label__19",
-                    "default": "Featured Products"
+                    "type":"header",
+                    "content":"t:settings_schema.general.name"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.product_block.settings.general.label__1",
+                    "default": true
                 },
                 {
                     "type": "select",
@@ -1594,6 +1840,12 @@
                     }]
                 },
                 {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "t:sections.image-banner.blocks.image.settings.content.label__19",
+                    "default": "Featured Products"
+                },
+                {
                     "type": "collection",
                     "id": "product_block_collection",
                     "label": "t:sections.main-sidebar.blocks.product_block.settings.general.label__3"
@@ -1616,7 +1868,7 @@
                 {
                     "type": "range",
                     "id": "product_block_limit",
-                    "label": "t:settings_schema.quick_search.settings.general.label__2",
+                    "label": "t:sections.main-sidebar.blocks.product_block.settings.general.label__5",
                     "min": 1,
                     "max": 20,
                     "step": 1,
@@ -1625,13 +1877,13 @@
                 {
                     "type": "checkbox",
                     "id": "product_block_dots",
-                    "label": "t:sections.product_block.settings.slider.product_block_dots",
+                    "label": "t:sections.main-sidebar.blocks.product_block.settings.general.label__6",
                     "default": false
                 },
                 {
                     "type": "checkbox",
                     "id": "product_block_arrows",
-                    "label": "t:sections.product_block.settings.slider.product_block_arrows",
+                    "label": "t:sections.main-sidebar.blocks.product_block.settings.general.label__7",
                     "default": true
                 }
             ]
@@ -1640,6 +1892,16 @@
             "type": "image",
             "name": "t:sections.main-sidebar.blocks.image.name",
             "settings": [
+                {
+                    "type":"header",
+                    "content":"t:settings_schema.general.name"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.image.settings.general.label__1",
+                    "default": true
+                },
                 {
                     "type": "text",
                     "id": "heading",
@@ -1663,6 +1925,12 @@
             "type": "text",
             "name": "t:sections.main-sidebar.blocks.text.name",
             "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "show_block",
+                    "label": "t:sections.main-sidebar.blocks.text.settings.general.label__1",
+                    "default": true
+                },
                 {
                     "type": "text",
                     "id": "heading",
@@ -1741,7 +2009,7 @@
                 {
                     "type" : "select",
                     "id" : "type_image_gallery",
-                    "label" : "t:sections.instagram.settings.type_image.type_instagram_by_gallery.option",
+                    "label" : "t:sections.main-sidebar.blocks.image_gallery.settings.general.type_image_gallery",
                     "options": [
                         {
                             "value": "link",
@@ -1763,13 +2031,13 @@
                 {
                     "type" : "color",
                     "id" : "color_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_color",
+                    "label": "t:sections.layout.color.color_title",
                     "default" : "#232323"
                 },
                 {
                     "type": "range",
                     "id": "fontsize_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_font_size",
+                    "label": "t:sections.layout.fontsize.fontsize_title.label",
                     "min": 10,
                     "max": 50,
                     "step": 1,
@@ -1779,7 +2047,7 @@
                 {
                     "type": "range",
                     "id": "fontsize_title_mb",
-                    "label": "t:settings_schema.typography.settings.typography.title_font_size_mb",
+                    "label": "t:sections.layout.fontsize.fontsize_title.label_mb",
                     "min": 10,
                     "max": 50,
                     "step": 1,
@@ -1789,7 +2057,7 @@
                 {
                     "type": "range",
                     "id": "margin_bottom_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_margin_bottom",
+                    "label": "t:sections.layout.fontsize.margin_bottom",
                     "min": 0,
                     "max": 50,
                     "step": 1,
@@ -1799,7 +2067,7 @@
                 {
                     "type": "range",
                     "id": "item_distance",
-                    "label": "t:settings_schema.typography.settings.typography.grid_gap",
+                    "label": "t:sections.main-sidebar.blocks.image_gallery.settings.general.grid_gap",
                     "min": 0,
                     "max": 50,
                     "step": 5,
@@ -2978,7 +3246,7 @@
                 {
                     "type": "color",
                     "id": "button_1_background_color",
-                    "label": "t:settings_schema.colors.settings.colors_name.background_color_2",
+                    "label": "t:settings_schema.colors.settings.colors_name.background_color",
                     "default": "#232323"
                 },
                 {
@@ -3095,7 +3363,7 @@
                 {
                     "type": "color",
                     "id": "button_2_background_color",
-                    "label": "t:settings_schema.colors.settings.colors_name.background_color_2",
+                    "label": "t:settings_schema.colors.settings.colors_name.background_color",
                     "default": "#232323"
                 },
                 {
@@ -3221,13 +3489,13 @@
                 {
                     "type" : "color",
                     "id" : "color_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_color",
+                    "label": "t:sections.layout.color.color_title",
                     "default" : "#232323"
                 },
                 {
                     "type": "range",
                     "id": "fontsize_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_font_size",
+                    "label": "t:sections.layout.fontsize.fontsize_title.label",
                     "min": 10,
                     "max": 50,
                     "step": 1,
@@ -3237,7 +3505,7 @@
                 {
                     "type": "range",
                     "id": "margin_bottom_title",
-                    "label": "t:settings_schema.typography.settings.typography.title_margin_bottom",
+                    "label": "t:sections.layout.fontsize.margin_bottom",
                     "min": 0,
                     "max": 50,
                     "step": 1,
@@ -3252,7 +3520,7 @@
                 {
                     "type" : "color",
                     "id" : "color_content",
-                    "label": "t:sections.customer_review.settings.layout_block.color_content",
+                    "label": "t:sections.main-sidebar.blocks.block_quote.settings.general.color_content",
                     "default" : "#3c3c3c"
                 },
                 {
@@ -3281,3 +3549,177 @@
 }
 {% endschema %}
 
+<style>
+  .singleblg-page-banner-block-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+.author-top h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+.author-top h3 span i {
+    font-weight: 300;
+}
+.author-top .blog-author {
+    display: flex;
+    flex-direction: column;
+    line-height: 18px;
+}
+.author-top .blog-author .by-auth {
+    font-size: 16px;
+    margin-top: 5px;
+}
+.author-top {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.author-top img {
+    order: -1;
+    width: 42px;
+    height: 42px;
+    border-radius: 50px;
+    object-fit: cover;
+    border: 1px solid #2f698e;
+}
+.singleblg-page-banner-block-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#image-wrapper-ind-blogs {
+    background-color: #e8e8e8;
+}
+@media (min-width: 768px) {
+  .singleblg-page-banner-block-wrapper.reverse-layout {
+    flex-direction: row-reverse;
+  }
+
+  .blocks-small-banner{
+    width: 50%;
+  }
+
+  .blocks-small-banner img{
+    width: 100%;
+  }
+
+  .singleblg-page-banner-block-wrapper {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+  .blog-banner-description-bottom {
+    display: none;
+  }
+}
+
+.singleblg-page-banner-block-left-text-section {
+  flex: 0 0 50%; /* Updated to 40% width */
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.singleblg-page-banner-block-left-text-section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #086b92 !important;
+}
+
+.singleblg-page-banner-block-left-text-section p {
+  font-size: 16px;
+  color: #4d565b;
+}
+
+.singleblg-page-banner-block-right-image-section {
+  flex: 0 0 55%; /* Updated to 55% width */
+  text-align: right;
+}
+
+.singleblg-page-banner-block-right-image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .singleblg-page-banner-block-wrapper {
+    flex-direction: column;
+    text-align: center;
+}
+  .blog-small-banner-desc {
+    display: none;
+  }
+    .singleblg-page-banner-block-left-text-section h1{
+    font-size: 20px!important;
+    line-height: 28px !important;
+    }
+
+  /* Change the order of the elements */
+  .singleblg-page-banner-block-left-text-section h2 {
+    order: 1;
+  }
+
+  .singleblg-page-banner-block-left-text-section h2 {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  p.blog-banner-description-bottom {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .singleblg-page-banner-block-right-image-section {
+    order: 2;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .singleblg-page-banner-block-left-text-section p {
+    order: 3;
+  }
+
+  .singleblg-page-banner-block-left-text-section {
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  .singleblg-page-banner-block-right-image-section img {
+    max-width: 100%;
+  }
+}
+
+    #share-indivisual-blog{
+        text-align: center;
+    }
+
+
+    /* .halo-text-format p+p{
+        display: none !important;
+    } */
+@media (min-width: 1025px) {
+    #image-wrapper-ind-blogs{
+        padding-top: 80px;
+    }
+   } 
+</style>

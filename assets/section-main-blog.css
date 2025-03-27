@@ -159,6 +159,15 @@
     width: auto;
     min-width: 170px;
     font-weight: var(--font-weight-semibold);
+    border-radius: 12px;
+    color: #086b92;
+    border: 1px solid #086b92;
+}
+
+.main-blog-block .blog-btn:hover{
+    color: white;
+    background-color: #086b92;
+    border: 1px solid white;
 }
 
 .blog-layout-default .item--first .blog-btn {
