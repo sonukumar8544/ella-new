@@ -5,6 +5,10 @@
 .cstm_policies__block .halo-item .policies-text:hover {
   text-decoration: none;
 }
+.cstm_policies__block .halo-item + .halo-item:before {
+  top: 32%;
+  height: 28px;
+}
 
 .policies-block .policies-content .policies-text,
 .policies-block .halo-item .policies-text {
