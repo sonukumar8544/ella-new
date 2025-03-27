@@ -3,7 +3,12 @@
 {%- liquid
         assign mg_top_desktop = section.settings.mg_top_desktop
         assign mg_top_tablet = section.settings.mg_top_tablet
-        assign mg_top_mobile = section.settings.mg_top_mobile %}
+        assign mg_top_mobile = section.settings.mg_top_mobile 
+
+        assign mg_bottom_desktop = section.settings.mg_bottom_desktop
+        assign mg_bottom_tablet = section.settings.mg_bottom_tablet
+        assign mg_bottom_mobile = section.settings.mg_bottom_mobile
+        %}
 <style>
    @media (min-width: 1200px) {.cstm_{{ section.id }}_padding {padding-top: {{ mg_top_desktop | append: 'px' }};padding-bottom: {{ mg_bottom_desktop | append: 'px' }}}}
   @media (min-width: 768px) and (max-width: 1199px) {.cstm_{{ section.id }}_padding {padding-top: {{ mg_top_tablet | append: 'px' }};padding-bottom: {{ mg_bottom_tablet | append: 'px' }}}}
