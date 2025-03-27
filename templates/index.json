@@ -1894,6 +1894,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/Best_Seller.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1923,7 +1924,7 @@
             "mg_top_des": 10,
             "enable_des_hover": false,
             "button_style": "button_1",
-            "button": "Why Tocotrienols? Find Ou",
+            "button": "Read Now",
             "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
@@ -1947,6 +1948,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/Body_Detox_4b442a31-aa5d-4690-9f94-546127f49f6c.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1976,7 +1978,7 @@
             "mg_top_des": 10,
             "enable_des_hover": false,
             "button_style": "button_1",
-            "button": "Myth vs. Reality – Read Now",
+            "button": "Read Now",
             "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
@@ -2000,6 +2002,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/Skin_Health_2.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -2029,7 +2032,7 @@
             "mg_top_des": 10,
             "enable_des_hover": false,
             "button_style": "button_1",
-            "button": " Balance Your Hormones Naturally",
+            "button": "Read Now",
             "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
@@ -2054,6 +2057,9 @@
         "16378289880293e735-0",
         "image_Ycqg4d",
         "image_xCEB7Q"
+      ],
+      "custom_css": [
+        ".spotlight-inner .spotlight-button.custom-button-style:hover {background: #086b92 !important; color: white;}"
       ],
       "settings": {
         "container": "container",
@@ -2103,8 +2109,8 @@
         "spotlight_button_text": "",
         "spotlight_button_link": "",
         "color_button": "#ffffff",
-        "border_color_button": "#232323",
-        "bg_color_button": "#232323",
+        "border_color_button": "rgba(0,0,0,0)",
+        "bg_color_button": "#ffffff",
         "bg_color_gradient_button": "",
         "color_button_hover": "#232323",
         "border_color_button_hover": "#ffffff",
