@@ -18,13 +18,13 @@
 	                    slidesToShow: itemsToShow,
 	                    slidesToScroll: 1,
 	                    dots: dataDots && itemTotal > itemsToShow,
-						get infinite() {
-						    if (autoplay == true) {
-						        return this.infinite = true;
-						    } else {
-						    	// return this.infinite = dataCenterMode;
-						    }
-						},
+						// get infinite() {
+						//     if (autoplay == true) {
+						//         return this.infinite = true;
+						//     } else {
+						//     	// return this.infinite = dataCenterMode;
+						//     }
+						// },
 						// centerMode: dataCenterMode,
 						
 	                    speed: 800,
