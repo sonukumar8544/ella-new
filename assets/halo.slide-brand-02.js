@@ -1,5 +1,4 @@
 (function ($) {
-   console.log("AAAAAABBBBBBBBBBBBBBBBBBBBBBBB";)
 	var halo = {
 	    initBrandsSlider: function() {
 	        var brandsSliderFor = $('[data-brands-slider-for]');
