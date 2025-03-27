@@ -22,7 +22,7 @@
 						    if (autoplay == true) {
 						        return this.infinite = true;
 						    } else {
-						    	return this.infinite = dataCenterMode;
+						    	// return this.infinite = dataCenterMode;
 						    }
 						},
 						// centerMode: dataCenterMode,
