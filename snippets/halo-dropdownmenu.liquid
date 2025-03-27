@@ -65,7 +65,7 @@
     color: #000000;
     background: #fff;
     padding: 4px 8px;
-    font-size: 16px;"{% endif %}>{{ link.title | escape }}</span>
+    font-size: 16px;" {% else %}font-size: 16px;{% endif %}>{{ link.title | escape }}</span>
         {%- if new_label_1 contains title -%}
             <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
         {%- elsif sale_label_1 contains title -%}

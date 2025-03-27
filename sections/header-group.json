@@ -115,7 +115,7 @@
             "menu_top_spacing": 22,
             "menu_bottom_spacing": 22,
             "grid_gap_menu_item": 10,
-            "alignment": "left",
+            "alignment": "center",
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
             "lv_1_color": "#ffffff",
@@ -127,7 +127,7 @@
             "sale_item_1": "Take Wellness Quiz",
             "sale_item_2": "Shop",
             "sale_item_3": "",
-            "sale_item_color": "#ff8b21",
+            "sale_item_color": "#fff",
             "label_position": "main_menu",
             "show_label_blink": true,
             "new_label_1": "",
@@ -264,7 +264,7 @@
         "4910f55a-213a-4e1b-9b5c-13897e08a8c5"
       ],
       "settings": {
-        "container": "1770",
+        "container": "1170",
         "padding_full_width": 85,
         "header_navigation_bg": "#086b92",
         "header_navigation_bg_gradient": "",
@@ -272,10 +272,10 @@
         "sticky_header_width": "full",
         "mg_top_desktop": 9,
         "mg_top_tablet": 9,
-        "mg_top_mobile": 5,
+        "mg_top_mobile": 2,
         "mg_bottom_desktop": 9,
         "mg_bottom_tablet": 9,
-        "mg_bottom_mobile": 5
+        "mg_bottom_mobile": 2
       }
     },
     "header-mobile": {
