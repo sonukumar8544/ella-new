@@ -26,6 +26,7 @@
         },
         "announcement_PXhTQQ": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p>Why settle? Mix &amp; match your favorite supplements and design a bundle just for you!\n</p>",
             "btn_color": "#f84248",
@@ -36,6 +37,7 @@
         },
         "announcement_UPwLfY": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Bulk Up, Save Big | 15% Off 3+ Products\n</p>",
             "btn_color": "#f84248",
@@ -46,6 +48,7 @@
         },
         "announcement_3pNXXW": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Grab 3, Save 15%! – The more you bundle, the more you save! Personalize your health routine today. Start Shopping\n</p>",
             "btn_color": "#f84248",
@@ -56,6 +59,7 @@
         },
         "announcement_7K94yJ": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "<p> Bundle. Save. Thrive. – Choose any 3 supplements, get 15% OFF, and build a wellness routine that works for you! Shop &amp; Save</p>",
             "btn_color": "#f84248",
@@ -73,7 +77,7 @@
         "announcement_7K94yJ"
       ],
       "settings": {
-        "layout": "scroll",
+        "layout": "slider",
         "enable_close": false,
         "color_text": "#ffcb4a",
         "bg_color_text": "#374650",
