@@ -8032,6 +8032,6 @@ body.is-custom-information .background-overlay {
 }
 
 /* menu CSS */
-.menu-dropdown__wrapper .price__label_sale .label_sale {
+.price__sale.show_saved_price .price__label_sale .label_sale {
   display: none;
 }
