@@ -7,7 +7,7 @@
 	            var self = $(this),
 	            	dataArrows = self.data('arrows'),
 	            	dataDots = self.data('dots'),
-					dataCenterMode = self.data('center-mode'),
+					// dataCenterMode = self.data('center-mode'),
 					itemsToShow = parseInt(self.data('rows')),
 					autoplay = self.data('autoplay'),
 					autoplaySpeed = self.data('autoplay-speed'),
