@@ -306,7 +306,7 @@ text-align: left;
     {%- endif -%}
     @media (min-width: 768px) {
         {%- unless section.settings.brands_block_style == 'style_3' -%}
-            .brand_style_3  .halo-block-header .rte{text-align: left !important;}
+            .
           .section-block-{{section.id}} .halo-block-header .rte {margin-left: 0; text-align: left;}
             {%- if section.settings.title_align == 'left' -%}
                 .section-block-{{section.id}} .halo-block-header .subtext-brand {text-align: right;float: right}
@@ -353,6 +353,9 @@ text-align: left;
               
               
             {%- endif -%}
+          @media(min-width: 1024px){
+            brand_style_3  .halo-block-header .rte{text-align: left !important;}
+          }
         {%- endif -%}
         {%- if section.settings.container == 'fullwidth' -%}
             .section-block-{{section.id}} .container-full {padding-left: {{ section.settings.padding_full_width | append: 'px' }};padding-right: {% if section.settings.brands_block_style == 'style_4' %}0{% else %}{{ section.settings.padding_full_width | append: 'px' }}{% endif %}}
