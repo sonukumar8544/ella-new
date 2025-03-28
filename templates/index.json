@@ -681,7 +681,8 @@
         "product_tabs_x6FH6N"
       ],
       "custom_css": [
-        ".product-card-layout-02.quick_shop_option_2 .card-information{padding: 5px 0 0px 0px}"
+        ".product-card-layout-02.quick_shop_option_2 .card-information {padding: 5px 0 0px 0px;}",
+        "dd.price__label_sale.price__label_percent,.card .price__saved {display: none;}"
       ],
       "settings": {
         "container": "container",
