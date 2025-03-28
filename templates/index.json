@@ -1639,12 +1639,13 @@
         "text_NVUyMT": {
           "type": "Text",
           "settings": {
+            "image": "shopify://shop_images/Cart.png",
             "icon_type": "image",
             "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "✔️ Patented, Proven Ingredients",
+            "icon_width": 19,
+            "icon_height": 14,
+            "icon_mg_right": 19,
+            "text": "Patented,<br> Proven Ingredients",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
@@ -1657,12 +1658,13 @@
         "text_6wrBKi": {
           "type": "Text",
           "settings": {
+            "image": "shopify://shop_images/Cart.png",
             "icon_type": "image",
             "icon": "",
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "✔️ Expert-Formulated",
+            "text": "Expert-Formulated",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
@@ -1675,12 +1677,13 @@
         "text_jFPWkm": {
           "type": "Text",
           "settings": {
+            "image": "shopify://shop_images/Cart.png",
             "icon_type": "image",
             "icon": "",
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "✔️ US-Sourced, GMP-Certified",
+            "text": "US-Sourced, GMP-Certified",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
@@ -1693,12 +1696,13 @@
         "text_rqJzEn": {
           "type": "Text",
           "settings": {
+            "image": "shopify://shop_images/Cart.png",
             "icon_type": "image",
             "icon": "",
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "✔️ FDA-Inspected Facility",
+            "text": "FDA-Inspected Facility",
             "font_size_text": 16,
             "font_size_text_mb": 16,
             "mg_bottom_text": 6,
@@ -1778,12 +1782,12 @@
         "border_block": "rgba(0,0,0,0)",
         "color_block": "#232323",
         "color_icon": "#232323",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 65,
-        "mg_bottom_tablet": 65,
-        "mg_bottom_mobile": 53
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 20
       }
     },
     "custom_press_banner_wahNej": {
