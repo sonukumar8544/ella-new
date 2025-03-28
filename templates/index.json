@@ -1640,27 +1640,17 @@
     "rich_text_qhM7tM": {
       "type": "rich-text",
       "blocks": {
-        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "We Builde A World For You Take Care Of Your Family",
-            "heading_size": 22,
-            "heading_size_mb": 16,
-            "heading_line_height": 1.5,
-            "heading_color": "#3c3c3c"
-          }
-        },
         "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1": {
           "type": "text",
           "settings": {
             "text": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
-            "text_size": 45,
+            "text_size": 40,
             "text_size_mb": 17,
             "text_font_weight": "500",
             "text_line_height": 3,
             "margin_top_text": 0,
             "text_color": "#3c3c3c",
-            "text_width": "1140px"
+            "text_width": ""
           }
         },
         "button_hqbDei": {
@@ -1684,7 +1674,6 @@
         }
       },
       "block_order": [
-        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-0",
         "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1",
         "button_hqbDei"
       ],
@@ -1696,16 +1685,16 @@
       ],
       "settings": {
         "container": "container",
-        "padding_full_width": 65,
-        "enable_border_top": true,
-        "enable_border_bottom": true,
+        "padding_full_width": 45,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
         "color_border_bottom": "#f2f3f9",
         "enable_minus_mg_top": false,
         "minus_spacing_top": 0,
         "rich_text_bg": "#f8f8f8",
         "rich_text_bg_gradient": "",
-        "enable_column": true,
-        "content_align": "left",
+        "enable_column": false,
+        "content_align": "center",
         "mg_top_desktop": 55,
         "mg_top_tablet": 50,
         "mg_top_mobile": 10,
