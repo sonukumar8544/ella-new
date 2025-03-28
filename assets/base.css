@@ -53,6 +53,18 @@ button {
   cursor: pointer;
 }
 
+.product-form__submit,
+.button-ATC {
+  border: 1px solid #006a91 !important;
+  color: #006a91 !important;
+}
+
+.product-form__submit:hover,
+.button-ATC:hover {
+  color: white !important;
+  background-color: #006a91 !important;
+}
+
 option.soldout {
   color: rgba(18, 18, 18, 0.5);
 }
