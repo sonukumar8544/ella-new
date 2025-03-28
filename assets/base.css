@@ -53,18 +53,6 @@ button {
   cursor: pointer;
 }
 
-.product-form__submit,
-.button-ATC {
-  border: 1px solid #006a91 !important;
-  color: #006a91 !important;
-}
-
-.product-form__submit:hover,
-.button-ATC:hover {
-  color: white !important;
-  background-color: #006a91 !important;
-}
-
 option.soldout {
   color: rgba(18, 18, 18, 0.5);
 }
@@ -136,7 +124,7 @@ option.soldout {
   margin-left: -15px;
   margin-right: -15px;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .halo-item {
@@ -1981,11 +1969,11 @@ h6 a {
 }
 
 p,
-.p{
-    font-size: 16px;
-    line-height: 26px;
-    font-family: Lato;
-    color:#36454f;
+.p {
+  font-size: 16px;
+  line-height: 26px;
+  font-family: Lato;
+  color: #36454f;
 }
 
 .hidden {
@@ -8045,6 +8033,10 @@ body.is-custom-information .background-overlay {
   /* END: Block */
 }
 
+.product-tab-block .product-item .link-underline:hover .text {
+  text-decoration: none;
+  text-underline-offset: 0.3rem;
+}
 @media (prefers-reduced-motion) {
   .motion-reduce {
     transition: none !important;
