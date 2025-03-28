@@ -351,6 +351,16 @@
             }
         {%- endif -%}
     {%- endif -%}
+
+  /* cstm css */
+  .product-tab-block .list-product-tabs{
+    display: flex;
+    margin: 3rem auto;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+  }
 </style>
 <product-tabs-section>
     <div class="product-tab-block product-block section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" {% if block_banners.size > 1  %}data-loader-script="{{ 'halo.product-tab-banner.js' | asset_url }}"{% endif %}>
