@@ -8037,6 +8037,10 @@ body.is-custom-information .background-overlay {
   text-decoration: none;
   text-underline-offset: 0.3rem;
 }
+.product-item .card-information .link-underline .text {
+  background: none;
+  transition: none;
+}
 @media (prefers-reduced-motion) {
   .motion-reduce {
     transition: none !important;
