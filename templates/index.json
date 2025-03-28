@@ -597,32 +597,88 @@
     "16409351508cd2f3e1": {
       "type": "product-tab-block",
       "blocks": {
+        "d672657b-959a-44fb-91cd-4352ed8ee468": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Brain Health",
+            "collection": "brain-health"
+          }
+        },
         "754a9b2c-0b43-4bbf-839c-c229e8f156eb": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Eye Health",
+            "collection": "eye-health"
+          }
+        },
+        "e98430ab-8a6b-49f8-a27c-63914b504aa3": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Skin Health",
+            "collection": "skin-health"
+          }
+        },
+        "product_tabs_93tUbY": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Heart Health",
+            "collection": "heart-health"
+          }
+        },
+        "product_tabs_F6WcNJ": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Muscle Health",
+            "collection": "muscle-health"
+          }
+        },
+        "product_tabs_VfAJrn": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Bone Health",
+            "collection": "bone-health"
+          }
+        },
+        "product_tabs_rwCPjU": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "Immune Health",
+            "collection": "immune-health"
+          }
+        },
+        "product_tabs_TFrUDc": {
           "type": "ProductTabs",
           "settings": {
             "title": "Gut Health",
             "collection": "gut-health"
           }
         },
-        "d672657b-959a-44fb-91cd-4352ed8ee468": {
+        "product_tabs_TQMLRt": {
           "type": "ProductTabs",
           "settings": {
-            "title": "Trending Now",
-            "collection": "best-seller-prouct"
+            "title": "Hormone Health",
+            "collection": "hormone-health"
           }
         },
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3": {
+        "product_tabs_x6FH6N": {
           "type": "ProductTabs",
           "settings": {
-            "title": " Customer Favorites",
-            "collection": ""
+            "title": "Healthy Aging",
+            "collection": "healthy-aging"
           }
         }
       },
       "block_order": [
-        "754a9b2c-0b43-4bbf-839c-c229e8f156eb",
         "d672657b-959a-44fb-91cd-4352ed8ee468",
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3"
+        "754a9b2c-0b43-4bbf-839c-c229e8f156eb",
+        "e98430ab-8a6b-49f8-a27c-63914b504aa3",
+        "product_tabs_93tUbY",
+        "product_tabs_F6WcNJ",
+        "product_tabs_VfAJrn",
+        "product_tabs_rwCPjU",
+        "product_tabs_TFrUDc",
+        "product_tabs_TQMLRt",
+        "product_tabs_x6FH6N"
       ],
       "settings": {
         "container": "container",
