@@ -937,8 +937,8 @@
         "border_color_hover": "#2d2d2d",
         "hover_effect": "zoom",
         "color_underline_image_hover": "rgba(0,0,0,0)",
-        "fontsize_text": 13,
-        "fontsize_text_mb": 13,
+        "fontsize_text": 15,
+        "fontsize_text_mb": 14,
         "font_weight_title": "600",
         "margin_bottom_title": 5,
         "mg_top_desktop": 80,
@@ -955,7 +955,7 @@
         "large_img_A3f39q": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify://shop_images/New_Ella_banner_Home.png",
+            "image": "shopify://shop_images/Hero_Banner_Design.jpg",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
@@ -1066,9 +1066,8 @@
         "fontsize_des": 16,
         "title_align": "center",
         "style_bg": "none",
-        "bg_color": "",
+        "bg_color": "#086b92",
         "bg_color_gradient": "",
-        "bg_image": "shopify://shop_images/New_Ella_banner_Home.png",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
@@ -1085,7 +1084,7 @@
           "settings": {
             "image": "shopify://shop_images/Highlighted_CTA.png",
             "enable_max_width_image": false,
-            "custom_width_image": 1170,
+            "custom_width_image": 1070,
             "enable_scroll_down": false,
             "enable_custom_image": false,
             "image_behavior": "none",
@@ -1194,7 +1193,7 @@
         "fontsize_des": 16,
         "title_align": "center",
         "style_bg": "none",
-        "bg_color": "",
+        "bg_color": "#086b92",
         "bg_color_gradient": "",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
@@ -2754,6 +2753,103 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "tiktok_video_4nH3kX": {
+      "type": "tiktok__video",
+      "blocks": {
+        "tiktok_video_JE3dmR": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/da2fb8a9429e4c37a3d791d2fdeb2849.mp4"
+          }
+        },
+        "tiktok_video_83Bcai": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": "https://cdn.shopify.com/videos/c/o/v/530260f73aa649fcb8517fff7b84717e.mp4"
+          }
+        },
+        "tiktok_video_cFRV3r": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_video_embede_code": "",
+            "tiktokvideo": ""
+          }
+        }
+      },
+      "block_order": [
+        "tiktok_video_JE3dmR",
+        "tiktok_video_83Bcai",
+        "tiktok_video_cFRV3r"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "padding_full_width": 0,
+        "section_bg": "#fafafa",
+        "section_gradient": "",
+        "text_align": "center",
+        "column_per_row": "3",
+        "videos_margin_top": 35,
+        "swipe_on_mobile": "slider",
+        "section_title": "Shop with us",
+        "section_title_font_size": 32,
+        "section_title_font_size_mb": 18,
+        "section_title_font_weight": "600",
+        "section_title_color": "#191919",
+        "section_title_margin_top": 0,
+        "section_title_font_style": "italic",
+        "section_title_enable_underline": true,
+        "section_title_underline_style": "2",
+        "section_title_underline_color": "",
+        "section_description": "Join us on TikTok for exclusive releases, unboxing and try-on videos, reviews, and more from our top brands and stylists.",
+        "section_description_font_size": 16,
+        "section_description_font_size_mb": 14,
+        "section_description_font_weight": "500",
+        "section_description_color": "#191919",
+        "section_description_margin_top": 25,
+        "section_description_max_width": 530,
+        "button_type": "button",
+        "button_text": "Shop now",
+        "button_link": "",
+        "button_text_transform": "capitalize",
+        "button_font_weight": "600",
+        "button_font_size": 16,
+        "button_width": 190,
+        "button_margin_top": 50,
+        "button_text_color": "#fff",
+        "button_border_color": "#232323",
+        "button_background_color": "#232323",
+        "button_gradient_color": "",
+        "button_text_color_hover": "#fff",
+        "button_border_color_hover": "#232323",
+        "button_background_color_hover": "#232323",
+        "button_gradient_color_hover": "",
+        "link_text": "",
+        "link_to_instagram": "",
+        "link_text_font_size": 16,
+        "link_text_font_size_mb": 14,
+        "link_text_font_weight": "500",
+        "link_text_font_style": "italic",
+        "link_text_color": "#191919",
+        "link_text_color_hover": "#191919",
+        "link_image_width": 100,
+        "link_margin_top": 50,
+        "arrow_color": "#333",
+        "arrow_bg_color": "",
+        "arrow_border_color": "#333",
+        "arrow_button_size": 35,
+        "number_color": "#333",
+        "number_font_size": 16,
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
     }
   },
   "order": [
@@ -2774,6 +2870,7 @@
     "spotlight_block_xF7mhH",
     "1643015886f75782fe",
     "instagram_9EfqFH",
-    "featured_blog_LT6gNw"
+    "featured_blog_LT6gNw",
+    "tiktok_video_4nH3kX"
   ]
 }
