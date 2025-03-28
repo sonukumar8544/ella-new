@@ -1644,7 +1644,7 @@
           "type": "text",
           "settings": {
             "text": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
-            "text_size": 40,
+            "text_size": 39,
             "text_size_mb": 17,
             "text_font_weight": "500",
             "text_line_height": 3,
@@ -1655,6 +1655,7 @@
         },
         "button_hqbDei": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_style": "button_1",
             "button_label": "Explore Our Story",
