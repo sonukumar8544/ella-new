@@ -690,7 +690,7 @@
         "product_block_title": "",
         "fontsize_title": 20,
         "fontsize_title_mb": 16,
-        "mg_bottom_title": 35,
+        "mg_bottom_title": 0,
         "enable_border_title": true,
         "border_color_title": "#e0e0e0",
         "enable_border_title2": true,
@@ -750,12 +750,12 @@
         "border_color_tab_active": "",
         "bg_color_tab_active": "#086b92",
         "bg_color_gradient_tab_active": "",
-        "mg_top_desktop": 40,
-        "mg_top_tablet": 40,
-        "mg_top_mobile": 35,
-        "mg_bottom_desktop": 40,
-        "mg_bottom_tablet": 40,
-        "mg_bottom_mobile": 30
+        "mg_top_desktop": 15,
+        "mg_top_tablet": 15,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 15,
+        "mg_bottom_tablet": 15,
+        "mg_bottom_mobile": 15
       }
     },
     "brand_slider_8dyJxH": {
@@ -1306,7 +1306,6 @@
         "instagram_MrCiKN",
         "instagram_MMpDfr"
       ],
-      "disabled": true,
       "settings": {
         "container": "container",
         "padding_full_width": 0,
