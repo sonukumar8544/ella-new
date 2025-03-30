@@ -1459,49 +1459,26 @@
     "rich_text_qhM7tM": {
       "type": "rich-text",
       "blocks": {
-        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1": {
-          "type": "text",
+        "heading_mjCmmg": {
+          "type": "heading",
           "settings": {
-            "text": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
-            "text_size": 34,
-            "text_size_mb": 17,
-            "text_font_weight": "500",
-            "text_line_height": 5.2,
-            "margin_top_text": 0,
-            "text_color": "#3c3c3c",
-            "text_width": ""
-          }
-        },
-        "button_hqbDei": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_style": "button_1",
-            "button_label": "Explore Our Story",
-            "button_link": "shopify://pages/about-us",
-            "margin_top_button": 30,
-            "enable_underline_button": false,
-            "button_color": "#086b92",
-            "button_border_color": "#086b92",
-            "button_bg_color": "rgba(0,0,0,0)",
-            "button_bg_gradient": "",
-            "button_color_hover": "#000000",
-            "button_border_color_hover": "#000000",
-            "button_bg_color_hover": "#ffffff",
-            "button_bg_gradient_hover": "",
-            "button_width": "270px"
+            "heading": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
+            "heading_size": 34,
+            "heading_size_mb": 30,
+            "heading_line_height": 5.9,
+            "heading_color": "#fff"
           }
         }
       },
       "block_order": [
-        "template--14707896156237__3c2934dd-8150-4949-acb7-35f9d05d9e50-1686713488eefefdac-1",
-        "button_hqbDei"
+        "heading_mjCmmg"
       ],
       "custom_css": [
         ".rich-text__blocks.enable_column {display: grid; grid-template-columns: 1fr;}",
         ".rich-text__blocks.enable_column .rich-text__text {padding-left: 0px;}",
         ".rich-text__blocks .rich-text__text {line-height: 1.5;}",
-        ".rich-text__blocks.text-center {padding: 20px 0px;}"
+        ".rich-text__blocks.text-center {padding: 20px 0px;}",
+        ".rich-text {background: linear-gradient(45deg, #b2d1dd, #076083);}"
       ],
       "settings": {
         "container": "fullwidth",
