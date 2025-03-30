@@ -682,7 +682,7 @@
       ],
       "custom_css": [
         "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: none !important;}",
-        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px!important; }}"
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}"
       ],
       "settings": {
         "container": "container",
@@ -754,12 +754,12 @@
         "border_color_tab_active": "",
         "bg_color_tab_active": "#086b92",
         "bg_color_gradient_tab_active": "",
-        "mg_top_desktop": 15,
-        "mg_top_tablet": 15,
+        "mg_top_desktop": 55,
+        "mg_top_tablet": 50,
         "mg_top_mobile": 20,
-        "mg_bottom_desktop": 15,
-        "mg_bottom_tablet": 15,
-        "mg_bottom_mobile": 15
+        "mg_bottom_desktop": 55,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 30
       }
     },
     "brand_slider_8dyJxH": {
