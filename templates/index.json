@@ -680,7 +680,10 @@
         "product_tabs_TQMLRt",
         "product_tabs_x6FH6N"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: none !important;}",
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px!important; }}"
+      ],
       "settings": {
         "container": "container",
         "padding_full_width": 0,
