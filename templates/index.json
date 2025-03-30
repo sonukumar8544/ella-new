@@ -1390,7 +1390,7 @@
         "column_mb": "1",
         "center_mode": false,
         "item_distance": 15,
-        "item_radius": 0,
+        "item_radius": 12,
         "enable_arrows": true,
         "enable_arrows_mb": false,
         "position_horizontal_slick_arrow": "0",
@@ -1463,10 +1463,10 @@
           "type": "text",
           "settings": {
             "text": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
-            "text_size": 39,
+            "text_size": 34,
             "text_size_mb": 17,
             "text_font_weight": "500",
-            "text_line_height": 3,
+            "text_line_height": 5.2,
             "margin_top_text": 0,
             "text_color": "#3c3c3c",
             "text_width": ""
@@ -1505,7 +1505,7 @@
       ],
       "settings": {
         "container": "fullwidth",
-        "padding_full_width": 45,
+        "padding_full_width": 95,
         "enable_border_top": false,
         "enable_border_bottom": false,
         "color_border_bottom": "#f2f3f9",
@@ -1515,12 +1515,12 @@
         "rich_text_bg_gradient": "",
         "enable_column": false,
         "content_align": "center",
-        "mg_top_desktop": 75,
+        "mg_top_desktop": 95,
         "mg_top_tablet": 75,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 75,
+        "mg_top_mobile": 45,
+        "mg_bottom_desktop": 95,
         "mg_bottom_tablet": 75,
-        "mg_bottom_mobile": 30
+        "mg_bottom_mobile": 45
       }
     },
     "policies_block_QPqQW3": {
