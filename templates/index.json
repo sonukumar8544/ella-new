@@ -1466,7 +1466,7 @@
             "heading_size": 34,
             "heading_size_mb": 30,
             "heading_line_height": 5.9,
-            "heading_color": "#fff"
+            "heading_color": "#ffffff"
           }
         }
       },
@@ -1478,7 +1478,8 @@
         ".rich-text__blocks.enable_column .rich-text__text {padding-left: 0px;}",
         ".rich-text__blocks .rich-text__text {line-height: 1.5;}",
         ".rich-text__blocks.text-center {padding: 20px 0px;}",
-        ".rich-text {background: linear-gradient(45deg, #b2d1dd, #076083);}"
+        ".rich-text {background: linear-gradient(45deg, #b2d1dd, #076083);}",
+        "@media(min-width:1024px){.rich-text__blocks.text-center {padding: 20px 44px; }}"
       ],
       "settings": {
         "container": "container",
