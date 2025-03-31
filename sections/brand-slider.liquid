@@ -505,13 +505,14 @@ padding: 0 0 0 0%;
    {%- if section.settings.brands_block_style == 'style_4' -%}
     .section-block-{{ section.id }} .brands-slider 
 
+     .adaptive_height img
    {% endif %}
       
 </style>
 
 {%- if section.blocks.size > 0 -%}
     <div class="brand-slider section-block-{{section.id}}" id="brands-{{section.id}}" {% if section.settings.brand_layout == 'slider' %}data-loader-script="{{ 'halo.slide-brand.js' | asset_url }}"{% endif %}>
-        <div class="brands-block {% if section.settings.brand_layout == 'grid' %}brands-grid{% else %}brands-slider{% endif %}{% if section.settings.brands_block_style == 'style_2' %} brand_style_2{% elsif section.settings.brands_block_style == 'style_3' %} brand_style_3{% elsif section.settings.brands_block_style == 'style_4' %} brand_style_4{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="brands-block {% if section.settings.brand_layout == 'grid' %}brands-grid{% else %}brands-slider{% endif %}{% if section.settings.brands_block_style == 'style_2' %} brand_style_2{% elsif section.settings.brands_block_style == 'style_3' %} brand_style_3{% elsif section.settings.brands_block_style == 'style_4' %} brand_style_4 {% elsif section.settings.brands_block_style == 'style_4' %} brand_style_5_cstm{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
             <div class="{% if section.settings.brand_layout == 'infinite' %}container-full{% else %}{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1170' %}container-1170{% elsif section.settings.container == '1470' %}container-1470{% elsif section.settings.container == '1770' %}container-1770{% else %}container{% endif %}{% endif %}">
                 {%- if section.settings.brands_block_style == 'style_3' -%}
                 <div class="brands-block--wrapper">
