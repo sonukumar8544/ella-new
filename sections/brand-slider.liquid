@@ -558,10 +558,10 @@ margin-top: 20px;
 {% endif %}
 
  {% if section.settings.slider_layout_3_no_round == true %}
-   #brands-{{section.id}} .csrt__image_round  {
+   #brands-{{section.id}} .csrt__image_round.slider_layout_3_no_round  {
     margin-bottom: 0px !important;
     width: calc(100% - 15%);
-    border-radius: 0%;
+    border-radius: 0% !important;
     top: 1px;
     transition: all .5s;
     border: none !important;
