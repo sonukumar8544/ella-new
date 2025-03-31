@@ -5,11 +5,11 @@
   color: var(--color-view-all-style);
 }
 
-.custom-service-block .policies-des h3,
-.custom-service-block .policies-des .h3 {
+.custom-service-block.service_block_style_3 .policies-content .policies-des h3,
+.custom-service-block.service_block_style_3 .policies-content .h3 {
   margin: 12px 0px 8px 0px;
 }
-.custom-service-block .policies-des p {
+.custom-service-block.service_block_style_3 .policies-content .policies-des p {
   margin: 0;
   padding: 0;
   line-height: normal;
