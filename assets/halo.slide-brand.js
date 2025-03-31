@@ -38,7 +38,7 @@
 	                            settings: {
 									infinite: false,
 									centerMode: false,
-	                                slidesToShow: 2,
+	                                slidesToShow: 4,
 	                                slidesToScroll: 4,
 	                                arrows: dataArrows,
 									dots: dataDots && itemTotal > 4
