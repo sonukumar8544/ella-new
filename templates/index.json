@@ -2667,7 +2667,7 @@
         "instagram_B9JV47": {
           "type": "instagram",
           "settings": {
-            "image": "shopify://shop_images/6.png",
+            "image": "shopify://shop_images/HEART_health_ella.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -2681,10 +2681,78 @@
             "link": ""
           }
         },
-        "instagram_kzxL7F": {
+        "instagram_7fEgTJ": {
           "type": "instagram",
           "settings": {
-            "image": "shopify://shop_images/6.png",
+            "image": "shopify://shop_images/HEART_health_ella.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_B7nmR8": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/HEART_health_ella.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_8hdpjQ": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/HEART_health_ella.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_UDcBT6": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/HEART_health_ella.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_JDE9zC": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/HEART_health_ella.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -2700,6 +2768,7 @@
         },
         "instagram_ktgTii": {
           "type": "instagram",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/6.png",
             "title": "",
@@ -2717,6 +2786,7 @@
         },
         "instagram_CKQqLR": {
           "type": "instagram",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/6.png",
             "title": "",
@@ -2734,6 +2804,7 @@
         },
         "instagram_FVghE3": {
           "type": "instagram",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/6.png",
             "title": "",
@@ -2751,6 +2822,7 @@
         },
         "instagram_M3JKeF": {
           "type": "instagram",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/6.png",
             "title": "",
@@ -2769,7 +2841,11 @@
       },
       "block_order": [
         "instagram_B9JV47",
-        "instagram_kzxL7F",
+        "instagram_7fEgTJ",
+        "instagram_B7nmR8",
+        "instagram_8hdpjQ",
+        "instagram_UDcBT6",
+        "instagram_JDE9zC",
         "instagram_ktgTii",
         "instagram_CKQqLR",
         "instagram_FVghE3",
@@ -2832,7 +2908,7 @@
         "type_instagram_by_gallery": "popup_image",
         "images_per_row": "3",
         "instagram_item_limit": 3,
-        "grid_gap": 0,
+        "grid_gap": 20,
         "slide_ins": "default_ins",
         "enable_hide_portion": true,
         "display_arrow": true,
