@@ -5,6 +5,15 @@
   color: var(--color-view-all-style);
 }
 
+.custom-service-block .policies-des h3,
+.custom-service-block .policies-des .h3 {
+  margin: 12px 0px 8px 0px;
+}
+.custom-service-block .policies-des p {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
 .custom-service-block .view_all:not(.has-border) {
   border-bottom: none;
 }
