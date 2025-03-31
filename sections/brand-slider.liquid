@@ -176,14 +176,20 @@ font-size: 14px;
 font-weight: 600;
 }
 
-.halo-block-header .title .text{
+
+      @media(min-width: 1024px){
+        .halo-block-header .title .text{
 padding: 0;
 text-align: left;
 }
+        .section-block-{{section.id}} .halo-block-header .title{
+          text-align: left;
+        }
+      }
 .section-block-{{section.id}} .halo-block-header .title{
 font-family: var(--font-body-family);
 letter-spacing: var(--body-letter-spacing);
-text-align: left;
+
 }
 .section-block-{{section.id}} .brand-layout--slider{
 max-width: 100%;
