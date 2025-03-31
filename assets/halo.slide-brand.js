@@ -129,7 +129,7 @@
 									infinite: false,
 									centerMode: false,
 	                                slidesToShow: 2,
-	                                slidesToScroll: 2,
+	                                slidesToScroll: 1,
 	                                arrows: dataArrows,
 									dots: dataDots && itemTotal > 4
 	                            }
@@ -137,8 +137,8 @@
 	                        {
 	                            breakpoint: 992,
 	                            settings: {
-	                                slidesToShow: 3,
-	                                slidesToScroll: 3,
+	                                slidesToShow: 2,
+	                                slidesToScroll: 1,
 	                                arrows: dataArrows,
 									dots: dataDots && itemTotal > 3
 	                            }
