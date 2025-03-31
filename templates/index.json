@@ -1500,171 +1500,14 @@
         "mg_bottom_mobile": 45
       }
     },
-    "policies_block_QPqQW3": {
-      "type": "policies-block",
-      "blocks": {
-        "text_NVUyMT": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 0,
-            "icon_height": 0,
-            "icon_mg_right": 19,
-            "text": "Patented, Proven Ingredients",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        },
-        "text_6wrBKi": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "Expert-Formulated",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        },
-        "text_jFPWkm": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "US-Sourced, GMP-Certified",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        },
-        "text_rqJzEn": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "FDA-Inspected Facility",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        },
-        "text_CYkF7r": {
-          "type": "Text",
-          "disabled": true,
-          "settings": {
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "✔️ GRAS Approved (Generally Recognized As Safe)",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        },
-        "text_TA8wpw": {
-          "type": "Text",
-          "disabled": true,
-          "settings": {
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "✔️Third-Party Tested",
-            "font_size_text": 16,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 6,
-            "font_weight_text": "400",
-            "font_style_text": "normal",
-            "description": "<span style=\"display: none;\n    text-decoration: underline;\n    text-underline-offset: 0.2em;\n    text-underline-position: from-font;\">More Details</span>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_NVUyMT",
-        "text_6wrBKi",
-        "text_jFPWkm",
-        "text_rqJzEn",
-        "text_CYkF7r",
-        "text_TA8wpw"
-      ],
-      "settings": {
-        "container": "container",
-        "padding_full_width": 0,
-        "policies_block_swipe_on_mobile": "slider",
-        "spacing_tablet": 0,
-        "spacing_mobile": 0,
-        "policies_bg": "#f2f3f9",
-        "policies_bg_gradient": "",
-        "border": "none",
-        "border_color": "#000000",
-        "border_item": "none",
-        "item_color_border": "#000000",
-        "align_items": "center",
-        "text_align_items": "center",
-        "enable_item_distance": true,
-        "item_padding_top": 24,
-        "item_padding_bottom": 24,
-        "item_padding_left_right": 0,
-        "item_radius": 0,
-        "bg_color_block": "rgba(0,0,0,0)",
-        "border_block": "rgba(0,0,0,0)",
-        "color_block": "#232323",
-        "color_icon": "#232323",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 20,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 20
-      }
-    },
     "brand_slider_tRACcq": {
       "type": "brand-slider",
       "blocks": {
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SKIN_health_ella.jpg",
-            "title": "Glowing Skin",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "Patented, Proven Ingredients",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
@@ -1672,132 +1515,80 @@
             "link": "shopify://collections/skin-health"
           }
         },
-        "image_nx4ByT": {
+        "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/GUT_health_ella.jpg",
-            "title": "A Happy Gut",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "Expert-Formulated",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify://collections/gut-health"
+            "link": "shopify://collections/skin-health"
           }
         },
-        "image_NDHhei": {
+        "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BONE_health_ell.jpg",
-            "title": "Bone Health",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "US-Sourced, GMP-Certified",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify://collections/bone-health"
+            "link": "shopify://collections/skin-health"
           }
         },
-        "image_QVNcyz": {
+        "image_aVixiN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/EYES_health_ella.png",
-            "title": "Clear Vision",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "FDA-Inspected Facility",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify://collections/eye-health"
+            "link": "shopify://collections/skin-health"
           }
         },
-        "image_Mi7QrC": {
+        "image_NyLNnA": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMMMUNE_health_ella.png",
-            "title": "Stronger Immunity",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "GRAS Approved (Generally Recognized As Safe)",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify://collections/immune-health"
+            "link": "shopify://collections/skin-health"
           }
         },
-        "image_NCz7WL": {
+        "image_HjABCT": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/MUSCLE_health_ella.png",
-            "title": "Muscle Strength & More Energy",
+            "image": "shopify://shop_images/Cart.png",
+            "title": "Third-Party Tested",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify://collections/muscle-health"
-          }
-        },
-        "image_d3wdKb": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BRAIN_health_ella.png",
-            "title": "Mental Clarity",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/brain-health"
-          }
-        },
-        "image_HXCCq7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/HEART_health_ella.png",
-            "title": "Heart Support",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/heart-health"
-          }
-        },
-        "image_qYLyBV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/HORMONE_health_ella.png",
-            "title": "Balanced Hormones",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/hormone-health"
-          }
-        },
-        "image_cgLmNE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AGING_Healthy_ella.jpg",
-            "title": "Healthy Aging",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/healthy-aging"
+            "link": "shopify://collections/skin-health"
           }
         }
       },
       "block_order": [
         "image_fthQXN",
-        "image_nx4ByT",
-        "image_NDHhei",
-        "image_QVNcyz",
-        "image_Mi7QrC",
-        "image_NCz7WL",
-        "image_d3wdKb",
-        "image_HXCCq7",
-        "image_qYLyBV",
-        "image_cgLmNE"
+        "image_mFiMEV",
+        "image_yhnmeK",
+        "image_aVixiN",
+        "image_NyLNnA",
+        "image_HjABCT"
       ],
       "settings": {
         "container": "container",
         "padding_full_width": 20,
         "brands_block_style": "style_5",
-        "brand_layout": "grid",
+        "brand_layout": "slider",
         "scroll_from": "rtl",
         "brand_scroll_time": "25",
         "display_brand_border": true,
@@ -3069,7 +2860,6 @@
     "image_banner_e7EKbV",
     "16378289883380f691",
     "rich_text_qhM7tM",
-    "policies_block_QPqQW3",
     "brand_slider_tRACcq",
     "1643015886f75782fe",
     "custom_service_block_RWF74E",
