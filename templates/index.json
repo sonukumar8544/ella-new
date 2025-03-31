@@ -1657,6 +1657,217 @@
         "mg_bottom_mobile": 20
       }
     },
+    "brand_slider_tRACcq": {
+      "type": "brand-slider",
+      "blocks": {
+        "image_fthQXN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SKIN_health_ella.jpg",
+            "title": "Glowing Skin",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/skin-health"
+          }
+        },
+        "image_nx4ByT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GUT_health_ella.jpg",
+            "title": "A Happy Gut",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/gut-health"
+          }
+        },
+        "image_NDHhei": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BONE_health_ell.jpg",
+            "title": "Bone Health",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/bone-health"
+          }
+        },
+        "image_QVNcyz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/EYES_health_ella.png",
+            "title": "Clear Vision",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/eye-health"
+          }
+        },
+        "image_Mi7QrC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMMMUNE_health_ella.png",
+            "title": "Stronger Immunity",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/immune-health"
+          }
+        },
+        "image_NCz7WL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/MUSCLE_health_ella.png",
+            "title": "Muscle Strength & More Energy",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/muscle-health"
+          }
+        },
+        "image_d3wdKb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRAIN_health_ella.png",
+            "title": "Mental Clarity",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/brain-health"
+          }
+        },
+        "image_HXCCq7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HEART_health_ella.png",
+            "title": "Heart Support",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/heart-health"
+          }
+        },
+        "image_qYLyBV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HORMONE_health_ella.png",
+            "title": "Balanced Hormones",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/hormone-health"
+          }
+        },
+        "image_cgLmNE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AGING_Healthy_ella.jpg",
+            "title": "Healthy Aging",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/healthy-aging"
+          }
+        }
+      },
+      "block_order": [
+        "image_fthQXN",
+        "image_nx4ByT",
+        "image_NDHhei",
+        "image_QVNcyz",
+        "image_Mi7QrC",
+        "image_NCz7WL",
+        "image_d3wdKb",
+        "image_HXCCq7",
+        "image_qYLyBV",
+        "image_cgLmNE"
+      ],
+      "settings": {
+        "container": "container",
+        "padding_full_width": 20,
+        "brands_block_style": "style_4",
+        "brand_layout": "slider",
+        "scroll_from": "rtl",
+        "brand_scroll_time": "25",
+        "display_brand_border": true,
+        "brand_bg": "#f2f3f9",
+        "brand_bg_gradient": "",
+        "title_align": "center",
+        "brand_title": "",
+        "color_title": "#374650",
+        "fontsize_title": 40,
+        "fontsize_title_mb": 25,
+        "mg_bottom_title": 0,
+        "enable_border_title": false,
+        "border_color_title": "#051c42",
+        "brand_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 18,
+        "mg_bottom_des": 0,
+        "view_all": "",
+        "view_all_fs": 12,
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "view_all_icon_side": "left",
+        "btn_text": "Find My Solution →",
+        "fontsize_btn": 18,
+        "btn_spacing_top": 18,
+        "btn_color": "#086b92",
+        "btn_link": "shopify://collections/health-goals",
+        "enable_autoplay": true,
+        "brand_speed": "4000",
+        "brand_rows": "6",
+        "enable_arrows": true,
+        "enable_dots": false,
+        "enable_center_mode": false,
+        "style_position_arrows": "arrows_2",
+        "position_horizontal_arrow": 10,
+        "color_arrow": "",
+        "arrow_background": "",
+        "arrow_background_gradient": "",
+        "arrow_border": "",
+        "color_arrow_hover": "#232323",
+        "arrow_background_hover": "",
+        "arrow_background_gradient_hover": "",
+        "arrow_border_hover": "",
+        "brand_rows_mb": "2",
+        "brand_image_ratio": "square",
+        "item_distance": 0,
+        "margin_bottom_image": 12,
+        "brand_item_border": "none",
+        "border_radius": 0,
+        "border_color": "#e2e5e7",
+        "border_color_hover": "#2d2d2d",
+        "hover_effect": "zoom",
+        "color_underline_image_hover": "#000000",
+        "fontsize_text": 17,
+        "fontsize_text_mb": 14,
+        "font_weight_title": "600",
+        "margin_bottom_title": 10,
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 75,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 40
+      }
+    },
     "1643015886f75782fe": {
       "type": "custom-service-block",
       "blocks": {
@@ -1999,62 +2210,6 @@
         "mg_bottom_desktop": 15,
         "mg_bottom_tablet": 15,
         "mg_bottom_mobile": 15
-      }
-    },
-    "fc292988-7f79-439e-b9e4-827b4a9b4596": {
-      "type": "custom-press-banner",
-      "disabled": true,
-      "settings": {
-        "container": "container",
-        "padding_full_width": 0,
-        "press_bg": "#f2f3f9",
-        "press_gradient": "",
-        "align_items": "start",
-        "press_image": "shopify://shop_images/03_07c334c5-ec5e-44a1-a63e-be1735632dd9.png",
-        "press_image_width": 740,
-        "press_image_width_ratio": 47,
-        "sub_title": "",
-        "letter_spacing_sub_title": "",
-        "font_size_sub_title": 16,
-        "font_size_sub_title_mb": 14,
-        "margin_bottom_sub_title": 30,
-        "font_weight_sub_title": "800",
-        "sub_title_position": "sub_title_above",
-        "color_sub_title": "#232323",
-        "title": "67% of Our Customers Keep Coming Back. Here’s why",
-        "title_font_size": 26,
-        "title_font_size_mb": 20,
-        "title_font_weight": "700",
-        "mg_bottom_title": 9,
-        "title_color": "#000000",
-        "des": "<h3>18,934 Repeat Customers (and Counting!)</h3>\n<b>✔️ Clinically Effective Formula</b>\n<br><p>Backed by science, trusted by experts—with visible results within 2-3 months</p><br>\n<b>✔️ Unmatched Ingredient Integrity\n</b>\n<p>\nUS-sourced actives crafted in FDA-inspected Canadian GMP certified facility</p>\n<br>\n<b>✔️ Truth in Every Bottle</b>\n<p>No fillers, no alterations—what’s on the label is exactly what’s inside.\n</p>\n<br>\n<b>✔️ Root-Cause Solutions, Not Quick Fixes </b><br>\n<p>Patented formulations designed to work deeply for long-term health.</p> <br>\n\n<b>✔️ Your Wellness Partner </b><br>\n<p>Expert guidance, research-backed blogs, and real human support to help you on your health journey.</p> <br>\n\n<b> ✔ Real-Time Support</b><br>\n<p></p> <br>",
-        "des_font_size": 17,
-        "des_font_size_mb": 16,
-        "des_font_weight": "400",
-        "mg_bottom_des": 30,
-        "des_color": "#000000",
-        "item_spacing": 75,
-        "content_max_width": 400,
-        "button_text": "Explore RockRider 9",
-        "button_link": "shopify://products/copy-of-sample-naminos-elementum-an-disus-tincidunts-1",
-        "fontsize_btn": 16,
-        "button_width": 230,
-        "color_button": "#ffffff",
-        "border_color_button": "#337fd3",
-        "bg_color_button": "#337fd3",
-        "bg_gradient_color_button": "",
-        "color_button_hover": "#ffffff",
-        "border_color_button_hover": "#1991e2",
-        "bg_color_button_hover": "#1991e2",
-        "bg_gradient_color_button_hover": "",
-        "btn_text_transform": "capitalize",
-        "image_behavior": "zoom-in",
-        "mg_top_desktop": 100,
-        "mg_top_tablet": 60,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 40,
-        "mg_bottom_mobile": 30
       }
     },
     "spotlight_block_xF7mhH": {
@@ -2915,9 +3070,9 @@
     "16378289883380f691",
     "rich_text_qhM7tM",
     "policies_block_QPqQW3",
+    "brand_slider_tRACcq",
     "1643015886f75782fe",
     "custom_service_block_RWF74E",
-    "fc292988-7f79-439e-b9e4-827b4a9b4596",
     "spotlight_block_xF7mhH",
     "custom_service_block_iwtYW7",
     "instagram_9EfqFH",
