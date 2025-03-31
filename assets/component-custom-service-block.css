@@ -376,6 +376,9 @@
     margin-left: calc((var(--grid-gap)) * (-1));
     margin-right: calc((var(--grid-gap)) * (-1));
   }
+  .custom-service-block.service_block_style_3 .policies-content {
+    padding: 0px 15px;
+  }
 
   .custom-service-block .halo-row .halo-item {
     padding-left: var(--grid-gap);
