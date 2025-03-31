@@ -1,7 +1,7 @@
 (function ($) {
 	var halo = {
 	    initBrandsSlider: function() {
-	        var brandsSlider = $('[data-brands-slider1]');
+	        var brandsSlider = $('[data-brands-slider]');
 
 	        brandsSlider.each(function () {
 	            var self = $(this),
