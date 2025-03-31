@@ -558,14 +558,26 @@ margin-top: 20px;
 {% endif %}
 
  {% if section.settings.slider_layout_3_no_round == true %}
-.section-block-{{ section.id }} .csrt__image_round .adaptive_height img
+   #brands-{{section.id}} .csrt__image_round  {
+    margin-bottom: 0px !important;
+    width: calc(100% - 15%);
+    border-radius: 0%;
+    top: 1px;
+    transition: all .5s;
+    border: none !important;
+    margin: auto;
+}
+.section-block-{{ section.id }} .csrt__image_round .adaptive_height img.slider_layout_3_no_round{
+  border-radius: 50%;
+  border: 2px solid var(--title_color);
+}
 
    {% endif %}
 </style>
 
 {%- if section.blocks.size > 0 -%}
     <div class="brand-slider section-block-{{section.id}}" id="brands-{{section.id}}" {% if section.settings.brand_layout == 'slider' %}data-loader-script="{{ 'halo.slide-brand.js' | asset_url }}"{% endif %}>
-        <div class="brands-block {% if section.settings.brand_layout == 'grid' %}brands-grid{% else %}brands-slider{% endif %}{% if section.settings.brands_block_style == 'style_2' %} brand_style_2{% elsif section.settings.brands_block_style == 'style_3' %} brand_style_3{% elsif section.settings.brands_block_style == 'style_4' %} brand_style_4 {% elsif section.settings.brands_block_style == 'style_5' %} brand_style_5_cstm{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="brands-block {% if section.settings.brand_layout == 'grid' %}brands-grid{% else %}brands-slider{% endif %}{% if section.settings.brands_block_style == 'style_2' %} brand_style_2{% elsif section.settings.brands_block_style == 'style_3' %} brand_style_3{% elsif section.settings.brands_block_style == 'style_4' %} brand_style_4 {% elsif section.settings.brands_block_style == 'style_5' %} brand_style_5_cstm {% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
             <div class="{% if section.settings.brand_layout == 'infinite' %}container-full{% else %}{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1170' %}container-1170{% elsif section.settings.container == '1470' %}container-1470{% elsif section.settings.container == '1770' %}container-1770{% else %}container{% endif %}{% endif %}">
                 {%- if section.settings.brands_block_style == 'style_3' -%}
                 <div class="brands-block--wrapper">
@@ -676,7 +688,7 @@ margin-top: 20px;
                                             <div class="wrapper-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if section.settings.brand_layout == 'infinite' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}" style="--border_radius:{{ section.settings.border_radius | append: 'px' }};--animation-order: {{ forloop.index }};"{% if settings.banner_animation == 'effect_fade_up' %} data-cascade style=""{% endif %}>
                                                 {%- if block.settings.image != blank -%}
                                                     {%- assign preview_img = block.settings.image -%}
-                                                    <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %} csrt__image_round">
+                                                    <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %} csrt__image_round {% if section.settings.brands_block_style == 'style_3' %}{% if section.settings.slider_layout_3_no_round == true %}slider_layout_3_no_round {% endif %}{% endif %}">
                                                         <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %} {% if section.settings.brands_block_style == 'style_3' %}{% if section.settings.slider_layout_3_no_round == true %}slider_layout_3_no_round {% endif %}{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
                                                             <img {% render 'lazyload', preview_img: preview_img  %} style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
                                                             {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
