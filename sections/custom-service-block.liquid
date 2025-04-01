@@ -309,8 +309,10 @@
                                          <div class="cstm__description">
                                           <div class="featured__cstm_icon">
                                         {% if block.settings.text1 != blank %}
-                                            <div class="feature">
-                                          {% if block.settings.icon1 != blank %}<img src="{{ block.settings.icon1 | img_url: '150x' }}" alt="{{  block.settings.text1 }}" title="" width="" height=""> {% endif %}
+                                            <div class="feature_row">
+                                          {% if block.settings.icon1 != blank %}
+                                            <img src="{{ block.settings.icon1 | img_url: '150x' }}" alt="{{  block.settings.text1 }}" title="" width="" height=""> 
+                                            {% endif %}
                                           <h3>{{ block.settings.text1 }}</h3>
                                          {% if block.settings.content1 != blank %} <p>{{ block.settings.content1  }}</p> {% endif %}
                                           </div>
