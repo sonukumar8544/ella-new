@@ -238,11 +238,12 @@
     text-align: center !IMPORTANT;
 }
       .halo-item.cstm_icon_enabled .featured__cstm_icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-        gap;20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap:20px;
 }
+      
     </style>
 
     <div class="custom-service-block section-block-{{ section.id }}{% if enable_block_bottom %} enable_block_bottom{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.service_block_style == 'style_3' %} service_block_style_3{% endif %}" style="--grid-gap: {{ grid_gap }}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% endif %}>
