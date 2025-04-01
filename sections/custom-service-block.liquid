@@ -307,7 +307,23 @@
                                         {%- endif -%}
                                        {%- if block.settings.custom_liquid != blank -%}
                                          <div class="cstm__description">
-                                         {{ block.settings.custom_liquid }}  
+                                          <div class="featured__cstm_icon">
+                                          <div class="feature">
+                                          <img src="icon.png" alt="Icon">
+                                          <h3>US-Sourced, GMP-Certified</h3>
+                                          <p>Automatically put your idle cash to work and make the most.</p>
+                                          </div>
+                                          <div class="feature">
+                                          <img src="icon.png" alt="Icon">
+                                          <h3>US-Sourced, GMP-Certified</h3>
+                                          <p>Automatically put your idle cash to work and make the most.</p>
+                                          </div>
+                                          <div class="feature">
+                                          <img src="icon.png" alt="Icon">
+                                          <h3>US-Sourced, GMP-Certified</h3>
+                                          <p>Automatically put your idle cash to work and make the most.</p>
+                                          </div>
+                                          </div>
                                          </div>
                                           {%- endif -%}
                                         {%- if block.settings.button != blank -%}
@@ -1293,11 +1309,61 @@
             "label" : "t:sections.image-banner.blocks.image.settings.content.label__2",
             "default" : "Nam tempus turpis at metus cosmo scelerisque placerat nulla deumantos delos sollicitudin delos felis."
         },
+          {
+            "type": "header",
+            "content": "Icon with Text settings enable"
+          },
             {
-      "type": "liquid",
+      "type": "checkbox",
       "id": "custom_liquid",
-      "label": "Liquid"
+      "label": "Enable Icon With Text",
+      "default":false          
     },
+        {
+        "type": "image_picker",
+        "id": "icon1",
+        "label": "icon 1"
+        },
+           {
+        "type": "text",
+        "id": "text1",
+        "label": "Title 1"
+        },
+           {
+        "type": "richtext",
+        "id": "content1",
+        "label": "Content 1"
+        },
+           {
+        "type": "image_picker",
+        "id": "icon2",
+        "label": "icon 2"
+        },
+           {
+        "type": "text",
+        "id": "text2",
+        "label": "Title 2"
+        },
+             {
+        "type": "richtext",
+        "id": "content2",
+        "label": "Content 2"
+        },
+           {
+        "type": "image_picker",
+        "id": "icon3",
+        "label": "icon 3"
+        },
+           {
+        "type": "text",
+        "id": "text3",
+        "label": "Title 3"
+        },
+             {
+        "type": "richtext",
+        "id": "content3",
+        "label": "Content 3"
+        },
         {
             "type": "range",
             "id": "fontsize_des_block",
