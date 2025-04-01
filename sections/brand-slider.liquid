@@ -273,7 +273,7 @@ padding: 0 0 0 0%;
    border: 2px solid var(--title_color)
 }
     #brands-{{section.id}} .brand-slider-btn a.brand-btn{
-        border: 1px solid;
+        border: 1px solid {{section.settings.btn_color_border}};
         padding: 8px 14px;
         text-decoration: none;
         border-radius: 4px;
@@ -288,6 +288,10 @@ padding: 0 0 0 0%;
     border: 2px solid var(--title_color);
     margin: auto;
 }
+       #brands-{{section.id}} .brand-slider-btn:hover a.brand-btn{
+           border: 1px solid {{section.settings.btn_hover_border_color}};
+         color: {{section.settings.btn_color_hover}};
+       }
   
   .brand-slider .halo-item .text {
     font-size: 15px;
