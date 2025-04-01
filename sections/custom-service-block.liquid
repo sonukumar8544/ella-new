@@ -306,7 +306,9 @@
                                             <p class="policies-des" style="--fontsize-desc-style: {{ block.settings.fontsize_des_block | append: 'px' }};--fontsize-desc-mb-style: {{ block.settings.fontsize_des_block_mb | append: 'px' }};--lineheight-desc-style: {{ block.settings.lineheight_des_block | append: 'px' }};--color-des-block-style: {{ block.settings.color_des_block }};--mg_bottom_des-style: {{ block.settings.mg_bottom_des | append: 'px' }}">{{block.settings.description}}</p>
                                         {%- endif -%}
                                        {%- if block.settings.custom_liquid != blank -%}
-                                         {{ block.settings.custom_liquid }}   
+                                         <div class="cstm__description">
+                                         {{ block.settings.custom_liquid }}  
+                                         </div>
                                           {%- endif -%}
                                         {%- if block.settings.button != blank -%}
                                             <p class="policies-button{% if block.settings.button_style == 'style2' %} button{% endif %}" style="--fontsize-button-style: {{ block.settings.fontsize_button | append: 'px' }};--color-button-style: {{ block.settings.color_button }};--fontweight-button-style: {{ block.settings.fontweight_button }};--button-background-style: {% if block.settings.button_background_gradient != blank %}{{ block.settings.button_background_gradient }}{% else %}{{ block.settings.button_background }}{% endif %};--button-border-style: {{ block.settings.button_border }};--button-color-hover-style: {{ block.settings.button_color_hover }};--button-background-hover-style: {% if block.settings.button_background_gradient_hover != blank %}{{ block.settings.button_background_gradient_hover }}{% else %}{{ block.settings.button_background_hover }}{% endif %};--button-border-hover-style: {{ block.settings.button_border_hover }};--button-width-style: {{ block.settings.button_width | append: 'px' }};
