@@ -298,14 +298,14 @@
                                         {%- endif -%}
                                     {%- endif -%}
                                     {%- if block.settings.description != blank or block.settings.button -%}
-                                    <div class="policies-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" >
+                                    <div class="policies-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}  {%- if block.settings.custom_liquid == true -%}cstm_icon_enabled{% endif %}" >
                                         {%- if block.settings.text != blank -%}
                                             <span class="policies-text type--{{ block.settings.type_tab_font }}" style="--fontsize-title-style: {{ block.settings.fontsize_title_block | append: 'px' }};--mg-bottom-title-style: {{ block.settings.mg_bottom_title | append: 'px' }};--mg-bottom-title-mb-style: {{ block.settings.mg_bottom_title_mb | append: 'px' }};--fontsize-title-style-mb: {{ block.settings.fontsize_title_block_mb | append: 'px' }};--fontweight-title-style: {{ block.settings.title_block_font_weight}};--color-block-style: {{ block.settings.color_block }}">{{block.settings.text}}</span>
                                         {%- endif -%}
                                         {%- if block.settings.description != blank -%}
                                             <p class="policies-des" style="--fontsize-desc-style: {{ block.settings.fontsize_des_block | append: 'px' }};--fontsize-desc-mb-style: {{ block.settings.fontsize_des_block_mb | append: 'px' }};--lineheight-desc-style: {{ block.settings.lineheight_des_block | append: 'px' }};--color-des-block-style: {{ block.settings.color_des_block }};--mg_bottom_des-style: {{ block.settings.mg_bottom_des | append: 'px' }}">{{block.settings.description}}</p>
                                         {%- endif -%}
-                                       {%- if block.settings.custom_liquid != blank -%}
+                                       {%- if block.settings.custom_liquid == true -%}
                                          <div class="cstm__description">
                                           <div class="featured__cstm_icon">
                                         {% if block.settings.text1 != blank %}
