@@ -5,6 +5,10 @@
   box-sizing: inherit;
 }
 
+a.button {
+  border-radius: 5px;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
