@@ -308,21 +308,14 @@
                                        {%- if block.settings.custom_liquid != blank -%}
                                          <div class="cstm__description">
                                           <div class="featured__cstm_icon">
-                                          <div class="feature">
-                                          <img src="icon.png" alt="Icon">
-                                          <h3>US-Sourced, GMP-Certified</h3>
-                                          <p>Automatically put your idle cash to work and make the most.</p>
+                                        {% if block.settings.text1 != blank %}
+                                            <div class="feature">
+                                          {% if block.settings.icon1 != blank %}<img src="{{ block.settings.icon1 | img_url: '150x' }}" alt="{{  block.settings.text1 }}" title="" width="" height=""> {% endif %}
+                                          <h3>{{ block.settings.text1 }}</h3>
+                                         {% if block.settings.content1 != blank %} <p>{{ block.settings.content1  }}</p> {% endif %}
                                           </div>
-                                          <div class="feature">
-                                          <img src="icon.png" alt="Icon">
-                                          <h3>US-Sourced, GMP-Certified</h3>
-                                          <p>Automatically put your idle cash to work and make the most.</p>
-                                          </div>
-                                          <div class="feature">
-                                          <img src="icon.png" alt="Icon">
-                                          <h3>US-Sourced, GMP-Certified</h3>
-                                          <p>Automatically put your idle cash to work and make the most.</p>
-                                          </div>
+                                            {% endif %}
+                                         
                                           </div>
                                          </div>
                                           {%- endif -%}
