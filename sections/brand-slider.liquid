@@ -272,6 +272,13 @@ padding: 0 0 0 0%;
        #brands-{{section.id}} .csrt__image_round:hover{
    border: 2px solid var(--title_color)
 }
+    #brands-{{section.id}} .brand-slider-btn a.brand-btn{
+        border: 1px solid;
+        padding: 8px 14px;
+        text-decoration: none;
+        border-radius: 4px;
+        text-align: left;
+    }
 #brands-{{section.id}} .csrt__image_round  {
     margin-bottom: 12px !important;
     width: calc(100% - 15%);
@@ -650,7 +657,7 @@ margin-top: 20px;
                                                     {%- if section.settings.icon_view_all -%}
                                                     <span class="icon-svg"{% if section.settings.view_all_icon_side =='right' %} style="display: none;"{% endif %}>{{ section.settings.icon_view_all }}</span>
                                                     {%- endif -%}
-                                                    {{ section.settings.view_all }}----
+                                                    {{ section.settings.view_all }}
                                                     {%- if section.settings.icon_view_all -%}
                                                         <span class="icon-svg" {% if section.settings.view_all_icon_side =='left' %} style="display: none;" {% endif %}>{{ section.settings.icon_view_all }}</span>
                                                     {%- endif -%}
