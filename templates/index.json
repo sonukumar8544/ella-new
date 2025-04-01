@@ -2239,6 +2239,17 @@
     "brand_slider_7QWUjR": {
       "type": "brand-slider",
       "blocks": {
+        "image_RKnFj6": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "color_text": "#000",
+            "color_text_hover": "#3e8cc4",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": ""
+          }
+        },
         "image_Hc7PcK": {
           "type": "image",
           "settings": {
@@ -2262,11 +2273,25 @@
             "color_des": "#374650",
             "link": "#"
           }
+        },
+        "image_w4nMHF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMMMUNE_health_ella.png",
+            "title": "Alex  ",
+            "color_text": "#374650",
+            "color_text_hover": "#232323",
+            "description": "(Researcher with Ph.D. and MD in health science)",
+            "color_des": "#374650",
+            "link": "#"
+          }
         }
       },
       "block_order": [
+        "image_RKnFj6",
         "image_Hc7PcK",
-        "image_d4tFj3"
+        "image_d4tFj3",
+        "image_w4nMHF"
       ],
       "settings": {
         "container": "container",
@@ -2541,13 +2566,13 @@
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "description": "",
             "fontsize_des": 12,
-            "color_des": "#fff",
+            "color_des": "#ffffff",
             "button_text": "",
-            "color_button": "#fff",
-            "color_button_hover": "#fff",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
             "link": ""
           }
         },
@@ -2558,13 +2583,13 @@
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "description": "",
             "fontsize_des": 12,
-            "color_des": "#fff",
+            "color_des": "#ffffff",
             "button_text": "",
-            "color_button": "#fff",
-            "color_button_hover": "#fff",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
             "link": ""
           }
         },
@@ -2575,13 +2600,13 @@
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "description": "",
             "fontsize_des": 12,
-            "color_des": "#fff",
+            "color_des": "#ffffff",
             "button_text": "",
-            "color_button": "#fff",
-            "color_button_hover": "#fff",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
             "link": ""
           }
         },
@@ -2592,13 +2617,13 @@
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "description": "",
             "fontsize_des": 12,
-            "color_des": "#fff",
+            "color_des": "#ffffff",
             "button_text": "",
-            "color_button": "#fff",
-            "color_button_hover": "#fff",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
             "link": ""
           }
         },
@@ -2609,13 +2634,13 @@
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "description": "",
             "fontsize_des": 12,
-            "color_des": "#fff",
+            "color_des": "#ffffff",
             "button_text": "",
-            "color_button": "#fff",
-            "color_button_hover": "#fff",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
             "link": ""
           }
         }
