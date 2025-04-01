@@ -338,6 +338,7 @@
                                           </div>
                                          </div>
                                           {%- endif -%}
+                                      
                                         {%- if block.settings.button != blank -%}
                                             <p class="policies-button{% if block.settings.button_style == 'style2' %} button{% endif %}" style="--fontsize-button-style: {{ block.settings.fontsize_button | append: 'px' }};--color-button-style: {{ block.settings.color_button }};--fontweight-button-style: {{ block.settings.fontweight_button }};--button-background-style: {% if block.settings.button_background_gradient != blank %}{{ block.settings.button_background_gradient }}{% else %}{{ block.settings.button_background }}{% endif %};--button-border-style: {{ block.settings.button_border }};--button-color-hover-style: {{ block.settings.button_color_hover }};--button-background-hover-style: {% if block.settings.button_background_gradient_hover != blank %}{{ block.settings.button_background_gradient_hover }}{% else %}{{ block.settings.button_background_hover }}{% endif %};--button-border-hover-style: {{ block.settings.button_border_hover }};--button-width-style: {{ block.settings.button_width | append: 'px' }};
                                                 {%- if block.settings.enable_underline_button -%}
