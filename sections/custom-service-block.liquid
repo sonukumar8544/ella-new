@@ -263,6 +263,8 @@
                             {%- if section.settings.service_block_des != blank and section.settings.service_block_des_pos == 'top' -%}
                                 <div class="rte subtext-spotlight">{{ section.settings.service_block_des }}</div>
                             {%- endif -%}
+
+                          
                             {%- if section.settings.view_all != blank -%}
                                 <a class="view_all{% if section.settings.enable_border_view_all %} has-border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-top-view-style: {{ section.settings.mg_top_view | append: 'px' }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }}">
                                     {%- if section.settings.icon_view_all -%}
