@@ -309,15 +309,32 @@
                                          <div class="cstm__description">
                                           <div class="featured__cstm_icon">
                                         {% if block.settings.text1 != blank %}
-                                            <div class="feature_row">
-                                          {% if block.settings.icon1 != blank %}
-                                            <img src="{{ block.settings.icon1 | img_url: '150x' }}" alt="{{  block.settings.text1 }}" title="" width="" height=""> 
-                                            {% endif %}
-                                          <h3>{{ block.settings.text1 }}</h3>
-                                         {% if block.settings.content1 != blank %} <p>{{ block.settings.content1  }}</p> {% endif %}
-                                          </div>
-                                            {% endif %}
-                                         
+                                              <div class="feature_row">
+                                              {% if block.settings.icon1 != blank %}
+                                              <img src="{{ block.settings.icon1 | img_url: '150x' }}" alt="{{  block.settings.text1 }}" title="" width="" height=""> 
+                                              {% endif %}
+                                              <h3>{{ block.settings.text1 }}</h3>
+                                              {% if block.settings.content1 != blank %} <p>{{ block.settings.content1  }}</p> {% endif %}
+                                              </div>
+                                         {% endif %}
+                                          {% if block.settings.text2 != blank %}
+                                              <div class="feature_row">
+                                              {% if block.settings.icon2 != blank %}
+                                              <img src="{{ block.settings.icon2 | img_url: '150x' }}" alt="{{  block.settings.text2 }}" title="" width="" height=""> 
+                                              {% endif %}
+                                              <h3>{{ block.settings.text2 }}</h3>
+                                              {% if block.settings.content2 != blank %} <p>{{ block.settings.content2 }}</p> {% endif %}
+                                              </div>
+                                         {% endif %}
+                                         {% if block.settings.text3 != blank %}
+                                              <div class="feature_row">
+                                              {% if block.settings.icon3 != blank %}
+                                              <img src="{{ block.settings.icon3 | img_url: '150x' }}" alt="{{  block.settings.text3 }}" title="" width="" height=""> 
+                                              {% endif %}
+                                              <h3>{{ block.settings.text3 }}</h3>
+                                              {% if block.settings.content3 != blank %} <p>{{ block.settings.content3 }}</p> {% endif %}
+                                              </div>
+                                         {% endif %}
                                           </div>
                                          </div>
                                           {%- endif -%}
