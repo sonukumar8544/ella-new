@@ -536,9 +536,12 @@
     border-width: var(--btn-3-border-width);
     padding-top: var(--btn-3-padding-top);
     padding-bottom: var(--btn-3-padding-bottom);
-    background: var(--product-action-bg);
-    color: var(--product-action-color);
-    border-color: var(--product-action-border);
+    /* background: var(--product-action-bg); */
+    /* color: var(--product-action-color); */
+    border-color: #374650;
+    color: #374650;
+    background: transparent;
+    /* border-color: var(--product-action-border); */
     box-shadow: var(--btn-3-horizontal-length) var(--btn-3-vertical-length) var(--btn-3-blur-radius) var(--btn-3-spread) var(--btn-3-all-bg-opacity) var(--btn-3-inset);
 }
 
@@ -3027,9 +3030,11 @@ quickshop-update-quantity.disabled {
     }
 
     .card-action .button:hover {
-        background: var(--product-action-bg-hover);
+        /* background: var(--product-action-bg-hover); */
+        background: #006A91;
         color: var(--product-action-color-hover);
-        border-color: var(--product-action-border-hover);
+        /* border-color: var(--product-action-border-hover); */
+        border-color: #006A91;
         box-shadow: var(--btn-3-horizontal-length) var(--btn-3-vertical-length) var(--btn-3-blur-radius) var(--btn-3-spread) var(--btn-3-all-bg-opacity-hover) var(--btn-3-inset);
     }
 

@@ -9,5 +9,51 @@
         {% render 'halo-share', product: product, share_layout: check_show_share %}
     </div>
 {%- else -%}
+   <div class="new-title-ul">
+    <li>Cellular Health</li>
+    <li>Metabolism</li>
+    <li>Strong Bones</li>
+    <li> Skin Vitality</li>
+    <li>Cardiovascular Support</li>
+   </div>
     <h1 class="productView-title" style="--color-title: {{ color_title }};--fontsize-text: {{ fontsize_text | append: 'px' }};--fontsize-mb-text: {{ fontsize_text_mb | append: 'px' }};"><span>{{ product.title | escape }}</span></h1>
+    <p class="product-page-subtitle">Pure DeltaGold Annatto Tocotrienols | Most Potent Vitamin E | Master Antioxidant</p>
+    <p class="product-page-one-liner">Support your overall wellness with Eannatto DeltaGold™, a tocotrienol-rich Vitamin E supplement.</p>
 {%- endif -%}
+
+
+
+<style>
+    .new-title-ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+
+  .new-title-ul li {
+    list-style: none;
+    margin: 3px;
+    background-color: #e2edef;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    color: #374650;
+    font-family: "Lato";
+    font-weight: bold;
+}
+
+.product-page-subtitle{
+    font-style: oblique;
+    font-weight: 500;
+    padding: 4px 0px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+p.product-page-one-liner {
+    margin: 0px;
+    line-height: 22px;
+}
+</style>

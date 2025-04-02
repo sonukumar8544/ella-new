@@ -79,7 +79,7 @@
             </a>
             {%- if product_style == '1' -%}
                 {%- if variantCount > 1 -%}
-                    <button type="button" aria-label="{{ 'products.product.select_options' | t }}" class="button bundle-product-toogle button-2" role="button" tabindex="0">
+                    <button type="button" aria-label="{{ 'products.product.select_options' | t }}" class="button bundle-product-toogle button-2 product-chuse-options" role="button" tabindex="0">
                         {{ 'products.product.select_options' | t }}
                     </button>
                 {%- endif -%}
@@ -98,7 +98,10 @@
                 <div class="bundle-product-checkbox">
                     <input type="checkbox" value="{{ product.title | split: '|' | first | handleize }}" checked autocomplete="off" id="bundle-product-item-{{ product.id }}" />
                     <label class="form-label--checkbox product-title" for="bundle-product-item-{{ product.id }}" data-bundle-checkbox>
-                        {{ product.title | split: '|' | first }}
+                        {% comment %} {{ product.title | split: '|' | first }} {% endcomment %}
+                        <p style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal; font-weight: bold;">
+                          {{ product.title }} 
+                        </p>
                         {%- if variantCount > 1 and settings.enable_swatch_name -%}
                             <span data-bundle-product-title> - {{ current_variant.title }}</span>
                         {%- endif -%}
