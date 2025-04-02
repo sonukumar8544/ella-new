@@ -1418,7 +1418,8 @@ button.disabled,
   text-transform: var(--heading-text-transform);
   letter-spacing: var(--heading-letter-spacing);
   line-height: var(--heading-line-height);
-  color: var(--color-text);
+  /* color: var(--color-text); */
+  color: #374650;
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -8049,4 +8050,61 @@ body.is-custom-information .background-overlay {
   .motion-reduce {
     transition: none !important;
   }
+}
+
+/* Product subscription app design */
+.sealsubs-container .sls-purchase-options-container .sls-option-container, .sealsubs-container .sls-option-container {
+  border: 1px solid #dedede !important;
+}
+
+.sealsubs-container .sls-option-container {
+  padding: 3px 10px !important;
+}
+
+.sealsubs-container .sls-option-container{
+  cursor: pointer;
+  align-items: center;
+}
+
+/* .seal-row {
+  background: transparent;
+  position: relative;
+  padding-left: 40px;
+  display: inline-block;
+  width: 100%;
+} */
+
+.selling-plan-group-options-name-select {
+  width: 100% !important;
+}
+
+.selling-plan-group-options-name-select {
+  padding-right: 1em;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.sealsubs-container .sls-option-container {
+cursor: pointer;
+}
+
+.sls-more-info-container{
+  display: none;
+}
+.d-nonee{
+  display: none !important;
+}
+
+button.button.bundle-product-toogle.button-2 {
+  display: none;
+}
+
+input[type=checkbox]:checked+.form-label--checkbox:before {
+  background-color: #006A91 !important;
+  border-color: #006A91 !important;
+  border-radius: 4px;
+}
+
+.product-form__input+.product-form__input{
+  margin-top: 0px !important;
 }

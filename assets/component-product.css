@@ -1043,7 +1043,8 @@
 .productView-title{
     display: block;
     font-size: var(--fontsize-text);
-    font-weight: var(--font-weight-semibold);
+    /* font-weight: var(--font-weight-semibold); */
+    font-weight: bold;
     text-transform: var(--product-title-text-transform);
     letter-spacing: 0;
     color: var(--color-title);
@@ -2042,6 +2043,8 @@ body.video-show.product-video-show .halo-video-popup {
 .product-details .product-option {
     display: inherit;
     margin: 0;
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 
 .product-details .productView-countDown .num {
@@ -3231,12 +3234,12 @@ quantity-input.disabled {
 
 @media (min-width: 1200px) {
     .halo-productView-left{
-        width: 62.4%;
+        width: 49%;
         padding-right: 60px;
     }
 
     .halo-productView-right{
-        width: 37.6%;
+        width: 49%;
     }
 
     .product-full-width .halo-productView-left{

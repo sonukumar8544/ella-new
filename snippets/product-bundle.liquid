@@ -51,13 +51,15 @@
 
             #halo-product-bundle .bundle-product-text{
                 color: {{ bundle_discount_text_color }};
+                font-weight: 500;
             }
 
             #halo-product-bundle .bundle-product-action .button{
                 background: {% if total_btn_bg_gradient != blank %}{{ total_btn_bg_gradient }}{% else %}{{ total_btn_bg }}{% endif %};
                 color: {{ total_btn_color }};
                 border-color: {{ total_btn_border }};
-            }
+                border-radius: 12px; 
+            } 
 
             @media (max-width: 1024px) {
                 #halo-product-bundle{
@@ -78,6 +80,7 @@
                     background: {% if total_btn_bg_gradient_hover != blank %}{{ total_btn_bg_gradient_hover }}{% else %}{{ total_btn_bg_hover }}{% endif %};
                     color: {{ total_btn_color_hover }};
                     border-color: {{ total_btn_border_hover }};
+                    border-radius: 12px;
                 }
             }
         </style>

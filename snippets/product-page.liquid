@@ -799,7 +799,7 @@
                         </div>
                     </div>
                     <div class="halo-productView-right productView-details clearfix">
-                        <div class="productView-product clearfix">
+                        <div class="sonu9 productView-product clearfix">
                             {%- for block in section.blocks -%}
                                 {%- liquid
                                     assign spacing_top = block.settings.spacing_top
@@ -883,7 +883,7 @@
                                             %}
                                         </div>
                                     {%- when 'variant_description' -%}
-                                        <div class="productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                        <div class="d-nonee productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                                             style="--spacing-top: {{ spacing_top | append: 'px' }};
                                             --spacing-bottom: {{ spacing_bottom | append: 'px' }}"
                                         >
@@ -1059,7 +1059,7 @@
                                         </div>
                                     {%- when 'perks' -%}
                                         {% unless has_product_combo %}
-                                            <div class="productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                            <div class="d-nonee productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                                                 style="--spacing-top: {{ spacing_top | append: 'px' }};
                                                 --spacing-bottom: {{ spacing_bottom | append: 'px' }}"
                                             >
@@ -1084,7 +1084,7 @@
                                                     {%- if product.quantity_price_breaks_configured? -%}
                                                     <div class="wrapper-price-volumn">
                                                     {%- endif -%}
-                                                        <div class="quantity_selector">
+                                                        <div class="quantity_selector d-nonee">
                                                             {% render 'product-quantity',
                                                                 current_variant: current_variant,
                                                                 qty_style: qty_style,
@@ -1352,9 +1352,23 @@
                                             style="--spacing-top: {{ spacing_top | append: 'px' }};
                                             --spacing-bottom: {{ spacing_bottom | append: 'px' }};"
                                         >
-                                            {% render 'product-custom-information',
+                                            {% comment %} {% render 'product-custom-information',
                                                 block: block
-                                            %}
+                                            %} {% endcomment %}
+                                            <div class="product-free-shipping-section" >
+                                                <div class="shipping-item">
+                                                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
+                                                  <p>Free shipping on orders over $50</p>
+                                                </div>
+                                                <div class="shipping-item">
+                                                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
+                                                  <p>Free shipping on orders</p>
+                                                </div>
+                                                <div class="shipping-item">
+                                                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
+                                                  <p>Free shipping on orders over $50</p>
+                                                </div>
+                                              </div>
                                         </div>
                                     {%- when 'grouped_product' -%}
                                         {%- if has_product_combo -%}
@@ -1609,3 +1623,57 @@
 {% render 'schema',
     product: product
 %}
+
+
+  <style>
+        .product-free-shipping-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+
+        }
+        @media (min-width: 600px) {
+            .product-free-shipping-section {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                padding: 0px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .product-free-shipping-section {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .product-free-shipping-section div {
+            background: #f9f9f9;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        }
+
+        .product-free-shipping-section div {
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: 10px;
+        }
+        .product-free-shipping-section img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+        .product-free-shipping-section p {
+            font-size: 14px;
+            color: #36454F;
+            font-weight: 400;
+            font-family: 'LATO';
+        }
+    </style>
