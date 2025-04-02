@@ -535,31 +535,31 @@
         "display_product_recently_viewed": true,
         "product_recently_viewed_container": "container",
         "padding_full_width": 0,
-        "enable_border_top": true,
+        "enable_border_top": false,
         "enable_border_bottom": false,
         "color_border_bottom": "#e8e8e8",
         "border_style": "container",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
+        "mg_top_desktop": 35,
+        "mg_top_tablet": 35,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 45,
         "mg_bottom_mobile": 0,
         "product_recently_viewed_layout": "slider",
-        "product_bg": "#ffffff",
+        "product_bg": "#f8f8f8",
         "product_bg_gradient": "",
-        "style_block_header": "style1",
-        "product_recently_viewed_title": "Recently Viewed Products",
+        "style_block_header": "style3",
+        "product_recently_viewed_title": "Recently Viewed",
         "enable_border_title": false,
-        "mg_top_title": 26,
-        "mg_bottom_title": 3,
-        "fontsize_title": 24,
-        "fontsize_title_mb": 18,
+        "mg_top_title": 10,
+        "mg_bottom_title": 50,
+        "fontsize_title": 34,
+        "fontsize_title_mb": 24,
         "border_color_title": "#232323",
         "color_title": "#232323",
         "product_recently_viewed_title_align": "center",
         "product_recently_viewed_limit": 10,
-        "product_recently_viewed_image_ratio": "adapt",
+        "product_recently_viewed_image_ratio": "square",
         "grid_gap": 30,
         "product_recently_viewed_per_row": "5",
         "product_recently_viewed_swipe_on_mobile": true,
@@ -582,6 +582,78 @@
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
       }
+    },
+    "collapsible_content_F3qXCN": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_UGJtxF": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_mwczVt": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_Dh4Vxn": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_ra94mt": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UGJtxF",
+        "content_mwczVt",
+        "content_Dh4Vxn",
+        "content_ra94mt"
+      ],
+      "settings": {
+        "id_section": "",
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#fff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "",
+        "color_title": "#232323",
+        "fontsize_title": 16,
+        "fontsize_title_mb": 16,
+        "collapsible_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "fontsize_des_mb": 12,
+        "max_width_des": 700,
+        "title_align": "center",
+        "enable_image_right": false,
+        "bg_content_color": "#ffffff",
+        "content_color": "#232323",
+        "title_color": "#232323",
+        "icon_color": "#232323",
+        "border_color": "#232323",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
     }
   },
   "order": [
@@ -590,6 +662,7 @@
     "product-grid",
     "1649236457c43290d7",
     "featured_blog_LT6gNw",
-    "product-recently-viewed"
+    "product-recently-viewed",
+    "collapsible_content_F3qXCN"
   ]
 }
