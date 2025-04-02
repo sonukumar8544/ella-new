@@ -36,12 +36,12 @@
 .custom-service-block .halo-item a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   padding: var(--item-padding-top-style) 15px var(--item-padding-bottom-style);
   border-radius: var(--item-radius-style);
   font-weight: var(--font-weight-medium);
-  flex-wrap: nowrap;
-  flex-direction: column;
+  /* flex-wrap: nowrap;
+  flex-direction: column; */
   align-content: center;
   background-color: var(--bg-color-block-style);
   border: 1px solid var(--border-block-style);
