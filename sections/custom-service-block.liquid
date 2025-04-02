@@ -3,6 +3,7 @@
         assign swipe = section.settings.service_block_swipe_on_mobile
         assign grid_gap = section.settings.grid_gap | times: 0.5 | append: 'px'
     -%}
+  
     <link rel="stylesheet" href="{{ 'component-custom-service-block.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'component-custom-service-block.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -63,7 +64,16 @@
             assign button_2_background_gradient_hover_block_bottom  = section.settings.button_2_background_gradient_hover_block_bottom
 
         -%}
-        
+          {% liquid 
+          assign mg_top_desktop1 = section.settings.mg_top_desktop1
+          assign mg_top_tablet1 = section.settings.mg_top_tablet1
+          assign mg_top_mobile = section.settings.mg_top_mobile1
+          
+          assign mg_bottom_desktop1 = section.settings.mg_bottom_desktop1
+          assign mg_bottom_tablet1 = section.settings.mg_bottom_tablet1
+          assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
+          %}
+
         {%- if policies_bg_image != blank -%}
             {%- if section.settings.service_block_style == 'style_2' -%}
                 .section-block-{{section.id}} .bg-policies-block{background: url({{ policies_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: cover}
@@ -291,15 +301,7 @@
             }
                                 </style>
       
- {% liquid 
-assign mg_top_desktop1 = section.settings.mg_top_desktop1
-assign mg_top_tablet1 = section.settings.mg_top_tablet1
-assign mg_top_mobile = section.settings.mg_top_mobile1
 
-assign mg_bottom_desktop1 = section.settings.mg_bottom_desktop1
-assign mg_bottom_tablet1 = section.settings.mg_bottom_tablet1
-assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
-%}
 
     <div class="custom-service-block section-block-{{ section.id }}{% if enable_block_bottom %} enable_block_bottom{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.service_block_style == 'style_3' %} service_block_style_3{% endif %}" style="--grid-gap: {{ grid_gap }}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% endif %}>
         <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
