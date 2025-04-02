@@ -391,13 +391,13 @@ faqs-item {
 
 @media (max-width: 550px) {
   .faqs .faqs-item .card-header .title::after {
-    left: 15px;
+    /* left: 15px; */
   }
 
   .faqs .faqs-item .card-header .title,
   .faqs .faqs-item .card-body,
   .faqs .faqs-item .halo-text-format {
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }
 
   .faqs .faqs-item .card-header .title {
