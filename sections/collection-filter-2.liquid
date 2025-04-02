@@ -23,7 +23,7 @@ assign padding_full_width = section.settings.padding_full_width
         type="button">{{ 'JUMP TO' }}</h3>
   {%- for block in section.blocks -%}
     {%- if block.settings.filter_collection -%}
-      <button
+      <h3
         class="filter_2_button"
         onclick="setActiveButton(this); location.href='/collections/{{ block.settings.filter_collection.handle }}';"
         type="button">
@@ -44,13 +44,17 @@ assign padding_full_width = section.settings.padding_full_width
         </div>
         {% endif %}
         <div class="collection-button-text">{{ block.settings.filter_collection.title }}</div>
-      </button>
+      </h3>
     {%- endif -%}
   {%- endfor -%}
 </div>
 
 <style>
- 
+ h3.filter_2_button {
+    margin: auto 9px;
+    padding: 0;
+    border-bottom: 2px solid;
+}
   @media (min-width: 768.1px) {
     .muscle-health-image-mobile {
       display: none;
@@ -153,11 +157,11 @@ assign padding_full_width = section.settings.padding_full_width
     padding-bottom: 15px;
   }
 
-   #filter__{{ section.id }} button:hover {
+   #filter__{{ section.id }} h3:hover {
     border:  1.7px solid #006A91;
     border-radius: 6px;
    }
-  #filter__{{ section.id }} button {
+  #filter__{{ section.id }} h3 {
     border: 1.5px solid #006A91;
     border-radius: 6px;
     background-color: #F4F5F5;
@@ -173,7 +177,7 @@ assign padding_full_width = section.settings.padding_full_width
   }
 
   /* Active button styles */
-  #filter__{{ section.id }} button.active .collection-icon-first-img {
+  #filter__{{ section.id }} h3.active .collection-icon-first-img {
     display: none;
   }
 
@@ -182,11 +186,11 @@ assign padding_full_width = section.settings.padding_full_width
   }
 
   /* Active button text styles */
-  #filter__{{ section.id }} button.active .collection-button-text {
+  #filter__{{ section.id }} h3.active .collection-button-text {
     color: white !important;
   }
 
-  #filter__{{ section.id }} button.active {
+  #filter__{{ section.id }} h3.active {
     background-color: #006A91 !important;
   }
 
@@ -366,7 +370,7 @@ assign padding_full_width = section.settings.padding_full_width
 
 <script defer defer>
       function setActiveButton(button) {
-            var buttons = document.querySelectorAll('#filter__{{ section.id }} button');
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} h3');
             buttons.forEach(function(btn) {
                 btn.classList.remove('active');
             });
@@ -374,7 +378,7 @@ assign padding_full_width = section.settings.padding_full_width
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('#filter__{{ section.id }} button');
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} h3');
         
             buttons.forEach(function(btn) {
                 if (window.location.href.includes(btn.getAttribute('onclick').split("'")[1])) {
