@@ -3,13 +3,15 @@
 assign container = section.settings.container 
 assign padding_full_width = section.settings.padding_full_width
 %}
- @media (min-width: 1025px) {
+{% style %}
+   @media (min-width: 1025px) {
         {% if container == 'fullwidth' %}
             #CollectionListSection-{{ section.id }} > .container-full {
                 padding-left: {{ padding_full_width | append: 'px' }};
                 padding-right: {{ padding_full_width | append: 'px' }};
             }
         {% endif %}
+{% endstyle %}
 
 <div id="filter__{{ section.id }}" class="filter_button {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
   {%- for block in section.blocks -%}
