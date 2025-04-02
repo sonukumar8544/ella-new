@@ -290,6 +290,9 @@
 .section-block-{{section.id}} .image-zoom:hover img{
   transform: none; 
   }
+ .section-block-{{section.id}} .halo-block-header .title .text{
+    width:100%;
+  }
 </style>
 
 <div class="instagram-slide section-block-{{section.id}} {% if section.settings.padding_full_width == 0 and section.settings.slide_ins == 'centermode' %}padding-full-width-0{% endif %} {% if as_grid_gap == 30 %}instagram-slide-pad-15{% endif %}{% if section.settings.enable_underline_button %} enable_underline_button{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="new-instagram-{{section.id}}" {% if section.settings.block_layout == 'slider' %}data-loader-script="{{ 'halo.slide-instagram.js' | asset_url }}"{% endif %} style="--grid-gap: {{ grid_gap }}">
