@@ -397,7 +397,8 @@ a.menu-lv-1__action.header__menu-item.list-menu__item.link.link--text.focus-inse
   .has-megamenu .menu-dropdown,
   .menu-lv-item:hover > .header__submenu,
   .menu-lv-2.dropdown:hover .site-nav-list-dropdown > .header__submenu {
-    background: var(--bg_mega_menu);
+    /* background: var(--bg_mega_menu); */
+    background: #fff;
     z-index: 2;
   }
   .menu-lv-1__action {
