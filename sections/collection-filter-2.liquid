@@ -11,13 +11,13 @@
       </div>
     </div>
     <div class="muscle-health-image">
-      <img class="lazyload" data-srcset="{{ collection.metafields.custom.feature_image | img_url: 'master' }}" 
+      <img class="lazyload" loading="lazy" src="{{ collection.metafields.custom.feature_image | img_url: 'master' }}" 
         alt="{{ collection.metafields.custom.feature_image.alt }}" width="100%"
               height="100%">
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
     </div>
     <div class="muscle-health-image-mobile">
-      <img class="lazyload" data-srcset="{{ collection.metafields.custom.feature_image_mobile_bar | img_url: 'master' }}"  width="100%"
+      <img class="lazyload" loading="lazy" src="{{ collection.metafields.custom.feature_image_mobile_bar | img_url: 'master' }}"  width="100%"
               height="100%" alt="{{ collection.metafields.custom.feature_image.alt }}">
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
     </div>
@@ -44,14 +44,14 @@
         type="button">
         <div class="collections image-icon">
           <img
-            class="collection-icon-first-img lazyload"
-            data-srcset="{{ block.settings.collection_icon_image_link }}"
+            class="collection-icon-first-img "
+            loading="lazy" src="{{ block.settings.collection_icon_image_link }}"
             alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x" style="width:30px;">
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
           
           <img
-            class="collection-icon-second-img lazyload"
-            data-srcset="{{ block.settings.collection_icon_image_link_hover |  img_url: 'master'  }}"
+            class="collection-icon-second-img "
+            loading="lazy" src="{{ block.settings.collection_icon_image_link_hover |  img_url: 'master'  }}"
             alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x">
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
           
