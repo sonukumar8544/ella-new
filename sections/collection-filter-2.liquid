@@ -1,5 +1,5 @@
 <!-- collection-filter-2 -->
-<div id="collections-filter-btn" class="filter_button">
+<div id="filter__{{ section.id }}" class="filter_button ">
   {%- for block in section.blocks -%}
     {%- if block.settings.filter_collection -%}
       <button
@@ -46,7 +46,7 @@
     #quize-sub-toitle-small-screen {
       font-size: 16px !important;
     }
-    div #collections-filter-btn {
+    div #filter__{{ section.id }} {
       justify-content: flex-start;
       margin-left: 10px;
       margin-bottom: 0px;
@@ -128,7 +128,7 @@
     height: 100%;
   }
 
-  #collections-filter-btn {
+  #filter__{{ section.id }} {
     display: flex;
     max-width: 1200px;
     margin: 3rem auto;
@@ -138,7 +138,7 @@
     padding-bottom: 15px;
   }
 
-  #collections-filter-btn button {
+  #filter__{{ section.id }} button {
     border: 1.5px solid #006A91;
     border-radius: 12px;
     background-color: #F4F5F5;
@@ -154,20 +154,20 @@
   }
 
   /* Active button styles */
-  #collections-filter-btn button.active .collection-icon-first-img {
+  #filter__{{ section.id }} button.active .collection-icon-first-img {
     display: none;
   }
 
-  #collections-filter-btn button.active .collection-icon-second-img {
+  #filter__{{ section.id }} button.active .collection-icon-second-img {
     display: block;
   }
 
   /* Active button text styles */
-  #collections-filter-btn button.active .collection-button-text {
+  #filter__{{ section.id }} button.active .collection-button-text {
     color: white !important;
   }
 
-  #collections-filter-btn button.active {
+  #filter__{{ section.id }} button.active {
     background-color: #006A91 !important;
   }
 
@@ -281,7 +281,7 @@
 
 <script defer defer>
       function setActiveButton(button) {
-            var buttons = document.querySelectorAll('#collections-filter-btn button');
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} button');
             buttons.forEach(function(btn) {
                 btn.classList.remove('active');
             });
@@ -289,7 +289,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('#collections-filter-btn button');
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} button');
         
             buttons.forEach(function(btn) {
                 if (window.location.href.includes(btn.getAttribute('onclick').split("'")[1])) {
