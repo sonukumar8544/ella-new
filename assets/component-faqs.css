@@ -417,7 +417,7 @@ faqs-item {
 
 @media (min-width: 551px) {
   .faqs .faqs-item .card-body {
-    padding-left: 15px;
+    /* padding-left: 15px; */
   }
 
   .faqs .faqs-item .card-header .title::after {
@@ -425,8 +425,8 @@ faqs-item {
   }
 
   .faqs .faqs-item .card-body {
-    margin-top: 15px;
-    padding-bottom: 30px;
+    /* margin-top: 15px;
+    padding-bottom: 30px; */
   }
 }
 
