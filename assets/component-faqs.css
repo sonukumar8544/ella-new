@@ -440,11 +440,11 @@ faqs-item {
   .faqs .faqs-item .card-header .title,
   .faqs .faqs-item .card-body,
   .faqs .faqs-item .halo-text-format {
-    padding-left: 30px;
+    /* padding-left: 30px; */
   }
 
   .faqs .faqs-item .card-header .title::after {
-    left: 30px;
+    /* left: 30px; */
   }
 
   .faqs .faqs-item .card-body {
