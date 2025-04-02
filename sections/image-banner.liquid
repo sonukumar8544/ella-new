@@ -223,6 +223,9 @@
                 }
             }
         {% endif %}
+
+      {{section.settings.liquid_css}}
+      
     </style>
     {%- if section.settings.id_section != blank -%}
     <div id="{{ section.settings.id_section }}">
@@ -1325,7 +1328,13 @@
                 "step": 5,
                 "unit": "t:sections.layout.mg_desktop.unit",
                 "default": 50
-            }
+            },
+          {
+           "type": "liquid",
+            "id":"liquid_css",
+            "label":"Liquid CSS",
+            
+          }
         ],
         "blocks": [
             {
