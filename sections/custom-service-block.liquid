@@ -269,7 +269,37 @@
           gap:10px;
         }
       }
-    </style>
+
+
+                            
+ @media (min-width: 1200px) {
+           .section-block-{{section.id}}  .custom-service-block .halo-item a {
+                    padding-top: {{ mg_top_desktop1 | append: 'px' }};padding-bottom: {{ mg_bottom_desktop1 | append: 'px' }};
+               
+            }
+       }
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .section-block-{{section.id}} .custom-service-block .halo-item a {
+                padding-top: {{ mg_top_tablet1 | append: 'px' }};padding-bottom: {{ mg_bottom_tablet1 | append: 'px' }};
+               
+            }
+        }
+       @media (max-width: 767px) {
+            .section-block-{{section.id}} .custom-service-block .halo-item a{
+                  padding-top: {{ mg_top_mobile1 | append: 'px' }};padding-bottom: {{ mg_bottom_mobile1 | append: 'px' }};
+              
+            }
+                                </style>
+      
+ {% liquid 
+assign mg_top_desktop1 = section.settings.mg_top_desktop1
+assign mg_top_tablet1 = section.settings.mg_top_tablet1
+assign mg_top_mobile = section.settings.mg_top_mobile1
+
+assign mg_bottom_desktop1 = section.settings.mg_bottom_desktop1
+assign mg_bottom_tablet1 = section.settings.mg_bottom_tablet1
+assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
+%}
 
     <div class="custom-service-block section-block-{{ section.id }}{% if enable_block_bottom %} enable_block_bottom{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.service_block_style == 'style_3' %} service_block_style_3{% endif %}" style="--grid-gap: {{ grid_gap }}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% endif %}>
         <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
