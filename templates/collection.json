@@ -91,43 +91,7 @@
         "mg_bottom_mobile": 0
       }
     },
-    "custom_text_block_zMwxgQ": {
-      "type": "custom-text-block",
-      "settings": {
-        "container": "container",
-        "padding_full_width": 0,
-        "brand_bg": "#ffffff",
-        "brand_bg_gradient": "",
-        "brand_title": "JUMP TO",
-        "color_title": "#232323",
-        "fontsize_title": 16,
-        "fontsize_title_mb": 16,
-        "brand_des": "",
-        "color_des": "#3c3c3c",
-        "fontsize_des": 16,
-        "title_align": "center",
-        "menu": "werb-main-menu-usa",
-        "grid_gap": 10,
-        "padding_vertical": 5,
-        "padding_hozi": 5,
-        "border_radius": 5,
-        "fontsize_tab": 18,
-        "color_tab": "#232323",
-        "border_color": "#f9ede1",
-        "bg_color_tab": "#f9ede1",
-        "bg_color_gradient_tab": "",
-        "color_active": "#232323",
-        "border_color_active": "#f9ede1",
-        "bg_color_active": "#f9ede1",
-        "bg_color_gradient_active": "",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50
-      }
-    },
+    
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -240,28 +204,110 @@
     },
     "collection_filter_2_fMXGJ3": {
       "type": "collection-filter-2",
-      "blocks": {
-        "collection_yeBBGn": {
+       "blocks": {
+        "collection_7zRHdN": {
           "type": "collection",
           "settings": {
-            "collection_icon_image_link": "",
-            "filter_collection": ""
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/bone-icon.png?v=1725357661",
+            "collection_icon_image_link_hover": "shopify://shop_images/bone-h.png",
+            "filter_collection": "bone-health"
+          }
+        },
+        "collection_WQXzGC": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/gut-icon.png?v=1725357661",
+            "collection_icon_image_link_hover": "shopify://shop_images/gut-h.png",
+            "filter_collection": "gut-health"
+          }
+        },
+        "collection_p43fcp": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/body-detox.png?v=1725357661",
+            "collection_icon_image_link_hover": "shopify://shop_images/b-d-h.png",
+            "filter_collection": "ultimate-detoxification-duo"
+          }
+        },
+        "collection_JqYGf4": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/skin-h.png?v=1725357660",
+            "collection_icon_image_link_hover": "shopify://shop_images/skinn-h.png",
+            "filter_collection": "skin-health"
+          }
+        },
+        "collection_9iWMwQ": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/healthy-a-i.png?v=1725357661",
+            "collection_icon_image_link_hover": "shopify://shop_images/healthy-h.png",
+            "filter_collection": "healthy-aging"
+          }
+        },
+        "collection_gDPdFN": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_364_7.png?v=1725358070",
+            "collection_icon_image_link_hover": "shopify://shop_images/brain-h.png",
+            "filter_collection": "brain-health"
+          }
+        },
+        "collection_tEHwt7": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/eye-i.png?v=1725358742",
+            "collection_icon_image_link_hover": "shopify://shop_images/eye-h-h.png",
+            "filter_collection": "eye-health"
+          }
+        },
+        "collection_bipAcU": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/heart-i.png?v=1725358741",
+            "collection_icon_image_link_hover": "shopify://shop_images/heart-h.png",
+            "filter_collection": "heart-health"
+          }
+        },
+        "collection_XDGrrA": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_362_2.png?v=1729152155",
+            "collection_icon_image_link_hover": "shopify://shop_images/immute-h.png",
+            "filter_collection": "immune-health"
+          }
+        },
+        "collection_Rh7ezF": {
+          "type": "collection",
+          "settings": {
+            "collection_icon_image_link": "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/muscle-i.png?v=1725358741",
+            "collection_icon_image_link_hover": "shopify://shop_images/muscle-h.png",
+            "filter_collection": "muscle-health"
           }
         }
       },
       "block_order": [
-        "collection_yeBBGn"
+        "collection_7zRHdN",
+        "collection_WQXzGC",
+        "collection_p43fcp",
+        "collection_JqYGf4",
+        "collection_9iWMwQ",
+        "collection_gDPdFN",
+        "collection_tEHwt7",
+        "collection_bipAcU",
+        "collection_XDGrrA",
+        "collection_Rh7ezF"
       ],
       "settings": {
-        "heading_filter_2": "",
-        "collections_descriptionn": ""
+        "heading_filter_2": "Bone Health",
+        "collections_page-banner-new": "shopify://shop_images/Clip_path_group_4.png",
+        "collections_descriptionn": "Everyone deserves to feel confident in their skin. Our skin health products are meticulously formulated with the best antioxidants, like Astaxanthin and Vitamin E tocotrienols. Our dietary health supplements are designed to work from within to support skin health and enhance your natural radiance.*"
       }
     }
   },
   "order": [
     "banner",
     "collection_filter_2_fMXGJ3",
-    "custom_text_block_zMwxgQ",
     "product-grid",
     "product-recently-viewed"
   ]
