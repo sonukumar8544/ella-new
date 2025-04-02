@@ -9,7 +9,7 @@
         <div class="collections image-icon">
           <img
             class="collection-icon-first-img "
-            loading="lazy" src="{{ block.settings.collection_icon_image_link }}"
+            loading="lazy" src="{{ block.settings.collection_icon_image_link |  img_url: 'master'}}"
             alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x" style="width:30px;">
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
           
