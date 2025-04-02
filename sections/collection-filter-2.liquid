@@ -6,11 +6,11 @@ assign padding_full_width = section.settings.padding_full_width
 {% style %}
    @media (min-width: 1025px) {
         {% if container == 'fullwidth' %}
-            #filter__{{ section.id }} > .container-full {
+            .filter_button.container-full {
                 padding-left: {{ padding_full_width | append: 'px' }};
                 padding-right: {{ padding_full_width | append: 'px' }};
             }
-         #filter__{{ section.id }} .container-full {
+         .filter_button.container-full {
           width: 99%;
           margin: 1rem 1rem;
           }
