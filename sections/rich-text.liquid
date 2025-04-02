@@ -99,7 +99,7 @@
     -%}
 
     {%- if rich_text_bg_image != blank %}
-        .section-block-{{section.id}}{background: url({{ rich_text_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: contain}
+        .section-block-{{section.id}}{background: url({{ rich_text_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: contain ;    min-height: 448px;}
     {%- else -%}
         .section-block-{{section.id}}{background: {% if rich_text_bg_gradient != blank %}{{ rich_text_bg_gradient }}{% else %}{{ rich_text_bg }}{% endif %}}
     {%- endif -%}
