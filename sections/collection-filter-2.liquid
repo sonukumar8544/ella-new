@@ -1,0 +1,427 @@
+<!-- filter-collection-2 -->
+<div class="filter-collection-section-top-banner">
+{% if collection.metafields.custom.feature_image %}
+  <div class="muscle-health-section">
+    <div class="muscle-outer">
+      <div class="container">
+        <div class="muscle-health-content">
+          <h2>{{ collection.metafields.custom.filter_collection_title }}</h2>
+          <p>{{ collection.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="muscle-health-image">
+      <img class="lazyload" data-srcset="{{ collection.metafields.custom.feature_image | img_url: 'master' }}" 
+        alt="{{ collection.metafields.custom.feature_image.alt }}" width="100%"
+              height="100%">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+    </div>
+    <div class="muscle-health-image-mobile">
+      <img class="lazyload" data-srcset="{{ collection.metafields.custom.feature_image_mobile_bar | img_url: 'master' }}"  width="100%"
+              height="100%" alt="{{ collection.metafields.custom.feature_image.alt }}">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+    </div>
+
+    <div class="collection-page-description-sec">
+      {{ collection.description }}
+    </div>
+  </div>
+  </div>
+
+{% else %}
+  <div class="collection-pag-title-img-hidden">
+    <h2>{{ collection.title }}</h2>
+  </div>
+{% endif %}
+
+
+<div id="collections-filter-btn" class="filter_button">
+  {%- for block in section.blocks -%}
+    {%- if block.settings.filter_collection -%}
+      <button
+        class="filter_2_button"
+        onclick="setActiveButton(this); location.href='/collections/{{ block.settings.filter_collection.handle }}';"
+        type="button">
+        <div class="collections image-icon">
+          <img
+            class="collection-icon-first-img lazyload"
+            data-srcset="{{ block.settings.collection_icon_image_link }}"
+            alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x" style="width:30px;">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+          
+          <img
+            class="collection-icon-second-img lazyload"
+            data-srcset="{{ block.settings.collection_icon_image_link_hover |  img_url: 'master'  }}"
+            alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+          
+        </div>
+        <div class="collection-button-text">{{ block.settings.filter_collection.title }}</div>
+      </button>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<style>
+  .filter-collection-section-top-banner{
+    background-color: white;
+  }
+  .collection-pag-title-img-hidden h2 {
+    text-align: center;
+    color: #374650;
+    font-size: 35px;
+  }
+
+  @media (min-width: 768.1px) {
+    .muscle-health-image-mobile {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .muscle-outer {
+      position: relative;
+    }
+    .muscle-health-image {
+      display: none;
+    }
+   
+    #quize-right-section-h1 {
+      font-size: 22px !important;
+    }
+    #quize-sub-toitle-small-screen {
+      font-size: 16px !important;
+    }
+    div #collections-filter-btn {
+      justify-content: flex-start;
+      margin-left: 10px;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 768px){
+    .muscle-health-section{
+      max-height: 700px;
+    }
+  }
+  /* css for banner */
+  .muscle-health-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+  }
+  .muscle-health-content {
+    position: absolute;
+    left: 52%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 2;
+    max-width: 42%;
+  }
+
+  .muscle-health-content h2 {
+    font-size: 3.5rem;
+    color: #374650;
+    line-height: 1.2;
+  }
+
+  .muscle-health-content p {
+    font-size: 1.9rem;
+    color: #006A91;
+    line-height: 1.5;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  .muscle-health-image {
+    width: 100%;
+    /* min-height: 80vh; */
+  }
+  @media (max-width: 1100px) {
+    .muscle-health-image {
+      /* min-height: 460px; */
+    }
+    .muscle-health-image img {
+      /* max-height: 460px; */
+    }
+  }
+  @media (max-width: 768px) {
+    .muscle-health-section {
+      flex-direction: column;
+    }
+    .collection-page-faq-title {
+      font-size: 21px !important;
+      font-weight: 700 !important;
+      margin-bottom: 2.5rem !important;
+    }
+    .faq-answer {
+      font-size: 15px;
+    }
+    .collection-page-faq-question {
+      font-size: 16px !important;
+    }
+
+    .muscle-health-image {
+      min-height: auto !important;
+    }
+
+    .muscle-health-image img {
+      position: relative;
+    }
+
+    .muscle-health-content {
+      position: static;
+      transform: none;
+      padding: 10px;
+      max-width: 100%;
+    }
+
+    .muscle-health-content h2 {
+      font-size: 2.5rem;
+    }
+
+    .muscle-health-content p {
+      font-size: 1rem;
+      display: none;
+    }
+
+    .collection-page-description-sec p {
+      padding: 10px;
+      color: #006A91;
+      font-size: 16px;
+      text-align: start;
+      line-height: 1.5;
+    }
+  }
+
+  @media (min-width: 768.1px) {
+    .collection-page-description-sec {
+      display: none;
+    }
+  }
+
+  /* css for collection btn */
+  .collection-page-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .collection-button-text {
+    display: flex;
+    margin: auto;
+    color: #36454F;
+    white-space: nowrap;
+    padding-left: 5px;
+  }
+
+  .collections.image-icon {
+    margin: auto;
+    height: 4rem;
+  }
+  .collections.image-icon > img {
+    padding: 5px 0 !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  #collections-filter-btn {
+    display: flex;
+    max-width: 1200px;
+    margin: 3rem auto;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+  }
+
+  #collections-filter-btn button {
+    border: 1.5px solid #006A91;
+    border-radius: 12px;
+    background-color: #F4F5F5;
+    color: #374650;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    padding: 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 160px;
+  }
+
+  /* Active button styles */
+  #collections-filter-btn button.active .collection-icon-first-img {
+    display: none;
+  }
+
+  #collections-filter-btn button.active .collection-icon-second-img {
+    display: block;
+  }
+
+  /* Active button text styles */
+  #collections-filter-btn button.active .collection-button-text {
+    color: white !important;
+  }
+
+  #collections-filter-btn button.active {
+    background-color: #006A91 !important;
+  }
+
+  @media (max-width: 768px) {
+    .collection-title-description-wrapper p {
+      text-align: center;
+      color: #374650;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 0 10px;
+    }
+    .collection-pag-title-img-hidden h2 {
+      text-align: center;
+      color: #374650;
+      font-size: 25px;
+    }
+    div .two-column-section .row.bullet-points {
+      flex-direction: column-reverse;
+    }
+    div .bullet-points .right-column,
+    .image-with-point .right-column {
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    div .left-column .description {
+      padding-left: 0;
+      padding-right: 0;
+      align-items: center;
+      text-align: center;
+    }
+
+    div .image-with-point .row:not(.bullet-points) {
+      flex-direction: column-reverse !important;
+    }
+    .two-column-section {
+      overflow-y: hidden;
+    }
+  }
+
+  /* Default state */
+  .collection-icon-first-img {
+    display: block;
+  }
+
+  .collection-icon-second-img {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    div .collection-page-description-sec p {
+      text-align: justify;
+      padding-inline: 15px;
+    }
+    div .left-column .title {
+      font-size: 23px;
+      line-height: 27px;
+      padding-bottom: 10px;
+    }
+    div .left-column .subtitle {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    div .image-with-point .container {
+      gap: 4rem;
+    }
+    #quize-right-section-h1 {
+      font-size: 23px !important;
+    }
+    #quize-sub-toitle-small-screen {
+      font-size: 17px !important;
+    }
+    .two-column-section {
+      padding: 40px 0 !important;
+    }
+    #shopify-block-judge_me_reviews_featured_carousel_g6eGDw {
+      margin-top: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Filter collection 2",
+    "tag": "section",
+    "class": "custom-filter-2",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_filter_2",
+        "label": "Heading"
+      }, {
+        "type": "image_picker",
+        "id": "collections_page-banner-new",
+        "label": "Collections Banner Image"
+      }, {
+        "type": "text",
+        "id": "collections_descriptionn",
+        "label": "Collections Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Filter Collection",
+        "limit": 10,
+        "settings": [
+          {
+            "type": "url",
+            "id": "collection_icon_image_link",
+            "label": "Upload Collection Icon"
+          }, {
+            "type": "image_picker",
+            "id": "collection_icon_image_link_hover",
+            "label": "Add hover icon"
+          }, {
+            "type": "collection",
+            "id": "filter_collection",
+            "label": "Select collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Filter collection 2",
+        "blocks": [
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script defer defer>
+      function setActiveButton(button) {
+            var buttons = document.querySelectorAll('#collections-filter-btn button');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('#collections-filter-btn button');
+        
+            buttons.forEach(function(btn) {
+                if (window.location.href.includes(btn.getAttribute('onclick').split("'")[1])) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+</script>
