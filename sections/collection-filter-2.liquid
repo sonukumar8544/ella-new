@@ -1,27 +1,5 @@
 <!-- collection-filter-2 -->
-<div class="filter-collection-section-top-banner " id="collection_filter_{{ section.id }}">
-{% if collection.metafields.custom.feature_image %}
-  <div class="muscle-health-section">
-    <div class="muscle-health-image">
-      <img class="lazyload" loading="lazy" src="{{ collection.metafields.custom.feature_image | img_url: 'master' }}" 
-        alt="{{ collection.metafields.custom.feature_image.alt }}" width="100%"
-              height="100%">
-       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
-    </div>
-    <div class="muscle-health-image-mobile">
-      <img class="lazyload" loading="lazy" src="{{ collection.metafields.custom.feature_image_mobile_bar | img_url: 'master' }}"  width="100%"
-              height="100%" alt="{{ collection.metafields.custom.feature_image.alt }}">
-       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
-    </div>
 
-    <div class="collection-page-description-sec">
-      {{ collection.description }}
-    </div>
-  </div>
-  </div>
-{% else %}
-
-{% endif %}
 
 
 <div id="collections-filter-btn" class="filter_button">
