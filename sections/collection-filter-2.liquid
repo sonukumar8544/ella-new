@@ -20,6 +20,7 @@ assign padding_full_width = section.settings.padding_full_width
         class="filter_2_button"
         onclick="setActiveButton(this); location.href='/collections/{{ block.settings.filter_collection.handle }}';"
         type="button">
+        {% if block.settings.collection_icon_image_link != blank or block.settings.collection_icon_image_link_hover != blank %}
         <div class="collections image-icon">
           <img
             class="collection-icon-first-img "
@@ -34,6 +35,7 @@ assign padding_full_width = section.settings.padding_full_width
        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
           
         </div>
+        {% endif %}
         <div class="collection-button-text">{{ block.settings.filter_collection.title }}</div>
       </button>
     {%- endif -%}
