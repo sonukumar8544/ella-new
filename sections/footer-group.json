@@ -87,8 +87,12 @@
     },
     "newsletter_section_custom_QkJ8aD": {
       "type": "newsletter-section-custom",
+      "custom_css": [
+        ".newsletter-section-footer {padding-top: 40px; background: #086b92;}",
+        ".newsletter-email-box-footer p,.newsletter-email-box-footer h2 {text-align: center; color: #fff;}"
+      ],
       "settings": {
-        "newsletter_title": "Receive weekly health tips straight to your in<br>boxand transform your health journey.",
+        "newsletter_title": "Receive weekly health tips straight to your inboxand transform your health journey.",
         "newsletter_subtitle": "Join 25,000+ Subscribers"
       }
     },
