@@ -283,21 +283,21 @@
 
                             
  @media (min-width: 1200px) {
-          .custom-service-block .halo-item a {
+          .section-block-{{ section.id }} .halo-item a {
                     padding-top: {{ mg_top_desktop1 | append: 'px' }} !important;
                     padding-bottom: {{ mg_bottom_desktop1 | append: 'px' }} !important;
                
             }
        }
         @media (min-width: 768px) and (max-width: 1199px) {
-           .custom-service-block .halo-item a{
+           .section-block-{{ section.id }}.halo-item a{
                 padding-top: {{ mg_top_tablet1 | append: 'px' }} !important;
               padding-bottom: {{ mg_bottom_tablet1 | append: 'px' }} !important;
                
             }
         }
        @media (max-width: 767px) {
-            .custom-service-block .halo-item a{
+            .section-block-{{ section.id }} .halo-item a{
                   padding-top: {{ mg_top_mobile1 | append: 'px' }} !important;
               padding-bottom: {{ mg_bottom_mobile1 | append: 'px' }} !important;
               
