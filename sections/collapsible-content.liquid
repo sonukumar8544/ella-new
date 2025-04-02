@@ -278,7 +278,7 @@
 	    }
 	</style>
     <faqs-item class="halo-collapsible-content section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% else %} id="halo-collapsible-content-{{ section.id }}"{% endif %}>
-    	<div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170 {% elsif section.settings.container == '1170' %}container-600{% else %}container-600{% endif %}">
+    	<div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170 {% elsif section.settings.container == '600' %}container-600{% else %}container{% endif %}">
     		 {% if section.settings.collapsible_title != blank or section.settings.collapsible_des != blank %}
                 <div class="halo-block-header text-{{ section.settings.title_align }}">
                     {% if section.settings.collapsible_title != blank %}
@@ -374,6 +374,10 @@
 		            {
 		                "value": "container",
 		                "label": "t:sections.layout.container.option1"
+		            },
+                  {
+		                "value": "600",
+		                "label": "t:sections.layout.container.option5"
 		            },
 		            {
 		                "value": "1170",
