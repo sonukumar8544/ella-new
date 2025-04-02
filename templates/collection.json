@@ -497,10 +497,10 @@
         "id_section": "",
         "container": "1170",
         "padding_full_width": 0,
-        "collapsible_bg": "#fff",
+        "collapsible_bg": "#f8f8f8",
         "collapsible_bg_gradient": "",
         "collapsible_title": "",
-        "color_title": "#232323",
+        "color_title": "#3c3c3c",
         "fontsize_title": 16,
         "fontsize_title_mb": 16,
         "collapsible_des": "",
@@ -510,17 +510,17 @@
         "max_width_des": 700,
         "title_align": "center",
         "enable_image_right": false,
-        "bg_content_color": "#ffffff",
+        "bg_content_color": "#f8f8f8",
         "content_color": "#232323",
         "title_color": "#232323",
         "icon_color": "#232323",
-        "border_color": "#232323",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50
+        "border_color": "#acacac",
+        "mg_top_desktop": 30,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 30,
+        "mg_bottom_tablet": 30,
+        "mg_bottom_mobile": 30
       }
     },
     "instagram_9EfqFH": {
@@ -1071,9 +1071,7 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
-    },
-   
-    
+    }
   },
   "order": [
     "banner",
@@ -1083,8 +1081,6 @@
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
     "custom_service_block_iwtYW7",
-    "featured_blog_LT6gNw",
-    
-    
+    "featured_blog_LT6gNw"
   ]
 }
