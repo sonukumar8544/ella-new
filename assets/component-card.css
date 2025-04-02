@@ -3490,6 +3490,7 @@ quickshop-update-quantity.disabled {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    display: none;
   }
 
   .card:hover .card-wishlist {
