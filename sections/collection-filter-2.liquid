@@ -1,5 +1,5 @@
 <!-- collection-filter-2 -->
-<div class="filter-collection-section-top-banner">
+<div class="filter-collection-section-top-banner " id="collection_filter_{{ section.id }}">
 {% if collection.metafields.custom.feature_image %}
   <div class="muscle-health-section">
     <div class="muscle-outer">
@@ -27,7 +27,6 @@
     </div>
   </div>
   </div>
-
 {% else %}
   <div class="collection-pag-title-img-hidden">
     <h2>{{ collection.title }}</h2>
