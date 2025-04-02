@@ -1211,7 +1211,42 @@ assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
         "step": 5,
         "unit": "t:sections.layout.mg_desktop.unit",
         "default": 50
-    }],
+    },
+         {
+        "type": "header",
+        "content": "Container Inner Padding TOP | Bottom"
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_desktop1",
+        "label": "t:sections.layout.mg_desktop.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_tablet1",
+        "label": "t:sections.layout.mg_tablet.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_mobile1",
+        "label": "t:sections.layout.mg_mobile.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    }
+    ],
     "blocks" : [
     {
         "type" : "Text",
@@ -1620,40 +1655,7 @@ assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
             "id" : "button_background_gradient_hover",
             "label" : "t:settings_schema.colors.settings.colors_name.background_hover_gradient"
         },
-           {
-        "type": "header",
-        "content": "t:sections.layout.margin_bottom"
-    },
-    {
-        "type": "range",
-        "id": "mg_bottom_desktop",
-        "label": "t:sections.layout.mg_desktop.label",
-        "min": 0,
-        "max": 300,
-        "step": 5,
-        "unit": "t:sections.layout.mg_desktop.unit",
-        "default": 50
-    },
-    {
-        "type": "range",
-        "id": "mg_bottom_tablet",
-        "label": "t:sections.layout.mg_tablet.label",
-        "min": 0,
-        "max": 300,
-        "step": 5,
-        "unit": "t:sections.layout.mg_desktop.unit",
-        "default": 50
-    },
-    {
-        "type": "range",
-        "id": "mg_bottom_mobile",
-        "label": "t:sections.layout.mg_mobile.label",
-        "min": 0,
-        "max": 300,
-        "step": 5,
-        "unit": "t:sections.layout.mg_desktop.unit",
-        "default": 50
-    }]
+      ]
     }],
     "presets": [{
         "name": "t:sections.custom_service_block.name",
