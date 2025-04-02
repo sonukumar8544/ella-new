@@ -169,10 +169,12 @@
 }
 
 .card .price__saved {
-  display: block;
   width: 100%;
   margin: 5px 0 0 0;
   padding: 0;
+  display: none;
+}
+span.price-item.price-item--regular span {
   display: none;
 }
 
