@@ -16,9 +16,10 @@
           "type": "image",
           "settings": {
             "show_image_parallax": false,
-            "show_bg_overlay": true,
+            "show_bg_overlay": false,
             "type": "full",
-            "image": "{{ collection.image }}",
+            "image": "{{ collection.metafields.custom.feature_image.value }}",
+            "image_mobile": "{{ collection.metafields.custom.feature_image_mobile.value }}",
             "bg_overlay": "#9f9f9f"
           }
         },
