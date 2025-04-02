@@ -18,7 +18,7 @@
             "show_image_parallax": false,
             "show_bg_overlay": true,
             "type": "full",
-            "image": "shopify://shop_images/New_Ella_banner_Home_8e418a63-7b0c-4c39-a3fd-922a8f0ea689.png",
+            "image": "{{ collection.image }}",
             "bg_overlay": "#9f9f9f"
           }
         },
@@ -72,7 +72,7 @@
         "container": "default",
         "padding_full_width": 0,
         "layout": "1",
-        "show_breadcrumb": true,
+        "show_breadcrumb": false,
         "breadcrumb_alignment": "left",
         "breadcrumb_color": "#999999",
         "breadcrumb_bg": "rgba(0,0,0,0)",
@@ -123,11 +123,11 @@
         "products_per_page": "20",
         "layout": "4",
         "show_infinite_scrolling": "show_more",
-        "show_banner": false,
-        "show_banner_1": false,
+        "show_banner": true,
+        "show_banner_1": true,
         "banner_position_1": "4",
         "img_banner1": "shopify://shop_images/HORMONE_health_ella.png",
-        "link_banner_1": "",
+        "link_banner_1": "#",
         "show_banner_2": true,
         "banner_position_2": "5",
         "link_banner_2": "",
@@ -199,11 +199,49 @@
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
       }
+    },
+    "custom_text_block_zMwxgQ": {
+      "type": "custom-text-block",
+      "settings": {
+        "container": "container",
+        "padding_full_width": 0,
+        "brand_bg": "#fff",
+        "brand_bg_gradient": "",
+        "brand_title": "",
+        "color_title": "#232323",
+        "fontsize_title": 16,
+        "fontsize_title_mb": 16,
+        "brand_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "menu": "werb-main-menu-usa",
+        "grid_gap": 5,
+        "padding_vertical": 5,
+        "padding_hozi": 5,
+        "border_radius": 5,
+        "fontsize_tab": 16,
+        "color_tab": "#232323",
+        "border_color": "#f9ede1",
+        "bg_color_tab": "#f9ede1",
+        "bg_color_gradient_tab": "",
+        "color_active": "#232323",
+        "border_color_active": "#f9ede1",
+        "bg_color_active": "#f9ede1",
+        "bg_color_gradient_active": "",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "product-recently-viewed"
+    "product-recently-viewed",
+    "custom_text_block_zMwxgQ"
   ]
 }
