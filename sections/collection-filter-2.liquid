@@ -18,9 +18,9 @@ assign padding_full_width = section.settings.padding_full_width
 {% endstyle %}
 
 <div id="filter__{{ section.id }}" class="filter_button {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
-<h2
+<p
         class="filter_2_button"
-        type="button">{{ 'JUMP TO' }}</h2>
+        type="button">{{ 'JUMP TO' }}</p>
   {%- for block in section.blocks -%}
     {%- if block.settings.filter_collection -%}
       <h3
@@ -50,11 +50,11 @@ assign padding_full_width = section.settings.padding_full_width
 </div>
 
 <style>
-h2.filter_2_button {
-    font-size: 1.7rem;
+p.filter_2_button{
+    font-size: 2rem;
+    line-height: 1.8;
+    font-weight: 600;
     border-bottom: 2px solid;
-    margin: 3rem 3rem 3rem 3rem;
-  
 }
   @media (min-width: 768.1px) {
     .muscle-health-image-mobile {
