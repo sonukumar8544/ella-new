@@ -1,5 +1,17 @@
 <!-- collection-filter-2 -->
-<div id="filter__{{ section.id }}" class="filter_button ">
+{% liquid
+assign container = section.settings.container 
+assign padding_full_width = section.settings.padding_full_width
+%}
+ @media (min-width: 1025px) {
+        {% if container == 'fullwidth' %}
+            #CollectionListSection-{{ section.id }} > .container-full {
+                padding-left: {{ padding_full_width | append: 'px' }};
+                padding-right: {{ padding_full_width | append: 'px' }};
+            }
+        {% endif %}
+
+<div id="filter__{{ section.id }}" class="filter_button {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
   {%- for block in section.blocks -%}
     {%- if block.settings.filter_collection -%}
       <button
@@ -242,7 +254,39 @@
     "tag": "section",
     "class": "custom-filter-2",
     "settings": [
-     
+      {
+            "type": "select",
+            "id": "container",
+            "label": "t:sections.layout.container.option",
+            "default": "container",
+            "options": [
+            {
+                "value": "container",
+                "label": "t:sections.layout.container.option1"
+            },
+            {
+                "value": "1170",
+                "label": "t:sections.layout.container.option4"
+            },
+            {
+                "value": "1770",
+                "label": "t:sections.layout.container.option3"
+            },
+            {
+                "value": "fullwidth",
+                "label": "t:sections.layout.container.option2"
+            }]
+        },
+      {
+            "type": "range",
+            "id": "padding_full_width",
+            "label": "t:sections.layout.container.padding_full_width",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.fontsize.fontsize_title.unit",
+            "default": 0
+        },
     ],
     "blocks": [
       {
