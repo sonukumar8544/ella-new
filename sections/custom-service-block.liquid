@@ -3,6 +3,7 @@
         assign swipe = section.settings.service_block_swipe_on_mobile
         assign grid_gap = section.settings.grid_gap | times: 0.5 | append: 'px'
     -%}
+  
     <link rel="stylesheet" href="{{ 'component-custom-service-block.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'component-custom-service-block.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -11,7 +12,6 @@
             assign policies_bg = section.settings.policies_bg
             assign policies_bg_gradient = section.settings.policies_bg_gradient
             assign policies_bg_image = section.settings.policies_bg_image
-
             assign color_title = section.settings.color_title
             assign mg_bottom_title_service_block = section.settings.mg_bottom_title_service_block
             assign mg_bottom_title_service_block_mb = section.settings.mg_bottom_title_service_block_mb
@@ -63,7 +63,16 @@
             assign button_2_background_gradient_hover_block_bottom  = section.settings.button_2_background_gradient_hover_block_bottom
 
         -%}
-        
+          {% liquid 
+          assign mg_top_desktop1 = section.settings.mg_top_desktop1
+          assign mg_top_tablet1 = section.settings.mg_top_tablet1
+          assign mg_top_mobile1 = section.settings.mg_top_mobile1
+          
+          assign mg_bottom_desktop1 = section.settings.mg_bottom_desktop1
+          assign mg_bottom_tablet1 = section.settings.mg_bottom_tablet1
+          assign mg_bottom_mobile1 = section.settings.mg_bottom_mobile1
+          %}
+
         {%- if policies_bg_image != blank -%}
             {%- if section.settings.service_block_style == 'style_2' -%}
                 .section-block-{{section.id}} .bg-policies-block{background: url({{ policies_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: cover}
@@ -211,6 +220,7 @@
                 .section-block-{{section.id}} .halo-block-header .title .text {width: auto}
             {%- endunless -%}
         }
+      
         @media (min-width: 768px) and (max-width: 1199px) {
             .section-block-{{section.id}} {
                 {%- if section.settings.display_border_top or section.settings.display_border_bottom -%}
@@ -256,7 +266,10 @@
       .halo-item.cstm_icon_enabled a{
         align-items: center;
       }
-      
+
+      #cstm__product__bundle .halo-row{
+        padding-top: 0px;
+      }
       .cstm__custom_service_block {
     align-items: center;
 }
@@ -265,7 +278,33 @@
           gap:10px;
         }
       }
-    </style>
+
+
+                            
+ @media (min-width: 1200px) {
+          .section-block-{{ section.id }} .halo-item a {
+                    padding-top: {{ mg_top_desktop1 | append: 'px' }} !important;
+                    padding-bottom: {{ mg_bottom_desktop1 | append: 'px' }} !important;
+               
+            }
+       }
+        @media (min-width: 768px) and (max-width: 1199px) {
+           .section-block-{{ section.id }}.halo-item a{
+                padding-top: {{ mg_top_tablet1 | append: 'px' }} !important;
+              padding-bottom: {{ mg_bottom_tablet1 | append: 'px' }} !important;
+               
+            }
+        }
+       @media (max-width: 767px) {
+            .section-block-{{ section.id }} .halo-item a{
+                  padding-top: {{ mg_top_mobile1 | append: 'px' }} !important;
+              padding-bottom: {{ mg_bottom_mobile1 | append: 'px' }} !important;
+              
+            }
+       }
+                                </style>
+      
+
 
     <div class="custom-service-block section-block-{{ section.id }}{% if enable_block_bottom %} enable_block_bottom{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.service_block_style == 'style_3' %} service_block_style_3{% endif %}" style="--grid-gap: {{ grid_gap }}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% endif %}>
         <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
@@ -314,8 +353,10 @@
                 {%- endif -%}
                         <div class="halo-row column-{{ section.blocks.size }} items--{{ section.settings.item_width }}{% if swipe == 'slider' %} slider slider--tablet{% endif %}{% unless section.settings.enable_item_distance %} not-distance{% endunless %}{% if swipe == 'scroll' %} scroll-snap-mobile disable-srollbar{% endif %}  {%- if section.settings.custom_liquid1 == true -%} cstm__custom_service_block {% endif %}">      
                             {%- for block in section.blocks -%}
-                            <div class="halo-item{% if swipe == 'slider' %} slider__slide{% endif %}{% if block.settings.description != blank %} has-des{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %} {%- if block.settings.custom_liquid == true -%} cstm_icon_enabled{% endif %}" {% if settings.banner_animation == 'effect_fade_up' %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
-                                <a {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %} title="{{block.settings.text}}" style="--item-radius-style: {{ section.settings.item_radius | append: 'px' }};--item-padding-top-style: {{ section.settings.item_padding_top | append: 'px' }};--item-padding-bottom-style: {{ section.settings.item_padding_bottom | append: 'px' }};--item-padding-left-right-style: {{ section.settings.item_padding_left_right | append: 'px' }};--bg-color-block-style: {{ block.settings.bg_color_block }};--border-block-style: {{ block.settings.border_block }};--width-icon-style: {{ block.settings.width_icon | append: 'px' }};--height-icon-style: {{ block.settings.height_icon | append: 'px' }}">
+
+                            <div class="halo-item{% if swipe == 'slider' %} slider__slide{% endif %}{% if block.settings.description != blank %} has-des{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %} {%- if block.settings.custom_liquid == true -%} cstm_icon_enabled{% endif %}" {% if settings.banner_animation == 'effect_fade_up' %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}  {% if block.settings.policies_bg_images != blank %}style="background-image: url({{ block.settings.policies_bg_images | img_url: 'master' }});background-size: cover;
+    background-repeat: no-repeat;" {% endif %}>
+                                <a {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %} title="{{block.settings.text}}" style="--item-radius-style: {{ section.settings.item_radius | append: 'px' }};--item-padding-top-style: {{ section.settings.item_padding_top | append: 'px' }};--item-padding-bottom-style: {{ section.settings.item_padding_bottom | append: 'px' }};--item-padding-left-right-style: {{ section.settings.item_padding_left_right | append: 'px' }};--bg-color-block-style: {{ block.settings.bg_color_block }};--border-block-style: {{ block.settings.border_block }};--width-icon-style: {{ block.settings.width_icon | append: 'px' }};--height-icon-style: {{ block.settings.height_icon | append: 'px' }}"  >
                                     {%- if block.settings.icon_type == 'image' -%}
                                         {%- if block.settings.image != blank -%}
                                             <div class="policies-icon image-zoom" style="--mg-bottom-icon-style: {{ block.settings.mg_bottom_icon | append: 'px' }}; --color-icon-style: {{ block.settings.color_icon }}">
@@ -1176,7 +1217,76 @@
         "step": 5,
         "unit": "t:sections.layout.mg_desktop.unit",
         "default": 50
-    }],
+    },
+     {
+        "type": "header",
+        "content": "Container Inner Padding Top"
+    },
+    {
+        "type": "range",
+        "id": "mg_top_desktop1",
+        "label": "t:sections.layout.mg_desktop.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_top_tablet1",
+        "label": "t:sections.layout.mg_tablet.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_top_mobile1",
+        "label": "t:sections.layout.mg_mobile.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+         {
+        "type": "header",
+        "content": "Container Inner Padding Bottom"
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_desktop1",
+        "label": "t:sections.layout.mg_desktop.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_tablet1",
+        "label": "t:sections.layout.mg_tablet.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    },
+    {
+        "type": "range",
+        "id": "mg_bottom_mobile1",
+        "label": "t:sections.layout.mg_mobile.label",
+        "min": 0,
+        "max": 300,
+        "step": 5,
+        "unit": "t:sections.layout.mg_desktop.unit",
+        "default": 50
+    }
+    ],
     "blocks" : [
     {
         "type" : "Text",
@@ -1188,6 +1298,11 @@
             "label" : "t:settings_schema.colors.settings.colors_name.background_color",
             "default" : "#f8f8f8"
         },
+           {
+        "type" : "image_picker",
+        "id" : "policies_bg_images",
+        "label" : "Bg Image"
+    },
         {
             "type": "color",
             "id": "border_block",
@@ -1584,7 +1699,8 @@
             "type" : "color_background",
             "id" : "button_background_gradient_hover",
             "label" : "t:settings_schema.colors.settings.colors_name.background_hover_gradient"
-        }]
+        },
+      ]
     }],
     "presets": [{
         "name": "t:sections.custom_service_block.name",

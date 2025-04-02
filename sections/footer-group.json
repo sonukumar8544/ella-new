@@ -36,7 +36,7 @@
             "show_input_field": true,
             "input_style": "style_1",
             "input_width": 450,
-            "input_border_radius": 5,
+            "input_border_radius": 6,
             "input_text_font_size": 15,
             "button_style": "text",
             "button_text": "Subscribe",
@@ -87,7 +87,16 @@
     },
     "newsletter_section_custom_QkJ8aD": {
       "type": "newsletter-section-custom",
-      "settings": {}
+      "custom_css": [
+        ".newsletter-section-footer {padding-top: 40px; background: #36454f; border-bottom: 1px solid #fff;}",
+        ".newsletter-email-box-footer p,.newsletter-email-box-footer h2 {text-align: center; color: #fff;}",
+        ".hs-form-frame {width: 80%; margin: auto;}",
+        ".footer__content-top .halo-row {padding-top: 35px !important;}"
+      ],
+      "settings": {
+        "newsletter_title": "Receive weekly health tips straight to your inboxand transform your health journey.",
+        "newsletter_subtitle": "Join 25,000+ Subscribers"
+      }
     },
     "77a3195e-4b80-497f-a648-2fe6ad255c4f": {
       "type": "footer-01",

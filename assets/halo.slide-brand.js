@@ -128,10 +128,10 @@
 	                            settings: {
 									infinite: false,
 									centerMode: false,
-	                                slidesToShow: 2,
+	                                slidesToShow: 3,
 	                                slidesToScroll: 1,
 	                                arrows: dataArrows,
-									dots: dataDots && itemTotal > 4
+									dots: dataDots && itemTotal > 3
 	                            }
 	                        },
 	                        {

@@ -93,7 +93,7 @@
 	    }
 
 	    .section-block-{{section.id}} .collapsible-grid .card-header {
-	    	border-top: 2px solid {{ border_color }};
+	    	border-top: 1px solid {{ border_color }};
 	    }
 
 	    .section-block-{{section.id}} .collapsible-grid .faqs-item .title {
@@ -103,8 +103,8 @@
 	    	font-size: 20px;
 		    font-weight: 700;
 		    text-transform: uppercase;
-		    padding-top: 30px;
-    		padding-bottom: 30px;
+		    /* padding-top: 30px;
+    		padding-bottom: 30px; */
 	    }
 
 	    .section-block-{{section.id}} .collapsible-grid .faqs-item .title:after {
@@ -119,8 +119,8 @@
 
 	    .section-block-{{section.id}} .collapsible-grid .card-header .arrow svg{
 	    	fill: {{ icon_color }};
-		    width: 34px;
-		    height: 34px;
+		    width: 24px;
+		    height: 24px;
 		    transform: rotate(90deg);
 	    }
 
@@ -128,9 +128,9 @@
 	    	transform: rotate(-90deg);
 	    }
 
-	    .section-block-{{section.id}} .collapsible-grid .faqs-item .card-body {
+	    .section-block-{{section.id}} .collapsible-grid .faqs-item .card-body p {
 	    	color: {{ content_color }};
-	    	padding-left: 0;
+	    	padding: 0;
 	    	margin-top: 0;
 	    }
 
@@ -246,7 +246,7 @@
 		    }
 
 		    .section-block-{{section.id}} .collapsible-grid .faqs-item .card-body {
-		    	padding-bottom: 20px;
+		    	padding-bottom: 10px;
 		    }
 
 		    .cart-count-bubble, .wishlist-count-bubble {
@@ -259,6 +259,10 @@
 	            padding-top: {{ mg_top_desktop | append: 'px' }};
 	            padding-bottom: {{ mg_bottom_desktop | append: 'px' }};
 	        }
+            .section-block-{{section.id}} .container-800 {
+            width: 800px;
+            margin: auto;
+            }
 	    }
 
 	    @media (min-width: 1025px) {
@@ -278,7 +282,7 @@
 	    }
 	</style>
     <faqs-item class="halo-collapsible-content section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"{% if section.settings.id_section != blank %} id="{{ section.settings.id_section }}"{% else %} id="halo-collapsible-content-{{ section.id }}"{% endif %}>
-    	<div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
+    	<div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170 {% elsif section.settings.container == '800' %}container-800{% else %}container{% endif %} AAAAAAAAA">
     		 {% if section.settings.collapsible_title != blank or section.settings.collapsible_des != blank %}
                 <div class="halo-block-header text-{{ section.settings.title_align }}">
                     {% if section.settings.collapsible_title != blank %}
@@ -371,6 +375,10 @@
 		        "label": "t:sections.layout.container.option",
 		        "default": "container",
 		        "options": [
+                   {
+		                "value": "800",
+		                "label": "conatiner SM"
+		            },
 		            {
 		                "value": "container",
 		                "label": "t:sections.layout.container.option1"
