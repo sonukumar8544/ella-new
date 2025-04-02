@@ -2548,12 +2548,12 @@
         "button_2_border_hover_block_bottom": "#232323",
         "button_2_background_hover_block_bottom": "#232323",
         "button_2_background_gradient_hover_block_bottom": "",
-        "mg_top_desktop": 70,
-        "mg_top_tablet": 60,
-        "mg_top_mobile": 40,
-        "mg_bottom_desktop": 70,
-        "mg_bottom_tablet": 60,
-        "mg_bottom_mobile": 40
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
       }
     },
     "instagram_9EfqFH": {
@@ -2819,7 +2819,7 @@
         "instagram_item_limit": 4,
         "grid_gap": 30,
         "slide_ins": "default_ins",
-        "enable_hide_portion": true,
+        "enable_hide_portion": false,
         "display_arrow": true,
         "enable_hover_arrow": true,
         "display_dots": false,
