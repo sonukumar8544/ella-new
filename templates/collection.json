@@ -32,7 +32,7 @@
             "sub_title_position": "sub_title_above",
             "color_sub_title": "#232323",
             "color_sub_title_mb": "#ffffff",
-            "heading": "<p></p><p>{{ collection.metafields.custom.filter_collection_title.value }}</p>",
+            "heading": "<p>{{ collection.metafields.custom.filter_collection_title.value }}</p>",
             "letter_spacing_heading": "",
             "enable_style_italic": false,
             "font_size_heading": 40,
