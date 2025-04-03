@@ -90,7 +90,7 @@
             #halo-image-banner-{{ section.id }} .banner-button:not(.effect_fade_up):first-child {margin-right: 0}
         }
         @media (min-width: 768px){
-            #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading:before {background-color: var(--border-color-title-style)}
+            /* #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading:before {background-color: var(--border-color-title-style)} */
             #halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {display:  flex}
             #halo-image-banner-{{ section.id }} .item--customImg .flex-box__banner,#halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {align-items: stretch}
             #halo-image-banner-{{ section.id }} .content-box--absolute {background-color: var(--bg_content_box)}
@@ -226,7 +226,15 @@
         {% endif %}
 /* css customization */
       {{section.settings.liquid_css}}
-      
+       #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading p{
+         padding-bottom: 0;
+    margin-bottom: 0;
+       } 
+      banner-sub-title h4 span{
+        font-family: Nunito;
+    font-weight: 400;
+    font-size: 16px;
+      }
     </style>
     {%- if section.settings.id_section != blank -%}
     <div id="{{ section.settings.id_section }}">
