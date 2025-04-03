@@ -1129,6 +1129,21 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "17436723686b7247d5": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_shoppable_videos_easyvideo_section_Tmaitf": {
+          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_shoppable_videos_easyvideo_section_Tmaitf"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -1136,9 +1151,10 @@
     "collection_filter_2_fMXGJ3",
     "product-grid",
     "1649236457c43290d7",
+    "17436723686b7247d5",
+    "featured_blog_LT6gNw",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
-    "custom_service_block_iwtYW7",
-    "featured_blog_LT6gNw"
+    "custom_service_block_iwtYW7"
   ]
 }
