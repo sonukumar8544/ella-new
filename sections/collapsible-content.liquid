@@ -92,9 +92,7 @@
     border-radius: 6px;
     padding: 5px 11px;
 }
-    /* .section-block-{{section.id}} .container.AAAAAAAAA  {
-        max-width: 800px;
-      } */
+   
 	    .section-block-{{section.id}} .collapsible-grid {
 	    	width: 47.14%;
 	    }
@@ -271,6 +269,9 @@
 	    }
 
 	    @media (min-width: 1200px) {
+           .section-block-{{section.id}} .container.AAAAAAAAA  {
+        max-width: 900px;
+      }
 	        .section-block-{{section.id}} {
 	            padding-top: {{ mg_top_desktop | append: 'px' }};
 	            padding-bottom: {{ mg_bottom_desktop | append: 'px' }};
