@@ -1498,7 +1498,6 @@
         "minus_spacing_top": 0,
         "rich_text_bg": "#f8f8f8",
         "rich_text_bg_gradient": "",
-        "rich_text_bg_image": "shopify://shop_images/Section_1.jpg",
         "enable_column": false,
         "content_align": "left",
         "mg_top_desktop": 95,
@@ -3177,6 +3176,21 @@
       "settings": {
         "custom_liquid": ""
       }
+    },
+    "17436577228b173582": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_shoppable_videos_easyvideo_section_fEHxM3": {
+          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_shoppable_videos_easyvideo_section_fEHxM3"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -3199,6 +3213,7 @@
     "instagram_9EfqFH",
     "featured_blog_LT6gNw",
     "tiktok_video_4nH3kX",
-    "custom_liquid_GeGnhc"
+    "custom_liquid_GeGnhc",
+    "17436577228b173582"
   ]
 }
