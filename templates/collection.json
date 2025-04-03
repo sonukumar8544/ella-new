@@ -695,9 +695,7 @@
         "image_Ycqg4d",
         "image_xCEB7Q"
       ],
-      "custom_css": [
-        ".spotlight-inner .spotlight-button.custom-button-style:hover {background: #086b92 !important; color: white;}"
-      ],
+      "custom_css": [],
       "settings": {
         "container": "container",
         "padding_full_width": 0,
@@ -711,13 +709,13 @@
         "item_distance": 15,
         "item_radius": 12,
         "enable_arrows": true,
-        "enable_arrows_mb": false,
+        "enable_arrows_mb": true,
         "position_horizontal_slick_arrow": "0",
-        "enable_dots": true,
-        "enable_dots_mb": true,
+        "enable_dots": false,
+        "enable_dots_mb": false,
         "display_border_bottom": false,
-        "border_color": "#e3e3e3",
-        "spotlight_bg": "#f2f3f9",
+        "border_color": "#fff",
+        "spotlight_bg": "#fff",
         "spotlight_bg_gradient": "",
         "enable_custom_position_title": false,
         "spotlight_block_title": "",
@@ -772,7 +770,7 @@
         "mg_top_mobile": 40,
         "mg_bottom_desktop": 65,
         "mg_bottom_tablet": 65,
-        "mg_bottom_mobile": 40
+        "mg_bottom_mobile": 30
       }
     },
     "collapsible_content_F3qXCN": {
@@ -844,9 +842,9 @@
         "title_align": "center",
         "enable_image_right": false,
         "bg_content_color": "#f8f8f8",
-        "content_color": "#232323",
-        "title_color": "#232323",
-        "icon_color": "#232323",
+        "content_color": "#101828",
+        "title_color": "#101828",
+        "icon_color": "#101828",
         "border_color": "#acacac",
         "mg_top_desktop": 30,
         "mg_top_tablet": 30,
