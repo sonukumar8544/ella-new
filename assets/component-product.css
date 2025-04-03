@@ -1376,7 +1376,7 @@
 .productView-quantity{
     letter-spacing: 0;
     font-size: 0;
-    margin: 10px 0 0 0;
+    /* margin: 10px 0 0 0; */
     display: block;
 }
 
@@ -1851,6 +1851,8 @@
     -moz-appearance: none;
     appearance: none;
     text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .iOS .quantity__style--1 .quantity__input {
@@ -2043,8 +2045,9 @@ body.video-show.product-video-show .halo-video-popup {
 .product-details .product-option {
     display: inherit;
     margin: 0;
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .product-details .productView-countDown .num {
