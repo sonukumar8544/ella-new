@@ -95,7 +95,7 @@
             #halo-image-banner-{{ section.id }} .item--customImg .flex-box__banner,#halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {align-items: stretch}
             #halo-image-banner-{{ section.id }} .content-box--absolute {background-color: var(--bg_content_box)}
 
-            banner-sub-title h4 span{
+          #collection_custom_banner banner-sub-title h4 span{
             font-family: Nunito;
             font-weight: 400;
             font-size: 18px;
@@ -204,6 +204,14 @@
         }
         @media (max-width: 767px){
             #halo-image-banner-{{ section.id }}{padding-top: var(--mg_top_mobile);padding-bottom: var(--mg_bottom_mobile)}
+         #collection_custom_banner .banner-heading p{
+           font-size: 22px;
+    line-height: normal !important;
+    height: auto;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+         }
         }
         @media (max-width: 550px){
             #halo-image-banner-{{ section.id }} .item--smallImg-st2 .content-box {flex-direction: column;padding-right: 15px;padding-left: 15px;margin: 0 auto}
