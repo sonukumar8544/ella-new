@@ -94,6 +94,15 @@
             #halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {display:  flex}
             #halo-image-banner-{{ section.id }} .item--customImg .flex-box__banner,#halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {align-items: stretch}
             #halo-image-banner-{{ section.id }} .content-box--absolute {background-color: var(--bg_content_box)}
+
+            banner-sub-title h4 span{
+            font-family: Nunito;
+            font-weight: 400;
+            font-size: 16px;
+            }
+          #collection_custom_banner .banner-item .content-box{
+                    left: calc((5%)) !important;
+          }
         }
         @media (min-width: 992px) {
             #halo-image-banner-{{ section.id }} .content-box .banner-action--style_4 .small_img_button_2 {margin-left: var(--smallImg_btn_2_spacing_top)}
@@ -230,11 +239,8 @@
          padding-bottom: 0;
     margin-bottom: 0;
        } 
-      banner-sub-title h4 span{
-        font-family: Nunito;
-    font-weight: 400;
-    font-size: 16px;
-      }
+      
+     
     </style>
     {%- if section.settings.id_section != blank -%}
     <div id="{{ section.settings.id_section }}">
