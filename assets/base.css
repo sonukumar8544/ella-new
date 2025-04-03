@@ -1236,9 +1236,12 @@ body:not(.safari) .button {
 
 .button.button-1,
 .button.button--primary {
-  background: var(--btn-1-bg);
-  border-color: var(--btn-1-border);
-  color: var(--btn-1-color);
+  /* background: var(--btn-1-bg); */
+  background: #086b92;
+  /* border-color: var(--btn-1-border); */
+  border-color: #086b92;;
+  /* color: var(--btn-1-color); */
+  color: white;
   background-origin: border-box;
 }
 
@@ -8095,9 +8098,9 @@ cursor: pointer;
   display: none !important;
 }
 
-button.button.bundle-product-toogle.button-2 {
+/* button.button.bundle-product-toogle.button-2 {
   display: none;
-}
+} */
 
 input[type=checkbox]:checked+.form-label--checkbox:before {
   background-color: #006A91 !important;
@@ -8107,4 +8110,18 @@ input[type=checkbox]:checked+.form-label--checkbox:before {
 
 .product-form__input+.product-form__input{
   margin-top: 0px !important;
+}
+
+.productView-price .price.price--medium .price-item, .productView-price .price.price--medium .price-item .money {
+  display: block !important;
+  color: #006A91;
+}
+
+.tabs .tab .tab-title{
+  font-family: Nunito;
+}
+
+.product-descriptios-bottom{
+  max-width: 1150px !important;
+  margin: auto;
 }
