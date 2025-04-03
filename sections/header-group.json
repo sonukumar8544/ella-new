@@ -17,10 +17,10 @@
         "announcement_3cLqPQ": {
           "type": "announcement",
           "settings": {
-            "text": "<p style=\"\">Bundle up &amp; Save! Purchase any 3 items &amp; unlock 15% off. No code needed!</p>",
+            "text": "<p style=\"font-style: normal;\n    font-weight: 500;\n    letter-spacing: 1px;\n    font-family: Lato;\n    text-align: center;\">Bundle up &amp; Save! Purchase any 3 items &amp; unlock 15% off. No code needed!</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#9f9696",
-            "btn_bg_color": "#ffffff",
+            "btn_bg_color": "#f8ce63",
             "btn_bg_color_gradient": ""
           }
         },
@@ -79,7 +79,7 @@
       "settings": {
         "layout": "slider",
         "enable_close": false,
-        "color_text": "#ffffff",
+        "color_text": "#f8ce63",
         "bg_color_text": "#374650",
         "bg_color_text_gradient": "",
         "font_size_text": 14,
