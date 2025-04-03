@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/Test_Banner.png",
             "mobile_image": "{{ collection.metafields.custom.feature_image_mobile.value }}",
-            "enable_max_width_image": true,
+            "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
             "enable_custom_image": false,
