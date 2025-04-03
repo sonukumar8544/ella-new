@@ -16,7 +16,6 @@
           "type": "largeImg",
           "settings": {
             "image": "shopify://shop_images/Collection_Banner.jpg",
-            "mobile_image": "{{ collection.metafields.custom.feature_image_mobile.value }}",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
