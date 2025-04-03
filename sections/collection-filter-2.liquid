@@ -43,7 +43,7 @@ assign padding_full_width = section.settings.padding_full_width
           
         </div>
         {% endif %}
-        <div class="collection-button-text">{{ block.settings.filter_collection.title }}</div>
+        <div class="collection-button-text">{{ block.settings.filter_collection_title }}</div>
       </h3>
     {%- endif -%}
   {%- endfor -%}
@@ -338,6 +338,11 @@ p.filter_2_button{
             "type": "collection",
             "id": "filter_collection",
             "label": "Select collection"
+          },
+           {
+            "type": "text",
+            "id": "filter_collection_title",
+            "label": "Title"
           }
         ]
       }
