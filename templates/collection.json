@@ -1054,7 +1054,7 @@
         "mg_bottom_mobile1": 100
       }
     },
-     "16378289883380f691": {
+    "16378289883380f691": {
       "type": "spotlight-block",
       "blocks": {
         "16378289880293e735-0": {
@@ -1305,15 +1305,31 @@
         "mg_bottom_mobile": 40
       }
     },
+    "1743675461e354d576": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_shoppable_videos_easyvideo_section_EXApQg": {
+          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_shoppable_videos_easyvideo_section_EXApQg"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
   },
   "order": [
     "collection_banner_meta_6B63K4",
     "collection_filter_2_fMXGJ3",
     "product-grid",
     "1649236457c43290d7",
+    "1743675461e354d576",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
-     "custom_service_block_iwtYW7",
+    "custom_service_block_iwtYW7",
     "16378289883380f691"
   ]
 }
