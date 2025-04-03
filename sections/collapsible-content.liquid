@@ -252,38 +252,45 @@
 	    		width: 100%;
 	    	}
 
-	    	.section-block-{{section.id}} .collapsible-grid .faqs-item .title {
-			    padding-top: 16px;
-	    		padding-bottom: 16px;
-		    }
-
-		    .section-block-{{section.id}} .collapsible-grid .card-header .arrow{
-	    		top: 15%;
-		    }
-
-		    .section-block-{{section.id}} .collapsible-grid .faqs-item .card-body {
-		    	padding-bottom: 10px;
-		    }
-
-		    .cart-count-bubble, .wishlist-count-bubble {
-		    	font-size: calc(var(--font-body-size) - 2px);
-		    }
-           .section-block-{{section.id}} .faqs .faqs-item .card-header .title {
-    padding: 10px 0px;
-    cursor: pointer;
-    position: relative;
-    font-family: Nunito;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: normal;
-    text-transform: capitalize;
-             background-color: {{ bg_content_color }};
+            .section-block-{{section.id}} .collapsible-grid .faqs-item .title {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            }
+            
+            .section-block-{{section.id}} .collapsible-grid .card-header .arrow{
+            top: 15%;
+            }
+            
+            .section-block-{{section.id}} .collapsible-grid .faqs-item .card-body {
+            padding-bottom: 10px;
+            }
+            
+            .cart-count-bubble, .wishlist-count-bubble {
+            font-size: calc(var(--font-body-size) - 2px);
+            }
+            .section-block-{{section.id}} .faqs .faqs-item .card-header .title {
+            padding: 10px 0px;
+            cursor: pointer;
+            position: relative;
+            font-family: Nunito;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: normal;
+            text-transform: capitalize;
+            background-color: {{ bg_content_color }};
+            }
+          
+            .section-block-{{section.id}} .collapsible-grid .faqs-item {
+            background-color: {{ bg_content_color }};
+            margin-bottom: 11px;
+            }
+          
+            .section-block-{{section.id}}  .collapsible-grid .card-header .arrow svg {
+            width: 20px;
+            height: 20px;
+            }
 }
-             .section-block-{{section.id}} .collapsible-grid .faqs-item {
-	    	background-color: {{ bg_content_color }};
-    margin-bottom: 11px;
-	    }
-	    }
+	    
 
 	    @media (min-width: 1200px) {
            .section-block-{{section.id}} .container.AAAAAAAAA  {
