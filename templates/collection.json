@@ -15,7 +15,7 @@
         "large_img_wBDKi4": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify://shop_images/Test_Banner.png",
+            "image": "shopify://shop_images/Collection_Banner.jpg",
             "mobile_image": "{{ collection.metafields.custom.feature_image_mobile.value }}",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
@@ -60,7 +60,7 @@
             "color_countdown": "#232323",
             "color_countdown_mb": "#ffffff",
             "countdown_margin_bottom": 35,
-            "content_width": 425,
+            "content_width": 500,
             "bg_color_content": "",
             "align": "left",
             "align_items": "center",
