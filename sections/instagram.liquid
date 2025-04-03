@@ -290,6 +290,7 @@
 .section-block-{{section.id}} .image-zoom:hover img{
   transform: none; 
   }
+  {% if template contains 'index' %}
  .section-block-{{section.id}} .halo-block-header .title .text{
     width:100%;
      padding: 0;
@@ -297,6 +298,7 @@
     font-weight: 700;
     font-size: 34px;
   }
+    {% endif %}
   
 </style>
 
