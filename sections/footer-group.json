@@ -11,84 +11,10 @@
   "type": "footer",
   "name": "Footer Group",
   "sections": {
-    "newsletter_UrXam7": {
-      "type": "newsletter",
-      "blocks": {
-        "newsletter_FYjWUb": {
-          "type": "newsletter",
-          "settings": {
-            "section_title": "Sign up for our newsletter",
-            "section_title_font_size": 32,
-            "section_title_font_size_mb": 18,
-            "section_title_font_weight": "600",
-            "section_title_text_transform": "none",
-            "section_title_font_style": "normal",
-            "section_title_color": "#e8e8e8",
-            "mg_bottom_title": 12,
-            "mg_bottom_title_mb": 12,
-            "section_description": "",
-            "section_description_font_size": 16,
-            "section_description_font_size_mb": 14,
-            "section_description_font_weight": "500",
-            "section_description_color": "#191919",
-            "margin_bottom_des": 60,
-            "des_line_height": 20,
-            "show_input_field": true,
-            "input_style": "style_1",
-            "input_width": 450,
-            "input_border_radius": 6,
-            "input_text_font_size": 15,
-            "button_style": "text",
-            "button_text": "Subscribe",
-            "button_font_size": 16,
-            "button_width": 150,
-            "button_text_color": "#ffffff",
-            "button_border_color": "#ffffff",
-            "button_background_color": "rgba(0,0,0,0)",
-            "button_gradient_color": "",
-            "button_text_color_hover": "#232323",
-            "button_border_color_hover": "#232323",
-            "button_background_color_hover": "rgba(0,0,0,0)",
-            "button_gradient_color_hover": "",
-            "button_text_transform": "uppercase",
-            "button_font_weight": "600",
-            "input_placeholder": "Your email address",
-            "input_placeholder_color": "#ffffff",
-            "input_background_color": "rgba(0,0,0,0)",
-            "input_border_color": "#ffffff",
-            "form_gap": 27,
-            "newsletter_content_direction": "column",
-            "newsletter_form_justify_content": "center",
-            "input_width_behavior": "restricted"
-          }
-        }
-      },
-      "block_order": [
-        "newsletter_FYjWUb"
-      ],
-      "disabled": true,
-      "settings": {
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "background": "#086b92",
-        "background_gradient": "",
-        "enable_parallax": true,
-        "section_text_align": "center",
-        "justify_section_content": "center",
-        "section_item_distance": 50,
-        "enable_social_media_below": false,
-        "mg_top_desktop": 65,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 60,
-        "mg_bottom_tablet": 55,
-        "mg_bottom_mobile": 5
-      }
-    },
     "newsletter_section_custom_QkJ8aD": {
       "type": "newsletter-section-custom",
       "custom_css": [
-        ".newsletter-section-footer {padding-top: 40px; background: #086B92;}",
+        ".newsletter-section-footer {padding-top: 35px; padding-left:5px; padding-right:5px; background: #086b92;}",
         ".newsletter-email-box-footer p,.newsletter-email-box-footer h2 {text-align: center; color: #fff;}",
         ".hs-form-frame {width: 80%; margin: auto;}",
         ".footer__content-top .halo-row {padding-top: 35px !important;}"
@@ -280,7 +206,6 @@
     }
   },
   "order": [
-    "newsletter_UrXam7",
     "newsletter_section_custom_QkJ8aD",
     "77a3195e-4b80-497f-a648-2fe6ad255c4f"
   ]
