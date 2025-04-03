@@ -116,6 +116,7 @@
     bottom: unset;
     display: inline-block;
     vertical-align: top;
+    display: none;
 }
 
 .bundle-product-item.style-3 .bundle-product-toogle{
@@ -245,7 +246,8 @@
 }
 
 .bundle-product-price{
-    font-size: var(--product-price-font-size);
+    /* font-size: var(--product-price-font-size); */
+    font-size: 18px !important;
     color: var(--product-price-color);
     margin: 0 0 15px 0;
 }
