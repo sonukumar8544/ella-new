@@ -1873,7 +1873,7 @@
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
             "color_block": "#086b92",
-            "description": "<h2 style=\"color:#374650\">18,934 Repeat Customers (and Counting!)</h2>\n\n<h3 style=\"color:#374650\">✔ Clinically Effective Formula</h3>\n<p style=\"color:#374650\">Backed by science, trusted by experts—with visible results within 2-3 months</p>\n\n<h3 style=\"color:#374650\">✔ Unmatched Ingredient Integrity</h3>\n<p style=\"color:#374650\">\nUS-sourced actives crafted in FDA-inspected Canadian GMP certified facility\n</p><h3 style=\"color:#374650\">✔ Truth in Every Bottle</h3>\n<p style=\"color:#374650\">No fillers, no alterations—what’s on the label is exactly what’s inside.</p>\n<h3 style=\"color:#374650\">✔ Root-Cause Solutions, Not Quick Fixes</h3>\n<p style=\"color:#374650\">Patented formulations designed to work deeply for long-term health.</p>\n<h3 style=\"color:#374650\">\n✔ Your Wellness Partner</h3>\n<p style=\"color:#374650\">Expert guidance, research-backed blogs, and real human support to help you on your health journey.</p>\n<h3 style=\"color:#374650\">✔ Real-Time Support</h3>\n<p style=\"color:#374650\">85% of customer queries resolved within 2 hours</p>\n<i style=\"color:#374650\">We are a Supplement Company That Actually Wants You to Get Better</i>",
+            "description": "<h2 style=\"color:#374650\">18,934 Repeat Customers (and Counting!)</h2>\n\n<h3 style=\"color:#374650\">✔ Clinically Effective Formulas</h3>\n<p style=\"color:#374650\">Science-backed transformations in 8–12 weeks.</p>\n\n<h3 style=\"color:#374650\">✔ Unmatched Ingredient Integrity</h3>\n<p style=\"color:#374650\">\nUS actives, FDA/GMP-certified facility.\n</p><h3 style=\"color:#374650\">✔ Root-Cause Solutions, Not Quick Fixes</h3>\n<p style=\"color:#374650\">Patented formulas for lasting wellness.</p>\n\n<p style=\"color:#374650\">Partnered Support.</p>\n<p style=\"color:#374650\">Real human support • 85% solved in 2hrs</p>\n\n<p style=\"color:#374650\">We are a Supplement Company That Actually Wants You to Get Better</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -3193,6 +3193,9 @@
       },
       "block_order": [
         "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
+      ],
+      "custom_css": [
+        ".easyvideo_gallery h2 {display: none;}"
       ],
       "settings": {
         "include_margins": false
