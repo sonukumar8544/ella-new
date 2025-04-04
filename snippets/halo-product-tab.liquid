@@ -153,8 +153,9 @@
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
                             {% if content_meta == 'nutritional-info' %}
-                             {{ product.metafields.custom._nutritional_information.value }}
+                             <img src="{{ product.metafields.custom._nutritional_information.value | img_ur:''}}" >
 
+                              
                               {% else %}
 							{{ content }}
                               {% endif %}
