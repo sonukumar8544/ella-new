@@ -433,6 +433,10 @@
     padding-bottom: 13px;
   }
 }
+.template-collection .custom-service-block .halo-row.not-distance .halo-item {
+  background-size: cover;
+}
+
 @media (min-width: 769px) {
   .custom-service-block .halo-item a {
     align-content: center !important;
