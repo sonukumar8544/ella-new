@@ -520,8 +520,11 @@
       "block_order": [
         "easyvideo_shoppable_videos_easyvideo_section_EXApQg"
       ],
+      "custom_css": [
+        ".splide__slide .nm-ev-center img.add_splide {max-width: 100%; max-height: inherit !important; width: 100%;}"
+      ],
       "settings": {
-        "include_margins": false
+        "include_margins": true
       }
     },
     "16378289883380f691": {
@@ -1326,8 +1329,7 @@
         "mg_bottom_tablet1": 125,
         "mg_bottom_mobile1": 100
       }
-    },
-    
+    }
   },
   "order": [
     "collection_banner_meta_6B63K4",
