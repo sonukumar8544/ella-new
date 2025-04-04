@@ -152,8 +152,12 @@
 							<div class="tab-popup-content">
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
-                              {{ content_meta }}
+                            {% if content_meta == 'nutritional-info' %}
+                             {{ product.metafields.custom._nutritional_information.value }}
+
+                              {% else %}
 							{{ content }}
+                              {% endif %}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
 								<div class="tab-showMore is-show" data-letter="{{ letter }}" data-des-max="{{ block.settings.maximum_des_to_show }}">
