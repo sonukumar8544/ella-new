@@ -151,7 +151,8 @@
 							</div>
 							<div class="tab-popup-content">
 						{%- endif -%}
-                              {{ forloop.index0 }}------
+                         {% assign content_meta = title | escape | handleize %} 
+                              {{ content_meta }}
 							{{ content }}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
