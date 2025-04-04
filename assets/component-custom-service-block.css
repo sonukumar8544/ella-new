@@ -433,6 +433,17 @@
     padding-bottom: 13px;
   }
 }
+@media (min-width: 769px) {
+  .custom-service-block .halo-item a {
+    align-content: center !important;
+    justify-content: end;
+  }
+  .section-block-template--24261275058472__1643015886f75782fe.service_block_style_3
+    .policies-content
+    .policies-text.type--font_2 {
+    text-align: left;
+  }
+}
 @media (max-width: 768px) {
   .template-page .custom-service-block .halo-item a {
     justify-content: center !important;
