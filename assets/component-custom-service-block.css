@@ -434,7 +434,7 @@
   }
 }
 .template-collection .custom-service-block .halo-row.not-distance .halo-item {
-  background-size: cover;
+  background-size: cover !important;
 }
 
 @media (min-width: 769px) {
