@@ -1,0 +1,85 @@
+<style>
+.message-container {
+display: none; /* Initially hidden */
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: white;
+padding: 38px;
+    border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+text-align: center;
+z-index: 999;
+width: 60%;
+}
+
+.form__popup {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+
+.form__close {
+margin-top: 10px;
+/* background: red; */
+color: white;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+}
+.form__close svg{
+height: 20px;
+}
+.message-container p {
+    font-size: 18px;
+    line-height: 1.3em;
+  color: green;
+}
+.error_message {
+color: red;
+}
+  @media(max-width: 600px){
+  .message-container{width: 97%;margin:auto; }  
+  }
+  .job-form .fieldset{
+    margin: auto;
+    justify-content: center;
+  }
+ label.resume.text_resumes {
+    line-height: 2;
+  }
+  }
+</style>
+
+<div class="form__popup" id="form__popup"></div>
+
+<div class="message-container" id="popup">
+<button class="form__close button-effect" id="formcloseBtngrp" style="color: #000;
+background: no-repeat;
+position: absolute;
+top: 0;
+right: 14px;
+" >{% render 'icon-close' %}</button>
+
+<p class="success_message" style="text-align: center;">Your Application has been submitted.<br> You will get an email confirmation soon. </p>
+<p class="error_message"></p>
+
+</div>
+
+<script>
+document.getElementById("formcloseBtngrp").addEventListener("click", function () {
+document.getElementById("popup").style.display = "none";
+document.getElementById("form__popup").style.display = "none";
+});
+
+document.getElementById("form__popup").addEventListener("click", function () {
+document.getElementById("popup").style.display = "none";
+document.getElementById("form__popup").style.display = "none";
+});
+</script>
