@@ -604,12 +604,13 @@ margin-top: 20px;
  {% if section.settings.slider_layout_3_no_round == true %}
    #brands-{{section.id}} .csrt__image_round.slider_layout_3_no_round  {
     margin-bottom: 0px !important;
-    width: 100%;
+    width: 90%;
     border-radius: 0% !important;
     top: 1px;
     transition: all .5s;
     border: none !important;
     margin: 0;
+     margin-bottom:15px !important;
 }
 .section-block-{{ section.id }} .csrt__image_round a.adaptive_height.slider_layout_3_no_round img{
   border-radius: 2%;
@@ -812,6 +813,11 @@ margin-top: 20px;
         "type": "header",
         "content": "t:settings_schema.general.name"
     },
+       {
+        "type": "text",
+        "id": "id",
+        "label": "uniqueID",
+       },
     {
         "type": "select",
         "id": "container",
