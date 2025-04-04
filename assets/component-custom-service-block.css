@@ -433,3 +433,9 @@
     padding-bottom: 13px;
   }
 }
+@media (max-width: 768px) {
+  .template-page .custom-service-block .halo-item a {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
