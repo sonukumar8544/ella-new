@@ -435,7 +435,7 @@
 }
 @media (max-width: 768px) {
   .template-page .custom-service-block .halo-item a {
-    justify-content: center;
+    justify-content: center !important;
     margin-bottom: 50px;
   }
 }
