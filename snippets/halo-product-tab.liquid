@@ -144,13 +144,13 @@
 						{%- if tab_layout == 'vertical_sidebar' or style_mobile == 'sidebar-mobile' or style_mobile == 'popup-mobile' -%}
 							<div class="tab-popup-header">
 								<h5>
-									<span class="text">{{ title | escape }}</span>
+									---------<span class="text">{{ title | escape }}</span>
 								</h5>
 								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
 							</div>
 							<div class="tab-popup-content">
 						{%- endif -%}
-							{{ content }}
+							{{ content }}------------
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
 								<div class="tab-showMore is-show" data-letter="{{ letter }}" data-des-max="{{ block.settings.maximum_des_to_show }}">
