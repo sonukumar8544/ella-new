@@ -538,7 +538,7 @@
                 {%- endif -%}
                 {%- if blog.comments_enabled? -%}
                     <div class="article-template__comment-wrapper background-secondary{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                        <div id="comments" class="page-width page-width--narrow">
+                        <div id="comments" class="privacy-page-width-sec page-width page-width--narrow">
                             {%- if article.comments_count > 0 -%}
                                 {%- assign anchorId = '#Comments-' | append: article.id -%}
                                 <div class="halo-block-header">

@@ -411,6 +411,24 @@
         "mg_bottom_mobile": 0
       }
     },
+    "1743670996c8046cda": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
+          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
+      ],
+      "custom_css": [
+        ".easyvideo_gallery h2 {display: none;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
     "slide_show_GkM6G9": {
       "type": "slide-show",
       "blocks": {
@@ -2389,11 +2407,93 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
-    }
+    },
+    "collapsible_content_F3qXCN": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_UGJtxF": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_mwczVt": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_Dh4Vxn": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_ra94mt": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        },
+        "content_JtrJUc": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UGJtxF",
+        "content_mwczVt",
+        "content_Dh4Vxn",
+        "content_ra94mt",
+        "content_JtrJUc"
+      ],
+      "settings": {
+        "id_section": "",
+        "container": "600",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "Frequently asked questions",
+        "color_title": "#3c3c3c",
+        "fontsize_title": 34,
+        "fontsize_title_mb": 22,
+        "collapsible_des": "Everything you need to know about the product and billing.",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "fontsize_des_mb": 15,
+        "max_width_des": 740,
+        "title_align": "center",
+        "enable_image_right": false,
+        "bg_content_color": "#ffffff",
+        "content_color": "#101828",
+        "title_color": "#101828",
+        "icon_color": "#101828",
+        "border_color": "#acacac",
+        "mg_top_desktop": 30,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 15,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 40,
+        "mg_bottom_mobile": 20
+      }
+    },
   },
   "order": [
     "main",
     "slide_show_GkM6G9",
+    "1743670996c8046cda",
     "custom_service_block_kQafyC",
     "brand_slider_tRACcq",
     "custom_service_block_CrXkTR",
@@ -2403,6 +2503,7 @@
     "custom_service_block_qLkzTJ",
     "instagram_9EfqFH",
     "custom_service_block_iwtYW7",
-    "featured_blog_7CQrDa"
+    "featured_blog_7CQrDa",
+    "collapsible_content_F3qXCN"
   ]
 }
