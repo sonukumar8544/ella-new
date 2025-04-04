@@ -1,4 +1,9 @@
 /* cstm */
+@media (min-width: 769px) {
+  body.template-page .cstm_policies__block img {
+    width: 120px;
+  }
+}
 .cstm_policies__block {
   padding-top: 2px;
 }
@@ -182,11 +187,5 @@
 
   .policies-block .halo-item img {
     margin-right: calc(var(--icon-mg-right-style) * 0.5);
-  }
-}
-
-@media (min-width: 769px) {
-  body.template-page .cstm_policies__block img {
-    width: 120px;
   }
 }
