@@ -18,7 +18,7 @@
         "type": "color",
         "id": "newsletterbg",
         "label": "Newsletter Bg",
-        "default": "#fff"
+        "default": "#e6f0f4"
       },
       {
         "type": "text",
@@ -41,7 +41,7 @@
   }
 {% endschema %}
 
-<div class="newsletter-section-footer">
+<div class="newsletter-section-footer" style="background: {{ section.settings.newsletterbg }}">
   <div class="newsletter-email-box-footer">
    <div class="content_newsletter"> <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">{{ section.settings.newsletter_title }}</h2>
     <p  style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
@@ -58,6 +58,28 @@
 </div>
 
 <style>
+.newsletter-email-box-footer {
+    max-width: 1320px;
+    margin: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding-bottom: 32px;
+    gap: 20px;
+}
+.newsletter-email-box-footer .content_newsletter {
+    width: 30%;
+    border: 1px solid #d2d2d2;
+    padding: 71px 5px;
+}
+.newsletter-email-box-footer .hs-form-frame {
+    width: 70%;
+    margin: auto;
+    padding: 0px 20px;
+    border: 1px solid #d2d2d2;
+}
+
+  
   .newsletter-section-footer {
   padding-top: 35px;
   padding-left: 5px;
