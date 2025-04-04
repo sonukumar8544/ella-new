@@ -1,0 +1,184 @@
+{% schema %}
+    {
+      "name": "image with text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What's Inside"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title1",
+          "default": "Annatto-Derived Tocotrienols"
+        },
+        {
+          "type": "text",
+          "id": "title2",
+          "label": "Product Title2",
+          "default": "Annatto-Derived Tocotrienols"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Product Description1",
+          "default": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference."
+        }, 
+        {
+          "type": "textarea",
+          "id": "description2",
+          "label": "Product Description2",
+          "default": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference."
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "SHOP NOW"
+        }
+      ],
+      "presets": [
+        {
+          "name": "image with text"
+        }
+      ]
+    }
+  {% endschema %}
+  
+  <div class="img-container">
+    {% if section.settings.heading %}
+      <h2 class="img-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+  
+    <div class="img-content">
+      <div class="img-image-container">
+        {% if section.settings.image %}
+          <img src="{{ section.settings.image | img_url: 'master' }}" alt="Annatto Seeds">
+        {% else %}
+          <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+        {% endif %}
+      </div>
+  
+      <div class="img-text-container">
+        {% if section.settings.title %}
+          <h3>{{ section.settings.title }}</h3>
+        {% endif %}
+  
+        {% if section.settings.description %}
+          <p>{{ section.settings.description }}</p>
+        {% endif %}
+  
+        {% if section.settings.title2 %}
+          <h3>{{ section.settings.title2 }}</h3>
+        {% endif %}
+  
+        {% if section.settings.description2 %}
+          <p>{{ section.settings.description2 }}</p>
+        {% endif %}
+  
+        {% if section.settings.button_link and section.settings.button_text %}
+          <a href="{{ section.settings.button_link }}" class="img-shop-button">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  
+  <style>
+    .img-container {
+      max-width: 1300px;
+      text-align: center;
+      padding: 40px 20px;
+      margin: auto;
+    }
+    .img-heading {
+      color: #374650;
+      font-size: 35px;
+      margin-bottom: 25px;
+      line-height: 1;
+    }
+    .img-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .img-image-container {
+      background-color: #eaeaea;
+      border-radius: 20px;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .img-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .img-text-container {
+      max-width: 500px;
+      text-align: left;
+    }
+    .img-text-container h3 {
+      font-size: 35px;
+      color: #374650;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .img-text-container p {
+      color: #36454F;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .img-shop-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid #086b92;
+      color: #086b92;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      width: 200px;
+      text-align: center;
+    }
+    .img-shop-button:hover {
+      background-color: #086b92;
+      color: white;
+    }
+  
+    @media (max-width: 768px) {
+      .img-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .img-image-container {
+        width: 100%;
+        height: auto;
+      }
+      .img-text-container {
+        max-width: 90%;
+        text-align: center;
+      }
+    }
+  </style>
