@@ -411,24 +411,6 @@
         "mg_bottom_mobile": 0
       }
     },
-    "1743670996c8046cda": {
-      "type": "apps",
-      "blocks": {
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
-      ],
-      "custom_css": [
-        ".easyvideo_gallery h2 {display: none;}"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
     "slide_show_GkM6G9": {
       "type": "slide-show",
       "blocks": {
@@ -603,200 +585,33 @@
         "mg_bottom_mobile": 50
       }
     },
-    "custom_service_block_kQafyC": {
-      "type": "custom-service-block",
+    "1743670996c8046cda": {
+      "type": "apps",
       "blocks": {
-        "text_K6hppH": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/HEART_health_ella.png",
-            "icon": "",
-            "width_icon": 64,
-            "height_icon": 64,
-            "mg_bottom_icon": 45,
-            "color_icon": "#3c3c3c",
-            "text": "",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 18,
-            "fontsize_title_block_mb": 18,
-            "title_block_font_weight": "700",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#232323",
-            "description": "",
-            "custom_liquid": false,
-            "text1": "",
-            "content1": "",
-            "text2": "",
-            "content2": "",
-            "text3": "",
-            "content3": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        },
-        "text_hERgVb": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "text",
-            "icon": "",
-            "width_icon": 64,
-            "height_icon": 64,
-            "mg_bottom_icon": 45,
-            "color_icon": "#3c3c3c",
-            "text": "Annatto-Derived Tocotrienols",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 34,
-            "fontsize_title_block_mb": 22,
-            "title_block_font_weight": "700",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#374650",
-            "description": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference.",
-            "custom_liquid": true,
-            "text1": "",
-            "content1": "",
-            "text2": "",
-            "content2": "",
-            "text3": "",
-            "content3": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "Shop Now",
-            "link": "",
-            "button_style": "style2",
-            "fontsize_button": 16,
-            "button_width": 200,
-            "fontweight_button": "600",
-            "enable_underline_button": false,
-            "color_button": "#006a91",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ffffff",
-            "button_border_hover": "",
-            "button_background_hover": "#006a91",
-            "button_background_gradient_hover": ""
-          }
+        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
+          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
         }
       },
       "block_order": [
-        "text_K6hppH",
-        "text_hERgVb"
+        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
       ],
       "custom_css": [
-        "@media (min-width: 1200px) {.section-block-template--24230844203304__custom_service_block_kQafyC {padding-top: 15px; padding-bottom: 0px; }}"
+        ".easyvideo_gallery h2 {display: none;}"
       ],
       "settings": {
-        "custom_liquid1": true,
-        "id_section": "",
-        "container": "container",
-        "padding_full_width": 0,
-        "display_border_top": false,
-        "display_border_bottom": false,
-        "border_color": "#d0d0d0",
-        "service_block_swipe_on_mobile": "slider",
-        "color_icon_slider": "#212121",
-        "service_block_style": "style_1",
-        "policies_bg": "#ffffff",
-        "policies_bg_gradient": "",
-        "service_block_title": "What's Inside",
-        "enable_border_title": false,
-        "color_title": "#374650",
-        "fontsize_title": 35,
-        "fontsize_title_mb": 22,
-        "mg_bottom_title_service_block": 12,
-        "mg_bottom_title_service_block_mb": 12,
-        "service_block_des": "",
-        "service_block_des_pos": "bottom",
-        "color_des": "#36454f",
-        "fontsize_des": 16,
-        "mg_top_service_block_des": 50,
-        "mg_bottom_service_block_des": 50,
-        "view_all": "",
-        "view_all_align": "center",
-        "font_weight_view_all": "400",
-        "mg_top_view": 0,
-        "mg_bottom_view": 30,
-        "enable_border_view_all": true,
-        "link_view_all": "",
-        "color_view_all": "#3c3c3c",
-        "icon_view_all": "",
-        "color_view_all_icon": "#eb492f",
-        "title_align": "center",
-        "item_width": "full_width",
-        "border_item": "none",
-        "enable_item_distance": true,
-        "enable_hover_box_shadow": false,
-        "enable_hover_effects_top": false,
-        "item_padding_top": 13,
-        "item_padding_bottom": 13,
-        "item_padding_left_right": 40,
-        "item_radius": 4,
-        "grid_gap": 30,
-        "item_align": "center",
-        "enable_block_bottom": false,
-        "bg_block_bottom": "#000000",
-        "btn_text_block_bottom": "Shop Now",
-        "button_link_block_bottom": "",
-        "button_1_width_block_bottom": 235,
-        "button_color_block_bottom": "#ffffff",
-        "button_border_block_bottom": "#232323",
-        "button_background_block_bottom": "#232323",
-        "button_background_gradient_block_bottom": "",
-        "button_color_hover_block_bottom": "#ffffff",
-        "button_border_hover_block_bottom": "#232323",
-        "button_background_hover_block_bottom": "#232323",
-        "button_background_gradient_hover_block_bottom": "",
-        "btn_2_text_block_bottom": "Shop Now",
-        "button_link_2_block_bottom": "",
-        "button_2_width_block_bottom": 235,
-        "button_2_color_block_bottom": "#ffffff",
-        "button_2_border_block_bottom": "#232323",
-        "button_2_background_block_bottom": "#232323",
-        "button_2_background_gradient_block_bottom": "",
-        "button_2_color_hover_block_bottom": "#ffffff",
-        "button_2_border_hover_block_bottom": "#232323",
-        "button_2_background_hover_block_bottom": "#232323",
-        "button_2_background_gradient_hover_block_bottom": "",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 50,
-        "mg_top_desktop1": 0,
-        "mg_top_tablet1": 0,
-        "mg_top_mobile1": 50,
-        "mg_bottom_desktop1": 0,
-        "mg_bottom_tablet1": 0,
-        "mg_bottom_mobile1": 50
+        "include_margins": false
+      }
+    },
+    "product_ingrediants_section_NLKKBM": {
+      "type": "product-ingrediants-section",
+      "settings": {
+        "heading": "What's Inside",
+        "image": "shopify://shop_images/Annatto_23c773a6-6da8-4ee1-9556-34e2f4987189.png",
+        "title": "Annatto-Derived Tocotrienols",
+        "description": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference.",
+        "button_link": "",
+        "button_text": "SHOP NOW"
       }
     },
     "brand_slider_tRACcq": {
@@ -2488,13 +2303,13 @@
         "mg_bottom_tablet": 40,
         "mg_bottom_mobile": 20
       }
-    },
+    }
   },
   "order": [
     "main",
     "slide_show_GkM6G9",
     "1743670996c8046cda",
-    "custom_service_block_kQafyC",
+    "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "custom_service_block_CrXkTR",
     "product-recommendations",
