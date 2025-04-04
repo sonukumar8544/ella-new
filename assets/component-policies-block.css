@@ -1,9 +1,10 @@
 /* cstm */
 @media (min-width: 769px) {
-  body.template-page .cstm_policies__block img {
-    width: 120px;
-  }
 }
+body.template-page .cstm_policies__block img {
+  width: 120px;
+}
+
 .cstm_policies__block {
   padding-top: 2px;
 }
