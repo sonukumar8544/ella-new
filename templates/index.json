@@ -537,6 +537,7 @@
         "image_K8bjTV"
       ],
       "settings": {
+        "id": "",
         "container": "container",
         "padding_full_width": 20,
         "brands_block_style": "style_4",
@@ -882,6 +883,30 @@
             "color_des": "#086b92",
             "link": ""
           }
+        },
+        "image_JBhaer": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Geranylgeraniol.png",
+            "title": "",
+            "color_text": "#086b92",
+            "color_text_hover": "#086b92",
+            "description": "",
+            "color_des": "#086b92",
+            "link": ""
+          }
+        },
+        "image_hczQUg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Annatto_5.png",
+            "title": "",
+            "color_text": "#086b92",
+            "color_text_hover": "#086b92",
+            "description": "",
+            "color_des": "#086b92",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -892,9 +917,12 @@
         "image_9Q4bEQ",
         "image_cGzxgz",
         "image_p3UjEF",
-        "image_pwBEcz"
+        "image_pwBEcz",
+        "image_JBhaer",
+        "image_hczQUg"
       ],
       "settings": {
+        "id": "",
         "container": "container",
         "padding_full_width": 0,
         "brands_block_style": "style_3",
@@ -1738,6 +1766,7 @@
         "image_HjABCT"
       ],
       "settings": {
+        "id": "",
         "container": "1170",
         "padding_full_width": 20,
         "brands_block_style": "style_5",
@@ -2221,7 +2250,8 @@
         "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
       ],
       "custom_css": [
-        ".easyvideo_gallery h2 {display: none;}"
+        ".easyvideo_gallery h2 {display: none;}",
+        ".splide__slide .nm-ev-center img.add_splide{max-height: inherit;}"
       ],
       "settings": {
         "include_margins": false
@@ -2273,6 +2303,7 @@
         "image_w4nMHF"
       ],
       "settings": {
+        "id": "",
         "container": "container",
         "padding_full_width": 0,
         "brands_block_style": "style_3",
