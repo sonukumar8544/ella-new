@@ -8125,3 +8125,22 @@ input[type=checkbox]:checked+.form-label--checkbox:before {
   max-width: 1150px !important;
   margin: auto;
 }
+
+.shopify-policy__container{
+  max-width: 1320px !important;
+  margin: auto;
+}
+
+.shopify-policy__container h1, h2, h3, h4, h5, h6{
+  font-family: "Nunito";
+  color: #374650;
+}
+
+.page-width.page-width--narrow h1, h2, h3, h4, h5 {
+  font-family: "Nunito";
+  color: #374650;
+}
+.page-width.page-width--narrow p {
+  font-family: "Lato";
+  color: #36454F;
+}
