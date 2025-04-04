@@ -184,3 +184,9 @@
     margin-right: calc(var(--icon-mg-right-style) * 0.5);
   }
 }
+
+@media (min-width: 769px) {
+  body.template-page .cstm_policies__block img {
+    width: 100px;
+  }
+}
