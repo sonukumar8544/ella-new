@@ -1,6 +1,404 @@
+<!-- Testimonial Section -->
+<div class="career-testomonial-section">
+  <div class="custom-section-testomonial">
+    <div class="section-header">
+      <h2>{{ section.settings.main_title }}</h2>
+      <p>{{ section.settings.main_description }}</p>
+    </div>
+    <div class="section-content">
+      {% for block in section.blocks %}
+        <div class="container-block-wraper block-{{ block.id }}" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');">
+          <div class="testomonial-descriptio-sec">
+            <h3>{{ block.settings.block_title }}</h3>
+            <p class="testomonial-test">{{ block.settings.block_subtitle }}</p>
+           
+          </div>
+          <a
+          href="#"
+          class="btn open-modal"
+          data-block-id="{{ block.id }}"
+          data-background="{{ block.settings.background_image | img_url: 'master' }}">
+          {{ block.settings.button_text }}
+        </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div
+  id="customModal"
+  class="modal"
+  style="display: none;">
+  <div class="modal-text-with-desc">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modalBodyContent">
+        <!-- Dynamic content will be loaded here based on the block -->
+      </div>
+    </div>
+    <div class="model-dyn-description">
+      <p id="dynamic-block-story"></p>
+      <p id="dynamic-block-quote"></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to handle modal open/close and content loading -->
+<script defer defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Open modal when button is clicked
+    document.querySelectorAll('.open-modal').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const blockId = this.getAttribute('data-block-id');
+        const backgroundImage = this.getAttribute('data-background');
+  
+        // Load dynamic content based on block ID
+        let modalContent = '';
+        let dynamicStory = '';
+        let dynamicQuote = '';
+        {% for block in section.blocks %}
+          if (blockId === '{{ block.id }}') {
+            modalContent = `
+              <h2>{{ block.settings.block_title }}</h2>
+              <p>{{ block.settings.block_subtitle }}</p>
+            `;
+            dynamicStory = `{{ block.settings.block_story }}`;
+            dynamicQuote = `{{ block.settings.block_quote }}`;
+          }
+        {% endfor %}
+  
+        document.getElementById('modalBodyContent').innerHTML = modalContent;
+        document.getElementById('dynamic-block-story').innerHTML = dynamicStory;
+        document.getElementById('dynamic-block-quote').innerHTML = dynamicQuote;
+  
+        // Set the background image for the modal
+        if (backgroundImage) {
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.style.backgroundImage = `url('${backgroundImage}')`;
+  modalContent.style.backgroundSize = 'contain';
+  modalContent.style.backgroundRepeat = 'no-repeat';
+}
+  
+        // Show modal
+        document.getElementById('customModal').style.display = 'flex';
+      });
+    });
+  
+    // Close modal when the close icon is clicked
+    document.querySelector('.close-modal').addEventListener('click', function () {
+      document.getElementById('customModal').style.display = 'none';
+    });
+  
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function (e) {
+      if (e.target == document.getElementById('customModal')) {
+        document.getElementById('customModal').style.display = 'none';
+      }
+    });
+  });
+  
+  // Slick slider testomonial section
+  $('.section-content').slick({
+  infinite: true,
+  speed: 300,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+  });
+</script>
+
+<style>
+div .slick-prev:before, div .slick-next:before {
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+.custom-section-testomonial .slick-prev {
+    background: transparent !important;
+}
+.custom-section-testomonial .slick-next {
+    background: transparent !important;
+}
+a.btn.open-modal {
+    position: relative;
+    top: 60%;
+    left: 60px;
+}
+    @media only screen and (max-width: 767px) {
+      .container-block-wraper .btn{
+        padding: 0px 7px !important;
+        font-size: 8px !important;
+      }
+      a.btn.open-modal {
+    position: relative;
+    top: 60%;
+    left: 18px !important;
+}
+      .section-header p{
+       font-size: 14px !important;
+       margin: 10px !important;
+      }
+      .slick-arrow.slick-prev {
+        left: -30px !important;
+    }
+
+    .slick-arrow.slick-next {
+        right: -30px !important;
+    }
+}
+  .custom-section-testomonial {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .testomonial-descriptio-sec {
+    max-width: 60%;
+    padding-left: 2rem;
+  }
+
+  .career-testomonial-section {
+    background-color: #006A91;
+    padding: 25px;
+  }
+
+  .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .section-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    padding: 20px;
+    font-size: 32px !important;
+  }
+
+  .section-header p {
+    background: #dce7eb;
+    max-width: fit-content;
+    margin: 0 auto 8rem;
+    padding: 7px 15px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #006A91;
+    line-height: 1.6;
+  }
+
+  .container-block-wraper {
+    height: 300px;
+    width: 45%;
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .container-block-wraper h3 {
+    font-size: 1.5em;
+    color: white;
+    line-height: 30px;
+  }
+
+  .container-block-wraper p {
+    font-size: 1em;
+  }
+
+  .container-block-wraper .btn {
+    display: inline-block;
+    padding: 7px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 600px;
+    height: 300px;
+    position: relative;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 34px;
+    font-weight: bold;
+    color: #111;
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  #modalBodyContent {
+    max-width: 70%;
+  }
+  #modalBodyContent h2 {
+    color: white;
+  }
+  #modalBodyContent p {
+    color: white;
+  }
+
+  #modalBodyContent p:nth-of-type(2) {
+    display: none;
+  }
+
+  .modal-text-with-desc {
+    border-radius: 20px;
+    background-color: white;
+    /* padding: 10px 50px; */
+  }
+
+  .model-dyn-description {
+    max-width: 513px;
+    margin: 20px;
+  }
+  .model-dyn-description p {
+    margin-bottom: 50px;
+  }
+
+  .model-dyn-description p:nth-of-type(1) {
+    color: #006A91;
+    text-align: center;
+  }
+  .model-dyn-description p:nth-of-type(2) {
+    text-align: center;
+    background-color: #FFCB4A;
+    padding: 30px 20px;
+    border-radius: 20px;
+    color: #36454F;
+  }
+
+  .slick-arrow.slick-prev {
+        left: -35px;
+    }
+
+    .slick-arrow.slick-next {
+        right: -35px;
+    }
+</style>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Testimonial Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Main Title"
+      }, {
+        "type": "html",
+        "id": "main_description",
+        "label": "Main Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_title",
+            "label": "Block Title"
+          },
+          {
+            "type": "text",
+            "id": "block_subtitle",
+            "label": "Block Subtitle"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Learn More"
+          }, {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image"
+          }, {
+            "type": "textarea",
+            "id": "block_story",
+            "label": "Block Story",
+            "default": "Nitesh had always dreamt of working abroad, and Wellness Extract made that possible. Starting as an intern from Ambala in 2021, he climbed the ladder through sheer will and hard work. In 2024, Nitesh successfully transitioned his role and relocated to Abbotsford, Canada, achieving his dream."
+          }, {
+            "type": "textarea",
+            "id": "block_quote",
+            "label": "Block Quote",
+            "default": "“The support from the Wellness Extract Team equipped me with the skills and knowledge to make my move abroad successful. The mentors and leaders provided personal career guidance, making this transition smooth and successful for me.”"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial Career",
+        "category": "Custom"
+      }
+    ]
   }
 {% endschema %}
