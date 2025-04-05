@@ -20,7 +20,9 @@ div#dynamic-checkout-cart {
   align-items: center;
   gap: 12px;
 }
-
+.previewCartGroup.cstm__card_drawer a.button.button-2.button-view-cart {
+  margin-top: auto;
+}
 .previewCartItem {
   position: relative;
   display: flex;
