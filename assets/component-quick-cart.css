@@ -6,7 +6,7 @@ button#cart-sidebar-checkout {
   margin-top: 0px;
 }
 .halo-sidebar-wrapper .previewCartMessage {
-  box-shadow: 0px 0px 3px #086b92;
+  border-bottom: 1px solid #086b923b;
 }
 
 .previewCartItem + .previewCartItem {
