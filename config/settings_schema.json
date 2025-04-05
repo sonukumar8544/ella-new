@@ -5958,6 +5958,230 @@
       }
     ]
   },
+    {
+    "name": "Quick Cart Empty",
+    "settings": [
+      {
+        "type": "text",
+        "id": "freeshippingamount",
+        "label": "Message",
+        "info": "Free shipping on all orders above like $100"
+      },
+      {
+        "type": "text",
+        "id": "your_shopping_bag",
+        "label": "Title",
+        "default": "Your Shopping Bag"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_1",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_1",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_1",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_2",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_2",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_2",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_3",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_3",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_3",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_4",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_4",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_4",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_5",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_5",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_5",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_6",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_6",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_6",
+        "label": "Collection Url"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_image_7",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_7",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_7",
+        "label": "Collection Url"
+      },
+	  {
+        "type": "image_picker",
+        "id": "collection_image_8",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_8",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_8",
+        "label": "Collection Url"
+      },
+	   {
+        "type": "image_picker",
+        "id": "collection_image_9",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_9",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_9",
+        "label": "Collection Url"
+      },
+	   {
+        "type": "image_picker",
+        "id": "collection_image_10",
+        "label": "Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "collection_title_10",
+        "label": "Collection Title"
+      },
+      {
+        "type": "url",
+        "id": "collection_url_10",
+        "label": "Collection Url"
+      },
+      {
+        "type": "text",
+        "id": "collect_all_button",
+        "label": "Button"
+      },
+      {
+        "type": "url",
+        "id": "collection_all_url",
+        "label": "Button url"
+      },
+      {
+        "type": "color",
+        "id": "button_txt_color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button background Color",
+        "default": "#f27a47"
+      }
+    ]
+  },
+   {
+    "name": "Quick Cart Similar Product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "similar_products",
+        "label": "Title",
+        "default": "Similar Products"
+      },
+      {
+        "type": "color",
+        "id": "similar_products_bg",
+        "label": "Bg Color",
+        "default": "#374650"
+      },
+      {
+        "type": "color",
+        "id": "similar_products_title",
+        "label": "Title Color",
+        "default": "#fff"
+      },
+      {
+        "type": "text",
+        "id": "details_link",
+        "label": "Link Title",
+        "default": "Show Details"
+      },
+      {
+        "type": "text",
+        "id": "atc",
+        "label": "Button",
+        "default": "Add To Cart"
+      },
+    ]
+   },
   {
     "name": "t:settings_schema.quick_view.name",
     "settings": [
