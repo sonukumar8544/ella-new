@@ -7,6 +7,9 @@ button#cart-sidebar-checkout {
 .halo-cart-sidebar .previewCartItem {
   padding-bottom: 5px;
 }
+.previewCartItem + .previewCartItem {
+  margin-top: 5px;
+}
 
 #halo-cart-sidebar .halo-sidebar-header {
   padding: 13px 5px 5px;
