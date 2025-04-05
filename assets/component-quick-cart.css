@@ -77,6 +77,7 @@ div#dynamic-checkout-cart {
 .cstm__qty_cart .previewCartItem-qty {
   margin-top: 0px;
 }
+
 #halo-cart-sidebar .previewCartItem-qty .quantity {
   padding: 4px 14px;
 }
@@ -93,6 +94,7 @@ div#dynamic-checkout-cart {
 .halo-cart-sidebar .halo-sidebar-wrapper {
   padding-top: 16px;
 }
+#halo-cart-sidebar .cart-discounts .discounts__discount,
 #halo-cart-sidebar .haloCalculatorShipping .message {
   font-size: 14px;
   font-weight: 600;
