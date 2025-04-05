@@ -91,6 +91,9 @@ div#dynamic-checkout-cart {
   right: 30px;
   bottom: 40px;
 }
+#halo-cart-sidebar .link-underline:hover .text {
+  text-decoration: none;
+}
 #halo-cart-sidebar .previewCartItem-options {
   margin: 0px !important;
 }
