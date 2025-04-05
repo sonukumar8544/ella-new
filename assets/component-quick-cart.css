@@ -1,7 +1,9 @@
 .previewCart.quick_cart_empty {
   padding: 0 !important;
 }
-
+div#dynamic-checkout-cart {
+  display: none;
+}
 .previewCart {
   padding: 5px 20px 0px 20px;
 }
