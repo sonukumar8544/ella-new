@@ -1,3 +1,63 @@
+<!-- job-post-career-page -->
+<div class="job_post_custom-section-main">
+  <h1>{{ section.settings.main_title }}</h1>
+  <p>{{ section.settings.main_description }}</p>
+
+  <div id="job-post-custom-section" class="job_post_custom-section">
+    {% for block in section.blocks %}
+      <div class="job_post_custom-block" data-modal="modal-{{ block.id }}">
+        {% if block.settings.block_image %}
+          <img
+            src="{{ block.settings.block_image | img_url: 'master' }}"
+            title=""
+            width=""
+            height=""
+            alt="{{ block.settings.block_image.alt }}"
+          >
+        {% endif %}
+        {% if block.settings.block_title != blank %}
+          <h3>{{ block.settings.block_title }}</h3>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Move all modals outside the slider -->
+{% for block in section.blocks %}
+  <div id="modal-{{ block.id }}" class="custom-modal">
+    <div class="custom-modal-content career-job-modal">
+      <div class="custom-modal-close" data-modal-close="modal-{{ block.id }}">&times;</div>
+      {% if block.settings.block_title != blank %}
+        <h4>{{ block.settings.block_title }}</h4>
+      {% endif %}
+      {% if block.settings.block_description != blank %}
+        <div class="main___content">
+          {{ block.settings.block_description }}
+          <br>
+          {% comment %}
+            {% if block.settings.link_apply != blank %}
+                <div class="job-modal-button">
+                  <a href="{{ block.settings.link_apply }}">
+                    <button>{{ block.settings.button_label_apply }}</button></a
+                  >
+                </div>
+              {% endif %}
+          {% endcomment %}
+        </div>
+        <span id="show_more_btn" class="show-more">Show More</span>
+        {% if block.settings.link_apply != blank %}
+          <div id="btn_form" class="job-modal-button" style="margin-top: 10px;">
+            <a href="{{ block.settings.link_apply }}">
+              <button>{{ block.settings.button_label_apply }}</button></a
+            >
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
 <style>
         .show-more {
           display: flex;
@@ -151,6 +211,7 @@
                   }
                 }
 </style>
+
 <script defer defer>
      document.addEventListener('DOMContentLoaded', function() {
        // Open modal
@@ -238,67 +299,6 @@
 
   });
 </script>
-<!-- job-post-career-page -->
-<div class="job_post_custom-section-main">
-  <h1>{{ section.settings.main_title }}</h1>
-  <p>{{ section.settings.main_description }}</p>
-
-  <div id="job-post-custom-section" class="job_post_custom-section">
-    {% for block in section.blocks %}
-      <div class="job_post_custom-block" data-modal="modal-{{ block.id }}">
-        {% if block.settings.block_image %}
-          <img
-            src="{{ block.settings.block_image | img_url: 'master' }}"
-            title=""
-            width=""
-            height=""
-            alt="{{ block.settings.block_image.alt }}"
-          >
-        {% endif %}
-        {% if block.settings.block_title != blank %}
-          <h3>{{ block.settings.block_title }}</h3>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
-</div>
-
-<!-- Move all modals outside the slider -->
-{% for block in section.blocks %}
-  <div id="modal-{{ block.id }}" class="custom-modal">
-    <div class="custom-modal-content career-job-modal">
-      <div class="custom-modal-close" data-modal-close="modal-{{ block.id }}">&times;</div>
-      {% if block.settings.block_title != blank %}
-        <h4>{{ block.settings.block_title }}</h4>
-      {% endif %}
-      {% if block.settings.block_description != blank %}
-        <div class="main___content">
-          {{ block.settings.block_description }}
-          <br>
-          {% comment %}
-            {% if block.settings.link_apply != blank %}
-                <div class="job-modal-button">
-                  <a href="{{ block.settings.link_apply }}">
-                    <button>{{ block.settings.button_label_apply }}</button></a
-                  >
-                </div>
-              {% endif %}
-          {% endcomment %}
-        </div>
-        <span id="show_more_btn" class="show-more">Show More</span>
-        {% if block.settings.link_apply != blank %}
-          <div id="btn_form" class="job-modal-button" style="margin-top: 10px;">
-            <a href="{{ block.settings.link_apply }}">
-              <button>{{ block.settings.button_label_apply }}</button></a
-            >
-          </div>
-        {% endif %}
-      {% endif %}
-    </div>
-  </div>
-{% endfor %}
-
-
 
 {% schema %}
 {
