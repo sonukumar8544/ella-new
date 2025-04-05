@@ -4317,7 +4317,7 @@ body.term-condition-show .background-overlay {
   padding: 0;
   height: 100%;
   z-index: 101;
-  max-width: calc(100vw - 40px);
+  max-width: calc(100vw - 20px);
   width: 100%;
   opacity: 1;
   visibility: hidden;
