@@ -254,6 +254,29 @@
         </a>
       </li>
     {% endif %}
+
+     {% if settings.collection_image_11 != blank or settings.collection_title_11 != blank %}
+      <li>
+        <a href="{{settings.collection_url_11}}">
+          {% if settings.collection_image_11 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_11.alt}}"
+                src="{{settings.collection_image_11 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_11 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_11 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
   </ul>
   {% unless template == 'cart' %}
     {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
