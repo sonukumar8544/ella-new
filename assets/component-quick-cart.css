@@ -53,8 +53,8 @@ div#dynamic-checkout-cart {
   font-size: 14px;
   font-family: "Nunito";
 }
-#halo-cart-sidebar .halo-cart-sidebar .halo-sidebar-wrapper {
-  padding-top: 16px !important;
+.halo-cart-sidebar .halo-sidebar-wrapper {
+  padding-top: 16px;
 }
 #halo-cart-sidebar .haloCalculatorShipping .message {
   font-size: 14px;
