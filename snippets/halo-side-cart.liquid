@@ -446,7 +446,7 @@
   <div class="previewCart quick_cart_empty">
     {% render 'quick_cart_empty' %}
   </div>
-        <div class="previewCart-emptyBody text-center">
+       {% comment %} <div class="previewCart-emptyBody text-center">
             <div class="empty">
                 <span class="text">
                     {{ 'sections.cart.empty' | t }}
@@ -465,6 +465,6 @@
             >
                 {{ 'sections.cart.continue_shopping' | t }}
             </a>
-        </div>
+        </div>{% endcomment %}
     </div>
 {% endunless%}
