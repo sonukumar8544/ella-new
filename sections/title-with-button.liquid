@@ -1,0 +1,156 @@
+{% schema %}
+    {
+        "name": "Contact Us Section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Have questions? Need advice? We're here to help! Connect With Our Wellness Experts Today!"
+            },
+            {
+                "type": "text",
+                "id": "button_label",
+                "label": "Button Label",
+                "default": "CONTACT US"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button Link"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Background Color",
+                "default": "#fde2a2"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "label": "Button Color",
+                "default": "#006d80"
+            },
+            {
+                "type": "color",
+                "id": "button_hover_color",
+                "label": "Button Hover Color",
+                "default": "#004f5a"
+            },
+            {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color",
+                "default": "#333"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "label": "Padding Top",
+                "min": 0,
+                "max": 100,
+                "default": 20,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "label": "Padding Bottom",
+                "min": 0,
+                "max": 100,
+                "default": 20,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "margin_top",
+                "label": "Margin Top",
+                "min": 0,
+                "max": 100,
+                "default": 20,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom",
+                "label": "Margin Bottom",
+                "min": 0,
+                "max": 100,
+                "default": 20,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "font_size_desktop",
+                "label": "Font Size (Desktop)",
+                "min": 12,
+                "max": 36,
+                "default": 24,
+                "unit": "px"
+            },
+            {
+                "type": "range",
+                "id": "font_size_mobile",
+                "label": "Font Size (Mobile)",
+                "min": 12,
+                "max": 36,
+                "default": 18,
+                "unit": "px"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Contact Us Section"
+            }
+        ]
+    }
+    {% endschema %}
+    
+    <style>
+        .contact-us-section {
+            background: {{ section.settings.background_color }};
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+            margin-top: {{ section.settings.margin_top }}px;
+            margin-bottom: {{ section.settings.margin_bottom }}px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .contact-us-heading {
+            color: {{ section.settings.text_color }};
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .contact-us-heading {
+                font-size: {{ section.settings.font_size_desktop }}px;
+            }
+        }
+        @media (max-width: 767px) {
+            .contact-us-heading {
+                font-size: {{ section.settings.font_size_mobile }}px;
+            }
+        }
+        .contact-us-button {
+            background-color: {{ section.settings.button_color }};
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            width: 200px;
+        }
+        .contact-us-button:hover {
+            background-color: {{ section.settings.button_hover_color }};
+            color: #086b92;
+        }
+    </style>
+    
+    <div class="contact-us-section">
+        <h2 class="contact-us-heading">{{ section.settings.heading }}</h2>
+        <a href="{{ section.settings.button_link }}" class="contact-us-button">{{ section.settings.button_label }}</a>
+    </div>
+    
