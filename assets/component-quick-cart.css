@@ -37,6 +37,10 @@ div#dynamic-checkout-cart {
   padding: 4px 0px;
   line-height: 1.3;
 }
+#halo-cart-sidebar .halo-sidebar-close {
+  top: 5;
+}
+
 .previewCartGroup.cstm__card_drawer a.button.button-2.button-view-cart {
   margin-top: auto;
 }
