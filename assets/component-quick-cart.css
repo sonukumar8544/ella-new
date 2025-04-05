@@ -1,12 +1,12 @@
 button#cart-sidebar-checkout {
   margin-top: 0px;
 }
-@media (max-width: 1024px) {
-  #halo-cart-sidebar .halo-sidebar-header {
-    padding: 13px 5px 5px;
-    background: #086b92;
-  }
+
+#halo-cart-sidebar .halo-sidebar-header {
+  padding: 13px 5px 5px;
+  background: #086b92;
 }
+
 .previewCart.quick_cart_empty {
   padding: 0 !important;
 }
