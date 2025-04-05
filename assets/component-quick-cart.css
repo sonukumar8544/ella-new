@@ -73,7 +73,9 @@ div#dynamic-checkout-cart {
   right: 30px;
   bottom: 32px;
 }
-#halo-cart-sidebar .previewCartItem-options,
+#halo-cart-sidebar .previewCartItem-options {
+  margin: 0px !important;
+}
 .cstm__qty_cart .previewCartItem-qty {
   margin-top: 0px !important;
 }
