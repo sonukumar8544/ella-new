@@ -12,6 +12,14 @@ div#dynamic-checkout-cart {
   margin: 0px 0 1px;
   padding: 0px 7px;
 }
+/* cartdrawer css */
+.previewCartGroup.cstm__card_drawer {
+  margin: 12px 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+}
 
 .previewCartItem {
   position: relative;
