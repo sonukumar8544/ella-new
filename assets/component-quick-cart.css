@@ -59,6 +59,15 @@ div#dynamic-checkout-cart {
   font-weight: 700;
   color: #086b92;
 }
+#halo-cart-sidebar .cstm__qty_cart {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+.cstm__qty_cart .previewCartItem-qty {
+  margin-top: 0px;
+}
 #halo-cart-sidebar .previewCartItem-qty .quantity {
   padding: 4px 14px;
 }
