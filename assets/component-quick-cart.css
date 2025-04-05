@@ -40,7 +40,9 @@ div#dynamic-checkout-cart {
 .previewCartGroup.cstm__card_drawer a.button.button-2.button-view-cart {
   margin-top: auto;
 }
-#halo-cart-sidebar .halo-sidebar-close svg,
+#halo-cart-sidebar .halo-sidebar-close svg {
+  fill: #fff;
+}
 #halo-cart-sidebar .halo-sidebar-header .title {
   color: #fff;
 }
