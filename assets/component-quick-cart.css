@@ -1,6 +1,12 @@
 .halo-sidebar-wrapper {
   padding: 0px 0 20px;
 }
+#halo-cart-sidebar .previewCart {
+  height: 88%;
+}
+#halo-cart-sidebar .previewCartInfo {
+  height: 400px;
+}
 
 button#cart-sidebar-checkout {
   margin-top: 0px;
