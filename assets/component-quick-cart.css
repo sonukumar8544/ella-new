@@ -8,11 +8,9 @@ button#cart-sidebar-checkout {
 .halo-sidebar-wrapper .previewCartMessage {
   box-shadow: 0px 0px 3px #086b92;
 }
-.halo-cart-sidebar .previewCartItem {
-  padding-bottom: 5px;
-}
+
 .previewCartItem + .previewCartItem {
-  margin-top: 5px;
+  margin-top: 5px !important;
 }
 
 #halo-cart-sidebar .halo-sidebar-header {
@@ -656,7 +654,7 @@ body.cart-sidebar-show .halo-cart-sidebar {
 }
 
 .halo-cart-sidebar .previewCartItem {
-  padding-bottom: 25px;
+  padding-bottom: 5px;
 }
 
 .previewCart-wrapper {
