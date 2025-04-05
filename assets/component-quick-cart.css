@@ -1,4 +1,6 @@
-button#cart-sidebar-checkout,
+button#cart-sidebar-checkout {
+  margin-top: 0px;
+}
 .previewCart.quick_cart_empty {
   padding: 0 !important;
 }
