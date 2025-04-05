@@ -65,6 +65,10 @@ div#dynamic-checkout-cart {
   flex-direction: row-reverse;
   gap: 20px;
 }
+#halo-cart-sidebar .previewCartItem-remove {
+  position: absolute;
+  right: 30px;
+}
 .cstm__qty_cart .previewCartItem-qty {
   margin-top: 0px;
 }
