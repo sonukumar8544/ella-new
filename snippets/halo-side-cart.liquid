@@ -428,6 +428,9 @@
                 </div>
             {%- endif -%}
             <div class="previewCartGroup cstm__card_drawer">
+                <a class="button button-2 button-view-cart" href="{{ routes.cart_url }}">
+                    {{ 'sections.cart.view_cart' | t }}
+                </a>
                 <button class="button button-1 button-checkout" onclick="window.location='{{ routes.cart_url | split: '/cart' | first }}/checkout'"{% if settings.show_global_checkbox %} disabled="disabled"{% endif %} id="cart-sidebar-checkout">
                     {{ 'sections.cart.checkout' | t }}
                 </button>
@@ -437,9 +440,7 @@
                 {% endif %}
               {% endcomment %}
               
-                <a class="button button-2 button-view-cart" href="{{ routes.cart_url }}">
-                    {{ 'sections.cart.view_cart' | t }}
-                </a>
+              
             </div>
 
           <!-- checkout btn -->
