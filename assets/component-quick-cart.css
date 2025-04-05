@@ -71,6 +71,9 @@ div#dynamic-checkout-cart {
   font-size: 13px;
   line-height: 1.5;
 }
+#halo-cart-sidebar .previewCartItem-image:before {
+}
+
 .previewCartItem {
   position: relative;
   display: flex;
