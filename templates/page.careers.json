@@ -1057,9 +1057,57 @@
     },
     "career_testimonial_section_BnHr9w": {
       "type": "career-testimonial-section",
+       "blocks": {
+        "block_yU9RbJ": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "block_title": "",
+            "block_subtitle": "",
+            "button_link": "",
+            "button_text": "Read Nitesh’s Story",
+            "background_image": "shopify://shop_images/Nitesh.png",
+            "block_story": "Nitesh had always dreamt of working abroad, and Wellness Extract made that possible. Starting as an intern from Ambala in 2021, he climbed the ladder through sheer will and hard work. In 2024, Nitesh successfully transitioned his role and relocated to Abbotsford, Canada, achieving his dream.",
+            "block_quote": "“The support from the Wellness Extract Team equipped me with the skills and knowledge to make my move abroad successful. The mentors and leaders provided personal career guidance, making this transition smooth and successful for me.”"
+          }
+        },
+        "block_3D7jJ9": {
+          "type": "block",
+          "settings": {
+            "block_title": "",
+            "block_subtitle": "",
+            "button_link": "",
+            "button_text": "Read Khushi’s Story",
+            "background_image": "shopify://shop_images/Group_589_7257cf95-259b-4934-bb21-4a0d96842a35.png",
+            "block_story": "Khushi wanted to work part-time while attending university, and Wellness Extract provided her with that opportunity and more. As a marketing student, she was able to learn at university while gaining hands-on experience at work.",
+            "block_quote": "“Working at Wellness Extract has made me rethink my academic goals. Starting as an Administrative Assistant allowed me to understand the business world and apply my knowledge. Transitioning to marketing felt natural! Wellness Extract gave me the space to explore my goals and align them with the company's, finding the right fit for me upon graduating!”"
+          }
+        },
+        "block_NDcReX": {
+          "type": "block",
+          "settings": {
+            "block_title": "",
+            "block_subtitle": "",
+            "button_link": "",
+            "button_text": "Read Akshit’s Story",
+            "background_image": "shopify://shop_images/Akshit.png",
+            "block_story": "As an international student in Canada, Akshit grabbed the opportunity to broadened his knowledge by stepping into a role in logistics. Two years later, he is now the Head of the Department.",
+            "block_quote": "\"A great team, supportive leaders, and an inclusive work environment make a huge difference. At Wellness Extract, I found my second family. They mentored me and guided me to become the head of the logistics department. The support and opportunities I received here have been invaluable in my professional & personal growth.\""
+          }
+        }
+      },
+      "block_order": [
+        "block_yU9RbJ",
+        "block_3D7jJ9",
+        "block_NDcReX"
+      ],
+      "custom_css": [
+        "#customModal {z-index: 9999;}",
+        ".modal-text-with-desc {max-height: 96vh; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none;}"
+      ],
       "settings": {
-        "main_title": "",
-        "main_description": ""
+        "main_title": "Hear from #TeamWE",
+        "main_description": "Read from our team members about their experiences at Wellness Extract."
       }
     }
   },
