@@ -441,6 +441,29 @@
                     {{ 'sections.cart.view_cart' | t }}
                 </a>
             </div>
+
+          <!-- checkout btn -->
+           <div class="checkout_grid">
+        <span class="btn_price">
+          <button id="Cartpage" class="button view_cart" onclick=" window.location.href = '/cart';">
+            {{ 'sections.cart.view_cart' | t }}
+          </button></span
+        >
+        <span class="button-text checkout_btn">
+          <button
+            type="submit"
+            id="CartDrawer-Checkout"
+            class="cart__checkout-button button"
+            onclick="window.location='{{ routes.cart_url | split: '/cart' | first }}/checkout'"
+            {% if settings.show_global_checkbox %}
+              disabled="disabled"
+            {% endif %}
+            id="cart-sidebar-checkout"
+          >
+            {{ 'sections.cart.checkout' | t }}
+          </button>
+        </span>
+      </div>
         </div>
     </div>
 {% else %}
