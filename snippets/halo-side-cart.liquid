@@ -113,7 +113,8 @@
                                 else 
                                     assign price_to_display = item.original_price
                                 endif 
-                            -%}  
+                            -%} 
+                          <div class="cstm__qty_cart">
                             <div class="previewCartItem-price" data-price="{{ price_to_display }}" data-original-price="{{ item.original_price }}">
                                 <span class="price">
                                     {%- assign current_variant = item.variant -%}
@@ -150,6 +151,7 @@
                                 <input class="form-input quantity" name="quantity" id="upsell-update-{{ item.id }}" data-qtt-id1="quantity{{ item.id }}" value="{{ item.quantity }}" type="number"{% if item.variant.inventory_management != null and item.variant.inventory_quantity > 0 %} data-inventory-quantity="{{ item.variant.inventory_quantity }}"{% endif %} data-cart-quantity data-cart-quantity-id="{{ item.id }}" data-line="{{ item.key }}" data-index="{{ item.index | plus: 1 }}"/>
                                 <a role="link" aria-disabled="true" class="plus btn-quantity" data-plus-quantity-cart=""></a>
                             </cart-update-quantity>
+                          </div>
                             {%- if has_qty_rules or has_vol_pricing -%}
                                 <quantity-popover class="quantity-popover-container">
                                     <button
