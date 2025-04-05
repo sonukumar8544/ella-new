@@ -1,146 +1,4 @@
 <!-- Testimonial Section -->
-<div class="career-testomonial-section">
-  <div class="custom-section-testomonial">
-    <div class="section-header">
-      <h2>{{ section.settings.main_title }}</h2>
-      <p>{{ section.settings.main_description }}</p>
-    </div>
-    <div class="section-content">
-      {% for block in section.blocks %}
-        <div class="container-block-wraper block-{{ block.id }}" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');">
-          <div class="testomonial-descriptio-sec">
-            <h3>{{ block.settings.block_title }}</h3>
-            <p class="testomonial-test">{{ block.settings.block_subtitle }}</p>
-           
-          </div>
-          <a
-          href="#"
-          class="btn open-modal"
-          data-block-id="{{ block.id }}"
-          data-background="{{ block.settings.background_image | img_url: 'master' }}">
-          {{ block.settings.button_text }}
-        </a>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-<!-- Modal Structure -->
-<div
-  id="customModal"
-  class="modal"
-  style="display: none;">
-  <div class="modal-text-with-desc">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div id="modalBodyContent">
-        <!-- Dynamic content will be loaded here based on the block -->
-      </div>
-    </div>
-    <div class="model-dyn-description">
-      <p id="dynamic-block-story"></p>
-      <p id="dynamic-block-quote"></p>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript to handle modal open/close and content loading -->
-<script defer defer>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Open modal when button is clicked
-    document.querySelectorAll('.open-modal').forEach(button => {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        const blockId = this.getAttribute('data-block-id');
-        const backgroundImage = this.getAttribute('data-background');
-  
-        // Load dynamic content based on block ID
-        let modalContent = '';
-        let dynamicStory = '';
-        let dynamicQuote = '';
-        {% for block in section.blocks %}
-          if (blockId === '{{ block.id }}') {
-            modalContent = `
-              <h2>{{ block.settings.block_title }}</h2>
-              <p>{{ block.settings.block_subtitle }}</p>
-            `;
-            dynamicStory = `{{ block.settings.block_story }}`;
-            dynamicQuote = `{{ block.settings.block_quote }}`;
-          }
-        {% endfor %}
-  
-        document.getElementById('modalBodyContent').innerHTML = modalContent;
-        document.getElementById('dynamic-block-story').innerHTML = dynamicStory;
-        document.getElementById('dynamic-block-quote').innerHTML = dynamicQuote;
-  
-        // Set the background image for the modal
-        if (backgroundImage) {
-  const modalContent = document.querySelector('.modal-content');
-  modalContent.style.backgroundImage = `url('${backgroundImage}')`;
-  modalContent.style.backgroundSize = 'contain';
-  modalContent.style.backgroundRepeat = 'no-repeat';
-}
-  
-        // Show modal
-        document.getElementById('customModal').style.display = 'flex';
-      });
-    });
-  
-    // Close modal when the close icon is clicked
-    document.querySelector('.close-modal').addEventListener('click', function () {
-      document.getElementById('customModal').style.display = 'none';
-    });
-  
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', function (e) {
-      if (e.target == document.getElementById('customModal')) {
-        document.getElementById('customModal').style.display = 'none';
-      }
-    });
-  });
-  
-  // Slick slider testomonial section
-  $('.section-content').slick({
-  infinite: true,
-  speed: 300,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-    arrows: false,
-    speed: 3000,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-        speed: 3000,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        speed: 3000,
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        speed: 3000,
-      }
-    }
-  ]
-  });
-</script>
-
 <style>
 div .slick-prev:before, div .slick-next:before {
     border-top: 2px solid #ffffff;
@@ -346,6 +204,149 @@ a.btn.open-modal {
   padding-bottom: 0px !important;
 }
 </style>
+<div class="career-testomonial-section">
+  <div class="custom-section-testomonial">
+    <div class="section-header">
+      <h2>{{ section.settings.main_title }}</h2>
+      <p>{{ section.settings.main_description }}</p>
+    </div>
+    <div class="section-content">
+      {% for block in section.blocks %}
+        <div class="container-block-wraper block-{{ block.id }}" style="background-image: url('{{ block.settings.background_image | img_url: 'master' }}');">
+          <div class="testomonial-descriptio-sec">
+            <h3>{{ block.settings.block_title }}</h3>
+            <p class="testomonial-test">{{ block.settings.block_subtitle }}</p>
+           
+          </div>
+          <a
+          href="#"
+          class="btn open-modal"
+          data-block-id="{{ block.id }}"
+          data-background="{{ block.settings.background_image | img_url: 'master' }}">
+          {{ block.settings.button_text }}
+        </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div
+  id="customModal"
+  class="modal"
+  style="display: none;">
+  <div class="modal-text-with-desc">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modalBodyContent">
+        <!-- Dynamic content will be loaded here based on the block -->
+      </div>
+    </div>
+    <div class="model-dyn-description">
+      <p id="dynamic-block-story"></p>
+      <p id="dynamic-block-quote"></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to handle modal open/close and content loading -->
+<script defer defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Open modal when button is clicked
+    document.querySelectorAll('.open-modal').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const blockId = this.getAttribute('data-block-id');
+        const backgroundImage = this.getAttribute('data-background');
+  
+        // Load dynamic content based on block ID
+        let modalContent = '';
+        let dynamicStory = '';
+        let dynamicQuote = '';
+        {% for block in section.blocks %}
+          if (blockId === '{{ block.id }}') {
+            modalContent = `
+              <h2>{{ block.settings.block_title }}</h2>
+              <p>{{ block.settings.block_subtitle }}</p>
+            `;
+            dynamicStory = `{{ block.settings.block_story }}`;
+            dynamicQuote = `{{ block.settings.block_quote }}`;
+          }
+        {% endfor %}
+  
+        document.getElementById('modalBodyContent').innerHTML = modalContent;
+        document.getElementById('dynamic-block-story').innerHTML = dynamicStory;
+        document.getElementById('dynamic-block-quote').innerHTML = dynamicQuote;
+  
+        // Set the background image for the modal
+        if (backgroundImage) {
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.style.backgroundImage = `url('${backgroundImage}')`;
+  modalContent.style.backgroundSize = 'contain';
+  modalContent.style.backgroundRepeat = 'no-repeat';
+}
+  
+        // Show modal
+        document.getElementById('customModal').style.display = 'flex';
+      });
+    });
+  
+    // Close modal when the close icon is clicked
+    document.querySelector('.close-modal').addEventListener('click', function () {
+      document.getElementById('customModal').style.display = 'none';
+    });
+  
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function (e) {
+      if (e.target == document.getElementById('customModal')) {
+        document.getElementById('customModal').style.display = 'none';
+      }
+    });
+  });
+  
+  // Slick slider testomonial section
+  $('.section-content').slick({
+  infinite: true,
+  speed: 300,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+    arrows: false,
+    speed: 3000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        speed: 3000,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        speed: 3000,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        speed: 3000,
+      }
+    }
+  ]
+  });
+</script>
+
+
 
 {% schema %}
   {
