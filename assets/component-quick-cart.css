@@ -59,6 +59,16 @@ div#dynamic-checkout-cart {
   font-weight: 700;
   color: #086b92;
 }
+#halo-cart-sidebar .previewCartItem-qty .quantity {
+  padding: 4px 14px;
+}
+#halo-cart-sidebar .previewCartItem-qty .btn-quantity {
+  height: 32px;
+}
+#halo-cart-sidebar .previewCartItem-qty .btn-quantity.plus:after,
+#halo-cart-sidebar .previewCartItem-qty .btn-quantity:before {
+  top: 16px;
+}
 #halo-cart-sidebar .cart-discounts + .previewCartItem-change {
   margin-top: 0px;
 }
