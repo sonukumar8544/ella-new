@@ -1,0 +1,390 @@
+<!-- quick_cart_empty -->
+<style>
+         /*________Empty cart drawer css________*/
+  .cart-content-empty.text-center.cstm_cart_empty a:hover span{
+     color: #086b92;
+   }
+    .cart-content-empty.text-center.cstm_cart_empty .cart-collection-pic:hover img {
+     border: 1px solid #086b92;
+   }
+   .cart-content-empty.text-center.cstm_cart_empty .cart-collection-pic img {
+     border: 1px solid #454f5b17;
+   }
+
+
+         .halo-cart-sidebar .halo-sidebar-wrapper{
+           padding-top: 10px;
+         }
+         .cart-dropdown__empty-message {
+           padding: 20px;
+           text-align: center;
+           transition: all 0.3s;
+           overflow: auto;
+       }
+
+       .empty_cart_drawer {
+           font-size: 14px;
+           text-align: center;
+           padding-top: 20px;
+           margin: 0 0 17.5px;
+       }
+       .previewCart.cstm_empty_cart_drawer{
+         padding-left: 5px;
+         padding-right: 5px;
+       }
+       .quick_cart_empty ul {
+         padding: 0px !important;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: left;
+         margin-left: 0;
+         margin-bottom: 20px;
+         margin-top: 0px;
+     }
+       .quick_cart_empty ul li {
+         padding: 10px 5px 6px;
+         display: flex;
+       flex: 0 0 33%;
+       justify-content: center;
+       align-items: flex-end;
+       }
+       .quick_cart_empty ul li a {
+        /*   display: flex;
+           flex-direction: column; */
+         text-decoration: none;
+       color: #000000ad;
+       }
+       .quick_cart_empty ul li a .cart-collection-pic {
+           max-width: 100px;
+           max-height: 100px;
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           align-items: center;
+           overflow: hidden;
+           margin-bottom: 15px;
+       }
+       .cart-collection-pic img {
+         background: #454f5b17;
+         border-radius: 52px;
+         padding: 5px;
+         width: 70px;
+         height: 70px;
+         object-fit: contain;
+     }
+       .quick_cart_empty ul li a .cart-collection-name {
+           font-size: 10px;
+          text-transform: uppercase;
+           font-weight: 600;
+       }
+       .drawer.is-empty .drawer__cart-empty {
+           overflow-y: scroll;
+       }
+       .footer__drawer_empty {
+           margin: 15px 25px 25px 25px;
+         text-align: center;
+       }
+         .mm-emptycart-button{
+           width: 100%;
+                             }
+
+     .mm-emptycart-button{
+         padding: 8px 13px;
+         width: max-content;
+         margin: 10px auto;
+         text-transform: uppercase;
+         border: 1px solid {{settings.button_bg_color}};
+         text-decoration: none;
+         border-radius: 6px;
+         font-size: 14px;
+     }
+     .open-empty-quick-cart .previewCart{
+       height: calc(100vh);
+     }
+
+     @media(max-width: 400px){
+       .quick_cart_empty ul li{
+         flex: 0 0 49%;
+       }
+       .quick_cart_empty ul li a .cart-collection-pic{
+         margin-bottom: 2px;
+       }
+         .template-cart .quick_cart_empty h2{
+           text-align: center;
+           margin: 12px 10px;
+           }
+
+     }
+</style>
+<div class="quick_cart_empty">
+  {% comment %}{% endcomment %}
+  {% if template == 'cart' %}
+    {% if section.settings.collection_title != blank %}
+      <h2>{{ section.settings.collection_title }}</h2>
+    {% endif %}
+  {% endif %}
+  <ul>
+    {% if settings.collection_image_1 != blank or settings.collection_title_1 != blank %}
+      <li>
+        <a href="{{settings.collection_url_1}}">
+          {% if settings.collection_image_1 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_1.alt}}"
+                src="{{settings.collection_image_1 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_1 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_1 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_2 != blank or settings.collection_title_2 != blank %}
+      <li>
+        <a href="{{settings.collection_url_2}}">
+          {% if settings.collection_image_2 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width="60"
+                height="60"
+                alt="{{settings.collection_title_2.alt}}"
+                src="{{settings.collection_image_2 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_2 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_2 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_3 != blank or settings.collection_title_3 != blank %}
+      <li>
+        <a href="{{settings.collection_url_3}}">
+          {% if settings.collection_image_3 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_3.alt}}"
+                src="{{settings.collection_image_3 | img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_3 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_3 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_4 != blank or settings.collection_title_4 != blank %}
+      <li>
+        <a href="{{settings.collection_url_4}}">
+          {% if settings.collection_image_4 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_4.alt}}"
+                src="{{settings.collection_image_4 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_4 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_4 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_5 != blank or settings.collection_title_5 != blank %}
+      <li>
+        <a href="{{settings.collection_url_5}}">
+          {% if settings.collection_image_5 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_5.alt}}"
+                src="{{settings.collection_image_5 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_5 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_5 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_6 != blank or settings.collection_title_6 != blank %}
+      <li>
+        <a href="{{settings.collection_url_6}}">
+          {% if settings.collection_image_6 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_6.alt}}"
+                src="{{settings.collection_image_6 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_6 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_6 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+    {% if settings.collection_image_7 != blank or settings.collection_title_7 != blank %}
+      <li>
+        <a href="{{settings.collection_url_7}}">
+          {% if settings.collection_image_7 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_7.alt}}"
+                src="{{settings.collection_image_7 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_7 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_7 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if settings.collection_image_8 != blank or settings.collection_title_8 != blank %}
+      <li>
+        <a href="{{settings.collection_url_8}}">
+          {% if settings.collection_image_8 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_8.alt}}"
+                src="{{settings.collection_image_8 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_8 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_8 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if settings.collection_image_9 != blank or settings.collection_title_9 != blank %}
+      <li>
+        <a href="{{settings.collection_url_9}}">
+          {% if settings.collection_image_9 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_9.alt}}"
+                src="{{settings.collection_image_9 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_9 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_9 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if settings.collection_image_10 != blank or settings.collection_title_10 != blank %}
+      <li>
+        <a href="{{settings.collection_url_10}}">
+          {% if settings.collection_image_10 != blank %}
+            <span class="cart-collection-pic">
+              <img
+                class="empty_min_drawer"
+                loading="lazy"
+                title=""
+                width=""
+                height=""
+                alt="{{settings.collection_title_10.alt}}"
+                src="{{settings.collection_image_10 |img_url:'master'}}"
+              >
+            </span>
+          {% endif %}
+          {% if settings.collection_title_10 != blank %}
+            <span class="cart-collection-name mm-text-bold">{{ settings.collection_title_10 }}</span>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+  {% unless template == 'cart' %}
+    {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
+      <div class="footer__drawer_empty">
+        <a
+          class="mm-emptycart-button button button--secondary"
+          href="https://wellnessextract.com/collections/all-products"
+          style="color:{{ settings.button_txt_color }};background-color:{{ settings.button_bg_color }}"
+        >
+          {{ settings.collect_all_button | default: 'View All Products' }}
+        </a>
+      </div>
+    {% endif %}
+  {% endunless %}
+</div>
+
+
+
+{% comment %}
+    <div class="previewCart-emptyBody text-center">
+    <div class="empty">
+      <span class="text">
+        {{ 'sections.cart.empty' | t }}
+      </span>
+    </div>
+    <a
+      class="button button-2 button-continue"
+      {% if settings.quick_cart_redirect_button == 'go_back' %}
+        role="link" aria-disabled="true"
+        onclick="window.history.back();"
+      {% elsif settings.quick_cart_redirect_button == 'link_to' %}
+        href="{{ settings.quick_cart_redirect_button_link }}"
+      {% else %}
+        role="link" aria-disabled="true"
+        onclick="window.location.reload();"
+      {% endif %}
+    >
+      {{ 'sections.cart.continue_shopping' | t }}
+    </a>
+  </div>
+{% endcomment %}
