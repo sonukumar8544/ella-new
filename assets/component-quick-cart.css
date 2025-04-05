@@ -68,7 +68,7 @@ div#dynamic-checkout-cart {
   color: #fff;
 }
 #halo-cart-sidebar .product-card-layout-02 .card-title {
-  font-size: 13px;
+  font-size: 13px !important;
   line-height: 1.5;
 }
 #halo-cart-sidebar .previewCartItem-image:before {
