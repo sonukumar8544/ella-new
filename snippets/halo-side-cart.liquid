@@ -96,16 +96,7 @@
                         {%- if item.selling_plan_allocation != nil -%}
                             <p class="cart-item-allocation">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                         {%- endif -%}
-                        {%- if item.discounts.size > 0 -%}
-                            <ul class="cart-discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                                {%- for discount in item.line_level_discount_allocations -%}
-                                    <li class="discounts__discount" data-auto-discount="{{ discount.total_savings }}">
-                                        {%- render 'icon-discount' -%}
-                                        {{ discount.discount_application.title }}
-                                    </li>
-                                {%- endfor -%}
-                            </ul>
-                        {%- endif -%}
+                       
                         <div class="previewCartItem-change">
                             {%- liquid 
                                 if item.original_price != item.final_price
@@ -152,6 +143,17 @@
                                 <a role="link" aria-disabled="true" class="plus btn-quantity" data-plus-quantity-cart=""></a>
                             </cart-update-quantity>
                           </div>
+{%- if item.discounts.size > 0 -%}
+    <ul class="cart-discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+        {%- for discount in item.line_level_discount_allocations -%}
+            <li class="discounts__discount" data-auto-discount="{{ discount.total_savings }}">
+                {%- render 'icon-discount' -%}
+                {{ discount.discount_application.title }}
+            </li>
+        {%- endfor -%}
+    </ul>
+{%- endif -%}
+                          
                             {%- if has_qty_rules or has_vol_pricing -%}
                                 <quantity-popover class="quantity-popover-container">
                                     <button
