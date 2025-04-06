@@ -1233,3 +1233,10 @@ a.button.button-2.button-continue {
     width: 340px;
   }
 }
+
+@media (max-width: 768px) {
+  .template-cart .cart-content-item[data-cart-total] {
+    width: 95%;
+    margin: auto;
+  }
+}
