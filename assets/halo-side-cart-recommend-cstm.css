@@ -8,12 +8,10 @@
   overflow: hidden;
 }
 .quick_cart_similar_update .header_title {
-  background-color: #006a91;
-  color: white;
-  text-align: center;
-  padding: 8px;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 13px 7px;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: left;
 }
 .quick_cart_similar_update .cart_grid_list {
   display: flex;
