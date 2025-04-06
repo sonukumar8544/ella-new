@@ -1,10 +1,14 @@
 /* similar product */
-.quick_cart_similar_update .product-card-layout-02 .card {
+.quick_cart_similar_update .product-item .card {
   margin-bottom: 10px;
   display: flex;
 }
 .quick_cart_similar_update .product-item-custom .card-title {
   margin-bottom: 0px;
+}
+.quick_cart_similar_update .product-item-custom .card-media {
+  width: 100px;
+  height: 100px;
 }
 
 .quick_cart_similar_update {
