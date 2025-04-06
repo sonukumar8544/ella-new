@@ -176,7 +176,7 @@
   -webkit-line-clamp: var(--product-title-line-text);
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  margin: 8px 11px 11px 8px;
+  margin: 0px 1px 5px 1px;
 }
 
 .card-price {
