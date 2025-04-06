@@ -904,7 +904,8 @@ body.cart-sidebar-show .halo-cart-sidebar {
 }
 
 .halo-cart-sidebar .previewCartItem-price .discounted-price {
-  font-size: var(--product-price-font-size);
+  /* font-size: var(--product-price-font-size); */
+  font-size: 14px;
   color: var(--product-sale-price-color);
 }
 
