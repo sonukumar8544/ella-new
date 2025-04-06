@@ -9,7 +9,10 @@
       {{ settings.similar_products }}
     </div>
   {% endif %}
-  <div class="cart_recomended">
+   <div class="previewCartProduct" data-product-collection-cart>
+                <div class="previewCartCarousel products-carousel" data-item-dots="{{ show_dots }}" data-item-arrows="{{ show_arrows }}"
+                >
+  <!-- <div class="cart_recomended"> -->
     {% assign displayed_product_titles = '' %}
 
     {% for item in cart.items %}
@@ -95,6 +98,7 @@
       document.querySelector('.quick_cart_similar_update').style.display = 'none';
     </script>
   {% endunless %}
+   </div>
 </div>
 <script>
   $('.quick_cart_similar_update #recommendedProduct').click(function () {
