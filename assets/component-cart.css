@@ -395,9 +395,9 @@
   content: "";
   position: absolute;
   width: 12px;
-  height: 1px;
+  height: 2px;
   left: 10px;
-  top: 22px;
+  top: 17px;
   background: #5a5a5a;
 }
 
@@ -412,7 +412,7 @@
   width: 12px;
   height: 2px;
   left: 10px;
-  top: 21px;
+  top: 17px;
   background: #5a5a5a;
   transform: rotate(90deg);
 }
