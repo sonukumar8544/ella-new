@@ -59,7 +59,9 @@
                     {% if tag == 'usa-bundle' %}
                       {% if product.price > 0 %}
                         {% assign has_recommended_products = true %}
-                        <!-- {% render 'cart-drawer-recommended-product', product: product %} -->
+                        {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %} 
                         {% render 'product-card-sidebar',
                                 product_card_product: product
                             %}
@@ -72,7 +74,9 @@
                   {% if tag == 'ca_bundle' %}
                     {% assign has_recommended_products = true %}
                     {% if product.price > 0 %}
-                      <!-- {% render 'cart-drawer-recommended-product', product: product %} -->
+                     {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %} 
                       {% render 'product-card-sidebar',
                                 product_card_product: product
                             %}
