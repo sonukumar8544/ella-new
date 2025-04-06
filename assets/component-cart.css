@@ -845,6 +845,10 @@ div#main-cart-items {
     justify-content: flex-end;
     flex-direction: row-reverse;
   }
+
+  .cart-item {
+    margin: 10px 0px 18px;
+  }
 }
 
 @media (max-width: 550px) {
