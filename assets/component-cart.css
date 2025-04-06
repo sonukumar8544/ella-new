@@ -1058,7 +1058,7 @@
 
 @media (min-width: 1025px) {
   .cart-content-wrapper {
-    width: 80%;
+    width: 70%;
     margin: auto;
   }
   .cart-item-block.cart-item-price {
@@ -1167,8 +1167,8 @@
   }
 
   .cart-content-item[data-cart-content] {
-    width: calc(100% - 340px);
-    padding-right: 30px;
+    width: 100%;
+    /* padding-right: 30px; */
   }
 
   .cart-content-item[data-cart-total] {
