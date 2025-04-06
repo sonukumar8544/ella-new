@@ -1,6 +1,6 @@
 <!-- halo-side-cart-recommend-cstm -->
 {% assign has_recommended_products = false %}
- <link href="{{ 'halo-side-cart-recommend-cstm.css' | asset_url }}">
+{{ 'halo-side-cart-recommend-cstm.css' | asset_url | stylesheet_tag }}
 <div class="quick_cart_similar_update">
   {% if settings.similar_products != blank %}
     <div
