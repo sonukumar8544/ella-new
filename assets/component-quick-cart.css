@@ -437,6 +437,11 @@ div#dynamic-checkout-cart {
   height: 35px;
   top: -24px;
   background: transparent;
+}
+.previewCartCarousel .slick-arrow svg {
+  color: #fff;
+}
+fill: #fff;
 .previewCartCarousel .slick-arrow.slick-prev {
   left: auto !important;
   right: 45px;
