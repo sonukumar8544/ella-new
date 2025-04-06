@@ -2,12 +2,12 @@
 {% assign has_recommended_products = false %}
 {{ 'halo-side-cart-recommend-cstm.css' | asset_url | stylesheet_tag }}
 <div class="quick_cart_similar_update">
-  {% if settings.similar_products != blank %}
+  {% if settings.quick_cart_popular_product_title != blank %}
     <div
       class="header_title"
       style="background-color: {{ settings.similar_products_bg }}; color: {{ settings.similar_products_title }}"
     >
-      {{ settings.similar_products }}
+      {{ settings.quick_cart_popular_product_title | escape }}       
     </div>
   {% endif %}
    <div class="previewCartProduct" data-product-collection-cart>
