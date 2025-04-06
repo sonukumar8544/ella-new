@@ -1167,7 +1167,7 @@
   }
 
   .cart-content-item[data-cart-content] {
-    width: 100%;
+    width: calc(100% - 440px);
     /* padding-right: 30px; */
   }
 
@@ -1185,7 +1185,7 @@
 
 @media (min-width: 1400px) {
   .cart-content-item[data-cart-content] {
-    width: calc(100% - 340px);
+    width: calc(100% - 440px);
   }
 
   .cart-content-item[data-cart-total] {
@@ -1195,7 +1195,7 @@
 
 @media (min-width: 1600px) {
   .cart-content-item[data-cart-content] {
-    width: calc(100% - 340px);
+    width: calc(100% - 440px);
   }
 
   .cart-content-item[data-cart-total] {
