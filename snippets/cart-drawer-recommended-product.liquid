@@ -32,7 +32,7 @@
                     {%- else -%}
                         {% assign image = product_card_product.images[0].src %}
                     {%- endif -%}
-                    <img src="{{ image | img_url: '' }}" sizes="" alt="{{ image.alt | escape }}" loading="lazy" width="100%" height="100%" class="motion-reduce" style="width:100px;">
+                    <img src="{{ image | img_url: '' }}" sizes="" alt="{{ image.alt | escape }}" loading="lazy" width="100%" height="100%" class="motion-reduce" style="width:100px;padding: 2px;">
                 {%- else -%}
                     {%- capture current %}{% cycle 1, 2, 3, 4 %}{% endcapture -%}
                     {%- assign placeholder_image = 'product-apparel-' | append: current -%}
