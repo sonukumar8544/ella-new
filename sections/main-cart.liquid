@@ -131,6 +131,7 @@
                                                             <img srcset="{{ item.image | img_url: '160x' }}" src="{{ item.image | img_url: '160x' }}" alt="{{ item.title | escape }}" sizes="160px" loading="lazy" width="{{ item.image.width }}" height="{{ item.image.height }}">
                                                         </a>
                                                     </div>
+                                                  
                                                     <div class="cart-item-block-right">
                                                         {%- liquid
                                                             assign thisHandle = item.product.handle
@@ -313,9 +314,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-item-block cart-item-price">
+                                                  <div class="cart-item-block cart-item-price">
                                                 <div class="cart-item__price-wrapper">
                                                     {%- assign current_variant = item.variant -%}
                                                     {%- if item.original_price != item.final_price -%}
@@ -448,6 +447,9 @@
                                             <div class="cart-item-block cart-item-remove">
                                                 <a class="cart-remove" href="javascript:void(0)" data-cart-remove data-cart-remove-id="{{ item.id }}" data-line="{{ item.key }}" data-index="{{ item.index | plus: 1 }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">{% render 'icon-close' %}</a>
                                             </div>
+                                                </div>
+                                            </div>
+                                            <!--  -->
                                         </div>
                                     {%- endfor -%}
                                 </div>
