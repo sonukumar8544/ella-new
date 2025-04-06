@@ -276,7 +276,7 @@
         {%- endif -%}
       <!-- recommended Products -->
  
-{% render 'halo-side-cart-recommend-cstm', cart:cart %}
+{% render 'halo-side-cart-recommend-cstm', cart:cart, limit: limit, show_dots: show_dots, show_arrows: show_arrows %}
     </div>
 
     {%- if settings.show_cart_note or settings.show_cart_gift or settings.show_cart_shipping or settings.show_cart_discount -%}
