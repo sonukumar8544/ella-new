@@ -8,7 +8,7 @@
   text-align: center;
   display: flex;
   align-items: center;
-  gap: 20px; 
+  gap: 20px;
 }
 .template-cart .lineItem__productvar {
   display: flex;
@@ -104,8 +104,7 @@
   border: none;
   margin: 0 0 25px 0;
 }
-.checkout_title 
-.cart-header {
+.checkout_title .cart-header {
   display: flex;
   align-items: center;
   text-align: left;
@@ -1186,7 +1185,7 @@
 
   .cart-content-item[data-cart-content] {
     /* width: calc(100% - 440px); */
-    width:58%:
+    width: 58%;
     /* padding-right: 30px; */
   }
 
