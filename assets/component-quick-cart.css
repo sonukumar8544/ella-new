@@ -75,6 +75,7 @@ div#dynamic-checkout-cart {
   font-size: 14px;
   font-weight: 500;
   color: #232323;
+  font-family: "Nunito";
 }
 #halo-cart-sidebar .cstm__qty_cart {
   display: flex;
@@ -119,10 +120,10 @@ div#dynamic-checkout-cart {
 }
 #halo-cart-sidebar .cart-discounts .discounts__discount,
 #halo-cart-sidebar .haloCalculatorShipping .message {
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  color: #000;
+  letter-spacing: 0.4px;
+  color: #df9f28;
   padding-bottom: 6px;
 }
 #halo-cart-sidebar .previewCart {
