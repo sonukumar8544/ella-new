@@ -1075,7 +1075,7 @@
 
 @media (min-width: 1025px) {
   .cart-content-wrapper {
-    width: 70%;
+    width: 80%;
     margin: auto;
   }
   .cart-item-block.cart-item-price {
@@ -1184,13 +1184,14 @@
   }
 
   .cart-content-item[data-cart-content] {
-    width: calc(100% - 440px);
+    /* width: calc(100% - 440px); */
+    width:58%:
     /* padding-right: 30px; */
   }
 
   .cart-content-item[data-cart-total] {
-    width: 340px;
-    max-width: 100%;
+    /* width: 340px; */
+    max-width: 40%;
     margin-top: 0;
   }
 
