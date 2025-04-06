@@ -1239,4 +1239,7 @@ a.button.button-2.button-continue {
     width: 95%;
     margin: auto;
   }
+  .cart-item {
+    grid-template-columns: auto !important;
+  }
 }
