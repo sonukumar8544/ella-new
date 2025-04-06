@@ -21,10 +21,9 @@
   border-bottom: 1px solid #ddd;
   margin: 3px 10px 5px 10px;
 }
-/* .cart_recomended {
-    height: 300px;
-    overflow-y: scroll;
-} */
+.quick_cart_similar_update span.price-item.price-item--sale .text {
+  display: none;
+}
 .quick_cart_similar_update .cart_grid_list:last-child {
   border-bottom: none;
 }
