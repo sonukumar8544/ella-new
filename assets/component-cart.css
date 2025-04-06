@@ -59,7 +59,9 @@
 
 .cart-content-item[data-cart-total] {
   margin: 20px 0 0 0;
-  max-width: 340px;
+  /* max-width: 340px; */
+
+  max-width: -webkit-fill-available;
 }
 
 .template-cart:has(.halo-cart-content .cart-content-empty)
