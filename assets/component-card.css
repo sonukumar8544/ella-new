@@ -8,8 +8,10 @@
 .quick_cart_similar_update .btn_price {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 20px;
+}
+.quick_cart_similar_update .card-action {
+  width: 50%;
 }
 .quick_cart_similar_update .product-item-custom .card-product {
   width: 30%;
