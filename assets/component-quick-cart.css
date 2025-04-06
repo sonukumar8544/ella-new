@@ -435,9 +435,8 @@ div#dynamic-checkout-cart {
   padding: 6px;
   width: 35px;
   height: 35px;
-  top: -19px;
-}
-
+  top: -24px;
+  background: transparent;
 .previewCartCarousel .slick-arrow.slick-prev {
   left: auto !important;
   right: 45px;
