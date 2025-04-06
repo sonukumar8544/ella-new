@@ -58,12 +58,10 @@ div#dynamic-checkout-cart {
 }
 h4.footer_text {
   font-size: 20px;
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 0px 0 10px;
   border: 3px solid #374650;
   padding: 2px 4px;
-  text-align: center;
-  border-radius: 6px;
+  text-align: left;
   background: #374650;
   color: #fff;
 }
@@ -489,8 +487,7 @@ h4.footer_text {
 }
 
 .previewCartTotalsPrice {
-  /*border-top: 1px solid var(--cart-item-border);*/
-  padding-top: 0;
+  padding: 0px 15px;
 }
 
 .previewCartTotals[data-coupon-discount] .previewCartTotals-label {
