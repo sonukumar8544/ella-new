@@ -1,13 +1,12 @@
-.quick_cart_similar_update .slick-dots,
 .quick_cart_similar_update .slider-dots {
   bottom: 1px;
 }
-.quick_cart_similar_update .slick-dots li,
-.quick_cart_similar_update .slider-dots li {
+.quick_cart_similar_update .slick-dots li {
   margin: 0 1px;
 }
-.quick_cart_similar_update .slick-dots li button,
-.quick_cart_similar_update .slider-dots li button .quick_cart_similar_update {
+.quick_cart_similar_update .slider-dots li button {
+}
+.quick_cart_similar_update {
   width: 100%;
   /* max-width: 400px; */
   margin: 20px 0px 20px 0px;
