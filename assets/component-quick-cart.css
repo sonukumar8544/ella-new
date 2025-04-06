@@ -1551,3 +1551,9 @@ body:not(.quick_shop_option_3) .previewCartCollection .product-card__button2 {
     z-index: 3;
   }
 }
+@media (max-width: 322px) {
+  #halo-cart-sidebar .previewCartInfo {
+    height: 470px;
+    position: relative;
+  }
+}
