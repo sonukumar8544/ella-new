@@ -31,6 +31,8 @@
   display: flex;
   flex-direction: column;
   margin-top: 35px;
+  width: 1000px;
+  margin: auto;
 }
 
 .cart-content-item[data-cart-total] {
@@ -1025,6 +1027,10 @@
 }
 
 @media (min-width: 1025px) {
+  .cart-content-wrapper {
+    width: 1000px;
+    margin: auto;
+  }
   .cart-item-block.cart-item-price {
     padding-left: 0;
     text-align: center;
