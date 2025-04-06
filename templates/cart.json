@@ -14,7 +14,7 @@
       "settings": {
         "container": "1770",
         "side_padding_full_width": 0,
-        "show_breadcrumb": true,
+        "show_breadcrumb": false,
         "breadcrumb_color": "#999999",
         "breadcrumb_alignment": "left",
         "show_page_title": true,
@@ -25,7 +25,7 @@
         "show_vendor": false,
         "image_ratio": "portrait",
         "portrait_aspect_ratio": 133,
-        "show_cart_countdown": true,
+        "show_cart_countdown": false,
         "cart_countdown_time": 2,
         "cart_countdown_text_item": "Congratulations! 15% discount has been automatically applied at checkout.",
         "cart_countdown_text_empty_1": "Please, hurry! The",
