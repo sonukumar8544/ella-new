@@ -2179,7 +2179,7 @@ quickshop-update-quantity.disabled {
 
 @media (max-width: 1024px) {
   .product-card-layout-02 .card-title {
-    font-size: calc(var(--product-title-font-size) * 0);
+    font-size: 13px;
     line-height: 1.5;
     /* margin: 0 0 var(--product-title-margin-bottom) 0; */
   }
