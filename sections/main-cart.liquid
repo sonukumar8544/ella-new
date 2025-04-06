@@ -292,14 +292,16 @@
                                             </div>
                                                        </div>
                                                       </div>  
-                                                        {%- if item.product.variants.size != 0 -%}
+                                                      {% comment %} 
+                                                      {%- if item.product.variants.size != 0 -%}
                                                             {%- unless item.variant.title contains 'Default' -%}
-                                                                <div class="cart-item-option d-none">
+                                                                <div class="cart-item-option ">
                                                                     <span class="cart-item-variant">{{ item.variant.title }}</span>
                                                                     <a href="javascript:void(0);" class="cart-item-edit" data-open-edit-cart data-edit-cart-url="{{ item.url }}&view=ajax_edit_cart" data-edit-cart-id="{{ item.id }}" data-edit-cart-quantity="{{ item.quantity }}" data-line="{{ item.key }}" data-index="{{ item.index | plus: 1 }}" aria-label="{{ 'sections.cart.edit_title' | t: title: item.variant.title }}">{% render 'icon-edit' %}</a>
                                                                 </div>
                                                             {%- endunless -%}
                                                         {%- endif -%}
+                                                       {% endcomment %} 
                                                         {%- if section.settings.show_vendor -%}
                                                             <p class="cart-item-vendor">{{ item.product.vendor }}</p>
                                                         {%- endif -%}
