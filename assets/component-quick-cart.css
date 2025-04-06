@@ -1116,7 +1116,8 @@ body:not(.quick_shop_option_3) .previewCartCollection .product-card__button2 {
 
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
-    font-size: calc(var(--product-price-font-size) * 0.75);
+    font-size: 13px;
+    /* font-size: calc(var(--product-price-font-size) * 0.75); */
   }
 
   .previewCart {
