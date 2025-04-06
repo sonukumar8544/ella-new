@@ -46,7 +46,7 @@
                         {%- endunless -%}
                     </button>
                 {%- else -%}
-                    <a class="button button-ATC card-button" href="{{ product.url }}" data-quickshop-popup data-product-handle="{{ product.handle }}">
+                    <a class="button button-ATC card-button" href="{{ product.url }}" data-quickshop-popup1 data-product-handle="{{ product.handle }}">
                         {%- unless settings.product_card_layout == '06' -%}
                             {{ 'products.product.quick_shop' | t }}
                         {%- else -%}
