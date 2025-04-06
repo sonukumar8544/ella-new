@@ -275,7 +275,7 @@
         </div>{% endcomment %}
         {%- endif -%}
       <!-- recommended Products -->
-{% render '' %}
+{% render 'halo-side-cart-recommend-cstm', cart:cart %}
     </div>
 
     {%- if settings.show_cart_note or settings.show_cart_gift or settings.show_cart_shipping or settings.show_cart_discount -%}
