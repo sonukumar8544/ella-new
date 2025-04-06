@@ -6,6 +6,9 @@
 a.button.button-2.button-continue {
   display: none;
 }
+div#main-cart-items {
+  margin-top: 50px;
+}
 .template-cart .cart-item-block.cart-item-price {
   padding-left: 0;
   text-align: center;
