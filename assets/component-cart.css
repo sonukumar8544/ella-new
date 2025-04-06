@@ -21,7 +21,7 @@
 }
 
 .template-cart .cart-content-item[data-cart-total] {
-  width: 450px;
+  width: 40%;
 }
 
 .cart-container .haloCalculatorShipping {
@@ -1190,8 +1190,8 @@
   }
 
   .cart-content-item[data-cart-total] {
-    /* width: 340px; */
-    max-width: 40%;
+    width: 340px;
+    max-width: 100%;
     margin-top: 0;
   }
 
