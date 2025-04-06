@@ -5,10 +5,12 @@
 .quick_cart_similar_update .product-item-custom .card-title {
   margin-bottom: 0px;
 }
-/* .quick_cart_similar_update .product-item-custom .card-media {
-  width: 100px;
-  height: 100px;
-} */
+.quick_cart_similar_update .btn_price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
 .quick_cart_similar_update .product-item-custom .card-product {
   width: 30%;
 }
