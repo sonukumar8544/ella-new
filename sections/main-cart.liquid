@@ -63,9 +63,9 @@
             {%- if show_breadcrumb -%}
                 {% render 'breadcrumb', alignment: breadcrumb_alignment %}
             {%- endif -%}
-            {%- if show_page_title -%}
+           {% comment %} {%- if show_page_title -%}
                 <h1 class="page-header text-{{ page_title_alignment }}">{{ 'sections.cart.title' | t }}</h1>
-            {%- endif -%}
+            {%- endif -%}  {% endcomment %}
             {%- if settings.show_calculator_free_shipping_message -%}
                 {{ 'component-calculator-shipping.css' | asset_url | stylesheet_tag }}
                 <div class="cart-message">{% render 'free-shipping-component' %}</div>
