@@ -9,6 +9,11 @@
   align-items: center;
   gap: 20px;
 }
+.template-cart .lineItem__productvar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .cart-container .haloCalculatorShipping {
   padding-left: 0;
