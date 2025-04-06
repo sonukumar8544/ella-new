@@ -3,14 +3,14 @@
 <div class="quick_cart_similar_update">
   {% if settings.similar_products != blank %}
     <div
-      class="header_title previewCartProduct"  data-product-collection-cart 
+      class="header_title"
       style="background-color: {{ settings.similar_products_bg }}; color: {{ settings.similar_products_title }}"
     >
       {{ settings.similar_products }}
     </div>
   {% endif %}
-                <div class="previewCartCarousel products-carousel" data-item-dots="{{ show_dots }}" data-item-arrows="{{ show_arrows }}"
-                >
+   <div class="previewCartProduct" data-product-collection-cart>
+    <div class="previewCartCarousel products-carousel" data-item-dots="{{ show_dots }}" data-item-arrows="{{ show_arrows }}">
   <!-- <div class="cart_recomended"> -->
     {% assign displayed_product_titles = '' %}
 
@@ -92,11 +92,12 @@
       {% endfor %}
     {% endfor %}
   </div>
-  {% unless has_recommended_products %}
-    <script>
-      document.querySelector('.quick_cart_similar_update').style.display = 'none';
-    </script>
-  {% endunless %}
+      {% unless has_recommended_products %}
+        <script>
+          document.querySelector('.quick_cart_similar_update').style.display = 'none';
+        </script>
+      {% endunless %}
+</div>
 </div>
 <script>
   $('.quick_cart_similar_update #recommendedProduct').click(function () {
