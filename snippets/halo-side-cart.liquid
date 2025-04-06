@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <button type="button" class="previewCartItem-remove{% if has_qty_rules or has_vol_pricing %} has_vol_pricing{% endif %}" data-cart-remove data-cart-remove-id="{{ item.id }}" data-line="{{ item.key }}" data-index="{{ item.index | plus: 1 }}" title="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                        {% render 'icon-close' %}
+                        {% render 'cartdrawer_close_icon' %}
                     </button>
                 </li>
             {%- endfor -%}
