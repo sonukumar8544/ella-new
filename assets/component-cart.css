@@ -104,14 +104,14 @@
   border: none;
   margin: 0 0 25px 0;
 }
-
+.checkout_title 
 .cart-header {
   display: flex;
   align-items: center;
   text-align: left;
   width: 100%;
   padding: 13px;
-        font-size: 24px;
+  font-size: 24px;
 }
 
 .cart-header-item {
