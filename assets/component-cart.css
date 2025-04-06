@@ -1,3 +1,15 @@
+.template-cart .cart-item-name a {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.template-cart .cart-item-block.cart-item-price {
+  padding-left: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .cart-container .haloCalculatorShipping {
   padding-left: 0;
   padding-right: 0;
