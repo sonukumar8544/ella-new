@@ -103,12 +103,7 @@
                     </div>
                     
                   </div>
-                                    <!-- <div class="<div class="cart-header checkout_title">
-                    <div class="cart-header-item cart-header-info">
-                      Shopping Cart
-                    </div>
-                    
-                  </div>cart-header-item cart-header-info">{{ 'Shopping Cart'}}</div> -->
+                                    <!-- <div class="cart-header-item cart-header-info">{{ 'Shopping Cart'}}</div> -->
                                     <!-- <div class="cart-header-item cart-header-price">{{ 'sections.cart.headings.price' | t }}</div>
                                     <div class="cart-header-item cart-header-quantity">{{ 'sections.cart.headings.quantity' | t }}</div>
                                     <div class="cart-header-item cart-header-total">{{ 'sections.cart.headings.total' | t }}</div>
@@ -498,9 +493,10 @@
                             {%- endif -%}
                         </div>
                         <div class="cart-content-item cart-total{% if section.settings.enable_sticky_button_checkout_mb %} enable_sticky_buttton{% endif %}" data-cart-total>
-                            <form action="{{ routes.cart_url }}" method="post" novalidate>
+                          <div class="checkout_title">Order Summary</div> 
+                          <form action="{{ routes.cart_url }}" method="post" novalidate>
                                 <ul class="cart-totals list-unstyled">
-                                    <div class="cart--totals-title">{{ 'general.cart.order_summary' | t }}</div>
+                                    <!-- <div class="cart--totals-title">{{ 'general.cart.order_summary' | t }}</div> -->
                                     <li class="cart-total cart-total-subtotal">
                                         <div class="cart-total-label"><span class="text">{{ 'general.cart.subtotal' | t }}</span></div>
                                         <div class="cart-total-value"><span class="text">{{ cart.original_total_price | money }}</span></div>
