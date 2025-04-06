@@ -1055,6 +1055,7 @@
 .card-swatch.text-left {
   display: flex;
   justify-content: flex-start;
+  width: 50%;
 }
 
 .card-information__wrapper.text-right .card-price,
