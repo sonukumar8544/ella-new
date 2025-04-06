@@ -3,6 +3,9 @@
   letter-spacing: 0.4px;
   font-size: 18px;
 }
+a.button.button-2.button-continue {
+  display: none;
+}
 .template-cart .cart-item-block.cart-item-price {
   padding-left: 0;
   text-align: center;
