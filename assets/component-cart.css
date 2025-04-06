@@ -14,6 +14,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.template-cart .cart-item-block.cart-item-price.small-screen-visible {
+  display: none !important;
+}
 
 .cart-container .haloCalculatorShipping {
   padding-left: 0;
@@ -605,7 +608,7 @@
 
 .cart-header-item.cart-header-info,
 .cart-item-block.cart-item-info {
-  width: calc(100% - 450px);
+  width: 100%;
   padding-left: 20px;
 }
 
