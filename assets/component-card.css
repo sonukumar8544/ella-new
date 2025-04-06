@@ -5,23 +5,21 @@
 .quick_cart_similar_update .product-item-custom .card-title {
   margin-bottom: 0px;
 }
-/* .quick_cart_similar_update .btn_price {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+.product-card-layout-02 .card-price .price dd,
+.product-card-layout-02 .price-item .text {
+  margin: 0 5px 0 0;
+  width: 107px;
 }
-.quick_cart_similar_update .card-action {
-  width: 50%;
-}
-.quick_cart_similar_update .product-item-custom .card-product {
-  width: 25%;
-} */
 .quick_cart_similar_update button#product-add-to-cart {
   /* width: auto; */
   padding: 7px 0px;
   font-size: 14px;
   line-height: normal;
+}
+.quick_cart_similar_update .price--on-sale .price__sale {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .quick_cart_similar_update .card-action {
   width: auto;
