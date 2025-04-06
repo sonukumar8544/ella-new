@@ -24,6 +24,15 @@
   padding-left: 0;
   padding-right: 0;
 }
+.template-cart .cart-content-item.cart-total form {
+  background-position: center;
+  padding: 25px 15px;
+  border: 1px solid #d3d3d3b8;
+  margin: 10px 10px 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 0 1px 1px #e6e6e6;
+}
 
 [data-cart] {
   position: relative;
