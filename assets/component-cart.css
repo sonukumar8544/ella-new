@@ -747,7 +747,7 @@ div#main-cart-items {
 
 @media (max-width: 767px) {
   .template-cart .cart-content-item[data-cart-total] {
-    width: 95%;
+    width: 100%;
     margin: auto;
   }
   .cart-item {
@@ -848,6 +848,9 @@ div#main-cart-items {
 
   .cart-item {
     margin: 10px 0px 18px;
+  }
+  .template-cart .cart-content-item.cart-total form {
+    margin: auto;
   }
 }
 
