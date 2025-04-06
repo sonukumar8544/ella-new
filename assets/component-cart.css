@@ -753,7 +753,9 @@ div#main-cart-items {
   .cart-item {
     grid-template-columns: auto !important;
   }
-
+  .template-cart .cart-item-name a {
+    font-size: 14px;
+  }
   .cart-content-item[data-cart-total] {
     max-width: 100%;
     width: 100%;
