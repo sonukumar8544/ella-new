@@ -6,6 +6,11 @@
 a.button.button-2.button-continue {
   display: none;
 }
+button#cart-checkout {
+  font-size: 22px;
+  line-height: 1.4;
+  border-radius: 6px !important;
+}
 div#main-cart-items {
   margin-top: 50px;
 }
