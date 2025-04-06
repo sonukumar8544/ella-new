@@ -1,0 +1,200 @@
+/* similar product */
+.quick_cart_similar_update {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+.quick_cart_similar_update .header_title {
+  background-color: #006a91;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.quick_cart_similar_update .cart_grid_list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px 0px;
+  border-bottom: 1px solid #ddd;
+  margin: 3px 10px 5px 10px;
+}
+/* .cart_recomended {
+    height: 300px;
+    overflow-y: scroll;
+} */
+.quick_cart_similar_update .cart_grid_list:last-child {
+  border-bottom: none;
+}
+.quick_cart_similar_update .cart_grid_list img {
+  max-width: 65px;
+  max-height: 65px;
+  border-radius: 4px;
+}
+.quick_cart_similar_update .product-info {
+  flex: 1;
+  margin-left: 7px;
+}
+.quick_cart_similar_update .product-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0px;
+  line-height: 1.2;
+}
+.quick_cart_similar_update .product-price {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.quick_cart_similar_update .discount-price {
+  font-weight: bold;
+  margin-left: 5px;
+}
+.quick_cart_similar_update .recommended_atc_btn {
+  background-color: transparent;
+  color: #006a91;
+  border: 2px solid rgb(0, 106, 145);
+  padding: 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1.15;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 90px !important;
+  width: auto;
+  height: 32px !important;
+  white-space: nowrap;
+  margin: inherit;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.quick_cart_similar_update .recommended_atc_btn.is-loading.button:before {
+  left: 38% !important;
+}
+.recommended_atc_btn.soldoutBtn {
+  background-color: transparent;
+  color: rgb(125 126 127);
+  border: 2px solid rgb(123 126 127);
+  padding: 7px;
+  border-radius: 3px;
+  cursor: not-allowed;
+  line-height: 1.15;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.recommended_atc_btn:hover {
+  color: #324a5e;
+  border-color: #324a5e;
+}
+.details-link {
+  display: block;
+  margin-top: 0px;
+  font-size: 12px;
+  color: rgb(0, 106, 145);
+  text-decoration: underline;
+}
+.details-link:hover {
+  text-decoration: underline;
+}
+/* similar product end */
+.previewCart {
+  padding: 10px 20px 0;
+}
+.previewCart
+  .previewCartItem-content.cart-item-block-right
+  .previewCartItem-name {
+  margin: 0 0 0px;
+}
+.halo-cart-sidebar .halo-sidebar-wrapper {
+  padding-top: 0.9px !important;
+}
+
+/* cart css default design */
+a.previewCartItem-image.line_itemsss {
+  width: 65px;
+  height: 65px;
+}
+
+.previewCart .quick_item_title {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  margin: 0px;
+  line-height: 1.2;
+}
+.previewCart span.previewCartItem-variant {
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  margin: 0px;
+  line-height: 1.2;
+  line-height: 1.6 !important;
+}
+.previewCartItem-change .previewCartItem-price {
+  width: 100% !important;
+}
+.previewCart .cart-discounts .discounts__discount {
+  color: hsl(39deg 73.76% 51.58%);
+}
+.previewCart .previewCartItem-content {
+  padding: 4px 0px;
+}
+.previewCart .previewCartItem-edit .icon {
+  width: 22px;
+  height: 14px;
+}
+
+.previewCartItem-change .previewCartItem-price .price {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  direction: rtl;
+}
+@media (max-width: 400px) {
+  .halo-cart-sidebar .previewCartItem {
+    padding-bottom: 1px;
+  }
+  .halo-sidebar {
+    max-width: calc(100vw - 20px) !important;
+  }
+  .previewCart {
+    padding: 10px 7px 0;
+  }
+  .quick_cart_similar_update .cart_grid_list {
+    margin: 3px !important;
+  }
+  .quick_cart_similar_update .recommended_atc_btn {
+    font-size: 11px !important;
+  }
+  .halo-cart-sidebar .previewCartItem-price .previewCartItem-saving-price {
+    justify-content: end;
+  }
+  .previewCart .cart-discounts .discounts__discount {
+    font-size: 12px;
+  }
+  .previewCartItem-change .previewCartItem-price .price {
+    display: block;
+    gap: 0px;
+  }
+  .previewCartItem-price,
+  .previewCart .previewCartItem-price {
+    margin: 0 0 0px;
+  }
+  .previewCart .previewCartItem-remove {
+    position: absolute;
+    right: 0px !important;
+    bottom: 9px !important;
+    background: none;
+    border: none;
+  }
+}
