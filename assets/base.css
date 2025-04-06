@@ -8166,13 +8166,13 @@ h5 {
   color: #fff;
 }
 
-.quick_cart_similar_update .slider-dots {
+.quick_cart_similar_update .previewCartProduct .slider-dots {
   bottom: 1px !important;
 }
-.quick_cart_similar_update .slick-dots li {
+.quick_cart_similar_update .previewCartProduct .slick-dots li {
   margin: 0 1px;
 }
-.quick_cart_similar_update .slider-dots li button {
+.quick_cart_similar_update .previewCartProduct .slider-dots li button {
   border: 1px solid #006a91;
   width: 8px;
   height: 8px;
