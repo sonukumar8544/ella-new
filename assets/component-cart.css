@@ -667,7 +667,7 @@
 
   .cart-header-item.cart-header-info,
   .cart-item-block.cart-item-info {
-    width: calc(100% - 400px);
+    width: 100%;
   }
 
   .cart-note .form-input {
