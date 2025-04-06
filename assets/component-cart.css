@@ -296,12 +296,6 @@
   letter-spacing: var(--body-letter-spacing);
   line-height: var(--body-line-height);
   margin: 0 0 5px 0;
-  padding: 13px 0;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.7px;
-  color: #df9f28;
-  padding-bottom: 0;
 }
 
 .cart-discounts .discounts__discount {
@@ -310,7 +304,13 @@
   color: var(--color-text2);
   letter-spacing: var(--body-letter-spacing);
   line-height: var(--body-line-height);
+  /* padding: 13px 0; */
   padding: 13px 0;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  color: #df9f28;
+  padding-bottom: 0;
 }
 
 .cart-discounts .discounts__discount:first-of-type,
