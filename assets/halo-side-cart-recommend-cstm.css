@@ -1,4 +1,9 @@
 /* similar product */
+.quick_cart_similar_update .product-card-layout-02 .card {
+  margin-bottom: 10px;
+  display: flex;
+}
+
 .quick_cart_similar_update {
   width: 100%;
   max-width: 400px;
