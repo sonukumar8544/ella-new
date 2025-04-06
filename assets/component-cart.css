@@ -335,7 +335,7 @@
 .cart-item__price-wrapper .price {
   display: block;
   font-size: calc(var(--font-body-size) + 4px);
-  font-weight: var(--font-weight-medium);
+  font-weight: 800;
   color: var(--product-sale-price-color);
   line-height: var(--body-line-height);
   letter-spacing: var(--body-letter-spacing);
