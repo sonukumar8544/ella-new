@@ -178,13 +178,15 @@
   overflow: hidden;
   position: relative;
   min-width: 120px;
-  padding-bottom: 80% !important;
+  padding-bottom: 95% !important;
+  border: 1px solid #b1b1b1;
+  border-radius: 6px;
 }
 
 .cart-item-image img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 7px;
+  left: 9px;
   width: 100px;
   height: 100px;
   object-fit: var(--product-cart-image-fit);
