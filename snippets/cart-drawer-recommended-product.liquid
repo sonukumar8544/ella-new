@@ -45,12 +45,7 @@
                 <a class="card-title link-underline{% if settings.product_title_line_text != 'full' %} card-title-ellipsis{% endif %}{% if variant_selected != blank %} card-title-change{% endif %}" href="{{ product_card_product.url }}">
                     <span class="text">{{ product_card_product.title | escape }}{% if variant_selected != blank %} <span data-change-title> - {{ variant_selected }}</span>{% endif %}</span>
                 </a>
-                <div class="card-price">
-                    {% render 'price',
-                        product: product_card_product,
-                        price_class: ''
-                    %}
-                </div>
+                
                 {%- if settings.show_swatch and isColor -%}
                     {% render 'product-swatch',
                         product: product_card_product,
@@ -61,6 +56,12 @@
                 {%- if settings.show_action -%}
                     <div class="card-action">
                         {% render 'add-to-cart-form-sidebar', product: product_card_product, id: 'form', position: position, sectionId: sectionId %}
+                      <div class="card-price">
+                    {% render 'price',
+                        product: product_card_product,
+                        price_class: ''
+                    %}
+                </div>
                     </div>
                 {%- endif -%}
             </div>
