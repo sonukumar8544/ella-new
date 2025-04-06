@@ -1,6 +1,7 @@
 .quick_cart_similar_update .product-item .card {
   margin: 10px 0px;
   display: flex;
+  gap: 10px;
 }
 .quick_cart_similar_update .product-item-custom .card-title {
   margin-bottom: 0px;
