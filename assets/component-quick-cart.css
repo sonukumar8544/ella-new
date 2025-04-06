@@ -1111,12 +1111,12 @@ body:not(.quick_shop_option_3) .previewCartCollection .product-card__button2 {
   }
 
   .halo-cart-sidebar .previewCartItem-price .before-discount-price {
-    font-size: calc(var(--product-price-font-size) * 0.75 - 2px);
+    font-size: calc(var(--product-price-font-size) * 0.75 - 1px);
   }
 
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
-    font-size: 13px;
+    font-size: 16px;
     /* font-size: calc(var(--product-price-font-size) * 0.75); */
   }
 
