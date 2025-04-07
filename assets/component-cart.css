@@ -1,3 +1,12 @@
+/* cart page | emprty | our health Goals Image css */
+.cart-content-empty .quick_cart_empty ul li a .cart-collection-pic {
+  max-width: max-content;
+  max-height: fit-content;
+}
+.cart-content-empty .quick_cart_empty ul li {
+  flex: 0 0 20%;
+}
+
 .template-cart .cart-item-name a {
   font-weight: 600;
   letter-spacing: 0.4px;
