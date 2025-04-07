@@ -12,6 +12,12 @@
     "main": {
       "type": "main-cart",
       "settings": {
+        "show_quick_cart_popular_product": true,
+        "quick_cart_popular_product_title": "You May Also Like",
+        "quick_cart_popular_product_collection": "",
+        "quick_cart_popular_product_show": 3,
+        "quick_cart_popular_product_dots": true,
+        "quick_cart_popular_product_arrows": true,
         "enable_empty_svg": true,
         "empty_title": "Your shopping cart is empty",
         "continue_shoppping": true,
