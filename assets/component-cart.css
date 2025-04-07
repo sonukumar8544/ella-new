@@ -1325,11 +1325,11 @@ div#main-cart-items {
   .cart-total .checkout_title,
   .checkout_title .cart-header-info {
     position: sticky;
-    top: 22%;
+    top: 200px;
   }
   .template-cart .cart-content-item.cart-total form {
     position: sticky;
-    top: 30%;
+    top: 250px;
   }
 }
 
