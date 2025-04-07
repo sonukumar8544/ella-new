@@ -1,12 +1,12 @@
 <!-- main-cart-you-may-also-like-product-->
 {% assign has_recommended_products = false %}
 <div class="quick_cart_similar_update">
-  {% if settings.quick_cart_popular_product_title != blank %}
+  {% if section.settings.quick_cart_popular_product_title != blank %}
     <h3
       class="header_title"
-      style="background-color: {{ settings.similar_products_bg }}; color: {{ settings.similar_products_title }}"
+      style="background-color: {{ section.settings.similar_products_bg }}; color: {{ section.settings.similar_products_title }}"
     >
-      {{ settings.quick_cart_popular_product_title | escape }}       
+      {{ section.settings.quick_cart_popular_product_title | escape }}       
     </h3>
   {% endif %}
    <div class="previewCartProduct" data-product-collection-cart>
