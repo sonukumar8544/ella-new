@@ -7,7 +7,10 @@
   z-index: 999999;
   height: 270px;
 }
-.product-card-layout-02.quick_shop_option_2 .card-action .variants-popup {
+#halo-cart-sidebar
+  .product-card-layout-02.quick_shop_option_2
+  .card-action
+  .variants-popup {
   background-color: #ececec;
   padding: 11px;
   overflow-x: scroll;
