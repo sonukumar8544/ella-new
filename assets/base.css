@@ -8185,6 +8185,9 @@ h5 {
   .menu-dropdown__column.menu-dropdown__column-3.w-auto h4.text {
     margin: 0;
   }
+  .menu-lv-item {
+    display: block;
+  }
 }
 
 .product-form__buttons,
