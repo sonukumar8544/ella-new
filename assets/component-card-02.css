@@ -1,3 +1,14 @@
+#halo-cart-sidebar
+  .product-card-layout-02
+  .card-action
+  .variants-popup-content {
+  padding: 10px;
+  height: 230px;
+}
+#halo-cart-sidebar .variants-popup.custom-scrollbar {
+  position: relative;
+}
+
 .product-card-layout-02 .card-action {
   position: initial;
   transform: translate3d(0, 0, 0);
