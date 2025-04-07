@@ -99,33 +99,6 @@
                             <div class="cart">
                                 <div class="cart-header">
                                   <div class="cart-header checkout_title">
-                    <div class="cart-header-item cart-header-info">
-                    
-               {% if section.settings.enable_empty_svg == true %}
-                <div class="quick-cart-empty-svg-icon">
-                  {% render 'quick-cart-empty-svg-icon', section: section %}
-                </div>
-              {% endif %}
-
-              {% if section.settings.empty_title != blank %}
-                <p class="center">{{ section.settings.empty_title }}</p>
-              {% endif %}
-              {% if section.settings.continue_shoppping == true %}
-                {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
-                  <div class="footer__drawer_empty">
-                    <a
-                      class="mm-emptycart-button button button--secondary"
-                      href="{{ settings.collection_all_url }}"
-                      style="color:{{ settings.button_txt_color }};background-color:{{ settings.button_bg_color }}"
-                    >
-                      {{ settings.collect_all_button | default: 'View All Products' }}
-                    </a>
-                  </div>
-                {% endif %}
-              {% endif %}
-            {% render 'main-cart-you-may-also-like-product' %}
-                    </div>
-                    
                   </div>
                                     <!-- <div class="cart-header-item cart-header-info">{{ 'Shopping Cart'}}</div> -->
                                     <!-- <div class="cart-header-item cart-header-price">{{ 'sections.cart.headings.price' | t }}</div>
@@ -648,13 +621,32 @@
               <!-- Emapty Cart 648 -->
                     <div class="cart-content-empty text-center">
                         <span class="cart-text">{{ 'sections.cart.empty' | t }}</span>
-                        <div class="cart-actions">
-                            {%- if continue_button_action == "1" -%}
-                                <a class="button button-2 button-continue"{% if custom_button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ custom_button_link }}"{% endif %} role="button">{{ 'general.continue_shopping' | t }}</a>
-                            {%- else -%}
-                                <a class="button button-2 button-continue" role="link" aria-disabled="true" onclick="window.history.back();" role="button" id="cart-previous-page-btn">{{ 'general.back_to_previous_page' | t }}</a>
-                            {%- endif -%}
-                        </div>
+                         <div class="cart-header-item cart-header-info">
+                    
+               {% if section.settings.enable_empty_svg == true %}
+                <div class="quick-cart-empty-svg-icon">
+                  {% render 'quick-cart-empty-svg-icon', section: section %}
+                </div>
+              {% endif %}
+
+              {% if section.settings.empty_title != blank %}
+                <p class="center">{{ section.settings.empty_title }}</p>
+              {% endif %}
+              {% if section.settings.continue_shoppping == true %}
+                {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
+                  <div class="footer__drawer_empty">
+                    <a
+                      class="mm-emptycart-button button button--secondary"
+                      href="{{ settings.collection_all_url }}"
+                      style="color:{{ settings.button_txt_color }};background-color:{{ settings.button_bg_color }}"
+                    >
+                      {{ settings.collect_all_button | default: 'View All Products' }}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% render 'main-cart-you-may-also-like-product' %}
+                    </div>
                     </div>
                 {%- endif -%}
             </div>
