@@ -136,8 +136,6 @@ div#main-cart-items {
   background: #fff;
   border-radius: 15px;
   box-shadow: 1px 0 1px 1px #e6e6e6;
-  position: sticky;
-  top: 46%;
 }
 
 .template-cart .link-underline:hover .text {
@@ -228,8 +226,6 @@ div#main-cart-items {
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 36px;
-  position: sticky;
-  top: 35%;
 }
 
 .cart-header-item {
@@ -1315,6 +1311,15 @@ div#main-cart-items {
 }
 
 @media (min-width: 1280px) {
+  .cart-total .checkout_title,
+  .checkout_title .cart-header-info {
+    position: sticky;
+    top: 35%;
+  }
+  .template-cart .cart-content-item.cart-total form {
+    position: sticky;
+    top: 46%;
+  }
   .cart-content-wrapper {
     flex-direction: row;
   }
