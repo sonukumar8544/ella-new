@@ -1321,7 +1321,6 @@ div#main-cart-items {
     top: 10%;
   }
 }
-
 @media (max-width: 1919px) and (min-width: 1280px) {
   .cart-total .checkout_title,
   .checkout_title .cart-header-info {
@@ -1332,6 +1331,9 @@ div#main-cart-items {
     position: sticky;
     top: 10%;
   }
+}
+
+@media (min-width: 1280px) {
   .cart-content-wrapper {
     flex-direction: row;
   }
