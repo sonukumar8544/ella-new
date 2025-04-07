@@ -71,6 +71,10 @@
     width: 100px;
     height: 100px;
   }
+  .price-item--sale,
+  .price.price--on-sale .price-item--sale .money {
+    font-size: 13px;
+  }
 }
 .cart-content-empty .quick_cart_empty ul::-webkit-scrollbar {
   width: 3px;
