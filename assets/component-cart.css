@@ -12,7 +12,33 @@
   background-color: transparent;
   border-radius: 10px;
 }
+.cart-content-empty .cart-collection-pic img {
+  width: 150px;
+  height: 150px;
+}
+.cart-content-empty .quick_cart_empty ul li a .cart-collection-name {
+  font-size: 16px;
+  font-family: "Nunito";
+}
+.template-cart .quick_cart_empty h2 {
+  font-size: 34px;
+}
 
+@media (max-width: 1200px) {
+  .template-cart .cart-content-empty .quick_cart_empty ul li {
+    flex: 0 0 25%;
+  }
+}
+@media (max-width: 768px) {
+  .template-cart .cart-content-empty .quick_cart_empty ul li {
+    flex: 0 0 33%;
+  }
+}
+@media (max-width: 500px) {
+  .template-cart .cart-content-empty .quick_cart_empty ul li {
+    flex: 0 0 49%;
+  }
+}
 .cart-content-empty .quick_cart_empty ul::-webkit-scrollbar {
   width: 3px;
 }
@@ -23,17 +49,6 @@
 
 .cart-content-empty .quick_cart_empty ul li {
   flex: 0 0 15%;
-}
-.cart-content-empty .cart-collection-pic img {
-  width: 200px;
-  height: 200px;
-}
-.cart-content-empty .quick_cart_empty ul li a .cart-collection-name {
-  font-size: 17px;
-  font-family: "Nunito";
-}
-.template-cart .quick_cart_empty h2 {
-  font-size: 34px;
 }
 
 .template-cart .cart-item-name a {
