@@ -634,7 +634,7 @@
               {% endif %}
               {% if section.settings.continue_shoppping == true %}
                 {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
-                  <div class="footer__drawer_empty">
+                  <!-- <div class="footer__drawer_empty">
                     <a
                       class="mm-emptycart-button button button--secondary"
                       href="{{ settings.collection_all_url }}"
@@ -642,7 +642,7 @@
                     >
                       {{ settings.collect_all_button | default: 'View All Products' }}
                     </a>
-                  </div>
+                  </div> -->
                 {% endif %}
               {% endif %}
             {% render 'quick_cart_empty' %}
