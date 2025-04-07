@@ -138,6 +138,11 @@ div#main-cart-items {
   box-shadow: 1px 0 1px 1px #e6e6e6;
 }
 
+.template-cart .link-underline:hover .text {
+  text-decoration: none;
+  text-underline-offset: 0.3rem;
+  opacity: 0.9;
+}
 @media (max-width: 1279px) {
   .template-cart .cart-content-item[data-cart-total] {
     width: 60%;
