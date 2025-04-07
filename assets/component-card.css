@@ -3478,6 +3478,10 @@ quickshop-update-quantity.disabled {
   .quick_shop_option_1 #halo-card-mobile-popup.show,
   .quick_shop_option_2 #halo-card-mobile-popup.show {
     transform: translateY(0);
+    top: 20%;
+  }
+  #halo-card-mobile-popup .product-item.product-item-custom {
+    display: block;
   }
 
   .quick_shop_option_1 #halo-card-mobile-popup .halo-popup-wrapper {
