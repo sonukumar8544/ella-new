@@ -1312,7 +1312,7 @@ div#main-cart-items {
 }
 
 @media (min-width: 1280px) {
-  .cart-total .checkout_title,
+  /* .cart-total .checkout_title,
   .checkout_title .cart-header-info {
     position: sticky;
     top: 9%;
@@ -1320,7 +1320,7 @@ div#main-cart-items {
   .template-cart .cart-content-item.cart-total form {
     position: sticky;
     top: 10%;
-  }
+  } */
   .cart-content-wrapper {
     flex-direction: row;
   }
