@@ -100,7 +100,27 @@
                                 <div class="cart-header">
                                   <div class="cart-header checkout_title">
                     <div class="cart-header-item cart-header-info">
-                      Shopping Cart
+                     {% if section.settings.enable_empty_svg == true %}
+                <div class="quick-cart-empty-svg-icon">
+                  {% render 'quick-cart-empty-svg-icon' %}
+                </div>
+              {% endif %}
+                       {% if section.settings.empty_title != blank %}
+                <p class="center">{{ section.settings.empty_title }}</p>
+              {% endif %}
+              {% if section.settings.continue_shoppping == true %}
+                {% if settings.collect_all_button != blank and settings.collection_all_url != blank %}
+                  <div class="footer__drawer_empty">
+                    <a
+                      class="mm-emptycart-button button button--secondary"
+                      href="{{ settings.collection_all_url }}"
+                      style="color:{{ settings.button_txt_color }};background-color:{{ settings.button_bg_color }}"
+                    >
+                      {{ settings.collect_all_button | default: 'View All Products' }}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
                     </div>
                     
                   </div>
