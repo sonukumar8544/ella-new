@@ -8180,8 +8180,11 @@ h5 {
 
 @media (max-width: 1025px) {
   .sls-savings-badge {
-  margin-top: 10px;
- }
+    margin-top: 10px;
+  }
+  .menu-dropdown__column.menu-dropdown__column-3.w-auto h4.text {
+    margin: 0;
+  }
 }
 
 .product-form__buttons,
