@@ -1257,8 +1257,8 @@
         "div#spotlight-template--24261275058472__spotlight_block_qnYcNH .halo-row {padding-top: 0px;}"
       ],
       "settings": {
-        "container": "container",
-        "padding_full_width": 0,
+        "container": "fullwidth",
+        "padding_full_width": 20,
         "disable_padding_content": false,
         "mg_minus_desktop": 0,
         "block_layout": "grid",
@@ -1325,7 +1325,7 @@
         "shadow_spread": 0,
         "shadow_color": "transparent",
         "shadow_inset": "no",
-        "mg_top_desktop": 35,
+        "mg_top_desktop": 15,
         "mg_top_tablet": 15,
         "mg_top_mobile": 10,
         "mg_bottom_desktop": 30,
