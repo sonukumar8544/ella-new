@@ -56,6 +56,14 @@
     endif
     assign enable_dropdown = section.settings.enable_dropdown
 -%}
+{%- if settings.show_quick_cart_popular_product -%}
+        {%- liquid
+            assign collection = collections[settings.quick_cart_popular_product_collection]
+            assign limit = settings.quick_cart_popular_product_show
+            assign show_dots = settings.quick_cart_popular_product_dots
+            assign show_arrows = settings.quick_cart_popular_product_arrows
+        -%}
+  {% endif %}
 <cart-coupon-discount>
     <template data-discount-icon>{% render 'icon-discount' %}</template>
     <cart-items data-section-id="{{ section.id }}" data-section-type="cart" id="CartSection-{{ section.id }}" data-section="{{ section.id }}">
@@ -682,6 +690,48 @@
     "name": "t:sections.main_cart.name",
     "settings": 
     [
+      {
+"type": "header",
+"content": "t:settings_schema.quick_cart.settings.header__4.content"
+},
+{
+"type": "checkbox",
+"id": "show_quick_cart_popular_product",
+"label": "t:settings_schema.quick_cart.settings.product.label__1",
+"default": true
+},
+{
+"type": "text",
+"id": "quick_cart_popular_product_title",
+"label": "t:settings_schema.quick_cart.settings.product.label__3",
+"default": "You May Also Like"
+},
+{
+"type": "collection",
+"id": "quick_cart_popular_product_collection",
+"label": "t:settings_schema.quick_cart.settings.product.label__4"
+},
+{
+"type": "range",
+"id": "quick_cart_popular_product_show",
+"label": "t:settings_schema.quick_search.settings.general.label__2",
+"min": 1,
+"max": 5,
+"step": 1,
+"default": 3
+},
+{
+"type": "checkbox",
+"id": "quick_cart_popular_product_dots",
+"label": "t:sections.product_block.settings.slider.product_block_dots",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "quick_cart_popular_product_arrows",
+"label": "t:sections.product_block.settings.slider.product_block_arrows",
+"default": true
+},
        {
                 "type": "header",
                 "content": "Empty Cart Settings"
