@@ -137,10 +137,10 @@
         "bg_color_gradient": "",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
-        "mg_top_mobile": 50,
+        "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 50,
+        "mg_bottom_mobile": 0,
         "liquid_css": ""
       }
     },
@@ -215,8 +215,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -341,10 +341,10 @@
         "mg_bottom_mobile1": 0
       }
     },
-    "custom_service_block_QnEz9M": {
+    "custom_service_block_UceDkM": {
       "type": "custom-service-block",
       "blocks": {
-        "text_Mq8EHd": {
+        "text_jmV7yC": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -394,7 +394,7 @@
             "button_background_gradient_hover": ""
           }
         },
-        "text_yhKKht": {
+        "text_NJ7exP": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -412,8 +412,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -445,12 +445,13 @@
         }
       },
       "block_order": [
-        "text_Mq8EHd",
-        "text_yhKKht"
+        "text_jmV7yC",
+        "text_NJ7exP"
       ],
       "custom_css": [
+        ".custom-service-block .policies-content .policies-text {text-align: left;}",
         ".halo-row {flex-direction: row-reverse;}",
-        ".custom-service-block .policies-content .policies-text {text-align: left;}"
+        ".image-zoom:hover img {transform: none;}"
       ],
       "settings": {
         "custom_liquid1": false,
@@ -536,6 +537,21 @@
         "mg_bottom_desktop1": 0,
         "mg_bottom_tablet1": 0,
         "mg_bottom_mobile1": 0
+      }
+    },
+    "founder_section_mezyQY": {
+      "type": "founder-section",
+      "custom_css": [
+        "strong {color: #086b92;}"
+      ],
+      "settings": {
+        "title": "The man with a Vision and Mission",
+        "profile_image": "shopify://shop_images/MUSCLEbgremove.png",
+        "name": "Virender Dass",
+        "bio_1": "<p>Virender Dass, the visionary <strong>Founder and Director</strong> of Wellness Extract, turned a personal mission into a global wellness movement helping people live healthier & happier lives.</p>",
+        "bio_2": "<p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. When his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to <strong>Dr. Barrie Tan, world’s foremost expert on tocotrienols</strong>, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p>",
+        "bio_3": "<p>This experience ignited <strong>Virender's passion for health.</strong>, prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a <strong>global movement</strong>, as he dedicated himself to providing high-quality natural supplements.</p>",
+        "bio_4": "<p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a <strong>trusted name in natural health</strong>, committed to helping people lead <strong>healthier lives</strong>.</p>"
       }
     },
     "16378289883380f691": {
@@ -710,7 +726,8 @@
         "image_KMMDWC"
       ],
       "custom_css": [
-        ".spotlight-inner .spotlight-button.custom-button-style:hover {background: #086b92 !important; color: white;}"
+        ".spotlight-inner .spotlight-button.custom-button-style:hover {background: #086b92 !important; color: white;}",
+        "a.image-zoom.adaptive_height.image {pointer-events: none;}"
       ],
       "settings": {
         "container": "container",
@@ -789,10 +806,10 @@
         "mg_bottom_mobile": 40
       }
     },
-    "custom_service_block_t4YYqy": {
+    "custom_service_block_hFgNHy": {
       "type": "custom-service-block",
       "blocks": {
-        "text_knLdAK": {
+        "text_WEcfzC": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -842,7 +859,7 @@
             "button_background_gradient_hover": ""
           }
         },
-        "text_8ETf3R": {
+        "text_4zFeYw": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -860,8 +877,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -893,10 +910,11 @@
         }
       },
       "block_order": [
-        "text_knLdAK",
-        "text_8ETf3R"
+        "text_WEcfzC",
+        "text_4zFeYw"
       ],
       "custom_css": [
+        ".image-zoom:hover img {transform: none;}",
         ".custom-service-block .policies-content .policies-text {text-align: left;}"
       ],
       "settings": {
@@ -985,10 +1003,10 @@
         "mg_bottom_mobile1": 0
       }
     },
-    "custom_service_block_EnBbpX": {
+    "custom_service_block_LCd4eV": {
       "type": "custom-service-block",
       "blocks": {
-        "text_JPmTYF": {
+        "text_kbyzaY": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1038,7 +1056,7 @@
             "button_background_gradient_hover": ""
           }
         },
-        "text_YWi4EW": {
+        "text_tYy4JA": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1056,8 +1074,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -1089,12 +1107,13 @@
         }
       },
       "block_order": [
-        "text_JPmTYF",
-        "text_YWi4EW"
+        "text_kbyzaY",
+        "text_tYy4JA"
       ],
       "custom_css": [
+        ".custom-service-block .policies-content .policies-text {text-align: left;}",
         ".halo-row {flex-direction: row-reverse;}",
-        ".custom-service-block .policies-content .policies-text {text-align: left;}"
+        ".image-zoom:hover img {transform: none;}"
       ],
       "settings": {
         "custom_liquid1": false,
@@ -1182,10 +1201,10 @@
         "mg_bottom_mobile1": 0
       }
     },
-    "custom_service_block_9bYDhL": {
+    "custom_service_block_9cyJG4": {
       "type": "custom-service-block",
       "blocks": {
-        "text_7w84nB": {
+        "text_fMAcdR": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1235,7 +1254,7 @@
             "button_background_gradient_hover": ""
           }
         },
-        "text_mYYAWq": {
+        "text_EqEaBU": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1253,8 +1272,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -1286,10 +1305,11 @@
         }
       },
       "block_order": [
-        "text_7w84nB",
-        "text_mYYAWq"
+        "text_fMAcdR",
+        "text_EqEaBU"
       ],
       "custom_css": [
+        ".image-zoom:hover img {transform: none;}",
         ".custom-service-block .policies-content .policies-text {text-align: left;}"
       ],
       "settings": {
@@ -1378,10 +1398,10 @@
         "mg_bottom_mobile1": 0
       }
     },
-    "custom_service_block_Jy63wp": {
+    "custom_service_block_fkQTLy": {
       "type": "custom-service-block",
       "blocks": {
-        "text_nBRUi4": {
+        "text_y9amja": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1431,7 +1451,7 @@
             "button_background_gradient_hover": ""
           }
         },
-        "text_tPdjC8": {
+        "text_jf9c7M": {
           "type": "Text",
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
@@ -1449,8 +1469,8 @@
             "title_block_font_weight": "700",
             "mg_bottom_title": 40,
             "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<p>Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><br><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#374650",
+            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -1482,12 +1502,13 @@
         }
       },
       "block_order": [
-        "text_nBRUi4",
-        "text_tPdjC8"
+        "text_y9amja",
+        "text_jf9c7M"
       ],
       "custom_css": [
+        ".custom-service-block .policies-content .policies-text {text-align: left;}",
         ".halo-row {flex-direction: row-reverse;}",
-        ".custom-service-block .policies-content .policies-text {text-align: left;}"
+        ".image-zoom:hover img {transform: none;}"
       ],
       "settings": {
         "custom_liquid1": false,
@@ -1724,6 +1745,9 @@
         "image_UDdqVg",
         "image_K8bjTV"
       ],
+      "custom_css": [
+        "@media (min-width: 1025px) {.section-block-template--24318608638248__1642989489e5f98f1a {margin-bottom: 70px; }}"
+      ],
       "settings": {
         "id": "",
         "container": "container",
@@ -1793,16 +1817,16 @@
         "border_color_hover": "#2d2d2d",
         "hover_effect": "zoom",
         "color_underline_image_hover": "#000000",
-        "fontsize_text": 17,
-        "fontsize_text_mb": 14,
+        "fontsize_text": 16,
+        "fontsize_text_mb": 16,
         "font_weight_title": "600",
-        "margin_bottom_title": 10,
-        "mg_top_desktop": 40,
+        "margin_bottom_title": 0,
+        "mg_top_desktop": 30,
         "mg_top_tablet": 25,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 50,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 30,
         "mg_bottom_tablet": 30,
-        "mg_bottom_mobile": 40
+        "mg_bottom_mobile": 30
       }
     },
     "16321237356a896dad": {
@@ -1988,9 +2012,9 @@
             "min_width_banner_button": 200,
             "color_button": "#086b92",
             "border_button": "#ff8b21",
-            "bg_button": "#FFFFFF",
+            "bg_button": "#ffffff",
             "bg_button_gradient": "",
-            "color_button_hover": "#FFFFFF",
+            "color_button_hover": "#ffffff",
             "border_button_hover": "#ff8b21",
             "bg_button_hover": "rgba(0,0,0,0)",
             "bg_button_gradient_hover": "",
@@ -2089,18 +2113,18 @@
     "title_with_button_tAjzY9": {
       "type": "title-with-button",
       "settings": {
-        "heading": "Have questions? Need advice? We're here to help! Connect With Our Wellness Experts Today!",
+        "heading": "Have questions? Need advice? We're here to help!<br> Connect With Our Wellness Experts Today!",
         "button_label": "CONTACT US",
         "button_link": "",
         "background_color": "#fde2a2",
-        "button_color": "#006d80",
-        "button_hover_color": "#004f5a",
-        "text_color": "#333",
+        "button_color": "#086b92",
+        "button_hover_color": "#ffffff",
+        "text_color": "#374650",
         "padding_top": 20,
         "padding_bottom": 20,
-        "margin_top": 20,
-        "margin_bottom": 20,
-        "font_size_desktop": 24,
+        "margin_top": 50,
+        "margin_bottom": 0,
+        "font_size_desktop": 32,
         "font_size_mobile": 18
       }
     }
@@ -2109,12 +2133,13 @@
     "main",
     "image_banner_iJcKje",
     "1643015886f75782fe",
-    "custom_service_block_QnEz9M",
+    "custom_service_block_UceDkM",
+    "founder_section_mezyQY",
     "16378289883380f691",
-    "custom_service_block_t4YYqy",
-    "custom_service_block_EnBbpX",
-    "custom_service_block_9bYDhL",
-    "custom_service_block_Jy63wp",
+    "custom_service_block_hFgNHy",
+    "custom_service_block_LCd4eV",
+    "custom_service_block_9cyJG4",
+    "custom_service_block_fkQTLy",
     "1642989489e5f98f1a",
     "16321237356a896dad",
     "title_with_button_tAjzY9"

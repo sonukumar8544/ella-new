@@ -1,0 +1,357 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_MqQXt4": {
+      "type": "image-banner",
+      "blocks": {
+        "large_img_pRBAAN": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/Contact_us_wellness_00d93755-bf5c-47b2-9616-fad541186e54.png",
+            "mobile_image": "shopify://shop_images/Contact_us_wellness_00d93755-bf5c-47b2-9616-fad541186e54.png",
+            "enable_max_width_image": false,
+            "custom_width_image": 1170,
+            "enable_scroll_down": false,
+            "enable_custom_image": false,
+            "image_behavior": "none",
+            "sub_title": "",
+            "border_sub_title": false,
+            "font_size_sub_title": 14,
+            "font_size_sub_title_mb": 14,
+            "margin_bottom_sub_title": 14,
+            "sub_heading_font": "font_1",
+            "font_weight_sub_title": "700",
+            "sub_title_position": "sub_title_above",
+            "color_sub_title": "#232323",
+            "color_sub_title_mb": "#ffffff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_style_italic": false,
+            "font_size_heading": 40,
+            "font_size_heading_mb": 24,
+            "margin_bottom_heading": 20,
+            "font_weight_heading": "600",
+            "color_heading": "#232323",
+            "color_heading_mb": "#ffffff",
+            "border_title": "border_s1",
+            "border_color_title": "#232323",
+            "border_color_title_mobile": "#ffffff",
+            "text": "",
+            "font_size_des": 12,
+            "font_size_des_mb": 12,
+            "line_height_des": 26,
+            "margin_bottom_des": 35,
+            "color_des": "#232323",
+            "color_des_mb": "#ffffff",
+            "countdown": "",
+            "hide_countdown_fc": "countdown",
+            "countdown_style": "round",
+            "countdown_position": "countdown_below_desc",
+            "font_size_countdown_number": 30,
+            "font_size_countdown_text": 14,
+            "color_countdown": "#232323",
+            "color_countdown_mb": "#ffffff",
+            "countdown_margin_bottom": 35,
+            "content_width": 475,
+            "bg_color_content": "",
+            "align": "center",
+            "align_items": "center",
+            "position": "left",
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "btn_text": "",
+            "link": "",
+            "btn_icon": "",
+            "button_1_width": 235,
+            "enable_button_custom_border": false,
+            "button_color": "#ffffff",
+            "button_border": "#232323",
+            "button_background": "#232323",
+            "button_background_gradient": "",
+            "button_color_hover": "#ffffff",
+            "button_border_hover": "#232323",
+            "button_background_hover": "#232323",
+            "button_background_gradient_hover": "",
+            "btn_text_2": "",
+            "link_2": "",
+            "btn_icon_2": "",
+            "button_color_2": "#ffffff",
+            "button_border_2": "#232323",
+            "button_background_2": "#232323",
+            "button_background_2_gradient": "",
+            "button_color_hover_2": "#ffffff",
+            "button_border_hover_2": "#232323",
+            "button_background_hover_2": "#232323",
+            "button_background_gradient_hover_2": "",
+            "video_link": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#ffffff",
+            "bg_color_icon": "#000000",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "large_img_pRBAAN"
+      ],
+      "settings": {
+        "id_section": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "display_type": "slide",
+        "enable_arrows": false,
+        "arrows_position": "",
+        "enable_dots": false,
+        "enable_autoplay": false,
+        "list_gap": 0,
+        "image_banner_title": "",
+        "enable_border_title": false,
+        "color_title": "#202020",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "margin_bottom_title": 25,
+        "image_banner_des": "",
+        "color_des": "#202020",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "style_bg": "none",
+        "bg_color": "",
+        "bg_color_gradient": "",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "liquid_css": ""
+      }
+    },
+    "rich_text_Bq4tQW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fXrE6x": {
+          "type": "heading",
+          "settings": {
+            "heading": "Write to Us",
+            "heading_size": 34,
+            "heading_size_mb": 24,
+            "heading_line_height": 1,
+            "heading_color": "#086b92"
+          }
+        },
+        "text_r8FdEA": {
+          "type": "text",
+          "settings": {
+            "text": "We're here to listen! Share your thoughts, ask questions, or get expert advice by choosing a topic below. We'll respond as quickly as possible because your wellness is our priority. Fill out the form, and one of our wellness experts will respond within 24 hours to assist you. We’re excited to be a part of your health journey!",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#36454f",
+            "text_width": "1400px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fXrE6x",
+        "text_r8FdEA"
+      ],
+      "custom_css": [
+        "@media (max-width: 767px) {.rich-text__blocks.text-left .rich-text__text.rte {width: 100% !important; max-width: 100%; line-height: 22px; margin: 5px auto; }}",
+        "@media (min-width: 1025px) {.container-1170 {max-width: 1350px !important; }}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#ffffff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "left",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 40,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 20,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "main": {
+      "type": "contact-us",
+      "blocks": {
+        "slide_yPxMRf": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "mobile_no": "<p><a href=\"tel:+1-(778)-907-1150\" target=\"_blank\" title=\"tel:+1-(778)-907-1150\">+1-(778)-907-1150 (US/CA)</a></p>",
+            "contact_icon_phone": "shopify://shop_images/Vector_31.png",
+            "contact_us_content": ""
+          }
+        },
+        "slide_APiWXG": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "mobile_no": "<p><a href=\"tel:+44-(204)-520-3815 \" target=\"_blank\" title=\"tel:+44-(204)-520-3815 \">+44-(204)-520-3815 (UK)</a></p>",
+            "contact_icon_phone": "shopify://shop_images/Vector_31.png",
+            "contact_us_content": ""
+          }
+        },
+        "text_QQKCjw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "custom_email": "<p><a href=\"mailto:info@wellnessextract.com\" target=\"_blank\" title=\"mailto:info@wellnessextract.com\">info@wellnessextract.com</a></p>",
+            "email_icon_phone_contact": "shopify://shop_images/Vector_32.png"
+          }
+        },
+        "newinfomail_AXwqK3": {
+          "type": "newinfomail",
+          "settings": {
+            "contact_us_bottom_email": "customersupport@wellnessextract.com",
+            "contact_us_bottom_email_image": "shopify://shop_images/Vector_32.png"
+          }
+        },
+        "contents_Wcbt3z": {
+          "type": "contents",
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "Get in Touch with Us",
+            "main_us_content": "<p>At <strong>Wellness Extract</strong>, our mission is simple: empowering you to take control of your health. We believe in fostering meaningful connections with each of our customers, guiding them on their wellness journey every step of the way. Whether you’re looking for personalized supplement recommendations, need health tips, or are interested in wholesale or medical partnerships, we’re just a message away</p>"
+          }
+        },
+        "contents_9L3fmT": {
+          "type": "contents",
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "For Customers",
+            "main_us_content": "<p><em>WE Cares, WE Connects, WE Supports! </em></p><p>We're here to support your health journey with tailored advice and personalized recommendations. Whether you’re curious about the best supplements for your lifestyle or seeking expert wellness tips, we’ve got you covered.</p><p></p>"
+          }
+        },
+        "contents_7n3hgw": {
+          "type": "contents",
+          "disabled": true,
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "For Doctors",
+            "main_us_content": "<p><strong>Partner with Us for Better Health.</strong></p><p>If you’re a healthcare professional looking to recommend high-quality supplements to your patients or are interested in subscriptions to <strong>WE Academy</strong>, we’re eager to collaborate with you. Together, we can help more individuals live healthier lives.</p><p><strong>Join Our Mission!<br/></strong>Fill out the form, and we’ll reach out within 24 hours to explore how we can work together to improve global wellness.</p>"
+          }
+        },
+        "contents_DtEaBA": {
+          "type": "contents",
+          "disabled": true,
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "For Wholesalers",
+            "main_us_content": "<p><strong>“WE”</strong> aims to reach the maximum number of individuals and help them on their health journey. If you are a health supplements seller or provider, join us on our mission. Contact us by filling out the form given below, and we will connect with you in the next 24 hours.</p><p><strong>Let’s Grow Together</strong></p><p>At Wellness Extract, we aim to expand our reach and make premium health supplements accessible to as many people as possible. If you’re a wholesaler or distributor interested in partnering with us, we’d love to connect and explore how we can work together to achieve our mission.</p>"
+          }
+        },
+        "bottomemail_6MePcy": {
+          "type": "bottomemail",
+          "settings": {
+            "contact_us_bottom_email": "customersupport@wellnessextract.com",
+            "contact_us_bottom_email_image": "shopify://shop_images/streamline_customer-support-1-solid.png"
+          }
+        },
+        "contentsform_bFJt7i": {
+          "type": "contentsform",
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "",
+            "main_heading": "Wellness Extract Headoffice",
+            "main_us_content": "<p><strong>Address:</strong></p><p>1A-2, 30508 Great Northern Ave Abbotsford, BC V2T 6H4</p>"
+          }
+        },
+        "phonenohere_KbqkXV": {
+          "type": "phonenohere",
+          "settings": {
+            "contact_us_bottom_email": "+44-(204)-520-3815 (UK)",
+            "contact_us_bottom_email_image": "shopify://shop_images/Vector_31.png"
+          }
+        },
+        "phonenoheretwo_tabfTk": {
+          "type": "phonenoheretwo",
+          "settings": {
+            "contact_us_bottom_email": "+1-(778)-907-1150 (US/CA)",
+            "contact_us_bottom_email_image": "shopify://shop_images/Vector_31.png"
+          }
+        },
+        "contentstwo_dGP3c4": {
+          "type": "contentstwo",
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "For Doctors",
+            "main_us_content": "<p><strong>Partner with Us for Better Health.</strong></p><p>If you’re a healthcare professional looking to recommend high-quality supplements to your patients or are interested in subscriptions to <strong>WE Academy</strong>, we’re eager to collaborate with you. Together, we can help more individuals live healthier lives.</p><p><strong>Join Our Mission!<br/></strong>Fill out the form, and we’ll reach out within 24 hours to explore how we can work together to improve global wellness.</p>"
+          }
+        },
+        "contentstwo_KFmgen": {
+          "type": "contentstwo",
+          "settings": {
+            "main_heading_color": "#086b92",
+            "main_heading_Font_size": "24px",
+            "main_heading": "For Wholesalers",
+            "main_us_content": "<p><strong>“WE”</strong> aims to reach the maximum number of individuals and help them on their health journey. If you are a health supplements seller or provider, join us on our mission. Contact us by filling out the form given below, and we will connect with you in the next 24 hours.</p><p><strong>Let’s Grow Together</strong></p><p>At Wellness Extract, we aim to expand our reach and make premium health supplements accessible to as many people as possible. If you’re a wholesaler or distributor interested in partnering with us, we’d love to connect and explore how we can work together to achieve our mission.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_yPxMRf",
+        "slide_APiWXG",
+        "text_QQKCjw",
+        "newinfomail_AXwqK3",
+        "contents_Wcbt3z",
+        "contents_9L3fmT",
+        "contents_7n3hgw",
+        "contents_DtEaBA",
+        "bottomemail_6MePcy",
+        "contentsform_bFJt7i",
+        "phonenohere_KbqkXV",
+        "phonenoheretwo_tabfTk",
+        "contentstwo_dGP3c4",
+        "contentstwo_KFmgen"
+      ],
+      "custom_css": [
+        "strong {font-size: 16px !important; color: #086b92;}",
+        "p {letter-spacing: 1px !important;}"
+      ],
+      "settings": {
+        "subtext": "",
+        "main_heading": "Write Us",
+        "sub_heading": "Choose your topic and write down your thoughts. We’ll get back to you as quickly as possible.",
+        "custom_phone": "Phone:",
+        "custom_email_heading": "Email:",
+        "store_name": "",
+        "address_heading": "Address:",
+        "custom_address": "1A-2, 30508 Great Northern Ave Abbotsford, BC V2T 6H4"
+      }
+    }
+  },
+  "order": [
+    "image_banner_MqQXt4",
+    "rich_text_Bq4tQW",
+    "main"
+  ]
+}

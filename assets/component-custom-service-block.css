@@ -291,7 +291,8 @@
   }
 
   .custom-service-block.service_block_style_3 .halo-item .policies-icon img {
-    max-height: 42px;
+    /* max-height: 42px; */
+    width: 100vw;
   }
 
   .custom-service-block.service_block_style_3 .scroll-snap-mobile .halo-item {
