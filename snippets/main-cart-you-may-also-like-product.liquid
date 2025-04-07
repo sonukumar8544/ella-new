@@ -1,16 +1,18 @@
-<!-- cart-page-recommended -->
+<!-- halo-side-cart-recommend-cstm -->
 {% assign has_recommended_products = false %}
-<div class="container quick_cart_similar_update" id="template-{{ template.name | handle }}">
-  {% if section.settings.heading != blank %}
-    <div class="halo-block-header text-left block-title--style4 ">
-      <h3 class="title">
-        <span class="text">{{ section.settings.heading }}</span>
-      </h3>
-    </div>
+{{ 'halo-side-cart-recommend-cstm.css' | asset_url | stylesheet_tag }}
+<div class="quick_cart_similar_update">
+  {% if settings.quick_cart_popular_product_title != blank %}
+    <h3
+      class="header_title"
+      style="background-color: {{ settings.similar_products_bg }}; color: {{ settings.similar_products_title }}"
+    >
+      {{ settings.quick_cart_popular_product_title | escape }}       
+    </h3>
   {% endif %}
-  <div
-    class="cart_recomended cart_slider "
-  >
+   <div class="previewCartProduct" data-product-collection-cart>
+    <div class="previewCartCarousel products-carousel" data-item-dots="{{ show_dots }}" data-item-arrows="{{ show_arrows }}">
+  <!-- <div class="cart_recomended"> -->
     {% assign displayed_product_titles = '' %}
 
     {% for item in cart.items %}
@@ -60,7 +62,13 @@
                     {% if tag == 'usa-bundle' %}
                       {% if product.price > 0 %}
                         {% assign has_recommended_products = true %}
-                        {% render 'cart-drawer-recommended-product', product: product %}
+                        {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %}
+                        <!-- cart-drawer-recommended-product -->
+                        {% render 'cart-drawer-recommended-product',
+                                product_card_product: product
+                            %}
                       {% endif %}
                     {% endif %}
                   {% endfor %}
@@ -70,7 +78,13 @@
                   {% if tag == 'ca_bundle' %}
                     {% assign has_recommended_products = true %}
                     {% if product.price > 0 %}
-                      {% render 'cart-drawer-recommended-product', product: product %}
+                     {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %} 
+                      <!-- cart-drawer-recommended-product -->
+                      {% render 'cart-drawer-recommended-product',
+                                product_card_product: product
+                            %}
                     {% endif %}
                   {% endif %}
                 {% endfor %}
@@ -81,101 +95,29 @@
       {% endfor %}
     {% endfor %}
   </div>
-  {% unless has_recommended_products %}
-    <script>
-      document.querySelector('.quick_cart_similar_update').style.display = 'none';
-    </script>
-  {% endunless %}
+      {% unless has_recommended_products %}
+        <script>
+          document.querySelector('.quick_cart_similar_update').style.display = 'none';
+        </script>
+      {% endunless %}
+</div>
 </div>
 <script>
-   window.addEventListener("DOMContentLoaded", function () {
-    if (typeof jQuery !== "undefined") {
-      const $slider = jQuery(".template-cart .cart_slider");
-        if ($slider.children().length > 3) {
-        $slider.slick({
-          autoplay: true,
-          dots: true,
-          infinite: true,
-          speed: 1500,
-          slidesToShow: Math.min(5, $slider.children().length),
-          slidesToScroll: 1,
-          arrows: false,
-          responsive: [
-            {
-              breakpoint: 1400,
-              settings: {
-                slidesToShow: Math.min(4, $slider.children().length),
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-              },
-            },
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: Math.min(3, $slider.children().length),
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-              },
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: Math.min(2, $slider.children().length),
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-              },
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: Math.min(2, $slider.children().length),
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-              },
-            },
-            {
-              breakpoint: 319,
-              settings: {
-                slidesToShow: Math.min(1, $slider.children().length),
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-              },
-            },
-          ],
-        });
-      } else {
-        console.log("Not enough items to initialize the slider.");
-      }
-    } else {
-      const carousel = document.querySelector(".template-cart .cart_slider");
-      if (carousel) {
-        console.warn("jQuery is not loaded. Hiding the carousel.");
-        carousel.style.display = "none";
-      }
-    }
-  });
+  $('.quick_cart_similar_update #recommendedProduct').click(function () {
+               let productname = $(this).attr('data-productTitle');
+                     let productUrls = $(this).attr('data-product-ur');
+                     console.log("Product Name:", productname);
+                     console.log("productUrl:", productUrls);
+                  // Tracking event
+                  _hsq.push([
+                      'trackCustomBehavioralEvent',
+                      {
+                          name: "pe49007533_addtocart",
+                          properties: {
+                              hs_page_title: productname,
+                              hs_page_url: productUrls
+                          }
+                      }
+                  ]);
+               })
 </script>
-{% comment %}
-  <script>
-    $('button#cartrecommended').click(function () {
-                 let productName = $(this).attr('data-product-title');
-                       let productUrl = $(this).attr('data-product-url');
-                    // Tracking event
-                    _hsq.push([
-                        'trackCustomBehavioralEvent',
-                        {
-                            name: "pe49007533_addtocart",
-                            properties: {
-                                hs_page_title: productName,
-                                hs_page_url: productUrl
-                            }
-                        }
-                    ]);
-                 })
-  </script>
-{% endcomment %}
