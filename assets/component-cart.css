@@ -1074,7 +1074,7 @@ div#main-cart-items {
   }
 
   .cart-content-item[data-cart-total] form {
-    display: flex;
+    display: block;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -1083,7 +1083,7 @@ div#main-cart-items {
 
   .cart-content-item .list-unstyled,
   .cart-content-item .cart-actions {
-    width: 50%;
+    width: 100%;
     padding: 0px 10px;
   }
 
