@@ -3,6 +3,24 @@
   max-width: max-content;
   max-height: fit-content;
 }
+.cart-content-empty .quick_cart_empty ul {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.cart-content-empty .quick_cart_empty ul::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px transparent;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.cart-content-empty .quick_cart_empty ul::-webkit-scrollbar {
+  width: 3px;
+}
+
+.cart-content-empty .quick_cart_empty ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
 .cart-content-empty .quick_cart_empty ul li {
   flex: 0 0 15%;
 }
