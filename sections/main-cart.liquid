@@ -101,11 +101,13 @@
                                   <div class="cart-header checkout_title">
                     <div class="cart-header-item cart-header-info">
                     
+               {% if section.settings.enable_empty_svg == true %}
                 <div class="quick-cart-empty-svg-icon">
                   {% render 'quick-cart-empty-svg-icon' %}
                 </div>
-          
-                       {% if section.settings.empty_title != blank %}
+              {% endif %}
+
+              {% if section.settings.empty_title != blank %}
                 <p class="center">{{ section.settings.empty_title }}</p>
               {% endif %}
               {% if section.settings.continue_shoppping == true %}
@@ -121,6 +123,7 @@
                   </div>
                 {% endif %}
               {% endif %}
+            {% render 'main-cart-you-may-also-like-product' %}
                     </div>
                     
                   </div>
