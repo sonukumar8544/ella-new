@@ -1008,8 +1008,6 @@
         "large_img_A3f39q": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify://shop_images/Hero_Banner_Design.jpg",
-            "mobile_image": "shopify://shop_images/EYES_health_ella.png",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
@@ -1100,136 +1098,6 @@
       "block_order": [
         "large_img_A3f39q"
       ],
-      "settings": {
-        "id_section": "",
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "display_type": "slide",
-        "enable_arrows": false,
-        "arrows_position": "",
-        "enable_dots": false,
-        "enable_autoplay": false,
-        "list_gap": 0,
-        "image_banner_title": "",
-        "enable_border_title": false,
-        "color_title": "#202020",
-        "fontsize_title": 24,
-        "fontsize_title_mb": 20,
-        "margin_bottom_title": 25,
-        "image_banner_des": "",
-        "color_des": "#202020",
-        "fontsize_des": 16,
-        "title_align": "center",
-        "style_bg": "none",
-        "bg_color": "#086b92",
-        "bg_color_gradient": "",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0,
-        "liquid_css": ""
-      }
-    },
-    "image_banner_e7EKbV": {
-      "type": "image-banner",
-      "blocks": {
-        "large_img_jTCGjY": {
-          "type": "largeImg",
-          "settings": {
-            "image": "shopify://shop_images/home_page_banner_2_ella.png",
-            "enable_max_width_image": false,
-            "custom_width_image": 1070,
-            "enable_scroll_down": false,
-            "enable_custom_image": false,
-            "image_behavior": "none",
-            "sub_title": "",
-            "border_sub_title": false,
-            "font_size_sub_title": 14,
-            "font_size_sub_title_mb": 14,
-            "margin_bottom_sub_title": 14,
-            "sub_heading_font": "font_1",
-            "font_weight_sub_title": "700",
-            "sub_title_position": "sub_title_above",
-            "color_sub_title": "#232323",
-            "color_sub_title_mb": "#ffffff",
-            "heading": "Build Your Own Stack. Save 15%",
-            "letter_spacing_heading": "",
-            "enable_style_italic": false,
-            "font_size_heading": 40,
-            "font_size_heading_mb": 24,
-            "margin_bottom_heading": 28,
-            "font_weight_heading": "700",
-            "color_heading": "#3c3c3c",
-            "color_heading_mb": "#3c3c3c",
-            "border_title": "border_s1",
-            "border_color_title": "rgba(0,0,0,0)",
-            "border_color_title_mobile": "#ffffff",
-            "text": "Pick 3+ supplements <br>\nSave 15% automatically<br>\nFeel the difference",
-            "font_size_des": 16,
-            "font_size_des_mb": 12,
-            "line_height_des": 26,
-            "margin_bottom_des": 35,
-            "color_des": "#3c3c3c",
-            "color_des_mb": "#3c3c3c",
-            "countdown": "",
-            "hide_countdown_fc": "countdown",
-            "countdown_style": "round",
-            "countdown_position": "countdown_below_desc",
-            "font_size_countdown_number": 30,
-            "font_size_countdown_text": 14,
-            "color_countdown": "#232323",
-            "color_countdown_mb": "#ffffff",
-            "countdown_margin_bottom": 35,
-            "content_width": 425,
-            "bg_color_content": "",
-            "align": "left",
-            "align_items": "center",
-            "position": "custom",
-            "custom_horizontal": "2",
-            "custom_vertical": "75",
-            "btn_text": "Start Building",
-            "link": "shopify://collections/health-goals",
-            "btn_icon": "",
-            "button_1_width": 350,
-            "enable_button_custom_border": false,
-            "button_color": "#3c3c3c",
-            "button_border": "#3c3c3c",
-            "button_background": "rgba(0,0,0,0)",
-            "button_background_gradient": "",
-            "button_color_hover": "#232323",
-            "button_border_hover": "#3c3c3c",
-            "button_background_hover": "rgba(0,0,0,0)",
-            "button_background_gradient_hover": "",
-            "btn_text_2": "",
-            "link_2": "",
-            "btn_icon_2": "",
-            "button_color_2": "#ffffff",
-            "button_border_2": "#232323",
-            "button_background_2": "#232323",
-            "button_background_2_gradient": "",
-            "button_color_hover_2": "#ffffff",
-            "button_border_hover_2": "#232323",
-            "button_background_hover_2": "#232323",
-            "button_background_gradient_hover_2": "",
-            "video_link": "",
-            "adaptive_height_video": "56",
-            "icon_style": "style_1",
-            "color_icon": "#ffffff",
-            "bg_color_icon": "#000000",
-            "enable_custom_video_icon_position": false,
-            "video_icon_horizontal_position": "",
-            "video_icon_vertical_position": "",
-            "video_icon_horizontal_position_mb": "",
-            "video_icon_vertical_position_mb": ""
-          }
-        }
-      },
-      "block_order": [
-        "large_img_jTCGjY"
-      ],
-      "disabled": true,
       "settings": {
         "id_section": "",
         "container": "fullwidth",
@@ -2971,6 +2839,77 @@
         "mg_bottom_mobile": 50,
         "liquid_css": ""
       }
+    },
+    "rich_text_6wH8m9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tqr8V3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Where To Start?",
+            "heading_size": 30,
+            "heading_size_mb": 30,
+            "heading_line_height": 1,
+            "heading_color": "#000"
+          }
+        },
+        "text_VBnFYH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "text_size": 16,
+            "text_size_mb": 12,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#000",
+            "text_width": "800px"
+          }
+        },
+        "button_bjNGxq": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "Button label",
+            "button_link": "",
+            "margin_top_button": 30,
+            "enable_underline_button": false,
+            "button_color": "#fff",
+            "button_border_color": "#000",
+            "button_bg_color": "#000",
+            "button_bg_gradient": "",
+            "button_color_hover": "#000",
+            "button_border_color_hover": "#000",
+            "button_bg_color_hover": "#fff",
+            "button_bg_gradient_hover": "",
+            "button_width": "270px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tqr8V3",
+        "text_VBnFYH",
+        "button_bjNGxq"
+      ],
+      "settings": {
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#086b92",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 125,
+        "mg_top_tablet": 70,
+        "mg_top_mobile": 90,
+        "mg_bottom_desktop": 125,
+        "mg_bottom_tablet": 70,
+        "mg_bottom_mobile": 90
+      }
     }
   },
   "order": [
@@ -2980,7 +2919,6 @@
     "16409351508cd2f3e1",
     "brand_slider_8dyJxH",
     "image_banner_YBBMPL",
-    "image_banner_e7EKbV",
     "16378289883380f691",
     "rich_text_qhM7tM",
     "image_banner_94cYaR",
@@ -2992,6 +2930,7 @@
     "spotlight_block_qnYcNH",
     "instagram_9EfqFH",
     "featured_blog_LT6gNw",
-    "image_banner_3eqgq3"
+    "image_banner_3eqgq3",
+    "rich_text_6wH8m9"
   ]
 }
