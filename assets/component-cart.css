@@ -17,6 +17,9 @@
   width: 150px;
   height: 150px;
 }
+.cart-content-empty .cart-collection-pic:hover img {
+  border: 1px solid #006fbb;
+}
 .cart-content-empty .quick_cart_empty ul li a .cart-collection-name {
   font-size: 15px;
   font-family: "Nunito";
