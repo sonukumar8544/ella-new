@@ -12,6 +12,12 @@
     "main": {
       "type": "main-cart",
       "settings": {
+        "enable_empty_svg": true,
+        "empty_title": "Your shopping cart is empty",
+        "continue_shoppping": true,
+        "collection_title": "Health Goals",
+        "enable_shipping_info": false,
+        "heading": "You May Also Like",
         "container": "1770",
         "side_padding_full_width": 0,
         "show_breadcrumb": false,
