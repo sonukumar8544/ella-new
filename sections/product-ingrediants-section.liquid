@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "Product ingredients",
+    "name": "product ingredients",
     "settings": [
       {
         "type": "text",
@@ -16,13 +16,13 @@
       {
         "type": "text",
         "id": "title",
-        "label": "Product Title",
+        "label": "Product Title1",
         "default": "Annatto-Derived Tocotrienols"
       },
       {
         "type": "textarea",
         "id": "description",
-        "label": "Product Description",
+        "label": "Product Description1",
         "default": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference."
       }, {
         "type": "url",
@@ -32,94 +32,162 @@
         "type": "text",
         "id": "button_text",
         "label": "Button Text",
-        "default": "SHOP NOW"
+        "default": "Read More"
       }
     ],
     "presets": [
       {
-        "name": "product ingredients"
+        "name": "product ingrediant section"
       }
     ]
   }
 {% endschema %}
 
-<div class="ing-container">
-  <h2 class="ing-heading">{{ section.settings.heading }}</h2>
-  <div class="ing-content">
-    <div class="ing-image-container">
-      {% if section.settings.image %}
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Annatto Seeds">
+<div class="product-ing-product-ing-iimg-text-section">
+  {% if section.settings.heading %}
+    <h2 class="product-ing-img-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="product-ing-img-two-column-new">
+    <div class="product-ing-img-image">
+      {% if product.metafields.Custom.we_product_ingrediant_image_one %}
+        <img src="{{ product.metafields.Custom.we_product_ingrediant_image_one | img_url: 'master' }}" alt="Annatto Seeds">
       {% else %}
         <img src="https://via.placeholder.com/200" alt="Placeholder Image">
       {% endif %}
     </div>
-    <div class="ing-text-container">
-      <h3>{{ section.settings.title }}</h3>
-      <p>{{ section.settings.description }}</p>
-      <a href="{{ section.settings.button_link }}" class="ing-shop-button">
-        {{ section.settings.button_text }}
-      </a>
+
+    <div class="product-ing-iimg-text">
+      {% if product.metafields.Custom.we_product_ingrediat_title_one %}
+        <h3>{{ product.metafields.Custom.we_product_ingrediat_title_one }}</h3>
+      {% endif %}
+
+      {% if product.metafields.Custom.we_product_ingrediant_subtitle_one %}
+        <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_one }}</p>
+      {% endif %}
+
+      {% if product.metafields.Custom.we_product_ingrediant_link_one %}
+        <a href="{{ product.metafields.Custom.we_product_ingrediant_link_one }}" class="product-ing-img-shop-button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
     </div>
   </div>
+
+  {% comment %} Ingrediant block 2 {% endcomment %}
+  {% if product.metafields.Custom.we_product_ingrediant_image_two %}
+    <div class="product-ing-img-two-column-new second-ingrediant-block">
+      <div class="product-ing-img-image">
+        {% if product.metafields.Custom.we_product_ingrediant_image_two %}
+          <img src="{{ product.metafields.Custom.we_product_ingrediant_image_two | img_url: 'master' }}" alt="Annatto Seeds">
+        {% else %}
+          <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+        {% endif %}
+      </div>
+      <div class="product-ing-iimg-text">
+        {% if product.metafields.Custom.we_product_ingrediant_title_two %}
+          <h3>{{ product.metafields.Custom.we_product_ingrediant_title_two }}</h3>
+        {% endif %}
+
+        {% if product.metafields.Custom.we_product_ingrediant_subtitle_two %}
+          <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_two }}</p>
+        {% endif %}
+
+        {% if product.metafields.Custom.we_product_ingrediant_link_two %}
+          <a href="{{ product.metafields.Custom.we_product_ingrediant_link_two }}" class="product-ing-img-shop-button">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
 </div>
 
 <style>
-  .ing-container {
+  .product-ing-product-ing-iimg-text-section {
     max-width: 1300px;
+    margin: 50px auto;
     text-align: center;
-    padding: 40px 20px;
-    margin: auto;
   }
-  .ing-heading {
+
+  .second-ingrediant-block {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .product-ing-img-heading {
     color: #374650;
     font-size: 35px;
     margin-bottom: 25px;
-    line-height: 1;
+    line-height: 1.3;
   }
-  .ing-content {
+
+  .product-ing-img-two-column-new {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
     margin-top: 40px;
   }
-  .ing-image-container {
+
+  .product-ing-img-image,
+  .product-ing-iimg-text {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+  }
+
+  .product-ing-img-image {
     background-color: #eaeaea;
     border-radius: 20px;
-    width: 500px;
-    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    height: 500px;
   }
-  .ing-image-container img {
+
+  .product-ing-img-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
   }
-  .ing-text-container {
-    max-width: 500px;
+
+  .product-ing-iimg-text {
+    max-width: 100%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .ing-text-container h3 {
-    font-size: 35px;
+
+  .product-ing-iimg-text h3 {
+    font-size: 30px;
     color: #374650;
-    margin-bottom: 10px;
+    margin: 0;
     line-height: 1.2;
+    padding: 0;
+    font-family: 'Nunito'
+    , sans-serif;
   }
-  .ing-text-container p {
+
+  .product-ing-iimg-text p {
     color: #36454F;
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-family: 'Lato'
+    , sans-serif;
+    padding-bottom: 0 !important;
+    margin-bottom: 6px;
   }
-  .ing-shop-button {
+
+  .product-ing-img-shop-button {
     display: inline-block;
     padding: 10px 20px;
     border: 1px solid #086b92;
-    color: #086b92;
+    background-color: #086b92;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
@@ -127,23 +195,40 @@
     transition: all 0.3s ease-in-out;
     width: 200px;
     text-align: center;
+    margin-top: 20px;
   }
-  .ing-shop-button:hover {
-    background-color: #086b92;
-    color: white;
+
+  .product-ing-img-shop-button:hover {
+    background-color: #fff;
+    color:#086b92;
   }
 
   @media (max-width: 768px) {
-    .ing-content {
+    .product-ing-img-two-column-new {
       flex-direction: column;
       align-items: center;
     }
-    .ing-image-container {
-      width: 100%;
-      height: auto;
+
+    .product-ing-img-shop-button {
+      margin: auto;
     }
-    .ing-text-container {
-      max-width: 90%;
+
+    .product-ing-img-image img {
+      width: 100vw;
+    }
+
+    .product-ing-img-image,
+    .product-ing-iimg-text {
+      flex: 1 1 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .product-ing-iimg-text h3 {
+      font-size: 28px;
+    }
+
+    .product-ing-iimg-text {
       text-align: center;
     }
   }

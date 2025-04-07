@@ -8177,3 +8177,22 @@ h5 {
   width: 8px;
   height: 8px;
 }
+
+@media (max-width: 1025px) {
+  .sls-savings-badge {
+  margin-top: 10px;
+ }
+}
+
+.product-form__buttons,
+.product-form__submit,
+.button,
+.button--primary,
+.cstm-take-wellness-quiz,
+.brand-btn,
+.custom-button-style,
+.spotlight-button,
+.product-ing-img-shop-button {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}

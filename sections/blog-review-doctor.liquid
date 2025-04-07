@@ -1,0 +1,197 @@
+<div class="container-blog">
+  {% assign tag_filter = section.settings.blog_author_name %}
+  {% assign dr_name = section.settings.blog_dr_name %}
+  {% assign dr_page_url = section.settings.review_dr_page %}
+
+  {% for article in blogs['wellness'].articles %}
+    {% for tag in article.tags %}
+      {% if tag == tag_filter %}
+        <div class="card">
+          <div class="card-header">
+            <img src="{{ article.image | img_url: 'medium' }}" alt="" />
+          </div>
+          <div class="card-body">
+            <a href="{{ article.url }}">
+              <h4 class="blog-title-author-page">{{ article.title }}</h4>
+            </a>
+            <div class="user">
+              <div class="user-infoo">
+                <div class="blog-review-dr">
+                  <small>
+                    <span class="blog-date">{{ article.published_at | time_tag: '%b %d, %Y' }}</span>
+                  </small>
+                  <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
+                    <h5>Author: {{ article.author }}</h5>
+                  </a>
+                </div>
+                <div class="blog-review-dr-url">
+                  <a href="https://wellnessextract.com/pages/{{ dr_page_url | replace: ' ', '-' | downcase }}">
+                    <h5>Reviewed By: {{ dr_name }}
+                    </h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+<style>
+  .blog-review-dr {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog-review-dr h5 {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+  }
+
+  .user-infoo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .blog-review-dr-url h5 {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+  }
+  .container-blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+    max-width: 1020px !important;
+  }
+
+  .container-blog .card {
+    max-width: 400px;
+  }
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .card-header img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+  }
+  .tag {
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 10px;
+    text-transform: uppercase;
+  }
+  .tag-teal {
+    background-color: #086b92;
+  }
+  .card-body h4 {
+    margin: 10px 0;
+    line-height: 25px;
+    color: #086b92;
+  }
+
+  .blog-title-author-page {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .user {
+    display: flex;
+    align-items: center;
+  }
+  .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  .user-info h5 {
+    margin: 0;
+  }
+  .user-info small {
+    color: #888785;
+    margin: auto;
+  }
+  .user-info {
+    display: flex;
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .container-blog {
+      padding: 10px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card-body {
+      padding: 15px;
+    }
+    .tag {
+      font-size: 10px;
+      padding: 2px 8px;
+    }
+    .card-body h4 {
+      font-size: 16px;
+    }
+    .user img {
+      width: 30px;
+      height: 30px;
+    }
+    .user-info h5 {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Blog Review Doctor Card",
+    "settings": [
+      {
+        "type": "text",
+        "id": "blog_author_name",
+        "label": "Author Name"
+      }, {
+        "type": "text",
+        "id": "blog_dr_name",
+        "label": "Dr Name"
+      }, {
+        "type": "text",
+        "id": "review_dr_page",
+        "label": "Dr Page URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "blog-card-review-doctor"
+      }
+    ]
+  }
+{% endschema %}
