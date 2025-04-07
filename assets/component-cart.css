@@ -35,14 +35,18 @@
   .template-cart .quick_cart_empty h2 {
     font-size: 32px;
   }
+  .cart-content-empty .cart-collection-pic img {
+    width: 120px;
+    height: 120px;
+  }
 }
 @media (max-width: 768px) {
   .template-cart .cart-content-empty .quick_cart_empty ul li {
     flex: 0 0 24%;
   }
   .cart-content-empty .cart-collection-pic img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
   .template-cart .quick_cart_empty h2 {
     font-size: 28px;
