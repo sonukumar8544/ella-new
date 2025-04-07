@@ -1002,6 +1002,77 @@
         "mg_bottom_mobile": 40
       }
     },
+    "rich_text_6wH8m9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tqr8V3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Where To Start?",
+            "heading_size": 30,
+            "heading_size_mb": 30,
+            "heading_line_height": 1,
+            "heading_color": "#ffffff"
+          }
+        },
+        "button_bjNGxq": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "let’s started with the quiz",
+            "button_link": "shopify://pages/wellness-quiz",
+            "margin_top_button": 30,
+            "enable_underline_button": false,
+            "button_color": "#086b92",
+            "button_border_color": "#ffffff",
+            "button_bg_color": "#FFFFFF",
+            "button_bg_gradient": "",
+            "button_color_hover": "#000000",
+            "button_border_color_hover": "#FFFFFF",
+            "button_bg_color_hover": "#ffffff",
+            "button_bg_gradient_hover": "",
+            "button_width": "320px"
+          }
+        },
+        "text_VBnFYH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find the perfect supplement for your health concerns in under 2 minutes.</p>",
+            "text_size": 18,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 28,
+            "text_color": "#ffffff",
+            "text_width": "600px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tqr8V3",
+        "button_bjNGxq",
+        "text_VBnFYH"
+      ],
+      "settings": {
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#086b92",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 125,
+        "mg_top_tablet": 70,
+        "mg_top_mobile": 45,
+        "mg_bottom_desktop": 125,
+        "mg_bottom_tablet": 70,
+        "mg_bottom_mobile": 55
+      }
+    },
     "image_banner_YBBMPL": {
       "type": "image-banner",
       "blocks": {
@@ -1380,45 +1451,6 @@
         "mg_bottom_desktop": 65,
         "mg_bottom_tablet": 65,
         "mg_bottom_mobile": 40
-      }
-    },
-    "rich_text_qhM7tM": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_mjCmmg": {
-          "type": "heading",
-          "settings": {
-            "heading": "Supplements with 10+ clinically studied ingredients - 3rd-party tested for 99% purity to help you achieve optimal wellness, naturally.",
-            "heading_size": 32,
-            "heading_size_mb": 22,
-            "heading_line_height": 4.8,
-            "heading_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_mjCmmg"
-      ],
-      "disabled": true,
-      "custom_css": [],
-      "settings": {
-        "container": "container",
-        "padding_full_width": 95,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#f2f3f9",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": 0,
-        "rich_text_bg": "#f8f8f8",
-        "rich_text_bg_gradient": "",
-        "enable_column": false,
-        "content_align": "left",
-        "mg_top_desktop": 95,
-        "mg_top_tablet": 75,
-        "mg_top_mobile": 45,
-        "mg_bottom_desktop": 95,
-        "mg_bottom_tablet": 75,
-        "mg_bottom_mobile": 45
       }
     },
     "image_banner_94cYaR": {
@@ -2839,77 +2871,6 @@
         "mg_bottom_mobile": 50,
         "liquid_css": ""
       }
-    },
-    "rich_text_6wH8m9": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_tqr8V3": {
-          "type": "heading",
-          "settings": {
-            "heading": "Not Sure Where To Start?",
-            "heading_size": 30,
-            "heading_size_mb": 30,
-            "heading_line_height": 1,
-            "heading_color": "#000"
-          }
-        },
-        "text_VBnFYH": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-            "text_size": 16,
-            "text_size_mb": 12,
-            "text_font_weight": "400",
-            "text_line_height": 1,
-            "margin_top_text": 20,
-            "text_color": "#000",
-            "text_width": "800px"
-          }
-        },
-        "button_bjNGxq": {
-          "type": "button",
-          "settings": {
-            "button_style": "button_1",
-            "button_label": "Button label",
-            "button_link": "",
-            "margin_top_button": 30,
-            "enable_underline_button": false,
-            "button_color": "#fff",
-            "button_border_color": "#000",
-            "button_bg_color": "#000",
-            "button_bg_gradient": "",
-            "button_color_hover": "#000",
-            "button_border_color_hover": "#000",
-            "button_bg_color_hover": "#fff",
-            "button_bg_gradient_hover": "",
-            "button_width": "270px"
-          }
-        }
-      },
-      "block_order": [
-        "heading_tqr8V3",
-        "text_VBnFYH",
-        "button_bjNGxq"
-      ],
-      "settings": {
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#e8e8e8",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": -100,
-        "rich_text_bg": "#086b92",
-        "rich_text_bg_gradient": "",
-        "enable_column": false,
-        "content_align": "center",
-        "mg_top_desktop": 125,
-        "mg_top_tablet": 70,
-        "mg_top_mobile": 90,
-        "mg_bottom_desktop": 125,
-        "mg_bottom_tablet": 70,
-        "mg_bottom_mobile": 90
-      }
     }
   },
   "order": [
@@ -2918,9 +2879,9 @@
     "1642989489e5f98f1a",
     "16409351508cd2f3e1",
     "brand_slider_8dyJxH",
+    "rich_text_6wH8m9",
     "image_banner_YBBMPL",
     "16378289883380f691",
-    "rich_text_qhM7tM",
     "image_banner_94cYaR",
     "brand_slider_tRACcq",
     "1643015886f75782fe",
@@ -2930,7 +2891,6 @@
     "spotlight_block_qnYcNH",
     "instagram_9EfqFH",
     "featured_blog_LT6gNw",
-    "image_banner_3eqgq3",
-    "rich_text_6wH8m9"
+    "image_banner_3eqgq3"
   ]
 }
