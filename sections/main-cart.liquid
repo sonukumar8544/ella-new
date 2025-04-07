@@ -103,7 +103,7 @@
                     
                {% if section.settings.enable_empty_svg == true %}
                 <div class="quick-cart-empty-svg-icon">
-                  {% render 'quick-cart-empty-svg-icon' %}
+                  {% render 'quick-cart-empty-svg-icon', section: section %}
                 </div>
               {% endif %}
 
