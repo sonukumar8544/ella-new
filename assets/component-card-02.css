@@ -3,10 +3,10 @@
   .card-action
   .variants-popup-content {
   padding: 10px;
-  height: 230px;
+  height: 230px !important;
 }
 #halo-cart-sidebar .card-action .variants-popup-content .variants {
-  max-height: 230px;
+  max-height: 230px !important;
 }
 #halo-cart-sidebar .variants-popup.custom-scrollbar {
   position: relative;
