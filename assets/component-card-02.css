@@ -610,6 +610,11 @@
     padding: 5px 2px !important;
     border-radius: 6px;
   }
+  #halo-cart-sidebar
+    .product-card-layout-02.quick_shop_option_2
+    .card-action
+    .variants-popup {
+  }
 }
 
 @media (max-width: 1024px) {
