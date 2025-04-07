@@ -60,7 +60,7 @@
                     {% if tag == 'usa-bundle' %}
                       {% if product.price > 0 %}
                         {% assign has_recommended_products = true %}
-                        {% render 'cart-similar-quick', product: product %}
+                        {% render 'cart-drawer-recommended-product', product: product %}
                       {% endif %}
                     {% endif %}
                   {% endfor %}
@@ -70,7 +70,7 @@
                   {% if tag == 'ca_bundle' %}
                     {% assign has_recommended_products = true %}
                     {% if product.price > 0 %}
-                      {% render 'cart-similar-quick', product: product %}
+                      {% render 'cart-drawer-recommended-product', product: product %}
                     {% endif %}
                   {% endif %}
                 {% endfor %}
