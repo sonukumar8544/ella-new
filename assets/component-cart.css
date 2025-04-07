@@ -6,6 +6,14 @@
 .cart-content-empty .quick_cart_empty ul li {
   flex: 0 0 20%;
 }
+.cart-content-empty .cart-collection-pic img {
+  width: 200px;
+  height: 200px;
+}
+.cart-content-empty .quick_cart_empty ul li a .cart-collection-name {
+  font-size: 17px;
+  font-family: "Nunito";
+}
 
 .template-cart .cart-item-name a {
   font-weight: 600;
