@@ -723,6 +723,11 @@
 }
 
 @media (max-width: 1024px){
+#block-image_rzpH6y .content-box--absolute {
+    position: absolute;
+    top: 24%;
+    left: 23% !important;
+  
     .banner-heading{
         margin: 0 0 15px 0;
         padding: 0px 0 20px 0;
