@@ -56,7 +56,7 @@
     endif
     assign enable_dropdown = section.settings.enable_dropdown
 -%}
-{%- if settings.show_quick_cart_popular_product -%}
+{%- if section.settings.show_quick_cart_popular_product -%}
         {%- liquid
             assign limit1 = section.settings.quick_cart_popular_product_show
             assign show_dots1 = section.settings.quick_cart_popular_product_dots
