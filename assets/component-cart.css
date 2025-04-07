@@ -1310,12 +1310,14 @@ div#main-cart-items {
     text-align: right;
   }
 }
+@media (min-width: 1280px) {
+}
 
 @media (min-width: 1280px) {
   .cart-total .checkout_title,
   .checkout_title .cart-header-info {
     position: sticky;
-    top: 9%;
+    top: 7%;
   }
   .template-cart .cart-content-item.cart-total form {
     position: sticky;
