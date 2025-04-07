@@ -1137,7 +1137,7 @@
         "mg_bottom_mobile": 40
       }
     },
-   "spotlight_block_qnYcNH": {
+    "spotlight_block_qnYcNH": {
       "type": "spotlight-block",
       "blocks": {
         "image_kAiYHF": {
@@ -1184,12 +1184,12 @@
             "btn_text_transform": "uppercase",
             "btn_icon": "",
             "mg_top_btn": 29,
-            "color_button": "#fff",
+            "color_button": "#ffffff",
             "border_color_button": "#ffffff",
             "bg_color_button": "#086b92",
             "bg_color_button_gradient": "",
-            "color_button_hover": "#fff",
-            "border_color_button_hover": "#fff",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#ffffff",
             "bg_color_button_hover": "#086b92",
             "bg_color_button_gradient_hover": ""
           }
@@ -1215,7 +1215,7 @@
             "font_weight_sub_title": "800",
             "mg_bottom_sub_title": 0,
             "title": "15% Off 3+ Products",
-            "color_title": "#fff",
+            "color_title": "#ffffff",
             "fontsize_title": 28,
             "fontsize_title_mb": 28,
             "font_weight_title": "700",
@@ -1238,12 +1238,12 @@
             "btn_text_transform": "uppercase",
             "btn_icon": "",
             "mg_top_btn": 29,
-            "color_button": "#fff",
+            "color_button": "#ffffff",
             "border_color_button": "#ffffff",
             "bg_color_button": "#ffffff",
             "bg_color_button_gradient": "",
-            "color_button_hover": "#fff",
-            "border_color_button_hover": "#fff",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#ffffff",
             "bg_color_button_hover": "#086b92",
             "bg_color_button_gradient_hover": ""
           }
@@ -1257,7 +1257,7 @@
         "div#spotlight-template--24261275058472__spotlight_block_qnYcNH .halo-row {padding-top: 0px;}"
       ],
       "settings": {
-        "container": "fullwidth",
+        "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
         "mg_minus_desktop": 0,
@@ -1325,14 +1325,14 @@
         "shadow_spread": 0,
         "shadow_color": "transparent",
         "shadow_inset": "no",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
+        "mg_top_desktop": 35,
+        "mg_top_tablet": 15,
         "mg_top_mobile": 10,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
+        "mg_bottom_desktop": 30,
+        "mg_bottom_tablet": 35,
         "mg_bottom_mobile": 10
       }
-    },
+    }
   },
   "order": [
     "collection_banner_meta_6B63K4",
@@ -1343,6 +1343,6 @@
     "16378289883380f691",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
-     "spotlight_block_qnYcNH"
+    "spotlight_block_qnYcNH"
   ]
 }
