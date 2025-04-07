@@ -603,6 +603,10 @@
     width: 250px;
     margin: auto;
   }
+  .product-card-layout-02.quick_shop_option_2 .card-action .variants-popup {
+    padding: 0 2px;
+    border-radius: 6px;
+  }
 }
 
 @media (max-width: 1024px) {
