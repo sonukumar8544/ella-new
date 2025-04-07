@@ -92,80 +92,127 @@
                 add_all_item: `{{ 'products.product.bundle_block.add_all_to_cart' | t }}`
             }
         </script>
-<div class="container free-shipping-container">
-<div class="product-free-shipping-section" >
-    <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
-      <p>Free shipping on orders over $50</p>
-    </div>
-    <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
-      <p>Free shipping on orders</p>
-    </div>
-    <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Italian Trulli">
-      <p>Free shipping on orders over $50</p>
-    </div>
-  </div>
-  </div>
-
-
-  <style>
+ <style>
     .container.free-shipping-container {
-        background: #f4f5f5;
-        border-radius: 10px;
+      background: #f4f5f5;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 20px;
+      max-width: 1000vw;
     }
-        .product-free-shipping-section {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            padding: 10px;
-        }
-        @media (min-width: 600px) {
-            .product-free-shipping-section {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                padding: 0px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .product-free-shipping-section {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 10px;
-            }
-        }
 
-        @media (max-width: 1024px) {
-            .product-free-shipping-section div {
-            background: #f9f9f9;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        }
+    .product-free-shipping-section {
+      display: none; /* hide grid by default, shown only on desktop */
+    }
 
-        .product-free-shipping-section div {
-            padding: 15px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            text-align: left;
-            gap: 10px;
-        }
-        .product-free-shipping-section img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-        .product-free-shipping-section p {
-            font-size: 14px;
-            color: #36454F;
-            font-weight: 400;
-            font-family: 'LATO';
-            font-weight: bold;
-        }
-    </style>
+    .shipping-slider {
+      display: none; /* shown on mobile/tablet */
+    }
+
+    .shipping-item {
+      display: flex !important;
+      align-items: center;
+      text-align: left;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f9f9f9;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 10px;
+    }
+
+    .shipping-item img {
+      max-width: 50px;
+    }
+
+    .shipping-item p {
+      font-size: 14px;
+      color: #36454F;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    /* Desktop layout (grid) */
+    @media (min-width: 1024px) {
+      .shipping-slider {
+        display: none !important;
+      }
+
+      .product-free-shipping-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 800px;
+        margin: auto;
+      }
+    }
+
+    /* Show slider on tablet/mobile */
+    @media (max-width: 1023px) {
+      .shipping-slider {
+        display: block;
+      }
+    }
+  </style>
+
+  <div class="container free-shipping-container">
+    <!-- Slider for mobile/tablet -->
+    <div class="shipping-slider">
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders over $50</p>
+      </div>
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders</p>
+      </div>
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders over $50</p>
+      </div>
+    </div>
+
+    <!-- Grid for desktop -->
+    <div class="product-free-shipping-section">
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders over $50</p>
+      </div>
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders</p>
+      </div>
+      <div class="shipping-item">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Build_3.png?v=1743510009" alt="Shipping" />
+        <p>Free shipping on orders over $50</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('.shipping-slider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
 
         <product-bundle class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" data-product-bundle id="halo-product-bundle">
             <div class="container container-{{ container }}">

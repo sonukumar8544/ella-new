@@ -152,10 +152,17 @@
 							<div class="tab-popup-content">
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
-                            {% if content_meta == 'nutritional-info' %}
-                               {{ product.metafields.custom._nutritional_information.value }}
-                              {% else %}
-							{{ content }}
+                            {% if content_meta == 'description' %}
+								{{ product.metafields.Custom.we_product_description }}
+							{% elsif content_meta == 'nutritional-info' %}
+								{{ product.metafields.Custom.we_nutritional_info }}
+							{% elsif content_meta == 'health-benefits' %}
+								{{ product.metafields.Custom.we_health_benifits }}
+							{% elsif content_meta == 'how-to-use' %}
+								{{ product.metafields.Custom.we_how_to_use }}
+							{%  else %}
+							{{ product.metafields.Custom.we_shipping_and_returns }}
+                             
                               {% endif %}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
