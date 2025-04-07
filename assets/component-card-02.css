@@ -11,6 +11,14 @@
 #halo-cart-sidebar .variants-popup.custom-scrollbar {
   position: relative;
 }
+#halo-cart-sidebar
+  .quick_shop_option_2
+  .product-item.quickshop-popup-show
+  .card-action
+  > form {
+  opacity: 1;
+  visibility: visible;
+}
 
 .product-card-layout-02 .card-action {
   position: initial;
