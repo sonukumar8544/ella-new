@@ -58,10 +58,9 @@
 -%}
 {%- if settings.show_quick_cart_popular_product -%}
         {%- liquid
-            assign collection = collections[settings.quick_cart_popular_product_collection]
-            assign limit = settings.quick_cart_popular_product_show
-            assign show_dots = settings.quick_cart_popular_product_dots
-            assign show_arrows = settings.quick_cart_popular_product_arrows
+            assign limit = section.settings.quick_cart_popular_product_show
+            assign show_dots = section.settings.quick_cart_popular_product_dots
+            assign show_arrows = section.settings.quick_cart_popular_product_arrows
         -%}
   {% endif %}
 <cart-coupon-discount>
@@ -706,11 +705,6 @@
 "id": "quick_cart_popular_product_title",
 "label": "t:settings_schema.quick_cart.settings.product.label__3",
 "default": "You May Also Like"
-},
-{
-"type": "collection",
-"id": "quick_cart_popular_product_collection",
-"label": "t:settings_schema.quick_cart.settings.product.label__4"
 },
 {
 "type": "range",
