@@ -1,0 +1,101 @@
+{% schema %}
+    {
+      "name": "Community Wellness Banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Join Us in Making a Difference"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Every person's wellness journey is unique. Through our collaboration with Santosh Foundation, we provide personalized support, quality supplements, and educational resources to help you navigate your path to better health. We believe in treating everyone with dignity, understanding, and respect.</p>"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Read More"
+        }
+      ],
+      "presets": [
+        {
+          "name": "community Wellness Banner"
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <section class="we-community-wellness">
+      <div class="container">
+        <h2
+          class="we-heading"
+          style="font-size: 28px;line-height: 33px;"
+        >
+          {{ section.settings.title }}
+        </h2>
+        {% if section.settings.banner_image %}
+          <div class="we-banner">
+            <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="Banner Image">
+          </div>
+        {% endif %}
+        <div class="we-paragraph">{{ section.settings.description }}</div>
+        {% if section.settings.button_link %}
+          <a href="{{ section.settings.button_link }}" class="we-read-more-marketing">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    </section>
+    
+    <style>
+      .we-community-wellness {
+        text-align: center;
+        padding: 20px;
+      }
+    
+      .we-banner {
+        height: 300px;
+      }
+      .we-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #36454F;
+        line-height: 1.2;
+      }
+      .we-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .we-paragraph {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .we-read-more-marketing {
+        display: inline-block;
+        background-color: #086b92;
+        color: #fff;
+        padding: 10px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    
+    
+      .we-read-more-marketing:hover {
+        color: #fff !important;
+      }
+    </style>
+    

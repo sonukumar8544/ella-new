@@ -1,0 +1,1073 @@
+<style>
+.rich-text__blocks.text-left {
+    padding-left: 18px;
+}
+   .fieldset {
+    border-width: 2px 0 0 0;
+    padding-bottom: 0;
+    border: unset;
+    padding: unset;
+}
+.field.note.no-label {
+    margin-bottom: 10px;
+}
+#google_recaptcha {
+    margin-bottom: 20px;
+}
+  .legend, .custom-contact-index {
+    width: 100%;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 9px 0px;
+}
+  small.error {
+    color: red;
+}
+  .field.attachment {
+    display: flex;
+    flex-direction: column;
+}
+  #attachment{
+    background: transparent;
+    border: 1px dashed #000;
+    width: 45%;
+  }
+  
+  @media (min-width:300px) and (max-width:400px){
+    #attachment{
+      width: 60%;
+    }
+  }
+    @media (min-width:400px) and (max-width:766px){
+    #attachment{
+      width: 50%;
+    }
+  }
+    @media (min-width:767px) and (max-width:900px){
+    #attachment{
+      width: 70%;
+    }
+  }
+  .custom-contact-index {
+    padding-bottom: 10px;
+    font-size:1.2rem !important;
+}
+  .custom-field {
+    display: block;
+}
+.icon-wraper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+  .icon-wraper p {
+    /* margin-bottom: unset; */
+    font-size: 1.2rem;
+    margin: 5px 0px;
+}
+    .fieldset>.field,
+    .fieldset>.fields>.field {
+        margin: 0 0 20px;
+    }
+
+   .fieldset>.field>.label, .fieldset>.fields>.field>.label {
+    font-weight: 600;
+    display: inline-block;
+    
+}
+
+    .fieldset>.field.required>.label:after,
+    .fieldset>.fields>.field.required>.label:after,
+    .fieldset>.field._required>.label:after,
+    .fieldset>.fields>.field._required>.label:after {
+        content: "*";
+        color: #e02b27;
+        font-size: 12px;
+        margin: 0 0 0 3px;
+    }
+
+/* 
+
+  select {
+    background:transparent;
+    border-radius: 0;
+    line-height: 1.42857143;
+    padding: 4px 25px 5px 10px;
+    -webkit-appearance: none;
+    width: 100%;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-size: 30px 60px;
+    text-indent: 0.01em;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+} */
+
+.custom-mail {
+    margin-bottom: unset;
+}
+    textarea {
+        border-radius: 1px;
+        height: auto;
+        line-height: 1.42857143;
+        margin: 0;
+        padding: 10px;
+        resize: vertical;
+       border: 1px solid #d1d1d1;
+    }
+
+  form .field .control input, form .field .control select, form .field .control textarea, select  {
+  padding: 10px;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+  background: #E8F0FE;
+  border-radius: 8px;
+  border: none;
+  color: #000;
+}
+.control{
+    width:100%;
+}
+    .actions-toolbar .primary .action {
+        margin: 0 15px 0 0;
+        width: auto;
+    }
+
+    .actions-toolbar .primary .action {
+        background: #30ace2;
+        border: 1px solid #30ace2;
+        color: #fff;
+        cursor: pointer;
+        font-weight: revert;
+        padding: 9px 20px;
+        font-size: 17px;
+        box-sizing: border-box;
+        vertical-align: middle;
+        text-transform: capitalize;
+        border-radius: 4px;
+    }
+
+    /* ---- Loader ---- */
+
+   
+
+
+   
+.custom-from-wraper{
+  display: grid;
+    grid-template-columns: 6fr 6fr;
+    gap: 40px;
+}
+
+  .custom-from-wraper .field:hover.field:after{
+    box-shadow:unset;
+  }
+
+  .custom-contact-index{
+    margin-top:0;
+  }
+    /* ---- Media Query ---- */
+
+    @media(min-width: 768px) {
+        .actions-toolbar {
+            text-align: left;
+        }
+
+        .actions-toolbar .primary {
+            display: inline-block;
+            float: left;
+        }
+ .rich-text__blocks.text-left .rich-text__text.rte{
+  line-height: 19px !important;
+ }
+    }
+
+    @media(max-width: 767px) {
+      .rich-text__blocks.text-left{
+        text-align: center;
+        padding:0px;
+      }
+      .rich-text__blocks.text-left .rich-text__text.rte {
+        width: 100% !important;
+        max-width: 32ch;
+        line-height: 22px;
+        margin: 5px auto;
+      }
+        form {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 30px;
+        }
+
+        .actions-toolbar>.primary .action {
+            width: 100%;
+        }
+      .custom-from-wraper {
+          grid-template-columns: auto;
+      }
+    }
+  .icon-wraper a {
+    color: #000;
+    text-decoration:none;
+    font-size: 14px;
+}
+  strong, .fieldset>.field>.label, .fieldset>.fields>.field>.label, form .field .control input, form .field .control select, form .field .control textarea,select{
+    font-size: 1.2rem !important;
+    color: #000;
+  }
+  .barrie-tan-description, .main--contact_form .note{
+    font-size: 1.2rem !important;
+    color: #000;
+  }
+  #other {
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+  display: none;
+}
+ .promtDelivery .control, .promtNewsletter .control, .rinfo .control{
+width: auto;
+}
+.promtDelivery, .promtNewsletter, .rinfo{
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+justify-content: flex-end;
+}
+.promtDelivery .label, .promtNewsletter .label, .rinfo .label{
+margin-left: 20px;
+} 
+.form-info h2, .fieldset h2 {
+font-size: 2rem;
+color: #000;  
+}
+.label span{
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 600;
+}  
+.no-label span{
+  color: #000;
+  font-size: 1.2rem;
+}  
+.no-label{
+  margin-bottom:20px;
+}  
+
+.contact-us-page-we-re{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.contact-us-page-we-re .main_heading_contact {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.contact-us-page-we-re .note p {
+    font-size: 16px;
+    line-height: 26px;
+}
+.contact-us-page-we-re p ~ .main_heading_contact {
+    margin-top: 40px !important;
+}
+@media (max-width: 1200px){
+    .contact-us-page-we-re{
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+}
+
+.radio-type-app{
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid red !important;
+}
+
+.mobile-phone-icon-contact{
+  height: 16px;
+}
+
+.contact-us-email-setting {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-us-email-setting img {
+    margin: auto 0px;
+}
+</style>
+
+{% render 'ajax-loader' %}
+
+<div class="contact-container container contact-us-page-we-re">
+  <div class="custom-from-wraper">
+    
+  {% comment %} <form id="contact-form" method="post" enctype="multipart/form-data" novalidate class="main--contact_form">
+    <!-- <div class="note no-label">
+     {{ page.content }}
+    </div> -->
+    <fieldset class="fieldset">
+      {% comment %} <div class="success_message" style="display:none;">
+        <p>Thank you response submitted successfully</p>
+      </div> {% endcomment %}
+
+      {% render 'form_message' %}
+      <!-- 
+       <legend class="legend">
+        <strong>{{ section.settings.main_heading }}</strong>
+      </legend> -->
+      <h2>{{ section.settings.main_heading }}</h2>
+      <div class=" note no-label">
+       {{ section.settings.sub_heading }}
+      </div>
+      <input type="hidden" name="mail_title" value="Contact Us" />
+      <input type="hidden" name="Store" value="Wellness Extract USA"/>
+      <input type="hidden" id="customer_location" name="Customer Country" value=""/>
+    <input type="hidden" name="reciever_mail" value="customersupport@wellnessextract.com" />
+    {% comment %}
+      <input type="hidden" name="reciever_mail" value="customercare@wellnessextract.com" />
+      {% endcomment %}
+      <div class="field dropdown required custom-field">
+
+
+
+        <label class="label" for="dropdown">
+          <span>You are?</span>
+        </label>
+        <select name="topic" id="dropdown" class=" lazyloaded">
+          <option value="selected">Select Topic</option>
+          <option name="wholesale" value="Wholesale">Wholesale account</option>
+          <option name="order" value="Order">Order Inquiry</option>
+          <option name="return" value="Return">Return/Replacement</option>
+          <option name="practitioner" value="Practitioner">Practitioner account</option>
+          <option name="inquiry" value="Inquiry">Product Inquiry</option>
+          <option value="other">Other</option>
+        </select>
+        <small class="error"></small>
+        <!-- <div id="inputFieldContainer"></div> -->
+        <div class="field other required custom-field">
+        <div class="control">
+          <input
+            name="other"
+            id="other"
+            title="Other"
+            value=""
+            class="input-text"
+            type="text"
+            data-validate="{required:true, 'validate-email':true}"
+            aria-required="true"
+            placeholder = "Please specify a topic"
+          >
+          <small class="error"></small>
+        </div>
+      </div>
+         <small class="error"></small>
+      </div>
+      <div class="field name required custom-field">
+        <label class="label" for="name">
+          <span>Name</span>
+        </label>
+        <div class="control">
+          <input
+            name="name"
+            id="name"
+            title="Name"
+            value=""
+            class="input-text"
+            type="text"
+            data-validate="{required:true}"
+            aria-required="true"
+          >
+          <small class="error"></small>
+        </div>
+      </div>
+      <div class="field email required custom-field">
+        <label class="label" for="email">
+          <span>Email</span>
+        </label>
+        <div class="control">
+          <input
+            name="email"
+            id="email"
+            title="Email"
+            value=""
+            class="input-text"
+            type="email"
+            data-validate="{required:true, 'validate-email':true}"
+            aria-required="true"
+          >
+          <small class="error"></small>
+        </div>
+      </div>
+      <div class="field telephone custom-field">
+        <label class="label" for="telephone">
+          <span>Phone</span>
+        </label>
+        <div class="control">
+          <input name="telephone" id="telephone" title="Phone Number" value="" class="input-text" type="text">
+        </div>
+      </div>
+      <div class="field comment required custom-field">
+        <label class="label" for="comment">
+          <span>What’s on your mind?</span>
+        </label>
+        <div class="control">
+          <textarea
+            name="comment"
+            id="comment"
+            title="What’s on your mind?"
+            class="input-text"
+            cols="5"
+            rows="3"
+            data-validate="{required:true}"
+            aria-required="true"
+          ></textarea>
+          <small class="error"></small>
+        </div>
+      </div>
+      <div class="field attachment">
+        <label class="label" for="attachment">
+          <span>Attachment</span>
+        </label>
+        <div class="control">
+          <input name="kj" type="file" id="attachment" class="input-text" onchange="validateFile(this)">
+        </div>
+      </div>
+
+      <div class="field promtDelivery custom-field">
+        <label class="label" for="promtDelivery">
+          <span>You provide consent to be contracted for better services & promt delivey</span>
+        </label>
+        <div class="control">
+          <input name="You provide consent to be contracted for better services &#38; promt delivey" id="promtDelivery" title="Promt Delivery" value="checked" class="input-text" type="checkbox">
+        </div>    
+      </div>
+      <div style="display: flex; margin-bottom: 20px;">
+        <div class="field rinfo custom-field">
+        <label class="label" for="rinfo">
+          <span>Phone</span>
+        </label>
+        <div class="control">
+          <input class="radio-type-app" name="Contact Info" title="Phone" value="Phone" class="input-text" type="radio">
+        </div>    
+      </div>
+        <div class="field rinfo custom-field">
+        <label class="label" for="rinfo">
+          <span>Email</span>
+        </label>
+        <div class="control">
+          <input name="Contact Info" title="Email" value="Email" class="input-text" type="radio">
+        </div>    
+      </div>
+        <div class="field rinfo custom-field">
+        <label class="label" for="rinfo">
+          <span>Both</span>
+        </label>
+        <div class="control">
+          <input name="Contact Info" title="Both" value="Phone and Email" class="input-text" type="radio">
+        </div>    
+      </div>
+      </div>
+      <div class="field promtNewsletter custom-field">
+        <label class="label" for="promtNewsletter">
+          <span>You provide consent to receive newsletter and related awarness through product compaign</span>
+        </label>
+        <div class="control">
+          <input name="You provide consent to receive newsletter &#38; related awarness through product compaign" id="promtNewsletter" title="Promt Newsletter" value="checked" class="input-text" type="checkbox">
+        </div>    
+      </div>
+      
+    </fieldset>
+    <div class="actions-toolbar">
+      <div class="primary">
+         <div id="google_recaptcha"></div>
+         <small class="captch_error error"></small>
+        <button type="submit" id="send_mail" class="action">Submit</button>
+      </div>
+    </div>
+  </form> {% endcomment %}
+  <div class="foem-participation">
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "49007533",
+        formId: "d8eddd8a-ef84-429b-8492-49f750127ebb"
+      });
+    </script>
+    {% comment %}
+    <iframe src="https://wellnessextractcanada.my.salesforce-sites.com/webToCase" width="100%" style="border: none;"></iframe>
+    {% endcomment %}
+    <div><strong>Let’s Connect!</strong></div>
+    <p>Fill out the form, and our team will get back to you within 24 hours to discuss partnership opportunities.</p>
+    
+    {% for block in section.blocks %}
+      {% if block.type=='contentsform' %}
+        {% if block.settings.main_heading != blank %}
+          <h2 class="main_heading_contact" style="color: {{ block.settings.main_heading_color }}; font-size: {{ block.settings.main_heading_Font_size }};"> 
+            {{ block.settings.main_heading }}</h2>
+        {% endif %}
+     
+        {% if block.settings.main_us_content != blank %}
+          <p class="main_us_content_contact">{{ block.settings.main_us_content }}</p>
+        {% endif %}
+
+    
+    {% endif %}
+   {% endfor %}
+   <div><strong>{{ section.settings.custom_phone }}</strong></div>
+   <div class="icon-wraper">
+    {% for block in section.blocks %}
+      {% if block.type=='phonenohere' %}
+        {% if block.settings.contact_us_bottom_email_image != blank %}
+          <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_us_bottom_email_image | img_url: 'master' }}" alt="icon">
+        {% endif %}
+        {% if block.settings.contact_us_bottom_email != blank %}
+          <p class="custom-mail"></p><p><a href="tel:+44-(204)-520-3815 " target="_blank" title="tel:+44-(204)-520-3815" aria-label="Go to tel:+44-(204)-520-3815">{{ block.settings.contact_us_bottom_email }}</a></p><p></p>
+        {% endif %}
+    {% endif %}
+   {% endfor %} 
+    </div>
+    <div class="icon-wraper">
+      {% for block in section.blocks %}
+        {% if block.type=='phonenoheretwo' %}
+          {% if block.settings.contact_us_bottom_email_image != blank %}
+            <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_us_bottom_email_image | img_url: 'master' }}" alt="icon">
+          {% endif %}
+          {% if block.settings.contact_us_bottom_email != blank %}
+            <p class="custom-mail"></p><p><a href="tel:+1-(778)-907-1150 " target="_blank" title="tel:+1-(778)-907-1150" aria-label="Go to tel:+1-(778)-907-1150">{{ block.settings.contact_us_bottom_email }}</a></p><p></p>
+          {% endif %}
+      {% endif %}
+     {% endfor %} 
+      </div>
+
+
+
+
+
+
+{% comment %} <strong>"Looking to get in touch? For product inquiries or to connect with our team, simply send an email."</strong> 
+<div class="icon-wraper">
+  {% for block in section.blocks %}
+    {% if block.type=='newinfomail' %}
+      {% if block.settings.contact_us_bottom_email_image != blank %}
+        <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_us_bottom_email_image | img_url: 'master' }}" alt="icon">
+      {% endif %}
+      {% if block.settings.contact_us_bottom_email != blank %}
+        <p class="custom-mail"></p><p><a href="mailto:info@wellnessextract.com" target="_blank" title="mailto:info@wellnessextract.com" aria-label="Go to mailto:customersupport@wellnessextract.com">{{ block.settings.contact_us_bottom_email }}</a></p><p></p>
+      {% endif %}
+  {% endif %}
+ {% endfor %} 
+  </div> {% endcomment %}
+   
+   <strong class="top-gap">"Have queries or need assistance? Our support team is here for you! Reach out, and we'll get back to you within one business day."</strong>
+   <div class="icon-wraper">
+    {% for block in section.blocks %}
+      {% if block.type=='bottomemail' %}
+        {% if block.settings.contact_us_bottom_email_image != blank %}
+          <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_us_bottom_email_image | img_url: 'master' }}" alt="icon">
+        {% endif %}
+        {% if block.settings.contact_us_bottom_email != blank %}
+          <p class="custom-mail"></p><p><a href="mailto:customersupport@wellnessextract.com" target="_blank" title="mailto:customersupport@wellnessextract.com" aria-label="Go to mailto:customersupport@wellnessextract.com">{{ block.settings.contact_us_bottom_email }}</a></p><p></p>
+        {% endif %}
+    {% endif %}
+   {% endfor %} 
+    </div>
+  </div>
+  <div class = "form-info">
+    <div class="note no-label">
+       {% for block in section.blocks %}
+      {% if block.type=='contents' %}
+        {% if block.settings.main_heading != blank %}
+          <h2 class="main_heading_contact" style="color: {{ block.settings.main_heading_color }}; font-size: {{ block.settings.main_heading_Font_size }};"> 
+            {{ block.settings.main_heading }}</h2>
+        {% endif %}
+     
+        {% if block.settings.main_us_content != blank %}
+          <p class="main_us_content_contact">{{ block.settings.main_us_content }}</p>
+        {% endif %}
+
+    
+    {% endif %}
+   {% endfor %}
+   
+   <strong>"Looking to get in touch? For product inquiries or to connect with our team, simply send an email."</strong> 
+   <div class="icon-wraper">
+     {% for block in section.blocks %}
+       {% if block.type=='newinfomail' %}
+         {% if block.settings.contact_us_bottom_email_image != blank %}
+           <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_us_bottom_email_image | img_url: 'master' }}" alt="icon">
+         {% endif %}
+         {% if block.settings.contact_us_bottom_email != blank %}
+           <p class="custom-mail"></p><p><a href="mailto:customersupport@wellnessextract.com" target="_blank" title="mailto:customersupport@wellnessextract.com" aria-label="Go to mailto:customersupport@wellnessextract.com">{{ block.settings.contact_us_bottom_email }}</a></p><p></p>
+         {% endif %}
+     {% endif %}
+    {% endfor %} 
+     </div>
+
+     {% comment %} second {% endcomment %}
+   {% for block in section.blocks %}
+    {% if block.type=='contentstwo' %}
+      {% if block.settings.main_heading != blank %}
+        <h2 class="main_heading_contact" style="color: {{ block.settings.main_heading_color }}; font-size: {{ block.settings.main_heading_Font_size }};"> 
+          {{ block.settings.main_heading }}</h2>
+      {% endif %}
+   
+      {% if block.settings.main_us_content != blank %}
+        <p class="main_us_content_contact">{{ block.settings.main_us_content }}</p>
+      {% endif %}
+
+  
+  {% endif %}
+ {% endfor %}
+    </div>
+
+  {% comment %} <h2 class= "custom-contact-index">{{ section.settings.store_name}}</h2>
+<strong>{{ section.settings.address_heading }}</strong>
+<p>{{ section.settings.custom_address }}</p> {% endcomment %}
+    <div class="contact-group">{% if section.settings.custom_phone!=blank %}
+   
+      {% endif %}
+     {% for block in section.blocks %}
+      {% if block.type=='slide' %}
+    <div class = "icon-wraper">
+    <span><i class="fa fa-phone"></i></span>
+      <div class="conatact-us-phone-icon">
+        <img class="mobile-phone-icon-contact" src="{{ block.settings.contact_icon_phone | img_url: 'master' }}" alt="icon">
+      </div>
+      {{ block.settings.mobile_no}}
+    </div>
+    {% endif %}
+   {% endfor %}</div>
+   {% if section.settings.custom_email_heading!=blank %}
+
+
+   <!-- <strong>{{ section.settings.custom_email_heading }}</strong> -->
+     {% endif %}
+    {% for block in section.blocks %}
+      {% if block.type=='text' %}
+        </div>
+        {% endif %}
+   {% endfor %}
+</div>
+<script defer src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
+
+<script defer defer>
+  document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.getElementById('dropdown');
+  var inputFieldContainer = document.getElementById('other');
+
+  dropdown.addEventListener('change', function() {
+    if (dropdown.value === 'other') {
+       inputFieldContainer.style.display = "block";
+    } else {
+      inputFieldContainer.style.display = "none";
+    }
+  });
+
+});
+
+</script>   
+<script defer defer>
+
+ var onloadCallback = function() {
+    grecaptcha.render('google_recaptcha', {
+      'sitekey' : '6LfiRQEkAAAAAErCfZGEpRhtegzVVK2Ab_82a2PN'
+    });
+  };
+
+   var cou;
+window.onload = function getCustomerCountry(){
+   fetch('https://ipapi.co/json/')
+   .then(response => {
+     if (!response.ok) {
+       throw new Error('Network response was not ok');
+     }
+     return response.json();
+   })
+   .then(data => {
+     console.log(data.country_name);
+       cou = data.country_name;
+       document.getElementById("customer_location").value = cou;
+   })
+   .catch(error => {
+     console.error('There was a problem fetching the country:', error);
+   });
+   } 
+
+  let form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    let name=document.querySelector("[name=name]");
+    let email=document.querySelector("[name=email]");
+    let comment=document.querySelector("[name=comment]");
+    let topic=document.querySelector("[name=topic]");
+
+    const formData = new FormData(form);
+    const email_pattern = /^[a-zA-Z0-9\_\.\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z]+)$/;
+    let isName=false;
+    let isEmail=false;
+    let isComment=false;
+    let isTopic=false;
+    console.log(formData)
+  //console.log(email_pattern.test(email.value));
+
+    if((name.value == '')){
+      name.nextElementSibling.innerHTML="This is a required field !";
+      isName=false;
+    }else{
+       name.nextElementSibling.style.display="none";
+      isName=true;
+    }
+
+   if((topic.value == 'selected')){
+      topic.nextElementSibling.innerHTML="This is a required field !";
+      isTopic=false;
+    }
+  
+   else{
+      topic.nextElementSibling.style.display="none";
+      isTopic=true;
+    }
+
+   if((email.value == '')){
+      isEmail=false;
+      email.nextElementSibling.innerHTML="This is a required field !";
+    }else {
+     if(!email_pattern.test(email.value)){
+        isEmail=false;
+        email.nextElementSibling.innerHTML="Invalid Email !";
+     }else{
+        email.nextElementSibling.style.display="none";
+        isEmail=true;
+     }
+
+    }
+    
+
+    if((comment.value == '')){
+       comment.nextElementSibling.innerHTML="This is a required field !";
+        isComment=false;
+     }else {
+      comment.nextElementSibling.style.display="none";
+       isComment=true;
+    }
+
+    if(!(isEmail && isName && isComment && isTopic)) return;
+
+    console.log(formData);
+
+
+
+    let rcres = grecaptcha.getResponse();
+
+
+
+    if(rcres.length){
+      grecaptcha.reset();
+      document.querySelector(".captch_error").style.display="none";
+      document.querySelector(".loader-container").style.display="flex";
+
+  const url = 'https://inventory.wellnessextract.com/api/job/applications';
+      //  const url = 'https://uvit.ca/mail';
+    //  const url = 'https://85f0-2401-4900-1c6e-ef63-70-908-1b68-1d65.ngrok-free.app/inventory-management/public/api/ja';
+     fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        })
+       .then(response => response.json())
+       // .then(response => {
+        //     return response.json();
+        // })
+        .then(data => {
+
+          if(data.status){
+            form.reset();
+            document.querySelector(".loader-container").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            document.querySelector(".message-container .success_message").innerHTML=data.message;
+            document.querySelector(".message-container .error_message").innerHTML=''
+          }
+          else{
+             document.querySelector(".loader").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            document.querySelector(".message-container .success_message").innerHTML='';
+            document.querySelector(".message-container .error_message").innerHTML='Failed';
+           console.error(data.message);
+          }
+
+         
+        })
+        .catch(error => {
+           document.querySelector(".loader").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            document.querySelector(".message-container .success_message").innerHTML='';
+            document.querySelector(".message-container .error_message").innerHTML='Failed';
+           console.error(error);
+        }); 
+
+    }else{
+      document.querySelector(".captch_error").innerHTML="Please verify reCAPTCHA";
+      document.querySelector(".captch_error").style.display="block";
+    }
+
+    
+  });
+
+  
+  function validateFile(input) {
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const fileSize = file.size; // size in bytes
+      const maxSize = 200 * 1024; // 200 KB
+
+      if (fileSize > maxSize) {
+        alert('File size exceeds the limit. Please select a file under 200 KB.');
+        input.value = ''; // Reset the file input
+      }
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Contact Us",
+  "settings": [
+    {
+         "type": "text",
+         "id": "subtext",
+         "label": "Upload Content"
+       },
+     {
+         "type": "text",
+         "id": "main_heading",
+         "label": "Main Heading"
+       },
+         {
+         "type": "text",
+         "id": "sub_heading",
+         "label": "Sub Heading"
+       },
+     {
+         "type": "text",
+         "id": "custom_phone",
+         "label": "Phone"
+       },
+       {
+         "type": "text",
+         "id": "custom_email_heading",
+         "label": "Email"
+       },
+    {
+         "type": "text",
+         "id": "store_name",
+         "label": "Store Name"
+       },
+     {
+         "type": "text",
+         "id": "address_heading",
+         "label": "Address Heading"
+       },
+       {
+         "type": "text",
+         "id": "custom_address",
+         "label": "Address Details"
+       }
+  ],
+  "blocks": [
+    {
+       "name": "Contents",
+       "type": "contents",
+       "settings": [
+        {
+           "type": "color",
+           "id": "main_heading_color",
+           "label": "color",
+           "default": "#086B92"
+         },
+         {
+           "type": "text",
+           "id": "main_heading_Font_size",
+           "label": "font size"
+         },
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Heading"
+         },
+         {
+          "type": "richtext",
+          "id": "main_us_content",
+          "label": "Add Content here"
+         }
+       ]
+     },
+    {
+       "name": "contentstwo",
+       "type": "contentstwo",
+       "settings": [
+        {
+           "type": "color",
+           "id": "main_heading_color",
+           "label": "color",
+           "default": "#086B92"
+         },
+         {
+           "type": "text",
+           "id": "main_heading_Font_size",
+           "label": "font size"
+         },
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Heading"
+         },
+         {
+          "type": "richtext",
+          "id": "main_us_content",
+          "label": "Add Content here"
+         }
+       ]
+     },
+     {
+       "name": "contentsform",
+       "type": "contentsform",
+       "settings": [
+        {
+           "type": "color",
+           "id": "main_heading_color",
+           "label": "color",
+           "default": "#086B92"
+         },
+         {
+           "type": "text",
+           "id": "main_heading_Font_size",
+           "label": "font size"
+         },
+        {
+           "type": "text",
+           "id": "main_heading",
+           "label": "Heading"
+         },
+         {
+          "type": "richtext",
+          "id": "main_us_content",
+          "label": "Add Content here"
+         }
+       ]
+     },
+     {
+       "name": "Contact",
+       "type": "slide",
+       "settings": [
+        {
+           "type": "richtext",
+           "id": "mobile_no",
+           "label": "Mobile Number"
+         },
+         {
+          "type": "image_picker",
+          "id": "contact_icon_phone",
+          "label": "Add phone icon"
+         },
+         {
+          "type": "richtext",
+          "id": "contact_us_content",
+          "label": "Add Content here"
+         }
+       ]
+     },
+     {
+       "name": "bottomemail",
+       "type": "bottomemail",
+       "settings": [
+        {
+           "type": "text",
+           "id": "contact_us_bottom_email",
+           "label": "Bottom Email"
+         },
+         {
+          "type": "image_picker",
+          "id": "contact_us_bottom_email_image",
+          "label": "Add phone icon"
+         }
+       ]
+     },
+     {
+       "name": "phonenohere",
+       "type": "phonenohere",
+       "settings": [
+        {
+           "type": "text",
+           "id": "contact_us_bottom_email",
+           "label": "Bottom Email"
+         },
+         {
+          "type": "image_picker",
+          "id": "contact_us_bottom_email_image",
+          "label": "Add phone icon"
+         }
+       ]
+     },
+     {
+       "name": "phonenoheretwo",
+       "type": "phonenoheretwo",
+       "settings": [
+        {
+           "type": "text",
+           "id": "contact_us_bottom_email",
+           "label": "Bottom Email"
+         },
+         {
+          "type": "image_picker",
+          "id": "contact_us_bottom_email_image",
+          "label": "Add phone icon"
+         }
+       ]
+     },
+     {
+       "name": "newinfomail",
+       "type": "newinfomail",
+       "settings": [
+        {
+           "type": "text",
+           "id": "contact_us_bottom_email",
+           "label": "Bottom Email"
+         },
+         {
+          "type": "image_picker",
+          "id": "contact_us_bottom_email_image",
+          "label": "Add phone icon"
+         }
+       ]
+     },
+    {
+       "name": "Email",
+       "type": "text",
+       "settings": [
+        {
+           "type": "richtext",
+           "id": "custom_email",
+           "label": "Email Id"
+         },
+         {
+          "type": "image_picker",
+          "id": "email_icon_phone_contact",
+          "label": "Add Email icon"
+         }
+
+       ]
+     }
+  ]
+}
+{% endschema %}

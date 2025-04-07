@@ -1,0 +1,224 @@
+<div class="container science-page-card-section">
+  {% for block in section.blocks %}
+    <div class="new-section-card">
+      {% if block.settings.product_image_science %}
+        <div class="product-image-container">
+          <img
+            class="product-imageee"
+            src="{{ block.settings.product_image_science | img_url: 'master' }}"
+            alt="{{ block.settings.product_image_science.alt }}">
+        </div>
+      {% endif %}
+
+      <div class="main-section-desc" style="background-color: {{ block.settings.header_color }};">
+        <div class="card-main-content-sec">
+        {% if block.settings.main_heading %}
+          <div class="text-science">
+            <span class="stats">{{ block.settings.main_heading }}</span>
+          </div>
+        {% endif %}
+        {% if block.settings.add_rich_text %}
+          <div class="text-science">
+            {{ block.settings.add_rich_text }}
+          </div>
+        {% endif %}
+        {% if block.settings.second_heading %}
+          <div class="text-science">
+            <span class="highlight">{{ block.settings.second_heading }}</span>
+          </div>
+        {% endif %}
+        {% if block.settings.second_rich_text %}
+          <div class="text">{{ block.settings.second_rich_text }}</div>
+        {% endif %}
+        </div>
+        <div class="card-btn-sec"> 
+        {% if block.settings.button_text %}
+          <div class="button-container">
+            <a href="{{ block.settings.product_link }}" class="view-product-button">{{ block.settings.button_text }}</a>
+          </div>
+        {% endif %}
+        {% if block.settings.read_study %}
+          <a href="{{ block.settings.butt_url }}" class="read-study">{{ block.settings.read_study }}</a>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Science page card",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Science page card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "product_image_science",
+            "label": "Add product imaget"
+          },
+          {
+            "type": "color",
+            "id": "header_color",
+            "label": "Header Background Color",
+            "default": "#AEDFF7"
+          },
+          {
+            "type": "text",
+            "id": "main_heading",
+            "label": "Add heading 1"
+          },
+          {
+            "type": "text",
+            "id": "add_rich_text",
+            "label": "add rich text",
+            "default": "Jacob"
+          }, {
+            "type": "text",
+            "id": "second_heading",
+            "label": "second_heading"
+          }, {
+            "type": "text",
+            "id": "second_rich_text",
+            "label": "second rich text"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "button text",
+            "default": "VIEW PRODUCT"
+          }, {
+            "type": "url",
+            "id": "butt_url",
+            "label": "button url"
+          }, {
+            "type": "url",
+            "id": "product_link",
+            "label": "product link"
+          }, {
+            "type": "text",
+            "id": "read_study",
+            "label": "product link",
+            "default": "Read Study"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "science page card"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  .card-main-content-sec{
+    max-width: 400px;
+    margin: 0px auto;
+  }
+  .new-section-card {
+    text-align: center;
+    border-radius: 20px;
+    max-width: 500px;
+  }
+
+  @media (max-width: 1060px) {
+    .new-section-card {
+      max-width: 350px;
+    }
+
+    .main-section-desc {
+      height: 350px !important;
+    }
+
+    .science-page-card-section {
+      margin-bottom: 50px;
+    }
+  }
+
+  .product-imageee {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-image-container {
+    position: relative;
+    top: 7rem;
+  }
+
+  .science-page-card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    /* padding: 50px 0; */
+    margin-bottom: 50px;
+  }
+
+  .main-section-desc {
+    /* background-color: #ffe6e6; */
+    display: flex;
+    flex-direction: column;
+    padding: 50px 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 335px;
+    justify-content: space-between;
+    color: #36454F;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .stats {
+    font-size: 36px;
+    font-weight: bold;
+    color: #374650;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .text-science {
+    font-size: 16px;
+    color: #36454F;
+    margin: 10px 0;
+  }
+
+  .highlight {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+
+  .view-product-button {
+    background-color: #006A91;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .view-product-button:hover {
+    background-color: white;
+    color: #374650;
+  }
+
+  .read-study {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #36454F;
+    text-decoration: underline;
+    padding-top: 10px;
+  }
+</style>

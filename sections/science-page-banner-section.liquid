@@ -1,0 +1,420 @@
+{% if page.handle == 'science-backing' %}
+    <h1 style="display:none;">{{ page.title }}</h1>
+  {% endif %}
+  <section class="science-page-col-collapsible-content-main {% if section.settings.button_text != blank %} {{ section.settings.custom_class }} {% endif %}" style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
+    <div class="container">
+      <div class="column left">
+        {% if section.settings.right_title != blank %}<h2 style="font-size: 2em; margin-bottom: 10px; color: #374650;">{{ section.settings.right_title }}</h2> {% endif %}
+        <img
+          src="{{ section.settings.left_image | img_url: 'master' }}"
+          alt="{{ section.settings.left_image.alt }}"
+          class="science-page-desktop-image">
+        {% if section.settings.mobile_image %}
+          <img
+            src="{{ section.settings.mobile_image | img_url: 'master' }}"
+            alt="{{ section.settings.left_image.alt }}"
+            class="science-page-mobile-image">
+        {% endif %}
+        {% comment %} <div class="science-page-content-wrapper">
+                                    <h2 id="add-read-more-button" class="right-subtitle">{{ section.settings.right_subtitle }}</h2>
+                                    <button id="read-more-btn" class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+                            </div> {% endcomment %}
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_link }}"
+            id="science-page-mobile-button-two-coloumn"
+            class="science-page-mobile-mobile-bottom-link">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
+  
+      <div class="column right">
+        <div class="science-page-inner-wrapper-right-section">
+          {% if section.settings.desktop_slider-rating_image != blank %}
+            <img
+              fethpriority="low"
+              src="{{ section.settings.desktop_slider-rating_image | img_url: '1024x1024' }}"
+              width="aut0"
+              height="master"
+              alt="{{ section.settings.desktop_slider-rating_image.alt }}">
+          {% endif %}
+          {% if section.settings.right_title_1 != blank %}
+            <div class="science-page-right_t_1">{{ section.settings.right_title_1 }}</div>
+  
+          {% endif %}
+          {% if section.settings.right_title_2 != blank %}
+            <div class="science-page-right_t_2">
+              {{ section.settings.right_title_2 }}
+            </div>
+  
+          {% endif %}
+          <div class="science-page-right_t_3">
+            {% if section.settings.right_title_3 != blank %}
+              {{ section.settings.right_title_3 }}
+            {% endif %}
+          </div>
+  
+          {% if section.settings.right_title != blank %}
+            <h1>{{ section.settings.right_title }}</h1>
+          {% endif %}
+          {% if section.settings.right_subtitle != blank %}
+            <h2>{{ section.settings.right_subtitle }}</h2>
+          {% endif %}
+          {% if section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_link }}" class="science-page-rright-button">{{ section.settings.button_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  {% schema %}
+    {
+      "name": "science page banner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_class",
+          "label": "Use Custom Class"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_image",
+          "label": "Left Block Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Left Block Mobile Image"
+        }, {
+          "type": "image_picker",
+          "id": "desktop_slider-rating_image",
+          "label": "desktop_slider-rating_icon"
+        }, {
+          "type": "textarea",
+          "id": "right_title_1",
+          "label": "Right Block Title",
+          "default": "Your Title Here"
+        }, {
+          "type": "textarea",
+          "id": "right_title_2",
+          "label": "Right Block Title",
+          "default": "Your Title Here"
+        }, {
+          "type": "textarea",
+          "id": "right_title_3",
+          "label": "Right Block Title",
+          "default": "Your Title Here"
+        }, {
+          "type": "text",
+          "id": "right_title",
+          "label": "Right Block Title",
+          "default": "Your Title Here"
+        }, {
+          "type": "text",
+          "id": "right_subtitle",
+          "label": "Right Block Subtitle",
+          "default": "Your Subtitle Here"
+        }, {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Here"
+        }, {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ],
+      "presets": [
+        {
+          "name": "science page banner",
+          "category": "Custom Sections"
+        }
+      ]
+    }
+  {% endschema %}
+  
+  <style>
+    .science-page-right_t_1 {
+      font-size: 60px;
+      font-weight: 600;
+      color: #36454F;
+      font-family: 'nunito';
+      margin-bottom: 10px;
+    }
+  
+    .science-page-right_t_2 {
+      font-size: 45px;
+      font-weight: 600;
+      color: #36454F;
+      padding-top: 25px;
+      font-family: 'nunito';
+    }
+  
+    .science-page-right_t_3 {
+      font-size: 40px;
+      font-weight: bold;
+      color: #006A91;
+      padding: 40px 0;
+      line-height: 1.2;
+      font-family: 'nunito';
+    }
+  
+    @media (min-width: 768px){
+      .science-page-col-collapsible-content-main .left{
+        padding-top: 50px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .science-page-right_t_3 {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+  
+      .science-page-inner-wrapper-right-section {
+        max-width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+      }
+  
+      .science-page-col-collapsible-content-main .left .science-page-mobile-image{
+         max-width: 220px;
+      }
+    }
+  
+  
+    .science-page-inner-wrapper-right-section {
+      max-width: 85%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .science-page-col-collapsible-content-main {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 50px 0 !important;
+    }
+  
+    .science-page-col-collapsible-content-main .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .science-page-col-collapsible-content-main .column {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  
+    .science-page-col-collapsible-content-main .left {
+      text-align: center;
+      position: relative;
+    }
+  
+    .science-page-col-collapsible-content-main .left .science-page-desktop-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 330px;
+    }
+  
+    .science-page-col-collapsible-content-main .left .science-page-mobile-image {
+      display: none;
+    }
+  
+    .science-page-col-collapsible-content-main .right {
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+  
+    .science-page-col-collapsible-content-main .right h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #374650;
+    }
+  
+    .science-page-col-collapsible-content-main .left h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #374650;
+    }
+  
+    .science-page-col-collapsible-content-main .right h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #36454F;
+    }
+    .science-page-col-collapsible-content-main .left h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    #science-page-mobile-button-two-coloumn,
+    .science-page-col-collapsible-content-main .right .science-page-rright-button {
+      padding: 10px 30px;
+      background-color: #DE584C;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 12px;
+      margin: 0 auto;
+      max-width: fit-content;
+    }
+  
+    #science-page-mobile-button-two-coloumn:hover,
+    .science-page-col-collapsible-content-main .right .science-page-rright-button:hover {
+      color: #006A91;
+      background-color: white;
+    }
+  
+    #science-page-mobile-button-two-coloumn {
+      display: none;
+    }
+  
+    .science-page-content-wrapper {
+      position: relative;
+      text-align: left;
+    }
+  
+    .right-subtitle {
+      overflow: hidden;
+      max-height: 220px;
+      /* Adjust this value to show only a certain number of lines */
+      line-height: 1.5em;
+      transition: max-height 0.5s ease;
+    }
+  
+    .science-page-content-wrapper.expanded .right-subtitle {
+      max-height: none;
+    }
+  
+    #read-more-btn {
+      margin: 0 auto;
+      background-color: #006A91;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 12px;
+      display: none;
+      /* Hide the button by default */
+    }
+  
+    #read-more-btn:hover {
+      background-color: #004e66;
+    }
+  
+    @media only screen and (min-width: 768.1px) {
+      .left h1 {
+        display: none !important;
+      }
+      .left h2 {
+        display: none !important;
+      }
+    }
+  
+    @media only screen and (max-width: 768px) {
+  
+      .science-page-inner-wrapper-right-section h1 {
+        display: none;
+      }
+      .science-page-inner-wrapper-right-section h2 {
+        display: none;
+      }
+  
+      .left h2 {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .science-page-col-collapsible-content-main .right .science-page-rright-button {
+        display: none;
+      }
+      #science-page-mobile-button-two-coloumn {
+        display: block;
+      }
+  
+  
+      .science-page-col-collapsible-content-main .container {
+        flex-direction: column;
+      }
+  
+      .science-page-col-collapsible-content-main .left {
+        order: 2;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+  
+      .science-page-col-collapsible-content-main .left .science-page-desktop-image {
+        display: none;
+      }
+  
+      .science-page-col-collapsible-content-main .left .science-page-mobile-image {
+        display: block !important;
+        margin: 0 auto;
+      }
+  
+      .science-page-col-collapsible-content-main .right {
+        order: 1;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+  
+      .science-page-col-collapsible-content-main .right h1 {
+        line-height: 1.3;
+      }
+      .science-page-col-collapsible-content-main .left h1 {
+        line-height: 1.3;
+      }
+    }
+  
+    @media only screen and (max-width: 767px) {
+      .science-page-col-collapsible-content-main .left h1 {
+        max-width: 17ch;
+        font-size: 20px;
+        margin-inline: auto;
+      }
+      .science-page-col-collapsible-content-main .science-page-content-wrapper {
+        text-align: center;
+      }
+    }
+  
+    @media only screen and (max-width: 500px) {
+      .left h2 {
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .science-page-col-collapsible-content-main {
+        padding-top: 15px;
+      }
+  
+    }
+  </style>
+  
+  <script defer defer>
+      function toggleReadMore() {
+        const contentWrapper = document.querySelector('.science-page-content-wrapper');
+        const readMoreBtn = document.getElementById('read-more-btn');
+      
+        if (contentWrapper.classList.contains('expanded')) {
+          contentWrapper.classList.remove('expanded');
+          readMoreBtn.innerText = "Read More";
+        } else {
+          contentWrapper.classList.add('expanded');
+          readMoreBtn.innerText = "Read Less";
+        }
+      }
+  </script>
