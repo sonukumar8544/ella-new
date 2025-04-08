@@ -846,11 +846,6 @@ predictive-search[loading] .predictive-search {
 }
 
 @media screen and (min-width: 750px) {
-  .products-grid.column-4 .product,
-  .products-grid.column-5 .product {
-    width: 17%;
-  }
-
   .predictive-search__results-groups-wrapper--no-products
     .predictive-search__result-group:nth-child(2),
   .predictive-search__result-group:last-child
