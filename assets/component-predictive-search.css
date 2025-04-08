@@ -155,7 +155,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   padding: 5px 5px;
   margin: 10px 4px;
   border-radius: 9px;
-  background: aqua;
+  background: #086b92 !important;
 }
 .quickSearchResultsBlock .list-item .link:hover svg {
   fill: #fff;
