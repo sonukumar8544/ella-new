@@ -152,8 +152,8 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 .predictive-search .predictive-search__list-item {
   display: inline-block;
   vertical-align: top;
-  padding: 5px 5px;
-  margin: 10px 4px;
+  padding: 4px;
+  margin: 2px;
   border-radius: 9px;
   background: #086b92 !important;
 }
@@ -172,7 +172,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 1px;
   background-color: #086b92 !important;
   color: #fff;
   text-decoration: unset;
@@ -191,6 +191,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 .quickSearchResultsBlock .list-item .link .text {
   display: block;
   margin: 0 0 0 4px;
+  font-size: 11px;
 }
 
 .quickSearchResultsBlock .products-grid {
