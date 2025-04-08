@@ -153,7 +153,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   display: inline-block;
   vertical-align: top;
   padding: 4px;
-  margin: 2px;
+  margin: 0px 2px 3px 4px;
   border-radius: 9px;
   background: #086b92 !important;
 }
