@@ -54,7 +54,7 @@
 
 <div class="newsletter-section-footer" style="background: {{ section.settings.newsletterbg }}">
   <div class="newsletter-email-box-footer" >
-   <div class="content_newsletter"  style="    padding: 1px; {% if section.settings.newsletter_border != blank %}border: 1px solid {{ section.settings.newsletter_border }}{% endif %};">
+   <div class="content_newsletter"  style="    padding: 1px; ">
      {% if section.settings.newsletter_image != blank %}<img src="{{ section.settings.newsletter_image | img_url:'' }}" alt="{{ section.settings.newsletter_title }}" width="" height="" loading="lazy"> {% endif %}
      <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">{{ section.settings.newsletter_title }}</h2>
     <p  style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
