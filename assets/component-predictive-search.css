@@ -849,6 +849,7 @@ predictive-search[loading] .predictive-search {
   .products-grid.column-4 .product,
   .products-grid.column-5 .product {
     width: 17%;
+    margin: auto;
   }
 
   .predictive-search__results-groups-wrapper--no-products
