@@ -3326,6 +3326,7 @@
                                             halo.updateSidebarCart(cart);
                                         }
                                         if (cart.item_count >= 100){
+                                          console.log("3329 cart bubble");
                                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                                         }
                                         $target.removeClass('is-loading');
@@ -3342,6 +3343,7 @@
                                     $body.addClass('add-to-cart-show');
                                     $target.removeClass('is-loading');
                                     if (cart.item_count >= 100){
+                                      console.log("3346 cart bubble");
                                         $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                                     }
                                 });
