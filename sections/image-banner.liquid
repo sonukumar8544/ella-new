@@ -1027,6 +1027,12 @@
     </div>
     {%- endif -%}
 {%- endif -%}
+@media(min-width: 800px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+    min-width: 50% !important;
+    left: 70% !important;
+}
+}
 {% schema %}
     {
         "name": "t:sections.image-banner.name",
