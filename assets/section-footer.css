@@ -766,7 +766,11 @@ footer details[open] summary ~ * {
 
 @media (max-width: 767px) {
   .footer-block__text {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+  .footer-block__details .rte p {
+    font-size: 14px;
+    padding: 0px 10px;
   }
 
   .footer-block__link_list {
