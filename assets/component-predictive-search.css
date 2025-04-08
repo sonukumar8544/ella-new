@@ -158,11 +158,11 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   background: #086b92 !important;
 }
 .quickSearchResultsBlock .list-item .link:hover svg {
-  fill: #fff;
-  stroke: #fff;
+  fill: #fff !important;
+  stroke: #fff !important;
 }
 .quickSearchResultsBlock .list-item .link:hover {
-  color: #fff;
+  color: #fff !important;
   background-color: #e5e5e5;
   border-color: #1f1e1e;
 }
