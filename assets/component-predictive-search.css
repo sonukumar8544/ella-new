@@ -176,7 +176,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   background-color: #086b92 !important;
   color: #fff;
   text-decoration: unset;
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 
 .quickSearchResultsBlock .list-item .link svg,
