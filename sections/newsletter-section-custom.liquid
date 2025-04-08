@@ -54,14 +54,14 @@
 
 <div class="newsletter-section-footer" style="background: {{ section.settings.newsletterbg }}">
   <div class="newsletter-email-box-footer" >
-   <div class="content_newsletter"  style="border: 1px solid {{ section.settings.newsletter_border }};">
+   <div class="content_newsletter"  style=" {% if section.settings.newsletter_border != blank %}border: 1px solid {{ section.settings.newsletter_border }}{% endif %};">
      {% if section.settings.newsletter_image != blank %}<img src="{{ section.settings.newsletter_image | img_url:'' }}" alt="{{ section.settings.newsletter_title }}" width="" height="" loading="lazy"> {% endif %}
      <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">{{ section.settings.newsletter_title }}</h2>
     <p  style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
    </div>
     <div
       
-      style="color: white;  border: 1px solid {{ section.settings.newsletter_border }};" 
+      style="color: white;  {% if section.settings.newsletter_border != blank %}border: 1px solid {{ section.settings.newsletter_border }};{% endif %}" 
       class="hs-form-frame"
       data-region="na1"
       data-form-id="3e4e59be-a9c3-4aaf-be23-28ed725a41b4"
