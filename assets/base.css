@@ -8208,3 +8208,52 @@ h5 {
   padding-bottom: 50px !important;
   background: #ffffff;
 }
+
+.brand-btn{
+  background: #086b92;
+  color: #fff !important;
+  border: 1px solid #086b92 !important;
+  padding: 10px !important;
+}
+
+.brand-btn:hover {
+  color: #086b92 !important;
+  background: transparent !important;
+
+}
+
+a.link-effect.p-relative.d-inline-block {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productView-img-container img{
+  border-radius: 12px !important;
+}
+
+.bundle-badge,
+.sale-badge{
+  display: none;
+}
+
+.halo-productBadges .badge.custom-badge {
+  color: var(--bundle-badge-color);
+  background-color: var(--bundle-badge-bg);
+}
+
+.halo-productBadges .badge {
+  font-family: var(--badge-font);
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  text-transform: var(--badge-text-transform);
+  letter-spacing: var(--badge-letter-spacing);
+  line-height: var(--badge-line-height);
+  border-radius: var(--badge-border-radius);
+  height: auto;
+  padding: var(--badge-padding-top) var(--badge-padding-left-right) var(--badge-padding-bottom) var(--badge-padding-left-right);
+  text-align: center;
+  word-break: break-word;
+}
