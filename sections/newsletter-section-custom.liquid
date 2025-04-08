@@ -81,6 +81,8 @@
     padding-bottom: 32px;
     gap: 20px;
 }
+   
+    
 .newsletter-email-box-footer .content_newsletter {
     width: 30%;
     text-align: -webkit-center;
@@ -92,9 +94,16 @@
     padding: 0px 20px;
     /* border: 1px solid #5a97af99; */
 }
+    .content_newsletter h2,
+    .content_newsletter p{
+      display:none;
+    }
   }
    @media(max-width:899px){
-
+ .content_newsletter img {
+    display: none;
+}
+     
 .newsletter-email-box-footer .content_newsletter {
     border: none !important;
 }
