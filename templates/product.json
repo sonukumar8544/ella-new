@@ -221,6 +221,19 @@
             "maximum_des_to_show": 300
           }
         },
+        "custom_6RXgWX": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "How To Use",
+            "type": "all",
+            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.</p><br><ul>\n  <li><strong>Combats oxidative stress</strong></li>\n  <li><strong>Overall cellular health</strong></li>\n  <li><strong>Promotes skin vitality</strong></li>\n  <li><strong>Bones and muscle strength</strong></li>\n  <li><strong>Supports cardiovascular health</strong></li>\n  <li><strong>Healthy inflammatory response</strong></li>\n  <li><strong>Regulates lipid levels</strong></li>\n  <li><strong>Healthy aging and longevity</strong></li>\n</ul>",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
         "19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3": {
           "type": "share",
           "disabled": true,
@@ -313,6 +326,7 @@
         "87197f5f-be0e-4b89-9270-62bf6917ebe7",
         "3d9ea84d-5527-4bce-abe6-5debef3ec955",
         "b9d6eb19-10f4-41f8-bfdc-ea10e8b3182a",
+        "custom_6RXgWX",
         "19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3",
         "a86220cf-8641-4e06-87d3-b5ffa195501b",
         "058d88b7-6cce-4aae-a5c4-b8193bbdfa7f",
@@ -381,12 +395,12 @@
         "tab_border_color_rgb": "",
         "show_product_bundle": true,
         "background_color": "",
-        "block_title": "Frequenly Bought Together",
+        "block_title": "Frequently Bought Together",
         "block_title_align": "center",
         "product_style": "2",
         "block_image_ratio": "square",
         "bundle_discount": true,
-        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text": "Buy any 3 supplements, save [discount]%",
         "bundle_discount_text_color": "#36454f",
         "total_btn_color": "#ffffff",
         "total_btn_border": "#006a91",

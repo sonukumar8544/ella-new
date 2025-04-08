@@ -597,8 +597,9 @@
   /* background: var(--product-action-bg); */
   /* color: var(--product-action-color); */
   border-color: #374650;
-  color: #374650;
-  background: transparent;
+  color: white;
+  background: #006a91;
+  /* background: transparent; */
   /* border-color: var(--product-action-border); */
   box-shadow: var(--btn-3-horizontal-length) var(--btn-3-vertical-length)
     var(--btn-3-blur-radius) var(--btn-3-spread) var(--btn-3-all-bg-opacity)
@@ -2891,8 +2892,9 @@ quickshop-update-quantity.disabled {
 
     .card-action .button:hover {
       /* background: var(--product-action-bg-hover); */
-      background: #006a91;
-      color: var(--product-action-color-hover);
+      background: transparent;
+      /* color: var(--product-action-color-hover); */
+      color: #006a91;
       /* border-color: var(--product-action-border-hover); */
       border-color: #006a91;
       box-shadow: var(--btn-3-horizontal-length) var(--btn-3-vertical-length)
@@ -4019,9 +4021,10 @@ quickshop-update-quantity.disabled {
 
   .card-action .button:hover {
     /* background: var(--product-action-bg-hover); */
-    background: #006a91;
+    background: transparent;
     border-color: #006a91;
-    color: var(--product-action-color-hover);
+    /* color: var(--product-action-color-hover); */
+    color: #006a91;
     /* border-color: var(--product-action-border-hover); */
     box-shadow: var(--btn-3-horizontal-length) var(--btn-3-vertical-length)
       var(--btn-3-blur-radius) var(--btn-3-spread)
