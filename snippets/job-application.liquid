@@ -10,11 +10,16 @@
     <input type="hidden" name="mail_title" value="Job Application Form">
     <input type="hidden" name="reciever_mail" value="amardeep@wellnessextract.in">
     <!--  -->
-
+{% if page.title != blank %}
+      <div class="field hidden">
+        <input type="hidden" name="department" id="department" value="{{ page.title }}">
+      </div>
+    {% else %}
     {% if section.settings.department %}
       <div class="field hidden">
         <input type="hidden" name="department" id="department" value="{{ section.settings.department }}">
       </div>
+    {% endif %}
     {% endif %}
     {% for block in section.blocks %}
       {% case block.type %}
