@@ -1325,73 +1325,74 @@
         "mg_bottom_mobile": 40
       }
     },
-    "brand_slider_tRACcq": {
+     "brand_slider_tRACcq": {
       "type": "brand-slider",
       "blocks": {
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "title": "Patented, Proven Ingredients",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
+            "image": "shopify://shop_images/Frame_1618872901_3.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "Patented, Proven <br> Ingredients",
+            "color_des": "#374650",
             "link": "shopify://collections/skin-health"
           }
         },
         "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "title": "Expert-Formulated",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
+            "image": "shopify://shop_images/Frame_1618872902.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "Expert- <br>Formulated",
+            "color_des": "#374650",
             "link": "shopify://collections/skin-health"
           }
         },
         "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "title": "US-Sourced, GMP-Certified",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "US-Sourced,<br> GMP-Certified",
+            "color_des": "#374650",
             "link": "shopify://collections/skin-health"
           }
         },
         "image_aVixiN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "title": "FDA-Inspected Facility",
+            "image": "shopify://shop_images/Frame_1618872901_5.png",
+            "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
+            "description": "FDA-Inspected <br>Facility",
+            "color_des": "#374650",
             "link": "shopify://collections/skin-health"
           }
         },
         "image_NyLNnA": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
-            "title": "GRAS Approved (Generally Recognized As Safe)",
+            "image": "shopify://shop_images/Frame_1618872901.png",
+            "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
+            "description": "GRAS <br>Approved",
+            "color_des": "#374650",
             "link": "shopify://collections/skin-health"
           }
         },
         "image_HjABCT": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Cart.png",
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
             "title": "Third-Party Tested",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -1409,11 +1410,15 @@
         "image_NyLNnA",
         "image_HjABCT"
       ],
+      "custom_css": [
+        ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
+        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}"
+      ],
       "settings": {
         "id": "",
         "container": "1170",
         "padding_full_width": 20,
-        "brands_block_style": "style_5",
+        "brands_block_style": "style_1",
         "brand_layout": "slider",
         "scroll_from": "rtl",
         "brand_scroll_time": "25",
@@ -1423,14 +1428,14 @@
         "title_align": "center",
         "brand_title": "Why Shop with Us",
         "color_title": "#374650",
-        "fontsize_title": 40,
-        "fontsize_title_mb": 28,
+        "fontsize_title": 32,
+        "fontsize_title_mb": 22,
         "mg_bottom_title": 0,
         "enable_border_title": false,
         "border_color_title": "#051c42",
         "brand_des": "",
         "color_des": "#3c3c3c",
-        "fontsize_des": 18,
+        "fontsize_des": 16,
         "mg_bottom_des": 0,
         "view_all": "",
         "view_all_fs": 12,
@@ -1443,8 +1448,8 @@
         "color_view_all_icon": "#eb492f",
         "view_all_icon_side": "left",
         "btn_text": "",
-        "fontsize_btn": 18,
-        "btn_spacing_top": 18,
+        "fontsize_btn": 16,
+        "btn_spacing_top": 16,
         "btn_color": "#086b92",
         "btn_link": "shopify://collections/health-goals",
         "btn_color_border": "#828282",
@@ -1454,7 +1459,7 @@
         "brand_speed": "4000",
         "data-brands-slider": false,
         "slider_layout_3_no_round": false,
-        "brand_rows": "4",
+        "brand_rows": "5",
         "enable_arrows": true,
         "enable_dots": false,
         "enable_center_mode": false,
@@ -1478,7 +1483,7 @@
         "border_color_hover": "#e8e8e8",
         "hover_effect": "zoom",
         "color_underline_image_hover": "#000000",
-        "fontsize_text": 17,
+        "fontsize_text": 16,
         "fontsize_text_mb": 14,
         "font_weight_title": "600",
         "margin_bottom_title": 10,
