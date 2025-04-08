@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "author_section_eFKLU9": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_r6D6RA": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Pragya Soni is a versatile writer with a background in pharmaceutical sciences. She holds a Bachelor's in Pharmacy from a NAAC 'A' accredited university and has four years of experience writing across multiple domains, including health, wellness, and beyond.<br><br>\nHer passion for research and writing started in college when she assisted professors with white paper research. This experience sparked her curiosity about the science behind molecules and the power of well-researched content. Pragya excels at translating complex scientific concepts into engaging and easy-to-understand information, making knowledge accessible to a broader audience. She stays updated with scientific studies, industry trends, and regulatory guidelines, ensuring accuracy and credibility in her work. When she's not writing, you'll often find her immersed in a Durjoy Datta romance novel."
+          }
+        },
+        "text_block_iMY3Um": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_r6D6RA",
+        "text_block_iMY3Um"
+      ],
+      "settings": {
+        "author_image": "shopify://shop_images/Pragya.jpg",
+        "author_name": "Pragya Soni",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": "https://in.linkedin.com/in/pragya-soni-a2212b169"
+      }
+    },
+    "author_blog_card_J8w7wj": {
+      "type": "author-blog-card",
+      "settings": {
+        "blog_author_name": "Pragya Soni"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "author_section_eFKLU9",
+    "author_blog_card_J8w7wj"
+  ]
+}
