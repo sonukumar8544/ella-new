@@ -2282,7 +2282,7 @@
         "div#spotlight-template--24261275058472__spotlight_block_qnYcNH .halo-row {padding-top: 0px;}"
       ],
       "settings": {
-        "container": "fullwidth",
+        "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
         "mg_minus_desktop": 0,
@@ -2300,7 +2300,7 @@
         "enable_dots_mb": false,
         "display_border_bottom": false,
         "border_color": "#e3e3e3",
-        "spotlight_bg": "rgba(0,0,0,0)",
+        "spotlight_bg": "#e6f0f4",
         "spotlight_bg_gradient": "",
         "enable_custom_position_title": false,
         "spotlight_block_title": "",
@@ -2354,7 +2354,7 @@
         "mg_top_tablet": 0,
         "mg_top_mobile": 10,
         "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
+        "mg_bottom_tablet": 45,
         "mg_bottom_mobile": 10
       }
     },
