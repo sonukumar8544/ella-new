@@ -3,6 +3,9 @@
   max-width: 750px;
   margin: 15px auto 0 auto;
 }
+.pagination-page-item.pagination-page-total {
+  display: none;
+}
 
 .search-form .form-input {
   width: calc(100% - 70px);
