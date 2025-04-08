@@ -1729,6 +1729,86 @@
                     "label" : "t:settings_schema.countdown.settings.general.label__5",
                     "info" : "Please use this exact format: yyyy/mm/dd hour/minute/second. Example: 2021/12/4 0:0:00."
                 },
+                   {
+                    "type": "header",
+                    "content": "Special Image Button"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text1",
+                    "label": "t:settings_schema.typography.settings.typography.button_text",
+                    "default": "Shop Now"
+                },
+                {
+                    "type": "url",
+                    "id": "link1",
+                    "label": "t:settings_schema.typography.settings.typography.button_link",
+                    "info": "t:sections.image-banner.blocks.image.settings.content.info"
+                },
+                {
+                    "type": "textarea",
+                    "id" : "btn_icon1",
+                    "label" : "t:settings_schema.typography.settings.typography.button_icon",
+                    "info" : "Go to this link [find your icon](https://fontawesome.com/v5.15/icons?d=gallery&p=2). Find the icon you want, then copy the SVG code and paste it here."
+                },
+                {
+                    "type": "range",
+                    "id": "button_1_width1",
+                    "label": "t:sections.image-banner.blocks.image.settings.style.button_width",
+                    "min": 100,
+                    "max": 600,
+                    "step": 5,
+                    "unit": "t:sections.layout.mg_desktop.unit",
+                    "default": 235
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_button_custom_border1",
+                    "label": "t:sections.image-banner.blocks.image.settings.style.enable_button_custom_border",
+                    "info": "t:sections.image-banner.blocks.image.settings.style.info__1",
+                    "default": false
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_color1",
+                    "label" : "t:sections.rich-text.blocks.button.settings.label_color",
+                    "default" : "#fff"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_border1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.border_color",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_background1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_2",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color_background",
+                    "id" : "button_background_gradient1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_gradient"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_color_hover11",
+                    "label" : "t:sections.rich-text.blocks.button.settings.label_hover_color",
+                    "default" : "#fff"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_border_hover1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.border_hover",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_background_hover1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_hover",
+                    "default" : "#232323"
+                },
                 {
                     "type": "select",
                     "id": "hide_countdown_fc",
@@ -4573,90 +4653,9 @@
                     "id" : "button_background_gradient_hover",
                     "label" : "t:settings_schema.colors.settings.colors_name.background_hover_gradient"
                 },
-
-                   {
-                    "type": "header",
-                    "content": "Special Image Button"
-                },
-                {
-                    "type": "text",
-                    "id": "btn_text1",
-                    "label": "t:settings_schema.typography.settings.typography.button_text",
-                    "default": "Shop Now"
-                },
-                {
-                    "type": "url",
-                    "id": "link1",
-                    "label": "t:settings_schema.typography.settings.typography.button_link",
-                    "info": "t:sections.image-banner.blocks.image.settings.content.info"
-                },
-                {
-                    "type": "textarea",
-                    "id" : "btn_icon1",
-                    "label" : "t:settings_schema.typography.settings.typography.button_icon",
-                    "info" : "Go to this link [find your icon](https://fontawesome.com/v5.15/icons?d=gallery&p=2). Find the icon you want, then copy the SVG code and paste it here."
-                },
-                {
-                    "type": "range",
-                    "id": "button_1_width1",
-                    "label": "t:sections.image-banner.blocks.image.settings.style.button_width",
-                    "min": 100,
-                    "max": 600,
-                    "step": 5,
-                    "unit": "t:sections.layout.mg_desktop.unit",
-                    "default": 235
-                },
-                {
-                    "type": "checkbox",
-                    "id": "enable_button_custom_border1",
-                    "label": "t:sections.image-banner.blocks.image.settings.style.enable_button_custom_border",
-                    "info": "t:sections.image-banner.blocks.image.settings.style.info__1",
-                    "default": false
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_color1",
-                    "label" : "t:sections.rich-text.blocks.button.settings.label_color",
-                    "default" : "#fff"
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_border1",
-                    "label" : "t:settings_schema.colors.settings.colors_name.border_color",
-                    "default" : "#232323"
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_background1",
-                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_2",
-                    "default" : "#232323"
-                },
-                {
-                    "type" : "color_background",
-                    "id" : "button_background_gradient1",
-                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_gradient"
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_color_hover11",
-                    "label" : "t:sections.rich-text.blocks.button.settings.label_hover_color",
-                    "default" : "#fff"
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_border_hover1",
-                    "label" : "t:settings_schema.colors.settings.colors_name.border_hover",
-                    "default" : "#232323"
-                },
-                {
-                    "type" : "color",
-                    "id" : "button_background_hover1",
-                    "label" : "t:settings_schema.colors.settings.colors_name.background_hover",
-                    "default" : "#232323"
-                },
-                
-                ]
-            },
+                  
+        ],
+  },     
             {
                 "type": "image_scrolling_text",
                 "name": "t:sections.image-banner.blocks.image_scrolling_text.name",
