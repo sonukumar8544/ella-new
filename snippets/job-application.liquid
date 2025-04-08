@@ -10,7 +10,7 @@
     <input type="hidden" name="mail_title" value="Job Application Form">
     <input type="hidden" name="reciever_mail" value="amardeep@wellnessextract.in">
     <!--  -->
- {% if section.settings.department %}
+ {% if section.settings.department != blank%}
       <div class="field hidden">
         <input type="hidden" name="department" id="department" value="{{ section.settings.department }}">
       </div>
