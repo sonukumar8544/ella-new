@@ -64,10 +64,11 @@
      {% if section.settings.newsletter_image != blank %}<img src="{{ section.settings.newsletter_image | img_url:'' }}" alt="{{ section.settings.newsletter_title }}" width="" height="" loading="lazy"> {% endif %}
      <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">{{ section.settings.newsletter_title }}</h2>
 
-     <p class="top_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
-    
-     <p class="middle_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle1 }}</p>
-   </div>
+    {% if section.settings.newsletter_subtitle != blank %}  <p class="top_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
+     {% endif %}
+   {% if section.settings.newsletter_subtitle1 != blank %}  <p class="middle_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle1 }}</p>
+   {% endif %}
+     </div>
     <div
       
       style="color: white;" 
