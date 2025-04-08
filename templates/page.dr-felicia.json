@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "author_section_L9iHwd": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_Rp9GaC": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Felicia is a dedicated naturopathic doctor committed to bridging the gap in healthcare accessibility both on a global and local scale. Her areas of expertise include mental health, healthy aging, and pain management, where she combines evidence-based naturopathic treatments with personalized care. Holds a Bachelor’s degree in Biology and Psychology from McMaster University and a Doctor of Naturopathy from the Canadian College of Naturopathic Medicine. She also remains actively involved in educating communities about the importance of mental resilience, aging gracefully, and managing pain effectively through non-invasive methods."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_Rp9GaC"
+      ],
+      "settings": {
+        "author_image": "shopify://shop_images/Felicia.jpg",
+        "author_name": "Dr. Felicia",
+        "author_role": "Author",
+        "author_email": "felicia.assenza@gmail.com",
+        "author_linkedin": "https://www.linkedin.com/in/felicia-assenza-9b0516113/"
+      }
+    },
+    "blog_review_doctor_jcMQMT": {
+      "type": "blog-review-doctor",
+      "settings": {
+        "blog_author_name": "felicia",
+        "blog_dr_name": "Dr. Felicia",
+        "review_dr_page": "dr-felicia"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "author_section_L9iHwd",
+    "blog_review_doctor_jcMQMT"
+  ]
+}

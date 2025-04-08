@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "author_section_mDmfmG": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_RGKLTt": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Dr. Surangama Lehri is an experienced medical writer and editor with a background in dentistry and medical sciences. She holds a Master’s in Dental Surgery (MDS) in Oral Medicine and Radiology and has dedicated her career to scientific writing, medical communication, and research. With over two years of experience in the healthcare industry, she has contributed to high-impact research papers, clinical manuscripts, and regulatory documents for pharmaceutical and medical device companies.<br><br>Her expertise lies in translating complex medical and scientific concepts into clear, engaging, and impactful content. She specializes in manuscript writing, scientific editing, slide deck preparation, and reviewing clinical data, ensuring accuracy and credibility in her work.<br><br>Beyond writing, Dr. Surangama is a voracious reader with a deep love for novels, often losing herself in different literary worlds. She also finds joy in experimenting in the kitchen, exploring new recipes, and perfecting her culinary skills. Whether it’s diving into a gripping book or creating something delicious, she believes that both reading and cooking are forms of storytelling—one through words, the other through flavours."
+          }
+        },
+        "text_block_xrra97": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_RGKLTt",
+        "text_block_xrra97"
+      ],
+      "settings": {
+        "author_image": "shopify://shop_images/Lehri.jpg",
+        "author_name": "Dr. Surangama Lehri",
+        "author_role": "Editor",
+        "author_email": "example@example.com",
+        "author_linkedin": "https://www.linkedin.com/in/dr-surangama-lehri-5a8596292/"
+      }
+    },
+    "blog_review_doctor_6Tc6am": {
+      "type": "blog-review-doctor",
+      "settings": {
+        "blog_author_name": "lehri",
+        "blog_dr_name": "Dr. Surangama Lehri",
+        "review_dr_page": "dr-surangama-lehri"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "author_section_mDmfmG",
+    "blog_review_doctor_6Tc6am"
+  ]
+}
