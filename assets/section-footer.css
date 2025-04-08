@@ -802,8 +802,13 @@ footer details[open] summary ~ * {
     padding-bottom: var(--footer-heading-margin-bottom);
   }
 
-  .footer-block__item .footer-block__heading {
+  /* .footer-block__item .footer-block__heading {
     font-size: max(calc(var(--footer-heading-font-size) - 4px), 20px);
+  } */
+  .footer-block__item .footer-block__heading {
+    font-size: 19px;
+    font-family: "Nunito";
+    letter-spacing: 1px;
   }
 
   .footer-block__mobile .footer-block__heading:before,
