@@ -83,14 +83,12 @@ span.text.header__active-menu-item {
 }
 .site-nav-product .card-information .button {
   box-shadow: 0 0 8px #0000004d;
-  padding-left: 15px;
-  padding-right: 15px;
   margin: auto;
   background: #086b92;
   color: #fff;
   border: none;
+  padding: 10px;
 }
-
 .site-nav-product .card-product .card-media {
   width: 120px;
   height: 160px;
