@@ -3677,6 +3677,7 @@
                     },
                     complete: function () {
                         $body.find('[data-cart-count]').text(cart.item_count);
+                       console.log("3680", cart.item_count);
                         if (cart.item_count >= 100){
                           console.log("3680");
                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
