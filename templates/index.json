@@ -924,7 +924,7 @@
         "mg_bottom_view": 30,
         "enable_border_view_all": true,
         "link_view_all": "shopify://collections",
-        "color_view_all": "#FFFFFF",
+        "color_view_all": "#ffffff",
         "icon_view_all": "",
         "color_view_all_icon": "rgba(0,0,0,0)",
         "view_all_icon_side": "left",
@@ -1028,6 +1028,7 @@
         "text_VBnFYH"
       ],
       "settings": {
+        "id": "",
         "container": "fullwidth",
         "padding_full_width": 0,
         "enable_border_top": false,
@@ -2002,7 +2003,7 @@
             "heading_size": 30,
             "heading_size_mb": 30,
             "heading_line_height": 1,
-            "heading_color": "#000"
+            "heading_color": "#000000"
           }
         }
       },
@@ -2010,6 +2011,7 @@
         "heading_6kiENX"
       ],
       "settings": {
+        "id": "instafram__video_title",
         "container": "container",
         "padding_full_width": 0,
         "enable_border_top": false,
@@ -2017,7 +2019,7 @@
         "color_border_bottom": "#e8e8e8",
         "enable_minus_mg_top": false,
         "minus_spacing_top": -100,
-        "rich_text_bg": "#fff",
+        "rich_text_bg": "#ffffff",
         "rich_text_bg_gradient": "",
         "enable_column": false,
         "content_align": "center",
