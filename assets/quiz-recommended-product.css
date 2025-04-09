@@ -1,4 +1,7 @@
-.quiz-recommended-product .card-media > img,
+.quiz-recommended-product .card-media > img {
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+}
 .quiz-recommended-product
   .card-product:hover
   .card-media.media--hover-effect
