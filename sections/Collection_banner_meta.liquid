@@ -554,19 +554,21 @@
                                                     {{ mobile_image | image_url: width: 750 | image_tag: loading: 'lazy',class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </a>
-                                            {%- else -%}
+                                           
                                                 {%- if image != blank -%}
                                                     <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image.aspect_ratio | times: 200 | append: '%' }}{% else %}{{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ image.alt | default: shop.name | escape }}">
                                                     {%- assign height_mb = image.width | divided_by: image.aspect_ratio | round -%}
                                                     {{ image | image_url: width: 750 | image_tag: loading: 'lazy', class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     </a>
+                                                   {% comment %}
                                                 {%- else -%}
                                                     <a class="image image-mobile" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
                                                         <div class="placeholder" style="--height_placeholder: 570px;">
                                                             {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                                                         </div>
                                                     </a>
+                                                  {% endcomment %}
                                                 {%- endif -%}
                                             {%- endif -%}
                                             {%- if video_link != blank -%}
