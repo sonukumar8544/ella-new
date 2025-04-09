@@ -81,9 +81,11 @@ div.quiz-recommended-product .bundle_grid_list .productbadgenew {
   border-top-left-radius: 13px;
 }
 div.quiz-recommended-product img.cstm_grid_list {
-  margin: 5px auto auto auto;
-  width: 70%;
+  margin: 0px auto auto;
+  width: auto;
   height: auto;
+  padding: 0px;
+  border-radius: 15px;
 }
 .backtoStart:hover {
   color: #000000ad;
