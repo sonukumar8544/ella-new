@@ -45,7 +45,7 @@
 <section class="faq-slider-wrapper">
   <div class="section-inner">
     <h2>{{ section.settings.section_heading }}</h2>
-    <p class="subtitle">{{ section.settings.section_subtitle }}</p>
+    <p class="subtitle">{{ product.metafields.custom.we_product_scientifically_backed_subtitle }}</p>
     <div class="faq-slider">
       {% for block in product.metafields.custom.we_product_scientifically_backed.value %}
         {% assign parts = block | split: '|' %}
@@ -102,6 +102,7 @@
     line-height: 1.6;
     color: #36454F;
     font-family: 'Lato', sans-serif;
+    font-weight: 500;
   }
 
   .faq-slide a {
