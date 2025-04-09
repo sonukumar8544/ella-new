@@ -1012,6 +1012,9 @@
 }
 
 @media (max-width: 500px) {
+  .content.spotlight-inner {
+    min-width: 250px;
+  }
   .content.spotlight-inner.text-left {
     left: 40%;
   }
