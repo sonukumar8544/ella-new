@@ -1015,4 +1015,8 @@
   .content.spotlight-inner.text-left {
     left: 40%;
   }
+  .content.spotlight-inner.text-right {
+    right: -34%;
+    left: auto;
+  }
 }
