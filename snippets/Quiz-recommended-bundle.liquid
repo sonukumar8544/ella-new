@@ -402,7 +402,6 @@
     data-bundle-id="{{ current_variant.id }}" data-bundle-title="{{ product.title }}"
   {% endif %}
 >
-  {% if product.metafields.custom.product_badge_code.value != blank %}
     <div class="productbadgenew">
     <div class="card{% if product_card_product.media[0].media_type == 'video' %} has-first-video{% endif %}">
         <div class="card-product{% if product_card_product.featured_media == nil %} card--text-only card--soft{% endif %}">
@@ -560,8 +559,7 @@
         </div>
     </div>
     </div>
-   
-  {% endif %}
+  
   <a href="{{ product.url }}" title="" class="details-link1">
     {% if product.metafields.custom.product_badge_code.value != blank %}
     {% endif %}
