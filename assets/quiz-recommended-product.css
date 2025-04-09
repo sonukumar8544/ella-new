@@ -1,3 +1,6 @@
+.halo-block-header .title {
+  margin-bottom: 15px;
+}
 .quiz-recommended-product .quiz_progress-bar {
   display: none !important;
 }
@@ -184,6 +187,9 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   div.quiz-recommended-product .price-item.price-item--regular,
   div.quiz-recommended-product .price-item {
     font-size: 15px !important;
+  }
+  .halo-block-header .title .text {
+    width: 100%;
   }
   div.quiz-recommended-product .halo-block-header .text h1,
   div.quiz-recommended-product .halo-block-header .text h2,
