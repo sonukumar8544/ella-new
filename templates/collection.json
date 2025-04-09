@@ -293,7 +293,7 @@
           "type": "specialImg",
           "settings": {
             "row_reverse": true,
-            "image": "shopify://shop_images/Build_your_custom_stack-1.png",
+            "image": "shopify://shop_images/Build_your_custom_stack-1_1.png",
             "width_banner": 60,
             "image_behavior": "none",
             "display_countdown": true,
@@ -714,6 +714,7 @@
       "disabled": true,
       "custom_css": [],
       "settings": {
+        "cstm_id": "",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
@@ -1268,6 +1269,7 @@
       ],
       "disabled": true,
       "settings": {
+        "cstm_id": "",
         "container": "fullwidth",
         "padding_full_width": 20,
         "disable_padding_content": false,
