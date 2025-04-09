@@ -31,7 +31,7 @@
             "font_weight_sub_title": "700",
             "sub_title_position": "sub_title_above",
             "color_sub_title": "#232323",
-            "color_sub_title_mb": "#ffffff",
+            "color_sub_title_mb": "#374650",
             "heading": "<p>{{ collection.metafields.custom.filter_collection_title.value }}</p>",
             "letter_spacing_heading": "",
             "enable_style_italic": false,
@@ -520,44 +520,6 @@
         "mg_bottom_tablet": 40,
         "mg_bottom_mobile": 25,
         "liquid_css": ""
-      }
-    },
-     "rich_text_MT6wG9": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_6kiENX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Voices of Satisfaction ",
-            "heading_size": 40,
-            "heading_size_mb": 28,
-            "heading_line_height": 1,
-            "heading_color": "#374650"
-          }
-        }
-      },
-      "block_order": [
-        "heading_6kiENX"
-      ],
-      "settings": {
-        "id": "instafram__video_title",
-        "container": "container",
-        "padding_full_width": 0,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#e8e8e8",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": -100,
-        "rich_text_bg": "#ffffff",
-        "rich_text_bg_gradient": "",
-        "enable_column": false,
-        "content_align": "center",
-        "mg_top_desktop": 30,
-        "mg_top_tablet": 30,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
       }
     },
     "1743675461e354d576": {
@@ -1391,7 +1353,6 @@
     "collection_filter_2_fMXGJ3",
     "product-grid",
     "1649236457c43290d7",
-     "rich_text_MT6wG9",
     "1743675461e354d576",
     "16378289883380f691",
     "collapsible_content_F3qXCN",
