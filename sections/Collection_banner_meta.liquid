@@ -251,6 +251,12 @@
                 }
             }
         {% endif %}
+
+      @media (min-width: 767px) and (max-width: 1024px){
+          .content-box--absolute {
+              top: 28%;
+          }
+      }
 /* css customization */
       {{section.settings.liquid_css}}
        #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading p{
