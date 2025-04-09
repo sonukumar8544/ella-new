@@ -83,7 +83,6 @@
         <div class="card-product{% if product_card_product.featured_media == nil %} card--text-only card--soft{% endif %}">
             <div class="card-product__wrapper">
                 {%- if settings.show_badge -%}
-                  <!--product-badg  -->
                     {% render 'product-badge',
                         product: product_card_product,
                         class: 'card__badge',
@@ -104,7 +103,6 @@
                         {% endif %}
                     {% endif %}
                 >
-                  <!-- image-product-card -->
                     {% render 'image-product-card',
                         product_card_product: product_card_product,
                         variant_img: variant_img,
@@ -130,7 +128,7 @@
                                 </div>
                             {%- endif -%}
                         {%- endunless -%}
-                        
+                        {%- if show_quick_view -%}
                             <div class="card-product__group-item card-quickview card-quickviewIcon{% if settings.show_quick_view_mb %} show-mb{% endif %}{% if settings.product_quick_view_type == 'default' %} default{% endif %}">
                                 <button type="button" title="{{ 'products.product.quick_view' | t }}" class="quickview-icon" data-product-id="{{ product_card_product.id }}" data-open-quick-view-popup data-product-handle="{{ product_card_product.handle }}">
                                     <span class="visually-hidden">{{ 'products.product.quick_view' | t }}</span>
@@ -140,7 +138,7 @@
                                     {% render 'icon-eyes' %}
                                 </button>
                             </div>
-                     
+                        {%- endif -%}
                         {%- if show_compare -%}
                             {% render 'product-compare'.
                                 product: product_card_product,
