@@ -3,6 +3,9 @@ a.menu-lv-1__action.header__menu-item.list-menu__item.link.link--text.focus-inse
   font-size: 16px !important;
   letter-spacing: 1.2px;
 }
+.menu-lv-1__action .text {
+  text-transform: uppercase;
+}
 
 .announcement-bar__message.text-center p {
   letter-spacing: 1.1px;
