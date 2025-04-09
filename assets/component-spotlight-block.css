@@ -642,6 +642,9 @@
 }
 
 @media (max-width: 992px) {
+  .spotlight-block .halo-row .halo-item {
+    width: 100%;
+  }
   .content.spotlight-inner.text-left {
     left: 35%;
   }
@@ -688,9 +691,9 @@
 }
 
 @media (max-width: 767px) {
-  .spotlight-block .halo-row .halo-item {
+  /* .spotlight-block .halo-row .halo-item {
     width: 100%;
-  }
+  } */
 
   .spotlight-block .halo-row .halo-item + .halo-item:not(.slider__slide),
   .spotlight-block .halo-row .halo-item + .halo-item:not(.slick-slide) {
