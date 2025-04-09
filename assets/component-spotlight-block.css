@@ -1023,11 +1023,11 @@
     margin-top: 10px;
   }
   .content.spotlight-inner.text-left {
-    left: 40%;
+    left: 50%;
   }
   .content.spotlight-inner.text-right {
-    right: -34%;
-    left: auto;
+    right: auto;
+    left: 50%;
   }
   #two-row-spotlight .spotlight-item .img-box a {
     height: 250px;
