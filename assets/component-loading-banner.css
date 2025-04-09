@@ -181,7 +181,7 @@
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 2px;
-  width: 40px;
+  width: 0px;
   display: inline-block;
   background-color: var(--border-color-title-style);
 }
