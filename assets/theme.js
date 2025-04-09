@@ -3676,7 +3676,7 @@
                         halo.showWarning($.parseJSON(xhr.responseText).description);
                     },
                     complete: function () {
-                      // cart total count function
+                      // cart total count function amar
                         Shopify.getCart((cart_update) => {
                         $body.find('[data-cart-count]').text(cart_update.item_count);
                        console.log("3680", cart_update.item_count);
