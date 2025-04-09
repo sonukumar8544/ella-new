@@ -197,7 +197,7 @@
             #halo-image-banner-{{ section.id }} .item--specialImg .collection-countdown .clock-item .num {font-size: var(--num_font_size_mb)}
             #halo-image-banner-{{ section.id }} .item--specialImg .collection-countdown .clock-item .text {font-size: var(--text_time_font_size_mb)}
             .before-line:before {bottom: 5px;}
-            #collection_custom_banner .item--largeImg .banner-sub-title{text-align: center !important;}
+            #collection_custom_banner .item--largeImg .banner-sub-title{text-align: center !important; margin-top:0px;}
             .content-box--absolute {padding: 17px 16px 10px; }
             #collection_custom_banner .banner-item .content-box { text-align: center;        left: calc((50%)) !important;        top: 31%;        transform: translate(-50%, -50%);    }
       
@@ -237,6 +237,9 @@
             #halo-image-banner-{{ section.id }} .item--largeImg:not('.animate--fade-in') .content-box--absolute {transform: translateY(-50%)}
             #halo-image-banner-{{ section.id }} .item--largeImg .banner-text br {display: none}
             #halo-image-banner-{{ section.id }} .content-box--absolute.content_width_custom .banner-button{width: 210px;max-width: 210px;}
+        #collection_custom_banner .banner-item .content-box{
+                  top: 29%;
+        }
         }
         {%- if section.settings.style_bg == 'for_img' -%}
             @media (min-width: 767px) and (max-width: 930px){
@@ -260,11 +263,7 @@
             }
         {% endif %}
 
-      @media (max-width: 1024px){
-       
-       @media (max-width: 768px){
-         
-      }
+    
 /* css customization */
       {{section.settings.liquid_css}}
        #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading p{
