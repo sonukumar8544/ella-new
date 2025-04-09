@@ -3867,6 +3867,7 @@
                             }
                             if (cart.item_count >= 100){
                                 $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
+                              console.log("3870", window.cartStrings.item_99);
                             }
                         }
                         
