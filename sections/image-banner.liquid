@@ -268,8 +268,17 @@ border: 1px solid;
 }
 }
 @media(max-width: 768px){
-#halo-image-banner-{{ section.id }} .special__banner_img {
+/* #halo-image-banner-{{ section.id }} .special__banner_img {
 padding: 30px 5px;
+} */
+ #halo-image-banner-{{ section.id }} .special__banner_img {
+        min-width: 100% !important;
+        left: 50% !important;
+        background: #211d1d6b;
+        padding: 5px;
+        border-radius: 6px;
+        height: 100%;
+    }
 }
 
     </style>
