@@ -42,9 +42,9 @@
           {% endfor %}
 
           {% if has_usa_bundle and currency == 'USD' or has_usa_bundle and currency == 'DKK' or has_usa_bundle and currency == 'AUD' or has_usa_bundle and currency == 'CZK' or has_usa_bundle and currency == 'EUR' or has_usa_bundle and currency == 'GBP' %}
-            {% render 'Quiz-recommended-bundle', product: product %}
+            {% render 'Quiz-recommended-bundle', product_card_product: product %}
           {% elsif has_ca_bundle and currency == 'CAD' %}
-            {% render 'Quiz-recommended-bundle', product: product %}
+            {% render 'Quiz-recommended-bundle', product_card_product: product %}
           {% endif %}
         {% endif %}
       {% endfor %}
