@@ -329,6 +329,11 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   .halo-block-header {
     margin-bottom: 12px !important;
   }
-  .Quiz_container .quiz-items .name {
-  }
+}
+
+div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }
