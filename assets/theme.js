@@ -3679,7 +3679,7 @@
                       // cart total count function amar
                         Shopify.getCart((cart_update) => {
                         $body.find('[data-cart-count]').text(cart_update.item_count);
-                       console.log("3680", cart_update.item_count);
+                       // console.log("3680", cart_update.item_count);
                         if (cart_update.item_count >= 100){
                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                         }
