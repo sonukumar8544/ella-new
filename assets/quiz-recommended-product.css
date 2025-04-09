@@ -205,7 +205,7 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   div.quiz-recommended-product span.price-item.price-item--sale,
   div.quiz-recommended-product .price-item.price-item--regular,
   div.quiz-recommended-product .price-item .price-item {
-    font-size: 13px;
+    font-size: 15px;
   }
   .final_result
     button.quiz_bundle_prodct.product-form__submit.button.button--primary {
@@ -255,7 +255,13 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
     min-width: 80% !important;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 660px) {
+  div.quiz-recommended-product span.price-item.price-item--sale,
+  div.quiz-recommended-product .price-item.price-item--regular,
+  div.quiz-recommended-product .price-item .price-item {
+    font-size: 13px;
+  }
+
   .final_result {
     margin-top: 40px;
   }
