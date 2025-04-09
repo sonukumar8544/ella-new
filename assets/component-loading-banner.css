@@ -1075,3 +1075,9 @@
     width: 27.22% !important;
   }
 }
+@media (max-width: 500px) {
+  a.banner-button.button {
+    width: auto !important;
+    min-width: initial;
+  }
+}
