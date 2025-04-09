@@ -599,6 +599,44 @@
         "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
       }
     },
+   "rich_text_MT6wG9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6kiENX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Voices of Satisfaction ",
+            "heading_size": 40,
+            "heading_size_mb": 28,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6kiENX"
+      ],
+      "settings": {
+        "id": "instafram__video_title",
+        "container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#ffffff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 30,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
     "1743670996c8046cda": {
       "type": "apps",
       "blocks": {
@@ -611,10 +649,11 @@
         "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
       ],
       "custom_css": [
-        ".easyvideo_gallery h2 {display: none;}"
+        ".splide__slide .nm-ev-center img.add_splide {max-height: inherit;}",
+        ".easyvideo_section {margin-bottom: 10px !important;}"
       ],
       "settings": {
-        "include_margins": false
+        "include_margins": true
       }
     },
     "product_ingrediants_section_NLKKBM": {
@@ -1197,34 +1236,34 @@
         "subheading": "Everything you need to know about the product and billing."
       }
     },
-    "spotlight_block_qnYcNH": {
+  "spotlight_block_qnYcNH": {
       "type": "spotlight-block",
       "blocks": {
         "image_kAiYHF": {
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/Content_2_1.png",
-            "title_align": "center",
-            "enable_absolute": false,
+            "image": "shopify://shop_images/Build_your_custom_stack-2_1_4d0bd716-221a-4834-a17a-134d916d3aea.png",
+            "title_align": "left",
+            "enable_absolute": true,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
             "align_items_spacing_top_bottom_position_mb": 0,
-            "bg_color_content": "",
+            "bg_color_content": "rgba(0,0,0,0)",
             "align_items_spacing_top": 0,
             "align_items_spacing_bottom": 0,
-            "align_items_spacing_lr": 0,
+            "align_items_spacing_lr": 20,
             "sub_title": "",
             "border_sub_title": false,
             "color_sub_title": "#232323",
             "fontsize_sub_title": 20,
-            "font_weight_sub_title": "500",
-            "mg_bottom_sub_title": 10,
-            "title": "",
-            "color_title": "#232323",
+            "font_weight_sub_title": "800",
+            "mg_bottom_sub_title": 0,
+            "title": "15% Off 3+ Products",
+            "color_title": "#ffffff",
             "fontsize_title": 22,
-            "fontsize_title_mb": 18,
-            "font_weight_title": "500",
+            "fontsize_title_mb": 22,
+            "font_weight_title": "700",
             "enable_style_italic": false,
             "border_title": "border_hover",
             "border_color_title": "",
@@ -1234,51 +1273,51 @@
             "mg_top_des": 10,
             "enable_des_hover": false,
             "button_style": "button_1",
-            "button": "",
+            "button": "Shop Now",
             "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
-            "bg_opacity_button": 1,
+            "bg_opacity_button": 0.2,
             "enable_button_custom_border": false,
             "enable_button_hover": false,
             "btn_text_transform": "uppercase",
             "btn_icon": "",
-            "mg_top_btn": 42,
-            "color_button": "#086b92",
-            "border_color_button": "#086b92",
-            "bg_color_button": "rgba(0,0,0,0)",
+            "mg_top_btn": 29,
+            "color_button": "#ffffff",
+            "border_color_button": "#ffffff",
+            "bg_color_button": "#086b92",
             "bg_color_button_gradient": "",
-            "color_button_hover": "#086b92",
-            "border_color_button_hover": "#086b92",
-            "bg_color_button_hover": "rgba(0,0,0,0)",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#ffffff",
+            "bg_color_button_hover": "#086b92",
             "bg_color_button_gradient_hover": ""
           }
         },
-        "image_BTcNnV": {
+        "image_qF3nwK": {
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/Content_3_2.png",
-            "title_align": "center",
-            "enable_absolute": false,
+            "image": "shopify://shop_images/Build_your_custom_stack-1_1.png",
+            "title_align": "right",
+            "enable_absolute": true,
             "align_items": "center",
-            "align_items_spacing_top_bottom_position": 0,
+            "align_items_spacing_top_bottom_position": 25,
             "align_items_spacing_top_bottom_position_mb": 0,
             "bg_color_content": "",
             "align_items_spacing_top": 0,
             "align_items_spacing_bottom": 0,
-            "align_items_spacing_lr": 10,
+            "align_items_spacing_lr": 20,
             "sub_title": "",
             "border_sub_title": false,
             "color_sub_title": "#232323",
             "fontsize_sub_title": 20,
-            "font_weight_sub_title": "500",
+            "font_weight_sub_title": "800",
             "mg_bottom_sub_title": 0,
-            "title": "",
-            "color_title": "#232323",
+            "title": "Build Your Own Stack",
+            "color_title": "#ffffff",
             "fontsize_title": 22,
-            "fontsize_title_mb": 18,
-            "font_weight_title": "500",
+            "fontsize_title_mb": 22,
+            "font_weight_title": "700",
             "enable_style_italic": false,
             "border_title": "border_hover",
             "border_color_title": "",
@@ -1288,7 +1327,7 @@
             "mg_top_des": 10,
             "enable_des_hover": false,
             "button_style": "button_1",
-            "button": "",
+            "button": "Let's Begin",
             "link": "shopify://pages/wellness-quiz",
             "fontsize_btn": 16,
             "button_width": 190,
@@ -1297,27 +1336,28 @@
             "enable_button_hover": false,
             "btn_text_transform": "uppercase",
             "btn_icon": "",
-            "mg_top_btn": 42,
-            "color_button": "#086b92",
-            "border_color_button": "#086b92",
-            "bg_color_button": "rgba(0,0,0,0)",
+            "mg_top_btn": 29,
+            "color_button": "#ffffff",
+            "border_color_button": "#ffffff",
+            "bg_color_button": "#f8f8f8",
             "bg_color_button_gradient": "",
-            "color_button_hover": "#086b92",
-            "border_color_button_hover": "#086b92",
-            "bg_color_button_hover": "rgba(0,0,0,0)",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#ffffff",
+            "bg_color_button_hover": "#086b92",
             "bg_color_button_gradient_hover": ""
           }
         }
       },
       "block_order": [
         "image_kAiYHF",
-        "image_BTcNnV"
+        "image_qF3nwK"
       ],
       "custom_css": [
-        ".halo-row {padding-top: 0px;}"
+        "div#spotlight-template--24261275058472__spotlight_block_qnYcNH .halo-row {padding-top: 0px;}"
       ],
       "settings": {
-        "container": "fullwidth",
+        "cstm_id": "two-row-spotlight",
+        "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
         "mg_minus_desktop": 0,
@@ -1326,16 +1366,16 @@
         "column": "2",
         "column_mb": "1",
         "center_mode": false,
-        "item_distance": 0,
-        "item_radius": 0,
-        "enable_arrows": true,
+        "item_distance": 15,
+        "item_radius": 18,
+        "enable_arrows": false,
         "enable_arrows_mb": false,
         "position_horizontal_slick_arrow": "0",
         "enable_dots": false,
         "enable_dots_mb": false,
         "display_border_bottom": false,
         "border_color": "#e3e3e3",
-        "spotlight_bg": "#f2f3f9",
+        "spotlight_bg": "#ffffff",
         "spotlight_bg_gradient": "",
         "enable_custom_position_title": false,
         "spotlight_block_title": "",
@@ -1385,12 +1425,12 @@
         "shadow_spread": 0,
         "shadow_color": "transparent",
         "shadow_inset": "no",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
+        "mg_top_desktop": 65,
+        "mg_top_tablet": 65,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 55,
+        "mg_bottom_tablet": 65,
+        "mg_bottom_mobile": 25
       }
     },
     "featured_blog_7CQrDa": {
@@ -1476,7 +1516,8 @@
     "main",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
-    "1743670996c8046cda",
+   "rich_text_MT6wG9",
+   "1743670996c8046cda",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "product-recommendations",

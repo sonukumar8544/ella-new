@@ -119,6 +119,13 @@
   text-transform: var(--text-transform-button-style);
   font-size: var(--font-size-button-style);
   min-width: var(--button-width-style);
+  background: #086b92;
+}
+
+
+.spotlight-inner .spotlight-button.custom-button-style:hover {
+   background: white !important;
+  color: #086b92 !important;
 }
 
 .spotlight-inner .spotlight-button.custom-button-style:hover {
