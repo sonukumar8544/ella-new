@@ -43,7 +43,8 @@
 
 .halo-productBadges .badge.custom-badge{
     color: var(--custom-badge-color);
-    background-color: var(--custom-badge-bg);
+    /* background-color: var(--custom-badge-bg); */
+    background-color: #086b92;;
 }
 
 .halo-productBadges .badge.bundle-badge{

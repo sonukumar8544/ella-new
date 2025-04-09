@@ -10,16 +10,13 @@
     </div>
 {%- else -%}
    <div class="new-title-ul">
-    <li>Cellular Health</li>
-    <li>Metabolism</li>
-    <li>Strong Bones</li>
-    <li> Skin Vitality</li>
-    <li>Cardiovascular Support</li>
-    <li>Oxidative Support</li>
+    {% for fielddd in product.metafields.custom.we_product_tag.value %}
+        <li>{{ fielddd }}</li>
+      {% endfor %}
    </div>
     <h1 class="productView-title" style="--color-title: {{ color_title }};--fontsize-text: {{ fontsize_text | append: 'px' }};--fontsize-mb-text: {{ fontsize_text_mb | append: 'px' }};"><span>{{ product.title | escape }}</span></h1>
-    <p class="product-page-subtitle">Pure DeltaGold Annatto Tocotrienols | Most Potent Vitamin E | Master Antioxidant</p>
-    <p class="product-page-one-liner">Support your overall wellness with Eannatto DeltaGold™, a tocotrienol-rich Vitamin E supplement.</p>
+    <p class="product-page-subtitle">{{ product.metafields.Custom.we_product_subtitle_text }}</p>
+    <p class="product-page-one-liner">{{ product.metafields.custom.we_product_onne_liner_text }}</p>
 {%- endif -%}
 
 

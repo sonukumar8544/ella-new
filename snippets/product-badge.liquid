@@ -155,3 +155,11 @@
         {%- endif -%}
     </div>
 {%- endif -%}
+
+
+<div class="halo-productBadges custom-badge-product">
+    {% for block in product.metafields.custom.we_product_card_badge.value %}
+        {% assign parts = block | split: '|' %}
+        <span class="badge custom-badge">{{ parts[0] | strip }}</span>
+  {% endfor %}
+</div>

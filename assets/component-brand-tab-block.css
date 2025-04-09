@@ -24,12 +24,16 @@
 
 .brand-tab-block .wrapper-item {
     padding: var(--items-spacing-tb-style) var(--items-spacing-lr-style);
-    border: 1px solid var(--items-border-color-style);
-    border-radius: var(--items-border-radius-style);
+    /* border: 1px solid var(--items-border-color-style); */
+    border: 1px solid #086b92;;
+    /* border-radius: var(--items-border-radius-style); */
     margin-bottom: calc(var(--items-grid-gap-style)*2);
     display: block;
-    background-color: var(--items-bg-color-style);
+    /* background-color: var(--items-bg-color-style); */
     transition: var(--anchor-transition);
+    background: #086b92;
+    color: white;
+    border-radius: 6px;
 }
 
 .brand-tab-block .wrapper-image a,
@@ -152,7 +156,12 @@
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  color: white;
 }
+
+.brand-tab-block .wrapper-image a .title:hover {
+    color: #086b92;
+  }
 
 /* Brand Title Tab Style 2 */
 .brand__custom--tab .tab-title.title_style_02 {
@@ -266,7 +275,8 @@
     }
 
     .brand-tab-block .wrapper-item:hover {
-        box-shadow: 5px 9px 20px 0px rgba(0, 0, 0, 0.15);
+        background-color: transparent;
+        /* box-shadow: 5px 9px 20px 0px rgba(0, 0, 0, 0.15); */
     }
 
     .brand-tab-block .wrapper-item:hover .wrapper-content .btb-title {
