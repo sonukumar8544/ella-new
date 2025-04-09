@@ -227,46 +227,50 @@
 
       {{section.settings.liquid_css}}
 
-      @media(min-width: 1025px){
+@media(min-width: 1025px){
 #halo-image-banner-{{ section.id }} .special__banner_img {
-    min-width: 50% !important;
-    left: 70% !important;
-    background: #211d1d6b;
-    padding: 18px;
-    border-radius: 6px;
+min-width: 50% !important;
+left: 70% !important;
+background: #211d1d6b;
+padding: 18px;
+border-radius: 6px;
 }
 #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1.3;
+line-height: 1.3;
 }
-      }
-          @media(max-width: 600px){
+}
+@media(max-width: 600px){
 #halo-image-banner-{{ section.id }} .special__banner_img {
-    min-width: 100% !important;
-    left: 50% !important;
-    background: #211d1d6b;
-    padding: 5px;
-    border-radius: 6px;
+min-width: 100% !important;
+left: 50% !important;
+background: #211d1d6b;
+padding: 5px;
+border-radius: 6px;
 }
 #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1;
+line-height: 1;
 }
-            #halo-image-banner-{{ section.id }} .special__banner_img .banner-button {
-    color: var(--button_color);
-    background: var(--button_bg);
-    background-origin: border-box;
-    border-color: var(--button_border);
-    width: 205px;
-    max-width: 205px;
-    font-size: 11px;
+#halo-image-banner-{{ section.id }} .special__banner_img .banner-button {
+color: var(--button_color);
+background: var(--button_bg);
+background-origin: border-box;
+border-color: var(--button_border);
+width: 205px;
+max-width: 205px;
+font-size: 11px;
 }
-            #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1;
-    font-size: 17px;
+#halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
+line-height: 1;
+font-size: 17px;
 }
-              #halo-image-banner-{{ section.id }} .halo-banner-wrapper .flex-box__banner .content-box{
-              border: 1px solid;
-            }
-      }
+#halo-image-banner-{{ section.id }} .halo-banner-wrapper .flex-box__banner .content-box{
+border: 1px solid;
+}
+}
+@media(min-width: 1025px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+padding: 30px 5px;
+}
 
     </style>
     {%- if section.settings.id_section != blank -%}
