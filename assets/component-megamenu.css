@@ -81,6 +81,11 @@ span.text.header__active-menu-item {
   border-radius: 0;
   padding: 0;
 }
+.site-nav-product .card-information .button:hover {
+  background: #ffffff;
+  color: #086b92;
+  border: 1px solid;
+}
 .site-nav-product .card-information .button {
   box-shadow: 0 0 8px #0000004d;
   margin: auto;
