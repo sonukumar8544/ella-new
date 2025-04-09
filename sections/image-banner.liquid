@@ -226,7 +226,11 @@
             }
         {% endif %}
 
-      {{section.settings.liquid_css}}
+ @media (min-width: 600px) and (max-width: 1024px) {
+ #halo-image-banner-{{ section.id }} .content-box--absolute{
+  max-width: 50%;
+}
+ }
 
 @media(min-width: 1025px){
 #halo-image-banner-{{ section.id }} .special__banner_img {
