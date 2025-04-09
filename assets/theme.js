@@ -3676,20 +3676,17 @@
                         halo.showWarning($.parseJSON(xhr.responseText).description);
                     },
                     complete: function () {
+                      // cart total count function
                         Shopify.getCart((cart_update) => {
                         $body.find('[data-cart-count]').text(cart_update.item_count);
                        console.log("3680", cart_update.item_count);
-                      
                         if (cart_update.item_count >= 100){
-                        
                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                         }
                         if (cart_update.item_count == 1){
                             $body.find('[data-cart-text]').text(window.cartStrings.item);
-                           console.log("3686", window.cartStrings.item);
                         } else {
                             $body.find('[data-cart-text]').text(window.cartStrings.items);
-                          console.log("3689", window.cartStrings.item);
                         }
                         }),
                         halo.productCollectionCartSlider();
