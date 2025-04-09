@@ -11,6 +11,9 @@ details-modal.header__iconItem.header__search details {
   margin-bottom: auto;
   border: none;
 }
+details[open] .icon {
+  transform: rotate(-90deg) !important;
+}
 
 .search-modal__content {
   display: flex;
