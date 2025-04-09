@@ -657,7 +657,7 @@
 
 @media (max-width: 768px) {
   .content.spotlight-inner.text-left {
-    left: 40%;
+    left: 30%;
   }
   .content.spotlight-inner.text-right {
     right: -21%;
@@ -1008,5 +1008,11 @@
 
   .spotlight-block .layout--special .slick-arrow.slick-prev {
     left: -110px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .content.spotlight-inner.text-left {
+    left: 40%;
   }
 }
