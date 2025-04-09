@@ -280,9 +280,7 @@
                 --section_margin: {{ list_gap }}; --mg_top_desktop: {{ mg_top_desktop | append: 'px' }};--mg_top_tablet:{{ mg_top_tablet | append: 'px' }};--mg_top_mobile: {{ mg_top_mobile | append: 'px' }};--mg_bottom_desktop:{{ mg_bottom_desktop | append: 'px' }};--mg_bottom_tablet:{{ mg_bottom_tablet | append: 'px' }};--mg_bottom_mobile:{{ mg_bottom_mobile | append: 'px' }};--padding_full_width:{{ padding_full_width | append: 'px' }};
                 {%- if section.settings.bg_image != blank -%}
                     background: url({{ section.settings.bg_image | img_url: '1920x' }});background-repeat: no-repeat;background-size: cover;
-                {%- else -%}
-                --bg-color-style: {% if section.settings.bg_color_gradient != blank %}{{ section.settings.bg_color_gradient }}{% else %}{{ section.settings.bg_color }}{% endif %}{%- endif -%}
-            " data-loader-script="{{ 'halo.image-banner-slide.js' | asset_url }}" allow-transparent-header
+              {% endif %}
         >
             <div class="{% if container == '1170' %}container-1170{% elsif section.settings.container == '1470' %}container-1470{% elsif section.settings.container == '1570' %}container-1570{% elsif container == '1770' %}container-1770{% elsif container == '1920' %}container-1920{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
                 {%- if section.settings.image_banner_title != blank or section.settings.image_banner_des != blank -%}
