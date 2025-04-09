@@ -643,7 +643,7 @@
 
 @media (max-width: 992px) {
   .content.spotlight-inner.text-left {
-    left: 50%;
+    left: 35%;
   }
   .spotlight-block .scroll-snap-mobile {
     align-items: flex-start;
@@ -656,6 +656,13 @@
 }
 
 @media (max-width: 768px) {
+  .content.spotlight-inner.text-left {
+    left: 30%;
+  }
+  .content.spotlight-inner.text-right {
+    right: -21%;
+    left: auto;
+  }
   .spotlight-block .content_absolute .content.align-items--top {
     top: var(--align-items-postion-content-mb-style);
   }
