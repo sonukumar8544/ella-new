@@ -1015,6 +1015,13 @@
   .content.spotlight-inner {
     min-width: 250px;
   }
+  .spotlight-inner h3 span {
+    display: inline-block;
+    font-size: 20px;
+  }
+  .spotlight-inner .spotlight-button.custom-button-style {
+    margin-top: 10px;
+  }
   .content.spotlight-inner.text-left {
     left: 40%;
   }
