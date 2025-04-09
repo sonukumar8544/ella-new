@@ -697,7 +697,7 @@ margin-top: 20px;
                                                     {%- if section.settings.icon_view_all -%}
                                                     <span class="icon-svg"{% if section.settings.view_all_icon_side =='right' %} style="display: none;"{% endif %}>{{ section.settings.icon_view_all }}</span>
                                                     {%- endif -%}
-                                                 dhhdhdh   {{ section.settings.view_all }}
+                                                    {{ section.settings.view_all }}
                                                     {%- if section.settings.icon_view_all -%}
                                                         <span class="icon-svg" {% if section.settings.view_all_icon_side =='left' %} style="display: none;" {% endif %}>{{ section.settings.icon_view_all }}</span>
                                                     {%- endif -%}
@@ -716,7 +716,7 @@ margin-top: 20px;
                                         {% if settings.banner_animation == 'effect_fade_up' %}
                                         <div class="scroll-trigger animate--slide-in">
                                         {% endif %}
-                                            <a class="view_all{% if section.settings.enable_border_view_all %} view_all--border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }};--font-size-view-all-style: {{ section.settings.view_all_fs | append: 'px' }}">
+                                            <a class="cstn__btn button button--primary an- view_all{% if section.settings.enable_border_view_all %} view_all--border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }};--font-size-view-all-style: {{ section.settings.view_all_fs | append: 'px' }}">
                                                 {%- if section.settings.icon_view_all -%}
                                                 <span class="icon-svg"{% if section.settings.view_all_icon_side =='right' %} style="display: none;"{% endif %}>{{ section.settings.icon_view_all }}</span>
                                                 {%- endif -%}
