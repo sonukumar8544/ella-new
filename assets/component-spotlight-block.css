@@ -225,9 +225,16 @@
     font-size: 0;
     z-index: 1;
 } */
+
+.content.spotlight-inner.text-left {
+  left: 25%;
+}
+.content.spotlight-inner.text-right {
+  right: -21%;
+}
 .content_absolute .content {
   position: absolute;
-  width: 100% !important;
+  width: 50% !important;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
