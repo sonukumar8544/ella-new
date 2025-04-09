@@ -611,7 +611,7 @@ margin-top: 20px;
     top: 1px;
     transition: all .5s;
     border: none !important;
-    margin: 0;
+    margin: auto;
      margin-bottom:15px !important;
 }
 .section-block-{{ section.id }} .csrt__image_round a.adaptive_height.slider_layout_3_no_round img{
@@ -622,6 +622,10 @@ margin-top: 20px;
   background: transparent !important;
 }
    {% endif %}
+
+     #grid_bundle .csrt__image_round.slider_layout_3_no_round{
+       width:100%;
+     }
 </style>
 
 {%- if section.blocks.size > 0 -%}
