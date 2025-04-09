@@ -15,8 +15,8 @@
         "large_img_wBDKi4": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify://shop_images/Gut_Health_Banner.png",
-            "mobile_image": "shopify://shop_images/Gut_Health_Banner_for_Mobile.png",
+            "image": "{{ collection.metafields.custom.collection_banner_image_desktop.value }}",
+            "mobile_image": "{{ collection.metafields.custom.collection_banner_image_mobile.value }}",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
@@ -1077,6 +1077,7 @@
         "instagram_VtYMTj"
       ],
       "settings": {
+        "id": "",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
