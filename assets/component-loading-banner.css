@@ -72,6 +72,7 @@
 
 .img-box--mobile .image + .image {
   display: block;
+  height: 216px;
 }
 
 .video-box {
@@ -167,7 +168,7 @@
 }
 
 .border--border_s1 .banner-heading {
-  padding: 0 0 30px 0;
+  padding: 0 0 10px 0;
 }
 
 .border--border_s1 .banner-heading:before {
@@ -181,7 +182,7 @@
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 2px;
-  width: 40px;
+  width: 0px;
   display: inline-block;
   background-color: var(--border-color-title-style);
 }
@@ -1072,5 +1073,11 @@
 
   .content-custom-image.content-box--absolute {
     width: 27.22% !important;
+  }
+}
+@media (max-width: 500px) {
+  a.banner-button.button {
+    width: auto !important;
+    min-width: initial;
   }
 }

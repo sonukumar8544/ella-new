@@ -1,3 +1,4 @@
+<!-- spotlight-block -->
 {%- if section.blocks.size > 0 -%}
     {%- assign swipe = section.settings.spotlight_block_swipe_on_mobile -%}
     {%- assign position_horizontal_slick_arrow = section.settings.position_horizontal_slick_arrow -%}
@@ -5,7 +6,7 @@
     <noscript>{{ 'component-spotlight-block.css' | asset_url | stylesheet_tag }}</noscript>
 
     <div class="spotlight-block section-block-{{section.id}}{% if section.settings.block_layout == 'slider' %} enable_slider{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="spotlight-{{section.id}}"{% if section.settings.block_layout == 'slider' %} data-loader-script="{{ 'halo.slide-spotlight.js' | asset_url }}"{% endif %}>
-        <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770 {% elsif section.settings.container == '1570'%}container-1570 {% elsif section.settings.container == '1470'%}container-1470 {% else %}{% if section.settings.container == '1200' %}layout--special{% endif %} container{% endif %}{% if section.settings.enable_custom_position_title %} enable_po_title{% endif %}">
+        <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770 {% elsif section.settings.container == '1570'%}container-1570 {% elsif section.settings.container == '1470'%}container-1470 {% else %}{% if section.settings.container == '1200' %}layout--special{% endif %} container{% endif %}{% if section.settings.enable_custom_position_title %} enable_po_title{% endif %}" id="{{ section.settings.cstm_id }}">
             {%- if section.settings.spotlight_block_title != blank -%}
                 <div class="halo-block-header text-{{ section.settings.title_align }}{% if section.settings.view_all != blank %} viewAll--{{ section.settings.view_all_align }}{% endif %}">
                     <h3 class="title{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--margin-bottom-title: {{ section.settings.margin_bottom_title | append: 'px' }}"><span class="text">{{ section.settings.spotlight_block_title }}</span></h3>
@@ -358,6 +359,11 @@
     {
         "type": "header",
         "content": "t:settings_schema.general.name"
+    },
+      {
+        "type": "text",
+        "id": "cstm_id",
+        "label": "Custom Id"
     },
     {
         "type": "select",

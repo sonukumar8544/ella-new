@@ -111,6 +111,7 @@
         }
         @media (min-width: 768px) and (max-width: 1199px) {#halo-image-banner-{{ section.id }}{padding-top: var(--mg_top_tablet);padding-bottom: var(--mg_bottom_tablet)}}
         @media (min-width: 1025px) {
+         #cstm___banner_text .content-box { width: 50% !important;left: 5%;}
             #halo-image-banner-{{ section.id }} .container-full {padding-left: var(--padding_full_width);padding-right: var(--padding_full_width)}
             #halo-image-banner-{{ section.id }} .banner-heading{margin-bottom: var(--margin_bottom_heading)}
             #halo-image-banner-{{ section.id }} .banner-sub-title {font-size: var(--font_size_sub_title)}
@@ -225,48 +226,71 @@
             }
         {% endif %}
 
-      {{section.settings.liquid_css}}
+ @media (min-width: 600px) and (max-width: 1024px) {
+ #halo-image-banner-{{ section.id }} .content-box--absolute{
+  max-width: 50%;
+}
+ }
 
-      @media(min-width: 1025px){
+@media(min-width: 1025px){
 #halo-image-banner-{{ section.id }} .special__banner_img {
-    min-width: 50% !important;
-    left: 70% !important;
-    background: #211d1d6b;
-    padding: 18px;
-    border-radius: 6px;
+min-width: 50% !important;
+left: 70% !important;
+background: #211d1d6b;
+padding: 18px;
+border-radius: 6px;
 }
 #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1.3;
+line-height: 1.3;
 }
-      }
-          @media(max-width: 600px){
+}
+@media(max-width: 600px){
 #halo-image-banner-{{ section.id }} .special__banner_img {
-    min-width: 100% !important;
-    left: 50% !important;
-    background: #211d1d6b;
-    padding: 5px;
-    border-radius: 6px;
+min-width: 100% !important;
+left: 50% !important;
+background: #211d1d6b;
+padding: 5px;
+border-radius: 6px;
 }
 #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1;
+line-height: 1;
 }
-            #halo-image-banner-{{ section.id }} .special__banner_img .banner-button {
-    color: var(--button_color);
-    background: var(--button_bg);
-    background-origin: border-box;
-    border-color: var(--button_border);
-    width: 205px;
-    max-width: 205px;
-    font-size: 11px;
+#halo-image-banner-{{ section.id }} .special__banner_img .banner-button {
+color: var(--button_color);
+background: var(--button_bg);
+background-origin: border-box;
+border-color: var(--button_border);
+width: 205px;
+max-width: 205px;
+font-size: 11px;
 }
-            #halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
-    line-height: 1;
-    font-size: 17px;
+#halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
+line-height: 1;
+font-size: 17px;
 }
-              #halo-image-banner-{{ section.id }} .halo-banner-wrapper .flex-box__banner .content-box{
-              border: 1px solid;
-            }
-      }
+#halo-image-banner-{{ section.id }} .halo-banner-wrapper .flex-box__banner .content-box{
+border: 1px solid;
+}
+}
+@media(max-width: 600px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+padding: 30px 5px;
+}
+  #cstm___banner_text .content-box--absolute {
+          width: 63%;
+    padding: 25px 12px 30px;
+          }
+       #cstm___banner_text .banner-heading{
+         text-align: left;
+       }
+ #halo-image-banner-{{ section.id }}  .item:not(.item--smallImg) .banner-heading {
+    line-height: 28px !important;
+    font-size: 16px !important;
+    font-weight: bold!important;
+}
+
+}
+    
 
     </style>
     {%- if section.settings.id_section != blank -%}

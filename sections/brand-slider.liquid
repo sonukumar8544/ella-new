@@ -150,11 +150,12 @@ width: auto;
 border: 2px solid #c3c3c3;
 }
 .section-block-{{section.id}} .halo-block-header .view_all {
-border: 1px solid;
-padding: 8px 14px;
-text-decoration: none;
-border-radius: 5px;
 text-align: left;
+    text-decoration: none;
+    width: auto;
+    margin: auto 0px 10px 0px;
+    display: flex
+;
 }
 #brands-{{section.id}} .wrapper-image.slider_layout_3_no_round{
   padding: 0px;
@@ -201,6 +202,9 @@ font-weight: 600;
 padding: 0;
 text-align: left;
 }
+  #WhyShopwithUs .halo-block-header .title .text{
+text-align: center;
+  }
 .section-block-{{section.id}} .halo-block-header .title{
 text-align: left;
 }
@@ -270,7 +274,7 @@ padding: 0 0 0 0%;
     {%- endif -%}
         .section-block-{{ section.id }} .brands-block .slick-dotted {margin-bottom: 40px}
     {%- if section.blocks.size > 0 -%}
-        .section-block-{{section.id}} .halo-item .text {display: block;text-align: center;margin-top: 2px;visibility: visible !important;font-size: {{ section.settings.fontsize_text | append: 'px' }};letter-spacing: 1px;  font-weight: 600;font-weight: {{ section.settings.font_weight_title }};margin-bottom: {{ section.settings.margin_bottom_title | append: 'px' }};font-style: var(--font-heading-style)}
+        .section-block-{{section.id}} .halo-item .text {display: block;text-align: center;margin-top: 2px;visibility: visible !important;font-size: {{ section.settings.fontsize_text | append: 'px' }};letter-spacing: 1px;  font-weight: {{ section.settings.font_weight_title }};margin-bottom: {{ section.settings.margin_bottom_title | append: 'px' }};font-style: var(--font-heading-style)}
         .section-block-{{section.id}} .halo-item:hover .text{text-decoration: none;text-underline-offset: 0.3rem}
         .section-block-{{section.id}} .halo-item .description{display: block;text-align: center;}
 
@@ -289,6 +293,11 @@ padding: 0 0 0 0%;
         .brand-slider .halo-row.brand-layout--infinite .halo-item {width: var(--width_item)}
 
     {%- if section.settings.brands_block_style == 'style_4' -%}
+      .brands-block.brands-slider.brand_style_4 .brand-slider-btn a.brand-btn {
+padding: 10px 15px !important;
+width: 200px;
+        text-align: center !important;
+}
        #brands-{{section.id}} .csrt__image_round:hover{
    border: 2px solid var(--title_color)
 }
@@ -373,6 +382,14 @@ padding: 0 0 0 0%;
         {%- endif -%}
         {%- if section.settings.brands_block_style == 'style_3' -%}
           .brand_style_3 .halo-block-header p {text-align: left; justify-content: flex-start;}
+          @media(min-width:768px){
+           .section-block-{{ section.id }}  #grid_bundle  .brands-slider{
+               gap:20px
+             }
+           .section-block-{{ section.id }} #grid_bundle .halo-row.column-2 .halo-item {
+    width: 40%;
+}
+          }
               @media(max-width:768px){
             .brand_style_3 .halo-item,
             .halo-row[data-center-mode=true] .halo-item{
@@ -611,17 +628,22 @@ margin-top: 20px;
     top: 1px;
     transition: all .5s;
     border: none !important;
-    margin: 0;
+    margin: auto;
      margin-bottom:15px !important;
 }
 .section-block-{{ section.id }} .csrt__image_round a.adaptive_height.slider_layout_3_no_round img{
-  border-radius: 2%;
-  border: 1px solid var(--title_color);
+  border-radius: 6%;
+  /* border: 1px solid var(--title_color); */
 }
 .section-block-{{ section.id }} .csrt__image_round .wrapper-image{
   background: transparent !important;
 }
    {% endif %}
+
+     #grid_bundle .csrt__image_round.slider_layout_3_no_round{
+       width:100%;
+       /* padding:0px 20px; */
+     }
 </style>
 
 {%- if section.blocks.size > 0 -%}
@@ -635,8 +657,8 @@ margin-top: 20px;
                         <div class="halo-block-header style--{{ section.settings.title_align }}{% if section.settings.brand_des != blank %} has-des{% endif %}{% if section.settings.brands_block_style == 'style_3' %} pt-20{% endif %} d-flex flex-align-center{% if section.settings.title_align == 'center_below' %} flex-jc-center{% else %} flex-jc-between{%- endif -%}{% unless section.settings.title_align == 'left' or section.settings.title_align == 'left_right'%} text-center{% endunless %}">
                             {%- unless section.settings.brands_block_style == 'style_3' -%}
                                 {%- if section.settings.title_align == 'center' or section.settings.title_align == 'right' or section.settings.title_align == 'left'%}
-                                    <div class="title-wrap p-relative d-inline-block{% unless section.settings.title_align == 'left' %} pl-lg-80 pr-lg-80 w-100{% endunless %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                                        <h3 class="title"><span class="text">{{ section.settings.brand_title }}</span></h3>
+                                    <div class="title-wrap p-relative d-inline-block{% unless section.settings.title_align == 'left' %} pl-lg-0 pr-lg-0 w-100{% endunless %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                                        <h3 class="title"><span class="text text-center">{{ section.settings.brand_title }}</span></h3>
                                         {%- if section.settings.view_all != blank -%}
                                             <a class="view_all{% if section.settings.title_align == 'left' %} ml-30{% endif %}{% if section.settings.enable_border_view_all %} view_all--border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }};--font-size-view-all-style: {{ section.settings.view_all_fs | append: 'px' }}">
                                                 {%- if section.settings.icon_view_all -%}
@@ -711,11 +733,11 @@ margin-top: 20px;
                                         {% if settings.banner_animation == 'effect_fade_up' %}
                                         <div class="scroll-trigger animate--slide-in">
                                         {% endif %}
-                                            <a class="view_all{% if section.settings.enable_border_view_all %} view_all--border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }};--font-size-view-all-style: {{ section.settings.view_all_fs | append: 'px' }}">
+                                            <a class="cstn__btn button button--primary an- view_all{% if section.settings.enable_border_view_all %} view_all--border{% endif %}"{% if section.settings.link_view_all == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.link_view_all }}"{% endif %} title="{{section.settings.view_all}}" style="--font-weight-view-all-style: {{ section.settings.font_weight_view_all }};--mg-bottom-view-style: {{ section.settings.mg_bottom_view | append: 'px' }};--color-view-all-style: {{ section.settings.color_view_all }};--color-view-all-icon-style: {{ section.settings.color_view_all_icon }};--font-size-view-all-style: {{ section.settings.view_all_fs | append: 'px' }}">
                                                 {%- if section.settings.icon_view_all -%}
                                                 <span class="icon-svg"{% if section.settings.view_all_icon_side =='right' %} style="display: none;"{% endif %}>{{ section.settings.icon_view_all }}</span>
                                                 {%- endif -%}
-                                                {{ section.settings.view_all }}
+                                              {{ section.settings.view_all }}
                                                 {%- if section.settings.icon_view_all -%}
                                                     <span class="icon-svg" {% if section.settings.view_all_icon_side =='left' %} style="display: none;" {% endif %}>{{ section.settings.icon_view_all }}</span>
                                                 {%- endif -%}

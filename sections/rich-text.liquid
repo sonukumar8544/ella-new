@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="{{ 'component-rich-text.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
-<div class="rich-text section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+<div class="rich-text section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="{{ section.settings.id }}">
   <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
     <div class="rich-text__blocks{% if section.settings.enable_column %} enable_column{% endif %} text-{{section.settings.content_align}}{% if section.settings.padding_full_width == 65 %} pad-65{% endif %}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
         {%- when 'heading' -%}
-            <h2 class="heading{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order:  {{ forloop.index }};{% endif %}--color-heading-style: {{ block.settings.heading_color }};--fontsize-heading-style: {{ block.settings.heading_size | append: 'px' }};--heading-size-mb-style: {{ block.settings.heading_size_mb | append: 'px' }};--heading-line-height-style: {{ block.settings.heading_line_height }}">{{ block.settings.heading | escape }}</h2>
+            <h2 class=" cstm__title  heading{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order:  {{ forloop.index }};{% endif %}--color-heading-style: {{ block.settings.heading_color }};--fontsize-heading-style: {{ block.settings.heading_size | append: 'px' }};--heading-size-mb-style: {{ block.settings.heading_size_mb | append: 'px' }};--heading-line-height-style: {{ block.settings.heading_line_height }}">{{ block.settings.heading | escape }}</h2>
         {%- when 'sub_heading' -%}
             <div class="rich-text__sub{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--sub-heading-size-style: {{ block.settings.sub_heading_size | append: 'px' }};--sub-heading-color-style: {{ block.settings.sub_heading_color }};--font-weight-sub-heading-style: {{ block.settings.font_weight_sub_heading }};--margin-top-sub-heading-style: {{ block.settings.margin_top_sub_heading | append: 'px' }}"><p>{{ block.settings.sub_heading }}</p></div> 
         {%- when 'text' -%}
@@ -195,20 +195,34 @@
     margin: 1px auto 0px 150px;
     height: 110px;
 }
-  }
-   @media (min-width: 1025px) and (max-width: 1280px) {
-.section-block-{{section.id}} .container {
+  #instafram__video_title h2.heading {
+    color: #374650;
+    font-size: 32px;
+    }
+    #instafram__video_title  .container {
+    width: 700px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: auto;
+    }
+    }
+    @media (min-width: 1025px) and (max-width: 1280px) {
+    .section-block-{{section.id}} .container {
     width: 700px;
     display: flex;
     align-items: center;
     justify-content: left;
     margin: 1px auto 0px 110px;
-           height: 55px;
-}
-     .rich-text__blocks h2{
-       font-size: 26px;
-     }
-   }
+    height: 55px;
+    }
+    .rich-text__blocks h2{
+    font-size: 26px;
+    }
+    }
+
+  
 </style>
 <script type="text/javascript">
     function homeMoreLess() {
@@ -238,6 +252,11 @@
             "type": "header",
             "content": "t:settings_schema.general.name"
         },
+       {
+            "type": "text",
+            "id": "id",
+            "label": "Custom ID",
+       },
         {
             "type": "select",
             "id": "container",
