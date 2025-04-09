@@ -202,6 +202,11 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   }
 }
 @media (max-width: 1199px) {
+  div.quiz-recommended-product span.price-item.price-item--sale,
+  div.quiz-recommended-product .price-item.price-item--regular,
+  div.quiz-recommended-product .price-item .price-item {
+    font-size: 13px;
+  }
   .final_result
     button.quiz_bundle_prodct.product-form__submit.button.button--primary {
     min-width: 45% !important;
