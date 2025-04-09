@@ -45,7 +45,8 @@
 
 .halo-productBadges .badge.custom-badge {
   color: var(--custom-badge-color);
-  /* background-color: var(--custom-badge-bg); */
+  padding: 3px 10px;
+  height: 28px;
   background-color: #086b92;
 }
 
