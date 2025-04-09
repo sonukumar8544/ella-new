@@ -4028,6 +4028,7 @@
 
                 count = count + 1;
                 itemWrapper.attr('data-count', count);
+              console.log("count 4031", count);
 
                 if ($('body').hasClass('cursor-fixed__show')){
                     window.sharedFunctionsAnimation.onEnterButton();
