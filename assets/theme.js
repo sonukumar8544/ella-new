@@ -3837,6 +3837,7 @@
                     },
                     complete: function () {
                         $body.find('[data-cart-count]').text(cart.item_count);
+                      console.log("3840", cart.item_count);
                         halo.dispatchChangeForShippingMessage();
                         if (halo.checkNeedToConvertCurrency()) {
                             Currency.convertAll(window.shop_currency, $('#currencies .active').attr('data-currency'), 'span.money', 'money_format');
