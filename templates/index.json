@@ -1223,6 +1223,7 @@
         ".spotlight-inner .spotlight-button.custom-button-style:hover {background: #086b92 !important; color: white;}"
       ],
       "settings": {
+        "cstm_id": "",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
@@ -2213,7 +2214,7 @@
             "link": "shopify://pages/wellness-quiz",
             "button_1_width": 160,
             "enable_button_custom_border": false,
-            "button_color": "#FFFFFF",
+            "button_color": "#ffffff",
             "button_border": "#086b92",
             "button_background": "#086b92",
             "button_background_gradient": "",
@@ -2391,6 +2392,7 @@
         "div#spotlight-template--24261275058472__spotlight_block_qnYcNH .halo-row {padding-top: 0px;}"
       ],
       "settings": {
+        "cstm_id": "two-row-spotlight",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
