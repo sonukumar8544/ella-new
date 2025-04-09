@@ -1,3 +1,14 @@
+.quiz-recommended-product .card-media > img,
+.card-media > video,
+.quiz-recommended-product
+  .card-product:hover
+  .card-media.media--hover-effect
+  > img
+  + img {
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+}
+
 .halo-block-header .title {
   margin-bottom: 15px;
 }
