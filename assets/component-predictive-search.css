@@ -5,6 +5,10 @@
   bottom: auto;
   min-height: auto;
 }
+.quickSearchResultsBlock.quickSearchResultsWidget.quickSearchResultsWrap.is-show
+  .icon-search-1 {
+  display: none;
+}
 
 .search-modal__content {
   display: flex;
