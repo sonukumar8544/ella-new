@@ -8273,3 +8273,10 @@ div#tab-shipping-amp-returns-mobile {
 .tabs-contents .toggle-content {
   font-weight: 400 !important;
 }
+
+@media (min-width: 767px) {
+  .product-block-has__banner.has__banner--left[data-width-banner="50"] .product-block__banner {
+      padding-right: calc(var(--grid-gap)* 2);
+      width: 44% !important;
+  }
+}
