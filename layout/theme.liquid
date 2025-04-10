@@ -197,8 +197,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
 
-  if (currentHash !== '#' + dynamicSlug) {
-    const newUrl = currentPath + '#' + dynamicSlug;
+  if (currentHash !== '/' + dynamicSlug) {
+    const newUrl = currentPath + '/' + dynamicSlug;
     window.history.pushState({}, '', newUrl);
   }
 });
