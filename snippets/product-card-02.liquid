@@ -109,8 +109,7 @@
                         has_video: has_video,
                         loading: loading
                     %}
-                    <a class="card-link" href="{{ product_card_product.url }}" title="{{ product_card_product.title | escape }}"></a>------
-                  {% render 'okendo-reviews-product-rating',  product: product_card_product %}
+                    <a class="card-link" href="{{ product_card_product.url }}" title="{{ product_card_product.title | escape }}"></a>
                 </div>
 
                 {%- if product_action_group -%}
@@ -205,6 +204,7 @@
                     product: product_card_product,
                     class: 'card-list__hidden'
                 %}
+                  {% render 'okendo-reviews-product-rating',  product: product_card_product %}
               
                 {%- if show_price -%}
                     <div class="card-price">
