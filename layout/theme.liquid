@@ -189,16 +189,16 @@
             {% render 'halo-currency-js' %}
         {% endif %}
 
-    <script>
+   
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   const dynamicSlug = 'sonu';
 
   const currentPath = window.location.pathname;
-  const currentSearch = window.location.search;
+  const currentHash = window.location.hash;
 
-  // Add slug as a query parameter (won’t trigger 404)
-  if (!currentSearch.includes('slug=' + dynamicSlug)) {
-    const newUrl = currentPath + '?slug=' + dynamicSlug;
+  if (currentHash !== '#' + dynamicSlug) {
+    const newUrl = currentPath + '#' + dynamicSlug;
     window.history.pushState({}, '', newUrl);
   }
 });
