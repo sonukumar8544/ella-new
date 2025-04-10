@@ -2052,6 +2052,12 @@ body.video-show.product-video-show .halo-video-popup {
     gap: 20px;
 }
 
+@media (max-width: 767px) {
+    .product-details .product-option {
+        justify-content: center !important;
+    }
+}
+
 .product-details .productView-countDown .num {
     font-size: calc(var(--font-body-size) + 4px);
 }
