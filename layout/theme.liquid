@@ -189,6 +189,14 @@
             {% render 'halo-currency-js' %}
         {% endif %}
 
-                      {{ collection.handle}}
+            <script>
+const dynamicPart = 'hello';
+const currentPath = window.location.pathname;
+const newPath = `${currentPath.replace(/\/$/, '')}/${dynamicPart}`;
+
+window.location.href = newPath;
+
+            </script>
+
     </body>
 </html>
