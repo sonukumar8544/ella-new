@@ -196,7 +196,8 @@
                         {% endif %}
                     </span>
                 </a>
-{% render 'okendo-reviews-product-rating-summary', product:product_card_product  %}
+                    {% render 'okendo-reviews-product-rating-summary', product:product_card_product  %}
+                      
                 {% if settings.disable_product_card_border and settings.enable_custom_layout_card %}
                     </div>
                 {% endif %}
