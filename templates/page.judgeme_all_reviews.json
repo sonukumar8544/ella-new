@@ -29,27 +29,11 @@
             "product": "",
             "widget_type": "combined_widget"
           }
-        },
-        "okendo_questions_widget_qw98Rx": {
-          "type": "shopify://apps/okendo/blocks/questions-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "disabled": true,
-          "settings": {
-            "product": ""
-          }
-        },
-        "okendo_reviews_badge_eDi4D3": {
-          "type": "shopify://apps/okendo/blocks/reviews-badge/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "disabled": true,
-          "settings": {
-            "horizontal_alignment": "left"
-          }
         }
       },
       "block_order": [
         "okendo_media_grid_FY3YXA",
-        "okendo_reviews_widget_LVmVnC",
-        "okendo_questions_widget_qw98Rx",
-        "okendo_reviews_badge_eDi4D3"
+        "okendo_reviews_widget_LVmVnC"
       ],
       "settings": {
         "include_margins": false
