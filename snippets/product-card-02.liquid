@@ -205,7 +205,7 @@
                     class: 'card-list__hidden'
                 %}
                   {% render 'okendo-reviews-product-rating',  product: product_card_product %}
-              
+              <div data-oke-star-rating {{ product_data_attribute }}>{{ product_card_product.metafields.okendo.StarRatingSnippet }}</div>
                 {%- if show_price -%}
                     <div class="card-price">
                         {% render 'price',
