@@ -270,7 +270,7 @@
                     product: product_card_product,
                     class: 'card-list__hidden'
                 %}
-              
+               {% render 'okendo-reviews-product-rating-summary',  product: product_card_product %}
                 {%- if show_price -%}
                     <div class="card-price">
                         {% render 'price',
