@@ -800,7 +800,7 @@ margin-top: 20px;
                                         {%- if block.settings.image != blank -%}
                                             {%- assign preview_img = block.settings.image -%}
                                             <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %} csrt__image_round  {% if section.settings.slider_layout_3_no_round == true %}slider_layout_3_no_round{% endif %}">
-                                                <{% if block.settings.link == blank %}a{% else %}p{% endif %} class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height {% if section.settings.slider_layout_3_no_round == true %}slider_layout_3_no_round{% endif %}{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
+                                                <{% if block.settings.link == blank %}a href="{{ block.settings.link }}"{% else %}p{% endif %} class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height {% if section.settings.slider_layout_3_no_round == true %}slider_layout_3_no_round{% endif %}{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}" {% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
                                                     <img {% render 'lazyload', preview_img: preview_img  %} style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </{% if block.settings.link == blank %}a{% else %}p{% endif %}>
@@ -815,10 +815,10 @@ margin-top: 20px;
                                             </a>
                                         {%- endif -%}
                                         {%- if block.settings.title != blank -%}
-                                            <{% if block.settings.link == blank %}a{% else %}p{% endif %} class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</{% if block.settings.link == blank %}a{% else %}p{% endif %}>
+                                            <{% if block.settings.link == blank %}a href="{{ block.settings.link }}" {% else %}p{% endif %} class="text" >{{ block.settings.title }}</{% if block.settings.link == blank %}a{% else %}p{% endif %}>
                                         {%- endif -%}
                                         {%- if block.settings.description != blank -%}
-                                            <{% if block.settings.link == blank %}a{% else %}p{% endif %} class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</{% if block.settings.link == blank %}a{% else %}p{% endif %}>
+                                            <{% if block.settings.link == blank %}a href="{{ block.settings.link }}"{% else %}p{% endif %} class="description" >{{ block.settings.description }}</{% if block.settings.link == blank %}a{% else %}p{% endif %}>
                                         {%- endif -%}
                                     </div>
                                 </div>
