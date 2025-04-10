@@ -783,7 +783,7 @@ margin-top: 20px;
                                                     </a> -->
                                                 {%- endif -%}
                                                 {%- if block.settings.title != blank -%}
-                                                    <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
+                                                    <{% if block.settings.link == blank %}a{% else %}p{% endif %} class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</{% if block.settings.link == blank %}a{% else %}p{% endif %}>
                                                 {%- endif -%}
                                                 {%- if block.settings.description != blank -%}
                                                     <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
