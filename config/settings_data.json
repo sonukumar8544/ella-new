@@ -955,6 +955,13 @@
         "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
         "disabled": false,
         "settings": {}
+      },
+      "8776485610325655785": {
+        "type": "shopify://apps/hiko-social-login/blocks/hiko-auth/3832d7e1-5bcd-4b72-91da-236b57feef8f",
+        "disabled": false,
+        "settings": {
+          "social_font": "enable"
+        }
       }
     }
   }
