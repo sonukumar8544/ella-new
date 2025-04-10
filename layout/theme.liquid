@@ -189,23 +189,21 @@
             {% render 'halo-currency-js' %}
         {% endif %}
 
-            <script>
+        <script>
 document.addEventListener('DOMContentLoaded', function () {
   const dynamicSlug = 'sanu';
 
   const currentPath = window.location.pathname;
-  const targetPath = `/collections/${{collection.handle}}/${dynamicSlug}`;
+  const targetPath = '/collections/{{ collection.handle }}/' + dynamicSlug;
 
   // Only push the new path if it's not already there
   if (!currentPath.endsWith(dynamicSlug)) {
-    const newPath = `${currentPath.replace(/\/$/, '')}/${dynamicSlug}`;
+    const newPath = currentPath.replace(/\/$/, '') + '/' + dynamicSlug;
     window.history.pushState({}, '', newPath);
   }
 });
+</script>
 
-
-
-            </script>
 
     </body>
 </html>
