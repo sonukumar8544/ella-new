@@ -530,7 +530,7 @@
         "liquid_css": ""
       }
     },
-      "rich_text_MT6wG9": {
+    "rich_text_MT6wG9": {
       "type": "rich-text",
       "blocks": {
         "heading_6kiENX": {
@@ -572,7 +572,7 @@
       "type": "apps",
       "blocks": {
         "easyvideo_shoppable_videos_easyvideo_section_EXApQg": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
           "settings": {}
         }
       },
@@ -839,6 +839,7 @@
     },
     "collection_page_faqs_rmnDiF": {
       "type": "collection-page-faqs",
+      "disabled": true,
       "settings": {
         "heading": "Frequently Asked Questions",
         "subheading": "Everything you need to know about the product and billing."
@@ -924,6 +925,13 @@
         "mg_bottom_desktop": 45,
         "mg_bottom_tablet": 40,
         "mg_bottom_mobile": 30
+      }
+    },
+    "collection_faq_new_nzkzTD": {
+      "type": "collection-faq-new",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about the product and billing."
       }
     },
     "instagram_9EfqFH": {
@@ -1410,6 +1418,7 @@
     "rich_text_MT6wG9",
     "1743675461e354d576",
     "16378289883380f691",
+    "collection_faq_new_nzkzTD",
     "collection_page_faqs_rmnDiF",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
