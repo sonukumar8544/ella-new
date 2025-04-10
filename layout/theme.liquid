@@ -190,11 +190,20 @@
         {% endif %}
 
             <script>
-const collectionHandle = 'summer-sale';
-const dynamicSlug = 'hello-world';
+document.addEventListener('DOMContentLoaded', function () {
+  const collectionHandle = 'summer-sale';
+  const dynamicSlug = 'hello-world';
 
-const fullUrl = `/collections/${collectionHandle}/${dynamicSlug}`;
-window.location.href = fullUrl; // or use pushState for no reload
+  const currentPath = window.location.pathname;
+  const targetPath = `/collections/${collectionHandle}/${dynamicSlug}`;
+
+  // Only push the new path if it's not already there
+  if (!currentPath.endsWith(dynamicSlug)) {
+    const newPath = `${currentPath.replace(/\/$/, '')}/${dynamicSlug}`;
+    window.history.pushState({}, '', newPath);
+  }
+});
+
 
 
             </script>
