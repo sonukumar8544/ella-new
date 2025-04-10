@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -50,12 +50,12 @@
         "brand_bg": "#ffffff",
         "brand_bg_gradient": "",
         "layout_style": "style_01",
-        "brand_title": "Shop By Categories",
+        "brand_title": "know our ingredients",
         "color_title": "#374650",
         "fontsize_title": 32,
         "fontsize_title_mb": 22,
         "mg_bottom_title": 18,
-        "brand_des": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin felis. Pellentesque diam dolor elementum et lobortis at mollis delio risus. Sedcuman des faucibus andor sullamcorper mattis fusce molestie elit lorem tempus scelerisque blandit est cursus. Quisque volutpat dorci metus malesuada in interdumos lectus scelerisque. Praesent deu odio des nisios delos sultricies.",
+        "brand_des": "",
         "color_des": "#36454f",
         "fontsize_des": 16,
         "mg_bottom_des": 36,
@@ -99,16 +99,16 @@
     "ingrediant_page_two_coloumn_KnrGGK": {
       "type": "ingrediant-page-two-coloumn",
       "settings": {
-        "heading": "Annatto Seeds: Pure Tocotrienols from Nature",
-        "image": "shopify://shop_images/Annatto_1.png",
+        "heading": "Humic Acid: Mineral-Rich Earth Detox",
+        "image": "shopify://shop_images/humic_acid_61e31f2c-d1a1-49aa-aaaf-c7628033ab9b.png",
         "title": "What It Is",
         "title2": "Chemical Properties",
         "title3": "Why We Use It",
         "title4": "Where to Find It",
-        "description": "Annatto seeds are tiny, red-orange seeds derived from the Achiote plant, scientifically known as Bixa Orellana. It is the only natural and rich source of 100% Vitamin E tocotrienols, free from tocopherol interference.",
-        "description2": "Annatto Seeds contain tocotrienols (delta and gamma), bixin, norbixin, flavonoids, and other mineral traces.",
-        "description3": "Annatto, rich in tocotrienols, is known for its antioxidative and anti-inflammatory properties. It also supports heart, brain, and skin health.",
-        "description4": "The achiote plant is native to tropical regions, including the Caribbean, Southeast Asia, Africa, and South and Central America. Today, packed annatto seeds are available in herbal and grocery stores.",
+        "description": "Humic acid is part of the humic substances group formed by the decomposition of ancient plant fossils over millions of years. It is primarily known for its mineral and nutrient-transporting properties.",
+        "description2": "Humic acid is a large-chain molecule containing carbon, hydrogen, oxygen, and other trace elements. Its aromatic nature is due to functional groups like carboxylic, phenolic, and hydroxyl groups.",
+        "description3": "Humic acid works in synergy with fulvic acid, supporting gut health and mineral replenishment. Its reactive aromatic nature allows it to bind and remove toxins from the body.",
+        "description4": "Humic acid is extremely rare in modern diets. It is found in natural sources such as rocks, shilajit, leonardite, peat, lignite, compost, and manure.",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -119,8 +119,8 @@
         ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
       ],
       "settings": {
-        "title": "Join Us in Making a Difference",
-        "description": "<p>Every person's wellness journey is unique. Through our collaboration with Santosh Foundation, we provide personalized support, quality supplements, and educational resources to help you navigate your path to better health. We believe in treating everyone with dignity, understanding, and respect.</p>",
+        "title": "The Wellness Extract Edge",
+        "description": "<p>At Wellness Extract, we source purified humic acid from deep-earth humic shale deposits. It is free from contamination and processed without any harsh chemicals.<br/><br/></p>",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -131,7 +131,7 @@
         "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Annatto_2_1315ff25-5fde-4ec3-9946-77dda2c60daf.png",
+            "image": "shopify://shop_images/Humic_Acid_1.png",
             "link": "",
             "banner_height": "auto",
             "enable_image_zoom": true,
@@ -354,22 +354,22 @@
         "faq_block_Vr3dBb": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://blogs/wellness/why-tocotrienols-are-essential"
+            "text": "Humic acid may stimulate immune responses in humans, contributing to the gut lining and overall health.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10142745/"
           }
         },
         "faq_block_xJNt7E": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://pages/about-us"
+            "text": "Humic substances have shown significant antiviral activities against a range of enveloped viruses, including HIV, herpes simplex viruses, and influenza.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9875298/"
           }
         },
         "faq_block_aexfQr": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://collections/annatto"
+            "text": "Humic acid (HA) may stimulate antioxidant defense mechanisms in certain plant species, showing human potential.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10180778/"
           }
         },
         "faq_block_deQLHg": {
@@ -388,7 +388,7 @@
       ],
       "settings": {
         "section_heading": "Scientifically Backed",
-        "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+        "section_subtitle": "Want to know the health potential of humic acid? More than 19000 clinical studies and reviews examine its properties and benefits."
       }
     }
   },
