@@ -195,6 +195,7 @@
                         {% endif %}
                     </span>
                 </a>
+                       {% render 'okendo-reviews-product-rating',  product: product_card_product %}
 
                 {% if settings.disable_product_card_border and settings.enable_custom_layout_card %}
                     </div>
@@ -384,9 +385,8 @@
                     </div>
                 {%- endif -%}
             {%- endif -%}
- {% render 'okendo-reviews-product-rating',  product: product_card_product %}
-              <div data-oke-star-rating {{ product_data_attribute }}>{{ product_card_product.metafields.okendo.StarRatingSnippet }}</div>
-            
+
+             
         </div>
     </div>
 </div>
