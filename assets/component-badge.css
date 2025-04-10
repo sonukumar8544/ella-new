@@ -42,7 +42,9 @@
   color: var(--sold-out-badge-color);
   background-color: var(--sold-out-badge-bg);
 }
-
+.product-card-layout-02 .halo-productBadges {
+  top: 1px;
+}
 .halo-productBadges .badge.custom-badge {
   color: var(--custom-badge-color);
   padding: 3px 10px;
