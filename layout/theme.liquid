@@ -47,9 +47,10 @@
 
       
         {{ content_for_header }}
-      {% if page.handle == 'reviews' %}
-{{ 'custom_okendo.css' | asset_url | stylesheet_tag }}
-      {% endif %}
+{% if page.handle == 'reviews' %}
+  <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css" />
+{% endif %}
+
         {% render 'variable' %}
         {% render 'global-style' %}
         {% render 'global-script' %}
