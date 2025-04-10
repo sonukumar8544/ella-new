@@ -44,6 +44,12 @@
             "spacing_bottom": 0
           }
         },
+        "okendo_star_rating_APJhrn": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
           "type": "title",
           "settings": {
@@ -310,6 +316,7 @@
       "block_order": [
         "2e8c7c14-a0ad-4930-a1d8-3def05310426",
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b",
+        "okendo_star_rating_APJhrn",
         "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
         "4f95b592-8369-4ab0-b30d-24e463fb6890",
         "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c",
@@ -599,7 +606,7 @@
         "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
       }
     },
-   "rich_text_MT6wG9": {
+    "rich_text_MT6wG9": {
       "type": "rich-text",
       "blocks": {
         "heading_6kiENX": {
@@ -1155,6 +1162,7 @@
         "@media (min-width: 1025px) {.halo-block-header .title .text {width: 100%; }}"
       ],
       "settings": {
+        "id": "",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": false,
@@ -1236,7 +1244,7 @@
         "subheading": "Everything you need to know about the product and billing."
       }
     },
-  "spotlight_block_qnYcNH": {
+    "spotlight_block_qnYcNH": {
       "type": "spotlight-block",
       "blocks": {
         "image_kAiYHF": {
@@ -1516,8 +1524,8 @@
     "main",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
-   "rich_text_MT6wG9",
-   "1743670996c8046cda",
+    "rich_text_MT6wG9",
+    "1743670996c8046cda",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "product-recommendations",
