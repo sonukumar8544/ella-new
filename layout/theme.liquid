@@ -47,6 +47,9 @@
 
       
         {{ content_for_header }}
+      {% if page.handle == 'reviews' %}
+{{ 'custom_okendo.css' | asset_url | stylesheet_tag }}
+      {% endif %}
         {% render 'variable' %}
         {% render 'global-style' %}
         {% render 'global-script' %}
