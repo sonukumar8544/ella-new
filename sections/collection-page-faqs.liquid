@@ -1,37 +1,34 @@
 {% comment %} 
     FAQ Section - Product Page collection 
 {% endcomment %}
-{% assign faqs = collection.metafields.custom.collection_faqs_section.value %}
 
-{% if faqs.size > 0 %}
-  <div class="collection-faq-container">
-    <div class="collection-faq-header">
-      <h2>{{ section.settings.heading }}</h2>
-      <p>{{ section.settings.subheading }}</p>
-    </div>
-
-    {% for block in faqs %}
-      {% assign parts = block | split: '|' %}
-      <details {% if forloop.first %} open{% endif %}>
-        <summary>
-          {{ parts[0] | strip }}
-          <svg
-            class="icon"
-            aria-hidden="true"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg">
-            <polygon points="150.46 478 129.86 456.5 339.11 256 129.86 55.49 150.46 34 382.14 256 150.46 478" />
-          </svg>
-        </summary>
-        <div class="collection-faq-content">
-          {{ parts[1] | strip }}
-        </div>
-      </details>
-    {% endfor %}
+<div class="collection-faq-container">
+  <div class="collection-faq-header">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
   </div>
-{% endif %}
+
+  {% for block in collection.metafields.custom.collection_faqs_section.value %}
+    {% assign parts = block | split: '|' %}
+    <details {% if forloop.first %} open{% endif %}>
+      <summary>
+        {{ parts[0] | strip }}
+        <svg
+          class="icon"
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg">
+          <polygon points="150.46 478 129.86 456.5 339.11 256 129.86 55.49 150.46 34 382.14 256 150.46 478" />
+        </svg>
+      </summary>
+      <div class="collection-faq-content">
+        {{ parts[1] | strip }}
+      </div>
+    </details>
+  {% endfor %}
+</div>
 
 <style>
   .collection-faq-container {
