@@ -189,20 +189,21 @@
             {% render 'halo-currency-js' %}
         {% endif %}
 
-        <script>
+    <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const dynamicSlug = 'sanu';
+  const dynamicSlug = 'sonu';
 
   const currentPath = window.location.pathname;
-  const targetPath = '/collections/{{ collection.handle }}/' + dynamicSlug;
+  const currentSearch = window.location.search;
 
-  // Only push the new path if it's not already there
-  if (!currentPath.endsWith(dynamicSlug)) {
-    const newPath = currentPath.replace(/\/$/, '') + '/' + dynamicSlug;
-    window.history.pushState({}, '', newPath);
+  // Add slug as a query parameter (won’t trigger 404)
+  if (!currentSearch.includes('slug=' + dynamicSlug)) {
+    const newUrl = currentPath + '?slug=' + dynamicSlug;
+    window.history.pushState({}, '', newUrl);
   }
 });
 </script>
+
 
 
     </body>
