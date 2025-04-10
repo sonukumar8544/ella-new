@@ -190,11 +190,12 @@
         {% endif %}
 
             <script>
-const dynamicPart = 'hello';
-const currentPath = window.location.pathname;
-const newPath = `${currentPath.replace(/\/$/, '')}/${dynamicPart}`;
+const collectionHandle = 'summer-sale';
+const dynamicSlug = 'hello-world';
 
-window.location.href = newPath;
+const fullUrl = `/collections/${collectionHandle}/${dynamicSlug}`;
+window.location.href = fullUrl; // or use pushState for no reload
+
 
             </script>
 
