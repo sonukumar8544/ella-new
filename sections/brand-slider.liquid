@@ -774,13 +774,13 @@ margin-top: 20px;
                                                         </{% if block.settings.link != blank %}a{% else %}p{% endif %}>
                                                     </div>
                                                 {%- else -%}
-                                                    <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
+                                                    <!-- <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
                                                         {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
                                                         {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
                                                         <div class="placeholder" style="--height_placeholder: 200px;">
                                                             {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
                                                         </div>
-                                                    </a>
+                                                    </a> -->
                                                 {%- endif -%}
                                                 {%- if block.settings.title != blank -%}
                                                     <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
