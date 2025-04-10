@@ -860,6 +860,7 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         border: 1px solid #fff;
         border-radius: 6px;
+        margin: 2px;
     }
 
     .bundle-product-item.slick-active + .bundle-product-item.slick-active .bundlePdItem-container:before {
@@ -968,7 +969,7 @@
 
     .bundle-product-text {
         /* padding: 0 30px; */
-        text-align: left;
+        text-align: center;
     }
 
     .bundle-product-list:not(.slick-initialized)>.bundle-product-item {
