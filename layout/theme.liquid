@@ -191,11 +191,10 @@
 
             <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const collectionHandle = 'summer-sale';
   const dynamicSlug = 'sanu';
 
   const currentPath = window.location.pathname;
-  const targetPath = `/collections/${collectionHandle}/${dynamicSlug}`;
+  const targetPath = `/collections/${{collection.handle}}/${dynamicSlug}`;
 
   // Only push the new path if it's not already there
   if (!currentPath.endsWith(dynamicSlug)) {
