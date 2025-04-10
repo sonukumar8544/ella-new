@@ -1,13 +1,15 @@
 {% comment %} 
     FAQ Section - Product Page collection 
 {% endcomment %}
-
+{% for block in collection.metafields.custom.collection_faqs_section.value %}
+ {% if forloop.index == 1 %}
 <div class="collection-faq-container">
   <div class="collection-faq-header">
     <h2>{{ section.settings.heading }}</h2>
     <p>{{ section.settings.subheading }}</p>
   </div>
-
+  {% endif %}
+{% endfor %}
   {% for block in collection.metafields.custom.collection_faqs_section.value %}
     {% assign parts = block | split: '|' %}
     <details {% if forloop.first %} open{% endif %}>
