@@ -186,6 +186,7 @@
                     </div>
                     {% endunless %}
                 {%- endif -%}
+                      ------ {% render 'okendo-reviews-product-rating',  product: product_card_product %}
                
                 <a class="card-title link-underline{% if settings.product_title_line_text != 'full' %} card-title-ellipsis{% endif %}{% if variant_selected != blank %} card-title-change{% endif %}" href="{{ product_card_product.url }}" data-product-title="{{ product_card_product.title | escape }}" data-product-url="{{ product_card_product.url }}">
                     <span class="text">
@@ -195,7 +196,6 @@
                         {% endif %}
                     </span>
                 </a>
-                       {% render 'okendo-reviews-product-rating',  product: product_card_product %}
 
                 {% if settings.disable_product_card_border and settings.enable_custom_layout_card %}
                     </div>
