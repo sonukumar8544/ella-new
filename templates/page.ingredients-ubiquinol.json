@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -50,12 +50,12 @@
         "brand_bg": "#ffffff",
         "brand_bg_gradient": "",
         "layout_style": "style_01",
-        "brand_title": "Shop By Categories",
+        "brand_title": "know our ingredients",
         "color_title": "#374650",
         "fontsize_title": 32,
         "fontsize_title_mb": 22,
         "mg_bottom_title": 18,
-        "brand_des": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin felis. Pellentesque diam dolor elementum et lobortis at mollis delio risus. Sedcuman des faucibus andor sullamcorper mattis fusce molestie elit lorem tempus scelerisque blandit est cursus. Quisque volutpat dorci metus malesuada in interdumos lectus scelerisque. Praesent deu odio des nisios delos sultricies.",
+        "brand_des": "",
         "color_des": "#36454f",
         "fontsize_des": 16,
         "mg_bottom_des": 36,
@@ -99,16 +99,16 @@
     "ingrediant_page_two_coloumn_KnrGGK": {
       "type": "ingrediant-page-two-coloumn",
       "settings": {
-        "heading": "Annatto Seeds: Pure Tocotrienols from Nature",
-        "image": "shopify://shop_images/Annatto_1.png",
+        "heading": "Ubiquinol: Reduced Form of CoQ10",
+        "image": "shopify://shop_images/duo_quinol_1.png",
         "title": "What It Is",
         "title2": "Chemical Properties",
         "title3": "Why We Use It",
         "title4": "Where to Find It",
-        "description": "Annatto seeds are tiny, red-orange seeds derived from the Achiote plant, scientifically known as Bixa Orellana. It is the only natural and rich source of 100% Vitamin E tocotrienols, free from tocopherol interference.",
-        "description2": "Annatto Seeds contain tocotrienols (delta and gamma), bixin, norbixin, flavonoids, and other mineral traces.",
-        "description3": "Annatto, rich in tocotrienols, is known for its antioxidative and anti-inflammatory properties. It also supports heart, brain, and skin health.",
-        "description4": "The achiote plant is native to tropical regions, including the Caribbean, Southeast Asia, Africa, and South and Central America. Today, packed annatto seeds are available in herbal and grocery stores.",
+        "description": "Ubiquinol is a reduced and more bioactive form of coenzyme Q10 (CoQ10), a naturally occurring endogenous antioxidant. CoQ10 is a natural energy producer that charges our body from within.",
+        "description2": "Molecular Formula: C59H92O<br>\nSynonyms: 2,3-Dimethoxy-5-methyl-6-polyprenyl-1,4-benzenediol",
+        "description3": "As we age or take certain medications, like statins, natural levels of CoQ10 start depleting, affecting energy production. Ubiquinol supplements help replenish CoQ10 levels, contributing to overall health.",
+        "description4": "Ubiquinol is endogenous, which means it is naturally produced in the body. It is also present in specific dietary sources like oily fish, organ meats, nuts, seeds, and certain oils.",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -119,8 +119,8 @@
         ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
       ],
       "settings": {
-        "title": "Join Us in Making a Difference",
-        "description": "<p>Every person's wellness journey is unique. Through our collaboration with Santosh Foundation, we provide personalized support, quality supplements, and educational resources to help you navigate your path to better health. We believe in treating everyone with dignity, understanding, and respect.</p>",
+        "title": "The Wellness Extract Edge",
+        "description": "<p>Wellness Extract sources pharmaceutical-grade ubiquinol, biosynthesized through advanced microbial fermentation, ensuring safety and efficacy. It is bio-identical to the ubiquinol produced naturally in our bodies.<br/><br/></p>",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -131,7 +131,7 @@
         "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Annatto_2_1315ff25-5fde-4ec3-9946-77dda2c60daf.png",
+            "image": "shopify://shop_images/Ubiquinol.png",
             "link": "",
             "banner_height": "auto",
             "enable_image_zoom": true,
@@ -354,22 +354,22 @@
         "faq_block_Vr3dBb": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://blogs/wellness/why-tocotrienols-are-essential"
+            "text": "Ubiquinol supplementation may elevate plasma CoQ10 levels, even in patients with severe sepsis or septic shock.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4520066/"
           }
         },
         "faq_block_xJNt7E": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://pages/about-us"
+            "text": "The ubiquinone-ubiquinol redox cycle maintains overall cellular health and has therapeutic potential.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11203502/"
           }
         },
         "faq_block_aexfQr": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://collections/annatto"
+            "text": "Athletes who received ubiquinol supplementation exhibited lower levels of oxidative stress markers.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10535924/"
           }
         },
         "faq_block_deQLHg": {
@@ -387,8 +387,8 @@
         "faq_block_deQLHg"
       ],
       "settings": {
-        "section_heading": "Scientifically Backed",
-        "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+        "section_heading": "Scholarly Research",
+        "section_subtitle": "Want to know more about ubiquinol (CoQ10)? At present, 12k+ scientific studies and reviews explore the properties and potential of ubiquinol and its forms."
       }
     }
   },
