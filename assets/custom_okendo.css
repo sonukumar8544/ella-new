@@ -1,0 +1,377 @@
+.okeReviews[data-oke-container].oke-mediaGrid,
+div.okeReviews.oke-mediaGrid {
+  --oke-stars-foregroundColor: #fff;
+  --oke-stars-backgroundColor: transparent;
+  --oke-stars-borderWidth: 1;
+  --oke-stars-borderColor: #fff;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-thumbnail .oke-media-image,
+div.okeReviews .oke-mediaGrid-thumbnail .oke-media-image {
+  height: 100%;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container,
+div.okeReviews .oke-mediaGrid-container {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  position: relative;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--default-desktop,
+div.okeReviews .oke-mediaGrid-container--default-desktop {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--default-desktop
+  .oke-mediaGrid-item:nth-child(14n + 1),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--default-desktop
+  .oke-mediaGrid-item:nth-child(14n-3),
+div.okeReviews
+  .oke-mediaGrid-container--default-desktop
+  .oke-mediaGrid-item:nth-child(14n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--default-desktop
+  .oke-mediaGrid-item:nth-child(14n-3) {
+  grid-area: span 2 / span 2;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--large-centered,
+div.okeReviews .oke-mediaGrid-container--large-centered {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--large-centered
+  .oke-mediaGrid-item:nth-child(5n-3),
+div.okeReviews
+  .oke-mediaGrid-container--large-centered
+  .oke-mediaGrid-item:nth-child(5n-3) {
+  grid-area: span 2 / span 2;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--x-large,
+div.okeReviews .oke-mediaGrid-container--x-large {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--x-large
+  .oke-mediaGrid-item:nth-child(14n + 1),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--x-large
+  .oke-mediaGrid-item:nth-child(14n-4),
+div.okeReviews
+  .oke-mediaGrid-container--x-large
+  .oke-mediaGrid-item:nth-child(14n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--x-large
+  .oke-mediaGrid-item:nth-child(14n-4) {
+  grid-area: span 3 / span 3;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--two-heroes,
+div.okeReviews .oke-mediaGrid-container--two-heroes {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--two-heroes
+  .oke-mediaGrid-item:nth-child(10n + 1),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--two-heroes
+  .oke-mediaGrid-item:nth-child(10n + 2),
+div.okeReviews
+  .oke-mediaGrid-container--two-heroes
+  .oke-mediaGrid-item:nth-child(10n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--two-heroes
+  .oke-mediaGrid-item:nth-child(10n + 2) {
+  grid-area: span 2 / span 2;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--default-mobile,
+div.okeReviews .oke-mediaGrid-container--default-mobile {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--default-mobile
+  .oke-mediaGrid-item:nth-child(9n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--default-mobile
+  .oke-mediaGrid-item:nth-child(9n + 1) {
+  grid-area: span 2 / span 2;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--alternate-mobile,
+div.okeReviews .oke-mediaGrid-container--alternate-mobile {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--alternate-mobile
+  .oke-mediaGrid-item:nth-child(6n + 1),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--alternate-mobile
+  .oke-mediaGrid-item:nth-child(6n-1),
+div.okeReviews
+  .oke-mediaGrid-container--alternate-mobile
+  .oke-mediaGrid-item:nth-child(6n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--alternate-mobile
+  .oke-mediaGrid-item:nth-child(6n-1) {
+  grid-area: span 2 / span 2;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-container--hero-three-mobile,
+div.okeReviews .oke-mediaGrid-container--hero-three-mobile {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container--hero-three-mobile
+  .oke-mediaGrid-item:nth-child(10n + 1),
+div.okeReviews
+  .oke-mediaGrid-container--hero-three-mobile
+  .oke-mediaGrid-item:nth-child(10n + 1) {
+  grid-area: span 3 / span 3;
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-1
+  .oke-mediaGrid-item:nth-last-child(-n + 1),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-2
+  .oke-mediaGrid-item:nth-last-child(-n + 2),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-3
+  .oke-mediaGrid-item:nth-last-child(-n + 3),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-4
+  .oke-mediaGrid-item:nth-last-child(-n + 4),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-5
+  .oke-mediaGrid-item:nth-last-child(-n + 5),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-6
+  .oke-mediaGrid-item:nth-last-child(-n + 6),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-7
+  .oke-mediaGrid-item:nth-last-child(-n + 7),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-8
+  .oke-mediaGrid-item:nth-last-child(-n + 8),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-9
+  .oke-mediaGrid-item:nth-last-child(-n + 9),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-10
+  .oke-mediaGrid-item:nth-last-child(-n + 10),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-11
+  .oke-mediaGrid-item:nth-last-child(-n + 11),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-12
+  .oke-mediaGrid-item:nth-last-child(-n + 12),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-13
+  .oke-mediaGrid-item:nth-last-child(-n + 13),
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-14
+  .oke-mediaGrid-item:nth-last-child(-n + 14),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-1
+  .oke-mediaGrid-item:nth-last-child(-n + 1),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-2
+  .oke-mediaGrid-item:nth-last-child(-n + 2),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-3
+  .oke-mediaGrid-item:nth-last-child(-n + 3),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-4
+  .oke-mediaGrid-item:nth-last-child(-n + 4),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-5
+  .oke-mediaGrid-item:nth-last-child(-n + 5),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-6
+  .oke-mediaGrid-item:nth-last-child(-n + 6),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-7
+  .oke-mediaGrid-item:nth-last-child(-n + 7),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-8
+  .oke-mediaGrid-item:nth-last-child(-n + 8),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-9
+  .oke-mediaGrid-item:nth-last-child(-n + 9),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-10
+  .oke-mediaGrid-item:nth-last-child(-n + 10),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-11
+  .oke-mediaGrid-item:nth-last-child(-n + 11),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-12
+  .oke-mediaGrid-item:nth-last-child(-n + 12),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-13
+  .oke-mediaGrid-item:nth-last-child(-n + 13),
+div.okeReviews
+  .oke-mediaGrid-container.oke-mediaGrid-container--last-14
+  .oke-mediaGrid-item:nth-last-child(-n + 14) {
+  grid-area: span 1 / span 1;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-loadMore,
+div.okeReviews .oke-mediaGrid-loadMore {
+  width: 100%;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+  transition: opacity 0.25s;
+  margin-top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okeReviews[data-oke-container] .oke-mediaGrid-loadMore,
+  div.okeReviews .oke-mediaGrid-loadMore {
+    transition: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .okeReviews[data-oke-container]
+    .oke-mediaGrid-loadMore:hover
+    .oke-mediaGrid-loadMore-chevron,
+  div.okeReviews .oke-mediaGrid-loadMore:hover .oke-mediaGrid-loadMore-chevron {
+    transform: translateY(2px);
+  }
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-loadMore-chevron,
+div.okeReviews .oke-mediaGrid-loadMore-chevron {
+  display: inline-block;
+  font-size: 24px;
+  height: 24px;
+  line-height: 0;
+  transition: transform 0.1s ease-out;
+  width: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okeReviews[data-oke-container] .oke-mediaGrid-loadMore-chevron,
+  div.okeReviews .oke-mediaGrid-loadMore-chevron {
+    transition: none;
+  }
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-loadMore-loading,
+div.okeReviews .oke-mediaGrid-loadMore-loading {
+  animation: oke-spin 1s linear infinite;
+  display: none;
+  font-size: 12px;
+  height: 12px;
+  line-height: 0;
+  width: 12px;
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-loadMore.oke-is-loading
+  .oke-mediaGrid-loadMore-chevron,
+div.okeReviews
+  .oke-mediaGrid-loadMore.oke-is-loading
+  .oke-mediaGrid-loadMore-chevron {
+  display: none;
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-loadMore.oke-is-loading
+  .oke-mediaGrid-loadMore-loading,
+div.okeReviews
+  .oke-mediaGrid-loadMore.oke-is-loading
+  .oke-mediaGrid-loadMore-loading {
+  display: inline-block;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-item,
+div.okeReviews .oke-mediaGrid-item {
+  position: relative;
+  grid-area: span 1 / span 1;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-item .oke-media,
+div.okeReviews .oke-mediaGrid-item .oke-media {
+  height: 100%;
+}
+
+@supports not (aspect-ratio: 1) {
+  .okeReviews[data-oke-container] .oke-mediaGrid-item .oke-media,
+  div.okeReviews .oke-mediaGrid-item .oke-media {
+    position: relative;
+  }
+
+  .okeReviews[data-oke-container] .oke-mediaGrid-item .oke-media:before,
+  div.okeReviews .oke-mediaGrid-item .oke-media:before {
+    content: "";
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  .okeReviews[data-oke-container] .oke-mediaGrid-item .oke-media-image,
+  div.okeReviews .oke-mediaGrid-item .oke-media-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-item .oke-mediaGrid-overlay,
+div.okeReviews .oke-mediaGrid-item .oke-mediaGrid-overlay {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .okeReviews[data-oke-container] .oke-mediaGrid-item .oke-mediaGrid-overlay,
+  div.okeReviews .oke-mediaGrid-item .oke-mediaGrid-overlay {
+    transition: none;
+  }
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-item-contents,
+div.okeReviews .oke-mediaGrid-item-contents {
+  display: none;
+}
+
+.okeReviews[data-oke-container] .oke-mediaGrid-item-contents-text,
+div.okeReviews .oke-mediaGrid-item-contents-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-item:focus-within
+  .oke-mediaGrid-overlay,
+.okeReviews[data-oke-container]
+  .oke-mediaGrid-item:hover
+  .oke-mediaGrid-overlay,
+div.okeReviews .oke-mediaGrid-item:focus-within .oke-mediaGrid-overlay,
+div.okeReviews .oke-mediaGrid-item:hover .oke-mediaGrid-overlay {
+  opacity: 1;
+}
