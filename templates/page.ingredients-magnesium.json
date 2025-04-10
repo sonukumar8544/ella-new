@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -50,12 +50,12 @@
         "brand_bg": "#ffffff",
         "brand_bg_gradient": "",
         "layout_style": "style_01",
-        "brand_title": "Shop By Categories",
+        "brand_title": "know our ingredients",
         "color_title": "#374650",
         "fontsize_title": 32,
         "fontsize_title_mb": 22,
         "mg_bottom_title": 18,
-        "brand_des": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin felis. Pellentesque diam dolor elementum et lobortis at mollis delio risus. Sedcuman des faucibus andor sullamcorper mattis fusce molestie elit lorem tempus scelerisque blandit est cursus. Quisque volutpat dorci metus malesuada in interdumos lectus scelerisque. Praesent deu odio des nisios delos sultricies.",
+        "brand_des": "",
         "color_des": "#36454f",
         "fontsize_des": 16,
         "mg_bottom_des": 36,
@@ -99,16 +99,16 @@
     "ingrediant_page_two_coloumn_KnrGGK": {
       "type": "ingrediant-page-two-coloumn",
       "settings": {
-        "heading": "Annatto Seeds: Pure Tocotrienols from Nature",
-        "image": "shopify://shop_images/Annatto_1.png",
+        "heading": "Elemental Magnesium: Purest Magnesium Form",
+        "image": "shopify://shop_images/Magnesium_2_1.png",
         "title": "What It Is",
         "title2": "Chemical Properties",
         "title3": "Why We Use It",
         "title4": "Where to Find It",
-        "description": "Annatto seeds are tiny, red-orange seeds derived from the Achiote plant, scientifically known as Bixa Orellana. It is the only natural and rich source of 100% Vitamin E tocotrienols, free from tocopherol interference.",
-        "description2": "Annatto Seeds contain tocotrienols (delta and gamma), bixin, norbixin, flavonoids, and other mineral traces.",
-        "description3": "Annatto, rich in tocotrienols, is known for its antioxidative and anti-inflammatory properties. It also supports heart, brain, and skin health.",
-        "description4": "The achiote plant is native to tropical regions, including the Caribbean, Southeast Asia, Africa, and South and Central America. Today, packed annatto seeds are available in herbal and grocery stores.",
+        "description": "Elemental magnesium is the purest form of magnesium—a natural mineral your body needs to stay healthy. It supports overall cellular functions like muscles, nerves, and energy production.",
+        "description2": "Chemical Symbol: Mg<br>\nProperties: Magnesium is a shiny, silvery-white, alkaline earth metal with atomic number 12. It is known for its lightweight and highly reactive nature. While it stays solid at room temperature, magnesium readily combines with other elements in favorable conditions.",
+        "description3": "When elemental magnesium reacts with water, it releases tiny bubbles of hydrogen gas, turning regular water into antioxidant-rich hydrogen water. This is one of the most convenient and effective methods for producing hydrogen water.",
+        "description4": "Magnesium is the eighth most abundant element in Earth's crust. Magnesium is naturally present in various dietary sources, including leafy green vegetables, nuts, seeds, legumes, and whole grains.",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -119,8 +119,8 @@
         ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
       ],
       "settings": {
-        "title": "Join Us in Making a Difference",
-        "description": "<p>Every person's wellness journey is unique. Through our collaboration with Santosh Foundation, we provide personalized support, quality supplements, and educational resources to help you navigate your path to better health. We believe in treating everyone with dignity, understanding, and respect.</p>",
+        "title": "The Wellness Extract Edge",
+        "description": "<p>Wellness Extract molecular hydrogen tablets (containing magnesium) rapidly dissolve in water. It delivers eight times the hydrogen concentration (8 PPM), producing stronger therapeutic effects.</p>",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -131,7 +131,7 @@
         "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Annatto_2_1315ff25-5fde-4ec3-9946-77dda2c60daf.png",
+            "image": "shopify://shop_images/Elemental_Magnesium.png",
             "link": "",
             "banner_height": "auto",
             "enable_image_zoom": true,
@@ -354,41 +354,33 @@
         "faq_block_Vr3dBb": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://blogs/wellness/why-tocotrienols-are-essential"
+            "text": "Magnesium implants, as a continuous source of molecular hydrogen, have treated myocardial infarction in animals, promising human potential.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11094026/"
           }
         },
         "faq_block_xJNt7E": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://pages/about-us"
+            "text": "Hydrogen released by magnesium alloy significantly inhibited tumor growth in vitro and in vivo trials.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11792047/"
           }
         },
         "faq_block_aexfQr": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://collections/annatto"
-          }
-        },
-        "faq_block_deQLHg": {
-          "type": "faq_block",
-          "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://products/healthy-aging-bundle"
+            "text": "Magnesium-based hydrogen water tablets may reduce fatigue and muscle soreness in healthy adults following intensive exercise.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9738607/"
           }
         }
       },
       "block_order": [
         "faq_block_Vr3dBb",
         "faq_block_xJNt7E",
-        "faq_block_aexfQr",
-        "faq_block_deQLHg"
+        "faq_block_aexfQr"
       ],
       "settings": {
-        "section_heading": "Scientifically Backed",
-        "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+        "section_heading": "Scholarly Research",
+        "section_subtitle": "Want to know more about magnesium-produced hydrogen water? More than 60k+ scientific research studies are being conducted to explore the properties and health benefits of elemental magnesium in producing hydrogen water."
       }
     }
   },

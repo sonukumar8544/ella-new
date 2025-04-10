@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -38,10 +38,33 @@
             "title_color_hover": "#202020",
             "show_tab_image": false
           }
+        },
+        "tab_H6BJGE": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "menu": "",
+            "items_grid_gap": 7.5,
+            "items_spacing_tb": 30,
+            "items_spacing_lr": 10,
+            "items_border_radius": 5,
+            "image_width": 145,
+            "image_height": 15,
+            "image_border_radius": 0,
+            "items_bg_color": "",
+            "items_border_color": "#d0d0d0",
+            "enable_title": false,
+            "fontsize_title": 18,
+            "fontweight_title": "500",
+            "title_color": "#202020",
+            "title_color_hover": "#202020",
+            "show_tab_image": true
+          }
         }
       },
       "block_order": [
-        "5dd7287c-abd8-43d6-8778-01dfb7754fb0"
+        "5dd7287c-abd8-43d6-8778-01dfb7754fb0",
+        "tab_H6BJGE"
       ],
       "settings": {
         "container": "1170",
@@ -50,12 +73,12 @@
         "brand_bg": "#ffffff",
         "brand_bg_gradient": "",
         "layout_style": "style_01",
-        "brand_title": "Shop By Categories",
+        "brand_title": "know our ingredients",
         "color_title": "#374650",
         "fontsize_title": 32,
         "fontsize_title_mb": 22,
         "mg_bottom_title": 18,
-        "brand_des": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitudin felis. Pellentesque diam dolor elementum et lobortis at mollis delio risus. Sedcuman des faucibus andor sullamcorper mattis fusce molestie elit lorem tempus scelerisque blandit est cursus. Quisque volutpat dorci metus malesuada in interdumos lectus scelerisque. Praesent deu odio des nisios delos sultricies.",
+        "brand_des": "",
         "color_des": "#36454f",
         "fontsize_des": 16,
         "mg_bottom_des": 36,
@@ -99,16 +122,16 @@
     "ingrediant_page_two_coloumn_KnrGGK": {
       "type": "ingrediant-page-two-coloumn",
       "settings": {
-        "heading": "Annatto Seeds: Pure Tocotrienols from Nature",
-        "image": "shopify://shop_images/Annatto_1.png",
+        "heading": "Fulvic Acid: Organic Mineral Acid",
+        "image": "shopify://shop_images/fulvic_acid_1.png",
         "title": "What It Is",
         "title2": "Chemical Properties",
         "title3": "Why We Use It",
         "title4": "Where to Find It",
-        "description": "Annatto seeds are tiny, red-orange seeds derived from the Achiote plant, scientifically known as Bixa Orellana. It is the only natural and rich source of 100% Vitamin E tocotrienols, free from tocopherol interference.",
-        "description2": "Annatto Seeds contain tocotrienols (delta and gamma), bixin, norbixin, flavonoids, and other mineral traces.",
-        "description3": "Annatto, rich in tocotrienols, is known for its antioxidative and anti-inflammatory properties. It also supports heart, brain, and skin health.",
-        "description4": "The achiote plant is native to tropical regions, including the Caribbean, Southeast Asia, Africa, and South and Central America. Today, packed annatto seeds are available in herbal and grocery stores.",
+        "description": "Fulvic acid is a naturally occurring humic substance formed through the microbial breakdown of organic substances. It is rich in electrolytes, trace minerals, and amino acids.",
+        "description2": "Fulvic acid is characterized by its low molecular weight and multiple binding sites. It contains a complex mixture of over 70 trace minerals, fatty acids, vitamins, electrolytes, antioxidants, and amino acids.",
+        "description3": "Fulvic acid contains 70+ trace minerals, making it an excellent nutrient absorber. Its unique molecular structure and formula allow it to bind to toxins (like heavy metals) and remove them.",
+        "description4": "Fulvic acid is naturally found in organic soil, mineral deposits, and shilajit. It is also found in marine sediments and organic vegetables, especially potatoes, carrots, radishes, and beets.",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -119,8 +142,8 @@
         ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
       ],
       "settings": {
-        "title": "Join Us in Making a Difference",
-        "description": "<p>Every person's wellness journey is unique. Through our collaboration with Santosh Foundation, we provide personalized support, quality supplements, and educational resources to help you navigate your path to better health. We believe in treating everyone with dignity, understanding, and respect.</p>",
+        "title": "The Wellness Extract Edge",
+        "description": "<p>At Wellness Extract, we use purified fulvic acid derived from deep-earth humic shale, which is highly potent and free from environmental contamination.</p>",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -131,7 +154,7 @@
         "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Annatto_2_1315ff25-5fde-4ec3-9946-77dda2c60daf.png",
+            "image": "shopify://shop_images/Fulvic_Acid_2.png",
             "link": "",
             "banner_height": "auto",
             "enable_image_zoom": true,
@@ -354,41 +377,33 @@
         "faq_block_Vr3dBb": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://blogs/wellness/why-tocotrienols-are-essential"
+            "text": "FvA can modulate the immune system, combat oxidative stress, and improve gastrointestinal function.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6151376/"
           }
         },
         "faq_block_xJNt7E": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://pages/about-us"
+            "text": "Fulvic acid improves glutathione metabolism, contributing to better ROS detoxification.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7301537/"
           }
         },
         "faq_block_aexfQr": {
           "type": "faq_block",
           "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://collections/annatto"
-          }
-        },
-        "faq_block_deQLHg": {
-          "type": "faq_block",
-          "settings": {
-            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
-            "link": "shopify://products/healthy-aging-bundle"
+            "text": "Fulvic acid boosts antioxidative defense mechanisms in plants, showing health potential for humans as well.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7301537/"
           }
         }
       },
       "block_order": [
         "faq_block_Vr3dBb",
         "faq_block_xJNt7E",
-        "faq_block_aexfQr",
-        "faq_block_deQLHg"
+        "faq_block_aexfQr"
       ],
       "settings": {
-        "section_heading": "Scientifically Backed",
-        "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+        "section_heading": "Scholarly Research",
+        "section_subtitle": "Want to know more about fulvic acid (FvA)? There are about 2,700 scientific studies and investigations on FvA that also examine its health properties."
       }
     }
   },
