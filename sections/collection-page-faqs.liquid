@@ -8,8 +8,7 @@
     <h2>{{ section.settings.heading }}</h2>
     <p>{{ section.settings.subheading }}</p>
   </div>
-  {% endif %}
-{% endfor %}
+
   {% for block in collection.metafields.custom.collection_faqs_section.value %}
     {% assign parts = block | split: '|' %}
     <details {% if forloop.first %} open{% endif %}>
@@ -31,7 +30,8 @@
     </details>
   {% endfor %}
 </div>
-
+  {% endif %}
+{% endfor %}
 <style>
   .collection-faq-container {
     max-width: 1200px;
