@@ -174,9 +174,9 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
 .final_result
   button.quiz_bundle_prodct.product-form__submit.button.button--primary {
   width: 200px;
-  background-color: transparent;
-  color: #006a91;
-  border: 2px solid rgb(0, 106, 145);
+  background-color: #006a91;
+  color: #fff;
+  border: 2px solid #006a91;
   padding: 9px 7px;
   border-radius: 8px;
   cursor: pointer;
