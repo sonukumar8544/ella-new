@@ -711,6 +711,15 @@
     </style>
 {%- endif -%}
 
+<style>
+  @media (max-width: 1024px) {
+ .section-block-{{ section.id }} .content-box--absolute {
+    position: absolute;
+    top: 18%;
+    left: 0% !important;
+  }
+  }
+</style>
 {% schema %}
     {
         "name": "t:sections.slide-show.name",
