@@ -446,6 +446,10 @@ button.filter-btn-mob {
     border-radius: 6px;
 }
 
+.blog-cat-filter{ 
+   font-family: 'Nunito'
+}
+
 .sidebar-filter-blog a {
     margin-right: 10px;
 }
@@ -478,6 +482,12 @@ div.sidebar-filter-blog {
 }
 .blog-layout-default .blog-block-item .blog-title a {
     display: block;
+    display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 .filters-list a .filter-btn {
     color: inherit;
@@ -616,7 +626,6 @@ div.sidebar-filter-blog {
     }
     #blog-page-card-wrapper .blog-content {
        width: 100% !important;
-       margin-top: 10px !important;
        padding-left: 0;
     }
 
@@ -718,7 +727,7 @@ div.sidebar-filter-blog h2 {
     position: relative;
     display: flex;
     align-items: center;
-    font-family: 'Nunito-Sans-Klaviyo-Hosted';
+    font-family: 'Nunito' !important;
 }
 /* .filters-list a:before {
     display: inline-block;

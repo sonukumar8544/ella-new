@@ -148,7 +148,7 @@ button.recommended_atc_btn.is-loading {
 
 .quiz-recommended-product .price__compare::first-child,
 .quiz-recommended-product .price__last::first-child {
-  display: none;
+  /* display: none; */
 }
 
 div.quiz-recommended-product .recommended_atc_btn {

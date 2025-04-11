@@ -80,6 +80,7 @@
     object-fit: cover;
     max-height: 100%;
     transition: var(--anchor-transition);
+    border-radius: 6%;
 }
 
 .bundle-product-toogle{
