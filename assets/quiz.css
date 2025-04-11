@@ -261,6 +261,9 @@ h3.quiz_title {
     max-width: 150px;
     margin: auto;
   }
+  .quiz-title p {
+    font-size: 16px;
+  }
 }
 @media (max-width: 500px) {
   .quiz-select_option-option .quiz-list {
