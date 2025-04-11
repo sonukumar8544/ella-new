@@ -840,7 +840,7 @@
         "button_link_two": ""
       }
     },
-      "brand_slider_tRACcq": {
+    "brand_slider_tRACcq": {
       "type": "brand-slider",
       "blocks": {
         "image_fthQXN": {
@@ -1151,7 +1151,7 @@
             "font_weight_sub_heading": "400",
             "border_sub_heading": "none",
             "sub_title_position": "sub_title_above",
-            "color_sub_heading": "#ff8b21",
+            "color_sub_heading": "#FFFFFF",
             "heading": "Work with Us",
             "letter_spacing_heading": "",
             "enable_border_heading": true,
@@ -1185,11 +1185,11 @@
             "enable_button_link": false,
             "enable_underline": false,
             "font_size_link": 28,
-            "button_slide": "Grab 3, Save 15%",
+            "button_slide": "Learn More & Apply ",
             "link": "shopify://collections/all-products",
             "button_style": "button_1",
             "button_slide_2": "",
-            "link_2": "shopify://pages/wellness-quiz",
+            "link_2": "shopify://pages/careers",
             "min_width_banner_button": 200,
             "color_button": "#086b92",
             "border_button": "#ff8b21",
@@ -1224,6 +1224,7 @@
         "@media (min-width: 768px) {.slide-block-image_rzpH6y .slide-content {padding-bottom: 50px; } .slide-block-image_rzpH6y .slide-content .slide-text {max-width: 80% !important; }}"
       ],
       "settings": {
+        "id": "",
         "container": "fullwidth",
         "padding_full_width": 0,
         "slideshow_background": "",
@@ -1294,9 +1295,9 @@
     "title_with_button_tAjzY9": {
       "type": "title-with-button",
       "settings": {
-        "heading": "Have questions? Need advice? We're here to help!<br> Connect With Our Wellness Experts Today!",
+        "heading": "Have questions? Need advice? We're here to help! Connect With Our Wellness Experts Today!",
         "button_label": "CONTACT US",
-        "button_link": "",
+        "button_link": "shopify://pages/contact-us",
         "background_color": "#fde2a2",
         "button_color": "#086b92",
         "button_hover_color": "#ffffff",
@@ -1319,7 +1320,7 @@
     "16378289883380f691",
     "about_page_two_col_section_RxDUbW",
     "about_page_two_col_section_KCYDDj",
-   "brand_slider_tRACcq",
+    "brand_slider_tRACcq",
     "16321237356a896dad",
     "title_with_button_tAjzY9"
   ]
