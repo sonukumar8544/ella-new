@@ -1513,10 +1513,16 @@
         "easyvideo_easyvideo_section_bY4Lrw": {
           "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
           "settings": {}
+        },
+        "easyvideo_easyvideo_section_jwB4bA": {
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
-        "easyvideo_easyvideo_section_bY4Lrw"
+        "easyvideo_easyvideo_section_bY4Lrw",
+        "easyvideo_easyvideo_section_jwB4bA"
       ],
       "settings": {
         "include_margins": false
