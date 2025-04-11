@@ -8286,7 +8286,7 @@ div#tab-shipping-amp-returns-mobile {
   padding: 0px 5px;
 }
 
-.sidebar-recent-post> .sidebarBlock-heading{
+.sidebar-recent-post > .sidebarBlock-heading {
   color: #374650 !important;
 }
 
@@ -8300,10 +8300,10 @@ div#tab-shipping-amp-returns-mobile {
 .button--prev:hover,
 .button--next:hover {
   background: white !important;
-  color: #006a91  !important;
+  color: #006a91 !important;
 }
 
-.price-item .text{
+.price-item .text {
   display: none !important;
 }
 
@@ -8311,7 +8311,7 @@ dd.price__label_sale.price__label_percent {
   display: none !important;
 }
 
-.productView-price .price__saved{
+.productView-price .price__saved {
   display: none !important;
 }
 
@@ -8319,4 +8319,8 @@ dd.price__label_sale.price__label_percent {
   width: 24px !important;
   height: 24px !important;
   visibility: visible;
+}
+
+.template-page .wrapper-body {
+  padding-bottom: 0px;
 }
