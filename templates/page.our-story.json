@@ -1107,30 +1107,30 @@
             "heading_size": 40,
             "heading_size_mb": 28,
             "heading_line_height": 1,
-            "heading_color": "#232323"
+            "heading_color": "#374650"
           }
         },
-        "sub_heading_B6yDPT": {
-          "type": "sub_heading",
+        "heading_w8GEV6": {
+          "type": "heading",
           "settings": {
-            "sub_heading": "We're here to help!",
-            "font_weight_sub_heading": "700",
-            "sub_heading_size": 32,
-            "margin_top_sub_heading": 10,
-            "sub_heading_color": "#000"
+            "heading": "Connect With Our Wellness Experts Today!",
+            "heading_size": 30,
+            "heading_size_mb": 28,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
           }
         },
         "button_RJjyyT": {
           "type": "button",
           "settings": {
             "button_style": "button_1",
-            "button_label": "Learn More & Apply ",
-            "button_link": "shopify://pages/careers",
+            "button_label": "Contact US",
+            "button_link": "shopify://pages/contact-us",
             "margin_top_button": 30,
             "enable_underline_button": false,
-            "button_color": "#086b92",
-            "button_border_color": "#ffffff",
-            "button_bg_color": "#f8f8f8",
+            "button_color": "#FFFFFF",
+            "button_border_color": "#086b92",
+            "button_bg_color": "#086b92",
             "button_bg_gradient": "",
             "button_color_hover": "#232323",
             "button_border_color_hover": "#232323",
@@ -1142,7 +1142,7 @@
       },
       "block_order": [
         "heading_hLhxVL",
-        "sub_heading_B6yDPT",
+        "heading_w8GEV6",
         "button_RJjyyT"
       ],
       "settings": {
@@ -1165,24 +1165,6 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 25
       }
-    },
-    "title_with_button_tAjzY9": {
-      "type": "title-with-button",
-      "settings": {
-        "heading": "",
-        "button_label": "CONTACT US",
-        "button_link": "shopify://pages/contact-us",
-        "background_color": "rgba(0,0,0,0)",
-        "button_color": "#086b92",
-        "button_hover_color": "#ffffff",
-        "text_color": "#374650",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "margin_top": 50,
-        "margin_bottom": 0,
-        "font_size_desktop": 32,
-        "font_size_mobile": 18
-      }
     }
   },
   "order": [
@@ -1196,7 +1178,6 @@
     "about_page_two_col_section_KCYDDj",
     "brand_slider_tRACcq",
     "rich_text_6wH8m9",
-    "rich_text_tyYd6w",
-    "title_with_button_tAjzY9"
+    "rich_text_tyYd6w"
   ]
 }
