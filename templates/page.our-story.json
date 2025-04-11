@@ -1010,6 +1010,78 @@
         "mg_bottom_mobile": 40
       }
     },
+       "rich_text_6wH8m9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tqr8V3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Not Sure Where To Start?",
+            "heading_size": 40,
+            "heading_size_mb": 28,
+            "heading_line_height": 1,
+            "heading_color": "#ffffff"
+          }
+        },
+        "button_bjNGxq": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "let’s start with the quiz",
+            "button_link": "shopify://pages/wellness-quiz",
+            "margin_top_button": 30,
+            "enable_underline_button": false,
+            "button_color": "#086b92",
+            "button_border_color": "#ffffff",
+            "button_bg_color": "#ffffff",
+            "button_bg_gradient": "",
+            "button_color_hover": "#374650",
+            "button_border_color_hover": "#ffffff",
+            "button_bg_color_hover": "#ffffff",
+            "button_bg_gradient_hover": "",
+            "button_width": "320px"
+          }
+        },
+        "text_VBnFYH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find the perfect supplement for your health concerns in under 2 minutes.</p>",
+            "text_size": 18,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 30,
+            "text_color": "#ffffff",
+            "text_width": "600px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tqr8V3",
+        "button_bjNGxq",
+        "text_VBnFYH"
+      ],
+      "settings": {
+        "id": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#086b92",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 80,
+        "mg_top_mobile": 35,
+        "mg_bottom_desktop": 80,
+        "mg_bottom_tablet": 80,
+        "mg_bottom_mobile": 40
+      }
+    },
     "16321237356a896dad": {
       "type": "slide-show",
       "blocks": {
@@ -1218,6 +1290,7 @@
     "about_page_two_col_section_RxDUbW",
     "about_page_two_col_section_KCYDDj",
     "brand_slider_tRACcq",
+    "rich_text_6wH8m9",
     "16321237356a896dad",
     "title_with_button_tAjzY9"
   ]
