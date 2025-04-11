@@ -433,6 +433,10 @@
         "mg_bottom_mobile": 0
       }
     },
+    "bundle_page_informational_image_xdtCLG": {
+      "type": "bundle-page-informational-image",
+      "settings": {}
+    },
     "image_banner_Q8DRPX": {
       "type": "image-banner",
       "blocks": {
@@ -645,25 +649,6 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
-      }
-    },
-    "1743670996c8046cda": {
-      "type": "apps",
-      "blocks": {
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
-          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
-      ],
-      "custom_css": [
-        ".splide__slide .nm-ev-center img.add_splide {max-height: inherit;}",
-        ".easyvideo_section {margin-bottom: 10px !important;}"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "product_ingrediants_section_NLKKBM": {
@@ -1522,9 +1507,20 @@
         "mg_bottom_mobile": 50
       }
     },
-    "bundle_page_informational_image_xdtCLG": {
-      "type": "bundle-page-informational-image",
-      "settings": {}
+    "1744376299193a70e7": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_easyvideo_section_bY4Lrw": {
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_easyvideo_section_bY4Lrw"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
@@ -1533,7 +1529,6 @@
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
-    "1743670996c8046cda",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "product-recommendations",
@@ -1541,6 +1536,7 @@
     "instagram_9EfqFH",
     "product_page_faq_section_HeHhtA",
     "spotlight_block_qnYcNH",
-    "featured_blog_7CQrDa"
+    "featured_blog_7CQrDa",
+    "1744376299193a70e7"
   ]
 }
