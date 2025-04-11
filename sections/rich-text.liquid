@@ -69,9 +69,7 @@
                             </div>
                         {%- endif -%}
                     </div>
-                  <style>
-                .rich-text__blocks .rich-text__content p { color: {{ block.settings.content_color }};}
-                    </style>
+                
                 {%- endcase -%}  
             {%- endfor -%}  
         </div>
@@ -121,6 +119,7 @@
         .rich-text__blocks .rich-text__sub {
             margin-bottom: 27px;
         }
+      
     {%- endif -%}
     @media (min-width: 1200px) {.section-block-{{section.id}} {padding-top: {{ mg_top_desktop | append: 'px' }};padding-bottom: {{ mg_bottom_desktop | append: 'px' }}}}
     @media (min-width: 1025px) {
@@ -224,7 +223,9 @@
     font-size: 26px;
     }
     }
-
+  .wellness-page  .section-block-{{section.id}} .rich-text__blocks .rich-text__content p {
+      color:#fff;
+    }
   
 </style>
 <script type="text/javascript">
