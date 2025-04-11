@@ -11,7 +11,7 @@
     endunless
     assign perImage = share_image | image_url: width: 1024, height: 1024
 -%}
-<ul class="social-share">
+<ul class="social-share cstm__footer">
     {%- if settings.share_facebook -%}
         <li class="social-share__item"><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ perLinkURL }}" title='{{ 'general.social.links.facebook' | t }}' data-no-instant rel="noopener noreferrer nofollow" target="_blank">{%- render 'icon-facebook' -%} </a></li>
     {%- endif -%}
