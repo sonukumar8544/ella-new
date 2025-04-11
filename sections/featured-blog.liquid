@@ -80,7 +80,11 @@
     .section-block-{{section.id}} .halo-block-header .rte {color: {{ color_des }};font-size: {{ fontsize_des | append: 'px'  }};margin-bottom: {{ margin_bottom_desheading | append: 'px' }}}
     .section-block-{{section.id}} .article-card {border-radius: {{ border_radius_item | append: 'px' }};overflow: inherit;background-color: {{ blog_item_bg }}}
     {%- if enable_border_box -%}
-    .section-block-{{section.id}} .article-card__info {border: 1px solid {{ color_border_box  }};border-top: 0;padding: 16px 27px 28px;border-radius: {{ border_radius_item | append: 'px' }}; }
+    .section-block-{{section.id}} .article-card__info {border: 1px solid {{ color_border_box  }};border-top: 0;padding: 16px 27px 28px;
+ 
+      border-bottom-left-radius: {{ border_radius_item | append: '%' }};
+    border-bottom-right-radius: {{ border_radius_item | append: '%' }};
+      }
     {%- endif -%}
     .section-block-{{section.id}} .article-card__title a {color: {{ color_title_item }}}
     .section-block-{{section.id}} .article-card__author {color: {{ color_date_item }};font-size: 14px;
