@@ -565,11 +565,12 @@
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     </a>
                                                 {%- else -%}
-                                                    <a class="image image-mobile" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
+                                                  {% comment %}  <a class="image image-mobile" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
                                                         <div class="placeholder" style="--height_placeholder: 570px;">
                                                             {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                                                         </div>
                                                     </a>
+                                                  {% endcomment %}
                                                 {%- endif -%}
                                             {%- endif -%}
                                             {%- if video_link != blank -%}
