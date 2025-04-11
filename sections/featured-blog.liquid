@@ -59,6 +59,10 @@
 -%}
 
 <style>
+    .section-block-{{section.id}} .article-card__image-wrapper .adaptive_height  {
+      border-top-left-radius:  6%;
+    border-top-right-radius:  6%;
+      }
     #shopify-section-{{section.id}} {padding-top: {{ mg_minus_desktop | times: 0.5 | append: 'px' }}}
     .section-block-{{section.id}} .halo-block-header {margin-top: -{{ mg_minus_desktop | append: 'px' }}}
     {%- if blog_bg_image != blank -%}
@@ -87,10 +91,7 @@
     border-bottom-right-radius: {{ border_radius_item | append: '%' }};
       }
     {%- endif -%}
-          .section-block-{{section.id}} .article-card__image-wrapper .adaptive_height  {
-      border-top-left-radius:  6%;
-    border-top-right-radius:  6%;
-      }
+        
     .section-block-{{section.id}} .article-card__title a {color: {{ color_title_item }}}
     .section-block-{{section.id}} .article-card__author {color: {{ color_date_item }};font-size: 14px;
     text-transform: capitalize; }
