@@ -1097,13 +1097,82 @@
         "mg_bottom_mobile": 25
       }
     },
+    "rich_text_tyYd6w": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hLhxVL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Have questions? Need advice? We're here to help!",
+            "heading_size": 40,
+            "heading_size_mb": 28,
+            "heading_line_height": 1,
+            "heading_color": "#232323"
+          }
+        },
+        "sub_heading_B6yDPT": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "We're here to help!",
+            "font_weight_sub_heading": "700",
+            "sub_heading_size": 32,
+            "margin_top_sub_heading": 10,
+            "sub_heading_color": "#000"
+          }
+        },
+        "button_RJjyyT": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "Learn More & Apply ",
+            "button_link": "shopify://pages/careers",
+            "margin_top_button": 30,
+            "enable_underline_button": false,
+            "button_color": "#086b92",
+            "button_border_color": "#ffffff",
+            "button_bg_color": "#f8f8f8",
+            "button_bg_gradient": "",
+            "button_color_hover": "#232323",
+            "button_border_color_hover": "#232323",
+            "button_bg_color_hover": "#ffffff",
+            "button_bg_gradient_hover": "",
+            "button_width": "320px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hLhxVL",
+        "sub_heading_B6yDPT",
+        "button_RJjyyT"
+      ],
+      "settings": {
+        "id": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#fde2a2",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 25
+      }
+    },
     "title_with_button_tAjzY9": {
       "type": "title-with-button",
       "settings": {
-        "heading": "Have questions? Need advice? <br>We're here to help! <br>Connect With Our Wellness Experts Today!",
+        "heading": "",
         "button_label": "CONTACT US",
         "button_link": "shopify://pages/contact-us",
-        "background_color": "#fde2a2",
+        "background_color": "rgba(0,0,0,0)",
         "button_color": "#086b92",
         "button_hover_color": "#ffffff",
         "text_color": "#374650",
@@ -1127,6 +1196,7 @@
     "about_page_two_col_section_KCYDDj",
     "brand_slider_tRACcq",
     "rich_text_6wH8m9",
+    "rich_text_tyYd6w",
     "title_with_button_tAjzY9"
   ]
 }
