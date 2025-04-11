@@ -221,6 +221,7 @@
         ".slide-button {border-radius: 6px !important;}"
       ],
       "settings": {
+        "id": "",
         "container": "fullwidth",
         "padding_full_width": 0,
         "slideshow_background": "",
@@ -2866,6 +2867,46 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "tiktok2_rDbEky": {
+      "type": "tiktok2",
+      "blocks": {
+        "tiktop_2_zDLw4b": {
+          "type": "tiktop_2",
+          "settings": {
+            "video": ""
+          }
+        }
+      },
+      "block_order": [
+        "tiktop_2_zDLw4b"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Voices of Satisfaction ",
+        "slider_gallery": true,
+        "slidesToShow": 4,
+        "slidesToScroll": 1,
+        "infinite": true,
+        "arrows": true,
+        "autoplay": true,
+        "autoplaySpeed": 2000,
+        "tslidesToShow": 3,
+        "tslidesToScroll": 1,
+        "tinfinite": true,
+        "tarrows": true,
+        "tautoplay": true,
+        "tautoplaySpeed": 2000,
+        "mslidesToShow": 2,
+        "mslidesToScroll": 1,
+        "minfinite": true,
+        "marrows": true,
+        "mautoplay": true,
+        "mautoplaySpeed": 2000,
+        "mdots": false,
+        "desktop-grid": "grid_5",
+        "mobile-grid": "grid_3"
+      }
     }
   },
   "order": [
@@ -2886,6 +2927,7 @@
     "1649236457c43290d7",
     "spotlight_block_qnYcNH",
     "instagram_9EfqFH",
-    "featured_blog_LT6gNw"
+    "featured_blog_LT6gNw",
+    "tiktok2_rDbEky"
   ]
 }
