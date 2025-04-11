@@ -1521,10 +1521,15 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
+    },
+    "bundle_page_informational_image_xdtCLG": {
+      "type": "bundle-page-informational-image",
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
