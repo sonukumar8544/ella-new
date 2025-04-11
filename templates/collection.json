@@ -241,7 +241,7 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "container": "1770",
+        "container": "container",
         "padding_full_width": 0,
         "colors_bg": "rgba(0,0,0,0)",
         "colors_bg_gradient": "",
@@ -837,6 +837,13 @@
         "mg_bottom_mobile": 30
       }
     },
+    "collection_faq_new_nzkzTD": {
+      "type": "collection-faq-new",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about the product and billing."
+      }
+    },
     "collection_page_faqs_rmnDiF": {
       "type": "collection-page-faqs",
       "disabled": true,
@@ -925,13 +932,6 @@
         "mg_bottom_desktop": 45,
         "mg_bottom_tablet": 40,
         "mg_bottom_mobile": 30
-      }
-    },
-    "collection_faq_new_nzkzTD": {
-      "type": "collection-faq-new",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subheading": "Everything you need to know about the product and billing."
       }
     },
     "instagram_9EfqFH": {
