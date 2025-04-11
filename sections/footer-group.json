@@ -15,7 +15,7 @@
       "type": "newsletter-section-custom",
       "custom_css": [],
       "settings": {
-        "newsletter_image": "shopify://shop_images/Frame_1618872924.png",
+        "newsletter_image": "shopify://shop_images/Newsletter.png",
         "newslettertext": "#f8f8f8",
         "newslettersubtitle": "#f8f8f8",
         "newsletterbg": "#086b92",
@@ -28,42 +28,6 @@
     "77a3195e-4b80-497f-a648-2fe6ad255c4f": {
       "type": "footer-01",
       "blocks": {
-        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-0": {
-          "type": "link_list",
-          "settings": {
-            "custom_width": "20",
-            "heading": "SHOP",
-            "menu": "all-products-usa",
-            "mg_bottom": 0
-          }
-        },
-        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-1": {
-          "type": "link_list",
-          "settings": {
-            "custom_width": "20",
-            "heading": "DISCOVER",
-            "menu": "footer-discover-2-0",
-            "mg_bottom": 0
-          }
-        },
-        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-2": {
-          "type": "link_list",
-          "settings": {
-            "custom_width": "20",
-            "heading": "SUPPORT",
-            "menu": "footer-support-2-0",
-            "mg_bottom": 0
-          }
-        },
-        "link_list_Q6YRdU": {
-          "type": "link_list",
-          "settings": {
-            "custom_width": "20",
-            "heading": "LEGAL",
-            "menu": "legal",
-            "mg_bottom": 0
-          }
-        },
         "text_bCaACK": {
           "type": "text",
           "settings": {
@@ -102,6 +66,42 @@
             "social_background_color_hover": "#ffffff",
             "social_background_color_gradient_hover": "",
             "social_box_hover_color": "#ffffff",
+            "mg_bottom": 0
+          }
+        },
+        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-0": {
+          "type": "link_list",
+          "settings": {
+            "custom_width": "20",
+            "heading": "SHOP",
+            "menu": "all-products-usa",
+            "mg_bottom": 0
+          }
+        },
+        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-1": {
+          "type": "link_list",
+          "settings": {
+            "custom_width": "20",
+            "heading": "DISCOVER",
+            "menu": "footer-discover-2-0",
+            "mg_bottom": 0
+          }
+        },
+        "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-2": {
+          "type": "link_list",
+          "settings": {
+            "custom_width": "20",
+            "heading": "SUPPORT",
+            "menu": "footer-support-2-0",
+            "mg_bottom": 0
+          }
+        },
+        "link_list_Q6YRdU": {
+          "type": "link_list",
+          "settings": {
+            "custom_width": "20",
+            "heading": "LEGAL",
+            "menu": "legal",
             "mg_bottom": 0
           }
         },
@@ -191,11 +191,11 @@
         }
       },
       "block_order": [
+        "text_bCaACK",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-0",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-1",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-2",
         "link_list_Q6YRdU",
-        "text_bCaACK",
         "110d49c1-eaa1-4fe6-b7d8-aa261738820d",
         "text_yanzUz"
       ],
