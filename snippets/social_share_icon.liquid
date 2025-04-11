@@ -16,7 +16,7 @@
         <li class="social-share__item"><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ perLinkURL }}" title='{{ 'general.social.links.facebook' | t }}' data-no-instant rel="noopener noreferrer nofollow" target="_blank">{%- render 'icon-facebook' -%} </a></li>
     {%- endif -%}
    {%- if settings.linkedin -%}
-        <li class="social-share__item"><a class="facebook" href=""{{ perLinkURL }}" title='{{ 'LinkedIn' }}' data-no-instant rel="noopener noreferrer nofollow" target="_blank">{%- render 'linkedin' -%} </a></li>
+        <li class="social-share__item"><a class="facebook" href="{{ perLinkURL }}" title='{{ 'LinkedIn' }}' data-no-instant rel="noopener noreferrer nofollow" target="_blank">{%- render 'linkedin' -%} </a></li>
     {%- endif -%}
     {%- if settings.share_twitter -%}
         <li class="social-share__item"><a class="twitter" href="http://twitter.com/share?text={{ perTitle }}&amp;url={{ perLinkURL }}" title='{{ 'general.social.links.twitter' | t }}' data-no-instant rel="noopener noreferrer nofollow" target="_blank">{%- render 'icon-twitter' -%}</a></li>
