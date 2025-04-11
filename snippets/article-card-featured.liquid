@@ -50,7 +50,7 @@
             {%- if show_more_pos == 'right_title' -%}
                 <div class="article-card-header d-flex flex-jc-between flex-align-start gap-col-30">
                     <h3 class="article-card__title" style="--margin-bottom: {{ margin_bottom_title | append: 'px' }}"><a class="link-effect p-relative" href="{{ article.url }}"><span class="text">{{ article.title }}</span></a></h3>
-                    <a href="{{article.url}}" class="article-card__link article-card__link-right link-effect min-w-100 text-right{% if enable_blog_button %} button{% endif %}"><span class="text p-relative">{{ 'blogs.article.read_more' | t }}</span>{%- if blog_show_more_icon == 'arrow-right' -%}{% render 'icon-arrow-right-2', class: 'ml-5' %}{%- elsif blog_show_more_icon == 'chevron-right' -%}{% render 'icon-arrow-right', class: 'ml-5' %}{% elsif blog_show_more_icon == 'angles-right' %}{% render 'icon-angles-right', class: 'ml-5' %}{% endif %}</a>
+                    <a href="{{article.url}}" class="article-card__link article-card__link-right link-effect min-w-100 text-right{% if enable_blog_button %} button{% endif %}"><span class="text p-relative">{{ 'Read More' }}</span>{%- if blog_show_more_icon == 'arrow-right' -%}{% render 'icon-arrow-right-2', class: 'ml-5' %}{%- elsif blog_show_more_icon == 'chevron-right' -%}{% render 'icon-arrow-right', class: 'ml-5' %}{% elsif blog_show_more_icon == 'angles-right' %}{% render 'icon-angles-right', class: 'ml-5' %}{% endif %}</a>
                 </div>
             {%- else -%}
                 <h3 class="article-card__title" style="--margin-bottom: {{ margin_bottom_title | append: 'px' }}"><a class="link-effect p-relative d-inline-block" href="{{ article.url }}"><span class="text">{{ article.title }}</span></a></h3>
