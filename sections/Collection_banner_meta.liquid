@@ -545,11 +545,12 @@
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </a>
                                             {%- else -%}
-                                                <a class="image" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
+                                              {% comment %}  <a class="image" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
                                                     <div class="placeholder" style="--height_placeholder: 720px;">
                                                         {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                                                     </div>
                                                 </a>
+                                               {% endcomment %} 
                                             {%- endif -%}
                                             {%- if mobile_image != blank -%}
                                                 <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} {% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless mobile_image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ mobile_image.alt | default: shop.name | escape }}">
