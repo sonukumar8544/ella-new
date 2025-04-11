@@ -8284,3 +8284,32 @@ div#tab-shipping-amp-returns-mobile {
 .easyvideo_section {
   padding: 0px 5px;
 }
+
+.sidebar-recent-post> .sidebarBlock-heading{
+  color: #374650 !important;
+}
+
+.button--prev,
+.button--next {
+  background: #006a91 !important;
+  color: #fff !important;
+  border: 1px solid #006a91 !important;
+}
+
+.button--prev:hover,
+.button--next:hover {
+  background: white !important;
+  color: #006a91  !important;
+}
+
+.price-item .text{
+  display: none !important;
+}
+
+dd.price__label_sale.price__label_percent {
+  display: none !important;
+}
+
+.productView-price .price__saved{
+  display: none !important;
+}

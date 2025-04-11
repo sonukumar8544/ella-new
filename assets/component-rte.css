@@ -85,15 +85,16 @@
 }
 
 .halo-text-format p a{
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-underline-offset: 0.3rem;
     transition: text-decoration var(--duration-short) ease;
+    color: #006a91 ;
 }
 
 .halo-text-format ul,
 .halo-text-format ol{
-    margin: 0 0 10px 17px;
-    padding: 0 0 22px 0;
+    /* margin: 0 0 10px 17px;
+    padding: 0 0 22px 0; */
     list-style: inherit;
 }
 

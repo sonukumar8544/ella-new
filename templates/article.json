@@ -16,6 +16,7 @@
           "type": "category",
           "disabled": true,
           "settings": {
+            "show_block": true,
             "heading": "Categories",
             "type": "3_level",
             "link_list": "blog-page-catogry"
@@ -24,6 +25,7 @@
         "96861bf3-10df-4b31-82bd-61aee2e9bc30": {
           "type": "recent_post",
           "settings": {
+            "show_block": true,
             "heading": "Recent Post",
             "number": 5
           }
@@ -32,9 +34,10 @@
           "type": "product_block",
           "disabled": true,
           "settings": {
-            "heading": "Featured Products",
+            "show_block": true,
             "position": "sidebar",
             "column": "1",
+            "heading": "Featured Products",
             "product_block_collection": "all-products-old",
             "product_block_layout": "slider",
             "product_block_limit": 4,
@@ -46,6 +49,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
+            "show_block": true,
             "heading": "",
             "link": ""
           }
@@ -54,6 +58,7 @@
           "type": "image",
           "disabled": true,
           "settings": {
+            "show_block": true,
             "heading": "",
             "link": ""
           }
@@ -62,6 +67,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
+            "show_block": true,
             "heading": "Custom Block",
             "text": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... or whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from admin panel.</p>"
           }
@@ -269,7 +275,6 @@
         "div .slick-prev:before,div .slick-next:before {border-top: 2px solid #086b92 !important; border-right: 2px solid #086b92 !important;}"
       ],
       "settings": {
-        "container": "container",
         "show_breadcrumb": true,
         "breadcrumb_alignment": "left",
         "breadcrumb_bg": "rgba(0,0,0,0)",
@@ -278,6 +283,14 @@
         "breadcrumb_gradient_mb": "",
         "show_page_title": false,
         "page_title_alignment": "left",
+        "container": "container",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "show_sidebar": true,
         "show_collapse": false,
         "enable_sticky": false,
         "sidebar_layout": "layout_1",
@@ -291,7 +304,7 @@
         "show_author": true,
         "show_date": true,
         "show_tags": false,
-        "show_share": true,
+        "show_share": false,
         "show_next_prev": true,
         "background_color": "",
         "title_font": "font_2",
@@ -308,13 +321,7 @@
         "info_font_weight": "400",
         "info_text_transform": "capitalize",
         "info_font_style": "normal",
-        "info_color": "#999999",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 25,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
+        "info_color": "#999999"
       }
     },
     "featured_blog_YUD83n": {
