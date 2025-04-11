@@ -1,6 +1,15 @@
 /* cstm */
 @media (min-width: 769px) {
 }
+.policies-block.policies-border--none {
+  position: relative;
+}
+.policies-block.policies-border--none .halo-item.has-des::after {
+  position: absolute;
+  background: rebeccapurple;
+  height: 2px;
+  width: 50%;
+}
 body.template-page .cstm_policies__block img {
   width: 120px;
 }
