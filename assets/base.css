@@ -8324,3 +8324,9 @@ dd.price__label_sale.price__label_percent {
 .template-page .wrapper-body {
   padding-bottom: 0px;
 }
+
+.header-icons details.search_details {
+  border: none;
+  margin-bottom: 0;
+  box-sizing: content-box;
+}
