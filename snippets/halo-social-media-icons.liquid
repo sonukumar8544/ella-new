@@ -13,12 +13,15 @@
         {%- if settings.social_instagram_link != blank -%}
             <li class="list-social__item"><a {% if settings.social_instagram_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.social_instagram_link }}" target="_blank"{% endif %} class="link link--text list-social__link icon-instagram">{%- render 'icon-instagram' -%} <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span></a></li>
         {%- endif -%}
-        {%- if settings.social_pinterest_link != blank -%}
+        {%- if settings.linkedin != blank -%}
+            <li class="list-social__item"><a {% if settings.social_linkedin_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.social_linkedin_link }}" target="_blank"{% endif %} class="link link--text list-social__link icon-pinterest">{%- render 'linkedin' -%} <span class="visually-hidden">{{ 'linkedIn' | t }}</span></a></li>
+        {%- endif -%}
+       {%- if settings.social_pinterest_link != blank -%}
             <li class="list-social__item"><a {% if settings.social_pinterest_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.social_pinterest_link }}" target="_blank"{% endif %} class="link link--text list-social__link icon-pinterest">{%- render 'icon-pinterest' -%} <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span></a></li>
         {%- endif -%}
-        {% comment %} {%- if settings.social_tiktok_link != blank -%}
+        {%- if settings.social_tiktok_link != blank -%}
             <li class="list-social__item"><a {% if settings.social_tiktok_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.social_tiktok_link }}" target="_blank"{% endif %} class="link link--text list-social__link icon-tiktok">{%- render 'icon-tiktok' -%} <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span></a></li>
-        {%- endif -%} {% endcomment %}
+        {%- endif -%}
         {%- if settings.social_tumblr_link != blank -%}
           <li class="list-social__item"><a {% if settings.social_tumblr_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.social_tumblr_link }}" target="_blank"{% endif %} class="link link--text list-social__link icon-tumblr">{%- render 'icon-tumblr' -%} <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span></a></li>
         {%- endif -%}

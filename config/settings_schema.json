@@ -7507,6 +7507,12 @@
       },
       {
         "type": "checkbox",
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "default": true
+      },
+      {
+        "type": "checkbox",
         "id": "share_twitter",
         "label": "t:settings_schema.social-media.settings.twitter_label",
         "default": true
@@ -7556,6 +7562,12 @@
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link_label",
         "info": "t:settings_schema.social-media.settings.social_facebook_link_info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn",
+        "info": "LinkedIn"
       },
       {
         "type": "text",
