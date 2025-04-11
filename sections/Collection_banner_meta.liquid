@@ -197,7 +197,7 @@
             #halo-image-banner-{{ section.id }} .item--specialImg .collection-countdown .clock-item .num {font-size: var(--num_font_size_mb)}
             #halo-image-banner-{{ section.id }} .item--specialImg .collection-countdown .clock-item .text {font-size: var(--text_time_font_size_mb)}
             .before-line:before {bottom: 5px;}
-            #collection_custom_banner .item--largeImg .banner-sub-title{text-align: center !important; margin-top:0px;}
+            #collection_custom_banner .item--largeImg .banner-sub-title{text-align: center !important;}
             .content-box--absolute {padding: 17px 16px 10px; }
             #collection_custom_banner .banner-item .content-box { text-align: center;        left: calc((50%)) !important;        top: 31%;        transform: translate(-50%, -50%);    }
       
@@ -209,13 +209,13 @@
         @media (max-width: 767px){
             #halo-image-banner-{{ section.id }}{padding-top: var(--mg_top_mobile);padding-bottom: var(--mg_bottom_mobile)}
             #halo-image-banner-{{ section.id }} .banner-sub-title   {
-            font-size: 14px;padding: 0px 5px;
+            font-size: 14px;padding: 0px 15px;
             }
           #collection_custom_banner .banner-heading p{
-                font-size: 24px !important;
+                font-size: 28px !important;
                 line-height: normal !important;
                 height: auto;
-                text-align: center;
+                text-align: left;
                 margin: 0;
                 padding: 0;
                 }
@@ -225,6 +225,7 @@
                 margin: 0;
                font-size:13px;
                 }
+          
                 }
         @media (max-width: 550px){
             #halo-image-banner-{{ section.id }} .item--smallImg-st2 .content-box {flex-direction: column;padding-right: 15px;padding-left: 15px;margin: 0 auto}
@@ -236,9 +237,6 @@
             #halo-image-banner-{{ section.id }} .item--largeImg:not('.animate--fade-in') .content-box--absolute {transform: translateY(-50%)}
             #halo-image-banner-{{ section.id }} .item--largeImg .banner-text br {display: none}
             #halo-image-banner-{{ section.id }} .content-box--absolute.content_width_custom .banner-button{width: 210px;max-width: 210px;}
-        #collection_custom_banner .banner-item .content-box{
-                  top: 30%;
-        }
         }
         {%- if section.settings.style_bg == 'for_img' -%}
             @media (min-width: 767px) and (max-width: 930px){
@@ -262,7 +260,11 @@
             }
         {% endif %}
 
-    
+      @media (max-width: 1024px){
+       
+       @media (max-width: 768px){
+         
+      }
 /* css customization */
       {{section.settings.liquid_css}}
        #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading p{
@@ -280,7 +282,9 @@
                 --section_margin: {{ list_gap }}; --mg_top_desktop: {{ mg_top_desktop | append: 'px' }};--mg_top_tablet:{{ mg_top_tablet | append: 'px' }};--mg_top_mobile: {{ mg_top_mobile | append: 'px' }};--mg_bottom_desktop:{{ mg_bottom_desktop | append: 'px' }};--mg_bottom_tablet:{{ mg_bottom_tablet | append: 'px' }};--mg_bottom_mobile:{{ mg_bottom_mobile | append: 'px' }};--padding_full_width:{{ padding_full_width | append: 'px' }};
                 {%- if section.settings.bg_image != blank -%}
                     background: url({{ section.settings.bg_image | img_url: '1920x' }});background-repeat: no-repeat;background-size: cover;
-              {% endif %}
+                {%- else -%}
+                --bg-color-style: {% if section.settings.bg_color_gradient != blank %}{{ section.settings.bg_color_gradient }}{% else %}{{ section.settings.bg_color }}{% endif %}{%- endif -%}
+            " data-loader-script="{{ 'halo.image-banner-slide.js' | asset_url }}" allow-transparent-header
         >
             <div class="{% if container == '1170' %}container-1170{% elsif section.settings.container == '1470' %}container-1470{% elsif section.settings.container == '1570' %}container-1570{% elsif container == '1770' %}container-1770{% elsif container == '1920' %}container-1920{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
                 {%- if section.settings.image_banner_title != blank or section.settings.image_banner_des != blank -%}
@@ -540,13 +544,12 @@
                                                     {{ image | image_url: width: 3840 | image_tag: loading: 'lazy', class: lazy, height: height_dsk, sizes: "100vw", widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' }}
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </a>
-                                           {% comment %}
+                                            {%- else -%}
                                                 <a class="image" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
                                                     <div class="placeholder" style="--height_placeholder: 720px;">
                                                         {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                                                     </div>
                                                 </a>
-                                              {% endcomment %}
                                             {%- endif -%}
                                             {%- if mobile_image != blank -%}
                                                 <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} {% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless mobile_image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ mobile_image.alt | default: shop.name | escape }}">
@@ -554,21 +557,19 @@
                                                     {{ mobile_image | image_url: width: 750 | image_tag: loading: 'lazy',class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </a>
-                                           
+                                            {%- else -%}
                                                 {%- if image != blank -%}
                                                     <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image.aspect_ratio | times: 200 | append: '%' }}{% else %}{{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ image.alt | default: shop.name | escape }}">
                                                     {%- assign height_mb = image.width | divided_by: image.aspect_ratio | round -%}
                                                     {{ image | image_url: width: 750 | image_tag: loading: 'lazy', class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     </a>
-                                                   {% comment %}
                                                 {%- else -%}
                                                     <a class="image image-mobile" title="{{ shop.name }}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>
                                                         <div class="placeholder" style="--height_placeholder: 570px;">
                                                             {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
                                                         </div>
                                                     </a>
-                                                  {% endcomment %}
                                                 {%- endif -%}
                                             {%- endif -%}
                                             {%- if video_link != blank -%}
