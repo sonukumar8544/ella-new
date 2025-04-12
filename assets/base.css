@@ -7349,7 +7349,7 @@ body.is-custom-information .background-overlay {
   .button.button--secondary:hover,
   .button.button--secondary:focus {
     color: var(--btn-2-color-hover);
-    background: var(--btn-2-bg-hover);
+    background-color: #006A91;
     border-color: var(--btn-2-border-hover);
     background-origin: border-box;
   }
