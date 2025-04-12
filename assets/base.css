@@ -8184,6 +8184,10 @@ h5 {
 }
 
 @media (max-width: 1025px) {
+  .wellness-page .brand-tab-block .wrapper-image a .title:hover {
+    color: #ffffff;
+  }
+
   .sls-savings-badge {
     margin-top: 10px;
   }
