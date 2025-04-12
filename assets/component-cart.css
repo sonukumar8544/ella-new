@@ -1393,3 +1393,10 @@ div#main-cart-items {
     width: 340px;
   }
 }
+
+@media (max-width: 600px) {
+  .template-cart .cart-item__price-wrapper .cart-item__discounted-prices dd {
+    margin: 0;
+    width: auto;
+  }
+}
