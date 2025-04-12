@@ -18,11 +18,12 @@
     assign padding_full_width = section.settings.padding_full_width
 -%}
 
-<div class="account-page login-page section-block-{{section.id}}">
+<!--main-login -->
+<div class="account-page login-page section-block-{{section.id}}" id="main-login-page">
   <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
     <div class="halo-page-header">
-      {% render 'breadcrumb' %}
-      <h1 class="page-header">
+
+      <h1 class="page-header" style="display:none;">
          {{ 'customer.login_page.title' | t }}
       </h1>
     </div>
@@ -34,9 +35,9 @@
                       {{ 'customer.recover_password.title' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                      <div class="login-text">
+                   {% comment %}   <div class="login-text">
                           {{ 'customer.recover_password.subtext' | t }}
-                      </div>
+                      </div>{% endcomment %}
                       {% comment %}
                           This form must use 'recover_customer_password'
                       {% endcomment %}
@@ -79,7 +80,7 @@
                           </div>
                           <div class="form-actions">
                               {% if settings.enable_button_1_border_outside %}
-                                  <button class="button button-2"><span>{{ 'customer.login_page.submit' | t }}</span></button>
+                                  <button class="button button-2"><span>{{ 'LOGIN' }}</span></button>
                               {% else %}
                                   <input type="submit" class="button button-2" value="{{ 'customer.login_page.submit' | t }}">
                               {% endif %}
@@ -95,9 +96,9 @@
                       {{ 'customer.login_page.sign_in' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                      <div class="login-text">
+                      <!-- <div class="login-text">
                           {{ 'customer.login_page.text' | t }}
-                      </div>
+                      </div> -->
                       {% comment %}
                           If a user has successfully requested a new password, the form.posted_successfully? variable
                           is set to true within the 'recover_customer_password' form only. Within that form you'll see
@@ -170,9 +171,9 @@
                           {%- endif -%}
                           <div class="form-actions">
                               {% if settings.enable_button_1_border_outside %}
-                                  <button class="button button-2"><span>{{ 'customer.login_page.title' | t }}</span></button>
+                                  <button class="button button--primary"><span>{{ 'LOGIN' }}</span></button>
                               {% else %}
-                                  <input type="submit" class="button button-2" value="{{ 'customer.login_page.title' | t }}">
+                                  <input type="submit" class="button button--primary" value="{{ 'LOGIN'}}">
                               {% endif %}
                               <a href="#recover" class="link link-underline forget-password">
                                   <span class="text">{{ 'customer.login_page.forgot_password' | t }}</span>
@@ -202,9 +203,9 @@
                       {{ 'customer.register.register' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                      <div class="login-text">
+                      <!-- <div class="login-text">
                           {{ 'customer.register.text' | t }}
-                      </div>
+                      </div> -->
                       {%- form 'create_customer', class: 'create-customer-form' -%}
                           {%- if form.errors -%}
                               <div class="form-message" role="alert">
