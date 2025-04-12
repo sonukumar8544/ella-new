@@ -4,6 +4,9 @@
 .halo-sticky-toolbar-mobile li.list-item a span.icon {
   margin: auto;
 }
+.halo-sticky-toolbar-mobile span {
+  color: #086b92;
+}
 .halo-sticky-toolbar-mobile {
   position: fixed;
   bottom: 0;
