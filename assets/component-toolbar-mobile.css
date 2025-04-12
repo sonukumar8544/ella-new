@@ -12,6 +12,9 @@
 .halo-sticky-toolbar-mobile span {
   color: #086b92 !important;
 }
+.halo-sticky-toolbar-mobile .cart-count-bubble span {
+  color: #fff;
+}
 .halo-sticky-toolbar-mobile {
   position: fixed;
   bottom: 0;
