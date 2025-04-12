@@ -1404,6 +1404,6 @@ div#main-cart-items {
     font-size: 12px;
   }
   .template-cart .cart-item__price-wrapper .price.cart-item__old-price {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 }
