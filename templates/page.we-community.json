@@ -147,8 +147,7 @@
     "custom_liquid_zt4aCQ": {
       "type": "custom-liquid",
       "custom_css": [
-        ".we-community-center p {max-width: 1300px; margin-left: auto; margin-right: auto;}",
-        "@media (min-width: 768px) {.we-community-center {margin-top: 60px; padding: 0px 15px; }}",
+        "@media (min-width: 768px) {.we-community-center p {max-width: 1300px; margin-left: auto; margin-right: auto;} .we-community-center {margin-top: 60px; padding: 0px 15px; }}",
         ".we-community-center {padding: 0px 20px;}"
       ],
       "settings": {
