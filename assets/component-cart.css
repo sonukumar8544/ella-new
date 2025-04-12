@@ -3,6 +3,10 @@
   margin: 0;
   width: 117px;
 }
+.template-cart .cart-item__price-wrapper .unit-price,
+.template-cart .cart-item__price-wrapper .price {
+  font-size: 15px;
+}
 .cart-content-empty .quick_cart_empty ul li a .cart-collection-pic {
   max-width: max-content;
   max-height: fit-content;
