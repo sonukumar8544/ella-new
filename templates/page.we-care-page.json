@@ -122,6 +122,7 @@
         "image_PTWaLE"
       ],
       "settings": {
+        "id": "",
         "container": "fullwidth",
         "padding_full_width": 0,
         "slideshow_background": "",
@@ -221,6 +222,7 @@
         "text_Yrx3pa"
       ],
       "settings": {
+        "id": "",
         "container": "fullwidth",
         "padding_full_width": 0,
         "enable_border_top": false,
@@ -265,6 +267,7 @@
         "@media (max-width: 768px) {.rich-text__text.rte .cstm-wecare {text-align: left; font-style: italic; line-height: 1.4em; }}"
       ],
       "settings": {
+        "id": "",
         "container": "1170",
         "padding_full_width": 0,
         "enable_border_top": false,
@@ -301,10 +304,10 @@
             "text": "We Understand Your Journey",
             "type_tab_font": "font_1",
             "fontsize_title_block": 18,
-            "fontsize_title_block_mb": 18,
+            "fontsize_title_block_mb": 24,
             "title_block_font_weight": "700",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
+            "mg_bottom_title": 12,
+            "mg_bottom_title_mb": 25,
             "color_block": "#374650",
             "description": "Living with chronic conditions can feel overwhelming. That's why we're creating a support system that considers not just your physical health, but your overall wellbeing.",
             "custom_liquid": false,
@@ -458,8 +461,8 @@
         "color_title": "#000000",
         "fontsize_title": 30,
         "fontsize_title_mb": 22,
-        "mg_bottom_title_service_block": 12,
-        "mg_bottom_title_service_block_mb": 12,
+        "mg_bottom_title_service_block": 27,
+        "mg_bottom_title_service_block_mb": 21,
         "service_block_des": "",
         "service_block_des_pos": "bottom",
         "color_des": "#000000",
