@@ -41,7 +41,7 @@ html.no-js .no-js-hidden {
 
 /* app css */
 #hubspot-messages-iframe-container.widget-align-right {
-  bottom: 17% !important;
+  /* bottom: 17% !important; */
 }
 
 body {
@@ -7349,7 +7349,7 @@ body.is-custom-information .background-overlay {
   .button.button--secondary:hover,
   .button.button--secondary:focus {
     color: var(--btn-2-color-hover);
-    background-color: #006A91;
+    background-color: #006a91;
     border-color: var(--btn-2-border-hover);
     background-origin: border-box;
   }
