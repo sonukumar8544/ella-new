@@ -39,6 +39,11 @@ html.no-js .no-js-hidden {
   display: none !important;
 }
 
+/* app css */
+#hubspot-messages-iframe-container.widget-align-right {
+  bottom: 17% !important;
+}
+
 body {
   font-family: var(--font-body-family);
   font-size: var(--font-body-size);
