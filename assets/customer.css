@@ -553,6 +553,12 @@
 
 .address-form input[type="checkbox"] + .form-label--checkbox:before {
   top: 3px;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  outline: none;
+  box-shadow: 0 0 0 2px #006a91;
+  border-radius: 2px;
 }
 
 .address-form input[type="checkbox"] + .form-label--checkbox:after {
