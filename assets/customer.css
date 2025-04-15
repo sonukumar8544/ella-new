@@ -1234,8 +1234,8 @@ h2.address-title.text-left {
     display: flex;
     gap: 20px;
   }
-  .template-customers\/addresses .cstm_main_address .cstm__add_btn {
-    width: 357px;
+  .template-customers\/addresses .address-form .button + .button {
+    width: 50%;
   }
   .template-customers\/addresses .cstm__default_checkbox {
     width: 100%;
