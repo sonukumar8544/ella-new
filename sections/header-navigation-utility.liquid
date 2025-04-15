@@ -1,13 +1,73 @@
 {{ 'component-megamenu.css' | asset_url | stylesheet_tag: preload: true }}
+{% style %}
+  .halo-top-language {
+    display: none !important;
+}
+@media screen and (min-width: 1025px) {
+    .header-nav-utility .header-item--side {
+        min-width: 200px !important;
+    }
+  .cstm-take-wellness-quiz{
+   font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    background: #086b92;
+    padding: 5px 8px;
+    font-size: 16px;
+    padding: 10px;
+  }
+ .header-nav-utility{ padding: 0px 40px;}
+  .sticky-search-menu-open .header-nav-utility .header-search-close svg{ 
+    fill: #fff !important;
+    background: #086b92 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    padding: 5px !important;
+}
 
+  .sticky-search-menu-open .header-nav-utility .header-search-close {
+    height: 40px !important;
+}
+  }
+ @media screen and (max-width: 1024px) {
+   .cstm-take-wellness-quiz:hover{
+     color:#fff;
+     background: #374650;
+     border:1px solid #fff;
+   }
+  .cstm-take-wellness-quiz{
+    border-radius: 4px;
+   color:#fff;
+    background: #086b92;
+    border:1px solid #086b92;
+    padding: 4px 8px;
+    font-size: 16px;
+  }
+  }
+  {% endstyle %}
+  {%- liquid
+        assign mg_top_desktop = section.settings.mg_top_desktop
+        assign mg_top_tablet = section.settings.mg_top_tablet
+        assign mg_top_mobile = section.settings.mg_top_mobile 
+
+        assign mg_bottom_desktop = section.settings.mg_bottom_desktop
+        assign mg_bottom_tablet = section.settings.mg_bottom_tablet
+        assign mg_bottom_mobile = section.settings.mg_bottom_mobile
+        %}
 <style>
-    @media screen and (min-width: 1025px) {
+   @media (min-width: 1200px) {.cstm_{{ section.id }}_padding {padding-top: {{ mg_top_desktop | append: 'px' }};padding-bottom: {{ mg_bottom_desktop | append: 'px' }}}}
+  @media (min-width: 768px) and (max-width: 1199px) {.cstm_{{ section.id }}_padding {padding-top: {{ mg_top_tablet | append: 'px' }};padding-bottom: {{ mg_bottom_tablet | append: 'px' }}}}
+     @media (max-width: 767px) { .cstm_{{ section.id }}_padding {padding-top: {{ mg_top_mobile | append: 'px' }};padding-bottom: {{ mg_bottom_mobile | append: 'px' }}} }
+  @media screen and (min-width: 1025px) {
         .header-nav-utility {
             {%- if section.settings.header_navigation_bg_gradient != 'rgba(0,0,0,0)' and section.settings.header_navigation_bg_gradient != blank -%}
-                 background: {{ section.settings.header_navigation_bg_gradient }}
+                 background: {{ section.settings.header_navigation_bg_gradient }};
+              box-shadow: 0px 1px 6px rgba(30, 30, 30, 0.1);
             {%- else -%}
                 {%- if section.settings.header_navigation_bg != 'rgba(0,0,0,0)' and section.settings.header_navigation_bg != blank -%}
-                   background: {{ section.settings.header_navigation_bg }}  
+                   background: {{ section.settings.header_navigation_bg }};
+                  box-shadow: 0px 1px 6px rgba(30, 30, 30, 0.1);
                 {%- endif -%}
             {%- endif -%}
         }
@@ -19,8 +79,12 @@
         {%- if section.settings.container == 'fullwidth' -%}
             .header-nav-utility > .container-full {padding-left: {{ section.settings.padding_full_width | append: 'px' }};padding-right: {{ section.settings.padding_full_width | append: 'px' }}}
         {%- endif -%}
-        .header-nav-utility .main-menu .container{width:100%}.header-nav-utility .header-icons{gap:18px}.header-nav-utility .header__icon--account .customer-links{font-size:var(--text_font_size);font-weight:var(--font-weight-medium);color:var(--header_icons_color);margin-top:1px}.header-nav-utility .header__icon--account:hover .customer-links{color:var(--header_icons_color_hover)}.header-nav-utility .header__search .icon-search{margin:2px auto 0}.header-nav-utility .header__icon--cart .cart-count-bubble{margin-left:6px}.header-nav-utility .header-icons .link-effect>span:after{background:var(--header_icons_color_hover)}.header-nav-utility .header-icons .link-effect:hover>span:after{background:var(--header_icons_color_hover)}.header-nav-utility .currency-dropdown .dropdown-label{display:inline-block;margin-top:1px}.header-nav-utility .top-language-currency .dropdown-label .text{font-size:var(--text_font_size);margin-left:5px;vertical-align:middle}.header-nav-utility .halo-top-language .disclosure__button>.icon{width:30px;height:22px;position:relative;margin-top:1px}.header-nav-utility .halo-top-language .disclosure__button>.icon svg{width:30px;height:22px}.header-nav-utility .enable-currency .halo-top-language .text+svg,.header-nav-utility .halo-top-currency .dropdown-label .icon,.header-nav-utility .halo-top-language .disclosure__button .text-language,.header-nav-utility .halo-top-language .disclosure__button .text-language+svg{display:none}.sticky-search-menu-open .header-nav-utility .search-modal__form{background-color:var(--bg-white);border-bottom:1px solid #e8e8e8;max-width:100%}.sticky-search-menu-open .header-nav-utility .search-modal__content{background-color:var(--bg-white);padding:20px 0}.sticky-search-menu-open .header-nav-utility .search__input{padding:7px 10px 7px 0}.sticky-search-menu-open .header-nav-utility .header-search-close svg,.sticky-search-menu-open .header-nav-utility .search__button svg{width:20px;height:20px;fill:var(--text-color)}.sticky-search-menu-open .header-nav-utility .quickSearchResultsWrap{right:0;left:0;top:calc(100% + 1px);width:100%;box-shadow:none}.sticky-search-menu-open .header-nav-utility .quickSearchResults .container{padding-left:15px;padding-right:15px}.sticky-search-menu-open .header-nav-utility details>.search-modal{padding:0 0 10vh;background:rgba(35,35,35,.8);animation:animateMenuOpen var(--duration-default) ease}.sticky-search-menu-open .header-nav-utility .header-search-close{height:36px}.header-nav-utility .header-item--side {min-width: 300px}.header-nav-utility .header-item:first-child {justify-content: flex-start}.header-nav-utility .header-item:nth-child(2){justify-content: center}.header-nav-utility .header-item:nth-child(3) {justify-content: flex-end}
-            .header-nav-utility .header__icon--wishlist .wishlist-count-bubble{top: -7px;right: -9px;min-width: 19px;min-height: 18px;line-height: 18px;font-size: var(--cart_count_bubble_font_size);background-color: var(--wishlist-bg-item);color: var(--wishlist-color-item);}
+        .header-nav-utility .main-menu .container{width:100%}.header-nav-utility .header-icons{gap:18px}.header-nav-utility .header__icon--account .customer-links{font-size:var(--text_font_size);font-weight:var(--font-weight-medium);color:var(--header_icons_color);margin-top:1px}.header-nav-utility .header__icon--account:hover .customer-links{color:var(--header_icons_color_hover)}.header-nav-utility .header__search .icon-search{margin:2px auto 0}.header-nav-utility .header__icon--cart .cart-count-bubble{margin-left:6px}.header-nav-utility .header-icons .link-effect>span:after{background:var(--header_icons_color_hover)}.header-nav-utility .header-icons .link-effect:hover>span:after{background:var(--header_icons_color_hover)}.header-nav-utility .currency-dropdown .dropdown-label{display:inline-block;margin-top:1px}
+        .header-nav-utility .top-language-currency .dropdown-label .text{font-size:var(--text_font_size);margin-left:5px;vertical-align:middle}
+        .header-nav-utility .halo-top-language .disclosure__button>.icon{width:30px;height:22px;position:relative;margin-top:1px}
+        .header-nav-utility .halo-top-language .disclosure__button>.icon svg{width:30px;height:22px}.
+        header-nav-utility .enable-currency .halo-top-language .text+svg,.header-nav-utility .halo-top-currency .dropdown-label .icon,.header-nav-utility .halo-top-language .disclosure__button .text-language,.header-nav-utility .halo-top-language .disclosure__button .text-language+svg{display:none}.sticky-search-menu-open .header-nav-utility .search-modal__form{background-color:var(--bg-white);border-bottom:1px solid #e8e8e8;max-width:100%}.sticky-search-menu-open .header-nav-utility .search-modal__content{background-color:var(--bg-white);padding:20px 0}.sticky-search-menu-open .header-nav-utility .search__input{padding:7px 10px 7px 0}.sticky-search-menu-open .header-nav-utility .header-search-close svg,.sticky-search-menu-open .header-nav-utility .search__button svg{width:20px;height:20px;fill:var(--text-color)}.sticky-search-menu-open .header-nav-utility .quickSearchResultsWrap{right:0;left:0;top:calc(100% + 1px);width:100%;box-shadow:none}.sticky-search-menu-open .header-nav-utility .quickSearchResults .container{padding-left:15px;padding-right:15px}.sticky-search-menu-open .header-nav-utility details>.search-modal{padding:0 0 10vh;background:rgba(35,35,35,.8);animation:animateMenuOpen var(--duration-default) ease}.sticky-search-menu-open .header-nav-utility .header-search-close{height:36px}.header-nav-utility .header-item--side {min-width: 300px}.header-nav-utility .header-item:first-child {justify-content: flex-start}.header-nav-utility .header-item:nth-child(2){justify-content: center}.header-nav-utility .header-item:nth-child(3) {justify-content: flex-end}
+        .header-nav-utility .header__icon--wishlist .wishlist-count-bubble{top: -7px;right: -9px;min-width: 19px;min-height: 18px;line-height: 18px;font-size: var(--cart_count_bubble_font_size);background-color: var(--wishlist-bg-item);color: var(--wishlist-color-item);}
         {%- if settings.enable_layout_rtl -%}
             .layout_rtl .header-nav-utility .header__icon--cart .cart-count-bubble {margin-left: 0;margin-right: 6px}.layout_rtl .header-nav-utility .customer-links {margin-right: 0}
         {%- endif -%}
@@ -30,8 +94,9 @@
     }
 </style>
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-navigation-wrapper"{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} no-effect-cursor{% endif %}>
-<div class="header-navigation header-nav-utility">
+<!--header-navigation-utility -->
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-navigation-wrapper "{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} no-effect-cursor{% endif %}>
+<div class="header-navigation header-nav-utility cstm_{{ section.id }}_padding">
     <div class="container container-{{ section.settings.container }} d-flex flex-jc-between flex-align-center p-static o-unset{% if section.settings.sticky_header_width == 'full' %} sticky-container-full{% endif %}">
     {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -45,7 +110,9 @@
                                 {%- assign logo_width_img = logo_width | append: 'x' -%}
                                 {%- assign logo_width_retina = logo_width | times: 2 | append: 'x'  -%}
                                 {%- assign logo_height = logo_width | divided_by: logo.aspect_ratio | round -%}
-                                <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: logo_width_retina }} 2x" src="{{ logo | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
+                              
+                              <img src="{{ logo | img_url: logo_width_img }}" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
+                                <!-- <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: 'master' }}" src="{{ logo | img_url: logo_width_img }}" loading="lazy" class="header__heading-logo w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}"> -->
                             {%- elsif block.settings.logo_text != blank -%}
                                 <span class="header__heading-text {{ block.settings.logo_text_transform }} d-block">{{ block.settings.logo_text }}</span>
                             {%- else -%}
@@ -73,19 +140,8 @@
             </div>
             {%- when 'header_icons' -%}
             <div class="header-icons header-item header-item--side d-flex flex-align-center flex-wrap fs-0 pt-2 pb-5{% if block.settings.show_search_sticky == false and block.settings.show_customer_sticky == false and block.settings.show_wishlist_sticky == false and block.settings.show_cart_sticky == false and block.settings.show_language_currency_sticky == false %} show-main-menu{% endif %}{% if block.settings.show_language_currency == false and block.settings.show_search == false and block.settings.show_customer == false and block.settings.show_wishlist == false and block.settings.show_cart == false %} hide-main-menu{% endif %}" style="--header_icons_color: {{block.settings.header_icons_color}};--header_icons_color_hover: {{block.settings.header_icons_color_hover}};--cart_count_bubble_bg: {% if block.settings.cart_count_bubble_bg_gradient != blank %}{{ block.settings.cart_count_bubble_bg_gradient }}{% else %}{{ block.settings.cart_count_bubble_bg }}{% endif %};--cart_count_bubble_color: {{block.settings.cart_count_bubble_color}};--cart_count_bubble_font_size: {% if block.settings.text_font_size <= 12 %}{{block.settings.text_font_size | append: 'px'}}{% else %} {{block.settings.text_font_size | minus: 2 | append: 'px'}}{% endif %};--text_font_size: {{block.settings.text_font_size | append: 'px' }}">
-                {%- if block.settings.show_language_currency or block.settings.show_language_currency_sticky -%}
-                <div class="header-language_currency language_currency_style_1 d-inline-block{% if block.settings.show_language_currency_sticky %}{% if block.settings.show_language_currency %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_language_currency %} show-main-menu{% endif %}{% endif %}">
-                    <div class="top-language-currency ft-0 d-flex sticky_effect{% if settings.enable_currencies %} enable-currency{% endif %}">
-                        {%- if settings.enable_multilang_shopify -%}
-                            {% render 'halo-top-language' %}
-                        {%- endif -%}
-                        {%- if settings.enable_currencies -%}
-                            {% render 'halo-top-currency' %}
-                        {%- endif -%}
-                    </div>
-                </div>
-                {%- endif -%}
-                {%- if shop.customer_accounts_enabled -%}
+              <!-- loginIcon  -->
+               {%- if shop.customer_accounts_enabled -%}
                     {%- if block.settings.show_customer or block.settings.show_customer_sticky -%}
                         {% if routes.account_login_url contains '/account/login' %}
                             {% assign is_contained = true %}
@@ -99,23 +155,37 @@
                                         {{ customer | avatar }}
                                     </account-icon>
                                 {%- else -%}
-                                    {%- liquid
+                                  {% render 'login_Icon' %}
+                                   {% comment %} {%- liquid
                                         if customer
                                             echo 'customer.account_fallback' | t
                                         else
                                             echo 'customer.sign_in' | t
                                         endif
-                                    -%}
+                                    -%}{% endcomment %}
                                 {%- endif -%}
                             </span>
                         </a> 
                     {%- endif -%}                              
                 {%- endif -%}
+<!-- cart Icon -->
+                {%- if block.settings.show_cart or block.settings.show_cart_sticky -%}
+                    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset cart-icon-bubble stroke-icon{% if block.settings.show_cart_sticky%}{% if block.settings.show_cart %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_cart %} show-main-menu{% endif %}{% endif %} text-center" {% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
+                        {% render 'icon-cart-03', class: 'w-h-24 stroke-w-10' %}
+                        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                        <div class="cart-count-bubble p-relative top-auto right-auto">
+                            <span class="text" aria-hidden="true" data-cart-count>{%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- else -%}{{ 'sections.cart.item_99' | t }}{%- endif -%}</span>
+                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                        </div>
+                    </a>
+                {%- endif -%}
+
+              <!-- Search Icon -->
                 {%- if block.settings.show_search or block.settings.show_search_sticky -%}
                     <details-modal class="header__iconItem header__search ml-0{% if block.settings.show_search_sticky%}{% if block.settings.show_search %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_search %} show-main-menu{% endif %}{% endif %}">
                             <details class="search_details search_details--popup">
                                 <summary class="header__icon header__icon--search header__icon--summary link link--text focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}" data-search-menu-sticky-form data-search-menu>
-                                    <span class="text-center">{% render 'icon-search', class: 'modal__toggle-open icon icon-search w-h-26' %}</span>
+                                    <span class="text-center">{% render 'search_Icon', class: 'modal__toggle-open icon icon-search w-h-26' %}</span>
                                 </summary>
                                 <div class="search-modal modal__content p-fixed top-0 bottom-0 left-0 right-0 w-100 h-100v m-zero zi-101{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
                                     <div class="search-modal__content search-modal__content-bottom d-block p-relative maw-100 text-center" tabindex="-1">
@@ -146,6 +216,21 @@
                             </details>
                     </details-modal>
                 {%- endif -%}
+              <!-- country Icon -->
+              {%- if block.settings.show_language_currency or block.settings.show_language_currency_sticky -%}
+                <div class="header-language_currency language_currency_style_1 d-inline-block{% if block.settings.show_language_currency_sticky %}{% if block.settings.show_language_currency %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_language_currency %} show-main-menu{% endif %}{% endif %}">
+                    <div class="top-language-currency ft-0 d-flex sticky_effect{% if settings.enable_currencies %} enable-currency{% endif %}">
+                        {%- if settings.enable_multilang_shopify -%}
+                            {% render 'halo-top-language' %}
+                        {%- endif -%}
+                        {%- if settings.enable_currencies -%}
+                            {% render 'halo-top-currency' %}
+                        {%- endif -%}
+                    </div>
+                </div>
+                {%- endif -%}
+               
+              
                 {%- if settings.show_wishlist -%}
                     {%- if block.settings.show_wishlist or block.settings.show_wishlist_sticky -%}
                         <a href="{% if settings.link_wishlist != blank %}{{ settings.link_wishlist }}{% else %}{{ pages['wish-list'].url }}{% endif %}" class="header__icon header__icon--wishlist link link--text focus-inset stroke-icon{% if block.settings.show_wishlist_sticky%}{% if block.settings.show_wishlist%}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_wishlist %} show-main-menu{% endif %}{% endif %} text-center" style="--wishlist-bg-item: {{ block.settings.wishlist_bg_item }}; --wishlist-color-item: {{ block.settings.wishlist_color_item }}">
@@ -157,16 +242,7 @@
                         </a>
                     {%- endif -%}
                 {%- endif -%}
-                {%- if block.settings.show_cart or block.settings.show_cart_sticky -%}
-                    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset cart-icon-bubble stroke-icon{% if block.settings.show_cart_sticky%}{% if block.settings.show_cart %}{% else %} hide-main-menu{% endif %}{% else %}{% if block.settings.show_cart %} show-main-menu{% endif %}{% endif %} text-center" {% if settings.show_quick_cart %} data-cart-sidebar{% endif %}>
-                        {% render 'icon-cart-03', class: 'w-h-24 stroke-w-10' %}
-                        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-                        <div class="cart-count-bubble p-relative top-auto right-auto">
-                            <span class="text" aria-hidden="true" data-cart-count>{%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- else -%}{{ 'sections.cart.item_99' | t }}{%- endif -%}</span>
-                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                        </div>
-                    </a>
-                {%- endif -%}
+              
             </div>
         {%- endcase -%}
     {%- endfor -%}
@@ -426,6 +502,70 @@ if (sticky != undefined || sticky != null) {
                     "label": "t:settings_schema.multiple_layouts.settings.general.full_width"
                 }
             ]
+        },
+      {
+            "type": "range",
+            "id": "mg_top_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
+        },
+        {
+            "type": "range",
+            "id": "mg_top_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
+        },
+        {
+            "type": "range",
+            "id": "mg_top_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
+        },
+      {
+            "type": "header",
+            "content": "t:sections.layout.margin_bottom"
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_desktop",
+            "label": "t:sections.layout.mg_desktop.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_tablet",
+            "label": "t:sections.layout.mg_tablet.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
+        },
+        {
+            "type": "range",
+            "id": "mg_bottom_mobile",
+            "label": "t:sections.layout.mg_mobile.label",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "t:sections.layout.mg_desktop.unit",
+            "default": 5
         }
     ],
     "blocks": [

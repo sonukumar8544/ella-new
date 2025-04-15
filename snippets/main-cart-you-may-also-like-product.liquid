@@ -1,0 +1,200 @@
+<!-- main-cart-you-may-also-like-product-->
+{% assign has_recommended_products = false %}
+<div class="quick_cart_similar_update" id="main-cart-you-may-also-like-product">
+  {% if section.settings.quick_cart_popular_product_title != blank %}
+    <h3
+      class="header_title"
+      style="background-color: {{ section.settings.similar_products_bg }}; color: {{ section.settings.similar_products_title }}"
+    >
+      {{ section.settings.quick_cart_popular_product_title | escape }}       
+    </h3>
+  {% endif %}
+   <div class="previewCartProduct" data-product-collection-cart>
+    <div class="previewCartCarousel products-carousel" data-item-dots="{{ show_dots1 }}" data-item-arrows="{{ show_arrows1 }}">
+  <!-- <div class="cart_recomended"> -->
+    {% assign displayed_product_titles = '' %}
+
+    {% for item in cart.items %}
+      {% assign collection = item.product.metafields.custom.similar_product_on_quick_cart.value %}
+      {% assign displayed_variant_ids = '' %}
+
+      {% for product in collection %}
+        {% assign cart_product_ids = cart.items | map: 'variant_id' %}
+
+        {% unless cart_product_ids contains product.selected_or_first_available_variant.id
+          or displayed_variant_ids contains product.selected_or_first_available_variant.id
+        %}
+          {% unless displayed_product_titles contains product.title %}
+            {% capture displayed_product_titles %}{{ displayed_product_titles }},{{ product.title }}{% endcapture %}
+
+            {% if localization.available_countries.size > 1 %}
+              {% assign currency = localization.country.currency.iso_code %}
+              {% if currency == 'USD'
+                or currency == 'CZK'
+                or currency == 'AUD'
+                or currency == 'DKK'
+                or currency == 'EUR'
+                or currency == 'GBP'
+              %}
+                {% assign show_product = true %}
+
+                {% if currency == 'DKK'
+                  or currency == 'AUD'
+                  or currency == 'CZK'
+                  or currency == 'EUR'
+                  or currency == 'GBP'
+                %}
+                  {% for tag in product.tags %}
+                    {% if tag == 'NOT_FOR_DDK'
+                      or tag == 'NOT_FOR_AUD'
+                      or tag == 'NOT_FOR_CZK'
+                      or tag == 'NOT_FOR_EUR'
+                      or tag == 'NOT_FOR_GBP'
+                    %}
+                      {% assign show_product = false %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+
+                {% if show_product %}
+                  {% for tag in product.tags %}
+                    {% if tag == 'usa-bundle' %}
+                      {% if product.price > 0 %}
+                        {% assign has_recommended_products = true %}
+                        {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %}
+                        <!-- cart-drawer-recommended-product -->
+                        {% render 'cart-drawer-recommended-product',
+                                product_card_product: product
+                            %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% elsif currency == 'CAD' %}
+                {% for tag in product.tags %}
+                  {% if tag == 'ca_bundle' %}
+                    {% assign has_recommended_products = true %}
+                    {% if product.price > 0 %}
+                     {% comment %}
+                       {% render 'cart-drawer-recommended-product', product: product %}
+                     {% endcomment %} 
+                      <!-- cart-drawer-recommended-product -->
+                      {% render 'cart-drawer-recommended-product',
+                                product_card_product: product
+                            %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+          {% endunless %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+      {% unless has_recommended_products %}
+        <script>
+          document.querySelector('.quick_cart_similar_update').style.display = 'none';
+        </script>
+      {% endunless %}
+</div>
+</div>
+<script>
+  $('.quick_cart_similar_update #recommendedProduct').click(function () {
+               let productname = $(this).attr('data-productTitle');
+                     let productUrls = $(this).attr('data-product-ur');
+                     console.log("Product Name:", productname);
+                     console.log("productUrl:", productUrls);
+                  // Tracking event
+                  _hsq.push([
+                      'trackCustomBehavioralEvent',
+                      {
+                          name: "pe49007533_addtocart",
+                          properties: {
+                              hs_page_title: productname,
+                              hs_page_url: productUrls
+                          }
+                      }
+                  ]);
+               })
+</script>
+
+<style>
+  #main-cart-you-may-also-like-product h3{
+    font-size: 34px;
+    text-align:center;
+  }
+  #main-cart-you-may-also-like-product .product-item .card{ display: block;}
+ #main-cart-you-may-also-like-product .product-item-custom .card-product{
+   display: block;
+   width: 250px;
+    height: 250px;
+ }
+ #main-cart-you-may-also-like-product .product-item-custom .card-product .card-media>img {
+    width: 250px !important;
+  }
+  #main-cart-you-may-also-like-product .previewCartCarousel.products-carousel {
+    display: flex;
+   justify-content: left;
+    align-items: center;
+    gap: 17px;
+    overflow-x: auto;
+}
+   #main-cart-you-may-also-like-product .previewCartCarousel.products-carousel::-webkit-scrollbar {
+  width: 4px; /* Adjust as needed */
+  height: 4px; /* For horizontal scroll */
+}
+
+#main-cart-you-may-also-like-product .previewCartCarousel.products-carousel::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px #fff !important;
+}
+
+#main-cart-you-may-also-like-product .previewCartCarousel.products-carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Customize thumb */
+  border-radius: 10px;
+}
+
+ #main-cart-you-may-also-like-product .product-item-custom .card-information {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 5px!important;
+    margin-top: 10px;
+}
+ #main-cart-you-may-also-like-product .card-information__wrapper.text-left .card-price,
+ #main-cart-you-may-also-like-product .card-swatch.text-left{
+   justify-content: center;
+ }
+  #main-cart-you-may-also-like-product .quick_cart_similar_update .product-item-custom .card-title{
+    text-align:center;
+  }
+ #main-cart-you-may-also-like-product .card-information__wrapper.text-left{
+   text-align: -webkit-center;
+ }
+   #main-cart-you-may-also-like-product button#product-add-to-cart:hover,
+ #main-cart-you-may-also-like-product a.button.button-ATC.card-button:hover{
+    color: #006a91;
+ }
+  #main-cart-you-may-also-like-product button#product-add-to-cart,
+ #main-cart-you-may-also-like-product a.button.button-ATC.card-button {
+    color: #fff;
+    width: 200px;
+    height: 42px;
+    line-height: 25px !important;
+    font-size: 18px !important;
+   border-color: #006a91;
+}
+ #main-cart-you-may-also-like-product .quick_cart_similar_update .price-item{
+   font-size: inherit; 
+  }
+  @media(max-width:768px){
+     #main-cart-you-may-also-like-product h3{
+    font-size: 22px;
+    text-align:center;
+  }
+  }
+</style>

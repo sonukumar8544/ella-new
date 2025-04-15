@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "author_section_pAQQMM": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_CEFdnx": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Sarika Jassal is a versatile and skilled content writer with a diverse academic background, holding an MA in English, a B.Tech in Electronics and Communication Engineering from JNTU Hyderabad, and a B.Ed. from KUK University. With experience spanning multiple domains, including health and wellness, Sarika excels in blending technical knowledge with clear, engaging communication to create informative, accessible, and well-researched content. <br><br>Over the years, Sarika has focused her writing on healthcare and wellness supplements, ensuring every article is meticulously researched and backed by credible sources. She diligently stays current on medical guidelines, peer-reviewed journals, and emerging trends, guaranteeing that her readers receive reliable, up-to-date information. Through her work, Sarika empowers individuals to make well-informed decisions about their health, shedding light on the science behind supplements and holistic well-being."
+          }
+        },
+        "text_block_yHNPXb": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights. <br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_CEFdnx",
+        "text_block_yHNPXb"
+      ],
+      "settings": {
+        "author_image": "shopify:\/\/shop_images\/Sarika.jpg",
+        "author_name": "Sarika Jassal",
+        "author_role": "Author",
+        "author_email": "content@wellnessextract.com",
+        "author_linkedin": "https:\/\/www.linkedin.com\/in\/sarika-jassal-2891b6107"
+      }
+    },
+    "author_blog_card_i73neq": {
+      "type": "author-blog-card",
+      "settings": {
+        "blog_author_name": "Sarika Jassal"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "author_section_pAQQMM",
+    "author_blog_card_i73neq"
+  ]
+}

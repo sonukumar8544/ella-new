@@ -17,7 +17,51 @@
         "announcement_3cLqPQ": {
           "type": "announcement",
           "settings": {
-            "text": "<p>Bundle up &amp; Save! Purchase any 3 items &amp; unlock 15% off. No code needed!</p>",
+            "text": "<p style=\"font-style: normal;\n    font-weight: 700;\n    letter-spacing: 1px;\n    font-family: Lato;\n    text-align: center;\">Spring Sale: 20% Off All Supplements. <a href=\"https://wellnessextract.com/collections/all-products\">Shop Now</a></p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#9f9696",
+            "btn_bg_color": "#f8ce63",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_PXhTQQ": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Why settle? Mix &amp; match your favorite supplements and design a bundle just for you!\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_UPwLfY": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<p> Bulk Up, Save Big | 15% Off 3+ Products\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_3pNXXW": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<p> Grab 3, Save 15%! – The more you bundle, the more you save! Personalize your health routine today. Start Shopping\n</p>",
+            "btn_color": "#f84248",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#ffffff",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_7K94yJ": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<p> Bundle. Save. Thrive. – Choose any 3 supplements, get 15% OFF, and build a wellness routine that works for you! Shop &amp; Save</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",
             "btn_bg_color": "#ffffff",
@@ -26,19 +70,23 @@
         }
       },
       "block_order": [
-        "announcement_3cLqPQ"
+        "announcement_3cLqPQ",
+        "announcement_PXhTQQ",
+        "announcement_UPwLfY",
+        "announcement_3pNXXW",
+        "announcement_7K94yJ"
       ],
       "settings": {
-        "layout": "scroll",
-        "enable_close": true,
-        "color_text": "#ffffff",
-        "bg_color_text": "#2f4a4e",
+        "layout": "slider",
+        "enable_close": false,
+        "color_text": "#374650",
+        "bg_color_text": "#f8ce63",
         "bg_color_text_gradient": "",
         "font_size_text": 14,
         "font_style_text": "normal",
-        "font_weight_text": "500",
-        "arrow_active": false,
-        "content_max_width": 38,
+        "font_weight_text": "700",
+        "arrow_active": true,
+        "content_max_width": 71,
         "padding_top": 0,
         "padding_top_tablet": 0,
         "padding_top_mobile": 0,
@@ -54,8 +102,8 @@
           "type": "logo",
           "settings": {
             "logo_position": "always",
-            "logo": "shopify://shop_images/logo.png",
-            "logo_width": 195,
+            "logo": "shopify://shop_images/LogoEllatheme.svg",
+            "logo_width": 180,
             "logo_width_fixed": 100,
             "logo_text": "",
             "logo_font_size": 20,
@@ -67,23 +115,23 @@
         "sections--14682829619277__d7eb20bb-97ec-4232-b5c6-c1a11d2d8c61-16808721906029dcad-1": {
           "type": "main_menu",
           "settings": {
-            "menu": "we-usa-mega-kapil",
+            "menu": "we-usa-mega-2-0",
             "menu_top_spacing": 22,
             "menu_bottom_spacing": 22,
-            "grid_gap_menu_item": 10,
-            "alignment": "left",
+            "grid_gap_menu_item": 14,
+            "alignment": "center",
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
-            "lv_1_color": "#ffffff",
-            "lv_1_color_hover": "#ffffff",
-            "lv_2_color": "#274b4f",
-            "lv_2_color_hover": "#274b4f",
-            "lv_3_color": "#5a5a5a",
-            "lv_3_color_hover": "#5a5a5a",
+            "lv_1_color": "#232323",
+            "lv_1_color_hover": "#086b92",
+            "lv_2_color": "#232323",
+            "lv_2_color_hover": "#086b92",
+            "lv_3_color": "#232323",
+            "lv_3_color_hover": "#086b92",
             "sale_item_1": "Take Wellness Quiz",
             "sale_item_2": "Shop",
             "sale_item_3": "",
-            "sale_item_color": "#ff8b21",
+            "sale_item_color": "#ffffff",
             "label_position": "main_menu",
             "show_label_blink": true,
             "new_label_1": "",
@@ -112,19 +160,19 @@
             "show_language_currency": true,
             "show_search": true,
             "show_customer": true,
-            "show_wishlist": true,
-            "show_wishlist_number": true,
+            "show_wishlist": false,
+            "show_wishlist_number": false,
             "show_cart": true,
             "text_font_size": 17,
             "show_language_currency_sticky": true,
             "show_search_sticky": true,
             "show_customer_sticky": true,
-            "show_wishlist_sticky": true,
+            "show_wishlist_sticky": false,
             "show_cart_sticky": true,
-            "header_icons_color": "#ffffff",
-            "header_icons_color_hover": "#ffffff",
-            "cart_count_bubble_color": "#323232",
-            "cart_count_bubble_bg": "#eaaf66",
+            "header_icons_color": "#086b92",
+            "header_icons_color_hover": "#086b92",
+            "cart_count_bubble_color": "#ffffff",
+            "cart_count_bubble_bg": "#d69e12",
             "cart_count_bubble_bg_gradient": "",
             "wishlist_color_item": "#ffffff",
             "wishlist_bg_item": "#ff8b21"
@@ -138,7 +186,7 @@
             "item": "SHOP",
             "column": 3,
             "show_banner_1": true,
-            "banner_1": "shopify://shop_images/Story_p0cHE_1738908419504.jpg",
+            "banner_1": "shopify://shop_images/Spring_Day_Sale-1-18.png",
             "banner_url_1": "shopify://collections/all-products",
             "show_product": true,
             "product_title": "Featured Products",
@@ -220,12 +268,18 @@
         "4910f55a-213a-4e1b-9b5c-13897e08a8c5"
       ],
       "settings": {
-        "container": "1770",
+        "container": "full",
         "padding_full_width": 85,
-        "header_navigation_bg": "#086b92",
+        "header_navigation_bg": "#ffffff",
         "header_navigation_bg_gradient": "",
         "sticky_header_type": "always",
-        "sticky_header_width": "full"
+        "sticky_header_width": "full",
+        "mg_top_desktop": 9,
+        "mg_top_tablet": 9,
+        "mg_top_mobile": 2,
+        "mg_bottom_desktop": 9,
+        "mg_bottom_tablet": 9,
+        "mg_bottom_mobile": 2
       }
     },
     "header-mobile": {
@@ -234,8 +288,8 @@
         "7de2266e-0cd4-4fda-9f09-06f75a17f944": {
           "type": "menu",
           "settings": {
-            "color": "#ffffff",
-            "menu_tab_bg": "#000000"
+            "color": "#086b92",
+            "menu_tab_bg": "#086b92"
           }
         },
         "163e2cb5-14f2-4af6-9ac3-77193c082f53": {
@@ -243,14 +297,14 @@
           "settings": {
             "icon": "1",
             "popup_action": true,
-            "color": "#ffffff"
+            "color": "#086b92"
           }
         },
         "550fbd21-75fb-4051-9dee-77d91b5239f0": {
           "type": "logo",
           "settings": {
-            "logo_mobile": "shopify://shop_images/logo-d.png",
-            "logo_width_mobile": 100,
+            "logo_mobile": "shopify://shop_images/LogoEllatheme.svg",
+            "logo_width_mobile": 114,
             "logo_text": "",
             "logo_font_size": 20,
             "logo_font_weight": "600",
@@ -263,7 +317,7 @@
           "type": "customer",
           "settings": {
             "icon": "1",
-            "color": "#ffffff"
+            "color": "#086b92"
           }
         },
         "633f9dae-3f65-4bda-9ca8-9d3e231aaf9d": {
@@ -271,9 +325,9 @@
           "settings": {
             "icon": "3",
             "show_cart_count_bubble": true,
-            "color": "#ffffff",
-            "color_bubble": "#232323",
-            "bg_bubble": "#ffffff"
+            "color": "#086b92",
+            "color_bubble": "#ffffff",
+            "bg_bubble": "#d69e12"
           }
         }
       },
@@ -285,9 +339,9 @@
         "633f9dae-3f65-4bda-9ca8-9d3e231aaf9d"
       ],
       "settings": {
-        "background": "#086b92",
+        "background": "#ffffff",
         "gradient": "",
-        "sticky_header_type": "on_scroll",
+        "sticky_header_type": "always",
         "enable_transparent": false,
         "transparent_color": "#232323",
         "transparent_border_color": "",

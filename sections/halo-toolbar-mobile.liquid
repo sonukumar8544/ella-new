@@ -1,3 +1,4 @@
+<!-- halo-toolbar-mobile-->
 {%- if section.settings.display_section -%}
 {{ 'component-toolbar-mobile.css' | asset_url | stylesheet_tag }}
 <div class="halo-sticky-toolbar-mobile">
@@ -61,6 +62,7 @@
     .halo-sticky-toolbar-mobile {background: {% if bg_color_gradient != blank %}{{bg_color_gradient}}{% else %}{{bg_color}}{% endif %};border: 1px solid {{border_color}}}
     .halo-sticky-toolbar-mobile span {color: {{color_icon}}}
     .halo-sticky-toolbar-mobile span.icon svg {fill: {{color_icon}}}
+  .bottom-bar--list .cart-count-bubble
 </style>
 <script>
     const buttons = document.querySelectorAll('[data-bar-content]');

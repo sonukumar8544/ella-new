@@ -309,7 +309,7 @@
         .section-block-{{section.id}} .halo-block-header .title {font-size: {{ fontsize_title_mb | append: 'px'  }}}
         .section-block-{{section.id}} .halo-block-top {border: 0}
         .list-product-tabs.list-tab__style_2 li .tab-links.active:before {display: none !important}
-        .product-tab-block .list-product-tabs.list-tab__style_2 li .tab-links {margin: 0}
+        .product-tab-block .list-product-tabs.list-tab__style_2 li .tab-links {margin: 0px;}
         .section-block-{{ section.id }} .products-flex .product {
             {%- if show_half -%}
                 flex-basis: calc(100% / calc(var(--count) - 0.3));width: calc(100% / calc(var(--count) - 0.3))
@@ -351,6 +351,23 @@
             }
         {%- endif -%}
     {%- endif -%}
+
+  /* cstm css */
+  .product-tab-block .list-product-tabs{
+    display: flex;
+    margin: 0rem auto 3rem;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+  }
+ @media(max-width: 768px){
+  .price--on-sale .price__sale{
+   flex-wrap: nowrap;
+   }
+.price--on-sale .price__sale .price-item {
+    font-size: 14px;
+ }
 </style>
 <product-tabs-section>
     <div class="product-tab-block product-block section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" {% if block_banners.size > 1  %}data-loader-script="{{ 'halo.product-tab-banner.js' | asset_url }}"{% endif %}>

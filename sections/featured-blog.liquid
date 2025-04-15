@@ -59,6 +59,10 @@
 -%}
 
 <style>
+    .section-block-{{section.id}} .article-card__image-wrapper .adaptive_height  {
+      border-top-left-radius:  6%;
+    border-top-right-radius:  6%;
+      }
     #shopify-section-{{section.id}} {padding-top: {{ mg_minus_desktop | times: 0.5 | append: 'px' }}}
     .section-block-{{section.id}} .halo-block-header {margin-top: -{{ mg_minus_desktop | append: 'px' }}}
     {%- if blog_bg_image != blank -%}
@@ -78,12 +82,19 @@
     }
     .section-block-{{section.id}} .halo-block-header .title {color: {{ color_title }};font-size: {{ fontsize_title | append: 'px'  }};margin-bottom: {{ margin_bottom_heading | append: 'px' }}}
     .section-block-{{section.id}} .halo-block-header .rte {color: {{ color_des }};font-size: {{ fontsize_des | append: 'px'  }};margin-bottom: {{ margin_bottom_desheading | append: 'px' }}}
-    .section-block-{{section.id}} .article-card {border-radius: {{ border_radius_item | append: 'px' }};overflow: hidden;background-color: {{ blog_item_bg }}}
+    .section-block-{{section.id}} .article-card {border-radius: {{ border_radius_item | append: 'px' }};overflow: inherit;background-color: {{ blog_item_bg }}}
     {%- if enable_border_box -%}
-    .section-block-{{section.id}} .article-card__info {border: 1px solid {{ color_border_box  }};border-top: 0;padding: 16px 27px 28px}
+    .section-block-{{section.id}} .article-card__info {
+      border: 1px solid {{ color_border_box  }};
+      border-top: 0;padding: 16px 27px 28px; 
+      border-bottom-left-radius: {{ border_radius_item | append: '%' }};
+    border-bottom-right-radius: {{ border_radius_item | append: '%' }};
+      }
     {%- endif -%}
+        
     .section-block-{{section.id}} .article-card__title a {color: {{ color_title_item }}}
-    .section-block-{{section.id}} .article-card__author {color: {{ color_date_item }}}
+    .section-block-{{section.id}} .article-card__author {color: {{ color_date_item }};font-size: 14px;
+    text-transform: capitalize; }
     .section-block-{{section.id}} .article-card__des {color: {{ color_des_item }}}
     .section-block-{{section.id}} .article-card__footer a {color: {{ color_button_item }};text-transform: {{ button_text_transform }};font-weight: {{ button_text_fw }}}
     .section-block-{{section.id}} .article-card__footer a svg {fill: {{ color_button_item }}}
@@ -146,7 +157,7 @@
         .section-block-{{section.id}} .halo-block-header .title {font-size: {{ fontsize_title_mb | append: 'px' }}}
     }
 </style>
-
+<!-- featured-blog -->
 <div class="featured-blog-block section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="featured-blog-{{section.id}}" data-loader-script="{{ 'halo.slide-blog.js' | asset_url }}">
     <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1170' %}container-1170{% elsif section.settings.container == '1770' %}container-1770{% else %}container{% endif %}">
         {%- if section.settings.featured_blog_title != blank -%}

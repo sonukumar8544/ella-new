@@ -1,3 +1,19 @@
+.quiz-recommended-product .card-media > img {
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+}
+.quiz-recommended-product
+  .card-product:hover
+  .card-media.media--hover-effect
+  > img
+  + img {
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+}
+
+.halo-block-header .title {
+  margin-bottom: 15px;
+}
 .quiz-recommended-product .quiz_progress-bar {
   display: none !important;
 }
@@ -81,9 +97,11 @@ div.quiz-recommended-product .bundle_grid_list .productbadgenew {
   border-top-left-radius: 13px;
 }
 div.quiz-recommended-product img.cstm_grid_list {
-  margin: 5px auto auto auto;
-  width: 70%;
+  margin: 0px auto auto;
+  width: auto;
   height: auto;
+  padding: 0px;
+  border-radius: 15px;
 }
 .backtoStart:hover {
   color: #000000ad;
@@ -130,13 +148,13 @@ button.recommended_atc_btn.is-loading {
 
 .quiz-recommended-product .price__compare::first-child,
 .quiz-recommended-product .price__last::first-child {
-  display: none;
+  /* display: none; */
 }
 
 div.quiz-recommended-product .recommended_atc_btn {
-  background-color: transparent;
-  color: #006a91;
-  border: 2px solid rgb(0, 106, 145);
+  background-color: #006a91;
+  color: #fff;
+  border: 2px solid #006a91;
   padding: 9px 7px;
   border-radius: 8px;
   cursor: pointer;
@@ -151,21 +169,23 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   button.quiz_bundle_prodct.product-form__submit.button.button--primary:hover {
   border: 2px solid #232323c7;
   color: #232323c7;
+  background: transparent;
 }
 
 .final_result
   button.quiz_bundle_prodct.product-form__submit.button.button--primary {
   width: 200px;
-  background-color: transparent;
-  color: #006a91;
-  border: 2px solid rgb(0, 106, 145);
+  background-color: #006a91;
+  color: #fff;
+  border: 2px solid #006a91;
   padding: 9px 7px;
   border-radius: 8px;
   cursor: pointer;
   line-height: 1.15;
   font-weight: 700;
   margin: 10px auto 15px;
-  font-size: 16px;
+  font-size: 20px;
+  height: 51px;
 }
 @media (min-width: 1200px) {
   .final_result
@@ -173,7 +193,8 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
     min-width: 45%;
   }
   div.quiz-recommended-product {
-    width: 80%;
+    width: 98%;
+    margin: auto;
   }
   div.quiz-recommended-product .price--on-sale .price__sale {
     flex-wrap: nowrap;
@@ -182,6 +203,9 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   div.quiz-recommended-product .price-item.price-item--regular,
   div.quiz-recommended-product .price-item {
     font-size: 15px !important;
+  }
+  .tab.final_result .halo-block-header .title .text {
+    width: 100%;
   }
   div.quiz-recommended-product .halo-block-header .text h1,
   div.quiz-recommended-product .halo-block-header .text h2,
@@ -202,6 +226,11 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   }
 }
 @media (max-width: 1199px) {
+  div.quiz-recommended-product span.price-item.price-item--sale,
+  div.quiz-recommended-product .price-item.price-item--regular,
+  div.quiz-recommended-product .price-item .price-item {
+    font-size: 14px;
+  }
   .final_result
     button.quiz_bundle_prodct.product-form__submit.button.button--primary {
     min-width: 45% !important;
@@ -250,7 +279,13 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
     min-width: 80% !important;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 660px) {
+  div.quiz-recommended-product span.price-item.price-item--sale,
+  div.quiz-recommended-product .price-item.price-item--regular,
+  div.quiz-recommended-product .price-item .price-item {
+    font-size: 13px;
+  }
+
   .final_result {
     margin-top: 40px;
   }
@@ -329,6 +364,16 @@ div.quiz-recommended-product .recommended_atc_btn:hover,
   .halo-block-header {
     margin-bottom: 12px !important;
   }
-  .Quiz_container .quiz-items .name {
+  div.quiz-recommended-product span.price-item.price-item--sale,
+  div.quiz-recommended-product .price-item.price-item--regular,
+  div.quiz-recommended-product .price-item .price-item {
+    font-size: 11px;
   }
+}
+
+div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
 }

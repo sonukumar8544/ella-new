@@ -1,0 +1,515 @@
+
+<!-- job-application -->
+{% render 'job-application-css' %}
+{% render 'ajax-loader' %}
+<form class="job-form form" id="job_application" method="post" enctype="multipart/form-data" novalidate>
+  <input type="hidden">
+  {% render 'form_message' %}
+
+  <fieldset class="fieldset">
+    <input type="hidden" name="mail_title" value="Job Application Form">
+    <input type="hidden" name="reciever_mail" value="career@wellnessextract.com">
+    <!--  -->
+ {% if section.settings.department != blank%}
+      <div class="field hidden">
+        <input type="hidden" name="department" id="department" value="{{ section.settings.department }}">
+      </div>
+    {% else %}
+      <div class="field hidden">
+        <input type="hidden" name="department" id="department" value="{{ page.title }}">
+      </div>
+    {% endif %}
+    
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {%- when 'input' -%}
+          {% if block.settings.input != blank %}
+            <div class="field cstm_input_text">
+              <label
+                class="{% if block.settings.required %}required-field {% endif %}"
+                for="{{ block.settings.input | replace: " ","_" | downcase }}"
+                ><span>{{ block.settings.input }}</span></label
+              >
+              <input
+                name="{{ block.settings.input | replace: " ","_" | downcase }}"
+                id="{{ block.settings.input | replace: " ","_" | downcase }}"
+                {% if block.settings.required %}
+                  required
+                {% endif %}
+                class="input-text"
+                type="text"
+              >
+              <small class="error">This is a required field !</small>
+            </div>
+          {% endif %}
+
+        {%- when 'email' -%}
+          {% if block.settings.email != blank %}
+            <div class="field cstm_input_text cst_email__id">
+              <label
+                class="{% if block.settings.required %}required-field {% endif %}"
+                for="{{ block.settings.email | replace: " ","_" | downcase }}"
+                ><span>{{ block.settings.email }}</span></label
+              >
+              <input
+                name="{{ block.settings.email | replace: " ","_" | downcase }}"
+                id="{{ block.settings.email | replace: " ","_" | downcase }}"
+                {% if block.settings.required %}
+                  required
+                {% endif %}
+                class="input-text"
+                type="email"
+              >
+              <small class="error">This is a required field !</small>
+            </div>
+          {% endif %}
+
+        {%- when 'phone' -%}
+         {% if block.settings.phone != blank %}
+  <div class="field cstm_input_text" id="cstm__phone_number">
+    <label class="{% if block.settings.required %}required-field {% endif %}" for="contact_number">
+      <span>{{ block.settings.phone }}</span>
+    </label>
+    <input
+      name="contact_number"
+      id="contact_number"
+      minlength="10"
+      maxlength="15"
+      pattern="\d{10,15}"
+      
+      {% if block.settings.required %}
+        required
+      {% endif %}
+      class="input-text"
+      type="tel"
+    >
+    <small class="error">This is a required field!</small>
+  </div>
+{% endif %}
+
+<!-- Include intlTelInput CSS & JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+
+{% style %}
+  .iti__flag {
+    display: block !important;
+  }
+
+  /* Phone Input Styles */
+  #cstm__phone_number .iti {
+    position: relative;
+    width: 100%;
+  }
+  
+  #cstm__phone_number .iti__selected-flag {
+    display: flex;
+    align-items: center;
+  }
+
+  #cstm__phone_number input {
+    padding-left: 75px !important;
+    width: 100%;
+  }
+ #cstm__phone_number .iti--separate-dial-code .iti__selected-flag {
+    background: rgb(7 123 161 / 8%);
+}
+  #cstm__phone_number .iti__country-list {
+    z-index: 99999;
+  }
+
+  #cstm__phone_number input::placeholder {
+    font-size: 15px;
+  }
+
+ 
+{% endstyle %}
+
+        {%- when 'dropdown' -%}
+          {% if block.settings.dropdown != blank %}
+            <div class="field cstm_input_text {% if block.settings.required %}required-field{% endif %}">
+              <label
+                class="required-field"
+                for="{% if block.settings.country_dropdown %}country{% else %}{{ block.settings.dropdown | replace: " ","_" | downcase }}{% endif %}"
+                ><span>{{ block.settings.dropdown }}</span></label>
+             
+              {% if block.settings.country_dropdown %}
+                <select required name="country">
+                  {{ all_country_option_tags }}
+                </select>
+              {% else %}
+                    {% if block.settings.dropdown_values != blank %}
+                      {% assign options = block.settings.dropdown_values | split: ',,' %}
+                      <select class="selected__option required-field" name="{{ block.settings.dropdown }}">
+                          {% for option in options %}
+                              <option 
+                                  value="{{ option | escape }}" 
+                                  id="option_{{ forloop.index }}" {% if forloop.index == 1 %}style="color:light-dark(graytext, rgb(170, 170, 170))"{% endif %}
+                              >
+                                  {{ option }}
+                              </option>
+                          {% endfor %}
+                      </select>
+                  {% endif %}
+              {% endif %}
+            </div>
+            {% if block.settings.country_dropdown %}
+              <div class="field cstm_input_text">
+                <label class="required-field" for="country" ><span>State/Province </span></label>
+                <select required name="state">
+                  <option class="placeholder" value="-" disabled="" selected="">Select State</option>
+                </select>
+              </div>
+            {% endif %}
+          {% endif %}
+
+        {%- when 'checkbox' -%}
+          {% if block.settings.checkbox != blank %}
+            <div class="field cstm_input_text {{ block.id }}" {% if block.settings.full_width %}style="width:100%;"{% endif %}>
+             
+              <label class="{{ block.settings.checkbox | replace: ' ',"_" | downcase }}"
+                ><span>{{ block.settings.checkbox }}</span>
+              </label>
+               <div class="checkbox__grid">
+              {% assign checkBoxes = block.settings.checkbox_values | split: ',,' %}
+              {% for checkbox in checkBoxes %}
+                  <div class="sub__checkbox__grid">
+                <input
+                  type="checkbox"
+                  name="{{ block.settings.checkbox | replace: ' ',"_" | downcase }}[]"
+                  value="{{- checkbox -}}"
+                >
+                <label for="{{- checkbox -}}">{{ checkbox }}</label>
+                  </div>
+              {% endfor %}
+               </div>
+            </div>
+          {% endif %}
+{% style %}
+   @media(min-width: 769px){
+  .{{ block.id }} .checkbox__grid .sub__checkbox__grid {
+    width:{{ block.settings.dgrid_width }};
+  } 
+  }
+  @media(max-width: 768px){
+  .{{ block.id }} .checkbox__grid .sub__checkbox__grid {
+    width:{{ block.settings.mgrid_width }};
+  } 
+  }
+ 
+{% endstyle %}
+        {% when 'radio' %}
+         {% if block.settings.radio != blank %}
+    <div class="field cstm_input_text radio_btn {{ block.id }}" {% if block.settings.full_width %}style="width:100%;"{% endif %}>
+        <label
+            class="{{ block.settings.radio | replace: ' ', '_' | downcase }}"
+            for="{{ block.settings.radio | replace: ' ', '_' | downcase }}"
+        >
+            <span>{{ block.settings.radio }}</span>
+        </label>
+
+        <div class="checkbox__grid ">
+            {% assign radio_values = block.settings.radio_values | split: ',' %}
+            {% for radio in radio_values %}
+                <div class="sub__checkbox__grid">
+                    <input {% if block.settings.border-round %}style="border-radius:100% !important"{% endif %}
+                        type="radio" 
+                        id="radio_{{ forloop.index }}" 
+                        name="{{ block.settings.radio | replace: ' ', '_' | downcase }}" 
+                        value="{{ radio | escape }}"
+                    >
+                    <label for="radio_{{ forloop.index }}">{{ radio }}</label>  
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+{% style %}
+    @media(min-width: 769px) {
+        .radio_btn.{{ block.id }} .checkbox__grid .sub__checkbox__grid {
+            width: {{ block.settings.dgrid_width }};
+        } 
+    }
+    @media(max-width: 768px) {
+        .radio_btn.{{ block.id }} .checkbox__grid .sub__checkbox__grid {
+            width: {{ block.settings.mgrid_width }};
+        } 
+    }
+{% endstyle %}
+
+        {% when 'file' %}
+          <div class="field resume_fields">
+            <label class="resume text_resumes" for="resume"><span>Upload Resume File</span></label>
+
+            <div>
+              <input
+                name="kj"
+                id="resume"
+                title="Resume"
+                class="input-text"
+                type="file"
+                accept=".pdf,.docx,.jpg"
+              >
+              <span class="suggested_message errror_msg errors ">**Accept .pdf, .docx, .jpg file only.</span>
+            </div>
+
+            <p class="suggested_message errror_msg errors size_error" style="display:none"></p>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </fieldset>
+  <div class="action-cta">
+    <button type="submit" title="" class="primary-btn">
+      <span>Submit Application</span>
+    </button>
+  </div>
+</form>
+
+
+<script
+  defer
+  defer
+>
+// mobile input 
+  $(document).ready(function () {
+    var input = $("#contact_number");
+
+    if (input.length) {
+        var iti = window.intlTelInput(input[0], {
+            initialCountry: "auto",
+            geoIpLookup: function (success, failure) {
+                $.get("https://ipapi.co/json", function (data) {
+                    success(data.country_code);
+                }).fail(failure);
+            },
+            separateDialCode: true, // Hides country code in UI
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+        });
+
+        // Track phone input changes
+        input.on("input", function () {
+            var selectedCountryData = iti.getSelectedCountryData();
+            var phoneValue = $(this).val().trim();
+
+            phoneValue = phoneValue.replace(/^\+\d*/, "").trim(); // Remove any existing country code
+            $(this).attr("data-full-phone", `+${selectedCountryData.dialCode}${phoneValue}`);
+        });
+    }
+});
+
+    // mobile input 
+
+
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    var inputElement = document.getElementById("resume");
+    inputElement.addEventListener('change', function(){
+      var fileLimit = 1000; // could be whatever you want 
+      var files = inputElement.files; //this is an array
+      var fileSize = files[0].size; 
+      //console.log(fileSize);
+      var fileSizeInKB = (fileSize/1024); // this would be in kilobytes defaults to bytes
+      
+      if(fileSizeInKB < fileLimit){
+       //console.log("file go for launch");
+        document.getElementsByClassName("size_error")[0].style.display = "none";
+        document.getElementsByClassName("size_error")[0].innerHTML = '';
+        inputElement.val('');
+        // add file to db here
+      } else {
+        
+       // console.log("file too big")
+        console.log(document.getElementsByClassName("size_error"));
+        document.getElementById('resume').value = "";
+        // do not pass go, do not add to db. Pass error to user 
+        document.getElementsByClassName("size_error")[0].style.display = "block";
+        document.getElementsByClassName("size_error")[0].innerHTML = "Your file is over 1000 KB. Kindly upload a small size file ";
+      }
+    })
+});
+  
+  try{
+
+    //validate property
+
+   function validate(target){
+
+       const errorObj={};
+      let input= document.querySelectorAll(".job-form input");
+
+       input.forEach(item=>{
+     // if(item.type=='text'){
+        if(item.hasAttribute("required")){
+          if(item.value==""){
+            errorObj[item.name]="This field is required !";
+            item.nextElementSibling.style.display="block";
+            item.nextElementSibling.innerHTML=errorObj[item.name];
+          }
+          
+        }
+    // }
+    })
+
+      return (Object.keys(errorObj).length > 0) ? errorObj: null;
+      
+    }
+
+    let errors= document.querySelectorAll(".error");
+    errors.forEach(item=>{
+      item.style.display="none";
+    })
+
+    const errorObj={};
+    
+// country code addon this
+$('#contact_number').on("countrychange", function () {
+    $(this).val("");
+});
+
+    
+let inputs = document.querySelectorAll(".job-form input, .job-form select"); // Fixed selector
+    
+inputs.forEach(item => {
+    item.addEventListener("input", handleInputChange); 
+    item.addEventListener("change", handleInputChange); 
+});
+
+function handleInputChange(e) {
+    console.log(e.target.name);
+    console.log(e.target.value);
+
+    if (e.target.hasAttribute("required")) {
+        if (e.target.value === '' ) {
+            errorObj[e.target.name] = `${(e.target.name).split("_").join(" ")} is required!`;
+            e.target.nextElementSibling.style.display = "block";
+            e.target.nextElementSibling.innerHTML = errorObj[e.target.name];
+        } else {
+            delete errorObj[e.target.name];
+            e.target.nextElementSibling.style.display = "none";
+        }
+    }
+
+    console.log(errorObj);
+}
+
+     
+ let form = document.getElementById("job_application");
+
+  form.addEventListener("submit", (e) => {
+  e.preventDefault();
+   let fullPhone = $('#cstm__phone_number input').attr("data-full-phone");
+    if (fullPhone) {
+      $('#contact_number').val(fullPhone); 
+    }
+
+// Ensure input is cleared when country changes
+      let field_data = document.getElementById('resume');
+      let r_message = document.querySelector('.suggested_message');
+      if(field_data.value == null || field_data.value == ""){
+        alert("Please Upload Your Resume!")
+        field_data.setAttribute("required", "required")
+        let error_box = document.createElement('small');
+        error_box.setAttribute("class","error");
+        error_box.style.display = "block";
+        error_box.innerHTML = "This is a required field !";
+        let e_box = r_message.append(error_box);
+        field_data.focus();
+      }
+      const formData = new FormData(form);
+      const error=validate(form);
+      if(error){
+          if((Object.keys(error).length > 0)) return;
+      }
+
+  document.querySelector(".loader-container").style.display="flex";
+   const url = 'https://inventory.wellnessextract.com/api/job/applications';
+    // const url = 'https://uvit.ca/mail';
+  // const url = 'https://ce07-2401-4900-1c71-bb39-1889-434f-b056-a9ee.ngrok-free.app/inventory-management/public/api/job/applications';
+     fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        })
+       .then(response => response.json())
+        // .then(response => {
+        //     return response.json();
+        // })
+        .then(data => {
+
+           if(data.status){
+            form.reset();
+            document.querySelector(".loader-container").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            // document.querySelector(".message-container .success_message").innerHTML=data.message;
+            document.querySelector(".message-container .error_message").innerHTML='';
+             document.getElementById("popup").style.display = "block";
+            document.getElementById("form__popup").style.display = "block";
+             setTimeout(()=>{
+                document.getElementById("popup").style.display = "none";
+            document.getElementById("form__popup").style.display = "none";
+             }, 2800);
+          }
+          else{
+             document.querySelector(".loader").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            // document.querySelector(".message-container .success_message").innerHTML='';
+            document.querySelector(".message-container .error_message").innerHTML='Failed';
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("form__popup").style.display = "block";
+              setTimeout(()=>{
+                document.getElementById("popup").style.display = "none";
+            document.getElementById("form__popup").style.display = "none";
+             }, 2800);
+           console.error(data.message);
+          }
+
+         
+        })
+        .catch(error => {
+            document.querySelector(".loader").style.display="none";
+            document.querySelector(".message-container").style.display="block";
+            // document.querySelector(".message-container .success_message").innerHTML='';
+            document.querySelector(".message-container .error_message").innerHTML='Failed';
+          document.getElementById("popup").style.display = "block";
+            document.getElementById("form__popup").style.display = "block";
+            setTimeout(()=>{
+                document.getElementById("popup").style.display = "none";
+            document.getElementById("form__popup").style.display = "none";
+             }, 2800);
+           console.error(error);
+        });
+
+  });
+    
+  }catch(e){
+    console.warn(e);
+  }
+
+ 
+
+  try{
+    let countryDropdown= document.querySelectorAll("[name=country]");
+    countryDropdown.forEach(item=>{
+      item.addEventListener("change",()=>{
+        const provinces=item.options[item.selectedIndex].getAttribute("data-provinces");
+        const provinceArr=JSON.parse(provinces);
+        let options='';
+        if(provinceArr.length > 0){
+          for(let i=0;i<provinceArr.length ; i++){
+            options +=`<option value="${provinceArr[i][0]}">${provinceArr[i][0]}</option>`
+          }
+          item.parentElement.nextElementSibling.style.display="block";
+          item.parentElement.nextElementSibling.lastElementChild.innerHTML=options;
+        }else{
+          item.parentElement.nextElementSibling.style.display="none";
+        }
+        
+      })
+    })
+    
+  }catch(e){
+    console.warn(e);
+  }
+</script>

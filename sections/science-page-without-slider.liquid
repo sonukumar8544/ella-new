@@ -1,0 +1,201 @@
+<!--science-page-without-slider-->
+{% if page.handle == 'we-academy' %}
+    <h1 style="display:none;">{{ page.title }}</h1>
+  {% endif %}
+  <section class="we-sciewce-second">
+    <div class="container">
+      <h2 class="science-sec-title-two">{{ section.settings.title }}</h2>
+      <p class="desc-science">{{ section.settings.subtitle }}</p>
+      <div class="we-sciewce-second-blocks-container-science">
+        {% for block in section.blocks %}
+          <div class="we-sciewce-block-item">
+            <img src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.image.alt }}">
+            <p>{{ block.settings.icon_descriptions }}</p>
+            {% if block.settings.btn_label != blank %}
+              <a target="_blank" class="sct-button" href="{{ block.settings.btn_url }}"> {{ block.settings.btn_label }} </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  
+      .we-sciewce-block-item p{
+          color: #F4F5F5;
+      }
+  
+    .we-sciewce-second {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin: 2rem 0;
+    }
+  
+    .science-sec-title-two {
+      color: white;
+      padding-bottom: 20px;
+    }
+  
+    .desc-science {
+      font-size: 16px;
+      /* font-weight: 600; */
+      /* padding: 15px; */
+    }
+    .we-sciewce-second .container {
+      text-align: center;
+    }
+  
+    .we-sciewce-second .we-sciewce-second-blocks-container-science {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+  
+    }
+  
+    .we-sciewce-second .we-sciewce-block-item {
+      width: 20%;
+      box-sizing: border-box;
+    }
+  
+    .we-sciewce-second .we-sciewce-block-item img {
+      width: 50%;
+      height: auto;
+      display: block;
+      max-width: 120px;
+      margin: 0px auto;
+    }
+  *{
+    box-sizing: border-box;
+  }
+    section.we-sciewce-second {
+      background-color: #36454F;
+    }
+    
+  .sct-button {
+      padding: 9px 0;
+      background-color: #006A91;
+      border: 2px solid #006A91;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 12px;
+      margin: 0 auto;
+      display: block;
+      max-width: 212px;
+      transition: all 0.5s;
+  }
+  
+  
+  .sct-button:hover {
+      color: #006A91;
+      background: #fff;
+  }
+  h2.science-sec-title-two {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.2;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+    @media (max-width: 768px) {
+      h2.science-sec-title-two {
+        font-size: 24px;
+        line-height: 50px;
+      }
+      .sct-button {
+      font-size: 14px;
+      padding: 7px;
+  }
+          .we-sciewce-second .we-sciewce-block-item {
+        width: 47%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        padding: 10px 0px;
+      }
+    }
+        .we-sciewce-second .science-sec-title-two {
+      margin-bottom: 0;
+      margin-top: 0px !important;
+  }
+    @media (max-width: 767px) {
+      .we-sciewce-second{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+  
+      .we-sciewce-second .we-sciewce-block-item img{
+        max-width: 95px;
+        margin-bottom: 15px !important;
+      }
+      .we-sciewce-second .science-sec-title-two {
+          margin-top: 0px !important;
+          font-size: 24px;
+          padding-bottom: 20px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .sct-button {
+          font-size: 13px;
+          padding: 7px 4px;
+      }
+      .we-sciewce-second{
+        padding-top: 1em;
+        padding-bottom: 0em;
+      }
+    }
+  </style>
+  
+  {% schema %}
+    {
+      "name": "Scientist logo 2",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your Title Here"
+        }, {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Your Subtitle Here"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "image_block",
+          "name": "Image Block",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "icon_descriptions",
+              "label": "Add icon description"
+            },
+            {
+              "type": "url",
+              "id": "btn_url",
+              "label": "button"
+            },
+            {
+              "type": "text",
+              "id": "btn_label",
+              "label": "Button Label"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "scientist logo 2",
+          "category": "Custom"
+        }
+      ]
+    }
+  {% endschema %}

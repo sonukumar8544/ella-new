@@ -1,0 +1,460 @@
+<div class="science-mobile-container container">
+  <h2 class="title-mob">Team of Scientists and Experts</h2>
+  <div class="science-mobile-profile-section">
+    {% for block in section.blocks %}
+      <div class="science-mobile-profile-card">
+        <div class="mobile-image-science-pag">
+          <img
+            src="{{ block.settings.scientist_image | img_url: 'master' }}"
+            alt="{{ block.settings.scientist_image.alt }}"
+            class="science-mobile-profile-image">
+        </div>
+        <div class="science-mobile-profile-details">
+          <h2 class="science-mobile-profile-name">{{ block.settings.scientist_title }}</h2>
+          <h3 class="science-mobile-profile-role">{{ block.settings.scientist_subtitle }}</h3>
+          <p class="science-mobile-profile-description">
+            {{ block.settings.scientist_description }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .title-mob {
+    font-size: 24px;
+    margin: 0 0 -45px;
+    color: #374650;
+    padding: 0;
+    line-height: 1.2;
+  }
+  @media (min-width: 768px) {
+    .science-mobile-container {
+      display: none !important;
+    }
+  }
+  .science-mobile-container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .science-mobile-container {
+    margin: 50px 0;
+  }
+
+  .mobile-image-science-pag {
+    position: relative;
+    top: 85px;
+  }
+
+
+  .science-mobile-profile-section {
+    display: block;
+    overflow: hidden;
+  }
+
+
+  .science-mobile-profile-card {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+
+  .science-mobile-profile-image {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+
+  .science-mobile-profile-details {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+
+  .science-mobile-profile-name {
+    font-size: 25px;
+    margin: 0;
+    color: #086B92;
+  }
+
+
+  .science-mobile-profile-role {
+    font-size: 18px;
+  font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: #36454F;
+  }
+
+
+  .science-mobile-profile-description {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #36454F;
+    line-height: 1.6;
+  }
+
+
+  @media (max-width: 768px) {
+    .science-mobile-profile-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .science-mobile-profile-details {
+      text-align: center;
+      padding-top: 75px;
+      padding-bottom: 30px;
+      background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_42.png?v=1727695771');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+</style>
+
+
+<script defer>
+  $(document).ready(function(){
+    $('.science-mobile-profile-section').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true, // Enable autoplay
+      autoplaySpeed: 1000000, // Delay between slides in ms
+      arrows: true, // Show next/prev arrows
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+      nextArrow: '<button type="button" class="slick-next">Next</button>',
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+
+{% comment %} Large screen section {% endcomment %}
+
+<div class="imain-wrapper-sec-scientist">
+  <div class="container-section-scie">
+    <h2 class="title-science-sec">{{ section.settings.science_testomonial_title }}</h2>
+    <div class="container profile-section science-slick-mobile">
+      {% for block in section.blocks %}
+        <div class="profile-card {% if block.settings.row_reverse_sec %} row-reverse-card {% endif %}">
+          <div class="profile-image-container">
+            <img
+              class="profile-image"
+              src="{{ block.settings.scientist_image | img_url: 'master' }}"
+              alt="{{ block.settings.scientist_image.alt }}">
+          </div>
+          <div class="profile-details">
+            <div class="scientist-title-sub">
+              <h2 class="profile-name {% if block.settings.row_reverse_sec %} text-rigt-sec {% endif %}">{{ block.settings.scientist_title }}</h2>
+              <h3 class="profile-role {% if block.settings.row_reverse_sec %} text-rigt-sec {% endif %}">{{ block.settings.scientist_subtitle }}</h3>
+            </div>
+            <div class="profile-description {% if block.settings.row_reverse_sec %} text-rigt-sec {% endif %}">
+              <p class="mobile-title-sc">{{ block.settings.scientist_title }}</p>
+              <p class="mobile-sub-title-sc">{{ block.settings.scientist_subtitle }}</p>
+              {{ block.settings.scientist_description }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "science page scientist",
+    "settings": [
+      {
+        "type": "text",
+        "id": "science_testomonial_title",
+        "label": "Title"
+      }, {
+        "type": "image_picker",
+        "id": "science_testomonial_background",
+        "label": "Background image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "scientist",
+        "name": "scientist",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "scientist_image",
+            "label": "Scientist image"
+          },
+          {
+            "type": "text",
+            "id": "scientist_title",
+            "label": "Add title"
+          },
+          {
+            "type": "text",
+            "id": "scientist_subtitle",
+            "label": "Scientist subtitle"
+          },
+          {
+            "type": "text",
+            "id": "scientist_description",
+            "label": "Scientist Description"
+          }, {
+            "type": "checkbox",
+            "id": "row_reverse_sec",
+            "label": "Ceck kr de Bro"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "science page scientist"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .row-reverse-card {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .container-section-scie {
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  h2.title-science-sec {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #374650;
+    font-weight: bold;
+    line-height: 1.2 !important;
+    font-family: 'Nunito', sans-serif;
+}
+
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .profile-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-image-container {
+    flex: 0 0 auto;
+    top: 0;
+  }
+
+  .profile-image {
+    width: 165px;
+    object-fit: cover;
+  }
+
+  .profile-details {
+    text-align: left;
+    flex: 1;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .profile-name {
+    font-size: 1.8em;
+    margin: 0;
+    color: #086B92;
+    font-weight: bold;
+  }
+
+  .profile-role {
+    font-size: 1.2em;
+    margin: 0;
+    color: #36454F;
+    font-weight: 500;
+  }
+
+  .profile-description {
+    font-size: 16px;
+    color: #36454F;
+    line-height: 1.6;
+    margin: 10px 0;
+    /* background: #ebebeb; */
+    padding: 80px 100px;
+    border-radius: 20px;
+  }
+
+  .profile-description {
+    background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_42.png?v=1727695771');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .imain-wrapper-sec-scientist {
+      background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/luxa.org-opacity-changed-Layer_1.png?v=1727695341');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .profile-card {
+      position: relative;
+      background: transparent;
+    }
+
+    .profile-image-container {
+      position: absolute;
+    }
+
+    .profile-section {
+      gap: 30px;
+    }
+
+    .mobile-sub-title-sc {
+      display: none;
+    }
+
+    .mobile-title-sc {
+      display: none;
+    }
+
+    .text-rigt-sec {
+      text-align: right;
+      padding-right: 140px;
+    }
+
+    .scientist-title-sub {
+    display: flex;
+    flex-direction: column;
+    padding-left: 140px;
+  }
+
+  }
+
+  @media (min-width: 1250px){
+    .text-rigt-sec {
+      text-align: right;
+      padding-right: 100px;
+    }
+
+    .scientist-title-sub {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+  }
+  }
+
+  @media (max-width: 768px) {
+
+    .imain-wrapper-sec-scientist {
+      display: none;
+    }
+    .profile-section {
+      flex-direction: column;
+    }
+    .container-section-scie {
+      padding: 0 !important;
+    }
+
+    .profile-description {
+      border-radius: 0;
+    }
+
+   
+    .profile-card {
+      margin: 0 auto;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .profile-image-container {
+      margin-bottom: 20px;
+      position: relative;
+      top: 100px;
+    }
+
+    .profile-details {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .profile-description {
+      padding: 90px 10px 20px;
+    }
+
+    .title-science-sec {
+      font-size: 2.5rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1.3;
+    }
+
+    .mobile-title-sc {
+      font-size: 2.5rem;
+      color: #086B92;
+      margin: 0;
+      padding: 0;
+      font-weight: 600;
+    }
+
+    .mobile-sub-title-sc {
+      font-size: 1.8rem;
+      color: #36454F;
+      margin: 0;
+      padding-bottom: 2rem;
+    }
+
+    .scientist-title-sub {
+      display: none;
+    }
+  }
+</style>

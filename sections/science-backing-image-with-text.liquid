@@ -1,0 +1,252 @@
+<div class="science-page-science-page-science-page-col-collapsible-content-main">
+  <div class="container">
+    <div class="science-page-col-collapsible-content-main">
+      {% for block in section.blocks %}
+        {% assign blocks = block.settings %}
+        {% if block.type == 'block_left' %}
+          <div class="science-page-col-collapsible-grid__item_main">
+            <div class="block_top_text_mob">
+             {{ blocks.block_mobile_top_text }}
+            </div>
+            <div class="science-page-inner-block-left">
+              <img
+                src="{{ blocks.block_heading | img_url: 'master' }}"
+                alt="{{ blocks.block_heading.alt }}"
+                class="science-page-icustom-banner-main-image">
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      {% for block in section.blocks %}
+        {% assign blocks = block.settings %}
+        {% if block.type == 'block_right' %}
+          <div class="science-page-col-collapsible-image-main">
+            <div class="science-page-col-inner-block-right">
+              <div class="sciecnde-paragraph_one">{{ blocks.block_heading_right }}</div>
+              <div class="sciecnde-paragraph {% if blocks.about-readmorec %} second-paragraph-about {% endif %}">{{ blocks.block_heading_right_two }}</div>
+            {% if blocks.about-readmorec %} 
+              <span id="readmore-btn-about" class="read-more" onclick="toggleText(this)">Read More</span>
+            {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Image with text section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block_left",
+        "name": "multi col block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "block_heading",
+            "label": "Add title"
+          }, {
+            "type": "liquid",
+            "id": "block_mobile_top_text",
+            "label": "Mobile top text"
+          }
+        ]
+      }, {
+        "type": "block_right",
+        "name": "multi col block right",
+        "settings": [
+          {
+            "type": "liquid",
+            "id": "block_heading_right",
+            "label": "Add title"
+          }, {
+            "type": "liquid",
+            "id": "block_heading_right_two",
+            "label": "Add title"
+          },{
+            "type": "checkbox",
+            "id": "about-readmorec",
+            "label": "Ceck kr de Bro"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "science imagw-with textc",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  .science-page-science-page-science-page-col-collapsible-content-main {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .science-page-science-page-science-page-col-collapsible-content-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clip_path_group_16.png?v=1727664752');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    z-index: -1;
+  }
+
+
+  /*
+
+   .science-page-science-page-science-page-col-collapsible-content-main { 
+   background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clip_path_group_16.png?v=1727664752'); 
+   background-size: cover; 
+   background-position: center; 
+   background-repeat: no-repeat; 
+   } 
+*/
+  .science-page-col-collapsible-content-main {
+    display: flex;
+    padding: 50px 0;
+  }
+
+  .science-page-col-collapsible-content-main button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 40px;
+    border: 2px solid black;
+    outline: none;
+    background: transparent;
+    border-radius: 12px;
+  }
+  .science-page-col-collapsible-grid__item_main {
+    width: 35%;
+  }
+
+  .science-page-col-collapsible-image-main {
+    width: 70%;
+  }
+
+
+
+  .science-page-inner-block-left {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .science-page-col-inner-block-right {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .science-page-col-inner-block-right {
+    font-size: 16px;
+    color: #36454F;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+  }
+
+
+  @media (min-width: 768px) {
+ 
+    .science-page-col-inner-block-right h1 {
+      padding-top: 50px;
+    }
+
+#readmore-btn-about{
+  display: none;
+}
+
+    .block_top_text_mob {
+      display: none;
+    }
+
+    .science-page-col-collapsible-image-main{
+       display: flex;
+       align-items: center;
+    }
+  }
+
+  .block_top_text_mob {
+    padding: 15px;
+    text-align: center;
+    line-height: 2;
+  }
+
+  @media (max-width: 768px) {
+    .science-page-col-collapsible-content-main {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .block_top_text_mob h3 {
+    font-size: 24px !important;
+}
+
+    .science-page-col-inner-block-right p{
+      font-size: 16px !important;
+    }
+    .science-page-col-inner-block-right {
+      text-align: center;
+    }
+    .science-page-inner-block-left{
+      max-width: 250px;
+    }
+
+    .science-page-col-collapsible-grid__item_main {
+      width: 100%;
+    }
+
+    .science-page-col-collapsible-image-main {
+      width: 100%;
+    }
+
+    .sciecnde-paragraph_one {
+      display: none !important;
+    }
+  }
+</style>
+
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Check if screen width is >= 768 pixels
+    if (window.innerWidth <= 768) {
+      const secondParagraphs = document.querySelectorAll(".second-paragraph-about p:nth-child(2)");
+      
+      secondParagraphs.forEach(function (paragraph) {
+        paragraph.style.display = "none";
+      });
+    }
+  });
+
+  function toggleText(button) {
+    // Check if screen width is >= 768 pixels
+    if (window.innerWidth <= 768) {
+      const parentDiv = button.previousElementSibling;
+      const secondParagraph = parentDiv.querySelector("p:nth-child(2)");
+
+      if (secondParagraph.style.display === "none" || secondParagraph.style.display === "") {
+        secondParagraph.style.display = "block";
+        button.innerHTML = "Read less";
+      } else {
+        secondParagraph.style.display = "none";
+        button.innerHTML = "Read more";
+      }
+    }
+  }
+</script>

@@ -1,9 +1,12 @@
+.account-page {
+  margin-top: 30px;
+}
+
 .account-page .halo-page-header {
-    background-color: var(--navigation-bg);
+  background-color: var(--navigation-bg);
 }
 
 .login-rowItem .page-subheader {
-
 }
 
 .login-rowItem .form-message {
@@ -26,7 +29,7 @@
 }
 
 .login-page .halo-page-content {
-  max-width: 112rem;
+  max-width: 1000px;
 }
 
 .login-page .login-item .login-text {
@@ -40,7 +43,7 @@
 
 .login-rowItem {
   padding-top: 30px;
-  padding-bottom: 50px
+  padding-bottom: 50px;
 }
 
 .login-rowRight {
@@ -49,7 +52,7 @@
 }
 
 .login-rowItem .page-subheader {
-  margin-bottom: 8px;
+  margin-bottom: 30px;
   margin-top: 0;
 }
 
@@ -63,33 +66,33 @@
 }
 
 .login-item:last-child {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .login-item .login-text {
-    font-size: var(--font-body-size);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-text);
-    line-height: var(--body-line-height);
-    letter-spacing: var(--body-letter-spacing);
-    margin: 0 0 26px 0;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  margin: 0 0 26px 0;
 }
 
-.login-item .login-message{
-     margin: 0 0 30px 0;
+.login-item .login-message {
+  margin: 0 0 30px 0;
 }
 
-.login-item .form-actions{
-    margin-top: 25px;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -ms-flex-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
+.login-item .form-actions {
+  margin-top: 25px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .login-item .form-actions .button {
@@ -105,514 +108,514 @@
 }
 
 .login-item .form-actions a {
-    font-size: var(--font-body-size);
-    display: inline-block;
-    margin-left: 30px
+  font-size: var(--font-body-size);
+  display: inline-block;
+  margin-left: 30px;
 }
 
 .login-item .form-actions .forget-password .text,
-.login-item .form-actions a.cancel .text{
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-    text-decoration-color: var(--color-link-underline);
+.login-item .form-actions a.cancel .text {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-color: var(--color-link-underline);
 }
 
-.login-item .login-action a + a{
-    margin-top: 15px;
+.login-item .login-action a + a {
+  margin-top: 15px;
 }
 
-.login-item#recover{
-    display: none;
+.login-item#recover {
+  display: none;
 }
 
 .login-item#recover:target {
-    display: block;
+  display: block;
 }
 
-.login-item#recover:target ~ .login-item#login{
-    display: none;
+.login-item#recover:target ~ .login-item#login {
+  display: none;
 }
 
-.login-item .form-input{
-    padding-top: 11px;
-    padding-bottom: 10px;
-    max-width: 450px;
+.login-item .form-input {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  max-width: 450px;
 }
 
-.login-item .form-field + .form-field{
-    margin-top: 14px;
+.login-item .form-field + .form-field {
+  margin-top: 14px;
 }
 
 .login-item .accepts-marketing {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 /* Login Page */
 .login-page .login-rowRight {
   background: var(--bg-global);
 }
-.login-item #customer_login_guest .button{
+.login-item #customer_login_guest .button {
   max-width: 450px;
-  margin: 0
+  margin: 0;
 }
 
 /* START: Account */
-    .account {
-        display: block;
-    }
+.account {
+  display: block;
+}
 
-    .account-page .account-item{
-        padding: 0 0 30px 0;
-    }
+.account-page .account-item {
+  padding: 0 0 30px 0;
+}
 
-    .account-title,
-    .address-title{
-        display: block;
-        position: relative;
-        font-family: var(--font-heading-family);
-        font-size: calc(var(--font-body-size) + 2px);
-        font-weight: var(--font-heading-weight);
-        text-transform: var(--heading-text-transform);
-        letter-spacing: var(--heading-letter-spacing);
-        line-height: cal(var(--font-body-size) + 10px);
-        color: var(--color-text);
-        margin-top: 0;
-        margin-bottom: 25px;
-        padding: 0 0 10px 0;
-        border-bottom: 2px solid var(--border_global)
-    }
+.account-title,
+.address-title {
+  display: block;
+  position: relative;
+  font-family: var(--font-heading-family);
+  font-size: calc(var(--font-body-size) + 2px);
+  font-weight: var(--font-heading-weight);
+  text-transform: var(--heading-text-transform);
+  letter-spacing: var(--heading-letter-spacing);
+  line-height: cal(var(--font-body-size) + 10px);
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding: 0 0 10px 0;
+  border-bottom: 2px solid var(--border_global);
+}
 
-    .account-desc {
-        font-size: var(--font-body-size);
-        font-weight: var(--font-weight-normal);
-        color: var(--color-text);
-        letter-spacing: var(--body-letter-spacing);
-        line-height: var(--body-line-height);
-        background: var(--color-info-bg);
-        color: var(--color-info);
-        padding: 13px 15px;
-        text-align: center;
-    }
+.account-desc {
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  background: var(--color-info-bg);
+  color: var(--color-info);
+  padding: 13px 15px;
+  text-align: center;
+}
 
-    .order-page .account-desc {
-      margin-bottom: 25px;
-    }
+.order-page .account-desc {
+  margin-bottom: 25px;
+}
 
-    .account-desc p {
-        margin: 0 0 34px 0;
-    }
+.account-desc p {
+  margin: 0 0 34px 0;
+}
 
-    .account-desc p:last-child{
-        margin: 0;
-    }
+.account-desc p:last-child {
+  margin: 0;
+}
 
-    .account-desc svg {
-      width: 24px;
-      height: 24px;
-      margin-right: 5px;
-      stroke: none
-    }
+.account-desc svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  stroke: none;
+}
 
-    .account-desc address p{
-        font-size: var(--font-size);
-        margin-bottom: 0;
-    }
+.account-desc address p {
+  font-size: var(--font-size);
+  margin-bottom: 0;
+}
 
-    .account-message{
-        display: block;
-        margin: 0 0 40px 0;
-    }
+.account-message {
+  display: block;
+  margin: 0 0 40px 0;
+}
 
-    .account-page .account-item + .account-item{
-        padding-top: 30px;
-    }
+.account-page .account-item + .account-item {
+  padding-top: 30px;
+}
 
-    .account table{
-        table-layout: auto;
-        border-collapse: collapse;
-        box-shadow: none;
-        width: 100%;
-        font-size: var(--font-body-size);
-        font-weight: var(--font-weight-normal);
-        line-height: var(--body-line-height);
-        letter-spacing: var(--body-letter-spacing);
-        color: var(--color-text);
-        position: relative;
-        border-bottom: 0.01rem solid var(--form-input-border);
-    }
+.account table {
+  table-layout: auto;
+  border-collapse: collapse;
+  box-shadow: none;
+  width: 100%;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--color-text);
+  position: relative;
+  border-bottom: 0.01rem solid var(--form-input-border);
+}
 
-    .account table .icon{
-        width: 16px;
-        height: 16px;
-        margin-right: 0.5rem;
-    }
+.account table .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
 
-    .account table dl {
-        margin: 0;
-    }
+.account table dl {
+  margin: 0;
+}
 
-    .account table dd {
-        margin-left: 0;
-    }
+.account table dd {
+  margin-left: 0;
+}
 
-    .account table dd s {
-        color: var(--color-grey);
-    }
+.account table dd s {
+  color: var(--color-grey);
+}
 
-    .account table .fulfillment{
-        width: fit-content;
-        border: 0.01rem solid var(--form-input-border);
-        padding: 1rem;
-        margin-top: 1rem;
-        text-align: left;
-    }
+.account table .fulfillment {
+  width: fit-content;
+  border: 0.01rem solid var(--form-input-border);
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+}
 
-    .account table .fulfillment a {
-        margin: 0.7rem 0;
-    }
+.account table .fulfillment a {
+  margin: 0.7rem 0;
+}
 
-    .account table .fulfillment span {
-        display: block;
-    }
+.account table .fulfillment span {
+  display: block;
+}
 
-    .account table .cart-discount{
-        display: block;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-    }
+.account table .cart-discount {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-    .account thead{
-        background-color: #f1f1f1;
-    }
+.account thead {
+  background-color: #f1f1f1;
+}
 
-    .account th,
-    .account td {
-        border: none;
-        padding: 0;
-    }
+.account th,
+.account td {
+  border: none;
+  padding: 0;
+}
 
-    .account td:empty {
-        display: initial;
-    }
+.account td:empty {
+  display: initial;
+}
 
-    .account tbody td {
-        padding: 12px 0px 10px 0px;
-    }
+.account tbody td {
+  padding: 12px 0px 10px 0px;
+}
 
-    .account tbody tr {
-        border-top: 0.01rem solid var(--form-input-border);
-    }
+.account tbody tr {
+  border-top: 0.01rem solid var(--form-input-border);
+}
 
-    .account tbody a{
-        font-weight: var(--font-weight-bold);
-        text-transform: uppercase;
-    }
+.account tbody a {
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
 
-    .account tbody .content a{
-        font-weight: var(--font-weight-normal);
-        text-transform: capitalize;
-    }
+.account tbody .content a {
+  font-weight: var(--font-weight-normal);
+  text-transform: capitalize;
+}
 
-    .account tbody .properties{
-        margin-top: 1rem;
-    }
+.account tbody .properties {
+  margin-top: 1rem;
+}
 
-    .account tbody .properties span{
-        display: block;
-    }
+.account tbody .properties span {
+  display: block;
+}
 
-    .account thead th {
-        letter-spacing: 0.07rem;
-        text-transform: uppercase;
-        padding: 9px 15px 6px 15px;
-        text-align: left;
-    }
+.account thead th {
+  letter-spacing: 0.07rem;
+  text-transform: uppercase;
+  padding: 9px 15px 6px 15px;
+  text-align: left;
+}
 
-    .account tfoot td:first-of-type,
-    .account tfoot td {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
-    }
+.account tfoot td:first-of-type,
+.account tfoot td {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
 
-    .account tfoot td:first-of-type {
-        text-align: left;
-    }
+.account tfoot td:first-of-type {
+  text-align: left;
+}
 
-    .account tfoot tr:first-of-type td {
-        padding-top: 2rem;
-    }
+.account tfoot tr:first-of-type td {
+  padding-top: 2rem;
+}
 
-    .account tfoot tr:last-of-type td {
-        padding-bottom: 2rem;
-    }
+.account tfoot tr:last-of-type td {
+  padding-bottom: 2rem;
+}
 
-    .account thead::after,
-    .account tfoot::before {
-        content: " ";
-        height: 0.1rem;
-        width: 100%;
-        display: block;
-        position: absolute;
-        left: 0;
-        background: var(--form-input-border);
-    }
+.account thead::after,
+.account tfoot::before {
+  content: " ";
+  height: 0.1rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background: var(--form-input-border);
+}
 
-    .account-list{
-        font-size: 0;
-        letter-spacing: 0;
-        margin-left: -5px;
-        margin-right: -5px;
-    }
+.account-list {
+  font-size: 0;
+  letter-spacing: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+}
 
-    .my-account-page .account-list + .account-action {
-      margin-top: 0px;
-    }
+.my-account-page .account-list + .account-action {
+  margin-top: 0px;
+}
 
-    .account-listItem{
-      display: inline-block;
-      width: 100%;
-      padding: 0 5px;
-      vertical-align: top;
-    }
+.account-listItem {
+  display: inline-block;
+  width: 100%;
+  padding: 0 5px;
+  vertical-align: top;
+}
 
-    .account-product{
-        border: 1px solid #e6e6e6;
-        padding: 19px 15px 20px 15px;
-        min-height: 200px;
-    }
+.account-product {
+  border: 1px solid #e6e6e6;
+  padding: 19px 15px 20px 15px;
+  min-height: 200px;
+}
 
-    .account-product-title{
-        display: block;
-        position: relative;
-        font-family: var(--font-heading-family);
-        font-size: var(--font-body-size);
-        font-weight: var(--font-weight-semibold);
-        line-height: var(--heading-line-height);
-        letter-spacing: var(--heading-letter-spacing);
-        color: var(--color-text);
-        text-transform: uppercase;
-        margin: 0 0 10px 0;
-    }
+.account-product-title {
+  display: block;
+  position: relative;
+  font-family: var(--font-heading-family);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
 
-    .account-product-text{
-        font-size: calc(var(--font-body-size) - 2px);
-        font-weight: var(--font-weight-medium);
-        line-height: var(--body-line-height);
-        letter-spacing: var(--body-letter-spacing);
-        height: auto;
-        padding: 2px 6px;
-        background-color: var(--sold-out-badge-bg);
-        color: var(--sold-out-badge-color);
-        text-transform: capitalize;
-        margin-left: 4px;
-    }
+.account-product-text {
+  font-size: calc(var(--font-body-size) - 2px);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  height: auto;
+  padding: 2px 6px;
+  background-color: var(--sold-out-badge-bg);
+  color: var(--sold-out-badge-color);
+  text-transform: capitalize;
+  margin-left: 4px;
+}
 
-    .account-product-label {
-      display: none;
-    }
+.account-product-label {
+  display: none;
+}
 
-    .account-product-detail li{
-        display: block;
-        font-size: var(--font-body-size);
-        font-weight: var(--font-weight-normal);
-        line-height: var(--body-line-height);
-        letter-spacing: var(--body-letter-spacing);
-    }
+.account-product-detail li {
+  display: block;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+}
 
-    .account-product-detail + .account-product-detail{
-        margin-top: 8px;
-    }
+.account-product-detail + .account-product-detail {
+  margin-top: 8px;
+}
 
-    .account-page .account-action {
-        margin: 15px 0 0 0;
-        max-width: 270px
-    }
+.account-page .account-action {
+  margin: 15px 0 0 0;
+  max-width: 270px;
+}
 
-    .account-page .account-action .count {
-      min-width: 23px;
-      min-height: 23px;
-      line-height: 23px;
-      text-align: center;
-      border-radius: 50%;
-      font-size: var(--font-body-size);
-      font-weight: var(--font-weight-normal);
-      letter-spacing: var(--body-letter-spacing);
-      background-color: var(--btn-1-color);
-      color: var(--btn-1-bg);
-      display: inline-block;
-      margin-left: 8px;
-      vertical-align: middle;
-      margin-top: -3px;
-    }
+.account-page .account-action .count {
+  min-width: 23px;
+  min-height: 23px;
+  line-height: 23px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--body-letter-spacing);
+  background-color: var(--btn-1-color);
+  color: var(--btn-1-bg);
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+  margin-top: -3px;
+}
 
-    .account-pag .account-action a:hover .count {
-      background-color: var(--btn-1-color-hover);
-      color: var(--btn-1-bg-hover);
-    }
+.account-pag .account-action a:hover .count {
+  background-color: var(--btn-1-color-hover);
+  color: var(--btn-1-bg-hover);
+}
 
-    .order-pagination{
-        margin: 40px 0 0 0;
-    }
-    .order-pagination .pagination__item-arrow {
-      position: relative;
-      top: auto;
-      transform: none;
-    }
-    .order-pagination .pagination__item {
-        width: var(--arrow-width);
-        height: var(--arrow-height);
-    }
-    
+.order-pagination {
+  margin: 40px 0 0 0;
+}
+.order-pagination .pagination__item-arrow {
+  position: relative;
+  top: auto;
+  transform: none;
+}
+.order-pagination .pagination__item {
+  width: var(--arrow-width);
+  height: var(--arrow-height);
+}
+
 /* END: Account */
 
 /* START: Address */
-    .addresses-page .account-item {
-      padding-bottom: 0;
-    }
+.addresses-page .account-item {
+  padding-bottom: 0;
+}
 
-    .address-new{
-        margin: 0 0 30px 0;
-    }
+.address-new {
+  margin: 0 0 30px 0;
+}
 
-    .address-new > button{
-        max-width: 250px;
-        margin-left: 0;
-        margin-top: 5px;
-    }
+.address-new > button {
+  max-width: 250px;
+  margin-left: 0;
+  margin-top: 5px;
+}
 
-    .address-new > button:before{
-        height: 1em;
-        width: 0.2em;
-    }
+.address-new > button:before {
+  height: 1em;
+  width: 0.2em;
+}
 
-    .address-new > button:after{
-        height: 0.2em;
-        width: 1em;
-    }
+.address-new > button:after {
+  height: 0.2em;
+  width: 1em;
+}
 
-    .address-content{
-        margin-bottom: 1.5rem;
-    }
+.address-content {
+  margin-bottom: 1.5rem;
+}
 
-    .address-content p{
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+.address-content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-    .address-button{
-        display: inline-block;
-        width: calc(50% - 5px);
-        margin-right: 5px;
-        min-width: unset;
-    }
+.address-button {
+  display: inline-block;
+  width: calc(50% - 5px);
+  margin-right: 5px;
+  min-width: unset;
+}
 
-    .address-button + .address-button{
-        margin-left: 5px;
-        margin-right: 0;
-    }
+.address-button + .address-button {
+  margin-left: 5px;
+  margin-right: 0;
+}
 
-    .address-form{
-        margin: 52px 0 50px 0;
-        font-size: var(--font-body-size);
-    }
+.address-form {
+  margin: 52px 0 50px 0;
+  font-size: var(--font-body-size);
+}
 
-    .address-form .address-title{
-        font-size: calc(var(--font-size) + 4px);
-        text-align: left;
-    }
+.address-form .address-title {
+  font-size: calc(var(--font-size) + 4px);
+  text-align: left;
+}
 
-    .address-form .form-field + .form-field{
-        margin-top: 12px;
-    }
+.address-form .form-field + .form-field {
+  margin-top: 12px;
+}
 
-    .address-form .form-field input,
-    .address-form .form-field .select__select {
-      max-width: 450px;
-    }
+.address-form .form-field input,
+.address-form .form-field .select__select {
+  max-width: 450px;
+}
 
-    .address-form input[type=checkbox] + .form-label--checkbox:before{
-        top: 3px;
-    }
+.address-form input[type="checkbox"] + .form-label--checkbox:before {
+  top: 3px;
+}
 
-    .address-form input[type=checkbox] + .form-label--checkbox:after{
-        top: 6px;
-    }
+.address-form input[type="checkbox"] + .form-label--checkbox:after {
+  top: 6px;
+}
 
-    .address-form .form-actions{
-        margin-top: 20px;
-        max-width: 450px;
-    }
+.address-form .form-actions {
+  margin-top: 20px;
+  max-width: 450px;
+}
 
-    .address-form .button + .button{
-        margin-top: 15px;
-    }
+.address-form .button + .button {
+  margin-top: 15px;
+}
 
-    .addresses li,
-    .account-listItem {
-      font-size: 0;
-      letter-spacing: 0;
-      margin-bottom: 40px;
-    }
+.addresses li,
+.account-listItem {
+  font-size: 0;
+  letter-spacing: 0;
+  margin-bottom: 40px;
+}
 
-    .addresses li address {
-      border: 1px solid #cecece;
-      padding: 10px 15px 15px 15px;
-      min-height: 200px;
-      font-style: normal;
-      font-size: var(--font-body-size);
-    }
+.addresses li address {
+  border: 1px solid #cecece;
+  padding: 10px 15px 15px 15px;
+  min-height: 200px;
+  font-style: normal;
+  font-size: var(--font-body-size);
+}
 
-    .addresses li address .acc-name {
-      text-transform: uppercase;
-      font-weight: var(--font-weight-semibold);
-      font-size: var(--font-body-size);
-      margin-bottom: 7px;
-    }
+.addresses li address .acc-name {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-body-size);
+  margin-bottom: 7px;
+}
 
-    .addresses li address .acc-name .default,
-    .address-form .address-title .default {
-      padding: 2px 6px 1px 6px;
-      background: var(--sold-out-badge-bg);
-      color: var(--sold-out-badge-color);
-      font-size: calc(var(--font-body-size) - 2px);
-      line-height: calc(var(--font-body-size) + 2px);
-      font-weight: var(--font-weight-medium);
-      letter-spacing: 0;
-      display: inline-block;
-      vertical-align: middle;
-      margin-top: -2px;
-      text-transform: capitalize;
-      margin-left: 4px;
-    }
+.addresses li address .acc-name .default,
+.address-form .address-title .default {
+  padding: 2px 6px 1px 6px;
+  background: var(--sold-out-badge-bg);
+  color: var(--sold-out-badge-color);
+  font-size: calc(var(--font-body-size) - 2px);
+  line-height: calc(var(--font-body-size) + 2px);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+  text-transform: capitalize;
+  margin-left: 4px;
+}
 
-    .addresses li .cus-addr {
-      display: block;
-      padding: 1px 0;
-    }
+.addresses li .cus-addr {
+  display: block;
+  padding: 1px 0;
+}
 
-    .account-action .back-account .text{
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-color: var(--color-link-underline);
-    }
+.account-action .back-account .text {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--color-link-underline);
+}
 
-    .addresses [aria-expanded="false"] ~ div[id] {
-        display: none;
-    }
+.addresses [aria-expanded="false"] ~ div[id] {
+  display: none;
+}
 
-    .addresses [aria-expanded="true"] ~ div[id] {
-        display: block;
-    }
+.addresses [aria-expanded="true"] ~ div[id] {
+  display: block;
+}
 
-    .pagination__list .pagination__item {
-      font-size: var(--font-body-size);
-    }
-    
-    .addresses .pagination__list li {
-      width: auto;
-      min-width: unset;
-      padding: 0 10px;
-    }
+.pagination__list .pagination__item {
+  font-size: var(--font-body-size);
+}
+
+.addresses .pagination__list li {
+  width: auto;
+  min-width: unset;
+  padding: 0 10px;
+}
 /* END ADDRESS */
 
 .customer:not(.account, .order) {
@@ -670,7 +673,7 @@
 }
 
 .customer tbody {
-  color: var(--color-foreground)
+  color: var(--color-foreground);
 }
 
 .customer th,
@@ -786,7 +789,7 @@
 }
 
 .customer .pagination li [aria-current]::after {
-  content: '';
+  content: "";
   display: block;
   width: 2rem;
   height: 0.01rem;
@@ -804,7 +807,7 @@
   width: fit-content;
 }
 
-.login a[href='#recover'] {
+.login a[href="#recover"] {
   margin-left: 0;
   margin-right: 0;
 }
@@ -867,12 +870,14 @@
 
 .account table td:first-of-type a {
   text-decoration: none;
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-base-outline-button-labels-rgb), 0.2);
+  box-shadow: 0 0 0 0.1rem
+    rgba(var(--color-base-outline-button-labels-rgb), 0.2);
   font-size: 1.2rem;
 }
 
 .account table td:first-of-type a:hover {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-base-outline-button-labels-rgb), 0.2);
+  box-shadow: 0 0 0 0.2rem
+    rgba(var(--color-base-outline-button-labels-rgb), 0.2);
   color: var(--color-base-outline-button-labels);
 }
 
@@ -1011,32 +1016,32 @@
   margin-top: 10px;
 }
 
-@media (min-width: 768px){
-  .login-row{
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 100%;
+@media (min-width: 768px) {
+  .login-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
   }
   .login-rowLeft {
     padding-right: 15px;
   }
-  .login-rowItem{
-      width: 50%;
+  .login-rowItem {
+    width: 50%;
   }
 
-  .login-item .login-action{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  .login-item .login-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .login-item .login-action a.back-to-store{
-      order: -1;
+  .login-item .login-action a.back-to-store {
+    order: -1;
   }
 
-  .login-item .login-action a + a{
-      margin-top: 0;
+  .login-item .login-action a + a {
+    margin-top: 0;
   }
 
   /* Login Page */
@@ -1096,7 +1101,7 @@
   }
 
   .account thead th#ColumnQuantity,
-  .account tbody td.ColumnQuantity{
+  .account tbody td.ColumnQuantity {
     text-align: center;
   }
 }
@@ -1106,68 +1111,69 @@
     padding-top: 0;
   }
   .login-page .login-rowRight {
-    padding-bottom: 35px
+    padding-bottom: 35px;
   }
-  .account-listItem:last-child, .addresses li:last-child {
+  .account-listItem:last-child,
+  .addresses li:last-child {
     margin-bottom: 0;
   }
-  .account-list+.account-action {
-    margin-top: 40px
+  .account-list + .account-action {
+    margin-top: 40px;
   }
 
   /* START: Account */
-    .account thead,
-    .account th,
-    .account tfoot td:first-of-type {
-        display: none;
-    }
+  .account thead,
+  .account th,
+  .account tfoot td:first-of-type {
+    display: none;
+  }
 
-    .account td {
-        display: flex;
-        text-align: right;
-    }
+  .account td {
+    display: flex;
+    text-align: right;
+  }
 
-    .account tbody tr:first-of-type {
-      border-top: none;
-    }
-    .account tbody tr {
-      margin-bottom: 15px;
-    }
-    .account tbody tr + tr {
-      padding-top: 15px;
-    }
-    .account td::before {
-        content: attr(data-label);
-        padding-right: 2rem;
-        text-transform: uppercase;
-        flex-grow: 1;
-        text-align: left;
-        font-weight: var(--font-weight-medium);
-    }
+  .account tbody tr:first-of-type {
+    border-top: none;
+  }
+  .account tbody tr {
+    margin-bottom: 15px;
+  }
+  .account tbody tr + tr {
+    padding-top: 15px;
+  }
+  .account td::before {
+    content: attr(data-label);
+    padding-right: 2rem;
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: left;
+    font-weight: var(--font-weight-medium);
+  }
 
-    .account td:first-of-type {
-        display: flex;
-        align-items: center;
-    }
+  .account td:first-of-type {
+    display: flex;
+    align-items: center;
+  }
 
-    .account tr {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-    }
+  .account tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
   /* END: Account */
   .order-pagination .pagination-arrow {
-      margin-bottom: 40px !important;
+    margin-bottom: 40px !important;
   }
 }
 
 @media (max-width: 551px) {
-  .account-page .account-action{
+  .account-page .account-action {
     max-width: 100%;
   }
 
-  .my-account-page .account-list+.account-action{
+  .my-account-page .account-list + .account-action {
     margin-top: 30px;
   }
 }
@@ -1180,20 +1186,19 @@
 }
 
 @media (min-width: 1025px) {
-
   .login-rowItem {
     padding-top: 55px;
-    padding-bottom: 60px
+    padding-bottom: 60px;
   }
   .login-page .login-rowLeft {
-    width: calc(100% - 570px)
+    width: calc(100% - 570px);
   }
   .login-page .login-rowRight {
     padding-left: 60px;
     padding-right: 60px;
     width: 570px;
   }
-  
+
   .account-list {
     margin-left: -15px;
     margin-right: -15px;
@@ -1209,7 +1214,7 @@
   .button--secondary.button-delete:hover {
     background: transparent;
     color: var(--btn-3-border);
-    border-color: var(--btn-3-border)
+    border-color: var(--btn-3-border);
   }
 }
 
@@ -1281,8 +1286,8 @@
     margin-left: 1rem;
   }
 
-  .order thead th:nth-last-child(-n+3),
-  .order td:nth-last-child(-n+3) {
+  .order thead th:nth-last-child(-n + 3),
+  .order td:nth-last-child(-n + 3) {
     text-align: right;
   }
 
@@ -1304,8 +1309,36 @@
   }
 }
 
+/* cstm css */
+
+#main-login-page h2.halo-page-title {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Lato";
+  letter-spacing: 1.2px;
+  color: #374650;
+}
+#main-login-page .form-label,
+.field__label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  color: #374650;
+}
+#main-login-page .login-item .form-input {
+  color: #374650;
+  border-color: #37465052;
+}
+
 @media screen and (max-width: 749px) {
-  .customer thead,
+  /* cstm */
+
+  #main-login-page h2.halo-page-title {
+    font-size: 28px;
+    line-height: 1;
+  }
+  .login-rowItem .page- .customer thead,
   .customer th,
   .customer tfoot td:first-of-type {
     display: none;

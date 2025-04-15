@@ -1,0 +1,198 @@
+<!-- multi-col-text-block-->
+<div class="container">
+  <div class="collapsible-content-main {{ section.settings.custom_class }}">
+    {% for block in section.blocks %}
+      {% assign blocks = block.settings %}
+      {% if block.type == 'block_left' %}
+        <div class="collapsible-grid__item_main">
+          <div class="inner-block-left">
+            <h2>{{ blocks.block_heading }}</h2>
+            <p>{{ blocks.block_richtext }}</p>
+            <a href="{{ blocks.add_button_url }}">
+              <button>
+                {{ blocks.button_multicol }}
+              </button>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% assign blocks = block.settings %}
+      {% if block.type == 'block_right' %}
+        <div class="collapsible-image-main">
+          <div class="inner-block-right">
+            <h2>{{ blocks.block_heading_right }}</h2>
+            <p>{{ blocks.block_richtext_right }}</p>
+            <input type="hidden" value="{{page.handle}}">
+ {% comment %} 
+            {% if page.handle == "we-community" %}
+            <button id="community-btn">
+                {{ blocks.button_multicol_right }}
+              </button>
+            {% endif %}
+ {% endcomment %}
+           
+                        <a href="{{ blocks.add_button_url_right }}">
+              <button>
+                {{ blocks.button_multicol_right }}
+              </button>
+            </a>
+           
+
+
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+</div>
+
+{% schema %}
+  {
+    "name": "Multi col block",
+    "settings": [
+                 {
+            "type": "text",
+            "id": "custom_class",
+            "label": "Use Custom Class"
+          },
+    ],
+    "blocks": [
+      {
+        "type": "block_left",
+        "name": "multi col block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_heading",
+            "label": "Add title"
+          }, {
+            "type": "richtext",
+            "id": "block_richtext",
+            "label": "Add text"
+          }, {
+            "type": "text",
+            "id": "button_multicol",
+            "label": "button label",
+            "default": "APPLY"
+
+          }, {
+            "type": "url",
+            "id": "add_button_url",
+            "label": "button link"
+          }
+        ]
+      }, {
+        "type": "block_right",
+        "name": "multi col block right",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_heading_right",
+            "label": "Add title"
+          }, {
+            "type": "richtext",
+            "id": "block_richtext_right",
+            "label": "Add text"
+          }, {
+            "type": "text",
+            "id": "button_multicol_right",
+            "label": "button label",
+            "default": "APPLY"
+
+          }, {
+            "type": "url",
+            "id": "add_button_url_right",
+            "label": "button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Multi col block",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .collapsible-content-main {
+    display: flex;
+    padding-bottom: 100px;
+  }
+
+  .collapsible-content-main h2 {
+    font-size:2.5rem;
+    color: #086b92;
+    margin-bottom: 0 !important;
+    line-height: 28px !important;
+  }
+
+  .collapsible-content-main button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 40px;
+    border: 1px solid #086b92;
+    outline: none;
+    background: transparent;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    background-color: #086b92;
+  }
+
+  .collapsible-content-main button:hover {
+    background-color: #fff;
+    color: #086b92;
+  }
+  .collapsible-grid__item_main {
+    width: 50%;
+  }
+
+  .collapsible-image-main {
+    width: 50%;
+  }
+
+  .inner-block-left {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .inner-block-right {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .collapsible-content-main {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .collapsible-grid__item_main {
+      width: 100%;
+    }
+
+    .collapsible-image-main {
+      width: 100%;
+    }
+
+    .inner-block-left{
+      max-width: 95% !important;
+    }
+
+    .inner-block-right{
+       max-width: 95% !important;
+    }
+  }
+</style>

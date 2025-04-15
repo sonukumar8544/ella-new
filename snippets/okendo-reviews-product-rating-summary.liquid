@@ -2,3 +2,14 @@
   {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
 {% endif %}
 <div data-oke-star-rating {{ product_data_attribute }}>{{ product.metafields.okendo.StarRatingSnippet }}</div>
+<style>
+  .okeReviews[data-oke-container] *, .okeReviews[data-oke-container] :after, .okeReviews[data-oke-container] :before, div.okeReviews *, div.okeReviews :after, div.okeReviews :before {
+    box-sizing: border-box;
+    width: 90px;
+    height: 26px;
+    margin: auto;
+}
+  .oke-sr-count {
+    display: none;
+}
+</style>

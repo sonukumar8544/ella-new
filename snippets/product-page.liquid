@@ -799,7 +799,7 @@
                         </div>
                     </div>
                     <div class="halo-productView-right productView-details clearfix">
-                        <div class="productView-product clearfix">
+                        <div class="sonu9 productView-product clearfix">
                             {%- for block in section.blocks -%}
                                 {%- liquid
                                     assign spacing_top = block.settings.spacing_top
@@ -883,7 +883,7 @@
                                             %}
                                         </div>
                                     {%- when 'variant_description' -%}
-                                        <div class="productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                        <div class="d-nonee productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                                             style="--spacing-top: {{ spacing_top | append: 'px' }};
                                             --spacing-bottom: {{ spacing_bottom | append: 'px' }}"
                                         >
@@ -1059,7 +1059,7 @@
                                         </div>
                                     {%- when 'perks' -%}
                                         {% unless has_product_combo %}
-                                            <div class="productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+                                            <div class="d-nonee productView-moreItem{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                                                 style="--spacing-top: {{ spacing_top | append: 'px' }};
                                                 --spacing-bottom: {{ spacing_bottom | append: 'px' }}"
                                             >
@@ -1084,7 +1084,7 @@
                                                     {%- if product.quantity_price_breaks_configured? -%}
                                                     <div class="wrapper-price-volumn">
                                                     {%- endif -%}
-                                                        <div class="quantity_selector">
+                                                        <div class="quantity_selector d-nonee">
                                                             {% render 'product-quantity',
                                                                 current_variant: current_variant,
                                                                 qty_style: qty_style,
@@ -1352,9 +1352,10 @@
                                             style="--spacing-top: {{ spacing_top | append: 'px' }};
                                             --spacing-bottom: {{ spacing_bottom | append: 'px' }};"
                                         >
-                                            {% render 'product-custom-information',
+                                            {% comment %} {% render 'product-custom-information',
                                                 block: block
-                                            %}
+                                            %} {% endcomment %}
+
                                         </div>
                                     {%- when 'grouped_product' -%}
                                         {%- if has_product_combo -%}
@@ -1537,7 +1538,7 @@
     {% unless has_product_combo %}
         {% render 'product-bundle' %}
     {% endunless %}
-    <div class="productView-bottom{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if tab_layout_mobile == 'popup' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}">
+    <div class="product-descriptios-bottom productView-bottom{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if tab_layout_mobile == 'popup' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}">
         <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
             {%- if section.settings.show_quick_order_list -%}
                 {{ 'component-price.css' | asset_url | stylesheet_tag }}

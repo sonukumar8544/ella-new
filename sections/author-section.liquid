@@ -1,0 +1,228 @@
+<div class="author-container">
+  <div class="container">
+    <div class="author">
+      <div class="author-head">
+        <div class="author-img">
+          <img src="{{ section.settings.author_image | img_url: '300x300' }}" alt="{{ section.settings.author_image.alt }}">
+        </div>
+        <div class="auth-sub-head">
+          <span class="types">{{ section.settings.author_role }}</span>
+          <h1 class="author-name">
+            {{ section.settings.author_name }}
+          </h1>
+          <ul class="social-list">
+           {% comment %} {% if section.settings.author_email %}
+              <li class="mail-icons">
+                <a href="mailto:{{ section.settings.author_email }}" target="_blank">
+                  <img
+                    class="invertimage"
+                    src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/email_50256a73-fe21-49e5-bcaf-ed25ec90c470.svg?v=1736437022"
+                    title="Mail Us">
+                </a>
+              </li>
+            {% endif %} {% endcomment %}
+            {% if section.settings.author_linkedin %}
+              <li>
+                <a href="{{ section.settings.author_linkedin }}" target="_blank">
+                  <img
+                    class="invertimage"
+                    src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/linkedin.svg?v=1736437022"
+                    title="LinkedIn">
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="author-des">
+        {% for block in section.blocks %}
+          <div class="des-items">
+            <h3 class="detail-title">{{ block.settings.title }}</h3>
+            <p>{{ block.settings.content }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .social-list .mail-icons img {
+    width: 20px;
+  }
+  .social-list {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+  }
+  .social-list li a {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: #2f698e;
+    color: #fff;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
+  .social-list li a img {
+    width: 100%;
+    max-width: 28px;
+    display: inline-block;
+  }
+
+  .invertimage {
+    filter: invert(100%);
+  }
+
+  .social-list li a:hover {
+    background: #184561;
+    box-shadow: 0 5px 10px #2f698e99;
+  }
+  .author-container .container {
+    max-width: 1020px !important;
+  }
+  .author-img {
+    max-width: 220px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px auto 15px;
+    box-shadow: 0 3px 10px 4px #2f698e70;
+  }
+  .author-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .author-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .author-head .types {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    color: #2f698e;
+  }
+  .author-head .author-name {
+    margin: 0 auto 10px;
+    font-size: 40px;
+    line-height: 76px;
+  }
+  .author-des {
+    margin: 20px auto 40px;
+  }
+  .des-items + .des-items {
+    border-top: 1px solid #2f698e;
+    margin-top: 30px;
+  }
+  .detail-title {
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    line-height: 34px;
+  }
+  .author-container {
+    padding-top: 80px;
+    padding-inline: 15px;
+  }
+
+  .des-items p{
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 768.5px) {
+    .author-container {
+      padding-top: 20px;
+    }
+    .author-img {
+      max-width: 180px;
+      width: 150px;
+      height: 150px;
+      margin: 10px auto 15px;
+    }
+    .author-head .author-name {
+      font-size: 24px;
+      line-height: 40px;
+    }
+    .author-head {
+      margin-bottom: 20px
+    }
+    .detail-title {
+      font-size: 20px;
+    }
+    .social-list li a {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Author Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "author_image",
+        "label": "Author Image"
+      },
+      {
+        "type": "text",
+        "id": "author_name",
+        "label": "Author Name",
+        "default": "John Doe"
+      },
+      {
+        "type": "text",
+        "id": "author_role",
+        "label": "Author Role",
+        "default": "Author"
+      },
+      {
+        "type": "text",
+        "id": "author_email",
+        "label": "Author Email",
+        "default": "example@example.com"
+      }, {
+        "type": "url",
+        "id": "author_linkedin",
+        "label": "LinkedIn Profile"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Description Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Block Title",
+            "default": "Block Title"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Block Content",
+            "default": "Block content goes here."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Author Section"
+      }
+    ]
+  }
+{% endschema %}

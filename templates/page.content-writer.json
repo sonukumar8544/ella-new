@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "job-application": {
+      "type": "job-application-form",
+      "blocks": {
+        "db024e51-a49c-414c-b23f-8bc10072d84b": {
+          "type": "file",
+          "settings": {}
+        },
+        "029550b7-81c5-4b7d-80ee-5418f848cbdd": {
+          "type": "email",
+          "settings": {
+            "email": "Email Address",
+            "required": true
+          }
+        },
+        "3a5514b2-a628-46ba-877f-278072659ce3": {
+          "type": "input",
+          "settings": {
+            "input": "Full Name",
+            "required": true
+          }
+        },
+        "fe4e6b79-6363-4274-b956-e3f5e7bd8f47": {
+          "type": "phone",
+          "settings": {
+            "phone": "Contact Number",
+            "required": true
+          }
+        },
+        "81f95476-b685-419c-89ae-28278051d41c": {
+          "type": "input",
+          "settings": {
+            "input": "LinkedIn Public URL",
+            "required": false
+          }
+        },
+        "7666c7f9-adc2-4c99-8c69-1e9ad673d430": {
+          "type": "input",
+          "disabled": true,
+          "settings": {
+            "input": "Mention your Experience (in Years)",
+            "required": true
+          }
+        },
+        "1df4865b-9a48-4fb4-8888-3c800ae97e5a": {
+          "type": "input",
+          "disabled": true,
+          "settings": {
+            "input": "Mention your Notice Period",
+            "required": true
+          }
+        },
+        "0b64f6b8-eaa1-4951-8c17-f8d49c15cf05": {
+          "type": "input",
+          "settings": {
+            "input": "Mention your Current CTC?",
+            "required": true
+          }
+        },
+        "dropdown_RF6V77": {
+          "type": "dropdown",
+          "settings": {
+            "dropdown": "Mention your highest level of education?",
+            "dropdown_values": "Select Option,, Bachelor's Degree,,Master's Degree,,Doctorate/PhD,,Other",
+            "country_dropdown": false
+          }
+        },
+        "dropdown_3cxRNf": {
+          "type": "dropdown",
+          "settings": {
+            "dropdown": "Mention your Experience (in Years)",
+            "dropdown_values": "Select Option,, Less than 1 year,,1-2 years,,3-5 years,,6-10 years,,10+ years",
+            "country_dropdown": false
+          }
+        },
+        "dropdown_DyFzd9": {
+          "type": "dropdown",
+          "settings": {
+            "dropdown": "Mention your Notice Period",
+            "dropdown_values": "Select Option,, Immediate Joiner,, 1 week,, 2 weeks,,1 month,, More than 1 month",
+            "country_dropdown": false
+          }
+        }
+      },
+      "block_order": [
+        "db024e51-a49c-414c-b23f-8bc10072d84b",
+        "029550b7-81c5-4b7d-80ee-5418f848cbdd",
+        "3a5514b2-a628-46ba-877f-278072659ce3",
+        "fe4e6b79-6363-4274-b956-e3f5e7bd8f47",
+        "81f95476-b685-419c-89ae-28278051d41c",
+        "7666c7f9-adc2-4c99-8c69-1e9ad673d430",
+        "1df4865b-9a48-4fb4-8888-3c800ae97e5a",
+        "0b64f6b8-eaa1-4951-8c17-f8d49c15cf05",
+        "dropdown_RF6V77",
+        "dropdown_3cxRNf",
+        "dropdown_DyFzd9"
+      ],
+      "settings": {
+        "department": "Content Writing"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "job-application"
+  ]
+}

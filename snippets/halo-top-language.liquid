@@ -1,3 +1,4 @@
+<!--halo-top-language -->
 <div class="halo-top-language">
     <div class="btn-group disclosure">
         {% assign logoActive = '' %}
@@ -22,3 +23,60 @@
     </div>
     <div class="dropdown-language">{% if settings.enable_multilang_shopify %}{% render 'halo-language' %}{% endif %}</div>
 </div>
+
+<style>
+  @media screen and (min-width: 1025px) {
+    .header-nav-utility .top-language-currency .dropdown-label .text {
+        vertical-align: middle;
+        font-size: 14px;
+        color:var(--header_icons_color);
+        margin-left: 15px;
+        font-weight: 600;
+    }
+      .header-nav-utility .halo-top-language .disclosure__button>.icon svg {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #fff;
+        border-radius: 30px;
+    }
+}
+  .language_currency_style_1 .halo-top-language .disclosure__button .icon:before{
+    background: none;
+  }
+  .halo-top-currency .text+svg {
+    position: relative;
+    top: 0;
+    width: 13px;
+    height: 15px;
+    fill: var(--header_icons_color);
+    stroke: var(--header_icons_color);
+}
+ .btn-group.currency-dropdown .dropdown-menu.currency-menu  .text{
+    color: var(--header_icons_color);
+  }
+  .header-language_currency.language_currency_style_1.d-inline-block {
+    background: #fff;
+    padding: 4px 8px;
+    font-size: 16px;
+    border-radius: 29px;
+    border: 1px solid var(--header_icons_color);
+}
+      .header-nav-utility .halo-top-language .disclosure__button>.icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 30px;
+    }
+  .header-navigation .top-language-currency:hover .dropdown-label .text{
+    color: var(--header_icons_color);
+  }
+  .halo-top-currency .currency-dropdown .icon svg{
+    fill: var(--header_icons_color);
+  }
+  .header-navigation .top-language-currency:hover .dropdown-label .text, .header-navigation .top-language-currency:hover .dropdown-label .text+svg{
+    color: var(--header_icons_color);
+  }
+
+ .has-megamenu .label.hot-label {
+   display:none;
+ }
+</style>

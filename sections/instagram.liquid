@@ -276,6 +276,13 @@
         {%- if section.settings.enable_underline_button -%}
             .footer .column-4 .footer-block__item.footer-block__text {width: 100%}
         {%- endif -%}
+      .section-block-{{section.id}} .halo-block-header .title .text{
+    width:100%;
+     padding: 0;
+    text-align: center;
+    font-weight: 800;
+   line-height: 1.1;
+  }
     }
     @media (min-width: 552px) and (max-width: 1024px) {
         {%- if section.settings.images_per_row == '2' -%}
@@ -287,9 +294,23 @@
             .instagram-slide .halo-row .halo-item {margin-bottom: 0 !important}
         {%- endif -%}
     }
+      div#cstm__instagram_view .halo-block-header .title .text {
+        padding: 0;
+        text-align: center;
+    }
+.section-block-{{section.id}} .image-zoom:hover img{
+  transform: none; 
+  }
+
+.section-block-{{section.id}} .halo-block-header .title .text{
+  width:100%;
+  line-height: 1.1;
+}
+  
+  
 </style>
 
-<div class="instagram-slide section-block-{{section.id}} {% if section.settings.padding_full_width == 0 and section.settings.slide_ins == 'centermode' %}padding-full-width-0{% endif %} {% if as_grid_gap == 30 %}instagram-slide-pad-15{% endif %}{% if section.settings.enable_underline_button %} enable_underline_button{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="new-instagram-{{section.id}}" {% if section.settings.block_layout == 'slider' %}data-loader-script="{{ 'halo.slide-instagram.js' | asset_url }}"{% endif %} style="--grid-gap: {{ grid_gap }}">
+<div class="instagram-slide section-block-{{section.id}} {% if section.settings.padding_full_width == 0 and section.settings.slide_ins == 'centermode' %}padding-full-width-0{% endif %} {% if as_grid_gap == 30 %}instagram-slide-pad-15{% endif %}{% if section.settings.enable_underline_button %} enable_underline_button{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="{{ section.settings.id }}" {% if section.settings.block_layout == 'slider' %}data-loader-script="{{ 'halo.slide-instagram.js' | asset_url }}"{% endif %} style="--grid-gap: {{ grid_gap }}">
     <div class="{% if section.settings.block_layout == 'infinite' %}container-full{% else %}{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1170' %}container-1170{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1470' %}container-1470{% else %}container{% endif %}{% endif %}">
         {%- if section.settings.instagram_title != blank or section.settings.instagram_des != blank or section.settings.view_all != blank -%}
             <div class="halo-block-header text-{{ section.settings.title_align }}{% if section.settings.view_all != blank %} viewAll--{{ section.settings.view_all_align }} viewAll-vert--{{ section.settings.view_all_vert_align }}{% endif %}{% if section.settings.style_block_header == 'style2' %} style_2_block_header{% endif %}"style="--margin-bottom-title: {{ section.settings.mg_bottom_header | append: 'px' }}">
@@ -534,6 +555,11 @@
             "type": "header",
             "content": "t:settings_schema.general.name"
         },
+       {
+            "type": "text",
+            "id": "id",
+            "label": "Custom ID",
+       },
         {
             "type": "select",
             "id": "container",

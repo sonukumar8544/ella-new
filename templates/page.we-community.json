@@ -1,0 +1,202 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_banner_kdLWUp": {
+      "type": "image-banner",
+      "blocks": {
+        "large_img_GhdwkE": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/Group_697.png",
+            "mobile_image": "shopify://shop_images/Group_697.png",
+            "enable_max_width_image": false,
+            "custom_width_image": 1170,
+            "enable_scroll_down": false,
+            "enable_custom_image": false,
+            "image_behavior": "none",
+            "sub_title": "",
+            "border_sub_title": false,
+            "font_size_sub_title": 14,
+            "font_size_sub_title_mb": 14,
+            "margin_bottom_sub_title": 14,
+            "sub_heading_font": "font_1",
+            "font_weight_sub_title": "700",
+            "sub_title_position": "sub_title_above",
+            "color_sub_title": "#232323",
+            "color_sub_title_mb": "#ffffff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_style_italic": false,
+            "font_size_heading": 40,
+            "font_size_heading_mb": 24,
+            "margin_bottom_heading": 20,
+            "font_weight_heading": "600",
+            "color_heading": "#232323",
+            "color_heading_mb": "#ffffff",
+            "border_title": "border_s1",
+            "border_color_title": "#232323",
+            "border_color_title_mobile": "#ffffff",
+            "text": "",
+            "font_size_des": 12,
+            "font_size_des_mb": 12,
+            "line_height_des": 26,
+            "margin_bottom_des": 35,
+            "color_des": "#232323",
+            "color_des_mb": "#ffffff",
+            "countdown": "",
+            "hide_countdown_fc": "countdown",
+            "countdown_style": "round",
+            "countdown_position": "countdown_below_desc",
+            "font_size_countdown_number": 30,
+            "font_size_countdown_text": 14,
+            "color_countdown": "#232323",
+            "color_countdown_mb": "#ffffff",
+            "countdown_margin_bottom": 35,
+            "content_width": 475,
+            "bg_color_content": "",
+            "align": "center",
+            "align_items": "center",
+            "position": "left",
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "btn_text": "",
+            "link": "",
+            "btn_icon": "",
+            "button_1_width": 235,
+            "enable_button_custom_border": false,
+            "button_color": "#ffffff",
+            "button_border": "#232323",
+            "button_background": "#232323",
+            "button_background_gradient": "",
+            "button_color_hover": "#ffffff",
+            "button_border_hover": "#232323",
+            "button_background_hover": "#232323",
+            "button_background_gradient_hover": "",
+            "btn_text_2": "",
+            "link_2": "",
+            "btn_icon_2": "",
+            "button_color_2": "#ffffff",
+            "button_border_2": "#232323",
+            "button_background_2": "#232323",
+            "button_background_2_gradient": "",
+            "button_color_hover_2": "#ffffff",
+            "button_border_hover_2": "#232323",
+            "button_background_hover_2": "#232323",
+            "button_background_gradient_hover_2": "",
+            "video_link": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#ffffff",
+            "bg_color_icon": "#000000",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "large_img_GhdwkE"
+      ],
+      "settings": {
+        "id_section": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "display_type": "slide",
+        "enable_arrows": false,
+        "arrows_position": "",
+        "enable_dots": false,
+        "enable_autoplay": false,
+        "list_gap": 0,
+        "image_banner_title": "",
+        "enable_border_title": false,
+        "color_title": "#202020",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "margin_bottom_title": 25,
+        "image_banner_des": "",
+        "color_des": "#202020",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "style_bg": "none",
+        "bg_color": "",
+        "bg_color_gradient": "",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 25,
+        "liquid_css": ""
+      }
+    },
+    "custom_liquid_zt4aCQ": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "@media (min-width: 768px) {.we-community-center p {max-width: 1300px; margin-left: auto; margin-right: auto;} .we-community-center {margin-top: 60px; padding: 0px 15px; }}",
+        ".we-community-center {padding: 0px 20px;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"we-community-center\">\n  <p>Are you passionate about natural health and wellness? Do you believe in the power of authentic, high-quality supplements to transform lives? Join our mission at Wellness Extract to empower people to seek #WellnessBeyondSupplements!</p>\n</div>"
+      }
+    },
+    "multi_col_block_section_Qpx443": {
+      "type": "multi-col-block-section",
+      "blocks": {
+        "block_left_XtGddy": {
+          "type": "block_left",
+          "settings": {
+            "block_heading": "Become an Ambassador",
+            "block_richtext": "<p>If you’re looking to collaborate with Wellness Extract and/or create content for the brand, please fill out the form below. <br/><br/></p>",
+            "button_multicol": "Apply",
+            "add_button_url": "https://wellnessextract-affiliate.grin.live/"
+          }
+        },
+        "block_right_eecdkA": {
+          "type": "block_right",
+          "settings": {
+            "block_heading_right": "Wellness Extract Affiliate Program",
+            "block_richtext_right": "<p>Join the Wellness Extract Affiliate Program to earn commissions promoting high-quality wellness products. With competitive payouts, reliable tracking, and strong customer support, you can easily build a passive income while sharing products that support overall well-being.<br/><br/></p>",
+            "button_multicol_right": "Become an Affiliate",
+            "add_button_url_right": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_left_XtGddy",
+        "block_right_eecdkA"
+      ],
+      "custom_css": [
+        ".collapsible-content-main {border-top: 1px solid #374650; margin-block: 80px; border-bottom: 1px solid #374650; padding: 0px;}",
+        ".inner-block-left,.inner-block-right {max-width: 100%;}",
+        ".collapsible-content-main h1 {margin-top: 0px;}",
+        ".collapsible-grid__item_main {padding: 60px; border-right: 1px solid #374650;}",
+        ".collapsible-image-main {padding: 60px;}",
+        "@media (max-width: 768px) {.collapsible-grid__item_main, .collapsible-image-main {padding: 30px 0px; } .collapsible-grid__item_main {border-bottom: 1px solid #374650; border-right: none; }}"
+      ],
+      "settings": {
+        "custom_class": "community-custom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_kdLWUp",
+    "custom_liquid_zt4aCQ",
+    "multi_col_block_section_Qpx443"
+  ]
+}

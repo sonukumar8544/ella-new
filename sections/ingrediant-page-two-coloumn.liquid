@@ -1,0 +1,252 @@
+{% schema %}
+  {
+    "name": "two column ingrediant",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "What's Inside"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Product Title1",
+        "default": "Title 1"
+      },
+      {
+        "type": "text",
+        "id": "title2",
+        "label": "Product Title2",
+        "default": "Title 2"
+      }, {
+        "type": "text",
+        "id": "title3",
+        "label": "Product Title3",
+        "default": "Title three"
+      },
+      {
+        "type": "text",
+        "id": "title4",
+        "label": "Product Title4",
+        "default": "Title four"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Product Description1",
+        "default": "Descriptin one"
+      }, {
+        "type": "textarea",
+        "id": "description2",
+        "label": "Product Description2",
+        "default": "description Two"
+      }, {
+        "type": "textarea",
+        "id": "description3",
+        "label": "Product Description3",
+        "default": "description three"
+      },
+      {
+        "type": "textarea",
+        "id": "description4",
+        "label": "Product Description4",
+        "default": "description four"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Read More"
+      }
+    ],
+    "presets": [
+      {
+        "name": "two column ingrediant"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="ingrediant-page-two-col-sec">
+  {% if section.settings.heading %}
+    <h2 class="ingrediant-img-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="ingrediant-img-two-column-new">
+    <div class="ingrediant-img-image">
+      {% if section.settings.image %}
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Annatto Seeds">
+      {% else %}
+        <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+      {% endif %}
+    </div>
+
+    <div class="ingrediant-img-text">
+      {% if section.settings.title %}
+        <h3>{{ section.settings.title }}</h3>
+      {% endif %}
+
+      {% if section.settings.description %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+
+      {% if section.settings.title2 %}
+        <h3>{{ section.settings.title2 }}</h3>
+      {% endif %}
+
+      {% if section.settings.description2 %}
+        <p>{{ section.settings.description2 }}</p>
+      {% endif %}
+
+      {% if section.settings.title3 %}
+        <h3>{{ section.settings.title3 }}</h3>
+      {% endif %}
+
+      {% if section.settings.description3 %}
+        <p>{{ section.settings.description3 }}</p>
+      {% endif %}
+
+      {% if section.settings.title4 %}
+        <h3>{{ section.settings.title4 }}</h3>
+      {% endif %}
+
+      {% if section.settings.description4 %}
+        <p>{{ section.settings.description4 }}</p>
+      {% endif %}
+
+      {% if section.settings.button_link and section.settings.button_text %}
+        <a href="{{ section.settings.button_link }}" class="ingrediant-img-shop-button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .ingrediant-page-two-col-sec {
+    max-width: 1300px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .ingrediant-img-heading {
+    color: #374650;
+    font-size: 30px;
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+
+  .ingrediant-img-two-column-new {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .ingrediant-img-image,
+  .ingrediant-img-text {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+  }
+
+  .ingrediant-img-image {
+    background-color: #eaeaea;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 500px;
+  }
+
+  .ingrediant-img-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .ingrediant-img-text {
+    max-width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ingrediant-img-text h3 {
+    font-size: 24px;
+    color: #374650;
+    margin: 0;
+    line-height: 1.2;
+    padding: 0;
+    font-family: 'Nunito'
+    , sans-serif;
+  }
+
+  .ingrediant-img-text p {
+    color: #36454F;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif; 
+    padding-bottom: 0 !important;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+  .ingrediant-img-shop-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #086b92;
+    color: white;
+    background: #086b92;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .ingrediant-img-shop-button:hover {
+    background-color: white;
+    color: #086b92;
+  }
+
+  @media (max-width: 768px) {
+    .ingrediant-img-two-column-new {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ingrediant-img-image img {
+      width: 100vw;
+    }
+
+    .ingrediant-img-image,
+    .ingrediant-img-text {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .ingrediant-img-text h3 {
+      font-size: 20px;
+    }
+  }
+</style>

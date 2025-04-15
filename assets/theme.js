@@ -3221,6 +3221,7 @@
                                     }
                                     if (cart.item_count == 1){
                                         $body.find('[data-cart-text]').text(window.cartStrings.item);
+                                      
                                     } else {
                                         $body.find('[data-cart-text]').text(window.cartStrings.items);
                                     }
@@ -3326,6 +3327,7 @@
                                             halo.updateSidebarCart(cart);
                                         }
                                         if (cart.item_count >= 100){
+                                          console.log("3329 cart bubble");
                                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                                         }
                                         $target.removeClass('is-loading');
@@ -3342,6 +3344,7 @@
                                     $body.addClass('add-to-cart-show');
                                     $target.removeClass('is-loading');
                                     if (cart.item_count >= 100){
+                                      console.log("3346 cart bubble");
                                         $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                                     }
                                 });
@@ -3673,15 +3676,19 @@
                         halo.showWarning($.parseJSON(xhr.responseText).description);
                     },
                     complete: function () {
-                        $body.find('[data-cart-count]').text(cart.item_count);
-                        if (cart.item_count >= 100){
+                      // cart total count function amar
+                        Shopify.getCart((cart_update) => {
+                        $body.find('[data-cart-count]').text(cart_update.item_count);
+                       // console.log("3680", cart_update.item_count);
+                        if (cart_update.item_count >= 100){
                             $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
                         }
-                        if (cart.item_count == 1){
+                        if (cart_update.item_count == 1){
                             $body.find('[data-cart-text]').text(window.cartStrings.item);
                         } else {
                             $body.find('[data-cart-text]').text(window.cartStrings.items);
                         }
+                        }),
                         halo.productCollectionCartSlider();
                         halo.updateGiftWrapper();
                         if (halo.checkNeedToConvertCurrency()) {
@@ -3831,6 +3838,7 @@
                     },
                     complete: function () {
                         $body.find('[data-cart-count]').text(cart.item_count);
+                      console.log("3840", cart.item_count);
                         halo.dispatchChangeForShippingMessage();
                         if (halo.checkNeedToConvertCurrency()) {
                             Currency.convertAll(window.shop_currency, $('#currencies .active').attr('data-currency'), 'span.money', 'money_format');
@@ -3859,6 +3867,7 @@
                             }
                             if (cart.item_count >= 100){
                                 $body.find('.cart-count-bubble [data-cart-count]').text(window.cartStrings.item_99);
+                              console.log("3870", window.cartStrings.item_99);
                             }
                         }
                         
@@ -4021,6 +4030,7 @@
 
                 count = count + 1;
                 itemWrapper.attr('data-count', count);
+              console.log("count 4031", count);
 
                 if ($('body').hasClass('cursor-fixed__show')){
                     window.sharedFunctionsAnimation.onEnterButton();

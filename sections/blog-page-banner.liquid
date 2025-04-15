@@ -1,0 +1,290 @@
+<section class="blog-banner-section-outer">
+  <div class="blog-banner-section">
+    <div class="blog-banner-content-wrapper">
+      <div class="blog-banner-title-wrapper">
+        <h1>{{ section.settings.banner_title | raw }}</h1>
+        <p>{{ section.settings.banner_subtitle | escape }}</p>
+      </div>
+    </div>
+  </div>
+
+<div class="blog-main-slider">
+    <div class="container">
+        <div class="inner-container">
+              <div class="hero-blog-slide">
+                {% assign current_url = canonical_url %}
+                {% assign url_parts = current_url | split: "/" %}
+                {% assign last_segment = url_parts | last %}
+              {% for article in blogs[last_segment].articles limit: 3 %}
+                  <div class="blog-slide-items">
+                    <a  href="{{ article.url }}">
+                      <div class="blogs-inner-items">
+                          <div class="blog-img-sec">
+                          <img class="blog-border-radius" src="{{ article.image | img_url: 'large' }}" alt="" />
+                          </div>
+                          <div class="blog-des-sec">
+                            <h3 class="blog-title">
+                              {{ article.title }}
+                            </h3>
+                            <div class="blog-date"> {{ article.published_at | time_tag: '%b %d, %Y' }} </div>
+                            <div class="blog-summary">
+                            {{ article.excerpt_or_content }}
+                            </div>
+                              <a href="{{ article.url }}"><div class="read-more"> Read More...</div></a>
+                          </div>
+                      </div>
+                    </a>
+                </div>  
+              {% endfor %}
+
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Blog Page Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }, {
+        "type": "textarea",
+        "id": "banner_title",
+        "label": "Enter title here (supports HTML)",
+        "default": "Health Hub"
+      }, {
+        "type": "textarea",
+        "id": "banner_subtitle",
+        "label": "Enter subtitle here",
+        "default": "This is the default subtitle for the blog page."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog Page Banner",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}
+
+
+
+<script>
+
+$(document).ready(function(){
+      $('.hero-blog-slide').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        speed: 300,
+        infinite: true,
+        autoplaySpeed: 7000,
+        autoplay: true,
+       });
+    });
+
+</script>
+
+<style>
+
+.blog-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.blog-border-radius{
+  border-radius: 12px;
+}
+  .blog-slide-items{
+    border-radius: 20px !important;
+  }
+
+.blogs-inner-items {
+    display: flex;
+    width: 100%;
+    padding: 25px;
+}
+.blog-img-sec {
+    flex: 0 0 30%;
+}
+.blog-des-sec {
+    flex: 0 0 70%;
+    padding-left: 40px;
+}
+
+.blog-main-slider {
+    margin-top: -135px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+}
+.blog-main-slider .inner-container {
+    background: #fcfdff;
+    box-shadow: 0px 10px 20px 0px #3e688b26;
+    border-radius: 12px;
+}
+.blog-des-sec .blog-title {
+    height: auto;
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.blog-des-sec .blog-summary {
+    margin: 20px auto;
+    font-size: 16px;
+}
+.blog-des-sec .read-more {
+    font-weight: 600;
+    color: #2f698e;
+}
+
+.blog-main-slider .slick-dots {
+    position: absolute;
+    bottom: 6px;
+}
+
+
+  .blog-page-navv {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 768px) {
+    .blog-banner-title-wrapper {
+      width: 100% !important;
+      margin-top: 40px;
+    }
+    .blog-banner-section {
+      position: relative;
+      height: 280px !important;
+      width: 100vw;
+      overflow: hidden;
+      margin-bottom: 40px !important;
+    }
+
+    .blog-banner-title-wrapper h1 {
+      color: #6f7a81;
+      font-size: 20px !important;
+      font-weight: bold;
+      line-height: 1.3;
+      white-space: pre-line;
+    }
+
+    .blog-banner-title-wrapper p {
+      color: #4d565b;
+      font-size: 16px;
+      margin-top: 10px;
+      /* Align text to the left */
+    }
+
+  }
+
+  .blog-banner-section {
+    position: relative;
+    height: 540px;
+    width: 100vw;
+    overflow: hidden; 
+  }
+
+  .blog-banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('{{ section.settings.background_image | img_url: 'master' }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .blog-banner-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0 1rem;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .blog-banner-title-wrapper {
+    text-align: left;
+    /* Align the whole wrapper's content to the left */
+  }
+
+.blog-banner-title-wrapper h1 {
+    color: #fff;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.3;
+    white-space: pre-line;
+    text-align: left;
+    margin: auto;
+}
+
+  .blog-banner-title-wrapper p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: left;
+    /* Align text to the left */
+  }
+ @media (max-width: 767.5px) {
+.halo-blog-content.halo-grid-content {
+    padding-top: 15px;
+}
+  .blogs-inner-items{
+    flex-direction: column;
+  }
+
+  .halo-blog-content.halo-grid-content #blog-page-card-wrapper-banner{
+    padding-inline: 10px !important;
+  }
+  div#blog-page-card-wrapper{
+    justify-content: center;
+  }
+  .blog-layout-default .blog-block-item .blog-title{
+    min-height: auto;
+  }
+.main-blog-block .blog-btn {
+    min-width: auto !important;
+    border-width: 1px;
+    font-size: 12px !important;
+    padding: 3px 10px !important;
+    border-radius: 3px;
+}
+#blog-page-card-wrapper .article-item{
+  margin-bottom: 20px !important;
+}
+div #blog-page-card-wrapper .blog-content{
+  padding: 15px 5px;
+}
+.blog-block-item .item {
+  padding: 5px !important;
+}
+
+.blog-text-inner .blog-summary {
+    font-size: 13px !important;
+    line-height: 18px;
+}
+
+.blog-layout-default .blog-block-item .blog-title{
+      -webkit-line-clamp: 2;
+}
+  }
+</style>

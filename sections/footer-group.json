@@ -11,87 +11,70 @@
   "type": "footer",
   "name": "Footer Group",
   "sections": {
-    "newsletter_UrXam7": {
-      "type": "newsletter",
-      "blocks": {
-        "newsletter_FYjWUb": {
-          "type": "newsletter",
-          "settings": {
-            "section_title": "Sign up for our newsletter",
-            "section_title_font_size": 32,
-            "section_title_font_size_mb": 18,
-            "section_title_font_weight": "600",
-            "section_title_text_transform": "none",
-            "section_title_font_style": "normal",
-            "section_title_color": "#e8e8e8",
-            "mg_bottom_title": 12,
-            "mg_bottom_title_mb": 12,
-            "section_description": "",
-            "section_description_font_size": 16,
-            "section_description_font_size_mb": 14,
-            "section_description_font_weight": "500",
-            "section_description_color": "#191919",
-            "margin_bottom_des": 60,
-            "des_line_height": 20,
-            "show_input_field": true,
-            "input_style": "style_1",
-            "input_width": 450,
-            "input_border_radius": 5,
-            "input_text_font_size": 15,
-            "button_style": "text",
-            "button_text": "Subscribe",
-            "button_font_size": 16,
-            "button_width": 150,
-            "button_text_color": "#ffffff",
-            "button_border_color": "#ffffff",
-            "button_background_color": "rgba(0,0,0,0)",
-            "button_gradient_color": "",
-            "button_text_color_hover": "#232323",
-            "button_border_color_hover": "#232323",
-            "button_background_color_hover": "rgba(0,0,0,0)",
-            "button_gradient_color_hover": "",
-            "button_text_transform": "uppercase",
-            "button_font_weight": "600",
-            "input_placeholder": "Your email address",
-            "input_placeholder_color": "#ffffff",
-            "input_background_color": "rgba(0,0,0,0)",
-            "input_border_color": "#ffffff",
-            "form_gap": 27,
-            "newsletter_content_direction": "column",
-            "newsletter_form_justify_content": "center",
-            "input_width_behavior": "restricted"
-          }
-        }
-      },
-      "block_order": [
-        "newsletter_FYjWUb"
-      ],
+    "newsletter_section_custom_QkJ8aD": {
+      "type": "newsletter-section-custom",
+      "custom_css": [],
       "settings": {
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "background": "#086b92",
-        "background_gradient": "",
-        "enable_parallax": true,
-        "section_text_align": "center",
-        "justify_section_content": "center",
-        "section_item_distance": 50,
-        "enable_social_media_below": false,
-        "mg_top_desktop": 65,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 60,
-        "mg_bottom_tablet": 55,
-        "mg_bottom_mobile": 5
+        "newsletter_image": "shopify://shop_images/Newsletter.png",
+        "newslettertext": "#f8f8f8",
+        "newslettersubtitle": "#f8f8f8",
+        "newsletterbg": "#086b92",
+        "newsletter_border": "rgba(0,0,0,0)",
+        "newsletter_title": "Stay in the Know. ",
+        "newsletter_subtitle": "Join 25,000+ who get health tips, wellness hacks & anti-aging secrets delivered fresh each week.",
+        "newsletter_subtitle1": ""
       }
     },
     "77a3195e-4b80-497f-a648-2fe6ad255c4f": {
       "type": "footer-01",
       "blocks": {
+        "text_bCaACK": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "custom_width": "20",
+            "heading": "",
+            "logo": "shopify://shop_images/Logo_Footer_PNG.png",
+            "logo_margin_bottom": 39,
+            "subtext": "",
+            "address_icon": "point_icon",
+            "show_address_icon": false,
+            "address_text": "",
+            "phone_icon": "message_icon",
+            "show_phone_icon": false,
+            "phone_text": "",
+            "email_icon": "envelope_icon",
+            "show_email_icon": false,
+            "email_text": "",
+            "icon_size": 16,
+            "icon_color": "",
+            "content_spacing": 1,
+            "enable_custom_position_icon": false,
+            "show_social": false,
+            "social_heading": "",
+            "enable_bg_social": false,
+            "social_margin_top": 35,
+            "social_icon_width": 12,
+            "social_icon_padding": 12,
+            "social_icon_border_width": 1,
+            "social_icon_margin_right": 15,
+            "social_color": "#282828",
+            "social_border_color": "#ffffff",
+            "social_background_color": "#ffffff",
+            "social_background_color_gradient": "",
+            "social_color_hover": "#282828",
+            "social_border_color_hover": "#ffffff",
+            "social_background_color_hover": "#ffffff",
+            "social_background_color_gradient_hover": "",
+            "social_box_hover_color": "#ffffff",
+            "mg_bottom": 0
+          }
+        },
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-0": {
           "type": "link_list",
           "settings": {
-            "custom_width": "18",
-            "heading": "Shop",
+            "custom_width": "20",
+            "heading": "SHOP",
             "menu": "all-products-usa",
             "mg_bottom": 0
           }
@@ -99,60 +82,50 @@
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-1": {
           "type": "link_list",
           "settings": {
-            "custom_width": "18",
-            "heading": "About Us",
-            "menu": "about-us",
+            "custom_width": "20",
+            "heading": "DISCOVER",
+            "menu": "footer-discover-2-0",
             "mg_bottom": 0
           }
         },
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-2": {
           "type": "link_list",
           "settings": {
-            "custom_width": "18",
-            "heading": "Learning Hubs",
-            "menu": "learning-hubs",
+            "custom_width": "20",
+            "heading": "SUPPORT",
+            "menu": "footer-support-2-0",
             "mg_bottom": 0
           }
         },
         "link_list_Q6YRdU": {
           "type": "link_list",
           "settings": {
-            "custom_width": "18",
-            "heading": "Offers & Plans",
-            "menu": "offers-plans",
-            "mg_bottom": 0
-          }
-        },
-        "link_list_zEEUmd": {
-          "type": "link_list",
-          "settings": {
-            "custom_width": "18",
-            "heading": "Legal",
+            "custom_width": "20",
+            "heading": "LEGAL",
             "menu": "legal",
             "mg_bottom": 0
           }
         },
         "110d49c1-eaa1-4fe6-b7d8-aa261738820d": {
           "type": "footer_bottom",
-          "disabled": true,
           "settings": {
             "pdtop_footer_bottom": 10,
             "pdbottom_footer_bottom": 15,
             "border_top": true,
             "footer_bottom_color": "#ffffff",
             "border_top_color": "#f8f8f8",
-            "footer_bottom_bg": "#086b92",
+            "footer_bottom_bg": "#36454f",
             "footer_bottom_bg_gradient": "",
             "show_copyright": true,
             "show_shop_name": false,
             "enable_layout_grid": true,
             "text_fontsize": 14,
-            "copyright_content": "<p>Wellnessextract</p>",
+            "copyright_content": "<p>© 2025, Wellness Extract USA</p>",
             "copyright_content_color": "#ffffff",
             "shop_name": "Wellness",
             "show_payment": true,
             "payment_margin_top": 0,
-            "payment_type": "default",
+            "payment_type": "custom",
             "show_payment_visa": true,
             "show_payment_master": true,
             "show_payment_maestro": true,
@@ -161,7 +134,7 @@
             "show_payment_bitcoin": false,
             "show_payment_dankort": false,
             "show_payment_diners_club": false,
-            "show_payment_discover": true,
+            "show_payment_discover": false,
             "show_payment_paypal": true,
             "show_payment_dogecoin": false,
             "show_payment_dwolla": false,
@@ -173,31 +146,72 @@
             "show_payment_ideal": false,
             "show_payment_klarna": false,
             "show_payment_klarna-pay-later": false,
-            "show_payment_shopify_pay": false,
+            "show_payment_shopify_pay": true,
             "show_payment_sofort": false
+          }
+        },
+        "text_yanzUz": {
+          "type": "text",
+          "settings": {
+            "custom_width": "100",
+            "heading": "",
+            "logo_margin_bottom": 28,
+            "subtext": "<p>*Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease.</p>",
+            "address_icon": "point_icon",
+            "show_address_icon": false,
+            "address_text": "",
+            "phone_icon": "message_icon",
+            "show_phone_icon": false,
+            "phone_text": "",
+            "email_icon": "envelope_icon",
+            "show_email_icon": false,
+            "email_text": "",
+            "icon_size": 16,
+            "icon_color": "",
+            "content_spacing": 1,
+            "enable_custom_position_icon": false,
+            "show_social": true,
+            "social_heading": "",
+            "enable_bg_social": false,
+            "social_margin_top": 35,
+            "social_icon_width": 30,
+            "social_icon_padding": 0,
+            "social_icon_border_width": 0,
+            "social_icon_margin_right": 15,
+            "social_color": "#282828",
+            "social_border_color": "#ffffff",
+            "social_background_color": "#36454f",
+            "social_background_color_gradient": "",
+            "social_color_hover": "#36454f",
+            "social_border_color_hover": "#ffffff",
+            "social_background_color_hover": "#ffffff",
+            "social_background_color_gradient_hover": "",
+            "social_box_hover_color": "#ffffff",
+            "mg_bottom": 0
           }
         }
       },
       "block_order": [
+        "text_bCaACK",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-0",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-1",
         "sections--14855161806899__77a3195e-4b80-497f-a648-2fe6ad255c4f-1676865909387c7c89-2",
         "link_list_Q6YRdU",
-        "link_list_zEEUmd",
-        "110d49c1-eaa1-4fe6-b7d8-aa261738820d"
+        "110d49c1-eaa1-4fe6-b7d8-aa261738820d",
+        "text_yanzUz"
       ],
       "settings": {
         "container": "1370",
         "padding_full_width": 45,
         "type_footer_heading": "font_1",
-        "type_footer_heading_font_size": 19,
+        "type_footer_heading_font_size": 18,
         "type_footer_heading_line_height": 16,
         "type_footer_heading_font_weight": "600",
         "type_footer_heading_text_transform": "capitalize",
         "type_footer_heading_margin_bottom": 12,
         "type_footer_heading_letter_spacing": "0",
-        "type_footer_link": "font_1",
-        "type_footer_link_font_size": 16,
+        "type_footer_link": "font_2",
+        "type_footer_link_font_size": 14,
         "type_footer_link_font_weight": "400",
         "type_footer_link_text_transform": "capitalize",
         "type_footer_link_line_height": 34,
@@ -206,7 +220,7 @@
         "border_footer_top_color": "#f8f8f8",
         "pdtop_footer_top": 0,
         "pdbottom_footer_top": 0,
-        "footer_top_bg": "#086b92",
+        "footer_top_bg": "#36454f",
         "footer_top_bg_gradient": "",
         "show_footer_top_bg_img": false,
         "footer_top_bg_img": "shopify://shop_images/Highlighted_CTA.png",
@@ -226,7 +240,7 @@
     }
   },
   "order": [
-    "newsletter_UrXam7",
+    "newsletter_section_custom_QkJ8aD",
     "77a3195e-4b80-497f-a648-2fe6ad255c4f"
   ]
 }
