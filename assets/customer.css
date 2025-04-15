@@ -527,6 +527,9 @@
 .address-form .form-field + .form-field {
   margin-top: 12px;
 }
+.wellness-addresses .form-field {
+  width: 49%;
+}
 
 .wellness-addresses .address-form .form-field input,
 .wellness-addresses .address-form .form-field .select__select {
