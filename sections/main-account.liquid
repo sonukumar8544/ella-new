@@ -120,8 +120,8 @@
                                                     <p class="account-product-detail list-unstyled">
                                                       {%- if address.phone -%}
                                                   <span>{{ address.phone }}, </span>  {%- endif -%}
-                                                    <span> {% if address.address1  %} {{ address.address1 }},{% endif %}
-                                                    {% if address.address2  %}  {{ address.address2 }},{% endif %}
+                                                    <span> {% if address.address1  %} {{ address.address1 }}, {% endif %}
+                                                    {% if address.address2  %}{{ address.address2 }},{% endif %}
                                                     </span>
                                                     {%- if address.zip or address.country -%}
                                                
