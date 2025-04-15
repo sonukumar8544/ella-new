@@ -1119,6 +1119,19 @@ h2.address-title.text-left {
   font-weight: bold;
   text-transform: capitalize;
 }
+#login div#seal-login-helper {
+  display: flex;
+  gap: 10px;
+}
+#login div#seal-login-helper h5 {
+  margin: 0;
+  padding: 0;
+}
+#login div#seal-login-helper a.link.link--underline {
+  border-bottom: 1px solid;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 @media (max-width: 1050px) {
   .address-form--wrapper {
