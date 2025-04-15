@@ -24,9 +24,19 @@
 
 <div class="account-page addresses-page">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
-        <h1 class="page-header">
-            {{ 'customer.addresses.title' | t }}
-        </h1>
+              <div class="main_addresses_title">  
+              <h1 class="page-header">
+              {{ 'customer.addresses.title' | t }}
+              </h1>
+              <button
+              class="button button--primary"
+              type="button"
+              aria-expanded="false"
+              aria-controls="AddAddress"
+              >
+              {{ 'customer.addresses.add_new' | t }}
+              </button>
+              </div>
         <div class="halo-page-content addresses">
             <customer-addresses class="account" data-customer-addresses>
                 <div class="account-body">
@@ -34,14 +44,7 @@
                         <div class="account-item">
                             <div class="account-content cstm_data_address">
                                 <div class="address-new" data-address>
-                                    <button
-                                        class="button button--primary"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="AddAddress"
-                                    >
-                                        {{ 'customer.addresses.add_new' | t }}
-                                    </button>
+                                
                                     <div class="account-action">
                                         <a href="{{ routes.account_url }}" class="link back-account link-underline">
                                             <span class="text">{{ 'customer.account.return' | t }}</span>
