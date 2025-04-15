@@ -115,28 +115,27 @@
                                                         </span>
                                                     {%- endif -%}
                                                 </h3>
-                                                <ul class="account-product-detail list-unstyled">
-                                                    {% if address.address1  %} <li>{{ address.address1 }},</li>{% endif %}
-                                                  {% if address.address2  %}  <li>{{ address.address2 }},</li>{% endif %}
-
+                                                <h3 class="account-product-detail list-unstyled">
+                                                   <p> {% if address.address1  %} {{ address.address1 }},{% endif %}
+                                                  {% if address.address2  %}  {{ address.address2 }},{% endif %}
+                                                                </p>
                                                 {%- if address.zip or address.country -%}
                                                     <!-- <ul class="account-product-detail list-unstyled">                                                    </ul> -->
-                                                        <li>
+                                                        <span>
                                                             <span class="account-product-label">{{ 'customer.addresses.zip' | t }}: </span>
                                                             {{ address.zip | upcase }},
-                                                        </li>
-                                                        <li>
+                                                  </span>
+                                                        <span>
                                                             <span class="account-product-label">{{ 'customer.addresses.country' | t }}: </span>
                                                             {{ address.country }},
-                                                        </li>
+                                                        </span>
 
                                                 {%- endif -%}
                                                 {%- if address.phone -%}
-                                                    <!-- <ul class="account-product-detail list-unstyled"> </ul> -->
-                                                        <li>{{ address.phone }}, </li>
+                                                  <span>{{ address.phone }}, </span>
                                                    
                                                 {%- endif -%}
-                                                                                                  </ul>
+                                                                                                  </h3>
                                             </div>
                                         </li>
                                     {%- endfor -%}
