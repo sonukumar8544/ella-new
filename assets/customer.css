@@ -1274,6 +1274,10 @@ h2.address-title.text-left {
     border-radius: 9px !important;
     border: 2px solid #086b92;
   }
+
+  .template-customers/\addresses .addresses li address {
+    padding: 0px !important;
+  }
   .addresses li address {
     padding: 20px 30px 30px 30px;
   }
