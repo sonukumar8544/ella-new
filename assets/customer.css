@@ -1218,6 +1218,9 @@ h2.address-title.text-left {
     width: 250px;
     margin-right: 0;
   }
+  .template-customers\/addresses .account-page .page-header {
+    text-align: center;
+  }
 }
 
 @media (max-width: 767px) {
