@@ -24,7 +24,12 @@
 
 <div class="account-page addresses-page">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
-              <div class="main_addresses_title">  
+              <div class="main_addresses_title"> 
+                 <div class="account-action">
+                                        <a href="{{ routes.account_url }}" class="link back-account link-underline">
+                                            <span class="text">{{ 'Back' }}</span>
+                                        </a>
+                                    </div>
               <h1 class="page-header">
               {{ 'customer.addresses.title' | t }}
               </h1>
@@ -44,12 +49,6 @@
                         <div class="account-item">
                             <div class="account-content cstm_data_address">
                                 <div class="address-new" data-address>
-                                
-                                    <div class="account-action">
-                                        <a href="{{ routes.account_url }}" class="link back-account link-underline">
-                                            <span class="text">{{ 'Back' }}</span>
-                                        </a>
-                                    </div>
                                     <div id="AddAddress" class="address-form">
                                         <h2 class="address-title text-left" id="AddressNewHeading">
                                             {{ 'customer.addresses.add_new' | t }}
