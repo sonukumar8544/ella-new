@@ -1234,6 +1234,9 @@ h2.address-title.text-left {
     display: flex;
     gap: 20px;
   }
+  .template-customers\/addresses .cstm_main_address .cstm__add_btn {
+    width: 357px;
+  }
 }
 
 @media (max-width: 767px) {
