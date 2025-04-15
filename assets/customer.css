@@ -1070,6 +1070,13 @@ h2.address-title.text-left {
 .reset-password.customer .form__message {
   margin-top: 10px;
 }
+.template-customers\/addresses .addresses li,
+.template-customers\/addresses .account-listItem {
+  padding: 0 15px 10px;
+  border-radius: 9px !important;
+  border: 2px solid #086b92;
+}
+
 @media (max-width: 1050px) {
   .address-form--wrapper {
     display: block;
