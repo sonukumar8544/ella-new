@@ -1240,6 +1240,13 @@ h2.address-title.text-left {
   .template-customers\/addresses .cstm__default_checkbox {
     width: 100%;
   }
+  .template-customers/account .seal-portal-link {
+    width: 30%;
+  }
+  .template-customers/account a.button.button--primary.cstm__btn {
+    width: 30%;
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 767px) {
