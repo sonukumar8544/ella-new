@@ -1221,6 +1221,9 @@ h2.address-title.text-left {
     gap: 10px;
     /* flex-wrap: wrap; */
   }
+  .template-customers\/addresses .main_addresses_title button {
+    width: 216px;
+  }
 
   .template-customers\/addresses .account-page .page-header {
     display: none;
