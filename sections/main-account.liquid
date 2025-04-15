@@ -116,8 +116,8 @@
                                                     {%- endif -%}
                                                 </h3>
                                                 <ul class="account-product-detail list-unstyled">
-                                                    <li>{{ address.address1 }},</li>
-                                                    <li>{{ address.address2 }},</li>
+                                                    {% if address.address1  %} <li>{{ address.address1 }},</li>{% endif %}
+                                                  {% if address.address2  %}  <li>{{ address.address2 }},</li>{% endif %}
 
                                                 {%- if address.zip or address.country -%}
                                                     <!-- <ul class="account-product-detail list-unstyled">                                                    </ul> -->
