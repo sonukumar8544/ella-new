@@ -1076,6 +1076,10 @@ h2.address-title.text-left {
   border-radius: 9px !important;
   border: 2px solid #086b92;
 }
+.template-customers\/account .account-content ul.account-list {
+  display: flex;
+}
+
 .template-customers\/addresses .main_addresses_title {
   display: flex;
   align-items: center;
