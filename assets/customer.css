@@ -593,10 +593,14 @@
   margin-bottom: 40px;
 }
 
-.addresses li address {
+.addresses li,
+.account-listItem {
   border: 1px solid #cecece;
   padding: 10px 15px 15px 15px;
   min-height: 200px;
+}
+
+.addresses li address {
   font-style: normal;
   font-size: var(--font-body-size);
 }
