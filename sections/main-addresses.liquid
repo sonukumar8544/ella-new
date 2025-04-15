@@ -327,10 +327,10 @@
         .section-block-{{section.id}} .container-full .halo-page-content {padding-left: 10px;padding-right: 10px}
     {%- endif -%}
   }
-  .template-customers\\/addresses .address-new{
+  .addresses-page .address-new{
     display:none;
   }
-  .template-customers\\/addresses .address-new.open__new{
+  .addresses-page .address-new.open__new{
     display:block;
   }
 </style>
@@ -346,7 +346,7 @@
     // }
  $(document).ready(function() {
   $('#addNewaddresses1').on('click', function() {
-    $('.template-customers\\/addresses .address-new').toggleClass('open__new');
+    $('.addresses-page .address-new').toggleClass('open__new');
   });
 });
 
