@@ -9,21 +9,6 @@
  */
 {
   "sections": {
-    "17447304680d8f83b6": {
-      "type": "apps",
-      "blocks": {
-        "easyvideo_easyvideo_section_mLLrkm": {
-          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_easyvideo_section_mLLrkm"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -446,6 +431,21 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
+      }
+    },
+    "17447304680d8f83b6": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_easyvideo_section_mLLrkm": {
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_easyvideo_section_mLLrkm"
+      ],
+      "settings": {
+        "include_margins": false
       }
     },
     "bundle_page_informational_image_xdtCLG": {
@@ -1525,8 +1525,8 @@
     }
   },
   "order": [
-    "17447304680d8f83b6",
     "main",
+    "17447304680d8f83b6",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
