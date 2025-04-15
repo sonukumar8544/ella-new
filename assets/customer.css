@@ -1214,6 +1214,9 @@ h2.address-title.text-left {
   .account tbody td.ColumnQuantity {
     text-align: center;
   }
+  .template-customers\/addresses .main_addresses_title button {
+    width: 216px;
+  }
 }
 
 @media (max-width: 767px) {
