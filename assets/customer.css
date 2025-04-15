@@ -1078,6 +1078,9 @@ h2.address-title.text-left {
 }
 .template-customers\/account .account-content ul.account-list {
   display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  gap: 20px;
 }
 
 .template-customers\/addresses .main_addresses_title {
