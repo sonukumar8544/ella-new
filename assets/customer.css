@@ -1141,6 +1141,7 @@ h2.address-title.text-left {
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    gap: 20px;
     /* margin-left: -15px;
     margin-right: -15px; */
   }
