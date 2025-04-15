@@ -405,7 +405,7 @@
   line-height: var(--heading-line-height);
   letter-spacing: var(--heading-letter-spacing);
   color: var(--color-text);
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin: 0 0 10px 0;
 }
 
