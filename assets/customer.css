@@ -242,6 +242,13 @@
   font-size: 22px;
   margin-bottom: 14px;
 }
+.template-customers\/account p.account-product-detail,
+p.account-product-detail span {
+  font-size: 17px;
+}
+.template-customers\/account .account-product {
+  margin-top: 25px;
+}
 
 .account-page .account-item + .account-item {
   padding-top: 30px;
