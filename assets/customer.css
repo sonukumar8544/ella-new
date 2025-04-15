@@ -1,10 +1,13 @@
 /* cstm_css */
 
-.template-customers\/addresses .form-actions {
+.template-customers\/addresses .form-actions.cstm_edit_address {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+.template-customers\/addresses .address-form .button + .button {
+  margin-top: 0px;
 }
 
 .account-page {
