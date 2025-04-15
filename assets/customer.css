@@ -528,9 +528,9 @@
   margin-top: 12px;
 }
 
-.address-form .form-field input,
-.address-form .form-field .select__select {
-  max-width: 450px;
+.wellness-addresses .address-form .form-field input,
+.wellness-addresses .address-form .form-field .select__select {
+  max-width: 100%;
   background: #ffffff;
   background-clip: padding-box;
   font-family: "Poppins", "Poppins", sans-serif;
