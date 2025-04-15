@@ -1088,8 +1088,11 @@ h2.address-title.text-left {
   padding: 0;
   width: 33%;
 }
-.main_addresses_title button {
-  width: 20%;
+.template-customers\/addresses .main_addresses_title button {
+  width: 33%;
+}
+.template-customers\/addresses .account-action {
+  width: 33%;
 }
 
 .template-customers\/addresses .account-action .back-account .text {
