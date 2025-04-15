@@ -9,6 +9,21 @@
  */
 {
   "sections": {
+    "17447304680d8f83b6": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_easyvideo_section_mLLrkm": {
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_easyvideo_section_mLLrkm"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -1507,30 +1522,15 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
-    },
-    "17447304680d8f83b6": {
-      "type": "apps",
-      "blocks": {
-        "easyvideo_easyvideo_section_Jtr8fH": {
-          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_easyvideo_section_Jtr8fH"
-      ],
-      "settings": {
-        "include_margins": false
-      }
     }
   },
   "order": [
+    "17447304680d8f83b6",
     "main",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
-    "17447304680d8f83b6",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "product-recommendations",
