@@ -330,14 +330,20 @@
 </style>
 
 <script>
-    Shopify.CustomerAddress = {
-        toggleForm: function(id) {
-          var editEl = document.getElementById('EditAddress_'+id);
-          editEl.style.display = editEl.style.display == 'none' ? '' : 'none';
-          editEl.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-          return false;
-        }
-    }
+    // Shopify.CustomerAddress = {
+    //     toggleForm: function() {
+    //       var editEl = document.getElementById('addNewaddresses1');
+    //       editEl.style.display = editEl.style.display == 'none' ? '' : 'none';
+    //       editEl.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    //       return false;
+    //     }
+    // }
+ $(document).ready(function() {
+  $('#addNewaddresses1').on('click', function() {
+    $('.template-customers\\/addresses .address-new').toggleClass('open__new');
+  });
+});
+
 </script>
 
 {% schema %}
