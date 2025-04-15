@@ -43,6 +43,7 @@
   }
 {% endschema %}
 
+{% if product.metafields.Custom.we_product_ingrediant_image_one %}
 <div class="product-ing-product-ing-iimg-text-section">
   {% if section.settings.heading %}
     <h2 class="product-ing-img-heading">{{ section.settings.heading }}</h2>
@@ -102,6 +103,7 @@
     </div>
   {% endif %}
 </div>
+{% endif %}
 
 <style>
   .product-ing-product-ing-iimg-text-section {
