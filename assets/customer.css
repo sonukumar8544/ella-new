@@ -1269,6 +1269,9 @@ h2.address-title.text-left {
     text-align: center;
     font-size: 22px;
   }
+  .template-customers\/addresses button.button.button--primary.cstm__add_btn {
+    margin-bottom: 10px;
+  }
 
   .login-rowLeft {
     padding-top: 0;
