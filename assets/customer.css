@@ -1092,6 +1092,9 @@ h2.address-title.text-left {
   width: 20%;
 }
 
+.template-customers\/addresses .account-action {
+  text-decoration: none;
+}
 .template-customers\/addresses .account-action a.link.back-account {
   font-weight: 600;
   border-radius: 4px;
