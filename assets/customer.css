@@ -527,6 +527,13 @@
 /* .address-form .form-field + .form-field {
   margin-top: 12px;
 } */
+
+.address-form--wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .wellness-addresses .form-field {
   width: 49%;
 }
