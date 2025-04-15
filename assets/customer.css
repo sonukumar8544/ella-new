@@ -623,7 +623,7 @@ h2.address-title.text-left {
   text-transform: uppercase;
   font-weight: 700;
   font-size: var(--font-body-size);
-  margin-bottom: 7px;
+  margin: 0px;
 }
 
 .addresses li address .acc-name .default,
