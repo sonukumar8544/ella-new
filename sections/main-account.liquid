@@ -108,7 +108,10 @@
                                         <li class="account-listItem">
                                             <div class="account-product">
                                                 <h3 class="account-product-title">
-                                                    {{ address.first_name | capitalize }} {{ address.last_name | capitalize }}
+                                                    {{ address.first_name | capitalize }} {{ address.last_name | capitalize }}- {%- if address.phone -%}
+                                                  <span>{{ address.phone }} </span>
+                                                   
+                                                {%- endif -%}
                                                     {%- if address == customer.default_address -%}
                                                         <span class="account-product-text">
                                                             {{ 'customer.addresses.default' | t }}
@@ -131,10 +134,7 @@
                                                         </span>
 
                                                 {%- endif -%}
-                                                {%- if address.phone -%}
-                                                  <span>{{ address.phone }}, </span>
-                                                   
-                                                {%- endif -%}
+                                               
                                                                                                   </h3>
                                             </div>
                                         </li>
