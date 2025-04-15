@@ -1217,6 +1217,14 @@ h2.address-title.text-left {
 }
 
 @media (max-width: 767px) {
+  .template-customers\/addresses .main_addresses_title button,
+  .template-customers\/addresses .account-action {
+    width: 17%;
+  }
+  .template-customers\/addresses .account-page .page-header {
+    font-size: 17px;
+  }
+
   .login-rowLeft {
     padding-top: 0;
   }
