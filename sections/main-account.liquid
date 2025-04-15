@@ -118,9 +118,9 @@
                                                 <ul class="account-product-detail list-unstyled">
                                                     <li>{{ address.address1 }}</li>
                                                     <li>{{ address.address2 }}</li>
-                                                </ul>
+
                                                 {%- if address.zip or address.country -%}
-                                                    <ul class="account-product-detail list-unstyled">
+                                                    <!-- <ul class="account-product-detail list-unstyled">                                                    </ul> -->
                                                         <li>
                                                             <span class="account-product-label">{{ 'customer.addresses.zip' | t }}: </span>
                                                             {{ address.zip | upcase }}
@@ -129,13 +129,14 @@
                                                             <span class="account-product-label">{{ 'customer.addresses.country' | t }}: </span>
                                                             {{ address.country }}
                                                         </li>
-                                                    </ul>
+
                                                 {%- endif -%}
                                                 {%- if address.phone -%}
-                                                    <ul class="account-product-detail list-unstyled">
+                                                    <!-- <ul class="account-product-detail list-unstyled"> </ul> -->
                                                         <li>{{ address.phone }}</li>
-                                                    </ul>
+                                                   
                                                 {%- endif -%}
+                                                                                                  </ul>
                                             </div>
                                         </li>
                                     {%- endfor -%}
