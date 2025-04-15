@@ -1224,6 +1224,11 @@ h2.address-title.text-left {
   .template-customers\/addresses .account-page .page-header {
     font-size: 17px;
   }
+  .template-customers\/addresses .main_addresses_title button,
+  .template-customers\/addresses .account-action {
+    font-size: 13px;
+    padding: 12px 5px;
+  }
 
   .login-rowLeft {
     padding-top: 0;
