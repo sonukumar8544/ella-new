@@ -1092,6 +1092,16 @@ h2.address-title.text-left {
   width: 20%;
 }
 
+.template-customers\/addresses .account-action a.link.back-account {
+  font-weight: 600;
+  border-radius: 4px;
+  color: #fff;
+  background: #086b92;
+  padding: 5px 8px;
+  font-size: 16px;
+  padding: 10px;
+}
+
 @media (max-width: 1050px) {
   .address-form--wrapper {
     display: block;
