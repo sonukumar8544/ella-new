@@ -191,7 +191,9 @@
                                 {%- for address in customer.addresses -%}    
                                 <div id="EditAddress_{{ address.id }}" class="address-form" style="display:none;">
                                     <h2 class="address-title text-left">
-                                        {{ 'customer.addresses.edit_address' | t }}: {{ address.first_name | uppercase }} {{address.last_name | uppercase }} {% if address == customer.default_address %}
+                                        {{ 'customer.addresses.edit_address' | t }}:
+                                     {% comment %} {{ address.first_name | uppercase }} {{address.last_name | uppercase }} {% endcomment %}
+                                      {% if address == customer.default_address %}
                                             <span class="default">{{ 'customer.addresses.default' | t }}</span>
                                           {% endif %}
                                     </h2>
