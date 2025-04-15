@@ -156,7 +156,6 @@
         },
         "19de9abb-17c8-4d67-941d-b32706ed06fd": {
           "type": "pickup_availability",
-          "disabled": true,
           "settings": {
             "show_pickup_availability": true,
             "spacing_top": 0,
@@ -165,7 +164,6 @@
         },
         "faa2b3e6-c0a1-4269-baa6-d2605efe4c05": {
           "type": "quantity_selector",
-          "disabled": true,
           "settings": {
             "qty_style": "1",
             "qty_layout": "1",
@@ -175,7 +173,6 @@
         },
         "10093fcf-2053-47e9-bedb-841bb0d046fa": {
           "type": "trust_image",
-          "disabled": true,
           "settings": {
             "show_trust_image": true,
             "spacing_top": 0,
@@ -184,7 +181,6 @@
         },
         "bd066b80-c8e3-4f3e-8280-b27fbf6e9423": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "open_tab_mobile": true,
             "title": "Description",
@@ -441,21 +437,6 @@
         "mg_bottom_mobile": 0
       }
     },
-    "17447304680d8f83b6": {
-      "type": "apps",
-      "blocks": {
-        "easyvideo_easyvideo_section_mLLrkm": {
-          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_easyvideo_section_mLLrkm"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
     "bundle_page_informational_image_xdtCLG": {
       "type": "bundle-page-informational-image",
       "settings": {}
@@ -672,6 +653,21 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
+      }
+    },
+    "17447304680d8f83b6": {
+      "type": "apps",
+      "blocks": {
+        "easyvideo_easyvideo_section_mLLrkm": {
+          "type": "shopify://apps/easyvideo/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "easyvideo_easyvideo_section_mLLrkm"
+      ],
+      "settings": {
+        "include_margins": false
       }
     },
     "product_ingrediants_section_NLKKBM": {
@@ -1534,11 +1530,11 @@
   },
   "order": [
     "main",
-    "17447304680d8f83b6",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
+    "17447304680d8f83b6",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
     "product-recommendations",
