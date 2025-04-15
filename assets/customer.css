@@ -1219,7 +1219,7 @@ h2.address-title.text-left {
 @media (max-width: 767px) {
   .template-customers\/addresses .main_addresses_title {
     gap: 10px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
 
   .template-customers\/addresses .account-page .page-header {
