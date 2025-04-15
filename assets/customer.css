@@ -1221,10 +1221,7 @@ h2.address-title.text-left {
     gap: 10px;
     flex-wrap: wrap;
   }
-  .template-customers\/addresses .main_addresses_title button,
-  .template-customers\/addresses .account-action {
-    width: 17%;
-  }
+
   .template-customers\/addresses .account-page .page-header {
     display: none;
   }
@@ -1235,10 +1232,6 @@ h2.address-title.text-left {
   }
   .template-customers\/addresses .account-action a.link.back-account {
     font-size: 16px;
-  }
-  .template-customers\/addresses h2.address-title.text-left {
-    text-align: center;
-    font-size: 25px;
   }
 
   .login-rowLeft {
