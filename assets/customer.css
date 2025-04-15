@@ -1126,7 +1126,8 @@
   .addresses li,
   .account-listItem {
     width: 50%;
-    padding: 0px 15px 10px 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   /* Account */
@@ -1254,7 +1255,7 @@
   .addresses li,
   .account-listItem {
     width: 25%;
-    padding: 0 15px;
+    padding: 0 15px 10px 15px;
   }
   .addresses li address {
     padding: 20px 30px 30px 30px;
