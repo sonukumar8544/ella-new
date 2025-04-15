@@ -523,11 +523,6 @@
   font-size: calc(var(--font-size) + 4px);
   text-align: left;
 }
-
-/* .address-form .form-field + .form-field {
-  margin-top: 12px;
-} */
-
 .address-form--wrapper {
   display: flex;
   align-items: center;
@@ -1037,6 +1032,8 @@
 
 .reset-password.customer .form__message {
   margin-top: 10px;
+}
+@media (min-width: 1050px) {
 }
 
 @media (min-width: 768px) {
