@@ -1238,6 +1238,10 @@ h2.address-title.text-left {
   .template-customers\/addresses .account-action a.link.back-account {
     font-size: 16px;
   }
+  .template-customers\/addresses h2.address-title.text-left {
+    text-align: center;
+    font-size: 22px;
+  }
 
   .login-rowLeft {
     padding-top: 0;
