@@ -284,8 +284,9 @@
                                             </div>
                                         </div>
                                         <div class="form-actions cstm_edit_address">
-                                            <button class="button button--primary">{{ 'customer.addresses.update' | t }}</button>
                                             <button class="button button--secondary" type="reset" onclick="Shopify.CustomerAddress.toggleForm({{form.id}}); return false;">{{ 'customer.addresses.cancel' | t }}</button>
+                                    
+                                            <button class="button button--primary">{{ 'customer.addresses.update' | t }}</button>
                                         </div>
                                     {%- endform -%}
                                 </div>
