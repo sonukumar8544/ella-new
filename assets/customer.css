@@ -1253,12 +1253,12 @@ h2.address-title.text-left {
   }
   .template-customers\/addresses .address-form .form-actions {
     margin-top: 20px;
-    max-width: 100%;
+    max-width: 600px;
     display: flex;
     gap: 20px;
   }
   .template-customers\/addresses .address-form .button + .button {
-    width: 50%;
+    width: 100%;
   }
   .template-customers\/addresses .cstm__default_checkbox {
     width: 100%;
