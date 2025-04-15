@@ -629,8 +629,9 @@ h2.address-title.text-left {
 .addresses li address .acc-name .default,
 .address-form .address-title .default {
   padding: 2px 6px 1px 6px;
-  background: var(--sold-out-badge-bg);
-  color: var(--sold-out-badge-color);
+  border-radius: 4px;
+  color: #fff;
+  background: #086b92;
   font-size: calc(var(--font-body-size) - 2px);
   line-height: calc(var(--font-body-size) + 2px);
   font-weight: var(--font-weight-medium);
