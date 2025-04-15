@@ -626,6 +626,8 @@ h2.address-title.text-left {
   margin: 0px;
 }
 
+.template-customers\/addresses .addresses li,
+.template-customers\/addresses .account-listItem,
 .addresses li address .acc-name .default,
 .address-form .address-title .default {
   padding: 2px 6px 1px 6px;
