@@ -327,6 +327,12 @@
         .section-block-{{section.id}} .container-full .halo-page-content {padding-left: 10px;padding-right: 10px}
     {%- endif -%}
   }
+  .addresses-page .address-new{
+    display:none;
+  }
+  .addresses-page .address-new.open__new{
+    display:block;
+  }
 </style>
 
 <script>
@@ -338,6 +344,12 @@
           return false;
         }
     }
+   $(document).ready(function() {
+  $('#addNewaddresses1').on('click', function() {
+    $('.addresses-page .address-new').toggleClass('open__new');
+  });
+});
+
 </script>
 
 {% schema %}
