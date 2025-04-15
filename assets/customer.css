@@ -1269,7 +1269,9 @@ h2.address-title.text-left {
   .addresses li,
   .account-listItem {
     width: 25%;
-    padding: 0 15px 10px 15px;
+    padding: 0 15px 10px;
+    border-radius: 9px !important;
+    border: 2px solid #b2b2b2;
   }
   .addresses li address {
     padding: 20px 30px 30px 30px;
