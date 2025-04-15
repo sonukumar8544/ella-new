@@ -531,6 +531,21 @@
 .address-form .form-field input,
 .address-form .form-field .select__select {
   max-width: 450px;
+  background: #ffffff;
+  background-clip: padding-box;
+  font-family: "Poppins", "Poppins", sans-serif;
+  line-height: 1.42857143;
+  padding: 0 9px;
+  vertical-align: baseline;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 15px !important;
+  border: 1px solid #086b929e !important;
+  border-radius: 5px !important;
+  height: 44px !important;
+  text-transform: initial;
+  margin-top: 5px;
+  color: #374650 !important;
 }
 
 .address-form input[type="checkbox"] + .form-label--checkbox:before {
