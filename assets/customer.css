@@ -1088,6 +1088,9 @@ h2.address-title.text-left {
   padding: 0;
   width: 80%;
 }
+.main_addresses_title button {
+  width: 20%;
+}
 
 @media (max-width: 1050px) {
   .address-form--wrapper {
