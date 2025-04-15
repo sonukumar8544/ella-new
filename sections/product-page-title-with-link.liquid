@@ -42,6 +42,8 @@
   }
 {% endschema %}
 
+
+{% if product.metafields.custom.we_product_scientifically_backed_subtitle %}
 <section class="faq-slider-wrapper">
   <div class="section-inner">
     <h2>{{ section.settings.section_heading }}</h2>
@@ -57,6 +59,7 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <style>
   .faq-slider-wrapper {
