@@ -33,7 +33,7 @@
                         <h2 class="account-title text-left">
                             {{ 'My Addresses'}}
                         </h2>
-                        <div class="account-content">
+                        <div class="account-content cstm__account">
                             {% paginate customer.orders by 20 %}
                                 {%- if customer.orders.size > 0 -%}
                                     <table role="table" class="order-history">
