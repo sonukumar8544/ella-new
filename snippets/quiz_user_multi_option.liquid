@@ -1,0 +1,147 @@
+<!-- quiz_user_multi_option -->
+<div
+  class="tab tab-group quiz_user_multi_checkbox cstm__multi_option  {% if settings.cstm_multi_checkboxid != '' %} {{ settings.cstm_multi_checkboxid }} {% endif %}"
+  {% if settings.cstm_multi_checkboxid != '' %}
+    class="{{ settings.cstm_multi_checkboxid }}"
+  {% endif %}
+  {% if settings.cstm_multi_checkboxid != '' %}
+    data-collection-multi-id="{{ settings.cstm_multi_checkboxid | handle}}"
+  {% endif %}
+  {% if settings.next_quiz_option_id != '' %}
+    data-next-quiz-move="{{ settings.next_quiz_option_id | handle }}"
+  {%- endif %}
+  data-progressbar="{{ index }}"
+>
+  {% if settings.quiz_checkbox_title != blank %}
+    <h2 class="tab-title">{{ settings.quiz_checkbox_title }}</h2>
+  {% endif %}
+  <div class="quiz-list {% if settings.checkbox_enable == true %}left-align half-width custom-checkbox{% endif %}">
+    {% if settings.quiz_checkbox1 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox1 | handle }}"
+          id="{{ settings.quiz_checkbox1 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox1 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox1 | handle }}" class="custom-label {{ settings.quiz_checkbox1 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox1 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox2 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox2 | handle }}"
+          id="{{ settings.quiz_checkbox2 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox2 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox2 | handle }}" class="custom-label {{ settings.quiz_checkbox2 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox2 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox3 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox3 | handle }}"
+          id="{{ settings.quiz_checkbox3 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox3 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox3 | handle }}" class="custom-label {{ settings.quiz_checkbox3 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox3 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox4 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox4 | handle }}"
+          id="{{ settings.quiz_checkbox4 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox4 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox4 | handle }}" class="custom-label {{ settings.quiz_checkbox4 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox4 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox5 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox5 | handle }}"
+          id="{{ settings.quiz_checkbox5 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox5 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox5 | handle }}" class="custom-label {{ settings.quiz_checkbox5 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox5 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox6 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox6 | handle }}"
+          id="{{ settings.quiz_checkbox6 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          value="{{ settings.quiz_checkbox6 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox6 | handle }}" class="custom-label {{ settings.quiz_checkbox6 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox6 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox7 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox7 | handle }}"
+          id="{{ settings.quiz_checkbox7 | handle }}"
+          name="{{ settings.quiz_checkbox_title | handle }}"
+          name1="quiz_answer"
+          value="{{ settings.quiz_checkbox7 | handle }}"
+        >
+        <label for="{{ settings.quiz_checkbox7 | handle }}" class="custom-label {{ settings.quiz_checkbox7 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox7 }}</p>
+        </label>
+      </div>
+    {% endif %}
+
+    {% if settings.quiz_checkbox8 != blank %}
+      <div class="quiz-items">
+        <input
+          type="checkbox"
+          class="{{ settings.quiz_checkbox8 | handle }}"
+          id="{{ settings.quiz_checkbox8 | handle }}"
+          name="{{settings.quiz_checkbox_title | handle}}"
+          value="{{ settings.quiz_checkbox8 | handle }}"
+          name1="quiz_answer"
+        >
+        <label for="{{ settings.quiz_checkbox8 | handle }}" class="custom-label {{ settings.quiz_checkbox8 | handle }}">
+          <p class="name checkbox__title">{{ settings.quiz_checkbox8 }}</p>
+        </label>
+      </div>
+    {% endif %}
+  </div>
+</div>

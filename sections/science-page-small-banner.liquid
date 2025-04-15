@@ -1,0 +1,50 @@
+<!-- image-blocks.liquid -->
+
+<div class="icon-liquid-section">
+  <div class="cotainer">
+    <h2 class="main-title-pati">{{ section.settings.main_title }}</h2>
+  </div>
+</div>
+
+<!-- Schema Settings -->
+{% schema %}
+  {
+    "name": "Image Blocks Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Main Title",
+        "default": "Main Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "small banner patti"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .icon-liquid-section {
+    background-color: #FFCB4A;
+    padding: 35px 0;
+  }
+  .main-title-pati {
+    color: #374650;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bolder;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  @media (max-width: 760px) {
+    .main-title-pati {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+
+
+</style>

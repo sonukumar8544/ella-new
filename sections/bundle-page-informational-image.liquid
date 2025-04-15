@@ -1,0 +1,56 @@
+{% schema %}
+  {
+    "name": "bundle info img",
+    "tag": "section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "bundle information image",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% if product.handle contains 'bundle' %}
+    {% if product.metafields.Custom.we_bundle_product_info_image %}
+  <section class="bundle-banner container">
+    <div class="nundle-image-bobile-new">
+      {% if product.metafields.Custom.we_bundle_product_info_image_mobile %}
+        <img
+          src="{{ product.metafields.Custom.we_bundle_product_info_image_mobile | img_url: 'master' }}"
+          alt="Mobile Banner"
+          loading="lazy" />
+      {% endif %}
+    </div>
+    <div class="bundle-image-desktop-new">
+      {% if product.metafields.Custom.we_bundle_product_info_image %}
+        <img
+          src="{{ product.metafields.Custom.we_bundle_product_info_image | img_url: 'master' }}"
+          alt="Desktop Banner"
+          loading="lazy" />
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+{% endif %}
+
+
+<style>
+
+.bundle-image-desktop-new {
+    margin-top: 50px;
+}
+
+  @media (min-width: 769px) {
+    .nundle-image-bobile-new {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bundle-image-desktop-new {
+      display: none;
+    }
+  }
+</style>

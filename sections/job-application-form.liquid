@@ -1,0 +1,223 @@
+<!-- job-application-form -->
+<div class="page-width">
+  {% render 'job-application', block:block %}
+</div>
+
+{% schema %}
+{
+  "name": "Job Application",
+  "class":"job-application",
+  "settings": [
+    {
+      "type":"text",
+      "id":"department",
+      "label":"Department"
+    }
+  ],
+ "blocks": [
+    {
+      "type": "input",
+      "name": "Text Input Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "input",
+          "label": "Title",
+          "default": "Title"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required"
+        }
+      ]
+    },
+    {
+      "type": "email",
+      "name": "Enter Your Email",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Title",
+          "default": "Email"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required"
+        }
+      ]
+    },
+    {
+      "type": "phone",
+      "name": "Enter Your Phone Number",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "Title",
+          "default": "Phone"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required"
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "Select Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "dropdown",
+          "label": "Title",
+          "default": "Select Dropdown Title"
+        },
+        {
+          "type": "text",
+          "id": "dropdown_values",
+          "label": "Values",
+          "info": "Separate the value using ,,"
+        },
+        {
+          "type": "checkbox",
+          "id": "country_dropdown",
+          "label": "Enable Country Dropdown",
+          "info": "Enable this to show the country and province dropdown"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "name": "Choose Multiple Option",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Enable Full Width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "dgrid_width",
+          "label": "Desktop Width",
+          "default": "25%"
+        },
+        {
+          "type": "text",
+          "id": "mgrid_width",
+          "label": "Mobile Width",
+          "default": "48%"
+        },
+        {
+          "type": "text",
+          "id": "checkbox",
+          "label": "Title",
+          "default": "Checkbox Title"
+        },
+        {
+          "type": "text",
+          "id": "checkbox_values",
+          "label": "Values",
+          "info": "Separate the values using ',,'"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "Choose Any One Option",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Enable Full Width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "dgrid_width",
+          "label": "Desktop Width",
+          "default": "25%"
+        },
+        {
+          "type": "text",
+          "id": "mgrid_width",
+          "label": "Mobile Width",
+          "default": "48%"
+        },
+        {
+          "type": "text",
+          "id": "radio",
+          "label": "Title",
+          "default": "Radio Button Title"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Email Template Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "border_round",
+          "label": "Enable Border Round",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "radio_values",
+          "label": "Radio Values",
+          "info": "Separate the values using ,"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "Resume Upload Option",
+      "limit": 1,
+      "settings": []
+    }
+  ],
+  "presets":
+  [
+  {
+    "name": "Job Application",
+     "blocks": [
+            {
+                "type": "file"
+            },
+            {
+                "type": "email"
+            },
+            {
+                "type": "phone"
+            },
+            {
+                "type": "input"
+            },
+            {
+                "type": "input"
+            },
+            {
+               "type": "dropdown"
+            },
+            {
+               "type": "dropdown"
+            }
+        ]
+
+  }
+]
+}
+{% endschema %}
+
+
+
+
+
+
+

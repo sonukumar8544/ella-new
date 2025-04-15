@@ -1,0 +1,172 @@
+{% schema %}
+  {
+    "name": "founder-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The man with a Vision and Mission"
+      },
+      {
+        "type": "image_picker",
+        "id": "profile_image",
+        "label": "Profile Image"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Name",
+        "default": "Virender Dass"
+      },
+      {
+        "type": "richtext",
+        "id": "bio_1",
+        "label": "Bio Paragraph 1",
+        "default": "<p>Virender Dass, the visionary <strong>Founder and Director</strong> of Wellness Extract, turned a personal mission into a global wellness movement helping people live healthier & happier lives.</p>"
+      }, {
+        "type": "richtext",
+        "id": "bio_2",
+        "label": "Bio Paragraph 2",
+        "default": "<p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. When his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to <strong>Dr. Barrie Tan, world’s foremost expert on tocotrienols</strong>, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p>"
+      }, {
+        "type": "richtext",
+        "id": "bio_3",
+        "label": "Bio Paragraph 3",
+        "default": "<p>This experience ignited <strong>Virender's passion for health.</strong>, prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a <strong>global movement</strong>, as he dedicated himself to providing high-quality natural supplements.</p>"
+      }, {
+        "type": "richtext",
+        "id": "bio_4",
+        "label": "Bio Paragraph 4",
+        "default": "<p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a <strong>trusted name in natural health</strong>, committed to helping people lead <strong>healthier lives</strong>.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "fonder-section",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Lato', sans-serif;
+    color: #36454F;
+  }
+
+  .vision-container h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    color: #374650;
+    margin-bottom: 14rem;
+  }
+
+  .vision-card {
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .vision-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -130px;
+  }
+
+  .vision-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid #facc15;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .vision-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .vision-name {
+    margin-top: 1rem;
+    background-color: #374650;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+
+  .vision-bio {
+    margin-top: 2rem;
+    font-size: 16px;
+    color: #444;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .vision-bio p {
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .vision-container h1 {
+      font-size: 26px;
+    }
+    .vision-card {
+      padding: 2rem 1rem;
+    }
+    .vision-bio {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .vision-container h1 {
+      font-size: 22px;
+    }
+    .vision-img {
+      width: 250px;
+      height: 250px;
+    }
+    .vision-name {
+      font-size: 16px;
+    }
+    .vision-bio {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div class="vision-container">
+  <h1>{{ section.settings.title }}</h1>
+
+  <div class="vision-card">
+    <div class="vision-profile">
+      <div class="vision-img">
+        <img src="{{ section.settings.profile_image | img_url: 'master' }}" alt="{{ section.settings.name }}">
+      </div>
+      <div class="vision-name">{{ section.settings.name }}</div>
+    </div>
+
+    <div class="vision-bio">
+      {{ section.settings.bio_1 }}
+      {{ section.settings.bio_2 }}
+      {{ section.settings.bio_3 }}
+      {{ section.settings.bio_4 }}
+    </div>
+  </div>
+</div>

@@ -59,7 +59,9 @@
         {%- endfor -%}
     </ul>
 {%- else -%}
-    <a {% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="{{ link.url }}"{% endif %} class="menu-lv-1__action header__menu-item list-menu__item link link--text focus-inset link-effect"{% if link.current %} aria-current="page"{% endif %}><span class="text{%- if link.current %} header__active-menu-item{% endif %} p-relative">{{ link.title | escape }}</span>
+  <!-- Halo-dropdownmenu without menu and dropdown-->
+  {%- unless link.title == 'Contact us' %}  {% endunless %}
+    <a {% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="{{ link.url }}"{% endif %} class="menu-lv-1__action header__menu-item list-menu__item link link--text focus-inset link-effect"{% if link.current %} aria-current="page"{% endif %}><span class="text{%- if link.current %} header__active-menu-item{% endif %} p-relative  cstm-take-wellness-quiz {{ link.title}}" >{{ link.title | escape }} </span>
         {%- if new_label_1 contains title -%}
             <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
         {%- elsif sale_label_1 contains title -%}
@@ -68,5 +70,7 @@
             <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
         {%- endif -%}
     </a>
+  
 {%- endif -%}
+   
 </li>

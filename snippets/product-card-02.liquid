@@ -186,6 +186,7 @@
                     </div>
                     {% endunless %}
                 {%- endif -%}
+                 
                
                 <a class="card-title link-underline{% if settings.product_title_line_text != 'full' %} card-title-ellipsis{% endif %}{% if variant_selected != blank %} card-title-change{% endif %}" href="{{ product_card_product.url }}" data-product-title="{{ product_card_product.title | escape }}" data-product-url="{{ product_card_product.url }}">
                     <span class="text">
@@ -195,7 +196,8 @@
                         {% endif %}
                     </span>
                 </a>
-
+                    {% render 'okendo-reviews-product-rating-summary', product:product_card_product  %}
+                      
                 {% if settings.disable_product_card_border and settings.enable_custom_layout_card %}
                     </div>
                 {% endif %}
@@ -204,8 +206,7 @@
                     product: product_card_product,
                     class: 'card-list__hidden'
                 %}
-              
-                {%- if show_price -%}
+                     {%- if show_price -%}
                     <div class="card-price">
                         {% render 'price',
                             product: product_card_product,
@@ -269,7 +270,7 @@
                     product: product_card_product,
                     class: 'card-list__hidden'
                 %}
-              
+               {% render 'okendo-reviews-product-rating-summary',  product: product_card_product %}
                 {%- if show_price -%}
                     <div class="card-price">
                         {% render 'price',
@@ -323,7 +324,7 @@
 
             {%- if settings.enable_custom_layout_card -%}
                 <div class="wrapper__card{% if show_wishlist %} show-wishlist{% endif %}{% if settings.show_wishlist_card_mb %} show-mb{% endif %}">
-                    {%- if settings.show_action and complementary_product_button_atc -%}
+                    {%- if settings.show_action and complementary_product_button_atc -%} {%- endif -%}
                         <div class="card-action{% if settings.show_compare and settings.product_compare_type == 'default' %} has-compare{% endif %}">
                             {% render 'add-to-cart-form',
                                 product: product_card_product,
@@ -332,8 +333,8 @@
                                 sectionId: sectionId
                             %}
                         </div>
-                    {%- endif -%}
-                    {%- if settings.show_action and complementary_product_button_atc -%}
+                   
+                    {%- if settings.show_action and complementary_product_button_atc -%} {%- endif -%}
                         {% render 'add-to-cart-form-category-list',
                             product: product_card_product,
                             id: 'form',
@@ -341,7 +342,7 @@
                             position: position,
                             sectionId: sectionId
                         %}
-                    {%- endif -%}
+                   
                     {%- if show_wishlist -%}
                         <div class="card-product__group-item card-wishlist">
                             <button type="button" title="{{ 'wishlist.general.add' | t }}" class="wishlist-icon{% if settings.show_wishlist_card_mb %} show-mb{% endif %}" data-wishlist data-wishlist-handle="{{ product_card_product.handle }}" data-product-id="{{ product_card_product.id }}">
@@ -386,6 +387,7 @@
                 {%- endif -%}
             {%- endif -%}
 
+             
         </div>
     </div>
 </div>

@@ -1,0 +1,403 @@
+<!-- collection-filter-2 -->
+{% liquid
+assign container = section.settings.container 
+assign padding_full_width = section.settings.padding_full_width
+%}
+{% style %}
+   @media (min-width: 1025px) {
+        {% if container == 'fullwidth' %}
+            .filter_button.container-full {
+                padding-left: {{ padding_full_width | append: 'px' }};
+                padding-right: {{ padding_full_width | append: 'px' }};
+            }
+         .filter_button.container-full {
+                  width: 96%;
+        margin: auto !important;
+           padding:10px 0px;
+          }
+        {% endif %}
+{% endstyle %}
+
+<div id="filter__{{ section.id }}" class="filter_button {% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
+{% comment %}<p
+        class="filter_2_button"
+        type="button">{{ 'JUMP TO:' }}</p>{% endcomment %}
+  {%- for block in section.blocks -%}
+    {%- if block.settings.filter_collection -%}
+      <h3
+        class="filter_2_button"
+        onclick="setActiveButton(this); location.href='/collections/{{ block.settings.filter_collection.handle }}';"
+        type="button">
+        {% if block.settings.collection_icon_image_link != blank or block.settings.collection_icon_image_link_hover != blank %}
+        <div class="collections image-icon">
+          <img
+            class="collection-icon-first-img "
+            loading="lazy" src="{{ block.settings.collection_icon_image_link |  img_url: 'master'}}"
+            alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x" style="width:30px;">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+          
+          <img
+            class="collection-icon-second-img "
+            loading="lazy" src="{{ block.settings.collection_icon_image_link_hover |  img_url: 'master'  }}"
+            alt="{{ block.settings.collection_icon_image_link.alt }}" width="30x" height="30x">
+       {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+          
+        </div>
+        {% endif %}
+        <div class="collection-button-text">{{ block.settings.filter_collection_title }}</div>
+      </h3>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+<style>
+.template-collection .wrapper-body {
+    padding-bottom: 0px;
+}
+#collection_custom_banner .border--border_s1 .banner-heading:before{
+  background-color: none !important;
+}
+    .easyvideo_section h2.nmev_h1_title {
+    display: none;
+}
+p.filter_2_button{
+    font-size: 1.7rem;
+    line-height: 2.5;
+    font-weight: 600;
+    border-bottom: 2px solid;
+    height: 33px;
+}
+  @media (min-width: 768.1px) {
+    .muscle-health-image-mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .muscle-health-image {
+    display: none;
+    }
+    #quize-right-section-h1 {
+    font-size: 22px !important;
+    }
+    #quize-sub-toitle-small-screen {
+    font-size: 16px !important;
+    }
+    div #filter__{{ section.id }} {
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    }
+    .collection-page-faq-title {
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    margin-bottom: 2.5rem !important;
+    }
+    .faq-answer {
+    font-size: 15px;
+    }
+    .collection-page-faq-question {
+    font-size: 16px !important;
+    }
+    
+    .muscle-health-image {
+    min-height: auto !important;
+    }
+    
+    .muscle-health-image img {
+    position: relative;
+    }
+    
+    .collection-page-description-sec p {
+    padding: 10px;
+    color: #006A91;
+    font-size: 16px;
+    text-align: start;
+    line-height: 1.5;
+    }
+    .collection-page-description-sec {
+    display: none;
+    }
+    div .collection-page-description-sec p {
+    text-align: justify;
+    padding-inline: 15px;
+    }
+    div .left-column .title {
+    font-size: 23px;
+    line-height: 27px;
+    padding-bottom: 10px;
+    }
+    div .left-column .subtitle {
+    font-size: 20px;
+    line-height: 28px;
+    }
+    
+    .two-column-section {
+    padding: 40px 0 !important;
+    }
+    #shopify-block-judge_me_reviews_featured_carousel_g6eGDw {
+    margin-top: 20px;
+    }
+  }
+
+  .muscle-health-image {
+    width: 100%;
+  }
+ 
+  /* css for collection btn */
+  .collection-page-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .collection-button-text {
+    display: flex;
+    margin: auto;
+    color: var(--product-title-color);
+    font-weight: 700;
+    white-space: nowrap;
+    /* padding-left: 5px; */
+  }
+
+  .collections.image-icon {
+    margin: auto;
+    height: 4rem;
+  }
+  .collections.image-icon > img {
+    padding: 5px 0 !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  #filter__{{ section.id }} {
+    display: flex;
+    gap:15px;
+    margin: 1rem 0rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
+   #filter__{{ section.id }} h3:hover {
+    border:  1.7px solid #006A91;
+    border-radius: 6px;
+   }
+  #filter__{{ section.id }} h3 {
+    border: 1.5px solid #006A91;
+    border-radius: 6px;
+    background-color: #F4F5F5;
+    color: #374650;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    height: 45px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: auto;
+    padding:0px 14px;
+        cursor: pointer;
+  }
+
+  /* Active button styles */
+  #filter__{{ section.id }} h3.active .collection-icon-first-img {
+    display: none;
+  }
+
+  #filter__{{ section.id }} button.active .collection-icon-second-img {
+    display: block;
+  }
+
+  /* Active button text styles */
+  #filter__{{ section.id }} h3.active .collection-button-text {
+    color: white !important;
+  }
+
+  #filter__{{ section.id }} h3.active {
+    background-color: #006A91 !important;
+  }
+
+  @media (max-width: 1200px) {
+     #filter__{{ section.id }} h3 {
+    min-width: 150px;
+       height: 40px;
+           cursor: pointer;
+  }
+     #filter__{{ section.id }} {
+    justify-content: flex-start;
+  }
+    
+    .collection-title-description-wrapper p {
+      text-align: center;
+      color: #374650;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 0 10px;
+    }
+  
+    div .two-column-section .row.bullet-points {
+      flex-direction: column-reverse;
+    }
+    div .bullet-points .right-column,
+    .image-with-point .right-column {
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+    div .left-column .description {
+      padding-left: 0;
+      padding-right: 0;
+      align-items: center;
+      text-align: center;
+    }
+
+    div .image-with-point .row:not(.bullet-points) {
+      flex-direction: column-reverse !important;
+    }
+    .two-column-section {
+      overflow-y: hidden;
+    }
+  }
+
+  /* Default state */
+  .collection-icon-first-img {
+    display: block;
+  }
+
+  .collection-icon-second-img {
+    display: none;
+  }
+
+
+#filter__{{ section.id }}::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	background-color: transparent;
+	border-radius: 10px;
+}
+
+#filter__{{ section.id }}::-webkit-scrollbar
+{
+	width: 3px;
+}
+
+#filter__{{ section.id }}::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+}
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Filter collection 2",
+    "tag": "section",
+    "class": "custom-filter-2",
+    "settings": [
+      {
+            "type": "select",
+            "id": "container",
+            "label": "t:sections.layout.container.option",
+            "default": "container",
+            "options": [
+            {
+                "value": "container",
+                "label": "t:sections.layout.container.option1"
+            },
+            {
+                "value": "1170",
+                "label": "t:sections.layout.container.option4"
+            },
+            {
+                "value": "1770",
+                "label": "t:sections.layout.container.option3"
+            },
+            {
+                "value": "fullwidth",
+                "label": "t:sections.layout.container.option2"
+            }]
+        },
+      {
+            "type": "range",
+            "id": "padding_full_width",
+            "label": "t:sections.layout.container.padding_full_width",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "t:sections.layout.fontsize.fontsize_title.unit",
+            "default": 0
+        },
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Filter Collection",
+        "limit": 15,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "collection_icon_image_link",
+            "label": "Upload Collection Icon"
+          }, {
+            "type": "image_picker",
+            "id": "collection_icon_image_link_hover",
+            "label": "Add hover icon"
+          }, {
+            "type": "collection",
+            "id": "filter_collection",
+            "label": "Select collection"
+          },
+           {
+            "type": "text",
+            "id": "filter_collection_title",
+            "label": "Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Filter collection 2",
+        "blocks": [
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script defer defer>
+      function setActiveButton(button) {
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} h3');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttons = document.querySelectorAll('#filter__{{ section.id }} h3');
+        
+            buttons.forEach(function(btn) {
+                if (window.location.href.includes(btn.getAttribute('onclick').split("'")[1])) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+</script>

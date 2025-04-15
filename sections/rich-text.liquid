@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="{{ 'component-rich-text.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
-<div class="rich-text section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+<div class="rich-text section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" id="{{ section.settings.id }}">
   <div class="{% if section.settings.container == 'fullwidth' %}container-full{% elsif section.settings.container == '1770' %}container-1770{% elsif section.settings.container == '1170' %}container-1170{% else %}container{% endif %}">
     <div class="rich-text__blocks{% if section.settings.enable_column %} enable_column{% endif %} text-{{section.settings.content_align}}{% if section.settings.padding_full_width == 65 %} pad-65{% endif %}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
         {%- when 'heading' -%}
-            <h2 class="heading{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order:  {{ forloop.index }};{% endif %}--color-heading-style: {{ block.settings.heading_color }};--fontsize-heading-style: {{ block.settings.heading_size | append: 'px' }};--heading-size-mb-style: {{ block.settings.heading_size_mb | append: 'px' }};--heading-line-height-style: {{ block.settings.heading_line_height }}">{{ block.settings.heading | escape }}</h2>
+            <h2 class=" cstm__title  heading{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order:  {{ forloop.index }};{% endif %}--color-heading-style: {{ block.settings.heading_color }};--fontsize-heading-style: {{ block.settings.heading_size | append: 'px' }};--heading-size-mb-style: {{ block.settings.heading_size_mb | append: 'px' }};--heading-line-height-style: {{ block.settings.heading_line_height }}">{{ block.settings.heading | escape }}</h2>
         {%- when 'sub_heading' -%}
             <div class="rich-text__sub{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--sub-heading-size-style: {{ block.settings.sub_heading_size | append: 'px' }};--sub-heading-color-style: {{ block.settings.sub_heading_color }};--font-weight-sub-heading-style: {{ block.settings.font_weight_sub_heading }};--margin-top-sub-heading-style: {{ block.settings.margin_top_sub_heading | append: 'px' }}"><p>{{ block.settings.sub_heading }}</p></div> 
         {%- when 'text' -%}
@@ -69,6 +69,7 @@
                             </div>
                         {%- endif -%}
                     </div>
+                
                 {%- endcase -%}  
             {%- endfor -%}  
         </div>
@@ -99,7 +100,7 @@
     -%}
 
     {%- if rich_text_bg_image != blank %}
-        .section-block-{{section.id}}{background: url({{ rich_text_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: cover}
+        .section-block-{{section.id}}{background: url({{ rich_text_bg_image | img_url: '1920x' }});background-repeat: repeat-x;background-size: contain ;    min-height: 448px;}
     {%- else -%}
         .section-block-{{section.id}}{background: {% if rich_text_bg_gradient != blank %}{{ rich_text_bg_gradient }}{% else %}{{ rich_text_bg }}{% endif %}}
     {%- endif -%}
@@ -107,6 +108,7 @@
         .rich-text__blocks h2 {
             font-weight: 500;
             line-height: 1;
+      text-transform: capitalize;
         }
         .rich-text__blocks .button.button_style_2 {
             text-align: center;
@@ -117,6 +119,7 @@
         .rich-text__blocks .rich-text__sub {
             margin-bottom: 27px;
         }
+      
     {%- endif -%}
     @media (min-width: 1200px) {.section-block-{{section.id}} {padding-top: {{ mg_top_desktop | append: 'px' }};padding-bottom: {{ mg_bottom_desktop | append: 'px' }}}}
     @media (min-width: 1025px) {
@@ -185,6 +188,53 @@
             }
         {%- endif -%}
     }
+  @media(min-width: 1025px){
+     .section-block-{{section.id}} .container {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 1px auto 0px 150px;
+    height: 110px;
+}
+  #instafram__video_title h2.heading {
+    color: #374650;
+    font-size: 32px;
+    }
+    #instafram__video_title  .container {
+    width: 700px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: auto;
+    }
+    }
+    @media (min-width: 1025px) and (max-width: 1280px) {
+    .section-block-{{section.id}} .container {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 1px auto 0px 110px;
+    height: 55px;
+    }
+    .rich-text__blocks h2{
+    font-size: 26px;
+    }
+    }
+   .section-block-{{section.id}} .rich-text__blocks .rich-text__content p {
+      color:#fff;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    }
+
+ .wellness-page .custom-service-block .policies-content .policies-text.type--font_2,
+ .wellness-page .custom-service-block .policies-content,
+ .wellness-page .custom-service-block .policies-block-wrapper.items-align-left .policies-content{
+  text-align:center;
+}
+  
 </style>
 <script type="text/javascript">
     function homeMoreLess() {
@@ -214,6 +264,11 @@
             "type": "header",
             "content": "t:settings_schema.general.name"
         },
+       {
+            "type": "text",
+            "id": "id",
+            "label": "Custom ID",
+       },
         {
             "type": "select",
             "id": "container",
@@ -397,7 +452,7 @@
         {
             "type": "heading",
             "name": "t:sections.image-banner.blocks.image.settings.content.label__19",
-            "limit": 1,
+            "limit": 4,
             "settings": [
                 {
                     "type": "text",

@@ -90,7 +90,7 @@
         }
         @media (min-width: 768px){
             #halo-image-banner-{{ section.id }} .border--border_s1 .banner-heading:before {background-color: var(--border-color-title-style)}
-            #halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {display:  flex}
+            /* #halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {display:  flex} */
             #halo-image-banner-{{ section.id }} .item--customImg .flex-box__banner,#halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {align-items: stretch}
             #halo-image-banner-{{ section.id }} .content-box--absolute {background-color: var(--bg_content_box)}
         }
@@ -111,6 +111,7 @@
         }
         @media (min-width: 768px) and (max-width: 1199px) {#halo-image-banner-{{ section.id }}{padding-top: var(--mg_top_tablet);padding-bottom: var(--mg_bottom_tablet)}}
         @media (min-width: 1025px) {
+         #cstm___banner_text .content-box { width: 50% !important;left: 5%;}
             #halo-image-banner-{{ section.id }} .container-full {padding-left: var(--padding_full_width);padding-right: var(--padding_full_width)}
             #halo-image-banner-{{ section.id }} .banner-heading{margin-bottom: var(--margin_bottom_heading)}
             #halo-image-banner-{{ section.id }} .banner-sub-title {font-size: var(--font_size_sub_title)}
@@ -129,6 +130,7 @@
                     margin-top: {{section.settings.list_gap}}px;
                 }
             {%- endif -%}
+           #halo-image-banner-{{ section.id }} .type-item--special .flex-box__banner {display:  flex}
         }
         @media (min-width: 1200px) {#halo-image-banner-{{ section.id }}{padding-top: var(--mg_top_desktop);padding-bottom: var(--mg_bottom_desktop)}}
         @media (max-width: 1366px) {
@@ -223,6 +225,73 @@
                 }
             }
         {% endif %}
+
+ @media (min-width: 600px) and (max-width: 1024px) {
+ #halo-image-banner-{{ section.id }} .content-box--absolute{
+  max-width: 50%;
+}
+ }
+
+@media(min-width: 1025px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+min-width: 50% !important;
+left: 70% !important;
+background: #211d1d6b;
+padding: 18px;
+border-radius: 6px;
+}
+#halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
+line-height: 1.3;
+}
+}
+@media(max-width: 600px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+min-width: 100% !important;
+left: 50% !important;
+background: #211d1d6b;
+padding: 5px;
+border-radius: 6px;
+}
+#halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
+line-height: 1;
+}
+#halo-image-banner-{{ section.id }} .special__banner_img .banner-button {
+color: var(--button_color);
+background: var(--button_bg);
+background-origin: border-box;
+border-color: var(--button_border);
+width: 205px;
+max-width: 205px;
+font-size: 11px;
+}
+#halo-image-banner-{{ section.id }} .special__banner_img h3.banner-title {
+line-height: 1;
+font-size: 17px;
+}
+#halo-image-banner-{{ section.id }} .halo-banner-wrapper .flex-box__banner .content-box{
+border: 1px solid;
+}
+}
+@media(max-width: 600px){
+#halo-image-banner-{{ section.id }} .special__banner_img {
+padding: 30px 5px;
+}
+  #cstm___banner_text .content-box--absolute {
+          width: 63%;
+    padding: 25px 12px 30px;
+          }
+       #cstm___banner_text .banner-heading{
+         text-align: left;
+       }
+ #halo-image-banner-{{ section.id }}  .item:not(.item--smallImg) .banner-heading {
+    line-height: 28px !important;
+    font-size: 16px !important;
+    font-weight: bold!important;
+}
+
+}
+    
+
     </style>
     {%- if section.settings.id_section != blank -%}
     <div id="{{ section.settings.id_section }}">
@@ -902,16 +971,27 @@
                                                     </div>
                                                 {%- endif -%}
                                                 {%- if display_countdown -%}
-                                                    <div class="countdown-box countdown-{{ block.id }}">
+                                                    <div class="countdown-box countdown-{{ block.id }} special__banner_img">
                                                         {%- if title != blank -%}
                                                             <h3 class="banner-title" style="--title_font_size: {{title_font_size | append: 'px'}};--title_font_size_mb: {{title_font_size_mb | append: 'px'}};--title_font_weight: {{ title_font_weight }};--title_color: {{ title_color }};--mg_bottom_title: {{ mg_bottom_title | append: 'px' }}">{{ title }}</h3>
                                                         {%- endif -%}
                                                         {%- if des != blank -%}
                                                             <p class="des-countdown" style="--des_countdown_font_size: {{des_countdown_font_size | append: 'px'}};--des_font_size_mb: {{des_font_size_mb | append: 'px'}};--des_countdown_font_weight: {{ des_countdown_font_weight }};--text_color: {{ text_color }};--mg_bottom_des: {{ mg_bottom_des | append: 'px' }}">{{ des }}</p>
                                                         {%- endif -%}
+                                                       <!-- cstm_btn -->
+                                                        {%- if block.settings.btn_text1 != blank -%}
+                                                            <a {% if block.settings.link1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link1 }}"{% endif %} class="banner-button button{% if block.settings.button_style == 'style2' %} banner-btn--style2{% else %}{% if enable_button_custom_border %} banner-button--custom-border{% endif %}{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: 3;{% endif %}--button_color: {{ block.settings.button_color1 }};--button_bg: {% if block.settings.button_background_gradient1 != blank %}{{ block.settings.button_background_gradient1 }}{% else %}{{ block.settings.button_background1}}{% endif %};--button_border: {{ block.settings.button_border1 }};--button_width: {{ block.settings.button_1_width1 | append: 'px' }};--button_color_hover: {{ block.settings.button_color_hover1 }};--button_bg_hover: {% if block.settings.button_background_gradient_hover1 != blank %}{{ block.settings.button_background_gradient_hover1 }}{% else %}{{ block.settings.button_background_hover1}}{% endif %};--button_border_hover: {{ block.settings.button_border_hover1}}">
+                                                                {%- if block.settings.btn_icon1 != blank -%}
+                                                                    {{ block.settings.btn_icon1 }}
+                                                                {%- endif -%}
+                                                                <span>{{ block.settings.btn_text1 | escape }}</span>
+                                                            </a>
+                                                        {%- endif -%}
+                                                      
                                                         {%- if countdown != blank -%}
                                                             <div class="collection-countdown" data-collection-countdown data-collection-countdown-value="{{ countdown }}" style="--border_countdown_color: {{ border_countdown_color | color_modify: 'alpha', opacity_background }};--countdown_background: {%- if countdown_background_gradient != blank -%}{{ countdown_background_gradient }};{%- elsif countdown_background != 'rgba(0,0,0,0)' and countdown_background != blank -%}{{ countdown_background | color_modify: 'alpha', opacity_background }};{%- endif -%};--item_countdown_width: {{ item_countdown_width | append: 'px' }};--item_countdown_height: {{ item_countdown_height | append: 'px' }};--item_countdown_radius: {{ item_countdown_radius | append: '%' }};--item_countdown_gap: {{ item_countdown_gap | append: 'px' }};--num_font_size: {{ num_font_size | append: 'px' }};--num_font_size_mb:{{ num_font_size_mb | append: 'px' }};--num_font_weight: {{ num_font_weight }};--num_color: {{ num_color }};--text_time_font_size: {{ text_time_font_size | append: 'px' }};--text_time_font_size_mb: {{ text_time_font_size_mb | append: 'px' }};--text_time_font_weight: {{ text_time_font_weight }};--text_time_color: {{ text_time_color }}"></div>
                                                         {%- endif -%}
+                                                   
                                                     </div>
                                                 {%- endif -%}
                                             </div>
@@ -1013,6 +1093,7 @@
     </div>
     {%- endif -%}
 {%- endif -%}
+
 {% schema %}
     {
         "name": "t:sections.image-banner.name",
@@ -1325,7 +1406,13 @@
                 "step": 5,
                 "unit": "t:sections.layout.mg_desktop.unit",
                 "default": 50
-            }
+            },
+          {
+           "type": "liquid",
+            "id":"liquid_css",
+            "label":"Liquid CSS",
+            
+          }
         ],
         "blocks": [
             {
@@ -4552,7 +4639,90 @@
                     "type" : "color_background",
                     "id" : "button_background_gradient_hover",
                     "label" : "t:settings_schema.colors.settings.colors_name.background_hover_gradient"
-                }]
+                },
+
+                   {
+                    "type": "header",
+                    "content": "Special Image Button"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text1",
+                    "label": "t:settings_schema.typography.settings.typography.button_text",
+                    "default": "Shop Now"
+                },
+                {
+                    "type": "url",
+                    "id": "link1",
+                    "label": "t:settings_schema.typography.settings.typography.button_link",
+                    "info": "t:sections.image-banner.blocks.image.settings.content.info"
+                },
+                {
+                    "type": "textarea",
+                    "id" : "btn_icon1",
+                    "label" : "t:settings_schema.typography.settings.typography.button_icon",
+                    "info" : "Go to this link [find your icon](https://fontawesome.com/v5.15/icons?d=gallery&p=2). Find the icon you want, then copy the SVG code and paste it here."
+                },
+                {
+                    "type": "range",
+                    "id": "button_1_width1",
+                    "label": "t:sections.image-banner.blocks.image.settings.style.button_width",
+                    "min": 100,
+                    "max": 600,
+                    "step": 5,
+                    "unit": "t:sections.layout.mg_desktop.unit",
+                    "default": 235
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_button_custom_border1",
+                    "label": "t:sections.image-banner.blocks.image.settings.style.enable_button_custom_border",
+                    "info": "t:sections.image-banner.blocks.image.settings.style.info__1",
+                    "default": false
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_color1",
+                    "label" : "t:sections.rich-text.blocks.button.settings.label_color",
+                    "default" : "#fff"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_border1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.border_color",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_background1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_2",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color_background",
+                    "id" : "button_background_gradient1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_color_gradient"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_color_hover11",
+                    "label" : "t:sections.rich-text.blocks.button.settings.label_hover_color",
+                    "default" : "#fff"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_border_hover1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.border_hover",
+                    "default" : "#232323"
+                },
+                {
+                    "type" : "color",
+                    "id" : "button_background_hover1",
+                    "label" : "t:settings_schema.colors.settings.colors_name.background_hover",
+                    "default" : "#232323"
+                },
+                
+                ]
             },
             {
                 "type": "image_scrolling_text",

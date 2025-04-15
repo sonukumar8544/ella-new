@@ -1,0 +1,335 @@
+<!-- career-resume-form -->
+<style>
+  .errror_msg {
+    color: #F2C94C;
+  }
+  .drop-cv__container {
+    background: url('{{ section.settings.background_image | img_url: 'large' }}');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover;
+    padding: 40px 0;
+  }
+
+  .drop-cv--container .open-position-heading-container {
+    margin-bottom: 40px;
+    padding-bottom: 0;
+    border: unset;
+  }
+
+  .red-title strong {
+    font-size: 18px;
+  }
+
+  .drop-cv--container .open-position-heading-container .red-title {
+    font-size: 18px;
+    padding-left: 15px;
+    line-height: 15px;
+    margin-bottom: 0;
+    color: #36454F;
+    font-weight: 400;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .open-position-heading-container {
+    max-width: 1100px !important;
+    margin: 0 auto;
+  }
+  .open-position-heading-container .red-title strong {
+    /* font-size: 32px; */
+    line-height: 20px;
+  }
+
+  .drop-cv__form-container .drop-cv__form {
+    background: #36454F;
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px 1px #9a9a9a8f;
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    box-sizing: border-box;
+    color: #fff;
+  }
+
+  .drop-cv__form p {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .drop-cv__form p label {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+  }
+  .drop-cv__form br {
+    display: none;
+  }
+  .drop-cv__form p input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 24px 10px;
+    background: white;
+    border-radius: 20px;
+  }
+  .drop-cv__form .upload-cv-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+    display: inline-block;
+    padding: 12px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 300px;
+    border: 2px dashed;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+  }
+  .drop-cv__file-Upload input.upload__cv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+  }
+
+  .drop-cv__form .drop-cv__submit-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: var(--blue);
+    border: none !important;
+    border-radius: 0;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #086b92;
+    border-radius: 12px;
+  }
+
+  .drop-cv__file-Upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .drop-cv__form .drop-cv__submit-button:hover {
+    background: white;
+    color: black;
+  }
+</style>
+
+{% render 'ajax-loader' %}
+<diV class="drop-cv__container">
+  <div class="drop-cv--container page-width">
+    {%- unless section.settings.title == blank -%}
+      <div class="open-position-heading-container">
+        <div>
+          <h3 class="red-title ">
+            {{ section.settings.title | safe }}
+          </h3>
+        </div>
+      </div>
+    {%- endunless -%}
+
+    <div class="drop-cv__form-container">
+      <form
+        class="drop-cv__form"
+        id="drop_cv"
+        method="post"
+        enctype="multipart/form-data">
+        {% render 'form_message' %}
+        <input
+          type="hidden"
+          name="mail_title"
+          value="Job Inquiries Form">
+
+        <input
+          type="hidden"
+          name="reciever_mail"
+          value="career@wellnessextract.com">
+        <p>
+          <label for="job_email">{{ section.settings.cv_form_label }}</label>
+          <br>
+          <input
+            type="email"
+            required
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+            data-validate="{required:true}">
+        </p>
+        <p>
+          <label for="job_title">{{ section.settings.cv_job_label }}</label>
+          <input
+            type="text"
+            id="job-title"
+            required
+            name="job_title"
+            placeholder="Job Title"
+            data-validate="{required:true}">
+        </p>
+        <p></p>
+        <div class="drop-cv__file-Upload btn">
+          <div class="upload-cv-wrapper">
+            <span>
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+              {{ section.settings.cv_Upload_label }}</span>
+            <input
+              type="file"
+              class="upload__cv"
+              name="kj"
+              data-validate="{required:true}"
+              required
+              accept=".pdf,.docx,.jpg"
+              onchange="validateFile(this)">
+          </div>
+          <div class="upload-file-name">
+            <span span id="filename"></span>
+          </div>
+        </div>
+        <p class="suggested_message errror_msg ">
+          **Please select a file under 200 KB, Accpet .pdf, .docx, .jpg file only.
+        </p>
+        <p>
+          <button
+            class="drop-cv__submit-button"
+            type="submit"
+            value="Submit">
+            {{ section.settings.cv_submit_label }}
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+</diV>
+
+<script defer defer>
+    document.querySelector(".upload__cv").addEventListener('change', function(e) {
+      console.log('hello');
+      if (e.target.files[0]) {
+        console.log('You selected ' + e.target.files[0].name);
+        document.querySelector("#filename").innerHTML=e.target.files[0].name;
+      }
+    });
+  
+    function validateFile(input) {
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      const fileSize = file.size; // size in bytes
+      const maxSize = 200 * 1024; // 200 KB
+  
+      if (fileSize > maxSize) {
+        alert('File size exceeds the limit. Please select a file under 200 KB.');
+        input.value = ''; // Reset the file input
+      }
+    }
+  }
+  
+    let form = document.getElementById("drop_cv");
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      console.log(formData);
+  
+          document.querySelector(".loader-container").style.display="flex";
+  
+      // const url = 'https://uvit.ca/mail';
+      const url = 'https://inventory.wellnessextract.com/api/job/applications'; 
+      fetch(url, {
+              method: 'POST',
+              mode: 'cors',
+              body: formData
+          })
+         .then(response => response.json())
+          // .then(response => {
+          //     return response.json();
+          // })
+           .then(data => {
+            console.log('data');
+            console.log(data);
+            if(data.status){
+              form.reset();
+              document.querySelector(".loader-container").style.display="none";
+              document.querySelector(".message-container").style.display="block";
+              document.querySelector(".message-container .success_message").innerHTML=data.message;
+              document.querySelector(".message-container .error_message").innerHTML=''
+            }
+            else{
+                document.querySelector(".loader").style.display="none";
+              document.querySelector(".message-container").style.display="block";
+              document.querySelector(".message-container .success_message").innerHTML='';
+              document.querySelector(".message-container .error_message").innerHTML='Failed';
+             console.error(data.message);
+            }
+  
+  
+          })
+          .catch(error => {
+              document.querySelector(".loader").style.display="none";
+              document.querySelector(".message-container").style.display="block";
+              document.querySelector(".message-container .success_message").innerHTML='';
+              document.querySelector(".message-container .error_message").innerHTML='Failed';
+             console.error(error);
+          });
+  
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Career Resume Form",
+    "class": "drop-cv__section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Section Background"
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "cv_form_label",
+        "label": "Cv Form Label"
+      }, {
+        "type": "text",
+        "id": "cv_job_label",
+        "label": "Form Job Title Label"
+      }, {
+        "type": "text",
+        "id": "cv_Upload_label",
+        "label": "CV Upload Label"
+      }, {
+        "type": "text",
+        "id": "cv_submit_label",
+        "label": "Form Button Label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Career Resume Form"
+      }
+    ]
+  }
+{% endschema %}

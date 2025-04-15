@@ -197,10 +197,21 @@
                             endif
                         -%}
                         {% render 'product-quantity', current_variant: current_variant, check_hidden: check_hidden, qty_style: qty_style, quantity_stt: 1, product: product %}
-                    {%- endif -%}                    
+                    {%- endif -%}  
+                    {% comment %} Product add to cart button... {% endcomment %}
                     <div class="productView-groupTop">
                         <div class="productView-action{% unless settings.show_wishlist %} productView-action-2{% endunless %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--atc-color: {{ atc_color }};--atc-bg-color: {% if atc_bg_color_gradient != blank %}{{ atc_bg_color_gradient }}{% else %}{{ atc_bg_color }}{% endif %};--atc-border-color: {{ atc_border_color }};--atc-color-hover: {{ atc_color_hover }};--atc-bg-color-hover: {% if atc_bg_color_gradient_hover != blank %}{{ atc_bg_color_gradient_hover }}{% else %}{{ atc_bg_color_hover }}{% endif %};--atc-border-color-hover: {{ atc_border_color_hover }}">
                             <input type="hidden" name="id" value="{{ current_variant.id }}">
+                          <div class="productView-pricesec-new">
+
+                            <div class="quantity_selector">
+                              {% render 'product-quantity',
+                              current_variant: current_variant,
+                              qty_style: qty_style,
+                              check_hidden: false,
+                              quantity_stt: 2
+                            %}
+                          </div>
                             <div class="product-form__buttons">
                                 {%- if current_variant.available -%}
                                     {%- if current_variant.inventory_management -%}
@@ -238,6 +249,7 @@
                                 {%- else -%}
                                     <button type="submit" name="add" data-btn-addToCart class="product-form__submit button{% if settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' %} button-not-animation{% endif %}" id="product-add-to-cart" disabled>{{ 'products.product.sold_out' | t }}</button>
                                 {%- endif -%}
+                            </div>
                             </div>
                         </div>
                         {%- if settings.show_wishlist -%}
@@ -282,3 +294,16 @@
         </div>
     {%- endif -%}
 </div>
+
+
+<style>
+  .productView-pricesec-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.product-form__buttons {
+    width: 100%;
+}
+</style>

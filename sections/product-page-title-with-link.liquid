@@ -1,0 +1,146 @@
+{% schema %}
+  {
+    "name": "product page list item",
+    "tag": "section",
+    "class": "scientifically-backed-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading",
+        "default": "Scientifically Backed"
+      }, {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Subtitle",
+        "default": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq_block",
+        "name": "FAQ Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Description",
+            "default": "Example benefit or description goes here."
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Read More Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "product page list item"
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% if product.metafields.custom.we_product_scientifically_backed_subtitle %}
+<section class="faq-slider-wrapper">
+  <div class="section-inner">
+    <h2>{{ section.settings.section_heading }}</h2>
+    <p class="subtitle">{{ product.metafields.custom.we_product_scientifically_backed_subtitle }}</p>
+    <div class="faq-slider">
+      {% for block in product.metafields.custom.we_product_scientifically_backed.value %}
+        {% assign parts = block | split: '|' %}
+        <div class="faq-slide">
+          <p>{{ parts[0] | strip }}</p>
+            <a href="{{ parts[1] | strip }}" rel="nofollow" >Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<style>
+  .faq-slider-wrapper {
+    background-color: #fdf9f4;
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+  }
+
+  .faq-slider-wrapper h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #374650;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.3;
+    margin-top: 0px;
+  }
+
+  .faq-slider-wrapper .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: #374650;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.3;
+    margin-top: 0px;
+  }
+
+  .faq-slide {
+    padding: 0 1rem;
+  }
+
+  .faq-slide p {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #36454F;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+  }
+
+  .faq-slide a {
+    color: #086b92;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .faq-slide a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        $('.faq-slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+      });
+</script>

@@ -291,6 +291,9 @@
                             {%- endif -%}
 
                             <style>
+                              .slide-block-{{ block.id }} .grouped_btn--slider .slide-button{
+                                margin-top: 10px;
+                              }
                                 .slide-block-{{ block.id }} .slide-content {width: {% if block.settings.enable_content_fullwidth %}100%{% else %}{% if show_dot_with_image and section.blocks.size > 1 %} clamp(300px, calc({{ block.settings.content_width }} / 1920 * 100vw), {{ block.settings.content_width | append: 'px' }}){% else %}{{ block.settings.content_width | append: 'px' }}{% endif %}{% endif %};padding-top: {{ block.settings.padding_vertical | minus: 5 | append: 'px' }};padding-bottom: {{ block.settings.padding_vertical | append: 'px' }}}
                                 .slide-block-{{ block.id }} .slide-content .slide-text {max-width: 100%;margin-bottom: {{ block.settings.des_spacing_bottom | append: 'px' }}}
                                 .slide-block-{{ block.id }} .slide-content .slide-sub {
@@ -708,6 +711,19 @@
     </style>
 {%- endif -%}
 
+<style>
+  @media (max-width: 1024px) {
+.template-index .section-block-{{ section.id }} .content-box--absolute {
+    position: absolute;
+    top: 18%;
+    left: 0% !important;
+  }
+  .section-block-{{ section.id }}  .slide-content .slide-text {
+    font-size: 13px !important;
+    margin-top: 15px;
+  }
+  }
+</style>
 {% schema %}
     {
         "name": "t:sections.slide-show.name",
@@ -717,6 +733,11 @@
             {
                 "type": "header",
                 "content": "t:settings_schema.general.name"
+            },
+          {
+                "type": "text",
+                "id": "id",
+                "label": "Id"
             },
             {
                 "type": "select",

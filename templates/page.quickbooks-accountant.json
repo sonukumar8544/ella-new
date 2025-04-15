@@ -1,0 +1,156 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "job-application": {
+      "type": "job-application-form",
+      "blocks": {
+        "db024e51-a49c-414c-b23f-8bc10072d84b": {
+          "type": "file",
+          "settings": {}
+        },
+        "3a5514b2-a628-46ba-877f-278072659ce3": {
+          "type": "input",
+          "settings": {
+            "input": "Full Name",
+            "required": true
+          }
+        },
+        "b5a41071-bf0f-45c1-bb5c-3fad9c304b5b": {
+          "type": "input",
+          "settings": {
+            "input": "Preferred Pronoun",
+            "required": false
+          }
+        },
+        "f8346ab2-45fc-45ea-b9e3-c7f3d1db317e": {
+          "type": "input",
+          "settings": {
+            "input": "State\/Province",
+            "required": false
+          }
+        },
+        "f097c74f-5b40-457e-9d7a-564bbdd3dec3": {
+          "type": "input",
+          "settings": {
+            "input": "",
+            "required": false
+          }
+        },
+        "c81c7a4e-dc95-40f4-93cd-eddd8eedc4ff": {
+          "type": "input",
+          "settings": {
+            "input": "Country",
+            "required": true
+          }
+        },
+        "029550b7-81c5-4b7d-80ee-5418f848cbdd": {
+          "type": "email",
+          "settings": {
+            "email": "Email Addresss",
+            "required": true
+          }
+        },
+        "fe4e6b79-6363-4274-b956-e3f5e7bd8f47": {
+          "type": "phone",
+          "settings": {
+            "phone": "Contact Number",
+            "required": true
+          }
+        },
+        "81f95476-b685-419c-89ae-28278051d41c": {
+          "type": "input",
+          "settings": {
+            "input": "LinkedIn Profile URL",
+            "required": false
+          }
+        },
+        "c7d32cba-8216-4c8b-95bc-5e549dafcc4c": {
+          "type": "input",
+          "settings": {
+            "input": "How many years of experience do you have in Shopify?",
+            "required": true
+          }
+        },
+        "0ae76b02-e49a-43c0-aa54-9b90668d5452": {
+          "type": "input",
+          "settings": {
+            "input": "Do you have work experience with shopify + ?",
+            "required": true
+          }
+        },
+        "6f15a9b0-807d-4897-afaa-89b1219d8744": {
+          "type": "input",
+          "settings": {
+            "input": "How many projects have you done in shopify?",
+            "required": true
+          }
+        },
+        "e7a28836-30fc-4425-8964-9471cf047956": {
+          "type": "input",
+          "settings": {
+            "input": "Are you currently working somewhere? If yes, mention the company's name and notice period.",
+            "required": true
+          }
+        },
+        "d112dfd4-c299-4919-9fd5-c1a916e7c414": {
+          "type": "input",
+          "settings": {
+            "input": "What is your recent CTC?",
+            "required": true
+          }
+        },
+        "024f236c-c502-486b-b74e-8ff1e890b3a5": {
+          "type": "input",
+          "settings": {
+            "input": "What is your expected CTC?",
+            "required": true
+          }
+        },
+        "9050e6c2-a5b1-4e3b-8dc5-ebd19a2539a0": {
+          "type": "checkbox",
+          "settings": {
+            "checkbox": "Please select from the following skillset at which you are good at.",
+            "checkbox_values": "HTML,,CSS,,SHOPIFY,,SHOPIFY +,,UI\/UX,,MAGENTO,,JAVA,,JASON,, LIQUID"
+          }
+        }
+      },
+      "block_order": [
+        "db024e51-a49c-414c-b23f-8bc10072d84b",
+        "3a5514b2-a628-46ba-877f-278072659ce3",
+        "b5a41071-bf0f-45c1-bb5c-3fad9c304b5b",
+        "f8346ab2-45fc-45ea-b9e3-c7f3d1db317e",
+        "f097c74f-5b40-457e-9d7a-564bbdd3dec3",
+        "c81c7a4e-dc95-40f4-93cd-eddd8eedc4ff",
+        "029550b7-81c5-4b7d-80ee-5418f848cbdd",
+        "fe4e6b79-6363-4274-b956-e3f5e7bd8f47",
+        "81f95476-b685-419c-89ae-28278051d41c",
+        "c7d32cba-8216-4c8b-95bc-5e549dafcc4c",
+        "0ae76b02-e49a-43c0-aa54-9b90668d5452",
+        "6f15a9b0-807d-4897-afaa-89b1219d8744",
+        "e7a28836-30fc-4425-8964-9471cf047956",
+        "d112dfd4-c299-4919-9fd5-c1a916e7c414",
+        "024f236c-c502-486b-b74e-8ff1e890b3a5",
+        "9050e6c2-a5b1-4e3b-8dc5-ebd19a2539a0"
+      ],
+      "settings": {
+        "department": "Frontend Shopify+ Developer"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "job-application"
+  ]
+}
