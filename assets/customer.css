@@ -1033,7 +1033,14 @@
 .reset-password.customer .form__message {
   margin-top: 10px;
 }
-@media (min-width: 1050px) {
+@media (max-width: 1050px) {
+  .address-form--wrapper {
+    display: block;
+  }
+  .wellness-addresses .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width: 768px) {
