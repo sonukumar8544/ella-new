@@ -1217,6 +1217,9 @@ h2.address-title.text-left {
 }
 
 @media (max-width: 767px) {
+  .template-customers\/addresses .main_addresses_title {
+    gap: 10px;
+  }
   .template-customers\/addresses .main_addresses_title button,
   .template-customers\/addresses .account-action {
     width: 17%;
