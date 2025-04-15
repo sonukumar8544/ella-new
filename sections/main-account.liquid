@@ -116,24 +116,24 @@
                                                     {%- endif -%}
                                                 </h3>
                                                 <ul class="account-product-detail list-unstyled">
-                                                    <li>{{ address.address1 }}</li>
-                                                    <li>{{ address.address2 }}</li>
+                                                    <li>{{ address.address1 }}</li>,
+                                                    <li>{{ address.address2 }}</li>,
 
                                                 {%- if address.zip or address.country -%}
                                                     <!-- <ul class="account-product-detail list-unstyled">                                                    </ul> -->
                                                         <li>
                                                             <span class="account-product-label">{{ 'customer.addresses.zip' | t }}: </span>
-                                                            {{ address.zip | upcase }}
+                                                            {{ address.zip | upcase }},
                                                         </li>
                                                         <li>
                                                             <span class="account-product-label">{{ 'customer.addresses.country' | t }}: </span>
-                                                            {{ address.country }}
+                                                            {{ address.country }},
                                                         </li>
 
                                                 {%- endif -%}
                                                 {%- if address.phone -%}
                                                     <!-- <ul class="account-product-detail list-unstyled"> </ul> -->
-                                                        <li>{{ address.phone }}</li>
+                                                        <li>{{ address.phone }}</li>,
                                                    
                                                 {%- endif -%}
                                                                                                   </ul>
