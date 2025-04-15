@@ -1250,6 +1250,14 @@ h2.address-title.text-left {
 }
 
 @media (max-width: 767px) {
+  .template-customers/account .seal-portal-link {
+    width: 30% !important;
+  }
+  .template-customers/account a.button.button--primary.cstm__btn {
+    width: 30% !important;
+    margin-left: 0;
+  }
+
   .template-customers\/addresses .main_addresses_title {
     gap: 10px;
   }
