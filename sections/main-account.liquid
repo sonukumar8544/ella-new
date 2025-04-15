@@ -141,11 +141,6 @@
                                     {%- endfor -%}
                                 </ul>
                                 <div class="account-action">
-                                     {% if customer %}
-  <a href="{{ customer | seal_subscription_portal_url }}" class="button button--primary">
-    Manage Subscriptions
-  </a>
-{% endif %}
                                     <a href="{{ routes.account_addresses_url }}" class="button button--primary">
                                         <span class="text">{{ 'customer.account.view_addresses' | t }} <span class="count">{{ customer.addresses_count }}</span></span>
                                     </a>
