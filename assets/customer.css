@@ -1273,6 +1273,9 @@ h2.address-title.text-left {
 }
 
 @media (max-width: 767px) {
+  .template-customers\/addresses .address-form .form-actions {
+    max-width: 100%;
+  }
   .template-customers\/account .account-content ul.account-list {
     display: block;
   }
