@@ -621,7 +621,7 @@ h2.address-title.text-left {
 
 .addresses li address .acc-name {
   text-transform: uppercase;
-  font-weight: var(--font-weight-semibold);
+  font-weight: 700;
   font-size: var(--font-body-size);
   margin-bottom: 7px;
 }
