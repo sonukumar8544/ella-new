@@ -113,7 +113,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 assign style_text_size_varriant = 'size_varriant_style_2'
             endif
         -%}
-    </head>
+    
+  {% render 'shogun-head' %}
+</head>
   <body>
     {% include 'shogun-content-handler' %}
 
