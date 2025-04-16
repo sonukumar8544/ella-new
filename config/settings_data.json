@@ -569,7 +569,7 @@
             "settings": {
               "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 384.97 384.97\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><g><g id=\"Grid\"><path d=\"M144.364,0H24.061C10.767,0,0,10.767,0,24.061v120.303c0,13.281,10.767,24.061,24.061,24.061h120.303 c13.293,0,24.061-10.779,24.061-24.061V24.061C168.424,10.767,157.657,0,144.364,0z M144.364,144.364H24.061V24.061h120.303 V144.364z\"></path><path d=\"M360.909,0H240.606c-13.293,0-24.061,10.767-24.061,24.061v120.303c0,13.281,10.767,24.061,24.061,24.061h120.303    c13.281,0,24.061-10.779,24.061-24.061V24.061C384.97,10.767,374.191,0,360.909,0z M360.909,144.364H240.606V24.061h120.303 V144.364z\"></path><path d=\"M360.909,216.545H240.606c-13.293,0-24.061,10.779-24.061,24.061v120.303c0,13.293,10.767,24.061,24.061,24.061h120.303 c13.281,0,24.061-10.767,24.061-24.061V240.606C384.97,227.313,374.191,216.545,360.909,216.545z M360.909,360.909H240.606 V240.606h120.303V360.909z\"></path><path d=\"M144.364,216.545H24.061C10.767,216.545,0,227.325,0,240.606v120.303c0,13.293,10.767,24.061,24.061,24.061h120.303 c13.293,0,24.061-10.767,24.061-24.061V240.606C168.424,227.313,157.657,216.545,144.364,216.545z M144.364,360.909H24.061 V240.606h120.303V360.909z\"></path></g></g></svg>",
               "text": "Collection",
-              "link": "https://wellnessextract.com/collections/all-products"
+              "link": "shopify://collections"
             }
           },
           "5d6d32ae-e121-47c0-84be-ab16049c7872": {
@@ -932,13 +932,8 @@
     },
     "content_for_index": [],
     "blocks": {
-      "16422382648059844097": {
-        "type": "shopify://apps/boost-ai-search-discovery/blocks/instant-search-app-embedded/7fc998ae-a150-4367-bab8-505d8a4503f7",
-        "disabled": true,
-        "settings": {}
-      },
-      "341186785192672687": {
-        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
+      "5018987021795618850": {
+        "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-embed/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
         "disabled": false,
         "settings": {}
       },
@@ -957,14 +952,19 @@
           "productGridSelector": ""
         }
       },
-      "5018987021795618850": {
-        "type": "shopify://apps/easyvideo/blocks/easyvideo-embed/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+      "16422382648059844097": {
+        "type": "shopify://apps/boost-ai-search-discovery/blocks/instant-search-app-embedded/7fc998ae-a150-4367-bab8-505d8a4503f7",
+        "disabled": true,
+        "settings": {}
+      },
+      "341186785192672687": {
+        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
         "disabled": false,
         "settings": {}
       },
       "8776485610325655785": {
         "type": "shopify://apps/hiko-social-login/blocks/hiko-auth/3832d7e1-5bcd-4b72-91da-236b57feef8f",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "social_font": "enable"
         }
