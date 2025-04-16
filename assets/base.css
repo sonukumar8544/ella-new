@@ -8342,3 +8342,14 @@ dd.price__label_sale.price__label_percent {
 .nm-ev-center img {
   width: auto !important;
 }
+
+
+#shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--regular .money {
+    font-weight: 800;
+    color: #969696 !important;
+}
+
+ #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--sale .money {
+    font-weight: 600;
+    color: #e95144 !important;
+}
