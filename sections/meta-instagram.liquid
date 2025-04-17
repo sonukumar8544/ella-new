@@ -394,7 +394,7 @@
 {% if array_of_insta %}
   {{ array_of_insta }}-
 {% for productmetareview in array_of_insta %}
-  <img src="{{ productmetareview }}" alt="Review Image">---
+  <img src="{{ productmetareview | img_url:'master' }}" alt="Review Image">---
 {% endfor %}         
 {% endif %}
 
