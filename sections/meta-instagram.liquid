@@ -409,7 +409,6 @@
                                         endif
                                     -%}
                               
-  <img src="{{ productmetareview | img_url:'master' }}" alt="Review Image">---
                         {%- if productmetareview != blank -%}
                                        
                                         <div class="halo-item{% if section.settings.block_layout == 'grid' and section.settings.display_instagram_button %} {% unless section.settings.type_button_more == 'link' %}{{ class_hidden }}{% endunless %}{% endif %}{% if effects_bg != blank %} has-effects{% endif %}{% if block.settings.title != blank or block.settings.description != blank or block.settings.button_text != blank %} content_block{% endif %}" style="--effects-bg: {{ effects_bg }}; --effects-opacity: {{ effects_opacity }}">
