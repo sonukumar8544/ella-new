@@ -1535,8 +1535,10 @@ div#recover .form-actions input.button.button-2 {
   border-color: #086b92;
   color: #086b92;
 }
-div#recover .form-actions:hover input.button.button-2 {
-  color: #fff;
+@media (min-width: 768px) {
+  div#recover .form-actions:hover input.button.button-2 {
+    color: #fff;
+  }
 }
 #main-login-page h2.halo-page-title {
   font-size: 34px;
