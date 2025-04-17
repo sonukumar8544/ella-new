@@ -1529,6 +1529,174 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
+    },
+    "meta_instagram_pWYEc3": {
+      "type": "meta-instagram",
+      "blocks": {
+        "instagram_cARRdD": {
+          "type": "instagram",
+          "settings": {
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#fff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#fff",
+            "button_text": "",
+            "color_button": "#fff",
+            "color_button_hover": "#fff",
+            "link": ""
+          }
+        },
+        "instagram_LqpFLE": {
+          "type": "instagram",
+          "settings": {
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#fff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#fff",
+            "button_text": "",
+            "color_button": "#fff",
+            "color_button_hover": "#fff",
+            "link": ""
+          }
+        },
+        "instagram_h9feGh": {
+          "type": "instagram",
+          "settings": {
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#fff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#fff",
+            "button_text": "",
+            "color_button": "#fff",
+            "color_button_hover": "#fff",
+            "link": ""
+          }
+        },
+        "instagram_NqeqHd": {
+          "type": "instagram",
+          "settings": {
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#fff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#fff",
+            "button_text": "",
+            "color_button": "#fff",
+            "color_button_hover": "#fff",
+            "link": ""
+          }
+        },
+        "instagram_KY6zRe": {
+          "type": "instagram",
+          "settings": {
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#fff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#fff",
+            "button_text": "",
+            "color_button": "#fff",
+            "color_button_hover": "#fff",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_cARRdD",
+        "instagram_LqpFLE",
+        "instagram_h9feGh",
+        "instagram_NqeqHd",
+        "instagram_KY6zRe"
+      ],
+      "name": "Meta Instagram",
+      "settings": {
+        "id": "",
+        "container": "container",
+        "padding_full_width": 0,
+        "disable_padding_content": false,
+        "type_instagram": "default",
+        "block_layout": "grid",
+        "scroll_from": "rtl",
+        "scroll_time": "30",
+        "enable_border_instagram": false,
+        "instagram_border_color": "#e6e6e6",
+        "instagram_bg": "#fafafa",
+        "instagram_bg_gradient": "",
+        "style_block_header": "style1",
+        "mg_bottom_header": 15,
+        "instagram_title": "#Ella On Instagram",
+        "font_weight_instagram_title": "400",
+        "enable_border_title": false,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "mg_bottom_title": 15,
+        "fontsize_title": 16,
+        "fontsize_title_mb": 16,
+        "instagram_des": "Phasellus lorem malesuada ligula pulvinar commodo maecenas",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "margin_bottom_des": 35,
+        "content_width": 375,
+        "title_align": "center",
+        "view_all": "",
+        "icon_for_viewall": "",
+        "view_all_fs": 12,
+        "view_all_align": "center",
+        "view_all_vert_align": "top",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "display_instagram_button": true,
+        "type_button_more": "load",
+        "instagram_button_text": "View Gallery",
+        "instagram_button_link": "",
+        "enable_underline_button": false,
+        "color_button": "#fff",
+        "border_color_button": "#232323",
+        "bg_color_button": "#232323",
+        "bg_color_gradient_button": "",
+        "color_button_hover": "#232323",
+        "border_color_button_hover": "#232323",
+        "bg_color_button_hover": "#fff",
+        "bg_color_gradient_button_hover": "",
+        "maxwidth_button": 230,
+        "mg_top_button": 30,
+        "embed_code": "",
+        "type_instagram_by_gallery": "popup_image",
+        "images_per_row": "5",
+        "instagram_item_limit": 5,
+        "grid_gap": 5,
+        "slide_ins": "default_ins",
+        "enable_hide_portion": false,
+        "display_arrow": true,
+        "enable_hover_arrow": false,
+        "display_dots": false,
+        "icon_for_image": "",
+        "icon_style": "style_1",
+        "effects_bg": "",
+        "effects_opacity": 0,
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
     }
   },
   "order": [
@@ -1545,6 +1713,7 @@
     "instagram_9EfqFH",
     "product_page_faq_section_HeHhtA",
     "spotlight_block_qnYcNH",
-    "featured_blog_7CQrDa"
+    "featured_blog_7CQrDa",
+    "meta_instagram_pWYEc3"
   ]
 }

@@ -389,6 +389,9 @@
                             </div>
                         {%- endfor -%}
                     {%- else -%}
+                                      {% assign productmetareview = product.metafields.custom.review_product_based_images2_0.value | split: "," %}
+                                  
+
                         {%- for block in section.blocks -%}
                             {%- case block.type -%}
                                 {%- when 'instagram' -%}
@@ -404,14 +407,17 @@
                                             assign class_hidden = class_hidden | append: ' hidden-lg'
                                         endif
                                     -%}
-                                    {%- if block.settings.image != blank -%}
+                               {% assign index = forloop.index0 %}
+                                                    {% assign review_image = productmetareview[index] %}
+                                    {%- if review_image != blank -%}
                                         {%- assign preview_img = block.settings.image -%}
                                         <div class="halo-item{% if section.settings.block_layout == 'grid' and section.settings.display_instagram_button %} {% unless section.settings.type_button_more == 'link' %}{{ class_hidden }}{% endunless %}{% endif %}{% if effects_bg != blank %} has-effects{% endif %}{% if block.settings.title != blank or block.settings.description != blank or block.settings.button_text != blank %} content_block{% endif %}" style="--effects-bg: {{ effects_bg }}; --effects-opacity: {{ effects_opacity }}">
                                             {% if settings.banner_animation == 'effect_fade_up' %}
                                             <div class="scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
                                             {% endif %}
-                                                <a class="adaptive_height image-zoom" {% if section.settings.type_instagram_by_gallery == 'link' %}{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% else %}class="fancybox" rel="gallery1" href="{{ block.settings.image | img_url: 'master' }}" data-fancybox="instagram-images"{% endif %} style="padding-top: {% unless preview_img.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: preview_img.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: preview_img.aspect_ratio | times: 100 | append: '%' }}{% endunless %}"> 
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ preview_img | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ preview_img | img_url: 'master' }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" {% unless settings.enable_layout_rtl %}loading="lazy"{% endunless %}{% if settings.enable_lazyload %} class="lazyload"{% endif %}{% unless preview_img.presentation.focal_point == '50.0% 50.0%' %} style="object-position: {{ preview_img.presentation.focal_point }}"{% endunless %}>
+                                                <a class="adaptive_height image-zoom" {% if section.settings.type_instagram_by_gallery == 'link' %}{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% else %}class="fancybox" rel="gallery1" href="{{ review_image | img_url: 'master' }}" data-fancybox="instagram-images"{% endif %} style="padding-top: {% unless review_image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: review_image.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: preview_img.aspect_ratio | times: 100 | append: '%' }}{% endunless %}"> 
+                                                   
+                                                  <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ review_image | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ preview_img | img_url: 'master' }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" {% unless settings.enable_layout_rtl %}loading="lazy"{% endunless %}{% if settings.enable_lazyload %} class="lazyload"{% endif %}{% unless review_image.presentation.focal_point == '50.0% 50.0%' %} style="object-position: {{ review_image.presentation.focal_point }}"{% endunless %}>
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     {%- if section.settings.icon_style == 'style_3' -%}
                                                         <span class="show-icon-more-style-3"></span>
