@@ -390,12 +390,13 @@
                         {%- endfor -%}
                     {%- else -%}
                                 
-{% assign productmetareview = product.metafields.custom.review_product_based_images2_0.value | split: "," %}
-{{ productmetareview }}-
-{% for productmetareview1 in productmetareview %}
-  {% assign review_image = productmetareview1 | strip %}
-  <img src="{{ review_image }}" alt="Review Image">---
-{% endfor %}
+{% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
+{% if array_of_insta %}
+  {{ array_of_insta }}-
+{% for productmetareview in array_of_insta %}
+  <img src="{{ productmetareview }}" alt="Review Image">---
+{% endfor %}         
+{% endif %}
 
                         {%- for block in section.blocks -%}
                             {%- case block.type -%}
