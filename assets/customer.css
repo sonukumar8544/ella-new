@@ -1531,6 +1531,10 @@ h2.address-title.text-left {
 }
 
 /* cstm css */
+div#recover .form-actions input.button.button-2 {
+  border-color: #086b92;
+  color: #086b92;
+}
 
 #main-login-page h2.halo-page-title {
   font-size: 34px;
