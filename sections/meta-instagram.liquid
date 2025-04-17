@@ -389,12 +389,13 @@
                             </div>
                         {%- endfor -%}
                     {%- else -%}
-                                {% assign productmetareview = product.metafields.custom.review_product_based_images2_0.value | split: "," %}
-                                {% for block in section.blocks %}
-                                {% assign index = forloop.index0 %}
-                                {% assign review_image = productmetareview[index] %}
-                                 <img src="{{ review_image | strip }}" alt="Review Image">
-                                {% endfor %}
+                                
+{% assign productmetareview = product.metafields.custom.review_product_based_images2_0.value | split: "," %}
+
+{% for productmetareview1 in productmetareview %}
+  {% assign review_image = productmetareview1 | strip %}
+  <img src="{{ review_image }}" alt="Review Image">---
+{% endfor %}
 
                         {%- for block in section.blocks -%}
                             {%- case block.type -%}
