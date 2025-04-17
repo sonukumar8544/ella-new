@@ -390,17 +390,12 @@
                         {%- endfor -%}
                     {%- else -%}
                                 
-{% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
+
+
+                        {% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
 {% if array_of_insta %}
   {{ array_of_insta }}-
 {% for productmetareview in array_of_insta %}
-  <img src="{{ productmetareview | img_url:'master' }}" alt="Review Image">---
-{% endfor %}         
-{% endif %}
-
-                        {%- for block in section.blocks -%}
-                            {%- case block.type -%}
-                                {%- when 'instagram' -%}
                                     {%- liquid
                                         assign class_hidden = ''
                                         if forloop.index > 2
@@ -413,14 +408,16 @@
                                             assign class_hidden = class_hidden | append: ' hidden-lg'
                                         endif
                                     -%}
-                                    {%- if block.settings.image != blank -%}
-                                        {%- assign preview_img = block.settings.image -%}
+                              
+  <img src="{{ productmetareview | img_url:'master' }}" alt="Review Image">---
+                        {%- if productmetareview != blank -%}
+                                       
                                         <div class="halo-item{% if section.settings.block_layout == 'grid' and section.settings.display_instagram_button %} {% unless section.settings.type_button_more == 'link' %}{{ class_hidden }}{% endunless %}{% endif %}{% if effects_bg != blank %} has-effects{% endif %}{% if block.settings.title != blank or block.settings.description != blank or block.settings.button_text != blank %} content_block{% endif %}" style="--effects-bg: {{ effects_bg }}; --effects-opacity: {{ effects_opacity }}">
                                             {% if settings.banner_animation == 'effect_fade_up' %}
                                             <div class="scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
                                             {% endif %}
-                                                <a class="adaptive_height image-zoom" {% if section.settings.type_instagram_by_gallery == 'link' %}{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% else %}class="fancybox" rel="gallery1" href="{{ block.settings.image | img_url: 'master' }}" data-fancybox="instagram-images"{% endif %} style="padding-top: {% unless preview_img.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: preview_img.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: preview_img.aspect_ratio | times: 100 | append: '%' }}{% endunless %}"> 
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ preview_img | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ preview_img | img_url: 'master' }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" {% unless settings.enable_layout_rtl %}loading="lazy"{% endunless %}{% if settings.enable_lazyload %} class="lazyload"{% endif %}{% unless preview_img.presentation.focal_point == '50.0% 50.0%' %} style="object-position: {{ preview_img.presentation.focal_point }}"{% endunless %}>
+                                                <a class="adaptive_height image-zoom" {% if section.settings.type_instagram_by_gallery == 'link' %}{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% else %}class="fancybox" rel="gallery1" href="{{ block.settings.image | img_url: 'master' }}" data-fancybox="instagram-images"{% endif %} style="padding-top: {% unless productmetareview.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: productmetareview.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: productmetareview.aspect_ratio | times: 100 | append: '%' }}{% endunless %}"> 
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ productmetareview | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ productmetareview | img_url: 'master' }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" {% unless settings.enable_layout_rtl %}loading="lazy"{% endunless %}{% if settings.enable_lazyload %} class="lazyload"{% endif %}{% unless productmetareview.presentation.focal_point == '50.0% 50.0%' %} style="object-position: {{ productmetareview.presentation.focal_point }}"{% endunless %}>
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     {%- if section.settings.icon_style == 'style_3' -%}
                                                         <span class="show-icon-more-style-3"></span>
@@ -466,20 +463,9 @@
                                             {% endif %}
                                         </div>
                                     {%- endif -%}
-                                {%- when 'typing_text' -%}
-                                    {%- liquid
-                                        assign title_1 = block.settings.title_1
-                                        assign title_2 = block.settings.title_2
-                                    -%}
-                                    <div class="halo-item content_block content_block--{{ block.type }}">
-                                        <div class="content__wrapper" style="--font-size-title: {{ block.settings.fontsize_title }}px;--font-size-title-mb: {{ block.settings.fontsize_title_mb }}px;--color-title: {{ block.settings.typing_color_title }};--bg-content: {{ block.settings.typing_bg }};">
-                                            <h3 class="title h-100">
-                                                <type-writer class="title_text-typing typing-comma d-flex fd-column flex-jc-between h-100" data-period="2000" data-type='["{{ title_1 }}", "{{ title_2 }}"]'></type-writer>
-                                            </h3>
-                                        </div>
-                                    </div>
-                            {%- endcase -%}
+                               
                         {%- endfor -%}
+                     {%- endif -%}
                     {%- endif -%}
                 </div>
             {%- if section.settings.block_layout == 'scroll' -%}</product-scroller>{%- endif -%}
