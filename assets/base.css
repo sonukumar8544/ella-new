@@ -43,6 +43,15 @@ html.no-js .no-js-hidden {
 #hubspot-messages-iframe-container.widget-align-right {
   /* bottom: 17% !important; */
 }
+/* Easy Video Section */
+.easyvideo_section::before {
+  position: absolute;
+  content: "Voices of Satisfaction ";
+  font-size: 40px;
+  top: -39px;
+  left: 42%;
+  transform: translate(-1%, -1%);
+}
 
 body {
   font-family: var(--font-body-family);
