@@ -391,7 +391,7 @@
                     {%- else -%}
                                 
 {% assign productmetareview = product.metafields.custom.review_product_based_images2_0.value | split: "," %}
-
+{{ productmetareview }}-
 {% for productmetareview1 in productmetareview %}
   {% assign review_image = productmetareview1 | strip %}
   <img src="{{ review_image }}" alt="Review Image">---
