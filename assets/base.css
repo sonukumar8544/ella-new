@@ -44,10 +44,10 @@ html.no-js .no-js-hidden {
   /* bottom: 17% !important; */
 }
 /* Easy Video Section */
-/* .easyvideo_section {
-  position: relative;
+.easyvideo_gallery h2 {
+  margin-bottom: 48px;
 }
-.easyvideo_section::before {
+/*.easyvideo_section::before {
   position: absolute;
   content: "Voices of Satisfaction ";
   font-size: 40px;
