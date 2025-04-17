@@ -44,7 +44,7 @@ html.no-js .no-js-hidden {
   /* bottom: 17% !important; */
 }
 /* Easy Video Section */
-.easyvideo_section {
+/* .easyvideo_section {
   position: relative;
 }
 .easyvideo_section::before {
@@ -54,7 +54,7 @@ html.no-js .no-js-hidden {
   top: -39px;
   left: 42%;
   transform: translate(-1%, -1%);
-}
+} */
 
 body {
   font-family: var(--font-body-family);
@@ -8173,9 +8173,9 @@ h5 {
   color: #36454f;
 }
 
-.easyvideo_gallery h2 {
+/* .easyvideo_gallery h2 {
   display: none;
-}
+} */
 .splide__slide .nm-ev-center img.add_splide {
   max-height: inherit;
 }
