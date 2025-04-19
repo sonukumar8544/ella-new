@@ -5,12 +5,9 @@
     data-bundle-id="{{ current_variant.id }}" data-bundle-title="{{ product.title }}"
   {% endif %}
 >
-  {% if product.metafields.custom.custom_badge != blank %}  {{ product.metafields.custom.custom_badge }} {% endif %}
+  {% if product.metafields.custom.custom_badge != blank %}   {% endif %}
     <div class="productbadgenew">
-      {% render 'product-badge',  product: product,
-                                        class: 'productView-badge',
-                                        badge_detail: true,
-                                        serial: 1 %}
+      {{ product.metafields.custom.custom_badge }}
     
     </div>
  
