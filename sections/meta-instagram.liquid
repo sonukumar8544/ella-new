@@ -392,9 +392,9 @@
                                 
 
 
-                        {% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
-{% if array_of_insta %}
-{% for productmetareview in array_of_insta %}
+                                    {% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
+                                    {% if array_of_insta %}
+                                    {% for productmetareview in array_of_insta %}
                                     {%- liquid
                                         assign class_hidden = ''
                                         if forloop.index > 2
@@ -408,8 +408,7 @@
                                         endif
                                     -%}
                               
-                        {%- if productmetareview != blank -%}
-                                       
+                                     {%- if productmetareview != blank -%}
                                         <div class="halo-item{% if section.settings.block_layout == 'grid' and section.settings.display_instagram_button %} {% unless section.settings.type_button_more == 'link' %}{{ class_hidden }}{% endunless %}{% endif %}{% if effects_bg != blank %} has-effects{% endif %}{% if block.settings.title != blank or block.settings.description != blank or block.settings.button_text != blank %} content_block{% endif %}" style="--effects-bg: {{ effects_bg }}; --effects-opacity: {{ effects_opacity }}">
                                             {% if settings.banner_animation == 'effect_fade_up' %}
                                             <div class="scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
