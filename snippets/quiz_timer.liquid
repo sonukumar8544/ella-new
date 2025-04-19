@@ -1,0 +1,170 @@
+{% if section.settings.progress_color != blank %}
+  <div class="quiz_progress-bar">
+    <div class="quiz_progress" style="background: {{ section.settings.progress_color }} !important;"></div>
+  </div>
+  <style>
+    .quiz_progress-bar {
+        width: 100%;
+        height: 11px;
+        background: #eee;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .quiz_progress {
+        width: 0%;
+        height: 100%;
+        border-radius: 10px;
+        transition: width 0.5s ease-in-out;
+    }
+
+    .quiz_progress-bar div:empty {
+        display: block !important;
+    }
+  </style>
+{% endif %}
+{% comment %}
+  {%- assign quiz_timer = section.settings.quiz_timer -%}
+  <div class="quiz-timer-strt on--productpage quizTimer"
+       data-timer="{%- if quiz_timer != blank -%}true{%- else -%}false{%- endif -%}"
+       data-time="{%- if quiz_timer != blank -%}{{ quiz_timer }}{%- else -%}00:00:00{%- endif -%}">
+  </div>
+
+  <script>
+  function timerHtmlInit($target) {
+      let timerDom = `<div class="cstm_quiz_timers">
+          <div class="flashtimer">
+              <div class="timer-display">
+                  <div class="timer-block"><span class="timer-block__num js-timer-minutes">00m</span></div>
+                  <div class="timer-block"><span class="timer-block__num js-timer-seconds">00s</span></div>
+              </div>
+          </div>
+      </div>`;
+
+      if ($target) {
+          $target.innerHTML = timerDom;
+      }
+  }
+
+  function startQuizTimer($target, timerTime) {
+      let [hours, minutes, seconds] = timerTime.split(':').map(Number);
+      let totalTime = (hours * 3600 + minutes * 60 + seconds) * 1000;
+      let endTime = Date.now() + totalTime;
+
+      let x = setInterval(function () {
+          let now = Date.now();
+          let distance = endTime - now;
+
+          if (distance < 1) {
+              clearInterval(x);
+                  document.querySelector('.cstm_quiz_timers').style.display = "none";
+
+              return;
+          }
+
+          let mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          let secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+          $target.querySelector('.js-timer-minutes').innerText = mins + 'm';
+          $target.querySelector('.js-timer-seconds').innerText = secs + 's';
+      }, 1000);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+      let $flashTimerSale = document.querySelector('.quizTimer');
+      let nextButton = document.querySelector('.quizTimer_start');
+
+      if ($flashTimerSale && nextButton) {
+          let timerStatus = $flashTimerSale.getAttribute('data-timer');
+          let timerTime = $flashTimerSale.getAttribute('data-time');
+
+          if (timerStatus === 'true') {
+              timerHtmlInit($flashTimerSale);
+
+              // nextButton.addEventListener('click', function () {
+            setTimeout(()=>{
+                  document.querySelector('.cstm_quiz_timers').style.display = "block";
+                  startQuizTimer($flashTimerSale, timerTime);
+              },5000);
+                  // nextButton.classList.remove('quizTimer_start');
+              // });
+          }
+      }
+  });
+  </script>
+
+
+
+  <style>
+  .timer-display {
+      display: flex;
+      gap: 4px;
+  }
+
+  .cstm_quiz_timers {
+      position: relative;
+      display: none;
+      padding: 5px 10px;
+      /* border-radius: 5px; */
+      width: fit-content;
+      background: linear-gradient(270deg, rgb(7, 123, 161) 23.86%, rgb(22 149 190) 47.06%, rgb(7, 123, 161) 66.05%);
+      animation: 5s linear 1s infinite normal none running bgstrip;
+
+  }
+
+  .timer-block.days-timer {
+      display: none;
+  }
+
+  div[role=progressbar] {
+      position: absolute;
+      bottom: 0;
+      right: -21%;
+      transform: translate(0, 0);
+      text-align: center;
+      line-height: 1;
+      padding: 0px;
+      margin: 0px 0 0;
+      font-size: 10px;
+      color: #000;
+      font-weight: 700;
+      width: 40.5px!important;
+      height: 4rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(closest-side, #fff 85%, transparent 0 99.9%, #fff 0),conic-gradient(from 3.1416rad, var(--fg) calc(var(--pgPercentage) * 1%), #b1b1b1 0);
+  }
+
+  .flashtimer .timer-block__num,
+  .flashtimer .timer-block__unit {
+      display: block;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+  }
+
+  .flashtimer .milliseconds {
+      background: white;
+      color: black;
+      font-weight: bold;
+      padding: 0;
+      width: 22px;
+  }
+
+  .quiz-timer-strt.on--collectionpage .cstm_quiz_timers {
+      padding: 0px 11px;
+  }
+
+  @keyframes bgstrip {
+      0% {
+          background-position: -1000px 0px;
+      }
+      100% {
+          background-position: 1000px 0px;
+      }
+  }
+  </style>
+{% endcomment %}
