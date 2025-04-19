@@ -5,7 +5,7 @@
     data-bundle-id="{{ current_variant.id }}" data-bundle-title="{{ product.title }}"
   {% endif %}
 >
-  {% if product.metafields.custom.product_badge_code.value != blank %}  {{ product.metafields.custom.product_badge_code.value }} {% endif %}
+  {% if product.metafields.custom.custom_badge != blank %}  {{ product.metafields.custom.custom_badge }} {% endif %}
     <div class="productbadgenew">
       {% render 'product-badge',  product: product,
                                         class: 'productView-badge',
