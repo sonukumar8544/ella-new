@@ -7,8 +7,8 @@
 >
   {% if product.metafields.custom.product_badge_code.value != blank %}{{ product.metafields.custom.product_badge_code.value }}{% endif %}
     <div class="productbadgenew">
-        {% render 'product-badge',  product: product,
-        class: 'productbadgenew',
+        {% render 'cstm-product-badge',  product: product,
+        class: 'productView-badge',
         badge_detail: true,
         serial: 1 %}
       
