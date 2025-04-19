@@ -7,6 +7,10 @@
 >
   {% if product.metafields.custom.product_badge_code.value != blank %}
     <div class="productbadgenew">
+      {% render 'product-badge',  product: product,
+                                        class: 'productView-badge',
+                                        badge_detail: true,
+                                        serial: 1 %}
       {{ product.metafields.custom.product_badge_code.value }}
     </div>
   {% endif %}
