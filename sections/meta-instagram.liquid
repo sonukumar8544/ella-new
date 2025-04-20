@@ -5,8 +5,7 @@
   {% if forloop.index > 1 and shown == false %}
     {{ 'helloW' }}
     {% assign shown = true %}
-  {% endif %}
-{% endfor %}
+  
 <link rel="stylesheet" href="{{ 'component-instagram.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-instagram.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -546,7 +545,8 @@
     customElements.define('instagram-block-load', InstagramBlockLoad);
 </script>
 {%- endif -%}
-
+{% endif %}
+{% endfor %}
 {% schema %}
   {
     "name": "Meta Instagram",
@@ -1512,3 +1512,7 @@
     }
   }
 {% endschema %}
+
+
+
+                                                              
