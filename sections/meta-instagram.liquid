@@ -1,9 +1,7 @@
 {% assign array_of_insta = product.metafields.custom.review_product_based_images2_0.value %}
 {% assign shown = false %}
-
 {% for array_of_insta1 in array_of_insta %}
   {% if forloop.index > 1 and shown == false %}
-    {{ 'helloW' }}
     {% assign shown = true %}
   
 <link rel="stylesheet" href="{{ 'component-instagram.css' | asset_url }}" media="print" onload="this.media='all'">
