@@ -115,6 +115,11 @@
         assign padding_full_width = section.settings.padding_full_width
     -%}
     @keyframes SlideLeft {0% {transform: translate3d(0,0,0)} 100% {transform: translate3d(-100%,0,0)}}
+
+.template-product #instafeed .adaptive_height img.lazyloaded{
+  padding:2px;
+}
+  
     {%- if enable_border_instagram -%}
         .section-block-{{section.id}} {border-top: 1px solid {{ instagram_border_color }}}
     {%- endif -%}
