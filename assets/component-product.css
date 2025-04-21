@@ -2197,6 +2197,16 @@ body.video-show.product-video-show .halo-video-popup {
 }
 
 @media (max-width: 767px) {
+  .productView-img-container.product-single__media .media img#product_stamp {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    left: auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50% !important;
+    display: block;
+  }
   .product-details .product-option {
     justify-content: center !important;
   }
