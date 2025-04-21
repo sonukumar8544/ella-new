@@ -267,6 +267,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 
 .quickSearchResultsBlock .halo-block .price-item .text {
   margin: 0 5px 0 0;
+  white-space: nowrap;
 }
 
 details[open] > .search-modal {
