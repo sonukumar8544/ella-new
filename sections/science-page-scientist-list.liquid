@@ -4,9 +4,9 @@
     {% for block in section.blocks %}
       <div class="science-mobile-profile-card">
         <div class="mobile-image-science-pag">
-          <img
+          <img loading="lazy"
             src="{{ block.settings.scientist_image | img_url: 'master' }}"
-            alt="{{ block.settings.scientist_image.alt }}"
+            alt="{{ block.settings.scientist_image.alt }}" width="" height="" title=""
             class="science-mobile-profile-image">
         </div>
         <div class="science-mobile-profile-details">
