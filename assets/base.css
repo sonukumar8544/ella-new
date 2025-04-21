@@ -8132,8 +8132,15 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
 .productView-price .price.price--medium .price-item,
 .productView-price .price.price--medium .price-item .money {
   display: block !important;
-  color: #006a91;
+  /* color: #006a91; */
 }
+	.price-item--regular .money {
+color: #969696 !important;
+ }
+
+.price-item--sale .money {
+color: #e95144 !important; 
+ }
 
 .tabs .tab .tab-title {
   font-family: Nunito;
@@ -8349,4 +8356,18 @@ dd.price__label_sale.price__label_percent {
   border: none;
   margin-bottom: 0;
   box-sizing: content-box;
+}
+.nm-ev-center img {
+  width: auto !important;
+}
+
+
+#shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--regular .money {
+    font-weight: 800;
+    color: #969696 !important;
+}
+
+ #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--sale .money {
+    font-weight: 600;
+    color: #e95144 !important;
 }
