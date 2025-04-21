@@ -1538,7 +1538,7 @@ div#recover .form-actions input.button.button-2 {
 }
 div#recover .form-actions input.button.button-2:hover {
   border-color: #086b92;
-  color: #086b92;
+  color: #086b92 !important;
   background: #ffffff;
 }
 
