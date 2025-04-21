@@ -1533,8 +1533,15 @@ h2.address-title.text-left {
 /* cstm css */
 div#recover .form-actions input.button.button-2 {
   border-color: #086b92;
-  color: #086b92;
+  color: #ffffff;
+  background: #086b92;
 }
+div#recover .form-actions input.button.button-2:hover {
+  border-color: #086b92;
+  color: #086b92;
+  background: #ffffff;
+}
+
 @media (min-width: 768px) {
   div#recover .form-actions:hover input.button.button-2 {
     color: #fff;
