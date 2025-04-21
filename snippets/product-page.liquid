@@ -544,7 +544,9 @@
                                                             {% if zoomed_image and main_image_show_custom_cursor != true %} data-zoom-image="{{ media.preview_image | img_url: 'master' }}"{% endif %} 
                                                             {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | img_url: 'master' }}" {% endif %}
                                                         >
-                                                          amar
+                                                          {% if forloop.index == 1 %}
+amar
+                                                          {% endif %}
                                                             <img id="product-featured-image-{{ media.id }}"
                                                                 {% if settings.enable_lazyload and forloop.first == false %}data-{% endif %}srcset="{{ media.preview_image | img_url: 'master' }}"
                                                                 {% unless settings.enable_lazyload and forloop.first == false %}src="{{ media | img_url: 'master' }}"{% endunless %}
