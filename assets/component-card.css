@@ -1071,6 +1071,7 @@
 .card-swatch.text-center {
   display: flex;
   justify-content: center;
+  height: 30px;
 }
 
 .card-information__wrapper.text-left .card-price,
@@ -2195,7 +2196,7 @@ quickshop-update-quantity.disabled {
 
   .product-card-layout-02 .price-item .money {
     font-size: calc(var(--product-price-font-size) * 0.75) !important;
-    line-height: inherit;
+    line-height: 1.4;
   }
 
   .product-card-layout-01 .product-item .card-action,
