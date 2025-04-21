@@ -121,6 +121,7 @@
 
 .price.price--on-sale .price-item--sale .money {
   color: var(--product-sale-price-color);
+  white-space: nowrap;
 }
 
 .price.price--on-sale .price-item--regular .money {
