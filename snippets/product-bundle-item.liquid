@@ -28,6 +28,12 @@
                 </label>
             </div>
         {%- endif -%}
+        <div class="halo-productBadges custom-badge-product">
+    {% for block in product.metafields.custom.we_product_card_badge.value %}
+        {% assign parts = block | split: '|' %}
+        <span class="badge custom-badge">{{ parts[0] | strip }}</span>
+  {% endfor %}
+</div>
         <div class="bundle-product-image">
             <a href="{{ product.url }}" class="bundle-product-media bundle-product-media--{{ image_ratio }}"
                 {% if product.featured_media %}
