@@ -2195,7 +2195,7 @@ quickshop-update-quantity.disabled {
 
   .product-card-layout-02 .price-item .money {
     font-size: calc(var(--product-price-font-size) * 0.75) !important;
-    line-height: 1.4;
+    line-height: inherit;
   }
 
   .product-card-layout-01 .product-item .card-action,
