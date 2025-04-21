@@ -1,6 +1,10 @@
 .halo-sidebar-wrapper {
   padding: 0px 0 20px;
 }
+li.discounts__discount svg {
+  height: 15px;
+  width: 15px;
+}
 #halo-cart-sidebar .previewCart {
   height: 88%;
 }
