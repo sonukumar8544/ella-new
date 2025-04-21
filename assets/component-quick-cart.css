@@ -51,6 +51,7 @@ div#dynamic-checkout-cart {
 .card-price s.price-item.price-item--regular {
   color: #374650;
   font-size: 12px;
+  white-space: nowrap;
 }
 .text_details {
   margin: 0;
