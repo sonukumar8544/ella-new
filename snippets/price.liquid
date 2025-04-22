@@ -73,8 +73,6 @@
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign new_saleprice = original_price | minus: discount %}
                      {{ new_saleprice | money_with_currency }}
-                
-                 
               </span>
             </dd>
           <dd class="price__compare" data-compare="{{compare_at_price}}">
