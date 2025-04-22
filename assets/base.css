@@ -8374,6 +8374,7 @@ dd#custom_proce_manage {
   align-items: center;
   gap: 7px;
 }
+.orginal_price1 span,
 .orginal_price1 {
   white-space: nowrap;
   font-size: 14px;
@@ -8382,7 +8383,7 @@ dd#custom_proce_manage {
   letter-spacing: 1px;
   font-weight: 800;
 }
-,
+.sale_price_amount1 span,
 .sale_price_amount1 {
   font-size: 15px;
   color: #e95144 !important;
