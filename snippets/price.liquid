@@ -65,7 +65,17 @@
 
       
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
-            <dd class="price__compare" data-compare="{{compare_at_price}}">
+            
+            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+              <span class="price-item price-item--sale sale_price_amount1">
+              {% comment %}  {{ money_price }}{% endcomment %}
+              {% assign original_price = compare_at_price %}
+                      {% assign discount = original_price | times: 0.2 %}
+                      {% assign new_saleprice = original_price | minus: discount %}
+                     {{ new_saleprice | money_with_currency }}
+              </span>
+            </dd>
+          <dd class="price__compare" data-compare="{{compare_at_price}}">
               <s class="price-item price-item--regular">
                 {% if settings.currency_format_enable %}
                   {{ compare_at_price | money_with_currency }} --AAA2
@@ -83,16 +93,6 @@
                               <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
                               </dt>
                               {%- endcomment -%}
-            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
-              <span class="price-item price-item--sale sale_price_amount1">
-              {% comment %}  {{ money_price }}{% endcomment %}
-              {% assign original_price = compare_at_price %}
-                      {% assign discount = original_price | times: 0.2 %}
-                      {% assign new_saleprice = original_price | minus: discount %}
-                     {{ new_saleprice | money_with_currency }}
-              </span>
-            </dd>
-          
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
                 {%- assign saved_price = compare_at_price | minus: price | money -%}
                 <div class="price__saved"><span class="price-item price-item--saved">
