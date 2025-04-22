@@ -55,7 +55,7 @@
                                                               {% comment %}
                                                                existing code====>>>    {{ money_price }}
                                                               {% endcomment %}  
-            {% assign original_price = price %}
+            {% assign original_price = price | money_with_currency %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign discounted_price = original_price | minus: discount %}
                       
