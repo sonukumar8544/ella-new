@@ -8378,11 +8378,11 @@ dd#custom_proce_manage {
 .orginal_price1 span,
 .orginal_price1 {
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 14px !important;
   text-decoration: line-through;
   color: #969696 !important;
   letter-spacing: 1px;
-  font-weight: 800;
+  font-weight: 800 !important;
 }
 
 .sale_price_amount1 span,
