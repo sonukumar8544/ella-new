@@ -535,6 +535,7 @@
       "block_order": [
         "large_img_3EwViL"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 1024px) {.img-box.img-box--mobile {max-width: 70%; margin: auto; }}"
       ],
@@ -568,6 +569,57 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50,
         "liquid_css": ""
+      }
+    },
+    "collapsiable_content_copy_rwPkJz": {
+      "type": "collapsiable-content-copy",
+      "blocks": {
+        "content_JKRbLA": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_JKRbLA"
+      ],
+      "custom_css": [
+        ".faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}",
+        ".faqs .faqs-item .card-header .title:after {background: none;}",
+        ".adaptive_height img.lazyloaded {border-radius: 8px;}"
+      ],
+      "settings": {
+        "id_section": "collapsable-content-copy",
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "{{ product.metafields.custom.we_product_information_title.value }}",
+        "color_title": "#374650",
+        "fontsize_title": 28,
+        "fontsize_title_mb": 22,
+        "collapsible_des": "{{ product.metafields.custom.we_product_information_description_new.value }}",
+        "color_des": "#374650",
+        "fontsize_des": 20,
+        "fontsize_des_mb": 16,
+        "max_width_des": 800,
+        "title_align": "center",
+        "enable_image_right": true,
+        "image_right": "{{ product.metafields.custom.we_product_info_image_new.value }}",
+        "bg_content_color": "#ffffff",
+        "content_color": "#374650",
+        "title_color": "#086b92",
+        "icon_color": "#374650",
+        "border_color": "#374650",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
       }
     },
     "collapsible_content_7qC8iH": {
@@ -630,6 +682,7 @@
         "content_Pwzyi4",
         "content_FUaYa4"
       ],
+      "disabled": true,
       "custom_css": [
         ".section-block-template--24230844203304__collapsible_content_7qC8iH .faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}"
       ],
@@ -1627,6 +1680,7 @@
     "main",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
+    "collapsiable_content_copy_rwPkJz",
     "collapsible_content_7qC8iH",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
