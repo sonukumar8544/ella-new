@@ -73,7 +73,16 @@
               <span class="price-item price-item--sale">{{ money_price }}</span></dd>
             {% endcomment %}
             <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
-              <span class="price-item price-item--sale">{{ money_price }}</span></dd>
+                      {% assign original_price = money_price %}
+                      {% assign discount = original_price | times: 0.2 %}
+                      {% assign discounted_price = original_price | minus: discount %}
+                      
+                      <p>Original Price: {{ original_price | money }}</p>
+                      <p>Discount (20%): {{ discount | money }}</p>
+                      <p>Discounted Price: {{ discounted_price | money }}</p>
+
+              <!-- <span class="price-item price-item--sale">{{ money_price }}</span> -->
+            </dd>
           
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
                 {%- assign saved_price = compare_at_price | minus: price | money -%}
