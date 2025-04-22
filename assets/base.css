@@ -8417,3 +8417,11 @@ div#custom_proce_manage {
 div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
   gap: 10px;
 }
+
+/* cart mobile view 20% css */
+@media (max-width: 768px) {
+  .halo-cart-sidebar .previewCartItem-price .discounted-price,
+  .previewCartItem-price .price {
+    font-size: 12px;
+  }
+}
