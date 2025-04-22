@@ -52,15 +52,14 @@
                 </dt>
             {%- endcomment -%}
             <dd class="price__last" id="custom_proce_manage"><span class="price-item price-item--regular">
-                            {{ money_price }}                                  {% comment %}
-                                                               existing code====>>>    
+                                                       {% comment %}
+                                                               existing code====>>>   {{ money_price }}        
                                                               {% endcomment %}  
             {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice1 = original_price | minus: discount %}
-                      
-                      <p class="orginal_price">{{ original_price | money }}</p>
                       <p class="sale_price_amount"> {{ newSalePrice1 | money }}</p>
+                      <p class="orginal_price">{{ original_price | money }}</p>
             </span></dd>
         </div>
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
@@ -89,7 +88,9 @@
                       <p class="orginal_price price-item price-item--sale">{{ original_price | money }}</p>
                       <p class="sale_price_amount price-item price-item--sale"> {{ newSalePrice | money }}</p>
 
-              <span class="price-item price-item--sale">{{ money_price }}</span>
+             {% comment %}
+               <span class="price-item price-item--sale">{{ money_price }}</span>
+             {% endcomment %} 
             </dd>
           
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
