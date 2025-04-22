@@ -187,7 +187,7 @@ a.previewCartItem-image.line_itemsss {
   }
   .previewCart .previewCartItem-remove {
     position: absolute;
-    right: 5px !important;
+    right: -2px !important;
     bottom: 44px !important;
     background: none;
     border: none;
