@@ -8429,10 +8429,7 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
     min-width: 76px;
   }
   .halo-cart-sidebar .previewCartItem-price .previewCartItem-saving-price {
-    display: flex;
-    gap: 0px;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+    display: grid !important;
+    gap: 0px !important;
   }
 }
