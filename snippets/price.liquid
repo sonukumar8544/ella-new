@@ -51,52 +51,33 @@
                     <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
                 </dt>
             {%- endcomment -%}
-            <dd class="price__last" id="custom_proce_manage">
-                                                       {% comment %}
-                                                          <span class="price-item price-item--regular">     existing code====>>>   {{ money_price }}    </span>       
-                                                              {% endcomment %}  
-            {% assign original_price = price %}
-                      {% assign discount = original_price | times: 0.2 %}
-                      {% assign newSalePrice1 = original_price | minus: discount %}
-                      <p class="sale_price_amount1"> {{ newSalePrice1 | money_with_currency }}</p>
-                      <p class="orginal_price1">{{ original_price | money_with_currency }}</p>
-         </dd>
+            <dd class="price__last"><span class="price-item price-item--regular">{{ money_price }}-AAA1</span></dd>
         </div>
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
-            {%- comment -%}
-                <dt class="price__compare">
-                    <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-                </dt>
-            {%- endcomment -%}
+                                                                                                                             
             
-           {% comment %}
-             existing code====>>> <dd class="price__compare" data-compare="{{compare_at_price}}"><s class="price-item price-item--regular">{% if settings.currency_format_enable %}{{ compare_at_price | money_with_currency }}--AAA1{% else %}{{ compare_at_price | money }}--AAA2{% endif %}</s></dd>
-           {% endcomment %}
-            {%- comment -%}
-                <dt>
-                    <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-                </dt>
-            {%- endcomment -%}
-            {% comment %}
-               existing code====>>>  <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
-              <span class="price-item price-item--sale">{{ money_price }}</span></dd>
-            {% endcomment %}
-            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}" id="custom_proce_manage">
-                      {% assign original_price = price %}
-                      {% assign discount = original_price | times: 0.2 %}
-                      {% assign newSalePrice = original_price | minus: discount %}
-                      <p class="sale_price_amount1"> {{ newSalePrice | money_with_currency }}</p>
-                      <p class="orginal_price1 ">{{ original_price | money_with_currency }}</p>
-              
-
-             {% comment %}
-               <span class="price-item price-item--sale">{{ money_price }}</span>
-             {% endcomment %} 
-            </dd>
-          
+            <dd class="price__compare" data-compare="{{compare_at_price}}">
+              <s class="price-item price-item--regular">
+                {% if settings.currency_format_enable %}
+                  {{ compare_at_price | money_with_currency }} --AA1
+                {% else %}
+                {{ compare_at_price | money }}--BB1
+                {% endif %}
+                </s></dd>
+                              {%- comment -%}
+                              <dt class="price__compare">
+                              <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+                              </dt>
+                              {%- endcomment -%}
+                              {%- comment -%}
+                              <dt>
+                              <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+                              </dt>
+                              {%- endcomment -%}
+            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}"><span class="price-item price-item--sale">{{ money_price }}</span></dd>
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
                 {%- assign saved_price = compare_at_price | minus: price | money -%}
-                <div class="price__saved"><span class="price-item price-item--saved">{{'products.product.price.saved_price_html' | t: price: saved_price }} --BB2</span></div>
+                <div class="price__saved"><span class="price-item price-item--saved">{{'products.product.price.saved_price_html' | t: price: saved_price }}</span></div>
             {%- endif -%}
 
             {%- if settings.show_price_percent -%}
@@ -119,12 +100,8 @@
         </div>
         <small class="unit-price caption{% if available == false or product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
             <dt class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</dt>
-            <dd class="price__last"><span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
-              <span aria-hidden="true">/</span>
-              <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-              <span>{%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
-                        {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}{%- endif -%}
-                        {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</span></dd>
+            <dd class="price__last"><span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span><span aria-hidden="true">/</span><span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span><span>{%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+                        {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}{%- endif -%} {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</span></dd>
         </small>
     </dl>
 </div>
