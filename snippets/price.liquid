@@ -92,9 +92,9 @@
           <dd class="price__compare" data-compare="{{compare_at_price}}">
               <s class="price-item price-item--regular">
                 {% if settings.currency_format_enable %}
-                  {{ compare_at_price | money_with_currency }} --AAA2
+                  {{ compare_at_price | money_with_currency }} 
                 {% else %}
-                {{ compare_at_price | money }}--BB1
+                {{ compare_at_price | money }}
                 {% endif %}
                 </s></dd>
                               {%- comment -%}
