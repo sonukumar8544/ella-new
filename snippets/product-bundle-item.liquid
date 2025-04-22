@@ -126,13 +126,13 @@
                 </div>
             {%- endif -%}
             <div class="bundle-product-price">
-                <div class="price-box card-price">
+                <div class="price-box card-price" >
                     {%- if product.compare_at_price > product.price -%}
                         <div class="price-sale clearfix">
-                            <span class="old-price">
+                            <span class="bundle_special_old old-price">
                                 {{ product.variants[0].compare_at_price | money }}
                             </span>
-                            <span class="special-price" data-bundle-product-price>
+                            <span id="bundle_special_price" class="special-price" data-bundle-product-price>
                                 {{ product.variants[0].price | money }}
                             </span>
                         </div>
