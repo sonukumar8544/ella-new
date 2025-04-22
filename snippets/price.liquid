@@ -60,7 +60,6 @@
                       {% assign discounted_price = original_price | minus: discount %}
                       
                       <p class="orginal_price">{{ original_price | money }}</p>
-                      <p class="discpunt_amount"> {{ discount | money }}</p>
                       <p class="sale_price_amount"> {{ discounted_price | money }}</p>
             </span></dd>
         </div>
@@ -89,7 +88,6 @@
                       {% assign discounted_price = original_price | minus: discount %}
                       
                       <p class="orginal_price">{{ original_price | money }}</p>
-                      <p class="discpunt_amount"> {{ discount | money }}</p>
                       <p class="sale_price_amount"> {{ discounted_price | money }}</p>
 
               <span class="price-item price-item--sale">{{ money_price }}</span>
