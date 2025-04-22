@@ -52,8 +52,8 @@
                 </dt>
             {%- endcomment -%}
             <dd class="price__last" id="custom_proce_manage"><span class="price-item price-item--regular">
-                                                              {% comment %}
-                                                               existing code====>>>    {{ money_price }}
+                            {{ money_price }}                                  {% comment %}
+                                                               existing code====>>>    
                                                               {% endcomment %}  
             {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
