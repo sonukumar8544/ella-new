@@ -8402,3 +8402,8 @@ span#bundle_special_price {
   font-size: 14px;
   color: red;
 }
+div#custom_proce_manage {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
