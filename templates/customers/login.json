@@ -1,1 +1,45 @@
-{"sections":{"main":{"type":"main-login","settings":{"container":"container","padding_full_width":65}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "container": "container",
+        "padding_full_width": 65
+      }
+    },
+    "1745298637f5dcaec8": {
+      "type": "apps",
+      "blocks": {
+        "hiko_social_login_hiko_block_EYVhBX": {
+          "type": "shopify://apps/hiko-social-login/blocks/hiko-block/3832d7e1-5bcd-4b72-91da-236b57feef8f",
+          "settings": {
+            "login_type": "login",
+            "width": "100%",
+            "mobile": "640px",
+            "padding_top": "0px",
+            "padding_bottom": "0px"
+          }
+        }
+      },
+      "block_order": [
+        "hiko_social_login_hiko_block_EYVhBX"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "1745298637f5dcaec8",
+    "main"
+  ]
+}
