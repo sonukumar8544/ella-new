@@ -53,10 +53,17 @@
             {%- endcomment -%}
             <dd class="price__last" id="custom_proce_manage">
               <span class="sale_price_amount1">
+                 {% if localization.available_countries.size > 1 %}
+                {% assign currency = localization.country.currency.iso_code %}
+                {% if currency == 'USD' %}
                 {% assign original_price1 = price %}
                 {% assign discount1 = original_price1 | times: 0.2 %}
                 {% assign new_saleprice1 = original_price1 | minus: discount1 %}
                 {{ new_saleprice1 | money_with_currency }}
+                   {% else %}
+            
+                   {% endif %}
+                   {% endif %}
             </span>
               <span class="price-item price-item--regular orginal_price1">{{ money_price }}</span>
               
