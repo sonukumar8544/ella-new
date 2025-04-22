@@ -8374,16 +8374,16 @@ dd#custom_proce_manage {
   align-items: center;
   gap: 7px;
 }
-p.orginal_price1 span,
-p.orginal_price1 {
+.orginal_price1 span,
+.orginal_price1 {
   white-space: nowrap;
   font-size: 14px;
   text-decoration: line-through;
   color: #969696 !important;
   letter-spacing: 1px;
 }
-p.sale_price_amount1 span,
-p.sale_price_amount1 {
+.sale_price_amount1 span,
+.sale_price_amount1 {
   font-size: 15px;
   color: red !important;
   letter-spacing: 1px;
