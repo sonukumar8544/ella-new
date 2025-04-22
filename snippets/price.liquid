@@ -82,7 +82,7 @@
               {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice = original_price | minus: discount %}
-                     {{ newSalePrice | money_with_currency }}
+                     {{ newSalePrice | money_with_currency }}<----{{ money_price }}
               </span>
             </dd>
           
