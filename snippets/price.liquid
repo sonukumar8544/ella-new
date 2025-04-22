@@ -58,8 +58,8 @@
             {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice1 = original_price | minus: discount %}
-                      <p class="sale_price_amount1"> {{ newSalePrice1 | | money_with_currency }}</p>
-                      <p class="orginal_price1">{{ original_price | | money_with_currency }}</p>
+                      <p class="sale_price_amount1"> {{ newSalePrice1 | money_with_currency }}</p>
+                      <p class="orginal_price1">{{ original_price | money_with_currency }}</p>
             </span></dd>
         </div>
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
@@ -85,8 +85,8 @@
                       {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice = original_price | minus: discount %}
-                      <p class="orginal_price1 ">{{ original_price | | money_with_currency }}</p>
-                      <p class="sale_price_amount1"> {{ newSalePrice | | money_with_currency }}</p>
+                      <p class="orginal_price1 ">{{ original_price | money_with_currency }}</p>
+                      <p class="sale_price_amount1"> {{ newSalePrice | money_with_currency }}</p>
 
              {% comment %}
                <span class="price-item price-item--sale">{{ money_price }}</span>
