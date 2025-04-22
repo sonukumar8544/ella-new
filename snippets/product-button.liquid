@@ -310,10 +310,8 @@
 </style>
 <script>
  
-    let getPrice = $('span.money.conversion-bear-money.seal-money.ht-money').text();
-    let price = parseFloat(getPrice.replace(/[^0-9\.]/g, ''));
-    let discountPrice = price - (price * 0.15);
+    let getPrice =  parseFloat($('span.money.conversion-bear-money.seal-money.ht-money').text())
    setInterval(()=>{
-    $('#product-add-to-cart').append(`Add To Cart: $${discountPrice.toFixed(2)}`);
+    $('#product-add-to-cart').append(`Add To Cart: ${getPrice}`);
   }, 500);
 </script>
