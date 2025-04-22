@@ -8397,7 +8397,8 @@ p.sale_price_amount1 {
 }
 
 /* product page bundle css price*/
-.bundle_special_price_regular p,
+.bundle_special_price_regular span,
 span#bundle_special_price {
   font-size: 14px;
+  color: red;
 }
