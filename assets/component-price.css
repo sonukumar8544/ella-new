@@ -127,8 +127,7 @@
 
 .price.price--on-sale .price-item--regular .money {
   text-decoration: line-through;
-  /*font-size: calc(var(--font-body-size) + 2px)!important;*/
-  font-weight: var(--font-weight-normal) !important;
+  font-weight: 800 !important;
   color: var(--product-compare-price-color);
 }
 
