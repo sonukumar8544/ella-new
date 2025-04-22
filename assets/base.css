@@ -8380,3 +8380,9 @@ p.orginal_price1 {
   text-decoration: line-through;
   color: #737373;
 }
+p.sale_price_amount1 {
+  font-size: 15px;
+  color: red;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
