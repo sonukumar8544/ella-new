@@ -81,7 +81,7 @@
                       <p>Discount (20%): {{ discount | money }}</p>
                       <p>Discounted Price: {{ discounted_price | money }}</p>
 
-              <!-- <span class="price-item price-item--sale">{{ money_price }}</span> -->
+              <span class="price-item price-item--sale">{{ money_price }}</span>
             </dd>
           
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
