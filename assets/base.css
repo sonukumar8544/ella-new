@@ -8123,13 +8123,13 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
   display: block !important;
   /* color: #006a91; */
 }
-	.price-item--regular .money {
-color: #969696 !important;
- }
+.price-item--regular .money {
+  color: #969696 !important;
+}
 
 .price-item--sale .money {
-color: #e95144 !important; 
- }
+  color: #e95144 !important;
+}
 
 .tabs .tab .tab-title {
   font-family: Nunito;
@@ -8350,13 +8350,33 @@ dd.price__label_sale.price__label_percent {
   width: auto !important;
 }
 
-
-#shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--regular .money {
-    font-weight: 800;
-    color: #969696 !important;
+#shopify-section-template--24371123814696__main
+  .price.price--medium
+  .price-item
+  .price-item--regular
+  .money {
+  font-weight: 800;
+  color: #969696 !important;
 }
 
- #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--sale .money {
-    font-weight: 600;
-    color: #e95144 !important;
+#shopify-section-template--24371123814696__main
+  .price.price--medium
+  .price-item
+  .price-item--sale
+  .money {
+  font-weight: 600;
+  color: #e95144 !important;
+}
+
+/* 20%oFF For USA */
+dd#custom_proce_manage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+p.orginal_price1 {
+  white-space: nowrap;
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #737373;
 }

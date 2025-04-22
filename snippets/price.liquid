@@ -85,8 +85,9 @@
                       {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice = original_price | minus: discount %}
-                      <p class="orginal_price1 ">{{ original_price | money_with_currency }}</p>
                       <p class="sale_price_amount1"> {{ newSalePrice | money_with_currency }}</p>
+                      <p class="orginal_price1 ">{{ original_price | money_with_currency }}</p>
+              
 
              {% comment %}
                <span class="price-item price-item--sale">{{ money_price }}</span>
@@ -112,13 +113,13 @@
                     if compare  < 1
                         assign compare = product.compare_at_price_min | minus: product.price_min | times: 100.0 | divided_by: product.compare_at_price_min | round
                     endif
-                -%}<span class="label_sale label_sale_percent">(-{{ compare | append: '%'}})--CCC11</span>
+                -%}<span class="label_sale label_sale_percent">(-{{ compare | append: '%'}})</span>
             </dd>
             {%- endif -%}
         </div>
         <small class="unit-price caption{% if available == false or product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
             <dt class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</dt>
-            <dd class="price__last"><span>{{- product.selected_or_first_available_variant.unit_price | money -}}---DDD1</span>
+            <dd class="price__last"><span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
               <span aria-hidden="true">/</span>
               <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
               <span>{%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
