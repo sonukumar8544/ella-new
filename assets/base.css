@@ -8395,3 +8395,9 @@ p.sale_price_amount1 {
   font-size: 22px;
   margin: 10px 0px 0px 0px;
 }
+
+/* product page bundle css price*/
+.bundle_special_price_regular p,
+span#bundle_special_price {
+  font-size: 14px;
+}
