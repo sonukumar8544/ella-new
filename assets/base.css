@@ -8432,4 +8432,7 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
     display: grid !important;
     gap: 0px !important;
   }
+  .halo-cart-sidebar li.discounts__discount svg {
+    width: 12px;
+  }
 }
