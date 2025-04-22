@@ -69,10 +69,15 @@
             <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
               <span class="price-item price-item--sale sale_price_amount1">
               {% comment %}  {{ money_price }}{% endcomment %}
+                {% if localization.available_countries.size > 1 %}
+                {% assign currency = localization.country.currency.iso_code %}
+                {% if currency == 'USD' %}
               {% assign original_price = compare_at_price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign new_saleprice = original_price | minus: discount %}
                      {{ new_saleprice | money_with_currency }}
+                   {% endif %}
+                   {% endif %}
               </span>
             </dd>
           <dd class="price__compare" data-compare="{{compare_at_price}}">
