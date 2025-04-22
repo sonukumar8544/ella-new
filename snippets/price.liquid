@@ -76,8 +76,8 @@
                      {{ new_saleprice | money_with_currency }}
               </span>
             </dd>
-          <dd class="price__compare" data-compare="{{compare_at_price}}">
-              <s class="price-item price-item--regular" style="font-weight: 800;">
+          <dd class="price__compare" data-compare="{{compare_at_price}}" style="font-weight: 800;">
+              <s class="price-item price-item--regular" >
                 {% if settings.currency_format_enable %}
                   {{ compare_at_price | money_with_currency }} +
                 {% else %}
