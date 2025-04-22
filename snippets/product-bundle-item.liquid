@@ -130,16 +130,28 @@
                     {%- if product.compare_at_price > product.price -%}
                         <div class="price-sale clearfix">
                             <span class="bundle_special_old old-price">
-                                {{ product.variants[0].compare_at_price | money }}
+                                  {{ product.variants[0].price | money }}
+                               {% comment %} original before 20%{{ product.variants[0].compare_at_price | money }}{% endcomment %}
                             </span>
                             <span id="bundle_special_price" class="special-price" data-bundle-product-price>
-                                {{ product.variants[0].price | money }}
+                               {% comment %} original before 20%   {{ product.variants[0].price | money }}{% endcomment %}
+                      {% assign original_price = product.variants[0].price %}
+                                  {% assign discount = original_price | times: 0.2 %}
+                                  {% assign bundlenewprice = original_price | minus: discount %}
+                      {{ bundlenewprice }}
                             </span>
                         </div>
                     {%- else -%}
+                      <span class="bundle_special_old old-price">
+                               {{ product.variants[0].price | money }}
+                            </span>
                         <div class="price-regular bundle_special_price_regular" >
                             <span data-bundle-product-price>
-                                {{ product.variants[0].price | money }}
+                      {% assign original_price = product.variants[0].price %}
+                                  {% assign discount = original_price | times: 0.2 %}
+                                  {% assign bundlenewprice1 = original_price | minus: discount %}
+                      {{ bundlenewprice1 }}
+                               {% comment %} original before 20%    {{ product.variants[0].price | money }}{% endcomment %}
                             </span>
                         </div>
                     {%- endif -%}
