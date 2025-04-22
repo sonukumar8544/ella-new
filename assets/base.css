@@ -8419,6 +8419,13 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 }
 
 /* cart mobile view 20% css */
+.halo-cart-sidebar .previewCartItem-price .previewCartItem-saving-price {
+  display: grid !important;
+  gap: 0px !important;
+}
+.halo-cart-sidebar li.discounts__discount svg {
+  width: 12px;
+}
 @media (max-width: 768px) {
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
@@ -8427,12 +8434,5 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
   }
   .previewCartItem-qty {
     min-width: 76px;
-  }
-  .halo-cart-sidebar .previewCartItem-price .previewCartItem-saving-price {
-    display: grid !important;
-    gap: 0px !important;
-  }
-  .halo-cart-sidebar li.discounts__discount svg {
-    width: 12px;
   }
 }
