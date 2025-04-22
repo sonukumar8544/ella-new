@@ -51,16 +51,16 @@
                     <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
                 </dt>
             {%- endcomment -%}
-            <dd class="price__last" id="custom_proce_manage"><span class="price-item price-item--regular">
+            <dd class="price__last" id="custom_proce_manage">
                                                        {% comment %}
-                                                               existing code====>>>   {{ money_price }}        
+                                                          <span class="price-item price-item--regular">     existing code====>>>   {{ money_price }}    </span>       
                                                               {% endcomment %}  
             {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign newSalePrice1 = original_price | minus: discount %}
                       <p class="sale_price_amount1"> {{ newSalePrice1 | money_with_currency }}</p>
                       <p class="orginal_price1">{{ original_price | money_with_currency }}</p>
-            </span></dd>
+         </dd>
         </div>
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
             {%- comment -%}
