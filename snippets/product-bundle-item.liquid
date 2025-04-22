@@ -133,7 +133,7 @@
                            
                             <span id="bundle_special_price" class="special-price" data-bundle-product-price>
                                {% comment %} original before 20%   {{ product.variants[0].price | money }}{% endcomment %}
-                      {{ product.variants[0].compare_at_price }}---->
+                      {{ product.variants[0].compare_at_price | money}}---->
                                       {% assign original_price1 = product.variants[0].compare_at_price %}
                                       {% assign discount1 = original_price1 | times: 0.2 %}
                                       {% assign bundlenewprice1 = original_price1 | minus: discount1 %}
