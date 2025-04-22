@@ -125,23 +125,40 @@
                     </a>
                 </div>
             {%- endif -%}
+            <!-- product-bundle-item -->
             <div class="bundle-product-price">
-                <div class="price-box card-price">
+                <div class="price-box card-price" id="custom_proce_manage">
                     {%- if product.compare_at_price > product.price -%}
-                        <div class="price-sale clearfix">
-                            <span class="old-price">
-                                {{ product.variants[0].compare_at_price | money }}
+                        <div class="price-sale clearfix" >
+                           
+                            <span id="bundle_special_price" class="special-price" data-bundle-product-price>
+                               {% comment %} original before 20%   {{ product.variants[0].price | money }}{% endcomment %}
+                
+                                      {% assign original_price1 = product.variants[0].compare_at_price %}
+                                      {% assign discount1 = original_price1 | times: 0.2 %}
+                                      {% assign bundlenewprice1 = original_price1 | minus: discount1 %}
+                                      {{ bundlenewprice1 | money_with_currency}}
                             </span>
-                            <span class="special-price" data-bundle-product-price>
-                                {{ product.variants[0].price | money }}
+                           <span class="bundle_special_old old-price">
+                                 {{ product.variants[0].compare_at_price | money_with_currency }}
                             </span>
                         </div>
                     {%- else -%}
-                        <div class="price-regular">
+                     
+                        <div class="price-regular bundle_special_price_regular" >
                             <span data-bundle-product-price>
-                                {{ product.variants[0].price | money }}
+                      {% assign original_price2 = product.variants[0].price %}
+                                  {% assign discount2 = original_price2 | times: 0.2 %}
+                                  {% assign bundlenewprice2 = original_price2 | minus: discount2 %}
+                                      {{ bundlenewprice2 | money_with_currency }}
+                               {% comment %} original before 20%    {{ product.variants[0].price | money }}{% endcomment %}
                             </span>
+                          
                         </div>
+                   <span class="bundle_special_old old-price">
+                               {{ product.variants[0].price | money_with_currency }}
+                            </span>
+                  
                     {%- endif -%}
                 </div>
             </div>
