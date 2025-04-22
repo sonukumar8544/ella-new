@@ -51,13 +51,15 @@
                     <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
                 </dt>
             {%- endcomment -%}
-            <dd class="price__last"><span class="price-item price-item--regular">
-                    {%- comment -%}{{ money_price }} {%- endcomment -%}
-             {% assign original_price1 = price %}
-                      {% assign discount1 = original_price1 | times: 0.2 %}
-                      {% assign new_saleprice1 = original_price1 | minus: discount1 %}
-                     {{ new_saleprice1 | money_with_currency }}
-            </span></dd>
+            <dd class="price__last">
+              <span class="price-item price-item--regular">{{ money_price }}</span>
+              <span class="price-item price-item--regular">
+                {% assign original_price1 = price %}
+                {% assign discount1 = original_price1 | times: 0.2 %}
+                {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+                {{ new_saleprice1 | money_with_currency }}
+            </span>
+            </dd>
         </div>
 
       
