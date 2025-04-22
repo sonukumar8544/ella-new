@@ -223,13 +223,13 @@
                                              assign allowOutStockSale = false
                                            endif
                                         -%}
-                                      --
+                                      
                                         <button type="submit" name="add" data-btn-addToCart data-inventory-quantity="{{ current_variant.inventory_quantity }}" data-available="{{ allowOutStockSale }}" class="product-form__submit button button--primary an-{{ atc_animation }}{% if first_inventory == 0 %} button-text-change{% else %}{% if show_subtotal_text %} button-text-change{% endif %}{% endif %}{% if settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' %} button-not-animation{% endif %}" id="product-add-to-cart">
                                             {%- if first_inventory > 0 -%}
                                                 {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                     {%- assign subtotal = subtotal | strip_html -%}
 
-                                                    {{ 'products.product.sub_total' | t : value : subtotal }}
+                                                    {{ 'products.product.sub_total' | t : value : subtotal }}--
                                                 {%- else -%}
                                                     {{ 'products.product.add_to_cart' | t}}
                                                 {%- endif -%}
@@ -241,9 +241,9 @@
                                         <button type="submit" name="add" data-btn-addToCart class="product-form__submit button button--secondary an-{{ atc_animation }}{% if show_subtotal_text %} button-text-change{% endif %}{% if settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' %} button-not-animation{% endif %}" id="product-add-to-cart">
                                             {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                 {%- assign subtotal = subtotal | strip_html -%}
-                                                {{ 'products.product.sub_total' | t : value : subtotal }}
+                                                {{ 'products.product.sub_total' | t : value : subtotal }}++
                                             {%- else -%}
-                                                {{ 'products.product.add_to_cart' | t}}
+                                                {{ 'products.product.add_to_cart' | t}}++
                                             {%- endif -%}
                                         </button>
                                     {%- endif -%}
