@@ -309,10 +309,11 @@
 }
 </style>
 <script>
-  setInterval(()=>{
+ 
     let getPrice = $('span.money.conversion-bear-money.seal-money.ht-money').text();
     let price = parseFloat(getPrice.replace(/[^0-9\.]/g, ''));
     let discountPrice = price - (price * 0.15);
+   setInterval(()=>{
     $('#product-add-to-cart').append(`Add To Cart: $${discountPrice.toFixed(2)}`);
   }, 500);
 </script>
