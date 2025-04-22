@@ -133,15 +133,14 @@
                            
                             <span id="bundle_special_price" class="special-price" data-bundle-product-price>
                                {% comment %} original before 20%   {{ product.variants[0].price | money }}{% endcomment %}
-                      {{ product.variants[0].compare_at_price | money}}--A-->
+                
                                       {% assign original_price1 = product.variants[0].compare_at_price %}
                                       {% assign discount1 = original_price1 | times: 0.2 %}
                                       {% assign bundlenewprice1 = original_price1 | minus: discount1 %}
-                                      {{ bundlenewprice1 | money_with_currency}}--B->
+                                      {{ bundlenewprice1 | money_with_currency}}
                             </span>
                            <span class="bundle_special_old old-price">
-                                  {{ product.variants[0].price | money_with_currency }}-C-->
-                               {% comment %} original before 20%{{ product.variants[0].compare_at_price | money }}{% endcomment %}
+                                 {{ product.variants[0].compare_at_price | money }}
                             </span>
                         </div>
                     {%- else -%}
