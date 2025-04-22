@@ -72,14 +72,14 @@
                existing code====>>>  <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
               <span class="price-item price-item--sale">{{ money_price }}</span></dd>
             {% endcomment %}
-            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}" id="custom_proce_manage">
                       {% assign original_price = price %}
                       {% assign discount = original_price | times: 0.2 %}
                       {% assign discounted_price = original_price | minus: discount %}
                       
-                      <p>Original Price: {{ original_price | money }}</p>
-                      <p>Discount (20%): {{ discount | money }}</p>
-                      <p>Discounted Price: {{ discounted_price | money }}</p>
+                      <p class="orginal_price">{{ original_price | money }}</p>
+                      <p class="discpunt_amount"> {{ discount | money }}</p>
+                      <p class="sale_price_amount"> {{ discounted_price | money }}</p>
 
               <span class="price-item price-item--sale">{{ money_price }}</span>
             </dd>
