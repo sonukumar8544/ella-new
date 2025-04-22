@@ -310,6 +310,7 @@
 </style>
 <script>
  
-    let getPrice =  parseFloat($('span.money.conversion-bear-money.seal-money.ht-money').text())
-    $('#product-add-to-cart').append(`Add To Cart: ${getPrice}`);
+   let getPrice = parseFloat($('span.money.conversion-bear-money.seal-money.ht-money').text());
+$('#product-add-to-cart').text(`Add To Cart: ${getPrice}`);
+
 </script>
