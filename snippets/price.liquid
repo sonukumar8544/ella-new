@@ -81,8 +81,8 @@
               {% comment %}  {{ money_price }}{% endcomment %}
               {% assign original_price = compare_at_price %}
                       {% assign discount = original_price | times: 0.2 %}
-                      {% assign newSalePrice = original_price | minus: discount %}
-                     {{ newSalePrice | money_with_currency }}
+                      {% assign new_saleprice = original_price | minus: discount %}
+                     {{ new_saleprice | money_with_currency }}
               </span>
             </dd>
           
