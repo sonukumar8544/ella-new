@@ -311,6 +311,8 @@
 <script>
   setInterval(()=>{
     let getPrice = $('span.money.conversion-bear-money.seal-money.ht-money').text();
-    $('#product-add-to-cart').appned(getPrice);
+    let price = parseFloat(getPrice.replace(/[^0-9\.]/g, ''));
+    let discountPrice = price - (price * 0.15);
+    $('#product-add-to-cart').append(`Add To Cart: $${discountPrice.toFixed(2)}`);
   }, 500);
 </script>
