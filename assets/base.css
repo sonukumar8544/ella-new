@@ -8374,7 +8374,8 @@ dd#custom_proce_manage {
   align-items: center;
   gap: 7px;
 }
-.price.price--on-sale dd.price__compare s span .orginal_price1 span,
+.price.price--on-sale dd.price__compare s span,
+.orginal_price1 span,
 .orginal_price1 {
   white-space: nowrap;
   font-size: 14px;
