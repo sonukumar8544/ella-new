@@ -8230,11 +8230,6 @@ h5 {
   transition: box-shadow 0.3s ease;
 }
 /* App */
-.easyvideo_section {
-  padding-top: 25px !important;
-  padding-bottom: 65px !important;
-  background: #ffffff;
-}
 
 .brand-btn {
   background: #086b92;
@@ -8306,6 +8301,11 @@ div#tab-shipping-amp-returns-mobile {
     .product-block__banner {
     padding-right: calc(var(--grid-gap) * 2);
     width: 44% !important;
+  }
+  .easyvideo_section {
+    padding-top: 25px !important;
+    padding-bottom: 65px !important;
+    background: #ffffff;
   }
 }
 
