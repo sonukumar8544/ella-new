@@ -263,8 +263,8 @@
         "text_QLTm3Q"
       ],
       "custom_css": [
-        ".rich-text__text.rte .cstm-wecare {text-align: left; font-style: italic; line-height: 1.5em;}",
-        "@media (max-width: 768px) {.rich-text__text.rte .cstm-wecare {text-align: left; font-style: italic; line-height: 1.4em; }}"
+        ".rich-text__text.rte .cstm-wecare {text-align: center; font-style: italic; line-height: 1.5em;}",
+        "@media (max-width: 768px) {.rich-text__text.rte .cstm-wecare {text-align: center; font-style: italic; line-height: 1.4em; }}"
       ],
       "settings": {
         "id": "",
@@ -278,7 +278,7 @@
         "rich_text_bg": "#ffffff",
         "rich_text_bg_gradient": "",
         "enable_column": false,
-        "content_align": "left",
+        "content_align": "center",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
@@ -453,7 +453,7 @@
         "border_color": "#d0d0d0",
         "service_block_swipe_on_mobile": "slider",
         "color_icon_slider": "#212121",
-        "service_block_style": "style_1",
+        "service_block_style": "style_3",
         "policies_bg": "#ffffff",
         "policies_bg_gradient": "",
         "service_block_title": "",
@@ -489,7 +489,7 @@
         "item_padding_bottom": 13,
         "item_padding_left_right": 40,
         "item_radius": 4,
-        "grid_gap": 30,
+        "grid_gap": 20,
         "item_align": "center",
         "enable_block_bottom": false,
         "bg_block_bottom": "#000000",
