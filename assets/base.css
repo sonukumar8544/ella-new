@@ -8296,7 +8296,7 @@ div#tab-shipping-amp-returns-mobile {
   font-weight: 400 !important;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .product-block-has__banner.has__banner--left[data-width-banner="50"]
     .product-block__banner {
     padding-right: calc(var(--grid-gap) * 2);
