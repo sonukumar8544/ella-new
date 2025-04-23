@@ -129,6 +129,7 @@
     "swatch_type": "color",
     "customization_option_1": "Input Text",
     "customization_option_2": "Input File",
+    "show_wishlist": false,
     "show_saved_price": true,
     "enable_lazyload": true,
     "trust_image_product_1": "shopify://shop_images/image-trust_9cf48f22-6c8a-4a39-b604-64b168dc56be.jpg",
@@ -230,37 +231,37 @@
     "quick_cart_popular_product_arrows": true,
     "show_quick_edit_cart": false,
     "quick_edit_cart_picker_type": "dropdown",
-    "collection_image_1": "shopify://shop_images/SKINbgremove.png",
-    "collection_title_1": "Skin",
+    "collection_image_1": "shopify://shop_images/Healthy_Aging_ee0c4bc6-586e-49d3-991e-402d8ef7d7d7.png",
+    "collection_title_1": "Glowing Skin",
     "collection_url_1": "shopify://collections/skin-health",
-    "collection_image_2": "shopify://shop_images/GUTbgremove.png",
-    "collection_title_2": "Gut",
+    "collection_image_2": "shopify://shop_images/gut_fe2fa4f3-e712-4462-99d5-c1822cf81d89.png",
+    "collection_title_2": "A Happy Gut",
     "collection_url_2": "shopify://collections/gut-health",
     "collection_image_3": "shopify://shop_images/AGINGbgremove.png",
     "collection_title_3": "Healthy Aging",
     "collection_url_3": "shopify://collections/healthy-aging",
-    "collection_image_4": "shopify://shop_images/EYESbgremove.png",
-    "collection_title_4": "Eye",
+    "collection_image_4": "shopify://shop_images/Eyes_Health-01.png",
+    "collection_title_4": "Clear Vision",
     "collection_url_4": "shopify://collections/eye-health",
     "collection_image_5": "shopify://shop_images/BRAINbgremove.png",
-    "collection_title_5": "Brain",
+    "collection_title_5": "Mental Clarity",
     "collection_url_5": "shopify://collections/brain-health",
-    "collection_image_6": "shopify://shop_images/HEARTbgremove.png",
-    "collection_title_6": "Heart",
+    "collection_image_6": "shopify://shop_images/Heart_bf04348b-38a1-4c93-b678-f2b2544a5441.png",
+    "collection_title_6": "Heart Support",
     "collection_url_6": "shopify://collections/heart-health",
-    "collection_image_7": "shopify://shop_images/BONEbgremove.png",
-    "collection_title_7": "Bone",
+    "collection_image_7": "shopify://shop_images/BONE_6c8a4ed7-7c6e-45dd-9ac4-565cffe68071.png",
+    "collection_title_7": "Bone Health",
     "collection_url_7": "shopify://collections/bone-health",
-    "collection_image_8": "shopify://shop_images/MUSCLEbgremove.png",
+    "collection_image_8": "shopify://shop_images/Muscle_8bd3420c-ba30-4666-b993-9ab8a61439a1.png",
     "collection_title_8": "Muscle Strength",
     "collection_url_8": "shopify://collections/muscle-health",
-    "collection_image_9": "shopify://shop_images/IMMMUNEbgremove.png",
-    "collection_title_9": "Stronger Immune",
+    "collection_image_9": "shopify://shop_images/Immune_-01-01.png",
+    "collection_title_9": "Immunity",
     "collection_url_9": "shopify://collections/immune-health",
     "collection_image_10": "shopify://shop_images/HORMONEbgremove.png",
-    "collection_title_10": "Hormone Health",
+    "collection_title_10": "Hormones",
     "collection_url_10": "shopify://collections/hormone-health",
-    "collection_image_11": "shopify://shop_images/DETOXbgremove.png",
+    "collection_image_11": "shopify://shop_images/Detox_adb3d29a-1dc5-4b81-b37b-61c2177ba42d.png",
     "collection_title_11": "Body Detox",
     "collection_url_11": "shopify://collections/ultimate-detoxification-duo",
     "collect_all_button": "Continue Shipping",
@@ -957,17 +958,17 @@
         "disabled": true,
         "settings": {}
       },
+      "8776485610325655785": {
+        "type": "shopify://apps/hiko-social-login/blocks/hiko-auth/3832d7e1-5bcd-4b72-91da-236b57feef8f",
+        "disabled": false,
+        "settings": {
+          "social_font": "enable"
+        }
+      },
       "341186785192672687": {
         "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
         "disabled": false,
         "settings": {}
-      },
-      "8776485610325655785": {
-        "type": "shopify://apps/hiko-social-login/blocks/hiko-auth/3832d7e1-5bcd-4b72-91da-236b57feef8f",
-        "disabled": true,
-        "settings": {
-          "social_font": "enable"
-        }
       }
     }
   }

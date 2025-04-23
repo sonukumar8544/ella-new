@@ -1,3 +1,10 @@
+.btn-group.currency-dropdown a.dropdown-item.active {
+  text-decoration: underline;
+  background: #ffffff;
+  border-radius: 9px;
+  border: 1px solid #c3c3c3;
+}
+
 .menu-dropdown__block--title {
   font-size: 18px;
 }

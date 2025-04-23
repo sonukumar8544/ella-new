@@ -39,9 +39,7 @@
 
 .price--on-sale .price__sale {
   display: flex !important;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
 }
 
 .price-style-2.price--on-sale .price__sale {
@@ -208,5 +206,11 @@
 
   .price-item {
     line-height: calc(var(--product-price-font-size) * 0.75);
+  }
+}
+
+@media (max-width: 600px) {
+  .price--on-sale .price__sale {
+    align-items: end;
   }
 }
