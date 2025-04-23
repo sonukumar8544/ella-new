@@ -443,8 +443,9 @@
 
           </div>
           {%- if enable_image_right != blank -%}
+             {%- if image_right != blank -%}
             <div class="collapsible-image">
-              {%- if image_right != blank -%}
+             
                 <a
                   class="image image-custom image-adapt adaptive_height{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--fade-in{% endif %}"
                   {% if button_link_block_bottom == blank %}
@@ -465,21 +466,9 @@
                     <span class="data-lazy-loading"></span>
                   {%- endif -%}
                 </a>
-              {%- else -%}
-                <!-- <a
-                  class="image"
-                  {% if button_link_block_bottom == blank %}
-                  role="link"
-                  aria-disabled="true"
-                  {% else %}
-                  href="{{ button_link_block_bottom }}"
-                  {% endif %}>
-                  <div class="placeholder" style="--height_placeholder: clamp(300px, calc(640 / 1920 * 100vw), 640px);">
-                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                  </div> -->
-                </a>
-              {%- endif -%}
+           
             </div>
+                  {%- endif -%}
           {%- endif -%}
         </div>
       </div>
