@@ -393,7 +393,7 @@
       {% endif %}
       <div class="halo-block-content">
         <div class="collapsible-content faqs{% unless enable_image_right %} not_image_right{% endunless %}">
-          <div class="collapsible-grid">
+          <div class="collapsible-grid" {% if image_right != blank %}style="width:100%;"{% endif %}>
             <div class="collapsible-grid__item">
               {% for block in product.metafields.custom.we_product_info_content.value %}
                 {% assign parts = block | split: '|' %}
