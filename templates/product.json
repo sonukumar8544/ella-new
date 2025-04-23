@@ -363,9 +363,9 @@
         "main_image_position": "left",
         "main_image_layout": "1",
         "main_image_arrows_desktop": true,
-        "main_image_arrows_mobile": true,
-        "main_image_counter_mobile": true,
-        "main_image_enable_parallax_mb": true,
+        "main_image_arrows_mobile": false,
+        "main_image_counter_mobile": false,
+        "main_image_enable_parallax_mb": false,
         "main_image_show_zoom_icon_mb": false,
         "show_thumbnail_mobile": true,
         "thumnail_layout": "3",
@@ -535,8 +535,9 @@
       "block_order": [
         "large_img_3EwViL"
       ],
+      "disabled": true,
       "custom_css": [
-        "@media (min-width: 1024px) {.img-box.img-box--mobile {max-width: 83%; margin: auto; }}"
+        "@media (min-width: 1024px) {.img-box.img-box--mobile {max-width: 70%; margin: auto; }}"
       ],
       "settings": {
         "id_section": "",
@@ -568,6 +569,152 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50,
         "liquid_css": ""
+      }
+    },
+    "collapsiable_content_copy_rwPkJz": {
+      "type": "collapsiable-content-copy",
+      "blocks": {
+        "content_JKRbLA": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_JKRbLA"
+      ],
+      "custom_css": [
+        ".faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}",
+        ".faqs .faqs-item .card-header .title:after {background: none;}",
+        ".adaptive_height img.lazyloaded {border-radius: 8px;}"
+      ],
+      "settings": {
+        "id_section": "collapsable-content-copy",
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "{{ product.metafields.custom.we_product_information_title.value }}",
+        "color_title": "#374650",
+        "fontsize_title": 28,
+        "fontsize_title_mb": 22,
+        "collapsible_des": "{{ product.metafields.custom.we_product_information_description_new.value }}",
+        "color_des": "#374650",
+        "fontsize_des": 20,
+        "fontsize_des_mb": 16,
+        "max_width_des": 800,
+        "title_align": "center",
+        "enable_image_right": true,
+        "image_right": "{{ product.metafields.custom.we_product_info_image_new.value }}",
+        "bg_content_color": "#ffffff",
+        "content_color": "#374650",
+        "title_color": "#086b92",
+        "icon_color": "#374650",
+        "border_color": "#374650",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "collapsible_content_7qC8iH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_zqANGa": {
+          "type": "content",
+          "settings": {
+            "heading": "Cellular Health",
+            "content": "<p>Protects cells from oxidative stress, promoting long-term wellness and vitality.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_iXGTYe": {
+          "type": "content",
+          "settings": {
+            "heading": "Skin Radiance",
+            "content": "<p>Improves elasticity and reduces wrinkles for a youthful, glowing appearance.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_BmeD7H": {
+          "type": "content",
+          "settings": {
+            "heading": "Cardiovascular Support",
+            "content": "<p>Helps maintain healthy cholesterol levels and supports heart function.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_4QfCaK": {
+          "type": "content",
+          "settings": {
+            "heading": "Strong Bones",
+            "content": "<p>Encourages bone strength and density for lasting structural health.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_Pwzyi4": {
+          "type": "content",
+          "settings": {
+            "heading": "-Metabolism Boost",
+            "content": "<p>Optimizes energy production by supporting macronutrient metabolism.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_FUaYa4": {
+          "type": "content",
+          "settings": {
+            "heading": "Oxidative Defense",
+            "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.</p><p></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_zqANGa",
+        "content_iXGTYe",
+        "content_BmeD7H",
+        "content_4QfCaK",
+        "content_Pwzyi4",
+        "content_FUaYa4"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".section-block-template--24230844203304__collapsible_content_7qC8iH .faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}"
+      ],
+      "settings": {
+        "id_section": "product-page-new-section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "Noticeable Results in Just 8-12 Weeks",
+        "color_title": "#374650",
+        "fontsize_title": 28,
+        "fontsize_title_mb": 20,
+        "collapsible_des": "Feel the transformation—support your skin, heart, and overall vitality with consistent daily use.",
+        "color_des": "#374650",
+        "fontsize_des": 20,
+        "fontsize_des_mb": 16,
+        "max_width_des": 800,
+        "title_align": "center",
+        "enable_image_right": true,
+        "image_right": "shopify://shop_images/Eannatto_bd872cca-b936-45ef-add9-9db72464dbc7.png",
+        "bg_content_color": "#ffffff",
+        "content_color": "#374650",
+        "title_color": "#086b92",
+        "icon_color": "#8b8787",
+        "border_color": "#f1f1f1",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
       }
     },
     "product_page_title_with_link_CmniUe": {
@@ -764,7 +911,8 @@
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
-        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}"
+        "@media (min-width: 1024px) {.wrapper-content {border: 1px solid #086b92; }}",
+        ".wrapper-content {padding: 10px 0px; border-radius: 6px;}"
       ],
       "settings": {
         "id": "",
@@ -1522,12 +1670,18 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
+    },
+    "product_related_blog_section_kkNziq": {
+      "type": "product-related-blog-section",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
+    "collapsiable_content_copy_rwPkJz",
+    "collapsible_content_7qC8iH",
     "product_page_title_with_link_CmniUe",
     "rich_text_MT6wG9",
     "17447304680d8f83b6",
@@ -1538,6 +1692,7 @@
     "instagram_9EfqFH",
     "product_page_faq_section_HeHhtA",
     "spotlight_block_qnYcNH",
-    "featured_blog_7CQrDa"
+    "featured_blog_7CQrDa",
+    "product_related_blog_section_kkNziq"
   ]
 }
