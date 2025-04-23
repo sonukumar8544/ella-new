@@ -393,7 +393,7 @@
       {% endif %}
       <div class="halo-block-content">
         <div class="collapsible-content faqs{% unless enable_image_right %} not_image_right{% endunless %}">
-          <div class="collapsible-grid" {% if image_right != blank %}style="width:100%;" {% else %}{% endif %}>
+          <div class="collapsible-grid" {% if section.settings.image_right != blank %}style="width:100%;" {% else %}{% endif %}>
             <div class="collapsible-grid__item">
               {% for block in product.metafields.custom.we_product_info_content.value %}
                 {% assign parts = block | split: '|' %}
@@ -526,25 +526,30 @@
         "step": 5,
         "unit": "t:sections.layout.fontsize.fontsize_title.unit",
         "default": 0
-      }, {
+      },
+      {
         "type": "color",
         "id": "collapsible_bg",
         "label": "t:settings_schema.colors.settings.colors_name.background_color_2",
         "default": "#fff"
-      }, {
+      }, 
+      {
         "type": "color_background",
         "id": "collapsible_bg_gradient",
         "label": "t:settings_schema.colors.settings.colors_name.background_color_gradient"
-      }, {
+      }, 
+      {
         "type": "text",
         "id": "collapsible_title",
         "label": "t:sections.image-banner.blocks.image.settings.content.label__1"
-      }, {
+      },
+      {
         "type": "color",
         "id": "color_title",
         "label": "t:settings_schema.typography.settings.typography.title_color",
         "default": "#232323"
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "fontsize_title",
         "label": "t:settings_schema.typography.settings.typography.title_font_size",
@@ -553,7 +558,8 @@
         "step": 1,
         "unit": "t:sections.layout.fontsize.fontsize_title.unit",
         "default": 16
-      }, {
+      },
+      {
         "type": "range",
         "id": "fontsize_title_mb",
         "label": "t:settings_schema.typography.settings.typography.title_font_size_mb",
@@ -562,16 +568,19 @@
         "step": 1,
         "unit": "t:sections.layout.fontsize.fontsize_title.unit",
         "default": 16
-      }, {
+      }, 
+      {
         "type": "inline_richtext",
         "id": "collapsible_des",
         "label": "t:sections.image-banner.blocks.image.settings.content.label__2"
-      }, {
+      }, 
+      {
         "type": "color",
         "id": "color_des",
         "label": "t:settings_schema.typography.settings.typography.des_color",
         "default": "#3c3c3c"
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "fontsize_des",
         "label": "t:settings_schema.typography.settings.typography.des_font_size",
@@ -580,7 +589,8 @@
         "step": 1,
         "unit": "t:sections.layout.fontsize.fontsize_title.unit",
         "default": 16
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "fontsize_des_mb",
         "label": "t:settings_schema.typography.settings.typography.des_font_size_mb",
@@ -589,7 +599,8 @@
         "step": 1,
         "unit": "t:sections.layout.fontsize.fontsize_title.unit",
         "default": 12
-      }, {
+      }, 
+      {
         "type": "range",
         "id": "max_width_des",
         "label": "t:sections.main-about-page.blocks.content.settings.content_max_width",
@@ -598,7 +609,8 @@
         "step": 10,
         "unit": "t:sections.layout.mg_desktop.unit",
         "default": 700
-      }, {
+      }, 
+      {
         "type": "select",
         "id": "title_align",
         "label": "t:sections.general.settings.alignment.label__1",
