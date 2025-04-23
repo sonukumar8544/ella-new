@@ -1,3 +1,4 @@
+<!-- price-liquid -->
 {%- comment -%}
     Renders a list of product's price (regular, sale)
 
@@ -51,25 +52,54 @@
                     <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
                 </dt>
             {%- endcomment -%}
-            <dd class="price__last"><span class="price-item price-item--regular">{{ money_price }}</span></dd>
+            <dd class="price__last" id="custom_proce_manage">
+              <span class="sale_price_amount1">
+                {% assign original_price1 = price %}
+                {% assign discount1 = original_price1 | times: 0.2 %}
+                {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+                {{ new_saleprice1 | money_with_currency }}
+                  
+            </span>
+              <span class="price-item price-item--regular orginal_price1">{{ money_price }} </span>
+              
+            </dd>
         </div>
+
+      
         <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
-            {%- comment -%}
-                <dt class="price__compare">
-                    <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-                </dt>
-            {%- endcomment -%}
             
-            <dd class="price__compare" data-compare="{{compare_at_price}}"><s class="price-item price-item--regular">{% if settings.currency_format_enable %}{{ compare_at_price | money_with_currency }}{% else %}{{ compare_at_price | money }}{% endif %}</s></dd>
-            {%- comment -%}
-                <dt>
-                    <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-                </dt>
-            {%- endcomment -%}
-            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}"><span class="price-item price-item--sale">{{ money_price }}</span></dd>
+            <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+              <span class="price-item price-item--sale sale_price_amount1">
+              {% assign original_price = compare_at_price %}
+                      {% assign discount = original_price | times: 0.2 %}
+                      {% assign new_saleprice = original_price | minus: discount %}
+                     {{ new_saleprice | money_with_currency }}
+              </span>
+            </dd>
+          <dd class="price__compare" data-compare="{{compare_at_price}}">
+              <b class="price-item price-item--regular">
+                {% if settings.currency_format_enable %}
+                  {{ compare_at_price | money_with_currency }} 
+                {% else %}
+                {{ compare_at_price | money }}
+                {% endif %}
+                </b></dd>
+                              {%- comment -%}
+                              <dt class="price__compare">
+                              <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+                              </dt>
+                              {%- endcomment -%}
+                              {%- comment -%}
+                              <dt>
+                              <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+                              </dt>
+                              {%- endcomment -%}
             {%- if settings.show_saved_price and price != nil and price != blank and compare_at_price != nil and compare_at_price != blank -%}
                 {%- assign saved_price = compare_at_price | minus: price | money -%}
-                <div class="price__saved"><span class="price-item price-item--saved">{{'products.product.price.saved_price_html' | t: price: saved_price }}</span></div>
+                <div class="price__saved"><span class="price-item price-item--saved">
+              {{'products.product.price.saved_price_html' | t: price: saved_price }} ---CCC4
+              
+                </span></div>
             {%- endif -%}
 
             {%- if settings.show_price_percent -%}

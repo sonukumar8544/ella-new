@@ -766,12 +766,12 @@
                               <div class="halo-block-header">
                                   <h3 id="Comments-{{ article.id }}" class="title text-left">
                                       <span class="text">
-                                          {{ 'blogs.article.comments' | t: count: article.comments_count }}
+                                          {{ 'blogs.article.comments' | t: count: article.comments_count | minus: 1 }}
                                       </span>
                                   </h3>
                               </div>
                               {%- paginate article.comments by 5 -%}
-                                  <div class="article-template__comments">
+                                  <div class="sonu1111 article-template__comments">
                                       {%- if comment.status == 'pending' and comment.content -%}
                                           <article id="{{ comment.id }}" class="article-template__comments-comment">
                                               <h4 class="comment-author">
@@ -784,21 +784,24 @@
                                       {%- endif -%}
 
                                       {%- for comment in article.comments -%}
+                                        {%- unless forloop.first -%}
                                           <article id="{{ comment.id }}" class="article-template__comments-comment">
-                                              <div class="comment-user">
-                                                {% render 'icon-account-2' %}
+                                            <div class="comment-user">
+                                              {% render 'icon-account-2' %}
+                                            </div>
+                                            <div class="comment-content">
+                                              <div class="comment-created-at">
+                                                <span class="comment-date">{{ comment.created_at | date: "%d %b %Y" }}</span>
+                                                <span class="comment-author">{{ comment.author }}</span>
                                               </div>
-                                              <div class="comment-content">
-                                                <div class="comment-created-at">
-                                                    <span class="comment-date">{{ comment.created_at | date: "%d %b %Y"   }}</span>
-                                                    <span class="comment-author">{{ comment.author }}</span>
-                                                </div>
-                                                <div class="comment-body {{ comment.status }}">
-                                                    {{ comment.content }}
-                                                </div>
+                                              <div class="comment-body {{ comment.status }}">
+                                                {{ comment.content }}
                                               </div>
+                                            </div>
                                           </article>
+                                        {%- endunless -%}
                                       {%- endfor -%}
+                                      
                                       {% render 'pagination',
                                           paginate: paginate,
                                           class: 'order-pagination pagination-wrapper text-center',

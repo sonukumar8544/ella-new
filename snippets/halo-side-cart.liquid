@@ -112,19 +112,19 @@
                                     {% if item.original_price != item.final_price %}
                                         <span class="previewCartItem-saving-price">
                                             <s class="before-discount-price" data-item-original-price-display>
-                                                {{ item.original_price | money }}
+                                                {{ item.original_price | money_with_currency }}
                                             </s>
                                             <span class="discounted-price" data-item-final-price-display>
-                                                {{ item.final_price | money }}
+                                                {{ item.final_price | money_with_currency }}
                                             </span>
                                         </span>
                                     {% elsif current_variant.compare_at_price > current_variant.price %}
                                         <span class="previewCartItem-saving-price saved_compare_price" data-price-from-compare>
                                             <s class="before-discount-price">
-                                                {{ current_variant.compare_at_price | money }}
+                                                {{ current_variant.compare_at_price | money_with_currency }}
                                             </s>
                                             <span class="discounted-price">
-                                                {{ current_variant.price | money }}
+                                                {{ current_variant.price | money_with_currency }}
                                             </span>
                                         </span>
                                     {% else %}  
@@ -383,7 +383,7 @@
                     {{ 'sections.cart.subtotal' | t }}:
                 </div>
                 <div class="previewCartTotals-value" data-cart-subtotal>
-                    {{ cart.original_total_price | money }}
+                    {{ cart.original_total_price | money_with_currency }}
                 </div>  
             </li>       
             <li class="previewCartTotals cart-total-savings" {% if cart.total_discount == 0 %}style="display: none;"{% endif %} data-saved-discount-display>
@@ -396,10 +396,10 @@
                             {%- for discount in cart.cart_level_discount_applications -%}
                                 {%- render 'icon-discount' -%}
                                 {{ discount.title }}
-                                (-{{ discount.total_allocated_amount | money }})
+                                (-{{ discount.total_allocated_amount | money_with_currency }})
                             {%- endfor -%}
                         {%- else -%}
-                            {{ cart.total_discount | money | prepend: '-' }}
+                            {{ cart.total_discount | money_with_currency | prepend: '-' }}
                         {%- endif -%}
                     </span>
                 </div>  
@@ -409,7 +409,7 @@
                     {{ 'general.cart.total' | t }}
                 </div>  
                 <div class="previewCartTotals-value" data-cart-total-value="{{ cart.total_price }}">
-                    {{ cart.total_price | money }}
+                    {{ cart.total_price | money_with_currency }}
                 </div>
             </li>
             {% if settings.show_shipping_note %}
