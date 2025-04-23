@@ -333,61 +333,56 @@
                         <div id="table-of-contents"></div>
                         <style>
 
-      @media (max-width: 1024px) {
-      .header-with-sidebar {
-      display: flex;
-      flex-direction: row-reverse !important;
-      }
-      article#blog_page_single {
-      margin-left: 15px;
-      }
-      }
-      @media (min-width: 1024.1px) {
-      .header-with-sidebar {
-      display: none !important; 
-      }
-      }
-      
-      
-      
-      .filter-btn-mob-details{
-      border: 1px solid #006a91;
-      border-radius: 4px;
-      padding: 6px 10px;
-      color: #006a91;
-      }
-      @media (max-width: 500px) {
-      .author-top {
-      align-items: start;
-      flex-direction: column;
-      gap: 12px !important;
-      align-items: start !important;
-      }
-      }
-      .blog-author-details {
-      display: flex;
-      gap: 10px;
-      }
-      .blog-editor {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      }
-      .article-info-details {
-      margin-top: 20px;
-      margin-bottom: 15px;
-      font-style: italic;
-      }
-      .article-info-details p {
-      margin: 5px 0;
-      font-size: 16px;
-      color: #36454f;
-      }
-      .article-info-details .highlight {
-      font-weight: bold;
-      color: #086b92;
-      }
-      </style>
+@media (max-width: 1024px) {
+    .header-with-sidebar {
+        display: flex;
+        flex-direction: row-reverse !important;
+    }
+}
+@media (min-width: 1024.1px) {
+    .header-with-sidebar {
+        display: none !important; 
+    }
+}
+
+.filter-btn-mob-details{
+    border: 1px solid #006a91;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #006a91;
+}
+                              @media (max-width: 500px) {
+                                  .author-top {
+                                    align-items: start;
+                                    flex-direction: column;
+                                    gap: 12px !important;
+                                    align-items: start !important;
+                                  }
+                                }
+                            .blog-author-details {
+                               display: flex;
+                               gap: 10px;
+                            }
+                            .blog-editor {
+                               display: flex;
+                               gap: 12px;
+                               align-items: center;
+                            }
+                            .article-info-details {
+                              margin-top: 20px;
+                              margin-bottom: 15px;
+                              font-style: italic;
+                            }
+                            .article-info-details p {
+                              margin: 5px 0;
+                              font-size: 16px;
+                              color: #36454f;
+                            }
+                            .article-info-details .highlight {
+                              font-weight: bold;
+                              color: #086b92;
+                            }
+                          </style>
                            
                           {% assign word_count = article.content | strip_html | split: " " | size %}
                           {% assign reading_time = word_count | divided_by: 200 %}

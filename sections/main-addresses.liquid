@@ -13,7 +13,7 @@
       into an external JS file
     - There are separate 'add new' and 'edit' address forms
 {% endcomment %}
-<!--main-addresses  -->
+
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 {%- liquid
     assign container = section.settings.container
@@ -24,32 +24,29 @@
 
 <div class="account-page addresses-page">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
-              <div class="main_addresses_title"> 
-                 <div class="account-action">
-                                        <a href="{{ routes.account_url }}" class="link back-account link-underline">
-                                            <span class="text">{{ 'Back' }}</span>
-                                        </a>
-                                    </div>
-              <h1 class="page-header">
-              {{ 'customer.addresses.title' | t }}
-              </h1>
-              <button
-              class="button button--primary"
-                id="addNewaddresses1"
-              type="button"
-              aria-expanded="false"
-              aria-controls="AddAddress"
-              >
-              {{ '+ Add New Address'}}
-              </button>
-              </div>
+        <h1 class="page-header">
+            {{ 'customer.addresses.title' | t }}
+        </h1>
         <div class="halo-page-content addresses">
             <customer-addresses class="account" data-customer-addresses>
                 <div class="account-body">
                     {%- paginate customer.addresses by 5 -%}
                         <div class="account-item">
-                            <div class="account-content cstm_data_address">
+                            <div class="account-content">
                                 <div class="address-new" data-address>
+                                    <button
+                                        class="button button--primary"
+                                        type="button"
+                                        aria-expanded="false"
+                                        aria-controls="AddAddress"
+                                    >
+                                        {{ 'customer.addresses.add_new' | t }}
+                                    </button>
+                                    <div class="account-action">
+                                        <a href="{{ routes.account_url }}" class="link back-account link-underline">
+                                            <span class="text">{{ 'customer.account.return' | t }}</span>
+                                        </a>
+                                    </div>
                                     <div id="AddAddress" class="address-form">
                                         <h2 class="address-title text-left" id="AddressNewHeading">
                                             {{ 'customer.addresses.add_new' | t }}
@@ -115,12 +112,12 @@
                                                     <label class="form-label" for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
                                                     <input class="form-input form-input-placeholder" type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
                                                 </div>
-                                                <div class="form-field form-field--full cstm__default_checkbox">
+                                                <div class="form-field form-field--full">
                                                     {{ form.set_as_default_checkbox }}
                                                     <label class="form-label form-label--checkbox" for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
                                                 </div>
-                                                <div class="form-actions cstm_main_address">
-                                                    <button class="button button--primary cstm__add_btn">{{ 'customer.addresses.add' | t }}</button>
+                                                <div class="form-actions">
+                                                    <button class="button button--primary">{{ 'customer.addresses.add' | t }}</button>
                                                     <button class="button button--secondary" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
                                                 </div>
                                             </div>
@@ -190,13 +187,11 @@
                                         </li>
                                     {%- endfor -%}
                                 </ul>
-<!-- Edit Adddress -->
+
                                 {%- for address in customer.addresses -%}    
                                 <div id="EditAddress_{{ address.id }}" class="address-form" style="display:none;">
                                     <h2 class="address-title text-left">
-                                        {{ 'customer.addresses.edit_address' | t }}:
-                                     {{ address.first_name | uppercase }} {{address.last_name | uppercase }} 
-                                      {% if address == customer.default_address %}
+                                        {{ 'customer.addresses.edit_address' | t }}: {{ address.first_name | uppercase }} {{address.last_name | uppercase }} {% if address == customer.default_address %}
                                             <span class="default">{{ 'customer.addresses.default' | t }}</span>
                                           {% endif %}
                                     </h2>
@@ -288,11 +283,10 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="form-actions cstm_edit_address">
+                                        <div class="form-actions">
                                             <button class="button button--primary">{{ 'customer.addresses.update' | t }}</button>
                                             <button class="button button--secondary" type="reset" onclick="Shopify.CustomerAddress.toggleForm({{form.id}}); return false;">{{ 'customer.addresses.cancel' | t }}</button>
-                                    
-                                        </div><br>
+                                        </div>
                                     {%- endform -%}
                                 </div>
                                 {%- endfor -%}
@@ -327,12 +321,6 @@
         .section-block-{{section.id}} .container-full .halo-page-content {padding-left: 10px;padding-right: 10px}
     {%- endif -%}
   }
-  .addresses-page .address-new{
-    display:none;
-  }
-  .addresses-page .address-new.open__new{
-    display:block;
-  }
 </style>
 
 <script>
@@ -344,12 +332,6 @@
           return false;
         }
     }
-   $(document).ready(function() {
-  $('#addNewaddresses1').on('click', function() {
-    $('.addresses-page .address-new').toggleClass('open__new');
-  });
-});
-
 </script>
 
 {% schema %}

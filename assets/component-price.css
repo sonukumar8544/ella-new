@@ -39,7 +39,9 @@
 
 .price--on-sale .price__sale {
   display: flex !important;
-  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .price-style-2.price--on-sale .price__sale {
@@ -121,7 +123,6 @@
 
 .price.price--on-sale .price-item--sale .money {
   color: var(--product-sale-price-color);
-  white-space: nowrap;
 }
 
 .price.price--on-sale .price-item--regular .money {
@@ -207,11 +208,5 @@
 
   .price-item {
     line-height: calc(var(--product-price-font-size) * 0.75);
-  }
-}
-
-@media (max-width: 600px) {
-  .price--on-sale .price__sale {
-    align-items: end;
   }
 }
