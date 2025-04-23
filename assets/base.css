@@ -8448,6 +8448,9 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 #we-care-page .cstm__custom_service_block .halo-item.has-des {
   margin-bottom: 23px;
 }
+.template-page div#WhyShopwithUs h3.title span.text {
+  width: auto;
+}
 
 @media (max-width: 768px) {
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
