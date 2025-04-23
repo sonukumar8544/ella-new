@@ -1,10 +1,6 @@
 .halo-sidebar-wrapper {
   padding: 0px 0 20px;
 }
-li.discounts__discount svg {
-  height: 10px;
-  width: 10px;
-}
 #halo-cart-sidebar .previewCart {
   height: 88%;
 }
@@ -51,7 +47,6 @@ div#dynamic-checkout-cart {
 .card-price s.price-item.price-item--regular {
   color: #374650;
   font-size: 12px;
-  white-space: nowrap;
 }
 .text_details {
   margin: 0;

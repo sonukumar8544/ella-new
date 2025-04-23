@@ -1,13 +1,12 @@
-<!-- science-page-scientist-list -->
 <div class="science-mobile-container container">
   <h2 class="title-mob">Team of Scientists and Experts</h2>
   <div class="science-mobile-profile-section">
     {% for block in section.blocks %}
       <div class="science-mobile-profile-card">
         <div class="mobile-image-science-pag">
-          <img loading="lazy"
+          <img
             src="{{ block.settings.scientist_image | img_url: 'master' }}"
-            alt="{{ block.settings.scientist_image.alt }}" width="" height="" title=""
+            alt="{{ block.settings.scientist_image.alt }}"
             class="science-mobile-profile-image">
         </div>
         <div class="science-mobile-profile-details">
@@ -128,10 +127,10 @@
       slidesToShow: 2,
       slidesToScroll: 1,
       autoplay: true, // Enable autoplay
-      autoplaySpeed: 5000, // Delay between slides in ms
-      arrows: false, // Show next/prev arrows
-      // prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-      // nextArrow: '<button type="button" class="slick-next">Next</button>',
+      autoplaySpeed: 1000000, // Delay between slides in ms
+      arrows: true, // Show next/prev arrows
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+      nextArrow: '<button type="button" class="slick-next">Next</button>',
       responsive: [
         {
           breakpoint: 1024,
@@ -139,8 +138,6 @@
             slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
-            autoplay: true, 
-            autoplaySpeed: 5000,
             dots: true
           }
         },
@@ -150,8 +147,6 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
-             autoplay: true, // Enable autoplay
-      autoplaySpeed: 3000,
             dots: true
           }
         },
@@ -159,18 +154,14 @@
           breakpoint: 600,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
-             autoplay: true, // Enable autoplay
-      autoplaySpeed: 5000,
+            slidesToScroll: 1
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
-             autoplay: true, // Enable autoplay
-      autoplaySpeed: 5000,
+            slidesToScroll: 1
           }
         }
       ]

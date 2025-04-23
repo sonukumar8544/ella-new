@@ -5,15 +5,11 @@
     data-bundle-id="{{ current_variant.id }}" data-bundle-title="{{ product.title }}"
   {% endif %}
 >
-  {% if product.metafields.custom.product_badge_code.value != blank %}{{ product.metafields.custom.product_badge_code.value }}{% endif %}
-    <!-- <div class="productbadgenew"> -->
-        {% render 'cstm-product-badge',  product: product,
-        class: 'productView-badge',
-        badge_detail: true,
-        serial: 1 %}
-      
-    <!-- </div> -->
-  
+  {% if product.metafields.custom.product_badge_code.value != blank %}
+    <div class="productbadgenew">
+      {{ product.metafields.custom.product_badge_code.value }}
+    </div>
+  {% endif %}
   <a href="{{ product.url }}" title="" class="details-link1">
     {% if product.metafields.custom.product_badge_code.value != blank %}
     {% endif %}
