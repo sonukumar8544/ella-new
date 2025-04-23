@@ -8412,11 +8412,6 @@ dd#custom_proce_manage {
 .template-product .halo-productView-right .sale_price_amount1 span {
   font-size: 22px;
 }
-/* our story */
-#discover_ourstory .policies-content .policies-text,
-#discover_ourstory1 .policies-content .policies-text {
-  text-align: center !important;
-}
 
 /* product page bundle css price*/
 .bundle_special_price_regular span,
@@ -8442,6 +8437,13 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 .halo-cart-sidebar li.discounts__discount svg {
   width: 12px;
 }
+
+/* our story */
+#discover_ourstory .policies-content .policies-text,
+#discover_ourstory1 .policies-content .policies-text {
+  text-align: center !important;
+}
+
 @media (max-width: 768px) {
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
