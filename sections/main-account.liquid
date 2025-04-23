@@ -19,7 +19,7 @@
     assign container = section.settings.container
     assign padding_full_width = section.settings.padding_full_width
 -%}
-
+<!--main-account -->
 <div class="account-page my-account-page section-block-{{section.id}}">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
         <h1 class="page-header">
@@ -27,12 +27,13 @@
         </h1>
         <div class="halo-page-content">
             <div class="account">
+              <!--  -->
                 <div class="account-body">
                     <div class="account-item">
                         <h2 class="account-title text-left">
-                            {{ 'customer.orders.title' | t }}
+                            {{ 'My Addresses'}}
                         </h2>
-                        <div class="account-content">
+                        <div class="account-content cstm__account">
                             {% paginate customer.orders by 20 %}
                                 {%- if customer.orders.size > 0 -%}
                                     <table role="table" class="order-history">
@@ -108,39 +109,40 @@
                                             <div class="account-product">
                                                 <h3 class="account-product-title">
                                                     {{ address.first_name | capitalize }} {{ address.last_name | capitalize }}
+                                                   
+                                              
                                                     {%- if address == customer.default_address -%}
                                                         <span class="account-product-text">
                                                             {{ 'customer.addresses.default' | t }}
                                                         </span>
                                                     {%- endif -%}
                                                 </h3>
-                                                <ul class="account-product-detail list-unstyled">
-                                                    <li>{{ address.address1 }}</li>
-                                                    <li>{{ address.address2 }}</li>
-                                                </ul>
-                                                {%- if address.zip or address.country -%}
-                                                    <ul class="account-product-detail list-unstyled">
-                                                        <li>
-                                                            <span class="account-product-label">{{ 'customer.addresses.zip' | t }}: </span>
-                                                            {{ address.zip | upcase }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="account-product-label">{{ 'customer.addresses.country' | t }}: </span>
-                                                            {{ address.country }}
-                                                        </li>
-                                                    </ul>
-                                                {%- endif -%}
-                                                {%- if address.phone -%}
-                                                    <ul class="account-product-detail list-unstyled">
-                                                        <li>{{ address.phone }}</li>
-                                                    </ul>
-                                                {%- endif -%}
+                                                    <p class="account-product-detail list-unstyled">
+                                                      {%- if address.phone -%}
+                                                  <span>{{ address.phone }}, </span>  {%- endif -%}
+                                                    <span> {% if address.address1  %} {{ address.address1 }}, {% endif %}
+                                                    {% if address.address2  %}{{ address.address2 }},{% endif %}
+                                                    </span>
+                                                    {%- if address.zip or address.country -%}
+                                               
+                                                    <span>
+                                                    <span class="account-product-label">{{ 'customer.addresses.zip' | t }}: </span>
+                                                    {{ address.zip | upcase }},
+                                                    </span>
+                                                    <span>
+                                                    <span class="account-product-label">{{ 'customer.addresses.country' | t }}: </span>
+                                                    {{ address.country }}
+                                                    </span>
+                                                    
+                                                    {%- endif -%}
+                                                    
+                                                    </p>
                                             </div>
                                         </li>
                                     {%- endfor -%}
                                 </ul>
                                 <div class="account-action">
-                                    <a href="{{ routes.account_addresses_url }}" class="button button--primary">
+                                    <a href="{{ routes.account_addresses_url }}" class="button button--primary cstm__btn">
                                         <span class="text">{{ 'customer.account.view_addresses' | t }} <span class="count">{{ customer.addresses_count }}</span></span>
                                     </a>
                                 </div>
@@ -149,7 +151,7 @@
                                     <svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="25" cy="25" fill="none" r="24" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><rect fill="none" height="50" width="50"/><path d="M23.779,16.241c-0.216,0-0.357-0.144-0.357-0.359v-2.618c0-0.215,0.142-0.359,0.357-0.359h2.439  c0.215,0,0.359,0.144,0.359,0.359v2.618c0,0.215-0.145,0.359-0.359,0.359H23.779z M23.852,37.293c-0.215,0-0.358-0.143-0.358-0.358  V20.473c0-0.215,0.144-0.359,0.358-0.359h2.295c0.216,0,0.359,0.144,0.359,0.359v16.462c0,0.216-0.144,0.358-0.359,0.358H23.852z"/></svg> {{ 'customer.addresses.none' | t }}
                                 </div>
                                 <div class="account-action">
-                                    <a href="{{ routes.account_addresses_url }}" class="button button--primary">
+                                    <a href="{{ routes.account_addresses_url }}" class="button button--primary cstm_btn2">
                                       {{ 'customer.account.view_addresses' | t }} <span class="count">{{ customer.addresses_count }}</span>
                                     </a>
                                 </div>
@@ -181,6 +183,42 @@
         .section-block-{{section.id}} .container-full .halo-page-content {padding-left: 10px;padding-right: 10px}
     {%- endif -%}
   }
+  .cstm__btn,
+  .seal-portal-link .standard-link{
+    background: #086b92;
+    border-color: #086b92;
+    color: #fff;
+    border-radius: 5px !important;
+    font-size: calc(var(--btn-1-font-size) * .8);
+    line-height: calc(var(--btn-1-line-height) * .8);
+    box-shadow: 0 0 8px #0000004d;
+    display: block;
+    width: 100%;
+    font-family: var(--btn-1-font-family);
+    font-size: var(--btn-1-font-size);
+    font-weight: var(--btn-1-font-weight);
+    text-transform: var(--btn-1-text-transform);
+    text-align: var(--btn-1-text-align);
+    letter-spacing: var(--btn-1-letter-spacing);
+    line-height: var(--btn-1-line-height);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: var(--btn-1-border-radius);
+    border-style: var(--btn-1-border-style);
+    border-width: var(--btn-1-border-width);
+    min-width: 130px;
+    max-width: 100%;
+    padding-top: var(--btn-1-padding-top);
+    padding-bottom: var(--btn-1-padding-bottom);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    outline: none!important;
+    box-shadow: var(--btn-1-horizontal-length) var(--btn-1-vertical-length) var(--btn-1-blur-radius) var(--btn-1-spread) var(--btn-1-all-bg-opacity) var(--btn-1-inset);
+    cursor: pointer;
+    position: relative;
+}
 </style>
 
 {% schema %}

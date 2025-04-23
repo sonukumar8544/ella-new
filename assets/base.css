@@ -43,6 +43,17 @@ html.no-js .no-js-hidden {
 #hubspot-messages-iframe-container.widget-align-right {
   /* bottom: 17% !important; */
 }
+/* Easy Video Section */
+.easyvideo_gallery h2 {
+  margin-bottom: 48px !important;
+}
+
+@media (max-width: 768px) {
+  .easyvideo_gallery h2 {
+    margin-bottom: 32px !important;
+    font-size: 28px !important;
+  }
+}
 
 body {
   font-family: var(--font-body-family);
@@ -8168,9 +8179,9 @@ h5 {
   color: #36454f;
 }
 
-.easyvideo_gallery h2 {
+/* .easyvideo_gallery h2 {
   display: none;
-}
+} */
 .splide__slide .nm-ev-center img.add_splide {
   max-height: inherit;
 }
@@ -8297,7 +8308,11 @@ div#tab-shipping-amp-returns-mobile {
     width: 44% !important;
   }
 }
-
+@media (max-width: 767px) {
+  .easyvideo_section {
+    padding-bottom: 5px !important;
+  }
+}
 .easyvideo_section {
   padding: 0px 5px;
 }

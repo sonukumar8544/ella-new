@@ -544,6 +544,12 @@
                                                             {% if zoomed_image and main_image_show_custom_cursor != true %} data-zoom-image="{{ media.preview_image | img_url: 'master' }}"{% endif %} 
                                                             {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | img_url: 'master' }}" {% endif %}
                                                         >
+                                                        {% if localization.available_countries.size > 1 %}
+                                                        {% assign currency = localization.country.currency.iso_code %}
+                                                        {% if forloop.index == 1 and currency == 'CAD' %}
+                                                        <img id="product_stamp" src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/CAD_Stamp.png?v=1745232776" title="" alt="" width="" height="" loading="lazy">
+                                                        {% endif %}
+                                                            {% endif %}
                                                             <img id="product-featured-image-{{ media.id }}"
                                                                 {% if settings.enable_lazyload and forloop.first == false %}data-{% endif %}srcset="{{ media.preview_image | img_url: 'master' }}"
                                                                 {% unless settings.enable_lazyload and forloop.first == false %}src="{{ media | img_url: 'master' }}"{% endunless %}

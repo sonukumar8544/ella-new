@@ -393,7 +393,7 @@
         "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/SKINbgremove.png",
+            "image": "shopify://shop_images/Healthy_Aging_ee0c4bc6-586e-49d3-991e-402d8ef7d7d7.png",
             "title": "Glowing Skin",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -405,7 +405,7 @@
         "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/GUT_c399994b-97a6-40e4-b4f2-905c314f5d67.png",
+            "image": "shopify://shop_images/gut_fe2fa4f3-e712-4462-99d5-c1822cf81d89.png",
             "title": "A Happy Gut",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -429,7 +429,7 @@
         "bf8d3101-7b0f-473f-9518-37843c89a01d": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/EYESbgremove.png",
+            "image": "shopify://shop_images/Eyes_Health-01.png",
             "title": "Clear Vision",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -441,7 +441,7 @@
         "14647100-8949-4e6d-bdd9-9cbcf385d3b0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMMMUNEbgremove.png",
+            "image": "shopify://shop_images/Immune_-01-01.png",
             "title": "Stronger Immunity",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -453,7 +453,7 @@
         "968532e7-c107-46a9-8870-68fa9f842f1f": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/MUSCLE_fe82e055-de31-427b-832a-0c476d9311ff.png",
+            "image": "shopify://shop_images/Muscle_8bd3420c-ba30-4666-b993-9ab8a61439a1.png",
             "title": "Muscle Strength & More Energy",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -477,7 +477,7 @@
         "image_ktXgfw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HEARTbgremove.png",
+            "image": "shopify://shop_images/Heart_bf04348b-38a1-4c93-b678-f2b2544a5441.png",
             "title": "Heart Support",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -513,7 +513,7 @@
         "image_K8bjTV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/DETOXbgremove.png",
+            "image": "shopify://shop_images/Detox_adb3d29a-1dc5-4b81-b37b-61c2177ba42d.png",
             "title": "Body Detox",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -1998,6 +1998,7 @@
       "blocks": {
         "heading_6kiENX": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Voices of Satisfaction ",
             "heading_size": 40,
@@ -2010,6 +2011,7 @@
       "block_order": [
         "heading_6kiENX"
       ],
+      "disabled": true,
       "settings": {
         "id": "instafram__video_title",
         "container": "container",
