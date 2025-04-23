@@ -8412,6 +8412,11 @@ dd#custom_proce_manage {
 .template-product .halo-productView-right .sale_price_amount1 span {
   font-size: 22px;
 }
+/* our story */
+#discover_ourstory .custom-service-block .policies-content .policies-text,
+#discover_ourstory1 .custom-service-block .policies-content .policies-text {
+  text-align: center !important;
+}
 
 /* product page bundle css price*/
 .bundle_special_price_regular span,
