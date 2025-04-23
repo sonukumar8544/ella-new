@@ -148,142 +148,6 @@
         "liquid_css": ""
       }
     },
-    "rich_text_Uwpt7Y": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_DbULiB": {
-          "type": "heading",
-          "settings": {
-            "heading": "3C’s for WELLNESS",
-            "heading_size": 45,
-            "heading_size_mb": 30,
-            "heading_line_height": 1,
-            "heading_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "heading_DbULiB"
-      ],
-      "settings": {
-        "id": "",
-        "container": "fullwidth",
-        "padding_full_width": 0,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#ffffff",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": -100,
-        "rich_text_bg": "#006b92",
-        "rich_text_bg_gradient": "",
-        "enable_column": false,
-        "content_align": "center",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
-      }
-    },
-    "policies_block_48DLaK": {
-      "type": "policies-block",
-      "blocks": {
-        "text_kLdgtJ": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/icon-1.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "Collaborate",
-            "font_size_text": 20,
-            "font_size_text_mb": 16,
-            "mg_bottom_text": 0,
-            "font_weight_text": "600",
-            "font_style_text": "normal",
-            "description": "",
-            "link": ""
-          }
-        },
-        "text_KG36x8": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/icon-2.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 10,
-            "icon_height": 8,
-            "icon_mg_right": 20,
-            "text": "",
-            "font_size_text": 20,
-            "font_size_text_mb": 18,
-            "mg_bottom_text": 0,
-            "font_weight_text": "700",
-            "font_style_text": "normal",
-            "description": "",
-            "link": ""
-          }
-        },
-        "text_MAJY8A": {
-          "type": "Text",
-          "settings": {
-            "image": "shopify://shop_images/icon-3.png",
-            "icon_type": "image",
-            "icon": "",
-            "icon_width": 30,
-            "icon_height": 30,
-            "icon_mg_right": 20,
-            "text": "Clarity",
-            "font_size_text": 20,
-            "font_size_text_mb": 18,
-            "mg_bottom_text": 0,
-            "font_weight_text": "700",
-            "font_style_text": "normal",
-            "description": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_kLdgtJ",
-        "text_KG36x8",
-        "text_MAJY8A"
-      ],
-      "custom_css": [],
-      "settings": {
-        "container": "container",
-        "padding_full_width": 0,
-        "policies_block_swipe_on_mobile": "slider",
-        "spacing_tablet": 0,
-        "spacing_mobile": 10,
-        "policies_bg": "#006a91",
-        "policies_bg_gradient": "",
-        "border": "none",
-        "border_color": "#000000",
-        "border_item": "none",
-        "item_color_border": "#374650",
-        "align_items": "center",
-        "text_align_items": "center",
-        "enable_item_distance": true,
-        "item_padding_top": 13,
-        "item_padding_bottom": 13,
-        "item_padding_left_right": 96,
-        "item_radius": 0,
-        "bg_color_block": "rgba(0,0,0,0)",
-        "border_block": "rgba(0,0,0,0)",
-        "color_block": "#ffffff",
-        "color_icon": "#3c3c3c",
-        "mg_top_desktop": 40,
-        "mg_top_tablet": 40,
-        "mg_top_mobile": 40,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50
-      }
-    },
     "brand_slider_tRACcq": {
       "type": "brand-slider",
       "blocks": {
@@ -318,7 +182,7 @@
             "title": "Clarity",
             "color_text": "#FFFFFF",
             "color_text_hover": "#f8f8f8",
-            "description": "Ethically Sourced,<br> GMP-Certified",
+            "description": "",
             "color_des": "#374650",
             "link": "#"
           }
@@ -378,10 +242,10 @@
         "brand_speed": "4000",
         "data-brands-slider": false,
         "slider_layout_3_no_round": false,
-        "brand_rows": "5",
-        "enable_arrows": true,
-        "enable_dots": false,
-        "enable_center_mode": false,
+        "brand_rows": "4",
+        "enable_arrows": false,
+        "enable_dots": true,
+        "enable_center_mode": true,
         "style_position_arrows": "arrows_2",
         "position_horizontal_arrow": 25,
         "color_arrow": "",
@@ -392,7 +256,7 @@
         "arrow_background_hover": "",
         "arrow_background_gradient_hover": "",
         "arrow_border_hover": "",
-        "brand_rows_mb": "2",
+        "brand_rows_mb": "1",
         "brand_image_ratio": "square",
         "item_distance": 0,
         "margin_bottom_image": 12,
@@ -1186,8 +1050,6 @@
   "order": [
     "main",
     "image_banner_Wipaym",
-    "rich_text_Uwpt7Y",
-    "policies_block_48DLaK",
     "brand_slider_tRACcq",
     "image_banner_ggwTzF",
     "job_post_career_page_M7ijpR",
