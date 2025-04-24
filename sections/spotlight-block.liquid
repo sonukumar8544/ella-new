@@ -345,9 +345,18 @@
           div#cstm_all_ingredients .halo-item .spotlight-item{
             border: 1px solid #c3c3c3;
             border-radius: 12px;
+            margin-bottom:30px;
+          }
+          #cstm_all_ingredients .halo-row{
+          justify-content: flex-start;
+          }
+      
+        @media (max-width: 551px) {
+  div#cstm_all_ingredients .halo-item .spotlight-item{
+           
             margin-bottom:20px;
           }
-        @media (max-width: 551px) {
+                  
             {%- if section.settings.disable_padding_content -%}
                 .section-block-{{section.id}} .container-full .halo-block-header{padding-left: 10px;padding-right: 10px}
             {%- endif -%}
