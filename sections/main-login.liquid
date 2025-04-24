@@ -59,9 +59,9 @@
                               </div>
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <label class="form-label" for="RecoverEmail">
-                                  {{ 'customer.login_page.email' | t }}
-                              </label>
+                              <!-- <label class="form-label" for="RecoverEmail">
+                                  
+                              </label> -->
                               <input class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
                                   type="email"
                                   value=""
@@ -75,7 +75,7 @@
                                       aria-describedby="RecoverEmail-email-error"
                                       autofocus
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.login_page.email' | t }}"
                               >
                           </div>
                           <div class="form-actions">
@@ -131,8 +131,8 @@
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
                               <label class="form-label" for="CustomerEmail">
-                                  {{ 'customer.login_page.email' | t }}
-                                  <em>*</em>
+                                
+                                  
                               </label>
                               <input
                                   class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
@@ -146,7 +146,7 @@
                                   {% if form.errors contains 'form' %}
                                       aria-invalid="true"
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.login_page.email' | t }}<em>*</em>"
                                   aria-required="true"
                                   aria-invalid="true"
                                   required
