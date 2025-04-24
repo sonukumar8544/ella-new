@@ -184,7 +184,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Geranylgeraniol.png",
-             "title_align": "center",
+            "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -238,7 +238,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Astaxanthin_2b388498-1563-4b52-9fc9-b9c9e7a323ec.png",
-             "title_align": "center",
+            "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -292,6 +292,8 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/coq10_681a171f-e075-4478-a453-0955ca4d423e.png",
+            "title_align": "center",
+            "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
             "align_items_spacing_top_bottom_position_mb": 0,
@@ -344,6 +346,8 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/humic_acid_61e31f2c-d1a1-49aa-aaaf-c7628033ab9b.png",
+            "title_align": "center",
+            "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
             "align_items_spacing_top_bottom_position_mb": 0,
@@ -450,7 +454,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/zeolite_5cd4d3c6-ed34-4386-8eda-6057661f980e.png",
-           "title_align": "center",
+            "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -504,7 +508,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Bovine_Colostrum_2_1_a93983fc-347e-43f1-99ff-4d22b4f54a13.png",
-             "title_align": "center",
+            "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -558,7 +562,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/coffee_beans_1.png",
-             "title_align": "center",
+            "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -681,7 +685,7 @@
         "mg_top_button": 11,
         "mg_bottom_button": 13,
         "enable_plus_icon": true,
-        "color_plus_icon": "#FFFFFF",
+        "color_plus_icon": "#ffffff",
         "enable_content_border": false,
         "content_border_color": "#e2e2e2",
         "enable_shadow": true,
@@ -691,9 +695,9 @@
         "shadow_spread": 11,
         "shadow_color": "transparent",
         "shadow_inset": "no",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
+        "mg_top_desktop": 30,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 25,
         "mg_bottom_desktop": 50,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
