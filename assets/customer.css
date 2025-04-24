@@ -1484,6 +1484,9 @@ div#recover .form-actions input.button.button-2:hover {
   .login-item .form-actions a.cancel .text {
     font-size: 12px;
   }
+  #login div#seal-login-helper {
+    flex-wrap: wrap;
+  }
   .login-page .login-rowLeft,
   .login-page .login-rowRight {
     padding: 20px;
