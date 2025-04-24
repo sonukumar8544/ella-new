@@ -1480,6 +1480,10 @@ div#recover .form-actions input.button.button-2:hover {
 }
 
 @media (max-width: 768px) {
+  .login-item .form-actions .forget-password .text,
+  .login-item .form-actions a.cancel .text {
+    font-size: 12px;
+  }
   .login-page .login-rowLeft,
   .login-page .login-rowRight {
     padding: 20px;
