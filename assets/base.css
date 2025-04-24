@@ -8473,14 +8473,14 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
   width: 280px !important;
 } */
 
-@media (min-width: 1025px) {
+@media (min-width: 1265px) {
   .page-sidebar.page-sidebar-right {
       float: right;
       width: 280px !important;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1265px) {
   .page-sidebar.page-sidebar-right+.page-content {
       max-width: 950px !important;
   }
