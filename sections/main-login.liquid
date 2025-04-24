@@ -99,16 +99,7 @@
                   <div class="halo-page-wrapper">
                  <div id="hiko-social-login"></div> 
                     <!-- After Login -->
-<script>
-  // Custom JS logic
-  document.addEventListener('DOMContentLoaded', function () {
-    const hikoDiv = document.getElementById('hiko-social-login');
-    if (hikoDiv) {
-      console.log('HIKO Social Login loaded');
-    }
-  });
-</script>
-                    
+          
                     {% comment %}     <!-- <div class="login-text">
                           {{ 'customer.login_page.text' | t }}
                       </div> -->
@@ -218,15 +209,7 @@
                   <div class="halo-page-wrapper">
                      <div id="hiko-social-login"></div> 
                     <!-- After Login -->
-<script>
-  // Custom JS logic
-  document.addEventListener('DOMContentLoaded', function () {
-    const hikoDiv = document.getElementById('hiko-social-login');
-    if (hikoDiv) {
-      console.log('HIKO Social Login loaded');
-    }
-  });
-</script>
+
                       <!-- <div class="login-text">
                           {{ 'customer.register.text' | t }}
                       </div> -->
@@ -336,7 +319,15 @@
     </div>  
   </div>
 </div>
-
+<script>
+  // Custom JS logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const hikoDiv = document.getElementById('hiko-social-login');
+    if (hikoDiv) {
+      console.log('HIKO Social Login loaded');
+    }
+  });
+</script>
 <style>
   @media (min-width: 1025px) {
     {%- if container == 'fullwidth' -%}
