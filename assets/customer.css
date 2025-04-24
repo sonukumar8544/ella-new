@@ -4,7 +4,7 @@
   margin: auto;
 }
 .login-page .login-rowRight {
-  display: none;
+  height: max-content;
 }
 
 .template-customers\/addresses .form-actions.cstm_edit_address {
