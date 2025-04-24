@@ -59,9 +59,9 @@
                               </div>
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <!-- <label class="form-label" for="RecoverEmail">
-                                  
-                              </label> -->
+                              <label class="form-label" for="RecoverEmail" >
+                                  {{ 'customer.login_page.email' | t }}
+                              </label>
                               <input class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
                                   type="email"
                                   value=""
@@ -130,10 +130,9 @@
                               </div>
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <!-- <label class="form-label" for="CustomerEmail">
-                                
-                                  
-                              </label> -->
+                              <label class="form-label" for="CustomerEmail" style="display:none;">
+                               {{ 'customer.login_page.email' | t }}<em>*</em>                                  
+                              </label>
                               <input
                                   class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
                                   type="email"
@@ -154,8 +153,8 @@
                           </div>
                           {%- if form.password_needed -%}
                               <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
-                                  <label class="form-label" for="CustomerPassword">
-                                      
+                                  <label class="form-label" for="CustomerPassword" style="display:none;">
+                                      {{ 'customer.login_page.password' | t }}<em>*</em>
                                   </label>
                                   <input
                                       class="form-input form-input-placeholder{% if form.errors contains "password" %} error{% endif %}"
@@ -239,9 +238,9 @@
                               </div>
                           {% endif %}
                           <div class="form-field{% if form.errors contains "first_name" %} form-field--error{% endif %}">
-                              <!-- <label class="form-label" for="RegisterForm-FirstName">
-                                  
-                              </label> -->
+                              <label class="form-label" for="RegisterForm-FirstName" style="display:none">
+                                 {{ 'customer.register.first_name' | t }} 
+                              </label>
                               <input class="form-input form-input-placeholder{% if form.errors contains "first_name" %} error{% endif %}"
                                   type="text"
                                   name="customer[first_name]"
