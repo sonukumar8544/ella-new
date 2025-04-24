@@ -1329,23 +1329,6 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media (max-width: 551px) {
-  .account-page .account-action {
-    max-width: 100%;
-  }
-
-  .my-account-page .account-list + .account-action {
-    margin-top: 30px;
-  }
-}
-
-@media (min-width: 992px) {
-  .addresses li,
-  .account-listItem {
-    width: 33.33%;
-  }
-}
-
 @media (min-width: 1025px) {
   .login-rowItem {
     padding-top: 55px;
@@ -1376,11 +1359,24 @@ div#recover .form-actions input.button.button-2:hover {
     border-color: var(--btn-3-border);
   }
 }
+@media screen and (min-width: 990px) {
+  .customer .pagination {
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+  }
 
-@media (min-width: 800px) {
+  :is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
+    flex-grow: 1;
+    padding-right: 3.2rem;
+  }
   div#recover .form-actions:hover input.button.button-2 {
     color: #fff;
   }
+  .addresses li,
+  .account-listItem {
+    width: 33.33%;
+  }
+
   .login-page .login-rowLeft {
     width: 45%;
     padding: 20px;
@@ -1607,18 +1603,6 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media screen and (min-width: 990px) {
-  .customer .pagination {
-    margin-top: 7rem;
-    margin-bottom: 10rem;
-  }
-
-  :is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
-    flex-grow: 1;
-    padding-right: 3.2rem;
-  }
-}
-
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .order > div:nth-of-type(2) > div:last-of-type {
     display: flex;
@@ -1626,5 +1610,15 @@ div#recover .form-actions input.button.button-2:hover {
 
   .order > div:nth-of-type(2) > div:last-of-type div {
     padding-right: 3.2rem;
+  }
+}
+
+@media (max-width: 551px) {
+  .account-page .account-action {
+    max-width: 100%;
+  }
+
+  .my-account-page .account-list + .account-action {
+    margin-top: 30px;
   }
 }
