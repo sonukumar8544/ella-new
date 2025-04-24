@@ -97,7 +97,17 @@
                       {{ 'customer.login_page.sign_in' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                 <div name="hiko-container"></div>
+                 <div id="hiko-social-login"></div> 
+                    <!-- After Login -->
+<script>
+  // Custom JS logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const hikoDiv = document.getElementById('hiko-social-login');
+    if (hikoDiv) {
+      console.log('HIKO Social Login loaded');
+    }
+  });
+</script>
                     
                     {% comment %}     <!-- <div class="login-text">
                           {{ 'customer.login_page.text' | t }}
@@ -206,7 +216,17 @@
                       {{ 'customer.register.register' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                     <div name="hiko-container"></div>
+                     <div id="hiko-social-login"></div> 
+                    <!-- After Login -->
+<script>
+  // Custom JS logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const hikoDiv = document.getElementById('hiko-social-login');
+    if (hikoDiv) {
+      console.log('HIKO Social Login loaded');
+    }
+  });
+</script>
                       <!-- <div class="login-text">
                           {{ 'customer.register.text' | t }}
                       </div> -->
