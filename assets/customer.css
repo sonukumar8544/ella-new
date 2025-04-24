@@ -1428,7 +1428,7 @@ h2.address-title.text-left {
     border-color: var(--btn-3-border);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   div#recover .form-actions:hover input.button.button-2 {
     color: #fff;
   }
