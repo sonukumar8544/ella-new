@@ -1227,6 +1227,9 @@ div#recover .form-actions input.button.button-2:hover {
     margin-left: 15px;
     white-space: nowrap;
   }
+  #login div#seal-login-helper {
+    flex-wrap: wrap;
+  }
   .login-row {
     display: flex;
     flex-wrap: wrap;
