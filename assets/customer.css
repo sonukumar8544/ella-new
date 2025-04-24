@@ -3,6 +3,10 @@
   width: 300px;
   margin: auto;
 }
+.login-page .login-rowRight {
+  display: none;
+}
+
 .template-customers\/addresses .form-actions.cstm_edit_address {
   display: flex;
   align-items: center;
