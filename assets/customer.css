@@ -1220,7 +1220,16 @@ div#recover .form-actions input.button.button-2:hover {
   .account-listItem {
     width: 33.33%;
   }
+}
 
+@media (min-width: 769px) {
+  .login-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+  }
   .login-page .login-rowLeft {
     width: 45%;
     padding: 20px;
@@ -1235,17 +1244,6 @@ div#recover .form-actions input.button.button-2:hover {
     border-radius: 6px;
     margin: 0px 5px;
   }
-}
-
-@media (min-width: 768px) {
-  .login-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 30px;
-  }
-
   .login-rowItem {
     width: 50%;
   }
@@ -1474,7 +1472,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .template-customers\/addresses .address-form .form-actions {
     max-width: 100%;
   }
