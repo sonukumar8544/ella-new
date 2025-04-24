@@ -1150,13 +1150,13 @@ h2.address-title.text-left {
 @media (min-width: 768px) {
   .login-row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    background: #fff;
+    gap: 30px;
   }
-  .login-rowLeft {
-    padding-right: 15px;
-  }
+
   .login-rowItem {
     width: 50%;
   }
@@ -1176,9 +1176,7 @@ h2.address-title.text-left {
   }
 
   /* Login Page */
-  .login-page .login-rowLeft {
-    /* padding-right: 60px; */
-  }
+
   .login-page .login-rowRight {
     padding-left: 30px;
     padding-right: 30px;
@@ -1406,14 +1404,18 @@ h2.address-title.text-left {
     padding-bottom: 60px;
   }
   .login-page .login-rowLeft {
-    width: calc(50%);
+    width: 45%;
     padding: 20px;
-    padding-right: 20px;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    margin: 0px 5px;
   }
   .login-page .login-rowRight {
     padding: 20px;
-    padding-right: 20px;
-    width: 50%;
+    width: 45%;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    margin: 0px 5px;
   }
 
   .account-list {
