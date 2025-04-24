@@ -1,5 +1,8 @@
 /* cstm_css */
-
+.template-customers\/login .h_wizard {
+  width: 300px;
+  margin: auto;
+}
 .template-customers\/addresses .form-actions.cstm_edit_address {
   display: flex;
   align-items: center;
