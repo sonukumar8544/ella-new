@@ -1146,6 +1146,9 @@ h2.address-title.text-left {
     margin-bottom: 20px;
   }
 }
+.login-row {
+  background: #fff;
+}
 
 @media (min-width: 768px) {
   .login-row {
@@ -1153,7 +1156,6 @@ h2.address-title.text-left {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    background: #fff;
     gap: 30px;
   }
 
