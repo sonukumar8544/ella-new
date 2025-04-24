@@ -1223,6 +1223,9 @@ div#recover .form-actions input.button.button-2:hover {
 }
 
 @media (min-width: 768px) {
+  .login-item .form-actions a {
+    margin-left: 15px;
+  }
   .login-row {
     display: flex;
     flex-wrap: wrap;
@@ -1230,6 +1233,7 @@ div#recover .form-actions input.button.button-2:hover {
     width: 100%;
     gap: 30px;
   }
+
   .login-page .login-rowLeft {
     width: 45%;
     padding: 20px;
