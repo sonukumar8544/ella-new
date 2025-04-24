@@ -190,6 +190,7 @@ faqs-item {
   overflow: hidden;
   pointer-events: none;
   position: relative;
+  font-weight: 400;
 }
 
 .faqs-item + .faqs-item {
