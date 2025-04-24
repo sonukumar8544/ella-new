@@ -6,6 +6,12 @@
 .login-page .login-rowRight {
   height: max-content;
 }
+.halo-page-wrapper.register_form_show {
+  display: none;
+}
+.halo-page-wrapper.register_form_show.active1 {
+  display: block;
+}
 
 .template-customers\/addresses .form-actions.cstm_edit_address {
   display: flex;
