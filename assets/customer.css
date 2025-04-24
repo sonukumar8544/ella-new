@@ -151,7 +151,7 @@
 .login-item .form-input {
   padding-top: 11px;
   padding-bottom: 10px;
-  max-width: 450px;
+  /* max-width: 450px; */
 }
 
 .login-item .form-field + .form-field {
@@ -1239,7 +1239,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
 
   .login-page .login-rowLeft {
-    width: 48%;
+    width: 47%;
     padding: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 6px;
@@ -1247,7 +1247,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
   .login-page .login-rowRight {
     padding: 20px;
-    width: 48%;
+    width: 47%;
     border: 1px solid #c3c3c3;
     border-radius: 6px;
     margin: 0px 5px;
