@@ -1213,7 +1213,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
   .addresses li,
   .account-listItem {
-    width: 33.33%;
+    width: 33.33% !important;
   }
 }
 
