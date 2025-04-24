@@ -96,10 +96,10 @@
                       {{ 'customer.login_page.sign_in' | t }}
                   </h2>
                   <div class="halo-page-wrapper">
-                      <!-- <div class="login-text">
+                  {% comment %}     <!-- <div class="login-text">
                           {{ 'customer.login_page.text' | t }}
                       </div> -->
-                      {% comment %}
+                     
                           If a user has successfully requested a new password, the form.posted_successfully? variable
                           is set to true within the 'recover_customer_password' form only. Within that form you'll see
                           us assign a variable 'reset_success' to true, which is used in JS to show our success message.
