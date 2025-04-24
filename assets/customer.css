@@ -12,6 +12,9 @@
 .halo-page-wrapper.register_form_show.active1 {
   display: block;
 }
+.login-row {
+  align-items: center;
+}
 
 .template-customers\/addresses .form-actions.cstm_edit_address {
   display: flex;
