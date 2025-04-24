@@ -13,18 +13,8 @@
       "type": "main-page",
       "settings": {}
     },
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "settings": {}
-    },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
-      "settings": {}
-    }
   },
   "order": [
-    "shogun-helper",
-    "main",
-    "shogun-optimizer"
+   "main"
   ]
 }
