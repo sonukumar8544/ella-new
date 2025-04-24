@@ -1203,7 +1203,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 989px) {
   .customer .pagination {
     margin-top: 7rem;
     margin-bottom: 10rem;
@@ -1454,6 +1454,13 @@ div#recover .form-actions input.button.button-2:hover {
 
   .order > div:nth-of-type(2) > div:last-of-type div {
     padding-right: 3.2rem;
+  }
+  .login-page .login-rowLeft,
+  .login-page .login-rowRight {
+    padding: 20px;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    margin: 0px 5px;
   }
 }
 
