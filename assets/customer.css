@@ -1136,6 +1136,41 @@ h2.address-title.text-left {
   font-weight: bold;
   text-transform: capitalize;
 }
+.login-row {
+  background: #fff;
+}
+/* cstm css */
+div#recover .form-actions input.button.button-2 {
+  border-color: #086b92;
+  color: #ffffff;
+  background: #086b92;
+}
+div#recover .form-actions input.button.button-2:hover {
+  border-color: #086b92;
+  color: #086b92 !important;
+  background: #ffffff;
+}
+
+#main-login-page h2.halo-page-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Lato";
+  letter-spacing: 1.2px;
+  color: #374650;
+  line-height: normal;
+}
+#main-login-page .form-label,
+.field__label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  color: #374650;
+}
+#main-login-page .login-item .form-input {
+  color: #374650;
+  border-color: #37465052;
+}
 
 @media (max-width: 1050px) {
   .address-form--wrapper {
@@ -1146,8 +1181,220 @@ h2.address-title.text-left {
     margin-bottom: 20px;
   }
 }
-.login-row {
-  background: #fff;
+
+@media (max-width: 767px) {
+  .template-customers\/addresses .address-form .form-actions {
+    max-width: 100%;
+  }
+  .template-customers\/addresses .form-actions.cstm_edit_address {
+    gap: 10px;
+  }
+  .template-customers\/account .account-content ul.account-list {
+    display: block;
+  }
+  .template-customers\/account .seal-portal-link {
+    width: 100% !important;
+  }
+  .template-customers\/account a.button.button--primary.cstm__btn {
+    width: 100% !important;
+    margin-left: 0;
+  }
+
+  .template-customers\/addresses .main_addresses_title {
+    gap: 10px;
+  }
+  .template-customers\/addresses .account-action a.link.back-account {
+    padding: 9px;
+  }
+  .template-customers\/addresses .main_addresses_title button {
+    width: 216px;
+    font-size: 14px;
+  }
+
+  .template-customers\/addresses .account-page .page-header {
+    display: none;
+  }
+
+  .template-customers\/addresses .account-action {
+    font-size: 13px;
+    padding: 12px 5px;
+  }
+  .template-customers\/addresses .account-action a.link.back-account {
+    font-size: 16px;
+  }
+  .template-customers\/addresses h2.address-title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 30px;
+    line-height: normal;
+  }
+  .template-customers\/addresses button.button.button--primary.cstm__add_btn {
+    margin-bottom: 10px;
+  }
+
+  .login-rowLeft {
+    padding-top: 0;
+  }
+  .login-page .login-rowRight {
+    padding-bottom: 35px;
+  }
+  .account-listItem:last-child,
+  .addresses li:last-child {
+    margin-bottom: 0;
+  }
+  .account-list + .account-action {
+    margin-top: 40px;
+  }
+
+  /* START: Account */
+  .account thead,
+  .account th,
+  .account tfoot td:first-of-type {
+    display: none;
+  }
+
+  .account td {
+    display: flex;
+    text-align: right;
+  }
+
+  .account tbody tr:first-of-type {
+    border-top: none;
+  }
+  .account tbody tr {
+    margin-bottom: 15px;
+  }
+  .account tbody tr + tr {
+    padding-top: 15px;
+  }
+  .account td::before {
+    content: attr(data-label);
+    padding-right: 2rem;
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: left;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .account td:first-of-type {
+    display: flex;
+    align-items: center;
+  }
+
+  .account tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  /* END: Account */
+  .order-pagination .pagination-arrow {
+    margin-bottom: 40px !important;
+  }
+  /* cstm */
+
+  #main-login-page h2.halo-page-title {
+    font-size: 28px;
+    line-height: 1;
+  }
+  .login-rowItem .page- .customer thead,
+  .customer th,
+  .customer tfoot td:first-of-type {
+    display: none;
+  }
+
+  .customer td {
+    display: flex;
+    text-align: right;
+  }
+
+  .customer td::before {
+    content: attr(data-label);
+    padding-right: 2rem;
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .customer td:first-of-type {
+    display: flex;
+    align-items: center;
+  }
+
+  .customer tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 551px) {
+  .account-page .account-action {
+    max-width: 100%;
+  }
+
+  .my-account-page .account-list + .account-action {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .addresses li,
+  .account-listItem {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .login-rowItem {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .account-list {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .addresses li,
+  .account-listItem {
+    width: 25%;
+    padding: 0 15px 10px;
+    border-radius: 9px !important;
+    border: 2px solid #086b92;
+  }
+
+  .template-customers\/addresses .addresses li address {
+    padding: 0px !important;
+  }
+  .addresses li address {
+    padding: 20px 30px 30px 30px;
+  }
+  .button--secondary.button-delete:hover {
+    background: transparent;
+    color: var(--btn-3-border);
+    border-color: var(--btn-3-border);
+  }
+}
+
+@media (min-width: 800px) {
+  div#recover .form-actions:hover input.button.button-2 {
+    color: #fff;
+  }
+  .login-page .login-rowLeft {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    margin: 0px 5px;
+  }
+  .login-page .login-rowRight {
+    padding: 20px;
+    width: 45%;
+    border: 1px solid #c3c3c3;
+    border-radius: 6px;
+    margin: 0px 5px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1270,187 +1517,6 @@ h2.address-title.text-left {
     width: 30% !important;
     margin-left: 0;
   }
-}
-
-@media (max-width: 767px) {
-  .template-customers\/addresses .address-form .form-actions {
-    max-width: 100%;
-  }
-  .template-customers\/addresses .form-actions.cstm_edit_address {
-    gap: 10px;
-  }
-  .template-customers\/account .account-content ul.account-list {
-    display: block;
-  }
-  .template-customers\/account .seal-portal-link {
-    width: 100% !important;
-  }
-  .template-customers\/account a.button.button--primary.cstm__btn {
-    width: 100% !important;
-    margin-left: 0;
-  }
-
-  .template-customers\/addresses .main_addresses_title {
-    gap: 10px;
-  }
-  .template-customers\/addresses .account-action a.link.back-account {
-    padding: 9px;
-  }
-  .template-customers\/addresses .main_addresses_title button {
-    width: 216px;
-    font-size: 14px;
-  }
-
-  .template-customers\/addresses .account-page .page-header {
-    display: none;
-  }
-
-  .template-customers\/addresses .account-action {
-    font-size: 13px;
-    padding: 12px 5px;
-  }
-  .template-customers\/addresses .account-action a.link.back-account {
-    font-size: 16px;
-  }
-  .template-customers\/addresses h2.address-title {
-    text-align: center;
-    font-size: 22px;
-    margin-top: 30px;
-    line-height: normal;
-  }
-  .template-customers\/addresses button.button.button--primary.cstm__add_btn {
-    margin-bottom: 10px;
-  }
-
-  .login-rowLeft {
-    padding-top: 0;
-  }
-  .login-page .login-rowRight {
-    padding-bottom: 35px;
-  }
-  .account-listItem:last-child,
-  .addresses li:last-child {
-    margin-bottom: 0;
-  }
-  .account-list + .account-action {
-    margin-top: 40px;
-  }
-
-  /* START: Account */
-  .account thead,
-  .account th,
-  .account tfoot td:first-of-type {
-    display: none;
-  }
-
-  .account td {
-    display: flex;
-    text-align: right;
-  }
-
-  .account tbody tr:first-of-type {
-    border-top: none;
-  }
-  .account tbody tr {
-    margin-bottom: 15px;
-  }
-  .account tbody tr + tr {
-    padding-top: 15px;
-  }
-  .account td::before {
-    content: attr(data-label);
-    padding-right: 2rem;
-    text-transform: uppercase;
-    flex-grow: 1;
-    text-align: left;
-    font-weight: var(--font-weight-medium);
-  }
-
-  .account td:first-of-type {
-    display: flex;
-    align-items: center;
-  }
-
-  .account tr {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  /* END: Account */
-  .order-pagination .pagination-arrow {
-    margin-bottom: 40px !important;
-  }
-}
-
-@media (max-width: 551px) {
-  .account-page .account-action {
-    max-width: 100%;
-  }
-
-  .my-account-page .account-list + .account-action {
-    margin-top: 30px;
-  }
-}
-
-@media (min-width: 992px) {
-  .addresses li,
-  .account-listItem {
-    width: 33.33%;
-  }
-}
-
-@media (min-width: 1025px) {
-  .login-rowItem {
-    padding-top: 55px;
-    padding-bottom: 60px;
-  }
-
-  .account-list {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  .addresses li,
-  .account-listItem {
-    width: 25%;
-    padding: 0 15px 10px;
-    border-radius: 9px !important;
-    border: 2px solid #086b92;
-  }
-
-  .template-customers\/addresses .addresses li address {
-    padding: 0px !important;
-  }
-  .addresses li address {
-    padding: 20px 30px 30px 30px;
-  }
-  .button--secondary.button-delete:hover {
-    background: transparent;
-    color: var(--btn-3-border);
-    border-color: var(--btn-3-border);
-  }
-}
-@media (min-width: 800px) {
-  div#recover .form-actions:hover input.button.button-2 {
-    color: #fff;
-  }
-  .login-page .login-rowLeft {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #c3c3c3;
-    border-radius: 6px;
-    margin: 0px 5px;
-  }
-  .login-page .login-rowRight {
-    padding: 20px;
-    width: 45%;
-    border: 1px solid #c3c3c3;
-    border-radius: 6px;
-    margin: 0px 5px;
-  }
-}
-
-@media screen and (min-width: 750px) {
   .customer:not(.account, .order) {
     max-width: 47.8rem;
   }
@@ -1538,78 +1604,6 @@ h2.address-title.text-left {
 
   .order tbody tr:first-of-type td:first-of-type > div {
     align-items: flex-start;
-  }
-}
-
-/* cstm css */
-div#recover .form-actions input.button.button-2 {
-  border-color: #086b92;
-  color: #ffffff;
-  background: #086b92;
-}
-div#recover .form-actions input.button.button-2:hover {
-  border-color: #086b92;
-  color: #086b92 !important;
-  background: #ffffff;
-}
-
-#main-login-page h2.halo-page-title {
-  font-size: 28px;
-  font-weight: 600;
-  text-align: center;
-  font-family: "Lato";
-  letter-spacing: 1.2px;
-  color: #374650;
-  line-height: normal;
-}
-#main-login-page .form-label,
-.field__label {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1.1px;
-  color: #374650;
-}
-#main-login-page .login-item .form-input {
-  color: #374650;
-  border-color: #37465052;
-}
-
-@media screen and (max-width: 749px) {
-  /* cstm */
-
-  #main-login-page h2.halo-page-title {
-    font-size: 28px;
-    line-height: 1;
-  }
-  .login-rowItem .page- .customer thead,
-  .customer th,
-  .customer tfoot td:first-of-type {
-    display: none;
-  }
-
-  .customer td {
-    display: flex;
-    text-align: right;
-  }
-
-  .customer td::before {
-    content: attr(data-label);
-    padding-right: 2rem;
-    text-transform: uppercase;
-    flex-grow: 1;
-    text-align: left;
-  }
-
-  .customer td:first-of-type {
-    display: flex;
-    align-items: center;
-  }
-
-  .customer tr {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
   }
 }
 
