@@ -1222,7 +1222,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .login-row {
     display: flex;
     flex-wrap: wrap;
@@ -1472,7 +1472,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .template-customers\/addresses .address-form .form-actions {
     max-width: 100%;
   }
