@@ -1235,11 +1235,11 @@ div#recover .form-actions input.button.button-2:hover {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    gap: 30px;
+    gap: 20px;
   }
 
   .login-page .login-rowLeft {
-    width: 45%;
+    width: 48%;
     padding: 20px;
     border: 1px solid #c3c3c3;
     border-radius: 6px;
@@ -1247,7 +1247,7 @@ div#recover .form-actions input.button.button-2:hover {
   }
   .login-page .login-rowRight {
     padding: 20px;
-    width: 45%;
+    width: 48%;
     border: 1px solid #c3c3c3;
     border-radius: 6px;
     margin: 0px 5px;
