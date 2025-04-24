@@ -1471,6 +1471,10 @@ div#recover .form-actions input.button.button-2:hover {
 }
 
 @media (max-width: 1050px) {
+  .template-customers\/login .h_wizard {
+    width: auto;
+    margin: auto;
+  }
   .address-form--wrapper {
     display: block;
   }
