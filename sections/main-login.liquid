@@ -323,6 +323,15 @@
       console.log('HIKO Social Login loaded');
     }
   });
+
+ document.querySelectorAll('.register_form_hide').forEach(function(element) {
+  element.addEventListener('click', function() {
+    document.querySelectorAll('.register_form_show').forEach(function(target) {
+      target.classList.toggle('active1');
+    });
+  });
+});
+
 </script>
 <style>
   @media (min-width: 1025px) {
