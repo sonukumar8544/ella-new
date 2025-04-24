@@ -1225,6 +1225,7 @@ div#recover .form-actions input.button.button-2:hover {
 @media (min-width: 768px) {
   .login-item .form-actions a {
     margin-left: 15px;
+    white-space: nowrap;
   }
   .login-row {
     display: flex;
