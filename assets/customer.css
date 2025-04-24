@@ -1172,6 +1172,10 @@ div#recover .form-actions input.button.button-2:hover {
   cursor: pointer;
   border: 1px solid #086b92;
 }
+h2.halo-page-title.page-subheader.text-left.register_form_hide {
+  padding: 0;
+}
+
 #main-login-page .form-label,
 .field__label {
   font-size: 18px;
