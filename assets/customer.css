@@ -1406,12 +1406,12 @@ h2.address-title.text-left {
     padding-bottom: 60px;
   }
   .login-page .login-rowLeft {
-    width: calc(100% - 570px);
+    width: calc(50%);
   }
   .login-page .login-rowRight {
     padding-left: 60px;
     padding-right: 60px;
-    width: 570px;
+    width: 50%;
   }
 
   .account-list {
