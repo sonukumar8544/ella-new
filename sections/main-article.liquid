@@ -165,7 +165,7 @@
         }
     }
 </style>
-<div id="image-wrapper-ind-blogs">
+{% comment %} <div id="image-wrapper-ind-blogs">
   <div class="singleblg-page-banner-block-section">
     <div class="singleblg-page-banner-block-wrapper">
       <div class="singleblg-page-banner-block-left-text-section">
@@ -174,13 +174,13 @@
       <div class="blocks-small-banner">
         {% if article.image %}
             <div class="singleblg-page-banner-block-right-image-section">
-             <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.title }}">
+             <img src="{{ article.image | img_url: '' }}" alt="{{ article.title }}">
             </div>
         {% endif %}
       </div>
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 <article id="blog_page_single" data-section-id="{{ section.id }}" data-section-type="article-template" id="ArticleSection-{{ section.id }}" data-section="{{ section.id }}" class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
@@ -208,6 +208,9 @@
         {% if show_sidebar %}
             </div>
         {% endif %}
+               <div class="we-blog-title">
+                     <h1>{{ article.title }}</h1>
+                </div>
         <div class="halo-article-block">
             {%- if show_sidebar and section.blocks.size > 0 -%}
                 {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
@@ -231,6 +234,50 @@
                 </div>
             {%- endif -%}
             <div class="page-content">
+                <div id="we-blog-banner">
+                <div class="we-blog-image">
+                    <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.title }}">
+                </div>
+               </div>
+
+              <style>
+                .we-blog-image img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                    
+                }
+
+                .we-blog-title h1{
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: #006a91;
+                    margin-bottom: 10px;
+                    line-height: 1.2;
+                    font-weight: 800;
+                }
+                .we-blog-title{
+                    max-width: 950px;
+                }
+
+                div#we-blog-banner {
+                    margin-bottom: 25px; 
+                    max-width: 950px;
+                  }
+
+                @media (max-width: 768px) {
+                    .we-blog-title h1{
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+                    div#we-blog-banner {
+                    margin-top: 15px; 
+                  }
+                }
+              </style>
               <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                   <div class="article-header">
 
@@ -339,6 +386,10 @@ div#table-of-contents{
     padding: 10px;
     border-radius: 6px;
 }
+
+.halo-article-content {
+                     max-width: 950px;
+                     }
 
 div#table-of-contents h3{
     margin: 0px; 
@@ -949,6 +1000,7 @@ div#table-of-contents h3{
 .toc-wrapper {
     border-radius: 8px;
     padding: 15px;
+    padding-bottom: 0px;
 }
 
 /* Title Styling */
@@ -969,7 +1021,7 @@ div#table-of-contents h3{
 
 /* H2 Styling */
 .toc-wrapper .toc-h2 {
-    font-weight: bold;
+    font-weight: 400;
     margin-top: 10px;
 }
 

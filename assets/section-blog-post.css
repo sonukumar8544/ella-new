@@ -91,9 +91,17 @@
 
 .halo-article-content .halo-text-format ul,
 .halo-article-content .halo-text-format ol {
-  margin: 14px 0 17px 50px;
-  padding: 0 0 0px 0;
+  /* margin: 14px 0 17px 50px; */
+  margin-left: 20px;
+  /* padding: 0 0 0px 0; */
   /* margin-left: 50px; */
+}
+
+@media (max-width: 550px) {
+  .halo-article-content .halo-text-format ul,
+  .halo-article-content .halo-text-format ol {
+    margin-left: 0;
+  }
 }
 
 .halo-article-content .halo-text-format ul li {
