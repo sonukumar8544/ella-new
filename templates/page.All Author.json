@@ -13,8 +13,239 @@
       "type": "main-page",
       "settings": {}
     },
+     "1642989489e5f98f1a": {
+      "type": "brand-slider",
+      "blocks": {
+        "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Healthy_Aging_ee0c4bc6-586e-49d3-991e-402d8ef7d7d7.png",
+            "title": "Glowing Skin",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/skin-health"
+          }
+        },
+        "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/gut_fe2fa4f3-e712-4462-99d5-c1822cf81d89.png",
+            "title": "A Happy Gut",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/gut-health"
+          }
+        },
+        "5c3a6277-76fd-42a6-8dcf-55cbd04599df": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BONE_6c8a4ed7-7c6e-45dd-9ac4-565cffe68071.png",
+            "title": "Bone Health",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/bone-health"
+          }
+        },
+        "bf8d3101-7b0f-473f-9518-37843c89a01d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Eyes_Health-01.png",
+            "title": "Clear Vision",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/eye-health"
+          }
+        },
+        "14647100-8949-4e6d-bdd9-9cbcf385d3b0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Immune_-01-01.png",
+            "title": "Stronger Immunity",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/immune-health"
+          }
+        },
+        "968532e7-c107-46a9-8870-68fa9f842f1f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Muscle_8bd3420c-ba30-4666-b993-9ab8a61439a1.png",
+            "title": "Muscle Strength & More Energy",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/muscle-health"
+          }
+        },
+        "image_efb37f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BRAINbgremove.png",
+            "title": "Mental Clarity",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/brain-health"
+          }
+        },
+        "image_ktXgfw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Heart_bf04348b-38a1-4c93-b678-f2b2544a5441.png",
+            "title": "Heart Support",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/heart-health"
+          }
+        },
+        "image_4hpFhD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HORMONEbgremove.png",
+            "title": "Balanced Hormones",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/hormone-health"
+          }
+        },
+        "image_UDdqVg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AGINGbgremove.png",
+            "title": "Healthy Aging",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/healthy-aging"
+          }
+        },
+        "image_K8bjTV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Detox_adb3d29a-1dc5-4b81-b37b-61c2177ba42d.png",
+            "title": "Body Detox",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/ultimate-detoxification-duo"
+          }
+        }
+      },
+      "block_order": [
+        "da6d0acb-9dd4-4650-af97-c64332dbd66c",
+        "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0",
+        "5c3a6277-76fd-42a6-8dcf-55cbd04599df",
+        "bf8d3101-7b0f-473f-9518-37843c89a01d",
+        "14647100-8949-4e6d-bdd9-9cbcf385d3b0",
+        "968532e7-c107-46a9-8870-68fa9f842f1f",
+        "image_efb37f",
+        "image_ktXgfw",
+        "image_4hpFhD",
+        "image_UDdqVg",
+        "image_K8bjTV"
+      ],
+      "settings": {
+        "id": "",
+        "container": "container",
+        "padding_full_width": 20,
+        "brands_block_style": "style_4",
+        "brand_layout": "slider",
+        "scroll_from": "rtl",
+        "brand_scroll_time": "25",
+        "display_brand_border": true,
+        "brand_bg": "rgba(0,0,0,0)",
+        "brand_bg_gradient": "",
+        "title_align": "center",
+        "brand_title": "I’m Looking For…",
+        "color_title": "#374650",
+        "fontsize_title": 40,
+        "fontsize_title_mb": 28,
+        "mg_bottom_title": 30,
+        "enable_border_title": false,
+        "border_color_title": "#051c42",
+        "brand_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 18,
+        "mg_bottom_des": 50,
+        "view_all": "",
+        "view_all_fs": 10,
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "view_all_icon_side": "left",
+        "btn_text": "Find My Solution",
+        "fontsize_btn": 18,
+        "btn_spacing_top": 25,
+        "btn_color": "#086b92",
+        "btn_link": "shopify://collections/health-goals",
+        "btn_color_border": "#086b92",
+        "btn_color_hover": "#3c3c3c",
+        "btn_hover_border_color": "#3c3c3c",
+        "enable_autoplay": true,
+        "brand_speed": "4000",
+        "data-brands-slider": false,
+        "slider_layout_3_no_round": false,
+        "brand_rows": "6",
+        "enable_arrows": true,
+        "enable_dots": false,
+        "enable_center_mode": false,
+        "style_position_arrows": "arrows_2",
+        "position_horizontal_arrow": 10,
+        "color_arrow": "",
+        "arrow_background": "",
+        "arrow_background_gradient": "",
+        "arrow_border": "",
+        "color_arrow_hover": "#232323",
+        "arrow_background_hover": "",
+        "arrow_background_gradient_hover": "",
+        "arrow_border_hover": "",
+        "brand_rows_mb": "2",
+        "brand_image_ratio": "square",
+        "item_distance": 0,
+        "margin_bottom_image": 12,
+        "brand_item_border": "none",
+        "border_radius": 0,
+        "border_color": "#e2e5e7",
+        "border_color_hover": "#2d2d2d",
+        "hover_effect": "zoom",
+        "color_underline_image_hover": "#000000",
+        "fontsize_text": 17,
+        "fontsize_text_mb": 14,
+        "font_weight_title": "600",
+        "margin_bottom_title": 10,
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 75,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 40
+      }
+    },
   },
   "order": [
     "main",
+    "1642989489e5f98f1a"
   ]
 }
