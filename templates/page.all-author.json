@@ -11,9 +11,10 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
-     "1642989489e5f98f1a": {
+    "1642989489e5f98f1a": {
       "type": "brand-slider",
       "blocks": {
         "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
@@ -242,7 +243,7 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 40
       }
-    },
+    }
   },
   "order": [
     "main",
