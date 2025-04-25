@@ -8500,3 +8500,21 @@ ol> ul{
    padding-top: 0px !important;
     margin-top: 0px !important;
 }
+
+.custom-blogs-btn{
+  background: #006a91;
+  color: #fff;
+  border: 1px solid #006a91;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.custom-blogs-btn a{
+  color: white !important;
+  text-decoration: none !important;
+}
