@@ -172,7 +172,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 }
 
 .quickSearchResultsBlock .list-item .link,
-ul#predictive-search-results-pages-list .predictive-search__list-item .link {
+.predictive-search .predictive-search__list-item .link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,20 +182,14 @@ ul#predictive-search-results-pages-list .predictive-search__list-item .link {
   text-decoration: unset;
   text-transform: lowercase;
 }
-.quickSearchResultsBlock p.predictive-search__item-heading,
+p.predictive-search__item-heading,
 .quickSearchResultsBlock .list-item .link span,
-ul#predictive-search-results-pages-list
-  .predictive-search__list-item
-  .link
-  span {
+.predictive-search .predictive-search__list-item .link span {
   color: #fff !important;
 }
 
 .quickSearchResultsBlock .list-item .link svg,
-ul#predictive-search-results-pages-list
-  .predictive-search__list-item
-  .link
-  svg {
+.predictive-search .predictive-search__list-item .link svg {
   width: 20px;
   height: 20px;
   padding: 2px;
