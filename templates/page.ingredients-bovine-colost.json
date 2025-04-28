@@ -148,6 +148,15 @@
         "button_text": "Read More"
       }
     },
+    "marketing_community_banner_bGwDjE": {
+      "type": "marketing-community-banner",
+      "settings": {
+        "title": "Products Featuring (ingredient name)",
+        "description": "",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
     "16593445849a1a3553": {
       "type": "product-block",
       "blocks": {
@@ -230,7 +239,7 @@
         "product_block_layout": "slider",
         "product_bg": "rgba(0,0,0,0)",
         "product_bg_gradient": "",
-        "product_block_collection": "all-products",
+        "product_block_collection": "colostrum",
         "product_block_limit": 8,
         "grid_gap": 30,
         "pb_style": "style2",
@@ -328,9 +337,9 @@
         "border_layout_card": "full",
         "border_width_card": 5,
         "border_color_card": "#f0f1f4",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 15
@@ -412,6 +421,7 @@
     "165941639628ba86d6",
     "ingrediant_page_two_coloumn_KnrGGK",
     "marketing_community_banner_n3CQiW",
+    "marketing_community_banner_bGwDjE",
     "16593445849a1a3553",
     "blog_posts_list_AJWJCt",
     "ingrediant_page_testomonial_jDY6wP"
