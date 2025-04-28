@@ -186,6 +186,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   .products-grid
   .product
   dd#custom_proce_manage {
+  display: block;
   flex-wrap: wrap;
   justify-content: center;
 }
