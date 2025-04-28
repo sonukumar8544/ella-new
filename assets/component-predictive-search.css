@@ -206,8 +206,8 @@ p.predictive-search__item-heading,
 
 .quickSearchResultsBlock .list-item .link svg,
 .predictive-search .predictive-search__list-item .link svg {
-  width: 20px;
-  height: 20px;
+  width: 20px !important;
+  height: 20px !important;
   padding: 2px;
   fill: #fff;
   transform: rotate(-90deg);
