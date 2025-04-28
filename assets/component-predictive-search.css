@@ -170,13 +170,23 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   background-color: #e5e5e5;
   border-color: #1f1e1e;
 }
-
+.quickSearchResultsBlock
+  .search-block-content
+  .search-block-content
+  .card-media
+  > img,
+.quickSearchResultsBlock
+  .search-block-content
+  .search-block-content
+  .card-media
+  > video,
 .search-block-content .card-media > img,
 .search-block-content .card-media > video {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
-.quickSearchResultsBlock .search-block-content .product-item {
+.quickSearchResultsBlock .search-block-content .product-item,
+.quickSearchResultsBlock .search-block-content .products-grid .product-item {
   border-radius: 11px;
   border: 1px solid #c3c3c3;
 }
