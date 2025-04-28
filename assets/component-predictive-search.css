@@ -157,8 +157,8 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   display: inline-block;
   vertical-align: top;
   padding: 2px 5px;
-  margin: 0px 2px 3px 4px;
-  border-radius: 9px;
+  margin: 5px 7px 3px 7px;
+  border-radius: 6px;
   background: #086b92 !important;
 }
 .quickSearchResultsBlock .list-item .link:hover svg {
