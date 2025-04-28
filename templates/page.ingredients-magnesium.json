@@ -113,18 +113,6 @@
         "button_text": "Read More"
       }
     },
-    "marketing_community_banner_n3CQiW": {
-      "type": "marketing-community-banner",
-      "custom_css": [
-        ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
-      ],
-      "settings": {
-        "title": "The Wellness Extract Edge",
-        "description": "<p>Wellness Extract molecular hydrogen tablets (containing magnesium) rapidly dissolve in water. It delivers eight times the hydrogen concentration (8 PPM), producing stronger therapeutic effects.</p>",
-        "button_link": "",
-        "button_text": "Read More"
-      }
-    },
     "16593445849a1a3553": {
       "type": "product-block",
       "blocks": {
@@ -207,7 +195,7 @@
         "product_block_layout": "slider",
         "product_bg": "rgba(0,0,0,0)",
         "product_bg_gradient": "",
-        "product_block_collection": "all-products",
+        "product_block_collection": "magnesium",
         "product_block_limit": 8,
         "grid_gap": 30,
         "pb_style": "style2",
@@ -305,12 +293,33 @@
         "border_layout_card": "full",
         "border_width_card": 5,
         "border_color_card": "#f0f1f4",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 15
+      }
+    },
+    "marketing_community_banner_n3CQiW": {
+      "type": "marketing-community-banner",
+      "custom_css": [
+        ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
+      ],
+      "settings": {
+        "title": "The Wellness Extract Edge",
+        "description": "<p>Wellness Extract molecular hydrogen tablets (containing magnesium) rapidly dissolve in water. It delivers eight times the hydrogen concentration (8 PPM), producing stronger therapeutic effects.</p>",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
+    "marketing_community_banner_bGwDjE": {
+      "type": "marketing-community-banner",
+      "settings": {
+        "title": "Products Featuring (ingredient name)",
+        "description": "",
+        "button_link": "",
+        "button_text": "Read More"
       }
     },
     "blog_posts_list_AJWJCt": {
@@ -388,8 +397,9 @@
     "main",
     "165941639628ba86d6",
     "ingrediant_page_two_coloumn_KnrGGK",
-    "marketing_community_banner_n3CQiW",
     "16593445849a1a3553",
+    "marketing_community_banner_n3CQiW",
+    "marketing_community_banner_bGwDjE",
     "blog_posts_list_AJWJCt",
     "ingrediant_page_testomonial_jDY6wP"
   ]

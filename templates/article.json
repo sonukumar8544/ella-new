@@ -272,7 +272,8 @@
       "custom_css": [
         ".sidebar--layout_1 .sidebarBlock-heading {font-size: 18px !important; font-weight: 900;}",
         ".article-content.halo-text-format img {margin-top: 20px;}",
-        "div .slick-prev:before,div .slick-next:before {border-top: 2px solid #086b92 !important; border-right: 2px solid #086b92 !important;}"
+        "div .slick-prev:before,div .slick-next:before {border-top: 2px solid #086b92 !important; border-right: 2px solid #086b92 !important;}",
+        ".article-template__comment-wrapper .halo-block-header {display: none;}"
       ],
       "settings": {
         "show_breadcrumb": true,
@@ -304,8 +305,8 @@
         "show_author": true,
         "show_date": true,
         "show_tags": false,
-        "show_share": false,
-        "show_next_prev": true,
+        "show_share": true,
+        "show_next_prev": false,
         "background_color": "",
         "title_font": "font_2",
         "title_font_size": 22,

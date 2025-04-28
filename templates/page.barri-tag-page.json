@@ -1,0 +1,711 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_banner_LTArcE": {
+      "type": "image-banner",
+      "blocks": {
+        "large_img_iCVDMg": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/The_World_s_Leading_Vitamin_E_Researcher.png",
+            "mobile_image": "shopify://shop_images/Dr._Barrie_Tan_4.png",
+            "enable_max_width_image": false,
+            "custom_width_image": 1170,
+            "enable_scroll_down": false,
+            "enable_custom_image": false,
+            "image_behavior": "none",
+            "sub_title": "",
+            "border_sub_title": false,
+            "font_size_sub_title": 32,
+            "font_size_sub_title_mb": 18,
+            "margin_bottom_sub_title": 14,
+            "sub_heading_font": "font_1",
+            "font_weight_sub_title": "500",
+            "sub_title_position": "sub_title_above",
+            "color_sub_title": "#374650",
+            "color_sub_title_mb": "#ffffff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_style_italic": false,
+            "font_size_heading": 32,
+            "font_size_heading_mb": 24,
+            "margin_bottom_heading": 20,
+            "font_weight_heading": "600",
+            "color_heading": "#374650",
+            "color_heading_mb": "#ffffff",
+            "border_title": "border_s1",
+            "border_color_title": "#374650",
+            "border_color_title_mobile": "#ffffff",
+            "text": "",
+            "font_size_des": 16,
+            "font_size_des_mb": 16,
+            "line_height_des": 26,
+            "margin_bottom_des": 35,
+            "color_des": "#374650",
+            "color_des_mb": "#ffffff",
+            "countdown": "",
+            "hide_countdown_fc": "countdown",
+            "countdown_style": "round",
+            "countdown_position": "countdown_below_desc",
+            "font_size_countdown_number": 30,
+            "font_size_countdown_text": 14,
+            "color_countdown": "#374650",
+            "color_countdown_mb": "#ffffff",
+            "countdown_margin_bottom": 35,
+            "content_width": 475,
+            "bg_color_content": "",
+            "align": "center",
+            "align_items": "center",
+            "position": "left",
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "btn_text": "",
+            "link": "",
+            "btn_icon": "",
+            "button_1_width": 235,
+            "enable_button_custom_border": false,
+            "button_color": "#ffffff",
+            "button_border": "#374650",
+            "button_background": "#374650",
+            "button_background_gradient": "",
+            "button_color_hover": "#ffffff",
+            "button_border_hover": "#374650",
+            "button_background_hover": "#374650",
+            "button_background_gradient_hover": "",
+            "btn_text_2": "",
+            "link_2": "",
+            "btn_icon_2": "",
+            "button_color_2": "#ffffff",
+            "button_border_2": "#374650",
+            "button_background_2": "#374650",
+            "button_background_2_gradient": "",
+            "button_color_hover_2": "#ffffff",
+            "button_border_hover_2": "#374650",
+            "button_background_hover_2": "#374650",
+            "button_background_gradient_hover_2": "",
+            "video_link": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#ffffff",
+            "bg_color_icon": "#374650",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "large_img_iCVDMg"
+      ],
+      "custom_css": [
+        "p.banner-sub-title {line-height: 1.2;}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "id_section": "barri-tan-page",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "display_type": "slide",
+        "enable_arrows": false,
+        "arrows_position": "",
+        "enable_dots": false,
+        "enable_autoplay": false,
+        "list_gap": 0,
+        "image_banner_title": "",
+        "enable_border_title": false,
+        "color_title": "#202020",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "margin_bottom_title": 25,
+        "image_banner_des": "",
+        "color_des": "#202020",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "style_bg": "none",
+        "bg_color": "",
+        "bg_color_gradient": "",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "liquid_css": ""
+      }
+    },
+    "about_page_two_col_section_fVLEmz": {
+      "type": "about-page-two-col-section",
+      "custom_css": [
+        "@media (max-width: 768px) {.about-about-product-ing-iimg-text {text-align: left; }}",
+        "@media (max-width: 768px) {.about-about-product-product-ing-img-image, .about-about-product-ing-iimg-text {flex: 1 1 100%; max-width: 100%; text-align: left; }}"
+      ],
+      "name": "about two col new",
+      "settings": {
+        "heading": "",
+        "image": "shopify://shop_images/lab_equipments.png",
+        "title": "About Dr. Barrie Tan",
+        "description": "For decades, the world accepted standard Vitamin E (tocopherols) as the benchmark. But Dr. Barrie Tan, a scientist driven by relentless curiosity and armed with a Ph.D. in Chemistry/Biochemistry, suspected there was more to the story. His extensive research, spanning over 40 years, led him to question the limitations of common Vitamin E forms.<br><br>He dedicated his career to exploring the entire Vitamin E family, focusing on a lesser-known, more powerful group called tocotrienols. Dr. Tan's pioneering work revealed that these compounds possess significantly greater antioxidant capacity, uncovering that most supplements were missing out on Vitamin E's true potential",
+        "button_link": "",
+        "button_text": "Read More",
+        "image_two": "shopify://shop_images/annato_plant.png",
+        "title_two": "Annatto Discovery",
+        "description_two": "Identifying the power of tocotrienols was only half the battle. Dr. Tan knew the source was crucial. He meticulously researched natural sources like palm and rice, but sought unparalleled purity and potency. His persistence paid off when he identified the Annatto plant as a unique, natural treasure.<br><br><strong>Why was this Dr. Tan's breakthrough?</strong><br> Annatto proved to be the richest known source of the most beneficial tocotrienols (Delta and Gamma), naturally free from the common tocopherols that could limit their effectiveness. This discovery, stemming directly from his expertise, allowed for the creation of truly potent Vitamin E formulations.<br><br>\n<strong>Annatto, Championed by Dr. Tan, Delivers:</strong><br>\n<ul>\n  <li>\n<strong>Targeted Potency:</strong> Rich in Delta and Gamma tocotrienols.</li>\n  <li>\n<strong>Uncompromised Purity:</strong> Naturally tocopherol-free for optimal benefit.</li>\n  <li>\n<strong>Scientific Validation:</strong> Backed by Dr. Tan's decades of dedicated research.</li>\n</ul>",
+        "button_link_two": ""
+      }
+    },
+    "about_page_two_col_section_n7RqRb": {
+      "type": "about-page-two-col-section",
+      "disabled": true,
+      "name": "about two col new",
+      "settings": {
+        "heading": "",
+        "image": "shopify://shop_images/cell_dtox_1.png",
+        "title": " The Art of Extraction",
+        "description": "Discovering pure annatto tocotrienols was a major breakthrough. But Dr. Barrie Tan knew that preserving their delicate power during extraction was just as critical. Raw ingredients lose their potency if not handled correctly.\nDriven by an unwavering commitment to quality, Dr. Tan developed and patented a unique, natural extraction method. Unlike harsh industrial processes, his approach avoids synthetic chemicals, petrochemicals, and solvents entirely. It's a sophisticated technique using controlled evaporation specifically designed to:<br>\n<ul>\n  <li>\n<strong>Gently Isolate:</strong> Precisely separate the precious Delta and Gamma tocotrienols from the annatto seed.</li>\n  <li>\n<strong>Maintain Integrity:</strong> Protect these sensitive compounds from damage, locking in their natural potency.</li>\n  <li>\n<strong>Guarantee Purity:</strong> Ensure the final ingredient, like our signature DeltaGold®, is exceptionally pure and free from unwanted tocopherols or contaminants.</li>\n</ul>\nThis dedication to a superior, patented, and solvent-free extraction process is fundamental. It reflects Dr. Tan's meticulous, science-first philosophy, ensuring you receive the full, uncompromised benefits that nature intended.",
+        "button_link": "",
+        "button_text": "Read More",
+        "title_two": "",
+        "description_two": "",
+        "button_link_two": ""
+      }
+    },
+    "rich_text_ejDMHq": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gxkjAq": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Art of Extraction",
+            "heading_size": 30,
+            "heading_size_mb": 22,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
+          }
+        },
+        "text_GwdybU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discovering pure annatto tocotrienols was a major breakthrough. But Dr. Barrie Tan knew that preserving their delicate power during extraction was just as critical. Raw ingredients lose their potency if not handled correctly. Driven by an unwavering commitment to quality, Dr. Tan developed and patented a unique, natural extraction method. Unlike harsh industrial processes, his approach avoids synthetic chemicals, petrochemicals, and solvents entirely. It's a sophisticated technique using controlled evaporation specifically designed to:</p><p>This dedication to a superior, patented, and solvent-free extraction process is fundamental. It reflects Dr. Tan's meticulous, science-first philosophy, ensuring you receive the full, uncompromised benefits that nature intended.</p>",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#374650",
+            "text_width": "1000px"
+          }
+        },
+        "content_7GMWQT": {
+          "type": "content",
+          "settings": {
+            "content_top": "<ul>\n  <li>\n<strong>Gently Isolate:</strong> Precisely separate the precious Delta and Gamma tocotrienols from the annatto seed.</li>\n  <li>\n<strong>Maintain Integrity:</strong> Protect these sensitive compounds from damage, locking in their natural potency.</li>\n  <li>\n<strong>Guarantee Purity:</strong> Ensure the final ingredient, like our signature DeltaGold®, is exceptionally pure and free from unwanted tocopherols or contaminants.</li>\n</ul>",
+            "content_bottom": "",
+            "alignment_content": "left",
+            "content_size": 16,
+            "margin_top_content": 20,
+            "content_color": "#374650",
+            "content_width": "1000px",
+            "button_text_more": "",
+            "button_text_less": "",
+            "button_text_font_size": 14,
+            "button_text_font_weight": "500",
+            "margin_top_button_text": 30,
+            "button_text_color": "#ffffff",
+            "button_text_border_color": "#374650",
+            "button_text_bg_color": "#374650",
+            "button_text_bg_color_gradient": "",
+            "button_text_color_hover": "#374650",
+            "button_text_border_color_hover": "#374650",
+            "button_text_bg_color_hover": "#ffffff",
+            "button_text_bg_color_hover_gradient": "",
+            "button_text_more_width": 270,
+            "pd_top_button_text": 12,
+            "pd_bottom_button_text": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_gxkjAq",
+        "text_GwdybU",
+        "content_7GMWQT"
+      ],
+      "custom_css": [
+        "@media (min-width: 1025px) {.rich-text__top ul {margin-left: 50px; }}",
+        "@media (max-width: 1025px) {.rich-text__top ul {margin-left: 20px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "baritam page section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#f2f3f9",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#f2f3f9",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "rich_text_JnjMfr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nPnjne": {
+          "type": "heading",
+          "settings": {
+            "heading": "Scientific Credentials",
+            "heading_size": 30,
+            "heading_size_mb": 22,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
+          }
+        },
+        "text_KUMXBy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dr. Barrie Tan isn't just a researcher; he's globally recognized as \"The Father of Tocotrienols.\" His credentials speak volumes:</p>",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#374650",
+            "text_width": "1000px"
+          }
+        },
+        "content_mxNKm9": {
+          "type": "content",
+          "settings": {
+            "content_top": "<ul>\n  <li>\n<strong>Academic Excellence:</strong> Ph.D. in Chemistry/Biochemistry (University of Otago) and former Professor at the University of Massachusetts, Amherst.</li>\n  <li>\n<strong>Scientific Leader:</strong> Holds multiple patents, authored 50+ peer-reviewed publications, and is a sought-after speaker worldwide.</li>\n  <li>\n<strong>Innovator:</strong> Founded American River Nutrition and developed the patented DeltaGold®, the premier tocopherol-free annatto tocotrienol concentrate.</li>\n</ul>",
+            "content_bottom": "",
+            "alignment_content": "left",
+            "content_size": 16,
+            "margin_top_content": 20,
+            "content_color": "#374650",
+            "content_width": "1000px",
+            "button_text_more": "",
+            "button_text_less": "",
+            "button_text_font_size": 14,
+            "button_text_font_weight": "500",
+            "margin_top_button_text": 30,
+            "button_text_color": "#ffffff",
+            "button_text_border_color": "#374650",
+            "button_text_bg_color": "#374650",
+            "button_text_bg_color_gradient": "",
+            "button_text_color_hover": "#374650",
+            "button_text_border_color_hover": "#374650",
+            "button_text_bg_color_hover": "#ffffff",
+            "button_text_bg_color_hover_gradient": "",
+            "button_text_more_width": 270,
+            "pd_top_button_text": 12,
+            "pd_bottom_button_text": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_nPnjne",
+        "text_KUMXBy",
+        "content_mxNKm9"
+      ],
+      "custom_css": [
+        ".rich-text__blocks.text-center {background: #f7f7f7; border-radius: 12px; padding: 25px;}",
+        "@media (min-width: 1025px) {.rich-text__top ul {margin-left: 60px; }}",
+        "@media (max-width: 1025px) {.rich-text__top ul {margin-left: 20px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "baritam page section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#ffffff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "rich_text_wBQizn": {
+      "type": "rich-text",
+      "blocks": {
+        "content_PBgQrE": {
+          "type": "content",
+          "settings": {
+            "content_top": "<em class=\"barrie-tan-ul\">Nature provides the perfect blueprint, Our role as scientists is to identify these compounds... and preserve their integrity.”\n \n</em>\n<div class=\"quote-author\">\n  <h5 class=\"name\">— Dr. Barrie Tan.</h5>\n  <h5 class=\"title\">Researcher / Scientist</h5>\n</div>",
+            "content_bottom": "",
+            "alignment_content": "center",
+            "content_size": 15,
+            "margin_top_content": 20,
+            "content_color": "#374650",
+            "content_width": "1000px",
+            "button_text_more": "",
+            "button_text_less": "",
+            "button_text_font_size": 14,
+            "button_text_font_weight": "500",
+            "margin_top_button_text": 30,
+            "button_text_color": "#ffffff",
+            "button_text_border_color": "#374650",
+            "button_text_bg_color": "#374650",
+            "button_text_bg_color_gradient": "",
+            "button_text_color_hover": "#374650",
+            "button_text_border_color_hover": "#374650",
+            "button_text_bg_color_hover": "#ffffff",
+            "button_text_bg_color_hover_gradient": "",
+            "button_text_more_width": 270,
+            "pd_top_button_text": 12,
+            "pd_bottom_button_text": 12
+          }
+        }
+      },
+      "block_order": [
+        "content_PBgQrE"
+      ],
+      "custom_css": [
+        ".quote-author {text-align: right; font-family: Arial, sans-serif; color: #2c3e50; margin-top: 20px;}",
+        ".quote-author .name {margin: 0; font-size: 18px; font-weight: 500;}",
+        ".quote-author .title {margin: 5px 0 0; font-size: 16px; font-weight: 400;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "baritam-page-section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#f2f3f9",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "rich_text_64kCM4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yWUEQp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Feel the Impact of Decades of Expertise in Every Softgel",
+            "heading_size": 30,
+            "heading_size_mb": 22,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
+          }
+        },
+        "text_FRXcEr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When you choose Wellness Extract formulas featuring tocotrienols, you're getting more than just a supplement. You're benefiting directly from Dr. Barrie Tan's life's work – his discoveries, his innovations, and his unwavering commitment to quality, from plant source to final product.</p>",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#374650",
+            "text_width": "1000px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yWUEQp",
+        "text_FRXcEr"
+      ],
+      "custom_css": [
+        ".rich-text__blocks.text-center {background: #f7f7f7; border-radius: 12px; padding: 25px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "baritam page section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#ffffff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "rich_text_zeePbP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jBWn4X": {
+          "type": "heading",
+          "settings": {
+            "heading": "Globally Trusted Expertise",
+            "heading_size": 30,
+            "heading_size_mb": 22,
+            "heading_line_height": 1,
+            "heading_color": "#374650"
+          }
+        },
+        "text_7NkfgN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dr. Tan's expertise is sought after by leading health publications (Harvard Health, Forbes) and trusted by discerning consumers and professionals alike.</p>",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#374650",
+            "text_width": "1000px"
+          }
+        },
+        "content_RxgCtW": {
+          "type": "content",
+          "settings": {
+            "content_top": "<ul>\n  <li>\n<strong>Globally Recognized:</strong> His research sets industry standards.</li>\n  <li>\n<strong>Customer Approved:</strong> Join 10,000+ satisfied customers (average 4.9/5 stars!).</li>\n  <li>\n<strong>Professionally Endorsed:</strong> Recommended by doctors and nutritionists who value science-backed solutions.</li>\n</ul>",
+            "content_bottom": "",
+            "alignment_content": "left",
+            "content_size": 16,
+            "margin_top_content": 20,
+            "content_color": "#374650",
+            "content_width": "1000px",
+            "button_text_more": "",
+            "button_text_less": "",
+            "button_text_font_size": 14,
+            "button_text_font_weight": "500",
+            "margin_top_button_text": 30,
+            "button_text_color": "#ffffff",
+            "button_text_border_color": "#374650",
+            "button_text_bg_color": "#374650",
+            "button_text_bg_color_gradient": "",
+            "button_text_color_hover": "#374650",
+            "button_text_border_color_hover": "#374650",
+            "button_text_bg_color_hover": "#ffffff",
+            "button_text_bg_color_hover_gradient": "",
+            "button_text_more_width": 270,
+            "pd_top_button_text": 12,
+            "pd_bottom_button_text": 12
+          }
+        }
+      },
+      "block_order": [
+        "heading_jBWn4X",
+        "text_7NkfgN",
+        "content_RxgCtW"
+      ],
+      "custom_css": [
+        ".rich-text__blocks.text-center {background: #f7f7f7; border-radius: 12px; padding: 25px;}",
+        "@media (min-width: 1025px) {.rich-text__top ul {margin-left: 50px; }}",
+        "@media (max-width: 1025px) {.rich-text__top ul {margin-left: 20px; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "baritam page section",
+        "container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#ffffff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "16497261635f6f948e": {
+      "type": "product-block",
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "disable_padding_content": false,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "border_height": 1,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "product_block_layout": "slider",
+        "product_bg": "#ffffff",
+        "product_bg_gradient": "",
+        "product_block_collection": "dr-barrie-tan",
+        "product_block_limit": 8,
+        "grid_gap": 30,
+        "pb_style": "style3",
+        "style_block_header": "style2",
+        "product_block_title": "Products Built on Proven Science",
+        "enable_border_title": false,
+        "enable_border_title_style2": false,
+        "fontsize_title": 34,
+        "fontsize_title_mb": 23,
+        "pd_top_title": 35,
+        "mg_bottom_title": 35,
+        "mg_bottom_title_mb": 30,
+        "border_color_title": "#e6e6e6",
+        "color_title": "#374650",
+        "title_align": "center",
+        "title_align_mb": "center",
+        "view_all": "",
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "mg_bottom_view_mb": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "button_text": "",
+        "button_text_font_size": 14,
+        "button_text_font_weight": "500",
+        "button_text_text_transform": "capitalize",
+        "product_button_width": 10,
+        "pd_top_product_button": 0,
+        "pd_bottom_product_button": 0,
+        "button_icon": "",
+        "mg_bottom_button": 55,
+        "enable_button_shadow": false,
+        "color_button": "#ffffff",
+        "border_color_button": "#374650",
+        "bg_color_button": "#374650",
+        "bg_color_gradient_button": "",
+        "color_button_hover": "",
+        "border_color_button_hover": "",
+        "bg_color_button_hover": "",
+        "bg_color_gradient_button_hover": "",
+        "style_countdown": "style_1",
+        "countdown": "",
+        "font_size_countdown_text": 14,
+        "color_countdown": "#f42b23",
+        "countdown_margin_left": 15,
+        "product_block_per_row": "4",
+        "product_block_infinite_scroll": false,
+        "product_block_swipe_on_mobile": true,
+        "enable_product_card_pd_bottom": false,
+        "product_card_pd_bottom": 40,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "spacing_top_dots": 0,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "enable_hover_arrow": false,
+        "product_block_progress_bar": false,
+        "product_block_counter_number": false,
+        "enable_infinite": true,
+        "enable_autoplay": false,
+        "product_block_arrows_custom_position": false,
+        "position_vertical_arrow": "70px",
+        "use_special_arrow_position": false,
+        "spacing_bottom": 0,
+        "spacing_right": 0,
+        "product_block_show": "4",
+        "button_text_slider": "",
+        "button_link_slider": "",
+        "button_width": 280,
+        "btn_spacing_top": 49,
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#374650",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 40,
+        "enable_image_mb": true,
+        "display_list_collection": false,
+        "collection_color": "#202020",
+        "collection_color_hover": "#3e8cc4",
+        "collection_bg_color": "#ffffff",
+        "collection_bg_color_gradient": "",
+        "text_list": "View all categories",
+        "url_list": "",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4",
+        "mg_top_desktop": 70,
+        "mg_top_tablet": 45,
+        "mg_top_mobile": 35,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "main",
+    "shogun-optimizer",
+    "image_banner_LTArcE",
+    "about_page_two_col_section_fVLEmz",
+    "about_page_two_col_section_n7RqRb",
+    "rich_text_ejDMHq",
+    "rich_text_JnjMfr",
+    "rich_text_wBQizn",
+    "rich_text_64kCM4",
+    "rich_text_zeePbP",
+    "16497261635f6f948e"
+  ]
+}
