@@ -172,7 +172,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 }
 
 .quickSearchResultsBlock .search-block-content .card-media > img,
-.card-media > video {
+.quickSearchResultsBlock .search-block-content .card-media > video {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
