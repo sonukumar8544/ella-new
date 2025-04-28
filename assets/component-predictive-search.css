@@ -757,6 +757,16 @@ div#predictive-search-results-list .products-grid .product .product-item {
   border-radius: 11px !important;
   border: 1px solid #c3c3c3 !important;
 }
+
+div#predictive-search-results-list
+  .products-grid
+  .product
+  .product-item
+  .card-media
+  > img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 .quickSearchResultsWrap[data-quick-trending-products] {
   display: none;
 }
