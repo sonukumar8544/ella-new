@@ -181,6 +181,14 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   border-radius: 11px;
   border: 1px solid #c3c3c3;
 }
+.quickSearchResultsBlock
+  .search-block-content
+  .products-grid
+  .product
+  dd#custom_proce_manage {
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .product-card-layout-02 .halo-productBadges {
   top: 3px !important;
