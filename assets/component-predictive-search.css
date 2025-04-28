@@ -753,7 +753,7 @@ input::-webkit-search-decoration {
   padding-bottom: 30px;
 }
 
-div#predictive-search-results-list .products-grid .product {
+div#predictive-search-results-list .products-grid .product .product-item {
   border-radius: 11px !important;
   border: 1px solid #c3c3c3 !important;
 }
