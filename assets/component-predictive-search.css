@@ -754,6 +754,8 @@ input::-webkit-search-decoration {
 }
 
 .predictive-search__results-list .product .products-grid {
+  border-radius: 11px;
+  border: 1px solid #c3c3c3;
 }
 .quickSearchResultsWrap[data-quick-trending-products] {
   display: none;
