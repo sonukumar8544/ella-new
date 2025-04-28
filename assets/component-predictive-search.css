@@ -182,6 +182,12 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   text-decoration: unset;
   text-transform: lowercase;
 }
+
+ul#predictive-search-results-pages-list li.predictive-search__list-item,
+ul#predictive-search-results-pages-list li.predictive-search__list-item a {
+  background: transparent !important;
+}
+
 p.predictive-search__item-heading,
 .quickSearchResultsBlock .list-item .link span,
 .predictive-search .predictive-search__list-item .link span {
