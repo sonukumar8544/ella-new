@@ -178,7 +178,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   justify-content: center;
   padding: 1px;
   background-color: #086b92 !important;
-  color: #fff;
+  color: #fff !important;
   text-decoration: unset;
   text-transform: lowercase;
 }
