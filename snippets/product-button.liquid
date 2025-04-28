@@ -228,8 +228,8 @@
                                             {%- if first_inventory > 0 -%}
                                                 {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                     {%- assign subtotal = subtotal | strip_html -%}
-
-                                                    {{ 'products.product.sub_total' | t : value : subtotal }}
+{% comment %}| t : value : subtotal {% endcomment %}
+                                                    {{ 'products.product.sub_total' }}
                                                 {%- else -%}
                                                     {{ 'products.product.add_to_cart' | t}}
                                                 {%- endif -%}
