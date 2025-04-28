@@ -8,35 +8,8 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "page.all-ingredients.json",
   "context": {
     "market": "canada"
   },
-  "sections": {
-    "spotlight_block_Jp7Jmi": {
-      "settings": {},
-      "blocks": {
-        "image_Ubmwpz": {
-          "disabled": true,
-          "settings": {}
-        },
-        "image_k9NVXD": {
-          "disabled": true,
-          "settings": {}
-        },
-        "image_q8dLAB": {
-          "disabled": true,
-          "settings": {}
-        },
-        "image_wEhaFh": {
-          "disabled": true,
-          "settings": {}
-        },
-        "image_rHEfWg": {
-          "disabled": true,
-          "settings": {}
-        }
-      }
-    }
-  }
+  "parent": "page.all-ingredients.json"
 }
