@@ -196,6 +196,8 @@ ul#predictive-search-results-pages-list
   div
   p {
   color: #000 !important;
+  line-height: normal;
+  font-size: 14px;
 }
 
 p.predictive-search__item-heading,
