@@ -66,18 +66,22 @@
         },
         "image_Ubmwpz": {
           "settings": {
-            "link": "shopify://products/muscle-health-bundle-ca",
-            "image": "shopify://shop_images/MUSCLE_b5218ec3-b16d-49ce-a226-c3135153bd29.png"
+            "image": "shopify://shop_images/MUSCLE_b5218ec3-b16d-49ce-a226-c3135153bd29.png",
+            "link": "shopify://products/muscle-health-bundle-ca"
           }
         },
         "image_M7dFEh": {
-          "disabled": true,
-          "settings": {}
+          "disabled": false,
+          "settings": {
+            "link": "shopify://products/antioxidant-bundle-ca",
+            "title": "Antioxidant",
+            "image": "shopify://shop_images/HEALTHY_AGING_a3b5a0a9-34da-41bf-bb67-39c3f34482b4.png"
+          }
         },
         "image_yeqV6M": {
           "settings": {
-            "link": "shopify://products/hormone-health-bundle-ca",
-            "image": "shopify://shop_images/HORMONE_f69dd2cb-7acd-4d5a-bc6c-250acb0e4250.png"
+            "image": "shopify://shop_images/HORMONE_f69dd2cb-7acd-4d5a-bc6c-250acb0e4250.png",
+            "link": "shopify://products/hormone-health-bundle-ca"
           }
         }
       }
