@@ -1535,37 +1535,39 @@
             {%- endunless -%}
         </div>
     </div>
+    {% render 'product-trusted-badze' %}
+    <div class="product-descriptios-bottom productView-bottom{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if tab_layout_mobile == 'popup' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}">
+    <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
+        {%- if section.settings.show_quick_order_list -%}
+            {{ 'component-price.css' | asset_url | stylesheet_tag }}
+            {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+            {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
+
+            {% render 'quick-order-list',
+                product: product,
+                show_image: section.settings.show_image,
+                show_sku: section.settings.show_sku
+            %}
+
+            <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+            <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+            <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+        {%- endif -%}
+        {%- if show_tab and tab_layout == 'horizontal' -%}
+            {% render 'halo-product-tab',
+                product: product,
+                section: section,
+                tab_layout: tab_layout,
+                tab_layout_mobile: tab_layout_mobile,
+                icon_style_layout: icon_style_layout
+            %}
+        {%- endif -%}
+    </div>
+</div>
     {% unless has_product_combo %}
         {% render 'product-bundle' %}
     {% endunless %}
-    <div class="product-descriptios-bottom productView-bottom{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if tab_layout_mobile == 'popup' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}">
-        <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
-            {%- if section.settings.show_quick_order_list -%}
-                {{ 'component-price.css' | asset_url | stylesheet_tag }}
-                {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
-                {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
-
-                {% render 'quick-order-list',
-                    product: product,
-                    show_image: section.settings.show_image,
-                    show_sku: section.settings.show_sku
-                %}
-
-                <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
-                <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
-                <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
-            {%- endif -%}
-            {%- if show_tab and tab_layout == 'horizontal' -%}
-                {% render 'halo-product-tab',
-                    product: product,
-                    section: section,
-                    tab_layout: tab_layout,
-                    tab_layout_mobile: tab_layout_mobile,
-                    icon_style_layout: icon_style_layout
-                %}
-            {%- endif -%}
-        </div>
-    </div>
+    
 </div>
 
 {%- if show_size_chart and has_size_chart -%}

@@ -59,7 +59,7 @@
                               </div>
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <label class="form-label" for="RecoverEmail">
+                              <label class="form-label" for="RecoverEmail" >
                                   {{ 'customer.login_page.email' | t }}
                               </label>
                               <input class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
@@ -75,7 +75,7 @@
                                       aria-describedby="RecoverEmail-email-error"
                                       autofocus
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.login_page.email' | t }}"
                               >
                           </div>
                           <div class="form-actions">
@@ -91,15 +91,16 @@
                       {%- endform -%}
                   </div>
               </div>
+            <!-- login -->
               <div class="login-item" id="login">
-                  <h2 class="halo-page-title page-subheader text-left">
+                  <h2 class="halo-page-title page-subheader text-left" >
                       {{ 'customer.login_page.sign_in' | t }}
                   </h2>
-                  <div class="halo-page-wrapper">
-                      <!-- <div class="login-text">
-                          {{ 'customer.login_page.text' | t }}
-                      </div> -->
-                      {% comment %}
+                  <div class="halo-page-wrapper" >
+                 <div id="hiko-social-login"></div> 
+                    <!-- After Login -->
+          
+                    {% comment %}   
                           If a user has successfully requested a new password, the form.posted_successfully? variable
                           is set to true within the 'recover_customer_password' form only. Within that form you'll see
                           us assign a variable 'reset_success' to true, which is used in JS to show our success message.
@@ -126,9 +127,8 @@
                               </div>
                           {%- endif -%}
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <label class="form-label" for="CustomerEmail">
-                                  {{ 'customer.login_page.email' | t }}
-                                  <em>*</em>
+                              <label class="form-label" for="CustomerEmail" style="display:none;">
+                               {{ 'customer.login_page.email' | t }}<em>*</em>                                  
                               </label>
                               <input
                                   class="form-input form-input-placeholder{% if form.errors contains "email" %} error{% endif %}"
@@ -142,7 +142,7 @@
                                   {% if form.errors contains 'form' %}
                                       aria-invalid="true"
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.login_page.email' | t }}*"
                                   aria-required="true"
                                   aria-invalid="true"
                                   required
@@ -150,9 +150,8 @@
                           </div>
                           {%- if form.password_needed -%}
                               <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
-                                  <label class="form-label" for="CustomerPassword">
-                                      {{ 'customer.login_page.password' | t }}
-                                      <em>*</em>
+                                  <label class="form-label" for="CustomerPassword" style="display:none;">
+                                      {{ 'customer.login_page.password' | t }}<em>*</em>
                                   </label>
                                   <input
                                       class="form-input form-input-placeholder{% if form.errors contains "password" %} error{% endif %}"
@@ -166,6 +165,7 @@
                                       {% endif %}
                                       aria-required="true"
                                       required
+                                    placeholder="{{ 'customer.login_page.password' | t }}*"
                                   >
                               </div>
                           {%- endif -%}
@@ -199,10 +199,13 @@
           </div>
           <div class="login-rowItem login-rowRight">
               <div class="login-item">
-                  <h2 class="halo-page-title page-subheader text-left">
+                  <h2 class="halo-page-title page-subheader text-left register_form_hide register_form_show" >
                       {{ 'customer.register.register' | t }}
                   </h2>
-                  <div class="halo-page-wrapper">
+                  <div class="halo-page-wrapper register_form_show">
+                     <div id="hiko-social-login"></div> 
+                    <!-- After Login -->
+
                       <!-- <div class="login-text">
                           {{ 'customer.register.text' | t }}
                       </div> -->
@@ -232,8 +235,8 @@
                               </div>
                           {% endif %}
                           <div class="form-field{% if form.errors contains "first_name" %} form-field--error{% endif %}">
-                              <label class="form-label" for="RegisterForm-FirstName">
-                                  {{ 'customer.register.first_name' | t }}
+                              <label class="form-label" for="RegisterForm-FirstName" style="display:none">
+                                 {{ 'customer.register.first_name' | t }} 
                               </label>
                               <input class="form-input form-input-placeholder{% if form.errors contains "first_name" %} error{% endif %}"
                                   type="text"
@@ -241,11 +244,11 @@
                                   id="RegisterForm-FirstName"
                                   {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
                                   autocomplete="given-name"
-                                  placeholder=""
+                                  placeholder="{{ 'customer.register.first_name' | t }}"
                               >
                           </div>
                           <div class="form-field{% if form.errors contains "last_name" %} form-field--error{% endif %}">
-                              <label class="form-label" for="RegisterForm-LastName">
+                              <label class="form-label" for="RegisterForm-LastName" style="display:none">
                                   {{ 'customer.register.last_name' | t }}
                               </label>      
                               <input class="form-input form-input-placeholder{% if form.errors contains "last_name" %} error{% endif %}"
@@ -254,11 +257,11 @@
                                   id="RegisterForm-LastName"
                                   {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
                                   autocomplete="family-name"
-                                  placeholder=""
+                                  placeholder="{{ 'customer.register.last_name' | t }}"
                               >
                           </div>
                           <div class="form-field{% if form.errors contains "email" %} form-field--error{% endif %}">
-                              <label class="form-label" for="RegisterForm-email">
+                              <label class="form-label" for="RegisterForm-email" style="display:none">
                                   {{ 'customer.register.you_email' | t }}
                                   <em>*</em>
                               </label>      
@@ -275,12 +278,12 @@
                                       aria-invalid="true"
                                       aria-describedby="RegisterForm-email-error"
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.register.you_email' | t }}*"
                                   required
                               >
                           </div>
                           <div class="form-field{% if form.errors contains "password" %} form-field--error{% endif %}">
-                              <label class="form-label" for="password">
+                              <label class="form-label" for="password" style="display:none">
                                   {{ 'customer.register.you_password' | t }}
                                   <em>*</em>
                               </label>      
@@ -293,7 +296,7 @@
                                       aria-invalid="true"
                                       aria-describedby="RegisterForm-password-error"
                                   {% endif %}
-                                  placeholder=""
+                                  placeholder="{{ 'customer.register.you_password' | t }}*"
                                   required
                               >
                           </div>
@@ -312,7 +315,24 @@
     </div>  
   </div>
 </div>
+<script>
+  // Custom JS logic
+  document.addEventListener('DOMContentLoaded', function () {
+    const hikoDiv = document.getElementById('hiko-social-login');
+    if (hikoDiv) {
+      console.log('HIKO Social Login loaded');
+    }
+  });
 
+//  document.querySelectorAll('.register_form_hide').forEach(function(element) {
+//   element.addEventListener('click', function() {
+//     document.querySelectorAll('.register_form_show').forEach(function(target) {
+//       target.classList.toggle('active1');
+//     });
+//   });
+// });
+
+</script>
 <style>
   @media (min-width: 1025px) {
     {%- if container == 'fullwidth' -%}

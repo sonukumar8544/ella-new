@@ -391,112 +391,10 @@
             "button_border_hover1": "rgba(0,0,0,0)",
             "button_background_hover1": "#ffffff"
           }
-        },
-        "cf0ec312-c547-4ffc-95e5-fe512cb488f6": {
-          "type": "customImg",
-          "disabled": true,
-          "settings": {
-            "row_reverse": false,
-            "small_banner_bg_color": "",
-            "small_banner_bg_color_g": "",
-            "small_banner_border_color": "#374650",
-            "sub_title": "New Collection",
-            "border_sub_title": true,
-            "letter_spacing_sub_title": "",
-            "font_size_sub_title": 12,
-            "font_size_sub_title_mb": 12,
-            "margin_bottom_sub_title": 14,
-            "sub_heading_font": "font_1",
-            "font_weight_sub_title": "400",
-            "sub_title_position": "sub_title_above",
-            "color_sub_title": "#232323",
-            "heading": "",
-            "letter_spacing_heading": "",
-            "font_size_heading": 30,
-            "font_size_heading_mb": 24,
-            "margin_bottom_heading": 20,
-            "font_weight_heading": "700",
-            "color_heading": "#374650",
-            "border_title": "none",
-            "border_color_title": "#374650",
-            "text": "",
-            "font_size_des": 12,
-            "font_size_des_mb": 12,
-            "line_height_des": 22,
-            "margin_bottom_des": 28,
-            "color_des": "#232323",
-            "content_width": 375,
-            "align": "center",
-            "video_link": "",
-            "adaptive_height_video": "56",
-            "icon_style": "style_1",
-            "color_icon": "#ffffff",
-            "bg_color_icon": "#000000",
-            "btn_text": "Shop Now",
-            "link": "",
-            "button_1_width": 185,
-            "button_color": "#ffffff",
-            "button_border": "#232323",
-            "button_background": "#232323",
-            "button_background_gradient": "",
-            "button_color_hover": "#ffffff",
-            "button_border_hover": "#232323",
-            "button_background_hover": "#232323",
-            "button_background_gradient_hover": "",
-            "row_reverse_item_2": false,
-            "small_banner_bg_color_item_2": "",
-            "small_banner_bg_color_g_item_2": "",
-            "small_banner_border_color_item_2": "#646464",
-            "sub_title_item_2": "New Collection",
-            "border_sub_title_item_2": true,
-            "letter_spacing_sub_title_item_2": "",
-            "font_size_sub_title_item_2": 12,
-            "font_size_sub_title_mb_item_2": 12,
-            "margin_bottom_sub_title_item_2": 14,
-            "sub_heading_font_item_2": "font_1",
-            "font_weight_sub_title_item_2": "400",
-            "sub_title_position_item_2": "sub_title_above",
-            "color_sub_title_item_2": "#232323",
-            "heading_item_2": "#convalis",
-            "letter_spacing_heading_item_2": "",
-            "font_size_heading_item_2": 30,
-            "font_size_heading_mb_item_2": 24,
-            "margin_bottom_heading_item_2": 20,
-            "font_weight_heading_item_2": "700",
-            "color_heading_item_2": "#232323",
-            "border_title_item_2": "border_s1",
-            "border_color_title_item_2": "#232323",
-            "text_item_2": "Quisquemos sodales suscipit ditaemcos lorem de cosmo lacus meleifend menean...",
-            "font_size_des_item_2": 12,
-            "font_size_des_mb_item_2": 12,
-            "line_height_des_item_2": 22,
-            "margin_bottom_des_item_2": 28,
-            "color_des_item_2": "#232323",
-            "content_width_item_2": 375,
-            "align_item_2": "center",
-            "video_link_item_2": "",
-            "adaptive_height_video_item_2": "56",
-            "icon_style_item_2": "style_1",
-            "color_icon_item_2": "#ffffff",
-            "bg_color_icon_item_2": "#000000",
-            "btn_text_item_2": "Shop Now",
-            "link_item_2": "",
-            "button_1_width_item_2": 185,
-            "button_color_item_2": "#ffffff",
-            "button_border_item_2": "#232323",
-            "button_background_item_2": "#232323",
-            "button_background_gradient_item_2": "",
-            "button_color_hover_item_2": "#ffffff",
-            "button_border_hover_item_2": "#232323",
-            "button_background_hover_item_2": "#232323",
-            "button_background_gradient_hover_item_2": "",
-            "image_behavior": "none"
-          }
         }
       },
       "block_order": [
-        "special_img_FdDYtW",
-        "cf0ec312-c547-4ffc-95e5-fe512cb488f6"
+        "special_img_FdDYtW"
       ],
       "settings": {
         "id_section": "collection_page_quiz_section",
@@ -528,44 +426,6 @@
         "mg_bottom_tablet": 40,
         "mg_bottom_mobile": 25,
         "liquid_css": ""
-      }
-    },
-    "rich_text_MT6wG9": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_6kiENX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Voices of Satisfaction ",
-            "heading_size": 40,
-            "heading_size_mb": 28,
-            "heading_line_height": 1,
-            "heading_color": "#374650"
-          }
-        }
-      },
-      "block_order": [
-        "heading_6kiENX"
-      ],
-      "settings": {
-        "id": "instafram__video_title",
-        "container": "container",
-        "padding_full_width": 0,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#e8e8e8",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": -100,
-        "rich_text_bg": "#ffffff",
-        "rich_text_bg_gradient": "",
-        "enable_column": false,
-        "content_align": "center",
-        "mg_top_desktop": 30,
-        "mg_top_tablet": 30,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
       }
     },
     "1743675461e354d576": {
@@ -839,14 +699,6 @@
     },
     "collection_faq_new_nzkzTD": {
       "type": "collection-faq-new",
-      "disabled": true,
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subheading": ""
-      }
-    },
-    "collection_page_faqs_rmnDiF": {
-      "type": "collection-page-faqs",
       "disabled": true,
       "settings": {
         "heading": "Frequently Asked Questions",
@@ -1208,9 +1060,9 @@
         "icon_style": "style_1",
         "effects_bg": "",
         "effects_opacity": 0,
-        "mg_top_desktop": 70,
-        "mg_top_tablet": 60,
-        "mg_top_mobile": 40,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
         "mg_bottom_desktop": 70,
         "mg_bottom_tablet": 60,
         "mg_bottom_mobile": 40
@@ -1417,11 +1269,9 @@
     "collection_filter_2_fMXGJ3",
     "product-grid",
     "1649236457c43290d7",
-    "rich_text_MT6wG9",
     "1743675461e354d576",
     "16378289883380f691",
     "collection_faq_new_nzkzTD",
-    "collection_page_faqs_rmnDiF",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
     "spotlight_block_qnYcNH"

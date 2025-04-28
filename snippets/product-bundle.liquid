@@ -58,7 +58,7 @@
                 background: {% if total_btn_bg_gradient != blank %}{{ total_btn_bg_gradient }}{% else %}{{ total_btn_bg }}{% endif %};
                 color: {{ total_btn_color }};
                 border-color: {{ total_btn_border }};
-                border-radius: 12px; 
+                border-radius: 6px; 
             } 
 
 
@@ -97,136 +97,7 @@
                 add_all_item: `{{ 'products.product.bundle_block.add_all_to_cart' | t }}`
             }
         </script>
- <style>
-    .container.free-shipping-container {
-      background: #f4f5f5;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      padding: 20px;
-      max-width: 1000vw;
-    }
-
-    .product-free-shipping-section {
-      display: none; /* hide grid by default, shown only on desktop */
-    }
-
-    .shipping-slider {
-      display: none; /* shown on mobile/tablet */
-    }
-
-    .shipping-item {
-      display: flex !important;
-      align-items: center;
-      text-align: left;
-      gap: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      background: #f9f9f9;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 0 10px;
-    }
-
-    .shipping-item img {
-      max-width: 50px;
-    }
-
-    .shipping-item p {
-      font-size: 14px;
-      color: #36454F;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    /* Desktop layout (grid) */
-    @media (min-width: 1024px) {
-      .shipping-slider {
-        display: none !important;
-      }
-
-      .product-free-shipping-section {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        max-width: 1200px;
-        margin: auto;
-      }
-    }
-
-    /* Show slider on tablet/mobile */
-    @media (max-width: 1023px) {
-      .shipping-slider {
-        display: block;
-      }
-    }
-  </style>
-
-  <div class="container free-shipping-container">
-    <!-- Slider for mobile/tablet -->
-    <div class="shipping-slider">
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Result_ori.svg?v=1744106233" alt="Shipping" />
-        <p>10+ Clinically Studied Ingredients</p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Award.svg?v=1744106233" alt="Shipping" />
-        <p>Award Winning Extraction Process </p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clinically.svg?v=1744106233" alt="Shipping" />
-        <p>Result Oriented Formulations </p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Customer.svg?v=1744106233" alt="Shipping" />
-        <p>67% Repeat Customers</p>
-      </div>
-    </div>
-
-    <!-- Grid for desktop -->
-    <div class="product-free-shipping-section">
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Result_ori.svg?v=1744106233" alt="Shipping" />
-        <p>10+ Clinically Studied Ingredients</p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Award.svg?v=1744106233" alt="Shipping" />
-        <p>Award Winning Extraction Process </p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clinically.svg?v=1744106233" alt="Shipping" />
-        <p>Result Oriented Formulations </p>
-      </div>
-      <div class="shipping-item">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Customer.svg?v=1744106233" alt="Shipping" />
-        <p>67% Repeat Customers</p>
-      </div>
-    </div>
-  </div>
-  <script>
-    $(document).ready(function () {
-      $('.shipping-slider').slick({
-        dots: true,
-        infinite: true,
-        arrows: false,
-        speed: 300,
-        slidesToShow: 1,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    });
-  </script>
-
+        {% comment %}  product bundle  {% endcomment %}
         <product-bundle class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" data-product-bundle id="halo-product-bundle">
             <div class="container container-{{ container }}">
                 {%- if block_title != blank -%}
@@ -306,3 +177,12 @@
         <script src="{{ 'product-bundle.js' | asset_url }}" defer></script>
     {% endif %}
 {% endif %}
+
+<style>
+  .bundle-discount-percentage{
+    font-size: 16px;
+    background: #EBF2F1;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+</style>

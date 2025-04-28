@@ -13,20 +13,20 @@
 {% endschema %}
 
 {% if product.handle contains 'bundle' %}
-    {% if product.metafields.Custom.we_bundle_product_info_image %}
+    {% if product.metafields.Custom.we_product_info_image_desktop %}
   <section class="bundle-banner container">
     <div class="nundle-image-bobile-new">
-      {% if product.metafields.Custom.we_bundle_product_info_image_mobile %}
+      {% if product.metafields.Custom.we_product_info_image_mob %}
         <img
-          src="{{ product.metafields.Custom.we_bundle_product_info_image_mobile | img_url: 'master' }}"
+          src="{{ product.metafields.Custom.we_product_info_image_desktop | img_url: 'master' }}"
           alt="Mobile Banner"
           loading="lazy" />
       {% endif %}
     </div>
     <div class="bundle-image-desktop-new">
-      {% if product.metafields.Custom.we_bundle_product_info_image %}
+      {% if product.metafields.Custom.we_product_info_image_desktop %}
         <img
-          src="{{ product.metafields.Custom.we_bundle_product_info_image | img_url: 'master' }}"
+          src="{{ product.metafields.Custom.we_product_info_image_mob | img_url: 'master' }}"
           alt="Desktop Banner"
           loading="lazy" />
       {% endif %}
@@ -34,6 +34,7 @@
   </section>
 {% endif %}
 {% endif %}
+
 
 
 <style>

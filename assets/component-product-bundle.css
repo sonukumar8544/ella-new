@@ -23,6 +23,12 @@
     width: 100%;
 }
 
+@media (max-width: 769px){
+    .bundle-product-checkbox p{
+        font-weight: 500 !important;
+    }
+}
+
 .halo-product-bundle .halo-block-header .title {
     text-align: left;
     text-transform: capitalize;
@@ -44,6 +50,11 @@
     line-height: 1.2;
 }
 
+@media(max-width: 769px){
+    .halo-product-bundle .halo-block-header .title .text {
+        font-size: 20px;
+    }
+}
 .bundle-product-right{
     margin: 50px 0 0 0;
 }
@@ -596,6 +607,17 @@
     margin-bottom: 15px;
 }
 
+@media (max-width: 769px){
+    .bundle-product-totalPrice{
+       display: flex;
+       gap: 5px;
+       margin-bottom: 0px;
+       align-items: center;
+       margin-bottom: 10px;
+       justify-content: center;
+    }
+}
+
 .bundle-product-totalPrice .text{
     display: block;
     /* color: var(--text-cart);
@@ -605,6 +627,15 @@
     font-size: 22px;
     font-weight: 600;
     color: #006a91;
+}
+
+@media (max-width: 768px){
+    .bundle-product-totalPrice .text{
+        margin: 0px !important;
+        font-weight: 500;
+        color: #374650;
+        font-size: 16px;
+    }
 }
 
 .skin-4 .bundle-product-totalPrice .text{
@@ -648,6 +679,12 @@
     color: red;
 }
 
+@media (max-width: 769px){
+    .bundle-product-totalPrice .old-price{
+      font-size: 14px;
+    }
+}
+
 .skin-4 .bundle-product-totalPrice .old-price,
 .skin-5 .bundle-product-totalPrice .old-price{
     font-size: 30px;
@@ -667,6 +704,12 @@
     color: #006a91;
 }
 
+@media (max-width: 769px){
+    .bundle-product-totalPrice .bundle-price{
+        font-size: 16px;
+    }
+}
+
 .bundle-product-totalPrice .bundle-price + .price{
     display: none;
 }
@@ -684,8 +727,14 @@
     margin: 0 auto;
 }
 
+@media (max-width: 769px){
+    .bundle-product-action{
+        width: 75%;
+    }
+}
+
 .bundle-product-action .button{
-    padding-top: 13px;
+    /* padding-top: 13px; */
     padding-bottom: 13px;
     border-radius: 0;
     text-transform: capitalize;
@@ -854,7 +903,7 @@
     }
 
     .bundlePdItem-container {
-        padding: 15px;
+        padding: 0px 15px;
         background-color: #fff;
         position: relative;
         /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22); */

@@ -165,7 +165,7 @@
         }
     }
 </style>
-<div id="image-wrapper-ind-blogs">
+{% comment %} <div id="image-wrapper-ind-blogs">
   <div class="singleblg-page-banner-block-section">
     <div class="singleblg-page-banner-block-wrapper">
       <div class="singleblg-page-banner-block-left-text-section">
@@ -174,13 +174,13 @@
       <div class="blocks-small-banner">
         {% if article.image %}
             <div class="singleblg-page-banner-block-right-image-section">
-             <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.title }}">
+             <img src="{{ article.image | img_url: '' }}" alt="{{ article.title }}">
             </div>
         {% endif %}
       </div>
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 <article id="blog_page_single" data-section-id="{{ section.id }}" data-section-type="article-template" id="ArticleSection-{{ section.id }}" data-section="{{ section.id }}" class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
@@ -208,6 +208,9 @@
         {% if show_sidebar %}
             </div>
         {% endif %}
+               <div class="we-blog-title">
+                     <h1>{{ article.title }}</h1>
+                </div>
         <div class="halo-article-block">
             {%- if show_sidebar and section.blocks.size > 0 -%}
                 {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
@@ -231,6 +234,50 @@
                 </div>
             {%- endif -%}
             <div class="page-content">
+                <div id="we-blog-banner">
+                <div class="we-blog-image">
+                    <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.title }}">
+                </div>
+               </div>
+
+              <style>
+                .we-blog-image img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                    
+                }
+
+                .we-blog-title h1{
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: #006a91;
+                    margin-bottom: 10px;
+                    line-height: 1.2;
+                    font-weight: 800;
+                }
+                .we-blog-title{
+                    max-width: 950px;
+                }
+
+                div#we-blog-banner {
+                    margin-bottom: 25px; 
+                    max-width: 950px;
+                  }
+
+                @media (max-width: 768px) {
+                    .we-blog-title h1{
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+                    div#we-blog-banner {
+                    margin-top: 15px; 
+                  }
+                }
+              </style>
               <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                   <div class="article-header">
 
@@ -333,6 +380,26 @@
                         <div id="table-of-contents"></div>
                         <style>
 
+div#table-of-contents{
+    border: 1px solid #ddd;
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+div#table-of-contents ul{
+    margin-left: 50px;
+}
+
+.halo-article-content {
+                     max-width: 950px;
+                     }
+
+div#table-of-contents h3{
+    margin: 0px; 
+    padding: 0px;
+}
+
 @media (max-width: 1024px) {
     .header-with-sidebar {
         display: flex;
@@ -376,11 +443,11 @@
                             .article-info-details p {
                               margin: 5px 0;
                               font-size: 16px;
-                              color: #36454f;
+                              color: #999999;
                             }
                             .article-info-details .highlight {
                               font-weight: bold;
-                              color: #086b92;
+                              color: #999999;
                             }
                           </style>
                            
@@ -761,12 +828,12 @@
                               <div class="halo-block-header">
                                   <h3 id="Comments-{{ article.id }}" class="title text-left">
                                       <span class="text">
-                                          {{ 'blogs.article.comments' | t: count: article.comments_count }}
+                                          {{ 'blogs.article.comments' | t: count: article.comments_count | minus: 1 }}
                                       </span>
                                   </h3>
                               </div>
                               {%- paginate article.comments by 5 -%}
-                                  <div class="article-template__comments">
+                                  <div class="sonu1111 article-template__comments">
                                       {%- if comment.status == 'pending' and comment.content -%}
                                           <article id="{{ comment.id }}" class="article-template__comments-comment">
                                               <h4 class="comment-author">
@@ -779,21 +846,24 @@
                                       {%- endif -%}
 
                                       {%- for comment in article.comments -%}
+                                        {%- unless forloop.first -%}
                                           <article id="{{ comment.id }}" class="article-template__comments-comment">
-                                              <div class="comment-user">
-                                                {% render 'icon-account-2' %}
+                                            <div class="comment-user">
+                                              {% render 'icon-account-2' %}
+                                            </div>
+                                            <div class="comment-content">
+                                              <div class="comment-created-at">
+                                                <span class="comment-date">{{ comment.created_at | date: "%d %b %Y" }}</span>
+                                                <span class="comment-author">{{ comment.author }}</span>
                                               </div>
-                                              <div class="comment-content">
-                                                <div class="comment-created-at">
-                                                    <span class="comment-date">{{ comment.created_at | date: "%d %b %Y"   }}</span>
-                                                    <span class="comment-author">{{ comment.author }}</span>
-                                                </div>
-                                                <div class="comment-body {{ comment.status }}">
-                                                    {{ comment.content }}
-                                                </div>
+                                              <div class="comment-body {{ comment.status }}">
+                                                {{ comment.content }}
                                               </div>
+                                            </div>
                                           </article>
+                                        {%- endunless -%}
                                       {%- endfor -%}
+                                      
                                       {% render 'pagination',
                                           paginate: paginate,
                                           class: 'order-pagination pagination-wrapper text-center',
@@ -932,10 +1002,9 @@
 
 /* TOC Wrapper Styling */
 .toc-wrapper {
-    border: 1px solid #ddd;
-    background-color: #f7fafc;
     border-radius: 8px;
     padding: 15px;
+    padding-bottom: 0px;
 }
 
 /* Title Styling */
@@ -956,7 +1025,7 @@
 
 /* H2 Styling */
 .toc-wrapper .toc-h2 {
-    font-weight: bold;
+    font-weight: 400;
     margin-top: 10px;
 }
 
