@@ -186,16 +186,15 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 ul#predictive-search-results-pages-list li.predictive-search__list-item,
 ul#predictive-search-results-pages-list li.predictive-search__list-item a {
   background: transparent !important;
-   color: #000 !important;
-  
+  color: #000 !important;
 }
-ul#predictive-search-results-pages-list li.predictive-search__list-item{
-  border: :1px solid #000 !important
+ul#predictive-search-results-pages-list li.predictive-search__list-item {
+  border: 1px solid #000 !important;
 }
 
 p.predictive-search__item-heading,
 .quickSearchResultsBlock .list-item .link span,
-.predictive-search .predictive-search__list-item .link span { 
+.predictive-search .predictive-search__list-item .link span {
   color: #fff !important;
 }
 
