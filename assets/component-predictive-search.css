@@ -171,6 +171,16 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   border-color: #1f1e1e;
 }
 
+.quickSearchResultsBlock .search-block-content .card-media > img,
+.card-media > video {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.quickSearchResultsBlock .search-block-content .product-item {
+  border-radius: 12px;
+  border: 1px solid #c3c3c3;
+}
+
 .quickSearchResultsBlock .list-item .link,
 .predictive-search .predictive-search__list-item .link {
   display: flex;
