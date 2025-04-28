@@ -180,12 +180,12 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   border-radius: 11px;
   border: 1px solid #c3c3c3;
 }
-.search.search-modal__form .product-card-layout-02 .halo-productBadges {
+.quickSearchProduct .product-card-layout-02 .halo-productBadges {
   top: 2px !important;
   left: 3px !important;
 }
-.search.search-modal__form .product-card-layout-02 .card-title {
-  font-size: 13px !important;
+.quickSearchProduct .product-card-layout-02 .card-title {
+  font-size: 13px;
 }
 
 .quickSearchResultsBlock .list-item .link,
