@@ -753,6 +753,8 @@ input::-webkit-search-decoration {
   padding-bottom: 30px;
 }
 
+.predictive-search__results-list .product .products-grid {
+}
 .quickSearchResultsWrap[data-quick-trending-products] {
   display: none;
 }
