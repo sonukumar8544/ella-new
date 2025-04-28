@@ -17,30 +17,6 @@
     "1642989489e5f98f1a": {
       "type": "brand-slider",
       "blocks": {
-        "5c3a6277-76fd-42a6-8dcf-55cbd04599df": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Sarika_700x_78385244-fb32-43c8-805e-4172b49696c7.webp",
-            "title": "Sarika Jassal 🡭",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "/pages/sarika-jassal"
-          }
-        },
-        "bf8d3101-7b0f-473f-9518-37843c89a01d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Pooja-2_700x_19ce50b2-8f4c-4d59-95d3-0e50bf41fb7c.webp",
-            "title": "Pooja Rawat 🡭",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://pages/pooja-rawat"
-          }
-        },
         "image_PkyKzX": {
           "type": "image",
           "settings": {
@@ -51,30 +27,6 @@
             "description": "",
             "color_des": "#3c3c3c",
             "link": "shopify://pages/alex"
-          }
-        },
-        "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Divya_700x_182f85f2-4fd3-48ba-ac88-e09bd7cb5876.webp",
-            "title": "Divya Katyal 🡭",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://pages/divya-katyal"
-          }
-        },
-        "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Pragya_700x_814a4e8b-9641-4f97-be94-ef8d27d013a3.webp",
-            "title": "Pragya Soni 🡭",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://pages/pragya-soni"
           }
         },
         "image_3LRpaP": {
@@ -115,11 +67,7 @@
         }
       },
       "block_order": [
-        "5c3a6277-76fd-42a6-8dcf-55cbd04599df",
-        "bf8d3101-7b0f-473f-9518-37843c89a01d",
         "image_PkyKzX",
-        "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0",
-        "da6d0acb-9dd4-4650-af97-c64332dbd66c",
         "image_3LRpaP",
         "image_X7ii94",
         "image_Mk7eLi"
@@ -136,7 +84,146 @@
         "brand_bg": "rgba(0,0,0,0)",
         "brand_bg_gradient": "",
         "title_align": "center",
-        "brand_title": "Our Authors",
+        "brand_title": "Our Editors",
+        "color_title": "#374650",
+        "fontsize_title": 40,
+        "fontsize_title_mb": 28,
+        "mg_bottom_title": 0,
+        "enable_border_title": false,
+        "border_color_title": "#051c42",
+        "brand_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 18,
+        "mg_bottom_des": 27,
+        "view_all": "",
+        "view_all_fs": 10,
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "view_all_icon_side": "left",
+        "btn_text": "",
+        "fontsize_btn": 18,
+        "btn_spacing_top": 25,
+        "btn_color": "#086b92",
+        "btn_link": "shopify://collections/health-goals",
+        "btn_color_border": "#086b92",
+        "btn_color_hover": "#3c3c3c",
+        "btn_hover_border_color": "#3c3c3c",
+        "enable_autoplay": false,
+        "brand_speed": "4000",
+        "data-brands-slider": false,
+        "slider_layout_3_no_round": false,
+        "brand_rows": "4",
+        "enable_arrows": false,
+        "enable_dots": false,
+        "enable_center_mode": false,
+        "style_position_arrows": "arrows_2",
+        "position_horizontal_arrow": 10,
+        "color_arrow": "",
+        "arrow_background": "",
+        "arrow_background_gradient": "",
+        "arrow_border": "",
+        "color_arrow_hover": "#232323",
+        "arrow_background_hover": "",
+        "arrow_background_gradient_hover": "",
+        "arrow_border_hover": "",
+        "brand_rows_mb": "2",
+        "brand_image_ratio": "square",
+        "item_distance": 0,
+        "margin_bottom_image": 21,
+        "brand_item_border": "none",
+        "border_radius": 0,
+        "border_color": "#e2e5e7",
+        "border_color_hover": "#2d2d2d",
+        "hover_effect": "zoom",
+        "color_underline_image_hover": "#000000",
+        "fontsize_text": 20,
+        "fontsize_text_mb": 20,
+        "font_weight_title": "600",
+        "margin_bottom_title": 31,
+        "mg_top_desktop": 35,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 65,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 40
+      }
+    },
+    "brand_slider_JXqMt6": {
+      "type": "brand-slider",
+      "blocks": {
+        "image_mRWDzA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Sarika_700x_78385244-fb32-43c8-805e-4172b49696c7.webp",
+            "title": "Sarika Jassal 🡭",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "/pages/sarika-jassal"
+          }
+        },
+        "image_8XgmUz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pooja-2_700x_19ce50b2-8f4c-4d59-95d3-0e50bf41fb7c.webp",
+            "title": "Pooja Rawat 🡭",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/pooja-rawat"
+          }
+        },
+        "image_Miki4J": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Divya_700x_182f85f2-4fd3-48ba-ac88-e09bd7cb5876.webp",
+            "title": "Divya Katyal 🡭",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/divya-katyal"
+          }
+        },
+        "image_gpDG4M": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pragya_700x_814a4e8b-9641-4f97-be94-ef8d27d013a3.webp",
+            "title": "Pragya Soni 🡭",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/pragya-soni"
+          }
+        }
+      },
+      "block_order": [
+        "image_mRWDzA",
+        "image_8XgmUz",
+        "image_Miki4J",
+        "image_gpDG4M"
+      ],
+      "settings": {
+        "id": "our_all_authors",
+        "container": "container",
+        "padding_full_width": 20,
+        "brands_block_style": "style_4",
+        "brand_layout": "grid",
+        "scroll_from": "rtl",
+        "brand_scroll_time": "25",
+        "display_brand_border": true,
+        "brand_bg": "rgba(0,0,0,0)",
+        "brand_bg_gradient": "",
+        "title_align": "center",
+        "brand_title": "Our Writers",
         "color_title": "#374650",
         "fontsize_title": 40,
         "fontsize_title_mb": 28,
@@ -208,6 +295,7 @@
   },
   "order": [
     "main",
-    "1642989489e5f98f1a"
+    "1642989489e5f98f1a",
+    "brand_slider_JXqMt6"
   ]
 }
