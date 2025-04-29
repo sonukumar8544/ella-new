@@ -8508,13 +8508,24 @@ ol > ul {
   margin-top: 0px !important;
 }
 
-.article-body .list-social__item{
+.article-body .list-social__item {
   margin: 0px !important;
   padding: 0px !important;
 }
 
 div#baritam-page-section {
   margin-bottom: 25px;
-
 }
 
+/* our story page CSS */
+
+#cstm_our_story_page .collapsible-grid__item h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #086b92;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  margin-top: 0;
+}
