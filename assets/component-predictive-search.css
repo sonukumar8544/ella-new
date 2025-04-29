@@ -513,18 +513,18 @@ input::-webkit-search-decoration {
 }
 
 /* END: Search popup */
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .quickSearchResultsBlock
     .search-block-content
     .products-grid
     .product
     dd#custom_proce_manage {
-    /* display: block; */
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0;
   }
-
+}
+@media (max-width: 1024px) {
   .quickSearchResultsWrap[data-quick-trending-products] {
     display: block !important;
   }
