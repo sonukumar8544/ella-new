@@ -8532,6 +8532,9 @@ div#baritam-page-section {
   font-weight: bold !important;
   margin-top: 0;
 }
+#cstm_our_story_page img {
+  border-radius: 25px;
+}
 
 @media (max-width: 768px) {
   #our-story-content .rich-text__blocks h2 {
