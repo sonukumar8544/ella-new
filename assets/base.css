@@ -8521,12 +8521,12 @@ div#baritam-page-section {
 
 #cstm_our_story_page .collapsible-grid__item h2,
 #cstm_our_story_page .rich-text__blocks h2 {
-  font-size: 32px;
+  font-size: 32px !important;
   margin-bottom: 20px;
-  color: #086b92;
+  color: #086b92 !important;
   line-height: 1.2;
   text-align: center;
   letter-spacing: 1.2px;
-  font-weight: bold;
+  font-weight: bold !important;
   margin-top: 0;
 }
