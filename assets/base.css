@@ -8537,6 +8537,7 @@ div#baritam-page-section {
 }
 
 @media (max-width: 768px) {
+  #cstm_our_story_page .collapsible-grid__item h2,
   #our-story-content .rich-text__blocks h2 {
     font-size: 28px !important;
     line-height: normal;
