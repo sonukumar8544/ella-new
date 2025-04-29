@@ -8550,4 +8550,7 @@ div#baritam-page-section {
   #cstm_our_story_page .collapsible-image {
     width: 100%;
   }
+  #cstm_our_story_page .collapsible-grid__item p {
+    text-align: center;
+  }
 }
