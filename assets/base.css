@@ -8522,7 +8522,7 @@ div#baritam-page-section {
   margin-top: auto;
 }
 .vision-container h2,
-#cstm_our_story_page h3 span,
+#cstm_our_story_page .halo-block-header h3 span,
 #cstm_our_story_page .collapsible-grid__item h2,
 #our-story-content .rich-text__blocks h2 {
   font-size: 32px !important;
@@ -8544,7 +8544,7 @@ div#baritam-page-section {
 }
 
 @media (max-width: 768px) {
-  #cstm_our_story_page h3 span,
+  #cstm_our_story_page .halo-block-header h3 span,
   .vision-container h2,
   #cstm_our_story_page .collapsible-grid__item h2,
   #our-story-content .rich-text__blocks h2 {
