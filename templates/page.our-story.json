@@ -1106,8 +1106,8 @@
         "mg_top_tablet": 15,
         "mg_top_mobile": 10,
         "mg_bottom_desktop": 40,
-        "mg_bottom_tablet": 45,
-        "mg_bottom_mobile": 50,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
         "mg_top_desktop1": 0,
         "mg_top_tablet1": 0,
         "mg_top_mobile1": 0,
@@ -1121,6 +1121,7 @@
       "blocks": {
         "content_VajQ9a": {
           "type": "content",
+          "disabled": true,
           "settings": {
             "heading": "Oxidative Defense",
             "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.</p><p></p>",
