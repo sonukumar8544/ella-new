@@ -144,74 +144,65 @@
         "liquid_css": ""
       }
     },
-     "science_back_logo_page_RC4iwW": {
-      "type": "science-back-logo-page",
+    "rich_text_3pWCBF": {
+      "type": "rich-text",
       "blocks": {
-        "image_block_egMpMG": {
-          "type": "image_block",
+        "heading_fPbUjk": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/GRAS_Approved_for_Safe_Consumption_378203e1-e977-4fd8-a1fc-6cfe68db833b.png"
+            "heading": "Wellness Extract – Empowering You to Take Control of Your Health",
+            "heading_size": 40,
+            "heading_size_mb": 30,
+            "heading_line_height": 1,
+            "heading_color": "#000"
           }
         },
-        "image_block_YGi3rg": {
-          "type": "image_block",
+        "text_64b48j": {
+          "type": "text",
           "settings": {
-            "image": "shopify://shop_images/100__plant_derived.png"
-          }
-        },
-        "image_block_Ncwdey": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/kosher_compliant.png"
-          }
-        },
-        "image_block_RqUPQK": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/compliance_with_the_latest_ingredient.png"
-          }
-        },
-        "image_block_C8mf4F": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Health_Canada_Registered_GMP_Facility_84f7f22e-7f6c-4401-a782-3d9210d49276.png"
-          }
-        },
-        "image_block_axe3Fp": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/FDA_Complaint.png"
-          }
-        },
-        "image_block_c9HxdY": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/third_party_tested.png"
-          }
-        },
-        "image_block_PnbxjF": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/NPN_Approved.png"
+            "text": "<p>At Wellness Extract, we strongly believe that real wellness starts with empowerment. We are here to guide you through your wellness journey and help you take charge of your health with confidence and knowledge.</p>",
+            "text_size": 16,
+            "text_size_mb": 12,
+            "text_font_weight": "400",
+            "text_line_height": 1,
+            "margin_top_text": 20,
+            "text_color": "#000",
+            "text_width": "800px"
           }
         }
       },
       "block_order": [
-        "image_block_egMpMG",
-        "image_block_YGi3rg",
-        "image_block_Ncwdey",
-        "image_block_RqUPQK",
-        "image_block_C8mf4F",
-        "image_block_axe3Fp",
-        "image_block_c9HxdY",
-        "image_block_PnbxjF"
+        "heading_fPbUjk",
+        "text_64b48j"
       ],
-      "custom_css": [
-        "div .slick-prev:before,div .slick-next:before {border-top: 2px solid #000 !important; border-right: 2px solid #000 !important;}"
-      ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "title": "\"WE\"  Science Backed Principles",
-        "subtitle": "<strong>Won’t you trust results that are backed by research and scientific testing?</strong><br>  Wellness Extract sets new standards for trust in health supplements and how! We’re  super strict on compliance and ensure the  highest quality  of health supplements with the purest ingredients. And there is  proven certified third-party testing  for your peace of mind."
+        "id": "",
+        "container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#fff",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 90,
+        "mg_top_tablet": 90,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 100,
+        "mg_bottom_tablet": 100,
+        "mg_bottom_mobile": 50
+      }
+    },
+    "science_back_logo_page_RC4iwW": {
+      "type": "science-back-logo-page",
+      "custom_css": [],
+      "settings": {
+        "title": "Wellness Extract – Empowering You to Take Control of Your Health",
+        "subtitle": "At Wellness Extract, we strongly believe that real wellness starts with empowerment. We are here to guide you through your wellness journey and help you take charge of your health with confidence and knowledge.<br>At Wellness Extract, we strongly believe that real wellness starts with empowerment. We are here to guide you through your wellness journey and help you take charge of your health with confidence and knowledge. "
       }
     },
     "1643015886f75782fe": {
@@ -320,10 +311,6 @@
       "block_order": [
         "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c",
         "text_8PpA4k"
-      ],
-      "custom_css": [
-        ".image-zoom:hover img {transform: none;}",
-        ".custom-service-block .policies-content .policies-text {text-align: left;}"
       ],
       "settings": {
         "custom_liquid1": false,
@@ -1167,10 +1154,10 @@
         "mg_bottom_mobile": 25
       }
     },
-    "rich_text_tyYd6w": {
+    "rich_text_CtJHjE": {
       "type": "rich-text",
       "blocks": {
-        "heading_hLhxVL": {
+        "heading_HGtYiE": {
           "type": "heading",
           "settings": {
             "heading": "Have questions? Need advice? We're here to help!",
@@ -1180,7 +1167,7 @@
             "heading_color": "#374650"
           }
         },
-        "heading_w8GEV6": {
+        "heading_AiHkww": {
           "type": "heading",
           "settings": {
             "heading": "Connect With Our Wellness Experts Today!",
@@ -1190,7 +1177,7 @@
             "heading_color": "#374650"
           }
         },
-        "button_RJjyyT": {
+        "button_KqTf6h": {
           "type": "button",
           "settings": {
             "button_style": "button_1",
@@ -1211,9 +1198,9 @@
         }
       },
       "block_order": [
-        "heading_hLhxVL",
-        "heading_w8GEV6",
-        "button_RJjyyT"
+        "heading_HGtYiE",
+        "heading_AiHkww",
+        "button_KqTf6h"
       ],
       "settings": {
         "id": "",
@@ -1240,7 +1227,8 @@
   "order": [
     "main",
     "image_banner_iJcKje",
-     "science_back_logo_page_RC4iwW",
+    "rich_text_3pWCBF",
+    "science_back_logo_page_RC4iwW",
     "1643015886f75782fe",
     "custom_service_block_UceDkM",
     "founder_section_mezyQY",
@@ -1249,6 +1237,6 @@
     "about_page_two_col_section_KCYDDj",
     "brand_slider_tRACcq",
     "rich_text_6wH8m9",
-    "rich_text_tyYd6w"
+    "rich_text_CtJHjE"
   ]
 }
