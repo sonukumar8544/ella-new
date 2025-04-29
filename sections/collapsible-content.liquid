@@ -354,7 +354,6 @@
                                     assign content_page = block.settings.page.content
                                    
 	            				-%}
-                             ===========
 	            				{%- if content != blank or content_page != blank -%}
 		            				<div class="faqs-item{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                                         <div class="card" id="#accordion-{{ block.id }}-{{ forloop.index }}">
@@ -373,7 +372,6 @@
                                         </div>
                                     </div>
 		            			{%- endif -%}
-                              ==========
 	            			{%- endfor -%}
   {% endif %}
 	            		</div>
