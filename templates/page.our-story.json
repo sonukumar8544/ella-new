@@ -144,6 +144,76 @@
         "liquid_css": ""
       }
     },
+     "science_back_logo_page_RC4iwW": {
+      "type": "science-back-logo-page",
+      "blocks": {
+        "image_block_egMpMG": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/GRAS_Approved_for_Safe_Consumption_378203e1-e977-4fd8-a1fc-6cfe68db833b.png"
+          }
+        },
+        "image_block_YGi3rg": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/100__plant_derived.png"
+          }
+        },
+        "image_block_Ncwdey": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/kosher_compliant.png"
+          }
+        },
+        "image_block_RqUPQK": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/compliance_with_the_latest_ingredient.png"
+          }
+        },
+        "image_block_C8mf4F": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Health_Canada_Registered_GMP_Facility_84f7f22e-7f6c-4401-a782-3d9210d49276.png"
+          }
+        },
+        "image_block_axe3Fp": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/FDA_Complaint.png"
+          }
+        },
+        "image_block_c9HxdY": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/third_party_tested.png"
+          }
+        },
+        "image_block_PnbxjF": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/NPN_Approved.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_egMpMG",
+        "image_block_YGi3rg",
+        "image_block_Ncwdey",
+        "image_block_RqUPQK",
+        "image_block_C8mf4F",
+        "image_block_axe3Fp",
+        "image_block_c9HxdY",
+        "image_block_PnbxjF"
+      ],
+      "custom_css": [
+        "div .slick-prev:before,div .slick-next:before {border-top: 2px solid #000 !important; border-right: 2px solid #000 !important;}"
+      ],
+      "settings": {
+        "title": "\"WE\"  Science Backed Principles",
+        "subtitle": "<strong>Won’t you trust results that are backed by research and scientific testing?</strong><br>  Wellness Extract sets new standards for trust in health supplements and how! We’re  super strict on compliance and ensure the  highest quality  of health supplements with the purest ingredients. And there is  proven certified third-party testing  for your peace of mind."
+      }
+    },
     "1643015886f75782fe": {
       "type": "custom-service-block",
       "blocks": {
@@ -1170,6 +1240,7 @@
   "order": [
     "main",
     "image_banner_iJcKje",
+     "science_back_logo_page_RC4iwW",
     "1643015886f75782fe",
     "custom_service_block_UceDkM",
     "founder_section_mezyQY",
