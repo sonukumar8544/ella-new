@@ -8532,3 +8532,10 @@ div#baritam-page-section {
   font-weight: bold !important;
   margin-top: 0;
 }
+
+@media (max-width: 768px) {
+  #our-story-content .rich-text__blocks h2 {
+    font-size: 28px !important;
+    line-height: normal;
+  }
+}
