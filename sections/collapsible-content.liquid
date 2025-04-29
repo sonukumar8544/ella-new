@@ -372,6 +372,7 @@
 		            			{%- endif -%}
                               ==========
 	            			{%- endfor -%}
+  {% if section.settings.special_content != blank %}{{ section.settings.special_content }} {% endif %}
 	            		</div>
 	            	</div>
 	            	{%- if enable_image_right != blank -%}
