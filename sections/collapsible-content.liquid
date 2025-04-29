@@ -344,6 +344,9 @@
             	<div class="collapsible-content faqs{% unless enable_image_right %} not_image_right{% endunless %}">
             		<div class="collapsible-grid">
 	            		<div class="collapsible-grid__item">
+                           {% if section.settings.special_content != blank %}
+                             {{ section.settings.special_content }}
+                              {% else %}
 	            			{%- for block in section.blocks -%}
 	            				{%- liquid
             						assign heading = block.settings.heading
@@ -372,7 +375,7 @@
 		            			{%- endif -%}
                               ==========
 	            			{%- endfor -%}
-  {% if section.settings.special_content != blank %}{{ section.settings.special_content }} {% endif %}
+  {% endif %}
 	            		</div>
 	            	</div>
 	            	{%- if enable_image_right != blank -%}
@@ -598,6 +601,12 @@
                 "label" : "t:settings_schema.typography.settings.typography.border",
                 "default": "#232323"
             },
+          {
+            "type": "richtext",
+            "id": "special_content",
+            "label": "Special Content",
+            "default": "<p></p>"
+          },
             {
 		        "type": "header",
 		        "content": "t:sections.layout.margin_top"
