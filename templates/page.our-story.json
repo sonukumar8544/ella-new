@@ -197,7 +197,7 @@
         "mg_bottom_mobile": 50
       }
     },
-    "1643015886f75782fe": {
+     "1643015886f75782fe": {
       "type": "custom-service-block",
       "blocks": {
         "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c": {
@@ -206,7 +206,7 @@
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
             "icon_type": "image",
-            "image": "shopify://shop_images/div.hiw-card.png",
+            "image": "shopify://shop_images/Our_Customers_Keep_Coming_Back_x1393_35f64588-d4f0-4e76-8e31-92afa831fc1a.webp",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
@@ -234,7 +234,7 @@
             "mg_bottom_des": 0,
             "color_des_block": "#505050",
             "button": "",
-            "link": "shopify://pages/wellness-quiz",
+            "link": "#",
             "button_style": "style2",
             "fontsize_button": 10,
             "button_width": 100,
@@ -255,21 +255,21 @@
           "settings": {
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
+            "icon_type": "text",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
             "mg_bottom_icon": 0,
             "color_icon": "#3c3c3c",
-            "text": "The Roots of Our Wisdom",
+            "text": "67% of Our Customers Keep Coming Back. Here’s Why",
             "type_tab_font": "font_2",
             "fontsize_title_block": 32,
-            "fontsize_title_block_mb": 22,
-            "title_block_font_weight": "700",
-            "mg_bottom_title": 40,
+            "fontsize_title_block_mb": 24,
+            "title_block_font_weight": "800",
+            "mg_bottom_title": 35,
             "mg_bottom_title_mb": 25,
-            "color_block": "#374650",
-            "description": "<p> Reimagine Wellness with the Ageless Wisdom of the Vedas for a Healthier, Happier & Balanced Life.</p><p>Vedas, meaning “knowledge,” are Hinduism's oldest texts, which reveal deep secrets for a balanced life, excellent health & vitality. Combining science and spirituality, the mantras in the Vedas integrate the body, mind, senses, and vital energies (prāṇa) into a holistic wellness.</p><p></p><p>The inspiration from these ancient scriptures and genuine concern for global healthcare led to the origin of Wellness Extract. Committed to bridge the gap between premium healthcare and individuals, \"WE\" blends the age-old revelations in its natural health supplements.</p>",
+            "color_block": "#086b92",
+            "description": "<h2 style=\"color:#374650;\">18,934 Repeat Customers (and Counting!)</h2>\n\n<h3 style=\"color:#374650\">✔ Clinically Effective Formulas</h3>\n<p style=\"color:#374650\">Science-backed transformations in 8–12 weeks.</p>\n\n<h3 style=\"color:#374650\">✔ Unmatched Ingredient Integrity</h3>\n<p style=\"color:#374650\">\nUS actives, FDA/GMP-certified facility.\n</p><h3 style=\"color:#374650\">✔ Root-Cause Solutions, Not Quick Fixes</h3>\n<p style=\"color:#374650\">Patented formulas for lasting wellness.</p>\n\n<h3 style=\"color:#374650\">✔ Partnered Support</h3>\n<p style=\"color:#374650;margin-bottom:20px\">Real human support - 85% solved in 1 hr</p>\n\n<i style=\"color:#374650; margin-left: 19px !important;\">We are a Supplement Company That Actually Wants You to Get Better</i>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -304,9 +304,12 @@
         "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c",
         "text_8PpA4k"
       ],
+      "custom_css": [
+        ".image-zoom:hover img {transform: none;}"
+      ],
       "settings": {
         "custom_liquid1": false,
-        "id_section": "discover_ourstory1",
+        "id_section": "grid_text_img",
         "container": "container",
         "padding_full_width": 0,
         "display_border_top": false,
@@ -314,8 +317,8 @@
         "border_color": "rgba(0,0,0,0)",
         "service_block_swipe_on_mobile": "list",
         "color_icon_slider": "#212121",
-        "service_block_style": "style_3",
-        "policies_bg": "#f2f3f9",
+        "service_block_style": "style_1",
+        "policies_bg": "#ffffff",
         "policies_bg_gradient": "",
         "service_block_title": "",
         "enable_border_title": false,
@@ -379,8 +382,8 @@
         "mg_top_desktop": 15,
         "mg_top_tablet": 15,
         "mg_top_mobile": 10,
-        "mg_bottom_desktop": 15,
-        "mg_bottom_tablet": 15,
+        "mg_bottom_desktop": 40,
+        "mg_bottom_tablet": 45,
         "mg_bottom_mobile": 50,
         "mg_top_desktop1": 0,
         "mg_top_tablet1": 0,
