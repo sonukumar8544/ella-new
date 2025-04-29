@@ -8519,7 +8519,8 @@ div#baritam-page-section {
 
 /* our story page CSS */
 
-#cstm_our_story_page .collapsible-grid__item h2 {
+#cstm_our_story_page .collapsible-grid__item h2,
+#cstm_our_story_page .rich-text__blocks h2 {
   font-size: 32px;
   margin-bottom: 20px;
   color: #086b92;
