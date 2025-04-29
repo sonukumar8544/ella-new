@@ -8532,9 +8532,7 @@ div#baritam-page-section {
   font-weight: bold !important;
   margin-top: 0;
 }
-#cstm_our_story_page .collapsible-image {
-  width: 100%;
-}
+
 #cstm_our_story_page .bg-policies-block a {
   margin-bottom: 25px;
 }
@@ -8548,5 +8546,8 @@ div#baritam-page-section {
   #our-story-content .rich-text__blocks h2 {
     font-size: 28px !important;
     line-height: normal;
+  }
+  #cstm_our_story_page .collapsible-image {
+    width: 100%;
   }
 }
