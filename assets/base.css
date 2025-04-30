@@ -8568,4 +8568,10 @@ div#baritam-page-section {
   #cstm_our_story_page .collapsible-grid__item p {
     text-align: center;
   }
+  #our-story-content .halo-item .text {
+    margin-bottom: 4px;
+    font-size: 18px;
+    padding: 10px 10px;
+    white-space: nowrap;
+  }
 }
