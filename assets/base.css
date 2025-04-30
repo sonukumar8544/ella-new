@@ -8521,6 +8521,12 @@ div#baritam-page-section {
 #our-story-content {
   margin-top: auto;
 }
+#our-story-content .rich-text__blocks.text-center {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 30px;
+}
+
 .vision-container h2,
 .template-page #WhyShopwithUs .halo-block-header h3 span,
 #cstm_our_story_page .halo-block-header h3 span,
