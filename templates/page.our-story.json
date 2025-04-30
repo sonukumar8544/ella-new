@@ -351,6 +351,176 @@
         "mg_bottom_mobile": 25
       }
     },
+    "brand_slider_tRACcq": {
+      "type": "brand-slider",
+      "blocks": {
+        "image_fthQXN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872901_3.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "Patented, Proven <br> Ingredients",
+            "color_des": "#374650",
+            "link": "#"
+          }
+        },
+        "image_mFiMEV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872902.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "Expert- <br>Formulated",
+            "color_des": "#374650",
+            "link": "#"
+          }
+        },
+        "image_yhnmeK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
+            "title": "",
+            "color_text": "#374650",
+            "color_text_hover": "#374650",
+            "description": "Ethically Sourced,<br> GMP-Certified",
+            "color_des": "#374650",
+            "link": "#"
+          }
+        },
+        "image_aVixiN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872901_5.png",
+            "title": "",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "FDA-Inspected <br>Facility",
+            "color_des": "#374650",
+            "link": "#"
+          }
+        },
+        "image_NyLNnA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872901.png",
+            "title": "",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "GRAS <br>Approved",
+            "color_des": "#374650",
+            "link": "#"
+          }
+        },
+        "image_HjABCT": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
+            "title": "Third-Party Tested",
+            "color_text": "#36454f",
+            "color_text_hover": "#36454f",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://collections/skin-health"
+          }
+        }
+      },
+      "block_order": [
+        "image_fthQXN",
+        "image_mFiMEV",
+        "image_yhnmeK",
+        "image_aVixiN",
+        "image_NyLNnA",
+        "image_HjABCT"
+      ],
+      "custom_css": [
+        ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
+        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}"
+      ],
+      "settings": {
+        "id": "WhyShopwithUs",
+        "container": "1170",
+        "padding_full_width": 20,
+        "brands_block_style": "style_1",
+        "brand_layout": "slider",
+        "scroll_from": "rtl",
+        "brand_scroll_time": "25",
+        "display_brand_border": true,
+        "brand_bg": "#f2f3f9",
+        "brand_bg_gradient": "",
+        "title_align": "center",
+        "brand_title": "Why Shop with Us",
+        "color_title": "#374650",
+        "fontsize_title": 40,
+        "fontsize_title_mb": 28,
+        "mg_bottom_title": 0,
+        "enable_border_title": false,
+        "border_color_title": "#051c42",
+        "brand_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "mg_bottom_des": 0,
+        "view_all": "",
+        "view_all_fs": 12,
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "view_all_icon_side": "left",
+        "btn_text": "",
+        "fontsize_btn": 16,
+        "btn_spacing_top": 16,
+        "btn_color": "#086b92",
+        "btn_link": "shopify://collections/health-goals",
+        "btn_color_border": "#828282",
+        "btn_color_hover": "#828282",
+        "btn_hover_border_color": "#828282",
+        "enable_autoplay": true,
+        "brand_speed": "4000",
+        "data-brands-slider": false,
+        "slider_layout_3_no_round": false,
+        "brand_rows": "5",
+        "enable_arrows": true,
+        "enable_dots": false,
+        "enable_center_mode": false,
+        "style_position_arrows": "arrows_2",
+        "position_horizontal_arrow": 25,
+        "color_arrow": "",
+        "arrow_background": "",
+        "arrow_background_gradient": "",
+        "arrow_border": "",
+        "color_arrow_hover": "#232323",
+        "arrow_background_hover": "",
+        "arrow_background_gradient_hover": "",
+        "arrow_border_hover": "",
+        "brand_rows_mb": "2",
+        "brand_image_ratio": "square",
+        "item_distance": 0,
+        "margin_bottom_image": 12,
+        "brand_item_border": "none",
+        "border_radius": 0,
+        "border_color": "#e2e5e7",
+        "border_color_hover": "#e8e8e8",
+        "hover_effect": "zoom",
+        "color_underline_image_hover": "#000000",
+        "fontsize_text": 16,
+        "fontsize_text_mb": 14,
+        "font_weight_title": "600",
+        "margin_bottom_title": 10,
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 75,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 40
+      }
+    },
     "custom_service_block_FqaKrB": {
       "type": "custom-service-block",
       "blocks": {
@@ -1088,6 +1258,7 @@
     "collapsible_content_7qC8iH",
     "collapsible_content_wicXQc",
     "rich_text_P6kMaE",
+    "brand_slider_tRACcq",
     "custom_service_block_FqaKrB",
     "collapsible_content_UDdBnm",
     "collapsible_content_wLcb8C",
