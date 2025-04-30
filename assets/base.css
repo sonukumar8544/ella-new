@@ -8521,7 +8521,7 @@ div#baritam-page-section {
 #our-story-content {
   margin-top: auto;
 }
-
+#our-story-content .halo-block-header h3 span,
 .vision-container h2,
 .template-page #WhyShopwithUs .halo-block-header h3 span,
 #cstm_our_story_page .halo-block-header h3 span,
@@ -8543,6 +8543,10 @@ div#baritam-page-section {
 
 #cstm_our_story_page img {
   border-radius: 25px;
+}
+
+#our-story-content .halo-item .text {
+  margin-bottom: 4px;
 }
 
 @media (max-width: 768px) {
