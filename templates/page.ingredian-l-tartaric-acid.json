@@ -9,24 +9,406 @@
  */
 {
   "sections": {
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
-      "settings": {}
-    },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "165941639628ba86d6": {
+      "type": "brand-tab-block",
+      "blocks": {
+        "5dd7287c-abd8-43d6-8778-01dfb7754fb0": {
+          "type": "tab",
+          "settings": {
+            "title": "",
+            "menu": "ingredients-page-menu",
+            "items_grid_gap": 5,
+            "items_spacing_tb": 8,
+            "items_spacing_lr": 0,
+            "items_border_radius": 0,
+            "image_width": 145,
+            "image_height": 15,
+            "image_border_radius": 0,
+            "items_bg_color": "#f5f5f5",
+            "items_border_color": "#f5f5f5",
+            "enable_title": false,
+            "fontsize_title": 18,
+            "fontweight_title": "500",
+            "title_color": "#202020",
+            "title_color_hover": "#202020",
+            "show_tab_image": false
+          }
+        }
+      },
+      "block_order": [
+        "5dd7287c-abd8-43d6-8778-01dfb7754fb0"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "display_brand_border": true,
+        "brand_bg": "#ffffff",
+        "brand_bg_gradient": "",
+        "layout_style": "style_01",
+        "brand_title": "know our ingredients",
+        "color_title": "#374650",
+        "fontsize_title": 32,
+        "fontsize_title_mb": 22,
+        "mg_bottom_title": 18,
+        "brand_des": "",
+        "color_des": "#36454f",
+        "fontsize_des": 16,
+        "mg_bottom_des": 36,
+        "title_align": "center",
+        "view_all": "",
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#36454f",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "brand_item_limit": 18,
+        "brand_rows": "5",
+        "title_tab_style": "style_01",
+        "fontsize_tab": 16,
+        "fontsize_tab_mb": 16,
+        "mg_bottom_title_tab": 15,
+        "color_tab": "#374650",
+        "color_border_tab": "",
+        "bg_color_tab": "",
+        "color_active": "",
+        "border_active": "#ea4226",
+        "bg_color_active": "",
+        "brand_button_text": "Show More",
+        "brand_button_text_less": "Show Less",
+        "brand_button_icon": "",
+        "button_color": "#ffffff",
+        "button_border_color": "#232323",
+        "button_bg_color": "#232323",
+        "button_bg_gradient": "",
+        "mg_top_desktop": 65,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 20,
+        "mg_bottom_tablet": 15,
+        "mg_bottom_mobile": 10
+      }
+    },
+    "ingrediant_page_two_coloumn_KnrGGK": {
+      "type": "ingrediant-page-two-coloumn",
+      "settings": {
+        "heading": "L-Tartaric Acid",
+        "image": "shopify://shop_images/L-Tartaric_Acid_4.png",
+        "title": "What It Is",
+        "title2": "Chemical Properties",
+        "title3": "Why We Use It",
+        "title4": "Where to Find It",
+        "description": "L-Tartaric acid is the levorotatory isomer of tartaric acid, a naturally occurring organic acid. It is known for its sharp and sour taste. Despite its strong acidic nature, it is soluble in water and ethanol.",
+        "description2": "Molecular Formula: C₄H₆O₆<br>\nSynonyms: (2R,3R)-Tartaric acid, L(+)-Tartaric acid",
+        "description3": "L-Tartaric acid stabilizes and enhances flavor in molecular hydrogen supplements. It also regulates pH and supports tablet disintegration, improving the solubility of other ingredients.",
+        "description4": "L-Tartaric acid naturally occurs in a variety of fruits, especially grapes, bananas, and tamarind. Due to its strong acidic nature, it is also used commercially in baking powders, wine, and effervescent beverages.",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
+    "marketing_community_banner_n3CQiW": {
+      "type": "marketing-community-banner",
+      "custom_css": [
+        ".we-community-wellness {background: #f2f3f9; margin-top: 50px;}"
+      ],
+      "settings": {
+        "title": "The Wellness Extract Edge",
+        "description": "<p>At Wellness Extract, we use high-purity L-tartaric acid that meets pharmaceutical standards. Tartaric acid is safe for human consumption, even when used over a long period.<br/><br/></p>",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
+    "marketing_community_banner_bGwDjE": {
+      "type": "marketing-community-banner",
+      "settings": {
+        "title": "Products Featuring (ingredient name)",
+        "description": "",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
+    "16593445849a1a3553": {
+      "type": "product-block",
+      "blocks": {
+        "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/L-Tartaric_Acid_2.png",
+            "link": "",
+            "banner_height": "auto",
+            "enable_image_zoom": true,
+            "banner_border_radius": 6,
+            "content_align": "center",
+            "align_items": "bottom",
+            "align_items_spacing_tb": 300,
+            "align_items_spacing_lr": 10,
+            "text": "",
+            "fontsize_text": 16,
+            "fontsize_text_mb": 12,
+            "mg_bottom_text": 13,
+            "color_text": "#ffffff",
+            "sub_text": "",
+            "fontsize_sub_text": 60,
+            "fontsize_sub_text_mb": 28,
+            "mg_bottom_sub_text": 40,
+            "color_sub_text": "#ffffff",
+            "description": "",
+            "fontsize_description": 14,
+            "color_description": "#ffffff",
+            "button_text": "",
+            "button_color": "#232323",
+            "button_border_color": "#f1b594",
+            "button_bg_color": "#f1b594",
+            "button_bg_color_gradient": "",
+            "button_color_hover": "#232323",
+            "button_border_color_hover": "#232323",
+            "button_bg_color_hover": "#ffffff",
+            "button_bg_color_gradient_hover": "",
+            "enable_custom_position": false,
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "video_link": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#ffffff",
+            "bg_color_icon": "#000000",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        },
+        "8dbacf63-f0f8-45db-b279-b411ebdbf8cc": {
+          "type": "collections",
+          "disabled": true,
+          "settings": {
+            "text_collections": "",
+            "button_text_collections": "",
+            "button_link_collections": ""
+          }
+        }
+      },
+      "block_order": [
+        "4c7db846-8b93-4c4c-9e79-098e7de819fd",
+        "8dbacf63-f0f8-45db-b279-b411ebdbf8cc"
+      ],
+      "custom_css": [
+        ".product-block-has__banner .product-block__banner figure img,.product-block-has__banner .product-block__image,.product-block-has__banner .product-block__banner figure {max-width: 500px; margin: auto;}"
+      ],
+      "settings": {
+        "container": "1770",
+        "padding_full_width": 0,
+        "disable_padding_content": false,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "border_height": 1,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "product_block_layout": "slider",
+        "product_bg": "rgba(0,0,0,0)",
+        "product_bg_gradient": "",
+        "product_block_collection": "tocotrienol",
+        "product_block_limit": 8,
+        "grid_gap": 30,
+        "pb_style": "style2",
+        "style_block_header": "style1",
+        "product_block_title": "",
+        "enable_border_title": true,
+        "enable_border_title_style2": true,
+        "fontsize_title": 16,
+        "fontsize_title_mb": 16,
+        "pd_top_title": 30,
+        "mg_bottom_title": 12,
+        "mg_bottom_title_mb": 12,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "title_align": "center",
+        "title_align_mb": "center",
+        "view_all": "",
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "mg_bottom_view_mb": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "button_text": "",
+        "button_text_font_size": 14,
+        "button_text_font_weight": "500",
+        "button_text_text_transform": "uppercase",
+        "product_button_width": 270,
+        "pd_top_product_button": 12,
+        "pd_bottom_product_button": 12,
+        "button_icon": "",
+        "mg_bottom_button": 55,
+        "enable_button_shadow": false,
+        "color_button": "#ffffff",
+        "border_color_button": "#232323",
+        "bg_color_button": "#232323",
+        "bg_color_gradient_button": "",
+        "color_button_hover": "",
+        "border_color_button_hover": "",
+        "bg_color_button_hover": "",
+        "bg_color_gradient_button_hover": "",
+        "style_countdown": "style_1",
+        "countdown": "",
+        "font_size_countdown_text": 14,
+        "color_countdown": "#f42b23",
+        "countdown_margin_left": 15,
+        "product_block_per_row": "4",
+        "product_block_infinite_scroll": true,
+        "product_block_swipe_on_mobile": true,
+        "enable_product_card_pd_bottom": false,
+        "product_card_pd_bottom": 40,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "spacing_top_dots": 0,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "enable_hover_arrow": false,
+        "product_block_progress_bar": false,
+        "product_block_counter_number": false,
+        "enable_infinite": true,
+        "enable_autoplay": false,
+        "product_block_arrows_custom_position": false,
+        "position_vertical_arrow": "70px",
+        "use_special_arrow_position": false,
+        "spacing_bottom": 0,
+        "spacing_right": 0,
+        "product_block_show": "2",
+        "button_text_slider": "",
+        "button_link_slider": "",
+        "button_width": 280,
+        "btn_spacing_top": 49,
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 50,
+        "enable_image_mb": true,
+        "display_list_collection": false,
+        "collection_color": "#202020",
+        "collection_color_hover": "#3e8cc4",
+        "collection_bg_color": "#ffffff",
+        "collection_bg_color_gradient": "",
+        "text_list": "View all categories",
+        "url_list": "",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 15
+      }
+    },
+    "blog_posts_list_AJWJCt": {
+      "type": "blog-posts-list",
+      "disabled": true,
+      "settings": {
+        "container": "1770",
+        "padding_full_width": 0,
+        "featured_blog_title": "Latest Posts",
+        "blog_posts": "wellness",
+        "item_distance": 15,
+        "post_limit": 3,
+        "limit_content_des": 22,
+        "margin_bottom_title": 0,
+        "margin_bottom_info": 13,
+        "margin_bottom_des": 6,
+        "margin_left_info": 0,
+        "show_more_button_text_color": "#3c3c3c",
+        "show_more_button_border_color": "#1e1e1e",
+        "show_more_button_background_color": "#1e1e1e",
+        "show_more_button_text_color_hover": "#000000",
+        "show_more_button_border_color_hover": "#ffffff",
+        "show_more_button_background_color_hover": "#ffffff",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_top_view": 0,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
+    },
+    "ingrediant_page_testomonial_jDY6wP": {
+      "type": "ingrediant-page-testomonial",
+      "blocks": {
+        "faq_block_Vr3dBb": {
+          "type": "faq_block",
+          "settings": {
+            "text": "L-tartaric acid exhibits significant antihypertensive and vasorelaxant effects, primarily mediated through the eNOS/NO/cGMP pathway.",
+            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9597030/"
+          }
+        },
+        "faq_block_xJNt7E": {
+          "type": "faq_block",
+          "settings": {
+            "text": "L-tartaric acid may have therapeutic potential for conditions such as diabetes and cardiovascular diseases.",
+            "link": "https://pubmed.ncbi.nlm.nih.gov/36464866/"
+          }
+        },
+        "faq_block_aexfQr": {
+          "type": "faq_block",
+          "settings": {
+            "text": "L-tartaric acid demonstrates potential as a therapeutic agent for managing Polycystic Ovary Syndrome (PCOS).",
+            "link": "https://pubmed.ncbi.nlm.nih.gov/39333435/"
+          }
+        },
+        "faq_block_deQLHg": {
+          "type": "faq_block",
+          "settings": {
+            "text": "Example benefit or description goes here. Example benefit or description goes here.Example benefit or description goes here.",
+            "link": "shopify://products/healthy-aging-bundle"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_Vr3dBb",
+        "faq_block_xJNt7E",
+        "faq_block_aexfQr",
+        "faq_block_deQLHg"
+      ],
+      "settings": {
+        "section_heading": "Scholarly Research",
+        "section_subtitle": "Want to know more about the science behind L-tartaric acid? 380+ studies currently explore its structure, medicinal uses, and properties."
+      }
     }
   },
   "order": [
-    "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "165941639628ba86d6",
+    "ingrediant_page_two_coloumn_KnrGGK",
+    "marketing_community_banner_n3CQiW",
+    "marketing_community_banner_bGwDjE",
+    "16593445849a1a3553",
+    "blog_posts_list_AJWJCt",
+    "ingrediant_page_testomonial_jDY6wP"
   ]
 }
