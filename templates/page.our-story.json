@@ -357,11 +357,10 @@
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_3.png",
-            "title": "",
+            "title": "Quality",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Patented, Proven <br> Ingredients",
+            "description": "",
             "color_des": "#374650",
             "link": "#"
           }
@@ -369,11 +368,10 @@
         "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872902.png",
-            "title": "",
+            "title": "Transparency",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Expert- <br>Formulated",
+            "description": "",
             "color_des": "#374650",
             "link": "#"
           }
@@ -381,60 +379,19 @@
         "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_1.png",
-            "title": "",
+            "title": "Science",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Ethically Sourced,<br> GMP-Certified",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_aVixiN": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_5.png",
-            "title": "",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "FDA-Inspected <br>Facility",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_NyLNnA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901.png",
-            "title": "",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "GRAS <br>Approved",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_HjABCT": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_1.png",
-            "title": "Third-Party Tested",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
             "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/skin-health"
+            "color_des": "#374650",
+            "link": "#"
           }
         }
       },
       "block_order": [
         "image_fthQXN",
         "image_mFiMEV",
-        "image_yhnmeK",
-        "image_aVixiN",
-        "image_NyLNnA",
-        "image_HjABCT"
+        "image_yhnmeK"
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
@@ -449,12 +406,12 @@
         "scroll_from": "rtl",
         "brand_scroll_time": "25",
         "display_brand_border": true,
-        "brand_bg": "#f2f3f9",
+        "brand_bg": "#fdf9f4",
         "brand_bg_gradient": "",
         "title_align": "center",
-        "brand_title": "Why Shop with Us",
-        "color_title": "#374650",
-        "fontsize_title": 40,
+        "brand_title": "The Heart of Wellness Extract",
+        "color_title": "#086b92",
+        "fontsize_title": 38,
         "fontsize_title_mb": 28,
         "mg_bottom_title": 0,
         "enable_border_title": false,
@@ -677,6 +634,7 @@
         "text_g7YFzY",
         "text_DWMzAk"
       ],
+      "disabled": true,
       "settings": {
         "custom_liquid1": true,
         "id_section": "our-story-content",
@@ -685,7 +643,7 @@
         "display_border_top": false,
         "display_border_bottom": false,
         "border_color": "#d0d0d0",
-        "service_block_swipe_on_mobile": "scroll",
+        "service_block_swipe_on_mobile": "slider",
         "color_icon_slider": "#212121",
         "service_block_style": "style_1",
         "policies_bg": "#fdf9f4",
@@ -716,9 +674,9 @@
         "title_align": "center",
         "item_width": "width_auto",
         "border_item": "none",
-        "enable_item_distance": false,
-        "enable_hover_box_shadow": false,
-        "enable_hover_effects_top": false,
+        "enable_item_distance": true,
+        "enable_hover_box_shadow": true,
+        "enable_hover_effects_top": true,
         "item_padding_top": 13,
         "item_padding_bottom": 13,
         "item_padding_left_right": 40,
