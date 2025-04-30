@@ -348,7 +348,12 @@
         </div>
       {% endif %}
       <div class="halo-block-content">
-        <div class="collapsible-content faqs{% unless enable_image_right %} not_image_right{% endunless %}">
+        <div
+          class="collapsible-content faqs{% unless enable_image_right %} not_image_right{% endunless %}"
+          {% if section.settings.EnableleftImage %}
+            style="direction: rtl;"
+          {% endif %}
+        >
           <div class="collapsible-grid">
             <div class="collapsible-grid__item">
               {% if section.settings.special_content != blank %}
@@ -612,6 +617,12 @@
                "id": "enable_image_right",
                "label": "t:settings_schema.typography.settings.typography.image_enable",
                "default": true
+           },
+           {
+               "type": "checkbox",
+               "id": "EnableleftImage",
+               "label": "Enable Left Image",
+               "default": false
            },
            {
                "type" : "image_picker",
