@@ -776,8 +776,8 @@ margin-top: 20px;
                                   {% if section.settings.brand_image_ratio == 'square' %}style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %}
                                   aria-label="{{ preview_img.alt | default: shop.name | escape }}"
                                   >
-                                  <img 
-                                  {% render 'lazyload', preview_img: preview_img %}
+                                  <img src="{{ preview_img | img_url:'master' }}"
+                                 
                                   style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{ block.settings.image.width }}px;{% else %}max-width: {{ block.settings.image.width }}px;{% endif %} margin: 0 auto; height: auto"
                                   />
                                   {% if settings.enable_lazyload %}
