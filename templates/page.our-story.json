@@ -790,6 +790,7 @@
         "text_daXJBW",
         "text_hp3tka"
       ],
+      "disabled": true,
       "settings": {
         "custom_liquid1": true,
         "id_section": "cstm_our_story_page",
@@ -874,6 +875,59 @@
         "mg_bottom_desktop1": 0,
         "mg_bottom_tablet1": 0,
         "mg_bottom_mobile1": 0
+      }
+    },
+    "rich_text_P6kMaE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AVbVVR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Empowering You: Be the CEO of Your Own Body ",
+            "heading_size": 40,
+            "heading_size_mb": 26,
+            "heading_line_height": 0.8,
+            "heading_color": "#374650"
+          }
+        },
+        "text_6zJcDN": {
+          "type": "text",
+          "settings": {
+            "text": "<p style=\"color:#374650\">You should be the master of your health, thus, at Wellness Extract, we strive to provide you with the right resources, expertise and education to feel confident in your choices. With our detailed product pages and wide range of research-based blogs, we are here to help you understand your body, its problems, and curate your customized solution. \n<br>\n<br>\n<a href=\"/pages/all-bundles\" class=\"button\" style=\"\n    border-radius: 4px !important;\n    color: #fff;\n    background: #086b92;\n    padding: 10px 19px !important;\n    font-size: 16px;\n    width: fit-content;\n    font-weight: 700;\">Buy Now</a>\n\n  </p>",
+            "text_size": 16,
+            "text_size_mb": 16,
+            "text_font_weight": "500",
+            "text_line_height": 1,
+            "margin_top_text": 32,
+            "text_color": "#374650",
+            "text_width": "700px"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AVbVVR",
+        "text_6zJcDN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "id": "our-story-content",
+        "container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": true,
+        "color_border_bottom": "#e8e8e8",
+        "enable_minus_mg_top": true,
+        "minus_spacing_top": 0,
+        "rich_text_bg": "#f8f8f8",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 60,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 65,
+        "mg_bottom_tablet": 65,
+        "mg_bottom_mobile": 25
       }
     },
     "collapsible_content_7wpXk8": {
@@ -1825,6 +1879,7 @@
     "custom_service_block_nJT8kB",
     "collapsible_content_UDdBnm",
     "custom_service_block_dxz8f6",
+    "rich_text_P6kMaE",
     "collapsible_content_7wpXk8",
     "custom_service_block_t4TgiD",
     "collapsible_content_bFPy3e",
