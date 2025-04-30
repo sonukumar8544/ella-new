@@ -775,7 +775,7 @@ margin-top: 20px;
                                                             {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                         </{% if block.settings.link != blank %}a{% else %}p{% endif %}>
                                                     </div>
-                                                {%- else -%}
+                                              
                                                   {% comment %}  <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
                                                         {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
                                                         {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
@@ -808,14 +808,14 @@ margin-top: 20px;
                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                 </{% if block.settings.link != blank %}a{% else %}p{% endif %}>
                                             </div>
-                                        {%- else -%}
+                                       {% comment %}    {%- else -%}
                                             <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
                                                 {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
                                                 {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
                                                 <div class="placeholder" style="--height_placeholder: 200px;">
                                                     {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
                                                 </div>
-                                            </a>
+                                            </a>   {% endcomment %}
                                         {%- endif -%}
                                         {%- if block.settings.title != blank -%}
                                             <{% if block.settings.link != blank %}a href="{{ block.settings.link }}" {% else %}p{% endif %} class="text" >{{ block.settings.title }}</{% if block.settings.link != blank %}a{% else %}p{% endif %}>
