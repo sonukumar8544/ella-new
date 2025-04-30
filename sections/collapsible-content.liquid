@@ -322,6 +322,15 @@
     	        }
     	    }
   </style>
+  {% style %}
+     {% if section.settings.enabled_id == true %}
+      {% if section.settings.id_section != blank %}
+       #{{ section.settings.id_section }} .collapsible-content {
+        align-items: center;
+       }
+      {% endif %}
+    {% endif %}
+  {% endstyle %}
   <faqs-item
     class="halo-collapsible-content section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
     {% if section.settings.id_section != blank %}
@@ -470,7 +479,13 @@
                "type": "text",
                "id": "id_section",
                "label": "t:sections.image-banner.blocks.image.settings.content.id_section",
-               "info": "t:sections.image-banner.blocks.image.settings.content.id_section_note"
+               "info": "Add Custom ID"
+           },
+      	    {
+               "type": "checkbox",
+               "id": "enabled_id",
+               "label": "Enable Custom Id",
+               "info": "Add Custom ID then Enabled checkbox"
            },
 	    {
 	        "type": "select",
