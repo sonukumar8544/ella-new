@@ -430,74 +430,74 @@
               <div id="table-of-contents"></div>
               <style>
                 div#table-of-contents{
-                    border: 1px solid #ddd;
-                    background-color: #f7fafc;
-                    padding: 10px;
-                    border-radius: 6px;
+                border: 1px solid #ddd;
+                background-color: #f7fafc;
+                padding: 10px;
+                border-radius: 6px;
                 }
 
                 div#table-of-contents ul{
-                    margin-left: 50px;
+                margin-left: 50px;
                 }
 
                 .halo-article-content {
-                                     max-width: 950px;
-                                     }
+                max-width: 950px;
+                }
 
                 div#table-of-contents h3{
-                    margin: 0px;
-                    padding: 0px;
+                margin: 0px;
+                padding: 0px;
                 }
 
                 @media (max-width: 1024px) {
-                    .header-with-sidebar {
-                        display: flex;
-                        flex-direction: row-reverse !important;
-                    }
+                .header-with-sidebar {
+                display: flex;
+                flex-direction: row-reverse !important;
+                }
                 }
                 @media (min-width: 1024.1px) {
-                    .header-with-sidebar {
-                        display: none !important;
-                    }
+                .header-with-sidebar {
+                display: none !important;
+                }
                 }
 
                 .filter-btn-mob-details{
-                    border: 1px solid #006a91;
-                    border-radius: 4px;
-                    padding: 6px 10px;
-                    color: #006a91;
+                border: 1px solid #006a91;
+                border-radius: 4px;
+                padding: 6px 10px;
+                color: #006a91;
                 }
-                                              @media (max-width: 500px) {
-                                                  .author-top {
-                                                    align-items: start;
-                                                    flex-direction: column;
-                                                    gap: 12px !important;
-                                                    align-items: start !important;
-                                                  }
-                                                }
-                                            .blog-author-details {
-                                               display: flex;
-                                               gap: 10px;
-                                            }
-                                            .blog-editor {
-                                               display: flex;
-                                               gap: 12px;
-                                               align-items: center;
-                                            }
-                                            .article-info-details {
-                                              margin-top: 20px;
-                                              margin-bottom: 15px;
-                                              font-style: italic;
-                                            }
-                                            .article-info-details p {
-                                              margin: 5px 0;
-                                              font-size: 16px;
-                                              color: #999999;
-                                            }
-                                            .article-info-details .highlight {
-                                              font-weight: bold;
-                                              color: #999999;
-                                            }
+                @media (max-width: 500px) {
+                .author-top {
+                align-items: start;
+                flex-direction: column;
+                gap: 12px !important;
+                align-items: start !important;
+                }
+                }
+                .blog-author-details {
+                display: flex;
+                gap: 10px;
+                }
+                .blog-editor {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                }
+                .article-info-details {
+                margin-top: 20px;
+                margin-bottom: 15px;
+                font-style: italic;
+                }
+                .article-info-details p {
+                margin: 5px 0;
+                font-size: 16px;
+                color: #999999;
+                }
+                .article-info-details .highlight {
+                font-weight: bold;
+                color: #999999;
+                }
               </style>
 
               {% assign word_count = article.content | strip_html | split: ' ' | size %}
@@ -555,7 +555,7 @@
                     <div
                       class="halo-block-header text-left"
                       style="
-                                                                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
+                                                                                                                    --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
                       "
                     >
                       <h3
