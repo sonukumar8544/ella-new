@@ -177,7 +177,7 @@
                 {% assign original_price1 = product.variants[0].compare_at_price %}
                 {% assign discount1 = original_price1 | times: 0.2 %}
                 {% assign bundlenewprice1 = original_price1 | minus: discount1 %}
-                {{ bundlenewprice1 | money_with_currency }}
+                {{ original_price1 | money_with_currency }}
               </span>
               <!--
                 <span class="bundle_special_old old-price">
@@ -191,7 +191,7 @@
                 {% assign original_price2 = product.variants[0].price %}
                 {% assign discount2 = original_price2 | times: 0.2 %}
                 {% assign bundlenewprice2 = original_price2 | minus: discount2 %}
-                {{ bundlenewprice2 | money_with_currency }}
+                {{ original_price2 | money_with_currency }}
                 {% comment %} original before 20%    {{ product.variants[0].price | money }}{% endcomment %}
               </span>
             </div>
