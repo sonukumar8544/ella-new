@@ -8467,6 +8467,10 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 }
 
 @media (max-width: 768px) {
+  #our-story-content_COO_MD_M .halo-row .wrapper-image {
+    width: 200px;
+    height: 200px;
+  }
   /* our story md direct manager css */
   #our-story-content_COO_MD_M .rte.subtext-brand.text-center p {
     text-align: center;
