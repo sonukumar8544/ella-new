@@ -8588,7 +8588,7 @@ div#baritam-page-section {
   }
 }
 @media (max-width: 500px) {
-  .template-page #our-story-content .brand-slider .halo-item .description {
+  #our-story-content .brand-slider .halo-item .description {
     font-size: 14px !important;
   }
 }
