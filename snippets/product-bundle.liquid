@@ -160,11 +160,10 @@
                         {{ 'products.product.bundle_block.total_price' | t }}
                       </span>
                       {%- if bundle_discount_rate > 0 -%}
-                        <!--
-                          <span class="old-price bundle-old-price">
-                            {{ cart.total_price | money }}
-                          </span>
-                        -->
+                        <span class="old-price bundle-old-price">
+                          {{ cart.total_price | money }}
+                        </span>
+
                         {% comment %}  goto> product metafield > find >Bundle Discount Rate given {% endcomment %}
                         <span
                           class="bundle-price"
