@@ -171,11 +171,11 @@
                           data-bundle-discount-rate="{{ bundle_discount_rate }}"
                         >
                           {%- assign compensation = 1 | minus: bundle_discount_rate -%}
-                          {{ cart.total_price | times: compensation | money }}
+                          {{ cart.total_price | times: compensation | money_with_currency }}
                         </span>
                       {%- endif -%}
                       <span class="price" data-bundle-product-total>
-                        {{ cart.total_price | money }}
+                        {{ cart.total_price | money_with_currency }}
                       </span>
                     </div>
                     <div class="bundle-product-action">
