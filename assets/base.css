@@ -8297,6 +8297,13 @@ div#tab-shipping-amp-returns-mobile {
 }
 
 @media (min-width: 768px) {
+  /* our story md direct manager css */
+  #our-story-content .rte.subtext-brand.text-center p {
+    text-align: center;
+    width: 650px;
+    margin: auto;
+  }
+
   .product-block-has__banner.has__banner--left[data-width-banner="50"]
     .product-block__banner {
     padding-right: calc(var(--grid-gap) * 2);
@@ -8453,6 +8460,11 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 }
 
 @media (max-width: 768px) {
+  /* our story md direct manager css */
+  #our-story-content .rte.subtext-brand.text-center p {
+    text-align: center;
+    margin: auto 20px;
+  }
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
     font-size: 12px !important;
