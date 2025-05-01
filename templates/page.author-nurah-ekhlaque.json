@@ -53,12 +53,20 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/nurah-ekhlaque-6b2588162"
       }
+    },
+    "author_blog_card_fqGKwM": {
+      "type": "author-blog-card",
+      "name": "author-blog-card",
+      "settings": {
+        "blog_author_name": "Nurah Ekhlaque"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_9LRt8h"
+    "author_section_9LRt8h",
+    "author_blog_card_fqGKwM"
   ]
 }
