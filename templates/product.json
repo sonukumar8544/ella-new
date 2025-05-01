@@ -1483,17 +1483,10 @@
             "product": "{{product}}",
             "widget_type": "reviews_widget"
           }
-        },
-        "okendo_star_rating_JzGDWj": {
-          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{product}}"
-          }
         }
       },
       "block_order": [
-        "okendo_reviews_widget_ACqWER",
-        "okendo_star_rating_JzGDWj"
+        "okendo_reviews_widget_ACqWER"
       ],
       "settings": {
         "include_margins": false
