@@ -8552,7 +8552,8 @@ div#baritam-page-section {
   white-space: nowrap;
 }
 #our-story-content .halo-row .wrapper-image {
-  border-radius: 12px !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
 }
 #our-story-content .halo-item .wrapper-content {
   padding: 0px 0px 10px 0px !important;
