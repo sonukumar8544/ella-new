@@ -179,9 +179,11 @@
                 {% assign bundlenewprice1 = original_price1 | minus: discount1 %}
                 {{ original_price1 | money_with_currency }}
               </span>
-              <span class="bundle_special_old old-price">
-                {{ product.variants[0].compare_at_price | money_with_currency }}
-              </span>
+              <!--
+                <span class="bundle_special_old old-price">
+                     {{ product.variants[0].compare_at_price | money_with_currency }}
+                </span>
+              -->
             </div>
           {%- else -%}
             <div class="price-regular bundle_special_price_regular">
@@ -193,9 +195,7 @@
                 {% comment %} original before 20%    {{ product.variants[0].price | money }}{% endcomment %}
               </span>
             </div>
-            <span class="bundle_special_old old-price">
-              {{ product.variants[0].price | money_with_currency }}
-            </span>
+            bundle-product-right
           {%- endif -%}
         </div>
       </div>
