@@ -8610,12 +8610,16 @@ div#baritam-page-section {
     white-space: nowrap;
   }
   #our-story-content_COO_MD_M .halo-row .wrapper-image {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 }
 @media (max-width: 550px) {
   #our-story-content_COO_MD_M .brand-slider .halo-item .description {
     font-size: 12px;
+  }
+  #our-story-content_COO_MD_M .halo-row .wrapper-image {
+    width: 150px;
+    height: 150px;
   }
 }
