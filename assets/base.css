@@ -8551,6 +8551,9 @@ div#baritam-page-section {
   padding: 20px 10px;
   white-space: nowrap;
 }
+#our-story-content .halo-item .wrapper-image {
+  border-radius: 12px;
+}
 
 @media (max-width: 768px) {
   .template-page #our-story-content .halo-block-header h3 span,
