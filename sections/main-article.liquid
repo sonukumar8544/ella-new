@@ -261,6 +261,7 @@
                 }
                 .we-blog-title{
                     max-width: 950px;
+                    padding-bottom: 10px;
                 }
 
                 div#we-blog-banner {
@@ -327,6 +328,18 @@
                                 </a>
                             </h3>
                             </div>
+                       {% elsif tag == "lehri" %}
+                            <div class="blog-editor">
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri.jpg?v=1741159628" width="40px" alt="sarika jassal">
+                            <h3>
+                                <a href="https://wellnessextract.com/pages/dr-surangama-lehri"> 
+                                 <span class="blog-author">
+                                   <span><i>Reviewed By: </i> Surangama Lehri</span>
+                                   {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                 </span>
+                                </a>
+                            </h3>
+                            </div>  
                         {% endif %}
                     {% endfor %}
                     </div>
@@ -799,7 +812,8 @@ div#table-of-contents h3{
                       {%- endif -%}
                       {%- if show_share -%}
                           <div id="share-indivisual-blog" class="article-social text-left{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                              {% render 'halo-share', product: article %}
+                              {% comment %} {% render 'halo-share', product: article %} {% endcomment %}
+                              {% render 'halo-social-media-icons' %}
                           </div>
                       {%- endif -%}
                   </div>

@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "settings": {}
+    },
+    "author_section_9LRt8h": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_CUdMWQ": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Nurah Ekhlaque is a dedicated medical writer with a Master’s in Biotechnology from Guru Ghasidas University, India. She brings over three years of experience in scientific writing, research communication, and biomedical content creation, contributing to high-quality publications in the healthcare and life sciences industries. <br> <br>Nurah began her research journey at the All India Institute of Medical Sciences (AIIMS), New Delhi, where she contributed to cutting-edge cancer biology research. There, she developed foundational expertise in molecular techniques and biomedical experimentation. Building on this, she worked as a Research Assistant at Saarland University, Germany, where her focus shifted to neuropharmacology imaging using advanced techniques such as immunohistochemistry and confocal microscopy. <br><br>Her work seamlessly blends scientific accuracy with clear communication, whether she’s crafting peer-reviewed articles, regulatory content, or educational healthcare materials. Beyond writing, Nurah is also passionate about mentoring emerging medical writers, supporting them in building strong, research-backed content."
+          }
+        },
+        "text_block_CjHtej": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_CUdMWQ",
+        "text_block_CjHtej"
+      ],
+      "name": "Author Section",
+      "settings": {
+        "author_image": "shopify://shop_images/nurah.jpg",
+        "author_name": "Nurah Ekhlaque",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": "https://www.linkedin.com/in/nurah-ekhlaque-6b2588162"
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "main",
+    "shogun-optimizer",
+    "author_section_9LRt8h"
+  ]
+}

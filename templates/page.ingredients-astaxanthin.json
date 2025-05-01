@@ -69,8 +69,8 @@
         "color_view_all": "#36454f",
         "icon_view_all": "",
         "color_view_all_icon": "#eb492f",
-        "brand_item_limit": 18,
-        "brand_rows": "5",
+        "brand_item_limit": 12,
+        "brand_rows": "6",
         "title_tab_style": "style_01",
         "fontsize_tab": 16,
         "fontsize_tab_mb": 16,
@@ -121,6 +121,15 @@
       "settings": {
         "title": "The Wellness Extract Edge",
         "description": "<p>We source Astaxanthin from fresh <em>Haematococcus pluvialis</em> microalgae, not synthetic alternatives. Our ingredients are non-GMO and third-party tested.<br/><br/></p>",
+        "button_link": "",
+        "button_text": "Read More"
+      }
+    },
+    "marketing_community_banner_bGwDjE": {
+      "type": "marketing-community-banner",
+      "settings": {
+        "title": "Products Featuring (ingredient name)",
+        "description": "",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -207,7 +216,7 @@
         "product_block_layout": "slider",
         "product_bg": "rgba(0,0,0,0)",
         "product_bg_gradient": "",
-        "product_block_collection": "all-products",
+        "product_block_collection": "astaxanthin",
         "product_block_limit": 8,
         "grid_gap": 30,
         "pb_style": "style2",
@@ -305,9 +314,9 @@
         "border_layout_card": "full",
         "border_width_card": 5,
         "border_color_card": "#f0f1f4",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 15
@@ -389,6 +398,7 @@
     "165941639628ba86d6",
     "ingrediant_page_two_coloumn_KnrGGK",
     "marketing_community_banner_n3CQiW",
+    "marketing_community_banner_bGwDjE",
     "16593445849a1a3553",
     "blog_posts_list_AJWJCt",
     "ingrediant_page_testomonial_jDY6wP"

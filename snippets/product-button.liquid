@@ -229,7 +229,8 @@
                                                 {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                     {%- assign subtotal = subtotal | strip_html -%}
 
-                                                    {{ 'products.product.sub_total' | t : value : subtotal }}
+                                                    {{ 'products.product.add_to_cart' | t}}
+                                              {% comment %}  {{ 'products.product.sub_total' | t : value : subtotal }} {% endcomment %}
                                                 {%- else -%}
                                                     {{ 'products.product.add_to_cart' | t}}
                                                 {%- endif -%}
@@ -241,7 +242,8 @@
                                         <button type="submit" name="add" data-btn-addToCart class="product-form__submit button button--secondary an-{{ atc_animation }}{% if show_subtotal_text %} button-text-change{% endif %}{% if settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' %} button-not-animation{% endif %}" id="product-add-to-cart">
                                             {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                 {%- assign subtotal = subtotal | strip_html -%}
-                                                {{ 'products.product.sub_total' | t : value : subtotal }}
+                                                {{ 'products.product.add_to_cart' | t}}
+                                              {% comment %}  {{ 'products.product.sub_total' | t : value : subtotal }} {% endcomment %}
                                             {%- else -%}
                                                 {{ 'products.product.add_to_cart' | t}}
                                             {%- endif -%}

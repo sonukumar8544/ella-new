@@ -342,11 +342,60 @@
                 }
             {%- endif -%}
         }
+           #cstm_all_bundles .halo-item .spotlight-item,
+          div#cstm_all_ingredients .halo-item .spotlight-item{
+            border: 1px solid #c3c3c3;
+            border-radius: 12px;
+            margin-bottom:30px;
+          }
+          #cstm_all_bundles .halo-row,
+          #cstm_all_ingredients .halo-row{
+          justify-content: flex-start;
+          }
+      div#cstm_all_bundles .spotlight-inner .link_title,
+      div#cstm_all_ingredients .spotlight-inner .link_title{
+                  margin-bottom: 15px;
+      }
+      div#cstm_all_bundles .halo-item .spotlight-item{
+                  background: #ECEEF2;
+      }
+      
         @media (max-width: 551px) {
+           div#cstm_all_bundles .halo-item .spotlight-item,
+          div#cstm_all_ingredients .halo-item .spotlight-item{
+          margin-bottom:2px;
+          }
+
             {%- if section.settings.disable_padding_content -%}
                 .section-block-{{section.id}} .container-full .halo-block-header{padding-left: 10px;padding-right: 10px}
             {%- endif -%}
-        }
+                   div#cstm_all_bundles .content.spotlight-inner,
+                div#cstm_all_ingredients .content.spotlight-inner {
+                min-width: min-content !important;
+                }
+                div#cstm_all_bundles .content.align-items--center,
+                 div#cstm_all_bundles .content.align-items--bottom,
+                 div#cstm_all_bundles .content.align-items--top,
+                 div#cstm_all_ingredients .content.align-items--center,
+                 div#cstm_all_ingredients .content.align-items--bottom,
+                 div#cstm_all_ingredients .content.align-items--top{
+                  padding-top:0px !important;
+                  padding-bottom:5px!important;
+                 }
+                }
+                  #cstm_all_bundles .halo-row .image-container {
+    position: relative;
+}
+#cstm_all_bundles .halo-row .img-box:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 2px;
+    width: 72px;
+    background-color: #006a91;
+}
     </style>
 {%- endif -%}
 
@@ -354,7 +403,7 @@
 {
     "name": "t:sections.spotlight_block.presets.section",
     "class": "sections-spotlight-block",
-    "max_blocks": 4,
+    "max_blocks": 16,
     "settings": [
     {
         "type": "header",
