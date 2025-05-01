@@ -8594,7 +8594,7 @@ div#baritam-page-section {
   #cstm_our_story_page .collapsible-grid__item p {
     text-align: center;
   }
-
+  #our-story-content_COO_MD_M .halo-item .text,
   .template-page #our-story-content .halo-item .text {
     margin-bottom: 4px;
     font-size: 18px !important;
@@ -8603,7 +8603,7 @@ div#baritam-page-section {
   }
 }
 @media (max-width: 500px) {
-  #our-story-content .brand-slider .halo-item .description {
+  #our-story-content_COO_MD_M .brand-slider .halo-item .description {
     font-size: 12px;
   }
 }
