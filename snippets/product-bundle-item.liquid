@@ -195,7 +195,11 @@
                 {% comment %} original before 20%    {{ product.variants[0].price | money }}{% endcomment %}
               </span>
             </div>
-            bundle-product-right
+            <!--
+              <span class="bundle_special_old old-price">
+                {{ product.variants[0].price | money_with_currency }}
+              </span>
+            -->
           {%- endif -%}
         </div>
       </div>
