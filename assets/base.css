@@ -8566,16 +8566,16 @@ div#baritam-page-section {
   padding: 20px 0px 0px 0px;
   white-space: nowrap;
 }
-#our-story-content .halo-row .wrapper-image 
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 2px solid #006a91;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    margin: auto;
+#our-story-content .halo-row .wrapper-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid #006a91;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: auto;
 }
 #our-story-content .halo-item .wrapper-content {
   padding: 0px 0px 10px 0px !important;
