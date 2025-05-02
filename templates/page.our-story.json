@@ -355,15 +355,15 @@
     },
     "brand_slider_Xth6yi": {
       "type": "brand-slider",
-     "blocks": {
+      "blocks": {
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_3.png",
-            "title": "",
+            "image": "shopify://shop_images/Quality.svg",
+            "title": "Quality",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Patented, Proven <br> Ingredients",
+            "description": "",
             "color_des": "#374650",
             "link": "#"
           }
@@ -371,11 +371,11 @@
         "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872902.png",
-            "title": "",
+            "image": "shopify://shop_images/Transparency.svg",
+            "title": "Transparency",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Expert- <br>Formulated",
+            "description": "",
             "color_des": "#374650",
             "link": "#"
           }
@@ -383,60 +383,20 @@
         "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_1.png",
-            "title": "",
+            "image": "shopify://shop_images/Science.svg",
+            "title": "Science",
             "color_text": "#374650",
             "color_text_hover": "#374650",
-            "description": "Ethically Sourced,<br> GMP-Certified",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_aVixiN": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_5.png",
-            "title": "",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "FDA-Inspected <br>Facility",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_NyLNnA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901.png",
-            "title": "",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "GRAS <br>Approved",
-            "color_des": "#374650",
-            "link": "#"
-          }
-        },
-        "image_HjABCT": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_1.png",
-            "title": "Third-Party Tested",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
             "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/skin-health"
+            "color_des": "#374650",
+            "link": "#"
           }
         }
       },
       "block_order": [
         "image_fthQXN",
         "image_mFiMEV",
-        "image_yhnmeK",
-        "image_aVixiN",
-        "image_NyLNnA",
-        "image_HjABCT"
+        "image_yhnmeK"
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
@@ -451,10 +411,10 @@
         "scroll_from": "rtl",
         "brand_scroll_time": "25",
         "display_brand_border": true,
-        "brand_bg": "#f2f3f9",
+        "brand_bg": "#fdf9f4",
         "brand_bg_gradient": "",
         "title_align": "center",
-        "brand_title": "Why Shop with Us",
+        "brand_title": "The Heart of Wellness Extract",
         "color_title": "#374650",
         "fontsize_title": 40,
         "fontsize_title_mb": 28,
@@ -521,57 +481,6 @@
         "mg_bottom_desktop": 75,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 40
-      }
-    },
-    "collapsible_content_UDdBnm": {
-      "type": "collapsible-content",
-      "blocks": {
-        "content_jM9wtG": {
-          "type": "content",
-          "settings": {
-            "heading": "Oxidative Defense",
-            "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.</p><p></p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "content_jM9wtG"
-      ],
-      "disabled": true,
-      "settings": {
-        "id_section": "cstm_our_story_page",
-        "enabled_id": true,
-        "container": "1170",
-        "padding_full_width": 0,
-        "collapsible_bg": "#ffffff",
-        "collapsible_bg_gradient": "",
-        "collapsible_title": "",
-        "color_title": "#374650",
-        "fontsize_title": 28,
-        "fontsize_title_mb": 20,
-        "collapsible_des": "",
-        "color_des": "#374650",
-        "fontsize_des": 22,
-        "fontsize_des_mb": 16,
-        "max_width_des": 740,
-        "title_align": "center",
-        "enable_image_right": true,
-        "EnableleftImage": false,
-        "enable_zoom": false,
-        "image_right": "shopify://shop_images/The_Heart_of_Wellness_Extract_Quality_Transparency_and_Science.png",
-        "bg_content_color": "#ffffff",
-        "content_color": "#374650",
-        "title_color": "#086b92",
-        "icon_color": "#8b8787",
-        "border_color": "#f1f1f1",
-        "special_content": "<h2>The Heart of Wellness Extract: Quality, Transparency, and Science</h2><p>What we firmly believe at Wellness Extract is that quality and integrity are non-negotiable. Behind the development of each product lies extensive scientific research and third-party lab testing to ensure purity, potency and safety. </p><p>Our customers are our family, and they deserve more than empty promises and words. Transparency is the core foundation of every step we take. From ethically sourced ingredients to eco-friendly packaging, every decision we make reflects our dedication to creating products that resonate with our founder’s story. </p>",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 20,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 70,
-        "mg_bottom_tablet": 90,
-        "mg_bottom_mobile": 25
       }
     },
     "collapsible_content_wLcb8C": {
@@ -894,7 +803,6 @@
     "collapsible_content_wicXQc",
     "rich_text_P6kMaE",
     "brand_slider_Xth6yi",
-    "collapsible_content_UDdBnm",
     "collapsible_content_wLcb8C",
     "collapsible_content_7wpXk8",
     "founder_section_mezyQY",
