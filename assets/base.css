@@ -8553,6 +8553,7 @@ div#baritam-page-section {
 #the_heart_of_wellness_extract .halo-block-header h3 span{
   margin-bottom: 0px !important;
 }
+
 #the_heart_of_wellness_extract .halo-block-header h3 span,
 #our-story-content .halo-block-header h3 span,
 .vision-container h2,
@@ -8599,6 +8600,9 @@ div#baritam-page-section {
 }
 
 @media (max-width: 768px) {
+  #cstm_our_story_page .collapsible-grid__item p {
+    text-align: center;
+}
   #the_heart_of_wellness_extract .halo-block-header h3 span,
   .template-page #our-story-content .halo-block-header h3 span,
   .template-page #WhyShopwithUs .halo-block-header h3 span,
