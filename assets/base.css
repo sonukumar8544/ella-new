@@ -8545,8 +8545,8 @@ div#baritam-page-section {
   margin-top: auto;
 }
  #cstm_our_story_page .halo-block-content .collapsible-image{
-    margin-top: auto;
-    animation: auto;
+    margin-top: auto !important;
+    animation: auto !important;
     will-change: transform;
 }
 #our-story-content .halo-block-header h3 span,
