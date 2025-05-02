@@ -8550,6 +8550,7 @@ div#baritam-page-section {
     will-change: transform;
     border-radius: 25px;
 }
+#the_heart_of_wellness_extract .halo-block-header h3 span,
 #our-story-content .halo-block-header h3 span,
 .vision-container h2,
 .template-page #WhyShopwithUs .halo-block-header h3 span,
@@ -8595,6 +8596,7 @@ div#baritam-page-section {
 }
 
 @media (max-width: 768px) {
+  #the_heart_of_wellness_extract .halo-block-header h3 span,
   .template-page #our-story-content .halo-block-header h3 span,
   .template-page #WhyShopwithUs .halo-block-header h3 span,
   #cstm_our_story_page .halo-block-header h3 span,
