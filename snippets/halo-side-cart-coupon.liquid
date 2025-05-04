@@ -1,20 +1,18 @@
 <!-- halo-side-cart-coupon -->
 <pre id="myPreTag">THANKSMOM</pre>
 <style>
-      pre {
-        position: relative;
-        background: #d3d6db;
-        padding: 10px;
-        font-size: 15px;
-        word-wrap: break-word;
-        white-space: pre-wrap;
-        border: 1px solid #e6e7e9;
-    }
-
-    .copy-button {
+       #myPreTag {
+      padding: 10px;
+      font-size: 15px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      border: 1px dotted #ffffff;
+      top: 0;
       position: absolute;
-      top: 19px;
-      right: 75px;
+      left: 50%;
+  }
+
+    #myPreTag .copy-button {
       cursor: pointer;
       color: #006a91;
       background: #ffffff;
@@ -22,11 +20,12 @@
       height: 24px;
       width: 42px;
       text-align: center;
+      margin-left: 20px;
   }
 
-    .copy-button:hover{
-      color: #000;
-    }
+     #myPreTag .copy-button:hover{
+        color: #000;
+      }
 </style>
 <script>
     const preTag = document.getElementById("myPreTag");
