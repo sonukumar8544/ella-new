@@ -555,6 +555,9 @@
 }
 
 @media (max-width: 1400px) {
+  .content.spotlight-inner.text-left {
+  left: 29%;
+}
   .spotlight-block .layout--special .slick-arrow {
     display: none !important;
   }
