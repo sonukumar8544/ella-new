@@ -1110,19 +1110,6 @@
             "color_des": "#374650",
             "link": "#"
           }
-        },
-        "image_HjABCT": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Frame_1618872901_1.png",
-            "title": "Third-Party Tested",
-            "color_text": "#36454f",
-            "color_text_hover": "#36454f",
-            "description": "",
-            "color_des": "#3c3c3c",
-            "link": "shopify://collections/skin-health"
-          }
         }
       },
       "block_order": [
@@ -1130,8 +1117,7 @@
         "image_mFiMEV",
         "image_yhnmeK",
         "image_aVixiN",
-        "image_NyLNnA",
-        "image_HjABCT"
+        "image_NyLNnA"
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
