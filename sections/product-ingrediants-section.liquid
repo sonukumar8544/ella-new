@@ -44,66 +44,123 @@
 {% endschema %}
 
 {% if product.metafields.Custom.we_product_ingrediant_image_one %}
-<div class="product-ing-product-ing-iimg-text-section">
-  {% if section.settings.heading %}
-    <h2 class="product-ing-img-heading">{{ section.settings.heading }}</h2>
-  {% endif %}
-
-  <div class="product-ing-img-two-column-new">
-    <div class="product-ing-img-image">
-      {% if product.metafields.Custom.we_product_ingrediant_image_one %}
-        <img src="{{ product.metafields.Custom.we_product_ingrediant_image_one | img_url: 'master' }}" alt="Annatto Seeds">
-      {% else %}
-        <img src="https://via.placeholder.com/200" alt="Placeholder Image">
-      {% endif %}
-    </div>
-
-    <div class="product-ing-iimg-text">
-      {% if product.metafields.Custom.we_product_ingrediat_title_one %}
-        <h3>{{ product.metafields.Custom.we_product_ingrediat_title_one }}</h3>
-      {% endif %}
-
-      {% if product.metafields.Custom.we_product_ingrediant_subtitle_one %}
-        <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_one }}</p>
-      {% endif %}
-
-      {% if product.metafields.Custom.we_product_ingrediant_link_one %}
-        <a href="{{ product.metafields.Custom.we_product_ingrediant_link_one }}" class="product-ing-img-shop-button">
-          {{ section.settings.button_text }}
-        </a>
-      {% endif %}
-    </div>
-  </div>
-
-  {% comment %} Ingrediant block 2 {% endcomment %}
-  {% if product.metafields.Custom.we_product_ingrediant_image_two %}
-    <div class="product-ing-img-two-column-new second-ingrediant-block">
+  <div class="product-ing-product-ing-iimg-text-section">
+    {% if section.settings.heading %}
+      <h2 class="product-ing-img-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+  
+    <div class="product-ing-img-two-column-new">
       <div class="product-ing-img-image">
-        {% if product.metafields.Custom.we_product_ingrediant_image_two %}
-          <img src="{{ product.metafields.Custom.we_product_ingrediant_image_two | img_url: 'master' }}" alt="Annatto Seeds">
+        {% if product.metafields.Custom.we_product_ingrediant_image_one %}
+          <img src="{{ product.metafields.Custom.we_product_ingrediant_image_one | img_url: 'master' }}" alt="Annatto Seeds">
         {% else %}
           <img src="https://via.placeholder.com/200" alt="Placeholder Image">
         {% endif %}
       </div>
+  
       <div class="product-ing-iimg-text">
-        {% if product.metafields.Custom.we_product_ingrediant_title_two %}
-          <h3>{{ product.metafields.Custom.we_product_ingrediant_title_two }}</h3>
+        {% if product.metafields.Custom.we_product_ingrediat_title_one %}
+          <h3>{{ product.metafields.Custom.we_product_ingrediat_title_one }}</h3>
         {% endif %}
-
-        {% if product.metafields.Custom.we_product_ingrediant_subtitle_two %}
-          <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_two }}</p>
+  
+        {% if product.metafields.Custom.we_product_ingrediant_subtitle_one %}
+          <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_one }}</p>
         {% endif %}
+  
+        {% if product.metafields.Custom.we_product_ingrediant_link_one %}
+          <a href="{{ product.metafields.Custom.we_product_ingrediant_link_one }}" class="product-ing-img-shop-button">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  
+    {% comment %} Ingrediant block 2 {% endcomment %}
+    {% if product.metafields.Custom.we_product_ingrediant_image_two %}
+      <div class="product-ing-img-two-column-new second-ingrediant-block">
+        <div class="product-ing-img-image">
+          {% if product.metafields.Custom.we_product_ingrediant_image_two %}
+            <img src="{{ product.metafields.Custom.we_product_ingrediant_image_two | img_url: 'master' }}" alt="Annatto Seeds">
+          {% else %}
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+          {% endif %}
+        </div>
+        <div class="product-ing-iimg-text">
+          {% if product.metafields.Custom.we_product_ingrediant_title_two %}
+            <h3>{{ product.metafields.Custom.we_product_ingrediant_title_two }}</h3>
+          {% endif %}
+  
+          {% if product.metafields.Custom.we_product_ingrediant_subtitle_two %}
+            <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_two }}</p>
+          {% endif %}
+  
+          {% if product.metafields.Custom.we_product_ingrediant_link_two %}
+            <a href="{{ product.metafields.Custom.we_product_ingrediant_link_two }}" class="product-ing-img-shop-button">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
 
-        {% if product.metafields.Custom.we_product_ingrediant_link_two %}
-          <a href="{{ product.metafields.Custom.we_product_ingrediant_link_two }}" class="product-ing-img-shop-button">
+    {% comment %} product ingrediant block 3 {% endcomment %}
+     {% if product.metafields.Custom.we_product_ingrediant_image_three %}
+    <div class="product-ing-img-two-column-new">
+      <div class="product-ing-img-image">
+        {% if product.metafields.Custom.we_product_ingrediant_image_three %}
+          <img src="{{ product.metafields.Custom.we_product_ingrediant_image_three | img_url: 'master' }}" alt="Annatto Seeds">
+        {% else %}
+          <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+        {% endif %}
+      </div>
+  
+      <div class="product-ing-iimg-text">
+        {% if product.metafields.Custom.we_product_ingrediant_title_three %}
+          <h3>{{ product.metafields.Custom.we_product_ingrediant_title_three }}</h3>
+        {% endif %}
+  
+        {% if product.metafields.Custom.we_product_ingrediant_subtitle_three %}
+          <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_three }}</p>
+        {% endif %}
+  
+        {% if product.metafields.Custom.we_product_ingrediant_link_three %}
+          <a href="{{ product.metafields.Custom.we_product_ingrediant_link_three }}" class="product-ing-img-shop-button">
             {{ section.settings.button_text }}
           </a>
         {% endif %}
       </div>
     </div>
   {% endif %}
-</div>
-{% endif %}
+  
+    {% comment %} Ingrediant block 4 {% endcomment %}
+    {% if product.metafields.Custom.we_product_ingrediant_image_four %}
+      <div class="product-ing-img-two-column-new second-ingrediant-block">
+        <div class="product-ing-img-image">
+          {% if product.metafields.Custom.we_product_ingrediant_image_four %}
+            <img src="{{ product.metafields.Custom.we_product_ingrediant_image_four | img_url: 'master' }}" alt="Annatto Seeds">
+          {% else %}
+            <img src="https://via.placeholder.com/200" alt="Placeholder Image">
+          {% endif %}
+        </div>
+        <div class="product-ing-iimg-text">
+          {% if product.metafields.Custom.we_product_ingrediant_title_four %}
+            <h3>{{ product.metafields.Custom.we_product_ingrediant_title_four }}</h3>
+          {% endif %}
+  
+          {% if product.metafields.Custom.we_product_ingrediant_subtitle_four %}
+            <p>{{ product.metafields.Custom.we_product_ingrediant_subtitle_four }}</p>
+          {% endif %}
+  
+          {% if product.metafields.Custom.we_product_ingrediant_link_four %}
+            <a href="{{ product.metafields.Custom.we_product_ingrediant_link_four }}" class="product-ing-img-shop-button">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% endif %}
 
 <style>
   .product-ing-product-ing-iimg-text-section {

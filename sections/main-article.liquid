@@ -443,6 +443,73 @@
                 .halo-article-content {
                 max-width: 950px;
                 }
+              </style>
+              <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                  <div class="article-header">
+
+                    <div class="author-top">
+                      {% assign blogauthor = article.author %}
+                      <div class="blog-author-details"> 
+                      {% if blogauthor == 'Sarika Jassal' or blogauthor == 'Divya Katyal' or blogauthor == 'Pragya Soni' or blogauthor == 'Pooja Rawat' or blogauthor == 'Nurah Ekhlaque' %}
+                        <h3>
+                            <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}"> 
+                             <span class="blog-author">
+                             <span><i>By </i> {{ article.author }}</span>
+                             <span class="by-auth">Author</span>
+                             </span>
+                            </a>
+                        </h3>
+                        {% if blogauthor == 'Sarika Jassal' %}
+                            <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Sarika.jpg?v=1737525344" width="40px" alt="sarika jassal">
+                            {% elsif blogauthor == "Divya Katyal" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Divya.jpg?v=1737525344" width="40px" alt="divya">
+                                {% elsif blogauthor == "Pragya Soni" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pragya.jpg?v=1738648479" width="40px" alt="divya">
+                                {% elsif blogauthor == "Pooja Rawat" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pooja-2.jpg?v=1739511048" width="40px" alt="divya">
+                                {% elsif blogauthor == "Nurah Ekhlaque" %}
+                                <img src="https://wellnessextract.com/cdn/shop/files/nurah.jpg?v=1745843377" width="40px" alt="divya">
+
+                            {% else %}
+                            <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_5_7935c512-a1c4-45fd-baaa-b6063fd0ed2c.png?v=1738731314" width="40px" alt="divya">
+                        {% endif %}
+                        {% else %}
+                        <h3>
+                            <span class="blog-author">
+                             <span><i>By </i>{{ article.author }}</span>
+                             <span class="by-auth">Author</span> 
+                            </span>
+                        </h3>
+                      {% endif %}
+                      </div>
+                      {% for tag in article.tags %}
+                        {% if tag == "felicia" %}
+                            <div class="blog-editor">
+                                <img src="https://wellnessextract.com/cdn/shop/files/Felicia_300x300.jpg?v=1737439340" width="40px" alt="sarika jassal">
+                            <h3>
+                                <a href="https://wellnessextract.com/pages/dr-felicia"> 
+                                 <span class="blog-author">
+                                   <span><i>Reviewed By: </i> Dr. Felicia</span>
+                                   {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                 </span>
+                                </a>
+                            </h3>
+                            </div>
+                       {% elsif tag == "lehri" %}
+                            <div class="blog-editor">
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri.jpg?v=1741159628" width="40px" alt="sarika jassal">
+                            <h3>
+                                <a href="https://wellnessextract.com/pages/dr-surangama-lehri"> 
+                                 <span class="blog-author">
+                                   <span><i>Reviewed By: </i> Surangama Lehri</span>
+                                   {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                 </span>
+                                </a>
+                            </h3>
+                            </div>  
+                        {% endif %}
+                    {% endfor %}
+                    </div>
 
                 div#table-of-contents h3{
                 margin: 0px;

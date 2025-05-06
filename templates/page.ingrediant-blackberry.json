@@ -38,33 +38,10 @@
             "title_color_hover": "#202020",
             "show_tab_image": false
           }
-        },
-        "tab_H6BJGE": {
-          "type": "tab",
-          "settings": {
-            "title": "",
-            "menu": "",
-            "items_grid_gap": 7.5,
-            "items_spacing_tb": 30,
-            "items_spacing_lr": 10,
-            "items_border_radius": 5,
-            "image_width": 145,
-            "image_height": 15,
-            "image_border_radius": 0,
-            "items_bg_color": "",
-            "items_border_color": "#d0d0d0",
-            "enable_title": false,
-            "fontsize_title": 18,
-            "fontweight_title": "500",
-            "title_color": "#202020",
-            "title_color_hover": "#202020",
-            "show_tab_image": true
-          }
         }
       },
       "block_order": [
-        "5dd7287c-abd8-43d6-8778-01dfb7754fb0",
-        "tab_H6BJGE"
+        "5dd7287c-abd8-43d6-8778-01dfb7754fb0"
       ],
       "settings": {
         "container": "1170",
@@ -122,16 +99,16 @@
     "ingrediant_page_two_coloumn_KnrGGK": {
       "type": "ingrediant-page-two-coloumn",
       "settings": {
-        "heading": "Fulvic Acid: Organic Mineral Acid",
-        "image": "shopify://shop_images/fulvic_acid_1.png",
+        "heading": "Blackberry",
+        "image": "shopify://shop_images/Blackberry_1.png",
         "title": "What It Is",
         "title2": "Chemical Properties",
         "title3": "Why We Use It",
         "title4": "Where to Find It",
-        "description": "Fulvic acid is a naturally occurring humic substance formed through the microbial breakdown of organic substances. It is rich in electrolytes, trace minerals, and amino acids.",
-        "description2": "Fulvic acid is characterized by its low molecular weight and multiple binding sites. It contains a complex mixture of over 70 trace minerals, fatty acids, vitamins, electrolytes, antioxidants, and amino acids.",
-        "description3": "Fulvic acid contains 70+ trace minerals, making it an excellent nutrient absorber. Its unique molecular structure and formula allow it to bind to toxins (like heavy metals) and remove them.",
-        "description4": "Fulvic acid is naturally found in organic soil, mineral deposits, and shilajit. It is also found in marine sediments and organic vegetables, especially potatoes, carrots, radishes, and beets.",
+        "description": "Blackberries belong to the Rubus genus of the Rosaceae family. They are dark-colored, edible fruits composed of many small drupelets. Blackberry fruit is known for its antioxidant properties.",
+        "description2": "Blackberry fruit primarily contains anthocyanins, polyphenols, vitamin C, and vitamin K. It is rich in water and carbohydrate content, along with traces of protein and fats.",
+        "description3": "Blackberry extract adds a natural color, mild fruit flavor, and antioxidant support to our formulations without affecting its health properties.",
+        "description4": "Wild blackberries are native to temperate regions, including parts of North America and Europe. You may also find blackberry extract, juice, or jam in your local grocery store.",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -143,7 +120,7 @@
       ],
       "settings": {
         "title": "The Wellness Extract Edge",
-        "description": "<p>At Wellness Extract, we use purified fulvic acid derived from deep-earth humic shale, which is highly potent and free from environmental contamination.</p>",
+        "description": "<p>We source premium-grade blackberry extract from ripe, nutrient-dense fruit with no synthetic dyes or additives. It is safe for human consumption.</p>",
         "button_link": "",
         "button_text": "Read More"
       }
@@ -163,7 +140,7 @@
         "4c7db846-8b93-4c4c-9e79-098e7de819fd": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/Fulvic_Acid_2.png",
+            "image": "shopify://shop_images/Blackberry_2.png",
             "link": "",
             "banner_height": "auto",
             "enable_image_zoom": true,
@@ -239,7 +216,7 @@
         "product_block_layout": "slider",
         "product_bg": "rgba(0,0,0,0)",
         "product_bg_gradient": "",
-        "product_block_collection": "fulvic-acid",
+        "product_block_collection": "tocotrienol",
         "product_block_limit": 8,
         "grid_gap": 30,
         "pb_style": "style2",
@@ -339,7 +316,7 @@
         "border_color_card": "#f0f1f4",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
+        "mg_top_mobile": 50,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 15
@@ -386,22 +363,22 @@
         "faq_block_Vr3dBb": {
           "type": "faq_block",
           "settings": {
-            "text": "FvA can modulate the immune system, combat oxidative stress, and improve gastrointestinal function.",
-            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6151376/"
+            "text": "The combined application of blackberry and dill extracts leads to a synergistic enhancement of skin elasticity.",
+            "link": "https://pubmed.ncbi.nlm.nih.gov/32583541/"
           }
         },
         "faq_block_xJNt7E": {
           "type": "faq_block",
           "settings": {
-            "text": "Fulvic acid improves glutathione metabolism, contributing to better ROS detoxification.",
-            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7301537/"
+            "text": "Blackberry seed proteins possess valuable functional properties and bioactivities, holding pharmaceutical potential.",
+            "link": "https://pubmed.ncbi.nlm.nih.gov/37895052/"
           }
         },
         "faq_block_aexfQr": {
           "type": "faq_block",
           "settings": {
-            "text": "Fulvic acid boosts antioxidative defense mechanisms in plants, showing health potential for humans as well.",
-            "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7301537/"
+            "text": "Blackberry anthocyanins show immunomodulatory effects classified by their structure.",
+            "link": "https://pubmed.ncbi.nlm.nih.gov/34638824/"
           }
         }
       },
@@ -412,7 +389,7 @@
       ],
       "settings": {
         "section_heading": "Scholarly Research",
-        "section_subtitle": "Want to know more about fulvic acid (FvA)? There are about 2,700 scientific studies and investigations on FvA that also examine its health properties."
+        "section_subtitle": "Want to know more about the science behind blackberries? There are more than 3,330 studies on PubMed exploring the structure, chemical properties, and health potential of blackberries."
       }
     }
   },
