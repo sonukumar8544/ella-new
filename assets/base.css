@@ -8644,8 +8644,10 @@ div#baritam-page-section {
 /* home Page "Shop with confidence "Why Wellness Extract"" */
 #Shop-with-confidence .rte.subtext-brand.text-center p {
     text-align: center;
-    font-size: 27px;
+    font-size: 28px;
     margin: 20px auto;
-      letter-spacing: unset;
+    font-weight: 600;
+    letter-spacing: unset;
+    color: #374650;
 }
 
