@@ -8295,8 +8295,17 @@ div#tab-shipping-amp-returns-mobile {
 .tabs-contents .toggle-content {
   font-weight: 400 !important;
 }
-
 @media (min-width: 768px) {
+  /* our story md direct manager css */
+  #our-story-content_COO_MD_M .rte.subtext-brand.text-center p {
+    text-align: center;
+    width: 650px;
+    margin: 20px auto auto auto;
+  }
+  #our-story-content_COO_MD_M .halo-row {
+    padding-top: 5px;
+  }
+
   .product-block-has__banner.has__banner--left[data-width-banner="50"]
     .product-block__banner {
     padding-right: calc(var(--grid-gap) * 2);
@@ -8451,8 +8460,22 @@ div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
 .template-page div#WhyShopwithUs h3.title span.text {
   width: auto;
 }
+#our-story-content_COO_MD_M .halo-item .text {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
 
 @media (max-width: 768px) {
+  #our-story-content_COO_MD_M .halo-row .wrapper-image {
+    width: 200px;
+    height: 200px;
+  }
+  /* our story md direct manager css */
+  #our-story-content_COO_MD_M .rte.subtext-brand.text-center p {
+    text-align: center;
+    margin: 20px 20px 0px 20px;
+  }
   .halo-cart-sidebar .previewCartItem-price .discounted-price,
   .previewCartItem-price .price {
     font-size: 12px !important;
@@ -8508,17 +8531,131 @@ ol > ul {
   margin-top: 0px !important;
 }
 
-.article-body .list-social__item{
+.article-body .list-social__item {
   margin: 0px !important;
   padding: 0px !important;
 }
 
 div#baritam-page-section {
   margin-bottom: 25px;
-
 }
 
-.halo-article-content .halo-text-format table{
-  margin-top: 25px !important;
-  margin-bottom: 25px !important;
+/* our story page CSS */
+#our-story-content {
+  margin-top: auto;
+}
+ #cstm_our_story_page .halo-block-content .collapsible-image.image-zoom{
+    margin-top: auto !important;
+    animation: auto !important;
+    will-change: transform;
+    border-radius: 25px;
+}
+#the_heart_of_wellness_extract .halo-block-header h3 span{
+  margin-bottom: 0px !important;
+}
+
+#the_heart_of_wellness_extract .halo-block-header h3 span,
+#our-story-content .halo-block-header h3 span,
+.vision-container h2,
+.template-page #WhyShopwithUs .halo-block-header h3 span,
+#cstm_our_story_page .halo-block-header h3 span,
+#cstm_our_story_page .collapsible-grid__item h2,
+#our-story-content .rich-text__blocks h2 {
+  font-size: 32px !important;
+  margin-bottom: 20px;
+  color: #086b92 !important;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-weight: bold !important;
+  margin-top: 0;
+}
+
+#cstm_our_story_page .bg-policies-block a {
+  margin-bottom: 25px;
+}
+
+#cstm_our_story_page img {
+  border-radius: 25px;
+}
+
+#our-story-content .halo-item .text {
+  margin-bottom: 4px;
+  font-size: 22px;
+  padding: 20px 10px;
+  white-space: nowrap;
+  border: 1px solid;
+  border-radius: 12px;
+}
+#our-story-content_COO_MD_M .halo-row .wrapper-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 8px solid #facc15;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  #cstm_our_story_page .collapsible-grid__item p {
+    text-align: center;
+}
+  #the_heart_of_wellness_extract .halo-block-header h3 span,
+  .template-page #our-story-content .halo-block-header h3 span,
+  .template-page #WhyShopwithUs .halo-block-header h3 span,
+  #cstm_our_story_page .halo-block-header h3 span,
+  .vision-container h2,
+  #cstm_our_story_page .collapsible-grid__item h2,
+  #our-story-content .rich-text__blocks h2 {
+    font-size: 28px !important;
+    line-height: normal;
+  }
+  #cstm_our_story_page .collapsible-image {
+    width: 100%;
+  }
+  #cstm_our_story_page .collapsible-grid__item p {
+    text-align: center;
+  }
+  #our-story-content_COO_MD_M .halo-item .text,
+  .template-page #our-story-content .halo-item .text {
+    margin-bottom: 4px;
+    font-size: 18px !important;
+    padding: 12px 0px 0px 0px !important;
+    white-space: nowrap;
+  }
+  #our-story-content_COO_MD_M .halo-row .wrapper-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 550px) {
+  #our-story-content_COO_MD_M .brand-slider .halo-item .description {
+    font-size: 12px;
+  }
+  #our-story-content_COO_MD_M .halo-row .wrapper-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* home Page "Shop with confidence "Why Wellness Extract"" */
+#Shop-with-confidence .rte.subtext-brand.text-center p {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px auto;
+    font-weight: 600;
+    letter-spacing: unset;
+    color: #374650;
+}
+#Shop-with-confidence .wrapper-content .description {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    letter-spacing: unset;
+}
+#Shop-with-confidence .csrt__image_round{
+border: none!important;
 }

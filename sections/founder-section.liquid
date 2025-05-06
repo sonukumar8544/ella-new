@@ -58,9 +58,10 @@
     padding: 2rem 1rem;
     font-family: 'Lato', sans-serif;
     color: #36454F;
+    background: #f7f7f7;
   }
 
-  .vision-container h1 {
+  .vision-container h2 {
     font-family: 'Nunito', sans-serif;
     font-size: 32px;
     color: #374650;
@@ -123,9 +124,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    .vision-container h1 {
-      font-size: 26px;
-    }
+    
     .vision-card {
       padding: 2rem 1rem;
     }
@@ -135,9 +134,7 @@
   }
 
   @media screen and (max-width: 480px) {
-    .vision-container h1 {
-      font-size: 22px;
-    }
+    
     .vision-img {
       width: 250px;
       height: 250px;
@@ -152,7 +149,7 @@
 </style>
 
 <div class="vision-container">
-  <h1>{{ section.settings.title }}</h1>
+  <h2>{{ section.settings.title }}</h2>
 
   <div class="vision-card">
     <div class="vision-profile">

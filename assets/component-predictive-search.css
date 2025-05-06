@@ -186,9 +186,6 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   top: 3px !important;
   left: 6px !important;
 }
-/* .product-card-layout-02 .card-title {
-  font-size: 13px;
-} */
 
 .quickSearchResultsBlock .list-item .link,
 .predictive-search .predictive-search__list-item .link {
@@ -513,18 +510,18 @@ input::-webkit-search-decoration {
 }
 
 /* END: Search popup */
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .quickSearchResultsBlock
     .search-block-content
     .products-grid
     .product
     dd#custom_proce_manage {
-    /* display: block; */
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0;
   }
-
+}
+@media (max-width: 1024px) {
   .quickSearchResultsWrap[data-quick-trending-products] {
     display: block !important;
   }
