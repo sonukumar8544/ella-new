@@ -295,7 +295,7 @@
 }
 
 .spotlight-inner h3:not(.has--none):hover span {
-  border-bottom: 2px solid var(--border-color-title-style);
+  /* border-bottom: 1px solid var(--border-color-title-style); */
 }
 .spotlight-inner--border-light h3:hover span {
   border-bottom-width: 1px;
