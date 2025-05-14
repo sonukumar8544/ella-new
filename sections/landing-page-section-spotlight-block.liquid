@@ -1,3 +1,4 @@
+{% if product.handle == 'vitamin-e-tocotrienols-supplement' or product.handle == 'annatto-150-vitamin-e-tocotrienols-with-geranylgeraniol' %}
 <!-- landing-page-section-spotlight-block-->
 {%- if section.blocks.size > 0 -%}
     {%- assign swipe = section.settings.spotlight_block_swipe_on_mobile -%}
@@ -398,7 +399,7 @@
 }
     </style>
 {%- endif -%}
-
+{% endif %}
 {% schema %}
 {
     "name": "landing spotlight block",
