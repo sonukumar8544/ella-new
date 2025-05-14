@@ -297,6 +297,10 @@
 .spotlight-inner h3:not(.has--none):hover span {
   /* border-bottom: 1px solid var(--border-color-title-style); */
 }
+#featured_page_products .spotlight-inner h3 span {
+    letter-spacing: normal;
+}
+
 .spotlight-inner--border-light h3:hover span {
   border-bottom-width: 1px;
 }
