@@ -1,4 +1,6 @@
-{% include 'shogun-content-handler' %}
+{% unless template contains 'index' or template contains 'collection' or template contains 'product' -%}
+  {%- include 'shogun-content-handler' -%}
+{%- endunless %}
 <!doctype html>
 {%- liquid
   if settings.list_iso_rtl != blank
@@ -135,8 +137,9 @@
         assign style_text_size_varriant = 'size_varriant_style_2'
       endif
     -%}
-
-    {% render 'shogun-head' %}
+    {% unless template contains 'index' or template contains 'collection' or template contains 'product' %}
+      {% render 'shogun-head' %}
+    {% endunless %}
   </head>
 
   <body
