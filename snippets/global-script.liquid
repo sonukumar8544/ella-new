@@ -1,9 +1,5 @@
-{% comment %}
-    {{ 'vendor.js' | asset_url | script_tag }}
-  {{ 'global.js' | asset_url | script_tag }}
-{% endcomment %}
-<script src="{{ 'vendor.js' | asset_url }}" defer></script>
-<script src="{{ 'global.js' | asset_url }}" defer></script>
+{{ 'vendor.js' | asset_url | script_tag }}
+{{ 'global.js' | asset_url | script_tag }}
 {{ 'lazysizes.min.js' | asset_url | script_tag }}
 <!-- {{ 'menu.js' | asset_url | script_tag }} -->
 
