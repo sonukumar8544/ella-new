@@ -1,13 +1,13 @@
 {% if settings.enable_lazyload %}data-{% endif %}srcset="
 {%- if preview_img.width >= 165 -%}
   {%- if preview_img.width >= 165 -%}
-    {{ preview_img | img_url: '165x' | }} 165w
+    {{ preview_img | img_url: '165x' | format: 'webp' }} 165w
   {%- endif -%}
   {%- if preview_img.width >= 170 -%}
-    ,{{ preview_img | img_url: '170x' }} 170w
+    ,{{ preview_img | img_url: '170x' | format: 'webp' }} 170w
   {%- endif -%}
   {%- if preview_img.width >= 185 -%}
-    ,{{ preview_img | img_url: '185x' }} 185w
+    ,{{ preview_img | img_url: '185x' | format: 'webp' }} 185w
   {%- endif -%}
   {%- if preview_img.width >= 198 -%}
     ,{{ preview_img | img_url: '198x' | format: 'webp' }} 198w
