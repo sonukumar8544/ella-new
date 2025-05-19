@@ -397,6 +397,9 @@
                           src="{{ block.settings.profile_picture | image_url: width: 720, height: 720 }}"
                           width="{{ block.settings.profile_picture.width }}"
                           height="{{ block.settings.profile_picture.height }}"
+                          type="image/webp"
+                          fetchpriority="high"
+                          loading="eager"
                           {% unless settings.enable_layout_rtl %}
                             loading="lazy"
                           {% endunless %}
