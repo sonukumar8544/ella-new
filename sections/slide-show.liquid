@@ -154,7 +154,7 @@
                         title="{{ img_url_mb.alt | default: shop.name | escape }}"
                         class="slide-image"
                       >
-                        <link rel="preload" as="image" href="{{ img_url_mb | img_url:'master'}}">
+                        <link rel="preload" as="image" href="{{ img_url_mb | img_url: 'master' }}">
 
                         <img
                           {% if settings.enable_lazyload and forloop.first == false %}
@@ -211,6 +211,8 @@
                         title="{{ img_url.alt | default: shop.name | escape }}"
                         class="slide-image"
                       >
+                        <link rel="preload" as="image" href="{{ img_url | img_url: 'master' }}">
+
                         <img
                           {% if settings.enable_lazyload and forloop.first == false %}
                             data-
@@ -395,6 +397,7 @@
                   -%}
                     <div class="slide-content__person slide-testimonial{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                       {%- if block.settings.profile_picture != blank -%}
+                        <link rel="preload" as="image" href="{{ block.settings.profile_picture  | img_url: 'master' }}">
                         <img
                           class="slide-content__person profile-image"
                           src="{{ block.settings.profile_picture | image_url: width: 720, height: 720 }}"
