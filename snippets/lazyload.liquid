@@ -1,7 +1,7 @@
 {% if settings.enable_lazyload %}data-{% endif %}srcset="
 {%- if preview_img.width >= 165 -%}
   {%- if preview_img.width >= 165 -%}
-    {{ preview_img | img_url: '165x' }} 165w
+    {{ preview_img | img_url: '165x' | }} 165w
   {%- endif -%}
   {%- if preview_img.width >= 170 -%}
     ,{{ preview_img | img_url: '170x' }} 170w
@@ -10,127 +10,127 @@
     ,{{ preview_img | img_url: '185x' }} 185w
   {%- endif -%}
   {%- if preview_img.width >= 198 -%}
-    ,{{ preview_img | img_url: '198x' }} 198w
+    ,{{ preview_img | img_url: '198x' | format: 'webp' }} 198w
   {%- endif -%}
   {%- if preview_img.width >= 205 -%}
-    ,{{ preview_img | img_url: '205x' }} 205w
+    ,{{ preview_img | img_url: '205x' | format: 'webp' }} 205w
   {%- endif -%}
   {%- if preview_img.width >= 210 -%}
-    ,{{ preview_img | img_url: '210x' }} 210w
+    ,{{ preview_img | img_url: '210x' | format: 'webp' }} 210w
   {%- endif -%}
   {%- if preview_img.width >= 220 -%}
-    ,{{ preview_img | img_url: '220x' }} 220w
+    ,{{ preview_img | img_url: '220x' | format: 'webp' }} 220w
   {%- endif -%}
   {%- if preview_img.width >= 245 -%}
-    ,{{ preview_img | img_url: '245x' }} 245w
+    ,{{ preview_img | img_url: '245x' | format: 'webp' }} 245w
   {%- endif -%}
   {%- if preview_img.width >= 270 -%}
-    ,{{ preview_img | img_url: '270x' }} 270w
+    ,{{ preview_img | img_url: '270x' | format: 'webp' }} 270w
   {%- endif -%}
   {%- if preview_img.width >= 290 -%}
-    ,{{ preview_img | img_url: '290x' }} 290w
+    ,{{ preview_img | img_url: '290x' | format: 'webp' }} 290w
   {%- endif -%}
   {%- if preview_img.width >= 320 -%}
-    ,{{ preview_img | img_url: '320x' }} 320w
+    ,{{ preview_img | img_url: '320x' | format: 'webp' }} 320w
   {%- endif -%}
   {%- if preview_img.width >= 355 -%}
-    ,{{ preview_img | img_url: '355x' }} 355w
+    ,{{ preview_img | img_url: '355x' | format: 'webp' }} 355w
   {%- endif -%}
   {%- if preview_img.width >= 360 -%}
-    ,{{ preview_img | img_url: '360x' }} 360w
+    ,{{ preview_img | img_url: '360x' | format: 'webp' }} 360w
   {%- endif -%}
   {%- if preview_img.width >= 370 -%}
-    ,{{ preview_img | img_url: '370x' }} 370w
+    ,{{ preview_img | img_url: '370x' | format: 'webp' }} 370w
   {%- endif -%}
   {%- if preview_img.width >= 420 -%}
-    ,{{ preview_img | img_url: '420x' }} 420w
+    ,{{ preview_img | img_url: '420x' | format: 'webp' }} 420w
   {%- endif -%}
   {%- if preview_img.width >= 430 -%}
-    ,{{ preview_img | img_url: '430x' }} 430w
+    ,{{ preview_img | img_url: '430x' | format: 'webp' }} 430w
   {%- endif -%}
   {%- if preview_img.width >= 460 -%}
-    ,{{ preview_img | img_url: '460x' }} 460w
+    ,{{ preview_img | img_url: '460x' | format: 'webp' }} 460w
   {%- endif -%}
   {%- if preview_img.width >= 470 -%}
-    ,{{ preview_img | img_url: '470x' }} 470w
+    ,{{ preview_img | img_url: '470x' | format: 'webp' }} 470w
   {%- endif -%}
   {%- if preview_img.width >= 510 -%}
-    ,{{ preview_img | img_url: '510x' }} 510w
+    ,{{ preview_img | img_url: '510x' | format: 'webp' }} 510w
   {%- endif -%}
   {%- if preview_img.width >= 523 -%}
-    ,{{ preview_img | img_url: '523x' }} 523w
+    ,{{ preview_img | img_url: '523x' | format: 'webp' }} 523w
   {%- endif -%}
   {%- if preview_img.width >= 533 -%}
-    ,{{ preview_img | img_url: '533x' }} 533w
+    ,{{ preview_img | img_url: '533x' | format: 'webp' }} 533w
   {%- endif -%}
   {%- if preview_img.width >= 534 -%}
-    ,{{ preview_img | img_url: '534x' }} 534w
+    ,{{ preview_img | img_url: '534x' | format: 'webp' }} 534w
   {%- endif -%}
   {%- if preview_img.width >= 570 -%}
-    ,{{ preview_img | img_url: '570x' }} 570w
+    ,{{ preview_img | img_url: '570x' | format: 'webp' }} 570w
   {%- endif -%}
   {%- if preview_img.width >= 640 -%}
-    ,{{ preview_img | img_url: '640x' }} 640w
+    ,{{ preview_img | img_url: '640x' | format: 'webp' }} 640w
   {%- endif -%}
   {%- if preview_img.width >= 665 -%}
-    ,{{ preview_img | img_url: '665x' }} 665w
+    ,{{ preview_img | img_url: '665x' | format: 'webp' }} 665w
   {%- endif -%}
   {%- if preview_img.width >= 670 -%}
-    ,{{ preview_img | img_url: '670x' }} 670w
+    ,{{ preview_img | img_url: '670x' | format: 'webp' }} 670w
   {%- endif -%}
   {%- if preview_img.width >= 720 -%}
-    ,{{ preview_img | img_url: '720x' }} 720w
+    ,{{ preview_img | img_url: '720x' | format: 'webp' }} 720w
   {%- endif -%}
   {%- if preview_img.width >= 775 -%}
-    ,{{ preview_img | img_url: '775x' }} 775w
+    ,{{ preview_img | img_url: '775x' | format: 'webp' }} 775w
   {%- endif -%}
   {%- if preview_img.width >= 785 -%}
-    ,{{ preview_img | img_url: '785x' }} 785w
+    ,{{ preview_img | img_url: '785x' | format: 'webp' }} 785w
   {%- endif -%}
   {%- if preview_img.width >= 870 -%}
-    ,{{ preview_img | img_url: '870x' }} 870w
+    ,{{ preview_img | img_url: '870x' | format: 'webp' }} 870w
   {%- endif -%}
   {%- if preview_img.width >= 930 -%}
-    ,{{ preview_img | img_url: '930x' }} 930w
+    ,{{ preview_img | img_url: '930x' | format: 'webp' }} 930w
   {%- endif -%}
   {%- if preview_img.width >= 935 -%}
-    ,{{ preview_img | img_url: '935x' }} 935w
+    ,{{ preview_img | img_url: '935x' | format: 'webp' }} 935w
   {%- endif -%}
   {%- if preview_img.width >= 940 -%}
-    ,{{ preview_img | img_url: '940x' }} 940w
+    ,{{ preview_img | img_url: '940x' | format: 'webp' }} 940w
   {%- endif -%}
   {%- if preview_img.width >= 1066 -%}
-    ,{{ preview_img | img_url: '1066x' }} 1066w
+    ,{{ preview_img | img_url: '1066x' | format: 'webp' }} 1066w
   {%- endif -%}
   {%- if preview_img.width >= 1160 -%}
-    ,{{ preview_img | img_url: '1160x' }} 1160w
+    ,{{ preview_img | img_url: '1160x' | format: 'webp' }} 1160w
   {%- endif -%}
   {%- if preview_img.width >= 1170 -%}
-    ,{{ preview_img | img_url: '1170x' }} 1170w
+    ,{{ preview_img | img_url: '1170x' | format: 'webp' }} 1170w
   {%- endif -%}
   {%- if preview_img.width >= 1270 -%}
-    ,{{ preview_img | img_url: '1270x' }} 1270w
+    ,{{ preview_img | img_url: '1270x' | format: 'webp' }} 1270w
   {%- endif -%}
   {%- if preview_img.width >= 1370 -%}
-    ,{{ preview_img | img_url: '1370x' }} 1370w
+    ,{{ preview_img | img_url: '1370x' | format: 'webp' }} 1370w
   {%- endif -%}
   {%- if preview_img.width >= 1570 -%}
-    ,{{ preview_img | img_url: '1570x' }} 1570w
+    ,{{ preview_img | img_url: '1570x' | format: 'webp' }} 1570w
   {%- endif -%}
   {%- if preview_img.width >= 1770 -%}
-    ,{{ preview_img | img_url: '1770x' }} 1770w
+    ,{{ preview_img | img_url: '1770x' | format: 'webp' }} 1770w
   {%- endif -%}
   {%- if preview_img.width >= 1850 -%}
-    ,{{ preview_img | img_url: '1850x' }} 1850w
+    ,{{ preview_img | img_url: '1850x' | format: 'webp' }} 1850w
   {%- endif -%}
   {%- if preview_img.width >= 1880 -%}
-    ,{{ preview_img | img_url: '1880x' }} 1880w
+    ,{{ preview_img | img_url: '1880x' | format: 'webp' }} 1880w
   {%- endif -%}
   {%- if preview_img.width == 1903 -%}
-    ,{{ preview_img | img_url: '1903x' }} 1903w
+    ,{{ preview_img | img_url: '1903x' | format: 'webp' }} 1903w
   {%- endif -%}
   {%- if preview_img.width == 1920 -%}
-    ,{{ preview_img | img_url: '1920x' }} 1920w
+    ,{{ preview_img | img_url: '1920x' | format: 'webp' }} 1920w
   {%- endif -%}
 {%- else -%}
   {{ preview_img | image_url: width: master, format: 'webp' }}
