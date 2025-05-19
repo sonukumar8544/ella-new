@@ -154,6 +154,8 @@
                         title="{{ img_url_mb.alt | default: shop.name | escape }}"
                         class="slide-image"
                       >
+                        <link rel="preload" as="image" href="{{ img_url_mb | img_url:'master'}}">
+
                         <img
                           {% if settings.enable_lazyload and forloop.first == false %}
                             data-
