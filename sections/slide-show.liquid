@@ -230,6 +230,9 @@
                           alt="{{ img_url.alt  | escape }}"
                           width="{{ img_url.width }}"
                           height="{{ img_url.width | divided_by: img_url.aspect_ratio | round }}"
+                          type="image/webp"
+                          fetchpriority="high"
+                          loading="eager"
                           {%- if settings.enable_lazyload and forloop.first == false -%}
                             class="lazyload"
                             {% unless settings.enable_layout_rtl %}loading="lazy"{% endunless %}
