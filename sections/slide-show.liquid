@@ -48,6 +48,9 @@
                         onError="style.display = 'none';"
                         width="{{ img.width }}"
                         height="{{ img.height }}"
+                        type="image/webp"
+                        fetchpriority="high"
+                        loading="eager"
                         {% unless settings.enable_layout_rtl %}
                           loading="lazy"
                         {% endunless %}
