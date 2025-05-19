@@ -70,70 +70,70 @@
     ,{{ preview_img | img_url: '570x' }} 570w
   {%- endif -%}
   {%- if preview_img.width >= 640 -%}
-    ,{{ preview_img | img_url: '640x' }} 640w
+    ,{{ preview_img | image_ur: width: 640x, format: 'webp' }} 640w
   {%- endif -%}
   {%- if preview_img.width >= 665 -%}
-    ,{{ preview_img | img_url: '665x' }} 665w
+    ,{{ preview_img | image_ur: width: 665x, format: 'webp' }} 665w
   {%- endif -%}
   {%- if preview_img.width >= 670 -%}
-    ,{{ preview_img | img_url: '670x' }} 670w
+    ,{{ preview_img | image_ur: width: 670x, format: 'webp' }} 670w
   {%- endif -%}
   {%- if preview_img.width >= 720 -%}
-    ,{{ preview_img | img_url: '720x' }} 720w
+    ,{{ preview_img | image_ur: width: 720x, format: 'webp' }} 720w
   {%- endif -%}
   {%- if preview_img.width >= 775 -%}
-    ,{{ preview_img | img_url: '775x' }} 775w
+    ,{{ preview_img | image_ur: width: 775x, format: 'webp' }} 775w
   {%- endif -%}
   {%- if preview_img.width >= 785 -%}
-    ,{{ preview_img | img_url: '785x' }} 785w
+    ,{{ preview_img | image_ur: width: 785x, format: 'webp' }} 785w
   {%- endif -%}
   {%- if preview_img.width >= 870 -%}
-    ,{{ preview_img | img_url: '870x' }} 870w
+    ,{{ preview_img | image_ur: width: 870x, format: 'webp' }} 870w
   {%- endif -%}
   {%- if preview_img.width >= 930 -%}
-    ,{{ preview_img | img_url: '930x' }} 930w
+    ,{{ preview_img | image_ur: width: 930x, format: 'webp' }} 930w
   {%- endif -%}
   {%- if preview_img.width >= 935 -%}
-    ,{{ preview_img | img_url: '935x' }} 935w
+    ,{{ preview_img | image_ur: width: 935x, format: 'webp' }} 935w
   {%- endif -%}
   {%- if preview_img.width >= 940 -%}
-    ,{{ preview_img | img_url: '940x' }} 940w
+    ,{{ preview_img | image_ur: width: 940x, format: 'webp' }} 940w
   {%- endif -%}
   {%- if preview_img.width >= 1066 -%}
-    ,{{ preview_img | img_url: '1066x' }} 1066w
+    ,{{ preview_img | image_ur: width: 1066x, format: 'webp' }} 1066w
   {%- endif -%}
   {%- if preview_img.width >= 1160 -%}
-    ,{{ preview_img | img_url: '1160x' }} 1160w
+    ,{{ preview_img | image_ur: width: 1160x, format: 'webp' }} 1160w
   {%- endif -%}
   {%- if preview_img.width >= 1170 -%}
-    ,{{ preview_img | img_url: '1170x' }} 1170w
+    ,{{ preview_img | image_ur: width: 1170x, format: 'webp' }} 1170w
   {%- endif -%}
   {%- if preview_img.width >= 1270 -%}
-    ,{{ preview_img | img_url: '1270x' }} 1270w
+    ,{{ preview_img | image_ur: width: 1270x, format: 'webp' }} 1270w
   {%- endif -%}
   {%- if preview_img.width >= 1370 -%}
-    ,{{ preview_img | img_url: '1370x' }} 1370w
+    ,{{ preview_img | image_ur: width: 1370x, format: 'webp' }} 1370w
   {%- endif -%}
   {%- if preview_img.width >= 1570 -%}
-    ,{{ preview_img | img_url: '1570x' }} 1570w
+    ,{{ preview_img | image_ur: width: 1570x, format: 'webp' }} 1570w
   {%- endif -%}
   {%- if preview_img.width >= 1770 -%}
-    ,{{ preview_img | img_url: '1770x' }} 1770w
+    ,{{ preview_img | image_ur: width: 1770x, format: 'webp' }} 1770w
   {%- endif -%}
   {%- if preview_img.width >= 1850 -%}
-    ,{{ preview_img | img_url: '1850x' }} 1850w
+    ,{{ preview_img | image_ur: width: 1850x, format: 'webp' }} 1850w
   {%- endif -%}
   {%- if preview_img.width >= 1880 -%}
-    ,{{ preview_img | img_url: '1880x' }} 1880w
+    ,{{ preview_img | image_ur: width: 1880x, format: 'webp' }} 1880w
   {%- endif -%}
   {%- if preview_img.width == 1903 -%}
-    ,{{ preview_img | img_url: '1903x' }} 1903w
+    ,{{ preview_img | image_ur: width: 1903x, format: 'webp' }} 1903w
   {%- endif -%}
   {%- if preview_img.width == 1920 -%}
-    ,{{ preview_img | img_url: '1920x' }} 1920w
+    ,{{ preview_img | image_url: width: 1920, format: 'webp' }} 1920w
   {%- endif -%}
 {%- else -%}
-  {{ preview_img | img_url: 'master' }}
+  {{ preview_img | image_url: width: master, format: 'webp' }}
 {%- endif -%}
 " {% unless settings.enable_lazyload %}src="{{ preview_img | img_url: '533x' }}"{% endunless %} sizes="(min-width:
 1100px) {{ preview_img.width | append: 'px' }}, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
