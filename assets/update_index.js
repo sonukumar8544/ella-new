@@ -1,10 +1,11 @@
-var navigatortt = navigator.userAgent;
+// var navigatortt = navigator.userAgent;
 
-  if (
-    navigatortt.indexOf(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
-    ) > -1
-  ) {
+//   if (
+//     navigatortt.indexOf(
+//       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
+//     ) > -1
+//   ) {
+    
     (function () {
       function asyncLoad() {
         var urls = [
@@ -29,4 +30,4 @@ var navigatortt = navigator.userAgent;
         window.addEventListener('load', asyncLoad, false);
       }
     })();
-  }
+  // }
