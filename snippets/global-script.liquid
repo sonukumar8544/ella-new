@@ -3,8 +3,8 @@
 <link rel="preload" as="script" href="{{ 'global.js' | asset_url }}">
 
 <!-- Defer execution to avoid blocking rendering -->
-<script src="{{ 'vendor.js' | asset_url }}" defer></script>
-<script src="{{ 'global.js' | asset_url }}" defer></script>
+<script src="{{ 'vendor.js' | asset_url }}"></script>
+<script src="{{ 'global.js' | asset_url }}"></script>
 
 <!-- Lazysizes can load async since it’s not critical for initial render -->
 <script src="{{ 'lazysizes.min.js' | asset_url }}"></script>
