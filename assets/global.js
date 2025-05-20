@@ -1,9 +1,4 @@
-var navigatortt1 = navigator.userAgent;
-if (
-    navigatortt1.indexOf(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
-    ) > -1
-  ) {
+
   function getFocusableElements(container) {
     return Array.from(
         container.querySelectorAll(
@@ -1156,4 +1151,3 @@ class SearchForm extends HTMLElement {
   }
   customElements.define('search-form', SearchForm);
 
-}
