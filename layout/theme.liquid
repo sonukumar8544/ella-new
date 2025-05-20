@@ -59,11 +59,11 @@
     <!-- End of HubSpot Embed Code -->
 
     {{ content_for_header }}
-    {% if page.handle == 'reviews' %}
+    {% unless template contains 'index' or template contains 'collection' %}
       <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css">
-    {% endif %}
+    {% endunless %}
 
-    {% render 'variable' %}
+    {% render 'variable' %} 
     {% render 'global-style' %}
     {% render 'global-script' %}
 
