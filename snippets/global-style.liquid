@@ -18,6 +18,8 @@
 
 {{ 'animated.css' | asset_url | stylesheet_tag }}
 <link rel="preload" as="style" href="{{ 'component-card.css' | asset_url }}">
+<link rel="preload" as="style" href="{{ 'component-loading-overlay.css' | asset_url }}">
+
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-banner.css' | asset_url | stylesheet_tag }}
@@ -26,6 +28,7 @@
 <noscript>{{ 'vendor.css' | asset_url | stylesheet_tag }}</noscript>
 
 {% if settings.product_card_layout == '02' %}
+  <link rel="preload" as="style" href="{{ 'component-card-02.css' | asset_url }}">
   {{ 'component-card-02.css' | asset_url | stylesheet_tag }}
 {% elsif settings.product_card_layout == '03' %}
   {{ 'component-card-03.css' | asset_url | stylesheet_tag }}
