@@ -7,7 +7,7 @@
 <script src="{{ 'global.js' | asset_url }}"></script>
 
 <!-- Lazysizes can load async since it’s not critical for initial render -->
-<script src="{{ 'lazysizes.min.js' | asset_url }}" async></script>
+<script src="{{ 'lazysizes.min.js' | asset_url }}" async defer></script>
 
 {%- if settings.show_quick_search -%}
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
