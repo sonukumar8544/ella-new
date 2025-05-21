@@ -8505,6 +8505,8 @@ div#our_all_authors .csrt__image_round {
 }
 #cstm_button_index .rich-text__blocks.text-center {
     display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 #cstm_button_index .rich-text__blocks.text-center .button {
     margin: 0;
