@@ -941,18 +941,18 @@
         "enable_border_top": false,
         "enable_border_bottom": false,
         "color_border_bottom": "#f2f3f9",
-        "enable_minus_mg_top": false,
-        "minus_spacing_top": -100,
+        "enable_minus_mg_top": true,
+        "minus_spacing_top": 0,
         "rich_text_bg": "#f2f3f9",
         "rich_text_bg_gradient": "",
-        "enable_column": false,
+        "enable_column": true,
         "content_align": "center",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
-        "mg_bottom_desktop": 40,
-        "mg_bottom_tablet": 40,
-        "mg_bottom_mobile": 30
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
       }
     },
     "brand_slider_8dyJxH": {
