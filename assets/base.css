@@ -8503,8 +8503,15 @@ div#our_all_authors .halo-item .text {
 div#our_all_authors .csrt__image_round {
   border: 1px solid #c6c6c6 !important;
 }
+#cstm_button_index .rich-text__blocks.text-center {
+    display: flex;
+}
+#cstm_button_index .rich-text__blocks.text-center .button {
+    margin: 0;
+}
 
 @media (min-width: 1265px) {
+  
   .page-sidebar.page-sidebar-right {
     float: right;
     width: 280px !important;
