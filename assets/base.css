@@ -8509,9 +8509,6 @@ div#our_all_authors .csrt__image_round {
     float: right;
     width: 280px !important;
   }
-}
-
-@media (min-width: 1265px) {
   .page-sidebar.page-sidebar-right + .page-content {
     max-width: 950px !important;
   }
