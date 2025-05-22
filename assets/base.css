@@ -8673,10 +8673,18 @@ border: none!important;
 
 /* Tablet and Mobile View - Right Side & Moved Up */
 @media screen and (max-width: 1023px) {
-  #hubspot-messages-iframe-container {
+  /* #hubspot-messages-iframe-container {
     right: 20px !important;
     left: auto !important;
     bottom: 100px !important; /* Adjust this value based on your sticky menu height */
-  }
+  } */
+
+  #hubspot-messages-iframe-container.widget-align-right
+ {
+    right: 0 !important;
+    margin-bottom: 40px;
+    margin-right: 25px;
+}
+
 }
 
