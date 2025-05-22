@@ -8682,8 +8682,8 @@ border: none!important;
   #hubspot-messages-iframe-container.widget-align-right
  {
     right: 0 !important;
-    margin-bottom: 40px;
-    margin-right: 25px;
+    margin-bottom: 40px !important;
+    margin-right: 25px !important;
 }
 
 }
