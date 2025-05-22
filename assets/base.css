@@ -8660,3 +8660,23 @@ div#baritam-page-section {
 #Shop-with-confidence .csrt__image_round{
 border: none!important;
 }
+
+/* Hubspot chat widget */
+/* Desktop View - Left Side */
+@media screen and (min-width: 1024px) {
+  #hubspot-messages-iframe-container {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+  }
+}
+
+/* Tablet and Mobile View - Right Side & Moved Up */
+@media screen and (max-width: 1023px) {
+  #hubspot-messages-iframe-container {
+    right: 20px !important;
+    left: auto !important;
+    bottom: 100px !important; /* Adjust this value based on your sticky menu height */
+  }
+}
+
