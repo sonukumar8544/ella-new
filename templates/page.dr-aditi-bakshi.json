@@ -16,17 +16,29 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "author_section_XhKzkf": {
+      "type": "author-section",
+      "name": "Author Section",
+      "settings": {
+        "author_name": "John Doe",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": ""
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "author_section_XhKzkf"
   ]
 }
