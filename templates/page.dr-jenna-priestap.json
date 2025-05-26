@@ -16,17 +16,30 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "author_section_HMJjPN": {
+      "type": "author-section",
+      "name": "Author Section",
+      "settings": {
+        "author_image": "shopify://shop_images/Dr._Jenna_Priestap.jpg",
+        "author_name": "Dr. Jenna Priestap",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": "https://www.linkedin.com/in/dr-jenna-priestap-nd-79970b367"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "author_section_HMJjPN"
   ]
 }
