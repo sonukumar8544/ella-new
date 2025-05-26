@@ -27,6 +27,13 @@
     "author_section_XhKzkf": {
       "type": "author-section",
       "blocks": {
+        "text_block_MtQRHQ": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Dr. Aditi Bakshi is an experienced healthcare writer and editor with a unique interdisciplinary background in dental sciences, food nutrition, and medical communication. With a Bachelor’s in Dental Sciences and a Master’s in Food Nutrition, she combines her clinical expertise and nutritional knowledge to create evidence-based, accessible, and SEO-optimized content.<br><br>Dr. Bakshi has over four years of experience in medical writing, research communication, and healthcare content development, following more than a decade of clinical practice in dentistry. Her writing spans a variety of formats, including digital health blogs, patient education materials, scientific articles, and regulatory content for medical devices, with a focus on scientific accuracy and clarity.<br><br>Her early research work at the Institute of Dental Sciences, Jammu, and consultancy experience as a nutritionist in leading hospitals have enriched her ability to bridge oral healthcare, medical sciences, and nutrition in her writing.\nBeyond content creation, Dr. Bakshi is passionate about mentoring aspiring medical writers, helping them develop research-backed, credible content. Her commitment to excellence ensures that readers receive reliable information to make informed health decisions while supporting organizations with precise, authoritative medical content."
+          }
+        },
         "text_block_W3PfPU": {
           "type": "text_block",
           "settings": {
@@ -36,6 +43,7 @@
         }
       },
       "block_order": [
+        "text_block_MtQRHQ",
         "text_block_W3PfPU"
       ],
       "name": "Author Section",
