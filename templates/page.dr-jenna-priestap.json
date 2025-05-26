@@ -26,6 +26,26 @@
     },
     "author_section_HMJjPN": {
       "type": "author-section",
+      "blocks": {
+        "text_block_QgFW8T": {
+          "type": "text_block",
+          "settings": {
+            "title": "Block Title",
+            "content": "Block content goes here."
+          }
+        },
+        "text_block_RYbePr": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_QgFW8T",
+        "text_block_RYbePr"
+      ],
       "name": "Author Section",
       "settings": {
         "author_image": "shopify://shop_images/Dr._Jenna_Priestap.jpg",
