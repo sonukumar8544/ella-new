@@ -1,0 +1,145 @@
+<section class="about-us-newcontainer">
+  <div class="about-us-two-col-section">
+    <h2>Our Mission</h2>
+    <p>
+      The heart and soul of Wellness Extract is built on a simple yet powerful idea: to empower individuals
+                worldwide with the tools and resources they require to make informed and better choices for their
+                health. We believe that every living being deserves to feel their best in body, mind and soul. Thus, we
+                are dedicated to making that possible with an ideal blend of science, transparency, and ethics.
+    </p>
+  </div>
+  <div>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Our_Mission_383236f2-d10d-42e2-95f7-225ba18e8a56.png?v=1748243642"
+      alt="Doctor Icons"
+      class="about-us-two-colimage">
+  </div>
+</section>
+
+<section class="about-us-newcontainer">
+  <div>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Our_Story_40f6ef8d-dd43-4db4-ad88-0ae3fa34afda.png?v=1748243642"
+      alt="Hands with Logo"
+      class="about-us-two-colimage">
+  </div>
+  <div class="about-us-two-col-section">
+    <h2>Our Story: A Personal Journey That Sparked a Global Mission</h2>
+    <p>
+      Wellness Extract began with a heart-warming story of compassion, determination and love. Our founder,
+                Virender Dass, embarked on this journey inspired by his own mother’s battle with cancer. He firsthand
+                witnessed the painful experiences of a cancer patient and struggled to find high-quality, scientifically
+                backed supplements to support his mother.
+      <br><br>
+      This gut-wrenching journey awakened in him a greater purpose: to bridge the gap in wellness and develop
+ 
+                products that give people the strength to take control of their health.
+      <br><br>
+      What started as a hope to help one person has now shaped into a global movement to render better health
+ 
+                solutions for generations across the globe.
+    </p>
+  </div>
+</section>
+
+<style>
+  .about-us-newcontainer {
+    background-color: white;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    border-radius: 10px;
+  }
+
+  .about-us-two-col-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-us-two-col-section h2 {
+    color: #007bb7;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .about-us-two-col-section p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about-us-two-colimage {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .logo-image {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "about us two col",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "author_image",
+        "label": "Author Image"
+      },
+      {
+        "type": "text",
+        "id": "author_name",
+        "label": "Author Name",
+        "default": "John Doe"
+      },
+      {
+        "type": "text",
+        "id": "author_role",
+        "label": "Author Role",
+        "default": "Author"
+      },
+      {
+        "type": "text",
+        "id": "author_email",
+        "label": "Author Email",
+        "default": "example@example.com"
+      }, {
+        "type": "url",
+        "id": "author_linkedin",
+        "label": "LinkedIn Profile"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Description Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Block Title",
+            "default": "Block Title"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Block Content",
+            "default": "Block content goes here."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "about us two col"
+      }
+    ]
+  }
+{% endschema %}

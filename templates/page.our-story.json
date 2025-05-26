@@ -20,7 +20,7 @@
         "large_img_Ha7jDf": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify://shop_images/Banner1.png",
+            "image": "shopify://shop_images/Banner1_2.png",
             "mobile_image": "shopify://shop_images/Group_407_2.png",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
@@ -166,7 +166,7 @@
             "text_font_weight": "500",
             "text_line_height": 1,
             "margin_top_text": 32,
-            "text_color": "#374650",
+            "text_color": "#ffffff",
             "text_width": "700px"
           }
         }
@@ -178,7 +178,7 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "id": "our-story-content",
-        "container": "container",
+        "container": "fullwidth",
         "padding_full_width": 0,
         "enable_border_top": false,
         "enable_border_bottom": false,
@@ -189,12 +189,22 @@
         "rich_text_bg_gradient": "",
         "enable_column": false,
         "content_align": "center",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 60,
-        "mg_top_mobile": 25,
-        "mg_bottom_desktop": 65,
-        "mg_bottom_tablet": 65,
-        "mg_bottom_mobile": 25
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "about_us_two_col_section_VbJpRp": {
+      "type": "about-us-two-col-section",
+      "name": "about us two col",
+      "settings": {
+        "author_name": "John Doe",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": ""
       }
     },
     "collapsible_content_7qC8iH": {
@@ -212,6 +222,7 @@
       "block_order": [
         "content_FUaYa4"
       ],
+      "disabled": true,
       "custom_css": [
         ".section-block-template--24230844203304__collapsible_content_7qC8iH .faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}"
       ],
@@ -265,6 +276,7 @@
       "block_order": [
         "content_brfEMR"
       ],
+      "disabled": true,
       "settings": {
         "id_section": "cstm_our_story_page",
         "enabled_id": true,
@@ -300,6 +312,16 @@
         "mg_bottom_mobile": 25
       }
     },
+    "about_us_image_with_banner_EbQaUa": {
+      "type": "about-us-image-with-banner",
+      "name": "about image with text",
+      "settings": {
+        "author_name": "John Doe",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": ""
+      }
+    },
     "rich_text_P6kMaE": {
       "type": "rich-text",
       "blocks": {
@@ -331,6 +353,7 @@
         "heading_AVbVVR",
         "text_6zJcDN"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "id": "our-story-content",
@@ -483,6 +506,16 @@
         "mg_bottom_mobile": 40
       }
     },
+    "about_us_two_col_section_7erU8U": {
+      "type": "about-us-two-col-section",
+      "name": "about us two col",
+      "settings": {
+        "author_name": "John Doe",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": ""
+      }
+    },
     "collapsible_content_wLcb8C": {
       "type": "collapsible-content",
       "blocks": {
@@ -498,6 +531,7 @@
       "block_order": [
         "content_aCtKRA"
       ],
+      "disabled": true,
       "custom_css": [
         ".collapsible-grid__item p {text-align: center;}"
       ],
@@ -551,6 +585,7 @@
       "block_order": [
         "content_7pBpWe"
       ],
+      "disabled": true,
       "settings": {
         "id_section": "cstm_our_story_page",
         "enabled_id": true,
@@ -588,6 +623,7 @@
     },
     "founder_section_mezyQY": {
       "type": "founder-section",
+      "disabled": true,
       "custom_css": [
         "strong {color: #086b92;}"
       ],
@@ -599,6 +635,135 @@
         "bio_2": "<p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. When his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to <strong>Dr. Barrie Tan, world’s foremost expert on tocotrienols</strong>, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p>",
         "bio_3": "<p>This experience ignited <strong>Virender's passion for health.</strong>, prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a <strong>global movement</strong>, as he dedicated himself to providing high-quality natural supplements.</p>",
         "bio_4": "<p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a <strong>trusted name in natural health</strong>, committed to helping people lead <strong>healthier lives</strong>.</p>"
+      }
+    },
+    "image_banner_PgKjda": {
+      "type": "image-banner",
+      "blocks": {
+        "large_img_mNGJgU": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/Testimonial_1d15f63c-6fee-40bc-900d-b2f55957ed31.png",
+            "enable_max_width_image": false,
+            "custom_width_image": 1170,
+            "enable_scroll_down": false,
+            "enable_custom_image": false,
+            "image_behavior": "none",
+            "sub_title": "",
+            "border_sub_title": false,
+            "font_size_sub_title": 14,
+            "font_size_sub_title_mb": 14,
+            "margin_bottom_sub_title": 14,
+            "sub_heading_font": "font_1",
+            "font_weight_sub_title": "700",
+            "sub_title_position": "sub_title_above",
+            "color_sub_title": "#232323",
+            "color_sub_title_mb": "#fff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_style_italic": false,
+            "font_size_heading": 40,
+            "font_size_heading_mb": 24,
+            "margin_bottom_heading": 20,
+            "font_weight_heading": "600",
+            "color_heading": "#232323",
+            "color_heading_mb": "#fff",
+            "border_title": "border_s1",
+            "border_color_title": "#232323",
+            "border_color_title_mobile": "#fff",
+            "text": "",
+            "font_size_des": 12,
+            "font_size_des_mb": 12,
+            "line_height_des": 26,
+            "margin_bottom_des": 35,
+            "color_des": "#232323",
+            "color_des_mb": "#fff",
+            "countdown": "",
+            "hide_countdown_fc": "countdown",
+            "countdown_style": "round",
+            "countdown_position": "countdown_below_desc",
+            "font_size_countdown_number": 30,
+            "font_size_countdown_text": 14,
+            "color_countdown": "#232323",
+            "color_countdown_mb": "#fff",
+            "countdown_margin_bottom": 35,
+            "content_width": 475,
+            "bg_color_content": "",
+            "align": "center",
+            "align_items": "center",
+            "position": "left",
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "btn_text": "",
+            "link": "",
+            "btn_icon": "",
+            "button_1_width": 235,
+            "enable_button_custom_border": false,
+            "button_color": "#fff",
+            "button_border": "#232323",
+            "button_background": "#232323",
+            "button_background_gradient": "",
+            "button_color_hover": "#fff",
+            "button_border_hover": "#232323",
+            "button_background_hover": "#232323",
+            "button_background_gradient_hover": "",
+            "btn_text_2": "",
+            "link_2": "",
+            "btn_icon_2": "",
+            "button_color_2": "#fff",
+            "button_border_2": "#232323",
+            "button_background_2": "#232323",
+            "button_background_2_gradient": "",
+            "button_color_hover_2": "#fff",
+            "button_border_hover_2": "#232323",
+            "button_background_hover_2": "#232323",
+            "button_background_gradient_hover_2": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#fff",
+            "bg_color_icon": "#000",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "large_img_mNGJgU"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "id_section": "about-founder-section",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "display_type": "slide",
+        "enable_arrows": false,
+        "arrows_position": "",
+        "enable_dots": false,
+        "enable_autoplay": false,
+        "list_gap": 0,
+        "image_banner_title": "",
+        "enable_border_title": false,
+        "color_title": "#202020",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "margin_bottom_title": 25,
+        "image_banner_des": "",
+        "color_des": "#202020",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "style_bg": "none",
+        "bg_color": "",
+        "bg_color_gradient": "",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "liquid_css": ""
       }
     },
     "brand_slider_tRACcq": {
@@ -802,13 +967,17 @@
     "main",
     "image_banner_iJcKje",
     "rich_text_3pWCBF",
+    "about_us_two_col_section_VbJpRp",
     "collapsible_content_7qC8iH",
     "collapsible_content_wicXQc",
+    "about_us_image_with_banner_EbQaUa",
     "rich_text_P6kMaE",
     "brand_slider_Xth6yi",
+    "about_us_two_col_section_7erU8U",
     "collapsible_content_wLcb8C",
     "collapsible_content_7wpXk8",
     "founder_section_mezyQY",
+    "image_banner_PgKjda",
     "brand_slider_tRACcq",
     "rich_text_CtJHjE"
   ]
