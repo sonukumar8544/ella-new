@@ -1,0 +1,167 @@
+<div
+  class="story-founder-container"
+  style="background-image: url({{ section.settings.background_image | img_url: 'master' }}); background-size: cover; background-position: center;">
+  <div class="story-founder-content container">
+    <div class="story-founder-text-section">
+      <h1>{{ section.settings.founder_title | newline_to_br }}</h1>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+          <p>{{ block.settings.text }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="story-founder-image-section">
+      <img src="{{ section.settings.founder_image | img_url: 'master' }}" alt="{{ section.settings.founder_image.alt }}" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .story-founder-container {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding-top: 30px;
+    /* padding-left: 5%;
+    padding-right: 5%; */
+    box-sizing: border-box;
+    display: flex;
+    justify-story-founder-content: center;
+    align-items: center;
+  }
+
+  .story-founder-content {
+    display: flex;
+    flex-direction: row;
+    justify-story-founder-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .story-founder-text-section {
+    flex: 1 1 50%;
+    color: white;
+    padding-bottom: 20px !important;
+  }
+
+  .story-founder-text-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .story-founder-text-section p {
+    font-size: 16px;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+    color: white;
+    margin: 6px;
+  }
+
+  .highlight {
+    color: #00ffff;
+  }
+
+  .story-founder-image-section {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: end;
+    justify-story-founder-content: center;
+  }
+
+  .story-founder-image-section img {
+    max-width: 100%;
+    /* height: 100%; */
+    border-radius: 12px;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .story-founder-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+    }
+
+    .story-founder-image-section img{
+      max-width: 70%;
+      margin: auto;
+    }
+
+    .story-founder-content{
+      gap: 0px;
+    }
+
+    .story-founder-text-section,
+    .story-founder-image-section {
+      flex: 1 1 100%;
+    }
+
+    .story-founder-text-section h1 {
+      font-size: 2em;
+    }
+
+    .story-founder-text-section p {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .story-founder-text-section h1 {
+      font-size: 1.6em;
+    }
+
+    .story-founder-text-section p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About Founder New",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "founder_title",
+      "label": "Title",
+      "default": "The man with a\nVision and Mission"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Paragraph Text",
+          "default": "Paragraph content goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Founder New",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
