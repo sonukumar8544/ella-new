@@ -8572,6 +8572,12 @@ div#baritam-page-section {
   margin-top: 0;
 }
 
+#our-story-content .rich-text__blocks h2{
+  color: white !important;
+  max-width: 800px;
+  margin: auto !important; 
+}
+
 #cstm_our_story_page .bg-policies-block a {
   margin-bottom: 25px;
 }
