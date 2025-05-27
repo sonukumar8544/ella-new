@@ -1,24 +1,15 @@
 <div class="about-banner-section-desktop-comtainer">
   <div class="about-banner-section-desktop container">
     <div class="about-banner-text-content">
-      <h1>From Amazon to a Global Brand:<br>A Journey Built on Trust</h1>
-      <p>
-        Our mission took its baby steps at Amazon, where we aimed to grow around three pillars of transparency,
- 
- 
-                trust and quality. From the initial stages, we believed that education would create a real impact on
-                people's lives. Thanks to the trust of our customers and the unwavering commitment of our team, we
-                became the #1 Vitamin D brand on Amazon — testimony to the life-changing potential of our products. As
-                we grew, so did our aim. Today, Wellness Extract has expanded its mission beyond Canada to the United
-                Kingdom, Australia, and India. By providing natural, science-backed supplements, we continue to make a
-                mark, inspiring trust and promoting healthier lifestyles across continents.
-      </p>
+      <h1>{{ section.settings.banner_title | newline_to_br }}</h1>
+      <p>{{ section.settings.banner_content }}</p>
     </div>
     <div class="about-banner-image-content">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Our_Mission_383236f2-d10d-42e2-95f7-225ba18e8a56.png?v=1748243642" alt="Wellness Extract Products" />
+      <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="{{ section.settings.banner_image.alt }}" />
     </div>
   </div>
 </div>
+
 
 <style>
   .about-banner-section-desktop-comtainer {
@@ -29,8 +20,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 60px 80px;
-    max-height: 600px;
+  }
 
+  @media (min-width: 1024px) {
+    .about-banner-section-desktop {
+      max-height: 600px;
+    }
   }
 
   .about-banner-text-content {
@@ -71,6 +66,10 @@
       padding: 40px 20px;
     }
 
+    .about-banner-image-content img {
+      max-width: 100%;
+    }
+
     .about-banner-text-content,
     .about-banner-image-content {
       max-width: 100%;
@@ -82,66 +81,34 @@
     }
 
     .about-banner-image-content img {
-      border-radius: 0;
+      border-radius: 20px;
     }
   }
 </style>
 
-
 {% schema %}
   {
-    "name": "about image with text",
+    "name": "About Banner With text",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "author_image",
-        "label": "Author Image"
-      },
-      {
         "type": "text",
-        "id": "author_name",
-        "label": "Author Name",
-        "default": "John Doe"
-      },
-      {
-        "type": "text",
-        "id": "author_role",
-        "label": "Author Role",
-        "default": "Author"
-      },
-      {
-        "type": "text",
-        "id": "author_email",
-        "label": "Author Email",
-        "default": "example@example.com"
+        "id": "banner_title",
+        "label": "Banner Title",
+        "default": "From Amazon to a Global Brand: A Journey Built on Trust"
       }, {
-        "type": "url",
-        "id": "author_linkedin",
-        "label": "LinkedIn Profile"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "text_block",
-        "name": "Description Block",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Block Title",
-            "default": "Block Title"
-          }, {
-            "type": "textarea",
-            "id": "content",
-            "label": "Block Content",
-            "default": "Block content goes here."
-          }
-        ]
+        "type": "textarea",
+        "id": "banner_content",
+        "label": "Banner Content",
+        "default": "Our mission ."
+      }, {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
       }
     ],
     "presets": [
       {
-        "name": "about image with text"
+        "name": "About Banner With Text"
       }
     ]
   }

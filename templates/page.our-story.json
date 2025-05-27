@@ -21,7 +21,7 @@
           "type": "largeImg",
           "settings": {
             "image": "shopify://shop_images/Banner1_2.png",
-            "mobile_image": "shopify://shop_images/Group_407_2.png",
+            "mobile_image": "shopify://shop_images/About_Us_1100x1416_1.png",
             "enable_max_width_image": false,
             "custom_width_image": 1170,
             "enable_scroll_down": false,
@@ -175,6 +175,10 @@
         "heading_fPbUjk",
         "text_64b48j"
       ],
+      "custom_css": [
+        "div#our-story-content {background: #086b92; margin: 0px; padding: 0px;}",
+        "@media (max-width: 767px) {#our-story-content .rich-text__blocks.text-center {padding: 50px 10px; }}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "id": "our-story-content",
@@ -201,10 +205,16 @@
       "type": "about-us-two-col-section",
       "name": "about us two col",
       "settings": {
-        "author_name": "John Doe",
-        "author_role": "Author",
-        "author_email": "example@example.com",
-        "author_linkedin": ""
+        "mission_image": "shopify://shop_images/Our_Mission_383236f2-d10d-42e2-95f7-225ba18e8a56.png",
+        "mission_title": "Our Mission",
+        "mission_content": "The heart and soul of Wellness Extract is built on a simple yet powerful idea: to empower individuals worldwide with the tools and resources they require to make informed and better choices for their health. We believe that every living being deserves to feel their best in body, mind and soul. Thus, we are dedicated to making that possible with an ideal blend of science, transparency, and ethics.",
+        "button_text": "Read More",
+        "button_text_link": "",
+        "story_image": "shopify://shop_images/Our_Story_40f6ef8d-dd43-4db4-ad88-0ae3fa34afda.png",
+        "story_title": "Our Story: A Personal Journey That Sparked a Global Mission",
+        "story_content": "<p>Wellness Extract began with a heart-warming story of compassion, determination and love. Our founder, Virender Dass, embarked on this journey inspired by his own mother’s battle with cancer. He firsthand witnessed the painful experiences of a cancer patient and struggled to find high-quality, scientifically backed supplements to support his mother. </p><p>This gut-wrenching journey awakened in him a greater purpose: to bridge the gap in wellness and develop products that give people the strength to take control of their health. </p><p>What started as a hope to help one person has now shaped into a global movement to render better health solutions for generations across the globe.</p>",
+        "button_text2": "",
+        "button_text_link2": ""
       }
     },
     "collapsible_content_7qC8iH": {
@@ -316,10 +326,9 @@
       "type": "about-us-image-with-banner",
       "name": "about image with text",
       "settings": {
-        "author_name": "John Doe",
-        "author_role": "Author",
-        "author_email": "example@example.com",
-        "author_linkedin": ""
+        "banner_title": "From Amazon to a Global Brand:A Journey Built on Trust ",
+        "banner_content": "<p>Our mission took its baby steps at Amazon, where we aimed to grow around three pillars of transparency, \ntrust and quality. From the initial stages, we believed that education would create a real impact on people’s lives. Thanks to the trust of our customers and the unwavering commitment of our team, we became the\n#1 Vitamin E brand on Amazon testimony to the life-changing potential of our products. As we grew, so did \nour aim. Today, Wellness Extract has expanded its mission beyond Canada to the United Kingdom, Australia, and India. By providing natural, science-backed supplements, we continue to make a mark, inspiring trust and promoting healthier lifestyles across continents.</p>",
+        "banner_image": "shopify://shop_images/From_Amazon_to_a_Global_Brand__A_Journey_Built_on_Trust.png"
       }
     },
     "rich_text_P6kMaE": {
@@ -510,10 +519,16 @@
       "type": "about-us-two-col-section",
       "name": "about us two col",
       "settings": {
-        "author_name": "John Doe",
-        "author_role": "Author",
-        "author_email": "example@example.com",
-        "author_linkedin": ""
+        "mission_image": "shopify://shop_images/Empowering_You.png",
+        "mission_title": "Empowering You: Be the CEO of Your Own Body",
+        "mission_content": "You should be the master of your health, thus, at Wellness Extract, we strive to provide you with the right resources, expertise and education to feel confident in your choices. With our detailed product pages and wide range of research-based blogs, we are here to help you understand your body, its",
+        "button_text": "BUY NOW",
+        "button_text_link": "https://wellnessextract.com/pages/all-bundles",
+        "story_image": "shopify://shop_images/Making_a_Difference.png",
+        "story_title": "Making a Difference: Partnership with the Beat Cancer Society",
+        "story_content": "<p>Wellness extends beyond physical health; it’s about making a meaningful difference. That is why we have partnered with the Beat Cancer Society to support those battling cancer. Through this partnership, we provide natural supplements and educational support to help improve their quality of life. </p>Each step we take is guided by our unwavering commitment to nurturing wellness, hope, and a brighter future",
+        "button_text2": "DONATE NOW",
+        "button_text_link2": "https://yourcharityauction.com/donation.php?a=3367&ca=fd7ceb"
       }
     },
     "collapsible_content_wLcb8C": {
@@ -637,6 +652,26 @@
         "bio_4": "<p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a <strong>trusted name in natural health</strong>, committed to helping people lead <strong>healthier lives</strong>.</p>"
       }
     },
+    "about_us_founder_section_dR6LVp": {
+      "type": "about-us-founder-section",
+      "blocks": {
+        "paragraph_HDWLW8": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Virender Dass, the visionary Founder and Director of Wellness Extract, turned a personal mission into a global wellness movement helping people live healthier & happier lives.</p><p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. \nWhen his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to Dr. Barrie Tan, world’s foremost expert on tocotrienols, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p><p>This experience ignited Virender's passion for health., prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a global movement, as he dedicated himself to providing high-quality natural supplements.</p><p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a trusted name in natural health, committed to helping people lead healthier lives.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_HDWLW8"
+      ],
+      "name": "about founder new",
+      "settings": {
+        "background_image": "shopify://shop_images/The_man_with_a_Vision_and_Mission_BG_1.png",
+        "founder_title": "The man with aVision and Mission",
+        "founder_image": "shopify://shop_images/Rectangle_41_1.png"
+      }
+    },
     "image_banner_PgKjda": {
       "type": "image-banner",
       "blocks": {
@@ -658,7 +693,7 @@
             "font_weight_sub_title": "700",
             "sub_title_position": "sub_title_above",
             "color_sub_title": "#232323",
-            "color_sub_title_mb": "#fff",
+            "color_sub_title_mb": "#ffffff",
             "heading": "",
             "letter_spacing_heading": "",
             "enable_style_italic": false,
@@ -667,17 +702,17 @@
             "margin_bottom_heading": 20,
             "font_weight_heading": "600",
             "color_heading": "#232323",
-            "color_heading_mb": "#fff",
+            "color_heading_mb": "#ffffff",
             "border_title": "border_s1",
             "border_color_title": "#232323",
-            "border_color_title_mobile": "#fff",
+            "border_color_title_mobile": "#ffffff",
             "text": "",
             "font_size_des": 12,
             "font_size_des_mb": 12,
             "line_height_des": 26,
             "margin_bottom_des": 35,
             "color_des": "#232323",
-            "color_des_mb": "#fff",
+            "color_des_mb": "#ffffff",
             "countdown": "",
             "hide_countdown_fc": "countdown",
             "countdown_style": "round",
@@ -685,7 +720,7 @@
             "font_size_countdown_number": 30,
             "font_size_countdown_text": 14,
             "color_countdown": "#232323",
-            "color_countdown_mb": "#fff",
+            "color_countdown_mb": "#ffffff",
             "countdown_margin_bottom": 35,
             "content_width": 475,
             "bg_color_content": "",
@@ -699,29 +734,30 @@
             "btn_icon": "",
             "button_1_width": 235,
             "enable_button_custom_border": false,
-            "button_color": "#fff",
+            "button_color": "#ffffff",
             "button_border": "#232323",
             "button_background": "#232323",
             "button_background_gradient": "",
-            "button_color_hover": "#fff",
+            "button_color_hover": "#ffffff",
             "button_border_hover": "#232323",
             "button_background_hover": "#232323",
             "button_background_gradient_hover": "",
             "btn_text_2": "",
             "link_2": "",
             "btn_icon_2": "",
-            "button_color_2": "#fff",
+            "button_color_2": "#ffffff",
             "button_border_2": "#232323",
             "button_background_2": "#232323",
             "button_background_2_gradient": "",
-            "button_color_hover_2": "#fff",
+            "button_color_hover_2": "#ffffff",
             "button_border_hover_2": "#232323",
             "button_background_hover_2": "#232323",
             "button_background_gradient_hover_2": "",
+            "video_link": "",
             "adaptive_height_video": "56",
             "icon_style": "style_1",
-            "color_icon": "#fff",
-            "bg_color_icon": "#000",
+            "color_icon": "#ffffff",
+            "bg_color_icon": "#000000",
             "enable_custom_video_icon_position": false,
             "video_icon_horizontal_position": "",
             "video_icon_vertical_position": "",
@@ -733,6 +769,7 @@
       "block_order": [
         "large_img_mNGJgU"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "id_section": "about-founder-section",
@@ -977,6 +1014,7 @@
     "collapsible_content_wLcb8C",
     "collapsible_content_7wpXk8",
     "founder_section_mezyQY",
+    "about_us_founder_section_dR6LVp",
     "image_banner_PgKjda",
     "brand_slider_tRACcq",
     "rich_text_CtJHjE"
