@@ -179,7 +179,6 @@
         "div#our-story-content {background: #086b92; margin: 0px; padding: 0px;}",
         "@media (max-width: 767px) {#our-story-content .rich-text__blocks.text-center {padding: 50px 10px; }}"
       ],
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "id": "our-story-content",
         "container": "fullwidth",
@@ -203,7 +202,6 @@
     },
     "about_us_two_col_section_VbJpRp": {
       "type": "about-us-two-col-section",
-      "name": "about us two col",
       "settings": {
         "mission_image": "shopify://shop_images/Our_Mission_383236f2-d10d-42e2-95f7-225ba18e8a56.png",
         "mission_title": "Our Mission",
@@ -211,7 +209,7 @@
         "button_text": "Read More",
         "button_text_link": "",
         "story_image": "shopify://shop_images/Our_Story_40f6ef8d-dd43-4db4-ad88-0ae3fa34afda.png",
-        "story_title": "Our Story: A Personal Journey That Sparked a Global Mission",
+        "story_title": "<i>Our Story:</i><br> <span>A Personal Journey That Sparked a Global Mission</span>",
         "story_content": "<p>Wellness Extract began with a heart-warming story of compassion, determination and love. Our founder, Virender Dass, embarked on this journey inspired by his own mother’s battle with cancer. He firsthand witnessed the painful experiences of a cancer patient and struggled to find high-quality, scientifically backed supplements to support his mother. </p><p>This gut-wrenching journey awakened in him a greater purpose: to bridge the gap in wellness and develop products that give people the strength to take control of their health. </p><p>What started as a hope to help one person has now shaped into a global movement to render better health solutions for generations across the globe.</p>",
         "button_text2": "",
         "button_text_link2": ""
@@ -324,9 +322,8 @@
     },
     "about_us_image_with_banner_EbQaUa": {
       "type": "about-us-image-with-banner",
-      "name": "about image with text",
       "settings": {
-        "banner_title": "From Amazon to a Global Brand:A Journey Built on Trust ",
+        "banner_title": "<i>From Amazon to a Global Brand:</i><br><span>A Journey Built on Trust </span>",
         "banner_content": "<p>Our mission took its baby steps at Amazon, where we aimed to grow around three pillars of transparency, \ntrust and quality. From the initial stages, we believed that education would create a real impact on people’s lives. Thanks to the trust of our customers and the unwavering commitment of our team, we became the\n#1 Vitamin E brand on Amazon testimony to the life-changing potential of our products. As we grew, so did \nour aim. Today, Wellness Extract has expanded its mission beyond Canada to the United Kingdom, Australia, and India. By providing natural, science-backed supplements, we continue to make a mark, inspiring trust and promoting healthier lifestyles across continents.</p>",
         "banner_image": "shopify://shop_images/From_Amazon_to_a_Global_Brand__A_Journey_Built_on_Trust.png"
       }
@@ -363,7 +360,6 @@
         "text_6zJcDN"
       ],
       "disabled": true,
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "id": "our-story-content",
         "container": "container",
@@ -432,7 +428,8 @@
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
-        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}"
+        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}",
+        "@media (min-width: 1025px) {.halo-block-header .title .text {width: 600px; }}"
       ],
       "settings": {
         "id": "the_heart_of_wellness_extract",
@@ -507,25 +504,24 @@
         "fontsize_text_mb": 14,
         "font_weight_title": "600",
         "margin_bottom_title": 10,
-        "mg_top_desktop": 80,
+        "mg_top_desktop": 50,
         "mg_top_tablet": 50,
         "mg_top_mobile": 50,
-        "mg_bottom_desktop": 75,
+        "mg_bottom_desktop": 50,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 40
       }
     },
     "about_us_two_col_section_7erU8U": {
       "type": "about-us-two-col-section",
-      "name": "about us two col",
       "settings": {
         "mission_image": "shopify://shop_images/Empowering_You.png",
-        "mission_title": "Empowering You: Be the CEO of Your Own Body",
-        "mission_content": "You should be the master of your health, thus, at Wellness Extract, we strive to provide you with the right resources, expertise and education to feel confident in your choices. With our detailed product pages and wide range of research-based blogs, we are here to help you understand your body, its",
+        "mission_title": "<i>Empowering You:</i><br><span> Be the CEO of Your Own Body</span>",
+        "mission_content": "You should be the master of your health, thus, at Wellness Extract, we strive to provide you with the right resources, expertise and education to feel confident in your choices. With our detailed product pages and wide range of research-based blogs, we are here to help you understand your body.",
         "button_text": "BUY NOW",
         "button_text_link": "https://wellnessextract.com/pages/all-bundles",
         "story_image": "shopify://shop_images/Making_a_Difference.png",
-        "story_title": "Making a Difference: Partnership with the Beat Cancer Society",
+        "story_title": "<i>Making a Difference:</i><br><span> Partnership with the Beat Cancer Society</span>",
         "story_content": "<p>Wellness extends beyond physical health; it’s about making a meaningful difference. That is why we have partnered with the Beat Cancer Society to support those battling cancer. Through this partnership, we provide natural supplements and educational support to help improve their quality of life. </p>Each step we take is guided by our unwavering commitment to nurturing wellness, hope, and a brighter future",
         "button_text2": "DONATE NOW",
         "button_text_link2": "https://yourcharityauction.com/donation.php?a=3367&ca=fd7ceb"
@@ -665,7 +661,6 @@
       "block_order": [
         "paragraph_HDWLW8"
       ],
-      "name": "about founder new",
       "settings": {
         "background_image": "shopify://shop_images/The_man_with_a_Vision_and_Mission_BG_1.png",
         "founder_title": "The man with aVision and Mission",
@@ -770,7 +765,6 @@
         "large_img_mNGJgU"
       ],
       "disabled": true,
-      "name": "t:sections.image-banner.presets.name",
       "settings": {
         "id_section": "about-founder-section",
         "container": "fullwidth",
