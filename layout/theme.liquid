@@ -1,6 +1,4 @@
-{% unless template contains 'index' or template contains 'collection' or template contains 'product' -%}
-  {%- include 'shogun-content-handler' -%}
-{%- endunless %}
+{% include 'shogun-content-handler' %}
 <!doctype html>
 {%- liquid
   if settings.list_iso_rtl != blank
@@ -31,12 +29,6 @@
     {%- if settings.favicon != blank -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
-    <!-- Shogun -->
-    {% comment %}
-      {% render 'shogun-header-script' %}
-    {% endcomment %}
-    <!-- Shogun -->
-
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <title>
       {{ page_title }}
@@ -53,40 +45,21 @@
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-W3L597KW');
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-W3L597KW');
     </script>
     <!-- End Google Tag Manager -->
 
     <!-- Start of HubSpot Embed Code -->
-    <script>
-        var navigatortt = navigator.userAgent;
-
-      if (
-        navigatortt.indexOf(
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
-        ) > -2
-      ) {
-        var hsScript = document.createElement('script');
-          hsScript.type = 'text/javascript';
-          hsScript.id = 'hs-script-loader';
-          hsScript.async = true;
-          hsScript.defer = true;
-          hsScript.src = 'https://js.hs-scripts.com/49007533.js';
-          document.head.appendChild(hsScript);
-      }
-    </script>
-    {% comment %}
-      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49007533.js"></script>
-    {% endcomment %}
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49007533.js"></script>
     <!-- End of HubSpot Embed Code -->
 
     {{ content_for_header }}
-    {% unless template contains 'index' or template contains 'collection' %}
+    {% if page.handle == 'reviews' %}
       <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css">
-    {% endunless %}
+    {% endif %}
 
     {% render 'variable' %}
     {% render 'global-style' %}
@@ -162,9 +135,8 @@
         assign style_text_size_varriant = 'size_varriant_style_2'
       endif
     -%}
-    {% unless template contains 'index' or template contains 'collection' or template contains 'product' %}
-      {% render 'shogun-head' %}
-    {% endunless %}
+
+    {% render 'shogun-head' %}
   </head>
 
   <body
