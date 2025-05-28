@@ -1,7 +1,7 @@
 {{ 'vendor.js' | asset_url | script_tag }}
 {{ 'global.js' | asset_url | script_tag }}
 {{ 'lazysizes.min.js' | asset_url | script_tag }}
-<!-- {{ 'menu.js' | asset_url | script_tag }} -->
+{{ 'menu.js' | asset_url | script_tag }}
 
 {%- if settings.show_quick_search -%}
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
