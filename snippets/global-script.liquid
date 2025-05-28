@@ -1,7 +1,13 @@
-{{ 'vendor.js' | asset_url | script_tag }}
-{{ 'global.js' | asset_url | script_tag }}
-{{ 'lazysizes.min.js' | asset_url | script_tag }}
-<!-- {{ 'menu.js' | asset_url | script_tag }} -->
+<!-- Preload scripts for prioritization -->
+<link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
+<link rel="preload" as="script" href="{{ 'global.js' | asset_url }}">
+
+<!-- Defer execution to avoid blocking rendering -->
+<script src="{{ 'vendor.js' | asset_url }}"></script>
+<script src="{{ 'global.js' | asset_url }}"></script>
+
+<!-- Lazysizes can load async since it’s not critical for initial render -->
+<script src="{{ 'lazysizes.min.js' | asset_url }}"></script>
 
 {%- if settings.show_quick_search -%}
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
