@@ -8687,3 +8687,15 @@ border: none!important;
   }
 }
 
+.blog-page-flex-h2{
+    display: flex;
+    gap: 20px;
+
+}
+
+.blog-button-cstm{
+  color: blue !important;
+  font-size: 22px !important;
+  text-decoration: underline !important;
+}
+
