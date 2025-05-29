@@ -48,16 +48,18 @@
             <div class="nav-title-mobile text-center">
               <span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
             </div>
-            <div class="site-nav navigation_all_mobile d-none">
-              <div class="site-nav-list ">
-                <a href="{{ link.url }}" class="site-nav-title menu-lv-2"
-                  ><span>
-                    {{- 'general.navigation.go_to' | t }}
-                    {{ link.title | escape -}}
-                  </span></a
-                >
+            {% if link.url != blank %}
+              <div class="site-nav navigation_all_mobile d-none">
+                <div class="site-nav-list ">
+                  <a href="{{ link.url }}" class="site-nav-title menu-lv-2"
+                    ><span>
+                      {{- 'general.navigation.go_to' | t }}
+                      {{ link.title | escape -}}
+                    </span></a
+                  >
+                </div>
               </div>
-            </div>
+            {% endif %}
             <div
               class="menu-dropdown__column menu-dropdown__column-{{ column }} w-auto{% unless show_banner_1 or show_product %} column-full{% endunless %}{% unless show_product %} no_show_product{% endunless %}{% unless show_banner_1 %} no_show_banner{% endunless %}"
               data-masonry='{ "itemSelector": "[data-gridItem]", "columnWidth": ".grid-sizer" }'
