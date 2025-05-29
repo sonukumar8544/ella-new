@@ -108,12 +108,17 @@
 
 .halo-text-format ul li,
 .halo-text-format ol li{
-    font-size: var(--font-body-size);
+    font-size: var(--font-body-size) !important;
     font-weight: var(--font-weight-normal);
     letter-spacing: var(--body-letter-spacing);
     line-height: var(--body-line-height);
     color: var(--color-text2);
     position: relative;
+}
+
+.article-body>.halo-text-format ul li,
+.article-body>.halo-text-format ol li{
+    color: #36454f !important
 }
 
 .halo-text-format ul li + li,
