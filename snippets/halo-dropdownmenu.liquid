@@ -1,5 +1,6 @@
+<!-- mobile view -->
 <li
-  class="!!!! menu-lv-item menu-lv-1 text-left no-megamenu{% if link.links != blank %} dropdown{% endif %}{% if sale_item_lv1 contains title %} menu-sale{% endif %}"
+  class=" menu-lv-item menu-lv-1 text-left no-megamenu{% if link.links != blank %} dropdown{% endif %}{% if sale_item_lv1 contains title %} menu-sale{% endif %}"
   {% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %}
     no-effect-cursor
   {% endif %}
@@ -32,7 +33,7 @@
         <span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
       </div>
       {% if link.url == blank %}
-        <li class="   menu-lv-item menu-lv-2 text-left navigation_all_mobile d-none">
+        <li class=" menu-lv-item menu-lv-2 text-left navigation_all_mobile d-none">
           <a
             {% if link.url == blank %}
               role="link" aria-disabled="true"
@@ -52,7 +53,7 @@
       {% endif %}
       {%- for childlink in link.links -%}
         {% assign childtitle = childlink.title | escape | downcase | handle %}
-        <li class=">>>>  menu-lv-item menu-lv-2 text-left {% if childlink.links != blank %} dropdown{% endif %} {% if sale_item_lv2 contains childtitle %} menu-sale{% endif %}{% if show_label_blink %} menu-lv-blink{% endif %}">
+        <li class="menu-lv-item menu-lv-2 text-left {% if childlink.links != blank %} dropdown{% endif %} {% if sale_item_lv2 contains childtitle %} menu-sale{% endif %}{% if show_label_blink %} menu-lv-blink{% endif %}">
           {%- if childlink.links == blank -%}
             <a
               {% if childlink.url == blank %}
@@ -100,7 +101,7 @@
                 <div class="nav-title-mobile text-center">
                   <span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span> {{ link.title | escape }}
                 </div>
-                <li class=" 222222 menu-lv-item menu-lv-3 text-left navigation_all_mobile d-none">
+                <li class="  menu-lv-item menu-lv-3 text-left navigation_all_mobile d-none">
                   <a
                     {% if childlink.url == blank %}
                       role="link" aria-disabled="true"
@@ -116,7 +117,7 @@
                 </li>
                 {%- for grandchildlink in childlink.links -%}
                   {% assign grandchildtitle = grandchildlink.title | escape | downcase | handle %}
-                  <li class=" 2222222 menu-lv-item menu-lv-3 text-left{% if sale_item_lv3 contains grandchildtitle %} menu-sale{% endif %}">
+                  <li class="  menu-lv-item menu-lv-3 text-left{% if sale_item_lv3 contains grandchildtitle %} menu-sale{% endif %}">
                     <a
                       {% if grandchildlink.url == blank %}
                         role="link" aria-disabled="true"
