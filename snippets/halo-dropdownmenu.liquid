@@ -32,7 +32,7 @@
       <div class="nav-title-mobile text-center">
         <span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
       </div>
-      {% if link.url != blank %}
+      {% if link.url != blank or link.url -= blank %}
         <li class=" menu-lv-item menu-lv-2 text-left navigation_all_mobile d-none">
           <a
             {% if link.url == blank %}
