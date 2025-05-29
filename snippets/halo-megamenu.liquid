@@ -48,17 +48,19 @@
             <div class="nav-title-mobile text-center">
               <span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
             </div>
-            {%- unless link.links contains '#' -%}
-              <div class="site-nav navigation_all_mobile d-none">
-                <div class="site-nav-list ">
-                  <a href="{{ link.url }}" class="site-nav-title menu-lv-2"
-                    ><span>
-                      {{- 'general.navigation.go_to' | t }}
-                      {{ link.title | escape -}}
-                    </span></a
-                  >
+            {%- unless link.links == '#' -%}
+              <!--
+                <div class="site-nav navigation_all_mobile d-none">
+                  <div class="site-nav-list ">
+                    <a href="{{ link.url }}" class="site-nav-title menu-lv-2"
+                      ><span>
+                        {{- 'general.navigation.go_to' | t }}
+                        {{ link.title | escape -}}
+                      </span></a
+                    >
+                  </div>
                 </div>
-              </div>
+              -->
             {% else %}
               <div class="site-nav navigation_all_mobile d-none">
                 <div class="site-nav-list ">
