@@ -21,19 +21,20 @@
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
+      "disabled": true,
       "settings": {}
     },
-    "author_section_9LRt8h": {
+    "author_section_XhKzkf": {
       "type": "author-section",
       "blocks": {
-        "text_block_CUdMWQ": {
+        "text_block_MtQRHQ": {
           "type": "text_block",
           "settings": {
             "title": "",
-            "content": "Nurah Ekhlaque is a dedicated medical writer with a Master’s in Biotechnology from Guru Ghasidas University, India. She brings over three years of experience in scientific writing, research communication, and biomedical content creation, contributing to high-quality publications in the healthcare and life sciences industries. <br> <br>Nurah began her research journey at the All India Institute of Medical Sciences (AIIMS), New Delhi, where she contributed to cutting-edge cancer biology research. There, she developed foundational expertise in molecular techniques and biomedical experimentation. Building on this, she worked as a Research Assistant at Saarland University, Germany, where her focus shifted to neuropharmacology imaging using advanced techniques such as immunohistochemistry and confocal microscopy. <br><br>Her work seamlessly blends scientific accuracy with clear communication, whether she’s crafting peer-reviewed articles, regulatory content, or educational healthcare materials. Beyond writing, Nurah is also passionate about mentoring emerging medical writers, supporting them in building strong, research-backed content."
+            "content": "Dr. Aditi Bakshi is an experienced healthcare writer and editor with a unique interdisciplinary background in dental sciences, food nutrition, and medical communication. With a Bachelor’s in Dental Sciences and a Master’s in Food Nutrition, she combines her clinical expertise and nutritional knowledge to create evidence-based, accessible, and SEO-optimized content.<br><br>Dr. Bakshi has over four years of experience in medical writing, research communication, and healthcare content development, following more than a decade of clinical practice in dentistry. Her writing spans a variety of formats, including digital health blogs, patient education materials, scientific articles, and regulatory content for medical devices, with a focus on scientific accuracy and clarity.<br><br>Her early research work at the Institute of Dental Sciences, Jammu, and consultancy experience as a nutritionist in leading hospitals have enriched her ability to bridge oral healthcare, medical sciences, and nutrition in her writing.\nBeyond content creation, Dr. Bakshi is passionate about mentoring aspiring medical writers, helping them develop research-backed, credible content. Her commitment to excellence ensures that readers receive reliable information to make informed health decisions while supporting organizations with precise, authoritative medical content."
           }
         },
-        "text_block_CjHtej": {
+        "text_block_W3PfPU": {
           "type": "text_block",
           "settings": {
             "title": "Wellness Extract Editorial Guidelines",
@@ -42,23 +43,16 @@
         }
       },
       "block_order": [
-        "text_block_CUdMWQ",
-        "text_block_CjHtej"
+        "text_block_MtQRHQ",
+        "text_block_W3PfPU"
       ],
       "name": "Author Section",
       "settings": {
-        "author_image": "shopify://shop_images/nurah.jpg",
-        "author_name": "Nurah Ekhlaque",
+        "author_image": "shopify://shop_images/Dr_Aditi_Bakshi-Msc-Nutrition.jpg",
+        "author_name": "Dr. Aditi Bakshi",
         "author_role": "Writer",
         "author_email": "example@example.com",
-        "author_linkedin": "https://www.linkedin.com/in/nurah-ekhlaque-6b2588162"
-      }
-    },
-    "author_blog_card_fqGKwM": {
-      "type": "author-blog-card",
-      "name": "author-blog-card",
-      "settings": {
-        "blog_author_name": "Nurah Ekhlaque"
+        "author_linkedin": "https://www.linkedin.com/in/dr-aditi-bakshi"
       }
     }
   },
@@ -66,7 +60,6 @@
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_9LRt8h",
-    "author_blog_card_fqGKwM"
+    "author_section_XhKzkf"
   ]
 }

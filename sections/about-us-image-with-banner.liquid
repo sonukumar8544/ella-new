@@ -1,0 +1,118 @@
+<div class="about-banner-section-desktop-comtainer">
+  <div class="about-banner-section-desktop container">
+    <div class="about-banner-text-content">
+      <h1>{{ section.settings.banner_title | newline_to_br }}</h1>
+      <p>{{ section.settings.banner_content }}</p>
+    </div>
+    <div class="about-banner-image-content">
+      <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="{{ section.settings.banner_image.alt }}" />
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .about-banner-section-desktop-comtainer {
+    background-color: #086B92;
+  }
+  .about-banner-section-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+  }
+
+  @media (min-width: 1024px) {
+    .about-banner-section-desktop {
+      max-height: 600px;
+    }
+  }
+
+  .about-banner-text-content {
+    flex: 1;
+    max-width: 55%;
+  }
+
+  .about-banner-text-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 1.1;
+  }
+  .about-banner-text-content h1 span {
+    font-size: 28px;
+  }
+
+  .about-banner-text-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+  }
+
+  .about-banner-image-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .about-banner-image-content img {
+    max-width: 90%;
+    height: auto;
+    border-top-left-radius: 180px;
+  }
+
+  @media (max-width: 1024px) {
+    .about-banner-section-desktop {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .about-banner-image-content img {
+      max-width: 100%;
+    }
+
+    .about-banner-text-content,
+    .about-banner-image-content {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .about-banner-image-content {
+      margin-top: 30px;
+    }
+
+    .about-banner-image-content img {
+      border-radius: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "About Banner With text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "banner_title",
+        "label": "Banner Title",
+        "default": "From Amazon to a Global Brand: A Journey Built on Trust"
+      }, {
+        "type": "textarea",
+        "id": "banner_content",
+        "label": "Banner Content",
+        "default": "Our mission ."
+      }, {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Banner With Text"
+      }
+    ]
+  }
+{% endschema %}

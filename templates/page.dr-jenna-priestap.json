@@ -21,19 +21,20 @@
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
+      "disabled": true,
       "settings": {}
     },
-    "author_section_9LRt8h": {
+    "author_section_HMJjPN": {
       "type": "author-section",
       "blocks": {
-        "text_block_CUdMWQ": {
+        "text_block_QgFW8T": {
           "type": "text_block",
           "settings": {
             "title": "",
-            "content": "Nurah Ekhlaque is a dedicated medical writer with a Master’s in Biotechnology from Guru Ghasidas University, India. She brings over three years of experience in scientific writing, research communication, and biomedical content creation, contributing to high-quality publications in the healthcare and life sciences industries. <br> <br>Nurah began her research journey at the All India Institute of Medical Sciences (AIIMS), New Delhi, where she contributed to cutting-edge cancer biology research. There, she developed foundational expertise in molecular techniques and biomedical experimentation. Building on this, she worked as a Research Assistant at Saarland University, Germany, where her focus shifted to neuropharmacology imaging using advanced techniques such as immunohistochemistry and confocal microscopy. <br><br>Her work seamlessly blends scientific accuracy with clear communication, whether she’s crafting peer-reviewed articles, regulatory content, or educational healthcare materials. Beyond writing, Nurah is also passionate about mentoring emerging medical writers, supporting them in building strong, research-backed content."
+            "content": "Doctor of Naturopathic Medicine<br><br>Dr. Jenna Priestap is a naturopathic doctor passionate about all things women's health-particularly maternal health. From helping women have regular painless periods, optimize their bodys for seamless conception, thriving through pregnancy as well as optimizing their bodies & rebuilding postpartum, Dr. Jenna believes every woman should have a knowledgeable & trustworthy source to turn to and she strives to be that person for all women. thrives in helping women regardless of the stage of life they're in."
           }
         },
-        "text_block_CjHtej": {
+        "text_block_RYbePr": {
           "type": "text_block",
           "settings": {
             "title": "Wellness Extract Editorial Guidelines",
@@ -42,23 +43,16 @@
         }
       },
       "block_order": [
-        "text_block_CUdMWQ",
-        "text_block_CjHtej"
+        "text_block_QgFW8T",
+        "text_block_RYbePr"
       ],
       "name": "Author Section",
       "settings": {
-        "author_image": "shopify://shop_images/nurah.jpg",
-        "author_name": "Nurah Ekhlaque",
-        "author_role": "Writer",
+        "author_image": "shopify://shop_images/Dr._Laura_Pipher_1.jpg",
+        "author_name": "Dr. Jenna Priestap",
+        "author_role": "Editor",
         "author_email": "example@example.com",
-        "author_linkedin": "https://www.linkedin.com/in/nurah-ekhlaque-6b2588162"
-      }
-    },
-    "author_blog_card_fqGKwM": {
-      "type": "author-blog-card",
-      "name": "author-blog-card",
-      "settings": {
-        "blog_author_name": "Nurah Ekhlaque"
+        "author_linkedin": "https://www.linkedin.com/in/dr-jenna-priestap-nd-79970b367"
       }
     }
   },
@@ -66,7 +60,6 @@
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_9LRt8h",
-    "author_blog_card_fqGKwM"
+    "author_section_HMJjPN"
   ]
 }

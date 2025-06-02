@@ -3,7 +3,7 @@
     <div class="author">
       <div class="author-head">
         <div class="author-img">
-          <img src="{{ section.settings.author_image | img_url: '300x300' }}" alt="{{ section.settings.author_image.alt }}">
+          <img src="{{ section.settings.author_image | img_url: '300x300' }}" alt="{{ section.settings.author_name }}">
         </div>
         <div class="auth-sub-head">
           <span class="types">{{ section.settings.author_role }}</span>
@@ -91,9 +91,7 @@
     max-width: 1020px !important;
   }
   .author-img {
-    max-width: 220px;
-    width: 220px;
-    height: 220px;
+    max-width: 330px;
     border-radius: 50%;
     overflow: hidden;
     margin: 30px auto 15px;

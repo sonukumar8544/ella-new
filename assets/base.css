@@ -8579,6 +8579,12 @@ div#baritam-page-section {
   margin-top: 0;
 }
 
+#our-story-content .rich-text__blocks h2{
+  color: white !important;
+  max-width: 800px;
+  margin: auto !important; 
+}
+
 #cstm_our_story_page .bg-policies-block a {
   margin-bottom: 25px;
 }
@@ -8667,3 +8673,42 @@ div#baritam-page-section {
 #Shop-with-confidence .csrt__image_round{
 border: none!important;
 }
+
+/* Hubspot chat widget */
+/* Desktop View - Left Side */
+@media screen and (min-width: 1024px) {
+  #hubspot-messages-iframe-container {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 20px !important;
+  }
+}
+
+/* Tablet and Mobile View - Right Side & Moved Up */
+@media screen and (max-width: 1023px) {
+#hubspot-messages-iframe-container.widget-align-right
+ {
+    right: 0 !important;
+    margin-bottom: 40px !important;
+    margin-right: 25px !important;
+  }
+}
+
+.blog-page-flex-h2{
+    display: flex;
+    gap: 20px;
+
+}
+
+.blog-button-cstm{
+  color: blue !important;
+  font-size: 22px !important;
+  text-decoration: underline !important;
+}
+
+
+#main-cart-items .cart-item-block-right .discounts__discount svg{
+     width: 14px;
+    height: 15px;
+}
+
