@@ -289,6 +289,7 @@
       <div class="page-content">
         <div id="we-blog-banner">
           <div class="we-blog-image">
+            <link rel="preload" as="image" href="{{ article.image | img_url: 'master', format: 'webp' }}">
             <img
               class="desktop_view_blog"
               src="{{ article.image | img_url: 'master', format: 'webp'}}"
@@ -644,7 +645,7 @@
                     <div
                       class="halo-block-header text-left"
                       style="
-                                                                                                                                                                                                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
+                                                                                                                                                                                                                                                    --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
                       "
                     >
                       <h3
