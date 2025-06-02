@@ -32,7 +32,6 @@
         {%- capture font_name_1 -%}
             {{font_1 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
         {%- endcapture -%}
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap">
 
         @import url('https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap');
               {% assign fonts_name = font_1 %}
@@ -42,7 +41,6 @@
             {%- capture fonts_name_2 -%}
                 {{font_2 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
             {%- endcapture -%}
-          <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap">
             @import url('https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap');
                   {% assign fonts_name_2 = font_2 %}
         {%- else -%}
@@ -66,7 +64,6 @@
             {%- capture fonts_name_2 -%}
                 {{font_2 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
             {%- endcapture -%}
-          <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap">
             @import url('https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap');
                     {% assign fonts_name_2 = font_2 %}
         {%- else -%}
@@ -83,7 +80,6 @@
             {%- capture font_name_1 -%}
                 {{font_1 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
             {%- endcapture -%}
-          <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap">
             @import url('https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap');
                   {% assign fonts_name = font_1 %}
         {%- else -%}
