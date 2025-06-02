@@ -164,7 +164,7 @@
    z-index: -1;
    }
    }
-  @media (min-width: 769px) {
+  /* @media (min-width: 769px) {
     .desktop_view_blog {
     display: block;
     }
@@ -179,28 +179,28 @@
     .mobile_view_blog {
     display: block;
     }
-    }
+    } */
 </style>
 
 <script>
-  function toggleImages() {
-    const desktopImg = document.querySelector('.desktop_view_blog');
-    const mobileImg = document.querySelector('.mobile_view_blog');
+  // function toggleImages() {
+  //   const desktopImg = document.querySelector('.desktop_view_blog');
+  //   const mobileImg = document.querySelector('.mobile_view_blog');
 
-    if (window.innerWidth >= 769) {
-      desktopImg.style.display = 'block';
-      mobileImg.style.display = 'none';
-    } else {
-      desktopImg.style.display = 'none';
-      mobileImg.style.display = 'block';
-    }
-  }
+  //   if (window.innerWidth >= 769) {
+  //     desktopImg.style.display = 'block';
+  //     mobileImg.style.display = 'none';
+  //   } else {
+  //     desktopImg.style.display = 'none';
+  //     mobileImg.style.display = 'block';
+  //   }
+  // }
 
-  // Run on load
-  window.addEventListener('load', toggleImages);
+  // // Run on load
+  // window.addEventListener('load', toggleImages);
 
-  // Run on resize
-  window.addEventListener('resize', toggleImages);
+  // // Run on resize
+  // window.addEventListener('resize', toggleImages);
 </script>
 {% comment %}
   <div id="image-wrapper-ind-blogs">
@@ -625,7 +625,7 @@
                     <div
                       class="halo-block-header text-left"
                       style="
-                                                                                                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
+                                                                                                                                                    --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
                       "
                     >
                       <h3
