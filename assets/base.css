@@ -8712,7 +8712,7 @@ border: none!important;
     height: 15px;
 }
 @media(max-width: 1024px){
-  .slideshow-wrapper .slide-content .slide-button:hover {
+.template-index .slideshow-wrapper .slide-content .slide-button:hover {
     background: transparent !important;
     border-color: #fff !important;
     color: #fff !important;
