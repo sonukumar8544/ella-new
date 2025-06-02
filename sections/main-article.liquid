@@ -291,8 +291,9 @@
           <div class="we-blog-image">
             <link rel="preload" as="image" href="{{ article.image | img_url: 'master'}}">
             <img
-              class="desktop_view_blog"
-              src="{{ article.image | img_url: 'master'}}"
+              class="desktop_view_blog lazyload"
+              data-src="{{ article.image | img_url: 'master'}}"
+              src="{{ article.image | img_url: '500x'}}"
               alt="{{ article.title }}"
               title=""
               width="100%"
@@ -646,7 +647,7 @@
                     <div
                       class="halo-block-header text-left"
                       style="
-                                                                                                                                                                                                                                                                                                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
+                                                                                                                                                                                                                                                                                                                                                    --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
                       "
                     >
                       <h3
