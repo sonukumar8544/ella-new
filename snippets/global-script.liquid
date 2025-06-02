@@ -1,52 +1,58 @@
-{{ 'vendor.js' | asset_url | script_tag }}
-{{ 'global.js' | asset_url | script_tag }}
-{{ 'lazysizes.min.js' | asset_url | script_tag }}
-<!-- {{ 'menu.js' | asset_url | script_tag }} -->
+<!-- Preload scripts for prioritization -->
+<link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
+<link rel="preload" as="script" href="{{ 'global.js' | asset_url }}">
+
+<!-- Defer execution to avoid blocking rendering -->
+<script src="{{ 'vendor.js' | asset_url }}"></script>
+<script src="{{ 'global.js' | asset_url }}"></script>
+
+<!-- Lazysizes can load async since it’s not critical for initial render -->
+<script src="{{ 'lazysizes.min.js' | asset_url }}"></script>
 
 {%- if settings.show_quick_search -%}
-    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {%- if settings.banner_animation == 'effect_fade_up' -%}
-    <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
 {% liquid
-    if settings.enable_currencies
-        if settings.currency_type == 'shopify_payment'
-            assign enable_shopify_payments_currencies = true
-            assign enable_multiple_currencies = false
-            assign enable_auto_currency = false 
-        elsif settings.currency_type == 'multiple_currencies'
-            assign enable_shopify_payments_currencies = false
-            assign enable_multiple_currencies = true
-            assign enable_auto_currency = false 
-        elsif settings.currency_type == 'auto_currencies'
-            assign enable_shopify_payments_currencies = false
-            assign enable_multiple_currencies = false
-            assign enable_auto_currency = true 
-        endif
-    else 
-        assign enable_shopify_payments_currencies = false
-        assign enable_multiple_currencies = false
-        assign enable_auto_currency = false 
+  if settings.enable_currencies
+    if settings.currency_type == 'shopify_payment'
+      assign enable_shopify_payments_currencies = true
+      assign enable_multiple_currencies = false
+      assign enable_auto_currency = false
+    elsif settings.currency_type == 'multiple_currencies'
+      assign enable_shopify_payments_currencies = false
+      assign enable_multiple_currencies = true
+      assign enable_auto_currency = false
+    elsif settings.currency_type == 'auto_currencies'
+      assign enable_shopify_payments_currencies = false
+      assign enable_multiple_currencies = false
+      assign enable_auto_currency = true
     endif
+  else
+    assign enable_shopify_payments_currencies = false
+    assign enable_multiple_currencies = false
+    assign enable_auto_currency = false
+  endif
 
-    if settings.enable_layout_rtl
-        if settings.list_iso_rtl != blank
-            assign locale_iso_code = request.locale.iso_code
-            assign arr_list_rtl = settings.list_iso_rtl | remove:' ' | split:',' 
-            if arr_list_rtl contains locale_iso_code
-                assign enable_iso_rtl = true
-            else
-                assign enable_iso_rtl = false
-            endif
-        else
-            assign enable_iso_rtl = false 
-        endif
-    else 
+  if settings.enable_layout_rtl
+    if settings.list_iso_rtl != blank
+      assign locale_iso_code = request.locale.iso_code
+      assign arr_list_rtl = settings.list_iso_rtl | remove: ' ' | split: ','
+      if arr_list_rtl contains locale_iso_code
+        assign enable_iso_rtl = true
+      else
         assign enable_iso_rtl = false
+      endif
+    else
+      assign enable_iso_rtl = false
     endif
+  else
+    assign enable_iso_rtl = false
+  endif
 %}
 
 <script>
@@ -321,8 +327,8 @@
 </script>
 
 {%- if template contains 'collection' -%}
-    <script>
+  <script>
       const currentCollection = "{{ collection.handle }}";
       document.cookie = `currentCollection=${currentCollection}; path=/`;
-    </script>
+  </script>
 {%- endif -%}

@@ -496,7 +496,7 @@
         "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Healthy_Aging_ee0c4bc6-586e-49d3-991e-402d8ef7d7d7.png",
+            "image": "shopify://shop_images/skin_health_57e05d31-6168-4823-ab8c-f5d102f28582.webp",
             "title": "Glowing Skin",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -508,7 +508,7 @@
         "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/gut_fe2fa4f3-e712-4462-99d5-c1822cf81d89.png",
+            "image": "shopify://shop_images/gut_health_e26d1e99-bcab-410a-8379-07421a7a43f0.webp",
             "title": "A Happy Gut",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -520,7 +520,7 @@
         "5c3a6277-76fd-42a6-8dcf-55cbd04599df": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BONE_6c8a4ed7-7c6e-45dd-9ac4-565cffe68071.png",
+            "image": "shopify://shop_images/bone_health_5480718a-a926-49c4-9009-9479049d615b.webp",
             "title": "Bone Health",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -532,7 +532,7 @@
         "bf8d3101-7b0f-473f-9518-37843c89a01d": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Eyes_Health-01.png",
+            "image": "shopify://shop_images/Eyes_Health.webp",
             "title": "Clear Vision",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -544,7 +544,7 @@
         "14647100-8949-4e6d-bdd9-9cbcf385d3b0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Immune_-01-01.png",
+            "image": "shopify://shop_images/Immune_-01-01_400x_d9740696-27a1-4978-bcef-85a8f4cbeba9.webp",
             "title": "Stronger Immunity",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -556,7 +556,7 @@
         "968532e7-c107-46a9-8870-68fa9f842f1f": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Muscle_8bd3420c-ba30-4666-b993-9ab8a61439a1.png",
+            "image": "shopify://shop_images/Muscle_400x_9c758685-c219-41b2-a64d-5e1ba57a6aab.webp",
             "title": "Muscle Strength & More Energy",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -568,7 +568,7 @@
         "image_efb37f": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BRAINbgremove.png",
+            "image": "shopify://shop_images/BRAINbgremove_400x_d67a9982-5e1e-4028-99e8-b03d2038a042.webp",
             "title": "Mental Clarity",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -580,7 +580,7 @@
         "image_ktXgfw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Heart_bf04348b-38a1-4c93-b678-f2b2544a5441.png",
+            "image": "shopify://shop_images/Heart_400x_c33f35a3-cf89-4ead-8201-5c86fe3852d0.webp",
             "title": "Heart Support",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -592,7 +592,7 @@
         "image_4hpFhD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HORMONEbgremove.png",
+            "image": "shopify://shop_images/HORMONEbgremove_400x_bd3aaaba-4c6a-41de-a15f-fac32657b108.webp",
             "title": "Balanced Hormones",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -604,7 +604,7 @@
         "image_UDdqVg": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/AGINGbgremove.png",
+            "image": "shopify://shop_images/AGINGbgremove_400x_57976ca5-a349-4566-a02e-a81b883bb92f.webp",
             "title": "Healthy Aging",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -616,7 +616,7 @@
         "image_K8bjTV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Detox_adb3d29a-1dc5-4b81-b37b-61c2177ba42d.png",
+            "image": "shopify://shop_images/Detox_400x_377c36e5-f0ab-4907-9665-6be0cd72cecb.webp",
             "title": "Body Detox",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -888,21 +888,77 @@
         "mg_bottom_mobile": 25
       }
     },
+    "rich_text_6wH8m9": {
+      "type": "rich-text",
+      "blocks": {
+        "button_CB6Q4q": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "Discover Eannatto Now",
+            "button_link": "shopify://pages/wellness-quiz",
+            "margin_top_button": 10,
+            "enable_underline_button": false,
+            "button_color": "#ffffff",
+            "button_border_color": "#086b92",
+            "button_bg_color": "#086b92",
+            "button_bg_gradient": "",
+            "button_color_hover": "#086b92",
+            "button_border_color_hover": "#086b92",
+            "button_bg_color_hover": "rgba(0,0,0,0)",
+            "button_bg_gradient_hover": "",
+            "button_width": "320px"
+          }
+        },
+        "button_bjNGxq": {
+          "type": "button",
+          "settings": {
+            "button_style": "button_1",
+            "button_label": "Shop Hydrogen Tabs",
+            "button_link": "shopify://pages/wellness-quiz",
+            "margin_top_button": 10,
+            "enable_underline_button": false,
+            "button_color": "#ffffff",
+            "button_border_color": "#086b92",
+            "button_bg_color": "#086b92",
+            "button_bg_gradient": "",
+            "button_color_hover": "#086b92",
+            "button_border_color_hover": "#086b92",
+            "button_bg_color_hover": "rgba(0,0,0,0)",
+            "button_bg_gradient_hover": "",
+            "button_width": "320px"
+          }
+        }
+      },
+      "block_order": [
+        "button_CB6Q4q",
+        "button_bjNGxq"
+      ],
+      "disabled": true,
+      "settings": {
+        "id": "cstm_button_index",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#f2f3f9",
+        "enable_minus_mg_top": false,
+        "minus_spacing_top": -100,
+        "rich_text_bg": "#f2f3f9",
+        "rich_text_bg_gradient": "",
+        "enable_column": false,
+        "content_align": "center",
+        "mg_top_desktop": 10,
+        "mg_top_tablet": 10,
+        "mg_top_mobile": 5,
+        "mg_bottom_desktop": 35,
+        "mg_bottom_tablet": 35,
+        "mg_bottom_mobile": 30
+      }
+    },
     "brand_slider_8dyJxH": {
       "type": "brand-slider",
       "blocks": {
-        "image_nTbePA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Annatto_Ella.png",
-            "title": "Annatto",
-            "color_text": "#191c1f",
-            "color_text_hover": "#086b92",
-            "description": "",
-            "color_des": "#086b92",
-            "link": "shopify://pages/ingredients-annatto"
-          }
-        },
         "image_NiUayJ": {
           "type": "image",
           "settings": {
@@ -989,7 +1045,6 @@
         }
       },
       "block_order": [
-        "image_nTbePA",
         "image_NiUayJ",
         "image_6rzkkW",
         "image_BEqWQX",
@@ -1079,10 +1134,10 @@
         "mg_bottom_mobile": 40
       }
     },
-    "rich_text_6wH8m9": {
+    "rich_text_AkN9Q8": {
       "type": "rich-text",
       "blocks": {
-        "heading_tqr8V3": {
+        "heading_dqnLAm": {
           "type": "heading",
           "settings": {
             "heading": "Not Sure Where To Start?",
@@ -1092,7 +1147,7 @@
             "heading_color": "#ffffff"
           }
         },
-        "button_bjNGxq": {
+        "button_r7NdhR": {
           "type": "button",
           "settings": {
             "button_style": "button_1",
@@ -1111,7 +1166,7 @@
             "button_width": "320px"
           }
         },
-        "text_VBnFYH": {
+        "text_BqyXY9": {
           "type": "text",
           "settings": {
             "text": "<p>Find the perfect supplement for your health concerns in under 2 minutes.</p>",
@@ -1126,9 +1181,9 @@
         }
       },
       "block_order": [
-        "heading_tqr8V3",
-        "button_bjNGxq",
-        "text_VBnFYH"
+        "heading_dqnLAm",
+        "button_r7NdhR",
+        "text_BqyXY9"
       ],
       "settings": {
         "id": "",
@@ -1314,7 +1369,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/Main-02-02.png",
+            "image": "shopify://shop_images/Main-02-02_600x_bccb704b-3a6b-43c6-80fe-40addb02d6e0.webp",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1368,7 +1423,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/HORMONE_health_ella.png",
+            "image": "shopify://shop_images/HORMONE_health_ella_600x_5351a580-1d32-4aca-adc1-42a341a953b1.webp",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1422,10 +1477,10 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/Main-03_6.png",
+            "image": "shopify://shop_images/Main-03_6_600x_6aa17453-658a-4619-99b4-36f9dbaad033.webp",
             "title_align": "center",
             "enable_absolute": false,
-            "align_items": "center",
+            "align_items": "top",
             "align_items_spacing_top_bottom_position": 0,
             "align_items_spacing_top_bottom_position_mb": 320,
             "bg_color_content": "",
@@ -1849,7 +1904,7 @@
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
             "icon_type": "image",
-            "image": "shopify://shop_images/Our_Customers_Keep_Coming_Back_x1393_35f64588-d4f0-4e76-8e31-92afa831fc1a.webp",
+            "image": "shopify://shop_images/Our_Customers_Keep_Coming_Back_x1393_650x_b29dc341-f944-4c42-846d-48a1391ad6cb.webp",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
@@ -2045,7 +2100,7 @@
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
             "icon_type": "image",
-            "image": "shopify://shop_images/Build_your_own_stack_option-2.png",
+            "image": "shopify://shop_images/Build_your_own_stack_option-2_800x_88f5f9ab-a866-473a-907e-f0048de100be.webp",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
@@ -2980,8 +3035,9 @@
     "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
     "1642989489e5f98f1a",
     "16409351508cd2f3e1",
-    "brand_slider_8dyJxH",
     "rich_text_6wH8m9",
+    "brand_slider_8dyJxH",
+    "rich_text_AkN9Q8",
     "brand_slider_tRACcq",
     "spotlight_block_cx6rBp",
     "brand_slider_PC48YQ",
