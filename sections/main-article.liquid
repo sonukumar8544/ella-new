@@ -291,7 +291,7 @@
           <div class="we-blog-image">
             <img
               class="desktop_view_blog"
-              src="{{ article.image | img_url: 'master' }}"
+              src="{{ article.image | img_url: 'master', format: 'webp'}}"
               alt="{{ article.title }}"
               title=""
               width="100%"
@@ -360,7 +360,7 @@
                   </h3>
                   {% if blogauthor == 'Sarika Jassal' %}
                     <img
-                      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Sarika_40x.jpg?v=1737525344"
+                      src="{{ 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Sarika.jpg?v=1737525344' | img_url: '40x', format: 'webp'}}"
                       width="40px"
                       height="40px"
                       title=""
@@ -626,7 +626,7 @@
                     <div
                       class="halo-block-header text-left"
                       style="
-                                                                                                                                                                                                    --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
+                                                                                                                                                                                                                            --margin-bottom-title: {{ margin_bottom_title | append: 'px' }}
                       "
                     >
                       <h3
