@@ -5,11 +5,23 @@
       title=""
       width="100%"
       height="100%"
-      class="lazyload"
+      class="desktop_banner lazyload"
       style="margin:auto;"
       data-src="{{ section.settings.background_image | img_url: 'master' }}"
       src="{{ section.settings.background_image | img_url: '500x' }}"
     >
+    <!--
+      <img
+        alt=""
+        title=""
+        width="100%"
+        height="100%"
+        class="lazyload mobile_banner"
+        style="margin:auto;"
+        data-src="{{ section.settings.background_image | img_url: 'master' }}"
+        src="{{ section.settings.background_image | img_url: '500x' }}"
+      >
+    -->
     <div class="blog-banner-content-wrapper">
       <div class="blog-banner-title-wrapper">
         <h1>{{ section.settings.banner_title | raw }}</h1>
