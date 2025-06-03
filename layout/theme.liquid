@@ -83,8 +83,8 @@
     <!-- End of HubSpot Embed Code -->
 
     {{ content_for_header }}
-    {% unless template contains 'index' or template contains 'collection' %}
-      <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css">
+    {% unless template contains 'index' or template contains 'collection' or template contains 'blogs' %}
+      <!-- <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css"> -->
     {% endunless %}
 
     {% render 'variable' %}
