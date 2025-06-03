@@ -3,7 +3,13 @@
     <div class="author">
       <div class="author-head">
         <div class="author-img">
-          <img src="{{ section.settings.author_image | img_url: '300x300' }}" alt="{{ section.settings.author_name }}">
+          <img
+            src="{{ section.settings.author_image | img_url: '480x' }}"
+            alt="{{ section.settings.author_name }}"
+            title="{{ section.settings.author_name }}"
+            width="100%"
+            height="100%"
+          >
         </div>
         <div class="auth-sub-head">
           <span class="types">{{ section.settings.author_role }}</span>
@@ -11,23 +17,29 @@
             {{ section.settings.author_name }}
           </h1>
           <ul class="social-list">
-           {% comment %} {% if section.settings.author_email %}
-              <li class="mail-icons">
-                <a href="mailto:{{ section.settings.author_email }}" target="_blank">
-                  <img
-                    class="invertimage"
-                    src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/email_50256a73-fe21-49e5-bcaf-ed25ec90c470.svg?v=1736437022"
-                    title="Mail Us">
-                </a>
-              </li>
-            {% endif %} {% endcomment %}
+            {% comment %}
+              {% if section.settings.author_email %}
+                <li class="mail-icons">
+                  <a href="mailto:{{ section.settings.author_email }}" target="_blank">
+                    <img
+                      class="invertimage"
+                      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/email_50256a73-fe21-49e5-bcaf-ed25ec90c470.svg?v=1736437022"
+                      title="Mail Us">
+                  </a>
+                </li>
+              {% endif %}
+            {% endcomment %}
             {% if section.settings.author_linkedin %}
               <li>
                 <a href="{{ section.settings.author_linkedin }}" target="_blank">
                   <img
                     class="invertimage"
                     src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/linkedin.svg?v=1736437022"
-                    title="LinkedIn">
+                    alt=""
+                    width=""
+                    height=""
+                    title="LinkedIn"
+                  >
                 </a>
               </li>
             {% endif %}
@@ -165,62 +177,61 @@
   }
 </style>
 
-
 {% schema %}
-  {
-    "name": "Author Section",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "author_image",
-        "label": "Author Image"
-      },
-      {
-        "type": "text",
-        "id": "author_name",
-        "label": "Author Name",
-        "default": "John Doe"
-      },
-      {
-        "type": "text",
-        "id": "author_role",
-        "label": "Author Role",
-        "default": "Author"
-      },
-      {
-        "type": "text",
-        "id": "author_email",
-        "label": "Author Email",
-        "default": "example@example.com"
-      }, {
-        "type": "url",
-        "id": "author_linkedin",
-        "label": "LinkedIn Profile"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "text_block",
-        "name": "Description Block",
-        "settings": [
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Block Title",
-            "default": "Block Title"
-          }, {
-            "type": "textarea",
-            "id": "content",
-            "label": "Block Content",
-            "default": "Block content goes here."
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Author Section"
-      }
-    ]
-  }
+{
+  "name": "Author Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author Image"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "John Doe"
+    },
+    {
+      "type": "text",
+      "id": "author_role",
+      "label": "Author Role",
+      "default": "Author"
+    },
+    {
+      "type": "text",
+      "id": "author_email",
+      "label": "Author Email",
+      "default": "example@example.com"
+    }, {
+      "type": "url",
+      "id": "author_linkedin",
+      "label": "LinkedIn Profile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Description Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Block Title"
+        }, {
+          "type": "textarea",
+          "id": "content",
+          "label": "Block Content",
+          "default": "Block content goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Author Section"
+    }
+  ]
+}
 {% endschema %}
