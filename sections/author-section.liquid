@@ -4,7 +4,9 @@
       <div class="author-head">
         <div class="author-img">
           <img
-            src="{{ section.settings.author_image | img_url: '480x' }}"
+            class="lazyload"
+            data-src="{{ section.settings.author_image | img_url: '480x' }}"
+            src="{{ section.settings.author_image | img_url: '100x' }}"
             alt="{{ section.settings.author_name }}"
             title="{{ section.settings.author_name }}"
             width="100%"
