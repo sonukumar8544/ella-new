@@ -81,7 +81,7 @@
       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49007533.js"></script>
     {% endcomment %}
     <!-- End of HubSpot Embed Code -->
-
+    {% render 'global-style' %}
     {{ content_for_header }}
     {% unless template contains 'index' or template contains 'collection' or template contains 'blogs' %}
       <!-- <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css"> -->
@@ -89,7 +89,6 @@
 
     {% render 'variable' %}
     {% render 'global-script' %}
-    {% render 'global-style' %}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
