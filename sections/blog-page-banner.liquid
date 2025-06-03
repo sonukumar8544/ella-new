@@ -1,5 +1,14 @@
 <section class="blog-banner-section-outer">
   <div class="blog-banner-section">
+    <img
+      alt=""
+      title=""
+      width=""
+      height=""
+      class="lazyload"
+      data-src="{{ section.settings.background_image | img_url: 'master' }}"
+      src="{{ section.settings.background_image | img_url: 'master' }}"
+    >
     <div class="blog-banner-content-wrapper">
       <div class="blog-banner-title-wrapper">
         <h1>{{ section.settings.banner_title | raw }}</h1>
