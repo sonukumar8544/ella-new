@@ -203,6 +203,20 @@
      }
        }
 </style>
+<script>
+  $(document).ready(function(){
+        $('.hero-blog-slide').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          speed: 300,
+          infinite: true,
+          autoplaySpeed: 7000,
+          autoplay: true,
+         });
+      });
+</script>
 <section class="blog-banner-section-outer">
   <div class="blog-banner-section">
     {% if section.settings.background_image != blank %}
@@ -282,20 +296,7 @@
     </div>
   </div>
 </section>
-<script>
-  $(document).ready(function(){
-        $('.hero-blog-slide').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          speed: 300,
-          infinite: true,
-          autoplaySpeed: 7000,
-          autoplay: true,
-         });
-      });
-</script>
+
 {% schema %}
 {
   "name": "Blog Page Banner",
