@@ -351,6 +351,7 @@
                   or blogauthor == 'Divya Katyal'
                   or blogauthor == 'Pragya Soni'
                   or blogauthor == 'Pooja Rawat'
+                  or blogauthor == 'Aditi bakshi'
                 %}
                   <h3>
                     <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
@@ -394,6 +395,16 @@
                     <img
                       class="lazyload"
                       data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pooja-2_40x.jpg?v=1739511048"
+                      width="40px"
+                      height="40px"
+                      title=""
+                      alt="divya"
+                      loading="lazy"
+                    >
+                  {% elsif blogauthor == 'Aditi bakshi' %}
+                    <img
+                      class="lazyload"
+                      data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Dr._Aditi_Bakshi_Msc-Nutrition_50x50_1.jpg?v=1748929087"
                       width="40px"
                       height="40px"
                       title=""
