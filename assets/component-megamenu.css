@@ -99,7 +99,8 @@ span.text.header__active-menu-item.p-relative.cstm-take-wellness-quiz {
   border: 1px solid;
 }
 .site-nav-product .card-product .card-media {
-  width: 120px;
+  /* width: 120px; */
+  width:auto;
   height: 160px;
   margin: 0 auto;
 }
