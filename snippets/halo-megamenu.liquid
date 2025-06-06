@@ -197,9 +197,7 @@
                         {%- if banner_1 != blank -%}
                           <img
                             {% if settings.enable_lazyload %}
-                              data-
-                            {% endif -%}
-                            srcset="{{ banner_1 | img_url: 'master' }}"
+                              data-{% endif -%}srcset="{{ banner_1 | img_url: 'master' }}"
                             {% unless settings.enable_lazyload %}
                               src="{{ banner_1 | img_url: 'master' }}"
                             {% endunless %}
@@ -343,9 +341,7 @@
                         {%- if banner_1 != blank -%}
                           <img
                             {% if settings.enable_lazyload %}
-                              data-
-                            {% endif -%}
-                            srcset="{{ banner_1 | img_url: 'master' }}"
+                              data-{% endif -%}srcset="{{ banner_1 | img_url: 'master' }}"
                             {% unless settings.enable_lazyload %}
                               src="{{ banner_1 | img_url: 'master' }}"
                             {% endunless %}
@@ -384,9 +380,7 @@
                         {%- if banner_2 != blank -%}
                           <img
                             {% if settings.enable_lazyload %}
-                              data-
-                            {% endif -%}
-                            srcset="{{ banner_2 | img_url: 'master' }}"
+                              data-{% endif -%}srcset="{{ banner_2 | img_url: 'master' }}"
                             {% unless settings.enable_lazyload %}
                               src="{{ banner_2 | img_url: 'master' }}"
                             {% endunless %}
@@ -428,9 +422,7 @@
                         {%- if banner_3 != blank -%}
                           <img
                             {% if settings.enable_lazyload %}
-                              data-
-                            {% endif -%}
-                            srcset="{{ banner_3 | img_url: 'master' }}"
+                              data-{% endif -%}srcset="{{ banner_3 | img_url: 'master' }}"
                             {% unless settings.enable_lazyload %}
                               src="{{ banner_3 | img_url: 'master' }}"
                             {% endunless %}
@@ -529,9 +521,7 @@
                               {%- if banner_1 != blank -%}
                                 <img
                                   {% if settings.enable_lazyload %}
-                                    data-
-                                  {% endif -%}
-                                  srcset="{{ banner_1 | img_url: 'master' }}"
+                                    data-{% endif -%}srcset="{{ banner_1 | img_url: 'master' }}"
                                   {% unless settings.enable_lazyload %}
                                     src="{{ banner_1 | img_url: 'master' }}"
                                   {% endunless %}
@@ -566,9 +556,7 @@
                               {%- if banner_2 != blank -%}
                                 <img
                                   {% if settings.enable_lazyload %}
-                                    data-
-                                  {% endif -%}
-                                  srcset="{{ banner_2 | img_url: 'master' }}"
+                                    data-{% endif -%}srcset="{{ banner_2 | img_url: 'master' }}"
                                   {% unless settings.enable_lazyload %}
                                     src="{{ banner_2 | img_url: 'master' }}"
                                   {% endunless %}
@@ -603,9 +591,7 @@
                               {%- if banner_3 != blank -%}
                                 <img
                                   {% if settings.enable_lazyload %}
-                                    data-
-                                  {% endif -%}
-                                  srcset="{{ banner_3 | img_url: 'master' }}"
+                                    data-{% endif -%}srcset="{{ banner_3 | img_url: 'master' }}"
                                   {% unless settings.enable_lazyload %}
                                     src="{{ banner_3 | img_url: 'master' }}"
                                   {% endunless %}
@@ -640,9 +626,7 @@
                               {%- if banner_4 != blank -%}
                                 <img
                                   {% if settings.enable_lazyload %}
-                                    data-
-                                  {% endif -%}
-                                  srcset="{{ banner_4 | img_url: 'master' }}"
+                                    data-{% endif -%}srcset="{{ banner_4 | img_url: 'master' }}"
                                   {% unless settings.enable_lazyload %}
                                     src="{{ banner_4 | img_url: 'master' }}"
                                   {% endunless %}
@@ -676,7 +660,8 @@
                             >
                               {%- if banner_5 != blank -%}
                                 <img
-                                  srcset="{{ banner_5 | img_url: 'master' }}"
+                                  {% if settings.enable_lazyload %}
+                                    data-{% endif -%}srcset="{{ banner_5 | img_url: 'master' }}"
                                   {% unless settings.enable_lazyload %}
                                     src="{{ banner_5 | img_url: 'master' }}"
                                   {% endunless %}
@@ -765,9 +750,7 @@
                             {%- if banner_1 != blank -%}
                               <img
                                 {% if settings.enable_lazyload %}
-                                  data-
-                                {% endif -%}
-                                srcset="{{ banner_1 | img_url: 'master' }}"
+                                  data-{% endif -%}srcset="{{ banner_1 | img_url: 'master' }}"
                                 {% unless settings.enable_lazyload %}
                                   src="{{ banner_1 | img_url: 'master' }}"
                                 {% endunless %}
@@ -802,9 +785,7 @@
                             {%- if banner_2 != blank -%}
                               <img
                                 {% if settings.enable_lazyload %}
-                                  data-
-                                {% endif -%}
-                                srcset="{{ banner_2 | img_url: 'master' }}"
+                                  data-{% endif -%}srcset="{{ banner_2 | img_url: 'master' }}"
                                 {% unless settings.enable_lazyload %}
                                   src="{{ banner_2 | img_url: 'master' }}"
                                 {% endunless %}
@@ -839,9 +820,7 @@
                             {%- if banner_3 != blank -%}
                               <img
                                 {% if settings.enable_lazyload %}
-                                  data-
-                                {% endif -%}
-                                srcset="{{ banner_3 | img_url: 'master' }}"
+                                  data-{% endif -%}srcset="{{ banner_3 | img_url: 'master' }}"
                                 {% unless settings.enable_lazyload %}
                                   src="{{ banner_3 | img_url: 'master' }}"
                                 {% endunless %}
@@ -876,9 +855,7 @@
                             {%- if banner_4 != blank -%}
                               <img
                                 {% if settings.enable_lazyload %}
-                                  data-
-                                {% endif -%}
-                                srcset="{{ banner_4 | img_url: 'master' }}"
+                                  data-{% endif -%}srcset="{{ banner_4 | img_url: 'master' }}"
                                 {% unless settings.enable_lazyload %}
                                   src="{{ banner_4 | img_url: 'master' }}"
                                 {% endunless %}
@@ -912,7 +889,8 @@
                           >
                             {%- if banner_5 != blank -%}
                               <img
-                                srcset="{{ banner_5 | img_url: 'master' }}"
+                                {% if settings.enable_lazyload %}
+                                    data-{% endif -%}srcset="{{ banner_5 | img_url: 'master' }}"
                                 {% unless settings.enable_lazyload %}
                                   src="{{ banner_5 | img_url: 'master' }}"
                                 {% endunless %}

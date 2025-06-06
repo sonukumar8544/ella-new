@@ -2,7 +2,9 @@
 {{ 'base.css' | asset_url | stylesheet_tag }}
 
 {%- if settings.use_custom_css -%}
+{% comment %}
   {{ 'custom.css' | asset_url | stylesheet_tag }}
+{% endcomment %}  
 {%- endif -%}
 
 {%- if settings.banner_animation == 'effect_fade_up'
@@ -15,11 +17,13 @@
 {%- if settings.enable_layout_rtl -%}
   {{ 'layout_rtl.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-
+<link rel="preload" as="style" href="{{ 'animated.css' | asset_url }}">
 {{ 'animated.css' | asset_url | stylesheet_tag }}
 <link rel="preload" as="style" href="{{ 'component-card.css' | asset_url }}">
 <link rel="preload" as="style" href="{{ 'component-loading-overlay.css' | asset_url }}">
 <link rel="preload" as="style" href="{{ 'component-quick-cart.css' | asset_url }}">
+<link rel="preload" as="style" href="{{ 'component-loading-banner.css' | asset_url }}">
+
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}

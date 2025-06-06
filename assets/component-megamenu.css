@@ -66,7 +66,7 @@ span.text.header__active-menu-item.p-relative.cstm-take-wellness-quiz {
 }
 
 .site-nav-product .card-information .card-action {
-  margin-top: 18px;
+  margin-top: 0px;
   visibility: visible;
   transform: none;
   padding: 0;
@@ -108,6 +108,8 @@ div#cstm__productmenu_collection {
     border: 1px solid #c1c1c1;
     border-radius: 10px;
     padding: 5px;
+    width: 200px;
+    margin: auto;
 }
 
 .azbrandsTable {
@@ -225,7 +227,7 @@ div#cstm__productmenu_collection {
 }
 
 .site-nav-banner .menu-dropdown__product .card .card-information {
-  padding: 20px 0;
+  padding: 5px 0 0px;
 }
 
 .site-nav-banner

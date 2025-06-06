@@ -263,6 +263,8 @@
     </div>
     <div class="halo-article-block">
       {%- if show_sidebar and section.blocks.size > 0 -%}
+        <link rel="preload" as="image" href="{{ article.image | img_url: '480x' }}" type="image/jpeg">
+        <link rel="preload" as="style" href="{{ 'component-main-sidebar.css' | asset_url }}">
         {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
         <div
           class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--vertical sidebar--{{ section.settings.sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}"
@@ -270,7 +272,7 @@
         >
           <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
             <span class="visually-hidden">{{ 'general.common.close' | t }}</span>
-            {% render 'icon-close' %}
+            {% render 'icon-close' %}  I'm using the correct credentials but unable to log in
           </a>
           <div class="halo-sidebar-header text-left">
             <span class="title">
@@ -289,17 +291,35 @@
       <div class="page-content">
         <div id="we-blog-banner">
           <div class="we-blog-image">
-            <img
-              class="desktop_view_blog lazyload"
-              data-src="{{ article.image | img_url: 'master'}}"
-              src="{{ article.image | img_url: '300x'}}"
-              alt="{{ article.title }}"
-              title=""
-              width="100%"
-              height="100%"
-              style="width:auto; margin:auto;"
-              loading="lazy"
-            >
+             <a aria-disabled="true" role="link" class="image-zoom adaptive_height" style="padding-top: {{ 1 | divided_by: article.image.src.aspect_ratio | times: 100 }}%">
+            <img class="desktop_view_blog lazyload"
+             data-src="{{ article.image | img_url: '920x' }}" 
+             src="{{ article.image | img_url: '280x' }}"
+             alt="" title="" 
+             width="100%" height="100%" 
+             loading="lazy">
+             </a>
+              {% comment %} <a aria-disabled="true" role="link" class="image-zoom adaptive_height" style="padding-top: {{ 1 | divided_by: article.image.src.aspect_ratio | times: 100 }}%">
+            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="
+            {%- if article.image.src.width >= 165 -%}{{ article.image.src | img_url: '165x' }} 165w,{%- endif -%}
+            {%- if article.image.src.width >= 360 -%}{{ article.image.src | img_url: '360x' }} 360w,{%- endif -%}
+            {%- if article.image.src.width >= 560 -%}{{ article.image.src | img_url: '560x' }} 560w,{%- endif -%}
+            {%- if article.image.src.width >= 570 -%}{{ article.image.src | img_url: '570x' }} 570w,{%- endif -%}
+            {%- if article.image.src.width >= 720 -%}{{ article.image.src | img_url: '720x' }} 720w,{%- endif -%}
+            {%- if article.image.src.width >= 920 -%}{{ article.image.src | img_url: '920x' }} 920w,{%- endif -%}
+            {%- if article.image.src.width >= 1120 -%}{{ article.image.src | img_url: '1120x' }} 1120w,{%- endif -%}"
+            src="{{ article.image | img_url: '100x' }}" 
+            sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" 
+              alt="{{article.title}}"
+               {% if settings.enable_lazyload %}class="lazyload desktop_view_blog"{% endif %} 
+                width="100%"
+              height="100%"/>
+            {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+        </a> {% endcomment %}
+        <noscript>
+           
+          </noscript>
+             
           </div>
         </div>
 
