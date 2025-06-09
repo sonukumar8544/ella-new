@@ -1151,3 +1151,14 @@ class SearchForm extends HTMLElement {
   }
   customElements.define('search-form', SearchForm);
 
+ document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("tr.TableRow").forEach(function (row) {
+      const tds = row.querySelectorAll("td");
+      if (tds.length === 2) {
+        tds.forEach(td => {
+          td.style.width = "50%";
+        });
+      }
+    });
+  });
+
