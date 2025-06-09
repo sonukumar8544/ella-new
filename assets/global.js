@@ -1154,6 +1154,7 @@ class SearchForm extends HTMLElement {
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".halo-text-format tr.TableRow").forEach(function (row) {
     const tds = row.querySelectorAll("td");
+    console.log("Table row", tds)
     if (tds.length === 2) {
       tds.forEach(td => {
         td.style.width = "50%";
