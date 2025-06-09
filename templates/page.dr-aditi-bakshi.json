@@ -54,12 +54,20 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/dr-aditi-bakshi"
       }
+    },
+    "author_blog_card_iCU67n": {
+      "type": "author-blog-card",
+      "name": "author-blog-card",
+      "settings": {
+        "blog_author_name": "Aditi bakshi"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_XhKzkf"
+    "author_section_XhKzkf",
+    "author_blog_card_iCU67n"
   ]
 }
