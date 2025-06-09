@@ -1163,7 +1163,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-    });
-  });
-
