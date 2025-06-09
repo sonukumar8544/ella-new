@@ -355,10 +355,18 @@
                 %}
                   <h3>
                     <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
-                      <span class="blog-author">
-                        <span><i>Author: </i> {{ article.author }}</span>
-                        {% comment %} <span class="by-auth">Author</span> {% endcomment %}
-                      </span>
+                      {% if article.author == 'Aditi bakshi' %}
+                        <span><i>Author: </i>Dr. {{ article.author }}</span>
+                        <span class="blog-author">
+                           {% comment %} <span class="by-auth">Author</span> {% endcomment %}
+                         </span>
+                       {% else %}
+                         <span class="blog-author">
+                           <span><i>Author: </i>{{ article.author }}</span>
+                           {% comment %} <span class="by-auth">Author</span> {% endcomment %}
+                         </span>
+                       {% endif %}
+
                     </a>
                   </h3>
                   {% if blogauthor == 'Sarika Jassal' %}
