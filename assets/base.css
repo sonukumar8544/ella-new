@@ -8746,3 +8746,7 @@ table.Table.Ltr.Table p {
 .blog-read-more {
     margin: 35px 0px !important;
 }
+
+.collabs-page__main h2, .collabs-page__main h1, .collabs-page__main p {
+    line-height: 1.1;
+}
