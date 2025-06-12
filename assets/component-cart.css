@@ -969,7 +969,11 @@ div#main-cart-items {
     margin: auto;
   }
 }
-
+@media(min-width:551px){
+ .removediscount{ display: flex;
+    align-items: center;
+}
+}
 @media (max-width: 550px) {
   .gift-card-container .content-gift {
     font-size: calc(var(--font-body-size) - 1px);
