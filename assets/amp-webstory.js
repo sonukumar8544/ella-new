@@ -21,7 +21,7 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 // Disable DevTools shortcuts
 document.onkeydown = function (e) {
   if (
-    e.keyCode === 123 || // F12
+    e.keyCode === 123 || 
     (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 67 || e.keyCode === 74)) || // Ctrl+Shift+I/C/J
     (e.ctrlKey && e.keyCode === 85) // Ctrl+U
   ) {
