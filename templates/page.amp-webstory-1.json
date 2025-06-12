@@ -9,24 +9,12 @@
  */
 {
   "sections": {
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
       "settings": {}
     },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
-      "disabled": true,
-      "settings": {}
-    }
   },
   "order": [
-    "shogun-helper",
-    "main",
-    "shogun-optimizer"
+    "main"
   ]
 }
