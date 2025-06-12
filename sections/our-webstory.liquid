@@ -1,54 +1,55 @@
 {% if template contains 'webstory-asterVeda'
   or template contains 'webstory-learning'
   or template contains 'webstory-wellness'
-%}
-  {% style %}
-    .template-page amp-story:not(.i-amphtml-story-vertical) {
-    z-index: 999;
-    }
-    #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp,
-    #section-block-{{section.id}} .template-page .amp-story-grid-layer p.description_amp{
-    color:#fff !important;
-    }
+-%}
+{%- endif %}
+{% style %}
+  .template-page amp-story:not(.i-amphtml-story-vertical) {
+  z-index: 999;
+  }
+  #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp,
+  #section-block-{{section.id}} .template-page .amp-story-grid-layer p.description_amp{
+  color:#fff !important;
+  }
 
-    #section-block-{{section.id}}  div:empty,  #section-block-{{section.id}} section:empty{
-    display:block !important;
-    }
-    #section-block-{{section.id}} .shopify-policy__container h1, h2, h3, h4, h5, h6, amp-story-grid-layer p {
-    color:#fff;
-    }
+  #section-block-{{section.id}}  div:empty,  #section-block-{{section.id}} section:empty{
+  display:block !important;
+  }
+  #section-block-{{section.id}} .shopify-policy__container h1, h2, h3, h4, h5, h6, amp-story-grid-layer p {
+  color:#fff;
+  }
 
-    #section-block-{{section.id}} #cstm__content .brand-btn {
-    font-weight: bold;
-    padding: 7px 10px !important;
-    text-align: center;
-    width: auto;
-    font-size: 16px;
-    border-radius: 3px;
-    }
-    #section-block-{{section.id}} a.brand-btn.link_hover:hover {
-    opacity: 0.7;
-    }
-    #section-block-{{section.id}} a.brand-btn.no_hover:hover {
-    opacity: 1;
-    }
+  #section-block-{{section.id}} #cstm__content .brand-btn {
+  font-weight: bold;
+  padding: 7px 10px !important;
+  text-align: center;
+  width: auto;
+  font-size: 16px;
+  border-radius: 3px;
+  }
+  #section-block-{{section.id}} a.brand-btn.link_hover:hover {
+  opacity: 0.7;
+  }
+  #section-block-{{section.id}} a.brand-btn.no_hover:hover {
+  opacity: 1;
+  }
 
 
-    #section-block-{{section.id}} amp-story-grid-layer h3{
-    font-size:{{section.settings.fontsize_title}}px;
-    line-height:normal !important;
-    margin-bottom: 3px;
-    }
+  #section-block-{{section.id}} amp-story-grid-layer h3{
+  font-size:{{section.settings.fontsize_title}}px;
+  line-height:normal !important;
+  margin-bottom: 3px;
+  }
 
-    #section-block-{{section.id}} amp-story-grid-layer p{
-    font-size:{{section.settings.fontsize_description}}px;
-    line-height:normal !important;
-    }
-    #section-block-{{section.id}} .btn_story{
-    margin-top: 10px
-    }
-  {% endstyle %}
-{% endif %}
+  #section-block-{{section.id}} amp-story-grid-layer p{
+  font-size:{{section.settings.fontsize_description}}px;
+  line-height:normal !important;
+  }
+  #section-block-{{section.id}} .btn_story{
+  margin-top: 10px
+  }
+{% endstyle %}
+
 <div class="web-story-wrapper" id="section-block-{{section.id}}">
   <amp-story
     standalone
