@@ -1,57 +1,40 @@
 {% schema %}
-  {
-    "name": "bundle info img",
-    "tag": "section",
-    "settings": [],
-    "presets": [
-      {
-        "name": "bundle information image",
-        "category": "Image"
-      }
-    ]
-  }
+{
+  "name": "bundle info img",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "bundle information image",
+      "category": "Image"
+    }
+  ]
+}
 {% endschema %}
 
 {% if product.handle contains 'bundle' %}
-    {% if product.metafields.Custom.we_product_info_image_desktop %}
-  <section class="bundle-banner container">
-    <div class="nundle-image-bobile-new">
-      {% if product.metafields.Custom.we_product_info_image_mob %}
-        <img
-          src="{{ product.metafields.Custom.we_product_info_image_desktop | img_url: 'master' }}"
-          alt="Mobile Banner"
-          loading="lazy" />
-      {% endif %}
-    </div>
-    <div class="bundle-image-desktop-new">
-      {% if product.metafields.Custom.we_product_info_image_desktop %}
-        <img
-          src="{{ product.metafields.Custom.we_product_info_image_mob | img_url: 'master' }}"
-          alt="Desktop Banner"
-          loading="lazy" />
-      {% endif %}
-    </div>
-  </section>
+  {% if product.metafields.Custom.we_product_info_image_desktop %}
+    <section class="bundle-banner container">
+      {% render 'product-table-dynamic' %}
+      {{ product.metafields.custom.bundle_product_meta_table }}
+    </section>
+  {% endif %}
 {% endif %}
-{% endif %}
-
-
 
 <style>
-
-.bundle-image-desktop-new {
-    margin-top: 50px;
-}
-
-  @media (min-width: 769px) {
-    .nundle-image-bobile-new {
-      display: none;
-    }
+  .bundle-image-desktop-new {
+      margin-top: 50px;
   }
 
-  @media (max-width: 768px) {
-    .bundle-image-desktop-new {
-      display: none;
+    @media (min-width: 769px) {
+      .nundle-image-bobile-new {
+        display: none;
+      }
     }
-  }
+
+    @media (max-width: 768px) {
+      .bundle-image-desktop-new {
+        display: none;
+      }
+    }
 </style>
