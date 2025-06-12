@@ -17,24 +17,6 @@
     "amp_webstory_GrmTgz": {
       "type": "amp-webstory",
       "blocks": {
-        "story_page_wR749k": {
-          "type": "story_page",
-          "settings": {
-            "webstory_slide": 7,
-            "image": "shopify://shop_images/About_Us_1100x1416_56b03003-8f7c-4c44-bc80-1b00c9ee0013.png",
-            "content-position": "0",
-            "content-align": "center",
-            "heading_bg": "#fd0000",
-            "heading_color": "#ffffff",
-            "heading": "Welcome to the Story",
-            "description_color": "#086b92",
-            "description": "",
-            "button_text": "View More",
-            "btn_link": "",
-            "btn_color": "#ffffff",
-            "btn_bg": "#086b92"
-          }
-        },
         "story_page_nTrLC3": {
           "type": "story_page",
           "settings": {
@@ -53,6 +35,24 @@
             "btn_bg": "#000000"
           }
         },
+        "story_page_wR749k": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/About_Us_1100x1416_56b03003-8f7c-4c44-bc80-1b00c9ee0013.png",
+            "content-position": "0",
+            "content-align": "center",
+            "heading_bg": "#fd0000",
+            "heading_color": "#ffffff",
+            "heading": "Welcome to the Story",
+            "description_color": "#086b92",
+            "description": "",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#086b92"
+          }
+        },
         "story_page_cxirGd": {
           "type": "story_page",
           "settings": {
@@ -67,14 +67,14 @@
             "description": "Virender Dass, the visionary Founder and Director of Wellness Extract turned a...",
             "button_text": "Read More",
             "btn_link": "",
-            "btn_color": "#FFFFFF",
-            "btn_bg": "#FFFFFF"
+            "btn_color": "#ffffff",
+            "btn_bg": "#ffffff"
           }
         }
       },
       "block_order": [
-        "story_page_wR749k",
         "story_page_nTrLC3",
+        "story_page_wR749k",
         "story_page_cxirGd"
       ],
       "name": "AMP Webstory 2.0",
