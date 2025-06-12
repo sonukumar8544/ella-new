@@ -1,269 +1,283 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gut Health Bundle</title>
-    <style>
-          #bundle_table .bundle_grid {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
-          }
-
-          .bundle-item strong {
-            width: 25%;
-            padding: 10px;
-            text-align: left;
-            font-size: 25px;
-            font-weight: 600;
-            color: #005a78;
-          }
-
-          #bundle_table .bundle_title {
-            font-size: 45px;
-            font-weight: 600;
-            color: #005a78;
-            margin-bottom: 33px;
-            text-align: center;
-          }
-
-          #bundle_table .bundle-title {
-            font-size: 36px;
-            font-weight: 600;
-            color: #005a78;
-            margin-bottom: 20px;
-            text-align: center;
-            width: 30%;
-          }
-
-          #bundle_table .bundle-box {
-            background: #e5e5e5;
-            border-radius: 20px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            width: 70%;
-          }
-
-          #bundle_table .bundle-item {
-            flex: 1 1 25%;
-            text-align: center;
-            border-right: 2px solid #888;
-            padding: 10px;
-          }
-
-          #bundle_table .bundle-item:last-child {
-            border-right: none;
-          }
-
-          #bundle_table .bundle-item p {
-            font-size: 18px;
-            font-weight: 500;
-          }
-
-          #bundle_table .table-wrapper {
-            background: #e5e5e5;
-            border-radius: 20px;
-            padding: 20px;
-            width: 70%;
-          }
-
-          /* New responsive table styles */
-          #bundle_table .responsive-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 18px;
-            color: #005a78;
-          }
-
-          #bundle_table .responsive-table th,
-          #bundle_table .responsive-table td {
-            border: 1px solid #999;
-            padding: 12px;
-            text-align: left;
-          }
-
-          #bundle_table .responsive-table th {
-            background-color: #d8d8d8;
-            font-size: 22px;
-            font-weight: 600;
-          }
-
-          #bundle_table .responsive-table td {
-            background-color: #f5f5f5;
-            font-weight: 500;
-          }
-           #bundle_table .responsive-table td:first-child {
-          font-weight: 700;
-
+<style>
+      #bundle_table .bundle_grid {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
       }
 
-          /* Responsive styling */
-          @media (max-width: 768px) {
-            #bundle_table .responsive-table,
-            #bundle_table .responsive-table thead,
-            #bundle_table .responsive-table tbody,
-            #bundle_table .responsive-table th,
-            #bundle_table .responsive-table td,
-            #bundle_table .responsive-table tr {
-              display: block;
-              width: 100%;
-            }
+      .bundle-item strong {
+        width: 25%;
+        padding: 10px;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+        color: #005a78;
+      }
 
       #bundle_table .bundle_title {
-          font-size: 30px;
-          }
-          #bundle_table .bundle-title {
-          font-size: 26px;
-          }
-            #bundle_table .responsive-table thead tr {
-              display: none;
-            }
+        font-size: 45px;
+        font-weight: 600;
+        color: #005a78;
+        margin-bottom: 33px;
+        text-align: center;
+      }
 
-            #bundle_table .responsive-table td {
-              position: relative;
-              padding-left: 50%;
-              margin-bottom: 10px;
-              border: none;
-              border-bottom: 1px solid #ccc;
-              background: #f9f9f9;
-              width: auto;
-            }
+      #bundle_table .bundle-title {
+        font-size: 32px;
+        font-weight: 600;
+        color: #005a78;
+        margin-bottom: 20px;
+        text-align: center;
+        width: 30%;
+      }
 
-            #bundle_table .responsive-table td::before {
-              content: attr(data-label);
-              position: absolute;
-              left: 15px;
-              top: 12px;
-              font-weight: bold;
-              white-space: nowrap;
-            }
-          }
+      #bundle_table .bundle-box {
+        background: #e5e5e5;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        width: 70%;
+      }
 
-          #bundle_table .note {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 500;
-            background: #003f5e;
-            padding: 10px;
-            border-radius: 5px;
-            color: #fff;
-            width: max-content;
-            margin: 20px auto;
-          }
+      #bundle_table .bundle-item {
+        flex: 1 1 25%;
+        text-align: center;
+        border-right: 2px solid #888;
+        padding: 10px;
+      }
 
-          #bundle_table .disclaimer {
-            font-size: 0.8rem;
-            text-align: center;
-            color: #777;
-            margin-top: 15px;
-          }
+      #bundle_table .bundle-item:last-child {
+        border-right: none;
+      }
 
-          @media (max-width: 1024px) {
-            #bundle_table .bundle_grid {
-              display: block;
-            }
+      #bundle_table .bundle-item p {
+        font-size: 18px;
+        font-weight: 500;
+      }
 
-            #bundle_table .bundle-box,
-            #bundle_table .table-wrapper,
-            #bundle_table .bundle-title {
-              width: auto;
-            }
+      #bundle_table .table-wrapper {
+        background: #e5e5e5;
+        border-radius: 20px;
+        padding: 20px;
+        width: 70%;
+      }
 
-            .bundle-item strong {
-              padding: 2px;
-              text-align: left;
-              font-size: 18px;
-            }
+      /* New responsive table styles */
+      #bundle_table .responsive-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 18px;
+        color: #005a78;
+      }
 
-            #bundle_table .bundle-item p {
-              font-size: 16px;
-              font-weight: 500;
-            }
+      #bundle_table .responsive-table th,
+      #bundle_table .responsive-table td {
+        border: 1px solid #999;
+        padding: 12px;
+        text-align: left;
+      }
 
-            #bundle_table .bundle-box {
-              padding: 20px 10px;
-              gap: 2px;
-            }
-          }
-    </style>
-  </head>
-  <body>
-    <div class="container" id="bundle_table">
-      <div class="bundle_title">Elevate Your Gut Health, Naturally</div>
+      #bundle_table .responsive-table th {
+        background-color: #d8d8d8;
+        font-size: 22px;
+        font-weight: 600;
+      }
 
-      <div class="bundle_grid">
-        <div class="bundle-title">This Bundle Includes</div>
-        <div class="bundle-box">
-          <div class="bundle-item">
-            <strong>Bovine Colostrum Powder</strong>
-            <p>1 Jar (150g)</p>
-          </div>
-          <div class="bundle-item">
-            <strong
-              >Eannatto 150+<br>
-              Vitamin E</strong
-            >
-            <p>1 Bottle (60 softgels)</p>
-          </div>
-          <div class="bundle-item">
-            <strong>Cell Dtox</strong>
-            <p>1 Bottle (60ml)</p>
-          </div>
-        </div>
+      #bundle_table .responsive-table td {
+        background-color: #f5f5f5;
+        font-weight: 500;
+      }
+       #bundle_table .responsive-table td:first-child {
+      font-weight: 700;
+
+  }
+
+
+      @media (max-width: 500px) {
+      #bundle_table .bundle-box {
+          padding: 10px;
+          gap: 2px;
+      }
+      }
+      @media (max-width: 768px) {
+        #bundle_table .bundle-box{
+          display: block;
+        }
+        #bundle_table .bundle-item{
+          width: auto;
+          border-top: 1px solid #c1c1c1;
+          border-left: 1px solid #c1c1c1;
+          border-right: 1px solid #c1c1c1;
+        }
+        #bundle_table .bundle-item:last-child{
+        border-bottom: 1px solid #c1c1c1;
+         border-right: 1px solid #c1c1c1;
+        }
+        .bundle-item strong{
+          font-size: 22px;
+        }
+        #bundle_table .bundle-item p {
+          font-size: 18px;
+        }
+
+        #bundle_table .responsive-table,
+        #bundle_table .responsive-table thead,
+        #bundle_table .responsive-table tbody,
+        #bundle_table .responsive-table th,
+        #bundle_table .responsive-table td,
+        #bundle_table .responsive-table tr {
+          display: block;
+          width: 100%;
+        }
+
+  #bundle_table .bundle_title {
+      font-size: 30px;
+      }
+      #bundle_table .bundle-title {
+      font-size: 26px;margin-top: 20px;
+      }
+        #bundle_table .responsive-table thead tr {
+          display: none;
+        }
+
+        #bundle_table .responsive-table td {
+          position: relative;
+          padding-left: 50%;
+          margin-bottom: 10px;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          background: #f9f9f9;
+          width: auto;
+        }
+
+        #bundle_table .responsive-table td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 15px;
+          top: 12px;
+          font-weight: bold;
+          white-space: nowrap;
+        }
+      }
+
+      #bundle_table .note {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      background: #003f5e;
+      padding: 10px;
+      border-radius: 5px;
+      color: #fff;
+      width: 100%;
+      margin: 20px auto;
+      line-height: 1.3;
+  }
+
+      #bundle_table .disclaimer {
+        font-size: 0.8rem;
+        text-align: center;
+        color: #777;
+        margin-top: 15px;
+      }
+
+      @media (max-width: 1024px) {
+        #bundle_table .bundle_grid {
+          display: block;
+        }
+
+        #bundle_table .bundle-box,
+        #bundle_table .table-wrapper,
+        #bundle_table .bundle-title {
+          width: auto;
+        }
+
+        .bundle-item strong {
+          padding: 2px;
+          text-align: left;
+          font-size: 19px;
+        }
+
+        #bundle_table .bundle-item p {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        #bundle_table .bundle-box {
+          padding: 20px 10px;
+          gap: 2px;
+        }
+      }
+</style>
+
+<div class="container" id="bundle_table">
+  <div class="bundle_title">Elevate Your Gut Health, Naturally</div>
+
+  <div class="bundle_grid">
+    <div class="bundle-title">This Bundle Includes</div>
+    <div class="bundle-box">
+      <div class="bundle-item">
+        <strong>Bovine Colostrum Powder</strong>
+        <p>1 Jar (150g)</p>
       </div>
-
-      <br>
-
-      <!-- Updated Table Format -->
-      <div class="bundle_grid">
-        <div class="bundle-title">How to Use</div>
-        <div class="table-wrapper">
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th>Supplement</th>
-                <th>Dose</th>
-                <th>When</th>
-                <th>How</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Supplement">Bovine Colostrum</td>
-                <td data-label="Dose">1 scoop</td>
-                <td data-label="When">Morning</td>
-                <td data-label="How">With warm water</td>
-              </tr>
-              <tr>
-                <td data-label="Supplement">Vitamin E (Eannatto)</td>
-                <td data-label="Dose">1 softgel</td>
-                <td data-label="When">Afternoon</td>
-                <td data-label="How">After food</td>
-              </tr>
-              <tr>
-                <td data-label="Supplement">Cell Dtox</td>
-                <td data-label="Dose">1 dropper</td>
-                <td data-label="When">Night</td>
-                <td data-label="How">Under the tongue</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="bundle-item">
+        <strong>Eannatto 150+ Vitamin E</strong>
+        <p>1 Bottle (60 softgels)</p>
       </div>
-
-      <div class="note">Maintain a 4–6 hour gap between each supplement for optimal benefits.</div>
-
-      <div class="disclaimer">
-        Disclaimer: The products are not intended to diagnose, treat, cure, or prevent any disease. Always consult a
-        healthcare practitioner before starting any supplements especially if you have any existing medical conditions
-        or are taking medications.
+      <div class="bundle-item">
+        <strong>Cell Dtox</strong>
+        <p>1 Bottle (60ml)</p>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+
+  <br>
+
+  <!-- Updated Table Format -->
+  <div class="bundle_grid">
+    <div class="bundle-title">How to Use</div>
+    <div class="table-wrapper">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Supplement</th>
+            <th>Dose</th>
+            <th>When</th>
+            <th>How</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Supplement">Bovine Colostrum</td>
+            <td data-label="Dose">1 scoop</td>
+            <td data-label="When">Morning</td>
+            <td data-label="How">With warm water</td>
+          </tr>
+          <tr>
+            <td data-label="Supplement">Vitamin E (Eannatto)</td>
+            <td data-label="Dose">1 softgel</td>
+            <td data-label="When">Afternoon</td>
+            <td data-label="How">After food</td>
+          </tr>
+          <tr>
+            <td data-label="Supplement">Cell Dtox</td>
+            <td data-label="Dose">1 dropper</td>
+            <td data-label="When">Night</td>
+            <td data-label="How">Under the tongue</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note">Maintain a 4–6 hour gap between each supplement for optimal benefits.</div>
+
+  <div class="disclaimer">
+    Disclaimer: The products are not intended to diagnose, treat, cure, or prevent any disease. Always consult a
+    healthcare practitioner before starting any supplements especially if you have any existing medical conditions or
+    are taking medications.
+  </div>
+</div>
