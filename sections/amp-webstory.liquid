@@ -76,7 +76,7 @@
           style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
         >
           {% if block.settings.heading != blank %}
-            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;">
+            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;">
               {{ block.settings.heading }}
             </h3>
           {% endif %}
