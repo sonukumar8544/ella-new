@@ -13,3 +13,32 @@ self,self.AMP=self.AMP||[];try{AMP._=AMP._||{},self.AMP&&!Array.isArray(self.AMP
 * https://developers.google.com/open-source/licenses/bsd
 */}});
 //# sourceMappingURL=amp-story-1.0.js.map
+
+
+// Disable right-click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable DevTools shortcuts
+document.onkeydown = function (e) {
+  if (
+    e.keyCode === 123 || // F12
+    (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 67 || e.keyCode === 74)) || // Ctrl+Shift+I/C/J
+    (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+  ) {
+    return false;
+  }
+};
+
+// Detect DevTools open
+(function () {
+  const threshold = 160;
+  setInterval(() => {
+    const start = performance.now();
+    debugger;
+    const end = performance.now();
+    if (end - start > threshold) {
+      document.body.innerHTML = "<h1>DevTools is not allowed</h1>";
+    }
+  }, 1000);
+})();
+
