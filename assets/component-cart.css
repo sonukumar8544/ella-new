@@ -970,7 +970,8 @@ div#main-cart-items {
   }
 }
 @media(min-width:551px){
- .removediscount{ display: flex;
+ .removediscount{ 
+   display: flex;
     align-items: center;
 }
 }
