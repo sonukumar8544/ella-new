@@ -475,32 +475,34 @@
                             {%- if item.selling_plan_allocation != null -%}
                               <p class="cart-item-allocation">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                             {%- endif -%}
-                            {%- if item.discounts.size > 0 -%}
-                              <ul
-                                class="cart-discounts list-unstyled"
-                                role="list"
-                                aria-label="{{ 'customer.order.discount' | t }}"
-                              >
-                                {%- for discount in item.line_level_discount_allocations -%}
-                                  <li class="discounts__discount">
-                                    {%- render 'icon-discount' -%}
-                                    {{ discount.discount_application.title }}
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
-                            {%- endif -%}
-                            <div class="cart-item-block cart-item-remove">
-                              <a
-                                class="cart-remove"
-                                href="javascript:void(0)"
-                                data-cart-remove
-                                data-cart-remove-id="{{ item.id }}"
-                                data-line="{{ item.key }}"
-                                data-index="{{ item.index | plus: 1 }}"
-                                aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
-                              >
-                                {%- render 'cartdrawer_close_icon' -%}
-                              </a>
+                            <div class="" removediscount>
+                              {%- if item.discounts.size > 0 -%}
+                                <ul
+                                  class="cart-discounts list-unstyled"
+                                  role="list"
+                                  aria-label="{{ 'customer.order.discount' | t }}"
+                                >
+                                  {%- for discount in item.line_level_discount_allocations -%}
+                                    <li class="discounts__discount">
+                                      {%- render 'icon-discount' -%}
+                                      {{ discount.discount_application.title }}
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              {%- endif -%}
+                              <div class="cart-item-block cart-item-remove">
+                                <a
+                                  class="cart-remove"
+                                  href="javascript:void(0)"
+                                  data-cart-remove
+                                  data-cart-remove-id="{{ item.id }}"
+                                  data-line="{{ item.key }}"
+                                  data-index="{{ item.index | plus: 1 }}"
+                                  aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                                >
+                                  {%- render 'cartdrawer_close_icon' -%}
+                                </a>
+                              </div>
                             </div>
                             {% comment %} adding-block {% endcomment %}
                             <div class="cart-item-block cart-item-price small-screen-visible">
