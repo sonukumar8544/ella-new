@@ -8750,3 +8750,21 @@ table.Table.Ltr.Table p {
 .collabs-page__main h2, .collabs-page__main h1, .collabs-page__main p {
     line-height: 1.1;
 }
+
+.cuctom-table-blog .FirstCol {
+    background-color: #006A91 !important;
+  }
+
+  .cuctom-table-blog .FirstCol p{
+    color: white !important;
+    font-weight: bold !important;
+  }
+
+  .cuctom-table-blog .LastCol{
+    background-color: white
+  }
+
+  .cuctom-table-blog .LastCol p{
+    color: #36454f !important;
+    font-weight: 400 !important;
+  }
