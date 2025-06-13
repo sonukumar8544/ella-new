@@ -639,6 +639,11 @@
                     {{- reading_time }} minute{% if reading_time > 1 %}s{% endif -%}
                   </span>
                 </p>
+                <span>|</span>
+
+                <p class="author-date-published">
+                   Published on: <span class="highlight">{{ article.published_at | date: '%d %b %Y' }}</span>
+                </p>
               </div>
 
               {{ article.content }}
