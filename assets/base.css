@@ -8775,5 +8775,5 @@ table.Table.Ltr.Table p {
 }
 
 .header-language_currency {
-    display: none;
+    display: none !important;
 }
