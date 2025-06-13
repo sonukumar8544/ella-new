@@ -11,7 +11,7 @@
   ]
 }
 {% endschema %}
-
+<!-- bundle-page-informational-image -->
 {% if product.handle contains 'bundle' %}
   {% if product.metafields.Custom.we_product_info_image_desktop %}
     <section class="bundle-banner container">
@@ -26,21 +26,3 @@
     </section>
   {% endif %}
 {% endif %}
-
-<style>
-  .bundle-image-desktop-new {
-      margin-top: 50px;
-  }
-
-    @media (min-width: 769px) {
-      .nundle-image-bobile-new {
-        display: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .bundle-image-desktop-new {
-        display: none;
-      }
-    }
-</style>
