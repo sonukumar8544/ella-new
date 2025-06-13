@@ -16,7 +16,7 @@
   {% if product.metafields.Custom.we_product_info_image_desktop %}
     <section class="bundle-banner container">
       {% if product.handle contains 'bundle' %}
-        {% if product.metafields.Custom.we_product_info_image_desktop %}
+        {% if product.metafields.custom.bundle_product_table.value %}
           <section class="bundle-banner container">
             {% render 'product-table-dynamic',
               bundle_product_meta_table: product.metafields.custom.bundle_product_table.value
