@@ -973,6 +973,7 @@ div#main-cart-items {
  .removediscount{ 
    display: flex;
     align-items: center;
+   gap:30px;
 }
 }
 @media (max-width: 550px) {
