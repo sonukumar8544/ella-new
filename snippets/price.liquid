@@ -56,7 +56,7 @@
         </dt>
       {%- endcomment -%}
       <dd class="price__last">
-        <span class="price-item price-item--regular">{{ money_price }}</span>
+        <span class="price-item price-item--regular AAAAA">{{ money_price }}</span>
       </dd>
     </div>
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
@@ -67,7 +67,7 @@
       {%- endcomment -%}
 
       <dd class="price__compare" data-compare="{{compare_at_price}}">
-        <s class="price-item price-item--regular">
+        <s class="price-item price-item--regular BBBB">
           {%- if settings.currency_format_enable -%}
             {{- compare_at_price | money_with_currency -}}
           {%- else -%}
