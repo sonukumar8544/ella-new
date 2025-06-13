@@ -1269,10 +1269,10 @@ div#main-cart-items {
     padding-right: 3px;
   }
 
-  .cart-item-block.cart-item-remove {
+  /* .cart-item-block.cart-item-remove {
     width: 45px;
   }
-
+ */
   .cart-item-block-left {
     padding-right: 15px;
   }
@@ -1326,9 +1326,9 @@ div#main-cart-items {
     fill: var(--color-error);
   }
 
-  .cart-item-block.cart-item-remove {
+  /* .cart-item-block.cart-item-remove {
     text-align: right;
-  }
+  } */
 }
 @media (min-width: 1920px) {
   .cart-total .checkout_title,
