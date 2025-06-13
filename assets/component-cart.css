@@ -129,6 +129,7 @@ div#main-cart-items {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 .template-cart .lineItem__productvar {
   display: flex;
