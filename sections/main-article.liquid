@@ -472,7 +472,10 @@
                       </a>
                     </h3>
                   </div>
-                {% elsif tag == 'lehri' %}
+                  {% endif %}
+                  {% endfor %}
+                   {% for tag in article.tags %}
+                {% if tag == 'lehri' %}
                   <div class="blog-editor">
                     <img
                       class="lazyload"
@@ -492,6 +495,30 @@
                       </a>
                     </h3>
                   </div>
+                  {% endif %}
+                  {% endfor %}
+                   {% for tag in article.tags %}
+                  {% if tag == 'jenny' %}
+                  <div class="blog-editor">
+                    <img
+                      class="lazyload"
+                      data-src="https://wellnessextract.com/cdn/shop/files/Dr._Jenna_Priestap_500x500_3fc74ad3-1104-467b-ba2f-6ab7dfc724a2_300x300.webp?v=1748940514"
+                      width="40px"
+                      alt="Dr. Jenny Priestap"
+                      height="40px"
+                      title=""
+                      loading="lazy"
+                    >
+                    <h3>
+                      <a href="https://wellnessextract.com/pages/dr-jenna-priestap">
+                        <span class="blog-author">
+                          <span><i>Approved By: </i> Dr. Jenna Priestap</span>
+                          {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                        </span>
+                      </a>
+                    </h3>
+                  </div>
+                
                 {% endif %}
               {% endfor %}
             </div>
@@ -601,10 +628,15 @@
                 gap: 10px;
                 align-items: center;
                 }
+
+                .blog-author-details span{
+                font-size: 16px;
+                }
                 .blog-editor {
                 display: flex;
                 gap: 12px;
                 align-items: center;
+                font-size: 16px;
                 }
                 .article-info-details {
                 margin-top: 20px;
@@ -3907,7 +3939,7 @@
   }
   .author-top {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   align-items: center;
   }
   .author-top img {
