@@ -58,7 +58,7 @@ ul.cart-discounts.list-unstyled {
 
 @media (max-width: 768px) {
  .template-cart ul.cart-discounts.list-unstyled {
-    width: -webkit-fill-available;
+    max-width: 160px;
 }
   .template-cart .cart-content-empty .quick_cart_empty ul li {
     flex: 0 0 24%;
