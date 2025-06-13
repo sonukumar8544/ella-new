@@ -50,6 +50,12 @@
     height: 120px;
   }
 }
+@media (min-width: 769px) {
+ul.cart-discounts.list-unstyled {
+    max-width: 160px;
+}
+}
+
 @media (max-width: 768px) {
   .template-cart .cart-content-empty .quick_cart_empty ul li {
     flex: 0 0 24%;
