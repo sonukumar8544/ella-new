@@ -8143,11 +8143,11 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
   /* color: #006a91; */
 }
 .price-item--regular .money {
-  color: #969696 !important;
+  color: #e95144!important;
 }
 
 .price-item--sale .money {
-  color: #e95144 !important;
+  color: #e95144!important;
 }
 
 .tabs .tab .tab-title {
