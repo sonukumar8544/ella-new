@@ -632,7 +632,7 @@ div#main-cart-items {
   padding: 0;
   width: 20px;
   /* height: 20px; */
-  text-align: center;
+  text-align: left;
 }
 
 .cart-remove svg {
@@ -937,7 +937,7 @@ div#main-cart-items {
     grid-area: item-remove;
     margin-left: auto;
     margin-right: 0;
-    text-align: right;
+    text-align: left;
   }
 
   .cart-item__price-wrapper .price {
