@@ -54,12 +54,22 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/dr-jenna-priestap-nd-79970b367"
       }
+    },
+    "blog_review_doctor_LTDnxH": {
+      "type": "blog-review-doctor",
+      "name": "blog-card-review-doctor",
+      "settings": {
+        "blog_author_name": "jenny",
+        "blog_dr_name": "Dr. Jenna Priestap",
+        "review_dr_page": "dr-jenna-priestap"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_HMJjPN"
+    "author_section_HMJjPN",
+    "blog_review_doctor_LTDnxH"
   ]
 }
