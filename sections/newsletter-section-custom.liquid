@@ -1,256 +1,184 @@
 {% schema %}
 {
-"name": "newsletter custom",
-"settings": [
-{
-"type": "image_picker",
-"id": "newsletter_image",
-"label": "Newsletter Image"
-},
-{
-"type": "color",
-"id": "newslettertext",
-"label": "title Color",
-"default": "#374650"
-},
-{
-"type": "color",
-"id": "newslettersubtitle",
-"label": "Subtitle Color",
-"default": "#374650"
-},
-{
-"type": "color",
-"id": "newsletterbg",
-"label": "Newsletter Bg",
-"default": "#e6f0f4"
-},
-{
-"type": "color",
-"id": "newsletter_border",
-"label": "Newsletter Border",
-"default": "#fff"
-},
-{
-"type": "text",
-"id": "newsletter_title",
-"label": "Newsletter Title",
-"default": "Get 10% off your first order"
-},
-{
-"type": "text",
-"id": "newsletter_subtitle",
-"label": "Newsletter subtitle ",
-"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-},
-{
-"type": "text",
-"id": "newsletter_subtitle1",
-"label": "Newsletter subtitle 1",
-"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-}
-],
-"presets": [
-{
-"name": "newsletter custom"
-}
-]
+  "name": "newsletter custom",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "newsletter_image",
+      "label": "Newsletter Image"
+    },
+     {
+      "type": "color",
+      "id": "newslettertext",
+      "label": "title Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "newslettersubtitle",
+      "label": "Subtitle Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "newsletterbg",
+      "label": "Newsletter Bg",
+      "default": "#e6f0f4"
+    },
+    {
+      "type": "color",
+      "id": "newsletter_border",
+      "label": "Newsletter Border",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Get 10% off your first order"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_subtitle",
+      "label": "Newsletter subtitle ",
+      "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+    },
+     {
+      "type": "text",
+      "id": "newsletter_subtitle1",
+      "label": "Newsletter subtitle 1",
+      "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "newsletter custom"
+    }
+  ]
 }
 {% endschema %}
 
-<section id="tocotrienol_banner1">
-  <div class="banner-container container">
-    <div class="banner-left">
-      <img
-        class="lazyload"
-        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/toco_scam.png?v=1750238504"
-        src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/toco_scam_200x.png?v=1750238504"
-        alt="
-          Choose Potent Tocotrienols
-          Backed by Science
-        "
-        title=""
-        width="100%"
-        height="100%"
-      >
-    </div>
-    <div class="banner-right">
-      <h2>
-        Choose Potent Tocotrienols.<br>
-        Backed by Science.
+<div class="newsletter-section-footer" style="background: {{ section.settings.newsletterbg }}">
+  <div class="newsletter-email-box-footer">
+    <div class="content_newsletter" style="padding: 1px; ">
+      {% if section.settings.newsletter_image != blank -%}
+        <img
+          src="{{ section.settings.newsletter_image | img_url:'' }}"
+          alt="{{ section.settings.newsletter_title }}"
+          width=""
+          height=""
+          loading="lazy"
+        >
+      {% endif %}
+      <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">
+        {{ section.settings.newsletter_title }}
       </h2>
-      <p class="subheading">Formulated with DeltaGold®—nature’s most powerful Vitamin E</p>
-      <ul>
-        <li>✅ 100% Annatto-Sourced</li>
-        <li>✅ Tocopherol-Free | Lab-Tested</li>
-        <li>✅ GMP-Certified Manufacturing</li>
-      </ul>
-      <a href="/products/vitamin-e-tocotrienols-supplement" class="cta-button">Get Yours Now</a>
-    </div>
-  </div>
-</section>
 
-<section id="tocotrienol_banner2">
-  <div class="banner-container container">
-    <div class="banner-left">
-      <img
-        class="lazyload"
-        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/tocoscam.png?v=1750238509"
-        src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/tocoscam_200x.png?v=1750238509"
-        alt="Don't Risk Your Health on Fake Supplements"
-        title=""
-        width="100%"
-        height="100%"
-      >
+      {% if section.settings.newsletter_subtitle != blank %}
+        <p class="top_content" style="color: {{ section.settings.newslettersubtitle }};">
+          {{ section.settings.newsletter_subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.newsletter_subtitle1 != blank %}
+        <p class="middle_content" style="color: {{ section.settings.newslettersubtitle }};">
+          {{ section.settings.newsletter_subtitle1 }}
+        </p>
+      {% endif %}
     </div>
-    <div class="banner-right">
-      <h2>Don't Risk Your Health on Fake Supplements</h2>
-      <p class="subheading">
-        Choose lab-verified Annatto Vitamin E —clinically backed for your heart, brain, and skin.
-      </p>
-
-      <a href="/products/vitamin-e-tocotrienols-supplement" class="cta-button">Shop Real Vitamin E</a>
-    </div>
+    <div
+      style="color: white;"
+      class="hs-form-frame"
+      data-region="na1"
+      data-form-id="3e4e59be-a9c3-4aaf-be23-28ed725a41b4"
+      data-portal-id="49007533"
+    ></div>
+    <script src="https://js.hsforms.net/forms/embed/49007533.js" defer></script>
   </div>
-</section>
+</div>
 
 <style>
-         #tocotrienol_banner1 {
-         background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
-         padding: 20px 20px;
-         display: flex;
-         justify-content: center;
-         }
-         #tocotrienol_banner2{
-         background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-         padding: 20px
-         display: flex;
-         justify-content: center;
-         }
-         #tocotrienol_banner1  .banner-container img.lazyload,
-         #tocotrienol_banner2  .banner-container img.lazyload{
-         width: 500px;
-         }
-         #tocotrienol_banner1 .banner-container{
-         display: flex;
-
-         width: 100%;
-          border-radius: 12px;
-         overflow: hidden;
-          flex-wrap: wrap;
-         align-items: center;
-         justify-content: center;
-         }
-
-         #tocotrienol_banner2 .banner-container {
-         display: flex;
-         width: 100%;
-        border-radius: 12px;
-         overflow: hidden;
-         flex-direction: row-reverse;
-         flex-wrap: wrap;
-         align-items: center;
-         justify-content: center;
-         }
-
-       #tocotrienol_banner1 .banner-left, .banner-right,
-       #tocotrienol_banner2  .banner-left, .banner-right{
-         width:50%;
-         padding: 20px;
-         box-sizing: border-box;
-         }
-
-         #tocotrienol_banner1 .banner-left img,
-    #tocotrienol_banner2 .banner-left img{
-         max-width: 100%;
-         height: auto;
-         }
-  #tocotrienol_banner1 .banner-right h2,
-  #tocotrienol_banner2 .banner-right h2{
-         font-size: 40px;
-         color: #086b92;
-         margin-bottom: 10px;
-         line-height: 1.2;
-         }
-
-       #tocotrienol_banner1 .banner-right .subheading,
-    #tocotrienol_banner2 .banner-right .subheading{
-         font-size: 22px;
-         color: #000;
-         margin-bottom: 20px;
-         font-weight: 500;
-         line-height: normal;
-         }
-         #tocotrienol_banner2 .banner-container p.subheading {
-         margin-bottom: 44px;
-         }
-
-        #tocotrienol_banner1 .banner-right ul {
-         list-style: none;
-         padding: 5px  0px;
-         margin: 0px 0px 20px;
-         }
-
-        #tocotrienol_banner1 .banner-right ul li {
-         margin-bottom: 10px;
-         font-size: 17px;
-           color: #000;
-         }
-      #tocotrienol_banner1 .cta-button:hover,
-     #tocotrienol_banner2 .cta-button:hover
-    {
-          background: #086b92;
-          color: #fff;
-        }
-        #tocotrienol_banner1 .cta-button,
-     #tocotrienol_banner2 .cta-button{
-         display: inline-block;
-         background-color: #FF4D03;
-         color: white;
-         padding: 12px 25px;
-         border-radius: 50px;
-         text-decoration: none;
-         font-weight: bold;
-         box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-         font-size: 22px;
-         }
-         @media (max-width: 768px) {
-         #tocotrienol_banner1 .banner-container,
-           #tocotrienol_banner2 .banner-container {
-         flex-direction: column;
-         text-align: center;
-         }
-      #tocotrienol_banner1 .banner-left, #tocotrienol_banner1 .banner-right,
-             #tocotrienol_banner2 .banner-left, #tocotrienol_banner2 .banner-right{
-        width:100%;
-        padding:0px;
+      .newsletter-email-box-footer h2 {
+      font-size: 32px;
+  }
+      p.top_content {
+      font-size: 22px;
+  }
+      p.middle_content {
+      margin-top: 13px;
+      font-size: 18px;
+      font-weight: 600;
+  }
+    @media(min-width:900px){
+  .newsletter-email-box-footer {
+      max-width: 1320px;
+      margin: auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      padding-bottom: 32px;
+      gap: 20px;
+  }
+  .newsletter-email-box-footer .content_newsletter {
+      width: 30%;
+      text-align: -webkit-center;
+  }
+  .newsletter-email-box-footer .hs-form-frame {
+      width: 70%;
+      margin: auto;
+      padding: 0px 20px;
+  }
+      .content_newsletter h2,
+      .content_newsletter p{
+        display:none;
       }
-     #tocotrienol_banner1 .banner-right h2,
-            #tocotrienol_banner2 .banner-right h2{
-        font-size: 21px;
-        margin-bottom: 5px;
-        line-height: 1.1;
-        text-align: left;
+
     }
-            #tocotrienol_banner1 .banner-right ul li{
-             text-align: left;
-           }
-          #tocotrienol_banner1 .banner-right .subheading,
-            #tocotrienol_banner2 .banner-right .subheading{
-        font-size: 16px;
-        font-weight: 500;
-        line-height: normal;
-             text-align: left;
+     @media(max-width:899px){
+   .content_newsletter img {
+      display: none;
+  }
+    .newsletter-section-footer   p.top_content {
+      font-size: 18px;
+      margin-bottom: 10px;
+  }
+
+  .newsletter-email-box-footer .content_newsletter {
+      border: none !important;
+  }
+  .newsletter-email-box-footer .hs-form-frame {
+      border:  none !important;
+  }
     }
-           #tocotrienol_banner1 .cta-button,
-            #tocotrienol_banner2 .cta-button{
-          margin-bottom: 40px;
-          margin-left: 0;
-          float: left;
-           }
-       #tocotrienol_banner1 .banner-right,
-           #tocotrienol_banner2 .banner-right{
-         padding-top: 0;
-         }
-         }
+
+    .newsletter-section-footer {
+    padding-top: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: linear-gradient(to bottom, #006B92, #36454f) !important;
+  }
+  .newsletter-email-box-footer p,
+  .newsletter-email-box-footer h2 {
+    text-align: center;
+  }
+  .hs-form-frame {
+    width: 80%;
+    margin: auto;
+  }
+  .footer__content-top .halo-row {
+    padding-top: 35px !important;
+  }
+
+    .newsletter-email-box-footer {
+      max-width: 1320px;
+      margin: auto;
+    }
+
+    .newsletter-email-box-footer h2 {
+      text-align: center;
+    }
+    .newsletter-email-box-footer p {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
 </style>
