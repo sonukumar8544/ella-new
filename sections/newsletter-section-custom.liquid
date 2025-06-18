@@ -101,6 +101,17 @@
 
     <!-- <div id="klaviyo_embed_wrapper"> -->
     <div class="klaviyo-form-WsgHsE"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const waitForKlaviyo = setInterval(() => {
+          if (window._klOnsite && window._klOnsite.openForm) {
+            window._klOnsite.openForm('WsgHsE'); // Your actual form ID
+            clearInterval(waitForKlaviyo);
+          }
+        }, 300);
+      });
+    </script>
+
     <!-- </div> -->
   </div>
 </div>
