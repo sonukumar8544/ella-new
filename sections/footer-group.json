@@ -11,6 +11,12 @@
   "type": "footer",
   "name": "Footer Group",
   "sections": {
+    "1750224632b666a1f0": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
     "newsletter_section_custom_QkJ8aD": {
       "type": "newsletter-section-custom",
       "custom_css": [],
@@ -240,6 +246,7 @@
     }
   },
   "order": [
+    "1750224632b666a1f0",
     "newsletter_section_custom_QkJ8aD",
     "77a3195e-4b80-497f-a648-2fe6ad255c4f"
   ]
