@@ -115,101 +115,100 @@
 </section>
 
 <style>
-     #tocotrienol_banner1 {
-       background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
-       padding: 20px 20px;
-       display: flex;
-       justify-content: center;
-     }
-     #tocotrienol_banner2{
-        background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-       padding: 20px
-       display: flex;
-       justify-content: center;
-     }
-    #tocotrienol_banner1 .banner-container{
-       display: flex;
-       /* max-width: 800px; */
-       width: 100%;
-       background: radial-gradient(#ffffff 5%, #BCBCCA 95%);
-       border-radius: 12px;
-       overflow: hidden;
-       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-          flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+   #tocotrienol_banner1 {
+     background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
+     padding: 20px 20px;
+     display: flex;
+     justify-content: center;
+   }
+   #tocotrienol_banner2{
+      background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
+     padding: 20px
+     display: flex;
+     justify-content: center;
+   }
+  #tocotrienol_banner1 .banner-container{
+     display: flex;
+     /* max-width: 800px; */
+     width: 100%;
+     background: radial-gradient(#ffffff 5%, #BCBCCA 95%);
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
-    }
 
-    #tocotrienol_banner2 .banner-container {
-       display: flex;
-       /* max-width: 800px; */
-       width: 100%;
-       background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-       border-radius: 12px;
-       overflow: hidden;
-       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-       flex-wrap: wrap;
-      flex-direction: row-reverse;
-          flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-  }
+  #tocotrienol_banner2 .banner-container {
+     display: flex;
+     /* max-width: 800px; */
+     width: 100%;
+     background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+     flex-wrap: wrap;
+    flex-direction: row-reverse;
+        flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .banner-left, .banner-right {
+     /* flex: 1 1 300px; */
+     width:50%;
+     padding: 20px;
+     box-sizing: border-box;
+   }
+
+   .banner-left img {
+     max-width: 100%;
+     height: auto;
+   }
+
+   .banner-right h2 {
+     font-size: 24px;
+     color: #0073aa;
+     margin-bottom: 10px;
+   }
+
+   .banner-right .subheading {
+     font-size: 16px;
+     color: #333;
+     margin-bottom: 20px;
+   }
+
+   .banner-right ul {
+     list-style: none;
+     padding: 0;
+     margin: 0 0 20px;
+   }
+
+   .banner-right ul li {
+     margin-bottom: 10px;
+     font-size: 15px;
+   }
+
+   .cta-button {
+     display: inline-block;
+     background-color: #FF4D03;
+     color: white;
+     padding: 12px 20px;
+     border-radius: 6px;
+     text-decoration: none;
+     font-weight: bold;
+     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+   }
+
+   @media (max-width: 768px) {
+     .banner-container {
+       flex-direction: column;
+       text-align: center;
      }
 
-     .banner-left, .banner-right {
-       flex: 1 1 300px;
-       padding: 20px;
-       box-sizing: border-box;
+     .banner-right {
+       padding-top: 0;
      }
-
-     .banner-left img {
-       max-width: 100%;
-       height: auto;
-     }
-
-     .banner-right h2 {
-       font-size: 24px;
-       color: #0073aa;
-       margin-bottom: 10px;
-     }
-
-     .banner-right .subheading {
-       font-size: 16px;
-       color: #333;
-       margin-bottom: 20px;
-     }
-
-     .banner-right ul {
-       list-style: none;
-       padding: 0;
-       margin: 0 0 20px;
-     }
-
-     .banner-right ul li {
-       margin-bottom: 10px;
-       font-size: 15px;
-     }
-
-     .cta-button {
-       display: inline-block;
-       background-color: #FF4D03;
-       color: white;
-       padding: 12px 20px;
-       border-radius: 6px;
-       text-decoration: none;
-       font-weight: bold;
-       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-     }
-
-     @media (max-width: 768px) {
-       .banner-container {
-         flex-direction: column;
-         text-align: center;
-       }
-
-       .banner-right {
-         padding-top: 0;
-       }
-     }
+   }
 </style>
