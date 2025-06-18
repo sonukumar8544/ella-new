@@ -1,60 +1,60 @@
 {% schema %}
 {
-  "name": "newsletter custom",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "newsletter_image",
-      "label": "Newsletter Image"
-    },
-     {
-      "type": "color",
-      "id": "newslettertext",
-      "label": "title Color",
-      "default": "#374650"
-    },
-    {
-      "type": "color",
-      "id": "newslettersubtitle",
-      "label": "Subtitle Color",
-      "default": "#374650"
-    },
-    {
-      "type": "color",
-      "id": "newsletterbg",
-      "label": "Newsletter Bg",
-      "default": "#e6f0f4"
-    },
-    {
-      "type": "color",
-      "id": "newsletter_border",
-      "label": "Newsletter Border",
-      "default": "#fff"
-    },
-    {
-      "type": "text",
-      "id": "newsletter_title",
-      "label": "Newsletter Title",
-      "default": "Get 10% off your first order"
-    },
-    {
-      "type": "text",
-      "id": "newsletter_subtitle",
-      "label": "Newsletter subtitle ",
-      "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-    },
-     {
-      "type": "text",
-      "id": "newsletter_subtitle1",
-      "label": "Newsletter subtitle 1",
-      "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-    }
-  ],
-  "presets": [
-    {
-      "name": "newsletter custom"
-    }
-  ]
+"name": "newsletter custom",
+"settings": [
+{
+"type": "image_picker",
+"id": "newsletter_image",
+"label": "Newsletter Image"
+},
+{
+"type": "color",
+"id": "newslettertext",
+"label": "title Color",
+"default": "#374650"
+},
+{
+"type": "color",
+"id": "newslettersubtitle",
+"label": "Subtitle Color",
+"default": "#374650"
+},
+{
+"type": "color",
+"id": "newsletterbg",
+"label": "Newsletter Bg",
+"default": "#e6f0f4"
+},
+{
+"type": "color",
+"id": "newsletter_border",
+"label": "Newsletter Border",
+"default": "#fff"
+},
+{
+"type": "text",
+"id": "newsletter_title",
+"label": "Newsletter Title",
+"default": "Get 10% off your first order"
+},
+{
+"type": "text",
+"id": "newsletter_subtitle",
+"label": "Newsletter subtitle ",
+"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+},
+{
+"type": "text",
+"id": "newsletter_subtitle1",
+"label": "Newsletter subtitle 1",
+"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+}
+],
+"presets": [
+{
+"name": "newsletter custom"
+}
+]
 }
 {% endschema %}
 
@@ -115,106 +115,109 @@
 </section>
 
 <style>
-         #tocotrienol_banner1 {
-           background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
-           padding: 20px 20px;
-           display: flex;
-           justify-content: center;
-         }
-         #tocotrienol_banner2{
-            background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-           padding: 20px
-           display: flex;
-           justify-content: center;
-         }
-        #tocotrienol_banner1  .banner-container img.lazyload,
-        #tocotrienol_banner2  .banner-container img.lazyload{
-          width: 500px;
-      }
-        #tocotrienol_banner1 .banner-container{
-           display: flex;
-           /* max-width: 800px; */
-           width: 100%;
-           background: radial-gradient(#ffffff 5%, #BCBCCA 95%);
-           border-radius: 12px;
-           overflow: hidden;
-           box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-              flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-        }
-
-        #tocotrienol_banner2 .banner-container {
-           display: flex;
-           /* max-width: 800px; */
-           width: 100%;
-           background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-           border-radius: 12px;
-           overflow: hidden;
-           box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-          flex-direction: row-reverse;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-         }
-
-         .banner-left, .banner-right {
-           /* flex: 1 1 300px; */
-           width:50%;
-           padding: 20px;
-           box-sizing: border-box;
-         }
-
-         .banner-left img {
-           max-width: 100%;
-           height: auto;
-         }
-
-        .banner-right h2 {
-        font-size: 40px;
-        color: #0073aa;
-        margin-bottom: 10px;
-        line-height: 1.2;
-    }
-
-          .banner-right .subheading {
-          font-size: 22px;
-          color: #333;
-          margin-bottom: 20px;
-          font-weight: 500;
-            line-height: normal;
-         }
-
-         .banner-right ul {
-        list-style: none;
-        padding: 5px  0px;
-        margin: 0px 0px 20px;
-    }
-
-         .banner-right ul li {
-           margin-bottom: 10px;
-           font-size: 17px;
-         }
-
-      .cta-button {
-      display: inline-block;
-      background-color: #FF4D03;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      font-size: 25px;
+  #tocotrienol_banner1 {
+  background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
   }
-         @media (max-width: 768px) {
-           .banner-container {
-             flex-direction: column;
-             text-align: center;
-           }
+  #tocotrienol_banner2{
+  background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
+  padding: 20px
+  display: flex;
+  justify-content: center;
+  }
+  #tocotrienol_banner1  .banner-container img.lazyload,
+  #tocotrienol_banner2  .banner-container img.lazyload{
+  width: 500px;
+  }
+  #tocotrienol_banner1 .banner-container{
+  display: flex;
+  /* max-width: 800px; */
+  width: 100%;
+  background: radial-gradient(#ffffff 5%, #BCBCCA 95%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  }
 
-           .banner-right {
-             padding-top: 0;
-           }
-         }
+  #tocotrienol_banner2 .banner-container {
+  display: flex;
+  /* max-width: 800px; */
+  width: 100%;
+  background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .banner-left, .banner-right {
+  /* flex: 1 1 300px; */
+  width:50%;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+
+  .banner-left img {
+  max-width: 100%;
+  height: auto;
+  }
+
+  .banner-right h2 {
+  font-size: 40px;
+  color: #0073aa;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  }
+
+  .banner-right .subheading {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: normal;
+  }
+  #tocotrienol_banner2 .banner-container p.subheading {
+  margin-bottom: 44px;
+  }
+
+  .banner-right ul {
+  list-style: none;
+  padding: 5px  0px;
+  margin: 0px 0px 20px;
+  }
+
+  .banner-right ul li {
+  margin-bottom: 10px;
+  font-size: 17px;
+  }
+
+  .cta-button {
+  display: inline-block;
+  background-color: #FF4D03;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  font-size: 25px;
+  }
+  @media (max-width: 768px) {
+  .banner-container {
+  flex-direction: column;
+  text-align: center;
+  }
+
+  .banner-right {
+  padding-top: 0;
+  }
+  }
 </style>
