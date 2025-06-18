@@ -115,136 +115,142 @@
 </section>
 
 <style>
-       #tocotrienol_banner1 {
-       background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
-       padding: 20px 20px;
-       display: flex;
-       justify-content: center;
-       }
-       #tocotrienol_banner2{
-       background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
-       padding: 20px
-       display: flex;
-       justify-content: center;
-       }
-       #tocotrienol_banner1  .banner-container img.lazyload,
-       #tocotrienol_banner2  .banner-container img.lazyload{
-       width: 500px;
-       }
-       #tocotrienol_banner1 .banner-container{
-       display: flex;
-       /* max-width: 800px; */
-       width: 100%;
-       /* background: radial-gradient(#ffffff 5%, #BCBCCA 95%); */
-       border-radius: 12px;
-       overflow: hidden;
-       /* box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
-       flex-wrap: wrap;
-       align-items: center;
-       justify-content: center;
-       }
+         #tocotrienol_banner1 {
+         background: linear-gradient(90deg, #e7eaf1, #d1d3dc);
+         padding: 20px 20px;
+         display: flex;
+         justify-content: center;
+         }
+         #tocotrienol_banner2{
+         background: radial-gradient(#ffffff 5%, #BCBCCA 95%);;
+         padding: 20px
+         display: flex;
+         justify-content: center;
+         }
+         #tocotrienol_banner1  .banner-container img.lazyload,
+         #tocotrienol_banner2  .banner-container img.lazyload{
+         width: 500px;
+         }
+         #tocotrienol_banner1 .banner-container{
+         display: flex;
 
-       #tocotrienol_banner2 .banner-container {
-       display: flex;
-       /* max-width: 800px; */
-       width: 100%;
-       /* background: radial-gradient(#ffffff 5%, #BCBCCA 95%); */
-       border-radius: 12px;
-       overflow: hidden;
-       /* box-shadow: 0 4px 20px rgba(0,0,0,0.1); */
-       flex-direction: row-reverse;
-       flex-wrap: wrap;
-       align-items: center;
-       justify-content: center;
-       }
+         width: 100%;
+          border-radius: 12px;
+         overflow: hidden;
+          flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+         }
 
-       .banner-left, .banner-right {
-       /* flex: 1 1 300px; */
-       width:50%;
-       padding: 20px;
-       box-sizing: border-box;
-       }
+         #tocotrienol_banner2 .banner-container {
+         display: flex;
+         width: 100%;
+        border-radius: 12px;
+         overflow: hidden;
+         flex-direction: row-reverse;
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+         }
 
-       .banner-left img {
-       max-width: 100%;
-       height: auto;
-       }
+       #tocotrienol_banner1 .banner-left, .banner-right,
+       #tocotrienol_banner2  .banner-left, .banner-right{
+         width:50%;
+         padding: 20px;
+         box-sizing: border-box;
+         }
 
-       .banner-right h2 {
-       font-size: 40px;
-       color: #086b92;
-       margin-bottom: 10px;
-       line-height: 1.2;
-       }
+         #tocotrienol_banner1 .banner-left img,
+    #tocotrienol_banner2 .banner-left img{
+         max-width: 100%;
+         height: auto;
+         }
+  #tocotrienol_banner1 .banner-right h2,
+  #tocotrienol_banner2 .banner-right h2{
+         font-size: 40px;
+         color: #086b92;
+         margin-bottom: 10px;
+         line-height: 1.2;
+         }
 
-       .banner-right .subheading {
-       font-size: 22px;
-       color: #000;
-       margin-bottom: 20px;
-       font-weight: 500;
-       line-height: normal;
-       }
-       #tocotrienol_banner2 .banner-container p.subheading {
-       margin-bottom: 44px;
-       }
-
-       .banner-right ul {
-       list-style: none;
-       padding: 5px  0px;
-       margin: 0px 0px 20px;
-       }
-
-       .banner-right ul li {
-       margin-bottom: 10px;
-       font-size: 17px;
+       #tocotrienol_banner1 .banner-right .subheading,
+    #tocotrienol_banner2 .banner-right .subheading{
+         font-size: 22px;
          color: #000;
-       }
-      .cta-button:hover{
-        background: #086b92;
-        color: #fff;
+         margin-bottom: 20px;
+         font-weight: 500;
+         line-height: normal;
+         }
+         #tocotrienol_banner2 .banner-container p.subheading {
+         margin-bottom: 44px;
+         }
+
+        #tocotrienol_banner1 .banner-right ul {
+         list-style: none;
+         padding: 5px  0px;
+         margin: 0px 0px 20px;
+         }
+
+        #tocotrienol_banner1 .banner-right ul li {
+         margin-bottom: 10px;
+         font-size: 17px;
+           color: #000;
+         }
+      #tocotrienol_banner1 .cta-button:hover,
+     #tocotrienol_banner2 .cta-button:hover
+    {
+          background: #086b92;
+          color: #fff;
+        }
+        #tocotrienol_banner1 .cta-button,
+     #tocotrienol_banner2 .cta-button{
+         display: inline-block;
+         background-color: #FF4D03;
+         color: white;
+         padding: 12px 25px;
+         border-radius: 50px;
+         text-decoration: none;
+         font-weight: bold;
+         box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+         font-size: 22px;
+         }
+         @media (max-width: 768px) {
+         #tocotrienol_banner1 .banner-container,
+           #tocotrienol_banner2 .banner-container {
+         flex-direction: column;
+         text-align: center;
+         }
+      #tocotrienol_banner1 .banner-left, #tocotrienol_banner1 .banner-right,
+             #tocotrienol_banner2 .banner-left, #tocotrienol_banner2 .banner-right{
+        width:100%;
+        padding:0px;
       }
-       .cta-button {
-       display: inline-block;
-       background-color: #FF4D03;
-       color: white;
-       padding: 12px 25px;
-       border-radius: 50px;
-       text-decoration: none;
-       font-weight: bold;
-       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-       font-size: 22px;
-       }
-       @media (max-width: 768px) {
-       .banner-container {
-       flex-direction: column;
-       text-align: center;
-       }
-    .banner-left, .banner-right{
-      width:100%;
-      padding:0px;
+     #tocotrienol_banner1 .banner-right h2,
+            #tocotrienol_banner2 .banner-right h2{
+        font-size: 21px;
+        margin-bottom: 5px;
+        line-height: 1.1;
+        text-align: left;
     }
-    .banner-right h2 {
-      font-size: 21px;
-      margin-bottom: 5px;
-      line-height: 1.1;
-      text-align: left;
-  }
-         .banner-right ul li{
-           text-align: left;
+            #tocotrienol_banner1 .banner-right ul li{
+             text-align: left;
+           }
+          #tocotrienol_banner1 .banner-right .subheading,
+            #tocotrienol_banner2 .banner-right .subheading{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+             text-align: left;
+    }
+           #tocotrienol_banner1 .cta-button,
+            #tocotrienol_banner2 .cta-button{
+          margin-bottom: 40px;
+          margin-left: 0;
+          float: left;
+           }
+       #tocotrienol_banner1 .banner-right,
+           #tocotrienol_banner2 .banner-right{
+         padding-top: 0;
          }
-         .banner-right .subheading {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: normal;
-           text-align: left;
-  }
-         .cta-button{
-        margin-bottom: 40px;
-        margin-left: 0;
-        float: left;
          }
-       .banner-right {
-       padding-top: 0;
-       }
-       }
 </style>
