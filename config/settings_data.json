@@ -948,11 +948,6 @@
           "social_font": "enable"
         }
       },
-      "341186785192672687": {
-        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
-        "disabled": false,
-        "settings": {}
-      },
       "3678330922655817062": {
         "type": "shopify://apps/boost-ai-search-discovery/blocks/boost-sd-ssr/7fc998ae-a150-4367-bab8-505d8a4503f7",
         "disabled": false,
@@ -973,6 +968,11 @@
       },
       "5018987021795618850": {
         "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-embed/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+        "disabled": true,
+        "settings": {}
+      },
+      "341186785192672687": {
+        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
         "disabled": true,
         "settings": {}
       }
