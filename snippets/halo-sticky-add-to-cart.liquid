@@ -699,7 +699,7 @@
           </h4>
           {%- if sticky_atc_layout == '1' -%}
             {% assign compare_price = current_variant.compare_at_price | money_with_currency %}
-            {% assign subtotal = product.price | money_with_currency %}
+            {% assign subtotal = prod.price | money_with_currency %}
             <div class="sticky-price{% unless compare_price == subtotal %}{% if compare_price != blank %} has-compare-price{% endif %}{% endunless %}">
               {% comment %}
                 <!--comment by amar--> {% unless compare_price == subtotal %}
