@@ -1,7 +1,4 @@
-{% include 'shogun-content-handler' %}
-{% unless template contains 'index' or template contains 'collection' or template contains 'product' -%}
-  {%- include 'shogun-content-handler' -%}
-{%- endunless %}
+
 <!doctype html>
 {%- liquid
   if settings.list_iso_rtl != blank
