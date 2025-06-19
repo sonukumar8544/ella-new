@@ -32,7 +32,9 @@
     {%- if settings.favicon != blank -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
-    
+    <!-- Shogun -->
+    {% render 'shogun-header-script' %}
+    <!-- Shogun -->
 
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <title>
@@ -159,9 +161,7 @@
         assign style_text_size_varriant = 'size_varriant_style_2'
       endif
     -%}
-    {% unless template contains 'index' or template contains 'collection' or template contains 'product' %}
-      {% render 'shogun-head' %}
-    {% endunless %}
+    
     <script
       async
       defer
