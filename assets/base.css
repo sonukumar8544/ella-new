@@ -8140,7 +8140,7 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
 .productView-price .price.price--medium .price-item,
 .productView-price .price.price--medium .price-item .money {
   display: block !important;
-  /* color: #006a91; */
+  color: #e95144 !important;
 }
 .price-item--regular .money,
 .price-item--sale .money {
