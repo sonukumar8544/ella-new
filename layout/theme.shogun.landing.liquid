@@ -41,6 +41,7 @@ This file can be re-written at any time.
     </script>
     <!-- End Google Tag Manager -->
 
+    {% comment %}
     <!-- Start of HubSpot Embed Code -->
     <script>
         var navigatortt = navigator.userAgent;
@@ -59,10 +60,9 @@ This file can be re-written at any time.
           document.head.appendChild(hsScript);
       }
     </script>
-    {% comment %}
       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49007533.js"></script>
-    {% endcomment %}
     <!-- End of HubSpot Embed Code -->
+    {% endcomment %}
 
     {{ content_for_header }}
     {% unless template contains 'index' or template contains 'collection' %}
