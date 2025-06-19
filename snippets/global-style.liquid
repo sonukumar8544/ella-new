@@ -48,7 +48,7 @@
 {% elsif settings.product_card_layout == '08' %}
   {{ 'component-card-08.css' | asset_url | stylesheet_tag }}
 {% endif %}
-
+<link rel="preload" as="style" href="{{ 'component-predictive-search.css' | asset_url }}">
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
 
 {%- unless request.page_type == 'product' -%}

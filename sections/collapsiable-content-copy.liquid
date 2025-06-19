@@ -368,6 +368,7 @@
       }
     }
   </style>
+
   <faqs-item
     class="halo-collapsible-content section-block-{{section.id}}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
     {% if section.settings.id_section != blank %}
@@ -467,12 +468,12 @@
                   style="padding-top: {% unless image_right.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image_right.aspect_ratio | times: 200 | append: '%' }}{% else %}{{ 1 | divided_by: image_right.aspect_ratio | times: 100 | append: '%' }}{% endunless %}"
                   title="{{ image.alt | default: shop.name | escape }}"
                 >
-                  {%- assign preview_img = image_right -%}
-                  {%- assign height_dsk = preview_img.width | divided_by: preview_img.aspect_ratio | round -%}
+                  {%- assign preview_img = section.settings.image_right -%}
+                  {% comment %} {%- assign height_dsk = preview_img.width | divided_by: preview_img.aspect_ratio | round -%} {% endcomment %}
                   <img
-                    width="{{preview_img.width}}"
-                    height="{{height_dsk}}"
-                    {% render 'lazyload', preview_img: preview_img %}
+                    width="100%"
+                    height="100%" class="lazyload"
+                    data-srcset="{{ preview_img | img_url: '480x'}}" srcset="{{ preview_img | img_url: '280x'}}" alt="" title=""
                   >
                   {%- if settings.enable_lazyload -%}
                     <span class="data-lazy-loading"></span>

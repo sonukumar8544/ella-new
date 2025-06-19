@@ -116,12 +116,10 @@
       {% assign parts = block | split: '|' %}
       <div class="product-related-blog-card">
         <img
-          src="{{ parts[0] | strip }}"
-          alt="Product Image"
-          class="related-blogproduct-image"
-          height="master"
-          ,
-          width="master" />
+          data-srcset="{{ parts[0] | strip }}"
+          alt="Product Image" title
+          class="related-blogproduct-image lazyload" width="100%" height="100%"
+           />
         <div class="product-related-blog-image">
           <a href="{{ parts[3] | strip }}">
             <h2 class="productproduct-related-blog-card-title">{{ parts[1] | strip }}</h2>
