@@ -744,7 +744,7 @@
                       <span class="text">{{ 'general.cart.subtotal' | t }}</span>
                     </div>
                     <div class="cart-total-value">
-                      <span class="text">{{ cart.original_total_price | money }}</span>
+                      <span class="text">{{ cart.original_total_price | money_with_currency }}</span>
                     </div>
                   </li>
                   {%- if show_shipping_rate_calculator -%}
