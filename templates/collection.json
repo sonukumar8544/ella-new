@@ -433,12 +433,14 @@
       "blocks": {
         "easyvideo_shoppable_videos_easyvideo_section_EXApQg": {
           "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
+          "disabled": true,
           "settings": {}
         }
       },
       "block_order": [
         "easyvideo_shoppable_videos_easyvideo_section_EXApQg"
       ],
+      "disabled": true,
       "custom_css": [
         ".splide__slide .nm-ev-center img.add_splide {max-width: 100%; max-height: inherit !important; width: 100%;}"
       ],
@@ -759,6 +761,7 @@
       "disabled": true,
       "settings": {
         "id_section": "",
+        "enabled_id": false,
         "container": "600",
         "padding_full_width": 0,
         "collapsible_bg": "#ffffff",
@@ -774,11 +777,14 @@
         "max_width_des": 740,
         "title_align": "center",
         "enable_image_right": false,
+        "EnableleftImage": false,
+        "enable_zoom": false,
         "bg_content_color": "#ffffff",
         "content_color": "#101828",
         "title_color": "#101828",
         "icon_color": "#101828",
         "border_color": "#acacac",
+        "special_content": "<p></p>",
         "mg_top_desktop": 0,
         "mg_top_tablet": 0,
         "mg_top_mobile": 0,
