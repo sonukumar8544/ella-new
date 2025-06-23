@@ -1,5 +1,5 @@
 {%- liquid
-  assign product_swatch_option = settings.swatch | downcase
+  assign product_swatch_option = block.settings.swatch | downcase
   assign isColor = false
   assign variant_img = ''
   for option in product_card_product.options_with_values
@@ -22,7 +22,7 @@
   endfor
 -%}
 <div
-  class="product-item product-item-custom{% if settings.disable_product_card_border %} disable_product_card_border{% endif %}{% if settings.enable_custom_layout_card %} enable_custom_layout_card{% endif %}{% if settings.disable_product_card_border and settings.enable_custom_layout_card %} enable_custom_content{% endif %}{% if settings.enable_custom_position_swatch_layout_card_1 %} enable_custom_position_swatch{% endif %}"
+  class="product-item product-item-custom{% if block.settings.disable_product_card_border %} disable_product_card_border{% endif %}{% if block.settings.enable_custom_layout_card %} enable_custom_layout_card{% endif %}{% if block.settings.disable_product_card_border and block.settings.enable_custom_layout_card %} enable_custom_content{% endif %}{% if block.settings.enable_custom_position_swatch_layout_card_1 %} enable_custom_position_swatch{% endif %}"
   data-product-id="product-{{ product_card_product.id }}"
   data-json-product="{{ product_card_product | json }}"
 >
@@ -55,7 +55,7 @@
     <div class="card-information">
       <div class="card-information__wrapper text-left">
         <a
-          class="card-title link-underline{% if settings.product_title_line_text != 'full' %} card-title-ellipsis{% endif %}{% if variant_selected != blank %} card-title-change{% endif %}"
+          class="card-title link-underline{% if block.settings.product_title_line_text != 'full' %} card-title-ellipsis{% endif %}{% if variant_selected != blank %} card-title-change{% endif %}"
           href="{{ product_card_product.url }}"
         >
           <span class="text">
@@ -66,14 +66,14 @@
           </span>
         </a>
 
-        {%- if settings.show_swatch and isColor -%}
+        {%- if block.settings.show_swatch and isColor -%}
           {% render 'product-swatch', product: product_card_product, index: index %}
         {%- endif -%}
         {% comment %} <a class="card-button" href="{{ product_card_product.url }}">{{ 'products.product.details' | t }}</a> {% endcomment %}
         <div class="card-price">
           {% render 'price', product: product_card_product, price_class: '' %}
         </div>
-        {%- if settings.show_action -%}
+        {%- if block.settings.show_action -%}
           <div class="card-action">
             {% render 'add-to-cart-form-sidebar',
               product: product_card_product,
