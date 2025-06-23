@@ -1,122 +1,125 @@
 <style>
-  .video-section {
-    padding: 3rem 1.5rem;
-    background-color: white;
-  }
+    .video-section {
+      padding: 3rem 1.5rem;
+      background-color: white;
+    }
 
-  .section-heading {
-    text-align: center;
-    font-size: 2rem;
-    font-style: italic;
-    font-weight: 300;
-  }
+    .section-heading {
+      text-align: center;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 300;
+    }
 
-  .section-heading .font-semibold {
-    font-weight: 600;
-  }
+    .section-heading .font-semibold {
+      font-weight: 600;
+    }
 
-  .section-subheading {
-    text-align: center;
-    color: #4B5563;
-    margin: 0.5rem 0 2rem;
-  }
+    .section-subheading {
+      text-align: center;
+      color: #4B5563;
+      margin: 0.5rem 0 2rem;
+    }
 
-  .video-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+    .video-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-  .video-scroll-container::-webkit-scrollbar {
-    display: none;
-  }
+    .video-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
 
-  .video-card {
-    flex: 0 0 300px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s;
-    position: relative;
-  }
+    .video-card {
+      flex: 0 0 300px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+      position: relative;
+    }
 
-  .video-card:hover {
-    transform: translateY(-4px);
-  }
+    .video-card:hover {
+      transform: translateY(-4px);
+    }
 
-  .video-wrapper {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
+    .video-wrapper {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
 
-  .video-wrapper video {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
 
-  .card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 0.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(5px);
-    background: #ffffff5c;
-    margin: 5px;
-    border-radius: 10px;
-  }
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(5px);
+      background: #ffffff5c;
+      margin: 5px;
+      border-radius: 10px;
+    }
 
-  .product-img {
-    width: 48px;
-    height: auto;
-    border-radius: 4px;
-  }
+    .product-img {
+      width: 48px;
+      height: auto;
+      border-radius: 4px;
+    }
 
-  .product-title {
-    font-weight: 600;
-    font-size: 13px;
-    margin: 0;
-    color: white;
-    font-family: monospace;
-  }
+    .product-title {
+      font-weight: 600;
+      font-size: 13px;
+      margin: 0;
+      color: white;
+      font-family: monospace;
+    }
 
-  .product-price {
-    font-size: 0.9rem;
-    margin: 0;
-    color: white;
-    font-family: monospace;
-  }
+    .product-price {
+      font-size: 0.9rem;
+      margin: 0;
+      color: white;
+      font-family: monospace;
+    }
 
-  .shop-button {
-    background-color: #086b92;
-    color: white;
-    padding: 0.4rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    .shop-button {
+      background-color: #086b92;
+      color: white;
+      padding: 0.4rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-  .shop-button:hover {
-    background-color: #055671;
-  }
+    .shop-button:hover {
+      background-color: #055671;
+    }
 
-  .product-title-new {
-    width: 200px;
+    .product-title-new {
+      width: 200px;
+    }
+  #video_open_popup .video_popup_grid video{
+        max-width: 600px;
   }
 </style>
 
