@@ -11,7 +11,7 @@
       {% if featured_product %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
           <img
-            data-src="{{ featured_product.featured_image | img_url: '480x' }}"
+            data-src="{{ featured_product.featured_image | img_url: 'master' }}"
             src="{{ featured_product.featured_image | img_url: '200x' }}"
             alt="{{ featured_product.title }}"
             width="100%"
