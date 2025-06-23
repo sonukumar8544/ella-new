@@ -186,36 +186,22 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("customVideo");
     const muteBtn = document.getElementById("muteToggle");
-    const muteIcon = document.getElementById("muteIcon");
-    const unmuteIcon = document.getElementById("unmuteIcon");
 
-    // Set initial state
     video.volume = 0.8;
     video.muted = true;
-    muteIcon.style.display = "block";
-    unmuteIcon.style.display = "none";
 
-    // Try to autoplay
     video.play().catch(err => {
       console.warn("Autoplay blocked:", err);
     });
 
     // Toggle mute/unmute on button click
     muteBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
+      e.stopPropagation(); // Prevent this click from reaching video
       video.muted = !video.muted;
-
-      if (video.muted) {
-        muteIcon.style.display = "block";
-        unmuteIcon.style.display = "none";
-      } else {
-        muteIcon.style.display = "none";
-        unmuteIcon.style.display = "block";
-      }
+      muteBtn.textContent = video.muted ? "Unmute" : "Mute";
     });
 
     // Toggle play/pause on video click
