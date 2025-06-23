@@ -179,7 +179,18 @@
               height="100%"
               class="video__poster lazyload"
             >
-
+            <video
+              id="customVideo"
+              class="mobile_view_video"
+              muted
+              loop
+              playsinline
+              controls
+              style="width: 100%; height: auto;"
+            >
+              <source src="{{ video.settings.video }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
             <svg
               id="youtube__icon_svg"
               xmlns="http://www.w3.org/2000/svg"
