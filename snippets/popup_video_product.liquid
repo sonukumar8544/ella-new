@@ -165,31 +165,49 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("customVideo");
-    const muteBtn = document.getElementById("muteToggle");
+   document.addEventListener("DOMContentLoaded", function () {
+    const videoWrappers = document.querySelectorAll(".video_popup_grid_inner");
 
-    video.volume = 0.8;
-    video.muted = true;
+    videoWrappers.forEach(wrapper => {
+      const video = wrapper.querySelector("video");
+      const muteBtn = wrapper.querySelector("#muteToggle");
 
-    video.play().catch(err => {
-      console.warn("Autoplay blocked:", err);
-    });
+      if (!video || !muteBtn) return;
 
-    // Toggle mute/unmute on button click
-    muteBtn.addEventListener("click", function (e) {
-      e.stopPropagation(); // Prevent this click from reaching video
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "Unmute" : "Mute";
-    });
+      video.volume = 0.8;
+      video.muted = true;
 
-    // Toggle play/pause on video click
-    video.addEventListener("click", function () {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
+      // Attempt autoplay
+      video.play().catch(err => {
+        console.warn("Autoplay blocked:", err);
+      });
+
+      // Toggle mute for only this video, mute others
+      muteBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Mute all other videos
+        document.querySelectorAll("video").forEach(v => {
+          if (v !== video) {
+            v.muted = true;
+            const btn = v.closest(".video_popup_grid_inner")?.querySelector("#muteToggle");
+            if (btn) btn.textContent = "Unmute";
+          }
+        });
+
+        // Toggle this video's mute state
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? "Unmute" : "Mute";
+      });
+
+      // Toggle play/pause on video click
+      video.addEventListener("click", function () {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
     });
   });
 </script>
