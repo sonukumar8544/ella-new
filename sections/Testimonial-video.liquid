@@ -135,21 +135,21 @@
 
   <div class="video-scroll-container">
     {% for video in section.blocks %}
-      {% if video.settings.video != blank %}
+      {% assign featured_product = video.settings.product %}
+      {% if video.settings.video_poster != blank %}
         <div class="video-card">
           <div class="video-wrapper">
             <img
-              data-src="{{ video.settings.video | img_url: '500x' }}"
-              src="{{ video.settings.video | img_url: '100x' }}"
+              data-src="{{ video.settings.video_poster | img_url: '500x' }}"
+              src="{{ video.settings.video_poster | img_url: '100x' }}"
               alt="{{ }}"
               width="100%"
               height="100%"
               class="video__poster lazyload"
             >
-            {% render 'popup_video_product', video: %}
+            {% render 'popup_video_product', video: video, featured_product: featured_product %}
           </div>
 
-          {% assign featured_product = video.settings.product %}
           {% if featured_product %}
             <div class="card-content" data-product-id="{{ featured_product.id }}">
               <img
