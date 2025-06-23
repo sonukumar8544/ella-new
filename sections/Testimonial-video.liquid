@@ -145,7 +145,7 @@
 
           {% assign featured_product = video.settings.product %}
           {% if video.settings.product != blank %}
-            <div class="card-content">
+            <div class="card-content" data-product-id="{{ featured_product.id }}">
               <img
                 data-src="{{ featured_product.featured_image | img_url: '70x' }}"
                 src="{{ featured_product.featured_image | img_url: '20x' }}"
