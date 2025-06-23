@@ -207,7 +207,10 @@
             </div>
           {% endif %}
           {% if featured_product1 %}
-            <div class="card-content cstm_tesimonail_video" data-product-id="{{ featured_product1.id }}">
+            <div
+              class="card-content cstm_tesimonail_video  {% if featured_product1 %}second_video_product{% endif %}"
+              data-product-id1="{{ featured_product1.id }}"
+            >
               <img
                 data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
                 src="{{ featured_product1.featured_image | img_url: '20x' }}"
