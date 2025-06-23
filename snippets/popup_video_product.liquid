@@ -10,19 +10,20 @@
     <div class="video_popup_grid">
       {% if featured_product %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
-          <img
-            class="product-img lazyload"
-            data-src="{{ featured_product.featured_image | img_url: 'master' }}"
-            src="{{ featured_product.featured_image | img_url: 'master' }}"
-            alt="{{ featured_product.title }}"
-            width="100%"
-            height="100%"
-            style="
-              width: auto;
-              height: auto;
-            "
-          >
-
+          <a href="{{ featured_product }}" title="{{ featured_product.title }}">
+            <img
+              class="product-img lazyload"
+              data-src="{{ featured_product.featured_image | img_url: 'master' }}"
+              src="{{ featured_product.featured_image | img_url: 'master' }}"
+              alt="{{ featured_product.title }}"
+              width="100%"
+              height="100%"
+              style="
+                width: auto;
+                height: auto;
+              "
+            >
+          </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product.title }}</p>
             <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
