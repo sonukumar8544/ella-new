@@ -1,92 +1,97 @@
 <!-- popup_video_product -->
 <style>
-  /* popup css */
-   #video_{{ section.id }} .video_popup_init .card-content{
-  padding: 8px 8px 20px 8px;
-  border: 1px solid #c1c1c1;
-  }
-  #video_{{ section.id }} button#closed_popup_btn svg {
-  fill: #fff;
-  }
-  #video_{{ section.id }} button#closed_popup_btn {
-  border-radius: 50%;
-  position: absolute;
-  right: -12px;
-  top: -9px;
-  background: #000;
+    /* popup css */
+     #video_{{ section.id }} .video_popup_init .card-content{
+    padding: 8px 8px 20px 8px;
+    border: 1px solid #c1c1c1;
+    }
+    #video_{{ section.id }} button#closed_popup_btn svg {
+    fill: #fff;
+    }
+    #video_{{ section.id }} button#closed_popup_btn {
+    border-radius: 50%;
+    position: absolute;
+    right: -12px;
+    top: -9px;
+    background: #000;
+    }
+
+    #video_{{ section.id }} .video_popup_init {
+    display:none;
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    backdrop-filter: blur(15px);
+    background: #19191982;
+    }
+    #video_{{ section.id }} .video_popup_init .video_popup_grid {
+    width: 50%;
+    }
+    #video_{{ section.id }} .video_popup_init .video_popup {
+    width: 600px;
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    }
+    #video_{{ section.id }} .video_popup_init .product-title-new {
+    width: auto;
+    text-align:center;
+    }
+  #video_{{ section.id }} .video_popup_init .video_popup_grid.popup_second_product {
+      height: 474px !important;
+      overflow: overlay;
   }
 
-  #video_{{ section.id }} .video_popup_init {
-  display:none;
-  position: fixed;
-  z-index: 999999;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left:0;
-  backdrop-filter: blur(15px);
-  background: #19191982;
-  }
-  #video_{{ section.id }} .video_popup_init .video_popup_grid {
-  width: 50%;
-  }
-  #video_{{ section.id }} .video_popup_init .video_popup {
-  width: 600px;
-  background: #fff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 12px;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 15px;
-  }
-  #video_{{ section.id }} .video_popup_init .product-title-new {
-  width: auto;
-  text-align:center;
-  }
-  #video_{{ section.id }} .video_popup_init .video_popup_grid a img {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  }
-  #video_{{ section.id }} .video_popup_init .product-title-new .product-title {
-  color: #086b92;
-  margin-top: 15px;
-  line-height: 1.5;
-  font-size: 16px;
-  margin-bottom: 8px;
-  }
-  #video_{{ section.id }} .video_popup_init .product-title-new .product-price {
-  font-size: 15px;
-  margin: 0;
-  color: rgb(233, 81, 68);
-  font-weight: bold;
-  margin-bottom: 10px;
-  letter-spacing: 1.2px;
-  }
-  #video_{{ section.id }} .video_popup_init .card-content .shop-button {
-  font-size: 14px;
-  border: 2px solid #086b92;
-  background-color: #086b92;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  text-transform: uppercase;
-  width: -webkit-fill-available;
-  }
-  #video_{{ section.id }} .video_popup_init .card-content .shop-button:hover {
-  background: transparent;
-  border: 2px solid #086b92;
-  color: #086b92;
-  font-weight: bold;
-  }
+    #video_{{ section.id }} .video_popup_init .video_popup_grid a img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    }
+    #video_{{ section.id }} .video_popup_init .product-title-new .product-title {
+    color: #086b92;
+    margin-top: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 8px;
+    }
+    #video_{{ section.id }} .video_popup_init .product-title-new .product-price {
+    font-size: 15px;
+    margin: 0;
+    color: rgb(233, 81, 68);
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    }
+    #video_{{ section.id }} .video_popup_init .card-content .shop-button {
+    font-size: 14px;
+    border: 2px solid #086b92;
+    background-color: #086b92;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: -webkit-fill-available;
+    }
+    #video_{{ section.id }} .video_popup_init .card-content .shop-button:hover {
+    background: transparent;
+    border: 2px solid #086b92;
+    color: #086b92;
+    font-weight: bold;
+    }
 </style>
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
