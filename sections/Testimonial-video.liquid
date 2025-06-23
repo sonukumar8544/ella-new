@@ -188,7 +188,7 @@
             </svg>
           </div>
 
-          {% if featured_product %}
+          {% if video.settings.product != blank %}
             <div class="card-content cstm_tesimonail_video" data-product-id="{{ featured_product.id }}">
               <img
                 data-src="{{ featured_product.featured_image | img_url: 'small' }}"
@@ -198,7 +198,6 @@
                 height="100%"
                 class="product-img lazyload"
               >
-
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
                 <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
@@ -206,7 +205,7 @@
               </div>
             </div>
           {% endif %}
-          {% if featured_product1 %}
+          {% if video.settings.product1 != blank %}
             <div
               class="card-content cstm_tesimonail_video  {% if featured_product1 %}second_video_product{% endif %}"
               data-product-id1="{{ featured_product1.id }}"
