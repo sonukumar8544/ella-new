@@ -121,11 +121,15 @@
 </style>
 
 <section class="video-section">
-  {% if section.settings.title != blank %}
-    <h2 class="section-heading">{{ section.settings.title }}</h2>
-  {% endif %}
+  {%- if section.settings.title != blank -%}
+    <h3 class="title">
+      <span class="text">{{ section.settings.title }}</span>
+    </h3>
+  {%- endif -%}
   {% if section.settings.description != blank %}
-    <p class="section-subheading">{{ section.settings.description }}</p>
+    <div class="rte subtext-brand w-100 text-center">
+      <p>{{ section.settings.description }}</p>
+    </div>
   {% endif %}
 
   <div class="video-scroll-container">
