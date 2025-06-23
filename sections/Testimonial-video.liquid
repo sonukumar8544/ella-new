@@ -156,7 +156,7 @@
       {% assign featured_product = video.settings.product %}
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
-          <div class="video-wrapper">
+          <div class="video-wrapper" data-modal="modal-{{ block.id }}">
             <!-- <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}"> -->
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
@@ -195,21 +195,22 @@
 </section>
 <script>
   $(document).ready(function () {
-    // Open the popup on clicking poster image
-    $('body').on('click', '.video__poster', function () {
-      $('#video_open_popup').fadeIn(); // or use .addClass('show')
+    // Open matching popup
+    $('body').on('click', '.video-wrapper', function () {
+      var modalId = $(this).data('modal');
+      $('#' + modalId).fadeIn();
     });
 
-    // Close the popup on clicking close button
-    $('body').on('click', '#closed_popup_btn', function (e) {
-      e.stopPropagation(); // Prevent from bubbling up
-      $('#video_open_popup').fadeOut(); // or use .removeClass('show')
+    // Close popup when clicking the close button
+    $('body').on('click', '.video_popup_init .halo-sidebar-close', function (e) {
+      e.stopPropagation();
+      $(this).closest('.video_popup_init').fadeOut();
     });
 
-    // Close popup if clicking anywhere outside .video_popup
-    $('body').on('click', '#video_open_popup', function (e) {
+    // Close popup when clicking outside the popup box
+    $('body').on('click', '.video_popup_init', function (e) {
       if (!$(e.target).closest('.video_popup').length) {
-        $('#video_open_popup').fadeOut(); // or use .removeClass('show')
+        $(this).fadeOut();
       }
     });
   });
