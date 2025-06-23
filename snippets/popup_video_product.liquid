@@ -1,5 +1,5 @@
 <!-- popup_video_product -->
-<div class="video_popup_init" id="video_open_popup" id="modal-{{ video.id }}">
+<div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
       type="button"
@@ -49,7 +49,7 @@
 </div>
 
 <style>
-  #video_{{ section.id }} #video_open_popup .card-content{
+  #video_{{ section.id }} .video_popup_init .card-content{
   padding: 8px 8px 20px 8px;
   border: 1px solid #c1c1c1;
   }
@@ -64,7 +64,7 @@
   background: #000;
   }
 
-  #video_{{ section.id }} #video_open_popup {
+  #video_{{ section.id }} .video_popup_init {
   display:none;
   position: fixed;
   z-index: 999999;
@@ -75,10 +75,10 @@
   backdrop-filter: blur(15px);
   background: #19191982;
   }
-  div#video_open_popup .video_popup_grid {
+  div.video_popup_init .video_popup_grid {
   width: 50%;
   }
-  div#video_open_popup .video_popup {
+  div.video_popup_init .video_popup {
   width: 600px;
   background: #fff;
   margin: auto;
@@ -93,22 +93,22 @@
   justify-content: center;
   gap: 15px;
   }
-  div#video_open_popup .product-title-new {
+  div.video_popup_init .product-title-new {
   width: auto;
   text-align:center;
   }
-  #video_open_popup .video_popup_grid a img {
+  .video_popup_init .video_popup_grid a img {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   }
-  div#video_open_popup .product-title-new .product-title {
+  div.video_popup_init .product-title-new .product-title {
   color: #086b92;
   margin-top: 15px;
   line-height: 1.5;
   font-size: 16px;
   margin-bottom: 8px;
   }
-  div#video_open_popup .product-title-new .product-price {
+  div.video_popup_init .product-title-new .product-price {
   font-size: 15px;
   margin: 0;
   color: rgb(233, 81, 68);
@@ -116,7 +116,7 @@
   margin-bottom: 10px;
   letter-spacing: 1.2px;
   }
-  div#video_open_popup .card-content .shop-button {
+  div.video_popup_init .card-content .shop-button {
   font-size: 14px;
   border: 2px solid #086b92;
   background-color: #086b92;
@@ -129,7 +129,7 @@
   text-transform: uppercase;
   width: -webkit-fill-available;
   }
-  div#video_open_popup .card-content .shop-button:hover {
+  div.video_popup_init .card-content .shop-button:hover {
   background: transparent;
   border: 2px solid #086b92;
   color: #086b92;
