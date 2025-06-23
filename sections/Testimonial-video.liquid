@@ -138,13 +138,13 @@
         <div class="video-card">
           <div class="video-wrapper">
             <video muted playsinline loop autoplay style="width: 100%; height: auto;">
-              <source src="{{ block.settings.video | video_tag_url }}" type="video/mp4">
+              <source src="{{ video.settings.video | video_tag_url }}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
 
-          {% assign featured_product = section.settings.product %}
-          {% if section.settings.product != blank %}
+          {% assign featured_product = video.settings.product %}
+          {% if video.settings.product != blank %}
             <div class="card-content">
               <img
                 data-src="{{ featured_product.featured_image | img_url: '70x' }}"
@@ -158,8 +158,8 @@
               >
 
               <div class="product-title-new">
-                <p class="product-title">Sample Title</p>
-                <p class="product-price">Rs. 1,600.00</p>
+                <p class="product-title">{{ featured_product.title }}</p>
+                <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
               </div>
 
               <button class="shop-button">Add Product</button>
