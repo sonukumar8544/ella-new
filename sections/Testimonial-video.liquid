@@ -155,7 +155,7 @@
           </div>
 
           {% if featured_product %}
-            <div class="card-content" data-product-id="{{ featured_product.id }}">
+            <div class="card-content cstm_tesimonail_video" data-product-id="{{ featured_product.id }}">
               <img
                 data-src="{{ featured_product.featured_image | img_url: '70x' }}"
                 src="{{ featured_product.featured_image | img_url: '20x' }}"
@@ -168,9 +168,8 @@
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product.title }}</p>
                 <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
+                <button class="shop-button">Add Product</button>
               </div>
-
-              <button class="shop-button">Add Product</button>
             </div>
           {% endif %}
         </div>
