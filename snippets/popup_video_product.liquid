@@ -1,8 +1,6 @@
 <!-- popup_video_product -->
-<!-- popup_video_product -->
 <div class="video_popup_init" id="video_open_popup">
   <div class="video_popup">
-    <!-- Close Button -->
     <button
       type="button"
       id="closed_popup_btn"
@@ -16,17 +14,15 @@
     </button>
 
     <div class="video_popup_grid">
-      <!-- Autoplay and Unmuted Video -->
       <video autoplay loop playsinline controls style="width: 100%; height: auto;">
         <source src="{{ video.settings.video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-
     <div class="video_popup_grid">
       {% if featured_product %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
-          <a href="{{ featured_product.url }}" title="{{ featured_product.title }}">
+          <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
               data-src="{{ featured_product.featured_image | img_url: '500x' }}"
@@ -34,13 +30,17 @@
               alt="{{ featured_product.title }}"
               width="100%"
               height="100%"
-              style="width: auto; height: auto;"
+              style="
+                width: auto;
+                height: auto;
+              "
             >
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product.title }}</p>
             <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
           </div>
+
           <button class="shop-button">Add To Cart</button>
         </div>
       {% endif %}
