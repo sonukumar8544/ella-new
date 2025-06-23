@@ -10,7 +10,7 @@
     <div class="video_popup_grid">
       {% if featured_product %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
-          <a href="{{ featured_product }}" title="{{ featured_product.title }}">
+          <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
               data-src="{{ featured_product.featured_image | img_url: '500x' }}"
