@@ -3052,15 +3052,34 @@
         "product_card_48Ljjj": {
           "type": "product_card",
           "settings": {
-            "video": "",
-            "product": ""
+            "video_poster": "shopify://shop_images/poster3.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1109fe412304e3cbad683c513b09120.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g"
+          }
+        },
+        "product_card_KWymqB": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster4.png",
+            "video": "https://bovine-colostrum-for-men.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g"
+          }
+        },
+        "product_card_GqzXGf": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster5.png",
+            "video": "https://cell-detox-supplement.mp4",
+            "product": "cell-dtox-dietary-supplement"
           }
         }
       },
       "block_order": [
         "product_card_jmkhrW",
         "product_card_8P9xpY",
-        "product_card_48Ljjj"
+        "product_card_48Ljjj",
+        "product_card_KWymqB",
+        "product_card_GqzXGf"
       ],
       "name": "Testimonial Video | App",
       "settings": {
