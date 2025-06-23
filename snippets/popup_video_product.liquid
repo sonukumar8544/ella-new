@@ -118,7 +118,7 @@
         </video>
       </div>
     </div>
-    <div class="video_popup_grid">
+    <div class="video_popup_grid {% if video.settings.product1 != blank %}popup_second_product{% endif %}">
       {% if video.settings.product != blank %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
           <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
