@@ -148,7 +148,7 @@
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
           <div class="video-wrapper">
-            <a href="{{ featured_product }}" title="{{ featured_product.title }}">
+            <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
               <img
                 data-src="{{ video.settings.video_poster | img_url: '500x' }}"
                 src="{{ video.settings.video_poster | img_url: '100x' }}"
