@@ -148,14 +148,16 @@
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
           <div class="video-wrapper">
-            <img
-              data-src="{{ video.settings.video_poster | img_url: '500x' }}"
-              src="{{ video.settings.video_poster | img_url: '100x' }}"
-              alt="{{ }}"
-              width="100%"
-              height="100%"
-              class="video__poster lazyload"
-            >
+            <a href="{{ featured_product }}" title="{{ featured_product.title }}">
+              <img
+                data-src="{{ video.settings.video_poster | img_url: '500x' }}"
+                src="{{ video.settings.video_poster | img_url: '100x' }}"
+                alt="{{ }}"
+                width="100%"
+                height="100%"
+                class="video__poster lazyload"
+              >
+            </a>
           </div>
 
           {% if featured_product %}
