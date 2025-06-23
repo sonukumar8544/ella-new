@@ -156,7 +156,7 @@
       {% assign featured_product = video.settings.product %}
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
-          <div class="video-wrapper" data-modal="modal-{{ block.id }}">
+          <div class="video-wrapper" data-modal="modal-{{ video.id }}">
             <!-- <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}"> -->
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
