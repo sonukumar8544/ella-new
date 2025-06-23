@@ -147,7 +147,6 @@
               height="100%"
               class="video__poster lazyload"
             >
-            {% render 'popup_video_product', video: video, featured_product: video.settings.product %}
           </div>
 
           {% if featured_product %}
@@ -170,6 +169,7 @@
             </div>
           {% endif %}
         </div>
+        {% render 'popup_video_product', video: video, featured_product: video.settings.product %}
       {% endif %}
     {% endfor %}
   </div>
