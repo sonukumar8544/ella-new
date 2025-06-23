@@ -143,18 +143,9 @@
           </div>
 
           <div class="card-content">
-            <!-- Product info could be rendered dynamically -->
-            <!-- <img src="..." class="product-img" alt=""> -->
-            <!--
-              <div class="product-title-new">
-                <p class="product-title">Sample Title</p>
-                <p class="product-price">Rs. 1,600.00</p>
-              </div>
-            -->
-            <button class="shop-button">Add Product</button>
+            {% assign featured_product = section.settings.product %}
+            {% render 'popup_video_product', product: featured_product %}
           </div>
-
-          {% render 'popup_video_product', product: product %}
         </div>
       {% endif %}
     {% endfor %}
@@ -190,6 +181,11 @@
         {
           "type": "header",
           "content": "Product Details"
+        },
+        {
+          "type": "url",
+          "id": "product",
+          "label": "Product"
         },
         {
           "type": "text",

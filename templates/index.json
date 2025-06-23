@@ -3032,6 +3032,50 @@
     },
     "testimonial_video_iqLUje": {
       "type": "Testimonial-video",
+      "blocks": {
+        "product_card_jmkhrW": {
+          "type": "product_card",
+          "settings": {
+            "video": "shopify://files/videos/oliviacoxlondon_apr07.mp4",
+            "swatch": "Color",
+            "show_swatch": true,
+            "disable_product_card_border": false,
+            "enable_custom_layout_card": false,
+            "enable_custom_position_swatch_layout_card_1": false,
+            "show_action": false,
+            "product_title_line_text": "full"
+          }
+        },
+        "product_card_8P9xpY": {
+          "type": "product_card",
+          "settings": {
+            "swatch": "Color",
+            "show_swatch": true,
+            "disable_product_card_border": false,
+            "enable_custom_layout_card": false,
+            "enable_custom_position_swatch_layout_card_1": false,
+            "show_action": true,
+            "product_title_line_text": "full"
+          }
+        },
+        "product_card_48Ljjj": {
+          "type": "product_card",
+          "settings": {
+            "swatch": "Color",
+            "show_swatch": true,
+            "disable_product_card_border": false,
+            "enable_custom_layout_card": false,
+            "enable_custom_position_swatch_layout_card_1": false,
+            "show_action": true,
+            "product_title_line_text": "full"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_jmkhrW",
+        "product_card_8P9xpY",
+        "product_card_48Ljjj"
+      ],
       "name": "Testimonial Video | App",
       "settings": {
         "title": "Voices of Satisfaction",
