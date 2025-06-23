@@ -117,7 +117,7 @@
         </video>
         <!-- Mute/Unmute Button -->
         <button
-          id="muteToggle"
+          class="muteToggle"
           style="
             position: absolute;
             bottom: 15px;
@@ -165,42 +165,40 @@
 </div>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    const videoWrappers = document.querySelectorAll(".video_popup_grid_inner");
+  document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll(".customVideo");
 
-    videoWrappers.forEach(wrapper => {
-      const video = wrapper.querySelector("video");
-      const muteBtn = wrapper.querySelector("#muteToggle");
-
-      if (!video || !muteBtn) return;
-
+    videos.forEach((video) => {
       video.volume = 0.8;
       video.muted = true;
 
       // Attempt autoplay
-      video.play().catch(err => {
+      video.play().catch((err) => {
         console.warn("Autoplay blocked:", err);
       });
 
-      // Toggle mute for only this video, mute others
+      const wrapper = video.closest(".video_popup_grid_inner");
+      const muteBtn = wrapper.querySelector(".muteToggle");
+
+      // Button click to toggle mute
       muteBtn.addEventListener("click", function (e) {
         e.stopPropagation();
 
         // Mute all other videos
-        document.querySelectorAll("video").forEach(v => {
+        videos.forEach((v) => {
           if (v !== video) {
             v.muted = true;
-            const btn = v.closest(".video_popup_grid_inner")?.querySelector("#muteToggle");
-            if (btn) btn.textContent = "Unmute";
+            const otherBtn = v.closest(".video_popup_grid_inner")?.querySelector(".muteToggle");
+            if (otherBtn) otherBtn.textContent = "Unmute";
           }
         });
 
-        // Toggle this video's mute state
+        // Toggle this video
         video.muted = !video.muted;
         muteBtn.textContent = video.muted ? "Unmute" : "Mute";
       });
 
-      // Toggle play/pause on video click
+      // Click video to pause/play
       video.addEventListener("click", function () {
         if (video.paused) {
           video.play();
