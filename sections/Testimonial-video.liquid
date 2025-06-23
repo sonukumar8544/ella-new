@@ -195,13 +195,13 @@
 </section>
 <script>
   $(document).ready(function() {
-    // Open popup when image is clicked
+    // OPEN POPUP on image click
     $('body').on('click', '.video-section .cstm_tesimonail_video img.video__poster', function() {
       $('.video_popup_init').addClass('show');
     });
 
-    // Close popup when close button is clicked
-    $('body').on('click', '.video_popup_init button#closed_popup_btn', function() {
+    // CLOSE POPUP on close button click
+    $('body').on('click', '.video_popup_init #closed_popup_btn', function() {
       $('.video_popup_init').removeClass('show');
     });
   });
