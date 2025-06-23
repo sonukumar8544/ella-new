@@ -8,11 +8,11 @@
       </video>
     </div>
     <div class="video_popup_grid">
-      <!-- data-src="{{ featured_product.featured_image | img_url: 'master' }}" -->
       {% if featured_product %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
           <img
             class="product-img lazyload"
+            data-src="{{ featured_product.featured_image | img_url: 'master' }}"
             src="{{ featured_product.featured_image | img_url: 'master' }}"
             alt="{{ featured_product.title }}"
             width="100%"
