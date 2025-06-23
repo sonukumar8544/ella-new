@@ -110,6 +110,7 @@
           muted
           loop
           playsinline
+          controls
           style="width: 100%; height: auto;"
         >
           <source src="{{ video.settings.video }}" type="video/mp4">
@@ -164,48 +165,50 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const videos = document.querySelectorAll(".customVideo");
+<!--
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const videos = document.querySelectorAll(".customVideo");
 
-    videos.forEach((video) => {
-      video.volume = 0.8;
-      video.muted = true;
+      videos.forEach((video) => {
+        video.volume = 0.8;
+        video.muted = true;
 
-      // Attempt autoplay
-      video.play().catch((err) => {
-        console.warn("Autoplay blocked:", err);
-      });
-
-      const wrapper = video.closest(".video_popup_grid_inner");
-      const muteBtn = wrapper.querySelector(".muteToggle");
-
-      // Button click to toggle mute
-      muteBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-
-        // Mute all other videos
-        videos.forEach((v) => {
-          if (v !== video) {
-            v.muted = true;
-            const otherBtn = v.closest(".video_popup_grid_inner")?.querySelector(".muteToggle");
-            if (otherBtn) otherBtn.textContent = "Unmute";
-          }
+        // Attempt autoplay
+        video.play().catch((err) => {
+          console.warn("Autoplay blocked:", err);
         });
 
-        // Toggle this video
-        video.muted = !video.muted;
-        muteBtn.textContent = video.muted ? "Unmute" : "Mute";
-      });
+        const wrapper = video.closest(".video_popup_grid_inner");
+        const muteBtn = wrapper.querySelector(".muteToggle");
 
-      // Click video to pause/play
-      video.addEventListener("click", function () {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
+        // Button click to toggle mute
+        muteBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+
+          // Mute all other videos
+          videos.forEach((v) => {
+            if (v !== video) {
+              v.muted = true;
+              const otherBtn = v.closest(".video_popup_grid_inner")?.querySelector(".muteToggle");
+              if (otherBtn) otherBtn.textContent = "Unmute";
+            }
+          });
+
+          // Toggle this video
+          video.muted = !video.muted;
+          muteBtn.textContent = video.muted ? "Unmute" : "Mute";
+        });
+
+        // Click video to pause/play
+        video.addEventListener("click", function () {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
+-->
