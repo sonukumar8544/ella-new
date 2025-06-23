@@ -142,10 +142,28 @@
             </video>
           </div>
 
-          <div class="card-content">
-            {% assign featured_product = section.settings.product %}
-            {% render 'popup_video_product', product: featured_product %}
-          </div>
+          {% assign featured_product = section.settings.product %}
+          {% if section.settings.product != blank %}
+            <div class="card-content">
+              <img
+                data-src="{{ featured_product.featured_image | img_url: '70x' }}"
+                src="{{ featured_product.featured_image | img_url: '20x' }}"
+                alt="{{featured_product.title  }}"
+                title=""
+                width="50px"
+                height="50px"
+                class="product-img lazyload"
+                alt=""
+              >
+
+              <div class="product-title-new">
+                <p class="product-title">Sample Title</p>
+                <p class="product-price">Rs. 1,600.00</p>
+              </div>
+
+              <button class="shop-button">Add Product</button>
+            </div>
+          {% endif %}
         </div>
       {% endif %}
     {% endfor %}
