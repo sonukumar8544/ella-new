@@ -121,11 +121,12 @@
 </style>
 
 <section class="video-section" id="video_{{ section.id }}">
-  {%- if section.settings.title != blank -%}
+  {% if section.settings.title != blank %}
     <h3 class="title">
       <span class="text">{{ section.settings.title }}</span>
     </h3>
-  {%- endif -%}
+  {% endif %}
+
   {% if section.settings.description != blank %}
     <div class="rte subtext-brand w-100 text-center">
       <p>{{ section.settings.description }}</p>
@@ -138,23 +139,21 @@
         <div class="video-card">
           <div class="video-wrapper">
             <video muted playsinline loop autoplay style="width: 100%; height: auto;">
-              <source src="{{ video.settings.video | video_tag_url }}" type="video/mp4">
+              <source src="{{ video.settings.video }}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
 
           {% assign featured_product = video.settings.product %}
-          {% if video.settings.product != blank %}
+          {% if featured_product %}
             <div class="card-content" data-product-id="{{ featured_product.id }}">
               <img
                 data-src="{{ featured_product.featured_image | img_url: '70x' }}"
                 src="{{ featured_product.featured_image | img_url: '20x' }}"
-                alt="{{featured_product.title  }}"
-                title=""
+                alt="{{ featured_product.title }}"
                 width="50px"
                 height="50px"
                 class="product-img lazyload"
-                alt=""
               >
 
               <div class="product-title-new">
@@ -193,70 +192,14 @@
       "name": "Custom Product Card",
       "settings": [
         {
-          "type": "video",
-          "id": "video",
-          "label": "Video"
-        },
-        {
-          "type": "header",
-          "content": "Product Details"
-        },
-        {
           "type": "url",
+          "id": "video",
+          "label": "Video URL"
+        },
+        {
+          "type": "product",
           "id": "product",
           "label": "Product"
-        },
-        {
-          "type": "text",
-          "id": "swatch",
-          "label": "Swatch Option Name",
-          "default": "Color"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_swatch",
-          "label": "Show Swatch",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "disable_product_card_border",
-          "label": "Disable Product Card Border",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_custom_layout_card",
-          "label": "Enable Custom Layout Card",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "enable_custom_position_swatch_layout_card_1",
-          "label": "Enable Custom Swatch Position",
-          "default": false
-        },
-        {
-          "type": "checkbox",
-          "id": "show_action",
-          "label": "Show Add to Cart Button",
-          "default": true
-        },
-        {
-          "type": "select",
-          "id": "product_title_line_text",
-          "label": "Product Title Line Display",
-          "default": "full",
-          "options": [
-            {
-              "value": "full",
-              "label": "Full"
-            },
-            {
-              "value": "ellipsis",
-              "label": "Truncate with Ellipsis"
-            }
-          ]
         }
       ]
     }
