@@ -1,176 +1,251 @@
 <style>
   .video-section {
-      padding: 3rem 1.5rem;
-      background-color: white;
+    padding: 3rem 1.5rem;
+    background-color: white;
   }
 
   .section-heading {
-      text-align: center;
-      font-size: 2rem;
-      font-style: italic;
-      font-weight: 300;
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
   }
 
   .section-heading .font-semibold {
-      font-weight: 600;
+    font-weight: 600;
   }
 
   .section-subheading {
-      text-align: center;
-      color: #4B5563;
-      margin: 0.5rem 0 2rem;
+    text-align: center;
+    color: #4B5563;
+    margin: 0.5rem 0 2rem;
   }
 
   .video-scroll-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      scroll-snap-type: x mandatory;
-  }
-
-  .video-card {
-      flex: 0 0 300px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s;
-      position: relative;
-  }
-
-  .video-card:hover {
-      transform: translateY(-4px);
-  }
-
-  .video-wrapper {
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-  }
-
-  .video-wrapper video {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-  }
-
-  .card-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.8rem;
-      display: flex;
-      align-items: flex-start;
-      backdrop-filter: blur(5px);
-      margin: 5px;
-      border-radius: 10px;
-      background: #ffffff5c;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .product-img {
-      width: 48px;
-      height: auto;
-      border-radius: 4px;
-  }
-
-  .product-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0px;
-      margin: 0px;
-      font-size: 13px;
-      font-family: 'Lato';
-      color: white;
-      font-family: monospace;
-  }
-
-  .product-price {
-      font-size: 0.9rem;
-      padding: 0px;
-      margin: 0px;
-      color: white;
-      font-family: monospace;
-  }
-
-  .shop-button {
-      background-color: #086b92;
-      color: white;
-      padding: 0.4rem 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
-  }
-
-  .shop-button:hover {
-      background-color: #086b92;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .video-scroll-container::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
 
-  .video-scroll-container {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+  .video-card {
+    flex: 0 0 300px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    position: relative;
+  }
+
+  .video-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .video-wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(5px);
+    background: #ffffff5c;
+    margin: 5px;
+    border-radius: 10px;
+  }
+
+  .product-img {
+    width: 48px;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .product-title {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+    color: white;
+    font-family: monospace;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+    margin: 0;
+    color: white;
+    font-family: monospace;
+  }
+
+  .shop-button {
+    background-color: #086b92;
+    color: white;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .shop-button:hover {
+    background-color: #055671;
   }
 
   .product-title-new {
-      width: 200px;
+    width: 200px;
   }
 </style>
 
 <section class="video-section">
-  <h2 class="section-heading">
-    Our <span class="font-semibold">community</span>, our <span class="font-semibold">everything</span>.
-  </h2>
-  <p class="section-subheading">"The first two ingredients are always care + science." - Jessica Sepel, Founder</p>
+  {% if section.settings.title != blank %}
+    <h2 class="section-heading">{{ section.settings.title }}</h2>
+  {% endif %}
+  {% if section.settings.description != blank %}
+    <p class="section-subheading">{{ section.settings.description }}</p>
+  {% endif %}
+
   <div class="video-scroll-container">
     {% for video in section.blocks %}
-      {% assign testimonial = video.settings %}
-      <div class="video-card">
-        <div class="video-wrapper">
-          <video muted playsinline loop autoplay>
-            <source
-              src="{{ testimonial.videourl }}"
-              type="video/mp4"
-            >
-          </video>
-        </div>
+      {% if video.settings.video != blank %}
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video muted playsinline loop autoplay>
+              <source src="{{ video.settings.video }}" type="video/mp4">
+            </video>
+          </div>
 
-        <div class="card-content">
-          {% comment %}
-            <div class="product-image">
-                  <img data-src="{{ testimonial.posterimage | img_url:'master' }}" src="{{ testimonial.posterimage | img_url:'100x' }}" title="" alt="" loading="lazy" width="100%" height="100%"
-                    class="product-img lazyload" />
-            </div>
-
-            <div class="product-title-new">
-                <p class="product-title"></p>
+          <div class="card-content">
+            <!-- Product info could be rendered dynamically -->
+            <!-- <img src="..." class="product-img" alt=""> -->
+            <!--
+              <div class="product-title-new">
+                <p class="product-title">Sample Title</p>
                 <p class="product-price">Rs. 1,600.00</p>
-                <button class="shop-button">Add Product</button>
-            </div>
-          {% endcomment %}
-        </div>
+              </div>
+            -->
+            <button class="shop-button">Add Product</button>
+          </div>
 
-        {% render 'popup_video_product', product: product %}
-      </div>
+          {% render 'popup_video_product', product: product %}
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Section name",
-  "settings": []
+  "name": "Video Product Cards",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Voices of Satisfaction"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Custom Product Card",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "header",
+          "content": "Product Details"
+        },
+        {
+          "type": "text",
+          "id": "swatch",
+          "label": "Swatch Option Name",
+          "default": "Color"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_swatch",
+          "label": "Show Swatch",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_product_card_border",
+          "label": "Disable Product Card Border",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_custom_layout_card",
+          "label": "Enable Custom Layout Card",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_custom_position_swatch_layout_card_1",
+          "label": "Enable Custom Swatch Position",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_action",
+          "label": "Show Add to Cart Button",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "product_title_line_text",
+          "label": "Product Title Line Display",
+          "default": "full",
+          "options": [
+            {
+              "value": "full",
+              "label": "Full"
+            },
+            {
+              "value": "ellipsis",
+              "label": "Truncate with Ellipsis"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Video | App"
+    }
+  ]
 }
 {% endschema %}
