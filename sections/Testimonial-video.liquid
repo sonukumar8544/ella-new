@@ -138,7 +138,7 @@
         <div class="video-card">
           <div class="video-wrapper">
             <video muted playsinline loop autoplay>
-              <source src="{{ video.settings.video }}" type="video/mp4">
+              <source src="{{ video.settings.video | video_tag_url }}" type="video/mp4">
             </video>
           </div>
 
