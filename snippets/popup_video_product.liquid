@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="video_popup_grid">
-      {% if video.settings.product %}
+      {% if video.settings.product != blank %}
         <div class="card-content" data-product-id="{{ featured_product.id }}">
           <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
             <img
@@ -143,7 +143,7 @@
           <button class="shop-button">Add To Cart</button>
         </div>
       {% endif %}
-      {% if video.settings.product1 %}
+      {% if video.settings.product1 != blank %}
         <div class="card-content" data-product-id="{{ featured_product1.id }}">
           <a href="/products/{{ featured_product1 }}" title="{{ featured_product1.title }}">
             <img
