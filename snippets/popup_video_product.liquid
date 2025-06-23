@@ -1,6 +1,6 @@
 <!-- popup_video_product -->
 <!-- popup_video_product -->
-<div class="video_popup_init" id="modal-{{ video.id }}">
+<div class="video_popup_init popup_{{ video.id }}" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
       type="button"
@@ -47,7 +47,7 @@
 
 <style>
   /* Container Styling */
-  #modal-{{ video.id }} {
+  .popup_{{ video.id }} {
     display: none;
     position: fixed;
     z-index: 999999;
@@ -60,7 +60,7 @@
   }
 
   /* Popup Box */
-  #modal-{{ video.id }} .video_popup {
+  .popup_{{ video.id }} .video_popup {
     width: 600px;
     background: #fff;
     margin: auto;
@@ -77,12 +77,12 @@
   }
 
   /* Grid Columns */
-  #modal-{{ video.id }} .video_popup_grid {
+  .popup_{{ video.id }} .video_popup_grid {
     width: 50%;
   }
 
   /* Close Button */
-  #modal-{{ video.id }} .halo-sidebar-close {
+  .popup_{{ video.id }} .halo-sidebar-close {
     border-radius: 50%;
     position: absolute;
     right: -12px;
@@ -90,28 +90,28 @@
     background: #000;
   }
 
-  #modal-{{ video.id }} .halo-sidebar-close svg {
+  .popup_{{ video.id }} .halo-sidebar-close svg {
     fill: #fff;
   }
 
   /* Product Styling */
-  #modal-{{ video.id }} .card-content {
+  .popup_{{ video.id }} .card-content {
     padding: 8px 8px 20px 8px;
     border: 1px solid #c1c1c1;
   }
 
-  #modal-{{ video.id }} .product-title-new {
+  .popup_{{ video.id }} .product-title-new {
     text-align: center;
   }
 
-  #modal-{{ video.id }} .product-title-new .product-title {
+  .popup_{{ video.id }} .product-title-new .product-title {
     color: #086b92;
     margin: 15px 0 8px;
     font-size: 16px;
     line-height: 1.5;
   }
 
-  #modal-{{ video.id }} .product-title-new .product-price {
+  .popup_{{ video.id }} .product-title-new .product-price {
     font-size: 15px;
     color: rgb(233, 81, 68);
     font-weight: bold;
@@ -119,7 +119,7 @@
     letter-spacing: 1.2px;
   }
 
-  #modal-{{ video.id }} .shop-button {
+  .popup_{{ video.id }} .shop-button {
     font-size: 14px;
     background-color: #086b92;
     color: white;
@@ -132,7 +132,7 @@
     width: 100%;
   }
 
-  #modal-{{ video.id }} .shop-button:hover {
+  .popup_{{ video.id }} .shop-button:hover {
     background: transparent;
     border: 2px solid #086b92;
     color: #086b92;
