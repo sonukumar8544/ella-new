@@ -1,5 +1,5 @@
 <!-- popup_video_product -->
-{% assign popupvideo = metaobject.video_url.value %}
+{% assign popupvideo = metaobject.video_link.value %}
 {% assign featured_product = metaobject.video_product_1.value %}
 {% assign featured_product1 = metaobject.video_product_2.value %}
 {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
