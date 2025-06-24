@@ -210,12 +210,15 @@
               muted
               loop
               playsinline
-              controls
-              style="width: 100%; height: auto;"
+              style="width: 100%; height: auto; cursor: pointer;"
             >
               <source src="{{ video.settings.video }}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+
+            <!-- Mute/Unmute Button -->
+            <button id="muteToggle" style="position: absolute; top: 10px; right: 10px; z-index: 10;">🔇</button>
+
             <svg
               id="youtube__icon_svg"
               xmlns="http://www.w3.org/2000/svg"
