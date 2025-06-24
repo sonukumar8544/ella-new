@@ -135,7 +135,6 @@
 
     <div class="video_popup_grid {% if video.settings.product != blank %}popup_second_product{% endif %}">
       {% if video.settings.product != blank %}
-        {{ primary_variant }}
         <div class="card-content" data-product-id="{{ primary_variant.id }}">
           <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
             <img
