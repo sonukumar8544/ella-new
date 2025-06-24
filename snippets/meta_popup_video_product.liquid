@@ -15,7 +15,7 @@
     </button>
 
     <div class="video_popup_grid_inner" style="position: relative;">
-      {{ metaobject.video_url.value }}
+      {{ video }}
       <video
         id="customVideo"
         autoplay
@@ -25,7 +25,7 @@
         controls
         style="width: 100%; height: auto;"
       >
-        <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+        <source src="{{ video }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
