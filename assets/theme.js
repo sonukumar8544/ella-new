@@ -7397,9 +7397,7 @@ $(document)
     }
   });
 // custom App Shopper code
-  $(document)
-      .off("click", ".video-section button.cst_atc_button_testimonail product1")
-      .on("click", ".video-section button.cst_atc_button_testimonail product1", function () {
+  $(document).on("click", ".video-section button.cst_atc_button_testimonail.product1", function () {
         $(this).addClass("is-loading");
         const variantSId = $(this).attr("data-variant-ids");
         let $tarSget = $(this);
