@@ -313,17 +313,14 @@
 </script>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("mobile_view_video");
-    const youtubeIcon = document.getElementById("youtubeIcon");
-
-    video.addEventListener("click", function () {
-      if (video.paused) {
-        video.play();
-        if (youtubeIcon) youtubeIcon.style.display = "none";
+    document.addEventListener("DOMContentLoaded", function () {
+    $(".mobile_view_video").on("click", function () {
+      if (this.paused) {
+        this.play();
+        $("#youtubeIcon").hide(); // Use # to target ID
       } else {
-        video.pause();
-        if (youtubeIcon) youtubeIcon.style.display = "block";
+        this.pause();
+        $("#youtubeIcon").show(); // Use # to target ID
       }
     });
   });
