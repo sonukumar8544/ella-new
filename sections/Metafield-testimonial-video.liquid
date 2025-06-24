@@ -109,7 +109,15 @@
             </div>
           {% endif %}
         </div>
-        {{ metaobject.video_url.value }}
+        <video
+          class="mobile_view_video"
+          muted
+          loop
+          playsinline
+          style="width: 100%; height: auto; cursor: pointer;"
+        >
+          <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+        </video>
         {% render 'meta_popup_video_product',
           metaobject: metaobject,
           popupvideo: metaobject.video_url.value,
