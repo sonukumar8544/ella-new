@@ -35,7 +35,7 @@
                -ms-overflow-style: none;
                scrollbar-width: none;
              }
-           
+
             #video_{{ section.id }} .video-scroll-container::-webkit-scrollbar {
                display: none;
              }
@@ -77,7 +77,7 @@
                 transform: translate(-50%, -50%);
             }
 
-  
+
             #video_{{ section.id }} .card-content {
                position: absolute;
                bottom: 0;
@@ -197,7 +197,7 @@
       {% assign featured_product1 = video.settings.product1 %}
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
-          <div class="video-wrapper" data-modal="modal-{{ video.id }}" style=">
+          <div class="video-wrapper" data-modal="modal-{{ video.id }}">
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
               src="{{ video.settings.video_poster | img_url: '100x' }}"
@@ -313,7 +313,7 @@
     });
   });
 </script>
-                <div class="video-wrapper" data-modal="modal-{{ video.id }}">
+<div class="video-wrapper" data-modal="modal-{{ video.id }}">
   <video
     id="customVideo"
     class="mobile_view_video"
@@ -355,7 +355,6 @@
     });
   });
 </script>
-
 
 {% schema %}
 {
