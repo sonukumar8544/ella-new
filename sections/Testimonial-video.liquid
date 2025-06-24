@@ -317,22 +317,22 @@
     const wrappers = document.querySelectorAll(".video-wrapper");
 
     wrappers.forEach(wrapper => {
-      const video = wrapper.querySelector(".mobile_view_video");
+      const video_mobile = wrapper.querySelector(".mobile_view_video");
       const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
 
       function toggleVideo() {
-        if (video.paused) {
-          video.play();
-          video.muted = true;
+        if (video_mobile.paused) {
+          video_mobile.play();
+          video_mobile.muted = true;
           youtubeIcon.style.display = "none";
         } else {
-          video.pause();
-          video.muted = false;
+          video_mobile.pause();
+          video_mobile.muted = false;
           youtubeIcon.style.display = "block";
         }
       }
 
-      video.addEventListener("click", toggleVideo);
+      video_mobile.addEventListener("click", toggleVideo);
       youtubeIcon.addEventListener("click", toggleVideo);
     });
   });
