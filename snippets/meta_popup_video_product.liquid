@@ -34,30 +34,30 @@
       </video>
     </div>
 
-    <div class="video_popup_grid {% if featured_product != blank %}popup_second_product{% endif %}">
-      {% if featured_product != blank %}
-        <div class="card-content" data-product-id="{{ first_variant_id }}">
-          <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
+    <div class="video_popup_grid {% if metaobject.video_product_1.value != blank %}popup_second_product{% endif %}">
+      {% if metaobject.video_product_1.value != blank %}
+        <div class="card-content" data-product-id="{{ metaobject.video_product_1.id }}">
+          <a href="/products/{{ metaobject.video_product_1.handle }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
               data-src="{{ metaobject.video_product_1.value | img_url: '500x' }}"
               src="{{ metaobject.video_product_1.value | img_url: '100x' }}"
-              alt="{{ featured_product.title }}"
+              alt="{{ metaobject.video_product_1.title }}"
               width="100%"
               height="100%"
               style="width: auto; height: auto;"
             >
           </a>
           <div class="product-title-new">
-            <p class="product-title">{{ featured_product.title }}</p>
-            <p class="product-price">{{ variant1.price | money_with_currency }}</p>
+            <p class="product-title">{{ metaobject.video_product_1.title }}</p>
+            <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
           </div>
 
           <button
             type="submit"
             name="add"
             class="cst_atc_button_testimonail product1"
-            data-variant-ids="{{ variant1.id }}"
+            data-variant-ids="{{ primary_variant.id }}"
           >
             Add To Cart
           </button>
@@ -79,14 +79,14 @@
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product1.title }}</p>
-            <p class="product-price">{{ variant2.price | money_with_currency }}</p>
+            <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
           </div>
 
           <button
             type="submit"
             name="add"
             class="cst_atc_button_testimonail product2"
-            data-variant-ids="{{ variant2.id }}"
+            data-variant-ids="{{ secondary_variant.id }}"
           >
             Add To Cart
           </button>
