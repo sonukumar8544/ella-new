@@ -1,7 +1,5 @@
 <!-- Metafield-testimonial-video -->
 {% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
-{% for metaobject in testimonial_videos %}
-{% endfor %}
 
 {% if testimonial_videos != blank %}
   <section class="video-section" id="video_{{ section.id }}">
@@ -115,7 +113,7 @@
             playsinline
             style="width: 100%; height: auto; cursor: pointer;"
           >
-            <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+            <source src="{{ metaobject.video_url }}" type="video/mp4">
           </video>
         </div>
 
