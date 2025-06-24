@@ -81,15 +81,6 @@
                 </button>
               </div>
             </div>
-            <video
-              class="mobile_view_video"
-              muted
-              loop
-              playsinline
-              style="width: 100%; height: auto; cursor: pointer;"
-            >
-              <source src="{{ metaobject.video_url.value }}" type="video/mp4">
-            </video>
           {% endif %}
 
           {% if product2 and variant2 %}
@@ -117,6 +108,15 @@
               </div>
             </div>
           {% endif %}
+          <video
+            class="mobile_view_video"
+            muted
+            loop
+            playsinline
+            style="width: 100%; height: auto; cursor: pointer;"
+          >
+            <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+          </video>
         </div>
 
         {% render 'meta_popup_video_product',
