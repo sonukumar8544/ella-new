@@ -327,22 +327,25 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("mobile_view_video");
-    const youtubeIcon = document.querySelector(".youtube__icon_svg");
+    const wrappers = document.querySelectorAll(".video-wrapper");
 
-    function toggleVideo() {
-      if (video.paused) {
-        video.play();
-        youtubeIcon.style.display = "none";
-      } else {
-        video.pause();
-        youtubeIcon.style.display = "block";
+    wrappers.forEach(wrapper => {
+      const video = wrapper.querySelector(".mobile_view_video");
+      const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
+
+      function toggleVideo() {
+        if (video.paused) {
+          video.play();
+          youtubeIcon.style.display = "none";
+        } else {
+          video.pause();
+          youtubeIcon.style.display = "block";
+        }
       }
-    }
 
-    // Click on video or YouTube icon will toggle play/pause
-    video.addEventListener("click", toggleVideo);
-    youtubeIcon.addEventListener("click", toggleVideo);
+      video.addEventListener("click", toggleVideo);
+      youtubeIcon.addEventListener("click", toggleVideo);
+    });
   });
 </script>
 
