@@ -95,7 +95,8 @@
        border-bottom-right-radius: 12px;
                }
      .card-content.cstm_tesimonail_video.second_video_product {
-       bottom: 96px !important;border-radius: 0 !important;
+       bottom: 96px !important;
+       border-radius: 0 !important;
      }
 
               #video_{{ section.id }} .cstm_tesimonail_video .product-img {
@@ -227,7 +228,7 @@
             </video>
 
             <!-- Mute/Unmute Button -->
-            <button id="muteToggle" style="">🔇</button>
+            <button id="muteToggle" style="">unmute</button>
 
             {% if video.settings.product != blank %}
               <div class="card-content cstm_tesimonail_video" data-product-id="{{ featured_product.id }}">
@@ -327,7 +328,7 @@
     // Mute/Unmute toggle
     muteBtn.addEventListener("click", function () {
       video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+      muteBtn.textContent = video.muted ? "mute" : "unmute";
     });
   });
 </script>
