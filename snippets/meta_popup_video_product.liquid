@@ -1,5 +1,5 @@
 <!-- popup_video_product -->
-{{ metaobject.video_url.value }}
+
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
@@ -15,6 +15,7 @@
     </button>
 
     <div class="video_popup_grid_inner" style="position: relative;">
+      {{ metaobject.video_url.value }}
       <video
         id="customVideo"
         autoplay
