@@ -28,20 +28,20 @@
           controls
           style="width: 100%; height: auto;"
         >
-          <source src="{{ video.settings.video }}" type="video/mp4">
+          <source src="{{  metaobject.video_url.value }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
     </div>
 
-    <div class="video_popup_grid {% if video.settings.product != blank %}popup_second_product{% endif %}">
-      {% if video.settings.product != blank %}
+    <div class="video_popup_grid {% if metaobject.product != blank %}popup_second_product{% endif %}">
+      {% if metaobject.product.value != blank %}
         <div class="card-content" data-product-id="{{ primary_variant.id }}">
           <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
-              data-src="{{  video.testimonial_video_app.video_poster | img_url: '500x' }}"
-              src="{{  video.testimonial_video_app.video_poster | img_url: '100x' }}"
+              data-src="{{ featured_product.video_poster.value | img_url: '500x' }}"
+              src="{{ featured_product.video_poster.value | img_url: '100x' }}"
               alt="{{ featured_product.title }}"
               width="100%"
               height="100%"
@@ -66,13 +66,13 @@
         </div>
       {% endif %}
 
-      {% if video.settings.product1 != blank %}
+      {% if metaobject.product1.value != blank %}
         <div class="card-content" data-product-id="{{ secondary_variant.id }}">
           <a href="/products/{{ featured_product1.handle }}" title="{{ featured_product1.title }}">
             <img
               class="product-img lazyload"
-              data-src="{{ featured_product1.featured_image | img_url: '500x' }}"
-              src="{{ featured_product1.featured_image | img_url: '100x' }}"
+              data-src="{{ featured_product1.featured_image.value | img_url: '500x' }}"
+              src="{{ featured_product1.featured_image.value | img_url: '100x' }}"
               alt="{{ featured_product1.title }}"
               width="100%"
               height="100%"
