@@ -24,7 +24,7 @@
         {% assign variant1 = product1.variants | where: 'available', true | first %}
         {% assign variant2 = product2.variants | where: 'available', true | first %}
 
-        {% if metaobject.video_poster.value != blank and metaobject.video_url.value != blank %}
+        {% if metaobject.video_poster.value != blank or metaobject.video_url.value != blank %}
           <div class="video-card">
             <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
               <img
