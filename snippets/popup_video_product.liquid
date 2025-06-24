@@ -130,8 +130,8 @@
     </div>
     <div class="video_popup_grid {% if video.settings.product1 != blank %}popup_second_product{% endif %}">
       {% if video.settings.product != blank and featured_product %}
-        <div class="card-content" data-product-id="{{ featured_product.id }}">
-          <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
+        <div class="card-content" data-product-id="{{ first_variant_id.id }}">
+          <a href="/products/{{ first_variant_id.handle }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
               data-src="{{ featured_product.featured_image | img_url: '500x' }}"
@@ -144,7 +144,7 @@
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product.title }}</p>
-            <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
+            <p class="product-price">{{ first_variant_id.price | money_with_currency }}</p>
           </div>
 
           {% if first_variant_id %}
@@ -161,8 +161,8 @@
       {% endif %}
 
       {% if video.settings.product1 != blank and featured_product1 %}
-        <div class="card-content" data-product-id="{{ featured_product1.id }}">
-          <a href="/products/{{ featured_product1.handle }}" title="{{ featured_product1.title }}">
+        <div class="card-content" data-product-id="{{ first_variant_id1.id }}">
+          <a href="/products/{{ first_variant_id1.handle }}" title="{{ featured_product1.title }}">
             <img
               class="product-img lazyload"
               data-src="{{ featured_product1.featured_image | img_url: '500x' }}"
@@ -175,7 +175,7 @@
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product1.title }}</p>
-            <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
+            <p class="product-price">{{ first_variant_id1.price | money_with_currency }}</p>
           </div>
 
           {% if first_variant_id1 %}
