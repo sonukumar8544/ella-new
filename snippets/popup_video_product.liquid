@@ -98,7 +98,10 @@
      font-weight: bold;
      }
 </style>
-
+{% assign featured_product = video.settings.product %}
+{% assign featured_product1 = video.settings.product1 %}
+{% assign primary_variant = featured_product.variants | where: 'available', true | first %}
+{% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
@@ -130,8 +133,9 @@
       </div>
     </div>
 
-    <div class="video_popup_grid {% if video.settings.product1 != blank %}popup_second_product{% endif %}">
-      {% if video.settings.product != blank and featured_product %}
+    <div class="video_popup_grid {% if video.settings.product != blank %}popup_second_product{% endif %}">
+      {% if video.settings.product != blank %}
+        {{ primary_variant }}
         <div class="card-content" data-product-id="{{ primary_variant.id }}">
           <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
             <img
@@ -162,7 +166,7 @@
         </div>
       {% endif %}
 
-      {% if video.settings.product1 != blank and featured_product1 %}
+      {% if video.settings.product1 != blank %}
         <div class="card-content" data-product-id="{{ secondary_variant.id }}">
           <a href="/products/{{ featured_product1.handle }}" title="{{ featured_product1.title }}">
             <img
