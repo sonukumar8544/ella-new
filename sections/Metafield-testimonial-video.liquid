@@ -21,111 +21,100 @@
         {% assign product2 = metaobject.video_product_2.value %}
         {% assign variant1 = product1.variants | where: 'available', true | first %}
         {% assign variant2 = product2.variants | where: 'available', true | first %}
-
-        <div class="video-card">
-          <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
-            {% if metaobject.video_poster.value != blank %}
-              <img
-                src="{{ metaobject.video_poster.value | img_url: '500x' }}"
-                alt="Video Poster"
-                class="video__poster lazyload"
-                width="100%"
-                height="100%"
+        {% if metaobject.video_link.value != blank %}
+          <div class="video-card">
+            <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
+              {% if metaobject.video_poster.value != blank %}
+                <img
+                  src="{{ metaobject.video_poster.value | img_url: '500x' }}"
+                  alt="Video Poster"
+                  class="video__poster lazyload"
+                  width="100%"
+                  height="100%"
+                >
+              {% endif %}
+              <video
+                class="mobile_view_video"
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: auto; cursor: pointer;"
               >
+                <source src="{{ metaobject.video_link }}" type="video/mp4">
+              </video>
+
+              <svg
+                class="youtube__icon_svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="red"
+              >
+                <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
+              </svg>
+            </div>
+
+            {% if product1 and variant1 %}
+              <div class="card-content cstm_tesimonail_video" data-product-id="{{ variant1.id }}">
+                <a href="{{ product1.url }}" title="{{ product1.title }}">
+                  <img
+                    src="{{ product1.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product1.title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </a>
+                <div class="product-title-new">
+                  <p class="product-title">{{ product1.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant1.price | money_with_currency }}</p>
+                  <button
+                    type="submit"
+                    name="add"
+                    class="cst_atc_button_testimonail product1"
+                    data-variant-ids="{{ variant1.id }}"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
             {% endif %}
-            <video
-              class="mobile_view_video"
-              muted
-              loop
-              playsinline
-              style="width: 100%; height: auto; cursor: pointer;"
-            >
-              <source src="{{ metaobject.video_link }}" type="video/mp4">
-            </video>
 
-            <svg
-              class="youtube__icon_svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="red"
-            >
-              <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
-            </svg>
-          </div>
-
-          {% if product1 and variant1 %}
-            <div class="card-content cstm_tesimonail_video" data-product-id="{{ variant1.id }}">
-              <a href="{{ product1.url }}" title="{{ product1.title }}">
-                <img
-                  src="{{ product1.featured_image | img_url: 'small' }}"
-                  class="product-img lazyload"
-                  alt="{{ product1.title }}"
-                  width="100%"
-                  height="100%"
-                >
-              </a>
-              <div class="product-title-new">
-                <p class="product-title">{{ product1.title | truncate: 30 }}</p>
-                <p class="product-price">{{ variant1.price | money_with_currency }}</p>
-                <button
-                  type="submit"
-                  name="add"
-                  class="cst_atc_button_testimonail product1"
-                  data-variant-ids="{{ variant1.id }}"
-                >
-                  Add To Cart
-                </button>
+            {% if product2 and variant2 %}
+              <div class="card-content cstm_tesimonail_video second_video_product" data-product-id1="{{ variant2.id }}">
+                <a href="{{ product2.url }}" title="{{ product2.title }}">
+                  <img
+                    src="{{ product2.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product2.title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </a>
+                <div class="product-title-new">
+                  <p class="product-title">{{ product2.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant2.price | money_with_currency }}</p>
+                  <button
+                    type="submit"
+                    name="add"
+                    class="cst_atc_button_testimonail product2"
+                    data-variant-ids="{{ variant2.id }}"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
               </div>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          {% if product2 and variant2 %}
-            <div class="card-content cstm_tesimonail_video second_video_product" data-product-id1="{{ variant2.id }}">
-              <a href="{{ product2.url }}" title="{{ product2.title }}">
-                <img
-                  src="{{ product2.featured_image | img_url: 'small' }}"
-                  class="product-img lazyload"
-                  alt="{{ product2.title }}"
-                  width="100%"
-                  height="100%"
-                >
-              </a>
-              <div class="product-title-new">
-                <p class="product-title">{{ product2.title | truncate: 30 }}</p>
-                <p class="product-price">{{ variant2.price | money_with_currency }}</p>
-                <button
-                  type="submit"
-                  name="add"
-                  class="cst_atc_button_testimonail product2"
-                  data-variant-ids="{{ variant2.id }}"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          {% endif %}
-          <video
-            class="mobile_view_video"
-            muted
-            loop
-            playsinline
-            style="width: 100%; height: auto; cursor: pointer;"
-          >
-            <source src="{{ metaobject.video_link }}" type="video/mp4">
-          </video>
-        </div>
-
-        {% render 'meta_popup_video_product',
-          metaobject: metaobject,
-          popupvideo: metaobject.video_link.value,
-          featured_product: product1,
-          featured_product1: product2,
-          first_variant_id: variant1.id,
-          first_variant_id1: variant2.id
-        %}
-        {% if metaobject.video_url.value != blank %}
+            {% render 'meta_popup_video_product',
+              metaobject: metaobject,
+              popupvideo: metaobject.video_link.value,
+              featured_product: product1,
+              featured_product1: product2,
+              first_variant_id: variant1.id,
+              first_variant_id1: variant2.id
+            %}
         {% endif %}
       {% endfor %}
     </div>
