@@ -131,6 +131,49 @@
     </div>
   </section>
 {% endif %}
+{% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
+
+{% if testimonial_videos != blank %}
+  <section class="video-section" id="video_{{ section.id }}">
+    {% if section.settings.title != blank %}
+      <h3 class="title">
+        <span class="text">{{ section.settings.title }}</span>
+      </h3>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="rte subtext-brand w-100 text-center">
+        <p>{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+
+    <div class="video-scroll-container">
+      {% for meta_handle in testimonial_videos %}
+        {% assign metaobject = meta_handle | metafield_tag %}
+        {% if metaobject.video_url.value != blank %}
+          <video
+            class="mobile_view_video"
+            muted
+            loop
+            playsinline
+            style="width: 100%; height: auto; cursor: pointer;"
+          >
+            <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+          </video>
+
+          {% render 'meta_popup_video_product',
+            metaobject: metaobject,
+            popupvideo: metaobject.video_url.value,
+            featured_product: product1,
+            featured_product1: product2,
+            first_variant_id: variant1.id,
+            first_variant_id1: variant2.id
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
 
 <style>
              #video_{{ section.id }}{
