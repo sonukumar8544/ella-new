@@ -237,18 +237,18 @@
 
           {% if primary_variant %}
             <div class="card-content cstm_tesimonail_video" data-product-id="{{ primary_variant.id }}">
-              <a href="{{ featured_product.url }}" title="{{ primary_variant.title }}">
+              <a href="{{ featured_product.url }}" title="{{ featured_product.title }}">
                 <img
-                  data-src="{{ primary_variant.featured_image | img_url: 'small' }}"
-                  src="{{ primary_variant.featured_image | img_url: '20x' }}"
-                  alt="{{ primary_variant.title }}"
+                  data-src="{{ featured_product.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product.title }}"
                   width="100%"
                   height="100%"
                   class="product-img lazyload"
                 >
               </a>
               <div class="product-title-new">
-                <p class="product-title">{{ primary_variant.title | truncate: 30 }}</p>
+                <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
                 <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
                 <button
                   type="submit"
@@ -264,14 +264,14 @@
 
           {% if secondary_variant %}
             <div
-              class="card-content cstm_tesimonail_video {% if secondary_variant != blank %}second_video_product{% endif %}"
+              class="card-content cstm_tesimonail_video {% if featured_product1 != blank %}second_video_product{% endif %}"
               data-product-id1="{{ secondary_variant.id }}"
             >
-              <a href="{{ featured_product1.url }}" title="{{ secondary_variant.title }}">
+              <a href="{{ featured_product1.url }}" title="{{ featured_product1.title }}">
                 <img
-                  data-src="{{ secondary_variant.featured_image | img_url: 'small' }}"
-                  src="{{ secondary_variant.featured_image | img_url: '20x' }}"
-                  alt="{{ secondary_variant.title }}"
+                  data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product1.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product1.title }}"
                   width="100%"
                   height="100%"
                   class="product-img lazyload"
@@ -279,7 +279,7 @@
               </a>
 
               <div class="product-title-new">
-                <p class="product-title">{{ secondary_variant.title | truncate: 30 }}</p>
+                <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
                 <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
                 <button
                   type="submit"
