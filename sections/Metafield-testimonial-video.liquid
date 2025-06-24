@@ -110,7 +110,13 @@
             {% endif %}
           </div>
 
-          {% render 'popup_video_product', video: metaobject.video_url.value %}
+          {% render 'popup_video_product',
+            metaobject: metaobject,
+            featured_product: product1,
+            featured_product1: product2,
+            first_variant_id: variant1.id,
+            first_variant_id1: variant2.id
+          %}
         {% endif %}
       {% endfor %}
     </div>
