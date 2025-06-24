@@ -161,7 +161,7 @@
    #video_{{ section.id }} .video-wrapper img.video__poster {
              display:block !important;
            }
-     #video_{{ section.id }} .video-wrapper #customVideo{
+     #video_{{ section.id }} .video-wrapper #mobile_view_video{
         display:none !important;
      }
    }
@@ -169,7 +169,7 @@
    #video_{{ section.id }} .video-wrapper img.video__poster {
              display:none !important;
            }
-     #video_{{ section.id }} .video-wrapper #customVideo{
+     #video_{{ section.id }} .video-wrapper #mobile_view_video{
         display:block !important;
      }
      .video_popup_init{
@@ -312,36 +312,10 @@
     });
   });
 </script>
-<div class="video-wrapper" data-modal="modal-{{ video.id }}">
-  <video
-    id="customVideo"
-    class="mobile_view_video"
-    muted
-    loop
-    playsinline
-    style="width: 100%; height: auto; cursor: pointer;"
-  >
-    <source src="{{ video.settings.video }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Optional SVG shown initially -->
-  <svg
-    id="youtubeIcon"
-    xmlns="http://www.w3.org/2000/svg"
-    width="32"
-    height="32"
-    viewBox="0 0 24 24"
-    fill="red"
-    style="position: absolute; top: 10px; left: 10px; z-index: 1;"
-  >
-    <path d="M10 15l5.2-3L10 9z" />
-  </svg>
-</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("customVideo");
+    const video = document.getElementById("mobile_view_video");
     const youtubeIcon = document.getElementById("youtubeIcon");
 
     video.addEventListener("click", function () {
