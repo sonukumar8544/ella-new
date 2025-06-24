@@ -322,12 +322,11 @@
 
       function toggleVideo() {
         if (video_mobile.paused) {
+          video_mobile.muted = false; // Unmute when playing
           video_mobile.play();
-          video_mobile.muted = true;
           youtubeIcon.style.display = "none";
         } else {
           video_mobile.pause();
-          video_mobile.muted = false;
           youtubeIcon.style.display = "block";
         }
       }
