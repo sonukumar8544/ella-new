@@ -279,10 +279,13 @@
             </div>
           {% endif %}
         </div>
-        {% render 'popup_video_product',
+        {%
+          render 'popup_video_product',
           video: video,
           featured_product: video.settings.product,
-          featured_product1: video.settings.product1
+          featured_product1: video.settings.product1,
+          first_variant_id = featured_product.variants.first.id,
+          first_variant_id1 = featured_product1.variants.first.id
         %}
       {% endif %}
     {% endfor %}
