@@ -1,7 +1,7 @@
 <!-- Metafield-testimonial-video -->
-{% assign testimonial_video_details = product.metafields.custom.meta_video_testimonials %}
+{% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
 
-{% if testimonial_video_details != blank %}
+{% if testimonial_videos != blank %}
   <section class="video-section" id="video_{{ section.id }}">
     {% if section.settings.title != blank %}
       <h3 class="title">
@@ -16,27 +16,24 @@
     {% endif %}
 
     <div class="video-scroll-container">
-      {% for video in testimonial_video_details.value %}
-        {% assign featured_product = video.testimonial_video_app.video_product_1 %}
-        {% assign featured_product1 = video.testimonial_video_app.video_product_2 %}
+      {% for metaobject in testimonial_videos %}
+        {% assign app = metaobject.testimonial_video_app %}
+        {% assign product1 = app.video_product_1 %}
+        {% assign product2 = app.video_product_2 %}
+        {% assign variant1 = product1.variants | where: 'available', true | first %}
+        {% assign variant2 = product2.variants | where: 'available', true | first %}
 
-        {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
-        {% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
-
-        {% assign first_variant_id = primary_variant.id %}
-        {% assign first_variant_id1 = secondary_variant.id %}
-
-        {% if video.testimonial_video_app.video_poster != blank %}
+        {% if app.video_poster != blank and app.video_url != blank %}
           <div class="video-card">
-            <div class="video-wrapper" data-modal="modal-{{ video.id }}">
+            <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
               <img
-                data-src="{{ video.testimonial_video_app.video_poster | img_url: '500x' }}"
-                src="{{ video.testimonial_video_app.video_poster | img_url: '100x' }}"
-                alt="Video thumbnail"
+                src="{{ app.video_poster | img_url: '500x' }}"
+                alt="Video Poster"
+                class="video__poster lazyload"
                 width="100%"
                 height="100%"
-                class="video__poster lazyload"
               >
+
               <video
                 class="mobile_view_video"
                 muted
@@ -44,9 +41,9 @@
                 playsinline
                 style="width: 100%; height: auto; cursor: pointer;"
               >
-                <source src="{{ video.testimonial_video_app.video_url }}" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="{{ app.video_url }}" type="video/mp4">
               </video>
+
               <svg
                 class="youtube__icon_svg"
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,26 +56,25 @@
               </svg>
             </div>
 
-            {% if primary_variant %}
-              <div class="card-content cstm_tesimonail_video" data-product-id="{{ primary_variant.id }}">
-                <a href="{{ featured_product.url }}" title="{{ featured_product.title }}">
+            {% if product1 and variant1 %}
+              <div class="card-content cstm_tesimonail_video" data-product-id="{{ variant1.id }}">
+                <a href="{{ product1.url }}" title="{{ product1.title }}">
                   <img
-                    data-src="{{ featured_product.featured_image | img_url: 'small' }}"
-                    src="{{ featured_product.featured_image | img_url: '20x' }}"
-                    alt="{{ featured_product.title }}"
+                    src="{{ product1.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product1.title }}"
                     width="100%"
                     height="100%"
-                    class="product-img lazyload"
                   >
                 </a>
                 <div class="product-title-new">
-                  <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
-                  <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
+                  <p class="product-title">{{ product1.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant1.price | money_with_currency }}</p>
                   <button
                     type="submit"
                     name="add"
                     class="cst_atc_button_testimonail product1"
-                    data-variant-ids="{{ first_variant_id }}"
+                    data-variant-ids="{{ variant1.id }}"
                   >
                     Add To Cart
                   </button>
@@ -86,30 +82,25 @@
               </div>
             {% endif %}
 
-            {% if secondary_variant %}
-              <div
-                class="card-content cstm_tesimonail_video {% if featured_product1 != blank %}second_video_product{% endif %}"
-                data-product-id1="{{ secondary_variant.id }}"
-              >
-                <a href="{{ featured_product1.url }}" title="{{ featured_product1.title }}">
+            {% if product2 and variant2 %}
+              <div class="card-content cstm_tesimonail_video second_video_product" data-product-id1="{{ variant2.id }}">
+                <a href="{{ product2.url }}" title="{{ product2.title }}">
                   <img
-                    data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
-                    src="{{ featured_product1.featured_image | img_url: '20x' }}"
-                    alt="{{ featured_product1.title }}"
+                    src="{{ product2.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product2.title }}"
                     width="100%"
                     height="100%"
-                    class="product-img lazyload"
                   >
                 </a>
-
                 <div class="product-title-new">
-                  <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
-                  <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
+                  <p class="product-title">{{ product2.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant2.price | money_with_currency }}</p>
                   <button
                     type="submit"
                     name="add"
                     class="cst_atc_button_testimonail product2"
-                    data-variant-ids="{{ first_variant_id1 }}"
+                    data-variant-ids="{{ variant2.id }}"
                   >
                     Add To Cart
                   </button>
@@ -119,11 +110,11 @@
           </div>
 
           {% render 'popup_video_product',
-            video: video,
-            featured_product: featured_product,
-            featured_product1: featured_product1,
-            first_variant_id: first_variant_id,
-            first_variant_id1: first_variant_id1
+            video: metaobject,
+            featured_product: product1,
+            featured_product1: product2,
+            first_variant_id: variant1.id,
+            first_variant_id1: variant2.id
           %}
         {% endif %}
       {% endfor %}
