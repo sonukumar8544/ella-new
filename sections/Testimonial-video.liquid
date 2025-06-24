@@ -198,20 +198,26 @@
       {% assign featured_product = video.settings.product %}
       {% assign featured_product1 = video.settings.product1 %}
 
-      {%- assign primary_variant = featured_product.variants | where: 'available', true | first -%}
-      {%- assign fallback_variant = featured_product1.variants | where: 'available', true | first -%}
+      {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
+      {% assign fallback_variant = featured_product1.variants | where: 'available', true | first %}
 
-      {%- if primary_variant -%}
-        {%- assign selected_variant = primary_variant -%}
-        {%- assign selected_product = featured_product -%}
-      {%- endif -%}
-      {%- if fallback_variant -%}
-        {%- assign selected_variant1 = fallback_variant -%}
-        {%- assign selected_product1 = featured_product1 -%}
-      {%- endif -%}
+      {% assign selected_variant = null %}
+      {% assign selected_product = null %}
+      {% if primary_variant %}
+        {% assign selected_variant = primary_variant %}
+        {% assign selected_product = featured_product %}
+      {% endif %}
 
-      {% if video.settings.video_poster != blank %}
+      {% assign selected_variant1 = null %}
+      {% assign selected_product1 = null %}
+      {% if fallback_variant %}
+        {% assign selected_variant1 = fallback_variant %}
+        {% assign selected_product1 = featured_product1 %}
+      {% endif %}
+
+      {% if featured_product.handle and featured_product1.handle and video.settings.video_poster != blank %}
         <div class="video-card">
+          <!-- Video Section -->
           <div class="video-wrapper" data-modal="modal-{{ video.id }}">
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
@@ -244,6 +250,7 @@
             </svg>
           </div>
 
+          <!-- First Product -->
           {% if selected_variant %}
             <div class="card-content cstm_tesimonail_video" data-product-id="{{ selected_product.id }}">
               <a href="/products/{{ selected_product.handle }}" title="{{ selected_product.title }}">
@@ -261,7 +268,6 @@
                 <p class="product-price">
                   {{ selected_variant.price | money_with_currency }}
                 </p>
-
                 <button
                   type="submit"
                   name="add"
@@ -277,11 +283,11 @@
               <p class="product-title">Out of Stock</p>
             </div>
           {% endif %}
-          <!-- second Product -->
 
+          <!-- Second Product -->
           {% if selected_variant1 %}
             <div
-              class="card-content cstm_tesimonail_video {% if selected_variant1 %}second_video_product{% endif %}"
+              class="card-content cstm_tesimonail_video second_video_product"
               data-product-id="{{ selected_product1.id }}"
             >
               <a href="/products/{{ selected_product1.handle }}" title="{{ selected_product1.title }}">
@@ -299,7 +305,6 @@
                 <p class="product-price">
                   {{ selected_variant1.price | money_with_currency }}
                 </p>
-
                 <button
                   type="submit"
                   name="add"
@@ -317,16 +322,18 @@
           {% endif %}
         </div>
 
-        {%- render 'popup_video_product',
+        <!-- Video Modal -->
+        {% render 'popup_video_product',
           video: video,
           featured_product: featured_product,
           featured_product1: featured_product1,
           first_variant_id: selected_variant.id
-        -%}
+        %}
       {% endif %}
     {% endfor %}
   </div>
 </section>
+
 <script>
   $(document).ready(function () {
     // Open popup when .video-wrapper is clicked
