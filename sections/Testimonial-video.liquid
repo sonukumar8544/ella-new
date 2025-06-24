@@ -246,7 +246,10 @@
               </a>
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
-                <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
+                <p class="product-price">
+                  {% render 'price', product: featured_product %}
+                  <!-- {{ featured_product.price | money_with_currency }} -->
+                </p>
                 <button
                   type="submit"
                   name="add"
@@ -274,7 +277,10 @@
 
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
-                <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
+                <p class="product-price">
+                  {% render 'price', product: featured_product1 %}
+                  <!-- {{ featured_product1.price | money_with_currency }} -->
+                </p>
 
                 <button
                   type="submit"
