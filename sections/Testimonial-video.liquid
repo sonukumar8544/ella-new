@@ -197,32 +197,15 @@
     {% for video in section.blocks %}
       {% assign featured_product = video.settings.product %}
       {% assign featured_product1 = video.settings.product1 %}
-
-      {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
-      {% assign fallback_variant = featured_product1.variants | where: 'available', true | first %}
-
-      {% assign selected_variant = null %}
-      {% assign selected_product = null %}
-      {% if primary_variant %}
-        {% assign selected_variant = primary_variant %}
-        {% assign selected_product = featured_product %}
-      {% endif %}
-
-      {% assign selected_variant1 = null %}
-      {% assign selected_product1 = null %}
-      {% if fallback_variant %}
-        {% assign selected_variant1 = fallback_variant %}
-        {% assign selected_product1 = featured_product1 %}
-      {% endif %}
-
-      {% if featured_product.handle and featured_product1.handle and video.settings.video_poster != blank %}
+      {% assign first_variant_id = featured_product.variants.first.id %}
+      {% assign first_variant_id1 = featured_product1.variants.first.id %}
+      {% if video.settings.video_poster != blank %}
         <div class="video-card">
-          <!-- Video Section -->
           <div class="video-wrapper" data-modal="modal-{{ video.id }}">
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
               src="{{ video.settings.video_poster | img_url: '100x' }}"
-              alt=""
+              alt="{{ }}"
               width="100%"
               height="100%"
               class="video__poster lazyload"
@@ -244,96 +227,80 @@
               height="32"
               viewBox="0 0 24 24"
               fill="red"
-              style="cursor: pointer;"
             >
               <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
             </svg>
           </div>
 
-          <!-- First Product -->
-          {% if selected_variant %}
-            <div class="card-content cstm_tesimonail_video" data-product-id="{{ selected_product.id }}">
-              <a href="/products/{{ selected_product.handle }}" title="{{ selected_product.title }}">
+          {% if video.settings.product != blank %}
+            <div class="card-content cstm_tesimonail_video" data-product-id="{{ featured_product.id }}">
+              <a href="/products/{{ featured_product }}" title="{{ featured_product.title }}">
                 <img
-                  data-src="{{ selected_product.featured_image | img_url: 'small' }}"
-                  src="{{ selected_product.featured_image | img_url: '20x' }}"
-                  alt="{{ selected_product.title }}"
+                  data-src="{{ featured_product.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product.title }}"
                   width="100%"
                   height="100%"
                   class="product-img lazyload"
                 >
               </a>
               <div class="product-title-new">
-                <p class="product-title">{{ selected_product.title | truncate: 30 }}</p>
-                <p class="product-price">
-                  {{ selected_variant.price | money_with_currency }}
-                </p>
+                <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
+                <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
                 <button
                   type="submit"
                   name="add"
                   class="cst_atc_button_testimonail product1"
-                  data-variant-ids="{{ selected_variant.id }}"
+                  data-variant-ids="{{ first_variant_id | strip }}"
                 >
                   Add To Cart
                 </button>
               </div>
-            </div>
-          {% else %}
-            <div class="card-content cstm_tesimonail_video">
-              <p class="product-title">Out of Stock</p>
             </div>
           {% endif %}
-
-          <!-- Second Product -->
-          {% if selected_variant1 %}
+          {% if video.settings.product1 != blank %}
             <div
-              class="card-content cstm_tesimonail_video second_video_product"
-              data-product-id="{{ selected_product1.id }}"
+              class="card-content cstm_tesimonail_video  {% if featured_product1 %}second_video_product{% endif %}"
+              data-product-id1="{{ featured_product1.id }}"
             >
-              <a href="/products/{{ selected_product1.handle }}" title="{{ selected_product1.title }}">
+              <a href="/products/{{ featured_product1 }}" title="{{ featured_product.title }}">
                 <img
-                  data-src="{{ selected_product1.featured_image | img_url: 'small' }}"
-                  src="{{ selected_product1.featured_image | img_url: '20x' }}"
-                  alt="{{ selected_product1.title }}"
+                  data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product1.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product1.title }}"
                   width="100%"
                   height="100%"
                   class="product-img lazyload"
                 >
               </a>
+
               <div class="product-title-new">
-                <p class="product-title">{{ selected_product1.title | truncate: 30 }}</p>
-                <p class="product-price">
-                  {{ selected_variant1.price | money_with_currency }}
-                </p>
+                <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
+                <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
+
                 <button
                   type="submit"
                   name="add"
-                  class="cst_atc_button_testimonail product1"
-                  data-variant-ids="{{ selected_variant1.id }}"
+                  class="cst_atc_button_testimonail product2"
+                  data-variant-ids="{{ first_variant_id1 | strip }}"
                 >
                   Add To Cart
                 </button>
               </div>
-            </div>
-          {% else %}
-            <div class="card-content cstm_tesimonail_video">
-              <p class="product-title">Out of Stock</p>
             </div>
           {% endif %}
         </div>
-
-        <!-- Video Modal -->
         {% render 'popup_video_product',
           video: video,
-          featured_product: featured_product,
-          featured_product1: featured_product1,
-          first_variant_id: selected_variant.id
+          featured_product: video.settings.product,
+          featured_product1: video.settings.product1,
+          first_variant_id: featured_product.variants.first.id,
+          first_variant_id1: featured_product1.variants.first.id
         %}
       {% endif %}
     {% endfor %}
   </div>
 </section>
-
 <script>
   $(document).ready(function () {
     // Open popup when .video-wrapper is clicked
