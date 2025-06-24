@@ -197,6 +197,8 @@
     {% for video in section.blocks %}
       {% assign featured_product = video.settings.product %}
       {% assign featured_product1 = video.settings.product1 %}
+      {% assign first_variant_id = featured_product.variants.first.id %}
+      {% assign first_variant_id1 = featured_product1.variants.first.id %}
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
           <div class="video-wrapper" data-modal="modal-{{ video.id }}">
@@ -243,7 +245,9 @@
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
                 <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
-                <button class="cst_atc_button_testimonail product1">Add To Cart</button>
+                <button class="cst_atc_button_testimonail product1" data-variant-ids="{{ first_variant_id | strip }}">
+                  Add To Cart
+                </button>
               </div>
             </div>
           {% endif %}
@@ -264,10 +268,10 @@
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
                 <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
-                {% assign first_variant_id = product.variants.first.id %}
+
                 <button
                   class="cst_atc_button_testimonail product2"
-                  data-variant-ids="{{ product_variant_ids | strip_newlines | strip }}"
+                  data-variant-ids="{{ first_variant_id1 | strip }}"
                 >
                   Add To Cart
                 </button>
