@@ -314,7 +314,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    $(".mobile_view_video").on("click", function () {
+    $(body).on("click", ".mobile_view_video, #youtubeIcon", function () {
       if (this.paused) {
         this.play();
         $("#youtubeIcon").hide(); // Use # to target ID
