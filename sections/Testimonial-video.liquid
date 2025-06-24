@@ -315,20 +315,20 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("customVideo");
+    const video_mobile = document.getElementById("customVideo");
     const muteBtn = document.getElementById("muteToggle");
 
-    // Play video on click
-    video.addEventListener("click", function () {
-      if (video.paused) {
-        video.play();
+    // Play video_mobile on click
+    video_mobile.addEventListener("click", function () {
+      if (video_mobile.paused) {
+        video_mobile.play();
       }
     });
 
     // Mute/Unmute toggle
     muteBtn.addEventListener("click", function () {
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "mute" : "unmute";
+      video_mobile.muted = !video_mobile.muted;
+      muteBtn.textContent = video_mobile.muted ? "mute" : "unmute";
     });
   });
 </script>
