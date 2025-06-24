@@ -245,7 +245,12 @@
               <div class="product-title-new">
                 <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
                 <p class="product-price">{{ featured_product.price | money_with_currency }}</p>
-                <button class="cst_atc_button_testimonail product1" data-variant-ids="{{ first_variant_id | strip }}">
+                <button
+                  type="submit"
+                  name="add"
+                  class="cst_atc_button_testimonail product1"
+                  data-variant-ids="{{ first_variant_id | strip }}"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -270,6 +275,8 @@
                 <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
 
                 <button
+                  type="submit"
+                  name="add"
                   class="cst_atc_button_testimonail product2"
                   data-variant-ids="{{ first_variant_id1 | strip }}"
                 >
