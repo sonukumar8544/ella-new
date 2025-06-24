@@ -175,10 +175,11 @@
             <p class="product-title">{{ featured_product1.title }}</p>
             <p class="product-price">{{ featured_product1.price | money_with_currency }}</p>
           </div>
-
-          <button class="cst_atc_button_testimonail product2" data-variant-ids="{{ first_variant_id1 | strip }}">
-            Add To Cart
-          </button>
+          {% if first_variant_id1 > 1 %}
+            <button class="cst_atc_button_testimonail product2" data-variant-ids="{{ first_variant_id1 | strip }}">
+              Add To Cart
+            </button>
+          {% endif %}
         </div>
       {% endif %}
     </div>
