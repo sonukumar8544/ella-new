@@ -1,8 +1,10 @@
 <!-- popup_video_product -->
-{% assign featured_product = metaobject.video_product_1.value %}
-{% assign featured_product1 = metaobject.video_product_2.value %}
-{% assign primary_variant = product1.variants | where: 'available', true | first %}
-{% assign secondary_variant = product2.variants | where: 'available', true | first %}
+
+{% assign featured_product = featured_product %}
+{% assign featured_product1 = featured_product1 %}
+{% assign primary_variant = first_variant_id %}
+{% assign secondary_variant = first_variant_id1 %}
+
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
@@ -17,31 +19,29 @@
       </svg>
     </button>
 
-    <div class="video_popup_grid">
-      <div class="video_popup_grid_inner" style="position: relative;">
-        <video
-          id="customVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-          style="width: 100%; height: auto;"
-        >
-          <source src="{{ video.video_url.value }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <div class="video_popup_grid_inner" style="position: relative;">
+      <video
+        id="customVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        style="width: 100%; height: auto;"
+      >
+        <source src="{{ metaobject.video_url.value }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
-    <div class="video_popup_grid {% if metaobject.product != blank %}popup_second_product{% endif %}">
-      {% if metaobject.product.value != blank %}
-        <div class="card-content" data-product-id="{{ primary_variant.id }}">
+    <div class="video_popup_grid {% if featured_product != blank %}popup_second_product{% endif %}">
+      {% if featured_product != blank %}
+        <div class="card-content" data-product-id="{{ first_variant_id }}">
           <a href="/products/{{ featured_product.handle }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
-              data-src="{{ featured_product.video_poster.value | img_url: '500x' }}"
-              src="{{ featured_product.video_poster.value | img_url: '100x' }}"
+              data-src="{{ metaobject.video_poster_1.value | img_url: '500x' }}"
+              src="{{ metaobject.video_poster_1.value | img_url: '100x' }}"
               alt="{{ featured_product.title }}"
               width="100%"
               height="100%"
@@ -50,29 +50,27 @@
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product.title }}</p>
-            <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
+            <p class="product-price">{{ variant1.price | money_with_currency }}</p>
           </div>
 
-          {% if primary_variant %}
-            <button
-              type="submit"
-              name="add"
-              class="cst_atc_button_testimonail product1"
-              data-variant-ids="{{ primary_variant.id }}"
-            >
-              Add To Cart
-            </button>
-          {% endif %}
+          <button
+            type="submit"
+            name="add"
+            class="cst_atc_button_testimonail product1"
+            data-variant-ids="{{ variant1.id }}"
+          >
+            Add To Cart
+          </button>
         </div>
       {% endif %}
 
-      {% if metaobject.product1.value != blank %}
-        <div class="card-content" data-product-id="{{ secondary_variant.id }}">
+      {% if featured_product1 != blank %}
+        <div class="card-content" data-product-id="{{ first_variant_id1 }}">
           <a href="/products/{{ featured_product1.handle }}" title="{{ featured_product1.title }}">
             <img
               class="product-img lazyload"
-              data-src="{{ featured_product1.featured_image.value | img_url: '500x' }}"
-              src="{{ featured_product1.featured_image.value | img_url: '100x' }}"
+              data-src="{{ metaobject.video_poster_2.value | img_url: '500x' }}"
+              src="{{ metaobject.video_poster_2.value | img_url: '100x' }}"
               alt="{{ featured_product1.title }}"
               width="100%"
               height="100%"
@@ -81,19 +79,17 @@
           </a>
           <div class="product-title-new">
             <p class="product-title">{{ featured_product1.title }}</p>
-            <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
+            <p class="product-price">{{ variant2.price | money_with_currency }}</p>
           </div>
 
-          {% if secondary_variant %}
-            <button
-              type="submit"
-              name="add"
-              class="cst_atc_button_testimonail product2"
-              data-variant-ids="{{ secondary_variant.id }}"
-            >
-              Add To Cart
-            </button>
-          {% endif %}
+          <button
+            type="submit"
+            name="add"
+            class="cst_atc_button_testimonail product2"
+            data-variant-ids="{{ variant2.id }}"
+          >
+            Add To Cart
+          </button>
         </div>
       {% endif %}
     </div>
