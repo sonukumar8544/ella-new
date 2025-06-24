@@ -1,5 +1,8 @@
 <!-- Metafield-testimonial-video -->
 {% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
+{% for metaobject in testimonial_videos %}
+  {{ metaobject.video_poster.value }}
+{% endfor %}
 
 {% if testimonial_videos != blank %}
   <section class="video-section" id="video_{{ section.id }}">
