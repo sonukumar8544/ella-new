@@ -319,11 +319,11 @@
       e.preventDefault();
       e.stopPropagation();
 
-      var popup = $(this).closest('.video_popup_init');
-      popup.fadeOut();
+      var popup_close = $(this).closest('.video_popup_init');
+      popup_close.fadeOut();
 
-      // Pause all videos inside the popup
-      popup.find('video').each(function () {
+      // Pause all videos inside the popup_close
+      popup_close.find('video').each(function () {
         this.pause();
       });
     });
