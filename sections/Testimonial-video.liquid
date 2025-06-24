@@ -143,7 +143,6 @@
                width: 200px;
              }
          #video_{{ section.id }}  .video_popup_init .video_popup_grid video{
-               /* max-width: 220px; */
                border: none;
                outline: none;
                border-radius: 12px;
@@ -314,16 +313,17 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("mobile_view_video");
     const youtubeIcon = document.getElementById("youtubeIcon");
 
     video.addEventListener("click", function () {
       if (video.paused) {
         video.play();
-        youtubeIcon?.remove();
+        if (youtubeIcon) youtubeIcon.style.display = "none";
       } else {
         video.pause();
+        if (youtubeIcon) youtubeIcon.style.display = "block";
       }
     });
   });
