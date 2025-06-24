@@ -204,9 +204,10 @@
       {%- if primary_variant -%}
         {%- assign selected_variant = primary_variant -%}
         {%- assign selected_product = featured_product -%}
-      {%- elsif fallback_variant -%}
-        {%- assign selected_variant = fallback_variant -%}
-        {%- assign selected_product = featured_product1 -%}
+      {%- endif -%}
+      {%- if fallback_variant -%}
+        {%- assign selected_variant1 = fallback_variant -%}
+        {%- assign selected_product1 = featured_product1 -%}
       {%- endif -%}
 
       {% if video.settings.video_poster != blank %}
@@ -266,6 +267,40 @@
                   name="add"
                   class="cst_atc_button_testimonail product1"
                   data-variant-ids="{{ selected_variant.id }}"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          {% else %}
+            <div class="card-content cstm_tesimonail_video">
+              <p class="product-title">Out of Stock</p>
+            </div>
+          {% endif %}
+          <!-- second Product -->
+          {% if selected_variant1 %}
+            <div class="card-content cstm_tesimonail_video" data-product-id="{{ selected_product1.id }}">
+              <a href="/products/{{ selected_product1.handle }}" title="{{ selected_product1.title }}">
+                <img
+                  data-src="{{ selected_product1.featured_image | img_url: 'small' }}"
+                  src="{{ selected_product1.featured_image | img_url: '20x' }}"
+                  alt="{{ selected_product1.title }}"
+                  width="100%"
+                  height="100%"
+                  class="product-img lazyload"
+                >
+              </a>
+              <div class="product-title-new">
+                <p class="product-title">{{ selected_product1.title | truncate: 30 }}</p>
+                <p class="product-price">
+                  {{ selected_variant1.price | money_with_currency }}
+                </p>
+
+                <button
+                  type="submit"
+                  name="add"
+                  class="cst_atc_button_testimonail product1"
+                  data-variant-ids="{{ selected_variant1.id }}"
                 >
                   Add To Cart
                 </button>
