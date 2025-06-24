@@ -1,5 +1,7 @@
 <!-- Metafield-testimonial-video -->
 {% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
+{% for metaobject in testimonial_videos %}
+{% endfor %}
 
 {% if testimonial_videos != blank %}
   <section class="video-section" id="video_{{ section.id }}">
@@ -21,18 +23,18 @@
         {% assign product2 = metaobject.video_product_2.value %}
         {% assign variant1 = product1.variants | where: 'available', true | first %}
         {% assign variant2 = product2.variants | where: 'available', true | first %}
-        {% if metaobject.video_link.value != blank %}
+
+        {% if metaobject.video_poster.value != blank or metaobject.video_link.value != blank %}
           <div class="video-card">
             <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
-              {% if metaobject.video_poster.value != blank %}
-                <img
-                  src="{{ metaobject.video_poster.value | img_url: '500x' }}"
-                  alt="Video Poster"
-                  class="video__poster lazyload"
-                  width="100%"
-                  height="100%"
-                >
-              {% endif %}
+              <img
+                src="{{ metaobject.video_poster.value | img_url: '500x' }}"
+                alt="Video Poster"
+                class="video__poster lazyload"
+                width="100%"
+                height="100%"
+              >
+
               <video
                 class="mobile_view_video"
                 muted
@@ -40,7 +42,7 @@
                 playsinline
                 style="width: 100%; height: auto; cursor: pointer;"
               >
-                <source src="{{ metaobject.video_link }}" type="video/mp4">
+                <source src="{{ metaobject.video_link.value }}" type="video/mp4">
               </video>
 
               <svg
@@ -106,53 +108,11 @@
                 </div>
               </div>
             {% endif %}
-
-            {% render 'meta_popup_video_product',
-              metaobject: metaobject,
-              popupvideo: metaobject.video_link.value,
-              featured_product: product1,
-              featured_product1: product2,
-              first_variant_id: variant1.id,
-              first_variant_id1: variant2.id
-            %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </section>
-{% endif %}
-{% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
-
-{% if testimonial_videos != blank %}
-  <section class="video-section" id="video_{{ section.id }}">
-    {% if section.settings.title != blank %}
-      <h3 class="title">
-        <span class="text">{{ section.settings.title }}</span>
-      </h3>
-    {% endif %}
-
-    {% if section.settings.description != blank %}
-      <div class="rte subtext-brand w-100 text-center">
-        <p>{{ section.settings.description }}</p>
-      </div>
-    {% endif %}
-
-    <div class="video-scroll-container">
-      {% for meta_handle in testimonial_videos %}
-        {% assign metaobject = meta_handle %}
-        {% if metaobject.video_url.value != blank %}
-          <video
-            class="mobile_view_video"
-            muted
-            loop
-            playsinline
-            style="width: 100%; height: auto; cursor: pointer;"
-          >
-            <source src="{{ metaobject.video_url.value }}" type="video/mp4">
-          </video>
+          </div>
 
           {% render 'meta_popup_video_product',
             metaobject: metaobject,
-            popupvideo: metaobject.video_url.value,
+            popupvideo: metaobject.video_link.value,
             featured_product: product1,
             featured_product1: product2,
             first_variant_id: variant1.id,
