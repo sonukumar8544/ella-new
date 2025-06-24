@@ -1,5 +1,10 @@
 <!-- popup_video_product -->
 
+{% assign featured_product = metaobject.video_product_1.value %}
+{% assign featured_product1 = metaobject.video_product_2.value %}
+{% assign primary_variant = product1.variants | where: 'available', true | first %}
+{% assign secondary_variant = product2.variants | where: 'available', true | first %}
+
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
@@ -15,7 +20,6 @@
     </button>
 
     <div class="video_popup_grid_inner" style="position: relative;">
-      {{ video }}
       <video
         id="customVideo"
         autoplay
@@ -25,7 +29,7 @@
         controls
         style="width: 100%; height: auto;"
       >
-        <source src="{{ video }}" type="video/mp4">
+        <source src="{{ metaobject.video_url.value }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
