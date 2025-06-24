@@ -314,13 +314,15 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    $(body).on("click", ".mobile_view_video, #youtubeIcon", function () {
-      if (this.paused) {
-        this.play();
-        $("#youtubeIcon").hide(); // Use # to target ID
+    $(body).on("click", "#youtubeIcon", function () {
+      $(this).hide();
+      let playVideo = $('#mobile_view_video');
+      if (playVideo.paused) {
+        playVideo.play();
+        $("#youtubeIcon").hide();
       } else {
-        this.pause();
-        $("#youtubeIcon").show(); // Use # to target ID
+        playVideo.pause();
+        $("#youtubeIcon").show();
       }
     });
   });
