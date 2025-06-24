@@ -149,7 +149,7 @@
 
     <div class="video-scroll-container">
       {% for meta_handle in testimonial_videos %}
-        {% assign metaobject = meta_handle | metafield_tag %}
+        {% assign metaobject = meta_handle %}
         {% if metaobject.video_url.value != blank %}
           <video
             class="mobile_view_video"
