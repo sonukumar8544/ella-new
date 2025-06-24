@@ -199,13 +199,16 @@
       {% assign featured_product1 = video.settings.product1 %}
       {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
       {% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
+      {% assign first_variant_id = primary_variant.id %}
+      {% assign first_variant_id1 = secondary_variant.id %}
+
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
           <div class="video-wrapper" data-modal="modal-{{ video.id }}">
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
               src="{{ video.settings.video_poster | img_url: '100x' }}"
-              alt="{{ }}"
+              alt="Video thumbnail"
               width="100%"
               height="100%"
               class="video__poster lazyload"
@@ -232,9 +235,9 @@
             </svg>
           </div>
 
-          {% if primary_variant != blank %}
+          {% if primary_variant %}
             <div class="card-content cstm_tesimonail_video" data-product-id="{{ primary_variant.id }}">
-              <a href="/products/{{ primary_variant }}" title="{{ primary_variant.title }}">
+              <a href="{{ featured_product.url }}" title="{{ primary_variant.title }}">
                 <img
                   data-src="{{ primary_variant.featured_image | img_url: 'small' }}"
                   src="{{ primary_variant.featured_image | img_url: '20x' }}"
@@ -258,12 +261,13 @@
               </div>
             </div>
           {% endif %}
-          {% if secondary_variant != blank %}
+
+          {% if secondary_variant %}
             <div
-              class="card-content cstm_tesimonail_video  {% if secondary_variant != blank %}second_video_product{% endif %}"
+              class="card-content cstm_tesimonail_video {% if secondary_variant != blank %}second_video_product{% endif %}"
               data-product-id1="{{ secondary_variant.id }}"
             >
-              <a href="/products/{{ secondary_variant }}" title="{{ secondary_variant.title }}">
+              <a href="{{ featured_product1.url }}" title="{{ secondary_variant.title }}">
                 <img
                   data-src="{{ secondary_variant.featured_image | img_url: 'small' }}"
                   src="{{ secondary_variant.featured_image | img_url: '20x' }}"
@@ -277,7 +281,6 @@
               <div class="product-title-new">
                 <p class="product-title">{{ secondary_variant.title | truncate: 30 }}</p>
                 <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
-
                 <button
                   type="submit"
                   name="add"
@@ -290,17 +293,19 @@
             </div>
           {% endif %}
         </div>
+
         {% render 'popup_video_product',
           video: video,
           primary_variant: video.settings.product,
           secondary_variant: video.settings.product1,
-          first_variant_id: secondary_variant,
-          first_variant_id1: secondary_variant
+          first_variant_id: primary_variant.id,
+          first_variant_id1: secondary_variant.id
         %}
       {% endif %}
     {% endfor %}
   </div>
 </section>
+
 <script>
   $(document).ready(function () {
     // Open popup when .video-wrapper is clicked
