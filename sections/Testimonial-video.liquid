@@ -278,8 +278,12 @@
             </div>
           {% endif %}
           <!-- second Product -->
+
           {% if selected_variant1 %}
-            <div class="card-content cstm_tesimonail_video" data-product-id="{{ selected_product1.id }}">
+            <div
+              class="card-content cstm_tesimonail_video {% if selected_variant1 %}second_video_product{% endif %}"
+              data-product-id="{{ selected_product1.id }}"
+            >
               <a href="/products/{{ selected_product1.handle }}" title="{{ selected_product1.title }}">
                 <img
                   data-src="{{ selected_product1.featured_image | img_url: 'small' }}"
