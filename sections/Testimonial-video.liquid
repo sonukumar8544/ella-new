@@ -309,19 +309,6 @@
       }
     });
 
-    // mobile video play
-    $("body").on("click", "#youtubeIcon", function () {
-      alert("");
-      // const playVideo = document.getElementById("mobile_view_video");
-
-      // if (playVideo.paused) {
-      //   playVideo.play();
-      //   $("#youtubeIcon").hide();
-      // } else {
-      //   playVideo.pause();
-      //   $("#youtubeIcon").show();
-      // }
-    });
 
   });
 </script>
@@ -336,9 +323,11 @@
       function toggleVideo() {
         if (video.paused) {
           video.play();
+          video.muted = true;
           youtubeIcon.style.display = "none";
         } else {
           video.pause();
+          video.muted = false;
           youtubeIcon.style.display = "block";
         }
       }
