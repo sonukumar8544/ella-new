@@ -249,7 +249,7 @@
                 <p class="product-price">
                   {% render 'price', product: featured_product %}
                   <br>
-                  Fake:-{{ featured_product.selected_or_first_available_variant | money_with_currency }}
+                  Fake:-{{ featured_product.selected_or_first_available_variant.unit_price | money_with_currency }}
                 </p>
                 <button
                   type="submit"
@@ -281,7 +281,7 @@
                 <p class="product-price">
                   {% render 'price', product: featured_product1 %}
                   <br>
-                  Fake:-{{ featured_product1.selected_or_first_available_variant | money_with_currency }}
+                  Fake:-{{ featured_product1.selected_or_first_available_variant.unit_price | money_with_currency }}
                 </p>
 
                 <button
