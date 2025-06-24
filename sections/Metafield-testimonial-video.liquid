@@ -1,3 +1,130 @@
+<!-- Metafield-testimonial-video -->
+<section class="video-section" id="video_{{ section.id }}">
+  {% if section.settings.title != blank %}
+    <h3 class="title">
+      <span class="text">{{ section.settings.title }}</span>
+    </h3>
+  {% endif %}
+
+  {% if section.settings.description != blank %}
+    <div class="rte subtext-brand w-100 text-center">
+      <p>{{ section.settings.description }}</p>
+    </div>
+  {% endif %}
+
+  <div class="video-scroll-container">
+    {% for video in section.blocks %}
+      {% assign featured_product = video.settings.product %}
+      {% assign featured_product1 = video.settings.product1 %}
+      {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
+      {% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
+      {% assign first_variant_id = primary_variant.id %}
+      {% assign first_variant_id1 = secondary_variant.id %}
+
+      {% if video.settings.video_poster != blank %}
+        <div class="video-card">
+          <div class="video-wrapper" data-modal="modal-{{ video.id }}">
+            <img
+              data-src="{{ video.settings.video_poster | img_url: '500x' }}"
+              src="{{ video.settings.video_poster | img_url: '100x' }}"
+              alt="Video thumbnail"
+              width="100%"
+              height="100%"
+              class="video__poster lazyload"
+            >
+            <video
+              class="mobile_view_video"
+              muted
+              loop
+              playsinline
+              style="width: 100%; height: auto; cursor: pointer;"
+            >
+              <source src="{{ video.settings.video }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <svg
+              class="youtube__icon_svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="red"
+            >
+              <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
+            </svg>
+          </div>
+
+          {% if primary_variant %}
+            <div class="card-content cstm_tesimonail_video" data-product-id="{{ primary_variant.id }}">
+              <a href="{{ featured_product.url }}" title="{{ featured_product.title }}">
+                <img
+                  data-src="{{ featured_product.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product.title }}"
+                  width="100%"
+                  height="100%"
+                  class="product-img lazyload"
+                >
+              </a>
+              <div class="product-title-new">
+                <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
+                <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
+                <button
+                  type="submit"
+                  name="add"
+                  class="cst_atc_button_testimonail product1"
+                  data-variant-ids="{{ first_variant_id | strip }}"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if secondary_variant %}
+            <div
+              class="card-content cstm_tesimonail_video {% if featured_product1 != blank %}second_video_product{% endif %}"
+              data-product-id1="{{ secondary_variant.id }}"
+            >
+              <a href="{{ featured_product1.url }}" title="{{ featured_product1.title }}">
+                <img
+                  data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
+                  src="{{ featured_product1.featured_image | img_url: '20x' }}"
+                  alt="{{ featured_product1.title }}"
+                  width="100%"
+                  height="100%"
+                  class="product-img lazyload"
+                >
+              </a>
+
+              <div class="product-title-new">
+                <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
+                <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
+                <button
+                  type="submit"
+                  name="add"
+                  class="cst_atc_button_testimonail product2"
+                  data-variant-ids="{{ first_variant_id1 | strip }}"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        {% render 'popup_video_product',
+          video: video,
+          featured_product: video.settings.product,
+          featured_product1: video.settings.product1,
+          first_variant_id: primary_variant.id,
+          first_variant_id1: secondary_variant.id
+        %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
 <style>
              #video_{{ section.id }}{
                 padding: 3rem 1.5rem;
@@ -279,131 +406,6 @@
       }
     }
 </style>
-<section class="video-section" id="video_{{ section.id }}">
-  {% if section.settings.title != blank %}
-    <h3 class="title">
-      <span class="text">{{ section.settings.title }}</span>
-    </h3>
-  {% endif %}
-
-  {% if section.settings.description != blank %}
-    <div class="rte subtext-brand w-100 text-center">
-      <p>{{ section.settings.description }}</p>
-    </div>
-  {% endif %}
-
-  <div class="video-scroll-container">
-    {% for video in section.blocks %}
-      {% assign featured_product = video.settings.product %}
-      {% assign featured_product1 = video.settings.product1 %}
-      {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
-      {% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
-      {% assign first_variant_id = primary_variant.id %}
-      {% assign first_variant_id1 = secondary_variant.id %}
-
-      {% if video.settings.video_poster != blank %}
-        <div class="video-card">
-          <div class="video-wrapper" data-modal="modal-{{ video.id }}">
-            <img
-              data-src="{{ video.settings.video_poster | img_url: '500x' }}"
-              src="{{ video.settings.video_poster | img_url: '100x' }}"
-              alt="Video thumbnail"
-              width="100%"
-              height="100%"
-              class="video__poster lazyload"
-            >
-            <video
-              class="mobile_view_video"
-              muted
-              loop
-              playsinline
-              style="width: 100%; height: auto; cursor: pointer;"
-            >
-              <source src="{{ video.settings.video }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <svg
-              class="youtube__icon_svg"
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="red"
-            >
-              <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
-            </svg>
-          </div>
-
-          {% if primary_variant %}
-            <div class="card-content cstm_tesimonail_video" data-product-id="{{ primary_variant.id }}">
-              <a href="{{ featured_product.url }}" title="{{ featured_product.title }}">
-                <img
-                  data-src="{{ featured_product.featured_image | img_url: 'small' }}"
-                  src="{{ featured_product.featured_image | img_url: '20x' }}"
-                  alt="{{ featured_product.title }}"
-                  width="100%"
-                  height="100%"
-                  class="product-img lazyload"
-                >
-              </a>
-              <div class="product-title-new">
-                <p class="product-title">{{ featured_product.title | truncate: 30 }}</p>
-                <p class="product-price">{{ primary_variant.price | money_with_currency }}</p>
-                <button
-                  type="submit"
-                  name="add"
-                  class="cst_atc_button_testimonail product1"
-                  data-variant-ids="{{ first_variant_id | strip }}"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          {% endif %}
-
-          {% if secondary_variant %}
-            <div
-              class="card-content cstm_tesimonail_video {% if featured_product1 != blank %}second_video_product{% endif %}"
-              data-product-id1="{{ secondary_variant.id }}"
-            >
-              <a href="{{ featured_product1.url }}" title="{{ featured_product1.title }}">
-                <img
-                  data-src="{{ featured_product1.featured_image | img_url: 'small' }}"
-                  src="{{ featured_product1.featured_image | img_url: '20x' }}"
-                  alt="{{ featured_product1.title }}"
-                  width="100%"
-                  height="100%"
-                  class="product-img lazyload"
-                >
-              </a>
-
-              <div class="product-title-new">
-                <p class="product-title">{{ featured_product1.title | truncate: 30 }}</p>
-                <p class="product-price">{{ secondary_variant.price | money_with_currency }}</p>
-                <button
-                  type="submit"
-                  name="add"
-                  class="cst_atc_button_testimonail product2"
-                  data-variant-ids="{{ first_variant_id1 | strip }}"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          {% endif %}
-        </div>
-
-        {% render 'popup_video_product',
-          video: video,
-          featured_product: video.settings.product,
-          featured_product1: video.settings.product1,
-          first_variant_id: primary_variant.id,
-          first_variant_id1: secondary_variant.id
-        %}
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
 
 <script>
   $(document).ready(function () {
@@ -481,35 +483,6 @@
       "type": "richtext",
       "id": "description",
       "label": "Content"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product_card",
-      "name": "Custom Product Card",
-      "settings": [
-         {
-          "type": "image_picker",
-          "id": "video_poster",
-          "label": "Video Poster"
-        },
-        {
-          "type": "url",
-          "id": "video",
-          "label": "Video URL"
-        },
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product1"
-        },
-         {
-          "type": "product",
-          "id": "product1",
-          "label": "Product2"
-        }
-
-      ]
     }
   ],
   "presets": [
