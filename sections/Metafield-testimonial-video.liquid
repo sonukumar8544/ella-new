@@ -23,7 +23,7 @@
         {% assign product2 = metaobject.video_product_2.value %}
         {% assign variant1 = product1.variants | where: 'available', true | first %}
         {% assign variant2 = product2.variants | where: 'available', true | first %}
-        {{ metaobject.video_url | json }}
+
         <div class="video-card">
           <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
             {% if metaobject.video_poster.value != blank %}
@@ -56,7 +56,7 @@
               <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
             </svg>
           </div>
-
+          {{ metaobject.video_url | json }}
           {% if product1 and variant1 %}
             <div class="card-content cstm_tesimonail_video" data-product-id="{{ variant1.id }}">
               <a href="{{ product1.url }}" title="{{ product1.title }}">
