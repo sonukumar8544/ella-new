@@ -35,7 +35,7 @@
                -ms-overflow-style: none;
                scrollbar-width: none;
              }
-
+           
             #video_{{ section.id }} .video-scroll-container::-webkit-scrollbar {
                display: none;
              }
@@ -66,6 +66,18 @@
                object-fit: cover;
              }
 
+   #video_{{ section.id }}  svg#youtube__icon_svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                fill: red;
+                stroke: red;
+                width: 40px;
+                height: 40px;
+                transform: translate(-50%, -50%);
+            }
+
+  
             #video_{{ section.id }} .card-content {
                position: absolute;
                bottom: 0;
@@ -185,7 +197,7 @@
       {% assign featured_product1 = video.settings.product1 %}
       {% if video.settings.video_poster != blank %}
         <div class="video-card">
-          <div class="video-wrapper" data-modal="modal-{{ video.id }}">
+          <div class="video-wrapper" data-modal="modal-{{ video.id }}" style=">
             <img
               data-src="{{ video.settings.video_poster | img_url: '500x' }}"
               src="{{ video.settings.video_poster | img_url: '100x' }}"
@@ -207,7 +219,7 @@
               Your browser does not support the video tag.
             </video>
             <svg
-              style="position: absolute; top: 10px; right: 10px; z-index: 10;"
+              style="position: absolute; top: 10px; right: 10px; z-index: 99;"
               id="youtube__icon_svg"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
