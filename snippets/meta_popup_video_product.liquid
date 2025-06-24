@@ -1,14 +1,5 @@
 <!-- popup_video_product -->
-
-{% assign featured_product = metaobject.video_product_1.value %}
-{{ featured_product }}
-{% assign featured_product1 = metaobject.video_product_2.value %}
-----{{ featured_product1 }}
-{% assign primary_variant = product1.variants | where: 'available', true | first %}
-----{{ primary_variant }}
-{% assign secondary_variant = product2.variants | where: 'available', true | first %}
----------{{ secondary_variant }}
-
+{{ metaobject.video_url.value }}
 <div class="video_popup_init" id="modal-{{ video.id }}">
   <div class="video_popup">
     <button
