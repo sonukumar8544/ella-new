@@ -16,15 +16,9 @@
         <p>{{ section.settings.description }}</p>
       </div>
     {% endif %}
-    {% capture videocount %}
-      {% for metaobject in testimonial_videos %}
-      {% assign count = testimonial_videos.size %}
-      {% if count == 0 %}
-      {{ count }}
-      {% endif %}
-      {% endfor %}
-      {% endcapture %}
-    {{ videocount | json }}
+    {% assign videocount = testimonial_videos.size %}
+
+    {{ videocount }}
     <div class="video-scroll-container{% if videocount <= '3' %} video_center_auto {{ videocount }}{% else %}{% endif %}">
       {% for metaobject in testimonial_videos %}
         {% assign product1 = metaobject.video_product_1.value %}
