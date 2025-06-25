@@ -24,6 +24,7 @@
       {% endif %}
       {% endfor %}
       {% endcapture %}
+    {{ videocount }}
     <div class="video-scroll-container{% if videocount <= '3' %} video_center_auto {{ videocount }}{% else %}{% endif %}">
       {% for metaobject in testimonial_videos %}
         {% assign product1 = metaobject.video_product_1.value %}
