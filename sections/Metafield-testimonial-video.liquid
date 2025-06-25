@@ -1,6 +1,9 @@
 <!-- Metafield-testimonial-video -->
 {% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
 {% for metaobject in testimonial_videos %}
+  {% assign videocount = testimonial_videos.size %}
+
+  {{ videocount }}
 {% endfor %}
 
 {% if testimonial_videos != blank %}
@@ -16,9 +19,7 @@
         <p>{{ section.settings.description }}</p>
       </div>
     {% endif %}
-    {% assign videocount = testimonial_videos.size %}
 
-    {{ videocount }}
     <div class="video-scroll-container{% if videocount <= '3' %} video_center_auto {{ videocount }}{% else %}{% endif %}">
       {% for metaobject in testimonial_videos %}
         {% assign product1 = metaobject.video_product_1.value %}
