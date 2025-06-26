@@ -421,91 +421,57 @@
   </div>
 </section>
 
-<!--
-  <script>
-    $(document).ready(function () {
-      // Open popup when .video-wrapper is clicked
-      $('body').on('click', '.video-wrapper', function () {
-        var modalId = $(this).data('modal');
-        $('#' + modalId).fadeIn();
-      });
-
-      // Close popup when close button is clicked
-      $('body').on('click', '.cideoClosed', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var popup_close = $(this).closest('.video_popup_init');
-        popup_close.fadeOut();
-
-        // Pause all videos inside the popup_close
-        popup_close.find('video').each(function () {
-          this.pause();
-        });
-      });
-
-      // Close popup when clicking outside the .video_popup content
-      $('body').on('click', '.video_popup_init', function (e) {
-        if ($(e.target).closest('.video_popup').length === 0) {
-          $(this).fadeOut();
-
-          // Pause all videos when closing by background click
-          $(this).find('video').each(function () {
-            this.pause();
-          });
-        }
-      });
-
-
+<script>
+  $(document).ready(function () {
+    // Open popup when .video-wrapper is clicked
+    $('body').on('click', '.video-wrapper', function () {
+      var modalId = $(this).data('modal');
+      $('#' + modalId).fadeIn();
     });
-  </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const wrappers = document.querySelectorAll(".video-wrapper");
+    // Close popup when close button is clicked
+    $('body').on('click', '.cideoClosed', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-      // Check screen width (only run if viewport width is less than 760px)
-      if (window.innerWidth < 760) {
-        wrappers.forEach(wrapper => {
-          const video_mobile = wrapper.querySelector(".mobile_view_video");
-          const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
+      var popup_close = $(this).closest('.video_popup_init');
+      popup_close.fadeOut();
 
-          function toggleVideo() {
-            if (video_mobile.paused) {
-              video_mobile.muted = false; // Unmute when playing
-              video_mobile.play();
-              youtubeIcon.style.display = "none";
-            } else {
-              video_mobile.pause();
-              youtubeIcon.style.display = "block";
-            }
-          }
+      // Pause all videos inside the popup_close
+      popup_close.find('video').each(function () {
+        this.pause();
+      });
+    });
 
-          video_mobile.addEventListener("click", toggleVideo);
-          youtubeIcon.addEventListener("click", toggleVideo);
+    // Close popup when clicking outside the .video_popup content
+    $('body').on('click', '.video_popup_init', function (e) {
+      if ($(e.target).closest('.video_popup').length === 0) {
+        $(this).fadeOut();
+
+        // Pause all videos when closing by background click
+        $(this).find('video').each(function () {
+          this.pause();
         });
       }
     });
-  </script>
--->
+
+
+  });
+</script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const wrappers = document.querySelectorAll(".video-wrapper");
 
-    // MOBILE: Enable inline video playback with click
-    if (window.innerWidth < 768) {
+    // Check screen width (only run if viewport width is less than 760px)
+    if (window.innerWidth < 760) {
       wrappers.forEach(wrapper => {
         const video_mobile = wrapper.querySelector(".mobile_view_video");
         const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
 
-        // Hide poster, show video
-        const poster = wrapper.querySelector(".video__poster");
-        if (poster) poster.style.display = "none";
-        if (video_mobile) video_mobile.style.display = "block";
-
         function toggleVideo() {
           if (video_mobile.paused) {
-            video_mobile.muted = false;
+            video_mobile.muted = false; // Unmute when playing
             video_mobile.play();
             youtubeIcon.style.display = "none";
           } else {
@@ -517,57 +483,91 @@
         video_mobile.addEventListener("click", toggleVideo);
         youtubeIcon.addEventListener("click", toggleVideo);
       });
-    } else {
-      // DESKTOP: Pause all mobile_view_video to prevent background audio
-      wrappers.forEach(wrapper => {
-        const video_mobile = wrapper.querySelector(".mobile_view_video");
-        if (video_mobile) {
-          video_mobile.pause();
-          video_mobile.currentTime = 0;
-          video_mobile.style.display = "none"; // Hide on desktop
-        }
-      });
     }
   });
 </script>
+<!--
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const wrappers = document.querySelectorAll(".video-wrapper");
 
-<script>
-  $(document).ready(function () {
-    // Open popup when .video-wrapper is clicked
-    $('body').on('click', '.video-wrapper', function () {
-      var modalId = $(this).data('modal');
-      $('#' + modalId).fadeIn();
-    });
+      // MOBILE: Enable inline video playback with click
+      if (window.innerWidth < 768) {
+        wrappers.forEach(wrapper => {
+          const video_mobile = wrapper.querySelector(".mobile_view_video");
+          const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
 
-    // Close popup via close button
-    $('body').on('click', '.cideoClosed', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+          // Hide poster, show video
+          const poster = wrapper.querySelector(".video__poster");
+          if (poster) poster.style.display = "none";
+          if (video_mobile) video_mobile.style.display = "block";
 
-      var popup_close = $(this).closest('.video_popup_init');
-      popup_close.fadeOut();
+          function toggleVideo() {
+            if (video_mobile.paused) {
+              video_mobile.muted = false;
+              video_mobile.play();
+              youtubeIcon.style.display = "none";
+            } else {
+              video_mobile.pause();
+              youtubeIcon.style.display = "block";
+            }
+          }
 
-      // Pause all popup videos
-      popup_close.find('video').each(function () {
-        this.pause();
-        this.currentTime = 0;
-      });
-    });
-
-    // Close popup by clicking outside the modal
-    $('body').on('click', '.video_popup_init', function (e) {
-      if ($(e.target).closest('.video_popup').length === 0) {
-        $(this).fadeOut();
-
-        // Pause popup videos
-        $(this).find('video').each(function () {
-          this.pause();
-          this.currentTime = 0;
+          video_mobile.addEventListener("click", toggleVideo);
+          youtubeIcon.addEventListener("click", toggleVideo);
+        });
+      } else {
+        // DESKTOP: Pause all mobile_view_video to prevent background audio
+        wrappers.forEach(wrapper => {
+          const video_mobile = wrapper.querySelector(".mobile_view_video");
+          if (video_mobile) {
+            video_mobile.pause();
+            video_mobile.currentTime = 0;
+            video_mobile.style.display = "none"; // Hide on desktop
+          }
         });
       }
     });
-  });
-</script>
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Open popup when .video-wrapper is clicked
+      $('body').on('click', '.video-wrapper', function () {
+        var modalId = $(this).data('modal');
+        $('#' + modalId).fadeIn();
+      });
+
+      // Close popup via close button
+      $('body').on('click', '.cideoClosed', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var popup_close = $(this).closest('.video_popup_init');
+        popup_close.fadeOut();
+
+        // Pause all popup videos
+        popup_close.find('video').each(function () {
+          this.pause();
+          this.currentTime = 0;
+        });
+      });
+
+      // Close popup by clicking outside the modal
+      $('body').on('click', '.video_popup_init', function (e) {
+        if ($(e.target).closest('.video_popup').length === 0) {
+          $(this).fadeOut();
+
+          // Pause popup videos
+          $(this).find('video').each(function () {
+            this.pause();
+            this.currentTime = 0;
+          });
+        }
+      });
+    });
+  </script>
+-->
 
 {% schema %}
 {
