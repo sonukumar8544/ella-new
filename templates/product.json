@@ -436,16 +436,18 @@
     "17509542687bfd534b": {
       "type": "apps",
       "blocks": {
-        "okendo_reviews_widget_JhEjt9": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "okendo_reviews_carousel_6KR7d3": {
+          "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
-            "product": "{{product}}",
-            "widget_type": "reviews_widget"
+            "show_heading": false,
+            "heading": "",
+            "badge_link": "",
+            "product": "{{product}}"
           }
         }
       },
       "block_order": [
-        "okendo_reviews_widget_JhEjt9"
+        "okendo_reviews_carousel_6KR7d3"
       ],
       "settings": {
         "include_margins": false
