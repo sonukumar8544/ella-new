@@ -486,6 +486,46 @@
   //   }
   // });
 </script>
+<script>
+  $(document).ready(function () {
+    const isMobile = window.innerWidth < 760;
+    if (!isMobile) return;
+
+    let currentlyPlaying = null;
+
+    $(".video-wrapper").each(function () {
+      const $wrapper = $(this);
+      const $video = $wrapper.find(".mobile_view_video");
+      const $icon = $wrapper.find(".youtube__icon_svg");
+
+      const video = $video.get(0);
+
+      const toggleVideo = () => {
+        if (currentlyPlaying && currentlyPlaying !== video) {
+          currentlyPlaying.pause();
+          const $prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
+          $prevIcon.show();
+        }
+
+        if (video.paused) {
+          video.muted = false;
+          video.play();
+          $icon.hide();
+          currentlyPlaying = video;
+        } else {
+          video.pause();
+          $icon.show();
+          currentlyPlaying = null;
+        }
+      };
+
+      $video.on("click", toggleVideo);
+      $icon.on("click", toggleVideo);
+    });
+
+
+  });
+</script>
 {% schema %}
 {
   "name": "Testimonial Video App",
