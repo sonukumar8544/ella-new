@@ -327,11 +327,24 @@
               height="100%"
               class="video__poster lazyload"
             >
+            <!--
+              <video
+                class="mobile_view_video"
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: auto; cursor: pointer;"
+              >
+                <source src="{{ video.settings.video }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            -->
             <video
               class="mobile_view_video"
               muted
               loop
               playsinline
+              poster="{{ video.settings.video_poster | img_url: '500x' }}"
               style="width: 100%; height: auto; cursor: pointer;"
             >
               <source src="{{ video.settings.video }}" type="video/mp4">
