@@ -433,26 +433,6 @@
         "mg_bottom_mobile": 0
       }
     },
-    "17509542687bfd534b": {
-      "type": "apps",
-      "blocks": {
-        "okendo_reviews_carousel_6KR7d3": {
-          "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "show_heading": false,
-            "heading": "",
-            "badge_link": "",
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_carousel_6KR7d3"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
     "bundle_page_informational_image_xdtCLG": {
       "type": "bundle-page-informational-image",
       "settings": {}
@@ -1760,7 +1740,6 @@
       "block_order": [
         "okendo_reviews_widget_ACqWER"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1781,7 +1760,6 @@
       "block_order": [
         "okendo_reviews_carousel_mi6anP"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1800,7 +1778,6 @@
       "block_order": [
         "okendo_reviews_widget_KmJmDx"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1808,7 +1785,6 @@
   },
   "order": [
     "main",
-    "17509542687bfd534b",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
     "collapsiable_content_copy_rwPkJz",
