@@ -17,7 +17,8 @@
 
     <div class="video-scroll-container  ">
       {% for metaobject in testimonial_videos %}
-        {{ metaobject.id }}
+        {% assign meta_id = metaobject.id | default: metaobject.system.id %}
+        {{ meta_id }}
         {% assign product1 = metaobject.video_product_1.value %}
         {% assign product2 = metaobject.video_product_2.value %}
         {% assign variant1 = product1.variants | where: 'available', true | first %}
