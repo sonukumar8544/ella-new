@@ -18,7 +18,7 @@
     <div class="video-scroll-container  ">
       {% for metaobject in testimonial_videos %}
         {% assign meta_id = metaobject.id | default: metaobject.system.id %}
-        {{ meta_id }}
+
         {% assign product1 = metaobject.video_product_1.value %}
         {% assign product2 = metaobject.video_product_2.value %}
         {% assign variant1 = product1.variants | where: 'available', true | first %}
@@ -26,7 +26,7 @@
 
         {% if metaobject.video_poster.value != blank or metaobject.video_link.value != blank %}
           <div class="video-card">
-            <div class="video-wrapper" data-modal="modal-{{ metaobject.id }}">
+            <div class="video-wrapper" data-modal="modal-{{ meta_id }}">
               <img
                 src="{{ metaobject.video_poster.value | img_url: '500x' }}"
                 alt="Video Poster"
@@ -112,6 +112,7 @@
 
           {% render 'meta_popup_video_product',
             metaobject: metaobject,
+            meta_id: meta_id,
             popupvideo: metaobject.video_link.value,
             featured_product: product1,
             featured_product1: product2,

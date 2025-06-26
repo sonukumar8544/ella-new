@@ -4,7 +4,7 @@
 {% assign featured_product1 = metaobject.video_product_2.value %}
 {% assign primary_variant = featured_product.variants | where: 'available', true | first %}
 {% assign secondary_variant = featured_product1.variants | where: 'available', true | first %}
-<div class="video_popup_init" id="modal-{{ metaobject.id }}">
+<div class="video_popup_init" id="modal-{{ meta_id}}">
   <div class="video_popup">
     <button
       type="button"
