@@ -8140,12 +8140,9 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
 .productView-price .price.price--medium .price-item,
 .productView-price .price.price--medium .price-item .money {
   display: block !important;
-  /* color: #006a91; */
+  color: #e95144 !important;
 }
-.price-item--regular .money {
-  color: #969696 !important;
-}
-
+.price-item--regular .money,
 .price-item--sale .money {
   color: #e95144 !important;
 }
@@ -8412,7 +8409,7 @@ dd#custom_proce_manage {
   letter-spacing: 1px;
   font-weight: 800 !important;
 }
-
+#custom_proce_manage span{ color: #e95144 !important;}
 .sale_price_amount1 span,
 .sale_price_amount1 {
   font-size: 14px;
@@ -8774,6 +8771,10 @@ table.Table.Ltr.Table p {
     margin-top: 5px !important;
 }
 
-.header-language_currency {
+/* .header-language_currency {
     display: none !important;
+} */
+
+form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.go3279073480.kl-private-reset-css-Xuajs1 {
+    padding: 0px !important;
 }

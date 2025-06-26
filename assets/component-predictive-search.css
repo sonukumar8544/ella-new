@@ -186,6 +186,11 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
   top: 3px !important;
   left: 6px !important;
 }
+@media (min-width: 769px){
+  .product-card-layout-02 .halo-productBadges {
+  left: 15px !important;
+ }
+}
 
 .quickSearchResultsBlock .list-item .link,
 .predictive-search .predictive-search__list-item .link {

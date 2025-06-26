@@ -575,7 +575,9 @@
           </div>
           <div class="article-body">
             <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-              <div id="table-of-contents"></div>
+              {% comment %} <div id="table-of-contents"></div> {% endcomment %}
+               <div id="table-of-contents" data-include-h3="{% for tag in article.tags %}{% if tag == 'addsubheading' %}true{% endif %}{% endfor %}"></div>
+
               <style>
                 div#table-of-contents{
                 border: 1px solid #ddd;
@@ -1339,50 +1341,61 @@
   display: block;
   }
 </style>
+
 <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      const tocContainer = document.getElementById("table-of-contents");
-      const headings = document.querySelectorAll(".article-content h2");
-      
-      if (headings.length === 0) return;
-      
-      const tocWrapper = document.createElement("div");
-      tocWrapper.classList.add("toc-wrapper");
-      
-      const tocTitle = document.createElement("h3");
-      tocTitle.textContent = "Table of Contents";
-      tocWrapper.appendChild(tocTitle);
-      
-      const tocList = document.createElement("ul");
-      let h2Counter = 0, h3Counter = 0;
-      
-      headings.forEach((heading, index) => {
-      if (heading.tagName === "H2") {
-      h2Counter++;
-      h3Counter = 0; // Reset H3 counter for a new H2 section
-      } 
-      
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocContainer = document.getElementById("table-of-contents");
+    const includeH3 = tocContainer.dataset.includeH3 === "true";
+    const selector = includeH3 ? ".article-content h2, .article-content h3" : ".article-content h2";
+    const headings = document.querySelectorAll(selector);
+
+    if (headings.length === 0 || !tocContainer) return;
+
+    const tocWrapper = document.createElement("div");
+    tocWrapper.classList.add("toc-wrapper");
+
+    const tocTitle = document.createElement("h3");
+    tocTitle.textContent = "Table of Contents";
+    tocWrapper.appendChild(tocTitle);
+
+    const tocList = document.createElement("ul");
+
+    headings.forEach((heading, index) => {
       const anchorId = "section-" + index;
       heading.id = anchorId;
-      
+
       const listItem = document.createElement("li");
       const link = document.createElement("a");
-      link.href = "#" + anchorId;
-      
-      // Create numbering format
+      link.textContent = heading.innerText;
+
+      // Smooth scroll with -100px offset
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.getElementById(anchorId);
+        if (target) {
+          const yOffset = -100;
+          const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      });
+
       if (heading.tagName === "H2") {
-      link.textContent = `${heading.innerText}`;
-      listItem.classList.add("toc-h2");
+        listItem.classList.add("toc-h2");
+      } else if (heading.tagName === "H3") {
+        listItem.classList.add("toc-h3");
       }
-      
+
       listItem.appendChild(link);
       tocList.appendChild(listItem);
-      });
-      
-      tocWrapper.appendChild(tocList);
-      tocContainer.appendChild(tocWrapper);
-      });
+    });
+
+    tocWrapper.appendChild(tocList);
+    tocContainer.appendChild(tocWrapper);
+  });
 </script>
+
+
+
 
 {% render 'schema', article: article %}
 

@@ -20,9 +20,14 @@
                   <small>
                     <span class="blog-date">{{ article.published_at | time_tag: '%b %d, %Y' }}</span>
                   </small>
+                  {% assign blogauthorname = article.author %}
+                  {% if blogauthorname == "Content Admin" %}
+                    <h5>Author: {{ article.author }}</h5>
+                  {% else %}
                   <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
                     <h5>Author: {{ article.author }}</h5>
                   </a>
+                  {% endif %}
                 </div>
                 <div class="blog-review-dr-url">
                   <a href="https://wellnessextract.com/pages/{{ dr_page_url | replace: ' ', '-' | downcase }}">
