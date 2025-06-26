@@ -420,86 +420,86 @@
     {% endfor %}
   </div>
 </section>
-
-<script>
-  $(document).ready(function () {
-    // Open popup when .video-wrapper is clicked
-    $('body').on('click', '.video-wrapper', function () {
-      var modalId = $(this).data('modal');
-      $('#' + modalId).fadeIn();
-    });
-
-    // Close popup when close button is clicked
-    $('body').on('click', '.cideoClosed', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      var popup_close = $(this).closest('.video_popup_init');
-      popup_close.fadeOut();
-
-      // Pause all videos inside the popup_close
-      popup_close.find('video').each(function () {
-        this.pause();
+{% if template contains 'index' or template contains 'collection' %}
+  <script>
+    $(document).ready(function () {
+      // Open popup when .video-wrapper is clicked
+      $('body').on('click', '.video-wrapper', function () {
+        var modalId = $(this).data('modal');
+        $('#' + modalId).fadeIn();
       });
-    });
 
-    // Close popup when clicking outside the .video_popup content
-    $('body').on('click', '.video_popup_init', function (e) {
-      if ($(e.target).closest('.video_popup').length === 0) {
-        $(this).fadeOut();
+      // Close popup when close button is clicked
+      $('body').on('click', '.cideoClosed', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-        // Pause all videos when closing by background click
-        $(this).find('video').each(function () {
+        var popup_close = $(this).closest('.video_popup_init');
+        popup_close.fadeOut();
+
+        // Pause all videos inside the popup_close
+        popup_close.find('video').each(function () {
           this.pause();
         });
-      }
-    });
+      });
 
+      // Close popup when clicking outside the .video_popup content
+      $('body').on('click', '.video_popup_init', function (e) {
+        if ($(e.target).closest('.video_popup').length === 0) {
+          $(this).fadeOut();
 
-  });
-</script>
-
-<script>
-  $(document).ready(function () {
-    const isMobile = window.innerWidth < 760;
-    if (!isMobile) return;
-
-    let currentlyPlaying = null;
-
-    $(".video-wrapper").each(function () {
-      const $wrapper = $(this);
-      const $video = $wrapper.find(".mobile_view_video");
-      const $icon = $wrapper.find(".youtube__icon_svg");
-
-      const video = $video.get(0);
-
-      const toggleVideo = () => {
-        if (currentlyPlaying && currentlyPlaying !== video) {
-          currentlyPlaying.pause();
-          const $prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
-          $prevIcon.show();
+          // Pause all videos when closing by background click
+          $(this).find('video').each(function () {
+            this.pause();
+          });
         }
+      });
 
-        if (video.paused) {
-          video.muted = false;
-          video.play();
-          $icon.hide();
-          currentlyPlaying = video;
-        } else {
-          video.pause();
-          $icon.show();
-          currentlyPlaying = null;
-        }
-      };
 
-      $video.on("click", toggleVideo);
-      $icon.on("click", toggleVideo);
     });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      const isMobile = window.innerWidth < 760;
+      if (!isMobile) return;
+
+      let currentlyPlaying = null;
+
+      $(".video-wrapper").each(function () {
+        const $wrapper = $(this);
+        const $video = $wrapper.find(".mobile_view_video");
+        const $icon = $wrapper.find(".youtube__icon_svg");
+
+        const video = $video.get(0);
+
+        const toggleVideo = () => {
+          if (currentlyPlaying && currentlyPlaying !== video) {
+            currentlyPlaying.pause();
+            const $prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
+            $prevIcon.show();
+          }
+
+          if (video.paused) {
+            video.muted = false;
+            video.play();
+            $icon.hide();
+            currentlyPlaying = video;
+          } else {
+            video.pause();
+            $icon.show();
+            currentlyPlaying = null;
+          }
+        };
+
+        $video.on("click", toggleVideo);
+        $icon.on("click", toggleVideo);
+      });
 
 
-  });
-</script>
-
+    });
+  </script>
+{% endif %}
 {% schema %}
 {
   "name": "Video Product Cards",
