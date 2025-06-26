@@ -425,6 +425,7 @@
     // Open popup when .video-wrapper is clicked
     $('body').on('click', '.video-wrapper', function () {
       var modalId = $(this).data('modal');
+      alert(modalId);
       $('#' + modalId).fadeIn();
     });
 
