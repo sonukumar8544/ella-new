@@ -7397,4 +7397,16 @@ $(document)
     }
   });
 
+  // custom App Shopper code
+  $(document).on("click", ".video-section button.cst_atc_button_testimonail", function () {
+        $(this).addClass("is-loading");
+        const variantSId = $(this).attr("data-variant-ids");
+        let $tarSget = $(this);
+        halo.actionAddToCart($tarSget, variantSId, 1),
+           // halo.updateSidebarCart(cart);
+                         $body.addClass('cart-sidebar-show');
+        cartSavings();
+      });
+  
+
 })(jQuery);
