@@ -40,6 +40,7 @@
                 muted
                 loop
                 playsinline
+                poster="{{ metaobject.video_poster.value | img_url: '500x' }}"
                 style="width: 100%; height: auto; cursor: pointer;"
               >
                 <source src="{{ metaobject.video_link.value }}" type="video/mp4">
