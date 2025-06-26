@@ -423,42 +423,39 @@
 
 <script>
   $(document).ready(function () {
-    const isMobile = window.innerWidth < 760;
-    if (!isMobile) return;
+    // Open popup when .video-wrapper is clicked
+    $('body').on('click', '.video-wrapper', function () {
+      var modalId = $(this).data('modal');
+      $('#' + modalId).fadeIn();
+    });
 
-    let currentlyPlaying = null;
+    // Close popup when close button is clicked
+    $('body').on('click', '.cideoClosed', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    $(".video-wrapper").each(function () {
-      const wrapper = $(this);
-      const video = wrapper.find(".mobile_view_video").get(0);
-      const icon = wrapper.find(".youtube__icon_svg").get(0);
+      var popup_close = $(this).closest('.video_popup_init');
+      popup_close.fadeOut();
 
-      const toggleVideo = () => {
-        // If another video is playing, pause it
-        if (currentlyPlaying && currentlyPlaying !== video) {
-          currentlyPlaying.pause();
-          const prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
-          if (prevIcon) prevIcon.style.display = "block";
-        }
-
-        if (video.paused) {
-          video.muted = false;
-          video.play();
-          icon.style.display = "none";
-          currentlyPlaying = video;
-        } else {
-          video.pause();
-          icon.style.display = "block";
-          currentlyPlaying = null;
-        }
-      };
-
-      // Click video or play icon
-      wrapper.on("click", ".mobile_view_video, .youtube__icon_svg", function (e) {
-        e.stopPropagation();
-        toggleVideo();
+      // Pause all videos inside the popup_close
+      popup_close.find('video').each(function () {
+        this.pause();
       });
     });
+
+    // Close popup when clicking outside the .video_popup content
+    $('body').on('click', '.video_popup_init', function (e) {
+      if ($(e.target).closest('.video_popup').length === 0) {
+        $(this).fadeOut();
+
+        // Pause all videos when closing by background click
+        $(this).find('video').each(function () {
+          this.pause();
+        });
+      }
+    });
+
+
   });
 </script>
 
