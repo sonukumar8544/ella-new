@@ -830,6 +830,24 @@
         "button_text": "Read More"
       }
     },
+    "17509553432f17f194": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_HEC7Pb": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_HEC7Pb"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
     "brand_slider_tRACcq": {
       "type": "brand-slider",
       "blocks": {
@@ -1796,6 +1814,7 @@
     "rich_text_MT6wG9",
     "17447304680d8f83b6",
     "product_ingrediants_section_NLKKBM",
+    "17509553432f17f194",
     "brand_slider_tRACcq",
     "landing_page_section_spotlight_block_dgCwPD",
     "product-recommendations",
