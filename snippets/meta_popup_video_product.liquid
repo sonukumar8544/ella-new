@@ -36,7 +36,7 @@
     <div class="video_popup_grid {% if metaobject.video_product_1.value != blank %}popup_second_product{% endif %}">
       {% if metaobject.video_product_1.value != blank %}
         <div class="card-content" data-product-id="{{  metaobject.video_product_1.id }}">
-          <a href="/products/{{ metaobject.video_product_1.handle }}" title="{{ featured_product.title }}">
+          <a href="/products/{{ metaobject.video_product_1.url }}" title="{{ featured_product.title }}">
             <img
               class="product-img lazyload"
               data-src="{{  metaobject.video_product_1.value | img_url: '500x' }}"
