@@ -463,6 +463,7 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth < 768) {
     const wrappers = document.querySelectorAll(".video-wrapper");
 
     wrappers.forEach(wrapper => {
@@ -483,6 +484,7 @@
       video_mobile.addEventListener("click", toggleVideo);
       youtubeIcon.addEventListener("click", toggleVideo);
     });
+    }
   });
 </script>
 {% schema %}
