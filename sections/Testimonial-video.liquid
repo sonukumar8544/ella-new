@@ -496,18 +496,7 @@
       $icon.on("click", toggleVideo);
     });
 
-    // Remove scroll listener if you only want pause on click
-    // If you do need scroll pause, uncomment below
-    /*
-    $(".video-scroll-container").on("scroll", function () {
-      if (currentlyPlaying) {
-        currentlyPlaying.pause();
-        const $icon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
-        $icon.show();
-        currentlyPlaying = null;
-      }
-    });
-    */
+
   });
 </script>
 
