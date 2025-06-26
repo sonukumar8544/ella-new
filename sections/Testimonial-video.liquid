@@ -527,6 +527,53 @@
     });
   </script>
 -->
+<!--
+  <script>
+    $(document).ready(function () {
+      const isMobile = window.innerWidth < 760;
+      if (!isMobile) return;
+
+      let currentlyPlaying = null;
+
+      $(".video-wrapper").each(function () {
+        const video = $(this).find(".mobile_view_video").get(0);
+        const icon = $(this).find(".youtube__icon_svg").get(0);
+
+        const toggleVideo = () => {
+          if (currentlyPlaying && currentlyPlaying !== video) {
+            currentlyPlaying.pause();
+            const prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
+            if (prevIcon) prevIcon.style.display = "block";
+          }
+
+          if (video.paused) {
+            video.muted = false;
+            video.play();
+            icon.style.display = "none";
+            currentlyPlaying = video;
+          } else {
+            video.pause();
+            icon.style.display = "block";
+            currentlyPlaying = null;
+          }
+        };
+
+        $(video).on("click", toggleVideo);
+        $(icon).on("click", toggleVideo);
+      });
+
+      // Pause video on scroll
+      $(".video-scroll-container").on("scroll", function () {
+        if (currentlyPlaying) {
+          currentlyPlaying.pause();
+          const icon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
+          if (icon) icon.style.display = "block";
+          currentlyPlaying = null;
+        }
+      });
+    });
+  </script>
+-->
 <script>
   $(document).ready(function () {
     const isMobile = window.innerWidth < 760;
@@ -535,41 +582,47 @@
     let currentlyPlaying = null;
 
     $(".video-wrapper").each(function () {
-      const video = $(this).find(".mobile_view_video").get(0);
-      const icon = $(this).find(".youtube__icon_svg").get(0);
+      const $wrapper = $(this);
+      const $video = $wrapper.find(".mobile_view_video");
+      const $icon = $wrapper.find(".youtube__icon_svg");
+
+      const video = $video.get(0);
 
       const toggleVideo = () => {
         if (currentlyPlaying && currentlyPlaying !== video) {
           currentlyPlaying.pause();
-          const prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
-          if (prevIcon) prevIcon.style.display = "block";
+          const $prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
+          $prevIcon.show();
         }
 
         if (video.paused) {
           video.muted = false;
           video.play();
-          icon.style.display = "none";
+          $icon.hide();
           currentlyPlaying = video;
         } else {
           video.pause();
-          icon.style.display = "block";
+          $icon.show();
           currentlyPlaying = null;
         }
       };
 
-      $(video).on("click", toggleVideo);
-      $(icon).on("click", toggleVideo);
+      $video.on("click", toggleVideo);
+      $icon.on("click", toggleVideo);
     });
 
-    // Pause video on scroll
-    $(".video-scroll-container").on("click", function () {
+    // Remove scroll listener if you only want pause on click
+    // If you do need scroll pause, uncomment below
+    /*
+    $(".video-scroll-container").on("scroll", function () {
       if (currentlyPlaying) {
         currentlyPlaying.pause();
-        const icon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
-        if (icon) icon.style.display = "block";
+        const $icon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
+        $icon.show();
         currentlyPlaying = null;
       }
     });
+    */
   });
 </script>
 
