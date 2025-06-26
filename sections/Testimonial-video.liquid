@@ -562,7 +562,7 @@
     });
 
     // Pause video on scroll
-    $(".video-scroll-container").on("scroll", function () {
+    $(".video-scroll-container").on("click", function () {
       if (currentlyPlaying) {
         currentlyPlaying.pause();
         const icon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg").get(0);
