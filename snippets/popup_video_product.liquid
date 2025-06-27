@@ -24,7 +24,7 @@
           muted
           loop
           controls
-          poster="{{ video.settings.video | img_url: '500x' }}"
+          poster="{{ video.settings.video_poster | img_url: '500x' }}"
           style="width: 100%; height: auto;"
         >
           <source src="{{ video.settings.video }}" type="video/mp4">
