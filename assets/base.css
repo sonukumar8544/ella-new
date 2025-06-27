@@ -8778,3 +8778,27 @@ table.Table.Ltr.Table p {
 form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.go3279073480.kl-private-reset-css-Xuajs1 {
     padding: 0px !important;
 }
+
+
+ .write-review-btn {
+  color: #086b92;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.write-review-btn i {
+  font-size: 16px;
+}
+
+.halo-block-header.text-center {
+    display: flex;
+    justify-content: center;
+}
