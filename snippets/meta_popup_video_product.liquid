@@ -25,6 +25,7 @@
           muted
           loop
           controls
+          poster="{{ metaobject.video_poster.value | img_url: '500x' }}"
           style="width: 100%; height: auto;"
         >
           <source src="{{ popupvideo }}" type="video/mp4">
