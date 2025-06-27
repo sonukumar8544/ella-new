@@ -8802,3 +8802,13 @@ form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.go3279073480.kl-private-
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 769px){
+a.review-btn-psps{
+  margin: auto;
+}
+
+.halo-block-header.text-center{
+flex-direction: column;
+}
+}
