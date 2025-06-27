@@ -1,0 +1,131 @@
+{% schema %}
+  {
+    "name": "healthgoal hero banner",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal hero banner"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="healthgoal-hero">
+  <div class="healthgoal-container">
+    <div class="healthgoal-text">
+      <h1>Heal Your Gut the<br><span>Natural Way</span>
+      </h1>
+      <p>Our science-backed supplements help restore gut biome balance and support natural detox, so you feel
+ 
+ 
+                    lighter, clearer, and truly well again.</p>
+      <a href="#" class="healthgoal-btn">Shop Now
+        <span>↗</span>
+      </a>
+    </div>
+    <div class="healthgoal-image">
+      <img
+        height=""
+        width=""
+        src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_3_a6860546-8ee7-4ef1-a0be-4048990e3923.png?v=1751004556"
+        alt="Gut Health Products" />
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .healthgoal-hero {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #fffce6, #fff);
+    color: #333;
+  }
+
+  .healthgoal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .healthgoal-text {
+    max-width: 520px;
+    flex: 1 1 400px;
+  }
+
+  .healthgoal-text h1 {
+    font-size: 45px;
+    color: #086b92;
+    margin: 0 0 20px;
+    line-height: 1.1;
+  }
+
+  .healthgoal-text h1 span {
+    display: block;
+  }
+  .healthgoal-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #65676C;
+    margin-bottom: 30px;
+  }
+
+  .healthgoal-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0077a3;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .healthgoal-btn span {
+    margin-left: 8px;
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 4px 8px;
+    border-radius: 16px;
+    background: white;
+    color: #086B92;
+  }
+
+  .healthgoal-btn:hover {
+    background-color: #005c7a;
+    color: white;
+  }
+
+  .healthgoal-image {
+    flex: 1 1 400px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .healthgoal-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .healthgoal-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .healthgoal-text h1 {
+      font-size: 32px;
+    }
+
+    .healthgoal-btn {
+      justify-content: center;
+    }
+  }
+</style>

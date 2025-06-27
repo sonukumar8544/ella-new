@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "healthgoad_herobanner_EXrKzj": {
+      "type": "healthgoad-herobanner",
+      "name": "healthgoal hero banner",
+      "settings": {}
+    },
+    "healthgoal_why_your_section_ndjqYU": {
+      "type": "healthgoal-why-your-section",
+      "name": "healthgoal why your",
+      "settings": {}
+    },
     "collection_banner_meta_6B63K4": {
       "type": "Collection_banner_meta",
       "blocks": {
@@ -107,6 +117,7 @@
       "block_order": [
         "large_img_wBDKi4"
       ],
+      "disabled": true,
       "settings": {
         "id_section": "collection_custom_banner",
         "container": "fullwidth",
@@ -233,9 +244,17 @@
         "collection_Rh7ezF",
         "collection_Qj9Hn3"
       ],
+      "disabled": true,
       "settings": {
         "container": "fullwidth",
         "padding_full_width": 0
+      }
+    },
+    "custom_liquid_gQJfXU": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <p class=\"healthgoal-hashtag\">#HAPPYGUTHAPPYYOU</p>\n    <h2 class=\"healthgoal-support-heading\">\n      <span class=\"highlight\">Powerful Daily Support</span>\n      <span class=\"divider\">—</span>\n      <span class=\"subtext\">for digestion, balance, and energy</span>\n    </h2>\n  </div>\n</section>\n\n<style> .healthgoal-support-section {\n  padding: 40px 20px;\n  text-align: center;\n  background-color: #ffffff;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-hashtag {\n  font-size: 16px;\n  letter-spacing: 2px;\n  color: #808080;\n  margin-bottom: 10px;\n  text-transform: uppercase;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 600;\n    color: #808080;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 22px;\n  }\n}\n</style>"
       }
     },
     "product-grid": {
@@ -270,7 +289,7 @@
         "show_view_as": true,
         "products_per_page": "20",
         "layout": "4",
-        "show_infinite_scrolling": "show_more",
+        "show_infinite_scrolling": "pagination",
         "show_banner": false,
         "show_banner_1": false,
         "banner_position_1": "4",
@@ -293,6 +312,16 @@
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
       }
+    },
+    "healthgoal_shop_section_q8fYH6": {
+      "type": "healthgoal-shop-section",
+      "name": "healthgoal shop section",
+      "settings": {}
+    },
+    "healthgoal_wht_feel_section_rzzf8V": {
+      "type": "healthgoal-wht-feel-section",
+      "name": "healthgoal what you feel",
+      "settings": {}
     },
     "1649236457c43290d7": {
       "type": "image-banner",
@@ -396,6 +425,7 @@
       "block_order": [
         "special_img_FdDYtW"
       ],
+      "disabled": true,
       "settings": {
         "id_section": "collection_page_quiz_section",
         "container": "1920",
@@ -564,6 +594,7 @@
         "product_card_Tk4Xjj",
         "product_card_twb6fB"
       ],
+      "disabled": true,
       "name": "Testimonial Video | App",
       "settings": {
         "title": "Voices of Satisfaction",
@@ -1390,18 +1421,36 @@
         "mg_bottom_tablet": 35,
         "mg_bottom_mobile": 20
       }
+    },
+    "healthgoal_faqs_section_WcLWJP": {
+      "type": "healthgoal-faqs-section",
+      "custom_css": [],
+      "name": "healthgoal faqs",
+      "settings": {}
+    },
+    "healthgoal_review_section_BWe8im": {
+      "type": "healthgoal-review-section",
+      "name": "healthgoal review",
+      "settings": {}
     }
   },
   "order": [
+    "healthgoad_herobanner_EXrKzj",
+    "healthgoal_why_your_section_ndjqYU",
     "collection_banner_meta_6B63K4",
     "collection_filter_2_fMXGJ3",
+    "custom_liquid_gQJfXU",
     "product-grid",
+    "healthgoal_shop_section_q8fYH6",
+    "healthgoal_wht_feel_section_rzzf8V",
     "1649236457c43290d7",
     "testimonial_video_iqLUje",
     "16378289883380f691",
     "collection_faq_new_nzkzTD",
     "collapsible_content_F3qXCN",
     "instagram_9EfqFH",
-    "spotlight_block_qnYcNH"
+    "spotlight_block_qnYcNH",
+    "healthgoal_faqs_section_WcLWJP",
+    "healthgoal_review_section_BWe8im"
   ]
 }

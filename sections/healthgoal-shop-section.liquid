@@ -1,0 +1,149 @@
+{% schema %}
+  {
+    "name": "healthgoal shop section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal shop section"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="healthgoal-shop-section">
+  <div class="healthgoal-container">
+    <h2 class="healthgoal-title">Why Shop With Us</h2>
+    <div class="healthgoal-cards-wrapper">
+      <div class="healthgoal-card faded">
+        <img
+          height=""
+          width=""
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
+          alt="Premium Patented Ingredients" />
+        <p>Premium Patented Ingredients</p>
+      </div>
+      <div class="healthgoal-card">
+        <img
+          height=""
+          width=""
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
+          alt="Award Winning Extraction Process" />
+        <p>Award Winning<br>Extraction Process</p>
+      </div>
+      <div class="healthgoal-card active">
+        <img
+          height=""
+          width=""
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
+          alt="Science-Backed Formulations" />
+        <p>
+          <strong>Science-Backed<br>Formulations</strong>
+        </p>
+      </div>
+      <div class="healthgoal-card">
+        <img
+          height=""
+          width=""
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
+          alt="GMP Facility" />
+        <p>Health Canada<br>Registered GMP Facility</p>
+      </div>
+      <div class="healthgoal-card faded">
+        <img
+          height=""
+          width=""
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
+          alt="FDA Compliant" />
+        <p>FDA<br>Compliant</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .healthgoal-shop-section {
+    padding: 0 20px 60px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .healthgoal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .healthgoal-title {
+    font-size: 35px;
+    color: #006a91;
+    margin-bottom: 45px;
+  }
+
+  .healthgoal-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .healthgoal-card {
+    background: #ffffff;
+    border: 1px solid #cce4ec;
+    border-radius: 10px;
+    padding: 20px 15px;
+    width: 180px;
+    min-height: 180px;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .healthgoal-card img {
+    max-width: 75px;
+    margin-bottom: 10px;
+  }
+
+  .healthgoal-card p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .healthgoal-card.active {
+    border: 2px solid #0077a3;
+    box-shadow: 0 8px 20px rgba(0, 119, 163, 0.15);
+  }
+
+  .healthgoal-card.faded {
+    opacity: 0.3;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .healthgoal-cards-wrapper {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .healthgoal-card {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .healthgoal-card {
+      width: 100%;
+    }
+
+    .healthgoal-title {
+      font-size: 26px;
+    }
+  }
+
+</style>

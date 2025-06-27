@@ -1,0 +1,174 @@
+{% schema %}
+  {
+    "name": "healthgoal faqs",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal faqs"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="healthgal-faqs-section">
+  <div class="healthgal-container">
+    <h2 class="healthgal-faqs-title">Freequently asked questions</h2>
+    <p class="healthgal-faqs-subtext">We’re happy to answer your questions</p>
+
+    <div class="healthgal-faqs-item">
+      <button class="healthgal-question">What is Team Newsify?</button>
+      <div class="healthgal-answer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi similique delectus vero, aspernatur vitae harum eaque sed aliquam earum omnis libero natus voluptas iste asperiores exercitationem ipsam in eos suscipit sint eligendi quisquam, eum fugiat impedit? Cupiditate ipsa consequatur, aperiam doloremque vel necessitatibus eveniet minus quas nulla officiis alias nemo.</p>
+      </div>
+    </div>
+
+    <div class="healthgal-faqs-item">
+      <button class="healthgal-question">How is the team Newsify</button>
+      <div class="healthgal-answer">
+        <p>The team is composed of experienced professionals Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, ex temporibus. Veritatis consequatur et laborum incidunt inventore autem illum asperiores labore aspernatur rerum in, odio officiis nisi aliquid, quisquam sapiente iste? Corrupti, suscipit eligendi fuga doloremque tempora quis deleniti ex! passionate about automation and AI.</p>
+      </div>
+    </div>
+
+    <div class="healthgal-faqs-item">
+      <button class="healthgal-question">What does the technology work?</button>
+      <div class="healthgal-answer">
+        <p>The technology uses AI-driven tools to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta fuga est, quis quasi deserunt quae. Commodi sunt labore, inventore, odit ipsum totam laboriosam voluptatem provident debitis ut corporis a, perspiciatis modi nemo sed incidunt fugit. Quo cum sit hic! automate workflows and improve productivity.</p>
+      </div>
+    </div>
+
+    <div class="healthgal-faqs-item">
+      <button class="healthgal-question">How often will I get team Newsify?</button>
+      <div class="healthgal-answer">
+        <p>You can access Team Newsify Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla natus temporibus velit doloribus ab! Repellat sint velit nisi sapiente animi dolorem similique provident laboriosam fuga mollitia blanditiis quisquam rerum eum, minima voluptatibus explicabo? Totam eligendi quisquam adipisci assumenda nisi tempore voluptatum debitis exercitationem dolore unde autem dicta expedita enim veritatis tempora cum neque consequuntur ut, odio natus quas commodi eaque! anytime through your subscription dashboard.</p>
+      </div>
+    </div>
+
+    <div class="healthgal-faqs-item">
+      <button class="healthgal-question">How automated is this?</button>
+      <div class="healthgal-answer">
+        <p>
+          It is almost completely automated  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium perferendis ab cupiditate omnis porro nisi facilis aliquid, amet iste sit incidunt natus corporis obcaecati at saepe recusandae quibusdam quidem fugit nesciunt harum impedit officia. Enim saepe exercitationem blanditiis, quisquam voluptatibus eius officia non nulla in.as a system. You can schedule plans and create calendars for your upcoming mails. You can analyze AI, tracker, AI reporter, AI to create a smooth business plan for you and your teammates with one click!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .healthgal-faqs-section {
+    background: #eaf4f8;
+    padding: 45px 20px 60px;
+    font-family: sans-serif;
+  }
+
+  .healthgal-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .healthgal-faqs-title {
+    font-size: 35px;
+    text-align: center;
+    color: #006a8b;
+    margin-bottom: 8px;
+  }
+
+  .healthgal-faqs-subtext {
+    text-align: center;
+    font-size: 22px;
+    color: #707070;
+    margin-bottom: 50px;
+  }
+
+  .healthgal-faqs-item {
+    border-bottom: 1px solid #cde5ef;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .healthgal-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  .healthgal-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #006a8b;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 300;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+
+  .healthgal-faqs-item.open .healthgal-question::after {
+    content: '×';
+    background: #006a8b;
+    color: #fff;
+    font-size: 26px;
+  }
+
+  .healthgal-answer {
+    padding-top: 12px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  .healthgal-faqs-item.open .healthgal-answer {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .healthgal-faqs-title {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.healthgal-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const isOpen = faqItem.classList.contains('open');
+  
+      // Close all
+      document.querySelectorAll('.healthgal-faqs-item').forEach(item => item.classList.remove('open'));
+  
+      // Toggle current
+      if (!isOpen) {
+        faqItem.classList.add('open');
+      }
+    });
+  });
+</script>
