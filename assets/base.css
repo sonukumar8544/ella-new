@@ -8800,8 +8800,17 @@ form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.go3279073480.kl-private-
 
 .halo-block-header.text-center {
     display: flex;
+   position: relative;
     justify-content: center;
 }
+
+@media (min-width: 769px){
+  a.review-btn-psps {
+    position: absolute;
+    right: 0;
+}
+}
+
 
 @media (max-width: 769px){
 a.review-btn-psps{
