@@ -43,7 +43,7 @@
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {% comment %} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%} {% endcomment %}
     </title>
-    {% if request.path contains ' /pages/molecular-hydrogen' %}
+    {% if request.path contains '/pages/molecular-hydrogen' %}
       <meta name="robots" content="noindex, nofollow">
     {% endif %}
 
