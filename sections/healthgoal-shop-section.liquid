@@ -9,141 +9,137 @@
     ]
   }
 {% endschema %}
-
-<section class="healthgoal-shop-section">
-  <div class="healthgoal-container">
-    <h2 class="healthgoal-title">Why Shop With Us</h2>
-    <div class="healthgoal-cards-wrapper">
-      <div class="healthgoal-card faded">
-        <img
-          height=""
-          width=""
-          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
-          alt="Premium Patented Ingredients" />
-        <p>Premium Patented Ingredients</p>
-      </div>
-      <div class="healthgoal-card">
-        <img
-          height=""
-          width=""
-          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
-          alt="Award Winning Extraction Process" />
-        <p>Award Winning<br>Extraction Process</p>
-      </div>
-      <div class="healthgoal-card active">
-        <img
-          height=""
-          width=""
-          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
-          alt="Science-Backed Formulations" />
-        <p>
-          <strong>Science-Backed<br>Formulations</strong>
-        </p>
-      </div>
-      <div class="healthgoal-card">
-        <img
-          height=""
-          width=""
-          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
-          alt="GMP Facility" />
-        <p>Health Canada<br>Registered GMP Facility</p>
-      </div>
-      <div class="healthgoal-card faded">
-        <img
-          height=""
-          width=""
-          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rectangle_24509.png?v=1751015530"
-          alt="FDA Compliant" />
-        <p>FDA<br>Compliant</p>
-      </div>
+<div class="wrapper">
+  <h2>Lorem ipsum dolor sit amet.</h2>
+  <div class="center-slider">
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="image-sec-text">
+      <img src="https://www.twtf.org.uk/wp-content/uploads/2024/01/dummy-image.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet.</p>
     </div>
   </div>
-</section>
-
+</div>
 
 <style>
-  .healthgoal-shop-section {
-    padding: 0 20px 60px;
-    background-color: #fff;
-    text-align: center;
-  }
-
-  .healthgoal-container {
+  .wrapper {
+    padding: 70px 0;
     max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center;
+    margin: auto;
   }
 
-  .healthgoal-title {
-    font-size: 35px;
-    color: #006a91;
-    margin-bottom: 45px;
-  }
-
-  .healthgoal-cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .healthgoal-card {
-    background: #ffffff;
-    border: 1px solid #cce4ec;
-    border-radius: 10px;
-    padding: 20px 15px;
-    width: 180px;
-    min-height: 180px;
-    box-shadow: 0 0 0 transparent;
-    transition: all 0.3s ease;
+  .image-sec-text {
     display: flex;
     flex-direction: column;
+  }
+
+  .image-sec-text p {
+    line-height: 1.1;
+    text-align: center;
+  }
+  /* Default slide */
+  .center-slider .slick-slide {
+    border: 2px solid gray;
+    /* height: 200px; */
+    border-radius: 12px;
+    margin: 0 15px 0 0;
+    display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.8);
+    transition: all 0.4s ease-in-out;
+  }
+  .center-slider .slick-slide,
+  .center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
+    transform: scale(0.8, 0.8);
+    transition: all 0.4s ease-in-out;
   }
 
-  .healthgoal-card img {
-    max-width: 75px;
-    margin-bottom: 10px;
+  /* Active center slide (You can change anything here for cenetr slide)*/
+  .center-slider .slick-center,
+  .center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1);
+    /* background-color: #000000; */
+    border: 2px solid blue;
+    border-radius: 12px;
+  }
+  .center-slider .slick-current.slick-active {
+    transform: scale(1);
+    /* background-color: #000000; */
   }
 
-  .healthgoal-card p {
-    font-size: 16px;
-    color: black;
-    line-height: 1.4;
-    margin: 0;
+  .slick-arrow.slick-next {
+    right: 15px;
   }
 
-  .healthgoal-card.active {
-    border: 2px solid #0077a3;
-    box-shadow: 0 8px 20px rgba(0, 119, 163, 0.15);
+  .slick-next,
+  .slick-prev {
+    z-index: 5;
+  }
+  .slick-next {
+    right: 15px;
+  }
+  .slick-prev {
+    left: 15px;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    color: #000;
+    font-size: 26px;
   }
 
-  .healthgoal-card.faded {
-    opacity: 0.3;
+  .slick-slide img {
+    display: block;
+    width: 50%;
+    height: 100%;
   }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .healthgoal-cards-wrapper {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .healthgoal-card {
-      width: 45%;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .healthgoal-card {
-      width: 100%;
-    }
-
-    .healthgoal-title {
-      font-size: 26px;
-    }
-  }
-
 </style>
+
+<script>
+  $(document).ready(function(){
+    $('.center-slider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '20px',
+      arrows: true,
+      dots: false,
+      speed: 300,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 50000,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
