@@ -3,23 +3,21 @@
 
 {%- assign collection_layout = settings.collection_layout -%}
 
-{% if collection_layout == "default" %}
-    {% render 'collection-product-grid' %}
-{% elsif collection_layout == "express_order" %}
-    {% render 'collection-express-order' %}
-{% elsif collection_layout == "full_width" %}
-    {% render 'collection-full-width' %}
-{% elsif collection_layout == "masonry" %}
-    {% render 'collection-masonry' %}
-{% elsif collection_layout == "right_sidebar" %}
-    {% render 'collection-right-sidebar' %}
-{% elsif collection_layout == "banner_adv" %}
-    {% render 'collection-banner-adv' %}
+{% if collection_layout == 'default' %}
+  {% render 'collection-product-grid' %}
+{% elsif collection_layout == 'express_order' %}
+  {% render 'collection-express-order' %}
+{% elsif collection_layout == 'full_width' %}
+  {% render 'collection-full-width' %}
+{% elsif collection_layout == 'masonry' %}
+  {% render 'collection-masonry' %}
+{% elsif collection_layout == 'right_sidebar' %}
+  {% render 'collection-right-sidebar' %}
+{% elsif collection_layout == 'banner_adv' %}
+  {% render 'collection-banner-adv' %}
 {% endif %}
 
-{% render 'schema',
-    collection: collection
-%}
+{% render 'schema', collection: collection %}
 
 {% schema %}
 {
@@ -78,7 +76,7 @@
         "id": "sidebar_collapse",
         "label": "t:sections.main-sidebar.settings.general.label__6",
         "default": "collapse",
-        "options": 
+        "options":
         [
             {
               "value": "collapse",
@@ -105,7 +103,7 @@
         "id": "sidebar_layout",
         "label": "t:sections.main-sidebar.settings.general.layout",
         "default": "layout_1",
-        "options": 
+        "options":
         [
             {
               "value": "layout_1",
@@ -122,7 +120,7 @@
         "id": "sidebar_collapse_default",
         "label": "t:sections.main-sidebar.settings.general.label__4",
         "default": "expand",
-        "options": 
+        "options":
         [
             {
               "value": "expand",
@@ -139,7 +137,7 @@
         "id": "sidebar_type",
         "label": "t:sections.main-sidebar.settings.general.label__3",
         "default": "vertical",
-        "options": 
+        "options":
         [
             {
               "value": "vertical",
@@ -156,7 +154,7 @@
         "id": "sidebar_position",
         "label": "t:sections.general.settings.position.label__1",
         "default": "left",
-        "options": 
+        "options":
         [
             {
               "value": "left",
@@ -330,7 +328,7 @@
         "type": "range",
         "id": "max_item_per_filter",
         "label": "t:sections.main-collection-product-grid.settings.filter.label__5",
-        "min": 5, 
+        "min": 5,
         "max": 20,
         "step": 1,
         "default": 10,
@@ -485,7 +483,7 @@
         "label": "t:sections.main-collection-product-grid.settings.product.banner_position_1",
         "default": "4",
         "info": "t:sections.main-collection-product-grid.settings.product.info_1"
-    },    
+    },
     {
         "type" : "image_picker",
         "id" : "img_banner1",
@@ -508,7 +506,7 @@
         "label": "t:sections.main-collection-product-grid.settings.product.banner_position_2",
         "default": "5",
         "info": "t:sections.main-collection-product-grid.settings.product.info_2"
-    },    
+    },
     {
         "type" : "image_picker",
         "id" : "img_banner2",
@@ -524,14 +522,14 @@
         "id" : "show_banner_3",
         "label" : "t:sections.main-collection-product-grid.settings.product.enable_banner_3",
         "default" : true
-    },  
+    },
     {
         "type": "text",
         "id": "banner_position_3",
         "label": "t:sections.main-collection-product-grid.settings.product.banner_position_3",
         "default": "12",
         "info": "t:sections.main-collection-product-grid.settings.product.info_3"
-    },   
+    },
     {
         "type" : "image_picker",
         "id" : "img_banner3",
@@ -697,7 +695,7 @@
                         {
                             "value": "show_all",
                             "label": "t:sections.main-sidebar.blocks.category.settings.general.options__3"
-                        }                    
+                        }
                     ]
                 },
                 {
@@ -821,7 +819,7 @@
                     "type": "url",
                     "id": "link",
                     "label": "t:sections.main-sidebar.blocks.lookbook_banner.settings.general.link"
-                }, 
+                },
                 {
                     "type": "checkbox",
                     "id": "show_title",
@@ -978,3 +976,7 @@
     ]
 }
 {% endschema %}
+
+{%- for product in collection['skin-health'].products -%}
+  -------{{ product.title }}
+{% endfor %}
