@@ -372,14 +372,12 @@
   <br>
   {% assign has_valid_bundle = false %}
 
-  {% if has_valid_bundle %}
-    {% assign filtered_product_count = filtered_product_count | plus: 1 %}
+  {% assign filtered_product_count = filtered_product_count | plus: 1 %}
 
-    {% if product.variants.size > 0 %}
-      {% assign first_variant_id = product.variants.first.id %}
-      {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
-      {% assign qty_index = forloop.index0 %}
-    {% endif %}
+  {% if product.variants.size > 0 %}
+    {% assign first_variant_id = product.variants.first.id %}
+    {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
+    {% assign qty_index = forloop.index0 %}
   {% endif %}
 {% endfor %}
 
