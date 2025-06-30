@@ -367,7 +367,7 @@
 {% assign product_variant_ids = '' %}
 <!-- Create a string to store variant IDs -->
 
-{% for product in collections[skin_bundle].products %}
+{%- for product in collection.products -%}
   {{ product.title }}----{{ forloop.index -}}
   <br>
   {% assign has_valid_bundle = false %}
