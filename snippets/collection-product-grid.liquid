@@ -362,14 +362,10 @@
 <!-- ============================ -->
 
 {% assign filtered_product_count = 0 %}
-{% assign skin_bundle = settings.collection %}
-
 {% assign product_variant_ids = '' %}
 <!-- Create a string to store variant IDs -->
 
 {%- for product in collection.products -%}
-  {{ product.title }}----{{ forloop.index -}}
-  <br>
   {% assign has_valid_bundle = false %}
 
   {% assign filtered_product_count = filtered_product_count | plus: 1 %}
