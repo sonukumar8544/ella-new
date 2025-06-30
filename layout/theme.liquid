@@ -86,6 +86,9 @@
     {% unless template contains 'index' or template contains 'collection' %}
       <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css">
     {% endunless %}
+    {% if request.path contains '/pages/molecular-hydrogen' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
     {% render 'variable' %}
     {% render 'global-style' %}
