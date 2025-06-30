@@ -183,7 +183,7 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
 }
 
 .product-card-layout-02 .halo-productBadges {
-  top: 3px !important;
+  top: 0px !important;
   left: 6px !important;
 }
 @media (min-width: 769px){
