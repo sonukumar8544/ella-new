@@ -277,12 +277,12 @@
               "
             >
               {%- for product in collection.products -%}
-               <h1>{{ product.title }}-----------<</h1> 
                 <li
                   class="product{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.banner_animation == 'effect_fade_up' %}
                     data-cascade style="--animation-order: {{ forloop.index }};"
                   {% endif %}
+                  data-variantid="{{ product.selected_or_first_available_variant.id }}"
                 >
                   {% render 'product-grid-layout',
                     product_card_product: product,
