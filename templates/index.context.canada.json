@@ -19,7 +19,7 @@
         "image_8zEkMA": {
           "disabled": false,
           "settings": {
-            "image_slide": "shopify://shop_images/Main-06_4_1.png",
+            "image_slide": "shopify://shop_images/DESKTOP.png",
             "image_slide_mb": "shopify://shop_images/Mobile_View-03_1.png",
             "heading": "",
             "slide-des": "",
@@ -36,6 +36,15 @@
         }
       }
     },
+    "testimonial_video_iqLUje": {
+      "settings": {},
+      "blocks": {
+        "product_card_EqhNhK": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    },
     "spotlight_block_qnYcNH": {
       "settings": {},
       "blocks": {
@@ -43,15 +52,6 @@
           "settings": {
             "title_align": "right"
           }
-        }
-      }
-    },
-    "testimonial_video_iqLUje": {
-      "settings": {},
-      "blocks": {
-        "product_card_EqhNhK": {
-          "disabled": true,
-          "settings": {}
         }
       }
     }
