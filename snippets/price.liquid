@@ -58,7 +58,7 @@
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
       <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
         <span class="price-item price-item--sale sale_price_amount1">
-          {% assign original_price = product.selected_or_first_available_variant.price %}
+          {% assign original_price = compare_at_price %}
           {% assign discount = original_price | times: 0.15 %}
           {% assign new_saleprice = original_price | minus: discount %}
           {{ new_saleprice | money_with_currency }}
