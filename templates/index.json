@@ -456,6 +456,7 @@
         "044503cd-52c1-4af3-8077-be921f131033",
         "16eb8900-abdc-40a0-bfc5-c69705db1f6b"
       ],
+      "disabled": true,
       "custom_css": [
         ".policies-block .policies-content {text-align: center;}"
       ],
@@ -529,7 +530,6 @@
         "marquee_aQPLj6",
         "marquee_iDyY9K"
       ],
-      "disabled": true,
       "name": "t:sections.marquee.presets.name",
       "settings": {
         "minus_spacing_top": 0,
@@ -550,11 +550,11 @@
         "border_color_mb": "#000000",
         "icon_color_mb": "#000000",
         "mg_top_desktop": 20,
-        "mg_top_tablet": 20,
-        "mg_top_mobile": 20,
+        "mg_top_tablet": 10,
+        "mg_top_mobile": 10,
         "mg_bottom_desktop": 20,
-        "mg_bottom_tablet": 12,
-        "mg_bottom_mobile": 18
+        "mg_bottom_tablet": 10,
+        "mg_bottom_mobile": 10
       }
     },
     "1642989489e5f98f1a": {
