@@ -585,7 +585,8 @@
       "custom_css": [
         "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
         "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}",
-        ".product-tab-block .list-product-tabs {display: none;}"
+        ".product-tab-block .list-product-tabs {display: none;}",
+        ".slider-progress-bar {display: none !important;}"
       ],
       "settings": {
         "container": "1170",
