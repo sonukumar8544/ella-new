@@ -1,0 +1,139 @@
+{% schema %}
+  {
+    "name": "healthgoal hero banner",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal hero banner"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="healthgoal-hero">
+  <div class="healthgoal-container">
+    <div class="healthgoal-text">
+       {% for block in collection.metafields.custom.collection_title_subtitle_link.value %}
+      {% assign parts = block | split: '|' %}
+      <h1>{{ parts[0] | strip }}</h1>
+      <p>{{ parts[1] | strip }}</p>
+      <a href="{{ parts[2] | strip }}" class="healthgoal-btn">Shop Now
+        <span>↗</span>
+      </a>
+      {% endfor %}
+    </div>
+    
+    <div class="healthgoal-image">
+      <img
+        height=""
+        width=""
+        src="{{ collection.metafields.custom.collection_images_new | image_url }}"
+        alt="Gut Health Products" />
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .healthgoal-hero {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #fffce6, #fff);
+    color: #333;
+  }
+
+  .healthgoal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .healthgoal-text {
+    max-width: 520px;
+    flex: 1 1 400px;
+  }
+
+  .healthgoal-text h1 {
+    font-size: 45px;
+    color: #086b92;
+    margin: 0 0 20px;
+    line-height: 1.1;
+  }
+
+  .healthgoal-text h1 span {
+    display: block;
+  }
+  .healthgoal-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #65676C;
+    margin-bottom: 30px;
+  }
+
+  .healthgoal-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0077a3;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .healthgoal-btn span {
+    margin-left: 8px;
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 4px 8px;
+    border-radius: 16px;
+    background: white;
+    color: #086B92;
+  }
+
+  .healthgoal-btn:hover {
+    background-color: #005c7a;
+    color: white;
+  }
+
+  .healthgoal-image {
+    flex: 1 1 400px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .healthgoal-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .healthgoal-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .healthgoal-text h1 {
+      font-size: 32px;
+    }
+
+    .healthgoal-btn {
+      justify-content: center;
+    }
+
+    .healthgoal-hero {
+      padding-bottom: 0;
+    }
+
+    .healthgoal-text {
+      flex: 1 1 325px;
+    }
+  }
+</style>

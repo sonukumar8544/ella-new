@@ -392,17 +392,19 @@
                         </ul>
                     </div>
                     <div class="product-tab--block-has__banner has__banner--{{ section.settings.position }}" style="--width-box-banner: {{ section.settings.width_banner | append: '%' }}">
-                        <div class="product-block__banner{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                        <div class="sonu333 product-block__banner{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                             <div class="list_banner_item" {% if block_banners.size > 1  %}data-banner-product{% endif %}>
                                 {%- for block in block_banners -%}
                                 {%- assign preview_img = block.settings.image -%}
                                 <figure class="{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }} o-hidden{% endif %}" style="max-width: {{ preview_img.width }}px">
                                     <div class="product-block__image adaptive_height image" style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%">
                                         {%- if block.settings.image != blank -%}
+                                           <a href="https://wellnessextract.com/pages/wellness-quiz">
                                             <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{%- if preview_img.width >= 375 -%}{{ preview_img | img_url: '375x' }} 375w,{%- endif -%}
                                             {%- if preview_img.width >= 750 -%}{{ preview_img | img_url: '750x' }} 750w,{%- endif -%}
                                             {%- if preview_img.width >= 1100 -%}{{ preview_img | img_url: '1100x' }} 1100w,{%- endif -%}
                                             {{ preview_img | img_url: 'master' }} {{ preview_img.width }}w" sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" alt="{{ preview_img.alt  | escape }}" width="{{ preview_img.width }}" height="{{ preview_img.width | divided_by: img_url.aspect_ratio }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}/>
+                                           </a>
                                         {%- else -%}
                                             <div class="placeholder" style="--height_placeholder: 530px;">
                                                 {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
@@ -420,6 +422,32 @@
                             </div>
                         </div>
                         <div class="product-block__grid">
+{% assign filtered_product_count = 0 %}
+{% assign skin_bundle = settings.collection %}
+ 
+{% assign product_variant_ids = '' %}
+ 
+{%- for product in collection.products -%}
+  {% assign has_valid_bundle = false %}
+ 
+  {% assign filtered_product_count = filtered_product_count | plus: 1 %}
+ 
+  {% if product.variants.size > 0 %}
+    {% assign first_variant_id = product.variants.first.id %}
+    {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
+    {% assign qty_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+ 
+{% if filtered_product_count > 1 %}
+<button
+    class="quiz_bundle_prodct product-form__submit button button--primary"
+    data-variant-ids="{{ product_variant_ids | strip_newlines | strip }}"
+    data-qtys="{{ qty_index }}"
+>
+    {{ 'Add All To Cart' }}
+</button>
+{% endif %}
                 {%- else -%}
                     {%- if block_title != blank -%}
                         <div class="halo-block-header text-{{ block_title_align }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
