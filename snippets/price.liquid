@@ -49,7 +49,7 @@
           {% assign original_price1 = product.selected_or_first_available_variant.price %}
           {% assign discount1 = original_price1 | times: 0.15 %}
           {% assign new_saleprice1 = original_price1 | minus: discount1 %}
-          {{ new_saleprice1 | money_with_currency }} --A
+          {{ new_saleprice1 | money_with_currency }}
         </span>
         <span class="price-item price-item--regular orginal_price1">
           {{- product.selected_or_first_available_variant.price | money_with_currency }}
