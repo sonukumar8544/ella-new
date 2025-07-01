@@ -49,7 +49,7 @@
           {% assign original_price1 = product.selected_or_first_available_variant.price %}
           {% assign discount1 = original_price1 | times: 0.15 %}
           {% assign new_saleprice1 = original_price1 | minus: discount1 %}
-          {{ new_saleprice1 | money_with_currency }}
+          {{ new_saleprice1 | money_with_currency }} --A
         </span>
         <span class="price-item price-item--regular orginal_price1">{{ money_price }} </span>
       </dd>
@@ -58,16 +58,16 @@
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
       <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
         <span class="price-item price-item--sale sale_price_amount1">
-          {% assign original_price = compare_at_price %}
+          {% assign original_price = product.selected_or_first_available_variant.price %}
           {% assign discount = original_price | times: 0.15 %}
           {% assign new_saleprice = original_price | minus: discount %}
-          {{ new_saleprice | money_with_currency }}
+          {{ new_saleprice | money_with_currency }}---B
         </span>
       </dd>
       <dd class="price__compare" data-compare="{{compare_at_price}}">
         <b class="price-item price-item--regular">
           {% if settings.currency_format_enable %}
-            {{ original_price | money_with_currency }}
+            {{ compare_at_price | money_with_currency }}
           {% else %}
             {{ compare_at_price | money }}
           {% endif %}
