@@ -531,7 +531,8 @@
         "marquee_iDyY9K"
       ],
       "custom_css": [
-        "@media screen and (max-width: 550px){.marquee.thunder_light {padding-top: 20px; padding-bottom: 20px;}}"
+        "@media screen and (max-width: 550px) {.marquee.thunder_light {padding-top: 20px; padding-bottom: 20px; }}",
+        "@media screen and (min-width: 1200px) {.marquee__item.bg_color {padding: 10px 15px; }}"
       ],
       "name": "t:sections.marquee.presets.name",
       "settings": {
