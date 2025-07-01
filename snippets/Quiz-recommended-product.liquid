@@ -26,12 +26,14 @@
           {% assign valid_currencies = 'DKK,AUD,CZK,EUR,GBP,CAD' | split: ',' %}
           {% assign show_product = false %}
 
-          {% if valid_currencies contains currency %}
+          {% if currency %}
             {% assign show_product = true %}
           {% endif %}
 
           {% assign has_usa_bundle = false %}
-          {% assign has_ca_bundle = false %}
+          {% comment %}
+            {% assign has_ca_bundle = false %}
+          {% endcomment %}
 
           {% for tag in product.tags %}
             {% if tag == settings['usa-bundle-tag'] %}
