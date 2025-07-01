@@ -59,7 +59,7 @@
       <dd class="price__last" id="custom_proce_manage">
         <span class="sale_price_amount1">
           {% assign original_price1 = price %}
-          {% assign discount1 = original_price1 | times: 0.2 %}
+          {% assign discount1 = original_price1 | times: 0.15 %}
           {% assign new_saleprice1 = original_price1 | minus: discount1 %}
           {{ new_saleprice1 | money_with_currency }}
         </span>
@@ -71,7 +71,7 @@
       <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
         <span class="price-item price-item--sale sale_price_amount1">
           {% assign original_price = compare_at_price %}
-          {% assign discount = original_price | times: 0.2 %}
+          {% assign discount = original_price | times: 0.15 %}
           {% assign new_saleprice = original_price | minus: discount %}
           {{ new_saleprice | money_with_currency }}
         </span>
