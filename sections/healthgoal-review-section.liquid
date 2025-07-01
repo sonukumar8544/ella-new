@@ -1,0 +1,162 @@
+{% schema %}
+  {
+    "name": "healthgoal review",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal review"
+      }
+    ]
+  }
+{% endschema %}
+<h2 class="testimonial-heading">What Our Customers Say</h2>
+<section class="testimonial-section">
+  <div class="testimonial-slider">
+    <!-- Review Image 1 -->
+    <div class="testimonial-img-slide">
+      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 1">
+    </div>
+
+    <!-- Review Image 2 -->
+    <div class="testimonial-img-slide">
+      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 2">
+    </div>
+
+    <!-- Review Image 3 -->
+    <div class="testimonial-img-slide">
+      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 3">
+    </div>
+    <!-- Review Image 3 -->
+    <div class="testimonial-img-slide">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
+    </div>
+    <!-- Review Image 3 -->
+    <div class="testimonial-img-slide">
+      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 3">
+    </div>
+    <!-- Review Image 3 -->
+    <div class="testimonial-img-slide">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
+    </div>
+    <!-- Review Image 3 -->
+    <div class="testimonial-img-slide">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
+    </div>
+
+
+  </div>
+  <!-- Fixed Final Slide -->
+  <div class="testimonial-fixed-slide">
+    <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2_2c500fce-62d9-4381-ba3c-bec435fc331c.png?v=1751204474" alt="">
+  </div>
+</section>
+
+
+<style>
+  .testimonial-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .testimonial-heading {
+    font-size: 35px;
+    color: #086b92;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-slider {
+    width: 70%;
+    display: flex;
+    gap: 20px;
+  }
+
+  /* Slick Slide Styling */
+  .testimonial-img-slide img {
+    width: 100%;
+
+
+    /*
+
+   border-radius: 12px; 
+   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); 
+*/
+  }
+
+  /* Fixed Slide */
+  .testimonial-fixed-slide {
+    padding: 20px;
+    width: 24%;
+  }
+
+  .testimonial-fixed-slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* Slick fix */
+  .slick-slide {
+    padding: 10px;
+  }
+
+  @media (max-width: 769px) {
+    .testimonial-heading {
+      font-size: 26px;
+      margin-bottom: 0;
+    }
+
+    .testimonial-section {
+      flex-direction: column;
+    }
+
+    .testimonial-slider {
+      width: 100%;
+    }
+
+    .testimonial-fixed-slide {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .testimonial-section .slick-arrow.slick-next {
+    right: -15px;
+  }
+
+  .testimonial-section .slick-arrow.slick-prev {
+    left: -15px;
+  }
+</style>
+
+<script>
+        $(document).ready(function(){
+        $('.testimonial-slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+          </button>`,
+          nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+        });
+</script>

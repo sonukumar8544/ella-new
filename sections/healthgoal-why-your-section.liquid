@@ -1,0 +1,175 @@
+{% schema %}
+  {
+    "name": "healthgoal why your",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal why your"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<section class="healthgoal-why-gut-stats">
+  <div class="healthgoal-why-container">
+    {% for block in collection.metafields.custom.why_collection_title_subtitle.value %}
+      {% assign parts = block | split: '|' %}
+      <h2 class="healthgoal-why-title">{{ parts[0] | strip }}</h2>
+      <p class="healthgoal-why-subtext">
+        {{ parts[1] | strip }}
+      </p>
+    {% endfor %}
+
+    <div class="healthgoal-why-stats-grid">
+      {% for block in collection.metafields.custom.why_collection_grid_details.value %}
+        {% assign parts = block | split: '|' %}
+        <div class="health-goad-left-section-why">
+          <div class="healthgoal-why-card dark">
+           {{ parts[0] | strip }}
+          </div>
+          <div class="healthgoal-why-card gradient">
+            {{ parts[1] | strip }}
+          </div>
+
+        </div>
+
+        <div class="health-goad-right-section-why">
+          <div class="healthgoal-why-card dark">
+           {{ parts[2] | strip }}
+          </div>
+          <div class="healthgoal-why-card dark">
+           {{ parts[3] | strip }}
+          </div>
+          <div class="healthgoal-why-card gradient">
+           {{ parts[4] | strip }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .healthgoal-why-gut-stats {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .healthgoal-why-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .healthgoal-why-title {
+    font-size: 35px;
+    color: #086b92;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .healthgoal-why-subtext {
+    font-size: 18px;
+    color: #65676C;
+    max-width: 700px;
+    margin: 0 auto 55px;
+    line-height: 1.6;
+  }
+
+  .healthgoal-why-stats-grid {
+    display: flex;
+    gap: 20px;
+  }
+
+  .health-goad-left-section-why {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .health-goad-right-section-why {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .healthgoal-why-card {
+    border-radius: 10px;
+    padding: 24px 20px;
+    color: #fff;
+    text-align: left;
+    min-height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .healthgoal-why-card p {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+  }
+
+  .healthgoal-why-card h3 {
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    margin: 4px 0;
+    line-height: 1.3;
+  }
+
+  .healthgoal-why-card.dark {
+    background-color: #086b92;
+  }
+
+  .healthgoal-why-card.gradient {
+    background: linear-gradient(135deg, #086b92 0%, #a7d7e5 100%);
+    color: #fff;
+  }
+
+  .healthgoal-why-card strong {
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .healthgoal-why-card small {
+    font-size: 18px;
+  }
+
+  /* Responsive typography */
+  @media (max-width: 769px) {
+    .healthgoal-why-title {
+      font-size: 26px;
+    }
+
+    .healthgoal-why-card {
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .healthgoal-why-card h3 {
+      font-size: 20px;
+    }
+
+    .healthgoal-why-stats-grid {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .health-goad-left-section-why {
+      width: 100%;
+      gap: 10px;
+    }
+
+    .health-goad-right-section-why {
+      width: 100%;
+      gap: 10px;
+    }
+  }
+
+</style>

@@ -1,0 +1,150 @@
+{% schema %}
+  {
+    "name": "healthgoal faqs",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal faqs"
+      }
+    ]
+  }
+{% endschema %}
+
+
+
+<section class="healthgal-faqs-section">
+  <div class="healthgal-container">
+    <h2 class="healthgal-faqs-title">Freequently asked questions</h2>
+    <p class="healthgal-faqs-subtext">We’re happy to answer your questions</p>
+
+
+    {% for block in collection.metafields.custom.collection_faqs_new_section.value %}
+      {% assign parts = block | split: '|' %}
+      <div class="healthgal-faqs-item">
+        <button class="healthgal-question">{{ parts[0] | strip }}</button>
+        <div class="healthgal-answer">
+          <p>{{ parts[1] | strip }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .healthgal-faqs-section {
+    background: #eaf4f8;
+    padding: 45px 20px 60px;
+    font-family: sans-serif;
+  }
+
+  .healthgal-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .healthgal-faqs-title {
+    font-size: 35px;
+    text-align: center;
+    color: #006a8b;
+    margin-bottom: 8px;
+  }
+
+  .healthgal-faqs-subtext {
+    text-align: center;
+    font-size: 22px;
+    color: #707070;
+    margin-bottom: 50px;
+  }
+
+  .healthgal-faqs-item {
+    border-bottom: 1px solid #cde5ef;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .healthgal-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+    padding-right: 40px;
+    position: relative;
+  }
+
+  .healthgal-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    color: #006a8b;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    font-weight: 300;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+  }
+
+  .healthgal-faqs-item.open .healthgal-question::after {
+    content: '×';
+    background: #006a8b;
+    color: #fff;
+    font-size: 26px;
+  }
+
+  .healthgal-answer {
+    padding-top: 12px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  .healthgal-faqs-item.open .healthgal-answer {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .healthgal-faqs-title {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.healthgal-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const isOpen = faqItem.classList.contains('open');
+  
+      // Close all
+      document.querySelectorAll('.healthgal-faqs-item').forEach(item => item.classList.remove('open'));
+  
+      // Toggle current
+      if (!isOpen) {
+        faqItem.classList.add('open');
+      }
+    });
+  });
+</script>
