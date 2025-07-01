@@ -561,6 +561,13 @@
         "mg_bottom_mobile": 10
       }
     },
+    "custom_liquid_8DztYg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\n     Best Seller Products\n    </h2>\n     </div>\n</section>\n\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 26px;\n  }\n}\n</style>"
+      }
+    },
     "16409351508cd2f3e1": {
       "type": "product-tab-block",
       "blocks": {
@@ -575,7 +582,6 @@
       "block_order": [
         "product_tabs_x6FH6N"
       ],
-      "disabled": true,
       "custom_css": [
         "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
         "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}"
@@ -3341,6 +3347,7 @@
     "16321237356a896dad",
     "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
     "marquee_GtzVRx",
+    "custom_liquid_8DztYg",
     "16409351508cd2f3e1",
     "1642989489e5f98f1a",
     "product_tab_block_q6UMeJ",
