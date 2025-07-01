@@ -8,7 +8,7 @@
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
 
-  Usage:
+  Usage
   {% render 'price', product: product %}
 {%- endcomment -%}
 {%- liquid
@@ -57,10 +57,12 @@
         </dt>
       {%- endcomment -%}
       <dd class="price__last" id="custom_proce_manage">
-        {% comment %} <span class="sale_price_amount1">
-          {{ price | money_with_currency }}
-        </span> {% endcomment %}
-       <span class="price-item price-item--regular sale_price_amount1">{{ price | money_with_currency }} </span>  
+        {% comment %}
+          <span class="sale_price_amount1">
+            {{ price | money_with_currency }}
+          </span>
+        {% endcomment %}
+        <span class="price-item price-item--regular sale_price_amount1">{{ price | money_with_currency }} </span>
       </dd>
     </div>
 
@@ -70,21 +72,21 @@
           {{ price | money_with_currency }}
         </span>
       </dd>
-        {%- comment -%} 
-        <!--commented by amar --> 
-        <dd class="price__compare" data-compare="{{compare_at_price}}">
-        <b class="price-item price-item--regular">
-          {% if settings.currency_format_enable %}
-            {{ compare_at_price | money_with_currency }}
-          {% else %}
-            {{ compare_at_price | money }}
-          {% endif %}
-        </b>
-      </dd>
-    
-        <dt class="price__compare">
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        </dt>
+      {%- comment -%}
+          <!--commented by amar -->
+          <dd class="price__compare" data-compare="{{compare_at_price}}">
+          <b class="price-item price-item--regular">
+            {% if settings.currency_format_enable %}
+              {{ compare_at_price | money_with_currency }}
+            {% else %}
+              {{ compare_at_price | money }}
+            {% endif %}
+          </b>
+        </dd>
+
+          <dt class="price__compare">
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          </dt>
       {%- endcomment -%}
       {%- comment -%}
         <dt>
@@ -98,11 +100,13 @@
         and compare_at_price != blank
       -%}
         {%- assign saved_price = compare_at_price | minus: price | money -%}
-        {% comment %} <div class="price__saved">
-          <span class="price-item price-item--saved">
-            {{ 'products.product.price.saved_price_html' | t: price: saved_price }} ---CCC4
-          </span>
-        </div> {% endcomment %}
+        {% comment %}
+          <div class="price__saved">
+            <span class="price-item price-item--saved">
+              {{ 'products.product.price.saved_price_html' | t: price: saved_price }} ---CCC4
+            </span>
+          </div>
+        {% endcomment %}
       {%- endif -%}
 
       {%- if settings.show_price_percent -%}
@@ -141,8 +145,8 @@
   </dl>
 </div>
 <style>
- .custom_proce_manage .money,
- .custom_proce_manage span{
-  color: #e95144;
-}
+   .custom_proce_manage .money,
+   .custom_proce_manage span{
+    color: #e95144;
+  }
 </style>
