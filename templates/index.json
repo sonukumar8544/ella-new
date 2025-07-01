@@ -490,6 +490,73 @@
         "mg_bottom_mobile": 0
       }
     },
+    "marquee_GtzVRx": {
+      "type": "marquee",
+      "blocks": {
+        "marquee_zDL33H": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>FDA-GRAS Approved</p>",
+            "color": "#086b92",
+            "color_mb": "#086b92",
+            "bg_color": "#e8e8e8",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_aQPLj6": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>3rd-Party Tested</p>",
+            "color": "#086b92",
+            "color_mb": "#086b92",
+            "bg_color": "#e8e8e8",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_iDyY9K": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>100,000+ Satisfied Customers</p>",
+            "color": "#086b92",
+            "color_mb": "#086b92",
+            "bg_color": "#e8e8e8",
+            "enable_border_bottom": false
+          }
+        }
+      },
+      "block_order": [
+        "marquee_zDL33H",
+        "marquee_aQPLj6",
+        "marquee_iDyY9K"
+      ],
+      "disabled": true,
+      "name": "t:sections.marquee.presets.name",
+      "settings": {
+        "minus_spacing_top": 0,
+        "mq_background": "",
+        "mq_gradient": "linear-gradient(86deg, rgba(8, 107, 146, 1) 69%, rgba(232, 232, 232, 1) 97%)",
+        "border": "none",
+        "border_color": "#e9b827",
+        "type_tab_font": "font_1",
+        "text_size": 30,
+        "text_line_height": 30,
+        "text_font_weight": "600",
+        "text_letter_spacing": "",
+        "gap_blocks": 14,
+        "icon": "thunder_light",
+        "icon_color": "#f8ce63",
+        "text_size_mb": 30,
+        "text_line_height_mb": 18,
+        "border_color_mb": "#000000",
+        "icon_color_mb": "#000000",
+        "mg_top_desktop": 20,
+        "mg_top_tablet": 20,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 20,
+        "mg_bottom_tablet": 12,
+        "mg_bottom_mobile": 18
+      }
+    },
     "1642989489e5f98f1a": {
       "type": "brand-slider",
       "blocks": {
@@ -3176,6 +3243,7 @@
   "order": [
     "16321237356a896dad",
     "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
+    "marquee_GtzVRx",
     "1642989489e5f98f1a",
     "16409351508cd2f3e1",
     "rich_text_6wH8m9",
