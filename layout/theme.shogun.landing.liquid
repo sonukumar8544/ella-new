@@ -25,12 +25,18 @@ This file can be re-written at any time.
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {% comment %} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%} {% endcomment %}
     </title>
+    {% if request.path contains '/pages/molecular-hydrogen'
+      or request.path contains '/pages/testosterone'
+      or request.path contains 'pages/statin'
+    %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
     {% render 'meta-tags' %}
-
+    {% render 'seo_script' %}
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
