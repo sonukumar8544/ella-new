@@ -57,38 +57,36 @@
         </dt>
       {%- endcomment -%}
       <dd class="price__last" id="custom_proce_manage">
-        <span class="sale_price_amount1">
-          {% assign original_price1 = price %}
-          {% assign discount1 = original_price1 | times: 0.15 %}
-          {% assign new_saleprice1 = original_price1 | minus: discount1 | round %}
-          {{ new_saleprice1 | money_with_currency }}
-        </span>
-        <span class="price-item price-item--regular orginal_price1">{{ money_price }} </span>
+        {% comment %}
+          <span class="sale_price_amount1">
+            {{ price | money_with_currency }}
+          </span>
+        {% endcomment %}
+        <span class="price-item price-item--regular sale_price_amount1">{{ price | money_with_currency }} </span>
       </dd>
     </div>
 
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
       <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
         <span class="price-item price-item--sale sale_price_amount1">
-          {% assign original_price = compare_at_price %}
-          {% assign discount = original_price | times: 0.15 %}
-          {% assign new_saleprice = original_price | minus: discount | round %}
-          {{ new_saleprice | money_with_currency }}
+          {{ price | money_with_currency }}
         </span>
       </dd>
-      <dd class="price__compare" data-compare="{{compare_at_price}}">
-        <b class="price-item price-item--regular">
-          {% if settings.currency_format_enable %}
-            {{ compare_at_price | money_with_currency }}
-          {% else %}
-            {{ compare_at_price | money }}
-          {% endif %}
-        </b>
-      </dd>
       {%- comment -%}
-        <dt class="price__compare">
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        </dt>
+          <!--commented by amar -->
+          <dd class="price__compare" data-compare="{{compare_at_price}}">
+          <b class="price-item price-item--regular">
+            {% if settings.currency_format_enable %}
+              {{ compare_at_price | money_with_currency }}
+            {% else %}
+              {{ compare_at_price | money }}
+            {% endif %}
+          </b>
+        </dd>
+
+          <dt class="price__compare">
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          </dt>
       {%- endcomment -%}
       {%- comment -%}
         <dt>
@@ -102,11 +100,13 @@
         and compare_at_price != blank
       -%}
         {%- assign saved_price = compare_at_price | minus: price | money -%}
-        <div class="price__saved">
-          <span class="price-item price-item--saved">
-            {{ 'products.product.price.saved_price_html' | t: price: saved_price }}
-          </span>
-        </div>
+        {% comment %}
+          <div class="price__saved">
+            <span class="price-item price-item--saved">
+              {{ 'products.product.price.saved_price_html' | t: price: saved_price }} ---CCC4
+            </span>
+          </div>
+        {% endcomment %}
       {%- endif -%}
 
       {%- if settings.show_price_percent -%}
@@ -144,3 +144,9 @@
     </small>
   </dl>
 </div>
+<style>
+   .custom_proce_manage .money,
+   .custom_proce_manage span{
+    color: #e95144;
+  }
+</style>
