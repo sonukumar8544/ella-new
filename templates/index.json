@@ -561,6 +561,102 @@
         "mg_bottom_mobile": 10
       }
     },
+    "16409351508cd2f3e1": {
+      "type": "product-tab-block",
+      "blocks": {
+        "product_tabs_x6FH6N": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "All Product",
+            "collection": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "product_tabs_x6FH6N"
+      ],
+      "custom_css": [
+        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "product_bg": "#f2f3f9",
+        "product_bg_gradient": "",
+        "product_block_layout": "slider",
+        "product_block_limit": 20,
+        "product_block_title": "",
+        "fontsize_title": 20,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 0,
+        "enable_border_title": true,
+        "border_color_title": "#e0e0e0",
+        "enable_border_title2": true,
+        "border_color_title2": "#1d5dd9",
+        "color_title": "#36454f",
+        "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 12,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "image_behavior": "none",
+        "product_block_per_row": "3",
+        "product_block_infinite_scroll": true,
+        "min_width_button": "",
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": true,
+        "product_block_arrows_custom_position": false,
+        "product_block_progress_bar": false,
+        "enable_infinite": true,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 5,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#086b92",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 25,
+        "tab_title_style": "style_1",
+        "layout_mobile": "grid",
+        "mg_bottom_title_tab": 30,
+        "type_tab_font": "font_2",
+        "separation": false,
+        "style_separation": "style2",
+        "color_separation": "#bebebe",
+        "enable_scroll_title": true,
+        "fontsize_tab": 16,
+        "fontsize_tab_mb": 15,
+        "font_weight_tab": "600",
+        "font_weight_active_tab": "600",
+        "spacing_between_title": 0,
+        "line_height_tab": 30,
+        "line_height_tab_mobile": 24,
+        "border_tab_radius": 6,
+        "min_width_tab": 60,
+        "border_width_tab": 1,
+        "tab_align": "center",
+        "color_tab": "#086b92",
+        "border_color_tab": "#086b92",
+        "bg_color_tab": "rgba(0,0,0,0)",
+        "bg_color_gradient_tab": "",
+        "color_tab_active": "#ffffff",
+        "border_color_tab_active": "",
+        "bg_color_tab_active": "#086b92",
+        "bg_color_gradient_tab_active": "",
+        "mg_top_desktop": 45,
+        "mg_top_tablet": 45,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 25
+      }
+    },
     "1642989489e5f98f1a": {
       "type": "brand-slider",
       "blocks": {
@@ -791,73 +887,73 @@
         "mg_bottom_mobile": 40
       }
     },
-    "16409351508cd2f3e1": {
+    "product_tab_block_q6UMeJ": {
       "type": "product-tab-block",
       "blocks": {
-        "d672657b-959a-44fb-91cd-4352ed8ee468": {
+        "product_tabs_p8FtK7": {
           "type": "ProductTabs",
           "settings": {
             "title": "Brain",
             "collection": "brain-health"
           }
         },
-        "754a9b2c-0b43-4bbf-839c-c229e8f156eb": {
+        "product_tabs_cgtJhp": {
           "type": "ProductTabs",
           "settings": {
             "title": "Eye",
             "collection": "eye-health"
           }
         },
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3": {
+        "product_tabs_GRcTVa": {
           "type": "ProductTabs",
           "settings": {
             "title": "Skin",
             "collection": "skin-health"
           }
         },
-        "product_tabs_93tUbY": {
+        "product_tabs_GKYwWD": {
           "type": "ProductTabs",
           "settings": {
             "title": "Cardiovascular",
             "collection": "heart-health"
           }
         },
-        "product_tabs_F6WcNJ": {
+        "product_tabs_gEFkgm": {
           "type": "ProductTabs",
           "settings": {
             "title": "Muscle ",
             "collection": "muscle-health"
           }
         },
-        "product_tabs_VfAJrn": {
+        "product_tabs_V7xxyT": {
           "type": "ProductTabs",
           "settings": {
             "title": "Joints & Bones",
             "collection": "bone-health"
           }
         },
-        "product_tabs_rwCPjU": {
+        "product_tabs_bHPU6q": {
           "type": "ProductTabs",
           "settings": {
             "title": "Immunity",
             "collection": "immune-health"
           }
         },
-        "product_tabs_TFrUDc": {
+        "product_tabs_AaL8jh": {
           "type": "ProductTabs",
           "settings": {
             "title": "Gut",
             "collection": "gut-health"
           }
         },
-        "product_tabs_TQMLRt": {
+        "product_tabs_BAEpfe": {
           "type": "ProductTabs",
           "settings": {
             "title": "Hormones",
             "collection": "hormone-health"
           }
         },
-        "product_tabs_x6FH6N": {
+        "product_tabs_mWTYNj": {
           "type": "ProductTabs",
           "settings": {
             "title": "Healthy Aging",
@@ -866,20 +962,16 @@
         }
       },
       "block_order": [
-        "d672657b-959a-44fb-91cd-4352ed8ee468",
-        "754a9b2c-0b43-4bbf-839c-c229e8f156eb",
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3",
-        "product_tabs_93tUbY",
-        "product_tabs_F6WcNJ",
-        "product_tabs_VfAJrn",
-        "product_tabs_rwCPjU",
-        "product_tabs_TFrUDc",
-        "product_tabs_TQMLRt",
-        "product_tabs_x6FH6N"
-      ],
-      "custom_css": [
-        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
-        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}"
+        "product_tabs_p8FtK7",
+        "product_tabs_cgtJhp",
+        "product_tabs_GRcTVa",
+        "product_tabs_GKYwWD",
+        "product_tabs_gEFkgm",
+        "product_tabs_V7xxyT",
+        "product_tabs_bHPU6q",
+        "product_tabs_AaL8jh",
+        "product_tabs_BAEpfe",
+        "product_tabs_mWTYNj"
       ],
       "settings": {
         "container": "container",
@@ -3248,8 +3340,9 @@
     "16321237356a896dad",
     "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
     "marquee_GtzVRx",
-    "1642989489e5f98f1a",
     "16409351508cd2f3e1",
+    "1642989489e5f98f1a",
+    "product_tab_block_q6UMeJ",
     "rich_text_6wH8m9",
     "brand_slider_8dyJxH",
     "rich_text_AkN9Q8",
