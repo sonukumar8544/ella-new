@@ -530,6 +530,9 @@
         "marquee_aQPLj6",
         "marquee_iDyY9K"
       ],
+      "custom_css": [
+        "@media screen and (max-width: 550px){.marquee.thunder_light {padding-top: 20px; padding-bottom: 20px;}}"
+      ],
       "name": "t:sections.marquee.presets.name",
       "settings": {
         "minus_spacing_top": 0,
