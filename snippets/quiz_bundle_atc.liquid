@@ -9,7 +9,7 @@
   {% assign currency = localization.country.currency.iso_code %}
   {% assign has_valid_bundle = false %}
   {% for tag in product.tags %}
-    {% if tag == settings['usa-bundle-tag'] and usa_currencies contains currency %}
+    {% if tag == settings['usa-bundle-tag'] %}
       {% assign has_valid_bundle = true %}
       {% comment %}
         {% elsif tag == settings['ca-bundle-tag'] and currency == 'CAD' %}
