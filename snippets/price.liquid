@@ -52,7 +52,7 @@
           {{ new_saleprice1 | money_with_currency }} --A
         </span>
         <span class="price-item price-item--regular orginal_price1">
-          {{- product.selected_or_first_available_variant.price }}
+          {{- product.selected_or_first_available_variant.price | money_with_currency }}
         </span>
       </dd>
     </div>
