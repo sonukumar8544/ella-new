@@ -8398,6 +8398,7 @@ dd#custom_proce_manage {
   display: flex;
   align-items: center;
   gap: 7px;
+  flex-direction: row-reverse;
 }
 .price.price--on-sale .price-item--regular .money,
 .orginal_price1 span,
@@ -8405,6 +8406,7 @@ dd#custom_proce_manage {
   white-space: nowrap;
   font-size: 14px !important;
   text-decoration: line-through;
+  text-decoration-color: #3f5260;
   color: #969696 !important;
   letter-spacing: 1px;
   font-weight: 800 !important;
@@ -8829,4 +8831,8 @@ flex-direction: column;
 }
 .footer-block__details p {
     font-size: 12px;
+}
+
+span#product-compare-at-price-we {
+    color: #3f5260 !important;
 }
