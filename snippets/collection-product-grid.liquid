@@ -229,40 +229,50 @@
                             </ul>
 
 <div class="collection-add-all-card">
-   <p class="collection-total-label">Total:</p>
-  <p class="collection-total-prices">
-    <span class="collection-original-price">$177.63</span>
-    <span class="collection-discounted-price">$150.99</span>
-  </p>
   {% assign filtered_product_count = 0 %}
-{% assign skin_bundle = settings.collection %}
- 
-{% assign product_variant_ids = '' %}
- 
-{%- for product in collection.products -%}
-  {% assign has_valid_bundle = false %}
- 
-  {% assign filtered_product_count = filtered_product_count | plus: 1 %}
- 
-  {% if product.variants.size > 0 %}
-    {% assign first_variant_id = product.variants.first.id %}
-    {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
-    {% assign qty_index = forloop.index0 %}
-  {% endif %}
-{% endfor %}
- 
-{% if filtered_product_count > 1 %}
-<button
-    class="quiz_bundle_prodct product-form__submit button button--primary"
-    data-variant-ids="{{ product_variant_ids | strip_newlines | strip }}"
-    data-qtys="{{ qty_index }}"
->
-    {{ 'Add All To Cart' }}
-</button>
-{% endif %}
-  <p class="collection-discount-note">Buy any 3 Supplements,<br>Save 15%</p>
-</div>
+  {% assign product_variant_ids = '' %}
+  {% assign total_price = 0 %}
+  {% assign discount_percentage = 15 %}
+  
+  {%- for product in collection.products -%}
+    {% if product.variants.size > 0 %}
+      {% assign first_variant = product.variants.first %}
+      {% assign first_variant_id = first_variant.id %}
+      {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
+      
+      {% assign price = first_variant.price %}
+      {% assign total_price = total_price | plus: price %}
+      
+      {% assign filtered_product_count = filtered_product_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
 
+  {% assign discount_amount = total_price | times: discount_percentage | divided_by: 100 %}
+  {% assign discounted_price = total_price | minus: discount_amount %}
+  
+  {% comment %}
+    Shopify prices are in cents, so divide by 100 to get dollar values
+  {% endcomment %}
+  <p class="collection-total-label">Total:</p>
+  <p class="collection-total-prices">
+    <span class="collection-original-price">${{ total_price | divided_by: 100.0 | round: 2 }}</span>
+    <span class="collection-discounted-price">${{ discounted_price | divided_by: 100.0 | round: 2 }}</span>
+  </p>
+
+  {% if filtered_product_count > 1 %}
+    <button
+      class="quiz_bundle_prodct product-form__submit button button--primary"
+      data-variant-ids="{{ product_variant_ids | strip_newlines | strip | remove_last: ',' }}"
+      data-qtys="1"
+    >
+      Add All To Cart
+    </button>
+  {% endif %}
+
+  <p class="collection-discount-note">
+  Buy any {{ filtered_product_count }} Supplement{% if filtered_product_count > 1 %}s{% endif %},<br>Save 15%
+</p>
+</div>
 
 
 
