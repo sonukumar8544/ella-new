@@ -497,30 +497,30 @@
         "marquee_zDL33H": {
           "type": "marquee",
           "settings": {
-            "text": "<p>FDA-GRAS Approved</p>",
-            "color": "#086b92",
-            "color_mb": "#086b92",
-            "bg_color": "#e8e8e8",
+            "text": "<p><em><strong>FDA-GRAS</strong></em> Approved</p>",
+            "color": "#fff",
+            "color_mb": "#fff",
+            "bg_color": "rgba(0,0,0,0)",
             "enable_border_bottom": false
           }
         },
         "marquee_aQPLj6": {
           "type": "marquee",
           "settings": {
-            "text": "<p>3rd-Party Tested</p>",
-            "color": "#086b92",
-            "color_mb": "#086b92",
-            "bg_color": "#e8e8e8",
+            "text": "<p>3rd-Party <em><strong>Tested</strong></em></p>",
+            "color": "#fff",
+            "color_mb": "#fff",
+            "bg_color": "rgba(0,0,0,0)",
             "enable_border_bottom": false
           }
         },
         "marquee_iDyY9K": {
           "type": "marquee",
           "settings": {
-            "text": "<p>100,000+ Satisfied Customers</p>",
-            "color": "#086b92",
-            "color_mb": "#086b92",
-            "bg_color": "#e8e8e8",
+            "text": "<p>100,000+ <em><strong>Satisfied Customers</strong></em></p>",
+            "color": "#fff",
+            "color_mb": "#fff",
+            "bg_color": "rgba(0,0,0,0)",
             "enable_border_bottom": false
           }
         }
@@ -532,7 +532,9 @@
       ],
       "custom_css": [
         "@media screen and (max-width: 550px) {.marquee.thunder_light {padding-top: 20px; padding-bottom: 20px; }}",
-        "@media screen and (min-width: 1200px) {.marquee__item.bg_color {padding: 10px 15px; }}"
+        "@media screen and (min-width: 1200px) {.marquee__item.bg_color {padding: 10px 15px; }}",
+        ".marquee {background: linear-gradient(to right, #086b92, #abe7ff, #086b92);}",
+        "span.marquee__item.bg_color p {color: white; letter-spacing: 1.2px; font-size: 18px;}"
       ],
       "name": "t:sections.marquee.presets.name",
       "settings": {
@@ -548,11 +550,11 @@
         "text_letter_spacing": "",
         "gap_blocks": 14,
         "icon": "thunder_light",
-        "icon_color": "#f8ce63",
+        "icon_color": "#fff",
         "text_size_mb": 30,
         "text_line_height_mb": 18,
-        "border_color_mb": "#000000",
-        "icon_color_mb": "#000000",
+        "border_color_mb": "#fff",
+        "icon_color_mb": "#fff",
         "mg_top_desktop": 20,
         "mg_top_tablet": 10,
         "mg_top_mobile": 10,
