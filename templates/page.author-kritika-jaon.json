@@ -27,6 +27,13 @@
     "author_section_EjLw7W": {
       "type": "author-section",
       "blocks": {
+        "text_block_RHhjwh": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Kritika Jain is a content writer with a B.A. in Travel & Tourism Management from Delhi University. With hands-on experience in diverse fields like healthcare and personal wellness, she creates content that bridges the gap between scientific information and everyday understanding.\nShe specializes in simplifying complex health topics into clear, engaging, and well-researched content. Her writing blends accuracy with creativity, making healthcare information both accessible and trustworthy for readers looking to make informed health choices."
+          }
+        },
         "text_block_HeweMb": {
           "type": "text_block",
           "settings": {
@@ -36,6 +43,7 @@
         }
       },
       "block_order": [
+        "text_block_RHhjwh",
         "text_block_HeweMb"
       ],
       "name": "Author Section",
