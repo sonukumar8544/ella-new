@@ -1,0 +1,138 @@
+{% schema %}
+  {
+    "name": "healthgoal what you feel",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal what you feel"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="healthgoal-why-after60-section">
+  <div class="healthgoal-why-container">
+    <h2 class="healthgoal-why-heading">What You’ll Feel After 60 Days</h2>
+    <div class="healthgoal-why-benefits-wrapper">
+
+      <div class="healthgoal-why-benefits-box dark">
+        <ul>
+      {% for block in collection.metafields.custom.collection_what_feel_after_left_section.value %}
+      {% assign parts = block | split: '|' %} 
+          <li><img
+              height=""
+              width=""
+              src="{{ parts[0] | strip }}"
+              alt="">
+             {{ parts[1] | strip }}
+          </li>
+           {% endfor %} 
+        </ul>
+      </div>
+
+      <div class="healthgoal-why-benefits-box light">
+        <ul>
+          {% for block in collection.metafields.custom.collection_what_feel_after_right_section.value %}
+          {% assign parts = block | split: '|' %} 
+          <li><img
+              height=""
+              width=""
+              src="{{ parts[0] | strip }}"
+              alt="">
+             {{ parts[1] | strip }}
+          </li>
+           {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .healthgoal-why-after60-section {
+    padding: 60px 20px 80px 20px;
+    background: linear-gradient(to bottom, #ffffff 0%, #fffce6 100%);
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .healthgoal-why-container {
+    max-width: 1100px;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .healthgoal-why-heading {
+    font-size: 35px;
+    color: #086b92;
+    margin-bottom: 60px;
+  }
+
+  .healthgoal-why-benefits-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .healthgoal-why-benefits-box {
+    flex: 1 1 300px;
+    border-radius: 10px;
+    padding: 24px 30px;
+  }
+
+  .healthgoal-why-benefits-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .healthgoal-why-benefits-box li {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .healthgoal-why-benefits-box li img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  /* Box styles */
+  .healthgoal-why-benefits-box.dark {
+    background-color: #086b92;
+    color: #ffffff;
+  }
+
+  .healthgoal-why-benefits-box.light {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .healthgoal-why-benefits-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .healthgoal-why-heading {
+      font-size: 26px;
+    }
+
+    .healthgoal-why-after60-section{
+      padding-top: 0px;
+    }
+
+    .healthgoal-why-benefits-box{
+      flex: 0;
+    }
+  }
+
+</style>

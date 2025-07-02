@@ -1,0 +1,151 @@
+{% schema %}
+  {
+    "name": "healthgoal shop section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "healthgoal shop section"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="wrapper collection-owl-slider-section">
+  <h2>Why Shop with Us</h2>
+  <div class="center-slider">
+  {% for block in collection.metafields.custom.collection_owl_slider_image_title.value %}
+  {% assign parts = block | split: '|' %}
+    <div class="image-sec-text">
+      <img height="" width="" src="{{ parts[0] | strip }}" alt="">
+      <p>{{ parts[1] | strip }}</p>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    padding: 20px 0px 70px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .image-sec-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collection-owl-slider-section h2 {
+    color: #086B92;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 20px;
+  }
+
+  .image-sec-text p {
+    line-height: 1.1;
+    text-align: center;
+  }
+  /* Default slide */
+  .center-slider .slick-slide {
+    border: 2px solid #e3dede;
+    /* height: 200px; */
+    border-radius: 12px;
+    margin: 0 15px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    transition: all 0.4s ease-in-out;
+  }
+  .center-slider .slick-slide,
+  .center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
+    transform: scale(0.8, 0.8);
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* Active center slide (You can change anything here for cenetr slide)*/
+  .center-slider .slick-center,
+  .center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+    transform: scale(1);
+    /* background-color: #000000; */
+    border: 2px solid #086b92;
+    border-radius: 12px;
+  }
+  .center-slider .slick-current.slick-active {
+    transform: scale(1);
+    /* background-color: #000000; */
+  }
+
+  .slick-arrow.slick-next {
+    right: 15px;
+  }
+
+  .slick-next,
+  .slick-prev {
+    z-index: 5;
+  }
+  .slick-next {
+    right: 15px;
+  }
+  .slick-prev {
+    left: 15px;
+  }
+  .slick-next:before,
+  .slick-prev:before {
+    color: #000;
+    font-size: 26px;
+  }
+
+  .slick-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 769px) {
+    .collection-owl-slider-section h2 {
+      font-size: 26px;
+    }
+
+    .image-sec-text img {
+      max-width: 50%;
+    }
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('.center-slider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '20px',
+      arrows: true,
+      dots: false,
+      speed: 300,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+      <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+      </button>`,
+      nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  });
+</script>

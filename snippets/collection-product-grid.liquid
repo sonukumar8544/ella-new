@@ -205,8 +205,8 @@
                             </div>
                         </div>
                     {%- else -%}
-                        <div class="collection{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                            <ul class="productListing {% if layout == '1' %} productList{% else %} productGrid column-{{ layout }}{% endif %} list-{{ layout }} list-unstyled" id="main-collection-product-grid" data-id="{{ section.id }}"
+                        <div class="new-collection-container collection{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                            <ul class="{% if template contains 'new-healthgoal-template' %} new-collection-page-product collection-product-grid-sliders {% endif %} productListing {% if layout == '1' %} productList{% else %} productGrid column-{{ layout }}{% endif %} list-{{ layout }} list-unstyled" id="main-collection-product-grid" data-id="{{ section.id }}"
                                 style="
                                     --space-between-vert-desk: {{product_space_between_vert_desk}}px; 
                                     --space-between-vert-mb: {{product_space_between_vert_mb}}px;
@@ -227,6 +227,59 @@
                                     </li>
                                 {%- endfor -%}
                             </ul>
+
+{% if template contains 'new-healthgoal-template' %}
+<div class="collection-add-all-card">
+<div class="add-all-teem-collection">
+  {% assign filtered_product_count = 0 %}
+  {% assign product_variant_ids = '' %}
+  {% assign total_price = 0 %}
+  {% assign discount_percentage = 15 %}
+  
+  {%- for product in collection.products -%}
+    {% if product.variants.size > 0 %}
+      {% assign first_variant = product.variants.first %}
+      {% assign first_variant_id = first_variant.id %}
+      {% assign product_variant_ids = product_variant_ids | append: first_variant_id | append: ',' %}
+      
+      {% assign price = first_variant.price %}
+      {% assign total_price = total_price | plus: price %}
+      
+      {% assign filtered_product_count = filtered_product_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign discount_amount = total_price | times: discount_percentage | divided_by: 100 %}
+  {% assign discounted_price = total_price | minus: discount_amount %}
+  
+  {% comment %}
+    Shopify prices are in cents, so divide by 100 to get dollar values
+  {% endcomment %}
+  <p class="collection-total-label">Total:</p>
+  <p class="collection-total-prices">
+    <span class="collection-original-price">${{ total_price | divided_by: 100.0 | round: 2 }}</span>
+    <span class="collection-discounted-price">${{ discounted_price | divided_by: 100.0 | round: 2 }}</span>
+  </p>
+
+  {% if filtered_product_count > 1 %}
+    <button
+      class="quiz_bundle_prodct product-form__submit button button--primary"
+      data-variant-ids="{{ product_variant_ids | strip_newlines | strip | remove_last: ',' }}"
+      data-qtys="1"
+    >
+      Add All To Cart
+    </button>
+  {% endif %}
+
+  <p class="collection-discount-note">
+  Buy any {{ filtered_product_count }} Supplement{% if filtered_product_count > 1 %}s{% endif %},<br><strong>Save 15%</strong>
+</p>
+</div>
+</div>
+{% endif %}
+
+
+
                             {%- if paginate.pages > 1 -%}
                                 {% render 'pagination-listing',
                                     paginate: paginate,
@@ -270,3 +323,193 @@
         <div class="loading-overlay__spinner" aria-label="{{ 'general.button_load_more.loading' | t }}"><svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg></div>
     </div>
 </div>
+
+<style>
+    .collection-product-grid-sliders{
+        width: 80%;
+    }
+
+.collection-add-all-card {
+  border: 1px solid #007199;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 21%;
+  height: 510px;
+  margin: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.add-all-teem-collection {
+    padding: 0px;
+    margin: 0px;
+    width: 229px;
+}
+
+.new-collection-page-product .slick-arrow.slick-next {
+    right: -27px;
+}
+.new-collection-page-product .slick-arrow.slick-prev {
+    left: -28px;
+}
+
+.new-collection-page-product .slick-arrow{
+  top: 33%;
+}
+
+.new-collection-container.collection {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.template-collection.product-card-layout-02 .productGrid .product {
+    margin-top: 0px;
+}
+
+.collection-total-label {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #086b92;
+}
+
+.collection-total-prices {
+  margin-bottom: 16px;
+}
+
+.collection-original-price {
+  text-decoration: line-through;
+  color: red;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.collection-discounted-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007199;
+}
+
+.collection-add-all-button {
+  background-color: #007199;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+.collection-add-all-button:hover {
+  background-color: #005f82;
+}
+
+.collection-discount-note {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px){
+    .new-collection-container.collection{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .collection-product-grid-sliders{
+        width: 100%;
+    }
+
+    .collection-add-all-card{
+        height: 240px;
+        width: 90%;
+    }
+
+    .new-collection-page-product .slick-arrow.slick-next {
+    right: 0px;
+}
+.new-collection-page-product .slick-arrow.slick-prev {
+    left: 0px;
+}
+}
+
+
+ @media (min-width: 1220px) and (max-width: 1270px) {
+  .collection-add-all-card {
+    height: 505px;
+  }
+}
+ @media (min-width: 1200px) and (max-width: 1220px) {
+  .collection-add-all-card {
+    height: 480px;
+  }
+}
+ @media (min-width: 1150px) and (max-width: 1200px) {
+  .collection-add-all-card {
+    height: 470px;
+  }
+}
+ @media (min-width: 1100px) and (max-width: 1150px) {
+  .collection-add-all-card {
+    height: 460px;
+  }
+}
+ @media (min-width: 1050px) and (max-width: 1100px) {
+  .collection-add-all-card {
+    height: 450px;
+  }
+}
+ @media (min-width: 1025px) and (max-width: 1150px) {
+  .collection-add-all-card {
+    height: 440px;
+  }
+}
+</style>
+
+<script>
+    $('.collection-product-grid-sliders').slick({
+  infinite: true,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+      <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+      </button>`,
+      nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+</script>
