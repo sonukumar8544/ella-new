@@ -16,17 +16,41 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "author_section_EjLw7W": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_HeweMb": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>\n\nOur editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_HeweMb"
+      ],
+      "name": "Author Section",
+      "settings": {
+        "author_name": "Kritika Jain",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": ""
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "author_section_EjLw7W"
   ]
 }
