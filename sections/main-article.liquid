@@ -576,7 +576,7 @@
           <div class="article-body">
             <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
               {% comment %} <div id="table-of-contents"></div> {% endcomment %}
-               <div id="table-of-contents" data-include-h3="{% for tag in article.tags %}{% if tag == 'addsubheading' %}true{% endif %}{% endfor %}"></div>
+               <div id="table-of-contents" data-include-h3="{% for tag in article.tags %}{% if tag == 'addh3' %}true{% endif %}{% endfor %}"></div>
 
               <style>
                 div#table-of-contents{
