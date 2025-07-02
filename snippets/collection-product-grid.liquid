@@ -206,7 +206,7 @@
                         </div>
                     {%- else -%}
                         <div class="new-collection-container collection{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-                            <ul class="collection-product-grid-sliders productListing {% if layout == '1' %} productList{% else %} productGrid column-{{ layout }}{% endif %} list-{{ layout }} list-unstyled" id="main-collection-product-grid" data-id="{{ section.id }}"
+                            <ul class="{% if template contains 'new-healthgoal-template' %} new-collection-page-product collection-product-grid-sliders {% endif %} productListing {% if layout == '1' %} productList{% else %} productGrid column-{{ layout }}{% endif %} list-{{ layout }} list-unstyled" id="main-collection-product-grid" data-id="{{ section.id }}"
                                 style="
                                     --space-between-vert-desk: {{product_space_between_vert_desk}}px; 
                                     --space-between-vert-mb: {{product_space_between_vert_mb}}px;
@@ -228,7 +228,9 @@
                                 {%- endfor -%}
                             </ul>
 
+{% if template contains 'new-healthgoal-template' %}
 <div class="collection-add-all-card">
+<div class="add-all-teem-collection">
   {% assign filtered_product_count = 0 %}
   {% assign product_variant_ids = '' %}
   {% assign total_price = 0 %}
@@ -270,9 +272,11 @@
   {% endif %}
 
   <p class="collection-discount-note">
-  Buy any {{ filtered_product_count }} Supplement{% if filtered_product_count > 1 %}s{% endif %},<br>Save 15%
+  Buy any {{ filtered_product_count }} Supplement{% if filtered_product_count > 1 %}s{% endif %},<br><strong>Save 15%</strong>
 </p>
 </div>
+</div>
+{% endif %}
 
 
 
@@ -325,27 +329,54 @@
         width: 80%;
     }
 
-    .collection-add-all-card {
+.collection-add-all-card {
   border: 1px solid #007199;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   width: 21%;
-  /* display: flex; */
-  height: 300px;
+  height: 510px;
   margin: auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.add-all-teem-collection {
+    padding: 0px;
+    margin: 0px;
+    width: 229px;
+}
+
+.new-collection-page-product .slick-arrow.slick-next {
+    right: -27px;
+}
+.new-collection-page-product .slick-arrow.slick-prev {
+    left: -28px;
+}
+
+.new-collection-page-product .slick-arrow{
+  top: 33%;
 }
 
 .new-collection-container.collection {
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    align-items: center;
+}
+
+.template-collection.product-card-layout-02 .productGrid .product {
+    margin-top: 0px;
 }
 
 .collection-total-label {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 800;
   margin-bottom: 8px;
+  color: #086b92;
 }
 
 .collection-total-prices {
@@ -377,7 +408,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   transition: background-color 0.3s ease;
 }
-
 .collection-add-all-button:hover {
   background-color: #005f82;
 }
@@ -388,6 +418,60 @@
   line-height: 1.4;
 }
 
+@media (max-width: 1024px){
+    .new-collection-container.collection{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .collection-product-grid-sliders{
+        width: 100%;
+    }
+
+    .collection-add-all-card{
+        height: 240px;
+        width: 90%;
+    }
+
+    .new-collection-page-product .slick-arrow.slick-next {
+    right: 0px;
+}
+.new-collection-page-product .slick-arrow.slick-prev {
+    left: 0px;
+}
+}
+
+
+ @media (min-width: 1220px) and (max-width: 1270px) {
+  .collection-add-all-card {
+    height: 505px;
+  }
+}
+ @media (min-width: 1200px) and (max-width: 1220px) {
+  .collection-add-all-card {
+    height: 480px;
+  }
+}
+ @media (min-width: 1150px) and (max-width: 1200px) {
+  .collection-add-all-card {
+    height: 470px;
+  }
+}
+ @media (min-width: 1100px) and (max-width: 1150px) {
+  .collection-add-all-card {
+    height: 460px;
+  }
+}
+ @media (min-width: 1050px) and (max-width: 1100px) {
+  .collection-add-all-card {
+    height: 450px;
+  }
+}
+ @media (min-width: 1025px) and (max-width: 1150px) {
+  .collection-add-all-card {
+    height: 440px;
+  }
+}
 </style>
 
 <script>
@@ -396,6 +480,10 @@
   speed: 300,
   slidesToShow: 3,
   slidesToScroll: 1,
+  prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+      <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+      </button>`,
+      nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
   responsive: [
     {
       breakpoint: 1024,

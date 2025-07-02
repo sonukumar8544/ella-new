@@ -9,50 +9,95 @@
     ]
   }
 {% endschema %}
+
+
+{% comment %} <img height="" width="" src="{{ parts[0] | strip }}" alt=""> {% endcomment %}
+
 <h2 class="testimonial-heading">What Our Customers Say</h2>
 <section class="testimonial-section">
   <div class="testimonial-slider">
-    <!-- Review Image 1 -->
-    <div class="testimonial-img-slide">
-      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 1">
-    </div>
-
-    <!-- Review Image 2 -->
-    <div class="testimonial-img-slide">
-      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 2">
-    </div>
-
-    <!-- Review Image 3 -->
-    <div class="testimonial-img-slide">
-      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 3">
-    </div>
-    <!-- Review Image 3 -->
-    <div class="testimonial-img-slide">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
-    </div>
-    <!-- Review Image 3 -->
-    <div class="testimonial-img-slide">
-      <img src="https://wellnessextract.com/cdn/shop/files/TESTIMONIALS_2.png?v=1743570486" alt="Review 3">
-    </div>
-    <!-- Review Image 3 -->
-    <div class="testimonial-img-slide">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
-    </div>
-    <!-- Review Image 3 -->
-    <div class="testimonial-img-slide">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_18.png?v=1751021476" alt="Review 3">
-    </div>
-
+    {% for block in collection.metafields.custom.collection_review_image_url.value %}
+      {% assign parts = block | split: '|' %}
+      <div class="testimonial-img-slide">
+        <div class="review-card">
+          <img height="" width="" src="{{ parts[0] | strip }}" alt="">
+          <div class="stars">★★★★★</div>
+          <h3 class="review-title">{{ parts[1] | strip }}</h3>
+          <p class="review-text">
+           {{ parts[2] | strip }}
+          </p>
+          <p class="review-author">{{ parts[3] | strip }}</p>
+        </div>
+      </div>
+    {% endfor %}
 
   </div>
   <!-- Fixed Final Slide -->
   <div class="testimonial-fixed-slide">
-    <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2_2c500fce-62d9-4381-ba3c-bec435fc331c.png?v=1751204474" alt="">
+    <img
+      height=""
+      width=""
+      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2_2c500fce-62d9-4381-ba3c-bec435fc331c.png?v=1751204474"
+      alt="">
   </div>
 </section>
 
 
 <style>
+.review-card {
+  max-width: 350px;
+  padding: 50px 20px;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: .5px solid black;
+  position: relative;
+  margin-top: 10px;
+}
+
+.review-card img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stars {
+  color: #f59e0b; /* Amber-500 from Tailwind */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.testimonial-img-slide{
+  text-align: left;
+}
+
+
+.review-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.review-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #111;
+}
+
+
+
+
+
+
   .testimonial-section {
     padding: 40px 20px;
     text-align: center;
@@ -76,16 +121,7 @@
   }
 
   /* Slick Slide Styling */
-  .testimonial-img-slide img {
-    width: 100%;
-
-
-    /*
-
-   border-radius: 12px; 
-   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); 
-*/
-  }
+ 
 
   /* Fixed Slide */
   .testimonial-fixed-slide {
@@ -122,14 +158,22 @@
       padding: 0;
       width: 100%;
     }
+
+    .testimonial-section .slick-arrow.slick-next {
+      right: -15px !important;
+    }
+
+    .testimonial-section .slick-arrow.slick-prev {
+      left: -15px !important;
+    }
   }
 
   .testimonial-section .slick-arrow.slick-next {
-    right: -15px;
+    right: -30px;
   }
 
   .testimonial-section .slick-arrow.slick-prev {
-    left: -15px;
+    left: -30px;
   }
 </style>
 
