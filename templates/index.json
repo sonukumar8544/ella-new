@@ -2451,6 +2451,11 @@
         "mg_bottom_mobile1": 0
       }
     },
+    "home_page_feature_product_WWLgy8": {
+      "type": "home-page-feature-product",
+      "name": "product home page",
+      "settings": {}
+    },
     "custom_service_block_YFzzCY": {
       "type": "custom-service-block",
       "blocks": {
@@ -2561,6 +2566,7 @@
         "text_fdernJ",
         "text_QGWLED"
       ],
+      "disabled": true,
       "settings": {
         "custom_liquid1": true,
         "id_section": "",
@@ -2831,15 +2837,6 @@
     },
     "1743670996c8046cda": {
       "type": "apps",
-      "blocks": {
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
-      ],
       "disabled": true,
       "custom_css": [
         ".splide__slide .nm-ev-center img.add_splide {max-height: inherit;}",
@@ -3550,6 +3547,7 @@
     "brand_slider_PC48YQ",
     "image_banner_94cYaR",
     "1643015886f75782fe",
+    "home_page_feature_product_WWLgy8",
     "custom_service_block_YFzzCY",
     "testimonial_video_iqLUje",
     "rich_text_MT6wG9",
