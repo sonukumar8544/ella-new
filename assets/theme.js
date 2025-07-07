@@ -7410,3 +7410,20 @@ $(document)
   
 
 })(jQuery);
+
+// collection page scroll to support section
+
+ document.getElementById('healthgoal-hero-section').addEventListener('click', function () {
+    const target = document.querySelector('.healthgoal-support-heading');
+    if (target) {
+      const offset = -140; // scroll 100px above the element
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = target.getBoundingClientRect().top;
+      const scrollToPosition = elementRect - bodyRect + offset;
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  });

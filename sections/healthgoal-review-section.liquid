@@ -20,7 +20,7 @@
       {% assign parts = block | split: '|' %}
       <div class="testimonial-img-slide">
         <div class="review-card">
-          <img height="" width="" src="{{ parts[0] | strip }}" alt="">
+          <img height="" width="" title="" class="lazyload" data-src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}">
           <div class="stars">★★★★★</div>
           <h3 class="review-title">{{ parts[1] | strip }}</h3>
           <p class="review-text">
@@ -37,8 +37,10 @@
     <img
       height=""
       width=""
-      src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2_2c500fce-62d9-4381-ba3c-bec435fc331c.png?v=1751204474"
-      alt="">
+      title=""
+      class="lazyload"
+      data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2_2c500fce-62d9-4381-ba3c-bec435fc331c.png?v=1751204474"
+      alt="testomonial-review">
   </div>
 </section>
 

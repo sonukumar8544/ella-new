@@ -22,8 +22,10 @@
           <li><img
               height=""
               width=""
+              title=""
+              class="lazyload"
               src="{{ parts[0] | strip }}"
-              alt="">
+              alt="{{ parts[1] | strip }}">
              {{ parts[1] | strip }}
           </li>
            {% endfor %} 
@@ -37,8 +39,10 @@
           <li><img
               height=""
               width=""
+              title=""
+              class="lazyload"
               src="{{ parts[0] | strip }}"
-              alt="">
+              alt="{{ parts[1] | strip }}">
              {{ parts[1] | strip }}
           </li>
            {% endfor %}

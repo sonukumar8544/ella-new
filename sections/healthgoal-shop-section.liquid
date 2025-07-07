@@ -16,7 +16,7 @@
   {% for block in collection.metafields.custom.collection_owl_slider_image_title.value %}
   {% assign parts = block | split: '|' %}
     <div class="image-sec-text">
-      <img height="" width="" src="{{ parts[0] | strip }}" alt="">
+      <img height="" width="" data-src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}" title="" class="lazyload">
       <p>{{ parts[1] | strip }}</p>
     </div>
   {% endfor %}
