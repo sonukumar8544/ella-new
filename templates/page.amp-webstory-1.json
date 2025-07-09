@@ -17,24 +17,6 @@
     "amp_webstory_GrmTgz": {
       "type": "amp-webstory",
       "blocks": {
-        "story_page_nTrLC3": {
-          "type": "story_page",
-          "settings": {
-            "webstory_slide": 7,
-            "image": "shopify://shop_images/Summer_sale_M2.jpg",
-            "content-position": "60",
-            "content-align": "center",
-            "heading_bg": "#ff8b21",
-            "heading_color": "#ffffff",
-            "heading": "Welcome to the Story",
-            "description_color": "#ff0000",
-            "description": "harita didi",
-            "button_text": "Buy Now",
-            "btn_link": "",
-            "btn_color": "#ffffff",
-            "btn_bg": "#000000"
-          }
-        },
         "story_page_wR749k": {
           "type": "story_page",
           "settings": {
@@ -52,30 +34,10 @@
             "btn_color": "#ffffff",
             "btn_bg": "#086b92"
           }
-        },
-        "story_page_cxirGd": {
-          "type": "story_page",
-          "settings": {
-            "webstory_slide": 7,
-            "image": "shopify://shop_images/The_man_with_a_Vision_and_Mission_BG_mobile.png",
-            "content-position": "0",
-            "content-align": "center",
-            "heading_bg": "",
-            "heading_color": "#ffffff",
-            "heading": "The Man with a Vision and Mission For Wellness",
-            "description_color": "#ffffff",
-            "description": "Virender Dass, the visionary Founder and Director of Wellness Extract turned a...",
-            "button_text": "Read More",
-            "btn_link": "",
-            "btn_color": "#086b92",
-            "btn_bg": "#ffffff"
-          }
         }
       },
       "block_order": [
-        "story_page_nTrLC3",
-        "story_page_wR749k",
-        "story_page_cxirGd"
+        "story_page_wR749k"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
