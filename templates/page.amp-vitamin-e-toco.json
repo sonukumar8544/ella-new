@@ -52,11 +52,30 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_ymh3XR": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 5,
+            "image": "shopify://shop_images/7.png",
+            "content-position": "0",
+            "content-align": "left",
+            "heading_bg": "",
+            "heading_color": "#fbf9f3",
+            "heading": "Naturally Supports Glowing, Acne-Free Skin",
+            "description_color": "#191717",
+            "description": "✅ Supports Skin Elasticity & Radiance\n🛡️ Shields Skin from Oxidative Damage",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_wR749k",
-        "story_page_tzMHg3"
+        "story_page_tzMHg3",
+        "story_page_ymh3XR"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
