@@ -71,3 +71,23 @@
 .dynamic-Product-page-3\.O-template span.oke-sr-count-number::after {
     content: ")";
 }
+
+
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 20px auto;
+  }
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 30%;
+  font-size: 16px;
+  color: #2c2c2c;
+  }
+  
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item .content_benifits_img {
+  font-size: 20px;
+  }
