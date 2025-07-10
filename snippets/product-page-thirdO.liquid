@@ -1655,7 +1655,7 @@
                   {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
                 {%- when 'product_benifits' -%}
                   {% assign benefits_third_o = product.metafields.custom.product_3_0_benefits.value %}
-
+                  {{ benefits_third_o | json }}
                   <div class="health-benefits_thirdO" id="benifit__{{ block.id }}">
                     {% for benefit in benefits_third_o %}
                       <div class="benefit-item">
