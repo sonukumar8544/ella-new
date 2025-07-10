@@ -1,5 +1,5 @@
 <!--  -->
-<div class="health-benefits" id="benifit__{{ block.id }}">
+<div class="health-benefits_thirdO" id="benifit__{{ block.id }}">
   {% for benefit in product.metafields.custom.product_3_0_benefits.value %}
     <div class="benefit-item">
       <span class="icon">
@@ -18,7 +18,7 @@
   {% endfor %}
 </div>
 {% style %}
-   #benifit__{{ block.id }}{
+   .health-benefits_thirdO{
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -27,7 +27,7 @@
     font-family: sans-serif;
   }
 
-  #benifit__{{ block.id }} .benefit-item {
+  .health-benefits_thirdO .benefit-item {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -37,7 +37,7 @@
     color: #2c2c2c;
   }
 
-  #benifit__{{ block.id }} .benefit-item .icon {
+  .health-benefits_thirdO .benefit-item .icon {
     font-size: 20px;
   }
 {% endstyle %}
