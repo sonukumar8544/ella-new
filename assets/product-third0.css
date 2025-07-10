@@ -5,3 +5,9 @@
 .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
  border-radius: 80px !important; 
 }
+.dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count {
+    display: block !important;
+}
+.dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
+   display: none !important;
+}
