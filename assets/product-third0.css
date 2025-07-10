@@ -16,3 +16,11 @@
     align-items: center;
     justify-content: flex-start;
 }
+.okeReviews[data-oke-container] *, 
+.okeReviews[data-oke-container] :after, 
+.okeReviews[data-oke-container] :before,
+div.okeReviews *,
+div.okeReviews :after,
+div.okeReviews :before{
+  margin-bottom: 0px !important;
+}
