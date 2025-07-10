@@ -1659,7 +1659,7 @@
                   {% if benefits_third_o != blank %}
                     <div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
                       {% for benefit in benefits_third_o %}
-                        {% assign benefit_image_url = benefit.benefits_image.value | image_url: '500x' %}
+                        {% assign benefit_image_url = benefit.benefits_url.value | image_url: '500x' %}
                         {% assign benefit_title = benefit.benefits_title.value %}
 
                         <div class="benefit-item">
