@@ -3,7 +3,7 @@
   assign padding_full_width = section.settings.padding_full_width
   assign show_sticky_info = section.settings.show_sticky_info
   assign mg_top_desktop = section.settings.mg_top_desktop
-  assign mg_top_tablet = section.settings.mg_top_tablet
+  assign mg_top_tablet = section.settings.mg_top_tablet@app
   assign mg_top_mobile = section.settings.mg_top_mobile
   assign mg_bottom_desktop = section.settings.mg_bottom_desktop
   assign mg_bottom_tablet = section.settings.mg_bottom_tablet
@@ -1651,6 +1651,8 @@
                   </div>
                 {%- when 'discount_badge' -%}
                   {% render 'badge_third0', product_card_product: product, block: block %}
+                {%- when 'meta_shortDes' -%}
+                  {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'delivery_time' -%}
