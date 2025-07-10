@@ -1,3 +1,7 @@
 .dynamic-Product-page-3\.O-template .productView-image-wrapper{
       box-shadow: none;
 }
+
+.dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
+ border-radius: 80px !important; 
+}
