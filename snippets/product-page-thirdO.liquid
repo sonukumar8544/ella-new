@@ -1654,24 +1654,29 @@
                 {%- when 'meta_shortDes' -%}
                   {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
                 {%- when 'product_benifits' -%}
+                {%- when 'product_benifits' -%}
                   {% assign benefits_third_o = product.metafields.custom.product_3_0_benefits.value %}
+                  {{ benefits_third_o | json }}
+                  {% if benefits_third_o != blank %}
+                    <div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
+                      {% for benefit in benefits_third_o %}
+                        <div class="benefit-item">
+                          <span class="icon">
+                            <img
+                              class="health_benefits_img"
+                              src="{{ benefit.benefits_image | image_url: '500x' }}"
+                              alt="{{ benefit.benefits_title }}"
+                              title="{{ benefit.benefits_title }}"
+                              loading="lazy"
+                            >
+                          </span>
+                          <span>{{ benefit.benefits_title }}</span>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
 
-                  <div class="health-benefits_thirdO" id="benifit__{{ block.id }}">
-                    {% for benefit in benefits_third_o %}
-                      <div class="benefit-item">
-                        <span class="icon">
-                          <img
-                            class="health_benefits_img"
-                            src="{{ benefit.benefits_image | image_url: '500x' }}"
-                            alt="{{ benefit.benefits_title }}"
-                            title="{{ benefit.benefits_title }}"
-                            loading="lazy"
-                          >
-                        </span>
-                        <span>{{ benefit.benefits_title }}</span>
-                      </div>
-                    {% endfor %}
-                  </div>
+                  {%- render 'product_benifit_third0' -%}
 
                   {% render 'product_benifit_third0' %}
                 {%- when '@app' -%}
