@@ -29,3 +29,9 @@ div.okeReviews :before{
   margin-bottom: 0px !important;
   height: 21px !important;
 }
+span.oke-sr-count-number::before {
+    content: "(";
+}
+span.oke-sr-count-number::after {
+    content: ")";
+}
