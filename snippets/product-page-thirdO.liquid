@@ -1662,7 +1662,7 @@
                         <div class="benefit-item">
                           <span class="icon">
                             <img src="{{ benefit.benefits_image | img_url: 'master' }}" alt="" loading="lazy">
-                            {{ benefit | json }}
+                            {{ benefit.benefits_image.value | image_url: width: 800 }}
                           </span>
                           <!-- <span>{{ benefit.benefits_title }}</span> -->
                         </div>
