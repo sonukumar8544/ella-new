@@ -11,3 +11,8 @@
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
    display: none !important;
 }
+.dynamic-Product-page-3\.O-template .okeReviews .okeReviews.oke-sr div:first-child{
+  display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
