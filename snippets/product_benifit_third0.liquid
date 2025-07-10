@@ -2,11 +2,13 @@
 <div class="health-benefits_third0" id="benifit__{{ block.id }}">
   {% for benefit in product.metafields.custom.product_3_0_benefits.value %}
     {{ benefit | json }}
+    <br>
+
     <div class="benefit-item">
       <span class="icon">
         <img
           class="health_benefits_img"
-          src="{{ benefit.benefits_url | img_url: '50x' }}"
+          src="{{ benefit | img_url: '50x' }}"
           alt="{{ benefit.benefits_title.value }}"
           width=""
           height=""
