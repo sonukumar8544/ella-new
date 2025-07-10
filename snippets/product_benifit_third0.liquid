@@ -1,5 +1,5 @@
 <!--  -->
-{% assign benefits_third_o = product.metafields.custom.product_3_0_benefits %}
+{% assign benefits_third_o = product.metafields.custom.product_3_0_benefits.value %}
 {{ benefits_third_o | json }}
 {% if benefits_third_o != blank %}
   <div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
