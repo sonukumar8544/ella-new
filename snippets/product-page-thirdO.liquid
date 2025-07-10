@@ -447,7 +447,7 @@
   <noscript>{{ 'component-fancybox.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
 <div
-  class="{{tab_layout_mobile}} product-details product-default{% if has_sidebar %} has-sidebar{% endif %}"
+  class="{{tab_layout_mobile}} product-details product-default{% if has_sidebar %} has-sidebar{% endif %} cstm_{{ template.name }}"
   data-section-id="{{ section.id }}"
   data-section-type="product"
   id="ProductSection-{{ section.id }}"
