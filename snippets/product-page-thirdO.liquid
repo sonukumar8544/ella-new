@@ -1661,7 +1661,7 @@
                       {% for benefit in benefits_third_o %}
                         <div class="benefit-item">
                           <span class="icon">
-                            {{ benefit.benefits_image.url.value | json }}
+                            {{ benefit.benefits_image.url.value | img_url: 'master' | json }}
                             {{ benefit.benefits_image.url | img_url: 'master' | img_tag }}
                           </span>
                           <span>{{ benefit.benefits_title }}</span>
