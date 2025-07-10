@@ -1,0 +1,17 @@
+<!-- badge_thirdO -->
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%- if current_variant.compare_at_price > current_variant.price -%}
+  {%- assign discount_amount = current_variant.compare_at_price | minus: current_variant.price -%}
+  {%- assign discount_percent = discount_amount | times: 100 | divided_by: current_variant.compare_at_price | round -%}
+
+  <!--
+    <div class="discount-amount">
+      Save {{ discount_amount | money }}
+    </div>
+  -->
+  <div class="discount-percent">Save {{ discount_percent }}%</div>
+{%- endif -%}
+
+<style></style>
