@@ -12,7 +12,7 @@
   assign main_image_show_custom_cursor = section.settings.main_image_show_custom_cursor
   assign icon_color = section.settings.icon_color
   assign thumnail_layout = section.settings.thumnail_layout
-  assign main_image_arrows_desktop = section.settings.main_image_arrows_desktop
+  assign main_image_arrows_desktop = section.settings.main_image_arrows_desktopbe
   assign main_image_arrows_mobile = section.settings.main_image_arrows_mobile
   assign main_image_counter_mobile = section.settings.main_image_counter_mobile
   assign main_image_enable_parallax_mb = section.settings.main_image_enable_parallax_mb
@@ -1654,7 +1654,9 @@
                 {%- when 'meta_shortDes' -%}
                   {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
                 {%- when 'product_benifits' -%}
-                  {% render 'product_benifit_third0' %}
+                  {% render 'product_benifit_third0',
+                    benefitmetaobject: product.metafields.custom.product_3_0_benefits.value
+                  %}
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'delivery_time' -%}
