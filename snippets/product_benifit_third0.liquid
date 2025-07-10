@@ -1,37 +1,21 @@
-{% assign benefits = product.metafields.custom.product_3_0_benefits.value | parse_json %}
-
-<div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
-  {% for group in benefits %}
-    {% assign titles = group.benefits_title %}
-    {% assign urls = group.benefit_url %}
-
-    {% if titles and urls %}
-      {% for i in (0..titles.size | minus: 1) %}
-        <div class="benefit-item">
-          <span class="icon">
-            <img
-              src="{{ urls[i] }}"
-              alt="{{ titles[i] }}"
-              title="{{ titles[i] }}"
-              loading="lazy"
-            >
-          </span>
-          <span class="title">{{ titles[i] }}</span>
-        </div>
-      {% endfor %}
-    {% elsif titles %}
-      {% for title in titles %}
-        <div class="benefit-item">
-          <span class="icon">
-            <img src="" alt="{{ title }}" loading="lazy">
-          </span>
-          <span class="title">{{ title }}</span>
-        </div>
-      {% endfor %}
-    {% endif %}
+<!--  -->
+<div class="health-benefits_third0" id="benifit__{{ block.id }}">
+  {% for benefit in product.metafields.custom.product_3_0_benefits.value %}
+    <div class="benefit-item">
+      <span class="icon">
+        <img
+          class="health_benefits_img"
+          src="{{ benefit.benefits_image.value | img_url: '500x' }}"
+          alt="{{ benefit.benefits_title.value }}"
+          width=""
+          height=""
+          loading="lazy"
+        >
+      </span>
+      <span>{{ benefit.benefits_title.value }}</span>
+    </div>
   {% endfor %}
 </div>
-
 {% style %}
    .health-benefits_thirdO{
     display: flex;
