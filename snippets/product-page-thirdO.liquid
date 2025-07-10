@@ -1663,9 +1663,8 @@
                           <span class="icon">
                             <img
                               class="health_benefits_img"
-                              src="{{ benefit.benefits_image.value | image_url: '500x' }}"
-                              alt="{{ benefit.benefits_title.value }}"
-                              title="{{ benefit.benefits_title.value }}"
+                              src="{{ benefit.benefits_image | image_url: width: 500 }}"
+                              alt="{{ benefit.benefits_title }}"
                               loading="lazy"
                             >
                           </span>
