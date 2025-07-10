@@ -116,8 +116,8 @@
         "image_rzpH6y": {
           "type": "image",
           "settings": {
-            "image_slide": "shopify://shop_images/Main-06_4_1.png",
-            "image_slide_mb": "shopify://shop_images/Mobile_View-03_compressed.png",
+            "image_slide": "shopify://shop_images/Summer_s_Hottest_Deal_on_Supplements.png",
+            "image_slide_mb": "shopify://shop_images/Summer_s_Hottest_Deal_on_Supplements_1.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "13.2",
@@ -403,13 +403,13 @@
             "icon_width": 0,
             "icon_height": 0,
             "icon_mg_right": 0,
-            "text": " POTENT & PURE, (FDA Inspected Facility)",
+            "text": " 3rd Party Tested - Highest Quality Gauranteed",
             "font_size_text": 17,
             "font_size_text_mb": 15,
             "mg_bottom_text": 0,
             "font_weight_text": "500",
             "font_style_text": "normal",
-            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">See What’s Trending →</p>",
+            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Shop Top Selling Vitamins→</p>",
             "link": "shopify://collections/best-seller-prouct"
           }
         },
@@ -427,7 +427,7 @@
             "mg_bottom_text": 0,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Find My Formula→</p>",
+            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Find My Wellness→</p>",
             "link": "shopify://pages/wellness-quiz"
           }
         },
@@ -456,6 +456,7 @@
         "044503cd-52c1-4af3-8077-be921f131033",
         "16eb8900-abdc-40a0-bfc5-c69705db1f6b"
       ],
+      "disabled": true,
       "custom_css": [
         ".policies-block .policies-content {text-align: center;}"
       ],
@@ -488,6 +489,183 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
+      }
+    },
+    "marquee_GtzVRx": {
+      "type": "marquee",
+      "blocks": {
+        "marquee_zDL33H": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p><em><strong>FDA-GRAS</strong></em> Approved</p>",
+            "color": "#ffffff",
+            "color_mb": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_aQPLj6": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>3rd-Party <em><strong>Tested</strong></em></p>",
+            "color": "#ffffff",
+            "color_mb": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_iDyY9K": {
+          "type": "marquee",
+          "settings": {
+            "text": "<p>100,000+ <em><strong>Satisfied Customers</strong></em></p>",
+            "color": "#ffffff",
+            "color_mb": "#ffffff",
+            "bg_color": "rgba(0,0,0,0)",
+            "enable_border_bottom": false
+          }
+        }
+      },
+      "block_order": [
+        "marquee_zDL33H",
+        "marquee_aQPLj6",
+        "marquee_iDyY9K"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 550px) {.marquee.thunder_light {padding-top: 20px; padding-bottom: 20px; }}",
+        "@media screen and (min-width: 1200px) {.marquee__item.bg_color {padding: 10px 15px; }}",
+        ".marquee {background: linear-gradient(to right, #086b92, #abe7ff, #086b92);}",
+        "span.marquee__item.bg_color p {color: white; letter-spacing: 1.2px; font-size: 18px;}"
+      ],
+      "name": "t:sections.marquee.presets.name",
+      "settings": {
+        "minus_spacing_top": 0,
+        "mq_background": "",
+        "mq_gradient": "linear-gradient(86deg, rgba(8, 107, 146, 1) 69%, rgba(232, 232, 232, 1) 97%)",
+        "border": "none",
+        "border_color": "#e9b827",
+        "type_tab_font": "font_1",
+        "text_size": 30,
+        "text_line_height": 30,
+        "text_font_weight": "600",
+        "text_letter_spacing": "",
+        "gap_blocks": 14,
+        "icon": "thunder_light",
+        "icon_color": "#ffffff",
+        "text_size_mb": 30,
+        "text_line_height_mb": 18,
+        "border_color_mb": "#ffffff",
+        "icon_color_mb": "#ffffff",
+        "mg_top_desktop": 20,
+        "mg_top_tablet": 10,
+        "mg_top_mobile": 10,
+        "mg_bottom_desktop": 20,
+        "mg_bottom_tablet": 10,
+        "mg_bottom_mobile": 10
+      }
+    },
+    "custom_liquid_8DztYg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\n     Bestsellers You’ll Love\n    </h2>\n     </div>\n</section>\n\n<style> .healthgoal-support-section {\n  padding: 80px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n</style>"
+      }
+    },
+    "16409351508cd2f3e1": {
+      "type": "product-tab-block",
+      "blocks": {
+        "product_tabs_x6FH6N": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "All Product",
+            "collection": "all-products"
+          }
+        }
+      },
+      "block_order": [
+        "product_tabs_x6FH6N"
+      ],
+      "custom_css": [
+        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}",
+        ".product-tab-block .list-product-tabs {display: none;}",
+        ".slider-progress-bar {display: none !important;}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "product_bg": "#f2f3f9",
+        "product_bg_gradient": "",
+        "product_block_layout": "slider",
+        "product_block_limit": 20,
+        "product_block_title": "",
+        "fontsize_title": 20,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 0,
+        "enable_border_title": true,
+        "border_color_title": "#e0e0e0",
+        "enable_border_title2": true,
+        "border_color_title2": "#1d5dd9",
+        "color_title": "#36454f",
+        "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 12,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "image_behavior": "none",
+        "product_block_per_row": "4",
+        "product_block_infinite_scroll": true,
+        "min_width_button": "",
+        "product_block_dots": false,
+        "product_block_dots_mb": false,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": true,
+        "product_block_arrows_custom_position": true,
+        "product_block_progress_bar": true,
+        "enable_infinite": true,
+        "product_block_show": "4",
+        "product_block_per_view": "1",
+        "show_half": true,
+        "scroll_height": 5,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#086b92",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 25,
+        "tab_title_style": "style_1",
+        "layout_mobile": "grid",
+        "mg_bottom_title_tab": 30,
+        "type_tab_font": "font_2",
+        "separation": false,
+        "style_separation": "style2",
+        "color_separation": "#bebebe",
+        "enable_scroll_title": true,
+        "fontsize_tab": 16,
+        "fontsize_tab_mb": 15,
+        "font_weight_tab": "600",
+        "font_weight_active_tab": "600",
+        "spacing_between_title": 0,
+        "line_height_tab": 30,
+        "line_height_tab_mobile": 24,
+        "border_tab_radius": 6,
+        "min_width_tab": 60,
+        "border_width_tab": 1,
+        "tab_align": "center",
+        "color_tab": "#086b92",
+        "border_color_tab": "#086b92",
+        "bg_color_tab": "rgba(0,0,0,0)",
+        "bg_color_gradient_tab": "",
+        "color_tab_active": "#ffffff",
+        "border_color_tab_active": "",
+        "bg_color_tab_active": "#086b92",
+        "bg_color_gradient_tab_active": "",
+        "mg_top_desktop": 45,
+        "mg_top_tablet": 45,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 25
       }
     },
     "1642989489e5f98f1a": {
@@ -720,73 +898,73 @@
         "mg_bottom_mobile": 40
       }
     },
-    "16409351508cd2f3e1": {
+    "product_tab_block_q6UMeJ": {
       "type": "product-tab-block",
       "blocks": {
-        "d672657b-959a-44fb-91cd-4352ed8ee468": {
+        "product_tabs_p8FtK7": {
           "type": "ProductTabs",
           "settings": {
             "title": "Brain",
             "collection": "brain-health"
           }
         },
-        "754a9b2c-0b43-4bbf-839c-c229e8f156eb": {
+        "product_tabs_cgtJhp": {
           "type": "ProductTabs",
           "settings": {
             "title": "Eye",
             "collection": "eye-health"
           }
         },
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3": {
+        "product_tabs_GRcTVa": {
           "type": "ProductTabs",
           "settings": {
             "title": "Skin",
             "collection": "skin-health"
           }
         },
-        "product_tabs_93tUbY": {
+        "product_tabs_GKYwWD": {
           "type": "ProductTabs",
           "settings": {
             "title": "Cardiovascular",
             "collection": "heart-health"
           }
         },
-        "product_tabs_F6WcNJ": {
+        "product_tabs_gEFkgm": {
           "type": "ProductTabs",
           "settings": {
             "title": "Muscle ",
             "collection": "muscle-health"
           }
         },
-        "product_tabs_VfAJrn": {
+        "product_tabs_V7xxyT": {
           "type": "ProductTabs",
           "settings": {
             "title": "Joints & Bones",
             "collection": "bone-health"
           }
         },
-        "product_tabs_rwCPjU": {
+        "product_tabs_bHPU6q": {
           "type": "ProductTabs",
           "settings": {
             "title": "Immunity",
             "collection": "immune-health"
           }
         },
-        "product_tabs_TFrUDc": {
+        "product_tabs_AaL8jh": {
           "type": "ProductTabs",
           "settings": {
             "title": "Gut",
             "collection": "gut-health"
           }
         },
-        "product_tabs_TQMLRt": {
+        "product_tabs_BAEpfe": {
           "type": "ProductTabs",
           "settings": {
             "title": "Hormones",
             "collection": "hormone-health"
           }
         },
-        "product_tabs_x6FH6N": {
+        "product_tabs_mWTYNj": {
           "type": "ProductTabs",
           "settings": {
             "title": "Healthy Aging",
@@ -795,20 +973,16 @@
         }
       },
       "block_order": [
-        "d672657b-959a-44fb-91cd-4352ed8ee468",
-        "754a9b2c-0b43-4bbf-839c-c229e8f156eb",
-        "e98430ab-8a6b-49f8-a27c-63914b504aa3",
-        "product_tabs_93tUbY",
-        "product_tabs_F6WcNJ",
-        "product_tabs_VfAJrn",
-        "product_tabs_rwCPjU",
-        "product_tabs_TFrUDc",
-        "product_tabs_TQMLRt",
-        "product_tabs_x6FH6N"
-      ],
-      "custom_css": [
-        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
-        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}"
+        "product_tabs_p8FtK7",
+        "product_tabs_cgtJhp",
+        "product_tabs_GRcTVa",
+        "product_tabs_GKYwWD",
+        "product_tabs_gEFkgm",
+        "product_tabs_V7xxyT",
+        "product_tabs_bHPU6q",
+        "product_tabs_AaL8jh",
+        "product_tabs_BAEpfe",
+        "product_tabs_mWTYNj"
       ],
       "settings": {
         "container": "container",
@@ -1134,13 +1308,199 @@
         "mg_bottom_mobile": 40
       }
     },
+    "featured_product_wBNw9p": {
+      "type": "featured-product",
+      "blocks": {
+        "title_79bHaR": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 40,
+            "fontsize_text_mb": 24,
+            "color_title": "#ffffff",
+            "spacing_top": 0,
+            "spacing_bottom": 17
+          }
+        },
+        "meta_jy3jdF": {
+          "type": "meta",
+          "settings": {
+            "show_sold_in": true,
+            "sold_in_number": "3,5,6,7,8,10,12,15",
+            "sold_in_hours": "10,15,16,17,18,20,25,35",
+            "color_text_sold_in": "#b60b32",
+            "spacing_top": 0,
+            "spacing_bottom": 13
+          }
+        },
+        "short_description_6EyMbt": {
+          "type": "short_description",
+          "settings": {
+            "show_short_description": true,
+            "word_number": "17",
+            "fontsize_text": 16,
+            "color_text": "#ffffff",
+            "spacing_top": 0,
+            "spacing_bottom": 24
+          }
+        },
+        "price_MHkwe6": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 30,
+            "price_style": "1",
+            "sale_color": "#f12d1c",
+            "spacing_top": 0,
+            "spacing_bottom": 24
+          }
+        },
+        "product_text_YpTyQf": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<strong>Shipping</strong> calculated at checkout.",
+            "fontsize_text": 16,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#ffffff",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 26
+          }
+        },
+        "variant_picker_XbheNk": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "variant_picker_style": "1",
+            "fontsize_text": 16,
+            "color_label": "#ffffff",
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "quantity_selector_JRygy9": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "2",
+            "fontsize_text": 16,
+            "color_qty_label": "#ffffff",
+            "color_qty_icon": "#5a5a5a",
+            "color_qty_input": "#f2f5ff",
+            "bg_color_qty_input": "#ffffff",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "buy_buttons_gjbgTY": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "fontsize_text": 14,
+            "checkbox_color": "#ffffff",
+            "checkbox_border_color": "#494a4d",
+            "color_qty_label": "#ffffff",
+            "color_qty_icon": "#5a5a5a",
+            "color_qty_input": "#f2f5ff",
+            "bg_color_qty_input": "rgba(0,0,0,0)",
+            "wishlist_color": "#747474",
+            "wishlist_border_color": "#121212",
+            "wishlist_bg_color": "#121212",
+            "wishlist_color_hover": "#ffffff",
+            "wishlist_border_color_hover": "#3faeea",
+            "wishlist_bg_color_hover": "#3faeea",
+            "atc_animation": "horizontal-shaking",
+            "atc_color": "#ffffff",
+            "atc_border_color": "rgba(0,0,0,0)",
+            "atc_bg_color": "rgba(0,0,0,0)",
+            "atc_bg_color_gradient": "linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%)",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "rgba(0,0,0,0)",
+            "atc_bg_color_hover": "rgba(0,0,0,0)",
+            "atc_bg_color_gradient_hover": "linear-gradient(#000, #000) padding-box,        linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%) border-box",
+            "bin_color": "#ffffff",
+            "bin_border_color": "rgba(0,0,0,0)",
+            "bin_bg_color": "rgba(0,0,0,0)",
+            "bin_bg_color_gradient": "linear-gradient(#000, #000) padding-box,        linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%) border-box",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "rgba(0,0,0,0)",
+            "bin_bg_color_hover": "rgba(0,0,0,0)",
+            "bin_bg_color_hover_gradient": "linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%)",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        }
+      },
+      "block_order": [
+        "title_79bHaR",
+        "meta_jy3jdF",
+        "short_description_6EyMbt",
+        "price_MHkwe6",
+        "product_text_YpTyQf",
+        "variant_picker_XbheNk",
+        "quantity_selector_JRygy9",
+        "buy_buttons_gjbgTY"
+      ],
+      "disabled": true,
+      "name": "t:sections.product_block.settings.header__2.feature_product",
+      "settings": {
+        "id_section": "",
+        "container": "container",
+        "padding_full_width": 0,
+        "show_sticky_info": false,
+        "bg_color_product": "#000000",
+        "title": "Shop Now",
+        "color_title": "#ffffff",
+        "fontsize_title": 60,
+        "fontsize_title_mb": 34,
+        "margin_bottom_title": 43,
+        "margin_bottom_title_mb": 20,
+        "des": "Phasellus lorem an malesuada ligula pulvinar commodo maecenas.",
+        "color_des": "#ffffff",
+        "fontsize_des": 16,
+        "margin_bottom_des": 45,
+        "margin_bottom_des_mb": 30,
+        "title_align": "center",
+        "title_align_mb": "center",
+        "featured_product": "",
+        "main_image_arrows_desktop": true,
+        "main_image_counter_mobile": false,
+        "main_image_layout": "1",
+        "main_image_position": "left",
+        "main_image_bg_color": "#121212",
+        "thumnail_layout": "2",
+        "show_thumbnail_mobile": true,
+        "thumbnail_to_show": 5,
+        "thumbnail_active_color": "#e11ecb",
+        "thumbnail_arrow_color_mb": "#ffffff",
+        "thumbnail_image_bg_color": "#121212",
+        "media_fit": "unset",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 100,
+        "product_image_popup": "fancybox",
+        "video_layout": "thumbnail",
+        "show_badge": true,
+        "mg_top_desktop": 60,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 40,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 30,
+        "mg_bottom_mobile": 30
+      }
+    },
     "rich_text_AkN9Q8": {
       "type": "rich-text",
       "blocks": {
         "heading_dqnLAm": {
           "type": "heading",
           "settings": {
-            "heading": "Not Sure Where To Start?",
+            "heading": "Get Customized Wellness Pack",
             "heading_size": 40,
             "heading_size_mb": 28,
             "heading_line_height": 1,
@@ -1198,12 +1558,12 @@
         "rich_text_bg_gradient": "",
         "enable_column": false,
         "content_align": "center",
-        "mg_top_desktop": 80,
-        "mg_top_tablet": 80,
-        "mg_top_mobile": 35,
-        "mg_bottom_desktop": 80,
-        "mg_bottom_tablet": 80,
-        "mg_bottom_mobile": 40
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 20
       }
     },
     "brand_slider_tRACcq": {
@@ -1361,6 +1721,11 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 40
       }
+    },
+    "home_page_feature_product_WWLgy8": {
+      "type": "home-page-feature-product",
+      "name": "product home page",
+      "settings": {}
     },
     "spotlight_block_cx6rBp": {
       "type": "spotlight-block",
@@ -2201,6 +2566,7 @@
         "text_fdernJ",
         "text_QGWLED"
       ],
+      "disabled": true,
       "settings": {
         "custom_liquid1": true,
         "id_section": "",
@@ -2287,6 +2653,148 @@
         "mg_bottom_mobile1": 25
       }
     },
+    "testimonial_video_iqLUje": {
+      "type": "Testimonial-video",
+      "blocks": {
+        "product_card_jmkhrW": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/testimonail_Poster.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1e966a5716b4176aeeda93859e871c1.mp4",
+            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+            "product1": ""
+          }
+        },
+        "product_card_8P9xpY": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/buiquinol-for-high-energy.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/1461debb69624a7eb7d7cc88953d11f8.mp4",
+            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+            "product1": ""
+          }
+        },
+        "product_card_48Ljjj": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster3.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1109fe412304e3cbad683c513b09120.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
+            "product1": ""
+          }
+        },
+        "product_card_GqzXGf": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster5.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f284d2989d4048329ff25b17b85e5fbb.mp4",
+            "product": "cell-dtox-dietary-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_KWymqB": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster4.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/a6b45dd7efd0488eb26f4dca35e3de40.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
+            "product1": ""
+          }
+        },
+        "product_card_VemeLb": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster6.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/9e793d68038548e2a447c654a919f2e4.mp4",
+            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+            "product1": ""
+          }
+        },
+        "product_card_rbHAY6": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster7.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/27bdea2f1403479883f974d08e6b355a.mp4",
+            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
+            "product1": ""
+          }
+        },
+        "product_card_trGFC8": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster8.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/3b129a8ddbb7410cad7ea9593e13ec84.mp4",
+            "product": "vitamin-e-tocotrienols-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_EqhNhK": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster9.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/540bf5aae7ed434096c185d9bde2c05f.mp4",
+            "product": "h2-molecular-hydrogen",
+            "product1": ""
+          }
+        },
+        "product_card_TKCnHb": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster10.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/5d922865f41142ba825cc8478e1347a1.mp4",
+            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+            "product1": ""
+          }
+        },
+        "product_card_x43L7Q": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster11.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/35d1b535ca6644fd879c5537f7aacc4d.mp4",
+            "product": "cell-dtox-dietary-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_Tk4Xjj": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster12.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f1f924c5d14244ee920fa64b019b99a2.mp4",
+            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
+            "product1": ""
+          }
+        },
+        "product_card_twb6fB": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster13.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/af6eb4d2f04f46618f2ce01db416c247.mp4",
+            "product": "annatto-150-vitamin-e-tocotrienols-with-geranylgeraniol",
+            "product1": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_jmkhrW",
+        "product_card_8P9xpY",
+        "product_card_48Ljjj",
+        "product_card_GqzXGf",
+        "product_card_KWymqB",
+        "product_card_VemeLb",
+        "product_card_rbHAY6",
+        "product_card_trGFC8",
+        "product_card_EqhNhK",
+        "product_card_TKCnHb",
+        "product_card_x43L7Q",
+        "product_card_Tk4Xjj",
+        "product_card_twb6fB"
+      ],
+      "name": "Testimonial Video | App",
+      "settings": {
+        "title": "Voices of Satisfaction",
+        "description": ""
+      }
+    },
     "rich_text_MT6wG9": {
       "type": "rich-text",
       "blocks": {
@@ -2329,15 +2837,6 @@
     },
     "1743670996c8046cda": {
       "type": "apps",
-      "blocks": {
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_shoppable_videos_easyvideo_section_xVT9kU"
-      ],
       "disabled": true,
       "custom_css": [
         ".splide__slide .nm-ev-center img.add_splide {max-height: inherit;}",
@@ -3034,17 +3533,23 @@
   "order": [
     "16321237356a896dad",
     "6cbca2ce-2310-4606-bb04-09ee74d1d97e",
-    "1642989489e5f98f1a",
+    "marquee_GtzVRx",
+    "custom_liquid_8DztYg",
     "16409351508cd2f3e1",
+    "1642989489e5f98f1a",
+    "product_tab_block_q6UMeJ",
     "rich_text_6wH8m9",
     "brand_slider_8dyJxH",
+    "featured_product_wBNw9p",
     "rich_text_AkN9Q8",
     "brand_slider_tRACcq",
+    "home_page_feature_product_WWLgy8",
     "spotlight_block_cx6rBp",
     "brand_slider_PC48YQ",
     "image_banner_94cYaR",
     "1643015886f75782fe",
     "custom_service_block_YFzzCY",
+    "testimonial_video_iqLUje",
     "rich_text_MT6wG9",
     "1743670996c8046cda",
     "brand_slider_7QWUjR",

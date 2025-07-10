@@ -23,14 +23,20 @@ This file can be re-written at any time.
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {% comment %} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%} {% endcomment %}
     </title>
+    {% if request.path contains '/pages/molecular-hydrogen'
+      or request.path contains '/pages/testosterone'
+      or request.path contains 'pages/statin'
+    %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
     {% render 'meta-tags' %}
-
+    {% render 'seo_script' %}
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -157,7 +163,7 @@ This file can be re-written at any time.
     {% include 'shogun-content-handler' %}
 
     
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     {{ content_for_layout }}
     {{ 'custom.js' | asset_url | script_tag }}
     

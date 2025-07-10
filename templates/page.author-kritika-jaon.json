@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "disabled": true,
+      "settings": {}
+    },
+    "author_section_EjLw7W": {
+      "type": "author-section",
+      "blocks": {
+        "text_block_RHhjwh": {
+          "type": "text_block",
+          "settings": {
+            "title": "",
+            "content": "Kritika Jain is a content writer with a B.A. in Travel & Tourism Management from Delhi University. With hands-on experience in diverse fields like healthcare and personal wellness, she creates content that bridges the gap between scientific information and everyday understanding.\nShe specializes in simplifying complex health topics into clear, engaging, and well-researched content. Her writing blends accuracy with creativity, making healthcare information both accessible and trustworthy for readers looking to make informed health choices."
+          }
+        },
+        "text_block_HeweMb": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>\n\nOur editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
+        }
+      },
+      "block_order": [
+        "text_block_RHhjwh",
+        "text_block_HeweMb"
+      ],
+      "name": "Author Section",
+      "settings": {
+        "author_image": "shopify://shop_images/Kritika_Jain.jpg",
+        "author_name": "Kritika Jain",
+        "author_role": "Author",
+        "author_email": "example@example.com",
+        "author_linkedin": "https://www.linkedin.com/in/kritika-jain-097904187/"
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "main",
+    "shogun-optimizer",
+    "author_section_EjLw7W"
+  ]
+}

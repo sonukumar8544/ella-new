@@ -9,10 +9,12 @@
   {% assign currency = localization.country.currency.iso_code %}
   {% assign has_valid_bundle = false %}
   {% for tag in product.tags %}
-    {% if tag == settings['usa-bundle-tag'] and usa_currencies contains currency %}
+    {% if tag == settings['usa-bundle-tag'] %}
       {% assign has_valid_bundle = true %}
-    {% elsif tag == settings['ca-bundle-tag'] and currency == 'CAD' %}
-      {% assign has_valid_bundle = true %}
+      {% comment %}
+        {% elsif tag == settings['ca-bundle-tag'] and currency == 'CAD' %}
+         {% assign has_valid_bundle = true %}
+      {% endcomment %}
     {% endif %}
   {% endfor %}
 
@@ -20,7 +22,8 @@
     {% assign filtered_product_count = filtered_product_count | plus: 1 %}
 
     {% if product.variants.size > 0 %}
-      {% if product.tags contains 'usa-quiz-bundle-atc' or product.tags contains 'ca_quiz_bundle_atc' %}
+      {% if product.tags contains 'usa-quiz-bundle-atc' %}
+        {% comment %}or product.tags contains 'ca_quiz_bundle_atc'{% endcomment %}
         <!-- This Tag usa-quiz-bundle-atc will assign in bundle product which is not Add to cart with bundle -->
       {% else %}
         {% assign first_variant_id = product.variants.first.id %}
