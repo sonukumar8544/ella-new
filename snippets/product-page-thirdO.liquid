@@ -1652,6 +1652,8 @@
                     </complementary-products>
                     <script src="{{ "build-complementary-products.js" | asset_url }}" defer="defer"></script>
                   </div>
+                {%- when 'clinician' -%}
+                  {% render 'clinician_banner_third0', block: block %}
                 {%- when 'discount_badge' -%}
                   {% render 'badge_third0', product_card_product: product, block: block %}
                 {%- when 'meta_shortDes' -%}
