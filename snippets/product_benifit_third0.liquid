@@ -5,7 +5,7 @@
   <div class="health-benefits_thirdO">
     {% for benefit in benefitmetaobject %}
       <div class="benefit-item">
-        <span class="icon">
+        <span class="content_benifits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_url.value }}"
@@ -15,7 +15,7 @@
             loading="lazy"
           >
         </span>
-        <span>{{ benefit.benefits_title.value }}</span>
+        <span class="content_benifits">{{ benefit.benefits_title.value }}</span>
       </div>
     {% endfor %}
   </div>
@@ -38,7 +38,7 @@
       color: #2c2c2c;
     }
 
-    .health-benefits_thirdO .benefit-item .icon {
+    .health-benefits_thirdO .benefit-item .content_benifits_img {
       font-size: 20px;
     }
 {% endstyle %}
