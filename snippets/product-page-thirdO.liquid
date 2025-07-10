@@ -1661,10 +1661,15 @@
                       {% for benefit in benefits_third_o %}
                         <div class="benefit-item">
                           <span class="icon">
-                            <img src="{{ benefit.benefits_image | img_url: 'master' }}" alt="" loading="lazy">
-                            {{ benefit.benefits_image.value | image_url: width: 800 | image_tag }}
+                            <img
+                              class="health_benefits_img"
+                              src="{{ benefit.benefits_image.value | image_url: '500x' }}"
+                              alt="{{ benefit.benefits_title.value }}"
+                              title="{{ benefit.benefits_title.value }}"
+                              loading="lazy"
+                            >
                           </span>
-                          <!-- <span>{{ benefit.benefits_title }}</span> -->
+                          <span>{{ benefit.benefits_title }}</span>
                         </div>
                       {% endfor %}
                     </div>
