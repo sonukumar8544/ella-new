@@ -6,7 +6,12 @@
  border-radius: 80px !important; 
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count {
-    display: block !important;
+    display: block!important;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
    display: none !important;
