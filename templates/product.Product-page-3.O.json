@@ -12,22 +12,6 @@
     "main": {
       "type": "main-product-thirdO",
       "blocks": {
-        "2e8c7c14-a0ad-4930-a1d8-3def05310426": {
-          "type": "breadcrumb",
-          "disabled": true,
-          "settings": {
-            "breadcrumb_layout": "full",
-            "breadcrumb_alignment": "left",
-            "breadcrumb_bg": "rgba(0,0,0,0)",
-            "breadcrumb_gradient": "",
-            "breadcrumb_bg_mb": "#f6f6f6",
-            "breadcrumb_gradient_mb": "",
-            "breadcrumb_mg_top_desktop": 10,
-            "breadcrumb_mg_top_mobile": 0,
-            "breadcrumb_mg_bottom_desktop": 20,
-            "breadcrumb_mg_bottom_mobile": 10
-          }
-        },
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b": {
           "type": "info",
           "settings": {
@@ -314,7 +298,6 @@
         }
       },
       "block_order": [
-        "2e8c7c14-a0ad-4930-a1d8-3def05310426",
         "4e59f24a-8859-4579-a80a-d70e6f1bf66b",
         "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
         "okendo_star_rating_APJhrn",
@@ -367,8 +350,8 @@
         "main_image_counter_mobile": false,
         "main_image_enable_parallax_mb": false,
         "main_image_show_zoom_icon_mb": false,
-        "show_thumbnail_mobile": true,
-        "thumnail_layout": "3",
+        "show_thumbnail_mobile": false,
+        "thumnail_layout": "4",
         "thumbnail_to_show": 6,
         "enable_sticky": true,
         "sidebar_layout": "layout_1",
@@ -762,6 +745,14 @@
       "settings": {
         "section_heading": "Scientifically Backed",
         "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
+      }
+    },
+    "metafield_testimonial_video_VcK34F": {
+      "type": "Metafield-testimonial-video",
+      "name": "Metafield Testimonial Video | App",
+      "settings": {
+        "title": "Voices of Satisfaction",
+        "description": ""
       }
     },
     "rich_text_MT6wG9": {
@@ -1774,14 +1765,6 @@
       ],
       "settings": {
         "include_margins": false
-      }
-    },
-    "metafield_testimonial_video_VcK34F": {
-      "type": "Metafield-testimonial-video",
-      "name": "Metafield Testimonial Video | App",
-      "settings": {
-        "title": "Voices of Satisfaction",
-        "description": ""
       }
     }
   },
