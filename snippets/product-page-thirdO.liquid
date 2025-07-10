@@ -1654,32 +1654,6 @@
                 {%- when 'meta_shortDes' -%}
                   {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
                 {%- when 'product_benifits' -%}
-                {%- when 'product_benifits' -%}
-                  {% assign benefits_third_o = product.metafields.custom.product_3_0_benefits.value %}
-                  {% if benefits_third_o != blank %}
-                    <div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
-                      {% for benefit in benefits_third_o %}
-                        {% assign benefit_image_url = benefit.benefits_url.value | image_url: '500x' %}
-                        {% assign benefit_title = benefit.benefits_title.value %}
-
-                        <div class="benefit-item">
-                          <span class="icon">
-                            <img
-                              class="health_benefits_img"
-                              src="{{ benefit_image_url }}"
-                              alt="{{ benefit_title }}"
-                              title="{{ benefit_title }}"
-                              loading="lazy"
-                            >
-                          </span>
-                          <span>{{ benefit_title }}</span>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-
-                  {%- render 'product_benifit_third0' -%}
-
                   {% render 'product_benifit_third0' %}
                 {%- when '@app' -%}
                   {% render block %}
