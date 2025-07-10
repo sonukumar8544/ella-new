@@ -5,15 +5,15 @@
       <span class="icon">
         <img
           class="health_benefits_img"
-          src="{{ benefit.benefits_image | img_url: '500x' }}"
-          alt="{{ benefit.benefits_title }}"
-          title="{{ benefit.benefits_title }}"
+          src="{{ benefit.benefits_image.value | img_url: '500x' }}"
+          alt="{{ benefit.benefits_title.value }}"
+          title="{{ benefit.benefits_title.value }}"
           width=""
           height=""
           loading="lazy"
         >
       </span>
-      <span>{{ benefit.benefits_title }}</span>
+      <span>{{ benefit.benefits_title.value }}</span>
     </div>
   {% endfor %}
 </div>
