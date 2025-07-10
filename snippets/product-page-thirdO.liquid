@@ -289,7 +289,10 @@
     onload="this.media='all'"
   >
 {%- endif -%}
-
+<link
+  rel="stylesheet"
+  href="{{ 'product-third0.css' | asset_url }}"
+>
 {%- if product.quantity_price_breaks_configured? -%}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
