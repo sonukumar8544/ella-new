@@ -11,7 +11,8 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1;
+    border-bottom: 2px solid #000;
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
    display: none !important;
@@ -25,18 +26,18 @@
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-rating{
   display: none !important;
 }
-.okeReviews[data-oke-container] *, 
-.okeReviews[data-oke-container] :after, 
-.okeReviews[data-oke-container] :before,
-div.okeReviews *,
-div.okeReviews :after,
-div.okeReviews :before{
+.dynamic-Product-page-3\.O-template  .okeReviews[data-oke-container] *, 
+ .dynamic-Product-page-3\.O-template .okeReviews[data-oke-container] :after, 
+.dynamic-Product-page-3\.O-template  .okeReviews[data-oke-container] :before,
+.dynamic-Product-page-3\.O-template  div.okeReviews *,
+.dynamic-Product-page-3\.O-template  div.okeReviews :after,
+.dynamic-Product-page-3\.O-template  div.okeReviews :before{
   margin-bottom: 0px !important;
   height: 21px !important;
 }
-span.oke-sr-count-number::before {
+.dynamic-Product-page-3\.O-template span.oke-sr-count-number::before {
     content: "(";
 }
-span.oke-sr-count-number::after {
+.dynamic-Product-page-3\.O-template span.oke-sr-count-number::after {
     content: ")";
 }
