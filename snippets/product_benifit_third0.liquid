@@ -1,0 +1,41 @@
+<!--  -->
+<div class="health-benefits" id="benifit__{{ block.id }}">
+  {% for benefit in product.metafields.custom.product_3_0_benefits.value %}
+    <div class="benefit-item">
+      <span class="icon">
+        <img
+          class="health_benefits_img"
+          src="{{ benefit.benefits_image | img_url: '500x' }}"
+          alt="{{ benefit.benefits_title }}"
+          title="{{ benefit.benefits_title }}"
+          loading="lazy"
+        >
+      </span>
+      <span>{{ benefit.benefits_title }}</span>
+    </div>
+  {% endfor %}
+</div>
+{% style %}
+   #benifit__{{ block.id }}{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: sans-serif;
+  }
+
+  #benifit__{{ block.id }} .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 30%;
+    min-width: 160px;
+    font-size: 16px;
+    color: #2c2c2c;
+  }
+
+  #benifit__{{ block.id }} .benefit-item .icon {
+    font-size: 20px;
+  }
+{% endstyle %}
