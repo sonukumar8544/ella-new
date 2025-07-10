@@ -1,21 +1,25 @@
 <!--  -->
-<div class="health-benefits_thirdO">
-  {% for benefit in product.metafields.custom.product_3_0_benefits %}
-    <div class="benefit-item">
-      <span class="icon">
-        <img
-          class="health_benefits_img"
-          src="{{ benefit.benefit_url.value | img_url:'50x' }}"
-          alt="{{ benefit.benefits_title.value }}"
-          width=""
-          height=""
-          loading="lazy"
-        >
-      </span>
-      <span>{{ benefit.benefits_title.value }}</span>
-    </div>
-  {% endfor %}
-</div>
+{% assign benefitmetaobject = product.metafields.custom.product_3_0_benefits.value %}
+
+{% if benefitmetaobject != blank %}
+  <div class="health-benefits_thirdO">
+    {% for benefit in benefitmetaobject %}
+      <div class="benefit-item">
+        <span class="icon">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_url.value | img_url:'50x' }}"
+            alt="{{ benefit.benefits_title.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span>{{ benefit.benefits_title.value }}</span>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 {% style %}
    .health-benefits_thirdO{
     display: flex;
