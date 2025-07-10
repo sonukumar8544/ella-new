@@ -1659,17 +1659,20 @@
                   {% if benefits_third_o != blank %}
                     <div class="health-benefits_thirdO" id="benefit__{{ block.id }}">
                       {% for benefit in benefits_third_o %}
+                        {% assign benefit_image_url = benefit.benefits_image.value | image_url: '500x' %}
+                        {% assign benefit_title = benefit.benefits_title.value %}
+
                         <div class="benefit-item">
                           <span class="icon">
                             <img
                               class="health_benefits_img"
-                              src="{{ benefit.benefits_image.value | image_url: '500x' }}"
-                              alt="{{ benefit.benefits_title.value }}"
-                              title="{{ benefit.benefits_title.value }}"
+                              src="{{ benefit_image_url }}"
+                              alt="{{ benefit_title }}"
+                              title="{{ benefit_title }}"
                               loading="lazy"
                             >
                           </span>
-                          <span>{{ benefit.benefits_title }}</span>
+                          <span>{{ benefit_title }}</span>
                         </div>
                       {% endfor %}
                     </div>
