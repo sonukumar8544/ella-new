@@ -1653,6 +1653,8 @@
                   {% render 'badge_third0', product_card_product: product, block: block %}
                 {%- when 'meta_shortDes' -%}
                   {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
+                {%- when 'product_benifits' -%}
+                  {% render 'product_benifit_third0', product_card_product: product, block: block %}
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'delivery_time' -%}
