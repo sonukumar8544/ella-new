@@ -1661,8 +1661,7 @@
                       {% for benefit in benefits_third_o %}
                         <div class="benefit-item">
                           <span class="icon">
-                            {{ benefit.benefits_image | img_url: 'master' }}
-                            {{ benefit.benefits_image.url | img_url: 'master' | img_tag }}
+                            <img src="{{ benefit.benefits_image | img_url: 'master' }}" alt="" loading="lazy">
                           </span>
                           <span>{{ benefit.benefits_title }}</span>
                         </div>
