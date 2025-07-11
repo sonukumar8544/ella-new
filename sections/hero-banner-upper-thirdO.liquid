@@ -1,8 +1,8 @@
 <!--hero-banner-upper-thirdO-->
-{% assign benefitmetaobject = product.metafields.custom.custom.product_3_0_banner_details.value %}
+{% assign product_banner = product.metafields.custom.custom.product_3_0_banner_details.value %}
 
-{% if benefitmetaobject != blank %}
-<section class="hero-section" id="{{ section.id }}" style="background: url({{ product_banner.subtitle }}) center/cover no-repeat;">
+{% if product_banner != blank %}
+<section class="hero-section" id="{{ section.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
       <span class="subtitle">{{ product_banner.subtitle }}</span>
@@ -14,31 +14,31 @@
 
     <ul class="benefits-list">
       {% if product_banner.list1 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list1 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list1 }}</li>
       {% endif %}
       {% if product_banner.list2 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list2 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list2 }}</li>
       {% endif %}
       {% if product_banner.list3 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list3 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list3 }}</li>
       {% endif %}
       {% if product_banner.list4 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list4 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list4 }}</li>
       {% endif %}
     </ul>
 
     <ul class="benefits-list">
       {% if product_banner.list11 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list11 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list11 }}</li>
       {% endif %}
       {% if product_banner.list12 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list12 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list12 }}</li>
       {% endif %}
       {% if product_banner.list13 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list13 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list13 }}</li>
       {% endif %}
       {% if product_banner.list14 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814"> {{ product_banner.list14 }}</li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" width="" title="" alt="" title=""> {{ product_banner.list14 }}</li>
       {% endif %}
     </ul>
 
@@ -51,10 +51,10 @@
 
   <div class="hero-images">
     {% if product_banner.small_image_1 != blank %}
-      <img src="{{ product_banner.small_image_1 }}" alt="" class="small-img top-img">
+      <img src="{{ product_banner.small_image_1 }}" alt="" class="small-img top-img" width="" title="" alt="" title="">
     {% endif %}
     {% if product_banner.small_image_2 != blank %}
-      <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img">
+      <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img" width="" title="" alt="" title="">
     {% endif %}
   </div>
 </section>
