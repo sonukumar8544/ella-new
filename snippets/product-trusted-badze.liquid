@@ -1,5 +1,5 @@
 <div class="container free-shipping-container">
-  <div class="shipping-slider">
+  <div class="shipping-slider" id="shipping_details">
     <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466"
@@ -80,87 +80,99 @@
   </div>
 </div>
 <style>
-      <style>
-      .container.free-shipping-container {
-        background: #EEEEEE;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        padding: 20px;
-        max-width: 1000vw;
-      }
+        <style>
 
-      .shipping-slider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
+  #shipping_details{
+    display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
   }
 
-      .shipping-item {
-        gap: 10px;
-        padding: 15px;
-        border-radius: 10px;
-        background: #f9f9f9;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        margin: 0 10px;
-        text-align: center;
-      }
+        .container.free-shipping-container {
+          background: #EEEEEE;
+          border-radius: 10px;
+          margin-bottom: 30px;
+          padding: 20px;
+          max-width: 1000vw;
+        }
 
-      .shipping-item img {
-      max-width: 60px;
-      margin: auto;
-  }
+        .shipping-slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            gap: 20px;
+      flex-wrap: wrap;
+    }
 
-      .shipping-item p {
-        font-size: 14px;
-        color: #36454F;
-        margin: 0;
-      }
-
-      @media (max-width: 768px) {
         .shipping-item {
-          flex-direction: column;
+          gap: 10px;
+          padding: 15px;
+          border-radius: 10px;
+          background: #f9f9f9;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          margin: 0 10px;
           text-align: center;
         }
 
-        .shipping-item p {
-          font-size: 13px;
-          line-height: 1.4;
-        }
-      }
-    </style>
-    <script>
-      $(document).ready(function () {
-        $('.shipping-slider1').slick({
-          dots: false,
-          infinite: true,
-          arrows: false,
-          speed: 700,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          slidesToShow: 4,
+        .shipping-item img {
+        max-width: 60px;
+        margin: auto;
+    }
 
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
+        .shipping-item p {
+          font-size: 14px;
+          color: #36454F;
+          margin: 0;
+        }
+
+        @media (max-width: 768px) {
+          .shipping-item {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .shipping-item p {
+            font-size: 13px;
+            line-height: 1.4;
+          }
+        }
+      </style>
+      <script>
+        $(document).ready(function () {
+          $('.shipping-slider1').slick({
+            dots: false,
+            infinite: true,
+            arrows: false,
+            speed: 700,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            slidesToShow: 4,
+
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 4,
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 3
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 3
+                }
               }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 3
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 3
-              }
-            }
-          ]
+            ]
+          });
         });
-      });
-    </script>
+      </script>
 </style>
