@@ -1,7 +1,7 @@
 
 <!--hero-banner-upper-thirdO-->
 {% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
-
+{{ product_banner1 | json}}
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
 <section class="hero-section" id="{{ section.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
