@@ -80,42 +80,42 @@
   </div>
 </div>
 <style>
-     .shipping-slider{
-        display: flex;
-          overflow-x: auto;
-          gap: 1rem;
-          padding-bottom: 1rem;
-          scroll-snap-type: x mandatory;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+      .shipping-slider{
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       }
-
-            .container.free-shipping-container {
-              background: #EEEEEE;
-              border-radius: 10px;
-              margin-bottom: 30px;
-              padding: 20px 40px;
-              max-width: 1000vw;
-            }
-
-        .shipping-item {
-        gap: 10px;
-        margin: 0 10px;
-        padding: 15px 30px;
-        /* flex: 0 0 230px; */
-        overflow: hidden;
-        scroll-snap-align: start;
-        /* flex-direction: column; */
-        transition: transform 0.3s;
-        position: relative;
-    }
-
-            .shipping-item img {
-            max-width: 50px;
-            margin: auto;
-              height:50px;
-        }
-
+      
+      .container.free-shipping-container {
+      background: #EEEEEE;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 20px 40px;
+      max-width: 1000vw;
+      }
+      
+      .shipping-item {
+      gap: 10px;
+      margin: 0 10px;
+      padding: 15px 30px;
+      /* flex: 0 0 230px; */
+      overflow: hidden;
+      scroll-snap-align: start;
+      /* flex-direction: column; */
+      transition: transform 0.3s;
+      position: relative;
+      }
+      
+      .shipping-item img {
+      max-width: 50px;
+      margin: auto;
+      height:50px;
+      }
+      
       .shipping-item p {
       margin: 0;
       margin-top: 10px;
@@ -128,43 +128,44 @@
       line-height: normal;
       letter-spacing: 0.32px;
       text-transform: capitalize;
-  }
-
-            @media (max-width: 768px) {
-              .shipping-item {
-                flex-direction: column;
-                text-align: center;
-              }
-              .container.free-shipping-container{
-          margin-top: 25px;
-    }
-
-              .shipping-item p {
-                font-size: 13px;
-                line-height: 1.4;
-              }
+      }
+      
+      @media (max-width: 768px) {
+      .shipping-item {
+      flex-direction: column;
+      text-align: center;
+      }
+      .container.free-shipping-container{
+      margin-top: 25px;
+      }
+      
+      .shipping-item p {
+      font-size: 13px;
+      line-height: 1.4;
+      }
+      .shipping-item p {
+      color: #36454F;
+      text-align: center;
+      font-family: Lato;
+      font-size: 10.661px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.244px;
+      text-transform: capitalize;
+      }
+      
+      .shipping-item img {
+      max-width: 40px;
+      margin: auto;
+      height: 40px;
+      }
             }
    @media (max-width: 550px) {
     .container.free-shipping-container{
           margin-top: 25px;
     }
-     .shipping-item p {
-    color: #36454F;
-    text-align: center;
-    font-family: Lato;
-    font-size: 10.661px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.244px;
-    text-transform: capitalize;
-}
-
-.shipping-item img {
-    max-width: 40px;
-    margin: auto;
-    height: 40px;
-  }
+    
 </style>
 <script>
   $(document).ready(function () {
@@ -187,13 +188,13 @@
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 3
+            slidesToShow: 4
           }
         },
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 2
+            slidesToShow: 3
           }
         }
       ]
