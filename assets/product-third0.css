@@ -105,6 +105,13 @@
 
 
 /* collapse */
+.dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title:after{
+ height: 0;
+    background: none; 
+}
+.dynamic-Product-page-3\.O-template .productView-tab .tabs{
+      padding-bottom: 30px;
+}
 .dynamic-Product-page-3\.O-template .productView-tab a.tab-title.is-open {
     padding: 9px 23px !important;
     border-radius: 16px;
