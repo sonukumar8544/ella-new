@@ -1,249 +1,161 @@
-<style>
-  .container.free-shipping-container {
-    background: #EEEEEE;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    padding: 20px;
-    max-width: 1000vw;
-  }
-
-  .product-free-shipping-section {
-    display: none; /* hide grid by default, shown only on desktop */
-  }
-
-  .shipping-slider {
-    display: none; /* shown on mobile/tablet */
-  }
-
-  .shipping-item {
-    display: flex !important;
-    align-items: center;
-    text-align: left;
-    gap: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
-  }
-
-  .shipping-item img {
-    max-width: 50px;
-  }
-
-  .shipping-item p {
-    font-size: 14px;
-    color: #36454F;
-    margin: 0;
-  }
-
-  /* Desktop layout (grid) */
-  @media (min-width: 1024px) {
-    .shipping-slider {
-      display: none !important;
-    }
-
-    .product-free-shipping-section {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      max-width: 1200px;
-      margin: auto;
-    }
-  }
-
-  /* Show slider on tablet/mobile */
-  @media (max-width: 1023px) {
-    .shipping-slider {
-      display: block;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .shipping-item {
-    flex-direction: column;
-  }
-
-  .shipping-item p {
-    font-size: 13px;
-    color: #36454F;
-    margin: 0;
-    text-align: center;
-    line-height: 1.4;
-  }
-  }
-</style>
-
 <div class="container free-shipping-container">
-  <!-- Slider for mobile/tablet -->
   <div class="shipping-slider">
     <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Rooted in Care<br> & Tradition</p>
+      <p>
+        Rooted in Care<br>
+        & Tradition
+      </p>
     </div>
     <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Award Winning <br>Extraction Process</p>
+      <p>
+        Award Winning <br>
+        Extraction Process
+      </p>
     </div>
     <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Premium Patented <br>Ingredients</p>
+      <p>
+        Premium Patented <br>
+        Ingredients
+      </p>
     </div>
     <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Award Winning<br> Extraction Process</p>
+      <p>
+        Award Winning<br>
+        Extraction Process
+      </p>
     </div>
-  </div>
-
-
-   <div class="shipping-item">
+    <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Science-Backed <br>Formulations</p>
+      <p>
+        Science-Backed <br>
+        Formulations
+      </p>
     </div>
-<div class="shipping-item">
+    <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Health Canada <br>
-Registered GMP Facility</p>
+      <p>
+        Health Canada <br>
+        Registered GMP Facility
+      </p>
     </div>
-<div class="shipping-item">
+    <div class="shipping-item">
       <img
         data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Heading_3_Earn_yield.svg?v=1752210466"
         alt="Shipping"
-        title=""
-        width=""
-        height=""
         class="lazyload"
       >
-
-      <p>Approved (Generally<br>
-Recognized As Safe)</p>
-    </div>
-
-
-  
-  </div>
-
-  <!-- Grid for desktop -->
-  <div class="product-free-shipping-section">
-    <div class="shipping-item">
-      <img
-        data-src=""
-        alt="Shipping"
-        title=""
-        width=""
-        height=""
-        class="lazyload"
-      >
-      <p>Tradition</p>
-    </div>
-    <div class="shipping-item">
-      <img
-        data-src=""
-        alt="Shipping"
-        title=""
-        width=""
-        height=""
-        class="lazyload"
-      >
-
-      <p>Award Winning Extraction Process</p>
-    </div>
-    <div class="shipping-item">
-      <img
-        data-src=""
-        alt="Shipping"
-        title=""
-        width=""
-        height=""
-        class="lazyload"
-      >
-
-      <p>Result Oriented Formulations</p>
-    </div>
-    <div class="shipping-item">
-      <img
-        data-src=""
-        alt="Shipping"
-        title=""
-        width=""
-        height=""
-        class="lazyload"
-      >
-
-      <p>67% Repeat Customers</p>
+      <p>
+        Approved (Generally<br>
+        Recognized As Safe)
+      </p>
     </div>
   </div>
 </div>
-<script>
-  $(document).ready(function () {
-    $('.shipping-slider').slick({
-      dots: true,
-      infinite: true,
-      arrows: false,
-      speed: 300,
-      slidesToShow: 1,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
+<style>
+    <style>
+    .container.free-shipping-container {
+      background: #EEEEEE;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 20px;
+      max-width: 1000vw;
+    }
+
+    .shipping-slider {
+      display: block;
+    }
+
+    .shipping-item {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f9f9f9;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0 10px;
+      text-align: left;
+    }
+
+    .shipping-item img {
+      max-width: 50px;
+    }
+
+    .shipping-item p {
+      font-size: 14px;
+      color: #36454F;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .shipping-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .shipping-item p {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('.shipping-slider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 4,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1
+            }
           }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2
-          }
-        }
-      ]
+        ]
+      });
     });
-  });
-</script>
+  </script>
+</style>
