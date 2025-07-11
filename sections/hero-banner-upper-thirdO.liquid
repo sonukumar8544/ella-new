@@ -42,19 +42,19 @@
       {% endif %}
     </ul>
 
-    {% if product_banner.btnlink != blank and product_banner.button != blank %}
-      <a class="cta-button" href="{{ product_banner.btnlink }}">
-        {{ product_banner.button }}
+    {% if product_banner.button_link != blank or product_banner.button != blank %}
+      <a class="cta-button" href="{{ product_banner.button_link }}">
+        {{ product_banner.button_title }}
       </a>
     {% endif %}
   </div>
 
   <div class="hero-images">
-    {% if product_banner.smallimg1 != blank %}
-      <img src="{{ product_banner.smallimg1 }}" alt="" class="small-img top-img">
+    {% if product_banner.small_image_1 != blank %}
+      <img src="{{ product_banner.small_image_1 }}" alt="" class="small-img top-img">
     {% endif %}
-    {% if product_banner.smallimg2 != blank %}
-      <img src="{{ product_banner.smallimg2 }}" alt="" class="small-img bottom-img">
+    {% if product_banner.small_image_2 != blank %}
+      <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img">
     {% endif %}
   </div>
 </section>
