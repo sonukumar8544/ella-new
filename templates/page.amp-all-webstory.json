@@ -131,6 +131,9 @@
         "image_wqPzNb",
         "image_fKfAGt"
       ],
+      "custom_css": [
+        "#cstm_all_bundles .halo-row,#cstm_all_ingredients .halo-row {justify-content: center;}"
+      ],
       "settings": {
         "cstm_id": "cstm_all_ingredients",
         "container": "container",
@@ -161,7 +164,7 @@
         "fontsize_title": 34,
         "fontsize_title_mb": 26,
         "margin_bottom_title": 22,
-        "spotlight_block_des": "Explore insights, tips, and articles written by experts in a range of professional domains.",
+        "spotlight_block_des": "",
         "color_des": "#3c3c3c",
         "margin_bottom_des": 30,
         "fontsize_des": 16,
