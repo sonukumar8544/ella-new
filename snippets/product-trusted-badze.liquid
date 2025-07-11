@@ -80,101 +80,109 @@
   </div>
 </div>
 <style>
-          <style>
+            <style>
 
-    #shipping_details{
-      display: flex;
-        overflow-x: auto;
-        gap: 1rem;
-        padding-bottom: 1rem;
-        scroll-snap-type: x mandatory;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+      #shipping_details{
+        display: flex;
+          overflow-x: auto;
+          gap: 1rem;
+          padding-bottom: 1rem;
+          scroll-snap-type: x mandatory;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+            .container.free-shipping-container {
+              background: #EEEEEE;
+              border-radius: 10px;
+              margin-bottom: 30px;
+              padding: 20px;
+              max-width: 1000vw;
+            }
+
+            .shipping-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                gap: 20px;
+          flex-wrap: wrap;
+        }
+
+            .shipping-item {
+        gap: 10px;
+        margin: 0 10px;
+        padding: 15px 30px;
+        flex: 0 0 230px;
+        overflow: hidden;
+        scroll-snap-align: start;
+        /* flex-direction: column; */
+        transition: transform 0.3s;
+        position: relative;
     }
 
-          .container.free-shipping-container {
-            background: #EEEEEE;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            padding: 20px;
-            max-width: 1000vw;
-          }
+            .shipping-item img {
+            max-width: 60px;
+            margin: auto;
+        }
 
-          .shipping-slider {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-              gap: 20px;
-        flex-wrap: wrap;
-      }
-
-          .shipping-item {
-      gap: 10px;
-      margin: 0 10px;
-      padding: 15px 30px;
-      flex: 0 0 274px;
-      overflow: hidden;
-      scroll-snap-align: start;
-      /* flex-direction: column; */
-      transition: transform 0.3s;
-      position: relative;
+      .shipping-item p {
+      margin: 0;
+      margin-top: 10px;
+      color: #36454F;
+      text-align: center;
+      font-family: Lato;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.32px;
+      text-transform: capitalize;
   }
 
-          .shipping-item img {
-          max-width: 60px;
-          margin: auto;
-      }
+            @media (max-width: 768px) {
+              .shipping-item {
+                flex-direction: column;
+                text-align: center;
+              }
 
-          .shipping-item p {
-            font-size: 14px;
-            color: #36454F;
-            margin: 0;
-          }
-
-          @media (max-width: 768px) {
-            .shipping-item {
-              flex-direction: column;
-              text-align: center;
+              .shipping-item p {
+                font-size: 13px;
+                line-height: 1.4;
+              }
             }
+          </style>
+          <script>
+            $(document).ready(function () {
+              $('.shipping-slider1').slick({
+                dots: false,
+                infinite: true,
+                arrows: false,
+                speed: 700,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                slidesToShow: 4,
 
-            .shipping-item p {
-              font-size: 13px;
-              line-height: 1.4;
-            }
-          }
-        </style>
-        <script>
-          $(document).ready(function () {
-            $('.shipping-slider1').slick({
-              dots: false,
-              infinite: true,
-              arrows: false,
-              speed: 700,
-              autoplay: true,
-              autoplaySpeed: 3000,
-              slidesToShow: 4,
-
-              responsive: [
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 4,
+                responsive: [
+                  {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 4,
+                    }
+                  },
+                  {
+                    breakpoint: 768,
+                    settings: {
+                      slidesToShow: 3
+                    }
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 3
+                    }
                   }
-                },
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 3
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 3
-                  }
-                }
-              ]
+                ]
+              });
             });
-          });
-        </script>
+          </script>
 </style>
