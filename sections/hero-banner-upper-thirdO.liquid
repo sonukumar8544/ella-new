@@ -3,7 +3,7 @@
 {% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
-<section class="hero-section" id="{{ section.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
+<section class="hero-section" id="{{ block.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
  <div class="position_set_group">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
@@ -70,7 +70,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   height: 500px;
   padding: 40px;
   color: white;
@@ -78,7 +77,7 @@
   overflow: hidden;
 }
 
-.hero-overlay {
+.hero-section .hero-overlay {
   background: rgba(0, 0, 0, 0.45);
   border-radius: 20px;
   padding: 30px 40px;
@@ -90,19 +89,23 @@
   backdrop-filter: blur(5px);
 }
 
-.subtitle {
-  font-size: 14px;
-  opacity: 0.8;
-  display: block;
-  margin-bottom: 10px;
+.hero-section .subtitle {
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 10px;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.hero-overlay h1 {
+.hero-section .hero-overlay h2 {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-.benefits-list {
+.hero-section .benefits-list {
   list-style: none;
   padding: 0;
   margin: 0 0 15px;
@@ -111,13 +114,13 @@
   flex-wrap: wrap;
 }
 
-.benefits-list li {
+.hero-section .benefits-list li {
   flex: 1 1 200px;
   padding-left: 20px;
   position: relative;
 }
 
-.cta-button {
+.hero-section .cta-button {
   background: linear-gradient(to right, #009ecf, #0077a6);
   border: none;
   padding: 12px 24px;
@@ -127,7 +130,7 @@
   cursor: pointer;
 }
 
-.hero-images {
+.hero-section .hero-images {
   position: absolute;
   right: 40px;
   bottom: 40px;
@@ -136,7 +139,7 @@
   gap: 20px;
 }
 
-.small-img {
+.hero-section .small-img {
   width: 120px;
   height: auto;
   border-radius: 15px;
