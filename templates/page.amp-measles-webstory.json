@@ -9,24 +9,159 @@
  */
 {
   "sections": {
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
-      "settings": {}
-    },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "amp_webstory_GrmTgz": {
+      "type": "amp-webstory",
+      "blocks": {
+        "story_page_wR749k": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/portrait-young-mother-giving-daughter-medicines-spoon_1.jpg",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#faf73a",
+            "heading_color": "#232323",
+            "heading": "How to Protect Yourself & Your Family from Measles in 2025",
+            "description_color": "#196988",
+            "description": "",
+            "button_text": "",
+            "btn_link": "shopify://products/vitamin-e-tocotrienols-supplement",
+            "btn_color": "#ffffff",
+            "btn_bg": "#082592"
+          }
+        },
+        "story_page_tzMHg3": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/headache-red-senior-man-with-migraine-mental-health-retirement-stress-mind-problem-overlay-memory-tired-sick-burnout-african-person-massage-temple-brain-fog-healthcare-risk_1.jpg",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#100f0f",
+            "heading_color": "#fafa1d",
+            "heading": "It’s a highly contagious virus that spreads through air. Can lead to pneumonia, brain damage, or even death.",
+            "description_color": "#f5eaea",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_ymh3XR": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 4,
+            "image": "shopify://shop_images/mother-checking-fever-her-daughter-bedroom_1.jpg",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#151414",
+            "heading_color": "#fafa1d",
+            "heading": "✅ High fever (over 104°F) ✅Cough, runny nose, red eyes",
+            "description_color": "#191717",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_ALxhVk": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 4,
+            "image": "shopify://shop_images/close-up-portrait-young-woman_1.webp",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#211f1f",
+            "heading_color": "#fafa1d",
+            "heading": "Full-body rash after 3–5 days",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_bnymJF": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/woman-with-rash-suffering-from-monkeypox-virus-light-blue-background-closeup_1_2.jpg",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#151414",
+            "heading_color": "#f0fc1e",
+            "heading": "You can spread measles 4 days before & after the rash appears.",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_d8NRYF": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/vertical-portrait-unrecognizable-nurse-vaccinating-african-american-boy-against-covid-clinic-hospital_1.jpg",
+            "content-position": "0",
+            "content-align": "center",
+            "heading_bg": "#211f1f",
+            "heading_color": "#f0fc1e",
+            "heading": "The Measles-Mumps-Rubella (MMR) shot is safe and effective. Most cases today are in unvaccinated people.",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_F44rt4": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/portrait-young-woman-using-mobile-phone-home_1.jpg",
+            "content-position": "0",
+            "content-align": "center",
+            "heading_bg": "#211f1f",
+            "heading_color": "#f0fc1e",
+            "heading": "Support immunity with zinc & vitamin A (under doctor guidance)",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "story_page_wR749k",
+        "story_page_tzMHg3",
+        "story_page_ymh3XR",
+        "story_page_ALxhVk",
+        "story_page_bnymJF",
+        "story_page_d8NRYF",
+        "story_page_F44rt4"
+      ],
+      "name": "AMP Webstory 2.0",
+      "settings": {
+        "fontsize_title": 20,
+        "fontsize_description": 16
+      }
     }
   },
   "order": [
-    "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "amp_webstory_GrmTgz"
   ]
 }
