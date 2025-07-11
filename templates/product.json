@@ -814,6 +814,7 @@
       "block_order": [
         "easyvideo_easyvideo_section_product_f3xGVF"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1730,6 +1731,7 @@
       "blocks": {
         "okendo_reviews_widget_ACqWER": {
           "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
             "product": "{{product}}",
             "widget_type": "reviews_widget"
@@ -1739,7 +1741,6 @@
       "block_order": [
         "okendo_reviews_widget_ACqWER"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1749,6 +1750,7 @@
       "blocks": {
         "okendo_reviews_carousel_mi6anP": {
           "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
             "show_heading": false,
             "heading": "",
@@ -1760,7 +1762,6 @@
       "block_order": [
         "okendo_reviews_carousel_mi6anP"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -1770,6 +1771,7 @@
       "blocks": {
         "okendo_reviews_widget_KmJmDx": {
           "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
             "product": "{{product}}",
             "widget_type": "reviews_widget"
@@ -1779,9 +1781,16 @@
       "block_order": [
         "okendo_reviews_widget_KmJmDx"
       ],
-      "disabled": true,
       "settings": {
         "include_margins": false
+      }
+    },
+    "metafield_testimonial_video_VcK34F": {
+      "type": "Metafield-testimonial-video",
+      "name": "Metafield Testimonial Video | App",
+      "settings": {
+        "title": "Voices of Satisfaction",
+        "description": ""
       }
     }
   },
@@ -1792,6 +1801,7 @@
     "collapsiable_content_copy_rwPkJz",
     "collapsible_content_7qC8iH",
     "product_page_title_with_link_CmniUe",
+     "metafield_testimonial_video_VcK34F",
     "rich_text_MT6wG9",
     "17447304680d8f83b6",
     "product_ingrediants_section_NLKKBM",

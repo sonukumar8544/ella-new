@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -23,10 +23,18 @@
             "title": "",
             "content": "Felicia is a dedicated naturopathic doctor committed to bridging the gap in healthcare accessibility both on a global and local scale. Her areas of expertise include mental health, healthy aging, and pain management, where she combines evidence-based naturopathic treatments with personalized care. Holds a Bachelor’s degree in Biology and Psychology from McMaster University and a Doctor of Naturopathy from the Canadian College of Naturopathic Medicine. She also remains actively involved in educating communities about the importance of mental resilience, aging gracefully, and managing pain effectively through non-invasive methods."
           }
+        },
+        "text_block_J8LHzK": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights. <br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
         }
       },
       "block_order": [
-        "text_block_Rp9GaC"
+        "text_block_Rp9GaC",
+        "text_block_J8LHzK"
       ],
       "settings": {
         "author_image": "shopify://shop_images/Felicia.jpg",

@@ -352,6 +352,7 @@
                   or blogauthor == 'Pragya Soni'
                   or blogauthor == 'Pooja Rawat'
                   or blogauthor == 'Aditi bakshi'
+                  or blogauthor == 'Nurah Ekhlaque'
                 %}
                   <h3>
                     <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
@@ -419,6 +420,16 @@
                       alt="divya"
                       loading="lazy"
                     >
+                {% elsif blogauthor == 'Nurah Ekhlaque' %}
+                    <img
+                      class="lazyload"
+                      data-src="https://wellnessextract.com/cdn/shop/files/nurah.jpg?v=1745843377"
+                      width="40px"
+                      height="40px"
+                      title=""
+                      alt="divya"
+                      loading="lazy"
+                    >
 
                   {% else %}
                     <img
@@ -461,7 +472,10 @@
                       </a>
                     </h3>
                   </div>
-                {% elsif tag == 'lehri' %}
+                  {% endif %}
+                  {% endfor %}
+                   {% for tag in article.tags %}
+                {% if tag == 'lehri' %}
                   <div class="blog-editor">
                     <img
                       class="lazyload"
@@ -481,6 +495,30 @@
                       </a>
                     </h3>
                   </div>
+                  {% endif %}
+                  {% endfor %}
+                   {% for tag in article.tags %}
+                  {% if tag == 'jenny' %}
+                  <div class="blog-editor">
+                    <img
+                      class="lazyload"
+                      data-src="https://wellnessextract.com/cdn/shop/files/Dr._Jenna_Priestap_500x500_3fc74ad3-1104-467b-ba2f-6ab7dfc724a2_300x300.webp?v=1748940514"
+                      width="40px"
+                      alt="Dr. Jenny Priestap"
+                      height="40px"
+                      title=""
+                      loading="lazy"
+                    >
+                    <h3>
+                      <a href="https://wellnessextract.com/pages/dr-jenna-priestap">
+                        <span class="blog-author">
+                          <span><i>Approved By: </i> Dr. Jenna Priestap</span>
+                          {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                        </span>
+                      </a>
+                    </h3>
+                  </div>
+                
                 {% endif %}
               {% endfor %}
             </div>
@@ -537,7 +575,9 @@
           </div>
           <div class="article-body">
             <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
-              <div id="table-of-contents"></div>
+              {% comment %} <div id="table-of-contents"></div> {% endcomment %}
+               <div id="table-of-contents" data-include-h3="{% for tag in article.tags %}{% if tag == 'addh3' %}true{% endif %}{% endfor %}"></div>
+
               <style>
                 div#table-of-contents{
                 border: 1px solid #ddd;
@@ -590,15 +630,23 @@
                 gap: 10px;
                 align-items: center;
                 }
+
+                .blog-author-details span{
+                font-size: 16px;
+                }
                 .blog-editor {
                 display: flex;
                 gap: 12px;
                 align-items: center;
+                font-size: 16px;
                 }
                 .article-info-details {
                 margin-top: 20px;
                 margin-bottom: 15px;
                 font-style: italic;
+                  display: flex;
+                align-items: center;
+                gap: 10px;
                 }
                 .article-info-details p {
                 margin: 5px 0;
@@ -624,6 +672,11 @@
                   <span class="highlight">
                     {{- reading_time }} minute{% if reading_time > 1 %}s{% endif -%}
                   </span>
+                </p>
+                <span>|</span>
+
+                <p class="author-date-published">
+                   Published on: <span class="highlight">{{ article.published_at | date: '%d %b %Y' }}</span>
                 </p>
               </div>
 
@@ -1288,50 +1341,61 @@
   display: block;
   }
 </style>
+
 <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      const tocContainer = document.getElementById("table-of-contents");
-      const headings = document.querySelectorAll(".article-content h2");
-      
-      if (headings.length === 0) return;
-      
-      const tocWrapper = document.createElement("div");
-      tocWrapper.classList.add("toc-wrapper");
-      
-      const tocTitle = document.createElement("h3");
-      tocTitle.textContent = "Table of Contents";
-      tocWrapper.appendChild(tocTitle);
-      
-      const tocList = document.createElement("ul");
-      let h2Counter = 0, h3Counter = 0;
-      
-      headings.forEach((heading, index) => {
-      if (heading.tagName === "H2") {
-      h2Counter++;
-      h3Counter = 0; // Reset H3 counter for a new H2 section
-      } 
-      
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocContainer = document.getElementById("table-of-contents");
+    const includeH3 = tocContainer.dataset.includeH3 === "true";
+    const selector = includeH3 ? ".article-content h2, .article-content h3" : ".article-content h2";
+    const headings = document.querySelectorAll(selector);
+
+    if (headings.length === 0 || !tocContainer) return;
+
+    const tocWrapper = document.createElement("div");
+    tocWrapper.classList.add("toc-wrapper");
+
+    const tocTitle = document.createElement("h3");
+    tocTitle.textContent = "Table of Contents";
+    tocWrapper.appendChild(tocTitle);
+
+    const tocList = document.createElement("ul");
+
+    headings.forEach((heading, index) => {
       const anchorId = "section-" + index;
       heading.id = anchorId;
-      
+
       const listItem = document.createElement("li");
       const link = document.createElement("a");
-      link.href = "#" + anchorId;
-      
-      // Create numbering format
+      link.textContent = heading.innerText;
+
+      // Smooth scroll with -100px offset
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.getElementById(anchorId);
+        if (target) {
+          const yOffset = -100;
+          const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      });
+
       if (heading.tagName === "H2") {
-      link.textContent = `${heading.innerText}`;
-      listItem.classList.add("toc-h2");
+        listItem.classList.add("toc-h2");
+      } else if (heading.tagName === "H3") {
+        listItem.classList.add("toc-h3");
       }
-      
+
       listItem.appendChild(link);
       tocList.appendChild(listItem);
-      });
-      
-      tocWrapper.appendChild(tocList);
-      tocContainer.appendChild(tocWrapper);
-      });
+    });
+
+    tocWrapper.appendChild(tocList);
+    tocContainer.appendChild(tocWrapper);
+  });
 </script>
+
+
+
 
 {% render 'schema', article: article %}
 
@@ -3888,7 +3952,7 @@
   }
   .author-top {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   align-items: center;
   }
   .author-top img {
@@ -4021,6 +4085,9 @@
   #share-indivisual-blog{
   text-align: center;
   }
+  .halo-text-format table td {
+    border: 1px solid black;
+}
 
 
   /* .halo-text-format p+p{
@@ -4031,4 +4098,4 @@
   padding-top: 80px;
   }
   }
-</style>
+

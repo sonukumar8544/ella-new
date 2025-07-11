@@ -196,6 +196,14 @@ option.soldout {
   padding-bottom: 80px;
 }
 
+.wellness-collection .wrapper-body {
+  padding-bottom: 0px;
+}
+
+
+
+
+
 .template-index .wrapper-body {
   padding-bottom: 0px;
   overflow: hidden;
@@ -8140,12 +8148,9 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
 .productView-price .price.price--medium .price-item,
 .productView-price .price.price--medium .price-item .money {
   display: block !important;
-  /* color: #006a91; */
+  color: #e95144 !important;
 }
-.price-item--regular .money {
-  color: #e95144!important;
-}
-
+.price-item--regular .money,
 .price-item--sale .money {
   color: #e95144!important;
 }
@@ -8401,6 +8406,7 @@ dd#custom_proce_manage {
   display: flex;
   align-items: center;
   gap: 7px;
+  flex-direction: row-reverse;
 }
 .price.price--on-sale .price-item--regular .money,
 .orginal_price1 span,
@@ -8408,11 +8414,12 @@ dd#custom_proce_manage {
   white-space: nowrap;
   font-size: 14px !important;
   text-decoration: line-through;
+  text-decoration-color: #3f5260;
   color: #969696 !important;
   letter-spacing: 1px;
   font-weight: 800 !important;
 }
-
+#custom_proce_manage span{ color: #e95144 !important;}
 .sale_price_amount1 span,
 .sale_price_amount1 {
   font-size: 14px;
@@ -8768,3 +8775,77 @@ table.Table.Ltr.Table p {
     color: #36454f !important;
     font-weight: 400 !important;
   }
+
+  p.author-date-published {
+    margin-top: 5px !important;
+}
+
+/* .header-language_currency {
+    display: none !important;
+} */
+
+form.needsclick.klaviyo-form.klaviyo-form-version-cid_1.go3279073480.kl-private-reset-css-Xuajs1 {
+    padding: 0px !important;
+}
+
+
+ .write-review-btn {
+  color: #086b92;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.write-review-btn i {
+  font-size: 16px;
+}
+
+.halo-block-header.text-center {
+    display: flex;
+   position: relative;
+    justify-content: center;
+}
+.template-product #collapsable-content-copy .halo-block-header.text-center {
+    display: none;
+}
+@media (min-width: 769px){
+  a.review-btn-psps {
+    position: absolute;
+    right: 0;
+}
+}
+
+
+@media (max-width: 769px){
+a.review-btn-psps{
+  margin: auto;
+}
+
+.halo-block-header.text-center{
+flex-direction: column;
+}
+}
+
+.product-card-layout-02 .halo-productBadges {
+    display: none;
+}
+.footer-block__details p {
+    font-size: 12px;
+}
+
+span#product-compare-at-price-we {
+    color: #3f5260 !important;
+}
+
+.blog-background-color-box {
+    background: #f2f3f9;
+    padding: 6px 12px;
+    border-radius: 12px;
+}

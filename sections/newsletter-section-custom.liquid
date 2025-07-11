@@ -1,168 +1,256 @@
 {% schema %}
-  {
-    "name": "newsletter custom",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "newsletter_image",
-        "label": "Newsletter Image"
-      },
-       {
-        "type": "color",
-        "id": "newslettertext",
-        "label": "title Color",
-        "default": "#374650"
-      },
-      {
-        "type": "color",
-        "id": "newslettersubtitle",
-        "label": "Subtitle Color",
-        "default": "#374650"
-      },
-      {
-        "type": "color",
-        "id": "newsletterbg",
-        "label": "Newsletter Bg",
-        "default": "#e6f0f4"
-      },
-      {
-        "type": "color",
-        "id": "newsletter_border",
-        "label": "Newsletter Border",
-        "default": "#fff"
-      },
-      {
-        "type": "text",
-        "id": "newsletter_title",
-        "label": "Newsletter Title",
-        "default": "Get 10% off your first order"
-      },
-      {
-        "type": "text",
-        "id": "newsletter_subtitle",
-        "label": "Newsletter subtitle ",
-        "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-      },
-       {
-        "type": "text",
-        "id": "newsletter_subtitle1",
-        "label": "Newsletter subtitle 1",
-        "default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
-      }
-    ],
-    "presets": [
-      {
-        "name": "newsletter custom"
-      }
-    ]
-  }
+{
+"name": "newsletter custom",
+"settings": [
+{
+"type": "image_picker",
+"id": "newsletter_image",
+"label": "Newsletter Image"
+},
+{
+"type": "color",
+"id": "newslettertext",
+"label": "title Color",
+"default": "#374650"
+},
+{
+"type": "color",
+"id": "newslettersubtitle",
+"label": "Subtitle Color",
+"default": "#374650"
+},
+{
+"type": "color",
+"id": "newsletterbg",
+"label": "Newsletter Bg",
+"default": "#e6f0f4"
+},
+{
+"type": "color",
+"id": "newsletter_border",
+"label": "Newsletter Border",
+"default": "#fff"
+},
+{
+"type": "text",
+"id": "newsletter_title",
+"label": "Newsletter Title",
+"default": "Get 10% off your first order"
+},
+{
+"type": "text",
+"id": "newsletter_subtitle",
+"label": "Newsletter subtitle ",
+"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+},
+{
+"type": "text",
+"id": "newsletter_subtitle1",
+"label": "Newsletter subtitle 1",
+"default": "Receive discounts, updates and more by subscribing to our email newsletter + SMS!"
+}
+],
+"presets": [
+{
+"name": "newsletter custom"
+}
+]
+}
 {% endschema %}
 
 <div class="newsletter-section-footer" style="background: {{ section.settings.newsletterbg }}">
-  <div class="newsletter-email-box-footer" >
-   <div class="content_newsletter"  style="padding: 1px; ">
-     {% if section.settings.newsletter_image != blank %}<img src="{{ section.settings.newsletter_image | img_url:'' }}" alt="{{ section.settings.newsletter_title }}" width="" height="" loading="lazy"> {% endif %}
-     <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">{{ section.settings.newsletter_title }}</h2>
+  <div class="newsletter-email-box-footer">
+    <div class="content_newsletter" style="padding: 1px; ">
+      {% if section.settings.newsletter_image != blank -%}
+        <img
+          src="{{ section.settings.newsletter_image | img_url:'' }}"
+          alt="{{ section.settings.newsletter_title }}"
+          width=""
+          height=""
+          loading="lazy"
+        >
+      {% endif %}
+      <h2 class="footer-newsletter-heading" style="color: {{ section.settings.newslettertext }};">
+        {{ section.settings.newsletter_title }}
+      </h2>
 
-    {% if section.settings.newsletter_subtitle != blank %}  <p class="top_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle }}</p>
-     {% endif %}
-   {% if section.settings.newsletter_subtitle1 != blank %}  <p class="middle_content" style="color: {{ section.settings.newslettersubtitle }};">{{ section.settings.newsletter_subtitle1 }}</p>
-   {% endif %}
-     </div>
-    <div
-      
-      style="color: white;" 
+      {% if section.settings.newsletter_subtitle != blank %}
+        <p class="top_content" style="color: {{ section.settings.newslettersubtitle }};">
+          {{ section.settings.newsletter_subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.newsletter_subtitle1 != blank %}
+        <p class="middle_content" style="color: {{ section.settings.newslettersubtitle }};">
+          {{ section.settings.newsletter_subtitle1 }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="klaviyo-form-T6BNnH"></div>
+    {% comment %}
+    <div class="klaviyo-form-WsgHsE"></div>  
+    {% endcomment %}
+    
+    <!--
+      <div
+      style="color: white;"
       class="hs-form-frame"
       data-region="na1"
       data-form-id="3e4e59be-a9c3-4aaf-be23-28ed725a41b4"
-      data-portal-id="49007533"></div>
-    <script src="https://js.hsforms.net/forms/embed/49007533.js" defer></script>
+      data-portal-id="49007533"
+      ></div>
+      <script src="https://js.hsforms.net/forms/embed/49007533.js" defer></script>
+    -->
   </div>
 </div>
 
 <style>
-    .newsletter-email-box-footer h2 {
-    font-size: 32px;
-}
-    p.top_content {
-    font-size: 22px;
-}
-    p.middle_content {
-    margin-top: 13px;
-    font-size: 18px;
-    font-weight: 600;
-}
+  .newsletter-email-box-footer{
+  display: flex;
+  align-items: baseline;
+  }
+
+  .newsletter-email-box-footer h2 {
+  font-size: 32px;
+  }
+  p.top_content {
+  font-size: 22px;
+  }
+  p.middle_content {
+  margin-top: 13px;
+  font-size: 18px;
+  font-weight: 600;
+  }
   @media(min-width:900px){
-.newsletter-email-box-footer {
-    max-width: 1320px;
-    margin: auto;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    padding-bottom: 32px;
-    gap: 20px;
-}
-.newsletter-email-box-footer .content_newsletter {
-    width: 30%;
-    text-align: -webkit-center;
-}
-.newsletter-email-box-footer .hs-form-frame {
-    width: 70%;
-    margin: auto;
-    padding: 0px 20px;
-}
-    .content_newsletter h2,
-    .content_newsletter p{
-      display:none;
-    }
-  
+  .newsletter-section-footer p.top_content {
+  font-size: 18px;
+  margin-bottom: 10px;
   }
-   @media(max-width:899px){
- .content_newsletter img {
-    display: none;
-}
+
+  .klaviyo-form-WsgHsE.klaviyo-form.form-version-cid-1 .content_newsletter {
+  border: none !important;
+  }
+  .klaviyo-form-WsgHsE.klaviyo-form.form-version-cid-1 .hs-form-frame {
+  border:  none !important;
+  }
+  .klaviyo-form-WsgHsE.klaviyo-form.form-version-cid-1  .needsclick form{
+  padding-top:0px !important;
+  }
+  .klaviyo-form-WsgHsE.klaviyo-form.form-version-cid-1  .needsclick{
+  justify-content: flex-start !important;
+  }
+  .klaviyo-form-WsgHsE.klaviyo-form.form-version-cid-1  {
+  max-width: 1320px;
+  margin: auto;
+  display: flex;
+  align-items: baseline !important;
+  justify-content: center;
+  padding-bottom: 32px;
+  gap: 20px;
+  }
+  .newsletter-email-box-footer .content_newsletter {
+  width: 30%;
+  text-align: -webkit-center;
+  }
+  .newsletter-email-box-footer .hs-form-frame {
+  width: 70%;
+  margin: auto;
+  padding: 0px 20px;
+  }
+  .content_newsletter h2,
+  .content_newsletter p{
+  display:none;
+  }
+
+  }
+  @media(max-width:899px){
+  .newsletter-email-box-footer {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  display:block;
+  }
+  .content_newsletter img {
+  display: none;
+  }
   .newsletter-section-footer   p.top_content {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-     
-.newsletter-email-box-footer .content_newsletter {
-    border: none !important;
-}
-.newsletter-email-box-footer .hs-form-frame {
-    border:  none !important;
-}
+  font-size: 18px;
+  margin-bottom: 10px;
   }
-  
+
+  .newsletter-email-box-footer .content_newsletter {
+  border: none !important;
+  }
+  .newsletter-email-box-footer .hs-form-frame {
+  border:  none !important;
+  }
+  }
+
   .newsletter-section-footer {
   padding-top: 35px;
   padding-left: 5px;
   padding-right: 5px;
   background: linear-gradient(to bottom, #006B92, #36454f) !important;
-}
-.newsletter-email-box-footer p,
-.newsletter-email-box-footer h2 {
+  }
+  .newsletter-email-box-footer p,
+  .newsletter-email-box-footer h2 {
   text-align: center;
-}
-.hs-form-frame {
+  }
+  .hs-form-frame {
   width: 80%;
   margin: auto;
-}
-.footer__content-top .halo-row {
+  }
+  .footer__content-top .halo-row {
   padding-top: 35px !important;
-}
-  
+  }
+
   .newsletter-email-box-footer {
-    max-width: 1320px;
-    margin: auto;
+  max-width: 1320px;
+  margin: auto;
   }
 
   .newsletter-email-box-footer h2 {
-    text-align: center;
+  text-align: center;
   }
   .newsletter-email-box-footer p {
-    text-align: center;
-    padding: 0;
-    margin: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
   }
+
+
+  @media (min-width: 900px) {
+    .newsletter-email-box-footer .content_newsletter {
+        width: 100%;
+        text-align: -webkit-center;
+    }
+	    .content_newsletter h2, .content_newsletter p {
+        display: block;
+    }
+	.newsletter-section-footer p.top_content {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+@media(max-width: 769px){
+.needsclick form.needsclick.klaviyo-form .needsclick {
+    display: block !important;
+}
+.needsclick form.needsclick.klaviyo-form .needsclick input,
+.needsclick form.needsclick.klaviyo-form .needsclick button {
+width:90%;
+margin:auto;
+}
+}
+.newsletter-email-box-footer h2 {
+    text-align: center;
+    margin-bottom: 11px;
+}
+ 
+.content_newsletter img {
+    display: none;
+}
+ 
+.newsletter-email-box-footer {
+    display: block;
+}
 </style>

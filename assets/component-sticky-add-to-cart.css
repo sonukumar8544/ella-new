@@ -183,7 +183,7 @@
     font-weight: var(--product-price-font-weight);
     letter-spacing: var(--product-price-letter-spacing);
     line-height: var(--product-price-line-height);
-    color: var(--product-price-color);
+    /* color: var(--product-price-color); */ color:#e95144;
 }
 
 .productView-stickyCart.style-1 .sticky-price.has-compare-price .money-subtotal {

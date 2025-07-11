@@ -11,46 +11,13 @@
   ]
 }
 {% endschema %}
-
+<!-- bundle-page-informational-image -->
 {% if product.handle contains 'bundle' %}
-  {% if product.metafields.Custom.we_product_info_image_desktop %}
+  {% if product.metafields.custom.bundle_product_table.value %}
     <section class="bundle-banner container">
-      <div class="nundle-image-bobile-new">
-        {% if product.metafields.Custom.we_product_info_image_mob %}
-          <img
-            src="{{ product.metafields.Custom.we_product_info_image_desktop | img_url: 'master' }}"
-            alt="Mobile Banner"
-            loading="lazy"
-          >
-        {% endif %}
-      </div>
-      <div class="bundle-image-desktop-new">
-        {% if product.metafields.Custom.we_product_info_image_desktop %}
-          <img
-            src="{{ product.metafields.Custom.we_product_info_image_mob | img_url: 'master' }}"
-            alt="Desktop Banner"
-            loading="lazy"
-          >
-        {% endif %}
-      </div>
+      {% render 'product-table-dynamic',
+        bundle_product_meta_table: product.metafields.custom.bundle_product_table.value
+      %}
     </section>
   {% endif %}
 {% endif %}
-
-<style>
-  .bundle-image-desktop-new {
-      margin-top: 50px;
-  }
-
-    @media (min-width: 769px) {
-      .nundle-image-bobile-new {
-        display: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .bundle-image-desktop-new {
-        display: none;
-      }
-    }
-</style>

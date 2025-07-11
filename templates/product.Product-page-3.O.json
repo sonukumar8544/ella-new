@@ -363,9 +363,9 @@
         "main_image_position": "left",
         "main_image_layout": "1",
         "main_image_arrows_desktop": true,
-        "main_image_arrows_mobile": true,
-        "main_image_counter_mobile": true,
-        "main_image_enable_parallax_mb": true,
+        "main_image_arrows_mobile": false,
+        "main_image_counter_mobile": false,
+        "main_image_enable_parallax_mb": false,
         "main_image_show_zoom_icon_mb": false,
         "show_thumbnail_mobile": true,
         "thumnail_layout": "3",
@@ -535,8 +535,9 @@
       "block_order": [
         "large_img_3EwViL"
       ],
+      "disabled": true,
       "custom_css": [
-        "@media (min-width: 1024px) {.img-box.img-box--mobile {max-width: 83%; margin: auto; }}"
+        "@media (min-width: 1024px) {.img-box.img-box--mobile {max-width: 70%; margin: auto; }}"
       ],
       "settings": {
         "id_section": "",
@@ -568,6 +569,156 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50,
         "liquid_css": ""
+      }
+    },
+    "collapsiable_content_copy_rwPkJz": {
+      "type": "collapsiable-content-copy",
+      "blocks": {
+        "content_JKRbLA": {
+          "type": "content",
+          "settings": {
+            "heading": "Collapsible Row",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_JKRbLA"
+      ],
+      "custom_css": [
+        ".faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}",
+        ".faqs .faqs-item .card-header .title:after {background: none;}",
+        ".adaptive_height img.lazyloaded {border-radius: 8px;}"
+      ],
+      "settings": {
+        "id_section": "collapsable-content-copy",
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "{{ product.metafields.custom.we_product_information_title.value }}",
+        "color_title": "#374650",
+        "fontsize_title": 28,
+        "fontsize_title_mb": 22,
+        "collapsible_des": "{{ product.metafields.custom.we_product_information_description_new.value }}",
+        "color_des": "#374650",
+        "fontsize_des": 20,
+        "fontsize_des_mb": 16,
+        "max_width_des": 800,
+        "title_align": "center",
+        "enable_image_right": true,
+        "image_right": "{{ product.metafields.custom.we_product_info_image_new.value }}",
+        "bg_content_color": "#ffffff",
+        "content_color": "#374650",
+        "title_color": "#086b92",
+        "icon_color": "#374650",
+        "border_color": "#374650",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "collapsible_content_7qC8iH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_zqANGa": {
+          "type": "content",
+          "settings": {
+            "heading": "Cellular Health",
+            "content": "<p>Protects cells from oxidative stress, promoting long-term wellness and vitality.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_iXGTYe": {
+          "type": "content",
+          "settings": {
+            "heading": "Skin Radiance",
+            "content": "<p>Improves elasticity and reduces wrinkles for a youthful, glowing appearance.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_BmeD7H": {
+          "type": "content",
+          "settings": {
+            "heading": "Cardiovascular Support",
+            "content": "<p>Helps maintain healthy cholesterol levels and supports heart function.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_4QfCaK": {
+          "type": "content",
+          "settings": {
+            "heading": "Strong Bones",
+            "content": "<p>Encourages bone strength and density for lasting structural health.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_Pwzyi4": {
+          "type": "content",
+          "settings": {
+            "heading": "-Metabolism Boost",
+            "content": "<p>Optimizes energy production by supporting macronutrient metabolism.</p><p></p>",
+            "page": ""
+          }
+        },
+        "content_FUaYa4": {
+          "type": "content",
+          "settings": {
+            "heading": "Oxidative Defense",
+            "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.</p><p></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_zqANGa",
+        "content_iXGTYe",
+        "content_BmeD7H",
+        "content_4QfCaK",
+        "content_Pwzyi4",
+        "content_FUaYa4"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".section-block-template--24230844203304__collapsible_content_7qC8iH .faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}"
+      ],
+      "settings": {
+        "id_section": "product-page-new-section",
+        "enabled_id": false,
+        "container": "1170",
+        "padding_full_width": 0,
+        "collapsible_bg": "#ffffff",
+        "collapsible_bg_gradient": "",
+        "collapsible_title": "Noticeable Results in Just 8-12 Weeks",
+        "color_title": "#374650",
+        "fontsize_title": 28,
+        "fontsize_title_mb": 20,
+        "collapsible_des": "Feel the transformation—support your skin, heart, and overall vitality with consistent daily use.",
+        "color_des": "#374650",
+        "fontsize_des": 20,
+        "fontsize_des_mb": 16,
+        "max_width_des": 800,
+        "title_align": "center",
+        "enable_image_right": true,
+        "EnableleftImage": false,
+        "enable_zoom": false,
+        "image_right": "shopify://shop_images/Eannatto_bd872cca-b936-45ef-add9-9db72464dbc7.png",
+        "bg_content_color": "#ffffff",
+        "content_color": "#374650",
+        "title_color": "#086b92",
+        "icon_color": "#8b8787",
+        "border_color": "#f1f1f1",
+        "special_content": "<p></p>",
+        "mg_top_desktop": 25,
+        "mg_top_tablet": 25,
+        "mg_top_mobile": 25,
+        "mg_bottom_desktop": 25,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25
       }
     },
     "product_page_title_with_link_CmniUe": {
@@ -652,25 +803,11 @@
         "mg_bottom_mobile": 0
       }
     },
-    "1744376299193a70e7": {
+    "17447304680d8f83b6": {
       "type": "apps",
-      "blocks": {
-        "easyvideo_easyvideo_section_bY4Lrw": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "disabled": true,
-          "settings": {}
-        },
-        "easyvideo_easyvideo_section_product_f3xGVF": {
-          "type": "shopify://apps/easyvideo-shoppable-videos/blocks/easyvideo-section-product/b3d32790-c8f7-4d70-aeda-acf9291f91ae",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "easyvideo_easyvideo_section_bY4Lrw",
-        "easyvideo_easyvideo_section_product_f3xGVF"
-      ],
+      "disabled": true,
       "settings": {
-        "include_margins": true
+        "include_margins": false
       }
     },
     "product_ingrediants_section_NLKKBM": {
@@ -771,7 +908,8 @@
       ],
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
-        ".wrapper-content {border: 1px solid #086b92; padding: 10px 0px; border-radius: 6px;}"
+        "@media (min-width: 1024px) {.wrapper-content {border: 1px solid #086b92; }}",
+        ".wrapper-content {padding: 10px 0px; border-radius: 6px;}"
       ],
       "settings": {
         "id": "",
@@ -852,6 +990,256 @@
         "mg_bottom_desktop": 75,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 40
+      }
+    },
+    "landing_page_section_spotlight_block_dgCwPD": {
+      "type": "landing-page-section-spotlight-block",
+      "blocks": {
+        "image_xJKWfN": {
+          "type": "image",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Main-02-02.png",
+            "title_align": "center",
+            "enable_absolute": false,
+            "align_items": "center",
+            "align_items_spacing_top_bottom_position": 0,
+            "align_items_spacing_top_bottom_position_mb": 115,
+            "bg_color_content": "",
+            "align_items_spacing_top": 10,
+            "align_items_spacing_bottom": 10,
+            "align_items_spacing_lr": 10,
+            "sub_title": "",
+            "border_sub_title": false,
+            "color_sub_title": "#232323",
+            "fontsize_sub_title": 20,
+            "font_weight_sub_title": "500",
+            "mg_bottom_sub_title": 10,
+            "title": "Lab-Tested Truth About Tocotrienols",
+            "color_title": "#232323",
+            "fontsize_title": 20,
+            "fontsize_title_mb": 20,
+            "font_weight_title": "600",
+            "enable_style_italic": false,
+            "border_title": "border_hover",
+            "border_color_title": "",
+            "des": "",
+            "color_des": "#3c3c3c",
+            "fontsize_des": 12,
+            "mg_top_des": 0,
+            "enable_des_hover": false,
+            "button_style": "button_1",
+            "button": "Know More",
+            "link": "shopify://pages/tocotrienols-scam",
+            "fontsize_btn": 16,
+            "button_width": 190,
+            "bg_opacity_button": 1,
+            "enable_button_custom_border": false,
+            "enable_button_hover": false,
+            "btn_text_transform": "uppercase",
+            "btn_icon": "",
+            "mg_top_btn": 20,
+            "color_button": "#ffffff",
+            "border_color_button": "#086b92",
+            "bg_color_button": "#086b92",
+            "bg_color_button_gradient": "",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#086b92",
+            "bg_color_button_hover": "#086b92",
+            "bg_color_button_gradient_hover": ""
+          }
+        },
+        "image_XUQTG7": {
+          "type": "image",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/HORMONE_health_ella.png",
+            "title_align": "center",
+            "enable_absolute": false,
+            "align_items": "top",
+            "align_items_spacing_top_bottom_position": 0,
+            "align_items_spacing_top_bottom_position_mb": 475,
+            "bg_color_content": "",
+            "align_items_spacing_top": 10,
+            "align_items_spacing_bottom": 10,
+            "align_items_spacing_lr": 10,
+            "sub_title": "",
+            "border_sub_title": false,
+            "color_sub_title": "#232323",
+            "fontsize_sub_title": 20,
+            "font_weight_sub_title": "500",
+            "mg_bottom_sub_title": 10,
+            "title": "5 Hormone Myths to Ditch at 35+",
+            "color_title": "#232323",
+            "fontsize_title": 20,
+            "fontsize_title_mb": 20,
+            "font_weight_title": "600",
+            "enable_style_italic": false,
+            "border_title": "border_hover",
+            "border_color_title": "",
+            "des": "",
+            "color_des": "#3c3c3c",
+            "fontsize_des": 12,
+            "mg_top_des": 0,
+            "enable_des_hover": false,
+            "button_style": "button_1",
+            "button": "Know More",
+            "link": "shopify://pages/hormone-health",
+            "fontsize_btn": 16,
+            "button_width": 190,
+            "bg_opacity_button": 1,
+            "enable_button_custom_border": false,
+            "enable_button_hover": false,
+            "btn_text_transform": "uppercase",
+            "btn_icon": "",
+            "mg_top_btn": 20,
+            "color_button": "#ffffff",
+            "border_color_button": "#086b92",
+            "bg_color_button": "#086b92",
+            "bg_color_button_gradient": "",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#086b92",
+            "bg_color_button_hover": "#086b92",
+            "bg_color_button_gradient_hover": ""
+          }
+        },
+        "image_DFAFjk": {
+          "type": "image",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Main-03_6.png",
+            "title_align": "center",
+            "enable_absolute": false,
+            "align_items": "center",
+            "align_items_spacing_top_bottom_position": 0,
+            "align_items_spacing_top_bottom_position_mb": 320,
+            "bg_color_content": "",
+            "align_items_spacing_top": 10,
+            "align_items_spacing_bottom": 10,
+            "align_items_spacing_lr": 10,
+            "sub_title": "",
+            "border_sub_title": false,
+            "color_sub_title": "#232323",
+            "fontsize_sub_title": 20,
+            "font_weight_sub_title": "500",
+            "mg_bottom_sub_title": 10,
+            "title": "You Might Be Taking the Wrong E",
+            "color_title": "#232323",
+            "fontsize_title": 20,
+            "fontsize_title_mb": 20,
+            "font_weight_title": "600",
+            "enable_style_italic": false,
+            "border_title": "border_hover",
+            "border_color_title": "",
+            "des": "",
+            "color_des": "#3c3c3c",
+            "fontsize_des": 12,
+            "mg_top_des": 0,
+            "enable_des_hover": false,
+            "button_style": "button_1",
+            "button": "Know More",
+            "link": "shopify://pages/only-good-stuff",
+            "fontsize_btn": 16,
+            "button_width": 190,
+            "bg_opacity_button": 1,
+            "enable_button_custom_border": false,
+            "enable_button_hover": false,
+            "btn_text_transform": "uppercase",
+            "btn_icon": "",
+            "mg_top_btn": 20,
+            "color_button": "#ffffff",
+            "border_color_button": "#086b92",
+            "bg_color_button": "#086b92",
+            "bg_color_button_gradient": "",
+            "color_button_hover": "#ffffff",
+            "border_color_button_hover": "#086b92",
+            "bg_color_button_hover": "#086b92",
+            "bg_color_button_gradient_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_xJKWfN",
+        "image_XUQTG7",
+        "image_DFAFjk"
+      ],
+      "name": "t:sections.spotlight_block.presets.name",
+      "settings": {
+        "cstm_id": "featured_page_products",
+        "container": "container",
+        "padding_full_width": 0,
+        "disable_padding_content": true,
+        "mg_minus_desktop": 0,
+        "block_layout": "slider",
+        "spotlight_block_swipe_on_mobile": "slider",
+        "column": "4",
+        "column_mb": "1",
+        "center_mode": false,
+        "item_distance": 15,
+        "item_radius": 12,
+        "enable_arrows": true,
+        "enable_arrows_mb": false,
+        "position_horizontal_slick_arrow": "0",
+        "enable_dots": false,
+        "enable_dots_mb": true,
+        "display_border_bottom": false,
+        "border_color": "#e3e3e3",
+        "spotlight_bg": "#ffffff",
+        "spotlight_bg_gradient": "",
+        "enable_custom_position_title": false,
+        "spotlight_block_title": "Featured, Just For You",
+        "enable_border_title": false,
+        "color_title": "#374650",
+        "color_title_mb": "",
+        "fontsize_title": 38,
+        "fontsize_title_mb": 28,
+        "margin_bottom_title": 19,
+        "spotlight_block_des": "",
+        "color_des": "#3c3c3c",
+        "margin_bottom_des": 25,
+        "fontsize_des": 16,
+        "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "view_all_fs": 12,
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 30,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "display_spotlight_button": false,
+        "button_position": "bottom",
+        "spotlight_button_text": "",
+        "spotlight_button_link": "",
+        "color_button": "#ffffff",
+        "border_color_button": "#232323",
+        "bg_color_button": "#232323",
+        "bg_color_gradient_button": "",
+        "color_button_hover": "#232323",
+        "border_color_button_hover": "#ffffff",
+        "bg_color_button_hover": "#ffffff",
+        "bg_color_gradient_button_hover": "",
+        "maxwidth_button": 230,
+        "mg_top_button": 30,
+        "mg_bottom_button": 30,
+        "enable_plus_icon": false,
+        "color_plus_icon": "#ffffff",
+        "enable_content_border": false,
+        "content_border_color": "#e2e2e2",
+        "enable_shadow": false,
+        "shadow_horizontal_length": 0,
+        "shadow_vertical_length": 0,
+        "shadow_blur_radius": 0,
+        "shadow_spread": 0,
+        "shadow_color": "transparent",
+        "shadow_inset": "no",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 75,
+        "mg_bottom_mobile": 75
       }
     },
     "product-recommendations": {
@@ -964,214 +1352,8 @@
         "border_color_card": "#f0f1f4"
       }
     },
-    "instagram_9EfqFH": {
-      "type": "instagram",
-      "blocks": {
-        "instagram_fMHFUY": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_1.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_mxwpfX": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_2.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_DJPjFi": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_3.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_pc3EtR": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_4.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_AnKhhJ": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_5.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_nK49Fh": {
-          "type": "instagram",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_6.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_KwaCKz": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_6.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_phgyJU": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_7.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_ay9EBc": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_8.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_MRtdPL": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_9.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        },
-        "instagram_VtYMTj": {
-          "type": "instagram",
-          "settings": {
-            "image": "shopify://shop_images/TESTIMONIALS_10.png",
-            "title": "",
-            "fontsize_title": 26,
-            "fontsize_title_mb": 20,
-            "color_title": "#ffffff",
-            "description": "",
-            "fontsize_des": 12,
-            "color_des": "#ffffff",
-            "button_text": "",
-            "color_button": "#ffffff",
-            "color_button_hover": "#ffffff",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "instagram_fMHFUY",
-        "instagram_mxwpfX",
-        "instagram_DJPjFi",
-        "instagram_pc3EtR",
-        "instagram_AnKhhJ",
-        "instagram_nK49Fh",
-        "instagram_KwaCKz",
-        "instagram_phgyJU",
-        "instagram_ay9EBc",
-        "instagram_MRtdPL",
-        "instagram_VtYMTj"
-      ],
-      "custom_css": [
-        "@media (min-width: 1025px) {.halo-block-header .title .text {width: 100%; }}"
-      ],
+    "meta_instagram_pWYEc3": {
+      "type": "meta-instagram",
       "settings": {
         "id": "",
         "container": "container",
@@ -1179,11 +1361,11 @@
         "disable_padding_content": false,
         "type_instagram": "default",
         "block_layout": "slider",
-        "scroll_from": "ltr",
+        "scroll_from": "rtl",
         "scroll_time": "30",
         "enable_border_instagram": false,
         "instagram_border_color": "#e6e6e6",
-        "instagram_bg": "#ffffff",
+        "instagram_bg": "#fafafa",
         "instagram_bg_gradient": "",
         "style_block_header": "style1",
         "mg_bottom_header": 15,
@@ -1192,30 +1374,30 @@
         "enable_border_title": false,
         "border_color_title": "#232323",
         "color_title": "#374650",
-        "mg_bottom_title": 18,
+        "mg_bottom_title": 30,
         "fontsize_title": 32,
         "fontsize_title_mb": 22,
         "instagram_des": "",
         "color_des": "#3c3c3c",
         "fontsize_des": 16,
-        "margin_bottom_des": 0,
-        "content_width": 0,
+        "margin_bottom_des": 35,
+        "content_width": 375,
         "title_align": "center",
         "view_all": "",
         "icon_for_viewall": "",
-        "view_all_fs": 14,
+        "view_all_fs": 12,
         "view_all_align": "center",
         "view_all_vert_align": "top",
         "font_weight_view_all": "400",
         "mg_bottom_view": 30,
         "enable_border_view_all": true,
-        "link_view_all": "shopify://pages/reviews",
+        "link_view_all": "",
         "color_view_all": "#3c3c3c",
         "display_instagram_button": true,
-        "type_button_more": "link",
+        "type_button_more": "load",
         "instagram_button_text": "",
-        "instagram_button_link": "#",
-        "enable_underline_button": true,
+        "instagram_button_link": "",
+        "enable_underline_button": false,
         "color_button": "#ffffff",
         "border_color_button": "#232323",
         "bg_color_button": "#232323",
@@ -1228,24 +1410,24 @@
         "mg_top_button": 30,
         "embed_code": "",
         "type_instagram_by_gallery": "link",
-        "images_per_row": "4",
-        "instagram_item_limit": 4,
-        "grid_gap": 30,
+        "images_per_row": "5",
+        "instagram_item_limit": 5,
+        "grid_gap": 5,
         "slide_ins": "default_ins",
         "enable_hide_portion": false,
         "display_arrow": true,
-        "enable_hover_arrow": true,
+        "enable_hover_arrow": false,
         "display_dots": false,
         "icon_for_image": "",
         "icon_style": "style_1",
         "effects_bg": "",
         "effects_opacity": 0,
-        "mg_top_desktop": 70,
-        "mg_top_tablet": 60,
-        "mg_top_mobile": 40,
-        "mg_bottom_desktop": 70,
-        "mg_bottom_tablet": 60,
-        "mg_bottom_mobile": 40
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
       }
     },
     "product_page_faq_section_HeHhtA": {
@@ -1262,8 +1444,8 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/Build_your_custom_stack-2_1_4d0bd716-221a-4834-a17a-134d916d3aea.png",
-            "title_align": "left",
+            "image": "shopify://shop_images/mothers_day_Banner_2.png",
+            "title_align": "right",
             "enable_absolute": true,
             "align_items": "center",
             "align_items_spacing_top_bottom_position": 0,
@@ -1347,7 +1529,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Let's Begin",
-            "link": "https://wellnessextract.com/collections/gut-health",
+            "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1454,6 +1636,7 @@
     },
     "featured_blog_7CQrDa": {
       "type": "featured-blog",
+      "disabled": true,
       "settings": {
         "container": "container",
         "padding_full_width": 0,
@@ -1529,22 +1712,101 @@
         "mg_bottom_tablet": 25,
         "mg_bottom_mobile": 50
       }
+    },
+    "product_related_blog_section_kkNziq": {
+      "type": "product-related-blog-section",
+      "settings": {}
+    },
+    "174547048737bd000a": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_ACqWER": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_ACqWER"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "1749117533ec919232": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_carousel_mi6anP": {
+          "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "show_heading": false,
+            "heading": "",
+            "badge_link": "",
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_carousel_mi6anP"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "1749117565c974bd22": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_KmJmDx": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_KmJmDx"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "metafield_testimonial_video_VcK34F": {
+      "type": "Metafield-testimonial-video",
+      "name": "Metafield Testimonial Video | App",
+      "settings": {
+        "title": "Voices of Satisfaction",
+        "description": ""
+      }
     }
   },
   "order": [
     "main",
     "bundle_page_informational_image_xdtCLG",
     "image_banner_Q8DRPX",
+    "collapsiable_content_copy_rwPkJz",
+    "collapsible_content_7qC8iH",
     "product_page_title_with_link_CmniUe",
+    "metafield_testimonial_video_VcK34F",
     "rich_text_MT6wG9",
-    "1744376299193a70e7",
+    "17447304680d8f83b6",
     "product_ingrediants_section_NLKKBM",
     "brand_slider_tRACcq",
+    "landing_page_section_spotlight_block_dgCwPD",
     "product-recommendations",
     "product-recently-viewed",
-    "instagram_9EfqFH",
+    "meta_instagram_pWYEc3",
     "product_page_faq_section_HeHhtA",
     "spotlight_block_qnYcNH",
-    "featured_blog_7CQrDa"
+    "featured_blog_7CQrDa",
+    "product_related_blog_section_kkNziq",
+    "174547048737bd000a",
+    "1749117533ec919232",
+    "1749117565c974bd22"
   ]
 }

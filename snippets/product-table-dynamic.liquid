@@ -145,7 +145,8 @@
     }
 
     #bundle_table .bundle_title {
-    font-size: 28px;
+    font-size: 25px;
+      line-height:normal;
     }
     #bundle_table .bundle-title {
     font-size: 22px;
@@ -179,7 +180,7 @@
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    background: #003f5e;
+    background: #086b92;
     padding: 10px;
     border-radius: 5px;
     color: #fff;
@@ -193,7 +194,9 @@
       text-align: center;
       color: #777;
       width: 645px;
-      margin: auto
+      margin: auto;
+      font-weight: 400;
+      font-style: italic;
     }
 
     @media (max-width: 1024px) {
@@ -228,72 +231,4 @@
     }
     }
 </style>
-
-<div class="container" id="bundle_table">
-  <div class="bundle_title">Elevate Your Gut Health, Naturally</div>
-
-  <div class="bundle_grid">
-    <div class="bundle-title">This Bundle Includes</div>
-    <div class="bundle-box">
-      <div class="bundle-item">
-        <strong>Bovine Colostrum Powder</strong>
-        <p>1 Jar (150g)</p>
-      </div>
-      <div class="bundle-item">
-        <strong>Eannatto 150+ Vitamin E</strong>
-        <p>1 Bottle (60 softgels)</p>
-      </div>
-      <div class="bundle-item">
-        <strong>Cell Dtox</strong>
-        <p>1 Bottle (60ml)</p>
-      </div>
-    </div>
-  </div>
-
-  <br>
-
-  <!-- Updated Table Format -->
-  <div class="bundle_grid">
-    <div class="bundle-title">How to Use</div>
-    <div class="table-wrapper">
-      <table class="responsive-table">
-        <thead>
-          <tr>
-            <th>Supplement</th>
-            <th>Dose</th>
-            <th>When</th>
-            <th>How</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Supplement">Bovine Colostrum</td>
-            <td data-label="Dose">1 scoop</td>
-            <td data-label="When">Morning</td>
-            <td data-label="How">With warm water</td>
-          </tr>
-          <tr>
-            <td data-label="Supplement">Vitamin E (Eannatto)</td>
-            <td data-label="Dose">1 softgel</td>
-            <td data-label="When">Afternoon</td>
-            <td data-label="How">After food</td>
-          </tr>
-          <tr>
-            <td data-label="Supplement">Cell Dtox</td>
-            <td data-label="Dose">1 dropper</td>
-            <td data-label="When">Night</td>
-            <td data-label="How">Under the tongue</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="note">Maintain a 4–6 hour gap between each supplement for optimal benefits.</div>
-
-  <div class="disclaimer">
-    Disclaimer: The products are not intended to diagnose, treat, cure, or prevent any disease. Always consult a
-    healthcare practitioner before starting any supplements especially if you have any existing medical conditions or
-    are taking medications.
-  </div>
-</div>
+{{ bundle_product_meta_table }}

@@ -1,0 +1,552 @@
+<!-- Metafield-testimonial-video -->
+{% assign testimonial_videos = product.metafields.custom.meta_video_testimonials.value %}
+
+{% if testimonial_videos != blank %}
+  <section class="video-section" id="video_{{ section.id }}">
+    {% if section.settings.title != blank %}
+      <h3 class="title">
+        <span class="text">{{ section.settings.title }}</span>
+      </h3>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="rte subtext-brand w-100 text-center">
+        <p>{{ section.settings.description }}</p>
+      </div>
+    {% endif %}
+
+    <div class="video-scroll-container  ">
+      {% for metaobject in testimonial_videos %}
+        {% assign meta_id = metaobject.id | default: metaobject.system.id %}
+
+        {% assign product1 = metaobject.video_product_1.value %}
+        {% assign product2 = metaobject.video_product_2.value %}
+        {% assign variant1 = product1.variants | where: 'available', true | first %}
+        {% assign variant2 = product2.variants | where: 'available', true | first %}
+
+        {% if metaobject.video_poster.value != blank or metaobject.video_link.value != blank %}
+          <div class="video-card">
+            <div class="video-wrapper" data-modal="modal-{{ meta_id }}">
+              <img
+                src="{{ metaobject.video_poster.value | img_url: '500x' }}"
+                alt="Video Poster"
+                class="video__poster lazyload"
+                width="100%"
+                height="100%"
+              >
+
+              <video
+                class="mobile_view_video"
+                muted
+                loop
+                poster="{{ metaobject.video_poster.value | img_url: '500x' }}"
+                style="width: 100%; height: auto; cursor: pointer;"
+              >
+                <source src="{{ metaobject.video_link.value }}" type="video/mp4">
+              </video>
+
+              <svg
+                class="youtube__icon_svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="red"
+              >
+                <path d="M19.615 3.184C21.068 3.585 22.003 4.768 22 6.273V17.73C22.003 19.236 21.068 20.419 19.615 20.82C17.559 21.4 12 21.4 12 21.4C12 21.4 6.441 21.4 4.385 20.82C2.932 20.419 1.997 19.236 2 17.73V6.273C1.997 4.768 2.932 3.585 4.385 3.184C6.441 2.6 12 2.6 12 2.6C12 2.6 17.559 2.6 19.615 3.184ZM10 16.2L16 12L10 7.8V16.2Z"/>
+              </svg>
+            </div>
+
+            {% if product1 and variant1 %}
+              <div class="card-content cstm_tesimonail_video" data-product-id="{{ variant1.id }}">
+                <a href="{{ product1.url }}" title="{{ product1.title }}">
+                  <img
+                    src="{{ product1.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product1.title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </a>
+                <div class="product-title-new">
+                  <p class="product-title">{{ product1.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant1.price | money_with_currency }}</p>
+                  <button
+                    type="submit"
+                    name="add"
+                    class="cst_atc_button_testimonail product1"
+                    data-variant-ids="{{ variant1.id }}"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if product2 and variant2 %}
+              <div class="card-content cstm_tesimonail_video second_video_product" data-product-id1="{{ variant2.id }}">
+                <a href="{{ product2.url }}" title="{{ product2.title }}">
+                  <img
+                    src="{{ product2.featured_image | img_url: 'small' }}"
+                    class="product-img lazyload"
+                    alt="{{ product2.title }}"
+                    width="100%"
+                    height="100%"
+                  >
+                </a>
+                <div class="product-title-new">
+                  <p class="product-title">{{ product2.title | truncate: 30 }}</p>
+                  <p class="product-price">{{ variant2.price | money_with_currency }}</p>
+                  <button
+                    type="submit"
+                    name="add"
+                    class="cst_atc_button_testimonail product2"
+                    data-variant-ids="{{ variant2.id }}"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
+          {% render 'meta_popup_video_product',
+            metaobject: metaobject,
+            meta_id: meta_id,
+            popupvideo: metaobject.video_link.value,
+            featured_product: product1,
+            featured_product1: product2,
+            first_variant_id: variant1.id,
+            first_variant_id1: variant2.id
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+<style>
+               #video_{{ section.id }}{
+                  padding: 3rem 1.5rem;
+                  background-color: white;
+               h3{
+                  text-align: center;
+                  font-size: 32px;
+                  margin-bottom: 50px;
+                  }
+                }
+
+               #video_{{ section.id }} .section-heading {
+                  text-align: center;
+                  font-size: 2rem;
+                  font-style: italic;
+                  font-weight: 300;
+                }
+
+               #video_{{ section.id }} .section-heading .font-semibold {
+                  font-weight: 600;
+                }
+
+               #video_{{ section.id }} .section-subheading {
+                  text-align: center;
+                  color: #4B5563;
+                  margin: 0.5rem 0 2rem;
+                }
+               #video_{{ section.id }} .video-wrapper img.video__poster {
+                cursor: pointer;
+                max-height: 435px;
+                width: inherit;
+                object-fit: cover;
+              }
+               #video_{{ section.id }} .video-scroll-container {
+                  display: flex;
+                  overflow-x: auto;
+                  gap: 1rem;
+                  padding-bottom: 1rem;
+                  scroll-snap-type: x mandatory;
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                }
+
+               #video_{{ section.id }} .video-scroll-container::-webkit-scrollbar {
+                  display: none;
+                }
+
+               #video_{{ section.id }} .video-card {
+                  flex: 0 0 300px;
+                  background-color: white;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                  overflow: hidden;
+                  scroll-snap-align: start;
+                  display: flex;
+                  flex-direction: column;
+                  transition: transform 0.3s;
+                  position: relative;
+                }
+
+                #video_{{ section.id }} .video-wrapper {
+                  width: 100%;
+                  height: auto;
+                  overflow: hidden;
+                }
+
+                #video_{{ section.id }} .video-wrapper video {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  object-fit: cover;
+                }
+
+      #video_{{ section.id }}  svg.youtube__icon_svg {
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 fill: #d6d6d6;
+                 stroke: #ffffff00;
+                 width: 36px;
+                 height: 35px;
+                 transform: translate(-50%, -50%);
+                 background: #000;
+                 border-radius: 50%;
+                 padding: 5px;
+               }
+
+
+               #video_{{ section.id }} .card-content {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  padding: 0.8rem;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  gap: 10px;
+                  backdrop-filter: blur(10px);
+                  background: #ffffff5c;
+                  margin: 0px;
+                  border-top-left-radius: 0;
+                   border-top-right-radius: 0;
+                   border-bottom-left-radius: 12px;
+                   border-bottom-right-radius: 12px;
+                   }
+                   .card-content.cstm_tesimonail_video.second_video_product {
+                   bottom: 96px !important;border-radius: 0 !important;
+                   }
+
+               #video_{{ section.id }} .cstm_tesimonail_video .product-img {
+                  width: 80px;
+                  height: auto;
+                  border-radius: 4px;
+                }
+
+               #video_{{ section.id }} .cstm_tesimonail_video .product-title {
+                font-weight: 600;
+                font-size: 13px;
+                margin: 0;
+                color: #000;
+                line-height: 1.2;
+            }
+
+                 #video_{{ section.id }} .cstm_tesimonail_video .product-price {
+                  font-size: 12px;
+                  margin: 0px 0px 3px;
+                  color: #000000;
+                  font-weight: 800;
+                  letter-spacing: unset;
+                  }
+
+                  #video_{{ section.id }} .cstm_tesimonail_video .cst_atc_button_testimonail {
+                  background-color: #086b92;
+                  color: white;
+                  padding: 8px 16px;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  border: 1px solid #086b92;
+                  font-size: 12px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  }
+
+               #video_{{ section.id }} .cstm_tesimonail_video .cst_atc_button_testimonail:hover {
+                  background-color: #055671;
+                }
+
+                #video_{{ section.id }} .product-title-new {
+                  width: 200px;
+                }
+            #video_{{ section.id }}  .video_popup_init .video_popup_grid video{
+                  border: none;
+                  outline: none;
+                  border-radius: 12px;
+              cursor:pointer;
+              }
+            #video_{{ section.id }}  .video_popup_init .card-content{
+                    position: relative;
+                  display: block;
+              }
+          .video_popup_init {
+        display: none;
+        transition: all 0.3s ease-in-out;
+      }
+    /* popup css */
+         #video_{{ section.id }} .video_popup_init .card-content{
+        padding: 8px 8px 20px 8px;
+        border: 1px solid #c1c1c1;
+        }
+        #video_{{ section.id }} button#closed_popup_btn svg {
+        fill: #fff;
+        }
+        #video_{{ section.id }} button#closed_popup_btn {
+        border-radius: 50%;
+        position: absolute;
+        right: -12px;
+        top: -9px;
+        background: #000;
+        }
+
+        #video_{{ section.id }} .video_popup_init {
+        display:none;
+        position: fixed;
+        z-index: 999999;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left:0;
+        backdrop-filter: blur(15px);
+        background: #19191982;
+        }
+        #video_{{ section.id }} .video_popup_init .video_popup_grid {
+        width: 50%;
+        }
+        #video_{{ section.id }} .video_popup_init .video_popup {
+        width: 600px;
+        background: #fff;
+        margin: auto;
+        padding: 20px;
+        border-radius: 12px;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
+        }
+        #video_{{ section.id }} .video_popup_init .product-title-new {
+        width: auto;
+        text-align:center;
+        }
+      #video_{{ section.id }} .video_popup_init .video_popup_grid.popup_second_product {
+          height: 474px !important;
+          overflow: overlay;
+      }
+      #video_{{ section.id }} .video_popup_init .video_popup_grid.popup_second_product .card-content:first-child{
+        margin-bottom: 20px;
+      }
+     #video_{{ section.id }} .video_popup_init .card-content {
+       border-radius: 12px;
+     }
+        #video_{{ section.id }} .video_popup_init .video_popup_grid a img {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        }
+        #video_{{ section.id }} .video_popup_init .product-title-new .product-title {
+        color: #086b92;
+        margin-top: 15px;
+        line-height: 1.5;
+        font-size: 16px;
+        margin-bottom: 8px;
+        }
+        #video_{{ section.id }} .video_popup_init .product-title-new .product-price {
+        font-size: 15px;
+        margin: 0;
+        color: rgb(233, 81, 68);
+        font-weight: bold;
+        margin-bottom: 10px;
+        letter-spacing: 1.2px;
+        }
+        #video_{{ section.id }} .video_popup_init .card-content .cst_atc_button_testimonail {
+        font-size: 14px;
+        border: 2px solid #086b92;
+        background-color: #086b92;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: -webkit-fill-available;
+        }
+        #video_{{ section.id }} .video_popup_init .card-content .cst_atc_button_testimonail:hover {
+        background: transparent;
+        border: 1px solid #086b92;
+        color: #086b92;
+        font-weight: bold;
+        }
+  /* @media(min-width: 1024px){
+  #video_{{ section.id }} .cstm_center-video {
+    justify-content: center;
+  }
+  } */
+     @media(min-width:768px){
+      #video_{{ section.id }} .video-wrapper img.video__poster {
+                display:block !important;
+              }
+        #video_{{ section.id }} .video-wrapper .mobile_view_video{
+           display:none !important;
+        }
+      }
+      @media(max-width:767px){
+         #video_{{ section.id }}{
+                  padding: 3rem 1.5rem;
+                  background-color: white;
+               h3{
+                  text-align: center;
+                  font-size: 22px;
+                  margin-bottom: 40px;
+                  }
+                }
+      #video_{{ section.id }} .video-wrapper img.video__poster {
+                display:none !important;
+              }
+        #video_{{ section.id }} .video-wrapper .mobile_view_video{
+           display:block !important;
+        }
+        .video_popup_init{
+          display:none !important;
+        }
+      }
+</style>
+{% if template contains 'product' %}
+  <script>
+    $(document).ready(function () {
+      // Open popup when .video-wrapper is clicked
+      $('body').on('click', '.video-wrapper', function () {
+        var modalId = $(this).data('modal');
+        $('#' + modalId).fadeIn();
+      });
+
+      // Close popup when close button is clicked
+      $('body').on('click', '.cideoClosed', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var popup_close = $(this).closest('.video_popup_init');
+        popup_close.fadeOut();
+
+        // Pause all videos inside the popup_close
+        popup_close.find('video').each(function () {
+          this.pause();
+        });
+      });
+
+      // Close popup when clicking outside the .video_popup content
+      $('body').on('click', '.video_popup_init', function (e) {
+        if ($(e.target).closest('.video_popup').length === 0) {
+          $(this).fadeOut();
+
+          // Pause all videos when closing by background click
+          $(this).find('video').each(function () {
+            this.pause();
+          });
+        }
+      });
+
+
+    });
+  </script>
+  <script>
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   if (window.innerWidth < 768) {
+    //   const wrappers = document.querySelectorAll(".video-wrapper");
+
+    //   wrappers.forEach(wrapper => {
+    //     const video_mobile = wrapper.querySelector(".mobile_view_video");
+    //     const youtubeIcon = wrapper.querySelector(".youtube__icon_svg");
+
+    //     function toggleVideo() {
+    //       if (video_mobile.paused) {
+    //         video_mobile.muted = false; // Unmute when playing
+    //         video_mobile.play();
+    //         youtubeIcon.style.display = "none";
+    //       } else {
+    //         video_mobile.pause();
+    //         youtubeIcon.style.display = "block";
+    //       }
+    //     }
+
+    //     video_mobile.addEventListener("click", toggleVideo);
+    //     youtubeIcon.addEventListener("click", toggleVideo);
+    //   });
+    //   }
+    // });
+  </script>
+  <script>
+    $(document).ready(function () {
+      const isMobile = window.innerWidth < 760;
+      if (!isMobile) return;
+
+      let currentlyPlaying = null;
+
+      $(".video-wrapper").each(function () {
+        const $wrapper = $(this);
+        const $video = $wrapper.find(".mobile_view_video");
+        const $icon = $wrapper.find(".youtube__icon_svg");
+
+        const video = $video.get(0);
+
+        const toggleVideo = () => {
+          if (currentlyPlaying && currentlyPlaying !== video) {
+            currentlyPlaying.pause();
+            const $prevIcon = $(currentlyPlaying).closest(".video-wrapper").find(".youtube__icon_svg");
+            $prevIcon.show();
+          }
+
+          if (video.paused) {
+            video.muted = false;
+            video.play();
+            $icon.hide();
+            currentlyPlaying = video;
+          } else {
+            video.pause();
+            $icon.show();
+            currentlyPlaying = null;
+          }
+        };
+
+        $video.on("click", toggleVideo);
+        $icon.on("click", toggleVideo);
+      });
+
+
+    });
+  </script>
+{% endif %}
+{% schema %}
+{
+  "name": "Testimonial Video App",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Voices of Satisfaction"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metafield Testimonial Video | App"
+    }
+  ]
+}
+{% endschema %}

@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -23,17 +23,25 @@
             "title": "",
             "content": "Dr. Alex, PhD and MD, is a health science innovator dedicated to advancing wellness through evidence-informed solutions. Inspired by his personal journey with osteoarthritis, he discovered the potential of molecular hydrogen and co-developed scientifically validated hydrogen tablets with Dr. Richard Holland to support pain relief and longevity. Committed to efficacy and quality, Dr. Alex also leads the creation of cutting-edge supplements and is set to launch the first safe hydrogen inhalation device, redefining health solutions for a simpler, safer, and healthier future."
           }
+        },
+        "text_block_LMr4nT": {
+          "type": "text_block",
+          "settings": {
+            "title": "Wellness Extract Editorial Guidelines",
+            "content": "At Wellness Extract, our mission is to provide educational, FDA-compliant, and well-researched content that empowers individuals to make informed decisions about their health and well-being. We are committed to delivering clear, evidence-based information that simplifies complex health topics, ensuring that all our content is grounded in reputable sources and expert insights.<br><br>Our editorial standards prioritize accuracy, transparency, FDA compliance, and inclusivity, with the goal of guiding readers in their wellness journey through reliable, accessible, and responsible health information."
+          }
         }
       },
       "block_order": [
-        "text_block_LM4KJW"
+        "text_block_LM4KJW",
+        "text_block_LMr4nT"
       ],
       "settings": {
-        "author_image": "shopify:\/\/shop_images\/Alex_Tarnava.jpg",
+        "author_image": "shopify://shop_images/Alex_56381d16-e853-4a55-8f4b-0f880ee7f9c8.png",
         "author_name": "Alex",
         "author_role": "Author",
         "author_email": " alextarnava@gmail.com",
-        "author_linkedin": "https:\/\/www.linkedin.com\/in\/alex-tarnava-162a27167\/"
+        "author_linkedin": "https://www.linkedin.com/in/alex-tarnava-162a27167/"
       }
     }
   },
@@ -42,4 +50,3 @@
     "author_section_HExFkL"
   ]
 }
-

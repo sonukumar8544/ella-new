@@ -423,21 +423,20 @@
                                       <span class="cart-item-value" data-item-price-with-quantity-display>{{ price_to_display | times: item.quantity | money }}</span>
                                   </div>
                                 {% endcomment %}
-                                {% comment %}
-                                  <div class="cart-item-block cart-item-remove">
-                                    <a
-                                      class="cart-remove"
-                                      href="javascript:void(0)"
-                                      data-cart-remove
-                                      data-cart-remove-id="{{ item.id }}"
-                                      data-line="{{ item.key }}"
-                                      data-index="{{ item.index | plus: 1 }}"
-                                      aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
-                                    >
-                                      {%- render 'cartdrawer_close_icon' -%}
-                                    </a>
-                                  </div>
-                                {% endcomment %}
+
+                                <div class="cart-item-block cart-item-remove">
+                                  <a
+                                    class="cart-remove"
+                                    href="javascript:void(0)"
+                                    data-cart-remove
+                                    data-cart-remove-id="{{ item.id }}"
+                                    data-line="{{ item.key }}"
+                                    data-index="{{ item.index | plus: 1 }}"
+                                    aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                                  >
+                                    {%- render 'cartdrawer_close_icon' -%}
+                                  </a>
+                                </div>
                               </div>
                             </div>
                             {% comment %}
@@ -477,35 +476,20 @@
                             {%- if item.selling_plan_allocation != null -%}
                               <p class="cart-item-allocation">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                             {%- endif -%}
-                            <div class="removediscount">
-                              {%- if item.discounts.size > 0 -%}
-                                <ul
-                                  class="cart-discounts list-unstyled"
-                                  role="list"
-                                  aria-label="{{ 'customer.order.discount' | t }}"
-                                >
-                                  {%- for discount in item.line_level_discount_allocations -%}
-                                    <li class="discounts__discount">
-                                      {%- render 'icon-discount' -%}
-                                      {{ discount.discount_application.title }}
-                                    </li>
-                                  {%- endfor -%}
-                                </ul>
-                              {%- endif -%}
-                              <div class="cart-item-block cart-item-remove">
-                                <a
-                                  class="cart-remove"
-                                  href="javascript:void(0)"
-                                  data-cart-remove
-                                  data-cart-remove-id="{{ item.id }}"
-                                  data-line="{{ item.key }}"
-                                  data-index="{{ item.index | plus: 1 }}"
-                                  aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
-                                >
-                                  {%- render 'cartdrawer_close_icon' -%}
-                                </a>
-                              </div>
-                            </div>
+                            {%- if item.discounts.size > 0 -%}
+                              <ul
+                                class="cart-discounts list-unstyled"
+                                role="list"
+                                aria-label="{{ 'customer.order.discount' | t }}"
+                              >
+                                {%- for discount in item.line_level_discount_allocations -%}
+                                  <li class="discounts__discount">
+                                    {%- render 'icon-discount' -%}
+                                    {{ discount.discount_application.title }}
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            {%- endif -%}
                             {% comment %} adding-block {% endcomment %}
                             <div class="cart-item-block cart-item-price small-screen-visible">
                               <div class="cart-item__price-wrapper">
@@ -761,7 +745,7 @@
                       <span class="text">{{ 'general.cart.subtotal' | t }}</span>
                     </div>
                     <div class="cart-total-value">
-                      <span class="text">{{ cart.original_total_price | money }}</span>
+                      <span class="text">{{ cart.original_total_price | money_with_currency }}</span>
                     </div>
                   </li>
                   {%- if show_shipping_rate_calculator -%}
@@ -853,10 +837,10 @@
                           {%- for discount in cart.cart_level_discount_applications -%}
                             {%- render 'icon-discount' -%}
                             {{ discount.title }}
-                            (-{{ discount.total_allocated_amount | money }})
+                            (-{{ discount.total_allocated_amount | money_with_currency }})
                           {%- endfor -%}
                         {%- else -%}
-                          {{ cart.total_discount | money | prepend: '-' }}
+                          {{ cart.total_discount | money_with_currency | prepend: '-' }}
                         {%- endif -%}
                       </span>
                     </div>
@@ -866,7 +850,7 @@
                       <span class="text">{{ 'general.cart.total' | t }}</span>
                     </div>
                     <div class="cart-total-value" data-cart-total-value="{{ cart.total_price }}">
-                      <span class="text">{{ cart.total_price | money }}</span>
+                      <span class="text">{{ cart.total_price | money_with_currency }}</span>
                     </div>
                   </li>
                   {%- if settings.show_shipping_note -%}
@@ -916,7 +900,7 @@
                         <span class="text">{{ 'general.cart.total' | t }}</span>
                       </div>
                       <div class="cart-total-value" data-cart-total-value="{{ cart.total_price }}">
-                        <span class="text">{{ cart.total_price | money }}</span>
+                        <span class="text">{{ cart.total_price | money_with_currency }}</span>
                       </div>
                     </li>
                   {%- endif -%}

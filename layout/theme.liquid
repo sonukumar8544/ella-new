@@ -41,14 +41,22 @@
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {% comment %} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%} {% endcomment %}
     </title>
+    {% if request.path contains '/pages/molecular-hydrogen'
+      or request.path contains '/pages/testosterone'
+      or request.path contains 'pages/statin'
+      or request.path contains 'pages/nafld'
+      or request.path contains 'pages/gut-health'
+    %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
     {% render 'meta-tags' %}
-
+    {% render 'seo_script' %}
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -164,6 +172,12 @@
     {% unless template contains 'index' or template contains 'collection' or template contains 'product' %}
       {% render 'shogun-head' %}
     {% endunless %}
+    <script
+      async
+      defer
+      type="text/javascript"
+      src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XAqg2H"
+    ></script>
   </head>
 
   <body
@@ -220,6 +234,9 @@
     {%- if settings.use_custom_js -%}
       {{ 'custom.js' | asset_url | script_tag }}
     {%- endif -%}
+
+    {% comment %} Font awesome {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <div class="background-overlay">
       {%- if settings.show_effect_close -%}
