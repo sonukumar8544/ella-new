@@ -1,7 +1,8 @@
 <!--hero-banner-upper-thirdO-->
-{% assign product_banner = product.metafields.custom.product_3_0_banner_details.value %}
+{% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
 
 {% if product_banner != blank %}
+  {% for product_banner in product_banner1 %}
 <section class="hero-section" id="{{ section.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
@@ -58,6 +59,7 @@
     {% endif %}
   </div>
 </section>
+    {% endfor %}
 {% endif %}
 
 <style>
