@@ -110,7 +110,7 @@
     background: none; 
 }
 .dynamic-Product-page-3\.O-template .productView-tab .tabs{
-         padding-bottom: 20px;
+         padding-bottom: 18px;
     border-bottom: 0px;
 }
 .dynamic-Product-page-3\.O-template .tabs-contents.halo-text-format{
@@ -135,4 +135,18 @@
     color: #29353C !important;
     font-style: normal;
     line-height: 26px;
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
+        margin-right: 47px;
+    }
 }
