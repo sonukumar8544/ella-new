@@ -1,5 +1,5 @@
 <!-- hero-content-block-thirdO -->
-<section class="tocotrienol-section">
+<section class="tocotrienol-section" id="cstm_{{ section.id }}">
   <div class="tocotrienol-container">
     <div class="tocotrienol-left">
       <h2>Our Tocotrienol Is Different</h2>
@@ -38,14 +38,14 @@
   </div>
 </section>
 <style>
-  .tocotrienol-section {
+#cstm_{{ section.id }} .tocotrienol-section {
   padding: 40px 20px;
   font-family: 'Helvetica Neue', sans-serif;
   background: #fff;
   color: #2d3748;
 }
 
-.tocotrienol-container {
+#cstm_{{ section.id }} .tocotrienol-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
@@ -53,59 +53,65 @@
   gap: 40px;
 }
 
-.tocotrienol-left {
+#cstm_{{ section.id }} .tocotrienol-left {
   flex: 1 1 55%;
 }
 
-.tocotrienol-left h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+#cstm_{{ section.id }} .tocotrienol-left h2 {
+    margin-bottom: 20px;
+    color: #374650;
+    font-family: Nunito;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 33.6px;
+    letter-spacing: 0.68px;
+    text-transform: capitalize;
 }
 
-.tocotrienol-left p {
+#cstm_{{ section.id }} #cstm_{{ section.id }} .tocotrienol-left p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
   color: #4a5568;
 }
 
-.tocotrienol-right {
+#cstm_{{ section.id }} .tocotrienol-right {
   flex: 1 1 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.tocotrienol-point {
+#cstm_{{ section.id }} .tocotrienol-point {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.tocotrienol-point img {
+#cstm_{{ section.id }} .tocotrienol-point img {
   width: 32px;
   height: auto;
 }
 
-.tocotrienol-point p {
+#cstm_{{ section.id }} .tocotrienol-point p {
   margin: 0;
   font-size: 15px;
   color: #2d3748;
 }
 
-.tocotrienol-divider {
+#cstm_{{ section.id }} .tocotrienol-divider {
   border-bottom: 1px solid #ccc;
   margin: 15px 0;
 }
 
 @media (max-width: 768px) {
-  .tocotrienol-container {
+#cstm_{{ section.id }} .tocotrienol-container {
     flex-direction: column;
   }
 
-  .tocotrienol-left,
+ #cstm_{{ section.id }} .tocotrienol-left,
   .tocotrienol-right {
     flex: 1 1 100%;
   }
