@@ -1,6 +1,177 @@
+<!-- scientific-slider-thirdO -->
+<section class="scientific-section" id="scientifically-backed">
+  <div class="scientific-header">
+    <h2 class="scientific-title">Scientifically Backed</h2>
+    <p class="scientific-subtitle">
+      Emerging research has explored the synergistic effects of astaxanthin with tocotrienols and 
+      tocotrienols with geranylgeraniol, suggesting the combined health potential.
+    </p>
+  </div>
+
+  <div class="scientific-slider">
+    <div class="scientific-card">
+      <div class="scientific-quote-icon">❝</div>
+      <p class="scientific-quote-text">
+        Astaxanthin and tocotrienols supplements may significantly improve verbal and composite memory in healthy adults.
+      </p>
+      <div class="scientific-verified">
+        <span class="scientific-icon">⚙️</span> 100% Verified
+        <small class="scientific-note">on what he learned when sitting with himself</small>
+      </div>
+    </div>
+
+    <div class="scientific-card">
+      <div class="scientific-quote-icon">❝</div>
+      <p class="scientific-quote-text">
+        Astaxanthin and tocotrienols supplements may significantly improve verbal and composite memory in healthy adults.
+      </p>
+      <div class="scientific-verified">
+        <span class="scientific-icon">⚙️</span> 100% Verified
+        <small class="scientific-note">on what he learned when sitting with himself</small>
+      </div>
+    </div>
+
+    <div class="scientific-card">
+      <div class="scientific-quote-icon">❝</div>
+      <p class="scientific-quote-text">
+        Astaxanthin and tocotrienols supplements may significantly improve verbal and composite memory in healthy adults.
+      </p>
+      <div class="scientific-verified">
+        <span class="scientific-icon">⚙️</span> 100% Verified
+        <small class="scientific-note">on what he learned when sitting with himself</small>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffffff, #fef9f2);
+}
+
+.scientific-section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.scientific-header {
+  margin-bottom: 40px;
+}
+
+.scientific-title {
+  font-size: 36px;
+  color: #00587A;
+  margin-bottom: 10px;
+}
+
+.scientific-subtitle {
+  font-size: 16px;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.scientific-slider {
+  margin: 0 auto;
+}
+
+.scientific-card {
+  background-color: #f4f0eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  margin: 10px;
+  text-align: left;
+  position: relative;
+  min-height: 250px;
+}
+
+.scientific-quote-icon {
+  font-size: 48px;
+  color: #c0bdb9;
+}
+
+.scientific-quote-text {
+  font-size: 18px;
+  color: #3f3f3f;
+  line-height: 1.5;
+  margin: 16px 0;
+}
+
+.scientific-verified {
+  font-size: 14px;
+  color: #444;
+}
+
+.scientific-icon {
+  margin-right: 6px;
+}
+
+.scientific-note {
+  display: block;
+  font-size: 10px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Slick Dots */
+.slick-dots {
+  margin-top: 30px;
+}
+
+.slick-dots li button:before {
+  color: #00587A;
+}
+
+</style>
+
+
+
+<!-- Slick CSS/JS (Paste in head or before </body>) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('.scientific-slider').slick({
+      dots: true,
+      arrows: false,
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 1.2
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+    {
+  "name": "scientific slider thirdO",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "scientific slider thirdO"
+    }
+  ]
+}
 {% endschema %}
