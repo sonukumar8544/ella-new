@@ -1,6 +1,106 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<section class="transformation-section">
+  <div class="container">
+    <h2 class="section-title">Transformation Results</h2>
+    <p class="section-subtitle">
+      Experience the merging of Earth’s most potent elements in one revolutionary formula. Cymbiotika’s Shilajit Liquid Complex isn’t just another supplement.
+    </p>
+    
+    <div class="results-grid">
+      <div class="result-box">
+        <h3 class="percentage">95%</h3>
+        <p class="result-text">Experience the merging of Earth’s most potent elements in one.</p>
+      </div>
+      <div class="result-box">
+        <h3 class="percentage">92%</h3>
+        <p class="result-text">Experience the merging of Earth’s most potent elements in one.</p>
+      </div>
+      <div class="result-box">
+        <h3 class="percentage">98%</h3>
+        <p class="result-text">Experience the merging of Earth’s most potent elements in one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .transformation-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #00678c;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.results-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.result-box {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.percentage {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result-text {
+  font-size: 13px;
+  color: #444;
+  max-width: 250px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* Responsive for tablets and mobile */
+@media (max-width: 768px) {
+  .results-grid {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .result-box {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+</style>
+
+
+{% schema %}
+    {
+  "name": "transform-section-thirdO",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "transform-section-thirdO"
+    }
+  ]
+}
 {% endschema %}
