@@ -1,40 +1,49 @@
 <!-- hero-content-block-thirdO -->
+{% assign hero-content = product.metafields.custom.product_3_0_banner_details.value %}
+{% if hero-content != blank %}
+  {% for hero_content_block in hero-content %}
 <section class="tocotrienol-section" id="cstm_{{ section.id }}">
   <div class="tocotrienol-container container">
+    {% if hero_content_block.title != blank or hero_content_block.description != blank %}
     <div class="tocotrienol-left">
-      <h2>Our Tocotrienol Is Different</h2>
+      <h2>{{ hero_content_block.title }}</h2>
       <p>
-        Experience the merging of Earth’s most potent elements in one revolutionary formula.
-        Cymbiotika’s Shilajit Liquid Complex isn’t just another supplement—it’s a combination
-        of high-altitude shilajit, organic cacao, raw honey, sea salt, and hazelnut butter.
-        These nourishing ingredients combine to form a complete, whole food complex that
-        provides energy, endurance, and recovery–all in one convenient packet.
-      </p>
-      <p>
-        While isolated shilajit resin is powerful, our new formula offers full-spectrum nutrition:
-        fulvic and humic acids, trace minerals, antioxidants, electrolytes, prebiotics, and adaptogens.
-        No water weight, no fillers—just a nutrient-dense formula crafted for energy on the go.
+        {{ hero_content_block.description }}
       </p>
     </div>
-
+    {% endif %}
     <div class="tocotrienol-right">
+{% if hero_content_block.image_1 != blank or hero_content_block.image_content1 != blank%}
       <div class="tocotrienol-point">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/SVG.svg?v=1752350625" alt="Icon 1" title="" width="" height="">
-        <p>Whole food complex for full-body nutrition.</p>
+        <img src="{{  hero_content_block.image_1 }}" alt="Icon 1" title="" width="" height="" title="">
+        <p>{{ hero_content_block.image_content1 }}</p>
       </div>
+      {% endif %}
 
+     {% if hero_content_block.image_2 != blank or hero_content_block.image_content2 != blank%}
       <div class="tocotrienol-point">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/SVG_1.svg?v=1752350624" alt="Icon 1" title="" width="" height="">
-        <p>Thoughtfully sourced with you in mind.</p>
+        <img src="{{  hero_content_block.image_2 }}" alt="Icon 1" title="" width="" height="" title="">
+        <p>{{ hero_content_block.image_content2 }}</p>
       </div>
+      {% endif %}
 
+     {% if hero_content_block.image_3 != blank or hero_content_block.image_content3 != blank%}
       <div class="tocotrienol-point">
-        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/SVG_2.svg?v=1752350624" alt="Icon 3" alt="Icon 1" title="" width="" height="">
-        <p>No mixing, no prep, no mess.</p>
+        <img src="{{  hero_content_block.image_3 }}" alt="Icon 1" title="" width="" height="" title="">
+        <p>{{ hero_content_block.image_content3 }}</p>
       </div>
+      {% endif %}
+    
+    {% if hero_content_block.image_4 != blank or hero_content_block.image_content4 != blank%}
+      <div class="tocotrienol-point">
+        <img src="{{  hero_content_block.image_4 }}" alt="Icon 1" title="" width="" height="" title="">
+        <p>{{ hero_content_block.image_content4 }}</p>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
+{% endfor %}
 <style>
 #cstm_{{ section.id }} .tocotrienol-section {
   padding: 40px 20px;
@@ -129,6 +138,7 @@
 }
 
 </style>
+ {% endif %}
 {% schema %}
     {
   "name": "Product Content ThirdO",
