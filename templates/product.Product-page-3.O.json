@@ -341,6 +341,7 @@
     },
     "bundle_page_informational_image_xdtCLG": {
       "type": "bundle-page-informational-image",
+      "disabled": true,
       "settings": {}
     },
     "image_banner_Q8DRPX": {
@@ -489,6 +490,7 @@
       "block_order": [
         "content_JKRbLA"
       ],
+      "disabled": true,
       "custom_css": [
         ".faqs .faqs-item .card-header .title {padding: 4px 80px 4px 0px;}",
         ".faqs .faqs-item .card-header .title:after {background: none;}",
@@ -662,6 +664,7 @@
         "faq_block_BLaywy",
         "faq_block_hrCJFG"
       ],
+      "disabled": true,
       "settings": {
         "section_heading": "Scientifically Backed",
         "section_subtitle": "Annatto-derived tocotrienols (AnTT) are scientifically backed with potential health benefits."
@@ -715,6 +718,7 @@
     },
     "product_ingrediants_section_NLKKBM": {
       "type": "product-ingrediants-section",
+      "disabled": true,
       "settings": {
         "heading": "What's Inside",
         "image": "shopify://shop_images/Annatto_23c773a6-6da8-4ee1-9556-34e2f4987189.png",
@@ -809,6 +813,7 @@
         "image_NyLNnA",
         "image_HjABCT"
       ],
+      "disabled": true,
       "custom_css": [
         ".halo-item .wrapper-image {max-width: 85px; margin: auto;}",
         "@media (min-width: 1024px) {.wrapper-content {border: 1px solid #086b92; }}",
