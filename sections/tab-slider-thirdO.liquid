@@ -39,17 +39,19 @@
                         <div class="owl-carousel common-carousel">
                             <div class="item">
                                 <div class="inner-items">
-                                      <img src="{{ tab_slider.slide_image_1 }}" title="" width="100%" height="100%" style="width:auto;"
+                                      <img class="lazyload" data-src="{{ tab_slider.button1_slide_image_1 }}" src="{{ tab_slider.button1_slide_image_1 }}" title="" width="100%" height="100%" style="width:auto;"
                                         alt="">
                                     <div class="content-secton">
                                         <div class="inner-content">
                                             <div class="cstm_tab_slider title-group">
-                                               {% if tab_silder_title1 != blank %}   <h2 class="slider-title">{{ tab_silder_title1 }}</h2>{% endif %}
-                                               {% if tab_silder_subtitle1 != blank %}   <h4>{{ tab_silder_subtitle1 }}</h4>{% endif %}
-                                           {% if tab_slide_description_1 != blank %} 
+                                               {% if button1_tab_title1 != blank %} <h2 class="slider-title">{{ button1_tab_title1 }}</h2>{% endif %}
+                                               {% if button1_tab_subtitle1 != blank %} <h4>{{ button1_tab_subtitle1 }}</h4>{% endif %}
+                                           {% if button1_tab_slide_description_1 != blank %} 
                                               <p class="description_with_redirection">
-                                               {{ tab_slide_description_1 }}
-                                              {% if tab_silder_redirection_link != blank %} <a href="{{ tab_silder_redirection_link }}" class="redirection_link">Read More</a>{% endif %}
+                                               {{ button1_tab_slide_description_1 }}
+                                              {% if button1_tab_slider_redirection_link != blank %} 
+                                                <a href="{{ button1_tab_slider_redirection_link }}" class="redirection_link">Read More</a>
+                                                {% endif %}
                                              </p>
                                               {% endif %}
                                             </div>
