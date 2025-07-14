@@ -8,7 +8,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carou
 href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
- -->
+-->
 {% for tab_slider in tab-slider-third1  %}
 <div class="tab-slider-thirdO">
 <div class="container">
@@ -42,7 +42,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme
 <div class="tab-content">
 {% if tab_slider.button1_slide_image1 != blank %}
 <div class="tab-panel active" data-panel="tab_img_slider_1">
-   {% render 'tab_slider_button1', tab_slider: tab_slider %}
+{% render 'tab_slider_button1', tab_slider: tab_slider %}
 </div>
 {% endif %}
 
@@ -75,294 +75,299 @@ href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme
 </div>
 </div>
 </div>
- {% endfor %}
-  {% endif %}
-  
-   <style>
+{% endfor %}
+{% endif %}
 
-   .tab-slider-thirdO h2 {
-    text-align: center;
-    color: #086b92;
-    font-family: Nunito;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1px;
+<style>
+.tab-slider-thirdO {
+background: rgba(8, 107, 146, 0.10);
 }
-     .tab-slider-thirdO h2.slider-title {
-    letter-spacing: 0;
-    color: #29353C;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 58px;
+.tab-slider-thirdO h2 {
+text-align: center;
+color: #086b92;
+font-family: Nunito;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -1px;
 }
-       .tab-slider-thirdO .content {
-            display: flex;
-        }
+.tab-slider-thirdO h2.slider-title {
+letter-spacing: 0;
+color: #29353C;
+font-size: 35px;
+font-style: normal;
+font-weight: 500;
+line-height: 58px;
+}
+.tab-slider-thirdO .content {
+display: flex;
+}
 
-        .tab-slider-thirdO .tabs-sidebar {
-            flex: 0 0 400px;
-            padding: 0px 20px 0px 0px;
-        }
+.tab-slider-thirdO .tabs-sidebar {
+flex: 0 0 400px;
+padding: 0px 20px 0px 0px;
+}
 
-       .tab-slider-thirdO .tab-button {
-            display: block;
-            width: 100%;
-            padding: 15px 20px;
-            margin-bottom: 10px;
-            background: white;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            font-size: 20px;
-            color: #3f3f3f;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
-            font-weight: 500;
-        }
+.tab-slider-thirdO .tab-button {
+width: 100%;
+margin-bottom: 10px;
+border: 2px solid #e9ecef;
+border-radius: 12px;
+font-size: 20px;
+cursor: pointer;
+transition: all 0.3s ease;
+text-align: left;
+font-weight: 500;
+display: flex;
+padding: 16px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-color: #fff;
+align-self: stretch;
+color: #086B92;
+}
+.tab-slider-thirdO .tab-button:hover {
+border-color: #086B92;
+color: #086B92;
+transform: translateX(5px);
+}
 
-       .tab-slider-thirdO .tab-button:hover {
-            border-color: #086B92;
-            color: #086B92;
-            transform: translateX(5px);
-        }
+.tab-slider-thirdO .tab-button.active {
+background: #086B92;
+border-color: #086B92;
+color: white;
+transform: translateX(5px);
+}
 
-        .tab-slider-thirdO .tab-button.active {
-            background: #086B92;
-            border-color: #086B92;
-            color: white;
-            transform: translateX(5px);
-        }
+.tab-slider-thirdO .tab-content {
+flex: 1;
+position: relative;
+overflow: hidden;
+}
 
-       .tab-slider-thirdO .tab-content {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
+.tab-slider-thirdO .tab-panel {
+display: none !important;
+width: 100%;
+height: 100%;
+opacity: 0;
+transform: translateX(50px);
+transition: all 0.4s ease;
+pointer-events: none;
+display: flex;
+flex-direction: column;
+}
 
-       .tab-slider-thirdO .tab-panel {
-            display: none !important;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.4s ease;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-        }
+.tab-slider-thirdO .tab-panel.active {
+opacity: 1;
+transform: translateX(0);
+pointer-events: all;
+display: flex !important;
+}
 
-       .tab-slider-thirdO .tab-panel.active {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: all;
-            display: flex !important;
-        }
+.tab-slider-thirdO .swipe-hint {
+position: absolute;
+bottom: 10px;
+right: 20px;
+color: rgba(255, 255, 255, 0.8);
+font-size: 0.9rem;
+font-style: italic;
+}
 
-        .tab-slider-thirdO .swipe-hint {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            font-style: italic;
-        }
+.tab-slider-thirdO .inner-items {
+position: relative;
+border-radius: 16px;
+overflow: hidden;
+background-color: #EEEEEE;
+}
 
-       .tab-slider-thirdO .inner-items {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background-color: #EEEEEE;
-        }
+.tab-slider-thirdO .inner-items.second-itmes img {
+opacity: 0;
+}
 
-       .tab-slider-thirdO .inner-items.second-itmes img {
-            opacity: 0;
-        }
+.tab-slider-thirdO  h2.slider-title {
+font-size: 40px;
+color: #086B92;
+margin: 0;
+line-height: 49px;
+letter-spacing: 0;
+}
 
-      .tab-slider-thirdO  h2.slider-title {
-            font-size: 40px;
-            color: #086B92;
-            margin: 0;
-            line-height: 49px;
-            letter-spacing: 0;
-        }
+.tab-slider-thirdO .inner-content p {
+color: #29353C;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 32.4px;
+}
 
-        .tab-slider-thirdO .inner-content p {
-    color: #29353C;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32.4px;
-        }
-     
-       .tab-slider-thirdO .content-btn {
-            display: inline-block;
-            font-size: 24px;
-            font-weight: 500;
-            font-style: italic;
-            color: #3F3F3F;
-        }
+.tab-slider-thirdO .content-btn {
+display: inline-block;
+font-size: 24px;
+font-weight: 500;
+font-style: italic;
+color: #3F3F3F;
+}
 
-        .tab-slider-thirdO .inner-items.second-itmes .inner-content {
-            max-width: 100%;
-        }
+.tab-slider-thirdO .inner-items.second-itmes .inner-content {
+max-width: 100%;
+}
 
-      .tab-slider-thirdO .solution-btn.button {
-            margin: 0px;
-            display: inline-block;
-            width: unset;
-            min-width: max-content;
-            max-width: max-content;
-            background: #086B92;
-            border-color: #086B92;
-            color: #fff;
-        }
+.tab-slider-thirdO .solution-btn.button {
+margin: 0px;
+display: inline-block;
+width: unset;
+min-width: max-content;
+max-width: max-content;
+background: #086B92;
+border-color: #086B92;
+color: #fff;
+}
 
-      .tab-slider-thirdO a.solution-btn.button:hover {
-            background: #f1d074;
-            border-color: #f1d074;
-            color: #086B92;
-        }
+.tab-slider-thirdO a.solution-btn.button:hover {
+background: #f1d074;
+border-color: #f1d074;
+color: #086B92;
+}
 
-       .tab-slider-thirdO .inner-items img {
-            min-height: 300px;
-            object-fit: cover;
-            object-position: 78%;
-        }
+.tab-slider-thirdO .inner-items img {
+min-height: 300px;
+object-fit: cover;
+object-position: 78%;
+}
 
-        @media (max-width: 768px) {
-           .tab-slider-thirdO .tab-button {
-                padding: 10px 15px;
-                border-radius: 10px;
-                font-size: 16px;
-            }
+@media (max-width: 768px) {
+.tab-slider-thirdO .tab-button {
+padding: 10px 15px;
+border-radius: 10px;
+font-size: 16px;
+}
 
-           .tab-slider-thirdO .content {
-                flex-direction: column;
-            }
+.tab-slider-thirdO .content {
+flex-direction: column;
+}
 
-           .tab-slider-thirdO .tabs-sidebar {
-                flex: none;
-                display: flex;
-                overflow-x: auto;
-                padding: 10px;
-                gap: 10px;
-                padding-left: 0px;
-                margin-bottom: 15px;
-            }
+.tab-slider-thirdO .tabs-sidebar {
+flex: none;
+display: flex;
+overflow-x: auto;
+padding: 10px;
+gap: 10px;
+padding-left: 0px;
+margin-bottom: 15px;
+}
 
-            .tab-slider-thirdO .tab-button {
-                flex: 0 0 auto;
-                white-space: nowrap;
-                margin-bottom: 0;
-                max-width: max-content;
-            }
-        }
+.tab-slider-thirdO .tab-button {
+flex: 0 0 auto;
+white-space: nowrap;
+margin-bottom: 0;
+max-width: max-content;
+}
+}
 
-        @media (max-width: 767.8px) {
-           .tab-slider-thirdO .content-secton {
-                position: absolute;
-                inset: 0;
-                padding: 10px 15px 30px;
-            }
+@media (max-width: 767.8px) {
+.tab-slider-thirdO .content-secton {
+position: absolute;
+inset: 0;
+padding: 10px 15px 30px;
+}
 
-            .tab-slider-thirdO .inner-content {
-                max-width: 85%;
-                gap: 10px;
-            }
+.tab-slider-thirdO .inner-content {
+max-width: 85%;
+gap: 10px;
+}
 
-           .tab-slider-thirdO h2.slider-title {
-                font-size: 24px;
-                line-height: 28px;
-            }
+.tab-slider-thirdO h2.slider-title {
+font-size: 24px;
+line-height: 28px;
+}
 
-           .tab-slider-thirdO .title-group p {
-                font-size: 17px;
-            }
+.tab-slider-thirdO .title-group p {
+font-size: 17px;
+}
 
-           .tab-slider-thirdO .inner-content p {
-                font-size: 15px;
-                line-height: 20px;
-            }
+.tab-slider-thirdO .inner-content p {
+font-size: 15px;
+line-height: 20px;
+}
 
-           .tab-slider-thirdO .content-btn {
-                font-size: 14px;
-                font-weight: 600;
-            }
-        }
+.tab-slider-thirdO .content-btn {
+font-size: 14px;
+font-weight: 600;
+}
+}
 
-        @media (max-width: 480px) {
-           .tab-slider-thirdO .tab-button {
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-        }
+@media (max-width: 480px) {
+.tab-slider-thirdO .tab-button {
+padding: 8px 12px;
+font-size: 14px;
+}
+}
 
-        @media (max-width: 350px) {
-           .tab-slider-thirdO h2.slider-title {
-                font-size: 20px;
-                line-height: 24px;
-            }
-        }
+@media (max-width: 350px) {
+.tab-slider-thirdO h2.slider-title {
+font-size: 20px;
+line-height: 24px;
+}
+}
 
-   .tab-slider-thirdO .tab-panel {
-      display: none;
-    }
+.tab-slider-thirdO .tab-panel {
+display: none;
+}
 
-   .tab-slider-thirdO .tab-panel.active {
-      display: block;
-    }
+.tab-slider-thirdO .tab-panel.active {
+display: block;
+}
 
-   .tab-slider-thirdO .owl-prev,
-     .tab-slider-thirdO .owl-next {
-      font-size: 20px;
-      background: #ddd;
-      padding: 7px 10px 10px 10px;
-      margin: 5px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+.tab-slider-thirdO .owl-prev,
+.tab-slider-thirdO .owl-next {
+font-size: 20px;
+background: #ddd;
+padding: 7px 10px 10px 10px;
+margin: 5px;
+border-radius: 50%;
+cursor: pointer;
+}
 
-   .tab-slider-thirdO .owl-nav {
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    </style>
-    
-  
-    <!-- <script>
-        // Tab switching functionality
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabPanels = document.querySelectorAll('.tab-panel');
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetTab = button.dataset.tab;
-                // Remove active class from all buttons and panels
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabPanels.forEach(panel => panel.classList.remove('active'));
-                // Add active class to clicked button and corresponding panel
-                button.classList.add('active');
-                document.querySelector(`[data-panel="${targetTab}"]`).classList.add('active');
-                // Reset carousel for new tab
-                resetCarousel(targetTab);
-            });
-        });
-    </script> -->
-    
+.tab-slider-thirdO .owl-nav {
+text-align: center;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+</style>
+
+
+<!-- <script>
+// Tab switching functionality
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabPanels = document.querySelectorAll('.tab-panel');
+tabButtons.forEach(button => {
+button.addEventListener('click', () => {
+const targetTab = button.dataset.tab;
+// Remove active class from all buttons and panels
+tabButtons.forEach(btn => btn.classList.remove('active'));
+tabPanels.forEach(panel => panel.classList.remove('active'));
+// Add active class to clicked button and corresponding panel
+button.classList.add('active');
+document.querySelector(`[data-panel="${targetTab}"]`).classList.add('active');
+// Reset carousel for new tab
+resetCarousel(targetTab);
+});
+});
+</script> -->
+
 
 {% schema %}
-    {
-  "name": "Tab slider thirdO",
-  "settings": [
-  ],
-  "presets": [
-    {
-      "name": "Tab slider thirdO"
-    }
-  ]
+{
+"name": "Tab slider thirdO",
+"settings": [
+],
+"presets": [
+{
+"name": "Tab slider thirdO"
+}
+]
 }
 {% endschema %}
