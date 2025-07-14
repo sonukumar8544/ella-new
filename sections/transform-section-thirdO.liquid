@@ -3,17 +3,17 @@
   {% for transform_value in transform_section1 %}
 <section class="transformation-section" section{{ block.id }}>
   <div class="container">
-    {% if transform_value.title1 != blank or transform_value.descriptions1 %}
-    <h2 class="section-title">{{ transform_value.title1 }}</h2>
+    {% if transform_value.count_title != blank or transform_value.count_descriptions1 %}
+    <h2 class="section-title">{{ transform_value.count_title }}</h2>
     <p class="section-subtitle">
-    {{ transform_value.descriptions1 }}  
+    {{ transform_value.count_descriptions1 }}  
     </p>
     {% endif %}
     
     <div class="results-grid">
-      {% if transform_value.count_title != blank or transform_value.description1 != blank %}
+      {% if transform_value.count1 != blank or transform_value.description1 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.count_title }}</h3>
+        <h3 class="percentage">{{ transform_value.count1 }}</h3>
         <p class="result-text">{{ transform_value.description1 }}</p>
       </div>
       {% endif %}
