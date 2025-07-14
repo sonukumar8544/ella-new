@@ -960,6 +960,7 @@
                                                         use_variant: true,
                                                         price_class: 'price--medium'
                                                     -%}
+                                              {% render 'badge_third0', product_card_product: product, block: block %}
                                                 </div>
                                                 {%- if product.quantity_price_breaks_configured? -%}
                                                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
