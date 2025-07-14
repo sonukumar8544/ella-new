@@ -1,4 +1,4 @@
-.dynamic-Product-page-3\.O-template .vertical.product-details.product-default.cstm_product{
+/* .dynamic-Product-page-3\.O-template .vertical.product-details.product-default.cstm_product{
   
 }
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
@@ -106,18 +106,12 @@
   font-size: 20px;
   }
 
-/* .dynamic-Product-page-3\.O-template #custom_proce_manage span {
-    font-family: Nunito;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 26.4px;
-} */
+
 .dynamic-Product-page-3\.O-template .installment.caption-large {
     margin-bottom: 22px;
 }
 
-/* price */
+
 .dynamic-Product-page-3\.O-template .productView-price{
   display: flex;
     align-items: center;
@@ -125,7 +119,6 @@
   gap:25px;
 }
 
-/* video code */
 
 
 @media(max-width:1025px){
@@ -245,4 +238,4 @@ line-height: normal;
         margin-right: 20px;
     }
 }
- 
+  */
