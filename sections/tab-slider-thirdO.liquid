@@ -21,41 +21,26 @@
     <div class="custom-container">
         <div class="content">
             <div class="tabs-sidebar">
-                {% if tab_slider.tab_button1_title1 != blank %} 
-                <button class="tab-button active" data-tab="tab_img_slider_1">{{ tab_slider.tab_button1_title1 }}</button>
+                {% if tab_slider.tab_button1_name1 != blank %} 
+                <button class="tab-button active" data-tab="tab_img_slider_1">{{ tab_slider.tab_button1_name1 }}</button>
                 {% endif %}
-                {% if tab_slider.tab_button2_title2 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_2">{{ tab_slider.tab_button2_title2 }}</button>
+                {% if tab_slider.tab_button2_name2 != blank %} 
+                <button class="tab-button" data-tab="tab_img_slider_2">{{ tab_slider.tab_button2_name2 }}</button>
                 {% endif %}
-                {% if tab_slider.tab_button3_title3 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_3">{{ tab_slider.tab_button3_title3 }}</button>
+                {% if tab_slider.tab_button3_name3 != blank %} 
+                <button class="tab-button" data-tab="tab_img_slider_3">{{ tab_slider.tab_button3_name3 }}</button>
                 {% endif %}
-                {% if tab_slider.tab_button4_title4 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_4">{{ tab_slider.tab_button4_title4 }}</button>
+                {% if tab_slider.tab_button4_name4 != blank %} 
+                <button class="tab-button" data-tab="tab_img_slider_4">{{ tab_slider.tab_button4_name4 }}</button>
                 {% endif %}
-                {% if tab_slider.tab_button5_title5 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_5">{{ tab_slider.tab_button5_title5 }}</button>
+                {% if tab_slider.tab_button5_name5 != blank %} 
+                <button class="tab-button" data-tab="tab_img_slider_5">{{ tab_slider.tab_button5_name5 }}</button>
                 {% endif %}
-                {% if tab_slider.tab_button6_title6 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_6">{{ tab_slider.tab_button6_title6 }}</button>
-                {% endif %}
-                {% if tab_slider.tab_button7_title7 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_7">{{ tab_slider.tab_button7_title7 }}</button>
-                {% endif %}
-                {% if tab_slider.tab_button8_title8 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_8">{{ tab_slider.tab_button8_title8 }}</button>
-                {% endif %}
-                {% if tab_slider.tab_button9_title9 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_9">{{ tab_slider.tab_button9_title9 }}</button>
-                {% endif %}
-                {% if tab_slider.tab_button10_title10 != blank %} 
-                <button class="tab-button" data-tab="tab_img_slider_10">{{ tab_slider.tab_button10_title10 }}</button>
-                {% endif %}
-                
+               
                 </div>
           
             <div class="tab-content">
-              {% if tab_slider.button1_slide_image_1 != blank %}
+              {% if tab_slider.button1_slide_image1 != blank %}
                 <div class="tab-panel active" data-panel="tab_img_slider_1">
                    {% render 'tab_slider_button1', tab_slider: tab_slider %}
                 </div>
@@ -84,37 +69,7 @@
                 {% render 'tab_slider_button5', tab_slider: tab_slider %}
                 </div>
                 {% endif %}
-                
-                {% if tab_slider.button6_slide_image_6 != blank %}
-                <div class="tab-panel" data-panel="tab_img_slider_6">
-                {% render 'tab_slider_button6', tab_slider: tab_slider %}
-                </div>
-                {% endif %}
-                
-                {% if tab_slider.button7_slide_image_7 != blank %}
-                <div class="tab-panel" data-panel="tab_img_slider_7">
-                {% render 'tab_slider_button7', tab_slider: tab_slider %}
-                </div>
-                {% endif %}
-                
-                {% if tab_slider.button8_slide_image_8 != blank %}
-                <div class="tab-panel" data-panel="tab_img_slider_8">
-                {% render 'tab_slider_button8', tab_slider: tab_slider %}
-                </div>
-                {% endif %}
-                
-                {% if tab_slider.button9_slide_image_9 != blank %}
-                <div class="tab-panel" data-panel="tab_img_slider_9">
-                {% render 'tab_slider_button9', tab_slider: tab_slider %}
-                </div>
-                {% endif %}
-                
-                {% if tab_slider.button10_slide_image_10 != blank %}
-                <div class="tab-panel" data-panel="tab_img_slider_10">
-                {% render 'tab_slider_button10', tab_slider: tab_slider %}
-                </div>
-                {% endif %}
-
+              
             </div>
         </div>
     </div>
