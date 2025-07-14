@@ -1,6 +1,7 @@
 <!--Tab-slider-thirdO -->
 
 {% assign tab-slider-third1 = product.metafields.custom.product_3_0_tab_slider_details.value %}
+{{ tab-slider-third1 | json }}
 {% if tab-slider-third1 != blank %}
   {% for tab_slider in tab-slider-third1 %}
   <link rel="stylesheet"
