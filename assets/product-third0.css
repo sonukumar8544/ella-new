@@ -1,3 +1,16 @@
+.dynamic-Product-page-3\.O-template .productView-image-wrapper {
+    position: relative;
+}
+
+.dynamic-Product-page-3\.O-template .productView-image-wrapper::before {
+    border-radius: 1110px;
+    opacity: 1;
+    background-color: #086B92;
+    filter: blur(100px);
+    content: '';
+    position: absolute;
+    inset: 0;
+}
 .dynamic-Product-page-3\.O-template h1.productView-title {
     color: #086B92;
     font-family: Nunito;
