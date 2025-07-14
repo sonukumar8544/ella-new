@@ -105,7 +105,7 @@
 .dynamic-Product-page-3\.O-template .productView-price{
   display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
   gap:25px;
 }
 
