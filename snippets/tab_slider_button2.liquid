@@ -4,17 +4,17 @@
 {% if tab_slider.button2_slide_image2 != blank %}
 <div class="item">
     <div class="inner-items">
-          <img class="lazyload" data-src="{{ tab_slider.button1_slide_image1 }}" src="{{ tab_slider.button1_slide_image1 }}" title="" width="100%" height="100%" style="width:auto;"
+          <img class="lazyload" data-src="{{ tab_slider.button2_slide_image2 }}" src="{{ tab_slider.button2_slide_image2 }}" title="" width="100%" height="100%" style="width:auto;"
             alt="">
         <div class="content-secton">
             <div class="inner-content">
                 <div class="cstm_tab_slider title-group">
-                   {% if tab_slider.button1_tab_title1 != blank %} <h2 class="slider-title">{{ tab_slider.button1_tab_title1 }}</h2>{% endif %}
-                   {% if tab_slider.button1_tab_slide1_description != blank %} 
+                   {% if tab_slider.button2_tab_title2 != blank %} <h2 class="slider-title">{{ tab_slider.button2_tab_title2 }}</h2>{% endif %}
+                   {% if tab_slider.button2_tab_slide2_description != blank %} 
                   <p class="description_with_redirection">
-                   {{ tab_slider.button1_tab_slide1_description }}
-                  {% if tab_slider.button1_tab_slide1_description_link != blank %} 
-                    <a href="{{ tab_slider.button1_tab_slide1_description_link }}" class="redirection_link">Read More</a>
+                   {{ tab_slider.button2_tab_slide2_description }}
+                  {% if tab_slider.button2_tab_slide2_description_link != blank %} 
+                    <a href="{{ tab_slider.button2_tab_slide2_description_link }}" class="redirection_link">Read More</a>
                     {% endif %}
                  </p>
                   {% endif %}
