@@ -1,8 +1,11 @@
-<section class="transformation-section">
+{% assign transform_section1 = product.metafields.custom.product_3_0_banner_details.value %}
+{% if transform_section1 != blank %}
+  {% for transform_value in transform_section1 %}
+<section class="transformation-section" section{{ section.id }}>
   <div class="container">
-    <h2 class="section-title">Transformation Results</h2>
+    <h2 class="section-title">{{ transform_value.title }}</h2>
     <p class="section-subtitle">
-      Experience the merging of Earth’s most potent elements in one revolutionary formula. Cymbiotika’s Shilajit Liquid Complex isn’t just another supplement.
+    {{ transform_value.description }}  
     </p>
     
     <div class="results-grid">
@@ -84,7 +87,8 @@
 }
 
 </style>
-
+  {% endfor %}
+  {% endif %}
 
 {% schema %}
     {
