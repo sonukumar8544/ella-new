@@ -326,16 +326,19 @@
     },
     "hero_banner_upper_third_o_deQynJ": {
       "type": "hero-banner-upper-thirdO",
+      "disabled": true,
       "name": "Banner thirdO product",
       "settings": {}
     },
     "tab_slider_third_o_izMia9": {
       "type": "tab-slider-thirdO",
+      "disabled": true,
       "name": "Tab slider thirdO",
       "settings": {}
     },
     "bundle_page_informational_image_xdtCLG": {
       "type": "bundle-page-informational-image",
+      "disabled": true,
       "settings": {}
     },
     "landing_page_section_spotlight_block_dgCwPD": {
@@ -509,13 +512,14 @@
         "image_XUQTG7",
         "image_DFAFjk"
       ],
+      "disabled": true,
       "name": "t:sections.spotlight_block.presets.name",
       "settings": {
         "cstm_id": "featured_page_products",
         "container": "container",
         "padding_full_width": 0,
         "disable_padding_content": true,
-        "mg_minus_desktop": 0,
+        "mg_minus_desktop": 130,
         "block_layout": "slider",
         "spotlight_block_swipe_on_mobile": "slider",
         "column": "4",
