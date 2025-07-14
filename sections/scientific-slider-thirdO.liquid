@@ -169,7 +169,7 @@
 <script>
   $(document).ready(function(){
     $('.scientific-slider').slick({
-      dots: true,
+      dots: false,
       arrows: false,
       infinite: true,
       slidesToShow: 3,
@@ -184,7 +184,11 @@
         {
           breakpoint: 500,
           settings: {
-            slidesToShow: 1.2
+          slidesToShow: 1.2
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          infinite: true,
           }
         }
       ]
