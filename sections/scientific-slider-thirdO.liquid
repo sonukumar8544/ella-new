@@ -52,9 +52,9 @@
   </div>
 </section>
 <style>
-  #scientifically-backed_{{ section.id }} {
-    background: linear-gradient(180deg, #FFF 0%, #FEF8E8 100%);
-      padding: 50px 0px;
+ #scientifically-backed_{{ section.id }} {
+  background: linear-gradient(180deg, #FFF 0%, #FEF8E8 100%);
+  padding: 50px 0px;
   text-align: center;
 }
 
@@ -63,91 +63,94 @@
 }
 
 #scientifically-backed_{{ section.id }} .scientific-title {
-    letter-spacing: 0.68px;
-    text-transform: capitalize;
-    color: #086B92;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 48px;
+  letter-spacing: 0.68px;
+  text-transform: capitalize;
+  color: #086B92;
+  text-align: center;
+  font-family: Nunito;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px;
 }
 
 #scientifically-backed_{{ section.id }} .scientific-subtitle {
-    color: #333;
-    max-width: 700px;
-    margin: 0 auto;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.3;
-    letter-spacing: 0.32px;
-    text-align: center;
-    vertical-align: middle;
-      font-family: 'poppins';
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0.32px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Poppins';
 }
 
 .scientific-slider {
-    margin: 0 auto;
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-  span.scientific-icon svg {
-    height: 20px;
-  }
+
+span.scientific-icon svg {
+  height: 20px;
+}
 
 .scientific-card {
-    background-color: #f4f0eb;
-    border-radius: 12px;
-    padding: 30px 24px;
-    margin: 10px;
-    text-align: left;
-    position: relative;
-    flex: 0 0 400px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  background-color: #f4f0eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  margin: 10px;
+  text-align: left;
+  position: relative;
+  flex: 0 0 400px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .scientific-quote-text {
-    color: #3f3f3f;
-    margin: 15px 0;
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 1.2;
-    letter-spacing: -0.63px;
-    font-family: 'Poppins';
+  color: #3f3f3f;
+  margin: 15px 0;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.63px;
+  font-family: 'Poppins';
 }
 
 .scientific-verified {
-    color: #67646A;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16.2px;
-    letter-spacing: -0.126px;
+  color: #67646A;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.2px;
+  letter-spacing: -0.126px;
 }
 
 .scientific-icon {
   margin-right: 6px;
 }
+
 .scientific-quote-icon img {
-    width: 70px;
-    margin-left: 0;
+  width: 70px;
+  margin-left: 0;
 }
+
 .scientific-note {
-    display: block;
-    margin-top: 4px;
-    color: #413D45;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 14.4px;
-    letter-spacing: -0.108px;
+  display: block;
+  margin-top: 4px;
+  color: #413D45;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14.4px;
+  letter-spacing: -0.108px;
 }
 
 /* Slick Dots */
@@ -158,9 +161,10 @@
 .slick-dots li button:before {
   color: #00587A;
 }
-  @media(max-width: 1025px){
-  
-h2.scientific-title {
+
+/* Tablet */
+@media (max-width: 1025px) {
+  h2.scientific-title {
     margin-bottom: 20px;
     color: #374650;
     text-align: center;
@@ -172,14 +176,16 @@ h2.scientific-title {
     letter-spacing: 0.68px;
     text-transform: capitalize;
     margin-top: 0;
-}
-#scientifically-backed_{{ section.id }} .scientific-subtitle{
-  font-size: 16px;
-    line-height: 1.5;
-}
-  
   }
-@media(max-width: 768px){
+
+  #scientifically-backed_{{ section.id }} .scientific-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .scientific-title {
     letter-spacing: 0.68px;
     text-transform: capitalize;
@@ -190,7 +196,8 @@ h2.scientific-title {
     font-style: normal;
     font-weight: 600;
     line-height: 48px;
-}
+  }
+
   .scientific-quote-text {
     color: #3f3f3f;
     margin: 15px 0;
@@ -198,15 +205,18 @@ h2.scientific-title {
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: -0.63px;
-}
+  }
+
   .scientific-quote-icon img {
     width: 50px;
     margin-left: 0;
-}
-  .scientific-slider{
-        gap: 0rem;
   }
-  scientific-card {
+
+  .scientific-slider {
+    gap: 0rem;
+  }
+
+  .scientific-card {
     background-color: #f4f0eb;
     border-radius: 12px;
     padding: 20px 20px;
@@ -216,6 +226,7 @@ h2.scientific-title {
     flex: 0 0 335px;
   }
 }
+
 </style>
 
 
