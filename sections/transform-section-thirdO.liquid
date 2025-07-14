@@ -1,5 +1,4 @@
 {% assign transform_section1 = product.metafields.custom.product_3_0_transform_section_third.value %}
-{{ transform_section1 | json }}
 {% if transform_section1 != blank %}
   {% for transform_value in transform_section1 %}
 <section class="transformation-section" section{{ block.id }}>
