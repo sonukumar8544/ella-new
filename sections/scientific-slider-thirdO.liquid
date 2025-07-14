@@ -186,13 +186,22 @@ h2.scientific-title {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 769,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 2.2
         }
       },
       {
-        breakpoint: 500,
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2, // <-- missing comma fixed
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          infinite: true
+        }
+      },
+       breakpoint: 500,
         settings: {
           slidesToShow: 1.2, // <-- missing comma fixed
           slidesToScroll: 1,
