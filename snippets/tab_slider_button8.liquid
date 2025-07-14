@@ -1,0 +1,77 @@
+<div class="carousel-wrapper">
+  <div class="owl-carousel common-carousel">
+
+    {% if tab_slider.button8_slide_image_1 != blank %}
+      <div class="item">
+        <div class="inner-items">
+          <img class="lazyload" data-src="{{ tab_slider.button8_slide_image_1 }}" src="{{ tab_slider.button8_slide_image_1 }}" title="" width="100%" height="100%" style="width:auto;" alt="">
+          <div class="content-secton">
+            <div class="inner-content">
+              <div class="cstm_tab_slider title-group">
+                {% if tab_slider.button8_tab_title1 != blank %}<h2 class="slider-title">{{ tab_slider.button8_tab_title1 }}</h2>{% endif %}
+                {% if tab_slider.button8_tab_subtitle1 != blank %}<h4>{{ tab_slider.button8_tab_subtitle1 }}</h4>{% endif %}
+                {% if tab_slider.button8_tab_slide_description_1 != blank %}
+                  <p class="description_with_redirection">
+                    {{ tab_slider.button8_tab_slide_description_1 }}
+                    {% if tab_slider.button8_tab_slider_redirection_link != blank %}
+                      <a href="{{ tab_slider.button8_tab_slider_redirection_link }}" class="redirection_link">Read More</a>
+                    {% endif %}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if tab_slider.button8_slide_image_2 != blank %}
+      <div class="item">
+        <div class="inner-items">
+          <img class="lazyload" data-src="{{ tab_slider.button8_slide_image_2 }}" src="{{ tab_slider.button8_slide_image_2 }}" title="" width="100%" height="100%" style="width:auto;" alt="">
+          <div class="content-secton">
+            <div class="inner-content">
+              <div class="cstm_tab_slider title-group">
+                {% if tab_slider.button8_tab_title2 != blank %}<h2 class="slider-title">{{ tab_slider.button8_tab_title2 }}</h2>{% endif %}
+                {% if tab_slider.button8_tab_subtitle2 != blank %}<h4>{{ tab_slider.button8_tab_subtitle2 }}</h4>{% endif %}
+                {% if tab_slider.button8_tab_slide_description_2 != blank %}
+                  <p class="description_with_redirection">
+                    {{ tab_slider.button8_tab_slide_description_2 }}
+                    {% if tab_slider.button8_tab_slider_redirection_link2 != blank %}
+                      <a href="{{ tab_slider.button8_tab_slider_redirection_link2 }}" class="redirection_link">Read More</a>
+                    {% endif %}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if tab_slider.button8_slide_image_3 != blank %}
+      <div class="item">
+        <div class="inner-items">
+          <img class="lazyload" data-src="{{ tab_slider.button8_slide_image_3 }}" src="{{ tab_slider.button8_slide_image_3 }}" title="" width="100%" height="100%" style="width:auto;" alt="">
+          <div class="content-secton">
+            <div class="inner-content">
+              <div class="cstm_tab_slider title-group">
+                {% if tab_slider.button8_tab_title3 != blank %}<h2 class="slider-title">{{ tab_slider.button8_tab_title3 }}</h2>{% endif %}
+                {% if tab_slider.button8_tab_subtitle3 != blank %}<h4>{{ tab_slider.button8_tab_subtitle3 }}</h4>{% endif %}
+                {% if tab_slider.button8_tab_slide_description_3 != blank %}
+                  <p class="description_with_redirection">
+                    {{ tab_slider.button8_tab_slide_description_3 }}
+                    {% if tab_slider.button8_tab_slider_redirection_link3 != blank %}
+                      <a href="{{ tab_slider.button8_tab_slider_redirection_link3 }}" class="redirection_link">Read More</a>
+                    {% endif %}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
