@@ -3,7 +3,7 @@
 {% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
-<section class="hero-section" id="cstm--{{ block.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
+<section class="hero-section" id="cstm--{{ block.id }}" >
  {% comment %} <div class="position_set_group">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
