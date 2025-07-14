@@ -4,7 +4,7 @@
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
 <section class="hero-section" id="{{ block.id }}" style="background: url({{ product_banner.product_3_0_banner_bg }}) center/cover no-repeat;">
- <div class="position_set_group">
+ <!-- <div class="position_set_group">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
       <span class="subtitle">{{ product_banner.subtitle }}</span>
@@ -58,7 +58,7 @@
       <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img">
     {% endif %}
   </div>
- </div>
+ </div> -->
 </section>
   {% endfor %}
 {% endif %}
