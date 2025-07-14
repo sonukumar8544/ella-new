@@ -88,20 +88,29 @@
 }
 
 .scientific-slider {
-  margin: 0 auto;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
   span.scientific-icon svg {
     height: 20px;
   }
 
 .scientific-card {
-  background-color: #f4f0eb;
-  border-radius: 12px;
-  padding: 30px 24px;
-  margin: 10px;
-  text-align: left;
-  position: relative;
-  min-height: 250px;
+    background-color: #f4f0eb;
+    border-radius: 12px;
+    padding: 30px 24px;
+    margin: 10px;
+    text-align: left;
+    position: relative;
+    flex: 0 0 400px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .scientific-quote-text {
