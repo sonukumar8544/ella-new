@@ -1,6 +1,8 @@
 <!--Tab-slider-thirdO -->
 
-
+{% assign tab-slider-third1 = product.metafields.custom.product_3_0_transform_section_third.value %}
+{% if tab-slider-third1 != blank %}
+  {% for tab_slider in tab-slider-third1 %}
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet"
@@ -12,24 +14,24 @@
     
  <div class="tab-slider-thirdO">
     <div class="tab-slider-thirdO-header">
-      <h4 class="tab-slider-subtitle">{{  tab_slider_subtitle }}</h4>
-    <h2 class="tab-slider-title">{{tab_slider_title  }}</h2>
+      <h4 class="tab-slider-subtitle">{{  tab_slider.tab_slider_subtitle }}</h4>
+    <h2 class="tab-slider-title">{{tab_slider.tab_slider_title  }}</h2>
     
     </div>
    
     <div class="custom-container">
         <div class="content">
             <div class="tabs-sidebar">
-              <button class="tab-button active" data-tab="tab_img_slider_1">{{ tab_button_title1 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_2">{{ tab_button_title2 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_3">{{ tab_button_title3 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_4">{{ tab_button_title4 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_5">{{ tab_button_title5 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_6">{{ tab_button_title6 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_7">{{ tab_button_title7 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_8">{{ tab_button_title8 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_9">{{ tab_button_title9 }}</button>
-              <button class="tab-button" data-tab="tab_img_slider_10">{{ tab_button_title10 }}</button>
+              <button class="tab-button active" data-tab="tab_img_slider_1">{{ tab_slider.tab_button_title1 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_2">{{ tab_slider.tab_button_title2 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_3">{{ tab_slider.tab_button_title3 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_4">{{ tab_slider.tab_button_title4 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_5">{{ tab_slider.tab_button_title5 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_6">{{ tab_slider.tab_button_title6 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_7">{{ tab_slider.tab_button_title7 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_8">{{ tab_slider.tab_button_title8 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_9">{{ tab_slider.tab_button_title9 }}</button>
+              <button class="tab-button" data-tab="tab_img_slider_10">{{ tab_slider.tab_button_title10 }}</button>
             </div>
           
             <div class="tab-content">
@@ -37,6 +39,8 @@
                 <div class="tab-panel active" data-panel="tab_img_slider_1">
                     <div class="carousel-wrapper">
                         <div class="owl-carousel common-carousel">
+                         
+                          {% if tab_slider.button1_slide_image_1 != blank %}
                             <div class="item">
                                 <div class="inner-items">
                                       <img class="lazyload" data-src="{{ tab_slider.button1_slide_image_1 }}" src="{{ tab_slider.button1_slide_image_1 }}" title="" width="100%" height="100%" style="width:auto;"
@@ -44,13 +48,13 @@
                                     <div class="content-secton">
                                         <div class="inner-content">
                                             <div class="cstm_tab_slider title-group">
-                                               {% if button1_tab_title1 != blank %} <h2 class="slider-title">{{ button1_tab_title1 }}</h2>{% endif %}
-                                               {% if button1_tab_subtitle1 != blank %} <h4>{{ button1_tab_subtitle1 }}</h4>{% endif %}
-                                           {% if button1_tab_slide_description_1 != blank %} 
+                                               {% if tab_slider.button1_tab_title1 != blank %} <h2 class="slider-title">{{ tab_slider.button1_tab_title1 }}</h2>{% endif %}
+                                               {% if tab_slider.button1_tab_subtitle1 != blank %} <h4>{{ tab_slider.button1_tab_subtitle1 }}</h4>{% endif %}
+                                           {% if tab_slider.button1_tab_slide_description_1 != blank %} 
                                               <p class="description_with_redirection">
-                                               {{ button1_tab_slide_description_1 }}
-                                              {% if button1_tab_slider_redirection_link != blank %} 
-                                                <a href="{{ button1_tab_slider_redirection_link }}" class="redirection_link">Read More</a>
+                                               {{ tab_slider.button1_tab_slide_description_1 }}
+                                              {% if tab_slider.button1_tab_slider_redirection_link != blank %} 
+                                                <a href="{{ tab_slider.button1_tab_slider_redirection_link }}" class="redirection_link">Read More</a>
                                                 {% endif %}
                                              </p>
                                               {% endif %}
@@ -60,42 +64,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="inner-items second-itmes">
-                                    <img src="https://i.shgcdn.com/39662e1f-33ed-415b-b08e-1dad950c53ab/-/format/auto/-/quality/normal/-/resize/1200x/"
-                                        alt="">
-                                    <div class="content-secton">
-                                        <div class="inner-content">
-                                            <div class="title-group">
-                                                <h2 class="slider-title">Why You Are Feeling That</h2>
-                                                <p>"This is because of <b>declining CoQ10 & mitochondrial dysfunction"</b>
-                                                </p>
-                                            </div>
-                                            <p> As we age, our body's natural CoQ10 levels decline, slowing down
-                                                cellular energy production—aka your body's power source. This leads to
-                                                sluggish metabolism, low stamina, and constant exhaustion.</p>
-                                            <a href="https://wellnessextract.com/products/bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg" class="solution-btn button">What’s the solution >></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          {% endif %}
+                          {% if tab_slider.button1_slide_image_2 != blank %}
                             <div class="item">
                                 <div class="inner-items">
-                                    <img src="https://i.shgcdn.com/7e5cc6ed-9531-4f98-bfbf-81895d5d896a/-/resize/1200x/"
+                                      <img class="lazyload" data-src="{{ tab_slider.button1_slide_image_2 }}" src="{{ tab_slider.button1_slide_image_2 }}" title="" width="100%" height="100%" style="width:auto;"
                                         alt="">
                                     <div class="content-secton">
                                         <div class="inner-content">
-                                            <div class="title-group">
-                                                <h2 class="slider-title">The Solution!</h2>
-                                                <p class="sub-text">Ubiquinol (Active CoQ10) & Geranylgeraniol (GG)</p>
+                                            <div class="cstm_tab_slider title-group">
+                                               {% if tab_slider.button1_tab_title2 != blank %} <h2 class="slider-title">{{ tab_slider.button1_tab_title2 }}</h2>{% endif %}
+                                               {% if tab_slider.button1_tab_subtitle2 != blank %} <h4>{{ tab_slider.button1_tab_subtitle2 }}</h4>{% endif %}
+                                           {% if tab_slider.button1_tab_slide_description_2 != blank %} 
+                                              <p class="description_with_redirection">
+                                               {{ tab_slider.button1_tab_slide_description_2 }}
+                                              {% if tab_slider.button1_tab_slider_redirection_link != blank %} 
+                                                <a href="{{ tab_slider.button1_tab_slider_redirection_link }}" class="redirection_link">Read More</a>
+                                                {% endif %}
+                                             </p>
+                                              {% endif %}
                                             </div>
-                                            <p>Clinically proven to boost mitochondrial function by 40%, reigniting
-                                                energy at the cellular level.</p>
-                                            <a href="https://wellnessextract.com/products/bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg" class="solution-btn button">Shop Now</a>
+                                           
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                          {% endif %}
+                
+                          
                         </div>
                     </div>
                 </div>
@@ -104,6 +100,8 @@
         </div>
     </div>
  </div>
+ {% endfor %}
+  {% endif %}
    <style>
         .custom-container {
             overflow: hidden;
