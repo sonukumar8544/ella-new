@@ -6,9 +6,9 @@
 <section class="tocotrienol-section" id="cstm_{{ section.id }}">
   <div class="tocotrienol-container container">
     {{ hero_content_block.title }}
-    {% if hero_content_block.hero_content_block_title != blank or hero_content_block.hero_content_block_description != blank %}
+    {% if hero_content_block.title != blank or hero_content_block.hero_content_block_description != blank %}
     <div class="tocotrienol-left">
-      <h2>{{ hero_content_block.hero_content_block_title }}</h2>
+      <h2>{{ hero_content_block.title }}</h2>
       <p>
         {{ hero_content_block.hero_content_block_description }}
       </p>
