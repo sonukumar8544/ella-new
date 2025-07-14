@@ -265,7 +265,10 @@
     assign customization_option_1 = settings.customization_option_1
     assign customization_option_2 = settings.customization_option_2
 -%}
-
+<link
+  rel="stylesheet"
+  href="{{ 'product-third0.css' | asset_url }}"
+>
 {%- if first_3d_model -%}
     <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'component-product-model.css' | asset_url }}" media="print" onload="this.media='all'">
