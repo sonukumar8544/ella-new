@@ -1,9 +1,7 @@
 <!--Tab-slider-thirdO -->
 
 {% assign tab-slider-third1 = product.metafields.custom.product_3_0_tab_slider_details.value %}
-{{ tab-slider-third1 | json }}
 {% if tab-slider-third1 != blank %}
-  {% for tab_slider in tab-slider-third1 %}
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <link rel="stylesheet"
@@ -11,10 +9,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+{% for tab_slider in tab-slider-third1  %}
 <div class="tab-slider-thirdO">
 {% if tab_slider.tab_slider_main_title != blank %}
 <div class="tab-slider-thirdO-header">
-<h2 class="tab-slider-title">{{ tab_slider.tab_slider_main_title }}</h2>
+<h2 class="tab-slider-title">{{ tab_slider.tab_slider_main_title.value }}</h2>
 </div>
 {% endif %}
 <div class="container">
