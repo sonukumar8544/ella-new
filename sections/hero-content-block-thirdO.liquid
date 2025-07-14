@@ -1,10 +1,11 @@
 <!-- hero-content-block-thirdO -->
 {% assign hero_content = product.metafields.custom.product_3_0_hero_content_block.value %}
-{{ hero_content | json }}
+<!-- {{ hero_content | json }} -->
 {% if hero_content != blank %}
   {% for hero_content_block in hero_content %}
 <section class="tocotrienol-section" id="cstm_{{ section.id }}">
   <div class="tocotrienol-container container">
+    {{ hero_content_block.title }}
     {% if hero_content_block.hero_content_block_title != blank or hero_content_block.hero_content_block_description != blank %}
     <div class="tocotrienol-left">
       <h2>{{ hero_content_block.hero_content_block_title }}</h2>
