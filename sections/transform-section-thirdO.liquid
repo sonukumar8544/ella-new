@@ -11,33 +11,33 @@
     {% endif %}
     
     <div class="results-grid">
-      {% if transform_value.number1 != blank or transform_value.description1 != blank %}
+      {% if transform_value.count_title != blank or transform_value.description1 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.number1 }}</h3>
+        <h3 class="percentage">{{ transform_value.count_title }}</h3>
         <p class="result-text">{{ transform_value.description1 }}</p>
       </div>
       {% endif %}
-      {% if transform_value.number2 != blank or transform_value.description2 != blank %}
+      {% if transform_value.count2 != blank or transform_value.description2 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.number2 }}</h3>
+        <h3 class="percentage">{{ transform_value.count2 }}</h3>
         <p class="result-text">{{ transform_value.description2 }}</p>
       </div>
       {% endif %}
-    {% if transform_value.number3 != blank or transform_value.description3 != blank %}
+    {% if transform_value.count3 != blank or transform_value.description3 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.number3 }}</h3>
+        <h3 class="percentage">{{ transform_value.count3 }}</h3>
         <p class="result-text">{{ transform_value.description3 }}</p>
       </div>
       {% endif %}
-    {% if transform_value.number4 != blank or transform_value.description4 != blank %}
+    {% if transform_value.count4 != blank or transform_value.description4 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.number4 }}</h3>
+        <h3 class="percentage">{{ transform_value.count4 }}</h3>
         <p class="result-text">{{ transform_value.description4 }}</p>
       </div>
       {% endif %}
-    {% if transform_value.number5 != blank or transform_value.description5 != blank %}
+    {% if transform_value.count5 != blank or transform_value.description5 != blank %}
       <div class="result-box">
-        <h3 class="percentage">{{ transform_value.number5 }}</h3>
+        <h3 class="percentage">{{ transform_value.count5 }}</h3>
         <p class="result-text">{{ transform_value.description5 }}</p>
       </div>
       {% endif %}
