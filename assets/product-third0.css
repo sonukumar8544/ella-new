@@ -101,7 +101,13 @@
     margin-bottom: 22px;
 }
 
-
+/* price */
+.dynamic-Product-page-3\.O-template .productView-price{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  gap:20px;
+}
 
 
 @media (min-width: 550px) {
@@ -154,6 +160,7 @@
 }
 
 }
+
 
 @media (min-width: 1024px) {
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom {
