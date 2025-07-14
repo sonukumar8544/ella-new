@@ -454,11 +454,10 @@
   class="{{tab_layout_mobile}} product-details product-default{% if has_sidebar %} has-sidebar{% endif %} cstm_{{ template.name }}"
   data-section-id="{{ section.id }}"
   data-section-type="product"
- 
+  id="ProductSection-{{ section.id }}"
   data-has-combo="{{ has_product_combo }}"
   data-image-opo
 >
-   <!-- id="ProductSection-{{ section.id }}" -->
   {% if has_breadcrumb %}
     {%- liquid
       if breadcrumb_gradient != 'rgba(0,0,0,0)' or breadcrumb_bg != 'rgba(0,0,0,0)' or breadcrumb_gradient_mb != 'rgba(0,0,0,0)' or breadcrumb_bg_mb != 'rgba(0,0,0,0)'
@@ -475,8 +474,7 @@
         --spacing-top-mb: {{ breadcrumb_mg_top_mobile | append: 'px' }};
         --spacing-bottom-mb: {{ breadcrumb_mg_bottom_mobile | append: 'px' }};
         --breadcrumb-bg: {%- if breadcrumb_gradient != '' -%}{{ breadcrumb_gradient }}{%- else -%}{{ breadcrumb_bg }}{%- endif -%};
-        --breadcrumb-mb-bg: {% if breadcrumb_gradient_mb != blank and breadcrumb_gradient_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_gradient_mb }}
-          {% elsif breadcrumb_bg_mb != blank and breadcrumb_bg_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_bg_mb }}{% else %}#fff{% endif %};
+        --breadcrumb-mb-bg: {% if breadcrumb_gradient_mb != blank and breadcrumb_gradient_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_gradient_mb }}{% elsif breadcrumb_bg_mb != blank and breadcrumb_bg_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_bg_mb }}{% else %}#fff{% endif %};
       "
     >
       {% if breadcrumb_has_bg %}
@@ -492,9 +490,8 @@
   {% endif %}
   <div
     class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %} productView-container"
-   
+    id="cstm_{{ template.name }}"
   >
-     <!-- id="cstm_{{ template.name }}" -->
     <div
       class="productView halo-productView layout-{{ thumnail_layout }} positionMainImage--{{ main_image_position }}{% if product.media.size == 0 %} productView-no-media{% endif %}{% if show_sticky_info %} productView-sticky{% endif %}{% if main_image_enable_parallax_mb %} productView-parallax-mobile{%endif %}{% if has_sidebar %} has-left-sidebar sidebar--layout_{{ sidebar_type }}{% endif %}"
       data-product-handle="{{ product.handle }}"
