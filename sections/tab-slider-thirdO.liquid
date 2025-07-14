@@ -10,6 +10,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 {% for tab_slider in tab-slider-third1  %}
+  {{ tab_slider.tab_slider_main_title }}
 <div class="tab-slider-thirdO">
 {% if tab_slider.tab_slider_main_title != blank %}
 <div class="tab-slider-thirdO-header">
