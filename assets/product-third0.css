@@ -355,10 +355,11 @@ font-size: 30px;
   padding-top: 8px;
   color: #29353C;
   font-family: Lato;
-  font-size: 16px;
-  font-style: italic;
+   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.4;
+  letter-spacing: 1px;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
   margin: 10px auto 20px;    gap: 12px;
