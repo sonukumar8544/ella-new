@@ -1,342 +1,341 @@
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
-    position: relative;
+position: relative;
 }
 
 .dynamic-Product-page-3\.O-template .productView-image-wrapper::before {
-    border-radius: 1110px;
-    opacity: 1;
-    background-color: #086b9275;
-    filter: blur(100px);
-    content: '';
-    position: absolute;
-    inset: 0;
+border-radius: 1110px;
+opacity: 1;
+background-color: #086b9275;
+filter: blur(100px);
+content: '';
+position: absolute;
+inset: 0;
 }
 .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-  background: #ccc;
+background: #ccc;
 }
 .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
-  color: #ffffff !important;
-    fill: #ffffff !important;
-    fill-opacity: 0.3;
-    stroke: #dcdcdc!important;
+color: #ffffff !important;
+fill: #ffffff !important;
+fill-opacity: 0.3;
+stroke: #dcdcdc!important;
 }
 
 .dynamic-Product-page-3\.O-template h1.productView-title {
-    color: #086B92;
-    font-family: Nunito;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -1px;
+color: #086B92;
+font-family: Nunito;
+font-size: 36px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -1px;
 }
 
 .dynamic-Product-page-3\.O-template p.product-page-one-liner {
-    margin: 0px;
-    padding-bottom: 10px;
-    padding-top: 8px;
-    color: #29353C;
-    font-family: Lato;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
+margin: 0px;
+padding-bottom: 10px;
+padding-top: 8px;
+color: #29353C;
+font-family: Lato;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
 }
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits {
-    color: #29353C;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
+color: #29353C;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
 }
 .dynamic-Product-page-3\.O-template .productView-image-wrapper{
-      box-shadow: none;
+box-shadow: none;
 }
 
 .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
-      border-radius: 80px !important; 
+border-radius: 80px !important; 
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count {
-    display: block!important;
-    color: #000;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    border-bottom: 2px solid #000;
+display: block!important;
+color: #000;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
+border-bottom: 2px solid #000;
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
-     display: none !important;
+display: none !important;
 }
 .dynamic-Product-page-3\.O-template .okeReviews.oke-sr div:first-child{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 10px;
 }
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-rating{
-  display: none !important;
+display: none !important;
 }
 .dynamic-Product-page-3\.O-template  .okeReviews[data-oke-container] *, 
- .dynamic-Product-page-3\.O-template .okeReviews[data-oke-container] :after, 
+.dynamic-Product-page-3\.O-template .okeReviews[data-oke-container] :after, 
 .dynamic-Product-page-3\.O-template  .okeReviews[data-oke-container] :before,
 .dynamic-Product-page-3\.O-template  div.okeReviews *,
 .dynamic-Product-page-3\.O-template  div.okeReviews :after,
 .dynamic-Product-page-3\.O-template  div.okeReviews :before{
-  margin-bottom: 0px !important;
-  height: 21px !important;
+margin-bottom: 0px !important;
+height: 21px !important;
 }
 .dynamic-Product-page-3\.O-template span.oke-sr-count-number::before {
-    content: "(";
+content: "(";
 }
 .dynamic-Product-page-3\.O-template span.oke-sr-count-number::after {
-    content: ")";
+content: ")";
 }
 
 
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px auto;
-  }
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 28%;
-  font-size: 16px;
-  color: #2c2c2c;
-  }
-  
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item .content_benifits_img {
-  font-size: 20px;
-  }
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+margin: 20px auto;
+}
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
+display: flex;
+align-items: center;
+gap: 8px;
+width: 28%;
+font-size: 16px;
+color: #2c2c2c;
+}
+
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item .content_benifits_img {
+font-size: 20px;
+}
 
 
 .dynamic-Product-page-3\.O-template .installment.caption-large {
-    margin-bottom: 22px;
+margin-bottom: 22px;
 }
 
 
 .dynamic-Product-page-3\.O-template .productView-price{
-  display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  gap:25px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap:25px;
 }
 /* together section */
 .dynamic-Product-page-3\.O-template .bundlePdItem-container {
-    padding: 0!important;
-    position: relative;
-    border-radius: 6px!important;
-    margin: 2px;
-    border: 1px solid #FFF;
-    background: #FFF;
-    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.10);
+padding: 0!important;
+position: relative;
+border-radius: 6px!important;
+margin: 2px;
+border: 1px solid #FFF;
+background: #FFF;
+box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.10);
 }
 .dynamic-Product-page-3\.O-template .bundlePdItem-container:hover{
-      border: 1px solid #086b9233;
-    background: #086b9200;
+border: 1px solid #086b9233;
+background: #086b9200;
 }
 .dynamic-Product-page-3\.O-template .bundle-product-content {
-    padding: 15px 10px;
+padding: 15px 10px;
+}
+@media (min-width: 1200px) {
+.dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
+margin-right: 20px;
 }
 
+}
+@media (min-width: 1024px) {
+.dynamic-Product-page-3\.O-template .product-descriptios-bottom {
+max-width: 1320px!important;
+padding-left: 15px;
+padding-right: 15px;
+margin: auto;
+padding: 1px 20px 35px;
+}
+.dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text {
+width: 100%;
+background: none;
+color: #374650;
+text-align: center;
+font-family: Nunito;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 33.6px;
+letter-spacing: 0.68px;
+text-transform: capitalize;
+}
+.dynamic-Product-page-3\.O-template .bundle-product-media img{
+border-radius: 2%;
+}
+.dynamic-Product-page-3\.O-template .bundle-product-item{
+padding-right: 10px;
+}
+.dynamic-Product-page-3\.O-template .bundle-product-totalPrice .text {
+display: block;
+margin: 0 0 12px;
+color: #006A91;
+text-align: center;
+font-family: Lato;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px;
+}
+.dynamic-Product-page-3\.O-template .bundle-product-totalPrice .price,
+.dynamic-Product-page-3\.O-template .bundle-product-totalPrice .price span {
+display: block;
+letter-spacing: 0;
+margin-bottom: 15px;
+color: #006A91;
+text-align: center;
+font-family: Lato;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 22px;
+}
+.dynamic-Product-page-3\.O-template #halo-product-bundle .bundle-product-text {
+color: #36454F;
+text-align: center;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0.32px;
+}
+}
+@media (min-width: 800px){
+.dynamic-Product-page-3\.O-template .halo-productView-left{
+position: sticky;
+top: 13%;
+}
+
+}
 @media (min-width: 551px) {
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title:after{
- height: 0;
-    background: none; 
+height: 0;
+background: none; 
 }
 .dynamic-Product-page-3\.O-template .productView-tab .tabs{
-         padding-bottom: 15px;
-    border-bottom: 0px;
-  margin: 20px 0 20px;
-      display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+padding-bottom: 15px;
+border-bottom: 0px;
+margin: 20px 0 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
 .dynamic-Product-page-3\.O-template .tabs-contents.halo-text-format{
-     padding: 20px 40px;
-    border-radius: 30px;
-   border: 1px solid #F0F0F0;
+padding: 20px 40px;
+border-radius: 30px;
+border: 1px solid #F0F0F0;
 }
 .dynamic-Product-page-3\.O-template .productView-tab a.tab-title.is-open {
-    padding: 9px 23px !important;
-    border-radius: 16px;
-    border: 1px solid #086b92c7!important;;
-    background: #FFF;
-    color: #086B92 !important;
-    font-style: normal;
-    line-height: 26px;
+padding: 9px 23px !important;
+border-radius: 16px;
+border: 1px solid #086b92c7!important;;
+background: #FFF;
+color: #086B92 !important;
+font-style: normal;
+line-height: 26px;
 }
 .dynamic-Product-page-3\.O-template .productView-tab a.tab-title {
-    padding: 9px 23px !important;
-    border-radius: 16px;
-    border: 1px solid #F0F0F0!important;
-    background: #FFF;
-    color: #29353C !important;
-    font-style: normal;
-    line-height: 26px;
+padding: 9px 23px !important;
+border-radius: 16px;
+border: 1px solid #F0F0F0!important;
+background: #FFF;
+color: #29353C !important;
+font-style: normal;
+line-height: 26px;
 }
 
 .dynamic-Product-page-3\.O-template .tabs-contents .toggle-content.is-active, 
 .dynamic-Product-page-3\.O-template .tabs-contents-horizontal .toggle-content, 
 .dynamic-Product-page-3\.O-template .tabs-contents-popup .toggle-content{
-  display: block;
-    color: #3C3C3C;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: 0.32px;
+display: block;
+color: #3C3C3C;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+line-height: 1.3;
+letter-spacing: 0.32px;
 }
-    .dynamic-Product-page-3\.O-template .video-section .title{
-    margin-bottom: 40px;
-    color: #374650;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 1.6px;
-    margin-top: 0;
-    }
-    .dynamic-Product-page-3\.O-template p.product-page-one-liner{
-    color: #29353C;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: normal;
-    }
- 
+.dynamic-Product-page-3\.O-template .video-section .title{
+margin-bottom: 40px;
+color: #374650;
+text-align: center;
+font-family: Nunito;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 1.6px;
+margin-top: 0;
+}
+.dynamic-Product-page-3\.O-template p.product-page-one-liner{
+color: #29353C;
+font-family: Lato;
+font-size: 16px;
+font-style: italic;
+font-weight: 400;
+line-height: normal;
+}
+
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
-  margin: 20px 1px;
-    justify-content: space-between;
+margin: 20px 1px;
+justify-content: space-between;
 }
-  .sonu9.productView-product.clearfix {
-    padding: 0px 10px;
+.sonu9.productView-product.clearfix {
+padding: 0px 10px;
 }
-  .discount-percent-thirdO{
-        padding: 2px 7px;
-  }
-  
-  .promo-banner__hsa-label,
-  .promo-banner__note{
-    font-size: 17px;
-  }
-  #scientifically-backed_template--24801254768936__scientific_slider_third_o_AYBm97 .scientific-title{
-    font-size: 30px;
-  }
+.discount-percent-thirdO{
+padding: 2px 7px;
 }
-@media (min-width: 1024px) {
-.dynamic-Product-page-3\.O-template .product-descriptios-bottom {
-    max-width: 1320px!important;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: auto;
-    padding: 1px 20px 35px;
+
+.promo-banner__hsa-label,
+.promo-banner__note{
+font-size: 17px;
 }
- .dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text {
-    width: 100%;
-    background: none;
-    color: #374650;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 33.6px;
-    letter-spacing: 0.68px;
-    text-transform: capitalize;
-  }
-  .dynamic-Product-page-3\.O-template .bundle-product-media img{
-        border-radius: 2%;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-item{
-            padding-right: 10px;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-totalPrice .text {
-    display: block;
-    margin: 0 0 12px;
-    color: #006A91;
-    text-align: center;
-    font-family: Lato;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-}
- .dynamic-Product-page-3\.O-template .bundle-product-totalPrice .price,
- .dynamic-Product-page-3\.O-template .bundle-product-totalPrice .price span {
-    display: block;
-    letter-spacing: 0;
-    margin-bottom: 15px;
-    color: #006A91;
-    text-align: center;
-    font-family: Lato;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-}
-.dynamic-Product-page-3\.O-template #halo-product-bundle .bundle-product-text {
-    color: #36454F;
-    text-align: center;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0.32px;
+#scientifically-backed_template--24801254768936__scientific_slider_third_o_AYBm97 .scientific-title{
+font-size: 30px;
 }
 }
-@media (min-width: 800px){
-  .dynamic-Product-page-3\.O-template .halo-productView-left{
-    position: sticky;
-        top: 13%;
-  }
- 
-}
-@media (min-width: 1200px) {
-    .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
-        margin-right: 20px;
-    }
- 
-}
+
 @media(max-width:550px ){
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-    width: 46%;
-  }
-  .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
-    padding: 10px;
-  }
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
+width: 46%;
+}
+.dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
+padding: 10px;
+}
 }
 @media (max-width: 767px){
 .dynamic-Product-page-3\.O-template .halo-block-header .title{
-        text-align: center;
-        font-family: Lato;
-        font-size: 28px !important;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 49.559px;
-        margin-bottom: 10px;
-        margin-top: 0;
+text-align: center;
+font-family: Lato;
+font-size: 28px !important;
+font-style: normal;
+font-weight: 700;
+line-height: 49.559px;
+margin-bottom: 10px;
+margin-top: 0;
 }
 }
 @media(max-width:1025px){
-  .dynamic-Product-page-3\.O-template h1.productView-title{
-    font-size: 30px;
-    line-height: 1.2;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
-    right: 0px !important;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
-        left: auto;
-        right: -5%!important;;
-    }
+.dynamic-Product-page-3\.O-template h1.productView-title{
+font-size: 30px;
+line-height: 1.2;
 }
- 
+.dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
+right: 0px !important;
+}
+.dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
+left: auto;
+right: -5%!important;;
+}
+}
