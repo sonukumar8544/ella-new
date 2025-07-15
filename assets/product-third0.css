@@ -104,7 +104,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 30%;
+  width: 28%;
   font-size: 16px;
   color: #2c2c2c;
   }
@@ -228,9 +228,7 @@
   .discount-percent-thirdO{
         padding: 2px 7px;
   }
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-    width: 46%;
-  }
+  
   .promo-banner__hsa-label,
   .promo-banner__note{
     font-size: 17px;
@@ -239,8 +237,11 @@
     font-size: 30px;
   }
 }
-
-
+@media(max-width:551px ){
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
+    width: 46%;
+  }
+}
 @media (min-width: 1024px) {
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom {
     max-width: 1320px!important;
