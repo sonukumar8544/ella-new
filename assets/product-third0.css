@@ -142,6 +142,13 @@ background: #086b9200;
 .dynamic-Product-page-3\.O-template .bundle-product-content {
 padding: 15px 10px;
 }
+
+.dynamic-Product-page-3\.O-template section.faqs_Product-page-3\.O_page {
+    background: #F4F4F4;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
 @media (min-width: 1200px) {
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
 margin-right: 20px;
