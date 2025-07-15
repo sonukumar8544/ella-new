@@ -399,17 +399,7 @@ font-size: 30px;
   padding-top: 9px;
   padding-bottom: 12px;
   }
-  .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-  background: #000000;
-  border-radius: 50%;
-  opacity: 0.5;
-  }
-  .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
-  color: #fff !important;
-  fill: #fff !important;
-  fill-opacity: 1;
-  stroke: #transparent!important;
-  }
+  
 }
 @media (max-width: 769px){
 .dynamic-Product-page-3\.O-template .faq-container .faq-header h2,
@@ -447,6 +437,17 @@ margin-top: 0;
         top: 50%;
         transform: translate(0%, -80%);
     }
+  .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
+  background: #006a9175;
+        border-radius: 50%;
+        opacity: .5;
+  }
+  .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
+  color: #fff !important;
+  fill: #fff !important;
+  fill-opacity: 1;
+  stroke: #transparent!important;
+  }
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
