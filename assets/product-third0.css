@@ -269,6 +269,34 @@
   .dynamic-Product-page-3\.O-template .bundle-product-media img{
         border-radius: 0%;
   }
+ .dynamic-Product-page-3\.O-template .bundle-product-item{
+            padding-right: 10px;
+  }
+ .dynamic-Product-page-3\.O-template .bundle-product-totalPrice .text {
+    display: block;
+    margin: 0 0 12px;
+    color: #006A91;
+    text-align: center;
+    font-family: Lato;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+  .bundle-product-totalPrice .price,
+  .bundle-product-totalPrice .price span {
+    display: block;
+    letter-spacing: 0;
+    margin-bottom: 15px;
+    color: #006A91;
+    text-align: center;
+    font-family: Lato;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+
 }
 
 
