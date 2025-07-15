@@ -357,24 +357,34 @@ padding: 10px;
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
     margin: 10px auto 20px;    gap: 12px;
   }
-  .discount-percent-thirdO{
+ .dynamic-Product-page-3\.O-template .discount-percent-thirdO{
         font-size: 12px;
   }
-  .promo-banner__note{
+ .dynamic-Product-page-3\.O-template .promo-banner__note{
     font-size: 15px;    margin-bottom: 5px;
   }
-  img.promo-banner__avatar1 {
+ .dynamic-Product-page-3\.O-template img.promo-banner__avatar1 {
     width: 180px;
   }
-  .promo-banner__hsa-label{
+  .dynamic-Product-page-3\.O-template .promo-banner__hsa-label{
     font-size: 17px;
   }
-  .promo-banner__clinician-info{
+ .dynamic-Product-page-3\.O-template .promo-banner__clinician-info{
         gap: 1px;
   }
   .dynamic-Product-page-3\.O-template .tabs .tab .tab-title{
         padding-bottom: 7px;
   }
+ .dynamic-Product-page-3\.O-template div#tab-shipping-amp-returns-mobile,
+ .dynamic-Product-page-3\.O-template .contents-horizontal .toggle-content,
+ .dynamic-Product-page-3\.O-template .tabs-contents .toggle-content {
+    color: #374650;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.4;
+}
 }
 @media (max-width: 769px){
 .dynamic-Product-page-3\.O-template .faq-container .faq-header h2,
@@ -401,6 +411,7 @@ margin-top: 0;
     margin-right: 0px;
         margin-left: 0px;
   }
+  
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
