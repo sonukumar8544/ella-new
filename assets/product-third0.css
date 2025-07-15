@@ -317,10 +317,10 @@
 }
 }
 @media (min-width: 767px){
-.halo-block-header .title{
+.dynamic-Product-page-3\.O-template .halo-block-header .title{
         text-align: center;
         font-family: Lato;
-        font-size: 28px;
+        font-size: 28px !important;
         font-style: normal;
         font-weight: 700;
         line-height: 49.559px;
