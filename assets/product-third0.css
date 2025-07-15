@@ -311,14 +311,17 @@
 }
 }
 
+@media (min-width: 800px){
+  .dynamic-Product-page-3\.O-template .halo-productView-left{
+    position: sticky;
+        top: 13%;
+  }
+}
 
 @media (min-width: 1200px) {
     .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
         margin-right: 20px;
     }
- .dynamic-Product-page-3\.O-template .halo-productView-left{
-    position: sticky;
-        top: 13%;
-  }
+ 
 }
  
