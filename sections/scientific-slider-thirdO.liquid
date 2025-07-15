@@ -1,36 +1,47 @@
 <!-- scientific-slider-thirdO -->
-    {% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
-    {% if science_content != blank  %}
-    <section class="scientific-section" id="scientifically-backed_{{ section.id }}">
-    <div class="container">
-       {% for block in science_content %}
-    <div class="scientific-header">
-    {% if block.scientific_main_title != blank %} <h2 class="scientific-title">{{ block.scientific_main_title }}</h2> {% endif %}
-    {% if block.scientific_main_description != blank %} <p class="scientific-subtitle">{{ block.scientific_main_description }}</p>{% endif %}
-    </div>
-    {% endfor %}
-    <div class="scientific-slider">
-    
+{% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
+{% if science_content != blank %}
+<section class="scientific-section" id="scientifically-backed_{{ section.id }}">
+  <div class="container">
+
     {% for block in science_content %}
-    <div class="scientific-card">
-    {% if block.scientific_card_image_url != blank %}   <div class="scientific-quote-icon">
-    <img src="{{ block.scientific_card_image_url }}" alt="" title="" width="" height=""></div>{% endif %}
-    {% if block.scientific_card_content != blank %} 
-    <p class="scientific-quote-text">
-    {{ block.scientific_card_content }} {% if block.scientific_card_small_content != blank %} <a href="{{ block.scientific_card_link }}" class="scientific-note">{{ block.scientific_card_small_content }}</p> {% endif %}
-    </p>
-    {% endif %}
-    <div class="scientific-verified">
-    
-    
-    </div>
-    </div>
+      <div class="scientific-header">
+        {% if block.scientific_main_title != blank %}
+          <h2 class="scientific-title">{{ block.scientific_main_title }}</h2>
+        {% endif %}
+        {% if block.scientific_main_description != blank %}
+          <p class="scientific-subtitle">{{ block.scientific_main_description }}</p>
+        {% endif %}
+      </div>
     {% endfor %}
+
+    <div class="scientific-slider">
+      {% for block in science_content %}
+        <div class="scientific-card">
+          {% if block.scientific_card_image_url != blank %}
+            <div class="scientific-quote-icon">
+              <img src="{{ block.scientific_card_image_url }}" alt="" title="">
+            </div>
+          {% endif %}
+
+          {% if block.scientific_card_content != blank %}
+            <p class="scientific-quote-text">
+              {{ block.scientific_card_content }}
+              {% if block.scientific_card_small_content != blank %}
+                <a href="{{ block.scientific_card_link }}" class="scientific-note">{{ block.scientific_card_small_content }}</a>
+              {% endif %}
+            </p>
+          {% endif %}
+
+          <div class="scientific-verified"></div>
+        </div>
+      {% endfor %}
     </div>
-    </div>
-    </section>
+  </div>
+</section>
+
 <style>
- #scientifically-backed_{{ section.id }} {
+#scientifically-backed_{{ section.id }} {
   background: linear-gradient(180deg, #FFF 0%, #FEF8E8 100%);
   padding: 50px 0px;
   text-align: center;
@@ -107,8 +118,17 @@
   margin-left: 0;
 }
 
+#scientifically-backed_{{ section.id }} .scientific-note {
+  display: block;
+  margin-top: 4px;
+  color: #413D45;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14.4px;
+  letter-spacing: -0.108px;
+}
 
-/* Slick Dots */
 #scientifically-backed_{{ section.id }} .slick-dots {
   margin-top: 30px;
 }
@@ -119,18 +139,13 @@
 
 /* Tablet */
 @media (max-width: 1025px) {
-#scientifically-backed_{{ section.id }} h2.scientific-title {
+  #scientifically-backed_{{ section.id }} h2.scientific-title {
     margin-bottom: 20px;
     color: #374650;
-    text-align: center;
-    font-family: Nunito;
     font-size: 28px;
-    font-style: normal;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0.68px;
-    text-transform: capitalize;
-    margin-top: 0;
   }
 
   #scientifically-backed_{{ section.id }} .scientific-subtitle {
@@ -141,101 +156,85 @@
 
 /* Mobile */
 @media (max-width: 768px) {
- #scientifically-backed_{{ section.id }} h2.scientific-title {
-    letter-spacing: 0.68px;
-    text-transform: capitalize;
-    color: #086B92;
-    text-align: center;
-    font-family: Nunito;
+  #scientifically-backed_{{ section.id }} h2.scientific-title {
     font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
     line-height: 48px;
   }
-#scientifically-backed_{{ section.id }} .scientific-header {
+
+  #scientifically-backed_{{ section.id }} .scientific-header {
     margin-bottom: 20px;
-}
- #scientifically-backed_{{ section.id }} .scientific-quote-text {
-    color: #3f3f3f;
-    margin: 15px 0;
-    font-weight: 400;
+  }
+
+  #scientifically-backed_{{ section.id }} .scientific-quote-text {
     font-size: 18px;
     line-height: 1.3;
-    letter-spacing: -0.63px;
   }
 
   #scientifically-backed_{{ section.id }} .scientific-quote-icon img {
     width: 50px;
-    margin-left: 0;
   }
 
   #scientifically-backed_{{ section.id }} .scientific-slider {
-    gap: 0rem;
+    gap: 0;
   }
 
- #scientifically-backed_{{ section.id }} .scientific-card {
-    background-color: #f4f0eb;
-    border-radius: 12px;
-    padding: 20px 20px;
-    margin: 10px;
-    text-align: left;
-    position: relative;
+  #scientifically-backed_{{ section.id }} .scientific-card {
+    padding: 20px;
     flex: 0 0 310px;
   }
 }
-
 </style>
-
 {% endif %}
 
-<!-- Slick CSS/JS (Paste in head or before </body>) -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Slick JS and Init (UNCOMMENT and include in theme.liquid or section template) -->
+{%- comment -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
- $(document).ready(function(){
-  $('#scientifically-backed_{{ section.id }} .scientific-slider').slick({
-    dots: false,
-    arrows: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2.2
+  $(document).ready(function(){
+    $('#scientifically-backed_{{ section.id }} .scientific-slider').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2.2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            infinite: true
+          }
         }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2, // <-- missing comma fixed
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          infinite: true
-        }
-      },
-      {
-       breakpoint: 500,
-        settings: {
-          slidesToShow: 1.2, // <-- missing comma fixed
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          infinite: true
-        }
-      }
-    ]
+      ]
+    });
   });
-});
-
-</script> -->
+</script>
+{%- endcomment -%}
 
 {% schema %}
-    {
+{
   "name": "scientific slider thirdO",
   "settings": [
     {
@@ -243,7 +242,7 @@
       "id": "title",
       "label": "Title"
     },
-     {
+    {
       "type": "richtext",
       "id": "description",
       "label": "Description"
