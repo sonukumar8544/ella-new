@@ -1,4 +1,6 @@
 <!-- scientific-slider-thirdO -->
+  {% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
+  {% if science_content != blank  %}
 <section class="scientific-section" id="scientifically-backed_{{ section.id }}">
   <div class="container">
   <div class="scientific-header">
@@ -7,7 +9,7 @@
   </div>
 
   <div class="scientific-slider">
-    {% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
+  
     {% for block in science_content %}
     <div class="scientific-card">
      {% if block.scientific_card_image_url != blank %}   <div class="scientific-quote-icon">
@@ -217,7 +219,7 @@
 
 </style>
 
-
+{% endif %}
 
 <!-- Slick CSS/JS (Paste in head or before </body>) -->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
