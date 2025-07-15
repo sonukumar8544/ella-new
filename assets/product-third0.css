@@ -399,6 +399,15 @@ padding: 10px;
         padding-top: 9px;
         padding-bottom: 12px;
     }
+  .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
+background: #ccc;
+}
+.dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
+    color: #fff !important;
+    fill: #fff !important;
+fill-opacity: 1;
+stroke: #transparent!important;
+}
 }
 @media (max-width: 769px){
 .dynamic-Product-page-3\.O-template .faq-container .faq-header h2,
