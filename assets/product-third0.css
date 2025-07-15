@@ -143,22 +143,7 @@
     padding: 15px 10px;
 }
 
-@media(max-width:1025px){
-  .dynamic-Product-page-3\.O-template h1.productView-title{
-    font-size: 30px;
-    line-height: 1.2;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
-    right: 0px !important;
-  }
- .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
-        left: auto;
-        right: -5%!important;;
-    }
-}
-
-
-@media (min-width: 550px) {
+@media (min-width: 551px) {
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title:after{
  height: 0;
     background: none; 
@@ -246,14 +231,6 @@
     font-size: 30px;
   }
 }
-@media(max-width:551px ){
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-    width: 46%;
-  }
-  .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
-    padding: 10px;
-  }
-}
 @media (min-width: 1024px) {
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom {
     max-width: 1320px!important;
@@ -316,6 +293,27 @@
     letter-spacing: 0.32px;
 }
 }
+@media (min-width: 800px){
+  .dynamic-Product-page-3\.O-template .halo-productView-left{
+    position: sticky;
+        top: 13%;
+  }
+ 
+}
+@media (min-width: 1200px) {
+    .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
+        margin-right: 20px;
+    }
+ 
+}
+@media(max-width:550px ){
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
+    width: 46%;
+  }
+  .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
+    padding: 10px;
+  }
+}
 @media (max-width: 767px){
 .dynamic-Product-page-3\.O-template .halo-block-header .title{
         text-align: center;
@@ -328,19 +326,17 @@
         margin-top: 0;
 }
 }
-
-@media (min-width: 800px){
-  .dynamic-Product-page-3\.O-template .halo-productView-left{
-    position: sticky;
-        top: 13%;
+@media(max-width:1025px){
+  .dynamic-Product-page-3\.O-template h1.productView-title{
+    font-size: 30px;
+    line-height: 1.2;
   }
- 
-}
-
-@media (min-width: 1200px) {
-    .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
-        margin-right: 20px;
+ .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
+    right: 0px !important;
+  }
+ .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
+        left: auto;
+        right: -5%!important;;
     }
- 
 }
  
