@@ -9,7 +9,7 @@
       <a href="{{ parts[1] | strip }}">Read More</a>
   </div>
 {% endfor %} {% endcomment %}
-
+<section class="faqs_{{ template.suffix }}_page">
 <div class="faq-container">
   <div class="faq-header">
     <h2>{{ section.settings.heading }}</h2>
@@ -37,7 +37,7 @@
     </details>
   {% endfor %}
 </div>
-
+          </section>
 <style>
   .faq-container {
     max-width: 1200px;
