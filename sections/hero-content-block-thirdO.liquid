@@ -142,10 +142,9 @@ font-size: 16px;
 font-style: normal;
 font-weight: 300;
 line-height: 140%; /* 22.4px */
-letter-spacing: 0.32px;
-  
+letter-spacing: 0.32px; 
 }
-{
+  
 #cstm_{{ section.id }} .tocotrienol-right p {
 margin: 0;
 color: #222;
@@ -157,6 +156,7 @@ line-height: 25.2px;
 letter-spacing: 0.18px;
     line-height: 1.2;
 }
+  
 
 }
 
@@ -190,7 +190,12 @@ height: auto;
     padding: 25px 0px;
   }
 }
-
+@media(max-width: 550px){
+  #cstm_{{ section.id }} .tocotrienol-left p  {
+        text-align: left;
+}
+ 
+}
 </style>
  {% endif %}
 {% schema %}
