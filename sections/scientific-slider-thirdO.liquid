@@ -29,12 +29,11 @@
             <p class="scientific-quote-text">
               {{ block.scientific_card_content }}
               {% if block.scientific_card_small_content != blank %}
-                <a href="{{ block.scientific_card_link }}" class="scientific-note">{{ block.scientific_card_small_content }}</a>
+                <a href="{{ block.scientific_card_link1 }}" class="scientific-note">{{ block.scientific_card_small_content }}</a>
               {% endif %}
             </p>
           {% endif %}
 
-          <div class="scientific-verified"></div>
         </div>
       {% endfor %}
     </div>
