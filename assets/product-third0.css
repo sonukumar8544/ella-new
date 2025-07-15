@@ -316,7 +316,7 @@
     letter-spacing: 0.32px;
 }
 }
-@media (min-width: 767px){
+@media (max-width: 767px){
 .dynamic-Product-page-3\.O-template .halo-block-header .title{
         text-align: center;
         font-family: Lato;
