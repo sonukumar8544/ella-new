@@ -3,7 +3,7 @@
 {% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
-<section class="hero-section" id="cstm--{{ block.id }}" >
+<section class="hero-section" id="cstm--hero-bannerthird" >
  {% comment %} <div class="position_set_group">
   <div class="hero-overlay">
     {% if product_banner.subtitle != blank %}
@@ -243,10 +243,10 @@ section.section_9_custom .stealing_buttons{
 
 
 @media(min-width:769px){
- #cstm--{{ block.id }} img.mobile_imh {
+ #cstm--hero-bannerthird img.mobile_imh {
     display: none;
 }
-   #cstm--{{ block.id }} .desktop_imh {
+   #cstm--hero-bannerthird .desktop_imh {
   display: block;
   }
   /* section.section_9_custom .content_page_details_grid p.content_details{
@@ -257,11 +257,12 @@ section.section_9_custom .stealing_buttons{
   /* #statins-section .icons .icon{
     width: auto;
   } */
-  #cstm--{{ block.id }} .desktop_imh {
+  #cstm--hero-bannerthird .desktop_imh {
   display: none;
   }
- #cstm--{{ block.id }} img.mobile_imh {
+ #cstm--hero-bannerthird img.mobile_imh {
     display: block;
+   width:100%;
 }
 }
 </style>
