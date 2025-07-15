@@ -149,11 +149,11 @@
     line-height: 1.2;
   }
  .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
-    right: 0px;
+    right: 0px !important;
   }
  .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
         left: auto;
-        right: -5%;
+        right: -5%!important;;
     }
 }
 
