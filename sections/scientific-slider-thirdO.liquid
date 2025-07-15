@@ -1,6 +1,6 @@
 <!-- scientific-slider-thirdO -->
-------{% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
-{{ science_content | json }}
+{% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
+
 {% if science_content != blank %}
 <section class="scientific-section" id="scientifically-backed_{{ section.id }}">
   <div class="container">
