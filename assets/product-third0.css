@@ -402,7 +402,9 @@ font-size: 30px;
   padding-top: 9px;
   padding-bottom: 12px;
   }
-  
+ .dynamic-Product-page-3\.O-template .vertical product-details{
+    padding-top: 5px;
+  }
 }
 @media (max-width: 769px){
 .dynamic-Product-page-3\.O-template .faq-container .faq-header h2,
@@ -419,7 +421,6 @@ margin-top: 0;
 }
 .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
       border-radius: 20px !important;
-
 }
   
  .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header,
