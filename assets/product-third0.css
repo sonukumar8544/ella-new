@@ -148,7 +148,13 @@
     font-size: 30px;
     line-height: 1.2;
   }
-  
+ .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-prev{
+    right: 0px;
+  }
+ .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
+        left: auto;
+        right: -5%;
+    }
 }
 
 
@@ -316,6 +322,7 @@
     position: sticky;
         top: 13%;
   }
+ 
 }
 
 @media (min-width: 1200px) {
