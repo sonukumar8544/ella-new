@@ -1,271 +1,208 @@
 
 <!--hero-banner-upper-thirdO-->
+<!--hero-banner-upper-thirdO-->
 {% assign product_banner1 = product.metafields.custom.product_3_0_banner_details.value %}
 {% if product_banner1 != blank %}
   {% for product_banner in product_banner1 %}
-<section class="hero-section" id="cstm--hero-bannerthird" >
- <div class="position_set_group">
-  <div class="hero-overlay">
-    {% if product_banner.subtitle != blank %}
-      <span class="subtitle">{{ product_banner.subtitle }}</span>
-    {% endif %}
+<section class="hero-section" id="cstm--hero-bannerthird">
+  <div class="position_set_group">
     
-    {% if product_banner.title != blank %}
-      <h2>{{ product_banner.title }}</h2>
-    {% endif %}
- <div class="banifit_grid_meta">
-    <ul class="benefits-list">
-      {% if product_banner.list1 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list1 }}</li>
+    <!-- Left Text Content -->
+    <div class="hero-overlay">
+      {% if product_banner.subtitle != blank %}
+        <span class="subtitle">{{ product_banner.subtitle }}</span>
       {% endif %}
-      {% if product_banner.list2 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list2 }}</li>
+      
+      {% if product_banner.title != blank %}
+        <h2>{{ product_banner.title }}</h2>
       {% endif %}
-      {% if product_banner.list3 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list3 }}</li>
-      {% endif %}
-      {% if product_banner.list4 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list4 }}</li>
-      {% endif %}
-    </ul>
+      
+      <div class="banifit_grid_meta">
+        <ul class="benefits-list">
+          {% if product_banner.list1 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list1 }}</li>
+          {% endif %}
+          {% if product_banner.list2 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list2 }}</li>
+          {% endif %}
+          {% if product_banner.list3 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list3 }}</li>
+          {% endif %}
+          {% if product_banner.list4 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list4 }}</li>
+          {% endif %}
+        </ul>
 
-    <ul class="benefits-list">
-      {% if product_banner.list11 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list11 }}</li>
+        <ul class="benefits-list">
+          {% if product_banner.list11 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list11 }}</li>
+          {% endif %}
+          {% if product_banner.list12 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list12 }}</li>
+          {% endif %}
+          {% if product_banner.list13 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list13 }}</li>
+          {% endif %}
+          {% if product_banner.list14 != blank %}
+            <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list14 }}</li>
+          {% endif %}
+        </ul>
+      </div>
+
+      {% if product_banner.button_link != blank or product_banner.button_title != blank %}
+        <a class="cta-button" href="{{ product_banner.button_link }}">{{ product_banner.button_title }}</a>
       {% endif %}
-      {% if product_banner.list12 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list12 }}</li>
+    </div>
+
+    <!-- Right Images -->
+    <div class="hero-images">
+      {% if product_banner.small_image_1 != blank %}
+        <img src="{{ product_banner.small_image_1 }}" alt="" class="small-img top-img">
       {% endif %}
-      {% if product_banner.list13 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list13 }}</li>
+      {% if product_banner.small_image_2 != blank %}
+        <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img">
       {% endif %}
-      {% if product_banner.list14 != blank %}
-        <li><img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image.svg?v=1752225814" alt=""> {{ product_banner.list14 }}</li>
-      {% endif %}
-    </ul>
- </div>
-    {% if product_banner.button_link != blank or product_banner.button != blank %}
-      <a class="cta-button" href="{{ product_banner.button_link }}">
-        {{ product_banner.button_title }}
-      </a>
-    {% endif %}
+    </div>
+
   </div>
-  <div class="hero-images">
-    {% if product_banner.small_image_1 != blank %}
-      <img src="{{ product_banner.small_image_1 }}" alt="" class="small-img top-img">
-    {% endif %}
-    {% if product_banner.small_image_2 != blank %}
-      <img src="{{ product_banner.small_image_2 }}" alt="" class="small-img bottom-img">
-    {% endif %}
-  </div>
- </div>
-  <!-- <img class="desktop_imh" src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/cdhdhdh.png?v=1752500836">
-  <img class="mobile_imh" src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/dggdgdgd.png?v=1752500878">
-   -->
 </section>
   {% endfor %}
 {% endif %}
 
 
 <style>
-  .hero-section {
-  position: relative;
+.hero-section {
+  padding: 40px 20px;
+  background-color: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 500px;
-  color: white;
-  font-family: sans-serif;
-  overflow: hidden;
 }
 
- .position_set_group {
-    width: auto;
-    border-radius: 20px;
-    position: absolute;
-    left: 40%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.position_set_group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.hero-section .hero-overlay {
-    background: rgba(0, 0, 0, 0.45);
-    padding: 30px 40px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+/* LEFT: Text Box */
+.hero-overlay {
+  flex: 1 1 48%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  color: #fff;
 }
 
-.hero-section .subtitle {
-    opacity: 0.8;
-    display: block;
-    margin-bottom: 10px;
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: block;
+  color: #fff;
 }
 
-.hero-section .hero-overlay h2 {
-    color: #FFF;
-    font-family: Nunito;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 7px 0 7px 0px;
+.hero-overlay h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 10px 0;
+  line-height: 1.3;
+  color: #fff;
 }
+
+.banifit_grid_meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+ul.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 45%;
+}
+
+ul.benefits-list li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+ul.benefits-list li img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Button */
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(to right, #009ecf, #0077a6);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* RIGHT: Images */
+.hero-images {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.hero-images .small-img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .position_set_group {
+    flex-direction: column;
+  }
+
+  .hero-overlay, .hero-images {
+    flex: 1 1 100%;
+  }
 
   .banifit_grid_meta {
-    display: flex;
-    align-items: flex-start;
-    
-    gap: 10px;
-}
-  
-.hero-section ul.benefits-list {
-    margin-left: 0;
-    padding-left: 0;
-  list-style: none;
-}
- .banifit_grid_meta ul.benefits-list li {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #FFF;
-    font-family: Nunito;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-    text-transform: capitalize;
-    padding-bottom: 20px;
-}
- .banifit_grid_meta ul.benefits-list li img {
-    width: 18px;
-}
-
-  .hero-section .cta-button {
-    background: linear-gradient(to right, #009ecf, #0077a6);
-    border: none;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #FFF;
-    font-family: Lato;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 0;
-}
-.hero-section .cta-button:hover{
-   background: #fff;color: #000;
-}
-.hero-section .hero-images {
-    bottom: 40px;
-    display: flex;
     flex-direction: column;
-    gap: 10px;
-    top: 20%;
-    left: 64%;
-}
-  .hero-section .small-img {
-    
-    height: auto;
-    border-radius: 15px;
-} 
-  .section_7_custom .content_page_details_grid p.content_details {
-    font-size: 16px!important;
-}
-section.section_9_custom .section_9_grid{
-  gap: 0px;
-    flex-wrap: wrap;
-}
-#nafld_fourth_section #steps-container .step-box h3,
-.section_7_custom p.content_details2{
-  font-size: 18px !important;
-}
-div#steps-container .step-box h4{
-      font-weight: 700;
-}
-.section_6_custom .statins_container #steps-container{
-  gap: 8px!important;
-}
-.section_6_custom .statins_container #steps-container .step-box{
-  padding: 20px 14px 25px!important;
-  max-width: 45% !important;
-}
-.section_7_custom {
-    padding: 50px 10px 50px !important;
-}
-#statins_fourth_section div#steps-container .step-box .icon{
-  text-align: -webkit-center;
-}
-#nafld_fourth_section #steps-container .step-box p, #statins_fourth_section #steps-container .step-box p,
-#nafld_fourth_section #steps-container .step-box h3, #statins_fourth_section #steps-container .step-box h3{
-  text-align: center;
-}
-#nafld_five_section #steps-container .icon img,
-#nafld_fourth_section #steps-container .icon img, #statins_fourth_section #steps-container .icon img{
-  width: 35px;
-    height: 35px;
-}
-#statins_fourth_section #steps-container .step-box{
-  border-left: none!important;
- border-top: 3px solid #086B92;
-}
-#statins-section p.subheadline.second{
-  font-size: 16px;padding: 0px 8px;
-}
-#statins-section .subheadline.first {
-    font-size: 19px;
-    padding: 0px 20px;
-}
-#statins-section .text-content h2{
-   font-size: 25px!important;
-}
-section.section_9_custom .content_details2{
-  font-size: 13px;
-}
-section.section_9_custom .stealing_buttons a.stealing_btn1{
-  font-size: 14px!important;
-}
-section.section_9_custom .stealing_buttons{
-          margin-top: 20px;
-}
-}
-
-
-
-@media(min-width:769px){
- #cstm--hero-bannerthird img.mobile_imh {
-    display: none;
-}
-   #cstm--hero-bannerthird .desktop_imh {
-  display: block;
   }
-  /* section.section_9_custom .content_page_details_grid p.content_details{
-    margin-bottom: 26px !important;
-  } */
-}
-@media(max-width:768px){
-  /* #statins-section .icons .icon{
-    width: auto;
-  } */
-  #cstm--hero-bannerthird .desktop_imh {
-  display: none;
+
+  ul.benefits-list {
+    flex: 1 1 100%;
   }
- #cstm--hero-bannerthird img.mobile_imh {
-    display: block;
-   width:100%;
-}
+
+  .hero-images .small-img {
+    max-width: 100%;
+  }
 }
 </style>
+
+
 
 {% schema %}
   {
