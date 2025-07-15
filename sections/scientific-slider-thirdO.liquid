@@ -3,11 +3,12 @@
     {% if science_content != blank  %}
     <section class="scientific-section" id="scientifically-backed_{{ section.id }}">
     <div class="container">
+       {% for block in science_content %}
     <div class="scientific-header">
-    {% if section.settings.title != blank %} <h2 class="scientific-title">{{ section.settings.title }}</h2> {% endif %}
-    {% if section.settings.description != blank %} <p class="scientific-subtitle">{{ section.settings.description }}</p>{% endif %}
+    {% if scientific_main_title != blank %} <h2 class="scientific-title">{{ scientific_main_title }}</h2> {% endif %}
+    {% if scientific_main_description != blank %} <p class="scientific-subtitle">{{ scientific_main_description }}</p>{% endif %}
     </div>
-    
+    {% endfor %}
     <div class="scientific-slider">
     
     {% for block in science_content %}
