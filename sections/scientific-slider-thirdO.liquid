@@ -5,8 +5,8 @@
     <div class="container">
        {% for block in science_content %}
     <div class="scientific-header">
-    {% if scientific_main_title != blank %} <h2 class="scientific-title">{{ scientific_main_title }}</h2> {% endif %}
-    {% if scientific_main_description != blank %} <p class="scientific-subtitle">{{ scientific_main_description }}</p>{% endif %}
+    {% if block.scientific_main_title != blank %} <h2 class="scientific-title">{{ block.scientific_main_title }}</h2> {% endif %}
+    {% if block.scientific_main_description != blank %} <p class="scientific-subtitle">{{ block.scientific_main_description }}</p>{% endif %}
     </div>
     {% endfor %}
     <div class="scientific-slider">
