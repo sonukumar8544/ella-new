@@ -17,12 +17,12 @@
     <img src="{{ block.scientific_card_image_url }}" alt="" title="" width="" height=""></div>{% endif %}
     {% if block.scientific_card_content != blank %} 
     <p class="scientific-quote-text">
-    {{ block.scientific_card_content }}
+    {{ block.scientific_card_content }} {% if block.scientific_card_small_content != blank %} <a href="{{ block.scientific_card_link }}" class="scientific-note">{{ block.scientific_card_small_content }}</p> {% endif %}
     </p>
     {% endif %}
     <div class="scientific-verified">
     
-    {% if block.scientific_card_small_content != blank %}  <a href="{{ block.scientific_card_link }}" class="scientific-note">{{ block.scientific_card_small_content }}</p> {% endif %}
+    
     </div>
     </div>
     {% endfor %}
