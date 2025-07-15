@@ -436,12 +436,17 @@ margin-top: 0;
     margin-right: 0px;
         margin-left: 0px;
   }
-  .productView-nav .slick-prev{
+.dynamic-Product-page-3\.O-template .productView-nav .slick-prev{
         transform: translateY(0) rotate(0);
         top: 50%;
         left: 0;
     transform: translate(0%, -80%);
   }
+     .dynamic-Product-page-3\.O-template .productView-nav .slick-next {
+        right: 0;
+        top: 50%;
+        transform: translate(0%, -80%);
+    }
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
