@@ -2,9 +2,10 @@
   .template-page amp-story:not(.i-amphtml-story-vertical) {
   z-index: 999;
   }
-  #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp,
+  #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp{
+  }
   #section-block-{{section.id}} .template-page .amp-story-grid-layer p.description_amp{
-  color:#fff !important;
+  color:{{section.settings.description_color}} !important;
   }
 
   #section-block-{{section.id}}  div:empty,  #section-block-{{section.id}} section:empty{
@@ -81,7 +82,7 @@
             </h3>
           {% endif %}
           {% if block.settings.description != blank %}
-            <p style="{{ block.settings.description_color }};line-height: normal;">{{ block.settings.description }}</p>
+            <p style="color:{{ block.settings.description_color }};line-height: normal;">{{ block.settings.description }}</p>
           {% endif %}
           {% if block.settings.button_text != blank %}
             <div class="btn_story">
