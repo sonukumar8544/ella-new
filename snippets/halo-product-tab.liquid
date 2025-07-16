@@ -161,7 +161,11 @@
                                 {% endif %}
 								
 							{% elsif content_meta == 'nutritional-info' %}
+                               {% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_nutritional_info }}
+                              {% else %}
 								{{ product.metafields.Custom.we_nutritional_info }}
+                              {% endif %}
 							{% elsif content_meta == 'health-benefits' %}
 								{{ product.metafields.Custom.we_health_benifits }}
 							{% elsif content_meta == 'how-to-use' %}
