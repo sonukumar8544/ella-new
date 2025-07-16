@@ -498,7 +498,7 @@
                                         check_hidden: false,
                                         quantity_stt: 3
                                     %}
-                            <button class="button button--primary product-sticky-checkout {% if first_inventory == 0 %} 11{% endif %}" onclick="addToCartAndCheckout({{ current_variant.id}})">
+                            <button class="button button--primary product-sticky-checkout {% if first_inventory == 0 %} 11{% endif %}" ="{{ current_variant.id}}">
                                              {%- if first_inventory > 0 -%}
                                                 {{ 'Checkout'}}
                                             {%- else -%}
