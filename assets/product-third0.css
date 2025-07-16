@@ -73,7 +73,7 @@
 }
 	}
 
-@media (max-width: 1799px) {
+@media(min-width: 800px) and (max-width: 1799px) {
   .dynamic-Product-page-3\.O-template .container.productView-container .productView{
     padding-bottom:0px;
   }
