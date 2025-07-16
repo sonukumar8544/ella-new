@@ -71,6 +71,10 @@
     background: #086b92;
     filter: blur(100px);
 }
+   .shipping-slider{
+    max-width: 1440px;
+    margin: auto;
+  }
 	}
 
 @media(min-width: 800px) and (max-width: 1799px) {
@@ -145,6 +149,10 @@
   .dynamic-Product-page-3\.O-template .container.productView-container{
     padding-inline: 60px;
         padding-block: 50px !important;
+  }
+  .shipping-slider{
+    max-width: 1212px;
+    margin: auto;
   }
 }
 
