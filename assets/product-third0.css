@@ -544,6 +544,7 @@ font-size: 17px;
 #scientifically-backed_template--24801254768936__scientific_slider_third_o_AYBm97 .scientific-title{
 font-size: 30px;
 }
+  
 }
 
 @media(max-width:550px ){
@@ -690,7 +691,10 @@ font-size: 30px;
   }
 }
 @media (max-width: 769px){
-
+#tab-description h2,#tab-description .h2 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
   display: flex;
   justify-content: space-around;gap:2px;
