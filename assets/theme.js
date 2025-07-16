@@ -7409,15 +7409,27 @@ $(document)
       });
   
   // fast checkout code product 3.0
+  $(document).ready(function () {
+  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
+    const value = $(this).val();
+    console.log('Current Quantity:', value);
+  });
+});
+
+  
 $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
   const variantIdthird = $(this).attr('data-variantId');
-  // console.log("Variant ID: " + variantIdthird);
+
+  // Find the quantity input value in the same sticky cart container
+  const $container = $(this).closest('.productView-stickyCart');
+  const quantity = parseInt($container.find('.quantity__input').val()) || 1;
+
   fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       id: variantIdthird,
-      quantity: 1
+      quantity: quantity
     })
   })
   .then(response => {
@@ -7432,13 +7444,6 @@ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stick
   .catch(error => {
     console.error('Fetch error:', error);
     alert('There was a problem adding the item to your cart.');
-  });
-});
-
-  $(document).ready(function () {
-  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
-    const value = $(this).val();
-    console.log('Current Quantity:', value);
   });
 });
 
