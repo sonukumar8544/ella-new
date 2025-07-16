@@ -14,20 +14,30 @@
     assign atc_bg_color_hover = block.settings.atc_bg_color_hover
     assign atc_bg_color_gradient_hover = block.settings.atc_bg_color_gradient_hover
 -%}
-<!--grouped-product.liquid -->
+<!--grouped-product -->
 <product-combo class="halo-product-combo frequently-bought-together-block" data-product-bundle data-product-combo id="halo-product-combo" data-showshare="{{ show_share }}" style="--spacing-top: {{ spacing_top }};--spacing-bottom: {{ spacing_bottom }}" data-combo-discount-rate="{{ combo_discount_rate }}">
     <div class="bundle-product">
         {%- assign product_form_combo_id = 'product-form-combo-' | append: product.id -%}
         {%- form 'product', product, id: product_form_combo_id, class: 'combo-form' -%}
             <div class="bundle-product-wrapper has-halo-block-loader">
                 <div class="bundle-product-list combo-item-list {{forloop.first}}">
-                    {%- for handle in handle_metafields limit: 10 -%}
+                   {% if template contains 'Product-page-3.O' %}
+                     {%- for handle in handle_metafields limit: 3 -%}
                         {%- liquid
                             assign handle_bundle = handle | strip
                             assign product = all_products[handle_bundle]
                         -%}
                         {%- render 'product-combo-item', product: product, product_style: product_style, image_ratio: image_ratio, portrait_aspect_ratio: portrait_aspect_ratio, first: false, picker_type: picker_type, forloop1: forloop -%}
                     {%- endfor -%}
+                     {% else %}
+                     {%- for handle in handle_metafields limit: 10 -%}
+                        {%- liquid
+                            assign handle_bundle = handle | strip
+                            assign product = all_products[handle_bundle]
+                        -%}
+                        {%- render 'product-combo-item', product: product, product_style: product_style, image_ratio: image_ratio, portrait_aspect_ratio: portrait_aspect_ratio, first: false, picker_type: picker_type, forloop1: forloop -%}
+                    {%- endfor -%}
+                     {% endif %}
                 </div>
                 <div class="bundle-product-right">
                     {%- if has_perks -%}
