@@ -76,7 +76,7 @@
           id="cstm__content"
           style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
         >
-          <div class="cstm_color_box {% if block.settings.bgapplyenable == true or block.settings.bluerenable == true  %}cstm_bg_init{% endif %}" style="
+          <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
             background: #2222222e;
     border-radius: 12px;
     padding: 20px;">
@@ -203,15 +203,23 @@
             }
         ]
     },
+        {
+          "type": "checkbox",
+          "id": "bgcover",
+          "label": "Bg Cover",
+          "default": false
+        },
          {
           "type": "checkbox",
           "id": "bgapplyenable",
-          "label": "Enable Bgcolor"
+          "label": "Enable Bgcolor",
+            "default": false
         },
          {
           "type": "checkbox",
           "id": "bluerenable",
-          "label": "Enable Bluer"
+          "label": "Enable Bluer",
+            "default": false
         },
         {
           "type": "color",
