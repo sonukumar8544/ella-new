@@ -86,6 +86,10 @@
   .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
         align-items: flex-start;
   }
+  .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
+        max-width: 78%;
+    margin-right: 0;
+  }
 }
 
 
