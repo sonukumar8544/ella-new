@@ -4,8 +4,8 @@ position: relative;
 
 .dynamic-Product-page-3\.O-template .productView-image-wrapper::before {
 border-radius: 1110px;
-opacity: 1;
-background-color: #086b9275;
+opacity: 0.2;
+background: #086B92;
 filter: blur(100px);
 content: '';
 position: absolute;
