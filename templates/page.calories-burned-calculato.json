@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "calories_burn_outcalculator_qQNfRh": {
+      "type": "calories-burn-outcalculator",
+      "name": "Calories Burned Calc",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "calories_burn_outcalculator_qQNfRh"
   ]
 }

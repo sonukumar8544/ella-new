@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "pragnancy_weight_gain_calculator_zwyqhX": {
+      "type": "pragnancy-weight-gain-calculator",
+      "name": "Pregnancy Weight Gain",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "pragnancy_weight_gain_calculator_zwyqhX"
   ]
 }

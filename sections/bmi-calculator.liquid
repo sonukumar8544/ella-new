@@ -1,0 +1,382 @@
+{% schema %}
+{
+  "name": "BMI Calculator",
+  "settings": [],
+  "presets": [
+    {
+      "name": "BMI Calculator"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+    @media (min-width: 768px){
+        .bmi-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .bmi-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .bmi-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .bmi-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .bmi-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+  .bmi-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .bmi-calc-input-group select,
+  .bmi-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .bmi-calc-input-group input {
+    box-sizing: border-box;
+  }
+
+  .bmi-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .bmi-calc-button:hover {
+    background-color: #086b92;
+  }
+
+  .bmi-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bmi-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .bmi-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .bmi-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .bmi-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bmi-calc-suggestion h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+
+  .bmi-calc-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .bmi-calc-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .bmi-calc-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .bmi-calc-error {
+    color: #d32f2f;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .bmi-calc-healthy-range {
+    margin-top: 15px;
+    text-align: center;
+    color: #666;
+  }
+
+  @media (max-width: 760px){
+    .bmi-calc-calculator-container{
+      padding: 10px;
+    }
+
+    .bmi-calc-calculator-container h1{
+      font-size: 24px;
+    }
+    
+    .bmi-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .bmi-calc-result-category {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<section class="bmi-calc-body">
+  <div class="bmi-calc-calculator-container">
+    <h1>BMI Calculator</h1>
+
+    <div class="bmi-calc-input-group">
+      <label for="bmi-calc-age">Age (years):</label>
+      <input
+        type="number"
+        id="bmi-calc-age"
+        min="2"
+        max="120"
+        placeholder="Enter your age (2-120)"
+        value="30">
+    </div>
+
+    <div class="bmi-calc-input-group">
+      <label for="bmi-calc-gender">Gender:</label>
+      <select id="bmi-calc-gender">
+        <option value="" disabled selected>Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="bmi-calc-input-group">
+      <label for="bmi-calc-height">Height (cm):</label>
+      <input
+        type="number"
+        id="bmi-calc-height"
+        min="50"
+        max="300"
+        placeholder="Enter height (50-300cm)"
+        value="175">
+    </div>
+
+    <div class="bmi-calc-input-group">
+      <label for="bmi-calc-weight">Weight (kg):</label>
+      <input
+        type="number"
+        id="bmi-calc-weight"
+        min="5"
+        max="500"
+        placeholder="Enter weight (5-500kg)"
+        value="70">
+    </div>
+
+    <button id="bmi-calc-calculate-btn" class="bmi-calc-button">Calculate BMI</button>
+  </div>
+
+  <div
+    id="bmi-calc-result"
+    class="bmi-calc-result-container"
+    style="display: none;">
+    <h2>Your Results</h2>
+    <div class="bmi-calc-result-value" id="bmi-calc-result-value">0.0</div>
+    <div class="bmi-calc-result-category" id="bmi-calc-result-category">Category</div>
+
+    <div class="bmi-calc-suggestion" id="bmi-calc-suggestion">
+      <h3>Health Information</h3>
+      <p id="bmi-calc-suggestion-text"></p>
+      <div class="bmi-calc-healthy-range" id="bmi-calc-healthy-range"></div>
+    </div>
+
+    <div class="bmi-calc-suggestion">
+      <h3>BMI Categories</h3>
+      <p><strong>Underweight:</strong> BMI less than 18.5</p>
+      <p><strong>Normal weight:</strong> BMI 18.5-24.9</p>
+      <p><strong>Overweight:</strong> BMI 25-29.9</p>
+      <p><strong>Obese:</strong> BMI 30 or greater</p>
+      <p><strong>Note:</strong> BMI is a screening tool but not a diagnostic of body fatness or health.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calculateBtn = document.getElementById('bmi-calc-calculate-btn');
+        const resultElement = document.getElementById('bmi-calc-result');
+        const resultValue = document.getElementById('bmi-calc-result-value');
+        const resultCategory = document.getElementById('bmi-calc-result-category');
+        const suggestionText = document.getElementById('bmi-calc-suggestion-text');
+        const healthyRange = document.getElementById('bmi-calc-healthy-range');
+        
+        // Calculate button event listener
+        calculateBtn.addEventListener('click', calculateBMI);
+        
+        function calculateBMI() {
+            // Get input values
+            const age = parseInt(document.getElementById('bmi-calc-age').value);
+            const gender = document.getElementById('bmi-calc-gender').value;
+            const height = parseFloat(document.getElementById('bmi-calc-height').value);
+            const weight = parseFloat(document.getElementById('bmi-calc-weight').value);
+            
+            // Clear previous results
+            resultElement.style.display = 'none';
+            
+            // Validation
+            if (!age || age < 2 || age > 120) {
+              showError("Please enter a valid age between 2-120 years");
+              return;
+            }
+            
+            if (!gender) {
+              showError("Please select your gender");
+              return;
+            }
+            
+            if (!height || height < 50 || height > 300) {
+              showError("Please enter a valid height between 50-300cm");
+              return;
+            }
+            
+            if (!weight || weight < 5 || weight > 500) {
+              showError("Please enter a valid weight between 5-500kg");
+              return;
+            }
+
+            // Calculate BMI
+            const heightInMeter = height / 100;
+            const bmi = (weight / (heightInMeter * heightInMeter)).toFixed(1);
+            
+            // Determine category based on age and BMI
+            let category = "";
+            let description = "";
+            
+            if (age < 18) {
+              // Child/teen BMI categories are different - this is simplified
+              if (bmi < 5) {
+                category = "Underweight";
+                description = "Consult with a healthcare provider. This may indicate nutritional deficiencies or other health concerns.";
+              }
+              else if (bmi >= 5 && bmi < 85) {
+                category = "Healthy weight";
+                description = "Your weight is within a healthy range for your age and height.";
+              }
+              else if (bmi >= 85 && bmi < 95) {
+                category = "Overweight";
+                description = "Consider consulting with a healthcare provider about healthy lifestyle choices.";
+              }
+              else {
+                category = "Obese";
+                description = "Consult with a healthcare provider. This may increase risk for health problems.";
+              }
+            } else {
+              // Adult BMI categories
+              if (bmi < 18.5) {
+                category = "Underweight";
+                description = "You may need to gain weight. Consult with a healthcare provider or dietitian.";
+              } else if (bmi >= 18.5 && bmi < 25) {
+                category = "Normal weight";
+                description = "Your weight is within a healthy range. Maintain your current lifestyle.";
+              } else if (bmi >= 25 && bmi < 30) {
+                category = "Overweight";
+                description = "Consider making lifestyle changes to reach a healthier weight.";
+              } else {
+                category = "Obese";
+                description = "Consult with a healthcare provider. Obesity increases risk for many health conditions.";
+              }
+            }
+
+            // Calculate healthy weight range for adults
+            let rangeText = '';
+            if (age >= 18) {
+              const minHealthyWeight = (18.5 * (heightInMeter * heightInMeter)).toFixed(1);
+              const maxHealthyWeight = (24.9 * (heightInMeter * heightInMeter)).toFixed(1);
+              rangeText = `Healthy weight range for your height: <strong>${minHealthyWeight}kg - ${maxHealthyWeight}kg</strong>`;
+            }
+
+            // Display result
+            displayResult(bmi, category, description, rangeText);
+        }
+        
+        function displayResult(bmi, category, description, rangeText) {
+            resultValue.textContent = bmi;
+            resultCategory.textContent = category;
+            suggestionText.innerHTML = description;
+            healthyRange.innerHTML = rangeText || '';
+            resultElement.style.display = 'block';
+            
+            // Scroll to results
+            resultElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showError(message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'bmi-calc-error';
+            errorElement.textContent = message;
+            
+            // Remove any existing error
+            const existingError = document.querySelector('.bmi-calc-error');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Insert after the calculator container
+            document.querySelector('.bmi-calc-body').insertBefore(errorElement, document.querySelector('.bmi-calc-result-container'));
+        }
+    });
+</script>

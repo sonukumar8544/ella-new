@@ -1,0 +1,345 @@
+{% schema %}
+  {
+    "name": "Pregnancy Weight Gain",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Pregnancy Weight Gain"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+    @media (min-width: 768px){
+        .pregnancy-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .pregnancy-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .pregnancy-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .pregnancy-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .pregnancy-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+  .pregnancy-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .pregnancy-calc-input-group select,
+  .pregnancy-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .pregnancy-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .pregnancy-calc-button:hover {
+    background-color: #075a7b;
+  }
+
+  .pregnancy-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  .pregnancy-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .pregnancy-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .pregnancy-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .pregnancy-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pregnancy-calc-trimester-info {
+    margin-top: 20px;
+  }
+
+  .pregnancy-calc-trimester-info h4 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 760px){
+    .pregnancy-calc-calculator-container{
+      padding: 15px;
+    }
+
+    .pregnancy-calc-calculator-container h1{
+      font-size: 22px;
+    }
+    
+    .pregnancy-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .pregnancy-calc-result-category {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<section class="pregnancy-calc-body">
+  <div class="pregnancy-calc-calculator-container">
+    <h1>Pregnancy Weight Gain Calculator</h1>
+
+    <div class="pregnancy-calc-input-group">
+      <label for="pregnancy-calc-height">Your Height (cm)</label>
+      <input
+        type="number"
+        id="pregnancy-calc-height"
+        placeholder="Enter your height"
+        min="140"
+        max="220"
+        value="165">
+    </div>
+
+    <div class="pregnancy-calc-input-group">
+      <label for="pregnancy-calc-pre-pregnancy-weight">Your Weight Before Pregnancy (kg)</label>
+      <input
+        type="number"
+        id="pregnancy-calc-pre-pregnancy-weight"
+        placeholder="Enter your pre-pregnancy weight"
+        min="30"
+        max="300"
+        value="50">
+    </div>
+
+    <div class="pregnancy-calc-input-group">
+      <label for="pregnancy-calc-bmi-category">Pre-pregnancy BMI Category</label>
+      <select id="pregnancy-calc-bmi-category">
+        <option value="underweight">Underweight (BMI < 18.5)</option>
+        <option value="normal" selected>Normal weight (BMI 18.5-24.9)</option>
+        <option value="overweight">Overweight (BMI 25-29.9)</option>
+        <option value="obese">Obese (BMI ≥ 30)</option>
+      </select>
+    </div>
+
+    <div class="pregnancy-calc-input-group">
+      <label for="pregnancy-calc-current-weight">Your Weight Now (kg)</label>
+      <input
+        type="number"
+        id="pregnancy-calc-current-weight"
+        placeholder="Enter your current weight"
+        min="30"
+        max="300"
+        value="55">
+    </div>
+
+    <div class="pregnancy-calc-input-group">
+      <label for="pregnancy-calc-week">Current Week of Pregnancy</label>
+      <input
+        type="number"
+        id="pregnancy-calc-week"
+        placeholder="Enter current week (1-40)"
+        min="1"
+        max="40"
+        value="20">
+    </div>
+
+    <button id="pregnancy-calc-calculate-btn" class="pregnancy-calc-button">Calculate</button>
+  </div>
+
+  <div class="pregnancy-calc-result-container" id="pregnancy-calc-result">
+    <h2>Your Results</h2>
+    <div class="pregnancy-calc-result-value" id="pregnancy-calc-result-value">0 kg</div>
+    <div class="pregnancy-calc-result-category" id="pregnancy-calc-result-category">Recommended Total Weight Gain</div>
+
+    <div class="pregnancy-calc-suggestion">
+      <h3>About Pregnancy Weight Gain</h3>
+      <p>Your recommended weight gain is based on guidelines from the Institute of Medicine and depends on your pre-pregnancy BMI. Healthy weight gain supports your baby's growth and development while reducing pregnancy complications.</p>
+      
+      <div class="pregnancy-calc-trimester-info" id="pregnancy-calc-trimester-info">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateBtn = document.getElementById('pregnancy-calc-calculate-btn');
+        const resultContainer = document.getElementById('pregnancy-calc-result');
+        const resultValue = document.getElementById('pregnancy-calc-result-value');
+        const resultCategory = document.getElementById('pregnancy-calc-result-category');
+        const trimesterInfo = document.getElementById('pregnancy-calc-trimester-info');
+        
+        calculateBtn.addEventListener('click', calculatePregnancyWeight);
+        
+        function calculatePregnancyWeight() {
+            const height = parseFloat(document.getElementById('pregnancy-calc-height').value);
+            const prePregnancyWeight = parseFloat(document.getElementById('pregnancy-calc-pre-pregnancy-weight').value);
+            const bmiCategory = document.getElementById('pregnancy-calc-bmi-category').value;
+            const currentWeight = parseFloat(document.getElementById('pregnancy-calc-current-weight').value);
+            const week = parseInt(document.getElementById('pregnancy-calc-week').value);
+            
+            // Clear previous errors
+            const existingError = document.querySelector('.pregnancy-calc-error');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Validate inputs
+            if (isNaN(height) || height <= 0) {
+                showError('Please enter a valid height');
+                return;
+            }
+            
+            if (isNaN(prePregnancyWeight) || prePregnancyWeight <= 0) {
+                showError('Please enter a valid pre-pregnancy weight');
+                return;
+            }
+            
+            if (isNaN(currentWeight) || currentWeight <= 0) {
+                showError('Please enter a valid current weight');
+                return;
+            }
+            
+            if (isNaN(week) || week < 1 || week > 40) {
+                showError('Please enter a valid week (1-40)');
+                return;
+            }
+            
+            // Determine recommended total weight gain based on BMI category
+            let totalGain;
+            let categoryDescription;
+            
+            switch(bmiCategory) {
+                case 'underweight':
+                    totalGain = 12.5; // 12.5-18 kg
+                    categoryDescription = "Underweight (BMI < 18.5)";
+                    break;
+                case 'normal':
+                    totalGain = 11.5; // 11.5-16 kg
+                    categoryDescription = "Normal weight (BMI 18.5-24.9)";
+                    break;
+                case 'overweight':
+                    totalGain = 7; // 7-11.5 kg
+                    categoryDescription = "Overweight (BMI 25-29.9)";
+                    break;
+                case 'obese':
+                    totalGain = 5; // 5-9 kg
+                    categoryDescription = "Obese (BMI ≥ 30)";
+                    break;
+            }
+            
+            // Calculate current gain vs recommended
+            const currentGain = currentWeight - prePregnancyWeight;
+            const remainingWeeks = 40 - week;
+            const recommendedWeeklyGain = (totalGain - currentGain) / remainingWeeks;
+            
+            // Display results
+            resultValue.textContent = `${totalGain.toFixed(1)} kg`;
+            resultCategory.textContent = `Recommended Total Weight Gain (${categoryDescription})`;
+            
+            // Create advice based on current progress
+            let progressAdvice = '';
+            if (currentGain < totalGain * 0.8) {
+                progressAdvice = `<p>• You're currently below the recommended weight gain. Aim to gain about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
+            } else if (currentGain > totalGain * 1.2) {
+                progressAdvice = `<p>• You're currently above the recommended weight gain. Try to limit further gain to about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
+            } else {
+                progressAdvice = `<p>• Your current weight gain is on track. Maintain a steady gain of about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
+            }
+            
+            trimesterInfo.innerHTML = `
+                <h4>Your Progress at Week ${week}</h4>
+                <p>• Current weight gain: ${currentGain.toFixed(1)} kg</p>
+                <p>• Recommended total gain: ${totalGain.toFixed(1)} kg</p>
+                ${progressAdvice}
+                <h4>Nutritional Advice</h4>
+                <p>• Eat a balanced diet with plenty of fruits, vegetables, and whole grains</p>
+                <p>• Stay hydrated and get regular exercise as approved by your doctor</p>
+                <p>• Always consult with your healthcare provider about your specific needs</p>
+            `;
+            
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showError(message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'pregnancy-calc-error';
+            errorElement.textContent = message;
+            
+            document.querySelector('.pregnancy-calc-body').insertBefore(
+                errorElement, 
+                document.querySelector('.pregnancy-calc-result-container')
+            );
+        }
+    });
+</script>
