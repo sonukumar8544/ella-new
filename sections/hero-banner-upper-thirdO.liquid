@@ -46,7 +46,7 @@
       </div>
 
       {% if product_banner.button_link1 != blank or product_banner.button_title != blank %}
-        <a class="cta-button" href="{{ product_banner.button_link1 }}">{{ product_banner.button_title }}</a>
+        <a class="cta-button"  href="{{ product_banner.button_link1 }}">{{ product_banner.button_title }}</a>
       {% endif %}
     </div>
     <div class="hero-images">
@@ -176,8 +176,8 @@ ul.benefits-list li img {
 }
 
 .cta-button:hover {
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 @media (max-width: 1024px) {
 .hero-overlay h2{
