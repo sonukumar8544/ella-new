@@ -614,16 +614,18 @@
                         {% assign compare_price = current_variant.compare_at_price | money_with_currency %}
                         {% assign subtotal = current_variant.price | money_with_currency %}
                         <div class="sticky-price{% unless compare_price == subtotal %}{% if compare_price != blank %} has-compare-price{% endif %}{% endunless %}">
-                          {% comment %} <!--comment by amar--> {% unless compare_price == subtotal %}
+                          {% comment %} {% unless compare_price == subtotal %}
                                 {% if compare_price != blank %}
                                     <s class="money-compare-price" data-compare-price="{{ current_variant.compare_at_price }}">{{ compare_price }}</s>
                                 {% endif %}
                             {% endunless %}
-                             {%endcomment %}
+                             
                             <span class="money-subtotal">{{ subtotal }}</span>
                         </div>
+                       {% endcomment %}
                     {%- endif -%}
                 </div>
+                   {% comment %}
                 {% render 'product-variant-sticky-mobile',
                     block: block,
                     product: product,
@@ -631,10 +633,16 @@
                     current_variant: current_variant,
                     picker_type: 'button'
                 %}
+       {% endcomment %}
             </div>
+                     
+             {% comment %}          
             <script type="application/json">
                 {{ product.variants | json }}
             </script>
+       {% endcomment %}
         </div>
     {% endif %}
 </sticky-add-to-cart>
+
+                      
