@@ -486,7 +486,7 @@ font-size: 30px;
 
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around;gap:2px;
 }
  .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage {
     display: grid;
