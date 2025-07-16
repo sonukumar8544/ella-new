@@ -10,7 +10,7 @@
 .dynamic-Product-page-3\.O-template .productView-top {
         display: flex;
         flex-wrap: nowrap;
-        align-items: anchor-center;
+        align-items: flex-start;
         justify-content: center;
         gap: 60px;
     }
