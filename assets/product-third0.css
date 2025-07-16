@@ -388,12 +388,14 @@ margin-right: 20px;
 }
 @media (min-width: 1024px) {
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom .container {
-max-width: 1420px!important;
-padding-left: 15px;
+max-width: 1420px!important;padding-left: 15px;
 padding-right: 15px;
 margin: auto;
 padding: 1px 0px 35px;
 }
+ .dynamic-Product-page-3\.O-template .product-descriptios-bottom{
+max-width: 1420px!important;    
+  }
 .dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text {
 width: 100%;
 background: none;
