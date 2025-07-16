@@ -79,6 +79,9 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: -1px;
 }
+.dynamic-Product-page-3\.O-template .productView-moreItem{
+      padding-bottom: 11px;
+}
 /* okando css */
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count {
 display: block!important;
@@ -132,6 +135,10 @@ content: ")";
     margin-bottom: 16px; 
 }
 /* benifit css */
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO{
+margin: 0px 1px 25px;
+justify-content: space-between;
+}
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits {
 color: #29353C;
 font-size: 18px;
@@ -139,10 +146,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 28px;
 margin: 20px 1px 25px;
-}
-
-.dynamic-Product-page-3\.O-template .productView-moreItem{
-      padding-bottom: 11px;
 }
 
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
@@ -378,7 +381,7 @@ color: #29353C;
 }
 
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
-margin: 16px 1px 25px;
+margin: 0px 1px 25px;
 justify-content: space-between;
 }
 .sonu9.productView-product.clearfix {
