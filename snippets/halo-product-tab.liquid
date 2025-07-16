@@ -167,12 +167,24 @@
 								{{ product.metafields.Custom.we_nutritional_info }}
                               {% endif %}
 							{% elsif content_meta == 'health-benefits' %}
-								{{ product.metafields.Custom.we_health_benifits }}
+                                {% if product.metafields.Custom.product_3_0_product_health_benefits != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_health_benefits }}
+                              {% else %}
+							{{ product.metafields.Custom.we_health_benifits }}
+                              {% endif %}
+								
 							{% elsif content_meta == 'how-to-use' %}
+                                {% if product.metafields.Custom.product_3_0_product_how_to_use != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_how_to_use }}
+                              {% else %}
 								{{ product.metafields.Custom.we_how_to_use }}
+                                  {% endif %}
 							{%  else %}
+                               {% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_shipping_returns }}
+                              {% else %}
 							{{ product.metafields.Custom.we_shipping_and_returns }}
-                             
+                             {% endif %}
                               {% endif %}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
