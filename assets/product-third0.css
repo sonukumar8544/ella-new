@@ -421,6 +421,7 @@ font-size: 30px;
     font-weight: 800;
     line-height: 26.4px;
 }
+  
   .dynamic-Product-page-3\.O-template .promo-banner__note{
   font-size: 15px;    margin-bottom: 5px;
   }
@@ -490,6 +491,9 @@ font-size: 30px;
  .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage {
     display: grid;
 }
+  .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage span{
+        gap: 0px;
+  }
  .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-actions .quantity__group{
     display: block;
   }
