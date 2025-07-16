@@ -7411,13 +7411,7 @@ $(document)
   // fast checkout code product 3.0
 $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
   const variantIdthird = $(this).attr('data-variantId');
-  console.log("Variant ID: " + variantIdthird);
-
-  if (!variantIdthird) {
-    alert("No variant ID found.");
-    return;
-  }
-
+  // console.log("Variant ID: " + variantIdthird);
   fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
