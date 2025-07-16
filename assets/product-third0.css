@@ -247,6 +247,9 @@ top: 13%;
 
 }
 @media (min-width: 551px) {
+  .dynamic-Product-page-3\.O-template .product-form__buttons{
+    border-radius: 10px;
+  }
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title:after{
 height: 0;
 background: none; 
