@@ -7452,7 +7452,7 @@ $(document).ready(function () {
     alert('There was a problem adding the item to your cart.');
   });
 });
-
+})
   
 })(jQuery);
 
