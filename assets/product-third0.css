@@ -479,6 +479,10 @@ font-size: 30px;
     max-width: 90%;
   }
 }
+ 
+.total_amount_checkoutdd#custom_proce_manage {
+    display: grid;
+}
 @media (max-width: 769px){
 
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
