@@ -78,7 +78,7 @@
         >
           <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
          {% if block.settings.bgcover == true  %} 
-            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:#2222222e{% endif %}
+            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:rgba(0,0,0,0){% endif %}
     padding: 10px;
     border-radius: 12px;{% endif %}
     padding: 20px;">
