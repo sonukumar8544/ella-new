@@ -7409,21 +7409,21 @@ $(document)
       });
   
  // Fast checkout code for Product 3.0
-setInterval(() => {
-  const atcButton = $('.dynamic-Product-page-3\\.O-template .productView-buttons #product-add-to-cart');
-  const buttonText = atcButton.text();
-  const priceMatch = buttonText.match(/\$[\d,.]+/);
+// setInterval(() => {
+//   const atcButton = $('.dynamic-Product-page-3\\.O-template .productView-buttons #product-add-to-cart');
+//   const buttonText = atcButton.text();
+//   const priceMatch = buttonText.match(/\$[\d,.]+/);
 
-  if (priceMatch) {
-    const price = priceMatch[0]; // e.g., "$123.45"
-    const numericPrice = price.replace('$', '').replace(/,/g, '');
+//   if (priceMatch) {
+//     const price = priceMatch[0]; // e.g., "$123.45"
+//     const numericPrice = price.replace('$', '').replace(/,/g, '');
 
-    // Optional: Update the button text to show just the price
-    atcButton.text(price);
+//     // Optional: Update the button text to show just the price
+//     atcButton.text(price);
 
-    console.log('Only price:', numericPrice);
-  }
-}, 1000);
+//     console.log('Only price:', numericPrice);
+//   }
+// }, 1000);
 
   
 $(document).ready(function () {
