@@ -7408,6 +7408,7 @@ $(document)
         cartSavings();
       });
   // fast checkout code 
+  $(document).on("click", ".productView-stickyCart .product-sticky-checkout", function () {
    function addToCartAndCheckout(variantId) {
     fetch('/cart/add.js', {
       method: 'POST',
@@ -7427,6 +7428,7 @@ $(document)
       }
     });
   }
+  })
 
 })(jQuery);
 
