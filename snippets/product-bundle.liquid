@@ -138,7 +138,7 @@
                       portrait_aspect_ratio: portrait_aspect_ratio,
                       first: true
                     -%}
-                    {%- for handle in handle_metafields limit: 10 -%}
+                    {%- for handle in handle_metafields limit: 3 -%}
                       {%- liquid
                         assign handle_bundle = handle | strip
                         assign product = all_products[handle_bundle]
