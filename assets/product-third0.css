@@ -135,11 +135,14 @@ content: ")";
     margin-bottom: 16px; 
 }
 /* benifit css */
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO{
-margin: 0px 1px 25px;
+
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+  margin: 0px 1px 25px;
 justify-content: space-between;
 }
-
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits {
 color: #29353C;
 font-size: 18px;
@@ -162,11 +165,7 @@ border-radius: 80px !important;
 }
 
 
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-}
+
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
 display: flex;
 align-items: center;
