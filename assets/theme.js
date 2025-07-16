@@ -7410,22 +7410,23 @@ $(document)
   
  // Fast checkout code for Product 3.0
 $(document).ready(function () {
-  // Real-time quantity logger (optional)
+  // Optional: log quantity changes for debugging
   $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
     const value = $(this).val();
-    console.log('Current Quantity:', value);
+    console.log('Live Quantity Input Value:', value);
   });
 
-  // Fast checkout button click
+  // Checkout button click - get latest quantity and proceed
   $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
     const variantIdthird = $(this).attr('data-variantId');
 
-    // Find the closest container and then get the input inside it
+    // Always get quantity from the nearest input in same cart section
     const $container = $(this).closest('.productView-stickyCart');
-    const quantity = parseInt($container.find('.quantity__input').val()) || 1;
+    const quantityInput = $container.find('.quantity__input');
+    const quantity = parseInt(quantityInput.val(), 10) || 1;
 
     console.log('Variant ID:', variantIdthird);
-    console.log('Selected Quantity:', quantity);
+    console.log('Selected Quantity for Checkout:', quantity);
 
     fetch('/cart/add.js', {
       method: 'POST',
@@ -7450,7 +7451,6 @@ $(document).ready(function () {
     });
   });
 });
-
 
   
 })(jQuery);
