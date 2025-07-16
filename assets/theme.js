@@ -7449,8 +7449,8 @@ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stick
   });
 
   // Minus button
-  $(document).on('click', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .minus', function () {
-    const $input = $(this).siblings('input.quantity__input');
+  // $(document).on('click', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .minus', function () {
+    const $input = $('.dynamic-Product-page-3\\.O-template .productView-stickyCart .minus').siblings('input.quantity__input');
     let value = parseInt($input.val()) || 1;
     const min = parseInt($input.attr('min')) || 1;
 
@@ -7458,7 +7458,7 @@ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stick
       value--;
       $input.val(value).trigger('change');
     }
-  });
+  // });
 
   // Realtime input update
   $(document).on('.dynamic-Product-page-3\\.O-template .productView-stickyCart input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
