@@ -481,8 +481,16 @@ font-size: 30px;
 }
 @media (max-width: 769px){
 
-
-  
+.dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
+  display: flex;
+  justify-content: center;
+}
+ .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-actions .quantity__group{
+    display: block;
+  }
+ .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .button{
+    width: auto;
+  }
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
     width: 20px;
 }
