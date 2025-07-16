@@ -7409,13 +7409,15 @@ $(document)
       });
   
   // fast checkout code product 3.0
-$(document).on("click", ".dynamic-Product-page-3\.O-template .productView-stickyCart .product-sticky-checkout", function () {
-  let variantIdthird = $(this).attr('data-variantId');
-
-  // Show the variant ID
+$(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
+  const variantIdthird = $(this).attr('data-variantId');
   console.log("Variant ID: " + variantIdthird);
 
-  // Add to cart and redirect
+  if (!variantIdthird) {
+    alert("No variant ID found.");
+    return;
+  }
+
   fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -7429,11 +7431,16 @@ $(document).on("click", ".dynamic-Product-page-3\.O-template .productView-sticky
       window.location.href = '/checkout';
     } else {
       return response.json().then(data => {
-        alert('Error adding to cart: ' + data.description);
+        alert('Error adding to cart: ' + (data.description || 'Unknown error'));
       });
     }
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+    alert('There was a problem adding the item to your cart.');
   });
 });
+
 
 })(jQuery);
 
