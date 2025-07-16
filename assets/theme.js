@@ -7410,7 +7410,6 @@ $(document)
   
  // Fast checkout code for Product 3.0
 $(document).ready(function () {
-  // Optional: log quantity changes for debugging
   $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
     const value = $(this).val();
     console.log('Live Quantity Input Value:', value);
