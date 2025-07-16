@@ -218,12 +218,6 @@ padding:10px 0px 25px;
 </style>
 {% endif %}
 
-<!-- Slick JS and Init (UNCOMMENT and include in theme.liquid or section template) -->
-{%- comment -%}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
 <script>
   $(document).ready(function(){
     $('#scientifically-backed_{{ section.id }} .scientific-slider').slick({
@@ -263,7 +257,6 @@ padding:10px 0px 25px;
     });
   });
 </script>
-{%- endcomment -%}
 
 {% schema %}
 {
