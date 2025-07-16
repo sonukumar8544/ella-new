@@ -72,10 +72,12 @@
         gap: 60px;
     }
       .dynamic-Product-page-3\.O-template .halo-productView-left {
-        max-width: 574px!important;;
+                max-width: 574px !important;
         padding-right: 0;
         width: 100%;
+        margin-right: 0;
     }
+  
   .productView-image.fit-unset .productView-img-container .media {
     position: initial;
     width: 100%;
