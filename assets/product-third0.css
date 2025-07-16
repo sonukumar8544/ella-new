@@ -480,14 +480,15 @@ font-size: 30px;
   }
 }
  
-.total_amount_checkout dd#custom_proce_manage {
-    display: grid;
-}
+
 @media (max-width: 769px){
 
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+ .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage {
+    display: grid;
 }
  .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-actions .quantity__group{
     display: block;
