@@ -7436,39 +7436,14 @@ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stick
 });
 
   $(document).ready(function () {
-  // Plus button
-  // $(document).on('click', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .plus', function () {
-    const $input = $('.dynamic-Product-page-3\\.O-template .productView-stickyCart .plus').siblings('input.quantity__input');
-    let value = parseInt($input.val()) || 1;
-    const max = parseInt($input.attr('max')) || Infinity;
-
-    if (value < max) {
-      value++;
-      $input.val(value).trigger('change');
-    }
-  });
-
-  // Minus button
-  // $(document).on('click', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .minus', function () {
-    const $input = $('.dynamic-Product-page-3\\.O-template .productView-stickyCart .minus').siblings('input.quantity__input');
-    let value = parseInt($input.val()) || 1;
-    const min = parseInt($input.attr('min')) || 1;
-
-    if (value > min) {
-      value--;
-      $input.val(value).trigger('change');
-    }
-  // });
-
-  // Realtime input update
-  // $(document).on('.dynamic-Product-page-3\\.O-template .productView-stickyCart input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
-    const value = $('dynamic-Product-page-3\\.O-template .productView-stickyCart input change').val();
+  // Listen for manual changes or theme-triggered changes to the quantity input
+  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
+    const value = $(this).val();
     console.log('Current Quantity:', value);
-    // You can add additional logic here (e.g., update price, inventory check, etc.)
   });
-// });
+});
 
-
+  
 })(jQuery);
 
 // collection page scroll to support section
