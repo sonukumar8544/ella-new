@@ -337,7 +337,7 @@ font-size: 30px;
 
 @media(max-width:550px ){
   .sls-label-container.seal-col .sls-selling-plan-group-name{
-      max-width:100%
+      max-width:100% !important;
   }
   .sealsubs-container .sls-option-container label:last-child,
  .dynamic-Product-page-3\.O-template .sls-selling-plan-group-name:last-child{
