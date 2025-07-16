@@ -644,5 +644,39 @@
         </div>
     {% endif %}
 </sticky-add-to-cart>
+<script>
+  $(document).ready(function () {
+  // Plus button
+  $(document).on('click', '.plus', function () {
+    const $input = $(this).siblings('input.quantity__input');
+    let value = parseInt($input.val()) || 1;
+    const max = parseInt($input.attr('max')) || Infinity;
 
+    if (value < max) {
+      value++;
+      $input.val(value).trigger('change');
+    }
+  });
+
+  // Minus button
+  $(document).on('click', '.minus', function () {
+    const $input = $(this).siblings('input.quantity__input');
+    let value = parseInt($input.val()) || 1;
+    const min = parseInt($input.attr('min')) || 1;
+
+    if (value > min) {
+      value--;
+      $input.val(value).trigger('change');
+    }
+  });
+
+  // Realtime input update
+  $(document).on('input change', '.quantity__input', function () {
+    const value = $(this).val();
+    console.log('Current Quantity:', value);
+    // You can add additional logic here (e.g., update price, inventory check, etc.)
+  });
+});
+
+</script>
                       
