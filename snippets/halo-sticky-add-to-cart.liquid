@@ -137,18 +137,12 @@
                                     %}
                                     {%- if current_variant.inventory_management -%}
                                         {%- assign first_inventory = current_variant.inventory_quantity -%}
-                                            <!-- <button class="button button--primary product-sticky-checkout {% if first_inventory == 0 %} button-text-change{% endif %}" onclick="addToCartAndCheckout({{ product.first_available_variant.id}})">
-                                             {%- if first_inventory > 0 -%}
-                                                {{ 'Checkout'}}
-                                            {%- else -%}
-                                                {{ 'Soldout' }}
-                                            {%- endif -%}
-                                            </button> -->
-                              <div class="productView-groupItem">
-                                        <div class="productView-payment" {% if settings.show_global_checkbox %} disabled="disabled"{% endif %} id="product-checkout-sticky-{{ product.id }}" style="--bin-color: {{ bin_color }};--bin-bg-color: {% if bin_bg_color_gradient != blank %}{{ bin_bg_color_gradient }}{% else %}{{ bin_bg_color }}{% endif %};--bin-border-color: {{ bin_border_color }};--bin-color-hover: {{ bin_color_hover }};--bin-bg-color-hover: {% if bin_bg_color_hover_gradient != blank %}{{ bin_bg_color_hover_gradient }}{% else %}{{ bin_bg_color_hover }}{% endif %};--bin-border-color-hover: {{ bin_border_color_hover }}"> 
-                                            {{ form | payment_button }}
-                                        </div>
-                                    </div>
+                          
+                                          <div class="productView-groupItem">
+                                          <div class="productView-payment"  id="product-checkout-sticky-{{ product.first_available_variant.id}}" style="--bin-color: {{ bin_color }};--bin-bg-color: {% if bin_bg_color_gradient != blank %}{{ bin_bg_color_gradient }}{% else %}{{ bin_bg_color }}{% endif %};--bin-border-color: {{ bin_border_color }};--bin-color-hover: {{ bin_color_hover }};--bin-bg-color-hover: {% if bin_bg_color_hover_gradient != blank %}{{ bin_bg_color_hover_gradient }}{% else %}{{ bin_bg_color_hover }}{% endif %};--bin-border-color-hover: {{ bin_border_color_hover }}"> 
+                                          {{ form | payment_button }}
+                                          </div>
+                                          </div>
                                         <button
                                             type="submit"
                                             name="add"
