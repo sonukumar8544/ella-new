@@ -74,7 +74,9 @@
         <amp-story-grid-layer
           template="vertical"
           id="cstm__content"
-          style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
+          style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};
+           {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% endif %}
+           {% if block.settings.bluerenable == true %}backdrop-filter: blur({{ block.settings.bgapplyrange }}){% endif %} ;"
         >
           {% if block.settings.heading != blank %}
             <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;">
@@ -193,6 +195,32 @@
             }
         ]
     },
+         {
+          "type": "checkbox",
+          "id": "bgapplyenable",
+          "label": "Enable Bgcolor"
+        },
+         {
+          "type": "checkbox",
+          "id": "bluerenable",
+          "label": "Enable Bluer"
+        },
+        {
+          "type": "color",
+          "id": "bgapply",
+          "label": "BgColor",
+          "default": "#ffffff5c"
+        },
+         {
+        "type": "range",
+        "id": "bgapplyrange",
+        "label": "Bluer bg",
+        "min": 40,
+        "max": 120,
+        "step": 5,
+        "default": 100
+    },
+        
         {
           "type": "color",
           "id": "heading_bg",
