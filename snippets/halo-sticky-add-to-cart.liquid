@@ -511,6 +511,8 @@
                                                 {{ 'products.product.add_to_cart' | t}}
                                             {%- endif -%}
                                     </button> -->
+                               {%- assign product_form_sticky_id = 'product-form-sticky-' | append: product.id -%}
+                        {% form 'product', product, id: product_form_sticky_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' %}
                   <div class="productView-groupItem">
 <div class="productView-payment"  id="product-checkout-sticky-{{ product.first_available_variant.id}}" 
 style="--bin-color: {{ bin_color }};
@@ -521,6 +523,7 @@ style="--bin-color: {{ bin_color }};
 {{ form | payment_button }}
 </div>
 </div>
+                          {% endform %}
                               
                             </div>
                         {% endif %}
