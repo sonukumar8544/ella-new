@@ -88,13 +88,32 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_qbyrzT": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Zero-Stress-01.jpg",
+            "content-position": "60",
+            "content-align": "center",
+            "heading_bg": "#d1ff21",
+            "heading_color": "#161414",
+            "heading": "Zero-Stress, More Glow",
+            "description_color": "#ffffff",
+            "description": "Stress shows on your face — she keeps calm with meditation and slow living.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_F44rt4",
         "story_page_wDAAWN",
         "story_page_97TF6i",
-        "story_page_UkUVYV"
+        "story_page_UkUVYV",
+        "story_page_qbyrzT"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
