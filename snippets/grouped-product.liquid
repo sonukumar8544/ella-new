@@ -22,7 +22,7 @@
         {%- form 'product', product, id: product_form_combo_id, class: 'combo-form' -%}
             <div class="bundle-product-wrapper has-halo-block-loader">
                 <div class="bundle-product-list combo-item-list {{forloop.first}}">
-                   {% if template contains 'Product-page-3.O' %}
+                   {% if template.suffix contains 'Product-page-3.O' %}
                      {%- for handle in handle_metafields limit: 10 -%}
                        {{ handle | json }}
                         {%- liquid
