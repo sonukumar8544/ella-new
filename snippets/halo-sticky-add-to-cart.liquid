@@ -139,7 +139,12 @@
                                         {%- assign first_inventory = current_variant.inventory_quantity -%}
                           
                                           <div class="productView-groupItem">
-                                          <div class="productView-payment"  id="product-checkout-sticky-{{ product.first_available_variant.id}}" style="--bin-color: {{ bin_color }};--bin-bg-color: {% if bin_bg_color_gradient != blank %}{{ bin_bg_color_gradient }}{% else %}{{ bin_bg_color }}{% endif %};--bin-border-color: {{ bin_border_color }};--bin-color-hover: {{ bin_color_hover }};--bin-bg-color-hover: {% if bin_bg_color_hover_gradient != blank %}{{ bin_bg_color_hover_gradient }}{% else %}{{ bin_bg_color_hover }}{% endif %};--bin-border-color-hover: {{ bin_border_color_hover }}"> 
+                                          <div class="productView-payment"  id="product-checkout-sticky-{{ product.first_available_variant.id}}" 
+                                            style="--bin-color: {{ bin_color }};
+                                            --bin-bg-color: {% if bin_bg_color_gradient != blank %}{{ bin_bg_color_gradient }}{% else %}{{ bin_bg_color }}{% endif %};
+                                            --bin-border-color: {{ bin_border_color }};--bin-color-hover: {{ bin_color_hover }};
+                                            --bin-bg-color-hover: {% if bin_bg_color_hover_gradient != blank %}{{ bin_bg_color_hover_gradient }}{% else %}{{ bin_bg_color_hover }}{% endif %};
+                                            --bin-border-color-hover: {{ bin_border_color_hover }}"> 
                                           {{ form | payment_button }}
                                           </div>
                                           </div>
