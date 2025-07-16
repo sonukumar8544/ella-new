@@ -135,17 +135,21 @@
      text-decoration: none;
     font-weight: 400;
     font-size: 16px;
-  
 }
 
 #scientifically-backed_{{ section.id }} .slick-dots {
   margin-top: 30px;
 }
 
-#scientifically-backed_{{ section.id }} .slick-dots li button:before {
+.slick-dots li button:before {
   color: #00587A;
 }
+#scientifically-backed_{{ section.id }}  .slick-dots, 
+  #scientifically-backed_{{ section.id }} .slider-dots{
+      bottom: -5px;
+}
 
+  
 /* Tablet */
 @media (max-width: 1025px) {
   #scientifically-backed_{{ section.id }} h2.scientific-title {
