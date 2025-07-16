@@ -24,6 +24,9 @@
         width: 100%;
         padding-right: 100px;
     }
+  .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
+        align-items: flex-start;
+  }
 	}
 
 
