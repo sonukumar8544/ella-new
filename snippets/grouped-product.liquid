@@ -22,7 +22,7 @@
             <div class="bundle-product-wrapper has-halo-block-loader">
                 <div class="bundle-product-list combo-item-list {{forloop.first}}">
                    {% if template contains 'Product-page-3.O' %}
-                     {%- for handle in handle_metafields limit: 3 -%}
+                     {%- for handle in handle_metafields limit: 10 -%}
                        {{ handle | json }}
                         {%- liquid
                             assign handle_bundle = handle | strip
