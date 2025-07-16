@@ -29,7 +29,7 @@
         align-items: flex-start;
   }
 	}
-@media (min-width: 1500px) {
+@media (min-width: 1700px) {
 .dynamic-Product-page-3\.O-template .container.productView-container {
    max-width: 100%;
         padding-inline: 50px;
@@ -58,13 +58,13 @@
   }
 	}
 
-@media (max-width: 1499px) {
-    .dynamic-Product-page-3\.O-template .container.productView-container {
-        max-width: 1440px;
-        padding-inline: 100px;
+@media (max-width: 1699px) {
+   .dynamic-Product-page-3\.O-template .container.productView-container{
+     max-width: 100%;
+        padding-inline: 50px;
         padding-block: 60px !important;
-        background: linear-gradient(180deg, #086b92d9 -162.25%, #fff 13.79%);
-    }
+        background: aqua;
+   }
   .dynamic-Product-page-3\.O-template .productView-top {
         display: flex;
         flex-wrap: nowrap;
@@ -72,24 +72,36 @@
         justify-content: center;
         gap: 60px;
     }
-	
-   .dynamic-Product-page-3\.O-template .halo-productView-left {
-        max-width: 550px;
-        padding-right: 0px;
+      .dynamic-Product-page-3\.O-template .halo-productView-left {
+        max-width: 574px;
+        padding-right: 0;
         width: 100%;
     }
-   .dynamic-Product-page-3\.O-template .halo-productView-right {
-        max-width: 600px;
-        width: 100%;
-        padding-right: 120px;
+  .productView-image.fit-unset .productView-img-container .media {
+    position: initial;
+    width: 100%;
+  }
+  .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img {
+    border-radius: 80px !important;
+    max-width: 66%;
+  }
+  .productView-image.fit-unset .productView-img-container img:not(.zoomImg) {
+    position: initial;
+    transform: inherit;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    top: auto;
+    display: inherit;
+}
+      .dynamic-Product-page-3\.O-template .halo-productView-right {
+        width: 49%;
+        padding-right: 100px;
+        background: aqua;
     }
-  .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
-        align-items: flex-start;
-  }
-  .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
-        max-width: 78%;
-    margin-right: 0;
-  }
 }
 
 
