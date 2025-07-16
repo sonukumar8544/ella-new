@@ -558,6 +558,10 @@ stroke: #transparent!important;
  .dynamic-Product-page-3\.O-template  .productView-action{
     display:block!important;
   }
+  .dynamic-Product-page-3\.O-template .productView-image-wrapper:before{
+    width: 350px;
+    height: 195px;
+  }
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
