@@ -7404,7 +7404,7 @@ $(document)
         let $tarSget = $(this);
         halo.actionAddToCart($tarSget, variantSId, 1),
            // halo.updateSidebarCart(cart);
-                         $body.addClass('cart-sidebar-show');
+              $body.addClass('cart-sidebar-show');
         cartSavings();
       });
   
@@ -7412,10 +7412,8 @@ $(document)
 $(document).ready(function () {
  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
   const value = $(this).val();
-  console.log('Live Quantity Input Value:', value);
-
-  // Find the closest checkout button and update its data-realqty attribute
-  $(this)
+  // console.log('Live Quantity Input Value:', value);
+ $(this)
     .closest('.productView-stickyCart')
     .find('.product-sticky-checkout')
     .attr('data-realqty', value);
@@ -7423,9 +7421,8 @@ $(document).ready(function () {
  $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
   const variantIdthird = $(this).attr('data-variantId');
   const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
-
-  console.log('Variant ID:', variantIdthird);
-  console.log('Selected Quantity for Checkout:', quantitythird);
+  // console.log('Variant ID:', variantIdthird);
+  // console.log('Selected Quantity for Checkout:', quantitythird);
 
   fetch('/cart/add.js', {
     method: 'POST',
