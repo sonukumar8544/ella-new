@@ -154,7 +154,12 @@
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
                             {% if content_meta == 'description' %}
+                              {% if product.metafields.Custom.product_3_0_product_description != blank %}
+                                {{ product.metafields.Custom.product_3_0_product_description }}
+                                {% else %}
 								{{ product.metafields.Custom.we_product_description }}
+                                {% endif %}
+								
 							{% elsif content_meta == 'nutritional-info' %}
 								{{ product.metafields.Custom.we_nutritional_info }}
 							{% elsif content_meta == 'health-benefits' %}
