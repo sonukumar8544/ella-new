@@ -7410,17 +7410,17 @@ $(document)
   
   // fast checkout code product 3.0
 $(document).on("click", ".dynamic-Product-page-3\.O-template .productView-stickyCart .product-sticky-checkout", function () {
-  let variantId = $(this).attr('data-variantId');
+  let variantIdthird = $(this).attr('data-variantId');
 
   // Show the variant ID
-  console.log("Variant ID: " + variantId);
+  console.log("Variant ID: " + variantIdthird);
 
   // Add to cart and redirect
   fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      id: variantId,
+      id: variantIdthird,
       quantity: 1
     })
   })
