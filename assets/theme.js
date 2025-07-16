@@ -7436,7 +7436,6 @@ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stick
 });
 
   $(document).ready(function () {
-  // Listen for manual changes or theme-triggered changes to the quantity input
   $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
     const value = $(this).val();
     console.log('Current Quantity:', value);
