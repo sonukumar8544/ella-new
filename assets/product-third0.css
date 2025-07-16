@@ -695,6 +695,12 @@ font-size: 30px;
     font-size: 1.4rem;
     line-height: 1.8rem;
 }
+  #tab-description .halo-text-format ul, #tab-description .halo-text-format ol {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 9px;
+}
+  
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
   display: flex;
   justify-content: space-around;gap:2px;
