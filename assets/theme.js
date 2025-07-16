@@ -7409,7 +7409,7 @@ $(document)
       });
   // fast checkout code 
   $(document).on("click", ".productView-stickyCart .product-sticky-checkout", function () {
-    let variantId = $(this).attr('variantId');
+    let variantId = $(this).attr('data-variantId');
     alert("variantId",variantId);
    function addToCartAndCheckout(variantId) {
     fetch('/cart/add.js', {
