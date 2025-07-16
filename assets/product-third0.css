@@ -336,7 +336,13 @@ font-size: 30px;
 }
 
 @media(max-width:550px ){
-   .dynamic-Product-page-3\.O-template .sealsubs-target-element {
+ .dynamic-Product-page-3\.O-template .sls-label-container.seal-col .sls-selling-plan-group-name{
+    max-width: 100%!important;
+  }
+  .sls-label-container.seal-col .sls-selling-plan-group-name {
+    padding-top: 1px!important;
+  }
+   .dynamic-Product-page-3\.O-template sealsubs-target-element {
     margin: 0px auto 10px;
 }
   .dynamic-Product-page-3\.O-template .product-form__buttons{
@@ -346,12 +352,15 @@ font-size: 30px;
     margin-bottom: 0em !important;
   }
   .sls-savings-badge{
-        font-size: 10px!important;
-    vertical-align: middle;
-    padding: 3px 0.75em!important;
-    line-height: 1.2!important;
-    max-width: 100px!important;
+       font-size: 8.7px !important;
+        vertical-align: middle;
+        padding: 3px .75em !important;
+        line-height: 1.2 !important;
+        max-width: 80px !important;
   }
+  label.sls-selling-plan-group-name, .sls-total-price {
+    margin-left: 0px!important;
+}
   
   .dynamic-Product-page-3\.O-template .halo-productView-right.productView-details.clearfix {
   margin-top: 25px;
