@@ -515,6 +515,10 @@ stroke: #transparent!important;
     line-height: 32px;
     text-transform: capitalize;
 }
+ 
+ .dynamic-Product-page-3\.O-template  .productView-action{
+    display:block;
+  }
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
