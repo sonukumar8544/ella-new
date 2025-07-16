@@ -79,9 +79,7 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: -1px;
 }
-.dynamic-Product-page-3\.O-template .productView-moreItem{
-      padding-bottom: 11px;
-}
+
 /* okando css */
 .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count {
 display: block!important;
@@ -149,7 +147,7 @@ font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: 28px;
-margin: 20px 1px 25px;
+margin: 0px 0px 25px;
 }
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
     width: 20px;
@@ -165,7 +163,9 @@ font-style: normal;
 font-weight: 400;
 line-height: 28px;
 }
-
+.dynamic-Product-page-3\.O-template .productView-moreItem{
+      padding-bottom: 30px;
+}
 .dynamic-Product-page-3\.O-template .productView-image-wrapper{
 box-shadow: none;
 }
