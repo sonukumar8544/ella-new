@@ -38,11 +38,12 @@
       {% endfor %}
     </div>
   </div>
-  <button class="button button-1 button-checkout" onclick="addToCartAndCheckout(1234567890)">
+  <button class="button button-1 button-checkout" onclick="addToCartAndCheckout({{ product.first_available_variant.id}})">
           Checkout
   </button>
 
 <script>
+  
   function addToCartAndCheckout(variantId) {
     fetch('/cart/add.js', {
       method: 'POST',
