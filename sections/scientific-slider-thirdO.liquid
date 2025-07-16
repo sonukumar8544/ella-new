@@ -38,34 +38,7 @@
       {% endfor %}
     </div>
   </div>
-  <button class="button button-1 button-checkout" onclick="addToCartAndCheckout({{ product.first_available_variant.id}})">
-          Checkout
-  </button>
-
-<script>
-  
-  function addToCartAndCheckout(variantId) {
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: variantId,
-        quantity: 1
-      })
-    })
-    .then(response => {
-      if (response.ok) {
-        window.location.href = '/checkout';
-      } else {
-        return response.json().then(data => {
-          alert('Error adding to cart: ' + data.description);
-        });
-      }
-    });
-  }
-</script>
-
-</section>
+ </section>
 
 <style>
     #scientifically-backed_{{ section.id }} {
