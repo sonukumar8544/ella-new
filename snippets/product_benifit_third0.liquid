@@ -1,11 +1,11 @@
-<!-- product_benifit_third0 -->
+<!-- product_benefit_third0 -->
 {% assign benefitmetaobject = product.metafields.custom.product_3_0_benefits.value %}
 
 {% if benefitmetaobject != blank %}
   <div class="health-benefits_thirdO">
     {% for benefit in benefitmetaobject %}
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_1.value }}"
@@ -15,10 +15,10 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_1.value }}</span>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_1.value }}</span>
       </div>
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_2.value }}"
@@ -28,10 +28,10 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_2.value }}</span>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_2.value }}</span>
       </div>
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_3.value }}"
@@ -41,10 +41,10 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_3.value }}</span>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_3.value }}</span>
       </div>
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_4.value }}"
@@ -54,10 +54,10 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_4.value }}</span>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_4.value }}</span>
       </div>
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_5.value }}"
@@ -67,10 +67,10 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_5.value }}</span>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_5.value }}</span>
       </div>
       <div class="benefit-item">
-        <span class="content_benifits_img">
+        <span class="content_benefits_img">
           <img
             class="health_benefits_img"
             src="{{ benefit.benefit_imageurl_6.value }}"
@@ -80,31 +80,30 @@
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefit_imageurl_content_6.value }}</span>
-      </div>
+        <span class="content_benefits">{{ benefit.benefit_imageurl_content_6.value }}</span>
       </div>
     {% endfor %}
   </div>
 {% endif %}
 
 {% style %}
-    .health-benefits_thirdO {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin: 20px auto;
+  .health-benefits_thirdO {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 20px auto;
   }
 
-    .health-benefits_thirdO .benefit-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      width: 30%;
-      font-size: 16px;
-      color: #2c2c2c;
-    }
+  .health-benefits_thirdO .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 30%;
+    font-size: 16px;
+    color: #2c2c2c;
+  }
 
-    .health-benefits_thirdO .benefit-item .content_benifits_img {
-      font-size: 20px;
-    }
+  .health-benefits_thirdO .benefit-item .content_benefits_img {
+    font-size: 20px;
+  }
 {% endstyle %}
