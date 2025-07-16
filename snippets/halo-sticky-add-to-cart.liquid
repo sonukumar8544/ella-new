@@ -137,6 +137,13 @@
                                     %}
                                     {%- if current_variant.inventory_management -%}
                                         {%- assign first_inventory = current_variant.inventory_quantity -%}
+                                            <button class="button button--primary product-sticky-checkout {% if first_inventory == 0 %} button-text-change{% endif %}" onclick="addToCartAndCheckout({{ product.first_available_variant.id}})">
+                                             {%- if first_inventory > 0 -%}
+                                                {{ 'Checkout'}}
+                                            {%- else -%}
+                                                {{ 'Soldout' }}
+                                            {%- endif -%}
+                                            </button>
                                         <button
                                             type="submit"
                                             name="add"
