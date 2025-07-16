@@ -362,7 +362,7 @@ font-size: 30px;
         line-height: 1.2 !important;
         max-width: 114px !important;
         margin-top: 0;
-        height: 28px;
+        height: 28px !important;
   }
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     margin-left: 0px!important;
