@@ -345,7 +345,7 @@ font-size: 30px;
  
  .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-selling-plan-group-name{
     display: flex!important;
-    max-width: 100% !important;
+    /* max-width: 100% !important; */
    padding-top: 0!important;
    align-items: anchor-center !important;
   }
@@ -366,7 +366,7 @@ font-size: 30px;
         line-height: 1.2 !important;
         max-width: 114px !important;
         margin-top: 0;
-        height: 28px !important;
+        height: 37px !important;
   }
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     margin-left: 0px!important;
