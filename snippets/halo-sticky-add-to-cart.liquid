@@ -504,7 +504,7 @@
                                            {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                 {%- assign subtotal = subtotal | strip_html -%}
 
-                                             Checkout – {{ subtotal | money }}
+                                             Checkout – {{ subtotal }}
                                             {%- else -%}
                                                 {{ 'Soldout' }}
                                             {%- endif -%}
