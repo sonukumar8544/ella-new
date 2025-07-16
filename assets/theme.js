@@ -7423,7 +7423,6 @@ $(document).ready(function () {
     const $container = $(this).closest('.productView-stickyCart');
     const quantityInput = $container.find('.quantity__input');
     const quantity = parseInt(quantityInput.val(), 10) || 1;
-
     console.log('Variant ID:', variantIdthird);
     console.log('Selected Quantity for Checkout:', quantity);
 
