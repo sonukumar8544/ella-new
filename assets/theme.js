@@ -7423,37 +7423,33 @@ $(document).ready(function () {
 
 
   // Checkout button click - get latest quantity and proceed
-  $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
-    const variantIdthird = $(this).attr('data-variantId');
+ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
+  const variantIdthird = $(this).attr('data-variantId');
+  const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
 
-    // Always get quantity from the nearest input in same cart section
-    const $container = $(this).closest('.productView-stickyCart');
-    const quantityInput = $container.find('.quantity__input');
-    const quantity = parseInt(quantityInput.val(), 10) || 1;
-    console.log('Variant ID:', variantIdthird);
-    console.log('Selected Quantity for Checkout:', quantity);
+  console.log('Variant ID:', variantIdthird);
+  console.log('Selected Quantity for Checkout:', quantitythird);
 
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: variantIdthird,
-        quantity: quantity
-      })
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: variantIdthird,
+      quantity: quantitythird
     })
-    .then(response => {
-      if (response.ok) {
-        window.location.href = '/checkout';
-      } else {
-        return response.json().then(data => {
-          alert('Error adding to cart: ' + (data.description || 'Unknown error'));
-        });
-      }
-    })
-    .catch(error => {
-      console.error('Fetch error:', error);
-      alert('There was a problem adding the item to your cart.');
-    });
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = '/checkout';
+    } else {
+      return response.json().then(data => {
+        alert('Error adding to cart: ' + (data.description || 'Unknown error'));
+      });
+    }
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+    alert('There was a problem adding the item to your cart.');
   });
 });
 
