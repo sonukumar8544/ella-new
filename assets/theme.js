@@ -7409,7 +7409,7 @@ $(document)
       });
   
   // fast checkout code product 3.0
-$(document).on("click", ".productView-stickyCart .product-sticky-checkout", function () {
+$(document).on("click", ".dynamic-Product-page-3\.O-template .productView-stickyCart .product-sticky-checkout", function () {
   let variantId = $(this).attr('data-variantId');
 
   // Show the variant ID
