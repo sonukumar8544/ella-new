@@ -77,8 +77,10 @@
           style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
         >
           <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
-            background: #2222222e;
-    border-radius: 12px;
+         {% if block.settings.bgcover == true  %} 
+            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:#2222222e{% endif %}
+    padding: 10px;
+    border-radius: 12px;{% endif %}
     padding: 20px;">
           {% if block.settings.heading != blank %}
             <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;">
@@ -86,11 +88,7 @@
             </h3>
           {% endif %}
           {% if block.settings.description != blank %}
-            <p style="color:{{ block.settings.description_color }};line-height: normal; 
-                {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% endif %}
-           {% if block.settings.bluerenable == true %}backdrop-filter: blur({{ block.settings.bgapplyrange }});  border-radius: 12px;
-    padding: 10px;{% endif %}
-              ">{{ block.settings.description }}</p>
+            <p style="color:{{ block.settings.description_color }};line-height: normal;">{{ block.settings.description }}</p>
           {% endif %}
           {% if block.settings.button_text != blank %}
             <div class="btn_story">
