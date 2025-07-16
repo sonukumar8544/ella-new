@@ -173,7 +173,23 @@ box-shadow: none;
 .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
 border-radius: 80px !important; 
 }
-
+/* price css */
+.dynamic-Product-page-3\.O-template #custom_proce_manage span.price-item.price-item--regular.orginal_price1 span {
+    color: #29353C !important;
+    font-family: Nunito;
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 26.4px;
+    text-decoration-line: line-through;
+}
+.dynamic-Product-page-3\.O-template .halo-productView-right .sale_price_amount1 span {
+    font-family: Nunito;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 26.4px;
+}
 
 
 
