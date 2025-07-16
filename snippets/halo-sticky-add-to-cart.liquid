@@ -600,7 +600,7 @@
                         {%- endfor -%}
                     </div>
                 </div>
-               {% comment %}  <div class="sticky-info">
+                <div class="sticky-info">
                     {%- if show_vendor -%}
                         <h3 class="sticky-brand">
                             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -614,12 +614,12 @@
                         {% assign compare_price = current_variant.compare_at_price | money_with_currency %}
                         {% assign subtotal = current_variant.price | money_with_currency %}
                         <div class="sticky-price{% unless compare_price == subtotal %}{% if compare_price != blank %} has-compare-price{% endif %}{% endunless %}">
-                          <!--comment by amar--> {% unless compare_price == subtotal %}
+                          {% comment %} <!--comment by amar--> {% unless compare_price == subtotal %}
                                 {% if compare_price != blank %}
                                     <s class="money-compare-price" data-compare-price="{{ current_variant.compare_at_price }}">{{ compare_price }}</s>
                                 {% endif %}
                             {% endunless %}
-                             
+                             {%endcomment %}
                             <span class="money-subtotal">{{ subtotal }}</span>
                         </div>
                     {%- endif -%}
@@ -630,49 +630,13 @@
                     variantCount: variantCount,
                     current_variant: current_variant,
                     picker_type: 'button'
-                %} {% endcomment %}
+                %}
             </div>
-                     
-                      
             <script type="application/json">
                 {{ product.variants | json }}
             </script>
         </div>
     {% endif %}
 </sticky-add-to-cart>
-<script>
-  $(document).ready(function () {
-  // Plus button
-  $(document).on('click', '.plus', function () {
-    const $input = $(this).siblings('input.quantity__input');
-    let value = parseInt($input.val()) || 1;
-    const max = parseInt($input.attr('max')) || Infinity;
 
-    if (value < max) {
-      value++;
-      $input.val(value).trigger('change');
-    }
-  });
-
-  // Minus button
-  $(document).on('click', '.minus', function () {
-    const $input = $(this).siblings('input.quantity__input');
-    let value = parseInt($input.val()) || 1;
-    const min = parseInt($input.attr('min')) || 1;
-
-    if (value > min) {
-      value--;
-      $input.val(value).trigger('change');
-    }
-  });
-
-  // Realtime input update
-  $(document).on('input change', '.quantity__input', function () {
-    const value = $(this).val();
-    console.log('Current Quantity:', value);
-    // You can add additional logic here (e.g., update price, inventory check, etc.)
-  });
-});
-
-</script>
                       
