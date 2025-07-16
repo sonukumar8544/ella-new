@@ -1,12 +1,12 @@
 /* 1440px */
 @media (min-width: 1460px) {
-.container.productView-container {
+.dynamic-Product-page-3\.O-template .container.productView-container {
     max-width: 1920px;
     margin: 0px auto;
     padding-inline: 240px;
     padding-block: 60px;
 }
-.productView-top {
+.dynamic-Product-page-3\.O-template .productView-top {
         display: flex;
         flex-wrap: nowrap;
         align-items: anchor-center;
@@ -14,12 +14,12 @@
         gap: 60px;
     }
 	
-    .halo-productView-left {
+   .dynamic-Product-page-3\.O-template .halo-productView-left {
         max-width: 690px;
         padding-right: 0px;
         width: 100%;
     }
-    .halo-productView-right {
+   .dynamic-Product-page-3\.O-template .halo-productView-right {
         max-width: 690px;
         width: 100%;
         padding-right: 100px;
