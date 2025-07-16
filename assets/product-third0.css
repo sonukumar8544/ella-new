@@ -90,11 +90,9 @@ letter-spacing: -1px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
-  margin-top: 12px;
-        padding-top: 0;
-}
-.dynamic-Product-page-3\.O-template .productView-moreItem{
-      padding-bottom: 11px;
+    margin-top: 12px;
+    padding-top: 0;
+    margin-bottom: 16px; 
 }
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits {
 color: #29353C;
@@ -102,6 +100,11 @@ font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: 28px;
+margin: 20px 1px 25px;
+}
+
+.dynamic-Product-page-3\.O-template .productView-moreItem{
+      padding-bottom: 11px;
 }
 
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
