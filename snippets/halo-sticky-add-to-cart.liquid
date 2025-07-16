@@ -493,9 +493,9 @@
 <!-- lineno502 -->
  <div class="empty-add-cart-button-wrapper" id="mobile_stricky_cstm">
    {%- assign subtotal = subtotal | strip_html -%}
-   <div class="total_amount_checkout">
-      {{ subtotal }}
-   </div>
+                                    <div class="total_amount_checkout">
+                                    {% render 'price', product: product %}
+                                    </div>
                                     {% render 'product-quantity',
                                         current_variant: current_variant,
                                         qty_style: qty_style,
