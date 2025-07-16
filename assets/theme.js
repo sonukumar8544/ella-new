@@ -7407,30 +7407,33 @@ $(document)
                          $body.addClass('cart-sidebar-show');
         cartSavings();
       });
-  // fast checkout code 
-  $(document).on("click", ".productView-stickyCart .product-sticky-checkout", function () {
-    let variantId = $(this).attr('data-variantId');
-    alert("variantId",variantId);
-   function addToCartAndCheckout(variantId) {
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: variantId,
-        quantity: 1
-      })
+  
+  // fast checkout code product 3.0
+$(document).on("click", ".productView-stickyCart .product-sticky-checkout", function () {
+  let variantId = $(this).attr('data-variantId');
+
+  // Show the variant ID
+  alert("Variant ID: " + variantId);
+
+  // Add to cart and redirect
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: variantId,
+      quantity: 1
     })
-    .then(response => {
-      if (response.ok) {
-        window.location.href = '/checkout';
-      } else {
-        return response.json().then(data => {
-          alert('Error adding to cart: ' + data.description);
-        });
-      }
-    });
-  }
   })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = '/checkout';
+    } else {
+      return response.json().then(data => {
+        alert('Error adding to cart: ' + data.description);
+      });
+    }
+  });
+});
 
 })(jQuery);
 
