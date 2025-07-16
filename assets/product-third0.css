@@ -470,10 +470,10 @@ font-size: 30px;
   max-width: 18px;
   }
   .dynamic-Product-page-3\.O-template .productView-nav .slick-next{
-  right: 25px;
+  right: 25px !important;
   }
   .dynamic-Product-page-3\.O-template .productView-nav .slick-prev{
-  left: 25px;
+  left: 25px !important;
   }
   .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
     max-width: 90%;
