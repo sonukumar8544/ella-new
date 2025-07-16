@@ -57,6 +57,20 @@
   .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
         align-items: flex-start;
   }
+   .dynamic-Product-page-3\.O-template .productView-image-wrapper:before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: 0;
+    bottom: 0;
+    left: -86px;
+    width: 700px;
+    height: 538px;
+    border-radius: 1110px;
+    opacity: .2;
+    background: #086b92;
+    filter: blur(100px);
+}
 	}
 
 @media (max-width: 1799px) {
