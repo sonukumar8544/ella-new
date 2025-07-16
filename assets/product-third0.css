@@ -375,9 +375,7 @@ font-size: 30px;
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits{
     font-size: 16px;
   }
-  .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
-    width: 20px;
-}
+  
   .dynamic-Product-page-3\.O-template .discount-percent-thirdO{
   font-size: 12px;
   }
@@ -428,6 +426,9 @@ font-size: 30px;
  .dynamic-Product-page-3\.O-template .vertical product-details{
     padding-top: 5px;
   }
+      .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
+        max-width: 18px;
+    }
 }
 @media (max-width: 769px){
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
