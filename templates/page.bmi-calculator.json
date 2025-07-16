@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "bmi_calculator_yAFmk3": {
+      "type": "bmi-calculator",
+      "name": "BMI Calculator",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "bmi_calculator_yAFmk3"
   ]
 }

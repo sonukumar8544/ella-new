@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "bmr_calculator_cHirak": {
+      "type": "bmr-calculator",
+      "name": "BMR Calculator",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "bmr_calculator_cHirak"
   ]
 }

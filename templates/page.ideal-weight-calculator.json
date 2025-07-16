@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "ideal_weight_calculator_Aa7tKC": {
+      "type": "ideal-weight-calculator",
+      "name": "ideal weight calculator",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "ideal_weight_calculator_Aa7tKC"
   ]
 }
