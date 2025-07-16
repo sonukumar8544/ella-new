@@ -7420,9 +7420,6 @@ $(document).ready(function () {
     .find('.product-sticky-checkout')
     .attr('data-realqty', value);
 });
-
-
-  // Checkout button click - get latest quantity and proceed
  $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
   const variantIdthird = $(this).attr('data-variantId');
   const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
