@@ -336,7 +336,10 @@ font-size: 30px;
 }
 
 @media(max-width:550px ){
-  .halo-productView-right.productView-details.clearfix {
+   .dynamic-Product-page-3\.O-template .sealsubs-target-element {
+    margin: 0px auto 15px;
+}
+  .dynamic-Product-page-3\.O-template .halo-productView-right.productView-details.clearfix {
   margin-top: 25px;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
@@ -427,6 +430,9 @@ font-size: 30px;
   }
 }
 @media (max-width: 769px){
+ .dynamic-Product-page-3\.O-template .productView-image.fit-unset .productView-img-container{
+        padding-top: 7px;
+  }
 .dynamic-Product-page-3\.O-template .faq-container .faq-header h2,
 .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header .title,
 .dynamic-Product-page-3\.O-template .halo-block-header .title{
@@ -439,54 +445,54 @@ line-height: 1.2;
 margin-bottom: 10px;
 margin-top: 0;
 }
-  .dynamic-Product-page-3\.O-template .product-default .productView ,
+.dynamic-Product-page-3\.O-template .product-default .productView ,
 .dynamic-Product-page-3\.O-template .vertical.product-details{
-  padding-top: 0px !important;
+padding-top: 0px !important;
 }
-  
+
 .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
-      border-radius: 25px !important;
+border-radius: 25px !important;
 }
-  
- .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header,
-  .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header .title{
-   margin-bottom: 0px; 
-  }
- .dynamic-Product-page-3\.O-template .sections-instagram-block .instagram-slide{
-   padding-top: 30px;
-        padding-bottom: 30px;
- }
-  .dynamic-Product-page-3\.O-template .instagram-slide .halo-row .halo-item{
-    margin-right: 0px;
-        margin-left: 0px;
-  }
+
+.dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header,
+.dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header .title{
+margin-bottom: 0px; 
+}
+.dynamic-Product-page-3\.O-template .sections-instagram-block .instagram-slide{
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.dynamic-Product-page-3\.O-template .instagram-slide .halo-row .halo-item{
+margin-right: 0px;
+margin-left: 0px;
+}
 .dynamic-Product-page-3\.O-template .productView-nav .slick-prev{
-        transform: translateY(0) rotate(0);
-        top: 50%;
-        left: 0;
-    transform: translate(0%, -80%);
-  }
-     .dynamic-Product-page-3\.O-template .productView-nav .slick-next {
-        right: 0;
-        top: 50%;
-        transform: translate(0%, -80%);
-    }
-  .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-  background: #006a9175;
-        border-radius: 50%;
-        opacity: .5;
-  }
-    .dynamic-Product-page-3\.O-template .productView-image-wrapper button:hover {
-  background: #000000;
-        border-radius: 50%;
-        opacity: .7;
-  }
-  .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
-  color: #fff !important;
-  fill: #fff !important;
-  fill-opacity: 1;
-  stroke: #transparent!important;
-  }
+transform: translateY(0) rotate(0);
+top: 50%;
+left: 0;
+transform: translate(0%, -80%);
+}
+.dynamic-Product-page-3\.O-template .productView-nav .slick-next {
+right: 0;
+top: 50%;
+transform: translate(0%, -80%);
+}
+.dynamic-Product-page-3\.O-template .productView-image-wrapper button {
+background: #006a9175;
+border-radius: 50%;
+opacity: .5;
+}
+.dynamic-Product-page-3\.O-template .productView-image-wrapper button:hover {
+background: #000000;
+border-radius: 50%;
+opacity: .7;
+}
+.dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
+color: #fff !important;
+fill: #fff !important;
+fill-opacity: 1;
+stroke: #transparent!important;
+}
 }
 @media(max-width:1025px){
 .dynamic-Product-page-3\.O-template h1.productView-title{
