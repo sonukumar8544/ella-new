@@ -60,6 +60,9 @@
 	}
 
 @media (max-width: 1799px) {
+  .dynamic-Product-page-3\.O-template .container.productView-container .productView{
+    padding-bottom:0px;
+  }
    .dynamic-Product-page-3\.O-template .container.productView-container{
      max-width: 100%;
         padding-inline: 50px;
