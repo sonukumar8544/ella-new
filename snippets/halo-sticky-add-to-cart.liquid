@@ -511,6 +511,7 @@
                                                 {{ 'Soldout' }}
                                             {%- endif -%}
                                             </button>
+                               {% else %}
                                     <button
                                         class="product-form__submit button button--primary{% if first_inventory == 0 %} button-text-change{% endif %}"
                                         id="show-sticky-product">
