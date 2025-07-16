@@ -7413,7 +7413,7 @@ $(document).on("click", ".dynamic-Product-page-3\.O-template .productView-sticky
   let variantId = $(this).attr('data-variantId');
 
   // Show the variant ID
-  alert("Variant ID: " + variantId);
+  console.log("Variant ID: " + variantId);
 
   // Add to cart and redirect
   fetch('/cart/add.js', {
