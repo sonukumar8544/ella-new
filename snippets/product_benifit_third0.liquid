@@ -5,17 +5,79 @@
   <div class="health-benefits_thirdO">
     {% for benefit in benefitmetaobject %}
       <div class="benefit-item">
+        
         <span class="content_benifits_img">
           <img
             class="health_benefits_img"
-            src="{{ benefit.benefit_url.value }}"
-            alt="{{ benefit.benefits_title.value }}"
+            src="{{ benefit.benefit_imageurl_1.value }}"
+            alt="{{ benefit.benefit_imageurl_content_1.value }}"
             width=""
             height=""
             loading="lazy"
           >
         </span>
-        <span class="content_benifits">{{ benefit.benefits_title.value }}</span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_1.value }}</span>
+
+        <span class="content_benifits_img">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_imageurl_2.value }}"
+            alt="{{ benefit.benefit_imageurl_content_2.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_2.value }}</span>
+
+        <span class="content_benifits_img">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_imageurl_3.value }}"
+            alt="{{ benefit.benefit_imageurl_content_3.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_3.value }}</span>
+
+        <span class="content_benifits_img">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_imageurl_4.value }}"
+            alt="{{ benefit.benefit_imageurl_content_4.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_4.value }}</span>
+
+        <span class="content_benifits_img">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_imageurl_5.value }}"
+            alt="{{ benefit.benefit_imageurl_content_5.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_5.value }}</span>
+
+        <span class="content_benifits_img">
+          <img
+            class="health_benefits_img"
+            src="{{ benefit.benefit_imageurl_6.value }}"
+            alt="{{ benefit.benefit_imageurl_content_6.value }}"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        <span class="content_benifits">{{ benefit.benefit_imageurl_content_6.value }}</span>
+
       </div>
     {% endfor %}
   </div>
