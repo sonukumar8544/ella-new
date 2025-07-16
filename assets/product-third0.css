@@ -147,7 +147,7 @@ font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: 28px;
-margin: 0px 0px 25px;
+margin: 0px 0px 30px;
 }
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
     width: 20px;
@@ -407,10 +407,7 @@ color: #29353C;
         line-height: 28px;
 }
 
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO{
-margin: 0px 1px 25px;
-justify-content: space-between;
-}
+
 .sonu9.productView-product.clearfix {
 padding: 0px 10px;
 }
@@ -465,7 +462,8 @@ font-size: 30px;
   margin-top: 25px;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-  width: 45%;    gap: 4px;
+  width: 45%; 
+    gap: 4px;
   }
   .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
   padding: 10px;
@@ -569,8 +567,6 @@ font-size: 30px;
     max-width: 90%;
   }
 }
- 
-
 @media (max-width: 769px){
 
 .dynamic-Product-page-3\.O-template .productView-stickyCart.style-1 .sticky-right .sticky-actions .empty-add-cart-button-wrapper{
