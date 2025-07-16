@@ -108,7 +108,7 @@ margin: 20px auto;
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
 display: flex;
 align-items: center;
-gap: 4px;
+gap: 8px;
 width: 28%;
 font-size: 16px;
 color: #2c2c2c;
@@ -343,7 +343,7 @@ font-size: 30px;
   margin-top: 25px;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-  width: 31%;
+  width: 31%;    gap: 4px;
   }
   .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
   padding: 10px;
