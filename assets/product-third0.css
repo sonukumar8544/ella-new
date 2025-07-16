@@ -151,9 +151,19 @@ font-weight: 400;
 line-height: 28px;
 margin: 20px 1px 25px;
 }
-
 .dynamic-Product-page-3\.O-template .health-benefits_thirdO img.health_benefits_img {
     width: 20px;
+}
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
+display: flex;
+align-items: center;
+gap: 8px;
+width: 28%;
+color: #29353C;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
 }
 
 .dynamic-Product-page-3\.O-template .productView-image-wrapper{
@@ -166,18 +176,7 @@ border-radius: 80px !important;
 
 
 
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item {
-display: flex;
-align-items: center;
-gap: 8px;
-width: 28%;
-font-size: 16px;
-color: #2c2c2c;
-}
 
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item .content_benifits_img {
-font-size: 20px;
-}
 
 
 .dynamic-Product-page-3\.O-template .installment.caption-large {
