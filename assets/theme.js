@@ -7410,10 +7410,17 @@ $(document)
   
  // Fast checkout code for Product 3.0
 $(document).ready(function () {
-  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
-    const value = $(this).val();
-    console.log('Live Quantity Input Value:', value);
-  });
+ $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
+  const value = $(this).val();
+  console.log('Live Quantity Input Value:', value);
+
+  // Find the closest checkout button and update its data-realqty attribute
+  $(this)
+    .closest('.productView-stickyCart')
+    .find('.product-sticky-checkout')
+    .attr('data-realqty', value);
+});
+
 
   // Checkout button click - get latest quantity and proceed
   $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
