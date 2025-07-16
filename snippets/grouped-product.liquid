@@ -18,11 +18,11 @@
 <product-combo class="halo-product-combo frequently-bought-together-block" data-product-bundle data-product-combo id="halo-product-combo" data-showshare="{{ show_share }}" style="--spacing-top: {{ spacing_top }};--spacing-bottom: {{ spacing_bottom }}" data-combo-discount-rate="{{ combo_discount_rate }}">
     <div class="bundle-product">
         {%- assign product_form_combo_id = 'product-form-combo-' | append: product.id -%}
-        {{ product_form_combo_id }}
+        {{  template.suffix }}
         {%- form 'product', product, id: product_form_combo_id, class: 'combo-form' -%}
             <div class="bundle-product-wrapper has-halo-block-loader">
                 <div class="bundle-product-list combo-item-list {{forloop.first}}">
-                   {% if template.suffix contains 'Product-page-3.O' %}
+                   {% if template.s contains 'Product-page-3.O' %}
                      {%- for handle in handle_metafields limit: 10 -%}
                        {{ handle | json }}
                         {%- liquid
