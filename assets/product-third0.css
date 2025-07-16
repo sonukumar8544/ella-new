@@ -337,7 +337,7 @@ font-size: 30px;
 
 @media(max-width:550px ){
  .dynamic-Product-page-3\.O-template .sls-selling-plan-group-name:last-child{
-    display: flex;
+    display: flex!important;
     max-width: 100% !important;
    padding-top: 0!important;
   }
