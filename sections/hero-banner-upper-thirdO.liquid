@@ -46,7 +46,7 @@
       </div>
 
       {% if product_banner.button_link1 != blank or product_banner.button_title != blank %}
-        <button class="cta-button cst_atc_button_testimonail" data-variant-ids="{{  product.variants.id | where: 'available', true | first }}" title="{{ product.title }}" href="{{ product_banner.button_link1 }}">{{ product_banner.button_title }}</button>
+        <button class="cta-button cst_atc_button_testimonail" data-variant-ids="{{  product.variants.first }}" title="{{ product.title }}" href="{{ product_banner.button_link1 }}">{{ product_banner.button_title }}</button>
       {% endif %}
     </div>
     <div class="hero-images">
