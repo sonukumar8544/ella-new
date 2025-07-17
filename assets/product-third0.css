@@ -78,6 +78,9 @@ gap: 16px;
 margin: 0px 1px 30px;
 justify-content: space-between;
 }
+  .sonu9.productView-product.clearfix {
+padding: 0px 10px;
+}
 	}
 
 @media(min-width: 800px) and (max-width: 1849px) {
@@ -187,6 +190,9 @@ flex-wrap: wrap;
 gap: 11px;
 margin: 0px 1px 30px;
 justify-content: space-between;
+}
+  .sonu9.productView-product.clearfix {
+padding: 0px 0px;
 }
 }
 
@@ -548,9 +554,7 @@ margin-top: 0;
 }
 
 
-.sonu9.productView-product.clearfix {
-padding: 0px 10px;
-}
+
 .discount-percent-thirdO{
 padding: 2px 7px;
 }
