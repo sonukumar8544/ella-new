@@ -494,14 +494,14 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
     .dynamic-Product-page-3\.O-template .bundle-product-wrapper {
         display: flex;
         justify-content: center;
-        gap: 10px;
+        gap: 32px;
     }
       .dynamic-Product-page-3\.O-template .bundle-product-wrapper, 
        .dynamic-Product-page-3\.O-template .bundle-product-checkbox,
        .dynamic-Product-page-3\.O-template .bundle-product-left{
           width: 90%;   
-         margin: auto;
     }
+
 
      .dynamic-Product-page-3\.O-template .bundle-product-left {
         width: calc(72%);
