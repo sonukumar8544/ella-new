@@ -101,8 +101,20 @@ padding: 0px 10px;
         margin-bottom: 80px;
         padding: 20px 0px;
   }
-  
-  
+  /* tab css description */
+  .toggle-content.is-active h2 {
+    font-size: 22px;
+}
+  .toggle-content.is-active h2 br{
+    display:none;
+  }
+  .toggle-content.is-active p b{
+    font-weight: 600;
+  }
+ .toggle-content.is-active h3 {
+    margin-top: 15px;
+    font-size: 20px;
+  }
 }
 
 @media(min-width: 800px) and (max-width: 1849px) {
