@@ -147,9 +147,7 @@ letter-spacing: -1px;
 padding-bottom: 7px;
 }
 }
-
-
-
+/* dynamic  */
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
 position: relative;
 }
@@ -321,7 +319,6 @@ border-radius: 80px !important;
   margin-bottom: 22px; display:none;
 }
 
-
 .dynamic-Product-page-3\.O-template .productView-price{
 display: flex;
 align-items: center;
@@ -368,13 +365,10 @@ padding: 15px 10px;
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
-@media (min-width: 1200px) {
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
 margin-right: 20px;
 }
 
-}
 @media (min-width: 1024px) {
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom .container {
 max-width: 1420px!important;padding-left: 15px;
