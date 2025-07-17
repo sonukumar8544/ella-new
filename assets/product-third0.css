@@ -677,6 +677,7 @@ font-size: 30px;
    width: 26%; 
     gap: 4px;
  }
+  
  .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-selling-plan-group-name{
     display: flex!important;
     /* max-width: 100% !important; */
@@ -748,7 +749,7 @@ font-size: 30px;
   .dynamic-Product-page-3\.O-template .productView-price #custom_proce_manage span {
     color: #e95144!important;
     font-family: Nunito;
-    font-size: 22px;
+    font-size: 20px !important;
     font-style: normal;
     font-weight: 800;
     line-height: 26.4px;
