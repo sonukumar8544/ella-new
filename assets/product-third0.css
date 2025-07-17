@@ -935,6 +935,16 @@ stroke: #transparent!important;
   .dynamic-Product-page-3\.O-template .productView-image-wrapper:before{
     width: 350px;
     height: 195px;
+     content: "";
+            position: absolute;
+            top: -55px;
+            right: 0;
+            bottom: 0;
+            left: -86px;
+            border-radius: 1110px;
+            opacity: .2;
+            background: #086b92;
+            filter: blur(100px);
   }
 }
 @media(max-width:1025px){
