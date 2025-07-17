@@ -101,33 +101,7 @@ padding: 0px 10px;
         margin-bottom: 80px;
         padding: 20px 0px;
   }
-  /* tab css description */
- .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p{
-    margin-bottom: 15px;
-    margin-top: 8px;
-  }
-  .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p,
-   .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p ul{
-   list-style: none;padding-left: 15px;
-  }
-   .dynamic-Product-page-3\.O-template .toggle-content.is-active h2 {
-    font-size: 22px;
-}
-  .dynamic-Product-page-3\.O-template .toggle-content.is-active br{
-    display:none;
-  }
-  .dynamic-Product-page-3\.O-template .toggle-content.is-active p b{
-    font-weight: 600;
-  }
- .dynamic-Product-page-3\.O-template .toggle-content.is-active h3 {
-        margin-top: 17px;
-        font-size: 20px;
-        margin-bottom: 19px;
-}
-
-
-
-
+ 
 }
 @media(min-width: 800px) and (max-width: 1849px) {
   .dynamic-Product-page-3\.O-template .container.productView-container .productView{
@@ -259,7 +233,7 @@ padding: 0px 0px;
   }
 }
 
-/* dynamic  */
+/* global css  */
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
 position: relative;
 }
@@ -322,6 +296,7 @@ content: "(";
 .dynamic-Product-page-3\.O-template span.oke-sr-count-number::after {
 content: ")";
 }
+
 /*  short css*/
 .dynamic-Product-page-3\.O-template p.product-page-one-liner {
     margin: 0;
@@ -480,6 +455,32 @@ padding: 15px 10px;
 .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
 margin-right: 20px;
 }
+
+
+ /* tab css description */
+ .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p{
+    margin-bottom: 15px;
+    margin-top: 8px;
+  }
+  .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p,
+   .dynamic-Product-page-3\.O-template .toggle-content.is-active .halo-text-format p ul{
+   list-style: none;padding-left: 15px;
+  }
+   .dynamic-Product-page-3\.O-template .toggle-content.is-active h2 {
+    font-size: 22px;
+}
+  .dynamic-Product-page-3\.O-template .toggle-content.is-active br{
+    display:none;
+  }
+  .dynamic-Product-page-3\.O-template .toggle-content.is-active p b{
+    font-weight: 600;
+  }
+ .dynamic-Product-page-3\.O-template .toggle-content.is-active h3 {
+        margin-top: 17px;
+        font-size: 20px;
+        margin-bottom: 19px;
+}
+
 
 @media (min-width: 1024px) {
   .dynamic-Product-page-3\.O-template .container.free-shipping-container{
