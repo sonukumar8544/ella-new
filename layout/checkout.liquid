@@ -1,50 +1,89 @@
-{% include 'shogun-content-handler' %}
-{% layout none %}
-<!doctype html>
-{%- liquid
-    if settings.list_iso_rtl != blank
-        assign locale_iso_code = request.locale.iso_code
-        assign arr_list_rtl = settings.list_iso_rtl | remove:' ' | split:',' 
-        if arr_list_rtl contains locale_iso_code
-            assign enable_iso_rtl = true
-        else
-            assign enable_iso_rtl = false
-        endif
-    else
-        assign enable_iso_rtl = false 
-    endif
--%}
-<html class="no-js full-height" lang="{{ request.locale.iso_code }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="theme-color" content="">
-        <link rel="canonical" href="{{ canonical_url }}">
-        <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-        {%- unless settings.type_header_font.system? -%}
-            <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-        {%- endunless -%}
-        <title>{{ shop.name }}</title>
-        <meta name="description" content="{{ page_description | escape }}">
-        {% render 'meta-tags' %}
-        {{ content_for_header }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | {{ shop.name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Ads Global Site Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-360945425"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        {% render 'variable' %}
-        {{ 'base.css' | asset_url | stylesheet_tag }}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" defer></script>
-        {% render 'global-script' %}
+    // Google Ads Conversion ID
+    gtag('config', 'AW-360945425');
+  </script>
 
-        {%- if settings.enable_layout_rtl -%}
-            {{ 'layout_rtl.css' | asset_url | stylesheet_tag }}
-        {%- endif -%}
-    
-  {% render 'shogun-head' %}
+  {% if checkout %}
+    <script>
+      // ----------------------------
+      // BEGIN CHECKOUT EVENT
+      // ----------------------------
+      {% if checkout.step == "contact_information" %}
+        console.log('🔵 Begin Checkout');
+        gtag('event', 'begin_checkout', {
+          send_to: 'AW-360945425',
+          value: {{ checkout.subtotal_price | money_without_currency }},
+          currency: '{{ checkout.currency }}',
+          items: [
+            {% for item in checkout.line_items %}
+              {
+                id: '{{ item.product_id }}',
+                name: '{{ item.title | escape }}',
+                quantity: {{ item.quantity }},
+                price: {{ item.price | money_without_currency }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        });
+      {% endif %}
+
+      // ----------------------------
+      // CHECKOUT PAGE LOADED
+      // ----------------------------
+      console.log('🟠 Checkout Page Loaded');
+
+      // ----------------------------
+      // PURCHASE EVENT
+      // ----------------------------
+      {% if template == 'checkout thank_you' %}
+        console.log('🟢 Purchase Completed');
+        console.log('Transaction ID:', '{{ checkout.order_number }}');
+        console.log('Amount:', '{{ checkout.total_price | money_without_currency }}');
+        console.log('Email:', '{{ checkout.email }}');
+
+        gtag('event', 'purchase', {
+          send_to: 'AW-360945425/6xrrCP7EpvIaEJGujqwB',
+          transaction_id: '{{ checkout.order_number }}',
+          value: {{ checkout.total_price | money_without_currency }},
+          currency: '{{ checkout.currency }}',
+
+          // Enhanced Conversion Data
+          email: '{{ checkout.email | strip | downcase }}',
+          first_name: '{{ checkout.billing_address.first_name | escape }}',
+          last_name: '{{ checkout.billing_address.last_name | escape }}',
+          phone_number: '{{ checkout.billing_address.phone | escape }}',
+          address: {
+            street: '{{ checkout.billing_address.address1 | escape }}',
+            city: '{{ checkout.billing_address.city | escape }}',
+            region: '{{ checkout.billing_address.province | escape }}',
+            postal_code: '{{ checkout.billing_address.zip | escape }}',
+            country: '{{ checkout.billing_address.country_code | escape }}'
+          }
+        });
+      {% endif %}
+    </script>
+  {% endif %}
+
+  {{ content_for_header }}
 </head>
 
-    <body class="password-template{% if settings.enable_layout_rtl and enable_iso_rtl %} layout_rtl{% endif %}">
-        {{content_for_layout}}
-    </body>
-
+<body>
+  {{ content_for_layout }}
+</body>
 </html>
+
+
+
