@@ -453,6 +453,9 @@ margin-right: 20px;
 }
 
 @media (min-width: 1024px) {
+  .dynamic-Product-page-3\.O-template .container.free-shipping-container{
+    margin-bottom: 55px;
+  }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
     gap: 7px;
   }
