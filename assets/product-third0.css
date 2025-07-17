@@ -754,6 +754,9 @@ font-size: 30px;
     font-weight: 800;
     line-height: 26.4px;
 }
+   .dynamic-Product-page-3\.O-template .product-details .product-option {
+        justify-content: left !important;
+    }
   
   .dynamic-Product-page-3\.O-template .promo-banner__note{
   font-size: 15px; 
@@ -815,6 +818,7 @@ font-size: 30px;
   }
 }
 @media (max-width: 769px){
+  
 #tab-description h2,#tab-description .h2 {
     font-size: 1.4rem;
     line-height: 1.8rem;
