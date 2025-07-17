@@ -499,7 +499,8 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
       .dynamic-Product-page-3\.O-template .bundle-product-wrapper, 
        .dynamic-Product-page-3\.O-template .bundle-product-checkbox,
        .dynamic-Product-page-3\.O-template .bundle-product-left{
-          width: 90%;   
+          width: 90%; 
+         margin: inherit;
     }
 
 
