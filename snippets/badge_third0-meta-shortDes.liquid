@@ -1,6 +1,6 @@
 <!-- badge_third0-meta-shortDes -->
 {% comment %}<p class="product-page-subtitle">{{ product.metafields.Custom.we_product_subtitle_text }}</p>{% endcomment %}
-<p class="product-page-one-liner">{{ product.metafields.custom.product_3_0_short_description.value }}</p>
+{% if product.metafields.custom.product_3_0_short_description != blank %}<p class="product-page-one-liner">{{ product.metafields.custom.product_3_0_short_description.value }}</p>
 
 <style>
     .product-page-subtitle{
@@ -17,3 +17,4 @@
         padding-top: 5px;
     }
 </style>
+{% endif %}
