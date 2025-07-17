@@ -2,9 +2,10 @@
   .template-page amp-story:not(.i-amphtml-story-vertical) {
   z-index: 999;
   }
-  #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp,
+  #section-block-{{section.id}} .template-page .amp-story-grid-layer h3.title_amp{
+  }
   #section-block-{{section.id}} .template-page .amp-story-grid-layer p.description_amp{
-  color:#fff !important;
+  color:{{section.settings.description_color}} !important;
   }
 
   #section-block-{{section.id}}  div:empty,  #section-block-{{section.id}} section:empty{
@@ -16,11 +17,12 @@
 
   #section-block-{{section.id}} #cstm__content .brand-btn {
   font-weight: bold;
-  padding: 7px 10px !important;
+  padding: 9px 15px !important;
   text-align: center;
   width: auto;
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 6px;
+  margin-bottom: 10px;
   }
   #section-block-{{section.id}} a.brand-btn.link_hover:hover {
   opacity: 0.9;
@@ -41,7 +43,7 @@
   line-height:normal !important;
   }
   #section-block-{{section.id}} .btn_story{
-  margin-top: 10px
+  margin-top: 25px
   }
 {% endstyle %}
 
@@ -75,13 +77,19 @@
           id="cstm__content"
           style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
         >
+          <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
+         {% if block.settings.bgcover == true  %} 
+            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:rgba(0,0,0,0){% endif %}
+    padding: 10px;
+    border-radius: 12px;{% endif %}
+    padding: 20px;">
           {% if block.settings.heading != blank %}
-            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;">
+            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;margin-bottom: 10px;">
               {{ block.settings.heading }}
             </h3>
           {% endif %}
           {% if block.settings.description != blank %}
-            <p style="{{ block.settings.description_color }};line-height: normal;">{{ block.settings.description }}</p>
+            <p style="color:{{ block.settings.description_color }};line-height: normal;" margin-bottom: 20px;>{{ block.settings.description }}</p>
           {% endif %}
           {% if block.settings.button_text != blank %}
             <div class="btn_story">
@@ -97,7 +105,9 @@
                 {{ block.settings.button_text }}
               </a>
             </div>
+            
           {% endif %}
+            </div>
         </amp-story-grid-layer>
       </amp-story-page>
     {% endfor %}
@@ -192,6 +202,26 @@
             }
         ]
     },
+        {
+          "type": "checkbox",
+          "id": "bgcover",
+          "label": "Bg Cover",
+          "default": false
+        },
+         {
+          "type": "checkbox",
+          "id": "bgapplyenable",
+          "label": "Enable Bgcolor",
+            "default": false
+        },
+        
+        {
+          "type": "color",
+          "id": "bgapply",
+          "label": "BgColor",
+          "default": "#ffffff5c"
+        },
+        
         {
           "type": "color",
           "id": "heading_bg",
