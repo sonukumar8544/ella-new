@@ -477,8 +477,23 @@
     .dynamic-Product-page-3\.O-template .productView-tab .tabs .tab-title {
     margin-right: 20px;
     }
-    
-    
+    /* together css */
+    .bundle-product-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+      .dynamic-Product-page-3\.O-template .bundle-product-wrapper, 
+       .dynamic-Product-page-3\.O-template .bundle-product-checkbox,
+       .dynamic-Product-page-3\.O-template .bundle-product-left{
+          width: 90%;   
+         margin: auto;
+    }
+
+     .dynamic-Product-page-3\.O-template .bundle-product-left {
+        width: calc(72%);
+               margin: 0;
+    }
     /* tab css description */
     .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p{
     margin-bottom: 15px;
