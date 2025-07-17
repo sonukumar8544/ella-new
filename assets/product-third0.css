@@ -819,6 +819,10 @@ font-size: 30px;
   .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
     max-width: 90%;
   }
+  .dynamic-Product-page-3\.O-template .halo-text-format p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
 }
 @media (max-width: 769px){
   
