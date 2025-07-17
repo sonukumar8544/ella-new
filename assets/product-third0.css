@@ -102,19 +102,19 @@ padding: 0px 10px;
         padding: 20px 0px;
   }
   /* tab css description */
-  .toggle-content.is-active h2 {
+   .dynamic-Product-page-3\.O-template .toggle-content.is-active h2 {
     font-size: 22px;
 }
-  .toggle-content.is-active br{
+  .dynamic-Product-page-3\.O-template .toggle-content.is-active br{
     display:none;
   }
-  .toggle-content.is-active p b{
+  .dynamic-Product-page-3\.O-template .toggle-content.is-active p b{
     font-weight: 600;
   }
- .toggle-content.is-active h3 {
-    margin-top: 15px;
-    font-size: 20px;
-  }
+ .dynamic-Product-page-3\.O-template .toggle-content.is-active h3 {
+        margin-top: 17px;
+        font-size: 20px;
+        margin-bottom: 19px;
 }
 
 @media(min-width: 800px) and (max-width: 1849px) {
