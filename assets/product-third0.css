@@ -826,6 +826,13 @@ font-size: 30px;
   .tab-slider-thirdO h2.slider-title{
             font-size: 22px;
   }
+  .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage {
+        display: grid;
+        width: 91px;
+    }
+  .dynamic-Product-page-3\.O-template #mobile_stricky_cstm #custom_proce_manage span.price-item.price-item--regular.orginal_price1 span{
+    
+  }
 }
 @media (max-width: 769px){
   
