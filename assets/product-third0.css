@@ -877,7 +877,7 @@ font-size: 30px;
   }
  .dynamic-Product-page-3\.O-template .halo-text-format ul li, 
  .dynamic-Product-page-3\.O-template .halo-text-format ol li{
-    font-size: 15px;
+    font-size: 15px !important;
   }
 }
 @media (max-width: 769px){
