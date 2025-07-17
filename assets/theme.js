@@ -7413,7 +7413,7 @@ $(document)
 $(document).ready(function () {
  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
   const value = $(this).val();
- $(this).closest('.productView-stickyCart').find('.product-sticky-checkout').attr('data-realqty', value); 
+ $(this).closest('.productView-stickyCart').find('#show-sticky-product1').attr('data-realqty', value); 
 });
  $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart #show-sticky-product1", function () {
   const variantIdthird = $(this).attr('data-variantId');
