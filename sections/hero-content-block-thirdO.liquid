@@ -13,30 +13,30 @@
     </div>
     {% endif %}
     <div class="tocotrienol-right">
-{% if hero_content_block.image_1 != blank or hero_content_block.image_content1 != blank%}
+{% if hero_content_block.image_content1 != blank%}
       <div class="tocotrienol-point">
-        <img src="{{  hero_content_block.image_1 }}" alt="Icon 1" title="" width="" height="" title="">
+      {% if hero_content_block.image_1 != blank %}  <img src="{{  hero_content_block.image_1 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
         <p>{{ hero_content_block.image_content1 }}</p>
       </div>
       {% endif %}
 
-     {% if hero_content_block.image_2 != blank or hero_content_block.image_content2 != blank%}
+     {% if hero_content_block.image_content2 != blank%}
       <div class="tocotrienol-point">
-        <img src="{{  hero_content_block.image_2 }}" alt="Icon 1" title="" width="" height="" title="">
+         {% if hero_content_block.image_2 != blank %}  <img src="{{  hero_content_block.image_2 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
         <p>{{ hero_content_block.image_content2 }}</p>
       </div>
       {% endif %}
 
-     {% if hero_content_block.image_3 != blank or hero_content_block.image_content3 != blank%}
+     {% if hero_content_block.image_content3 != blank%}
       <div class="tocotrienol-point">
-        <img src="{{  hero_content_block.image_3 }}" alt="Icon 1" title="" width="" height="" title="">
+         {% if hero_content_block.image_3 != blank %} <img src="{{  hero_content_block.image_3 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
         <p>{{ hero_content_block.image_content3 }}</p>
       </div>
       {% endif %}
     
     {% if hero_content_block.image_4 != blank or hero_content_block.image_content4 != blank%}
       <div class="tocotrienol-point">
-        <img src="{{  hero_content_block.image_4 }}" alt="Icon 1" title="" width="" height="" title="">
+      {% if hero_content_block.image_4 != blank %} <img src="{{  hero_content_block.image_4 }}" alt="Icon 1" title="" width="" height="" title=""> {% endif %}
         <p>{{ hero_content_block.image_content4 }}</p>
       </div>
       {% endif %}
