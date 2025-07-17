@@ -13,6 +13,7 @@
 
 <div class="custom-container">
 <div class="content">
+  {% if tab_slider.tab_button1_name1 != blank %} 
 <div class="tabs-sidebar">
 {% if tab_slider.tab_button1_name1 != blank %} 
 <button class="tab-button active" data-tab="tab_img_slider_1">{{ tab_slider.tab_button1_name1 }}</button>
@@ -29,8 +30,8 @@
 {% if tab_slider.tab_button5_name5 != blank %} 
 <button class="tab-button" data-tab="tab_img_slider_5">{{ tab_slider.tab_button5_name5 }}</button>
 {% endif %}
-
 </div>
+  {% endif %}
 
 <div class="tab-content">
 {% if tab_slider.button1_slide_image1 != blank %}
