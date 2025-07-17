@@ -502,15 +502,16 @@
                                         check_hidden: false,
                                         quantity_stt: 3
                                     %}
-                          {% if template.suffix contains 'Product-page-3.O' %}
-                           
-                            <button  id="show-sticky-product" class="button button--primary product-form__submit product-sticky-checkout {% if first_inventory == 0 %} 11{% endif %}" data-variantId="{{ current_variant.id}}" data-realqty>
+                          <button  id="show-sticky-product" class="button button--primary product-form__submit product-sticky-checkout {% if first_inventory == 0 %} 11{% endif %}" data-variantId="{{ current_variant.id}}" data-realqty>
                                            {%- if show_subtotal_text and subtotal_style == '2' -%}
                                                 Checkout
                                             {%- else -%}
                                                 {{ 'Soldout' }}
                                             {%- endif -%}
                                             </button>
+                         {% comment %} {% if template.suffix contains 'Product-page-3.O' %}
+                           
+                            
                                {% else %}
                                     <button
                                         class="product-form__submit button button--primary{% if first_inventory == 0 %} button-text-change{% endif %}"
@@ -524,6 +525,7 @@
                                             {%- endif -%}
                                     </button>
                             {% endif %}
+                           {% endcomment %} 
                             </div>
                         {% endif %}
                     </div>
