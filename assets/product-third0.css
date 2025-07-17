@@ -872,6 +872,13 @@ font-size: 30px;
   product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo_product_tab, .halo-product-tab .tab_title_halo_product_tab{
         font-size: 24px;
   }
+  .dynamic-Product-page-3\.O-template .toggle-content h3{
+        font-size: 16px;
+  }
+ .dynamic-Product-page-3\.O-template .halo-text-format ul li, 
+ .dynamic-Product-page-3\.O-template .halo-text-format ol li{
+    font-size: 15px;
+  }
 }
 @media (max-width: 769px){
   
