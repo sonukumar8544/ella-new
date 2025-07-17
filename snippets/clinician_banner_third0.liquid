@@ -1,5 +1,7 @@
 <!-- clinician_banner_third0 -->
-{{ product.metafields.custom.product_3_0_clinical_content.value }}
+{% if product.metafields.custom.product_3_0_clinical_content.value  != blank %}{
+  { product.metafields.custom.product_3_0_clinical_content.value }}
+  {% endif %}
 
 <div class="shipping-benefits">
   <div class="shipping-benefit clinicalSlider">
