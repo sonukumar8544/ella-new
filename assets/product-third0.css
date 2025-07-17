@@ -84,7 +84,16 @@ padding: 0px 10px;
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom .container{
   max-width: 1420px !important;
 }
-  
+ .halo-product-tab .tab_title_halo_product_tab{
+   color: #374650;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55.8px;
+    letter-spacing: -0.32px;
+ }
 }
 
 @media(min-width: 800px) and (max-width: 1849px) {
