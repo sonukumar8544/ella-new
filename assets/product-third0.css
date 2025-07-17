@@ -81,7 +81,11 @@ justify-content: space-between;
   .sonu9.productView-product.clearfix {
 padding: 0px 10px;
 }
-	}
+.dynamic-Product-page-3\.O-template .product-descriptios-bottom .container{
+  max-width: 1420px !important;
+}
+  
+}
 
 @media(min-width: 800px) and (max-width: 1849px) {
   .dynamic-Product-page-3\.O-template .container.productView-container .productView{
@@ -429,7 +433,7 @@ margin-right: 20px;
     font-size: 16px;
   }
 .dynamic-Product-page-3\.O-template .product-descriptios-bottom .container {
-max-width: 1420px!important;padding-left: 15px;
+padding-left: 15px;
 padding-right: 15px;
 margin: auto;
 padding: 1px 0px 35px;
