@@ -235,6 +235,20 @@ padding: 0px 0px;
   .container.free-shipping-container{
         margin-bottom: 55px;
   }
+   .dynamic-Product-page-3\.O-template .position_set_group.container {
+    max-width: 1260px;
+    background: #006a9108;
+    border-radius: 15px;
+    border: 1px solid #006a9108;
+    padding: 10px 0px;
+}
+.dynamic-Product-page-3\.O-template ul.benefits-list li{
+  font-size: 17px;
+  margin-bottom: 20px
+}
+.dynamic-Product-page-3\.O-template .hero-overlay h2{
+ font-size: 29px; 
+}
 }
 
 /* global css  */
@@ -491,20 +505,7 @@ margin-right: 20px;
         margin-bottom: 10px;
 }
 
- .dynamic-Product-page-3\.O-template .position_set_group.container {
-    max-width: 1260px;
-    background: #006a9108;
-    border-radius: 15px;
-    border: 1px solid #006a9108;
-    padding: 10px 0px;
-}
-.dynamic-Product-page-3\.O-template ul.benefits-list li{
-  font-size: 17px;
-  margin-bottom: 20px
-}
-.dynamic-Product-page-3\.O-template .hero-overlay h2{
- font-size: 29px; 
-}
+
 
 @media (min-width: 1024px) {
   .dynamic-Product-page-3\.O-template .halo-text-format p {
