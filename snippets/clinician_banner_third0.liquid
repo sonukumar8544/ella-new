@@ -2,7 +2,10 @@
 {{ product.metafields.custom.product_3_0_clinical_content.value }}
 
 <div class="shipping-benefits">
-  <div class="shipping-benefit"><span>10+ Clinically Studied Ingredients</span> <span>Fast & Free Shipping</span> <span>3rd-Party Tested</span></div>
+  <div class="shipping-benefit clinicalSlider">
+    <span>10+ Clinically Studied Ingredients</span>
+    <span>Fast & Free Shipping</span>
+    <span>3rd-Party Tested</span></div>
   </div>
 
 <style>
@@ -52,4 +55,34 @@
 }
   }
 
-</style>
+  </style>
+
+<script>
+$(document).ready(function () {
+  let sliderInitialized = false;
+
+  function handleSlider() {
+    if ($(window).width() <= 800) {
+      if (!sliderInitialized) {
+        $('.clinicalSlider').slick({
+          slidesToShow: 1,
+          dots: true,
+          arrows: false
+        });
+        sliderInitialized = true;
+      }
+    } else {
+      if (sliderInitialized) {
+        $('.my-slider').slick('unslick');
+        sliderInitialized = false;
+      }
+    }
+  }
+
+  // Initial check
+  handleSlider();
+
+  // Recheck on window resize
+  $(window).on('resize', handleSlider);
+});
+</script>
