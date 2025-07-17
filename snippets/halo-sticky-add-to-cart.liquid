@@ -490,18 +490,20 @@
                             {%- endif -%}
                         {% endform %}
                         {% if sticky_atc_layout == '1' %}
-<!-- lineno502 -->
+                                    <!-- lineno502 -->
                                     <div class="empty-add-cart-button-wrapper" id="mobile_stricky_cstm">
-                                    {%- assign subtotal = subtotal | strip_html -%}
+                                                                      
                                     <div class="total_amount_checkout">
                                     {% render 'price', product: product %}
                                     </div>
+                                    
                                     {% render 'product-quantity',
                                     current_variant: current_variant,
                                     qty_style: qty_style,
                                     check_hidden: false,
                                     quantity_stt: 3
                                     %}
+                          
                                     <button  id="show-sticky-product" class="button button--primary product-sticky-checkout" 
                                     data-variantId="{{ current_variant.id}}"
                                     data-realqty>
@@ -509,6 +511,7 @@
                                     </button>
 
                          {% comment %} {% if template.suffix contains 'Product-page-3.O' %}
+                                       {%- assign subtotal = subtotal | strip_html -%}
                            {% else %}
                                     <button
                                         class="product-form__submit button button--primary{% if first_inventory == 0 %} button-text-change{% endif %}"
