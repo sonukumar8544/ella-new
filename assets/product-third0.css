@@ -71,7 +71,13 @@
     padding-top: 0;
     margin-bottom: 16px; 
 }
-/* benifit css */
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+margin: 0px 1px 30px;
+justify-content: space-between;
+}
 	}
 
 @media(min-width: 800px) and (max-width: 1799px) {
@@ -175,8 +181,15 @@ padding-bottom: 7px;
     padding-top: 0;
     margin-bottom: 16px; 
 }
-/* benifit css */
+.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+display: flex;
+flex-wrap: wrap;
+gap: 11px;
+margin: 0px 1px 30px;
+justify-content: space-between;
 }
+}
+
 /* dynamic  */
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
 position: relative;
@@ -648,7 +661,8 @@ font-size: 30px;
 }
   
   .dynamic-Product-page-3\.O-template .promo-banner__note{
-  font-size: 15px;    margin-bottom: 5px;
+  font-size: 15px; 
+    margin-bottom: 5px;
   }
   .dynamic-Product-page-3\.O-template img.promo-banner__avatar1 {
   width: 180px;
