@@ -66,8 +66,12 @@ $(document).ready(function () {
       if (!sliderInitialized) {
         $('.clinicalSlider').slick({
           slidesToShow: 1,
-          dots: true,
-          arrows: false
+           dots: false,
+      infinite: true,
+      arrows: false,
+      speed: 700,
+      autoplay: true,
+      autoplaySpeed: 3000,
         });
         sliderInitialized = true;
       }
