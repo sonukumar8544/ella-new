@@ -95,6 +95,9 @@ padding: 0px 10px;
     letter-spacing: -0.32px;
    margin-top: 0;
  }
+  .container.free-shipping-container{
+        margin-bottom: 80px;
+  }
 }
 
 @media(min-width: 800px) and (max-width: 1849px) {
@@ -222,6 +225,9 @@ padding: 0px 0px;
     letter-spacing: -0.32px;
      margin-top: 0;
  }
+  .container.free-shipping-container{
+        margin-bottom: 40px;
+  }
 }
 
 /* dynamic  */
