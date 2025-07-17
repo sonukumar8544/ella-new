@@ -238,6 +238,7 @@ padding: 0px 0px;
 }
 
 /* global css  */
+
 .dynamic-Product-page-3\.O-template .productView-image-wrapper {
 position: relative;
 }
@@ -491,6 +492,10 @@ margin-right: 20px;
 
 
 @media (min-width: 1024px) {
+  .dynamic-Product-page-3\.O-template .halo-text-format p {
+    margin-bottom: 0;
+    margin-top: 7px;
+}
   .dynamic-Product-page-3\.O-template .container.free-shipping-container{
     margin-bottom: 55px;
   }
