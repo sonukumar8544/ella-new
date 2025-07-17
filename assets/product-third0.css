@@ -1,106 +1,110 @@
 /* 1440px */
 @media (min-width: 1850px) {
-.dynamic-Product-page-3\.O-template .container.productView-container {
-    max-width: 1920px;
-    margin: 0px auto;
-    padding-inline: 240px !important;
-    padding-block: 60px;
-  background: linear-gradient(180deg, #086b92d9 -162.25%, #FFF 13.79%);
-}
-.dynamic-Product-page-3\.O-template .productView-top {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 60px;
-    }
-	
-   .dynamic-Product-page-3\.O-template .halo-productView-left {
-        max-width: 690px;
-        padding-right: 0px;
-        width: 100%;
-    }
-   .dynamic-Product-page-3\.O-template .halo-productView-right {
-        max-width: 690px;
-        width: 100%;
-        padding-right: 100px;
-    }
-  .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
-        align-items: flex-start;
-  }
+            .dynamic-Product-page-3\.O-template .container.productView-container {
+            max-width: 1920px;
+            margin: 0px auto;
+            padding-inline: 240px !important;
+            padding-block: 60px;
+            background: linear-gradient(180deg, #086b92d9 -162.25%, #FFF 13.79%);
+            }
+            .dynamic-Product-page-3\.O-template .productView-top {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 60px;
+            }
+            
+            .dynamic-Product-page-3\.O-template .halo-productView-left {
+            max-width: 690px;
+            padding-right: 0px;
+            width: 100%;
+            }
+            .dynamic-Product-page-3\.O-template .halo-productView-right {
+            max-width: 690px;
+            width: 100%;
+            padding-right: 100px;
+            }
+            .productView-nav.image-fit-unset:not(.enable_variant_image_group) .slick-track{
+            align-items: flex-start;
+            }
+            
+            .dynamic-Product-page-3\.O-template .productView-image-wrapper:before {
+            content: "";
+            position: absolute;
+            top: -55px;
+            right: 0;
+            bottom: 0;
+            left: -86px;
+            width: 747px;
+            height: 718px;
+            border-radius: 1110px;
+            opacity: .2;
+            background: #086b92;
+            filter: blur(100px);
+            }
+            .dynamic-Product-page-3\.O-template .position_set_group.container,
+            .dynamic-Product-page-3\.O-template .product-descriptios-bottom,
+            .dynamic-Product-page-3\.O-template .shipping-slider{
+            max-width: 1440px !important;
+            margin: auto;
+            }
+            .dynamic-Product-page-3\.O-template h1.productView-title {
+            color: #086B92;
+            font-family: Nunito;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -1px;
+            padding-bottom: 7px;
+            }
+            .dynamic-Product-page-3\.O-template p.product-page-one-liner {
+            margin: 0;
+            padding-bottom: 10px;
+            padding-top: 8px;
+            color: #29353C;
+            font-family: Lato;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            margin-top: 12px;
+            padding-top: 0;
+            margin-bottom: 16px; 
+            }
+            .dynamic-Product-page-3\.O-template .health-benefits_thirdO {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 0px 1px 30px;
+            justify-content: space-between;
+            }
+            .sonu9.productView-product.clearfix {
+            padding: 0px 10px;
+            }
+            .dynamic-Product-page-3\.O-template .product-descriptios-bottom .container{
+            max-width: 1420px !important;
+            },
+            .dynamic-Product-page-3\.O-template .tocotrienol-left h2,
+            .dynamic-Product-page-3\.O-template .tab-slider-thirdO h2,
+            .dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text
+            .halo-product-tab .tab_title_halo_product_tab{
+            color: #374650;
+            text-align: center;
+            font-family: Nunito;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 55.8px;
+            letter-spacing: -0.32px;
+            margin-top: 0;
+            }
+            .container.free-shipping-container{
+            margin-bottom: 80px;
+            padding: 20px 0px;
+            }
   
-   .dynamic-Product-page-3\.O-template .productView-image-wrapper:before {
-    content: "";
-    position: absolute;
-    top: -55px;
-    right: 0;
-    bottom: 0;
-    left: -86px;
-    width: 747px;
-        height: 718px;
-    border-radius: 1110px;
-    opacity: .2;
-    background: #086b92;
-    filter: blur(100px);
-    }
-      .dynamic-Product-page-3\.O-template .position_set_group.container,
-      .dynamic-Product-page-3\.O-template .product-descriptios-bottom,
-      .dynamic-Product-page-3\.O-template .shipping-slider{
-      max-width: 1440px !important;
-      margin: auto;
-      }
-      .dynamic-Product-page-3\.O-template h1.productView-title {
-      color: #086B92;
-      font-family: Nunito;
-      font-size: 36px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: -1px;
-      padding-bottom: 7px;
-      }
-  .dynamic-Product-page-3\.O-template p.product-page-one-liner {
-    margin: 0;
-    padding-bottom: 10px;
-    padding-top: 8px;
-    color: #29353C;
-    font-family: Lato;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    margin-top: 12px;
-    padding-top: 0;
-    margin-bottom: 16px; 
-}
-.dynamic-Product-page-3\.O-template .health-benefits_thirdO {
-display: flex;
-flex-wrap: wrap;
-gap: 16px;
-margin: 0px 1px 30px;
-justify-content: space-between;
-}
-  .sonu9.productView-product.clearfix {
-padding: 0px 10px;
-}
-.dynamic-Product-page-3\.O-template .product-descriptios-bottom .container{
-  max-width: 1420px !important;
-}
- .halo-product-tab .tab_title_halo_product_tab{
-   color: #374650;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 55.8px;
-    letter-spacing: -0.32px;
-   margin-top: 0;
- }
-  .container.free-shipping-container{
-        margin-bottom: 80px;
-        padding: 20px 0px;
-  }
  
 }
 @media(min-width: 800px) and (max-width: 1849px) {
