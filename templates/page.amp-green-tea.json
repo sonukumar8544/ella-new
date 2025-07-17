@@ -79,12 +79,55 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_WnHMky": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Supports_Heart-01-01.jpg",
+            "content-position": "60",
+            "content-align": "left",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#FFFFFF",
+            "heading_color": "#232323",
+            "heading": "Support Heart Health",
+            "description_color": "#ffffff",
+            "description": "Green tea helps reduce cholesterol and supports better blood flow and heart function.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_4md7tB": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": false,
+            "bgapplyenable": false,
+            "bgapply": "#ffffff5c",
+            "heading_bg": "",
+            "heading_color": "#ffffff",
+            "heading": "Welcome to the Story",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_8RYHU4",
         "story_page_pNWKCV",
-        "story_page_mFTd6B"
+        "story_page_mFTd6B",
+        "story_page_WnHMky",
+        "story_page_4md7tB"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
