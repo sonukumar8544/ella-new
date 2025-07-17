@@ -7410,37 +7410,37 @@ $(document)
   
  
   
-$(document).ready(function () {
- $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
-  const value = $(this).val();
- $(this).closest('.productView-stickyCart').find('.product-sticky-checkout').attr('data-realqty', value); 
-});
- $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
-  const variantIdthird = $(this).attr('data-variantId');
-  const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
-  fetch('/cart/add.js', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      id: variantIdthird,
-      quantity: quantitythird
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      window.location.href = '/checkout';
-    } else {
-      return response.json().then(data => {
-        alert('Error adding to cart: ' + (data.description || 'Unknown error'));
-      });
-    }
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-    alert('There was a problem adding the item to your cart.');
-  });
-});
-})
+// $(document).ready(function () {
+//  $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
+//   const value = $(this).val();
+//  $(this).closest('.productView-stickyCart').find('.product-sticky-checkout').attr('data-realqty', value); 
+// });
+//  $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart .product-sticky-checkout", function () {
+//   const variantIdthird = $(this).attr('data-variantId');
+//   const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
+//   fetch('/cart/add.js', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//       id: variantIdthird,
+//       quantity: quantitythird
+//     })
+//   })
+//   .then(response => {
+//     if (response.ok) {
+//       window.location.href = '/checkout';
+//     } else {
+//       return response.json().then(data => {
+//         // alert('Error adding to cart: ' + (data.description || 'Unknown error'));
+//       });
+//     }
+//   })
+//   .catch(error => {
+//     console.error('Fetch error:', error);
+//     // alert('There was a problem adding the item to your cart.');
+//   });
+// });
+// })
   // endcode
   
 })(jQuery);
