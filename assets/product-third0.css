@@ -462,10 +462,16 @@ margin-right: 20px;
     margin-bottom: 15px;
     margin-top: 8px;
   }
-  .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p,
-   .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p ul{
-   list-style: none;padding-left: 15px;
+  .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p{
+    
   }
+      .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format ul,
+      .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format ol {
+      list-style: none!important;
+      padding-top: 11px !important;
+      padding-left: 15px;
+      }
+  
    .dynamic-Product-page-3\.O-template .toggle-content h2 {
     font-size: 22px;
 }
