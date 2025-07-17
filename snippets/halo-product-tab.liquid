@@ -19,7 +19,10 @@
 -%}
 <!--halo-product-tab -->
 <product-tab class="productView-tab layout-{{ tab_layout }} halo-product-tab" data-vertical="{{ isVerticalSidebar }}" data-vertical-mobile="{{ isVerticalSidebarMobile }}">
-	{%- if tab_layout == 'horizontal' or tab_layout == 'popup' -%}
+	{% if product.metafields.custom.product_3_0_product_description_heading.value  != blank %}
+      <h2>{{ product.metafields.custom.product_3_0_product_description_heading.value }}</h2>
+  {% endif %}
+  {%- if tab_layout == 'horizontal' or tab_layout == 'popup' -%}
 		<ul class="tabs tabs-horizontal list-unstyled disable-srollbar">
 			{%- for block in section.blocks -%}
 				{%- liquid
