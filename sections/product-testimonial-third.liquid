@@ -38,221 +38,260 @@
       </div>
     {% endif %}
 
-      {% if testimonial.review_card_title2 != blank %}
-        <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-          {% if testimonial.review_card_icon_url2 != blank %}
-            <div class="testimonial-card-third__icon" aria-hidden="true">
-              {{ testimonial.review_card_icon_url2 }}
-            </div>
-          {% endif %}
-          <div class="testimonial-card-third__rating" aria-label="5 star rating">
-            {% render 'product-third-star-review' %} 
-          </div>
-          <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title2 }}</h2>
-          {% if testimonial.review_card_description2 != blank %}
-            <p class="testimonial-card-third__text">
-              {{ testimonial.review_card_description2 }}
-            </p>
-          {% endif %}
-          {% if testimonial.review_card_author_name2 != blank %}
-            <footer>
-              <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name2 }}</p>
-            </footer>
-          {% endif %}
-        </div>
-      {% endif %}
-
-        {% if testimonial.review_card_title3 != blank %}
-          <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-            {% if testimonial.review_card_icon_url3 != blank %}
-              <div class="testimonial-card-third__icon" aria-hidden="true">
-                {{ testimonial.review_card_icon_url3 }}
-              </div>
-            {% endif %}
-            <div class="testimonial-card-third__rating" aria-label="5 star rating">
-              {% render 'product-third-star-review' %} 
-            </div>
-            <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title3 }}</h2>
-            {% if testimonial.review_card_description3 != blank %}
-              <p class="testimonial-card-third__text">
-                {{ testimonial.review_card_description3 }}
-              </p>
-            {% endif %}
-            {% if testimonial.review_card_author_name3 != blank %}
-              <footer>
-                <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name3 }}</p>
-              </footer>
-            {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
           </div>
         {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title4 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url4 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url4 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title4 }}</h2>
-              {% if testimonial.review_card_description4 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description4 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name4 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name4 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title5 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url5 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url5 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title5 }}</h2>
-              {% if testimonial.review_card_description5 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description5 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name5 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name5 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
 
-          {% if testimonial.review_card_title6 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url6 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url6 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title6 }}</h2>
-              {% if testimonial.review_card_description6 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description6 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name6 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name6 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title7 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url7 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url7 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title7 }}</h2>
-              {% if testimonial.review_card_description7 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description7 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name7 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name7 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title8 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url8 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url8 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title8 }}</h2>
-              {% if testimonial.review_card_description8 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description8 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name8 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name8 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title9 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url9 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url9 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title9 }}</h2>
-              {% if testimonial.review_card_description9 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description9 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name9 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name9 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
 
-          {% if testimonial.review_card_title11 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url11 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  {{ testimonial.review_card_icon_url11 }}
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title11 }}</h2>
-              {% if testimonial.review_card_description11 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description11 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name11 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name11 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
+
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
+
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
+
+       {% if testimonial.review_card_title1 != blank %}
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+        {% if testimonial.review_card_icon_url1 != blank %}
+          <div class="testimonial-card-third__icon" aria-hidden="true">
+            {{ testimonial.review_card_icon_url1 }}
+          </div>
+        {% endif %}
+        <div class="testimonial-card-third__rating" aria-label="5 star rating">
+          {% render 'product-third-star-review' %} 
+        </div>
+        
+        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+        {% if testimonial.review_card_description1 != blank %}
+          <p class="testimonial-card-third__text">
+            {{ testimonial.review_card_description1 }}
+          </p>
+        {% endif %}
+        {% if testimonial.review_card_author_name1 != blank %}
+          <footer>
+            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+          </footer>
+        {% endif %}
+      </div>
+    {% endif %}
+
+      
+
+    
 
 
         {% endfor %}
