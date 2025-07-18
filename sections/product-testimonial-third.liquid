@@ -1,38 +1,50 @@
-<!-- scientific-slider-thirdO -->
+<!--product-testimonial-third. -->
 {% assign testimonial = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
 
-{% if testimonial  != blank %}
+{% if testimonial != blank %}
 <section class="testimonial-third" id="testimonial-third-{{ section.id }}">
   <div class="container">
+    
+    {% if section.settings.titlefaq != blank %}
       <div class="faq__header">
-        {% if section.settings.titlefaq != blank %}
-          <h2 class="faq_title">{{ section.settings.titlefaq }}</h2>
-        {% endif %}
+        <h2 class="faq_title">{{ section.settings.titlefaq }}</h2>
       </div>
+    {% endif %}
+
     <div class="testimonial_slider_third">
       {% if testimonial.review_card_title1 != blank %}
         <div class="testimonial-card-third">
-             {% if testimonial.review_card_icon_url1  != blank %} 
-                <div class="testimonial-card-third__icon" aria-hidden="true">{{ testimonial.review_card_icon_url1 }}</div>
-                {% endif %}
-                <header>
-                  <div class="testimonial-card-third__rating" aria-label="5 star rating"></div>
-                  <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
-                </header>
-                 {% if testimonial.review_card_description1 != blank %} <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description1 }}
-                </p>
+          
+          {% if testimonial.review_card_icon_url1 != blank %}
+            <div class="testimonial-card-third__icon" aria-hidden="true">
+              {{ testimonial.review_card_icon_url1 }}
+            </div>
           {% endif %}
-                {% if testimonial.review_card_author_name1 != blank %}
-                  <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1  }}</p>
-                </footer>
+
+          <header>
+            <div class="testimonial-card-third__rating" aria-label="5 star rating">★★★★★</div>
+            <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
+          </header>
+
+          {% if testimonial.review_card_description1 != blank %}
+            <p class="testimonial-card-third__text">
+              {{ testimonial.review_card_description1 }}
+            </p>
           {% endif %}
+
+          {% if testimonial.review_card_author_name1 != blank %}
+            <footer>
+              <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
+            </footer>
+          {% endif %}
+
         </div>
       {% endif %}
     </div>
   </div>
- </section>
+</section>
+
+
 
 <style>
     #testimonial-third-{{ section.id }} {
