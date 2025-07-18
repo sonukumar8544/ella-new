@@ -4,21 +4,9 @@
 {% if science_content != blank %}
 <section class="scientific-section" id="faqs-third{{ section.id }}">
   <div class="container">
-
-    {% for block in science_content %}
-      <div class="scientific-header">
-        {% if block.scientific_main_title != blank %}
-          <h2 class="scientific-title">{{ block.scientific_main_title }}</h2>
-        {% endif %}
-        {% if block.scientific_main_description != blank %}
-          <p class="scientific-subtitle">{{ block.scientific_main_description }}</p>
-        {% endif %}
-      </div>
-    {% endfor %}
-
     <div class="scientific-slider">
       {% for block in science_content %}
-        <div class="scientific-card">
+        <div class="faqs-card-third">
           {% if block.scientific_card_image_url != blank %}
             <div class="scientific-quote-icon">
               <img src="{{ block.scientific_card_image_url }}" alt="" title="">
@@ -101,10 +89,10 @@
     #faqs-third{{ section.id }} span.scientific-icon svg {
     height: 20px;
     }
-    #faqs-third{{ section.id }} .scientific-card:hover {
+    #faqs-third{{ section.id }} .faqs-card-third:hover {
     border:1px solid #006a91;
     }
-    #faqs-third{{ section.id }} .scientific-card {
+    #faqs-third{{ section.id }} .faqs-card-third {
     background-color: #f4f0eb;
     border-radius: 12px;
     padding: 30px 24px;
@@ -201,7 +189,7 @@
     gap: 0;
     }
     
-    #faqs-third{{ section.id }} .scientific-card {
+    #faqs-third{{ section.id }} .faqs-card-third {
     padding: 10px 20px;
     flex: 0 0 310px;
     }
@@ -228,7 +216,7 @@
     #faqs-third{{ section.id }} .transformation-section .percentage{
     line-height: 1.7;
     }
-    #faqs-third{{ section.id }} .scientific-card{
+    #faqs-third{{ section.id }} .faqs-card-third{
       height: 154px;
     }
   }
