@@ -1,7 +1,7 @@
 <!-- scientific-slider-thirdO -->
-{% assign testimonial-third = product.metafields.custom.product_3_0_science_slider.value %}
+{% assign testimonial_slider_review = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
 
-{% if science_content != blank %}
+{% if testimonial_slider_review  != blank %}
 <section class="testimonial-third" id="testimonial-third-{{ section.id }}">
   <div class="container">
       <div class="faq__header">
@@ -10,23 +10,22 @@
         {% endif %}
       </div>
     <div class="testimonial_slider_third">
-      {% for block in science_content %}
+      {% for block in testimonial_slider_review  %}
         <div class="testimonial-card-third">
-          {% if block.scientific_card_image_url != blank %}
-            <div class="scientific-quote-icon">
-              <img src="{{ block.scientific_card_image_url }}" alt="" title="">
-            </div>
-          {% endif %}
-
-          {% if block.scientific_card_content != blank %}
-            <p class="scientific-quote-text">
-              {{ block.scientific_card_content }}
-              {% if block.scientific_card_small_content != blank %}
-                <a href="{{ block.scientific_card_link1 }}" class="scientific-note">{{ block.scientific_card_small_content }}</a>
-              {% endif %}
-            </p>
-          {% endif %}
-
+              <article class="review-card" aria-label="Amazon customer review">
+                <div class="review-card__icon" aria-hidden="true">{{  }}</div>
+            
+                <header>
+                  <div class="review-card__rating" aria-label="5 star rating"></div>
+                  <h2 class="review-card__title">{{  }}</h2>
+                </header>
+                  <p class="review-card__text">
+                  {{  }}
+                </p>
+                <footer>
+                  <p class="review-card__author">{{  }}</p>
+                </footer>
+              </article>
         </div>
       {% endfor %}
     </div>
