@@ -923,9 +923,14 @@ font-size: 30px;
 @media (max-width: 769px){
  .dynamic-Product-page-3\.O-template .toggle-content h2{
    font-size: 21px !important;
-    margin-top: 30px;
+    margin-top: 15px;
     line-height: 1.2 !important;
  } 
+  .dynamic-Product-page-3\.O-template .toggle-content strong, b {
+    font-size: 14px;
+    font-weight: 600;
+        color: #3c3c3ce8;
+}
 #tab-description h2,#tab-description .h2 {
     font-size: 1.4rem;
     line-height: 1.8rem;
