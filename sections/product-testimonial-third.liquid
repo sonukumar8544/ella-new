@@ -2,7 +2,7 @@
 {% assign testimonial1 = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
 
 {% if testimonial1 != blank %}
-<section class="testimonial-third" id="testimonial-third-{{ section.id }}">
+<section class="testimonial-third" id="testimonial-third-{{ section.id }}" {% if section.settings.bgcolor!= blank %}style="background-color:{{ section.settings.bgcolor }}"{% endif %}>
   <div class="container">
     
     {% if section.settings.titlefaq != blank %}
