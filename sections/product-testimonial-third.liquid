@@ -130,7 +130,13 @@
       left: 50%;
       transform: translateX(-50%);
     }
-
+#testimonial-third-{{ section.id }} .testimonial-card-third__title,
+    #testimonial-third-{{ section.id }} .testimonial-card-third__text,
+   #testimonial-third-{{ section.id }} .testimonial-card-third__author,
+ #testimonial-third-{{ section.id }} .testimonial-card-third__rating {
+    text-align: left;
+}
+  
  #testimonial-third-{{ section.id }} .testimonial-card-third__rating svg {
     fill: #FFA25F;
     stroke: #FFA25F;
@@ -146,7 +152,7 @@
     }
 
     #testimonial-third-{{ section.id }} .testimonial-card-third__text {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--color-text);
       line-height: 1.6;
     }
