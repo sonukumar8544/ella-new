@@ -769,6 +769,9 @@ font-size: 30px;
     justify-content: center;
     width: 121px;
 }
+  .sls-label-container.seal-col:nth-child(2n) .sls-selling-plan-group-name{
+        padding-top: 16px;
+  }
   
   .dynamic-Product-page-3\.O-template .halo-productView-right.productView-details.clearfix {
   margin-top: 25px;
