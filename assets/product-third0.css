@@ -555,15 +555,14 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
     font-size: 17px;
     }
     .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p {
-   margin-bottom: 0;
-        margin-top: 7px;
-        color: #3C3C3C;
+         margin-top: 7px;
+        margin-bottom: 1rem;
+        color: #212833eb;
         font-family: Lato;
-        font-size: 16px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0.32px;
+        line-height: 1.5;
     }
     /* bought together */
     .dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text {
