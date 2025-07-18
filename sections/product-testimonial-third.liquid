@@ -14,7 +14,7 @@
     <div class="testimonial_slider_third">
   {% for testimonial in testimonial1 %}
      {% if testimonial.review_card_title1 != blank %}
-      <div class="testimonial-card-third">
+      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
         {% if testimonial.review_card_icon_url1 != blank %}
           <div class="testimonial-card-third__icon" aria-hidden="true">
             {{ testimonial.review_card_icon_url1 }}
@@ -39,7 +39,7 @@
     {% endif %}
 
       {% if testimonial.review_card_title2 != blank %}
-        <div class="testimonial-card-third">
+        <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
           {% if testimonial.review_card_icon_url2 != blank %}
             <div class="testimonial-card-third__icon" aria-hidden="true">
               {{ testimonial.review_card_icon_url2 }}
@@ -63,7 +63,7 @@
       {% endif %}
 
         {% if testimonial.review_card_title3 != blank %}
-          <div class="testimonial-card-third">
+          <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
             {% if testimonial.review_card_icon_url3 != blank %}
               <div class="testimonial-card-third__icon" aria-hidden="true">
                 {{ testimonial.review_card_icon_url3 }}
@@ -87,7 +87,7 @@
         {% endif %}
 
           {% if testimonial.review_card_title4 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url4 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url4 }}
@@ -111,7 +111,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title5 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url5 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url5 }}
@@ -135,7 +135,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title6 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url6 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url6 }}
@@ -159,7 +159,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title7 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url7 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url7 }}
@@ -183,7 +183,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title8 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url8 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url8 }}
@@ -207,7 +207,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title9 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url9 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url9 }}
@@ -231,7 +231,7 @@
           {% endif %}
 
           {% if testimonial.review_card_title11 != blank %}
-            <div class="testimonial-card-third">
+            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
               {% if testimonial.review_card_icon_url11 != blank %}
                 <div class="testimonial-card-third__icon" aria-hidden="true">
                   {{ testimonial.review_card_icon_url11 }}
@@ -358,6 +358,7 @@
       font-size: 16px;
       color: var(--color-text);
       line-height: 1.6;
+      margin-top: 10px;
     }
 
     #testimonial-third-{{ section.id }} .testimonial-card-third__author {
