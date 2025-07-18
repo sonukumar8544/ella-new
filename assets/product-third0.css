@@ -261,7 +261,9 @@
     }
     
     .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-    background: #006a91;
+    border: none;
+    background: #006a91ad;
+    border-color: #006a91ad;
     }
     .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
     color: #ffffff !important;
