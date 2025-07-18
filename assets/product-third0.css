@@ -712,9 +712,9 @@ font-size: 30px;
 }
 @media(max-width:550px ){
   .seal-col:nth-child(2n) .sls-selling-plan-group-name{
-      max-width:100% !important;
+  max-width:100% !important;
   }
- .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
+  .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
    font-size: 15px;
    width: 44%; 
     gap: 4px;
