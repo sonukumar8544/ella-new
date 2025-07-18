@@ -24,7 +24,6 @@
 
           <header>
             <div class="testimonial-card-third__rating" aria-label="5 star rating">
-            <div class="review-stars" aria-label="5 star rating">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA25F" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
             <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
@@ -33,7 +32,6 @@
             <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
             </svg>
             
-            </div>
             </div>
             <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
             </header>
@@ -113,6 +111,7 @@
       position: relative;
     }
 
+  
     #testimonial-third-{{ section.id }} .testimonial-card-third__icon {
       width: 44px;
       height: 44px;
@@ -136,6 +135,12 @@
       margin-top: 20px;
       letter-spacing: 2px;
     }
+ #testimonial-third-{{ section.id }} .testimonial-card-third__rating svg {
+    fill: #FFA25F;
+    stroke: #FFA25F;
+    width: 18px;
+    height: auto;
+}
 
    #testimonial-third-{{ section.id }} .testimonial-card-third__title {
       font-weight: 600;
