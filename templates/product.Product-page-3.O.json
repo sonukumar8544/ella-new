@@ -618,8 +618,21 @@
         "description": ""
       }
     },
+    "product_testimonial_third_iMhbTE": {
+      "type": "product-testimonial-third",
+      "name": "Meta FAQ's 3.0",
+      "settings": {
+        "bgcolor": "#f2f3f9",
+        "bgcard": "#ffffff",
+        "title": "#000000",
+        "description": "",
+        "author": "#3f3f3f",
+        "titlefaq": "Real People, Real Results"
+      }
+    },
     "meta_instagram_pWYEc3": {
       "type": "meta-instagram",
+      "disabled": true,
       "settings": {
         "id": "",
         "container": "container",
@@ -702,14 +715,6 @@
         "heading": "Frequently Asked Questions",
         "subheading": "Everything you need to know about Hair + Energy"
       }
-    },
-    "product_testimonial_third_iMhbTE": {
-      "type": "product-testimonial-third",
-      "name": "Meta FAQ's 3.0",
-      "settings": {
-        "titlefaq": "Real People, Real Results",
-        "description": ""
-      }
     }
   },
   "order": [
@@ -726,8 +731,8 @@
     "scientific_slider_third_o_AYBm97",
     "transform_section_third_o_CP39Wc",
     "metafield_testimonial_video_VcK34F",
+    "product_testimonial_third_iMhbTE",
     "meta_instagram_pWYEc3",
-    "product_page_faq_section_HeHhtA",
-    "product_testimonial_third_iMhbTE"
+    "product_page_faq_section_HeHhtA"
   ]
 }
