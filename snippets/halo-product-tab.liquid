@@ -227,3 +227,22 @@
 	}
 </script>
 {%- endif -%}
+
+
+<script>
+function toggleContent(event) {
+  event.preventDefault();
+
+  const wrapper = event.target.closest(".testimonial-wrapper");
+  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
+  const showLink = wrapper.querySelector(".toggle-show");
+
+  if (hiddenContent.classList.contains("hidden")) {
+    hiddenContent.classList.remove("hidden");
+    showLink.style.display = "none";
+  } else {
+    hiddenContent.classList.add("hidden");
+    showLink.style.display = "inline";
+  }
+}
+</script>
