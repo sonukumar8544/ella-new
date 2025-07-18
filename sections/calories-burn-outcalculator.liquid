@@ -9,7 +9,6 @@
     ]
   }
 {% endschema %}
-
 <style>
     @media (min-width: 768px){
         .calories-burn-calc-body{
@@ -43,7 +42,7 @@
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.1;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .calories-burn-calc-input-group {
@@ -102,7 +101,6 @@
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
-    max-width: 1000px;
   }
 
   .calories-burn-calc-result-container h2 {
@@ -111,10 +109,18 @@
     text-align: center;
   }
 
-  .calories-burn-calc-calories-display {
+  .calories-burn-calc-result-value {
     font-size: 32px;
     font-weight: bold;
     color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .calories-burn-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
     margin: 15px 0;
     text-align: center;
   }
@@ -125,6 +131,9 @@
     border-radius: 5px;
     margin-top: 20px;
     border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .calories-burn-calc-suggestion h3 {
@@ -157,8 +166,125 @@
     .calories-burn-calc-calculator-container h1{
       font-size: 24px;
     }
+    
+    .calories-burn-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .calories-burn-calc-result-category {
+      font-size: 20px;
+    }
   }
 
+  /* Popup styles */
+  .calories-burn-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .calories-burn-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .calories-burn-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .calories-burn-calc-popup-overlay.active .calories-burn-calc-popup {
+    transform: translateY(0);
+  }
+
+  .calories-burn-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .calories-burn-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .calories-burn-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .calories-burn-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .calories-burn-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 </style>
 
 <section class="calories-burn-calc-body">
@@ -229,7 +355,8 @@
     class="calories-burn-calc-result-container"
     style="display: none;">
     <h2>Your Results</h2>
-    <div class="calories-burn-calc-calories-display" id="calories-burn-calc-calories-result">0 calories</div>
+    <div class="calories-burn-calc-result-value" id="calories-burn-calc-calories-result">0 calories</div>
+    <div class="calories-burn-calc-result-category" id="calories-burn-calc-intensity-level">Intensity Level</div>
 
     <div class="calories-burn-calc-comparison">
       <div class="calories-burn-calc-comparison-item">
@@ -249,14 +376,38 @@
   </div>
 </section>
 
+<!-- Popup HTML - Only contains Klaviyo form -->
+<div class="calories-burn-calc-popup-overlay" id="calories-burn-calc-popup">
+  <div class="calories-burn-calc-popup">
+    <button class="calories-burn-calc-popup-close" id="calories-burn-calc-popup-close">&times;</button>
+    <h2 class="calories-burn-calc-popup-title">Get Your Full Fitness Analysis</h2>
+    <div class="calories-burn-calc-popup-content">
+      <!-- Only Klaviyo form in popup -->
+      <div class="calories-burn-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const calculateBtn = document.getElementById('calories-burn-calc-calculate-btn');
         const resultElement = document.getElementById('calories-burn-calc-result');
         const caloriesResult = document.getElementById('calories-burn-calc-calories-result');
+        const intensityLevel = document.getElementById('calories-burn-calc-intensity-level');
         const suggestionText = document.getElementById('calories-burn-calc-suggestion-text');
         const equivalentFood = document.getElementById('calories-burn-calc-equivalent-food');
         const walkingEquivalent = document.getElementById('calories-burn-calc-walking-equivalent');
+        
+        // Popup elements
+        const popup = document.getElementById('calories-burn-calc-popup');
+        const popupClose = document.getElementById('calories-burn-calc-popup-close');
+        
+        // Store the calculated calories
+        let calculatedCalories = 0;
+        let calculatedActivity = '';
+        let calculatedIntensity = '';
 
         // MET values for different activities and intensities
         const metValues = {
@@ -279,7 +430,38 @@
             { name: "can of soda", calories: 150 }
         ];
 
-        calculateBtn.addEventListener('click', function () {
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            // Show the regular result container after closing popup
+            displayResult(calculatedCalories, calculatedActivity, calculatedIntensity);
+        });
+
+        // Close popup when clicking outside of it
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                // Show the regular result container after closing popup
+                displayResult(calculatedCalories, calculatedActivity, calculatedIntensity);
+            }
+        });
+
+        // Function to handle Klaviyo button clicks
+        function handleKlaviyoButtonClick(e) {
+            // Check if the clicked element is the Klaviyo submit button
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                // Close the popup
+                popup.classList.remove('active');
+                // Show the regular result container
+                displayResult(calculatedCalories, calculatedActivity, calculatedIntensity);
+            }
+        }
+
+        // Set up event listener for Klaviyo button
+        document.addEventListener('click', handleKlaviyoButtonClick);
+
+        calculateBtn.addEventListener('click', function() {
             // Get input values
             const activity = document.getElementById('calories-burn-calc-activity').value;
             const hours = parseFloat(document.getElementById('calories-burn-calc-hours').value) || 0;
@@ -305,15 +487,16 @@
             const met = metValues[activity][intensity];
             const calories = calculateCaloriesBurned(met, weight, durationMinutes);
 
-            // Show results
-            resultElement.style.display = 'block';
-            caloriesResult.textContent = `${calories.toFixed(0)} calories burned`;
-            generateSuggestions(calories, activity, durationMinutes);
-            showFoodEquivalent(calories);
-            showWalkingEquivalent(calories, weight);
+            // Store the calculated values
+            calculatedCalories = calories;
+            calculatedActivity = activity;
+            calculatedIntensity = intensity;
+
+            // Show the popup with Klaviyo form
+            popup.classList.add('active');
             
-            // Scroll to results
-            resultElement.scrollIntoView({ behavior: 'smooth' });
+            // Hide the regular result container initially
+            resultElement.style.display = 'none';
         });
 
         function calculateCaloriesBurned(met, weightKg, durationMinutes) {
@@ -321,25 +504,47 @@
             return met * weightKg * (durationMinutes / 60);
         }
 
-        function generateSuggestions(calories, activity, duration) {
-            let suggestion = "";
-            const caloriesPerMinute = calories / duration;
+        function displayResult(calories, activity, intensity) {
+            // Update the result display
+            caloriesResult.textContent = `${calories.toFixed(0)} calories burned`;
             
-            if (calories < 100) {
-                suggestion = "This is a light workout. Consider increasing duration or intensity for better results.";
-            } else if (calories < 300) {
-                suggestion = "Good moderate workout! Try adding 10 more minutes next time to boost your results.";
-            } else if (calories < 500) {
-                suggestion = "Great vigorous workout! You're burning significant calories. Keep it up!";
+            // Set intensity level text
+            const intensityText = intensity.charAt(0).toUpperCase() + intensity.slice(1);
+            intensityLevel.textContent = `${intensityText} Intensity`;
+            
+            // Generate suggestions
+            generateSuggestions(calories, activity, intensity);
+            
+            // Show food equivalent
+            showFoodEquivalent(calories);
+            
+            // Show walking equivalent
+            const weight = parseFloat(document.getElementById('calories-burn-calc-weight').value);
+            showWalkingEquivalent(calories, weight);
+            
+            // Show the result container
+            resultElement.style.display = 'block';
+            resultElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateSuggestions(calories, activity, intensity) {
+            let suggestion = "";
+            
+            if (intensity === 'light') {
+                suggestion = "This is a light workout. Great for recovery days or beginners. Consider increasing intensity gradually as you build endurance.";
+            } else if (intensity === 'moderate') {
+                suggestion = "Good moderate workout! This intensity is excellent for maintaining fitness and burning calories consistently.";
             } else {
-                suggestion = "Excellent intense workout! Make sure to stay hydrated and get proper recovery.";
+                suggestion = "Vigorous workout! You're pushing your limits. Make sure to balance these with recovery days to prevent overtraining.";
             }
             
             // Activity-specific tips
-            if (activity === 'running' && caloriesPerMinute < 8) {
-                suggestion += " Try increasing your pace to burn more calories per minute.";
+            if (activity === 'running' && intensity === 'vigorous') {
+                suggestion += " For running at this intensity, proper running form and footwear are crucial to prevent injuries.";
             } else if (activity === 'weightlifting') {
-                suggestion += " Remember that weight training builds muscle which boosts metabolism long-term.";
+                suggestion += " Remember that weight training builds muscle which boosts metabolism long-term, even when you're not exercising.";
+            } else if (activity === 'swimming') {
+                suggestion += " Swimming is excellent low-impact exercise. Consider varying your strokes to work different muscle groups.";
             }
             
             suggestionText.textContent = suggestion;

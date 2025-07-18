@@ -181,6 +181,115 @@
     }
   }
 
+  /* Popup styles */
+  .body-fat-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .body-fat-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .body-fat-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .body-fat-calc-popup-overlay.active .body-fat-calc-popup {
+    transform: translateY(0);
+  }
+
+  .body-fat-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .body-fat-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .body-fat-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .body-fat-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .body-fat-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 </style>
 
 <section class="body-fat-calc-body">
@@ -289,6 +398,20 @@
   </div>
 </section>
 
+<!-- Popup HTML - Only contains Klaviyo form -->
+<div class="body-fat-calc-popup-overlay" id="body-fat-calc-popup">
+  <div class="body-fat-calc-popup">
+    <button class="body-fat-calc-popup-close" id="body-fat-calc-popup-close">&times;</button>
+    <h2 class="body-fat-calc-popup-title">Get Your Full Body Analysis</h2>
+    <div class="body-fat-calc-popup-content">
+      <!-- Only Klaviyo form in popup -->
+      <div class="body-fat-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const genderSelect = document.getElementById('body-fat-calc-gender');
@@ -298,6 +421,15 @@
         const resultValue = document.getElementById('body-fat-calc-result-value');
         const resultCategory = document.getElementById('body-fat-calc-result-category');
         const suggestionText = document.getElementById('body-fat-calc-suggestion-text');
+        
+        // Popup elements
+        const popup = document.getElementById('body-fat-calc-popup');
+        const popupClose = document.getElementById('body-fat-calc-popup-close');
+        
+        // Store the calculated body fat percentage
+        let calculatedBodyFat = 0;
+        let calculatedGender = '';
+        let calculatedAge = 0;
         
         // Toggle hip measurement based on gender selection
         function toggleHipGroup() {
@@ -312,6 +444,50 @@
         
         // Calculate button event listener
         calculateBtn.addEventListener('click', calculateBodyFat);
+        
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            // Show the regular result container after closing popup
+            displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+        });
+        
+        // Close popup when clicking outside of it
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                // Show the regular result container after closing popup
+                displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+            }
+        });
+        
+        // Function to handle Klaviyo button clicks
+        function handleKlaviyoButtonClick(e) {
+            // Check if the clicked element is the Klaviyo submit button
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                // Close the popup
+                popup.classList.remove('active');
+                // Show the regular result container
+                displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+            }
+        }
+        
+        // Set up event listener for Klaviyo button
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Function to show results after Klaviyo form submission
+        function showResultsAfterFormSubmission() {
+            popup.classList.remove('active');
+            displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+        }
+        
+        // Listen for Klaviyo form submission as a fallback
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                showResultsAfterFormSubmission();
+            }
+        });
         
         function calculateBodyFat() {
             // Get selected gender
@@ -355,11 +531,20 @@
             // Ensure body fat is not negative or too high
             bodyFatPercentage = Math.max(2, Math.min(50, bodyFatPercentage));
             
-            // Display result
-            displayResult(bodyFatPercentage.toFixed(1), gender, age);
+            // Store the calculated values
+            calculatedBodyFat = bodyFatPercentage.toFixed(1);
+            calculatedGender = gender;
+            calculatedAge = age;
+            
+            // Show the popup with Klaviyo form
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially
+            resultElement.style.display = 'none';
         }
         
         function displayResult(percentage, gender, age) {
+            // Update the result display
             resultValue.textContent = `${percentage}%`;
             
             // Determine category based on gender and percentage
@@ -402,11 +587,12 @@
                 }
             }
             
+            // Update the display
             resultCategory.textContent = category;
             suggestionText.textContent = description;
-            resultElement.style.display = 'block';
             
-            // Scroll to results
+            // Show the result container
+            resultElement.style.display = 'block';
             resultElement.scrollIntoView({ behavior: 'smooth' });
         }
     });
