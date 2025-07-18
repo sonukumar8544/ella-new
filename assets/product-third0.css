@@ -921,15 +921,21 @@ font-size: 30px;
  }
 }
 @media (max-width: 769px){
+      .dynamic-Product-page-3\.O-template .halo-text-format p {
+        margin-bottom: 0;
+        font-size: 16px;
+        color: #3c3c3ce8;
+        font-weight: 400;
+    }
  .dynamic-Product-page-3\.O-template .toggle-content h2{
    font-size: 21px !important;
     margin-top: 15px;
     line-height: 1.2 !important;
  } 
   .dynamic-Product-page-3\.O-template .toggle-content strong, b {
-    font-size: 14px;
-    font-weight: 600;
-        color: #3c3c3ce8;
+       font-size: 14px;
+    font-weight: bolder;
+    color: #3c3c3ce8;
 }
 #tab-description h2,#tab-description .h2 {
     font-size: 1.4rem;
