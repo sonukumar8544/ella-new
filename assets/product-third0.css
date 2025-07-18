@@ -741,16 +741,15 @@ font-size: 30px;
         gap: 4px;
  }
   
- .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-selling-plan-group-name{
+ /* .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-selling-plan-group-name{
     display: flex!important;
-    /* max-width: 100% !important; */
    padding-top: 0!important;
    align-items: anchor-center !important;
   }
 
    .dynamic-Product-page-3\.O-template .sealsubs-target-element {
     margin: 0px auto 10px !important;
-}
+} */
   .dynamic-Product-page-3\.O-template .product-form__buttons{
     border-radius: 10px;
   }
