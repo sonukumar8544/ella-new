@@ -4,7 +4,7 @@
 {% if science_content != blank %}
 <section class="scientific-section" id="faqs-third{{ section.id }}">
   <div class="container">
-      <div class="scientific-header">
+      <div class="faq__header">
         {% if section.settings.scientific_main_title != blank %}
           <h2 class="scientific-title">{{ section.settings.scientific_main_title }}</h2>
         {% endif %}
@@ -40,7 +40,7 @@
     text-align: center;
     }
     
-    .scientific-header {
+    .faq__header {
     margin-bottom: 20px;
     }
     
@@ -177,7 +177,7 @@
     line-height: 48px;
     }
     
-    #faqs-third{{ section.id }} .scientific-header {
+    #faqs-third{{ section.id }} .faq__header {
     margin-bottom: 20px;
     }
     
