@@ -515,60 +515,34 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
                margin: 0;
     }
     /* tab css description */
-    .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p{
-    margin-bottom: 15px;
-    margin-top: 8px;
-    font-size: 15px;
+               .dynamic-Product-page-3\.O-template .toggle-content  h2 {
+      font-size: 21px;
+      margin-top: 30px;
     }
-    .dynamic-Product-page-3\.O-template .toggle-content  ul,
-    .dynamic-Product-page-3\.O-template .toggle-content ol {
-    list-style: inside !important;
-    padding-top: 0px !important;
-    padding-left: 15px;
-    padding-bottom: 10px;
+
+   .dynamic-Product-page-3\.O-template .toggle-content  h3 {
+      font-size: 19px;
+      margin-top: 20px;
     }
-    
-    .dynamic-Product-page-3\.O-template .toggle-content h2 {
-    font-size: 21px!important;
-    margin-bottom: 15px;
-    color: #212833;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.3 !important;
-    letter-spacing: -0.96px;
+
+    .dynamic-Product-page-3\.O-template .toggle-content p {
+      font-size: 16px;
+      margin: 10px 0;
     }
-    .dynamic-Product-page-3\.O-template .toggle-content br{
-    display:none;
+
+   .dynamic-Product-page-3\.O-template .toggle-content  strong, b {
+      font-size: 16px;
+      font-weight: bold;
     }
-    .dynamic-Product-page-3\.O-template .toggle-content p b {
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 7px;
-    margin-bottom: 1rem;
-    color: #212833de;
-    font-family: Lato;
-    font-style: normal;
-    /* font-weight: 400; */
-    line-height: 1.5;
-}
-    .dynamic-Product-page-3\.O-template .toggle-content h3{
-    margin-top: 15px;
-    font-size: 18px;
-    margin-bottom: 10px;
+
+   .dynamic-Product-page-3\.O-template .toggle-content  ul {
+      padding-left: 20px;
     }
-    .dynamic-Product-page-3\.O-template .toggle-content h4 {
-    font-size: 17px;
-    }
-    .dynamic-Product-page-3\.O-template .toggle-content .halo-text-format p {
-         margin-top: 7px;
-        margin-bottom: 1rem;
-        color: #212833eb;
-        font-family: Lato;
-        font-size: 17px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.5;
+
+   .dynamic-Product-page-3\.O-template .toggle-content  li {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
     /* bought together */
     .dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text {
