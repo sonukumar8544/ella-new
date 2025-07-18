@@ -9,7 +9,6 @@
     ]
   }
 {% endschema %}
-
 <style>
     @media (min-width: 768px){
         .bmr-calc-body{
@@ -142,6 +141,116 @@
       font-size: 20px;
     }
   }
+
+  /* Popup styles - Added from body fat calculator */
+  .bmr-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .bmr-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bmr-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .bmr-calc-popup-overlay.active .bmr-calc-popup {
+    transform: translateY(0);
+  }
+
+  .bmr-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .bmr-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .bmr-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .bmr-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .bmr-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 </style>
 
 <section class="bmr-calc-body">
@@ -205,6 +314,20 @@
   </div>
 </section>
 
+<!-- Added popup HTML from body fat calculator -->
+<div class="bmr-calc-popup-overlay" id="bmr-calc-popup">
+  <div class="bmr-calc-popup">
+    <button class="bmr-calc-popup-close" id="bmr-calc-popup-close">&times;</button>
+    <h2 class="bmr-calc-popup-title">Get Your Full Metabolism Analysis</h2>
+    <div class="bmr-calc-popup-content">
+      <!-- Klaviyo form in popup -->
+      <div class="bmr-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const calculateBtn = document.getElementById('bmr-calc-calculate-btn');
@@ -212,7 +335,48 @@
         const resultValue = document.getElementById('bmr-calc-result-value');
         const activityNote = document.getElementById('bmr-calc-activity-note');
         
+        // Popup elements - Added from body fat calculator
+        const popup = document.getElementById('bmr-calc-popup');
+        const popupClose = document.getElementById('bmr-calc-popup-close');
+        
+        // Store calculated BMR
+        let calculatedBMR = 0;
+        
         calculateBtn.addEventListener('click', calculateBMR);
+        
+        // Close popup when clicking the close button - Added from body fat calculator
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            displayResult(calculatedBMR);
+        });
+        
+        // Close popup when clicking outside of it - Added from body fat calculator
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        });
+        
+        // Function to handle Klaviyo button clicks - Added from body fat calculator
+        function handleKlaviyoButtonClick(e) {
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        }
+        
+        // Set up event listener for Klaviyo button - Added from body fat calculator
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Listen for Klaviyo form submission as a fallback - Added from body fat calculator
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        });
         
         function calculateBMR() {
             const gender = document.getElementById('bmr-calc-gender').value;
@@ -251,8 +415,16 @@
             }
             
             // Round to nearest whole number
-            bmr = Math.round(bmr);
+            calculatedBMR = Math.round(bmr);
             
+            // Show the popup with Klaviyo form - Added from body fat calculator
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially
+            resultContainer.style.display = 'none';
+        }
+        
+        function displayResult(bmr) {
             // Add activity level information
             activityNote.innerHTML = `
                 <strong>Based on your activity level:</strong><br>

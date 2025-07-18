@@ -151,6 +151,116 @@
       font-size: 20px;
     }
   }
+
+  /* Added popup styles */
+  .pregnancy-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .pregnancy-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .pregnancy-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .pregnancy-calc-popup-overlay.active .pregnancy-calc-popup {
+    transform: translateY(0);
+  }
+
+  .pregnancy-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .pregnancy-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .pregnancy-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .pregnancy-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .pregnancy-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 </style>
 
 <section class="pregnancy-calc-body">
@@ -230,6 +340,20 @@
   </div>
 </section>
 
+<!-- Added popup HTML -->
+<div class="pregnancy-calc-popup-overlay" id="pregnancy-calc-popup">
+  <div class="pregnancy-calc-popup">
+    <button class="pregnancy-calc-popup-close" id="pregnancy-calc-popup-close">&times;</button>
+    <h2 class="pregnancy-calc-popup-title">Get Your Full Pregnancy Nutrition Guide</h2>
+    <div class="pregnancy-calc-popup-content">
+      <!-- Klaviyo form in popup -->
+      <div class="pregnancy-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const calculateBtn = document.getElementById('pregnancy-calc-calculate-btn');
@@ -238,7 +362,50 @@
         const resultCategory = document.getElementById('pregnancy-calc-result-category');
         const trimesterInfo = document.getElementById('pregnancy-calc-trimester-info');
         
+        // Added popup elements
+        const popup = document.getElementById('pregnancy-calc-popup');
+        const popupClose = document.getElementById('pregnancy-calc-popup-close');
+        
+        // Store calculated results
+        let calculatedTotalGain = 0;
+        let calculatedCurrentGain = 0;
+        let calculatedWeeklyGain = 0;
+        let calculatedWeek = 0;
+        let calculatedBMICategory = '';
+        
         calculateBtn.addEventListener('click', calculatePregnancyWeight);
+        
+        // Added popup close handlers
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            displayResult();
+        });
+        
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                displayResult();
+            }
+        });
+        
+        // Added Klaviyo button handler
+        function handleKlaviyoButtonClick(e) {
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                displayResult();
+            }
+        }
+        
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Added Klaviyo form submission handler
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                popup.classList.remove('active');
+                displayResult();
+            }
+        });
         
         function calculatePregnancyWeight() {
             const height = parseFloat(document.getElementById('pregnancy-calc-height').value);
@@ -302,24 +469,39 @@
             const remainingWeeks = 40 - week;
             const recommendedWeeklyGain = (totalGain - currentGain) / remainingWeeks;
             
+            // Store calculated values
+            calculatedTotalGain = totalGain;
+            calculatedCurrentGain = currentGain;
+            calculatedWeeklyGain = recommendedWeeklyGain;
+            calculatedWeek = week;
+            calculatedBMICategory = categoryDescription;
+            
+            // Show the popup with Klaviyo form
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially
+            resultContainer.style.display = 'none';
+        }
+        
+        function displayResult() {
             // Display results
-            resultValue.textContent = `${totalGain.toFixed(1)} kg`;
-            resultCategory.textContent = `Recommended Total Weight Gain (${categoryDescription})`;
+            resultValue.textContent = `${calculatedTotalGain.toFixed(1)} kg`;
+            resultCategory.textContent = `Recommended Total Weight Gain (${calculatedBMICategory})`;
             
             // Create advice based on current progress
             let progressAdvice = '';
-            if (currentGain < totalGain * 0.8) {
-                progressAdvice = `<p>• You're currently below the recommended weight gain. Aim to gain about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
-            } else if (currentGain > totalGain * 1.2) {
-                progressAdvice = `<p>• You're currently above the recommended weight gain. Try to limit further gain to about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
+            if (calculatedCurrentGain < calculatedTotalGain * 0.8) {
+                progressAdvice = `<p>• You're currently below the recommended weight gain. Aim to gain about ${calculatedWeeklyGain.toFixed(2)} kg per week.</p>`;
+            } else if (calculatedCurrentGain > calculatedTotalGain * 1.2) {
+                progressAdvice = `<p>• You're currently above the recommended weight gain. Try to limit further gain to about ${calculatedWeeklyGain.toFixed(2)} kg per week.</p>`;
             } else {
-                progressAdvice = `<p>• Your current weight gain is on track. Maintain a steady gain of about ${recommendedWeeklyGain.toFixed(2)} kg per week.</p>`;
+                progressAdvice = `<p>• Your current weight gain is on track. Maintain a steady gain of about ${calculatedWeeklyGain.toFixed(2)} kg per week.</p>`;
             }
             
             trimesterInfo.innerHTML = `
-                <h4>Your Progress at Week ${week}</h4>
-                <p>• Current weight gain: ${currentGain.toFixed(1)} kg</p>
-                <p>• Recommended total gain: ${totalGain.toFixed(1)} kg</p>
+                <h4>Your Progress at Week ${calculatedWeek}</h4>
+                <p>• Current weight gain: ${calculatedCurrentGain.toFixed(1)} kg</p>
+                <p>• Recommended total gain: ${calculatedTotalGain.toFixed(1)} kg</p>
                 ${progressAdvice}
                 <h4>Nutritional Advice</h4>
                 <p>• Eat a balanced diet with plenty of fruits, vegetables, and whole grains</p>
