@@ -1,6 +1,6 @@
 <!--product-testimonial-third. -->
 {% assign testimonial = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
-
+{{ testimonial |json }}
 {% if testimonial != blank %}
 <section class="testimonial-third" id="testimonial-third-{{ section.id }}">
   <div class="container">
