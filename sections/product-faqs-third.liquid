@@ -4,6 +4,11 @@
 {% if science_content != blank %}
 <section class="scientific-section" id="faqs-third{{ section.id }}">
   <div class="container">
+      <div class="scientific-header">
+        {% if section.settings.scientific_main_title != blank %}
+          <h2 class="scientific-title">{{ section.settings.scientific_main_title }}</h2>
+        {% endif %}
+      </div>
     <div class="scientific-slider">
       {% for block in science_content %}
         <div class="faqs-card-third">
