@@ -1,4 +1,17 @@
     /* 1440px */
+.productView-tab .tab-content .hidden {
+    display: none;
+}
+.productView-tab .tab-content .toggle-link {
+    color: #086b92;
+    padding-left: 4px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px 16px;
+    text-decoration: underline;
+    }
+
+
     @media (min-width: 1850px) {
     .dynamic-Product-page-3\.O-template .container.productView-container {
     max-width: 1920px;
