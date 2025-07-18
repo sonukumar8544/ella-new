@@ -228,7 +228,7 @@
 </script>
 {%- endif -%}
 
-
+{% if template.suffix contains 'Product-page-3.0'%}
 <script>
 function toggleContent(event) {
   event.preventDefault();
@@ -246,3 +246,4 @@ function toggleContent(event) {
   }
 }
 </script>
+{% endif %}
