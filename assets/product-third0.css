@@ -921,7 +921,11 @@ font-size: 30px;
  }
 }
 @media (max-width: 769px){
-  
+ .dynamic-Product-page-3\.O-template .toggle-content h2{
+   font-size: 21px !important;
+    margin-top: 30px;
+    line-height: 1.2 !important;
+ } 
 #tab-description h2,#tab-description .h2 {
     font-size: 1.4rem;
     line-height: 1.8rem;
