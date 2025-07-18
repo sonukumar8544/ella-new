@@ -5,8 +5,8 @@
 <section class="scientific-section" id="faqs-third{{ section.id }}">
   <div class="container">
       <div class="faq__header">
-        {% if section.settings.scientific_main_title != blank %}
-          <h2 class="scientific-title">{{ section.settings.scientific_main_title }}</h2>
+        {% if section.settings.titlefaq != blank %}
+          <h2 class="faq_title">{{ section.settings.titlefaq }}</h2>
         {% endif %}
       </div>
     <div class="scientific-slider">
@@ -44,7 +44,7 @@
     margin-bottom: 20px;
     }
     
-    #faqs-third{{ section.id }} .scientific-title {
+    #faqs-third{{ section.id }} .faq_title {
     letter-spacing: 0.68px;
     text-transform: capitalize;
     color: #086B92;
@@ -155,7 +155,7 @@
   
 /* Tablet */
 @media (max-width: 1025px) {
-    #faqs-third{{ section.id }} h2.scientific-title {
+    #faqs-third{{ section.id }} h2.faq_title {
     margin-bottom: 20px;
     color: #374650;
     font-size: 28px;
@@ -172,7 +172,7 @@
 
 /* Mobile */
 @media (max-width: 769px) {
-    #faqs-third{{ section.id }} h2.scientific-title {
+    #faqs-third{{ section.id }} h2.faq_title {
     font-size: 28px;
     line-height: 48px;
     }
@@ -278,7 +278,7 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
+      "id": "titlefaq",
       "label": "Title"
     },
     {
