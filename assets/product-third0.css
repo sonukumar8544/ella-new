@@ -763,7 +763,11 @@ font-size: 30px;
         height: 37px !important;
   }
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
-    margin-left: 0px!important;
+    flex-direction: column;
+    align-items: end;
+    min-height: 48px;
+    justify-content: center;
+    width: 121px;
 }
   
   .dynamic-Product-page-3\.O-template .halo-productView-right.productView-details.clearfix {
