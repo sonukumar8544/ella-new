@@ -1,7 +1,7 @@
 <!--product-testimonial-third. -->
-{% assign testimonial = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
-{{ testimonial |json }}
-{% if testimonial != blank %}
+{% assign testimonial1 = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
+
+{% if testimonial1 != blank %}
 <section class="testimonial-third" id="testimonial-third-{{ section.id }}">
   <div class="container">
     
@@ -12,6 +12,7 @@
     {% endif %}
 
     <div class="testimonial_slider_third">
+  {% for testimonial in testimonial1 %}
       {% if testimonial.review_card_title1 != blank %}
         <div class="testimonial-card-third">
           
@@ -22,26 +23,27 @@
           {% endif %}
 
           <header>
-            <div class="testimonial-card-third__rating" aria-label="5 star rating"><div class="review-stars" aria-label="5 star rating">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
-  </svg>
-</div>
-</div>
+            <div class="testimonial-card-third__rating" aria-label="5 star rating">
+            <div class="review-stars" aria-label="5 star rating">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFA500" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.166L12 18.896l-7.334 3.862 1.4-8.166L.132 9.21l8.2-1.192z"/>
+            </svg>
+            </div>
+            </div>
             <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
-          </header>
+            </header>
 
           {% if testimonial.review_card_description1 != blank %}
             <p class="testimonial-card-third__text">
@@ -57,7 +59,10 @@
 
         </div>
       {% endif %}
+    
+      {% endfor %}
     </div>
+      
   </div>
 </section>
 
