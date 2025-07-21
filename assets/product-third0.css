@@ -742,12 +742,8 @@ margin: 5px 6px 10px 0;
   .dynamic-Product-page-3\.O-template .productView-moreItem .productView-price {
     margin-bottom: 20px;
 }
-.faq-content{
-  
-}
 
-  
-  .seal-col:nth-child(2n) .sls-selling-plan-group-name{
+ .seal-col:nth-child(2n) .sls-selling-plan-group-name{
   max-width:100% !important;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
@@ -755,9 +751,6 @@ margin: 5px 6px 10px 0;
         width: 44%;
         gap: 4px;
  }
-  
-  
-
   .dynamic-Product-page-3\.O-template .product-form__buttons{
     border-radius: 10px;
   }
@@ -765,10 +758,13 @@ margin: 5px 6px 10px 0;
     margin-bottom: 0em !important;
   }
   .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-savings-badge{
-      padding: 5px .75em 0px !important;
+      padding: 4px .75em 0px !important;
         line-height: 1.2 !important;
-        max-width: 147px !important;
-        height: 37px !important;
+        max-width: 145px !important;
+        height: 35px !important;
+        border-radius: 40px;
+        text-align: center;
+        margin-left: 0;
   }
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
