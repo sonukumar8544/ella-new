@@ -1,14 +1,17 @@
     /* 1440px */
 
-.productView-nav.style-1 .slick-dots{
-  max-width: unset;
-          background-color: transparent;
-  width: max-content;
-}
 .productView-nav.style-1 .slick-dots {
-    bottom: -28px;
+    left: 60%;
+    bottom: -77px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
 
 .productView-tab .tab-content .hidden {
     display: none;
