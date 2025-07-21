@@ -566,6 +566,9 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
 
 
 @media (min-width: 1024px) {
+   .productView-nav.style-1 .slick-dots {
+    left: 56%;
+  }
   .dynamic-Product-page-3\.O-template .halo-text-format p {
     margin-bottom: 0;
     margin-top: 7px;
@@ -942,6 +945,7 @@ margin: 5px 6px 10px 0;
  .dynamic-Product-page-3\.O-template .tocotrienol-right .tocotrienol-point{
    padding: 12px 0px;
  }
+ 
 }
 @media (max-width: 769px){
   .productView-nav.style-1 .slick-dots {
