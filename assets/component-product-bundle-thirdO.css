@@ -587,27 +587,7 @@
     visibility: hidden;*/
 }
 
-.bundle-product-total {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 10px 10px;
-    text-align: center;
-}
-.bundle-product-total h3 {
-    width: 100%;
-    background: none;
-    color: #374650;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.68px;
-    text-transform: capitalize;
-}
+
 
 
 .product-full-width-2 .bundle-product-total {
@@ -883,6 +863,28 @@
   padding-bottom: 34px;
   background: #fbfbfb;
   }
+.bundle-product-total {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    text-align: center;
+}
+.dynamic-Product-page-3\.O-template .halo-product-bundle .halo-block-header .title .text,
+.bundle-product-total h3 {
+    width: 100%;
+    background: none;
+    color: #374650;
+    text-align: center;
+    font-family: Nunito;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.68px;
+    text-transform: capitalize;
+}
 
 
 @media (max-width: 1025px) {
