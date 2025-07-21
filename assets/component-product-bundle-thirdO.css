@@ -911,6 +911,14 @@
   .cstm-Product-page-3\.O-third .bundle-product-total h3{
       display:none;
   }
+  .dynamic-Product-page-3\.O-template .cstm-Product-page-3\.O-third .bundlePdItem-container{
+    display: flex;
+  }
+ .cstm-Product-page-3\.O-third .bundle-product-image, 
+ .cstm-Product-page-3\.O-third .bundle-product-media{
+       max-width: 200px;
+    object-fit: cover;
+ }
   
 }
 
