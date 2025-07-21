@@ -975,7 +975,13 @@ text-align: center;
     width: 16px;
     height: 16px;
 }
-
+  .dynamic-Product-page-3\.O-template .bundle-product-content {
+    padding: 15px 1px;
+}
+.cstm-Product-page-3\.O-third .bundlePdItem-container:before{
+  left: 50%;
+    bottom: -40px;
+}
   
     .bundle-product-options .halo-popup-title {
         padding-bottom: 7px;
