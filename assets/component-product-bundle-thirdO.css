@@ -905,7 +905,9 @@
     display: none;
 }
 
-
+product-bundle#halo-product-bundle{
+  background: #f9f9f9;
+}
 @media (max-width: 1025px) {
         .bundle-product-right {
         margin-top: 30px;
