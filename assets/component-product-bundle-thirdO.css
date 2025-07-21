@@ -983,7 +983,14 @@ text-align: center;
     bottom: -40px;
     top: auto; 
 }
+  .dynamic-Product-page-3\.O-template #halo-product-bundle .bundle-product-text, .cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text, .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-total h3, .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice span {
+    text-align: center;
+}
   
+.cstm-Product-page-3\.O-third .halo-block-header {
+    position: relative;
+    margin: 0 0 20px;
+}
     .bundle-product-options .halo-popup-title {
         padding-bottom: 7px;
     }
