@@ -2,16 +2,19 @@
 
 .productView-nav.style-1 .slick-dots {
     left: 60%;
-    bottom: -85px;
+    bottom: -50px;
     transform: translate(-50%, -50%);
     display: flex;
     overflow-x: auto;
     gap: 0rem;
-    padding-bottom: 2.5rem;
+    padding: 2px 9px;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
-  width: 150px;
+    width: 160px;
+    border-radius: 100px;
+    opacity: 0.5;
+    background: #FFF;
 }
 
 .productView-tab .tab-content .hidden {
