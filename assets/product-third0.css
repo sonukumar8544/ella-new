@@ -1071,6 +1071,12 @@ stroke: #transparent!important;
   }
 }
 @media(max-width:1025px){
+   .dynamic-Product-page-3\.O-template .tabs-contents .toggleLink,
+  .dynamic-Product-page-3\.O-template .tabs .tab .tab-title{
+            background: linear-gradient(180deg, #8DDFFF 0%, #086B92 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+  }
 .dynamic-Product-page-3\.O-template h1.productView-title{
 font-size: 30px;
 line-height: 1.2;
