@@ -807,6 +807,8 @@
 .cstm-Product-page-3\.O-third input[type=checkbox]+.form-label--checkbox:after {
     width: 20px;
     height: 20px;
+  top: 1px !important;
+    left: 0px;
 
 }
 
