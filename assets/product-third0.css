@@ -11,6 +11,7 @@
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
+  width: 150px;
 }
 
 .productView-tab .tab-content .hidden {
