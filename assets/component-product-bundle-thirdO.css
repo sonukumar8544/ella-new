@@ -795,7 +795,7 @@
   .cstm-Product-page-3\.O-third .bundle-product-item .bundle-product-image img.motion-reduce {
   border-radius: 6px;
   }
-  .cstm-Product-page-3\.O-third .bundlePdItem-container::before {
+  .cstm-Product-page-3\.O-third .bundlePdItem-container::after {
   content: "+";
   position: absolute;
   font-size: 30px;
@@ -899,7 +899,7 @@
 .cstm-Product-page-3\.O-third .bundle-product-totalPrice .price span{
   margin-bottom: 0px;
 }
-.cstm-Product-page-3\.O-third .bundlePdItem-container.A_2:before {
+.cstm-Product-page-3\.O-third .bundlePdItem-container.A_2:after {
     content: '';
     display: none;
 }
