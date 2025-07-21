@@ -777,7 +777,13 @@
 
 /* thirdO */
 
-
+.bundle-product-wrapper.has-halo-block-loader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
   .cstm-Product-page-3\.O-third .bundle-product-list1 {
   display: flex;
   align-items: center;
