@@ -934,7 +934,7 @@
         }
         .cstm-Product-page-3\.O-third .bundlePdItem-container:after{
         left: 50%;
-        bottom: -21%;
+        bottom: -21% !important;
         }
          .cstm-Product-page-3\.O-third .bundle-product-action{
         margin-left: auto;
