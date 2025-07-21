@@ -950,6 +950,9 @@ margin: 5px 6px 10px 0;
  
 }
 @media (max-width: 769px){
+ .halo-productView-right {
+    margin-top: 45px;
+}
   .productView-nav.style-1 .slick-dots {
     left: 50%;
     bottom: -45px;
