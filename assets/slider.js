@@ -1,4 +1,4 @@
-class SliderComponent1 extends HTMLElement {
+class SliderComponent extends HTMLElement {
     constructor() {
         super();
         this.slider = this.querySelector('ul');
