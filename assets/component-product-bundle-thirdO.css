@@ -774,15 +774,14 @@
 }
 
 /* thirdO */
-.cstm-Product-page-3.O-third {
-  .bundle-product-list1 {
+.cstm-Product-page-3.O-third .bundle-product-list1 {
     display: flex;
     align-items: unset;
 }
-  .bundle-product-item {
+ .cstm-Product-page-3.O-third .bundle-product-item {
     width: 33%;
 }
-}
+
 
 
 
