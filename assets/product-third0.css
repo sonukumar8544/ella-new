@@ -31,6 +31,9 @@
   
   
   @media (min-width: 1850px) {
+      #tab-slider-thirdO .container {
+    max-width: 1100px !important;
+}
   .dynamic-Product-page-3\.O-template .container.productView-container {
   max-width: 1920px;
   margin: 0px auto;
@@ -141,9 +144,7 @@
   }
   }
   @media(min-width: 800px) and (max-width: 1849px) {
-    #tab-slider-thirdO .container {
-    max-width: 1100px !important;
-}
+  
   .productView-nav.style-1 .slick-dots {
   left: 56%;
   }
