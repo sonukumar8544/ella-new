@@ -1001,14 +1001,14 @@
     }
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .bundle-product-wrapper{
         display: flex;
         justify-content:center;
         flex-direction: row-reverse;
         gap: 10px;
     }
-}
+} */
 
 @media (min-width: 1025px) {
     .bundle-product-left{
