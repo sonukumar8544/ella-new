@@ -105,7 +105,7 @@
     
     <product-bundle
       class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %}
-        scroll-trigger animate--slide-in{% endif %}"
+        scroll-trigger animate--slide-in{% endif %} {{ template.suffix }}"
       data-product-bundle
       id="halo-product-bundle"
     >
@@ -127,8 +127,8 @@
                 <div class="halo-block-loader"></div>
                 <div class="bundle-product-left">
                   <div
-                    class="bundle-product-list"
-                    data-bundle-slider
+                    class="bundle-product-list1"
+                    data-bundle-slider1
                     data-dots="{{ block_dots }}"
                     data-arrows="{{ block_arrows }}"
                   >
