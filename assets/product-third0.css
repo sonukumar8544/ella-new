@@ -141,6 +141,9 @@
   }
   }
   @media(min-width: 800px) and (max-width: 1849px) {
+    #tab-slider-thirdO .container {
+    max-width: 1100px !important;
+}
   .productView-nav.style-1 .slick-dots {
   left: 56%;
   }
