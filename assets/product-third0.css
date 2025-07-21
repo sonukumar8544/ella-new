@@ -760,12 +760,13 @@ margin: 5px 6px 10px 0;
   .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-savings-badge{
       padding: 4px .75em 0px !important;
         line-height: 1.2 !important;
-        max-width: 145px !important;
-        height: 35px !important;
-        border-radius: 40px;
+        max-width: 130px !important;
+        height: 32px !important;
+        border-radius: 41px;
         text-align: center;
         margin-left: 0;
-  }
+        font-size: 9px;
+    }
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
     align-items: end;
