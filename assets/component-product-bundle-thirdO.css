@@ -782,8 +782,8 @@
  .cstm-Product-page-3\.O-third .bundle-product-item {
     width: 33%;
 }
-.cstm-Product-page-3\.O-third .bundlePdItem-container:last-child::after {
- display: none;
+.cstm-Product-page-3\.O-third .bundlePdItem-container:last-child::before {
+ content: ""; 
 }
 .cstm-Product-page-3\.O-third .bundlePdItem-container::before {
   content: "+"; 
