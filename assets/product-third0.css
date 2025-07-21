@@ -140,6 +140,9 @@
     
     }
     @media(min-width: 800px) and (max-width: 1849px) {
+       .productView-nav.style-1 .slick-dots {
+    left: 56%;
+  }
     .dynamic-Product-page-3\.O-template .container.productView-container .productView{
     /* padding-bottom:0px; */
     }
@@ -566,9 +569,7 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
 
 
 @media (min-width: 1024px) {
-   .productView-nav.style-1 .slick-dots {
-    left: 56%;
-  }
+  
   .dynamic-Product-page-3\.O-template .halo-text-format p {
     margin-bottom: 0;
     margin-top: 7px;
