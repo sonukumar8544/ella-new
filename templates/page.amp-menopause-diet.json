@@ -37,10 +37,32 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_CCnVen": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Why_Diet_Matters_During_Menopause-01-01.png",
+            "content-position": "60",
+            "content-align": "left",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#232323",
+            "heading_color": "#d8fa32",
+            "heading": "Why Diet Matters During Menopause",
+            "description_color": "#ffffff",
+            "description": "Hormonal changes affect weight, mood, bones & more. The right diet eases symptoms naturally.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
-        "story_page_PTMTge"
+        "story_page_PTMTge",
+        "story_page_CCnVen"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
