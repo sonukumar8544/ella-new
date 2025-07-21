@@ -782,7 +782,20 @@
  .cstm-Product-page-3\.O-third .bundle-product-item {
     width: 33%;
 }
-
+.cstm-Product-page-3\.O-third .bundlePdItem-container::before {
+    content: "+";
+    position: absolute;
+    font-size: 30px;
+    left: -15px;
+    top: 50%;
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #374650;
+    z-index: 1;
+}
 
 
 
