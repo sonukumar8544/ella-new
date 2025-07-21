@@ -783,7 +783,7 @@
     width: 33%;
 }
 /*  css */
-.cstm-Product-page-3.O-third .bundlePdItem-container::after {
+.cstm-Product-page-3.O-third .bundlePdItem-container::before {
   content: "+";
   position: absolute;
   font-size: 30px;
