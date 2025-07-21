@@ -925,12 +925,16 @@
     width: 50%;
   }
   .cstm-Product-page-3\.O-third .bundle-product-item{
-        margin-bottom: 20px;
+        margin-bottom: 35px;
   }
  .cstm-Product-page-3\.O-third .bundlePdItem-container{
     border: 1px solid #36454f4d;
     background: #ffffff00;
     box-shadow: none;
+  }
+  .cstm-Product-page-3\.O-third .bundlePdItem-container:after{
+        left: 50%;
+    bottom: -21%;
   }
   
 }
