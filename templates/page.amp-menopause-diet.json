@@ -58,11 +58,33 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_AjJtwE": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Load_Up_on_Leafy_Greens-01.png",
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#f4f413",
+            "heading_color": "#232323",
+            "heading": "Load Up on Leafy Greens",
+            "description_color": "#ffffff",
+            "description": "Kale, spinach & broccoli support bone health and reduce inflammation.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_PTMTge",
-        "story_page_CCnVen"
+        "story_page_CCnVen",
+        "story_page_AjJtwE"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
