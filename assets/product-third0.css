@@ -773,6 +773,10 @@ margin: 5px 6px 10px 0;
   .sls-selling-plan-group-name{
     color: #4D4D4D !important;
   }
+ .productView-nav.style-1 .slick-dots li, 
+  .productView-nav.style-1 .slider-dots li{
+  margin: 0 4px;
+  }
   
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
