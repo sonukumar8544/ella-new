@@ -944,6 +944,13 @@ margin: 5px 6px 10px 0;
  }
 }
 @media (max-width: 769px){
+  .productView-nav.style-1 .slick-dots {
+    left: 50%;
+    bottom: -45px;
+    border-radius: 100px;
+    opacity: 0.5;
+    background: #086b921c;
+}
       .dynamic-Product-page-3\.O-template .halo-text-format p {
         margin-bottom: 0;
         font-size: 16px;
