@@ -912,13 +912,16 @@
       display:none;
   }
   .dynamic-Product-page-3\.O-template .cstm-Product-page-3\.O-third .bundlePdItem-container{
-    display: flex;
+       display: flex;
+    gap: 15px;
   }
  .cstm-Product-page-3\.O-third .bundle-product-image, 
  .cstm-Product-page-3\.O-third .bundle-product-media{
        max-width: 200px;
     object-fit: cover;
+   width: 50%;
  }
+  
   
 }
 
