@@ -767,6 +767,10 @@ margin: 5px 6px 10px 0;
         margin-left: 0;
         font-size: 9px;
     }
+.sls-select, .sealsubs-container .sls-select-container select.sls-select{
+      border-radius: 10px;
+}
+  
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
     align-items: end;
