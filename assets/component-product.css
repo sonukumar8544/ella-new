@@ -2577,7 +2577,7 @@ quantity-input.disabled {
         background-color: #fff;
         padding: 0 15px;
         max-width: calc(100% - 123px);
-        display: none !important;
+        /* display: none !important; */
     }
 
     .productView-nav .slick-arrow {
