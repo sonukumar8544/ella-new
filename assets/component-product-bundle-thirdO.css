@@ -782,12 +782,10 @@
  .cstm-Product-page-3\.O-third .bundle-product-item {
     width: 33%;
 }
-/* This removes the '+' before the first .bundlePdItem-container */
 .cstm-Product-page-3.O-third .bundlePdItem-container:first-child::before {
-  content: none;
+  content: '';
 }
 
-/* This shows '+' before all .bundlePdItem-container elements */
 .cstm-Product-page-3.O-third .bundlePdItem-container::before {
   content: "+";
   position: absolute;
