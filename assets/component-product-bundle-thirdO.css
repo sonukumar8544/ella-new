@@ -782,11 +782,8 @@
  .cstm-Product-page-3\.O-third .bundle-product-item {
     width: 33%;
 }
-.cstm-Product-page-3.O-third .bundlePdItem-container:first-child::before {
-  content: '';
-}
-
-.cstm-Product-page-3.O-third .bundlePdItem-container::before {
+/*  css */
+.cstm-Product-page-3.O-third .bundlePdItem-container::after {
   content: "+";
   position: absolute;
   font-size: 30px;
@@ -795,6 +792,9 @@
   transform: translate(-50%, -50%);
   color: #374650;
   z-index: 1;
+}
+.cstm-Product-page-3.O-third .bundlePdItem-container:first-child::after {
+  content: '';
 }
 
 
