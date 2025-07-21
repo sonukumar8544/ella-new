@@ -4,7 +4,7 @@
   class="bundle-product-item style-{{ product_style }}{% if first %} bundle-product-itemFirst{% endif %}{% if product.available %} isChecked{% endif %}"
   data-bundle-product-item-id="{{ product.id }}"
 >
-  <div class="bundlePdItem-container A_{{ forloop.index }}">
+  <div class="bundlePdItem-container A_{{ forloop }}">
     <script>
       window.productVariants = window.productVariants || {};
       window.productVariants[{{ product.id }}] = {{ product.variants | json }};
