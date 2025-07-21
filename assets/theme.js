@@ -7442,6 +7442,10 @@ $(document).ready(function () {
 });
 })
   // endcode
+  $('[data-image-gallery-main]').slick({
+
+  dots: true, 
+});
   
 })(jQuery);
 
