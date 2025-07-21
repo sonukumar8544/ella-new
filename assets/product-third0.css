@@ -1,4 +1,22 @@
     /* 1440px */
+
+.productView-nav.style-1 .slick-dots {
+    left: 60%;
+    bottom: -50px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    overflow-x: auto;
+    gap: 0rem;
+    padding: 2px 9px;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 160px;
+    border-radius: 100px;
+    opacity: 0.5;
+    background: #FFF;
+}
+
 .productView-tab .tab-content .hidden {
     display: none;
 }
@@ -118,10 +136,14 @@
     margin-bottom: 80px;
     padding: 20px 0px;
     }
-    
-    
+    .productView-nav.style-1 .slick-dots {
+    left: 50%;
+    }
     }
     @media(min-width: 800px) and (max-width: 1849px) {
+       .productView-nav.style-1 .slick-dots {
+    left: 56%;
+  }
     .dynamic-Product-page-3\.O-template .container.productView-container .productView{
     /* padding-bottom:0px; */
     }
@@ -548,6 +570,7 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
 
 
 @media (min-width: 1024px) {
+  
   .dynamic-Product-page-3\.O-template .halo-text-format p {
     margin-bottom: 0;
     margin-top: 7px;
@@ -719,12 +742,8 @@ margin: 5px 6px 10px 0;
   .dynamic-Product-page-3\.O-template .productView-moreItem .productView-price {
     margin-bottom: 20px;
 }
-.faq-content{
-  
-}
 
-  
-  .seal-col:nth-child(2n) .sls-selling-plan-group-name{
+ .seal-col:nth-child(2n) .sls-selling-plan-group-name{
   max-width:100% !important;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
@@ -732,9 +751,6 @@ margin: 5px 6px 10px 0;
         width: 44%;
         gap: 4px;
  }
-  
-  
-
   .dynamic-Product-page-3\.O-template .product-form__buttons{
     border-radius: 10px;
   }
@@ -742,11 +758,26 @@ margin: 5px 6px 10px 0;
     margin-bottom: 0em !important;
   }
   .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-savings-badge{
-      padding: 5px .75em 0px !important;
+      padding: 4px .75em 0px !important;
         line-height: 1.2 !important;
-        max-width: 147px !important;
-        height: 37px !important;
+        max-width: 130px !important;
+        height: 32px !important;
+        border-radius: 41px;
+        text-align: center;
+        margin-left: 0;
+        font-size: 9px;
+    }
+.sls-select, .sealsubs-container .sls-select-container select.sls-select{
+      border-radius: 10px;
+}
+  .sls-selling-plan-group-name{
+    color: #4D4D4D !important;
   }
+ /* .productView-nav.style-1 .slick-dots li, 
+  .productView-nav.style-1 .slider-dots li{
+  margin: 0 4px;
+  } */
+  
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
     align-items: end;
@@ -759,7 +790,7 @@ margin: 5px 6px 10px 0;
   }
   
   .dynamic-Product-page-3\.O-template .halo-productView-right.productView-details.clearfix {
-  margin-top: 25px;
+  margin-top: 45px;
   }
  
   .dynamic-Product-page-3\.O-template .productView-parallax-mobile  .productView-details{
@@ -924,8 +955,19 @@ margin: 5px 6px 10px 0;
  .dynamic-Product-page-3\.O-template .tocotrienol-right .tocotrienol-point{
    padding: 12px 0px;
  }
+ 
 }
 @media (max-width: 769px){
+ .halo-productView-right {
+    margin-top: 45px;
+}
+  .productView-nav.style-1 .slick-dots {
+    left: 50%;
+    bottom: -45px;
+    border-radius: 100px;
+    opacity: 0.5;
+    background: #086b921c;
+}
       .dynamic-Product-page-3\.O-template .halo-text-format p {
         margin-bottom: 0;
         font-size: 16px;
@@ -1071,6 +1113,12 @@ stroke: #transparent!important;
   }
 }
 @media(max-width:1025px){
+   .dynamic-Product-page-3\.O-template .tabs-contents .toggleLink,
+  .dynamic-Product-page-3\.O-template .tabs .tab .tab-title{
+            background: linear-gradient(180deg, #8DDFFF 0%, #086B92 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+  }
 .dynamic-Product-page-3\.O-template h1.productView-title{
 font-size: 30px;
 line-height: 1.2;
@@ -1081,5 +1129,14 @@ right: 0px !important;
 .dynamic-Product-page-3\.O-template .bundle-product-list .slick-arrow.slick-next {
 left: auto;
 right: -5%!important;;
+}
+}
+
+@media(max-width:350px){
+  .productView-pricesec-new {
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+        justify-content: center;
 }
 }
