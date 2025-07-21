@@ -4802,7 +4802,7 @@
                     if (!sliderNav.is('.style-2, .style-3') || window.innerWidth < 768) {
                         sliderNav.slick({
                             fade: true,
-                            dots: false,
+                            dots: true,
                             arrows: navArrowsDesk,
                             infinite: true,
                             slidesToShow: 1,
