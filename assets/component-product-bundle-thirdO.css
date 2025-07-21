@@ -799,8 +799,9 @@
   content: "+";
   position: absolute;
   font-size: 30px;
-  left: -15px;
-  top: 50%;
+  left: auto;
+    right: -40px;
+    top: 50%;
   -moz-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
