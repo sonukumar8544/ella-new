@@ -7442,10 +7442,10 @@ $(document).ready(function () {
 });
 })
   // endcode
-//   $('[data-image-gallery-main]').slick({
+  $('.productView-nav[data-image-gallery-main]').slick({
 
-//   dots: true, 
-// });
+  dots: true, 
+});
   
 })(jQuery);
 
