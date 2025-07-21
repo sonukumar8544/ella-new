@@ -945,8 +945,11 @@
         box-shadow: none;
         }
         .cstm-Product-page-3\.O-third .bundlePdItem-container:after{
-        left: 50%;
-        bottom: -21% !important;
+        bottom: -20% !important;
+        top: auto;
+        left: 67%;
+        transform: translate(-50%, -50%);
+          
         }
          .cstm-Product-page-3\.O-third .bundle-product-action{
         margin-left: auto;
