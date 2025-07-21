@@ -888,6 +888,12 @@
     letter-spacing: 0.68px;
     text-transform: capitalize;
 }
+.cstm-Product-page-3\.O-third .bundle-product-totalPrice .price, 
+.cstm-Product-page-3\.O-third .bundle-product-totalPrice .price span{
+  margin-bottom: 0px;
+}
+
+
 
 
 @media (max-width: 1025px) {
