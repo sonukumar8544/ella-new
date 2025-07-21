@@ -770,6 +770,9 @@ margin: 5px 6px 10px 0;
 .sls-select, .sealsubs-container .sls-select-container select.sls-select{
       border-radius: 10px;
 }
+  .sls-selling-plan-group-name{
+    color: #4D4D4D !important;
+  }
   
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
