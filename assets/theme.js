@@ -7442,11 +7442,7 @@ $(document).ready(function () {
 });
 })
   // endcode
-  $('.productView-nav[data-image-gallery-main]').slick({
-
-  dots: true, 
-});
-  
+   
 })(jQuery);
 
 // collection page scroll to support section
