@@ -181,7 +181,7 @@
                       </span>
                     </div>
                     <div class="bundle-product-action">
-                     {% if template contains 'Product-page-3.0' %}
+                     
                        <input
                         data-bundle-addToCart
                         type="submit"
@@ -190,17 +190,7 @@
                         class="button button--primary button-bundle style-{{ total_btn_style }}"
                         value="{{ 'Add all (3) to cart' }}"
                       >
-                      {% else %} 
-                       <input
-                        data-bundle-addToCart
-                        type="submit"
-                        name="add"
-                        data-form-id="{{ product_form_bundle_id | prepend : '#' }}"
-                        class="button button--primary button-bundle style-{{ total_btn_style }}"
-                        value="{{ 'products.product.bundle_block.add_all_to_cart' | t }}"
-                      >
-                       {% endif %}
-                     
+                                        
                     </div>
                     {%- if bundle_discount_rate > 0 -%}
                       <div class="bundle-product-text">
