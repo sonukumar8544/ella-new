@@ -799,7 +799,17 @@
     .cstm-Product-page-3\.O-third .bundle-product-left {
         width: 65%;
     }
-
+.cstm-Product-page-3\.O-third input[type=checkbox]+.form-label--checkbox:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border: 1px solid #dbdbdb;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 0;
+}
 
 
 
