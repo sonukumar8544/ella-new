@@ -746,7 +746,8 @@ margin: 5px 6px 10px 0;
   
 }
 
- .seal-col:nth-child(2n) .sls-selling-plan-group-name{
+  
+  .seal-col:nth-child(2n) .sls-selling-plan-group-name{
   max-width:100% !important;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
@@ -754,6 +755,9 @@ margin: 5px 6px 10px 0;
         width: 44%;
         gap: 4px;
  }
+  
+  
+
   .dynamic-Product-page-3\.O-template .product-form__buttons{
     border-radius: 10px;
   }
@@ -1120,11 +1124,4 @@ right: -5%!important;;
 }
 }
 
-@media(max-width:350px){
-  .productView-pricesec-new {
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-        justify-content: center;
-}
-}
+
