@@ -574,6 +574,14 @@ product-tab.productView-tab.layout-horizontal.halo-product-tab h2.tab_title_halo
     }
 
 
+.dynamic-Product-page-3\.O-template .product-details .product-option{
+  flex-wrap: nowrap;
+    gap: 10px;
+}
+.dynamic-Product-page-3\.O-template .product-details .product-page-varient-box{
+  padding: 5px;
+}
+
 @media (min-width: 1024px) {
   .dynamic-Product-page-3\.O-template .halo-text-format p {
     margin-bottom: 0;
