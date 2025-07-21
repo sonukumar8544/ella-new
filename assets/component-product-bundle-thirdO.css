@@ -899,6 +899,10 @@
 .cstm-Product-page-3\.O-third .bundle-product-totalPrice .price span{
   margin-bottom: 0px;
 }
+.cstm-Product-page-3\.O-third .bundlePdItem-container.A_2:before {
+    content: '';
+    display: none;
+}
 
 
 @media (max-width: 1025px) {
@@ -947,11 +951,15 @@
         margin-left: auto;
       width: 100% !important;
         }
-.cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text,
-  .cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text, 
-  .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-total h3,
-  .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice span{
-text-align: center;
+        .cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text,
+        .cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text, 
+        .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-total h3,
+        .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice span{
+        text-align: center;
+        }
+  .cstm-Product-page-3\.O-third .bundlePdItem-container.A_2:before {
+    content: '';
+    display: none;
 }
   
 }
