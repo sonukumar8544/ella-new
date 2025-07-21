@@ -840,16 +840,16 @@
 .bundle-product-action{
   width: fit-content;
 }
-.cstm-Product-page-3\.O-third .bundle-product-right.bundle-product-totalPrice {
-    display: flex;
+.cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice {
     letter-spacing: 0;
     font-size: 0;
-    margin-bottom: 15px;
-    align-items: baseline;
-    justify-content: center;
+    margin-bottom: 10px;
     gap: 10px;
 }
-
+.cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-total h3,
+.cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice .text{
+  text-align: left;
+}
 
 
 @media (max-width: 1024px) {
