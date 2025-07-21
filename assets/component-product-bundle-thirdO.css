@@ -783,7 +783,7 @@
     width: 33%;
 }
 .cstm-Product-page-3\.O-third .bundlePdItem-container:last-child::after {
-  content: none !important; 
+  /* content: none !important;  */
 }
 .cstm-Product-page-3\.O-third .bundlePdItem-container::after {
   content: "+"; */
