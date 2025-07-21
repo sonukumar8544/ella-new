@@ -6,7 +6,7 @@
     transform: translate(-50%, -50%);
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
+    gap: 0rem;
     padding-bottom: 2.5rem;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
