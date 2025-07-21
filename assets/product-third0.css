@@ -755,9 +755,11 @@ font-size: 14px;
 }
 .dynamic-Product-page-3\.O-template .product-form__label {
 margin: 5px 6px 10px 0;
-width: 44%;
+/* width: 44%; */
 }
-
+.product-form__radio:checked+.product-form__label .text{
+      font-size: 10px;
+}
 
 
   
