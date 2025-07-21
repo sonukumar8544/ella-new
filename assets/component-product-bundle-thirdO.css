@@ -979,8 +979,9 @@ text-align: center;
     padding: 15px 1px;
 }
 .cstm-Product-page-3\.O-third .bundlePdItem-container:before{
-  left: 50%;
+  left: 50% ;
     bottom: -40px;
+    top: auto; 
 }
   
     .bundle-product-options .halo-popup-title {
