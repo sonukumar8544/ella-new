@@ -157,7 +157,8 @@
               </h3>
                     <div class="bundle-product-totalPrice">
                       <span class="text">
-                        {{ 'products.product.bundle_block.total_price' | t }}
+                          {{ 'Total Price:' }}
+                       {% comment %} {{ 'products.product.bundle_block.total_price' | t }}{% endcomment %}
                       </span>
                       {%- if bundle_discount_rate > 0 -%}
                         <span class="old-price bundle-old-price">
