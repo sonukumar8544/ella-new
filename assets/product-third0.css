@@ -742,6 +742,9 @@ margin: 5px 6px 10px 0;
   .dynamic-Product-page-3\.O-template .productView-moreItem .productView-price {
     margin-bottom: 20px;
 }
+.faq-content{
+  
+}
 
  .seal-col:nth-child(2n) .sls-selling-plan-group-name{
   max-width:100% !important;
@@ -758,26 +761,11 @@ margin: 5px 6px 10px 0;
     margin-bottom: 0em !important;
   }
   .dynamic-Product-page-3\.O-template .seal-col:nth-child(2n) .sls-savings-badge{
-      padding: 4px .75em 0px !important;
+      padding: 5px .75em 0px !important;
         line-height: 1.2 !important;
-        max-width: 130px !important;
-        height: 32px !important;
-        border-radius: 41px;
-        text-align: center;
-        margin-left: 0;
-        font-size: 9px;
-    }
-.sls-select, .sealsubs-container .sls-select-container select.sls-select{
-      border-radius: 10px;
-}
-  .sls-selling-plan-group-name{
-    color: #4D4D4D !important;
+        max-width: 147px !important;
+        height: 37px !important;
   }
- /* .productView-nav.style-1 .slick-dots li, 
-  .productView-nav.style-1 .slider-dots li{
-  margin: 0 4px;
-  } */
-  
   label.sls-selling-plan-group-name:last-child, .sls-total-price {
     flex-direction: column;
     align-items: end;
