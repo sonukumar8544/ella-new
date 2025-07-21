@@ -970,6 +970,9 @@ product-bundle#halo-product-bundle{
    .dynamic-Product-page-3\.O-template #halo-product-bundle .bundle-product-text, .cstm-Product-page-3\.O-third #halo-product-bundle .bundle-product-text, .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-total h3, .cstm-Product-page-3\.O-third .bundle-product-right .bundle-product-totalPrice span {
     text-align: center;
 }
+  .cstm-Product-page-3\.O-third .bundle-product-item:last-child{
+            margin-bottom: 5px;
+  }
   
 }
 
@@ -1003,9 +1006,7 @@ product-bundle#halo-product-bundle{
     content: '';
     display: none;
 }
-  .cstm-Product-page-3\.O-third .bundle-product-item:last-child{
-            margin-bottom: 5px;
-  }
+  
   
 .cstm-Product-page-3\.O-third .halo-block-header {
     position: relative;
