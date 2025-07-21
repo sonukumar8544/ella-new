@@ -136,8 +136,9 @@
     margin-bottom: 80px;
     padding: 20px 0px;
     }
-    
-    
+    .productView-nav.style-1 .slick-dots {
+    left: 50%;
+    }
     }
     @media(min-width: 800px) and (max-width: 1849px) {
        .productView-nav.style-1 .slick-dots {
