@@ -782,7 +782,7 @@
  .cstm-Product-page-3\.O-third .bundle-product-item {
     width: 33%;
 }
-.cstm-Product-page-3\.O-third .bundlePdItem-container:last-child::before {
+.cstm-Product-page-3\.O-third .bundlePdItem-container:first-child::before {
  content: ""; 
 }
 .cstm-Product-page-3\.O-third .bundlePdItem-container::before {
