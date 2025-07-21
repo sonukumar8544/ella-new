@@ -608,6 +608,9 @@
     letter-spacing: 0.68px;
     text-transform: capitalize;
 }
+.cstm-Product-page-3\.O-third .bundlePdItem-container:first-child::before {
+    content: none;
+}
 
 
 
