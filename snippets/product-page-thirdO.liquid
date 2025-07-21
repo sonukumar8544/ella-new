@@ -970,16 +970,14 @@
                                             {% endif %}
                                         </div>
                                   {%- when 'clinician' -%}
-{% render 'clinician_banner_third0', block: block %}
-{%- when 'discount_badge' -%}
-{% render 'badge_third0', product_card_product: product, block: block %}
-{%- when 'meta_shortDes' -%}
-{% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
-{%- when 'product_benifits' -%}
-{% render 'product_benifit_third0',
-benefitmetaobject: product.metafields.custom.product_3_0_benefits.value
-                  %}
-                                    {%- when 'countdown' -%}
+                                  {% render 'clinician_banner_third0', block: block %}
+                                  {%- when 'discount_badge' -%}
+                                  {% render 'badge_third0', product_card_product: product, block: block %}
+                                  {%- when 'meta_shortDes' -%}
+                                  {% render 'badge_third0-meta-shortDes', product_card_product: product, block: block %}
+                                  {%- when 'product_benifits' -%}
+                                  {% render 'product_benifit_third0',benefitmetaobject: product.metafields.custom.product_3_0_benefits.value %}
+                                   {%- when 'countdown' -%}
                                         {%- liquid
                                             assign show_countdown = settings.show_countdown
                                             if show_countdown
@@ -1582,7 +1580,7 @@ benefitmetaobject: product.metafields.custom.product_3_0_benefits.value
     </div>
 </div>
     {% unless has_product_combo %}
-        {% render 'product-bundle' %}
+        {% render 'product-bundle-thirdO' %}
     {% endunless %}
     
 </div>
