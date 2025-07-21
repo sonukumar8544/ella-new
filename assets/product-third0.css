@@ -1,5 +1,8 @@
     /* 1440px */
 
+.productView-nav.style-1 .slick-dots{
+  max-width: unset;
+}
 .productView-nav.style-1 .slick-dots {
     bottom: -28px;
 }
