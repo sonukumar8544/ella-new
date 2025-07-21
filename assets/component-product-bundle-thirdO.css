@@ -610,6 +610,23 @@
 }
 
 
+.product-full-width-2 .bundle-product-total {
+    max-width: 300px;
+}
+
+.bundle-product-totalPrice{
+    display: block;
+    letter-spacing: 0;
+    font-size: 0;
+    margin-bottom: 15px;
+}
+/* css start */
+@media (max-width: 769px){
+
+
+}
+
+
 
 @media (max-width: 769px){
     .bundle-product-total{
@@ -624,16 +641,6 @@
        }
 }
 
-.product-full-width-2 .bundle-product-total {
-    max-width: 300px;
-}
-
-.bundle-product-totalPrice{
-    display: block;
-    letter-spacing: 0;
-    font-size: 0;
-    margin-bottom: 15px;
-}
 
 @media (max-width: 769px){
     .bundle-product-totalPrice{
@@ -883,10 +890,6 @@ product-bundle#halo-product-bundle{
 
 
 @media (max-width: 1024px) {
-    .bundle-product-wrapper {
-        display: block !important;
-    }
-
     .bundle-product-right {
         margin-top: 30px;
     }
