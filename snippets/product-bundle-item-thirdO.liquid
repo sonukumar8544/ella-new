@@ -95,7 +95,7 @@
             src="{{ product.featured_media | img_url: '533x' }}"
             sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
             alt="{{ product.featured_media.alt | escape }} {{product.featured_media.width}}"
-            loading="lazy"
+            loading="lazy" width="100%" height=""
             class="motion-reduce"
           >
         {%- else -%}
