@@ -1,0 +1,681 @@
+{% schema %}
+{
+  "name": "Pace Calculator",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Pace Calculator"
+    }
+  ]
+}
+{% endschema %}
+
+
+<style>
+  @media (min-width: 768px) {
+    .pace-calc-body {
+      min-height: 100vh;
+    }
+  }
+  .pace-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+
+  .pace-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+
+  .pace-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+
+  .pace-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+
+  .pace-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+
+  .pace-calc-input-group select,
+  .pace-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+
+  .pace-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+
+  .pace-calc-button:hover {
+    background-color: #075a7b;
+  }
+
+
+  .pace-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+
+  .pace-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+
+  .pace-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+
+  .pace-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+
+  .pace-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .pace-calc-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+  }
+
+
+  .pace-calc-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+
+  .pace-calc-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+
+  @media (max-width: 760px) {
+    .pace-calc-calculator-container {
+      padding: 15px;
+    }
+
+
+    .pace-calc-calculator-container h1 {
+      font-size: 22px;
+    }
+
+
+    .pace-calc-result-value {
+      font-size: 28px;
+    }
+
+
+    .pace-calc-result-category {
+      font-size: 20px;
+    }
+  }
+
+
+  /* Popup styles */
+  .pace-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+
+  .pace-calc-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  .pace-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+
+  .pace-calc-popup-overlay.active .pace-calc-popup {
+    transform: translateY(0);
+  }
+
+
+  .pace-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+
+  .pace-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+
+  .pace-calc-popup-content {
+    margin-top: 20px;
+  }
+
+
+  /* Klaviyo form styles */
+  .pace-calc-klaviyo-form {
+    margin: 20px 0;
+    padding-bottom: 20px;
+  }
+
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+
+  .pace-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+<section class="pace-calc-body">
+  <div class="pace-calc-calculator-container">
+    <h1>Running Pace Calculator</h1>
+
+
+    <div class="pace-calc-input-group">
+      <label for="pace-calc-distance">Distance</label>
+      <select id="pace-calc-distance">
+        <option value="5">5K</option>
+        <option value="10">10K</option>
+        <option value="21.0975" selected>Half Marathon (21.1K)</option>
+        <option value="42.195">Marathon (42.2K)</option>
+        <option value="custom">Custom Distance</option>
+      </select>
+    </div>
+
+
+    <div
+      class="pace-calc-input-group"
+      id="pace-calc-custom-distance-group"
+      style="display: none;"
+    >
+      <label for="pace-calc-custom-distance">Custom Distance (km)</label>
+      <input
+        type="number"
+        id="pace-calc-custom-distance"
+        placeholder="Enter distance in kilometers"
+        min="1"
+        max="100"
+        step="0.1"
+      >
+    </div>
+
+
+    <div class="pace-calc-input-group">
+      <label for="pace-calc-time">Time</label>
+      <div style="display: flex; gap: 10px;">
+        <input
+          type="number"
+          id="pace-calc-hours"
+          placeholder="Hours"
+          min="0"
+          max="24"
+          style="flex: 1;"
+        >
+        <input
+          type="number"
+          id="pace-calc-minutes"
+          placeholder="Minutes"
+          min="0"
+          max="59"
+          value="30"
+          style="flex: 1;"
+        >
+        <input
+          type="number"
+          id="pace-calc-seconds"
+          placeholder="Seconds"
+          min="0"
+          max="59"
+          style="flex: 1;"
+        >
+      </div>
+    </div>
+
+
+    <div class="pace-calc-input-group">
+      <label for="pace-calc-unit">Pace Unit</label>
+      <select id="pace-calc-unit">
+        <option value="min/km">Minutes per Kilometer</option>
+        <option value="min/mile">Minutes per Mile</option>
+      </select>
+    </div>
+
+
+    <button id="pace-calc-calculate-btn" class="pace-calc-button">Calculate Pace</button>
+  </div>
+
+
+  <div class="pace-calc-result-container" id="pace-calc-result">
+    <h2>Your Results</h2>
+    <div class="pace-calc-result-value" id="pace-calc-result-value">0:00 min/km</div>
+    <div class="pace-calc-result-category" id="pace-calc-result-category">Average Pace</div>
+
+
+    <div class="pace-calc-comparison">
+      <div class="pace-calc-comparison-item">
+        <div>5K Pace</div>
+        <div class="pace-calc-comparison-value" id="pace-calc-5k-value">0:00</div>
+      </div>
+      <div class="pace-calc-comparison-item">
+        <div>10K Pace</div>
+        <div class="pace-calc-comparison-value" id="pace-calc-10k-value">0:00</div>
+      </div>
+      <div class="pace-calc-comparison-item">
+        <div>Half Marathon</div>
+        <div class="pace-calc-comparison-value" id="pace-calc-half-value">0:00</div>
+      </div>
+    </div>
+
+
+    <div class="pace-calc-suggestion">
+      <h3>About Your Pace</h3>
+      <p>
+        Your pace is calculated by dividing your total time by the distance. This helps you understand how fast you're
+        running and can be used to plan training sessions or race strategies.
+      </p>
+      <p id="pace-calc-goal-note"></p>
+      <p>For race predictions, add 5-10% to your training pace to account for race day conditions and fatigue.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Popup HTML -->
+<div class="pace-calc-popup-overlay" id="pace-calc-popup">
+  <div class="pace-calc-popup">
+    <button class="pace-calc-popup-close" id="pace-calc-popup-close">&times;</button>
+    <h2 class="pace-calc-popup-title">Get Your Personalized Training Plan</h2>
+    <div class="pace-calc-popup-content">
+      <!-- Klaviyo form -->
+      <div class="pace-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const calculateBtn = document.getElementById('pace-calc-calculate-btn');
+    const resultContainer = document.getElementById('pace-calc-result');
+    const resultValue = document.getElementById('pace-calc-result-value');
+    const resultCategory = document.getElementById('pace-calc-result-category');
+    const fiveKValue = document.getElementById('pace-calc-5k-value');
+    const tenKValue = document.getElementById('pace-calc-10k-value');
+    const halfValue = document.getElementById('pace-calc-half-value');
+    const goalNote = document.getElementById('pace-calc-goal-note');
+    const distanceSelect = document.getElementById('pace-calc-distance');
+    const customDistanceGroup = document.getElementById('pace-calc-custom-distance-group');
+
+
+    // Popup elements
+    const popup = document.getElementById('pace-calc-popup');
+    const popupClose = document.getElementById('pace-calc-popup-close');
+
+
+    // Store calculated values
+    let calculatedPace = 0;
+    let calculatedUnit = '';
+
+
+    // Toggle custom distance field
+    distanceSelect.addEventListener('change', function () {
+      if (this.value === 'custom') {
+        customDistanceGroup.style.display = 'block';
+      } else {
+        customDistanceGroup.style.display = 'none';
+      }
+    });
+
+
+    calculateBtn.addEventListener('click', function () {
+      // First calculate the pace
+      const calculationSuccessful = calculatePace();
+
+
+      // Only show popup if calculation was successful
+      if (calculationSuccessful) {
+        popup.classList.add('active');
+        // Hide the regular result container initially
+        resultContainer.style.display = 'none';
+      }
+    });
+
+
+    // Close popup when clicking the close button
+    popupClose.addEventListener('click', function () {
+      popup.classList.remove('active');
+      displayResult(calculatedPace, calculatedUnit);
+    });
+
+
+    // Close popup when clicking outside of it
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+        displayResult(calculatedPace, calculatedUnit);
+      }
+    });
+
+
+    // Function to handle Klaviyo button clicks
+    function handleKlaviyoButtonClick(e) {
+      const klaviyoButton = e.target.closest('.go3265039304');
+      if (klaviyoButton && popup.classList.contains('active')) {
+        popup.classList.remove('active');
+        displayResult(calculatedPace, calculatedUnit);
+      }
+    }
+
+
+    // Set up event listener for Klaviyo button
+    document.addEventListener('click', handleKlaviyoButtonClick);
+
+
+    // Listen for Klaviyo form submission as a fallback
+    document.addEventListener('klaviyoForms', function (e) {
+      if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+        popup.classList.remove('active');
+        displayResult(calculatedPace, calculatedUnit);
+      }
+    });
+
+
+    function calculatePace() {
+      const distanceOption = distanceSelect.value;
+      let distance;
+
+
+      if (distanceOption === 'custom') {
+        distance = parseFloat(document.getElementById('pace-calc-custom-distance').value);
+        if (isNaN(distance) || distance <= 0) {
+          showError('Please enter a valid custom distance');
+          return false;
+        }
+      } else {
+        distance = parseFloat(distanceOption);
+      }
+
+
+      const hours = parseInt(document.getElementById('pace-calc-hours').value) || 0;
+      const minutes = parseInt(document.getElementById('pace-calc-minutes').value) || 30;
+      const seconds = parseInt(document.getElementById('pace-calc-seconds').value) || 0;
+      const unit = document.getElementById('pace-calc-unit').value;
+
+
+      // Clear previous errors
+      const existingError = document.querySelector('.pace-calc-error');
+      if (existingError) {
+        existingError.remove();
+      }
+
+
+      // Validate inputs
+      if (hours < 0 || minutes < 0 || seconds < 0 || minutes > 59 || seconds > 59) {
+        showError('Please enter valid time values');
+        return false;
+      }
+
+
+      if (hours === 0 && minutes === 0 && seconds === 0) {
+        showError('Please enter a time greater than zero');
+        return false;
+      }
+
+
+      // Calculate total time in seconds
+      const totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+
+      // Calculate pace in seconds per km
+      const paceSecondsPerKm = totalSeconds / distance;
+
+
+      // Convert to min:sec format
+      const paceMinutes = Math.floor(paceSecondsPerKm / 60);
+      const paceSeconds = Math.round(paceSecondsPerKm % 60);
+
+
+      // Store calculated values
+      calculatedPace = {
+        minutes: paceMinutes,
+        seconds: paceSeconds,
+        secondsPerKm: paceSecondsPerKm,
+      };
+      calculatedUnit = unit;
+
+
+      return true; // Calculation was successful
+    }
+
+
+    function displayResult(pace, unit) {
+      // Format pace based on unit
+      let paceText;
+      if (unit === 'min/km') {
+        paceText = `${pace.minutes}:${pace.seconds < 10 ? '0' + pace.seconds : pace.seconds} min/km`;
+      } else {
+        // Convert to min/mile (1 km = 0.621371 miles)
+        const paceSecondsPerMile = pace.secondsPerKm / 0.621371;
+        const paceMinutesMile = Math.floor(paceSecondsPerMile / 60);
+        const paceSecondsMile = Math.round(paceSecondsPerMile % 60);
+        paceText = `${paceMinutesMile}:${paceSecondsMile < 10 ? '0' + paceSecondsMile : paceSecondsMile} min/mile`;
+      }
+
+
+      // Display main result
+      resultValue.textContent = paceText;
+      resultCategory.textContent = 'Average Pace';
+
+
+      // Calculate comparison paces (5K, 10K, Half Marathon)
+      const fiveKPace = formatPaceTime(pace.secondsPerKm, unit);
+      const tenKPace = formatPaceTime(pace.secondsPerKm * 1.03, unit); // Slightly slower for longer distances
+      const halfPace = formatPaceTime(pace.secondsPerKm * 1.06, unit); // Even slower for half marathon
+
+
+      fiveKValue.textContent = fiveKPace;
+      tenKValue.textContent = tenKPace;
+      halfValue.textContent = halfPace;
+
+
+      // Set goal-specific note
+      goalNote.textContent = `At this pace, you would complete a 5K in ${calculateFinishTime(
+        5,
+        pace.secondsPerKm
+      )}, a 10K in ${calculateFinishTime(10, pace.secondsPerKm)}, and a half marathon in ${calculateFinishTime(
+        21.0975,
+        pace.secondsPerKm
+      )}.`;
+
+
+      // Show the result container
+      resultContainer.style.display = 'block';
+      resultContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+
+    function formatPaceTime(secondsPerUnit, unit) {
+      const isKm = unit === 'min/km';
+      const conversionFactor = isKm ? 1 : 0.621371;
+      const secondsConverted = isKm ? secondsPerUnit : secondsPerUnit / conversionFactor;
+
+
+      const minutes = Math.floor(secondsConverted / 60);
+      const seconds = Math.round(secondsConverted % 60);
+
+
+      return `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+
+    function calculateFinishTime(distance, secondsPerKm) {
+      const totalSeconds = distance * secondsPerKm;
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = Math.round(totalSeconds % 60);
+
+
+      let timeString = '';
+      if (hours > 0) timeString += `${hours}h `;
+      if (minutes > 0 || hours > 0) timeString += `${minutes}m `;
+      timeString += `${seconds}s`;
+
+
+      return timeString;
+    }
+
+
+    function showError(message) {
+      const errorElement = document.createElement('div');
+      errorElement.className = 'pace-calc-error';
+      errorElement.style.color = 'red';
+      errorElement.style.margin = '10px 0';
+      errorElement.style.textAlign = 'center';
+      errorElement.textContent = message;
+
+
+      document
+        .querySelector('.pace-calc-body')
+        .insertBefore(errorElement, document.querySelector('.pace-calc-result-container'));
+    }
+  });
+</script>
+
+
+

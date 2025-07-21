@@ -1,0 +1,560 @@
+{% schema %}
+  {
+    "name": "One-Rep Max Calculator",
+    "settings": [],
+    "presets": [
+      {
+        "name": "One-Rep Max Calculator"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<style>
+    @media (min-width: 768px){
+        .orm-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .orm-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+
+  .orm-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+
+  .orm-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+
+  .orm-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+
+  .orm-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+
+  .orm-calc-input-group select,
+  .orm-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+
+  .orm-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+
+  .orm-calc-button:hover {
+    background-color: #075a7b;
+  }
+
+
+  .orm-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+
+  .orm-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+
+  .orm-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+
+  .orm-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+
+  .orm-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .orm-calc-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+  }
+
+
+  .orm-calc-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+
+  .orm-calc-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+
+  @media (max-width: 760px){
+    .orm-calc-calculator-container{
+      padding: 15px;
+    }
+
+
+    .orm-calc-calculator-container h1{
+      font-size: 22px;
+    }
+   
+    .orm-calc-result-value {
+      font-size: 28px;
+    }
+   
+    .orm-calc-result-category {
+      font-size: 20px;
+    }
+  }
+
+
+  /* Popup styles */
+.orm-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.orm-calc-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+  .orm-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+
+  .orm-calc-popup-overlay.active .orm-calc-popup {
+    transform: translateY(0);
+  }
+
+
+  .orm-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+
+  .orm-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+
+  .orm-calc-popup-content {
+    margin-top: 20px;
+  }
+
+
+  /* Klaviyo form styles */
+  .orm-calc-klaviyo-form {
+    margin: 20px 0;
+    padding-bottom: 20px;
+  }
+
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+
+  .orm-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+<section class="orm-calc-body">
+  <div class="orm-calc-calculator-container">
+    <h1>One-Rep Max Calculator</h1>
+
+
+    <div class="orm-calc-input-group">
+      <label for="orm-calc-weight">Weight Lifted (kg/lbs)</label>
+      <input
+        type="number"
+        id="orm-calc-weight"
+        placeholder="Enter weight lifted"
+        min="1"
+        max="500"
+        value="100">
+    </div>
+
+
+    <div class="orm-calc-input-group">
+      <label for="orm-calc-reps">Reps Performed</label>
+      <input
+        type="number"
+        id="orm-calc-reps"
+        placeholder="Enter number of reps"
+        min="1"
+        max="20"
+        value="5">
+    </div>
+
+
+    <div class="orm-calc-input-group">
+      <label for="orm-calc-unit">Unit</label>
+      <select id="orm-calc-unit">
+        <option value="kg">Kilograms (kg)</option>
+        <option value="lbs">Pounds (lbs)</option>
+      </select>
+    </div>
+
+
+    <div class="orm-calc-input-group">
+      <label for="orm-calc-formula">Calculation Formula</label>
+      <select id="orm-calc-formula">
+        <option value="brzycki">Brzycki (Most Common)</option>
+        <option value="epley">Epley</option>
+        <option value="lander">Lander</option>
+        <option value="lombardi">Lombardi</option>
+        <option value="mayhew">Mayhew</option>
+      </select>
+    </div>
+
+
+    <button id="orm-calc-calculate-btn" class="orm-calc-button">Calculate 1RM</button>
+  </div>
+
+
+  <div class="orm-calc-result-container" id="orm-calc-result">
+    <h2>Your Results</h2>
+    <div class="orm-calc-result-value" id="orm-calc-result-value">0 kg</div>
+    <div class="orm-calc-result-category" id="orm-calc-result-category">Estimated 1 Rep Max</div>
+
+
+    <div class="orm-calc-comparison">
+      <div class="orm-calc-comparison-item">
+        <div>3 Reps</div>
+        <div class="orm-calc-comparison-value" id="orm-calc-3rep-value">0</div>
+      </div>
+      <div class="orm-calc-comparison-item">
+        <div>5 Reps</div>
+        <div class="orm-calc-comparison-value" id="orm-calc-5rep-value">0</div>
+      </div>
+      <div class="orm-calc-comparison-item">
+        <div>10 Reps</div>
+        <div class="orm-calc-comparison-value" id="orm-calc-10rep-value">0</div>
+      </div>
+    </div>
+
+
+    <div class="orm-calc-suggestion">
+      <h3>About Your One-Rep Max</h3>
+      <p>Your one-rep max (1RM) is the maximum amount of weight you can lift for a single repetition. This calculator estimates your 1RM based on your performance with submaximal weights.</p>
+      <p id="orm-calc-goal-note"></p>
+      <p>For strength training, aim to train at 70-90% of your 1RM. Always use proper form and a spotter when attempting heavy lifts.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Popup HTML -->
+<div class="orm-calc-popup-overlay" id="orm-calc-popup">
+  <div class="orm-calc-popup">
+    <button class="orm-calc-popup-close" id="orm-calc-popup-close">&times;</button>
+    <h2 class="orm-calc-popup-title">Get Your Personalized Strength Program</h2>
+    <div class="orm-calc-popup-content">
+      <!-- Klaviyo form -->
+      <div class="orm-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateBtn = document.getElementById('orm-calc-calculate-btn');
+        const resultContainer = document.getElementById('orm-calc-result');
+        const resultValue = document.getElementById('orm-calc-result-value');
+        const resultCategory = document.getElementById('orm-calc-result-category');
+        const threeRepValue = document.getElementById('orm-calc-3rep-value');
+        const fiveRepValue = document.getElementById('orm-calc-5rep-value');
+        const tenRepValue = document.getElementById('orm-calc-10rep-value');
+        const goalNote = document.getElementById('orm-calc-goal-note');
+       
+        // Popup elements
+        const popup = document.getElementById('orm-calc-popup');
+        const popupClose = document.getElementById('orm-calc-popup-close');
+       
+        // Store calculated values
+        let calculated1RM = 0;
+        let calculatedUnit = '';
+       
+        calculateBtn.addEventListener('click', function() {
+            // First calculate the 1RM
+            const calculationSuccessful = calculate1RM();
+           
+            // Only show popup if calculation was successful
+            if (calculationSuccessful) {
+                popup.classList.add('active');
+                // Hide the regular result container initially
+                resultContainer.style.display = 'none';
+            }
+        });
+       
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            displayResult(calculated1RM, calculatedUnit);
+        });
+       
+        // Close popup when clicking outside of it
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                displayResult(calculated1RM, calculatedUnit);
+            }
+        });
+       
+        // Function to handle Klaviyo button clicks
+        function handleKlaviyoButtonClick(e) {
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                displayResult(calculated1RM, calculatedUnit);
+            }
+        }
+       
+        // Set up event listener for Klaviyo button
+        document.addEventListener('click', handleKlaviyoButtonClick);
+       
+        // Listen for Klaviyo form submission as a fallback
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                popup.classList.remove('active');
+                displayResult(calculated1RM, calculatedUnit);
+            }
+        });
+       
+        function calculate1RM() {
+            const weight = parseFloat(document.getElementById('orm-calc-weight').value);
+            const reps = parseInt(document.getElementById('orm-calc-reps').value);
+            const unit = document.getElementById('orm-calc-unit').value;
+            const formula = document.getElementById('orm-calc-formula').value;
+           
+            // Clear previous errors
+            const existingError = document.querySelector('.orm-calc-error');
+            if (existingError) {
+                existingError.remove();
+            }
+           
+            // Validate inputs
+            if (isNaN(weight) || weight <= 0 || weight > 500) {
+                showError('Please enter a valid weight between 1-500');
+                return false;
+            }
+           
+            if (isNaN(reps) || reps <= 0 || reps > 20) {
+                showError('Please enter valid reps between 1-20');
+                return false;
+            }
+           
+            // Calculate 1RM based on selected formula
+            let oneRepMax;
+            switch(formula) {
+                case 'brzycki':
+                    oneRepMax = weight * (36 / (37 - reps));
+                    break;
+                case 'epley':
+                    oneRepMax = weight * (1 + (0.0333 * reps));
+                    break;
+                case 'lander':
+                    oneRepMax = (100 * weight) / (101.3 - (2.67123 * reps));
+                    break;
+                case 'lombardi':
+                    oneRepMax = weight * Math.pow(reps, 0.1);
+                    break;
+                case 'mayhew':
+                    oneRepMax = (100 * weight) / (52.2 + (41.9 * Math.exp(-0.055 * reps)));
+                    break;
+                default:
+                    oneRepMax = weight * (36 / (37 - reps)); // Default to Brzycki
+            }
+           
+            // Round to nearest whole number
+            oneRepMax = Math.round(oneRepMax);
+           
+            // Store calculated values
+            calculated1RM = oneRepMax;
+            calculatedUnit = unit;
+           
+            return true; // Calculation was successful
+        }
+       
+        function displayResult(oneRepMax, unit) {
+            // Display main result
+            resultValue.textContent = `${oneRepMax} ${unit}`;
+            resultCategory.textContent = "Estimated 1 Rep Max";
+           
+            // Calculate comparison values (3RM, 5RM, 10RM)
+            const threeRM = Math.round(oneRepMax * 0.93); // 93% of 1RM
+            const fiveRM = Math.round(oneRepMax * 0.87); // 87% of 1RM
+            const tenRM = Math.round(oneRepMax * 0.75); // 75% of 1RM
+           
+            threeRepValue.textContent = `${threeRM} ${unit}`;
+            fiveRepValue.textContent = `${fiveRM} ${unit}`;
+            tenRepValue.textContent = `${tenRM} ${unit}`;
+           
+            // Set goal-specific note
+            goalNote.textContent = `Based on this calculation, you could likely lift ${threeRM}${unit} for 3 reps, ${fiveRM}${unit} for 5 reps, and ${tenRM}${unit} for 10 reps with proper form.`;
+           
+            // Show the result container
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+       
+        function showError(message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'orm-calc-error';
+            errorElement.style.color = 'red';
+            errorElement.style.margin = '10px 0';
+            errorElement.style.textAlign = 'center';
+            errorElement.textContent = message;
+           
+            document.querySelector('.orm-calc-body').insertBefore(
+                errorElement,
+                document.querySelector('.orm-calc-result-container')
+            );
+        }
+    });
+</script>
+

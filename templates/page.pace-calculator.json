@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "peace_calculator_LBWK7Q": {
+      "type": "peace-calculator",
+      "name": "Pace Calculator",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "peace_calculator_LBWK7Q"
   ]
 }
