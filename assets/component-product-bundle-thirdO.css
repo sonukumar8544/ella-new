@@ -773,6 +773,20 @@
     padding: 0;
 }
 
+/* thirdO */
+.cstm-Product-page-3.O-third {
+  .bundle-product-list1 {
+    display: flex;
+    align-items: unset;
+}
+  .bundle-product-item {
+    width: 33%;
+}
+}
+
+
+
+
 @media (max-width: 1024px) {
     .bundle-product-wrapper {
         display: block !important;
@@ -1067,3 +1081,5 @@
         margin-left: 80px;
     }
 }
+
+
