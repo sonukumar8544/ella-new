@@ -1,4 +1,10 @@
     /* 1440px */
+
+.productView-nav.style-1 .slick-dots {
+    bottom: -28px;
+}
+
+
 .productView-tab .tab-content .hidden {
     display: none;
 }
