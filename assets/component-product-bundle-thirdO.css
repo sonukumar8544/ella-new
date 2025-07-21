@@ -990,6 +990,9 @@ text-align: center;
     content: '';
     display: none;
 }
+  .cstm-Product-page-3\.O-third .bundle-product-item::last-child{
+            margin-bottom: 5px;
+  }
   
 .cstm-Product-page-3\.O-third .halo-block-header {
     position: relative;
