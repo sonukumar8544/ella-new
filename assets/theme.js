@@ -7445,7 +7445,6 @@ $(document).ready(function () {
  // bundle update in cart
   $(document).ready(function() {
     $(document).on("click", ".dynamic-Product-page-3\\.O-template .bundle-product-action input", function(e) {
-        console.log("Input clicked");
       setTimeout(()=>{
         window.location.href = "/cart";
         }, 4000);
