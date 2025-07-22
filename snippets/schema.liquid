@@ -49,14 +49,13 @@
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }} {{ 'aaaa' }}",
-  "price": "{% for priceschema1 in priceschema %}{{ priceschema1  }}{% endfor %}",
   },
   "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{ final_price  }}",
+    "price": "{% for priceschema1 in priceschema %}{{ priceschema1  }}{% endfor %}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
