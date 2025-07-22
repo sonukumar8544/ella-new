@@ -8,36 +8,49 @@
         assign fa_variant_count = product.variants | size
         assign fa_count = 0
     -%}
-    <script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "Product",
-        "name": "{{ product.title | strip_html | escape }}",
-        "url": "{{ url }}{{ product.url }}",
-        {% comment %} {%- if product.variants.first.sku != blank -%}
-            "sku": "{{ product.variants.first.sku }}",
-        {%- else -%}
-            "sku": "{{ product.variants.first.id }}",
-        {%- endif -%} {% endcomment %}
-        {%- if product.variants.first.barcode.size == 12 -%}
-            "gtin12": {{ product.variants.first.barcode }},
-        {%- endif -%}
-        {%- if product.variants.first.barcode.size == 13 -%}
-            "gtin13": {{ product.variants.first.barcode }},
-        {%- endif -%}
-        {%- if product.variants.first.barcode.size == 14 -%}
-            "gtin14": {{ product.variants.first.barcode }},
-        {%- endif -%}
-        "productID": "{{ product.id }}",
-        "brand": {
-            "@type": "Brand",
-            "name": "{{ product.vendor | escape }}"
-        },
-        "description": "{{ product.description | strip_html | escape | strip_newlines }}",
-        "image": "https:{{ product.featured_image.src | img_url: 'original' }}"
-       
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | strip_html | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  {%- if product.variants.first.barcode.size == 12 -%}
+    "gtin12": {{ product.variants.first.barcode }},
+  {%- endif -%}
+  {%- if product.variants.first.barcode.size == 13 -%}
+    "gtin13": {{ product.variants.first.barcode }},
+  {%- endif -%}
+  {%- if product.variants.first.barcode.size == 14 -%}
+    "gtin14": {{ product.variants.first.barcode }},
+  {%- endif -%}
+  "productID": "{{ product.id }}",
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  "description": "{{ product.description | strip_html | escape | strip_newlines }}",
+  "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{ product.price | money_without_currency | remove: ',' }}",
+    "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
     }
-    </script>
+  }
+  {% if product.metafields.reviews.rating.value != blank %},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.metafields.reviews.rating.value | round: 1 }}",
+    "ratingCount": "{{ product.metafields.reviews.rating_count.value }}"
+  }
+  {% endif %}
+}
+</script>
   
     <script type="application/ld+json">
     {
