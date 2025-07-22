@@ -35,7 +35,7 @@
         },
         "description": "{{ product.description | strip_html | escape | strip_newlines }}",
         "image": "https:{{ product.featured_image.src | img_url: 'original' }}",
-        {%- if product.variants -%}
+        {% comment %} {%- if product.variants -%}
             {%- assign fa_count = fa_count | plus: 1 -%}
             "offers": {% if product.variants.size > 1 %}[{% endif %}
             {
@@ -65,13 +65,13 @@
                 {%- if fa_current_variant.barcode.size == 14 -%}
                     "gtin14": {{ fa_current_variant.barcode }},
                 {%- endif -%}
-               {% comment %}
+              
                  
               {%- if fa_current_variant.sku != blank -%}
                     "sku": "{{ fa_current_variant.sku }}",
                 {%- else -%}
                     "sku": "{{ fa_current_variant.id }}",
-                {%- endif -%} {% endcomment %} 
+                {%- endif -%} 
                 {%- if product.description != blank -%}
                     "description": "{{ product.description | strip_html | escape | strip_newlines }}",
                 {%- endif -%}
@@ -107,14 +107,14 @@
                         {%- if variant.barcode.size == 14 -%}
                             "gtin14": {{ variant.barcode }},
                         {%- endif -%}
-                        {% comment %}  {%- if variant.sku != blank -%}
+                        {%- if variant.sku != blank -%}
                             "sku": "{{ variant.sku }}",
                         {%- else -%}
                             "sku": "{{ variant.id }}",
                         {%- endif -%} 
                         {%- if product.description != blank -%}
                             "description": "{{ product.description | strip_html | escape | strip_newlines }}",
-                        {%- endif -%}{% endcomment %} 
+                        {%- endif -%}
                         "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' | uri_encode | replace:'+','%20' }}"
                     }
                     {%- if fa_count < fa_variant_count -%}
@@ -123,7 +123,7 @@
                 {%- endif -%}
             {%- endfor -%}
             {% if product.variants.size > 1 %}]{% endif %}
-        {%- endif -%} 
+        {%- endif -%}  {% endcomment %}
     }
     </script>
   
