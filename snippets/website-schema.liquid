@@ -3,7 +3,7 @@
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "{{ product.title | escape }}",
+  "name": "{{ product.title | escape }} {{ "Sonu kumar" }}",
   "image": "{{ product.featured_image | img_url: 'master' }}",
   "description": "{{ product.description | strip_html | escape }}",
   "brand": {
