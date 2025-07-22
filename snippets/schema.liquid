@@ -12,7 +12,7 @@
     -%} {% endcomment %}
   
 <!-- sonooooooooooooooooooo -->
-{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
+{% comment %}{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
 {% assign original_price = original_price_cents | divided_by: 100.0 %}
   <!-- {{ original_price }} -->
 {% assign discount = original_price | times: 0.07 %}
@@ -25,7 +25,7 @@
 
 <!-- Display only for debugging -->
 <!-- {{ sale_price_dollars }} -->
-
+{% endcomment %}
 {% assign priceschema = product.metafields.custom.base_price.value %}
   
   
