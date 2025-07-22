@@ -11,13 +11,7 @@
   
  {% assign original_price1 = product.metafields.custom.price_schema.value | split: ',' %}
 
-{% for original_price in original_price1 %}
-  {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
-  {{ '$' }}{{ original_price1 }}{{ 'USD'}}
-  {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
-   {{ '$' }}{{ original_price1 }}{{ 'CAD'}}
-  {% endif %}
-{% endfor %}
+
   <!-- amamammam -->
 <script type="application/ld+json">
 {
