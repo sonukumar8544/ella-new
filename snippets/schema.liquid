@@ -14,11 +14,11 @@
         "@type": "Product",
         "name": "{{ product.title | strip_html | escape }}",
         "url": "{{ url }}{{ product.url }}",
-        {%- if product.variants.first.sku != blank -%}
+        {% comment %} {%- if product.variants.first.sku != blank -%}
             "sku": "{{ product.variants.first.sku }}",
         {%- else -%}
             "sku": "{{ product.variants.first.id }}",
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
         {%- if product.variants.first.barcode.size == 12 -%}
             "gtin12": {{ product.variants.first.barcode }},
         {%- endif -%}
@@ -35,7 +35,7 @@
         },
         "description": "{{ product.description | strip_html | escape | strip_newlines }}",
         "image": "https:{{ product.featured_image.src | img_url: 'original' }}",
-        {% comment %} {%- if product.variants -%}
+        {%- if product.variants -%}
             {%- assign fa_count = fa_count | plus: 1 -%}
             "offers": {% if product.variants.size > 1 %}[{% endif %}
             {
@@ -123,7 +123,7 @@
                 {%- endif -%}
             {%- endfor -%}
             {% if product.variants.size > 1 %}]{% endif %}
-        {%- endif -%} {% endcomment %}
+        {%- endif -%} 
     }
     </script>
   
