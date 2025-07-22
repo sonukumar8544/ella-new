@@ -19,8 +19,8 @@
   <!-- {{ discount }} -->
 {% assign sale_price = original_price | minus: discount %}
   <!-- {{ sale_price }} -->
-<!-- {% assign final_price = sale_price | round %} -->
-
+{% assign final_price = sale_price | round %}
+<!--Final: {{ final_price }} -->
 
 
 <!-- Display only for debugging -->
