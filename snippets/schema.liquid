@@ -12,7 +12,7 @@
     -%} {% endcomment %}
   
 <!-- sonooooooooooooooooooo -->
-{% comment %}{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
+{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
 {% assign original_price = original_price_cents | divided_by: 100.0 %}
   <!-- {{ original_price }} -->
 {% assign discount = original_price | times: 0.07 %}
@@ -25,8 +25,8 @@
 
 <!-- Display only for debugging -->
 <!-- {{ sale_price_dollars }} -->
-{% endcomment %}
-{% assign priceschema = product.metafields.custom.base_price.value %}
+
+{% assign priceschema = product.metafields.custom.price_schema.value %}
   
   
 <script type="application/ld+json">
@@ -48,13 +48,14 @@
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }} {{ 'aaaa' }}",
+  "price": "{% for priceschema1 in priceschema %}{{ priceschema1  }}{% endfor %}",
   },
   "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{ priceschema  }}",
+    "price": "{{ final_price  }}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
