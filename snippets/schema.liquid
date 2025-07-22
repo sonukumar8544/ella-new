@@ -9,11 +9,15 @@
         assign fa_count = 0
     -%}
   
-  {% assign original_price1 = product.metafields.custom.price_schema.value%}
-  {% for original_price in original_price1 %}
-    <!-- {{ original_price }}
-    {{ localization.country.currency.iso_code }} -->
-    {% endfor %}
+ {% assign original_price1 = product.metafields.custom.price_schema.value | split: ',' %}
+
+{% for original_price in original_price1 %}
+  {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
+    <!--USA {{ original_price }} -->
+  {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
+    <!--CAD {{ original_price }} -->
+  {% endif %}
+{% endfor %}
   <!-- amamammam -->
 <script type="application/ld+json">
 {
