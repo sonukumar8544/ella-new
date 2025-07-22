@@ -44,13 +44,13 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{% for original_price in original_price1 %}
-  {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
-  {{ '$' }}{{ original_price1 }}{{ 'USD'}}
-  {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
-   {{ '$' }}{{ original_price1 }}{{ 'CAD'}}
-  {% endif %}
-{% endfor %}",
+    "price": "{% assign price_list = product.metafields.custom.price_list %}
+
+{% if localization.country.currency.iso_code == 'USD' and price_list.size > 0 %}
+  {{ '$' }}{{ price_list[0] }} USD
+{% elsif localization.country.currency.iso_code == 'CAD' and price_list.size > 1 %}
+  {{ '$' }}{{ price_list[1] }} CAD
+{% endif %}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
