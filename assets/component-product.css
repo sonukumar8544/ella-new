@@ -1,7 +1,14 @@
+.wellness-product .productView-nav ul.slick-dots {
+    display: none !important;
+}
+
+
 #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--regular .money {
     font-weight: 800;
     color: #969696 !important;
 }
+
+
 
  #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--sale .money {
     font-weight: 600;
