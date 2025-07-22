@@ -1,86 +1,66 @@
-<!--product-trusted-badze -->
-    <div class="container free-shipping-container cstm__{{ section.id }}">
-    <div class="shipping-slider" id="shipping_details">
+<!-- product-trusted-badge -->
+<div class="container free-shipping-container cstm__{{ section.id }}">
+  <div class="shipping-slider" id="shipping_details">
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Rooted in Care<br>
-    & Tradition
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Rooted in Care<br>& Tradition</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Award Winning <br>
-    Extraction Process
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Award Winning <br>Extraction Process</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Premium Patented <br>
-    Ingredients
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Premium Patented <br>Ingredients</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-   Expert<br> Formulated
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Expert<br>Formulated</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Science-Backed <br>
-    Formulations
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Science-Backed <br>Formulations</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Health Canada <br>
-    Registered GMP Facility
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466"
+        alt="Shipping"
+        class="lazyload">
+      <p>Health Canada <br>Registered GMP Facility</p>
     </div>
+
     <div class="shipping-item">
-    <img
-    data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Heading_3_Earn_yield.svg?v=1752212970"
-    alt="Shipping"
-    class="lazyload"
-    >
-    <p>
-    Approved (Generally<br>
-    Recognized As Safe)
-    </p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Heading_3_Earn_yield.svg?v=1752212970"
+        alt="Shipping"
+        class="lazyload">
+      <p>Approved (Generally<br>Recognized As Safe)</p>
     </div>
-    </div>
-    </div>
-    <style>
-    .shipping-slider{
+  </div>
+</div>
+
+<style>
+  .shipping-slider {
     display: flex;
     overflow-x: auto;
     gap: 1rem;
@@ -88,139 +68,118 @@
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    }
-    
-    .container.free-shipping-container {
+  }
+
+  .container.free-shipping-container {
     background: #EEEEEE;
     border-radius: 10px;
     margin-bottom: 30px;
     padding: 20px 40px;
     max-width: 1000vw;
-    }
-    
-    .shipping-item {
+  }
+
+  .shipping-item {
     gap: 10px;
     margin: 0 10px;
     padding: 15px 30px;
-    /* flex: 0 0 230px; */
     overflow: hidden;
     scroll-snap-align: start;
-    /* flex-direction: column; */
     transition: transform 0.3s;
     position: relative;
-    }
-    
-    .shipping-item img {
+  }
+
+  .shipping-item img {
     max-width: 50px;
     margin: auto;
-    height:50px;
-    }
-    
-    .shipping-item p {
-    margin: 0;
-    margin-top: 10px;
+    height: 50px;
+  }
+
+  .shipping-item p {
+    margin: 10px 0 0;
     color: #36454F;
     text-align: center;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.32px;
     text-transform: capitalize;
-    }
-    
-    @media (max-width: 768px) {
+  }
+
+  @media (max-width: 768px) {
     .shipping-item {
-    flex-direction: column;
-    text-align: center;
+      flex-direction: column;
+      text-align: center;
     }
-    .container.free-shipping-container{
-    margin-top: 25px;
-    }
-    
-    .shipping-item p {
-    font-size: 13px;
-    line-height: 1.4;
-    }
-    .shipping-item p {
-    color: #36454F;
-    text-align: center;
-    font-family: Lato;
-    font-size: 10.661px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.244px;
-    text-transform: capitalize;
-    }
-    
-    .shipping-item img {
-    max-width: 40px;
-    margin: auto;
-    height: 40px;
-    }
+
     .container.free-shipping-container {
-    background: #EEEEEE;
-    border-radius: 0px;
-    margin-bottom: 30px;
-    padding: 10px 1px;
-    max-width: 1000vw;
-    }       
+      margin-top: 25px;
     }
-    @media (max-width: 550px) {
-    .container.free-shipping-container{
-    margin-top: 25px;
+
+    .shipping-item p {
+      font-size: 10.661px;
+      line-height: normal;
+      letter-spacing: 0.244px;
     }
+
+    .shipping-item img {
+      max-width: 40px;
+      height: 40px;
+    }
+
+    .container.free-shipping-container {
+      background: #EEEEEE;
+      border-radius: 0;
+      padding: 10px 1px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .container.free-shipping-container {
+      margin-top: 25px;
+    }
+
     .shipping-item {
-    gap: 10px;
-    margin: 0 5px;
-    padding: 5px 0px;
+      gap: 10px;
+      margin: 0 5px;
+      padding: 5px 0;
     }
-      
 
-#shipping_details .slick-slide {
-    padding: 0px;
-}
+    #shipping_details .slick-slide {
+      padding: 0;
     }
-    </style>
-  <script>
-$(document).ready(function () {
-  $('#shipping_details').slick({
-    dots: false,
-    infinite: true,
-    arrows: false,
-    speed: 700,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 5,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    $('#shipping_details').slick({
+      dots: false,
+      infinite: true,
+      arrows: false,
+      speed: 700,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 5,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: { slidesToShow: 4 }
+        },
+        {
+          breakpoint: 800,
+          settings: { slidesToShow: 3 }
+        },
+        {
+          breakpoint: 600,
+          settings: { slidesToShow: 2 }
+        },
+        {
+          breakpoint: 310,
+          settings: { slidesToShow: 1 }
         }
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 310,
-        settings: {
-          slidesToShow: 1,
-        }
-      }
-    ]
+      ]
+    });
   });
-});
 </script>
-
