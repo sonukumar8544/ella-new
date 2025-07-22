@@ -10,13 +10,14 @@
     -%}
   
 <!-- sonooooooooooooooooooo -->
-  {% assign original_price1 = product.selected_or_first_available_variant.price %}
-  {% assign discount1 = original_price1 | times: 0.15 %}
-          {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+ % assign original_price_cents = product.selected_or_first_available_variant.price %}
+{% assign discount_cents = original_price_cents | times: 0.15 %}
+{% assign sale_price_cents = original_price_cents | minus: discount_cents %}
 
-<!-- {{ original_price1 | strip_html }} ---{{ discount1 }}-->
-  
-  <!-- {{ new_saleprice1 | money_with_currency | strip_html}} -->
+{% assign sale_price_dollars = sale_price_cents | divided_by: 100.0 %}
+
+<!-- Display only for debugging -->
+<!-- {{ sale_price_dollars }} -->
   
 <script type="application/ld+json">
 {
