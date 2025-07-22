@@ -35,7 +35,7 @@
         },
         "description": "{{ product.description | strip_html | escape | strip_newlines }}",
         "image": "https:{{ product.featured_image.src | img_url: 'original' }}",
-        {%- if product.variants -%}
+        {% comment %} {%- if product.variants -%}
             {%- assign fa_count = fa_count | plus: 1 -%}
             "offers": {% if product.variants.size > 1 %}[{% endif %}
             {
@@ -123,7 +123,7 @@
                 {%- endif -%}
             {%- endfor -%}
             {% if product.variants.size > 1 %}]{% endif %}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
     }
     </script>
   
