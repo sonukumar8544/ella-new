@@ -36,7 +36,7 @@
     "@type": "Thing",
     "name": "{{ product.vendor | escape }}"
   },
-  "description": "{{ product.description | remove: "<span class=money>" }}",
+  "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
