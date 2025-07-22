@@ -3,11 +3,13 @@
     assign page_type = request.page_type
 %}
 {%- if page_type == 'product' -%}
-    {%- liquid
+   {% comment %}
+     
+   {%- liquid
         assign fa_current_variant = product.selected_or_first_available_variant
         assign fa_variant_count = product.variants | size
         assign fa_count = 0
-    -%}
+    -%} {% endcomment %}
   
 <!-- sonooooooooooooooooooo -->
 {% assign original_price_cents = product.selected_or_first_available_variant.price  %}
