@@ -1,8 +1,10 @@
 <!--product-testimonial-third -->
+{% assign review_meta = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
+{% if review_meta != blank %}
 <h2 class="testimonial-heading">What Our Customers Say</h2>
 <section class="testimonial-section">
   <div class="testimonial-slider">
-    {% for block in collection.metafields.custom.collection_review_image_url.value %}
+    {% for block in review_meta %}
       {% assign parts = block | split: '|' %}
       <div class="testimonial-img-slide">
         <div class="review-card">
@@ -16,9 +18,7 @@
         </div>
       </div>
     {% endfor %}
-
   </div>
-
 </section>
 
 
@@ -72,13 +72,7 @@
   font-size: 14px;
   color: #111;
 }
-
-
-
-
-
-
-  .testimonial-section {
+.testimonial-section {
     padding: 40px 20px;
     text-align: center;
     background-color: #fff;
@@ -170,7 +164,7 @@
         });
         });
 </script>
-
+{% endif %}
 {% schema %}
 {
   "name": "Meta FAQ's 3.0",
