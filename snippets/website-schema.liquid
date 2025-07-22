@@ -1,0 +1,132 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  {% if product.variants.size > 1 %}
+  "@type": "ProductGroup",
+  "name": "{{ product.title | escape }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.vendor | escape }}"
+  },
+  "productGroupID": "{{ product.id }}",
+  "variesBy": [
+    {% for option in product.options %}
+      "{{ option.name | escape }}"{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ],
+  "hasVariant": [
+    {% for variant in product.variants %}
+      {
+        "@type": "Product",
+        "sku": "{{ variant.sku | escape }}",
+        "name": "{{ product.title | escape }} - {{ variant.title | escape }}",
+        "description": "{{ product.description | strip_html | escape }} {{ "Sonu " }}",
+        "image": [
+          {% if variant.image %}
+            "{{ variant.image.src | img_url: 'master' }}"
+          {% else %}
+            "{{ product.featured_image | img_url: 'master' }}"
+          {% endif %}
+        ],
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "{{ shop.currency }}",
+          "price": "{{ variant.price | money_without_currency | remove: ',' }}",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "{% if variant.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+          "url": "{{ shop.url }}{{ product.url }}?variant={{ variant.id }}",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": 5.00,
+              "currency": "{{ shop.currency }}"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 5,
+                "unitCode": "DAY"
+              }
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnFees": "https://schema.org/FreeReturn",
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "applicableCountry": "US"
+          }
+        }
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  {% else %}
+  "@type": "Product",
+  "name": "{{ product.title | escape }} {{ 'AMAM' }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "image": [
+    "{{ product.featured_image | img_url: 'master' }}"
+  ],
+  "url": "{{ shop.url }}{{ product.url }}",
+  "sku": "{{ product.variants.first.sku | escape }}",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{ product.price | money_without_currency | remove: ',' }}",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 5.00,
+        "currency": "{{ shop.currency }}"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnFees": "https://schema.org/FreeReturn",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "applicableCountry": "US"
+    }
+  }
+  {% endif %}
+}
+</script>
