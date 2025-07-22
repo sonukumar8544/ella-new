@@ -44,7 +44,8 @@
   "productID": "{{ product.id }}",
   "brand": {
     "@type": "Thing",
-    "name": "{{ product.vendor | escape }} {{ 'aaaa' }}"
+    "name": "{{ product.vendor | escape }} {{ 'aaaa' }}",
+  "price": "{{ final_price  }}",
   },
   "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
