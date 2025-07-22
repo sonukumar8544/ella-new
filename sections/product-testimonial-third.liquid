@@ -3,7 +3,7 @@
 {% if review_meta != blank %}
 <section class="testimonial-section" {% if section.settings.bgcolor != blank %}style="background-color: {{ section.settings.bgcolor }}"{% endif %}>
   <div class="container">
-{% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading">{{ section.settings.titlefaq }}</h2> {% endif %}
+{% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading" {% if section.settings.titlefaq_color != blank %}style="color: {{ section.settings.titlefaq_color }}"{% endif %}>{{ section.settings.titlefaq }}</h2> {% endif %}
   <div class="testimonial-slider">
     {% for block in review_meta %}
       {% assign parts = block | split: '|' %}
@@ -205,7 +205,13 @@
       "type": "text",
       "id": "titlefaq",
       "label": "Title"
-    }
+    },
+    {
+      "type": "color",
+      "id": "titlefaq_color",
+      "label": "Heading Color",
+       "default": "#000"
+    },
   ],
   "presets": [
     {
