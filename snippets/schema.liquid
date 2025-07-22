@@ -37,7 +37,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{ original_price1}}",
+    "price": "{{ original_price1 | prepend: '$' | append: 'USD'}}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
