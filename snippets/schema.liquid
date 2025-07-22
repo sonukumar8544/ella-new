@@ -12,8 +12,8 @@
     -%} {% endcomment %}
   
 <!-- sonooooooooooooooooooo -->
-{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
-{% assign original_price = original_price_cents | money_with_currency %}
+{% assign original_price_cents = product.selected_or_first_available_variant.price | money_with_currency %}
+{% assign original_price = original_price_cents%}
   <!-- {{ original_price }} -->
 {% assign discount = original_price | times: 0.07 %}
   <!-- {{ discount }} -->
