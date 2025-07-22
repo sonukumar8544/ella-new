@@ -48,7 +48,6 @@
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }} {{ 'aaaa' }}",
-  "price": "{{ priceschema  }}",
   },
   "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
