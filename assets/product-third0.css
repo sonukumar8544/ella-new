@@ -722,7 +722,7 @@
   @media(max-width:550px ){
   .dynamic-Product-page-3\.O-template .product-details .product-option{
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   }
   .dynamic-Product-page-3\.O-template .product-details .product-page-varient-box{
