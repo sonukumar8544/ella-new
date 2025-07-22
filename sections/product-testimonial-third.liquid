@@ -11,11 +11,11 @@
         <div class="review-card">
           <img height="" width="" title="" class="lazyload" data-src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}">
           <div class="stars">★★★★★</div>
-          <h3 class="review-title">{{ parts[1] | strip }}</h3>
-          <p class="review-text">
+          <h3 class="review-title" {% if section.settings.title != blank %}style="color: {{ section.settings.title }}"{% endif %}>{{ parts[1] | strip }}</h3>
+          <p class="review-text" {% if section.settings.description != blank %}style="color: {{ section.settings.description }}"{% endif %}>
            {{ parts[2] | strip }}
           </p>
-          <p class="review-author">{{ parts[3] | strip }}</p>
+          <p class="review-author" {% if section.settings.author != blank %}style="color: {{ section.settings.author }}"{% endif %}>{{ parts[3] | strip }}</p>
         </div>
       </div>
     {% endfor %}
