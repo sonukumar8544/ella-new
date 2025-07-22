@@ -1,4 +1,42 @@
 <!-- scientific-slider-thirdO -->
+{% assign science_content = product.metafields.custom.product_3_0_science_slide.value %}
+
+{% if science_content != blank %}
+<section class="scientific-section" id="scientifically-backed_{{ section.id }}">
+  <div class="container">
+      <div class="scientific-header">
+        {% if section.settings.scientific_main_title != blank %}
+          <h2 class="scientific-title">{{ section.settings.scientific_main_title }}</h2>
+        {% endif %}
+        {% if product.metafields.custom.product_3_0_science_slide_description.value != blank %}
+          <p class="scientific-subtitle">{{ product.metafields.custom.product_3_0_science_slide_description.value }}</p>
+        {% endif %}
+      </div>
+
+
+    <div class="scientific-slider">
+      {% for block in science_content %}
+         {% assign text_break = block | split: '|' %}
+        <div class="scientific-card">
+           {% comment %}
+             <div class="scientific-quote-icon">
+              <img src="{{ text_break[0] | strip  }}" alt="" title="" width="" height="">
+            </div>
+           {% endcomment %} 
+            
+            <p class="scientific-quote-text">
+              {{ text_break[0] | strip  }}
+                <a href="{{ text_break[1] | strip  }}" class="scientific-note">Here's How</a>
+            </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+ </section>
+{% endif %}
+
+
+
 {% assign science_content = product.metafields.custom.product_3_0_science_slider.value %}
 
 {% if science_content != blank %}
@@ -285,8 +323,9 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Title"
+      "id": "scientific_main_title",
+      "label": "Title",
+      "default": "Scientifically Backed"
     },
     {
       "type": "richtext",
@@ -301,3 +340,6 @@
   ]
 }
 {% endschema %}
+
+
+
