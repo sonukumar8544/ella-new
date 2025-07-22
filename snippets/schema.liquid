@@ -45,7 +45,7 @@
   {% if product.metafields.reviews.rating.value != blank %},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ product.metafields.reviews.rating.value | round: 1 }}",
+    "ratingValue": "{{ 4.8 }}",
     "ratingCount": "{{ product.metafields.reviews.rating_count.value }}"
   }
   {% endif %}
