@@ -3,7 +3,7 @@
 {% if review_meta != blank %}
 <section class="testimonial-section ">
   <div class="container">
- <h2 class="testimonial-heading">What Our Customers Say</h2>
+{% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading">{{ section.settings.titlefaq }}</h2> {% endif %}
   <div class="testimonial-slider">
     {% for block in review_meta %}
       {% assign parts = block | split: '|' %}
