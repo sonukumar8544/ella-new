@@ -22,7 +22,7 @@
         "@type": "Product",
         "sku": "{{ variant.sku | escape }}",
         "name": "{{ product.title | escape }} - {{ variant.title | escape }}",
-        "description": "{{ product.description | strip_html | escape }}",
+        "description": "{{ product.description | strip_html | escape }} {{ "Sonu " }}",
         "image": [
           {% if variant.image %}
             "{{ variant.image.src | img_url: 'master' }}"
