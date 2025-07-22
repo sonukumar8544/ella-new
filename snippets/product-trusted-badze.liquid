@@ -161,25 +161,26 @@
       speed: 700,
       autoplay: true,
       autoplaySpeed: 3000,
-      slidesToShow: 5,
+      slidesToShow: 5, // Default for screens wider than 1200px
       responsive: [
         {
-          breakpoint: 1200,
+          breakpoint: 1200, // ≤1200
           settings: { slidesToShow: 4 }
         },
         {
-          breakpoint: 800,
+          breakpoint: 992, // ≤992
           settings: { slidesToShow: 3 }
         },
         {
-          breakpoint: 600,
+          breakpoint: 768, // ≤768
           settings: { slidesToShow: 2 }
         },
         {
-          breakpoint: 310,
+          breakpoint: 480, // ≤480
           settings: { slidesToShow: 1 }
         }
       ]
     });
   });
 </script>
+
