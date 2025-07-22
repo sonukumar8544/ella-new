@@ -7,8 +7,8 @@
   <div class="testimonial-slider">
     {% for block in review_meta %}
       {% assign parts = block | split: '|' %}
-      <div class="testimonial-img-slide" {% if section.settings.bgcard != blank %}style="background-color: {{ section.settings.bgcard }}"{% endif %}>
-        <div class="review-card">
+      <div class="testimonial-img-slide" >
+        <div class="review-card" {% if section.settings.bgcard != blank %}style="background-color: {{ section.settings.bgcard }}"{% endif %}>
           <img height="" width="" title="" class="lazyload" src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}">
           <div class="stars">★★★★★</div>
           <h3 class="review-title" {% if section.settings.title != blank %}style="color: {{ section.settings.title }}"{% endif %}>{{ parts[1] | strip }}</h3>
