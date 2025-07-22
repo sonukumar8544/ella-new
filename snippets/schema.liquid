@@ -10,7 +10,7 @@
     -%}
   
 <!-- sonooooooooooooooooooo -->
- % assign original_price_cents = product.selected_or_first_available_variant.price %}
+{% assign original_price_cents = product.selected_or_first_available_variant.price %}
 {% assign discount_cents = original_price_cents | times: 0.15 %}
 {% assign sale_price_cents = original_price_cents | minus: discount_cents %}
 
