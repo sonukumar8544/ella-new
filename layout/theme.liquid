@@ -261,7 +261,17 @@
     {% if settings.enable_currencies and settings.currency_type == 'auto_currencies' %}
       {% render 'halo-currency-js' %}
     {% endif %}
-
+  {% style %}
+{% if template.suffix == 'Product-page-3.O' %}
+.productView-nav.style-1 .slick-dots{
+display:flex !important;
+}
+{% else %}
+.productView-nav .slick-dots{
+display:none !important;
+}
+{% endif %}
+{% endstyle %}
                 
   </body>
 </html>
