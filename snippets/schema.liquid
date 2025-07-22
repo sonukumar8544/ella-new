@@ -14,7 +14,8 @@
 {% assign original_price = original_price_cents | divided_by: 100.0 %}
 {% assign discount = original_price | times: 0.15 %}
 {% assign sale_price = original_price | minus: discount %}
-<!-- {{ sale_price | round: 2 | prepend: '$' | append: 'USD' }} -->
+<!-- {% assign final_price = sale_price | round: 2 %} -->
+
 
 
 <!-- Display only for debugging -->
