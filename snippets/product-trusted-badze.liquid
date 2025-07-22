@@ -184,9 +184,9 @@
 }
     }
     </style>
-    <script>
-    $(document).ready(function () {
-    $('.cstm__{{ section.id }} #shipping_details').slick({
+  <script>
+$(document).ready(function () {
+  $('#shipping_details').slick({
     dots: false,
     infinite: true,
     arrows: false,
@@ -194,33 +194,33 @@
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 5,
-    
     responsive: [
-    {
-    breakpoint: 1200,
-    settings: {
-    slidesToShow: 4,
-    }
-    },
-    {
-    breakpoint: 800,
-    settings: {
-    slidesToShow: 4
-    }
-    },
-    {
-    breakpoint: 600,
-    settings: {
-    slidesToShow: 3
-    }
-    },
       {
-       breakpoint: 310,
-    settings: {
-    slidesToShow: 2
-    }
-    }
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 310,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
     ]
-    });
-    });
-    </script>
+  });
+});
+</script>
+
