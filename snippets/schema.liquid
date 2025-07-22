@@ -12,8 +12,8 @@
     -%} {% endcomment %}
   
 <!-- sonooooooooooooooooooo -->
-{% assign original_price_cents = product.selected_or_first_available_variant.price | money_with_currency %}
-{% assign original_price = original_price_cents%}
+{% assign original_price_cents = product.selected_or_first_available_variant.price  %}
+{% assign original_price = original_price_cents | divided_by: 100.0 %}
   <!-- {{ original_price }} -->
 {% assign discount = original_price | times: 0.07 %}
   <!-- {{ discount }} -->
@@ -51,7 +51,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{final_price }}",
+    "price": "{{final_price | prepend: '$' | append: 'USD' }}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
