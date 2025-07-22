@@ -12,7 +12,7 @@
 <!-- sonooooooooooooooooooo -->
 {% assign original_price_cents = product.selected_or_first_available_variant.price %}
 {% assign original_price = original_price_cents | divided_by: 100.0 %}
-{% assign discount = original_price | times: 0.12.5 %}
+{% assign discount = original_price | times: 0.15 %}
 {% assign sale_price = original_price | minus: discount %}
 <!-- {{ sale_price | round: 2 | prepend: '$' | append: 'USD' }} -->
 
@@ -44,7 +44,8 @@
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
-    "price": "{{sale_price | round | prepend: '$' | append: 'USD'}}",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{}}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
