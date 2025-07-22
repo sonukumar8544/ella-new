@@ -3,19 +3,15 @@
     assign page_type = request.page_type
 %}
 {%- if page_type == 'product' -%}
-   {% comment %}
-     
-   {%- liquid
+    {%- liquid
         assign fa_current_variant = product.selected_or_first_available_variant
         assign fa_variant_count = product.variants | size
         assign fa_count = 0
-    -%} {% endcomment %}
+    -%}
   
 <!-- sonooooooooooooooooooo -->
+  {% assign original_price1 = product.metafields.custom.price_schema.value%}
 
-{% assign priceschema = product.metafields.custom.price_schema.value %}
-  
-  
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -34,14 +30,14 @@
   "productID": "{{ product.id }}",
   "brand": {
     "@type": "Thing",
-    "name": "{{ product.vendor | escape }}",
+    "name": "{{ product.vendor | escape }}"
   },
-  "description": "{{ product.description |strip_html }}",
+  "description": "{{ product.description | remove: "<span class=money>" }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{% for priceschema1 in priceschema %}{{ priceschema1  }}{% endfor %}",
+    "price": "{{ original_price1}}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
@@ -144,4 +140,3 @@
     }
     </script>
 {%- endif -%}
-
