@@ -1,462 +1,174 @@
-<!--product-testimonial-third. -->
-{% assign testimonial1 = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
-
-{% if testimonial1 != blank %}
-<section class="testimonial-third" id="testimonial-third-{{ section.id }}" {% if section.settings.bgcolor!= blank %}style="background-color:{{ section.settings.bgcolor }}"{% endif %}>
-  <div class="container">
-    
-    {% if section.settings.titlefaq != blank %}
-      <div class="faq__header">
-        <h2 class="faq_title">{{ section.settings.titlefaq }}</h2>
-      </div>
-    {% endif %}
-
-    <div class="testimonial_slider_third">
-  {% for testimonial in testimonial1 %}
-     {% if testimonial.review_card_title1 != blank %}
-       <div class="testimonial-card-third111">
-      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-        {% if testimonial.review_card_icon_url1 != blank %}
-          <div class="testimonial-card-third__icon" aria-hidden="true">
-              <img src="{{ testimonial.review_card_icon_url1 }}" alt="" title="" width="" height="" loading="lazy">
-          </div>
-        {% endif %}
-        <div class="testimonial-card-third__rating" aria-label="5 star rating">
-          {% render 'product-third-star-review' %} 
-        </div>
-        
-        <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title1 }}</h2>
-        {% if testimonial.review_card_description1 != blank %}
-          <p class="testimonial-card-third__text">
-            {{ testimonial.review_card_description1 }}
+<!--product-testimonial-third -->
+<h2 class="testimonial-heading">What Our Customers Say</h2>
+<section class="testimonial-section">
+  <div class="testimonial-slider">
+    {% for block in collection.metafields.custom.collection_review_image_url.value %}
+      {% assign parts = block | split: '|' %}
+      <div class="testimonial-img-slide">
+        <div class="review-card">
+          <img height="" width="" title="" class="lazyload" data-src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}">
+          <div class="stars">★★★★★</div>
+          <h3 class="review-title">{{ parts[1] | strip }}</h3>
+          <p class="review-text">
+           {{ parts[2] | strip }}
           </p>
-        {% endif %}
-        {% if testimonial.review_card_author_name1 != blank %}
-          <footer>
-            <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name1 }}</p>
-          </footer>
-        {% endif %}
-      </div>
-       </div>
-    {% endif %}
-
-      {% if testimonial.review_card_title2 != blank %}
-        <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-          {% if testimonial.review_card_icon_url2 != blank %}
-            <div class="testimonial-card-third__icon" aria-hidden="true">
-             <img src="{{ testimonial.review_card_icon_url2 }}" alt="" title="" width="" height="" loading="lazy">
-             </div>
-          {% endif %}
-          <div class="testimonial-card-third__rating" aria-label="5 star rating">
-            {% render 'product-third-star-review' %} 
-          </div>
-          <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title2 }}</h2>
-          {% if testimonial.review_card_description2 != blank %}
-            <p class="testimonial-card-third__text">
-              {{ testimonial.review_card_description2 }}
-            </p>
-          {% endif %}
-          {% if testimonial.review_card_author_name2 != blank %}
-            <footer>
-              <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name2 }}</p>
-            </footer>
-          {% endif %}
+          <p class="review-author">{{ parts[3] | strip }}</p>
         </div>
-      {% endif %}
-
-        {% if testimonial.review_card_title3 != blank %}
-          <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-            {% if testimonial.review_card_icon_url3 != blank %}
-              <div class="testimonial-card-third__icon" aria-hidden="true">
-                <img src="{{ testimonial.review_card_icon_url3 }}" alt="" title="" width="" height="" loading="lazy">
-                
-              </div>
-            {% endif %}
-            <div class="testimonial-card-third__rating" aria-label="5 star rating">
-              {% render 'product-third-star-review' %} 
-            </div>
-            <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title3 }}</h2>
-            {% if testimonial.review_card_description3 != blank %}
-              <p class="testimonial-card-third__text">
-                {{ testimonial.review_card_description3 }}
-              </p>
-            {% endif %}
-            {% if testimonial.review_card_author_name3 != blank %}
-              <footer>
-                <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name3 }}</p>
-              </footer>
-            {% endif %}
-          </div>
-        {% endif %}
-
-          {% if testimonial.review_card_title4 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url4 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                 <img src="{{ testimonial.review_card_icon_url4 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title4 }}</h2>
-              {% if testimonial.review_card_description4 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description4 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name4 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name4 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title5 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url5 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  <img src="{{ testimonial.review_card_icon_url5 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title5 }}</h2>
-              {% if testimonial.review_card_description5 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description5 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name5 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name5 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title6 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url6 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  <img src="{{ testimonial.review_card_icon_url6 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title6 }}</h2>
-              {% if testimonial.review_card_description6 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description6 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name6 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name6 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title7 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url7 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                 <img src="{{ testimonial.review_card_icon_url7 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title7 }}</h2>
-              {% if testimonial.review_card_description7 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description7 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name7 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name7 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title8 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url8 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                 <img src="{{ testimonial.review_card_icon_url8 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title8 }}</h2>
-              {% if testimonial.review_card_description8 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description8 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name8 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name8 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title9 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url9 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  <img src="{{ testimonial.review_card_icon_url9 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title9 }}</h2>
-              {% if testimonial.review_card_description9 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description9 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name9 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name9 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if testimonial.review_card_title11 != blank %}
-            <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
-              {% if testimonial.review_card_icon_url11 != blank %}
-                <div class="testimonial-card-third__icon" aria-hidden="true">
-                  <img src="{{ testimonial.review_card_icon_url11 }}" alt="" title="" width="" height="" loading="lazy">
-                </div>
-              {% endif %}
-              <div class="testimonial-card-third__rating" aria-label="5 star rating">
-                {% render 'product-third-star-review' %} 
-              </div>
-              <h2 class="testimonial-card-third__title">{{ testimonial.review_card_title11 }}</h2>
-              {% if testimonial.review_card_description11 != blank %}
-                <p class="testimonial-card-third__text">
-                  {{ testimonial.review_card_description11 }}
-                </p>
-              {% endif %}
-              {% if testimonial.review_card_author_name11 != blank %}
-                <footer>
-                  <p class="testimonial-card-third__author">{{ testimonial.review_card_author_name11 }}</p>
-                </footer>
-              {% endif %}
-            </div>
-          {% endif %}
-
-        {% endfor %}
       </div>
-      
+    {% endfor %}
+
   </div>
+
 </section>
 
+
 <style>
-    #testimonial-third-{{ section.id }} {
-    padding: 50px 0px;
+.review-card {
+  max-width: 350px;
+  padding: 50px 20px;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: .5px solid black;
+  position: relative;
+  margin-top: 10px;
+  height: 430px;
+}
+
+.review-card img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stars {
+  color: #f59e0b; /* Amber-500 from Tailwind */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.testimonial-img-slide{
+  text-align: left;
+}
+
+
+.review-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.review-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #111;
+}
+
+
+
+
+
+
+  .testimonial-section {
+    padding: 40px 20px;
     text-align: center;
-    }
-    
-    .faq__header {
-    margin-bottom: 20px;
-    }
-    
-    #testimonial-third-{{ section.id }} .faq_title {
-    letter-spacing: 0.68px;
-    text-transform: capitalize;
-    color: #086B92;
-    text-align: center;
-    font-family: Nunito;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 48px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    }
-  
-    #testimonial-third-{{ section.id }} .testimonial_slider_third {
-    margin: 0 auto;
+    background-color: #fff;
     display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 2.5rem;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    }
-    #testimonial-third-{{ section.id }} .slick-active button {
-    border-radius: 30px;
-    width: 22px;
-    height: 8px;
-    }
-    #testimonial-third-{{ section.id }} .slick-dots li,
-    #testimonial-third-{{ section.id }} .slider-dots li{
-    margin: 0px 3px;
-    }
-    
- #testimonial-third-{{ section.id }} .testimonial-card-third {
-   flex: 0 0 315px;
-    padding: 24px 20px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    position: relative;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .testimonial-heading {
+    font-size: 35px;
+    color: #086b92;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-slider {
     width: 100%;
-   margin-right: 15px;
+    display: flex;
+    gap: 20px;
+  }
+
+  /* Slick Slide Styling */
+ 
+
+ 
+
+  /* Slick fix */
+  .slick-slide {
+    padding: 10px;
+  }
+
+  @media (max-width: 769px) {
+    .testimonial-heading {
+      font-size: 26px;
+      margin-bottom: 0;
     }
 
-  
-    #testimonial-third-{{ section.id }} .testimonial-card-third__icon img {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      position: absolute;
-      top: -22px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-#testimonial-third-{{ section.id }} .testimonial-card-third__title,
-    #testimonial-third-{{ section.id }} .testimonial-card-third__text,
-   #testimonial-third-{{ section.id }} .testimonial-card-third__author,
- #testimonial-third-{{ section.id }} .testimonial-card-third__rating {
-    text-align: left;
-}
-  
- #testimonial-third-{{ section.id }} .testimonial-card-third__rating svg {
-    fill: #D69E12;
-    stroke: #D69E12;
-    width: 80px;
-    height: auto;
-}
-
-   #testimonial-third-{{ section.id }} .testimonial-card-third__title {
-      font-weight: bolder;
-      font-size: 17px;
-      margin: 12px 0 0px;
-      color: #222;
-      line-height: 1.3;
+    .testimonial-section {
+      flex-direction: column;
     }
 
-    #testimonial-third-{{ section.id }} .testimonial-card-third__text {
-      font-size: 16px;
-      color: var(--color-text);
-      line-height: 1.6;
-      margin-top: 10px;
+    .testimonial-slider {
+      width: 100%;
     }
 
-    #testimonial-third-{{ section.id }} .testimonial-card-third__author {
-      font-weight: 600;
-      margin-top: 18px;
-      font-size: 14px;
-      color: #333;
-    }
-  
-    #testimonial-third-{{ section.id }} .slick-dots {
-    margin-top: 30px;
-    }
-    
-   #testimonial-third-{{ section.id }} .slick-dots li button:before {
-    color: #00587A;
-    }
-    #testimonial-third-{{ section.id }}  .slick-dots, 
-    #testimonial-third-{{ section.id }} .slider-dots{
-    bottom: -5px;
-    }
-
-  
-/* Tablet */
-@media (max-width: 1025px) {
-    #testimonial-third-{{ section.id }} h2.faq_title {
-    margin-bottom: 20px;
-    color: #374650;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0.68px;
-    }
-
-}
-
-/* Mobile */
-@media (max-width: 769px) {
-    #testimonial-third-{{ section.id }} h2.faq_title {
-    font-size: 28px;
-    line-height: 48px;
-    }
-    
-    #testimonial-third-{{ section.id }} .faq__header {
-    margin-bottom: 20px;
-    }
-    
-    #testimonial-third-{{ section.id }} .testimonial_slider_third {
-    gap: 0;
-    }
-    
    
-    #testimonial-third-{{ section.id }} {
-    padding:10px 0px 25px;
+    .testimonial-section .slick-arrow.slick-next {
+      right: -15px !important;
     }
-}
-  @media(max-width: 550px){
-   
+
+    .testimonial-section .slick-arrow.slick-prev {
+      left: -15px !important;
+    }
+  }
+
+  .testimonial-section .slick-arrow.slick-next {
+    right: -30px;
+  }
+
+  .testimonial-section .slick-arrow.slick-prev {
+    left: -30px;
   }
 </style>
-{% endif %}
 
 <script>
-  $(document).ready(function(){
-    $('.testimonial_slider_third').slick({
-      dots: false,
-      infinite: true,
-      arrows: false,
-      speed: 700,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      slidesToShow: 4, 
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 790,
-          settings: {
-            slidesToShow: 1.1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            infinite: true
-          }
-        },
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            infinite: true,
-             dots: true,
-          }
-        }
-      ]
-    });
-  });
+        $(document).ready(function(){
+        $('.testimonial-slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+          </button>`,
+          nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+        });
 </script>
 
 {% schema %}
