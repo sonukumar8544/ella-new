@@ -741,7 +741,8 @@
   }
   .dynamic-Product-page-3\.O-template .product-form__label .text,
   .dynamic-Product-page-3\.O-template .product-form__radio:checked+.product-form__label .text{
-  font-size: 12px;
+          font-size: 11px;
+        padding: 0px 3px;
   }
   .dynamic-Product-page-3\.O-template .productView-moreItem .productView-price {
   margin-bottom: 20px;
