@@ -262,16 +262,16 @@
       {% render 'halo-currency-js' %}
     {% endif %}
   {% style %}
-{% if template.suffix == 'Product-page-3.O' %}
+    {% if template.suffix == 'Product-page-3.O' %}
 .productView-nav.style-1 .slick-dots{
-display:flex !important;
+ display:flex !important;
+      }
+                  {% else %}
+       .dynamic--template .productView-nav .slick-dots{
+    display:none !important;
 }
-{% else %}
-.productView-nav .slick-dots{
-display:none !important;
-}
-{% endif %}
-{% endstyle %}
+                  {% endif %}
+    {% endstyle %}
                 
   </body>
 </html>
