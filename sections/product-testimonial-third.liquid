@@ -14,7 +14,8 @@
     <div class="testimonial_slider_third">
   {% for testimonial in testimonial1 %}
      {% if testimonial.review_card_title1 != blank %}
-      <div class="testimonial-card-third" style="background-color:{{ section.settings.bgcard }};">
+       <div class="testimonial-card-third">
+      <div class="testimonial-card-third111" style="background-color:{{ section.settings.bgcard }};">
         {% if testimonial.review_card_icon_url1 != blank %}
           <div class="testimonial-card-third__icon" aria-hidden="true">
               <img src="{{ testimonial.review_card_icon_url1 }}" alt="" title="" width="" height="" loading="lazy">
@@ -36,6 +37,7 @@
           </footer>
         {% endif %}
       </div>
+       </div>
     {% endif %}
 
       {% if testimonial.review_card_title2 != blank %}
