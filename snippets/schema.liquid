@@ -42,7 +42,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{ new_saleprice1 | strip_html | escape }}",
+    "price": "{{  original_price1 | strip_html | escape }}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
