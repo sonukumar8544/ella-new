@@ -41,7 +41,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{new_saleprice1 | money_with_currency | strip_html }}{{ '---' }}{{ original_price1 | money_with_currency | strip_html  }}",
+    "price": "{{new_saleprice1 | money_with_currency | strip_html }}{{ original_price1 | money_with_currency | strip_html  }}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
