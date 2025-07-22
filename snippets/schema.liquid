@@ -14,7 +14,7 @@
   <!-- {{ original_price1 }} -->
           {% assign discount1 = original_price1 | times: 0.15 %}
   <!-- discount1 -->
-          {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+          {% assign new_saleprice1 = original_price1 | minus: discount1 | money_with_currency %}
   <!-- {{ new_saleprice1 }} -->
       
 <script type="application/ld+json">
@@ -42,7 +42,7 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
-    "price": "{{ new_saleprice1 | money_with_currency }}",
+    "price": "{{ new_saleprice1 }}",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
