@@ -142,37 +142,37 @@
 </style>
 
 <script>
-        // $(document).ready(function(){
-        // $('.cstm_{{ section.id }} .testimonial-slider').slick({
-        //   slidesToShow: 4,
-        //   slidesToScroll: 1,
-        //   infinite: true,
-        //   prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
-        //   <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
-        //   </button>`,
-        //   nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
-        //   responsive: [
-        //     {
-        //       breakpoint: 1024,
-        //       settings: {
-        //         slidesToShow: 3
-        //       }
-        //     },
-        //     {
-        //       breakpoint: 768,
-        //       settings: {
-        //         slidesToShow: 1.1
-        //       }
-        //     },
-        //      {
-        //       breakpoint: 550,
-        //       settings: {
-        //         slidesToShow: 1
-        //       }
-        //     }
-        //   ]
-        // });
-        // });
+        $(document).ready(function(){
+        $('.cstm_{{ section.id }} .testimonial-slider').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+          </button>`,
+          nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1.1
+              }
+            },
+             {
+              breakpoint: 550,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+        });
 </script>
 {% endif %}
 {% schema %}
