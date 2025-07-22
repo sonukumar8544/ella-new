@@ -10,8 +10,11 @@
     -%}
   
   {% assign original_price1 = product.metafields.custom.price_schema.value%}
+  {% for original_price in original_price1 %}
+    <!-- {{ original_price }}
+    {{ localization.country.currency.iso_code }} -->
+    {% endfor %}
   <!-- amamammam -->
-<!-- {{ localization.country.currency.iso_code }} -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
