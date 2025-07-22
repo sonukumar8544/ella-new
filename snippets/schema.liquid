@@ -12,6 +12,10 @@
 <!-- sonooooooooooooooooooo -->
   {% assign original_price1 = product.selected_or_first_available_variant.price %}
 <!-- {{ original_price1 | money_with_currency | strip_html }} -->
+  {% assign discount1 = original_price1 | times: 0.15 %}
+          {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+  <!-- {{ new_saleprice1 }} -->
+  
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
