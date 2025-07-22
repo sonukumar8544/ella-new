@@ -25,6 +25,9 @@
 
 <!-- Display only for debugging -->
 <!-- {{ sale_price_dollars }} -->
+
+{% assign priceschema = product.metafields.custom.price_schema.value %}
+  
   
 <script type="application/ld+json">
 {
@@ -45,7 +48,7 @@
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }} {{ 'aaaa' }}",
-  "price": "{{ final_price  }}",
+  "price": "{{ priceschema  }}",
   },
   "description": "{{ product.description |strip_html }}",
   "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
