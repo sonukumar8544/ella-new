@@ -7443,14 +7443,12 @@ $(document).ready(function () {
 })
   // endcode
  // bundle update in cart
-  $(document).ready(function() {
+
     $(document).on("click", ".wellness-product .bundle-product-action input", function(e) {
       setTimeout(()=>{
         window.location.href = "/cart";
         }, 4000);
     });
-});
-
   
 })(jQuery);
 
