@@ -40,6 +40,7 @@
 .price--on-sale .price__sale {
   display: flex !important;
   align-items: baseline;
+  flex-direction: row-reverse;
 }
 
 .price-style-2.price--on-sale .price__sale {

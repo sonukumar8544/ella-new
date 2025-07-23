@@ -142,9 +142,10 @@
             data-bundle-checkbox
           >
             {% comment %} {{ product.title | split: '|' | first }} {% endcomment %}
-            <p style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal; font-weight: bold;">
+            <p id="product-bundle-buyy" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal; font-weight: bold;">
               {{ product.title }}
             </p>
+            <small id="product-bundle-benifits" >Lorem, ipsum ipsum.</small>
             {%- if variantCount > 1 and settings.enable_swatch_name -%}
               <span data-bundle-product-title> - {{ current_variant.title }}</span>
             {%- endif -%}

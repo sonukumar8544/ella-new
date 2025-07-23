@@ -26,6 +26,8 @@
 @media (max-width: 769px){
     .bundle-product-checkbox p{
         font-weight: 500 !important;
+        margin-top: 0px;
+        margin-bottom: 6px;
     }
 }
 
@@ -811,10 +813,10 @@
   z-index: 1;
   }
   .cstm-Product-page-3\.O-third .bundle-product-left {
-  width: 60%;
+  width: 70%;
   }
   .cstm-Product-page-3\.O-third .bundle-product-right {
-  width: 35%;
+  width: 28%;
   }
   .cstm-Product-page-3\.O-third  input[type=checkbox]+.form-label--checkbox:before {
   

@@ -8448,6 +8448,12 @@ div#custom_proce_manage {
   align-items: center;
   gap: 7px;
 }
+
+@media (max-width: 768px){
+  div#custom_proce_manage{
+    margin-top: 10px !important;
+  }
+}
 /* quiz price css */
 div.quiz-recommended-product .bundle_grid_list .price--on-sale .price__sale {
   gap: 10px;
@@ -8849,4 +8855,30 @@ span#product-compare-at-price-we {
     background: #f2f3f9;
     padding: 6px 12px;
     border-radius: 12px;
+}
+
+.price__last.price_percent .price-item .money {
+    font-weight: 800;
+    color: #ff0000 !important;
+} 
+
+.template-product .vertical.product-details .price--on-sale .price__sale .price__compare .money {
+    font-size: 12px !important;
+    letter-spacing: 0;
+    color: #29353C !important;
+}
+
+@media (max-width: 768px){
+  .price-item--sale, .price.price--on-sale .price-item--sale .money {
+    font-size: 18px !important;
+}
+}
+
+@media (min-width: 768px){
+  p#product-bundle-buyy {
+    margin-bottom: 5px;
+}
+div#custom_proce_manage {
+    margin-top: 10px;
+}
 }
