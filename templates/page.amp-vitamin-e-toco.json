@@ -9,24 +9,102 @@
  */
 {
   "sections": {
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
-      "settings": {}
-    },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "amp_webstory_GrmTgz": {
+      "type": "amp-webstory",
+      "blocks": {
+        "story_page_wR749k": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/close-up-ice-cream-glass-jar-table.jpg",
+            "content-position": "0",
+            "content-align": "center",
+            "heading_bg": "rgba(0,0,0,0)",
+            "heading_color": "#201d1d",
+            "heading": "Meet Eannatto® Vitamin E Tocotrienols",
+            "description_color": "#196988",
+            "description": "",
+            "button_text": "View More",
+            "btn_link": "shopify://products/vitamin-e-tocotrienols-supplement",
+            "btn_color": "#ffffff",
+            "btn_bg": "#082592"
+          }
+        },
+        "story_page_tzMHg3": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/close-up-young-man-having-pill.jpg",
+            "content-position": "60",
+            "content-align": "left",
+            "heading_bg": "",
+            "heading_color": "#ffffff",
+            "heading": "",
+            "description_color": "#ffffff",
+            "description": "Powerful Tocotrienols You Can Trust\n✅ 100% DeltaGold® Formula\n✅ 60x Stronger Antioxidant Support",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_ymh3XR": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 4,
+            "image": "shopify://shop_images/7.png",
+            "content-position": "60",
+            "content-align": "left",
+            "heading_bg": "",
+            "heading_color": "#141413",
+            "heading": "Naturally Supports Glowing, Acne-Free Skin",
+            "description_color": "#191717",
+            "description": "✅ Supports Skin Elasticity & Radiance\n🛡️ Shields Skin from Oxidative Damage",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_ALxhVk": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 4,
+            "image": "shopify://shop_images/5.png",
+            "content-position": "60",
+            "content-align": "left",
+            "heading_bg": "",
+            "heading_color": "#ffffff",
+            "heading": "✨ Clearer Skin Starts Within",
+            "description_color": "#ffffff",
+            "description": "✅ Supports Skin Elasticity & Radiance\n🛡️ Shields Skin from Oxidative Damage",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "story_page_wR749k",
+        "story_page_tzMHg3",
+        "story_page_ymh3XR",
+        "story_page_ALxhVk"
+      ],
+      "name": "AMP Webstory 2.0",
+      "settings": {
+        "fontsize_title": 20,
+        "fontsize_description": 16
+      }
     }
   },
   "order": [
-    "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "amp_webstory_GrmTgz"
   ]
 }

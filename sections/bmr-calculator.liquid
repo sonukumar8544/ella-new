@@ -1,0 +1,457 @@
+{% schema %}
+  {
+    "name": "BMR Calculator",
+    "settings": [],
+    "presets": [
+      {
+        "name": "BMR Calculator"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+    @media (min-width: 768px){
+        .bmr-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .bmr-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .bmr-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .bmr-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .bmr-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+  .bmr-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .bmr-calc-input-group select,
+  .bmr-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .bmr-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .bmr-calc-button:hover {
+    background-color: #075a7b;
+  }
+
+  .bmr-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  .bmr-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .bmr-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .bmr-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .bmr-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 760px){
+    .bmr-calc-calculator-container{
+      padding: 15px;
+    }
+
+    .bmr-calc-calculator-container h1{
+      font-size: 22px;
+    }
+    
+    .bmr-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .bmr-calc-result-category {
+      font-size: 20px;
+    }
+  }
+
+  /* Popup styles - Added from body fat calculator */
+  .bmr-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .bmr-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bmr-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .bmr-calc-popup-overlay.active .bmr-calc-popup {
+    transform: translateY(0);
+  }
+
+  .bmr-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .bmr-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .bmr-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .bmr-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .bmr-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<section class="bmr-calc-body">
+  <div class="bmr-calc-calculator-container">
+    <h1>BMR Calculator</h1>
+
+    <div class="bmr-calc-input-group">
+      <label for="bmr-calc-gender">Gender</label>
+      <select id="bmr-calc-gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="bmr-calc-input-group">
+      <label for="bmr-calc-age">Age (years)</label>
+      <input
+        type="number"
+        id="bmr-calc-age"
+        placeholder="Enter your age"
+        min="15"
+        max="120"
+        value="30">
+    </div>
+
+    <div class="bmr-calc-input-group">
+      <label for="bmr-calc-height">Height (cm)</label>
+      <input
+        type="number"
+        id="bmr-calc-height"
+        placeholder="Enter your height in cm"
+        min="100"
+        max="250"
+        value="175">
+    </div>
+
+    <div class="bmr-calc-input-group">
+      <label for="bmr-calc-weight">Weight (kg)</label>
+      <input
+        type="number"
+        id="bmr-calc-weight"
+        placeholder="Enter your weight in kg"
+        min="30"
+        max="300"
+        value="70">
+    </div>
+
+    <button id="bmr-calc-calculate-btn" class="bmr-calc-button">Calculate BMR</button>
+  </div>
+
+  <div class="bmr-calc-result-container" id="bmr-calc-result">
+    <h2>Your Results</h2>
+    <div class="bmr-calc-result-value" id="bmr-calc-result-value">0 kcal</div>
+    <div class="bmr-calc-result-category">Basal Metabolic Rate</div>
+
+    <div class="bmr-calc-suggestion">
+      <h3>About Your BMR</h3>
+      <p>Your Basal Metabolic Rate (BMR) is the number of calories your body needs at complete rest to maintain basic functions like breathing and circulation. This is calculated using the Mifflin-St Jeor Equation, the most accurate BMR formula.</p>
+      <p id="bmr-calc-activity-note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- Added popup HTML from body fat calculator -->
+<div class="bmr-calc-popup-overlay" id="bmr-calc-popup">
+  <div class="bmr-calc-popup">
+    <button class="bmr-calc-popup-close" id="bmr-calc-popup-close">&times;</button>
+    <h2 class="bmr-calc-popup-title">Get Your Full Metabolism Analysis</h2>
+    <div class="bmr-calc-popup-content">
+      <!-- Klaviyo form in popup -->
+      <div class="bmr-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateBtn = document.getElementById('bmr-calc-calculate-btn');
+        const resultContainer = document.getElementById('bmr-calc-result');
+        const resultValue = document.getElementById('bmr-calc-result-value');
+        const activityNote = document.getElementById('bmr-calc-activity-note');
+        
+        // Popup elements - Added from body fat calculator
+        const popup = document.getElementById('bmr-calc-popup');
+        const popupClose = document.getElementById('bmr-calc-popup-close');
+        
+        // Store calculated BMR
+        let calculatedBMR = 0;
+        
+        calculateBtn.addEventListener('click', calculateBMR);
+        
+        // Close popup when clicking the close button - Added from body fat calculator
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            displayResult(calculatedBMR);
+        });
+        
+        // Close popup when clicking outside of it - Added from body fat calculator
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        });
+        
+        // Function to handle Klaviyo button clicks - Added from body fat calculator
+        function handleKlaviyoButtonClick(e) {
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        }
+        
+        // Set up event listener for Klaviyo button - Added from body fat calculator
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Listen for Klaviyo form submission as a fallback - Added from body fat calculator
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                popup.classList.remove('active');
+                displayResult(calculatedBMR);
+            }
+        });
+        
+        function calculateBMR() {
+            const gender = document.getElementById('bmr-calc-gender').value;
+            const age = parseInt(document.getElementById('bmr-calc-age').value);
+            const height = parseFloat(document.getElementById('bmr-calc-height').value);
+            const weight = parseFloat(document.getElementById('bmr-calc-weight').value);
+            
+            // Clear previous errors
+            const existingError = document.querySelector('.bmr-calc-error');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Validate inputs
+            if (isNaN(age) || age <= 0 || age > 120) {
+                showError('Please enter a valid age between 1-120');
+                return;
+            }
+            
+            if (isNaN(height) || height <= 0) {
+                showError('Please enter a valid height');
+                return;
+            }
+            
+            if (isNaN(weight) || weight <= 0) {
+                showError('Please enter a valid weight');
+                return;
+            }
+            
+            // Calculate BMR using Mifflin-St Jeor Equation
+            let bmr;
+            if (gender === 'male') {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+            
+            // Round to nearest whole number
+            calculatedBMR = Math.round(bmr);
+            
+            // Show the popup with Klaviyo form - Added from body fat calculator
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially
+            resultContainer.style.display = 'none';
+        }
+        
+        function displayResult(bmr) {
+            // Add activity level information
+            activityNote.innerHTML = `
+                <strong>Based on your activity level:</strong><br>
+                • Sedentary (little/no exercise): ${Math.round(bmr * 1.2)} kcal/day<br>
+                • Lightly active (light exercise 1-3 days/week): ${Math.round(bmr * 1.375)} kcal/day<br>
+                • Moderately active (moderate exercise 3-5 days/week): ${Math.round(bmr * 1.55)} kcal/day<br>
+                • Very active (hard exercise 6-7 days/week): ${Math.round(bmr * 1.725)} kcal/day<br>
+                • Extremely active (very hard exercise & physical job): ${Math.round(bmr * 1.9)} kcal/day
+            `;
+            
+            // Display result
+            resultValue.textContent = `${bmr} kcal/day`;
+            resultContainer.style.display = 'block';
+            
+            // Scroll to results
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showError(message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'bmr-calc-error';
+            errorElement.textContent = message;
+            
+            document.querySelector('.bmr-calc-body').insertBefore(
+                errorElement, 
+                document.querySelector('.bmr-calc-result-container')
+            );
+        }
+    });
+</script>

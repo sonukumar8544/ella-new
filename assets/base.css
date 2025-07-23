@@ -8152,7 +8152,7 @@ input[type="checkbox"]:checked + .form-label--checkbox:before {
 }
 .price-item--regular .money,
 .price-item--sale .money {
-  color: #e95144 !important;
+  color: #e95144!important;
 }
 
 .tabs .tab .tab-title {
@@ -8782,7 +8782,6 @@ table.Table.Ltr.Table p {
     font-weight: 400 !important;
   }
 
-
   p.author-date-published {
     margin-top: 5px !important;
 }
@@ -8882,3 +8881,4 @@ div#custom_proce_manage {
     margin-top: 10px;
 }
 }
+
