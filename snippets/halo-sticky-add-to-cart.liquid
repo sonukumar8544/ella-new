@@ -183,6 +183,8 @@
                                         check_hidden: false,
                                         quantity_stt: 3
                                     %}
+                  
+                                          
                                     <button
                                         class="product-form__submit button button--primary{% if first_inventory == 0 %} button-text-change{% endif %}"
                                         id="show-sticky-product">
@@ -488,13 +490,29 @@
                             {%- endif -%}
                         {% endform %}
                         {% if sticky_atc_layout == '1' %}
-                            <div class="empty-add-cart-button-wrapper">
+                                    <!-- lineno502 -->
+                                    <div class="empty-add-cart-button-wrapper" id="mobile_stricky_cstm">
+                                                                      
+                                    <div class="total_amount_checkout">
+                                    {% render 'price', product: product %}
+                                    </div>
+                                    
                                     {% render 'product-quantity',
-                                        current_variant: current_variant,
-                                        qty_style: qty_style,
-                                        check_hidden: false,
-                                        quantity_stt: 3
+                                    current_variant: current_variant,
+                                    qty_style: qty_style,
+                                    check_hidden: false,
+                                    quantity_stt: 3
                                     %}
+                          
+                                    <button  id="show-sticky-product1" class="button button--primary product-sticky-checkout1" 
+                                    data-variantId="{{ current_variant.id}}"
+                                    data-realqty>
+                                    {{ 'Checkout' }}
+                                    </button>
+
+                         {% comment %} {% if template.suffix contains 'Product-page-3.O' %}
+                                       {%- assign subtotal = subtotal | strip_html -%}
+                           {% else %}
                                     <button
                                         class="product-form__submit button button--primary{% if first_inventory == 0 %} button-text-change{% endif %}"
                                         id="show-sticky-product">
@@ -506,6 +524,8 @@
                                                 {{ 'products.product.add_to_cart' | t}}
                                             {%- endif -%}
                                     </button>
+                            {% endif %}
+                           {% endcomment %} 
                             </div>
                         {% endif %}
                     </div>
@@ -625,3 +645,5 @@
         </div>
     {% endif %}
 </sticky-add-to-cart>
+
+                      

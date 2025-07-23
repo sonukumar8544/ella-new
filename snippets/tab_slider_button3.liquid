@@ -1,0 +1,30 @@
+<div class="carousel-wrapper">
+<div class="owl-carousel common-carousel">
+
+{% if tab_slider.button3_slide_image3 != blank %}
+<div class="item">
+    <div class="inner-items">
+          <img class="lazyload" data-src="{{ tab_slider.button3_slide_image3 }}" src="{{ tab_slider.button3_slide_image3 }}" title="" width="100%" height="100%" style="width:auto;"
+            alt="">
+        <div class="content-secton">
+            <div class="inner-content">
+                <div class="cstm_tab_slider title-group">
+                   {% if tab_slider.button3_tab_title3 != blank %} <h2 class="slider-title">{{ tab_slider.button3_tab_title3 }}</h2>{% endif %}
+                   {% if tab_slider.button3_tab_slide3_description != blank %} 
+                  <p class="description_with_redirection">
+                   {{ tab_slider.button3_tab_slide3_description }}
+                  {% if tab_slider.button3_tab_slide3_description_link3 != blank %} <br>
+                    <a href="{{ tab_slider.button3_tab_slide3_description_link3 }}" class="redirection_link">Read More</a>
+                    {% endif %}
+                 </p>
+                  {% endif %}
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+</div>
+</div>

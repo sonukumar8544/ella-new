@@ -1,4 +1,4 @@
-<!-- product-bundle -->
+<!-- product-bundle-thirdO -->
 {%- if section.settings.show_product_bundle -%}
   {% if product.metafields.c_f.grouped_sub_product %}
     {%- assign handle_metafields = product.metafields.c_f.grouped_sub_product | split: ',' -%}
@@ -6,11 +6,11 @@
 
     <link
       rel="stylesheet"
-      href="{{ 'component-product-bundle.css' | asset_url }}"
+      href="{{ 'component-product-bundle-thirdO.css' | asset_url }}"
       media="print"
       onload="this.media='all'"
     >
-    <noscript>{{ 'component-product-bundle.css' | asset_url | stylesheet_tag }}</noscript>
+    <noscript>{{ 'component-product-bundle-thirdO.css' | asset_url | stylesheet_tag }}</noscript>
 
     {%- liquid
       assign padding_top = section.settings.padding_top | append: 'px'
@@ -102,8 +102,10 @@
                 add_all_item: `{{ 'products.product.bundle_block.add_all_to_cart' | t }}`
             }
     </script>
+    
     <product-bundle
-      class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
+      class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %}
+        scroll-trigger animate--slide-in{% endif %} cstm-{{ template.suffix }}-third"
       data-product-bundle
       id="halo-product-bundle"
     >
@@ -112,7 +114,7 @@
           <div class="halo-block-header text-{{ block_title_align }}">
             <h3 class="title text-{{ block_title_align }}">
               <span class="text text-{{ block_title_align }}">
-                {{ block_title | escape }}
+                <!-- {{ block_title | escape }}  --> Frequently Bought <i>Together</i>
               </span>
             </h3>
           </div>
@@ -125,42 +127,44 @@
                 <div class="halo-block-loader"></div>
                 <div class="bundle-product-left">
                   <div
-                    class="bundle-product-list"
-                    data-bundle-slider
+                    class="bundle-product-list1"
+                    data-bundle-slider1
                     data-dots="{{ block_dots }}"
                     data-arrows="{{ block_arrows }}"
                   >
-                    
-                    {%- for handle in handle_metafields limit: 10 -%}
+                  
+                    {%- for handle in handle_metafields limit: 3 -%}
                       {%- liquid
                         assign handle_bundle = handle | strip
                         assign product = all_products[handle_bundle]
                          
                       -%}
                        
-                      {%- render 'product-bundle-item',
+                      {%- render 'product-bundle-item-thirdO',
                         product: product,
                         product_style: product_style,
                         image_ratio: image_ratio,
                         portrait_aspect_ratio: portrait_aspect_ratio,
-                        first: false
+                        first: false,
+                      forloop: forloop.index0
                       -%}
                     {%- endfor -%}
                   </div>
                 </div>
                 <div class="bundle-product-right">
                   <div class="bundle-product-total">
+              <h3>
+                Frequently Bought <i>Together</i>
+              </h3>
                     <div class="bundle-product-totalPrice">
                       <span class="text">
-                        {{ 'products.product.bundle_block.total_price' | t }}
+                          {{ 'Total Price:' }}
+                       {% comment %} {{ 'products.product.bundle_block.total_price' | t }}{% endcomment %}
                       </span>
                       {%- if bundle_discount_rate > 0 -%}
-                        <span class="old-price bundle-old-price">
-                          {{ cart.total_price | money }}
-                        </span>
-
+                       
                         {% comment %}  goto> product metafield > find >Bundle Discount Rate given {% endcomment %}
-                        <span
+                       <div class="bundle_proce"> <span
                           class="bundle-price"
                           data-bundle-product-price
                           data-bundle-discount-rate="{{ bundle_discount_rate }}"
@@ -168,32 +172,26 @@
                           {%- assign compensation = 1 | minus: bundle_discount_rate -%}
                           {{ cart.total_price | times: compensation | money }}
                         </span>
+                         <span class="old-price bundle-old-price">
+                          {{ cart.total_price | money }}
+                        </span>
+                       </div>
                       {%- endif -%}
                       <span class="price" data-bundle-product-total>
                         {{ cart.total_price | money }}
                       </span>
                     </div>
                     <div class="bundle-product-action">
-                     {% if template contains 'Product-page-3.0' %}
-                       <input
-                        data-bundle-addToCart
-                        type="submit"
-                        name="add"
-                        data-form-id="{{ product_form_bundle_id | prepend : '#' }}"
-                        class="button button--primary button-bundle style-{{ total_btn_style }}"
-                        value="{{ 'Add all to cart' }}"
-                      >
-                      {% else %} 
-                       <input
-                        data-bundle-addToCart
-                        type="submit"
-                        name="add"
-                        data-form-id="{{ product_form_bundle_id | prepend : '#' }}"
-                        class="button button--primary button-bundle style-{{ total_btn_style }}"
-                        value="{{ 'products.product.bundle_block.add_all_to_cart' | t }}"
-                      >
-                       {% endif %}
                      
+                       <input
+                        data-bundle-addToCart
+                        type="submit"
+                        name="add"
+                        data-form-id="{{ product_form_bundle_id | prepend : '#' }}"
+                        class="button button--primary button-bundle style-{{ total_btn_style }}"
+                        value="{{ 'Add all (3) to cart' }}"
+                      >
+                                        
                     </div>
                     {%- if bundle_discount_rate > 0 -%}
                       <div class="bundle-product-text">

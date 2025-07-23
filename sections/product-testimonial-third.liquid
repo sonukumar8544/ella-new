@@ -1,0 +1,230 @@
+<!--product-testimonial-third -->
+{% assign review_meta = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
+{% if review_meta != blank %}
+<section class="testimonial-section cstm_{{ section.id }}" {% if section.settings.bgcolor != blank %}style="background-color: {{ section.settings.bgcolor }}"{% endif %}>
+  <div class="container">
+{% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading" {% if section.settings.titlefaq_color != blank %}style="color: {{ section.settings.titlefaq_color }}"{% endif %}>{{ section.settings.titlefaq }}</h2> {% endif %}
+  <div class="testimonial-slider">
+    {% for block in review_meta %}
+      {% assign parts = block | split: '|' %}
+      <div class="testimonial-img-slide" >
+        <div class="review-card" {% if section.settings.bgcard != blank %}style="background-color: {{ section.settings.bgcard }}"{% endif %}>
+          <img height="" width="" title="" class="lazyload" src="{{ parts[0] | strip }}" alt="{{ parts[1] | strip }}">
+          <div class="stars">★★★★★</div>
+          <h3 class="review-title" {% if section.settings.title != blank %}style="color: {{ section.settings.title }}"{% endif %}>{{ parts[1] | strip }}</h3>
+          <p class="review-text" {% if section.settings.description != blank %}style="color: {{ section.settings.description }}"{% endif %}>
+           {{ parts[2] | strip }}
+          </p>
+          <p class="review-author" {% if section.settings.author != blank %}style="color: {{ section.settings.author }}"{% endif %}>-{{ parts[3] | strip }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+
+
+<style>
+.review-card {
+  max-width: 350px;
+  padding: 50px 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: .5px solid black;
+  position: relative;
+  margin-top: 10px;
+  height: 430px;
+
+}
+
+.review-card img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.testimonial-img-slide{
+  text-align: left;
+}
+.review-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  /* height: 220px;
+    overflow: hidden; */
+}
+  .testimonial-img-slide {
+    text-align: left;
+    flex: 0 0 300px;
+}
+
+.review-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #111;
+}
+.testimonial-section {
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .testimonial-heading {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-slider {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .slick-slide {
+    padding: 10px;
+  }
+
+  @media (max-width: 769px) {
+    .testimonial-heading {
+     text-align: center;
+            font-family: Lato;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 25px;
+
+    }
+
+    .testimonial-section {
+      flex-direction: column;
+    }
+
+    .testimonial-slider {
+      width: 100%;
+    }
+
+   
+    .testimonial-section .slick-arrow.slick-next {
+      right: -15px !important;
+    }
+
+    .testimonial-section .slick-arrow.slick-prev {
+      left: -15px !important;
+    }
+  }
+
+  .testimonial-section .slick-arrow.slick-next {
+    right: -30px;
+  }
+
+  .testimonial-section .slick-arrow.slick-prev {
+    left: -30px;
+  }
+</style>
+
+<script>
+        $(document).ready(function(){
+        $('.cstm_{{ section.id }} .testimonial-slider').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          prevArrow: `<button type="button" class="slick-prev slick-arrow" aria-label="Previous" role="button">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
+          </button>`,
+          nextArrow: `<button type="button" class="slick-next slick-arrow" aria-label="Next" role="button" style=""><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg></button>`,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1.1
+              }
+            },
+             {
+              breakpoint: 550,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+        });
+</script>
+{% endif %}
+{% schema %}
+{
+  "name": "Meta FAQ's 3.0",
+  "settings": [
+     {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Section Bg Color",
+       "default": "#fff"
+    },
+     {
+      "type": "color",
+      "id": "bgcard",
+      "label": "Card Bg Color",
+       "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title",
+      "label": "Title Color",
+       "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "description",
+      "label": "Description Color",
+       "default": "#333"
+    },
+    {
+      "type": "color",
+      "id": "author",
+      "label": "Author Color",
+       "default": "#3f3f3f"
+    },
+    {
+      "type": "text",
+      "id": "titlefaq",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "titlefaq_color",
+      "label": "Heading Color",
+       "default": "#086b92"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Meta FAQ's 3.0"
+    }
+  ]
+}
+{% endschema %}

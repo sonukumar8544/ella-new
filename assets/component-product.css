@@ -1,7 +1,14 @@
+/* .wellness-product .productView-nav ul.slick-dots {
+    display: none !important;
+} */
+
+
 #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--regular .money {
     font-weight: 800;
     color: #969696 !important;
 }
+
+
 
  #shopify-section-template--24371123814696__main .price.price--medium .price-item .price-item--sale .money {
     font-weight: 600;
@@ -2064,9 +2071,9 @@ body.video-show.product-video-show .halo-video-popup {
 }
 
 @media (max-width: 767px) {
-    .product-details .product-option {
+    /* .product-details .product-option {
         justify-content: center !important;
-    }
+    } */
 }
 
 .product-details .productView-countDown .num {
@@ -2577,7 +2584,7 @@ quantity-input.disabled {
         background-color: #fff;
         padding: 0 15px;
         max-width: calc(100% - 123px);
-        display: none !important;
+        display: none;
     }
 
     .productView-nav .slick-arrow {

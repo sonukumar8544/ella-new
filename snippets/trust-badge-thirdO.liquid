@@ -1,0 +1,132 @@
+ <!-- Make sure to include jQuery and Slick Carousel -->
+
+<div class="free-shipping-container">
+  <div class="container">
+  <div class="shipping-slider" id="shipping_details">
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466" alt="Shipping">
+      <p>Rooted in Care<br>& Tradition</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466" alt="Shipping">
+      <p>Award Winning <br> Extraction Process</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466" alt="Shipping">
+      <p>Premium Patented <br> Ingredients</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466" alt="Shipping">
+      <p>Expert<br> Formulated</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466" alt="Shipping">
+      <p>Science-Backed <br> Formulations</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466" alt="Shipping">
+      <p>Health Canada <br> Registered GMP Facility</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Heading_3_Earn_yield.svg?v=1752212970" alt="Shipping">
+      <p>Approved (Generally<br> Recognized As Safe)</p>
+    </div>
+  </div>
+</div>
+</div>
+
+    <style>
+   .free-shipping-container {
+  background: #EEEEEE;
+  margin-bottom: 30px;
+  padding: 20px 40px;
+}
+
+.shipping-slider {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.shipping-item {
+  text-align: center;
+  padding: 15px 3px;
+  scroll-snap-align: start;
+}
+
+.shipping-item img {
+  max-width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.shipping-item p {
+  margin-top: 10px;
+  color: #36454F;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.32px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .free-shipping-container {
+    padding: 10px 0px;
+    border-radius: 0;
+  }
+
+  .shipping-item img {
+    max-width: 40px;
+    height: 40px;
+  }
+
+  .shipping-item p {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+}
+
+    </style>
+    <script>
+   $(document).ready(function () {
+  $('#shipping_details').slick({
+    dots: false,
+    infinite: true,
+    arrows: false,
+    speed: 700,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 5,
+     responsive: [
+    {
+    breakpoint: 1200,
+    settings: {
+    slidesToShow: 4,
+    }
+    },
+    {
+    breakpoint: 800,
+    settings: {
+    slidesToShow: 4
+    }
+    },
+    {
+    breakpoint: 600,
+    settings: {
+    slidesToShow: 2
+    }
+    },
+    {
+       breakpoint: 350,
+    settings: {
+    slidesToShow: 2
+    }
+    }
+    ]
+  });
+});
+
+    </script>

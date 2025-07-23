@@ -4802,7 +4802,7 @@
                     if (!sliderNav.is('.style-2, .style-3') || window.innerWidth < 768) {
                         sliderNav.slick({
                             fade: true,
-                            dots: false,
+                            dots: true,
                             arrows: navArrowsDesk,
                             infinite: true,
                             slidesToShow: 1,
@@ -7404,11 +7404,52 @@ $(document)
         let $tarSget = $(this);
         halo.actionAddToCart($tarSget, variantSId, 1),
            // halo.updateSidebarCart(cart);
-                         $body.addClass('cart-sidebar-show');
+              $body.addClass('cart-sidebar-show');
         cartSavings();
       });
   
+ 
+  
+$(document).ready(function () {
+ $(document).on('input change', '.dynamic-Product-page-3\\.O-template .productView-stickyCart .quantity__input', function () {
+  const value = $(this).val();
+ $(this).closest('.productView-stickyCart').find('#show-sticky-product1').attr('data-realqty', value); 
+});
+ $(document).on("click", ".dynamic-Product-page-3\\.O-template .productView-stickyCart #show-sticky-product1", function () {
+  const variantIdthird = $(this).attr('data-variantId');
+  const quantitythird = parseInt($(this).attr('data-realqty')) || 1;
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: variantIdthird,
+      quantity: quantitythird
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = '/checkout';
+    } else {
+      return response.json().then(data => {
+        // alert('Error adding to cart: ' + (data.description || 'Unknown error'));
+      });
+    }
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+    // alert('There was a problem adding the item to your cart.');
+  });
+});
+})
+  // endcode
+ // bundle update in cart
 
+    $(document).on("click", ".wellness-product .bundle-product-action input", function(e) {
+      setTimeout(()=>{
+        window.location.href = "/cart";
+        }, 4000);
+    });
+  
 })(jQuery);
 
 // collection page scroll to support section

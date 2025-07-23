@@ -514,7 +514,12 @@
 {%- if section.settings.type_instagram_by_gallery == 'popup_image' -%}
     <script src="{{ 'fancybox.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
+<style>
+  .section-block-template--24801254768936__meta_instagram_pWYEc3,
+  .section-block-template--24801254768936__meta_instagram_pWYEc3, .section-block-template--24801254768936__meta_instagram_pWYEc3 .halo-block-header .title .text{
+    background: #f2f3f9;
+  }
+</style>
 {%- if check_load and section.settings.display_instagram_button -%}
 <script>
     class InstagramBlockLoad extends HTMLElement {
