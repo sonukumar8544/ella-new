@@ -1,0 +1,599 @@
+{% schema %}
+{
+  "name": "Body fat calculator",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Body fat calculator"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+    @media (min-width: 768px){
+        .body-fat-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .body-fat-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .body-fat-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .body-fat-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .body-fat-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+  .body-fat-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .body-fat-calc-input-group select,
+  .body-fat-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .body-fat-calc-input-group input {
+    box-sizing: border-box;
+  }
+
+  .body-fat-calc-measurement-group {
+    display: flex;
+    gap: 10px;
+  }
+
+  .body-fat-calc-measurement-group input {
+    flex: 1;
+  }
+
+  .body-fat-calc-measurement-group select {
+    width: 80px;
+  }
+
+  .body-fat-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .body-fat-calc-button:hover {
+    background-color: #086b92;
+  }
+
+  .body-fat-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .body-fat-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .body-fat-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .body-fat-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .body-fat-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .body-fat-calc-suggestion h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+
+  .body-fat-calc-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .body-fat-calc-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .body-fat-calc-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  @media (max-width: 760px){
+    .body-fat-calc-calculator-container{
+      padding: 10px;
+    }
+
+    .body-fat-calc-calculator-container h1{
+      font-size: 24px;
+    }
+    
+    .body-fat-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .body-fat-calc-result-category {
+      font-size: 20px;
+    }
+  }
+
+  /* Popup styles */
+  .body-fat-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .body-fat-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .body-fat-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .body-fat-calc-popup-overlay.active .body-fat-calc-popup {
+    transform: translateY(0);
+  }
+
+  .body-fat-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .body-fat-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .body-fat-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .body-fat-calc-klaviyo-form {
+    /* margin: 20px 0; */
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .body-fat-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<section class="body-fat-calc-body">
+  <div class="body-fat-calc-calculator-container">
+    <h1>Body Fat Percentage Calculator</h1>
+
+    <div class="body-fat-calc-input-group">
+      <label for="body-fat-calc-gender">Gender:</label>
+      <select id="body-fat-calc-gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="body-fat-calc-input-group">
+      <label for="body-fat-calc-age">Age:</label>
+      <input
+        type="number"
+        id="body-fat-calc-age"
+        min="18"
+        max="100"
+        value="30">
+    </div>
+
+    <div class="body-fat-calc-input-group">
+      <label for="body-fat-calc-height">Height:</label>
+      <div class="body-fat-calc-measurement-group">
+        <input
+          type="number"
+          id="body-fat-calc-height"
+          placeholder="Enter height"
+          value="175">
+        <select id="body-fat-calc-height-unit">
+          <option value="cm">cm</option>
+          <option value="in">inches</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="body-fat-calc-input-group">
+      <label for="body-fat-calc-neck">Neck Circumference:</label>
+      <div class="body-fat-calc-measurement-group">
+        <input
+          type="number"
+          id="body-fat-calc-neck"
+          placeholder="Enter neck measurement"
+          value="38">
+        <select id="body-fat-calc-neck-unit">
+          <option value="cm">cm</option>
+          <option value="in">inches</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="body-fat-calc-input-group">
+      <label for="body-fat-calc-waist">Waist Circumference:</label>
+      <div class="body-fat-calc-measurement-group">
+        <input
+          type="number"
+          id="body-fat-calc-waist"
+          placeholder="Enter waist measurement"
+          value="85">
+        <select id="body-fat-calc-waist-unit">
+          <option value="cm">cm</option>
+          <option value="in">inches</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="body-fat-calc-input-group" id="body-fat-calc-hip-group" style="display: none;">
+      <label for="body-fat-calc-hip">Hip Circumference (Women):</label>
+      <div class="body-fat-calc-measurement-group">
+        <input
+          type="number"
+          id="body-fat-calc-hip"
+          placeholder="Enter hip measurement"
+          value="95">
+        <select id="body-fat-calc-hip-unit">
+          <option value="cm">cm</option>
+          <option value="in">inches</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="body-fat-calc-calculate-btn" class="body-fat-calc-button">Calculate Body Fat Percentage</button>
+  </div>
+
+  <div
+    id="body-fat-calc-result"
+    class="body-fat-calc-result-container"
+    style="display: none;">
+    <h2>Your Results</h2>
+    <div class="body-fat-calc-result-value" id="body-fat-calc-result-value">0.0%</div>
+    <div class="body-fat-calc-result-category" id="body-fat-calc-result-category">Category</div>
+
+    <div class="body-fat-calc-suggestion" id="body-fat-calc-suggestion">
+      <h3>Health Information</h3>
+      <p id="body-fat-calc-suggestion-text"></p>
+    </div>
+
+    <div class="body-fat-calc-suggestion">
+      <h3>Body Fat Categories</h3>
+      <p><strong>For Men:</strong> Essential (2-5%), Athletes (6-13%), Fitness (14-17%), Average (18-24%), Above Average (25%+)</p>
+      <p><strong>For Women:</strong> Essential (10-13%), Athletes (14-20%), Fitness (21-24%), Average (25-31%), Above Average (32%+)</p>
+    </div>
+  </div>
+</section>
+
+<!-- Popup HTML - Only contains Klaviyo form -->
+<div class="body-fat-calc-popup-overlay" id="body-fat-calc-popup">
+  <div class="body-fat-calc-popup">
+    <button class="body-fat-calc-popup-close" id="body-fat-calc-popup-close">&times;</button>
+    <h2 class="body-fat-calc-popup-title">Get Your Full Body Analysis</h2>
+    <div class="body-fat-calc-popup-content">
+      <!-- Only Klaviyo form in popup -->
+      <div class="body-fat-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const genderSelect = document.getElementById('body-fat-calc-gender');
+        const hipGroup = document.getElementById('body-fat-calc-hip-group');
+        const calculateBtn = document.getElementById('body-fat-calc-calculate-btn');
+        const resultElement = document.getElementById('body-fat-calc-result');
+        const resultValue = document.getElementById('body-fat-calc-result-value');
+        const resultCategory = document.getElementById('body-fat-calc-result-category');
+        const suggestionText = document.getElementById('body-fat-calc-suggestion-text');
+        
+        // Popup elements
+        const popup = document.getElementById('body-fat-calc-popup');
+        const popupClose = document.getElementById('body-fat-calc-popup-close');
+        
+        // Store the calculated body fat percentage
+        let calculatedBodyFat = 0;
+        let calculatedGender = '';
+        let calculatedAge = 0;
+        
+        // Toggle hip measurement based on gender selection
+        function toggleHipGroup() {
+            hipGroup.style.display = genderSelect.value === 'female' ? 'block' : 'none';
+        }
+        
+        // Initial toggle
+        toggleHipGroup();
+        
+        // Add event listener for gender change
+        genderSelect.addEventListener('change', toggleHipGroup);
+        
+        // Calculate button event listener
+        calculateBtn.addEventListener('click', calculateBodyFat);
+        
+        // Close popup when clicking the close button
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            // Show the regular result container after closing popup
+            displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+        });
+        
+        // Close popup when clicking outside of it
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                // Show the regular result container after closing popup
+                displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+            }
+        });
+        
+        // Function to handle Klaviyo button clicks
+        function handleKlaviyoButtonClick(e) {
+            // Check if the clicked element is the Klaviyo submit button
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                // Close the popup
+                popup.classList.remove('active');
+                // Show the regular result container
+                displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+            }
+        }
+        
+        // Set up event listener for Klaviyo button
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Function to show results after Klaviyo form submission
+        function showResultsAfterFormSubmission() {
+            popup.classList.remove('active');
+            displayResult(calculatedBodyFat, calculatedGender, calculatedAge);
+        }
+        
+        // Listen for Klaviyo form submission as a fallback
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                showResultsAfterFormSubmission();
+            }
+        });
+        
+        function calculateBodyFat() {
+            // Get selected gender
+            const gender = genderSelect.value;
+            
+            // Get input values
+            const age = parseInt(document.getElementById('body-fat-calc-age').value) || 30;
+            const height = parseFloat(document.getElementById('body-fat-calc-height').value) || 175;
+            const heightUnit = document.getElementById('body-fat-calc-height-unit').value;
+            const neck = parseFloat(document.getElementById('body-fat-calc-neck').value) || 38;
+            const neckUnit = document.getElementById('body-fat-calc-neck-unit').value;
+            const waist = parseFloat(document.getElementById('body-fat-calc-waist').value) || 85;
+            const waistUnit = document.getElementById('body-fat-calc-waist-unit').value;
+            let hip = 0;
+            let hipUnit = 'cm'; // Default value
+            
+            if (gender === 'female') {
+                hip = parseFloat(document.getElementById('body-fat-calc-hip').value) || 95;
+                hipUnit = document.getElementById('body-fat-calc-hip-unit').value;
+            }
+            
+            // Convert all measurements to cm
+            const heightCm = heightUnit === 'in' ? height * 2.54 : height;
+            const neckCm = neckUnit === 'in' ? neck * 2.54 : neck;
+            const waistCm = waistUnit === 'in' ? waist * 2.54 : waist;
+            const hipCm = gender === 'female' ? (hipUnit === 'in' ? hip * 2.54 : hip) : 0;
+            
+            // Calculate body fat using U.S. Navy method
+            let bodyFatPercentage;
+            
+            if (gender === 'male') {
+                // Male formula: 86.010 * log10(waist - neck) - 70.041 * log10(height) + 36.76
+                bodyFatPercentage = 86.010 * Math.log10(waistCm - neckCm) -
+                    70.041 * Math.log10(heightCm) + 36.76;
+            } else {
+                // Female formula: 163.205 * log10(waist + hip - neck) - 97.684 * log10(height) - 78.387
+                bodyFatPercentage = 163.205 * Math.log10(waistCm + hipCm - neckCm) -
+                    97.684 * Math.log10(heightCm) - 78.387;
+            }
+            
+            // Ensure body fat is not negative or too high
+            bodyFatPercentage = Math.max(2, Math.min(50, bodyFatPercentage));
+            
+            // Store the calculated values
+            calculatedBodyFat = bodyFatPercentage.toFixed(1);
+            calculatedGender = gender;
+            calculatedAge = age;
+            
+            // Show the popup with Klaviyo form
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially
+            resultElement.style.display = 'none';
+        }
+        
+        function displayResult(percentage, gender, age) {
+            // Update the result display
+            resultValue.textContent = `${percentage}%`;
+            
+            // Determine category based on gender and percentage
+            let category, description;
+            const percentageNum = parseFloat(percentage);
+            
+            if (gender === 'male') {
+                if (percentageNum < 6) {
+                    category = "Essential Fat";
+                    description = "Very low body fat. Essential for physiological functions. Athletes may reach this level temporarily but maintaining it long-term may not be healthy.";
+                } else if (percentageNum < 14) {
+                    category = "Athletic";
+                    description = "Excellent condition. Typical for athletes and highly fit individuals. Shows good muscle definition and fitness level.";
+                } else if (percentageNum < 18) {
+                    category = "Fitness";
+                    description = "Good condition. Better than average, showing some muscle definition. This is a healthy range for most men.";
+                } else if (percentageNum < 25) {
+                    category = "Average";
+                    description = "Within normal range. May show slight abdominal definition. Could improve with better nutrition and exercise.";
+                } else {
+                    category = "Above Average";
+                    description = "Higher than recommended. Consider dietary improvements and regular exercise to reduce health risks associated with excess body fat.";
+                }
+            } else {
+                if (percentageNum < 14) {
+                    category = "Essential Fat";
+                    description = "Very low body fat. Essential for physiological functions. Athletes may reach this level temporarily but maintaining it long-term may not be healthy.";
+                } else if (percentageNum < 21) {
+                    category = "Athletic";
+                    description = "Excellent condition. Typical for female athletes. Shows good muscle tone and fitness level.";
+                } else if (percentageNum < 25) {
+                    category = "Fitness";
+                    description = "Good condition. Better than average, showing some muscle definition. This is a healthy range for most women.";
+                } else if (percentageNum < 32) {
+                    category = "Average";
+                    description = "Within normal range. Common for women. Could improve with better nutrition and exercise.";
+                } else {
+                    category = "Above Average";
+                    description = "Higher than recommended. Consider dietary improvements and regular exercise to reduce health risks associated with excess body fat.";
+                }
+            }
+            
+            // Update the display
+            resultCategory.textContent = category;
+            suggestionText.textContent = description;
+            
+            // Show the result container
+            resultElement.style.display = 'block';
+            resultElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>

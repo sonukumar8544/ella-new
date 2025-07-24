@@ -1,0 +1,475 @@
+{% schema %}
+  {
+    "name": "ideal weight calculator",
+    "settings": [],
+    "presets": [
+      {
+        "name": "ideal weight calculator"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+    @media (min-width: 768px){
+        .ideal-weight-calc-body{
+           min-height: 100vh;
+        }
+    }
+  .ideal-weight-calc-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .ideal-weight-calc-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .ideal-weight-calc-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .ideal-weight-calc-input-group {
+    margin-bottom: 20px;
+  }
+
+  .ideal-weight-calc-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .ideal-weight-calc-input-group select,
+  .ideal-weight-calc-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .ideal-weight-calc-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .ideal-weight-calc-button:hover {
+    background-color: #075a7b;
+  }
+
+  .ideal-weight-calc-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  .ideal-weight-calc-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .ideal-weight-calc-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .ideal-weight-calc-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .ideal-weight-calc-suggestion {
+    background-color: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ideal-weight-calc-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .ideal-weight-calc-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .ideal-weight-calc-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  @media (max-width: 760px){
+    .ideal-weight-calc-calculator-container{
+      padding: 15px;
+    }
+
+    .ideal-weight-calc-calculator-container h1{
+      font-size: 22px;
+    }
+    
+    .ideal-weight-calc-result-value {
+      font-size: 28px;
+    }
+    
+    .ideal-weight-calc-result-category {
+      font-size: 20px;
+    }
+  }
+
+  /* Popup styles - Added to match body fat calculator */
+  .ideal-weight-calc-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ideal-weight-calc-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ideal-weight-calc-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .ideal-weight-calc-popup-overlay.active .ideal-weight-calc-popup {
+    transform: translateY(0);
+  }
+
+  .ideal-weight-calc-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .ideal-weight-calc-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .ideal-weight-calc-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .ideal-weight-calc-klaviyo-form {
+    margin: 20px 0;
+    padding-bottom: 20px;
+  }
+
+  .klaviyo-form-T6BNnH {
+    width: 100%;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(22, 109, 148) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0px 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .ideal-weight-calc-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<section class="ideal-weight-calc-body">
+  <div class="ideal-weight-calc-calculator-container">
+    <h1>Ideal Weight Calculator</h1>
+
+    <div class="ideal-weight-calc-input-group">
+      <label for="ideal-weight-calc-gender">Gender</label>
+      <select id="ideal-weight-calc-gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="ideal-weight-calc-input-group">
+      <label for="ideal-weight-calc-height">Height (cm)</label>
+      <input
+        type="number"
+        id="ideal-weight-calc-height"
+        placeholder="Enter your height in cm"
+        value="175">
+    </div>
+
+    <div class="ideal-weight-calc-input-group">
+      <label for="ideal-weight-calc-age">Age (years)</label>
+      <input
+        type="number"
+        id="ideal-weight-calc-age"
+        placeholder="Enter your age"
+        value="30">
+    </div>
+
+    <div class="ideal-weight-calc-input-group">
+      <label for="ideal-weight-calc-body-frame">Body Frame</label>
+      <select id="ideal-weight-calc-body-frame">
+        <option value="small">Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large">Large</option>
+      </select>
+    </div>
+
+    <button id="ideal-weight-calc-calculate-btn" class="ideal-weight-calc-button">Calculate Ideal Weight</button>
+  </div>
+
+  <div class="ideal-weight-calc-result-container" id="ideal-weight-calc-result">
+    <h2>Your Results</h2>
+    <div class="ideal-weight-calc-result-value" id="ideal-weight-calc-result-value">0.0 kg</div>
+    <div class="ideal-weight-calc-result-category">Ideal Body Weight</div>
+
+    <div class="ideal-weight-calc-suggestion">
+      <h3>About Your Ideal Weight</h3>
+      <p>Your ideal weight is calculated using the Devine formula: IBW = 50 kg (or 45.5 kg for women) + 2.3 kg per inch over 5 feet (60 inches). This result is then adjusted for your body frame size.</p>
+      <p id="ideal-weight-calc-age-note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- Added popup HTML - Same as body fat calculator -->
+<div class="ideal-weight-calc-popup-overlay" id="ideal-weight-calc-popup">
+  <div class="ideal-weight-calc-popup">
+    <button class="ideal-weight-calc-popup-close" id="ideal-weight-calc-popup-close">&times;</button>
+    <h2 class="ideal-weight-calc-popup-title">Get Your Full Body Analysis</h2>
+    <div class="ideal-weight-calc-popup-content">
+      <!-- Only Klaviyo form in popup -->
+      <div class="ideal-weight-calc-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculateBtn = document.getElementById('ideal-weight-calc-calculate-btn');
+        const resultContainer = document.getElementById('ideal-weight-calc-result');
+        const resultValue = document.getElementById('ideal-weight-calc-result-value');
+        const ageNote = document.getElementById('ideal-weight-calc-age-note');
+        
+        // Popup elements - Added
+        const popup = document.getElementById('ideal-weight-calc-popup');
+        const popupClose = document.getElementById('ideal-weight-calc-popup-close');
+        
+        // Store calculated values - Added
+        let calculatedWeight = 0;
+        let calculatedGender = '';
+        let calculatedAge = 0;
+        
+        calculateBtn.addEventListener('click', calculateIdealWeight);
+        
+        // Close popup when clicking the close button - Added
+        popupClose.addEventListener('click', function() {
+            popup.classList.remove('active');
+            displayResult(calculatedWeight, calculatedGender, calculatedAge);
+        });
+        
+        // Close popup when clicking outside of it - Added
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                displayResult(calculatedWeight, calculatedGender, calculatedAge);
+            }
+        });
+        
+        // Function to handle Klaviyo button clicks - Added
+        function handleKlaviyoButtonClick(e) {
+            const klaviyoButton = e.target.closest('.go3265039304');
+            if (klaviyoButton && popup.classList.contains('active')) {
+                popup.classList.remove('active');
+                displayResult(calculatedWeight, calculatedGender, calculatedAge);
+            }
+        }
+        
+        // Set up event listener for Klaviyo button - Added
+        document.addEventListener('click', handleKlaviyoButtonClick);
+        
+        // Listen for Klaviyo form submission as a fallback - Added
+        document.addEventListener('klaviyoForms', function(e) {
+            if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+                popup.classList.remove('active');
+                displayResult(calculatedWeight, calculatedGender, calculatedAge);
+            }
+        });
+        
+        function calculateIdealWeight() {
+            const gender = document.getElementById('ideal-weight-calc-gender').value;
+            const height = parseFloat(document.getElementById('ideal-weight-calc-height').value);
+            const age = parseInt(document.getElementById('ideal-weight-calc-age').value);
+            const bodyFrame = document.getElementById('ideal-weight-calc-body-frame').value;
+            
+            // Clear previous errors
+            const existingError = document.querySelector('.ideal-weight-calc-error');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Validate inputs
+            if (isNaN(height) || height <= 0) {
+                showError('Please enter a valid height');
+                return;
+            }
+            
+            if (isNaN(age) || age <= 0) {
+                showError('Please enter a valid age');
+                return;
+            }
+            
+            // Convert height from cm to inches
+            const heightInInches = height / 2.54;
+            
+            // Calculate ideal weight using Devine formula
+            let idealWeightKg;
+            if (gender === 'male') {
+                idealWeightKg = 50 + 2.3 * (heightInInches - 60);
+            } else {
+                idealWeightKg = 45.5 + 2.3 * (heightInInches - 60);
+            }
+            
+            // Adjust for body frame
+            if (bodyFrame === 'small') {
+                idealWeightKg *= 0.95; // 5% less for small frame
+            } else if (bodyFrame === 'large') {
+                idealWeightKg *= 1.05; // 5% more for large frame
+            }
+            
+            // Store calculated values - Added
+            calculatedWeight = idealWeightKg.toFixed(1);
+            calculatedGender = gender;
+            calculatedAge = age;
+            
+            // Show the popup with Klaviyo form - Added
+            popup.classList.add('active');
+            
+            // Hide the regular result container initially - Added
+            resultContainer.style.display = 'none';
+        }
+        
+        // Modified to be called after popup is closed
+        function displayResult(weight, gender, age) {
+            resultValue.textContent = `${weight} kg`;
+            
+            // Add age-related note
+            if (age > 50) {
+                ageNote.textContent = "Note: For individuals over 50, a slightly higher weight may be acceptable as muscle mass naturally decreases with age.";
+            } else {
+                ageNote.textContent = "";
+            }
+            
+            // Show the result container
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showError(message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'ideal-weight-calc-error';
+            errorElement.textContent = message;
+            
+            document.querySelector('.ideal-weight-calc-body').insertBefore(
+                errorElement, 
+                document.querySelector('.ideal-weight-calc-result-container')
+            );
+        }
+    });
+</script>
