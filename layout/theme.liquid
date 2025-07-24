@@ -264,24 +264,5 @@
     {% if settings.enable_currencies and settings.currency_type == 'auto_currencies' %}
       {% render 'halo-currency-js' %}
     {% endif %}
-
-                  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.querySelector(".open-download-btn");
-    if (btn) {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        const url = "https://cdn.shopify.com/s/files/1/0735/8172/3944/files/21_day_diet_plan_pdf_1.pdf?v=1753335893";
-        window.open(url, "_blank");
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "21_day_diet_plan.pdf";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
-    }
-  });
-</script>
   </body>
 </html>
