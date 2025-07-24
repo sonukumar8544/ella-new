@@ -60,8 +60,13 @@
               
 				{%- if has_tab and title != blank -%}
 					<li class="tab">
-                      {% assign h2only = block.settings.title | escape %}
-                  {{ h2only }} --{{ forloop.index0 }}
+                   {% if product.handle == 'electric-frother' %}  
+                    {% assign h2only = block.settings.title | escape  | handle %}
+                      {{ h2only }}
+                     {% if h2only == '' %}
+                       {% else %}
+                     {% endif %}
+                    {% endif %}
 			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
 			                {{ block.settings.title | escape }}
 			            </a>
