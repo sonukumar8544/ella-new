@@ -60,7 +60,9 @@
               
 				{%- if has_tab and title != blank -%}
 					<li class="tab">
-                   {% if product.handle == 'electric-frother' %}  
+                   
+			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
+			               {% if product.handle == 'electric-frother' %}  
                     {% assign h2only = block.settings.title | escape  | handle %}
                      {% if h2only == 'health-benefits' %}
                        {{ 'Key Features' | escape}}
@@ -68,8 +70,6 @@
                        {{ block.settings.title | escape }}
                      {% endif %}
                     {% endif %}
-			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
-			                {{ block.settings.title | escape }}
 			            </a>
 			        </li>
 			    {%- endif -%}
