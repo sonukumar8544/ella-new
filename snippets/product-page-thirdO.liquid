@@ -270,8 +270,15 @@
  .cstm-Product-page-3\.O-third .bundlePdItem-container.A_1:after {
     display: none !important;
   }
+  @media(min-width:1045px){
+   .dynamic-Product-page-3\.O-template .video-scroll-container{
+     justify-content: center;
+   }
+  }
 </style>
-
+<script>
+$('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('Buy any 2 Supplements, Save 15%');
+</script>
 {% endif %}
 <link
   rel="stylesheet"
