@@ -131,7 +131,7 @@
 
     </script> -->
 <script>
- function handleSlider() {
+$(document).ready(function(){
   if ($(window).width() <= 700) {
     if (!sliderInitialized) {
       $('.clinicalSlider').slick({
@@ -155,6 +155,6 @@
       sliderInitialized = true;
     }
   }
-}
+})
 
 </script>
