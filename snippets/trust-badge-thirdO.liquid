@@ -1,169 +1,184 @@
- <!-- Make sure to include jQuery and Slick Carousel -->
-
-<div class="free-shipping-container">
-  <div class="container">
-  <div class="shipping-slider cstm_shippingthird" id="shipping_details">
+<style>
+  .container.free-shipping-container {
+    background: #f4f5f5;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width: 100%;
+  }
+ 
+  .shipping-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  .shipping-item {
+    display: flex !important;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+    height: 100%;
+  }
+ 
+  .shipping-item img {
+    max-width: 50px;
+  }
+ 
+  .shipping-item p {
+    font-size: 14px;
+    color: #36454F;
+    margin: 0;
+  }
+ 
+  /* Mobile layout */
+  @media (max-width: 767px) {
+    .shipping-item {
+      flex-direction: column;
+      text-align: center;
+    }
+   
+    .shipping-item p {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+ 
+  /* Hide arrows on mobile */
+  .slick-arrow {
+    display: none !important;
+  }
+  @media (min-width: 768px) {
+    .slick-arrow {
+      display: block !important;
+    }
+  }
+</style>
+ 
+<div class="container free-shipping-container">
+  <div class="shipping-slider">
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466" alt="Shipping">
-      <p>Rooted in Care<br>& Tradition</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Result_ori_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>10+ Clinically Studied Ingredients</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466" alt="Shipping">
-      <p>Award Winning <br> Extraction Process</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Award_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>Award Winning Extraction Process</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466" alt="Shipping">
-      <p>Premium Patented <br> Ingredients</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clinically_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>Result Oriented Formulations</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466" alt="Shipping">
-      <p>Expert<br> Formulated</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Customer_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>67% Repeat Customers</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466" alt="Shipping">
-      <p>Science-Backed <br> Formulations</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Result_ori_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>100% Natural Ingredients</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466" alt="Shipping">
-      <p>Health Canada <br> Registered GMP Facility</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Award_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>Doctor Recommended</p>
     </div>
     <div class="shipping-item">
-      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Heading_3_Earn_yield.svg?v=1752212970" alt="Shipping">
-      <p>Approved (Generally<br> Recognized As Safe)</p>
+      <img
+        data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Clinically_50x.svg?v=1744106233"
+        alt="Shipping"
+        title=""
+        width=""
+        height=""
+        class="lazyload"
+      >
+      <p>Made in FDA Approved Facility</p>
     </div>
   </div>
 </div>
-</div>
-
-    <style>
-   .free-shipping-container {
-  background: #EEEEEE;
-  margin-bottom: 30px;
-  padding: 20px 40px;
-}
-
-.shipping-slider {
-  display: flex;
-  gap: 1rem;
-  overflow: hidden;
-}
-
-.shipping-item {
-  text-align: center;
-  padding: 15px 3px;
-  scroll-snap-align: start;
-}
-
-.shipping-item img {
-  max-width: 50px;
-  height: 50px;
-  display: block;
-  margin: 0 auto;
-}
-
-.shipping-item p {
-  margin-top: 10px;
-  color: #36454F;
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.32px;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .free-shipping-container {
-    padding: 10px 0px;
-    border-radius: 0;
-  }
-
-  .shipping-item img {
-    max-width: 40px;
-    height: 40px;
-  }
-
-  .shipping-item p {
-    font-size: 12px;
-    letter-spacing: 0.2px;
-  }
-}
-
-    </style>
-    <!-- <script>
-   $(document).ready(function () {
-  $('#shipping_details').slick({
-    dots: false,
-    infinite: true,
-    arrows: false,
-    speed: 700,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 5,
-     responsive: [
-    {
-    breakpoint: 1200,
-    settings: {
-    slidesToShow: 4,
-    }
-    },
-    {
-    breakpoint: 800,
-    settings: {
-    slidesToShow: 4
-    }
-    },
-    {
-    breakpoint: 600,
-    settings: {
-    slidesToShow: 3
-    }
-    },
-    {
-       breakpoint: 340,
-    settings: {
-    slidesToShow: 2
-    }
-    }
-    ]
-  });
-});
-
-    </script> -->
+ 
 <script>
-$(document).ready(function(){
-
-      $('.free-shipping-container .cstm_shippingthird').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        arrows: false,
-        speed: 700,
-        autoplay: true,
-        autoplaySpeed: 3000,
-         responsive: [
-    {
-    breakpoint: 1200,
-    settings: {
-    slidesToShow: 4,
-    }
-    },
-    {
-    breakpoint: 800,
-    settings: {
-    slidesToShow: 4
-    }
-    },
-    {
-    breakpoint: 600,
-    settings: {
-    slidesToShow: 3
-    }
-    }
-    ]
-      });
-    
-})
-
+  $(document).ready(function () {
+    $('.shipping-slider').slick({
+      dots: true,
+      infinite: true,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoslide: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2,
+            arrows: false
+          }
+        }
+      ]
+    });
+  });
 </script>
