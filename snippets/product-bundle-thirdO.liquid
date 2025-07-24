@@ -195,7 +195,7 @@
                     </div>
                     {%- if bundle_discount_rate > 0 -%}
                       <div class="bundle-product-text">
-                        {{ bundle_discount_text }}
+                        {{ bundle_discount_text }}---
                       </div>
                     {%- endif -%}
                   </div>
@@ -209,7 +209,7 @@
     <script src="{{ 'product-bundle.js' | asset_url }}" defer></script>
   {% endif %}
 {% endif %}
-{{ product.handle }}
+
 <style>
   .bundle-discount-percentage{
     font-size: 16px;
