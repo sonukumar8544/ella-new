@@ -133,7 +133,6 @@
 <script>
 $(document).ready(function(){
   if ($(window).width() > 700) {
-    if (!sliderInitialized) {
       $('.free-shipping-container .cstm_shippingthird').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -153,8 +152,8 @@ $(document).ready(function(){
           }
         ]
       });
-      sliderInitialized = true;
-    }
+      
+  
   }
 })
 
