@@ -265,6 +265,14 @@
     assign customization_option_1 = settings.customization_option_1
     assign customization_option_2 = settings.customization_option_2
 -%}
+{% if product.handle == "h2-molecular-hydrogen" %}
+<style>
+ .cstm-Product-page-3\.O-third .bundlePdItem-container.A_1:after {
+    display: none !important;
+  }
+</style>
+
+{% endif %}
 <link
   rel="stylesheet"
   href="{{ 'product-third0.css' | asset_url }}"
