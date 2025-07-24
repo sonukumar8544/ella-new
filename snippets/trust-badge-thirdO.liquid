@@ -90,7 +90,7 @@
 }
 
     </style>
-    <script>
+    <!-- <script>
    $(document).ready(function () {
   $('#shipping_details').slick({
     dots: false,
@@ -129,4 +129,32 @@
   });
 });
 
-    </script>
+    </script> -->
+<script>
+ function handleSlider() {
+  if ($(window).width() <= 700) {
+    if (!sliderInitialized) {
+      $('.clinicalSlider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        infinite: true,
+        arrows: false,
+        speed: 700,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 4,
+            }
+          }
+        ]
+      });
+      sliderInitialized = true;
+    }
+  }
+}
+
+</script>
