@@ -146,7 +146,7 @@
 </script> {% endcomment %}
 
 <style>
-  .container.free-shipping-container {
+  /* .container.free-shipping-container {
     background: #f4f5f5;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -177,6 +177,64 @@
   }
  
  .shipping-item p {
+    font-size: 14px;
+    color: #36454F;
+    margin: 0;
+  }
+ 
+
+  @media (max-width: 767px) {
+    .shipping-item {
+      flex-direction: column;
+      text-align: center;
+    }
+   
+    .shipping-item p {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+ 
+  
+  .slick-arrow {
+    display: none !important;
+  }
+  @media (min-width: 768px) {
+    .slick-arrow {
+      display: block !important;
+    }
+  } */
+  .container.free-shipping-container {
+    background: #f4f5f5;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width: 100%;
+  }
+ 
+  .shipping-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  .shipping-item {
+    display: flex !important;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+    height: 100%;
+  }
+ 
+  .shipping-item img {
+    max-width: 50px;
+  }
+ 
+  .shipping-item p {
     font-size: 14px;
     color: #36454F;
     margin: 0;
