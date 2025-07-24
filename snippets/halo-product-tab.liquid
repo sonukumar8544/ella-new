@@ -266,7 +266,7 @@ function toggleContent(event) {
   }
 }
 </script> -->
-<script>
+<!-- <script>
 function toggleContent(event) {
   event.preventDefault();
 
@@ -290,6 +290,39 @@ function toggleContent(event) {
     }
   }
 }
+</script> -->
+<script>
+function toggleContent(event) {
+  event.preventDefault();
+
+  const wrapper = event.target.closest(".testimonial-wrapper");
+  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
+  const showLink = wrapper.querySelector(".toggle-show");
+
+  if (hiddenContent.classList.contains("hidden")) {
+    // Content is hidden → Show it
+    hiddenContent.classList.remove("hidden");
+    showLink.style.display = "none";
+  } else {
+    // Content is visible → Hide it and scroll with offset
+    hiddenContent.classList.add("hidden");
+    showLink.style.display = "inline";
+
+    const targetElement = document.getElementById("product-thirdO-tabd");
+    if (targetElement) {
+      // Calculate scroll position with offset (e.g., 20% of viewport height)
+      const offset = window.innerHeight * 0.2; // 20% offset
+      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const scrollToPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth"
+      });
+    }
+  }
+}
 </script>
+
 
 {% endif %}
