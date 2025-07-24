@@ -141,7 +141,16 @@
 					<div class="toggle-title{% if settings.product_page_layout == 'full_width_2' or template.suffix == 'template-full-width-2' %} title-content-full{% endif %}">
 		                <a class="toggleLink{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.type == 'description' and tab_layout == 'vertical' %} is-open{% endif %}" data-collapsible href="#tab-{{ title | escape | handleize }}-mobile">
 		                    <span class="text">
-		                        {{ title | escape }} 
+		                        {% if product.handle == 'electric-frother' %}  
+                    {% assign h2only = title | escape  | handle %}
+                     {% if h2only == 'health-benefits' %}
+                       {{ 'Key Features' | escape}}
+                       {% else %}
+                      {{ title | escape }}
+                     {% endif %}
+                             {% else %}
+                               {{ title | escape }} 
+                    {% endif %} 
 		                    </span>
 		                    {% if icon_style_layout == 'style_1' %}	
 			                    <span class="icon-dropdown">
