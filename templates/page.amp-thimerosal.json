@@ -9,24 +9,22 @@
  */
 {
   "sections": {
-    "shogun-helper": {
-      "type": "shogun-helper",
-      "disabled": true,
-      "settings": {}
-    },
     "main": {
       "type": "main-page",
-      "settings": {}
-    },
-    "shogun-optimizer": {
-      "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "amp_webstory_GrmTgz": {
+      "type": "amp-webstory",
+      "name": "AMP Webstory 2.0",
+      "settings": {
+        "fontsize_title": 20,
+        "fontsize_description": 16
+      }
     }
   },
   "order": [
-    "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "amp_webstory_GrmTgz"
   ]
 }
