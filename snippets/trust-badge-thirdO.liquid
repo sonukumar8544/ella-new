@@ -42,12 +42,19 @@
   padding: 20px 40px;
 }
 
-.free-shipping-container .shipping-slider {
+.free-shipping-container.trusted-badge__slider {
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 1rem;
-  overflow: hidden;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-     .free-shipping-container .trusted-badge__slider.slick-initialized {
+
+/* Once Slick loads, override layout */
+.trusted-badge__slider.slick-initialized {
   display: block !important;
   overflow: hidden;
 }
