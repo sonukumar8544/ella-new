@@ -196,7 +196,7 @@
                     {%- if bundle_discount_rate > 0 -%}
                       {% assign he_two = canonical_url | remove:'https://wellnessextract.com/products/' %}
                       <div class="bundle-product-text">
-                       {% if he_two = 'h2-molecular-hydrogen' %}Buy any 2 Supplements, Save 15% {% else %} {{ bundle_discount_text }} {% endif %}
+                       {% if he_two == 'h2-molecular-hydrogen' %}{{ 'Buy any 2 Supplements, Save 15% ' }}{% else %} {{ bundle_discount_text }} {% endif %}
                       </div>
                     {%- endif -%}
                   </div>
