@@ -62,7 +62,16 @@
                   <!-- tab__slide -->
 					<li class="tab">
 			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
-			                {{ block.settings.title | escape }}
+			                 {% if product.handle == 'electric-frother' %}  
+                    {% assign h2only = block.settings.title | escape  | handle %}
+                     {% if h2only == 'health-benefits' %}
+                       {{ 'Key Features' | escape}}
+                       {% else %}
+                       {{ block.settings.title | escape }}
+                     {% endif %}
+                             {% else %}
+                              {{ block.settings.title | escape }}
+                    {% endif %}
 			            </a>
 			        </li>
 			    {%- endif -%}
