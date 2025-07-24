@@ -31,8 +31,28 @@
             "heading_color": "#000000",
             "heading": "Top 7 Nutrients Every Mom-to-Be Needs for a Healthy Pregnancy",
             "description_color": "#ffffff",
-            "description": "",
+            "description": "Because your baby’s growth starts with what you nourish yourself with. Let’s dive in.",
             "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_9KzmKj": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": false,
+            "bgapplyenable": false,
+            "bgapply": "#ffffff5c",
+            "heading_bg": "",
+            "heading_color": "#ffffff",
+            "heading": "Welcome to the Story",
+            "description_color": "#ffffff",
+            "description": "",
+            "button_text": "View More",
             "btn_link": "",
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
@@ -40,7 +60,8 @@
         }
       },
       "block_order": [
-        "story_page_BKdieG"
+        "story_page_BKdieG",
+        "story_page_9KzmKj"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
