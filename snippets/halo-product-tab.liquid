@@ -249,48 +249,6 @@
 {%- endif -%}
 
 {% if template.suffix contains 'Product-page-3.O'%}
-<!-- <script>
-function toggleContent(event) {
-  event.preventDefault();
-
-  const wrapper = event.target.closest(".testimonial-wrapper");
-  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
-  const showLink = wrapper.querySelector(".toggle-show");
-
-  if (hiddenContent.classList.contains("hidden")) {
-    hiddenContent.classList.remove("hidden");
-    showLink.style.display = "none";
-  } else {
-    hiddenContent.classList.add("hidden");
-    showLink.style.display = "inline";
-  }
-}
-</script> -->
-<!-- <script>
-function toggleContent(event) {
-  event.preventDefault();
-
-  const wrapper = event.target.closest(".testimonial-wrapper");
-  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
-  const showLink = wrapper.querySelector(".toggle-show");
-
-  if (hiddenContent.classList.contains("hidden")) {
-    // Content is hidden → Show it
-    hiddenContent.classList.remove("hidden");
-    showLink.style.display = "none";
-  } else {
-    // Content is visible → Hide it and scroll
-    hiddenContent.classList.add("hidden");
-    showLink.style.display = "inline";
-
-    // Scroll to #product-thirdO-tabd smoothly
-    const targetElement = document.getElementById("product-thirdO-tabd");
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
-}
-</script> -->
 <script>
 function toggleContent(event) {
   event.preventDefault();
@@ -310,8 +268,8 @@ function toggleContent(event) {
 
     const targetElement = document.getElementById("product-thirdO-tabd");
     if (targetElement) {
-      // Calculate scroll position with offset (e.g., 20% of viewport height)
-      const offset = window.innerHeight * 0.2; // 20% offset
+     
+      const offset = window.innerHeight * 0.2;
       const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
       const scrollToPosition = elementPosition - offset;
 
