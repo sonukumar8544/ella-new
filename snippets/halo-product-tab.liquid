@@ -18,7 +18,7 @@
 	endif
 -%}
 <!--halo-product-tab -->
-<product-tab class="productView-tab layout-{{ tab_layout }} halo-product-tab" data-vertical="{{ isVerticalSidebar }}" data-vertical-mobile="{{ isVerticalSidebarMobile }}">
+<product-tab class="productView-tab layout-{{ tab_layout }} halo-product-tab" data-vertical="{{ isVerticalSidebar }}" data-vertical-mobile="{{ isVerticalSidebarMobile }}" id="product-thirdO-tabd">
 	{% if product.metafields.custom.product_3_0_product_description_heading.value  != blank %}
       <h2 class="tab_title_halo_product_tab">{{ product.metafields.custom.product_3_0_product_description_heading.value }}</h2>
   {% endif %}
@@ -249,7 +249,7 @@
 {%- endif -%}
 
 {% if template.suffix contains 'Product-page-3.O'%}
-<script>
+<!-- <script>
 function toggleContent(event) {
   event.preventDefault();
 
@@ -263,6 +263,38 @@ function toggleContent(event) {
   } else {
     hiddenContent.classList.add("hidden");
     showLink.style.display = "inline";
+  }
+}
+</script> -->
+<script>
+function toggleContent(event) {
+  event.preventDefault();
+
+  const wrapper = event.target.closest(".testimonial-wrapper");
+  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
+  const showLink = wrapper.querySelector(".toggle-show");
+
+  if (hiddenContent.classList.contains("hidden")) {
+    // Content is hidden → Show it
+    hiddenContent.classList.remove("hidden");
+    showLink.style.display = "none";
+  } else {
+    // Content is visible → Hide it and scroll with offset
+    hiddenContent.classList.add("hidden");
+    showLink.style.display = "inline";
+
+    const targetElement = document.getElementById("product-thirdO-tabd");
+    if (targetElement) {
+      // Calculate scroll position with offset (e.g., 20% of viewport height)
+      const offset = window.innerHeight * 0.2; // 20% offset
+      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const scrollToPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth"
+      });
+    }
   }
 }
 </script>
