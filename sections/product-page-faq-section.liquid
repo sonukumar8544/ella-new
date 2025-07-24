@@ -11,7 +11,7 @@
   <div class="faq-container">
   <div class="faq-header">
   <h2>{{ section.settings.heading }}</h2>
-  <p class="faqsubheading">{{ section.settings.subheading }}</p>
+  {% comment %} <p class="faqsubheading">{{ section.settings.subheading }}</p> {% endcomment %}
   </div>
   
   {% for block in product.metafields.custom.we_product_page_faqs.value %}

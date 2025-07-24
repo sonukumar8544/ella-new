@@ -436,7 +436,7 @@
   .dynamic-Product-page-3\.O-template #custom_proce_manage span.price-item.price-item--regular.orginal_price1 span {
   color: #29353C !important;
   font-family: Nunito;
-  font-size: 18px !important;
+  font-size: 12px !important;
   font-style: normal;
   font-weight: 700 !important;
   line-height: 26.4px;
@@ -721,12 +721,12 @@
   }
   @media(max-width:550px ){
   .dynamic-Product-page-3\.O-template .product-details .product-option{
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  gap: 10px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 10px;
   }
   .dynamic-Product-page-3\.O-template .product-details .product-page-varient-box{
-  padding: 5px;
+  padding: 5px ;
   }
   .dynamic-Product-page-3\.O-template .product-details .product-form__label {
   margin: 5px 3px 2px 0;
@@ -741,8 +741,9 @@
   }
   .dynamic-Product-page-3\.O-template .product-form__label .text,
   .dynamic-Product-page-3\.O-template .product-form__radio:checked+.product-form__label .text{
-          font-size: 12px;
-        padding: 0px 4px;
+    font-size: 16px;
+    padding: 0px 5px;
+    border-radius: 5px !important;
   }
   .dynamic-Product-page-3\.O-template .productView-moreItem .productView-price {
   margin-bottom: 20px;
@@ -937,7 +938,7 @@
   }
   .dynamic-Product-page-3\.O-template .bundle-product-left{
   width: auto;
-  margin: :0;
+  margin: 0;
   }
   .dynamic-Product-page-3\.O-template .total_amount_checkout dd#custom_proce_manage{
   gap: 0px;

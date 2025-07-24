@@ -145,6 +145,7 @@
             <p style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; white-space: normal; font-weight: bold;">
               {{ product.title }}
             </p>
+            <small id="product-bundle-benifits" > {{ product.metafields.custom.product_3_0_frequently_bundle }} </small>
             {%- if variantCount > 1 and settings.enable_swatch_name -%}
               <span data-bundle-product-title> - {{ current_variant.title }}</span>
             {%- endif -%}

@@ -9,7 +9,7 @@
           <h2 class="scientific-title">{{ section.settings.scientific_main_title }}</h2>
         {% endif %}
         {% if product.metafields.custom.product_3_0_science_slide_description.value != blank %}
-          <p class="scientific-subtitle">{{ product.metafields.custom.product_3_0_science_slide_description.value }}</p>
+          {% comment %} <p class="scientific-subtitle">{{ product.metafields.custom.product_3_0_science_slide_description.value }}</p> {% endcomment %}
         {% endif %}
       </div>
 
