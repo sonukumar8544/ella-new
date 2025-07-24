@@ -1,0 +1,14 @@
+<!-- product-title-third0 -->
+
+{%- liquid
+  assign fontsize_text = block.settings.fontsize_text
+  assign fontsize_text_mb = block.settings.fontsize_text_mb
+  assign color_title = block.settings.color_title
+-%}
+
+<h1
+  class="productView-title"
+  style="--color-title: {{ color_title }};--fontsize-text: {{ fontsize_text | append: 'px' }};--fontsize-mb-text: {{ fontsize_text_mb | append: 'px' }};"
+>
+  <span>{{ product.title | escape }}</span>
+</h1>

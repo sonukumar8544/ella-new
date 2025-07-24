@@ -17,8 +17,12 @@
 		assign isVerticalSidebarMobile = 'sidebar-mobile'
 	endif
 -%}
+<!--halo-product-tab -->
 <product-tab class="productView-tab layout-{{ tab_layout }} halo-product-tab" data-vertical="{{ isVerticalSidebar }}" data-vertical-mobile="{{ isVerticalSidebarMobile }}">
-	{%- if tab_layout == 'horizontal' or tab_layout == 'popup' -%}
+	{% if product.metafields.custom.product_3_0_product_description_heading.value  != blank %}
+      <h2 class="tab_title_halo_product_tab">{{ product.metafields.custom.product_3_0_product_description_heading.value }}</h2>
+  {% endif %}
+  {%- if tab_layout == 'horizontal' or tab_layout == 'popup' -%}
 		<ul class="tabs tabs-horizontal list-unstyled disable-srollbar">
 			{%- for block in section.blocks -%}
 				{%- liquid
@@ -53,7 +57,7 @@
 						assign has_tab = true
 					endif
 				-%}
-              <!-- tab title -->
+              
 				{%- if has_tab and title != blank -%}
 					<li class="tab">
 			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
@@ -120,7 +124,7 @@
 					endif
 				endif
 			-%}
-          <!--halo-product-tab -->
+        
 			{%- if has_tab and title != blank -%}
 				<div class="tab-content{% if block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}" id="tab-{{ title | escape | handleize }}">
 					<div class="toggle-title{% if settings.product_page_layout == 'full_width_2' or template.suffix == 'template-full-width-2' %} title-content-full{% endif %}">
@@ -153,16 +157,37 @@
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
                             {% if content_meta == 'description' %}
+                              {% if product.metafields.Custom.product_3_0_product_description != blank %}
+                                {{ product.metafields.Custom.product_3_0_product_description }}
+                                {% else %}
 								{{ product.metafields.Custom.we_product_description }}
+                                {% endif %}
+								
 							{% elsif content_meta == 'nutritional-info' %}
+                               {% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_nutritional_info }}
+                              {% else %}
 								{{ product.metafields.Custom.we_nutritional_info }}
+                              {% endif %}
 							{% elsif content_meta == 'health-benefits' %}
-								{{ product.metafields.Custom.we_health_benifits }}
+                                {% if product.metafields.Custom.product_3_0_product_health_benefits != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_health_benefits }}
+                              {% else %}
+							{{ product.metafields.Custom.we_health_benifits }}
+                              {% endif %}
+								
 							{% elsif content_meta == 'how-to-use' %}
+                                {% if product.metafields.Custom.product_3_0_product_how_to_use != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_how_to_use }}
+                              {% else %}
 								{{ product.metafields.Custom.we_how_to_use }}
+                                  {% endif %}
 							{%  else %}
+                               {% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
+                              {{ product.metafields.Custom.product_3_0_product_shipping_returns }}
+                              {% else %}
 							{{ product.metafields.Custom.we_shipping_and_returns }}
-                             
+                             {% endif %}
                               {% endif %}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
@@ -202,3 +227,23 @@
 	}
 </script>
 {%- endif -%}
+
+{% if template.suffix contains 'Product-page-3.O'%}
+<script>
+function toggleContent(event) {
+  event.preventDefault();
+
+  const wrapper = event.target.closest(".testimonial-wrapper");
+  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
+  const showLink = wrapper.querySelector(".toggle-show");
+
+  if (hiddenContent.classList.contains("hidden")) {
+    hiddenContent.classList.remove("hidden");
+    showLink.style.display = "none";
+  } else {
+    hiddenContent.classList.add("hidden");
+    showLink.style.display = "inline";
+  }
+}
+</script>
+{% endif %}

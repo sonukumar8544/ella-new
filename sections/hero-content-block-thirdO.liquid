@@ -1,0 +1,221 @@
+<!-- hero-content-block-thirdO -->
+{% assign hero_content = product.metafields.custom.product_3_0_hero_content_block.value %}
+{% if hero_content != blank %}
+  {% for hero_content_block in hero_content %}
+<section class="tocotrienol-section" id="cstm_{{ section.id }}">
+  <div class="tocotrienol-container container">
+    {% if hero_content_block.title != blank or hero_content_block.description != blank %}
+    <div class="tocotrienol-left">
+      <h2>{{ hero_content_block.title }}</h2>
+      <p>
+        {{ hero_content_block.description }}
+      </p>
+    </div>
+    {% endif %}
+    <div class="tocotrienol-right">
+{% if hero_content_block.image_content1 != blank%}
+      <div class="tocotrienol-point">
+      {% if hero_content_block.image_1 != blank %}  <img src="{{  hero_content_block.image_1 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
+        <p>{{ hero_content_block.image_content1 }}</p>
+      </div>
+      {% endif %}
+
+     {% if hero_content_block.image_content2 != blank%}
+      <div class="tocotrienol-point">
+         {% if hero_content_block.image_2 != blank %}  <img src="{{  hero_content_block.image_2 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
+        <p>{{ hero_content_block.image_content2 }}</p>
+      </div>
+      {% endif %}
+
+     {% if hero_content_block.image_content3 != blank%}
+      <div class="tocotrienol-point">
+         {% if hero_content_block.image_3 != blank %} <img src="{{  hero_content_block.image_3 }}" alt="Icon 1" title="" width="" height="" title="">{% endif %}
+        <p>{{ hero_content_block.image_content3 }}</p>
+      </div>
+      {% endif %}
+    
+    {% if hero_content_block.image_4 != blank or hero_content_block.image_content4 != blank%}
+      <div class="tocotrienol-point">
+      {% if hero_content_block.image_4 != blank %} <img src="{{  hero_content_block.image_4 }}" alt="Icon 1" title="" width="" height="" title=""> {% endif %}
+        <p>{{ hero_content_block.image_content4 }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+<style>
+#cstm_{{ section.id }}{
+padding: 40px 20px;
+background: #fff;
+color: #2d3748;
+}
+  .tab-slider-thirdO .container,
+ #cstm_{{ section.id }} .tocotrienol-container.container {
+    max-width: 1260px !important;
+    margin: auto;
+}
+
+#cstm_{{ section.id }} .tocotrienol-container {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+#cstm_{{ section.id }} .tocotrienol-left h2 {
+margin-bottom: 20px;
+color: #374650;
+font-family: Nunito;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 1.2;
+letter-spacing: 0.68px;
+text-transform: capitalize;
+}
+
+#cstm_{{ section.id }} .tocotrienol-left p {
+color: #3C3C3C;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 1.4;
+letter-spacing: 0.32px;
+}
+#cstm_{{ section.id }} .tocotrienol-left {
+flex: 1 1 48%;
+}
+
+#cstm_{{ section.id }} .tocotrienol-right {
+flex: 1 1 48%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#cstm_{{ section.id }} .tocotrienol-point:last-child{
+border-bottom: 0px solid #000;
+}
+
+#cstm_{{ section.id }} .tocotrienol-point {
+display: flex;
+align-items: center;
+gap: 25px;
+border-bottom: 1px solid #000;
+padding: 17px 0px;
+}
+
+#cstm_{{ section.id }} .tocotrienol-point img {
+width: 50px;
+height: auto;
+}
+
+#cstm_{{ section.id }} .tocotrienol-point p {
+margin: 0;
+font-size: 17px;
+color: #2d3748;
+}
+
+#cstm_{{ section.id }} .tocotrienol-divider {
+border-bottom: 1px solid #ccc;
+margin: 15px 0;
+}
+
+@media (max-width: 1024px){
+#cstm_{{ section.id }} .tocotrienol-left {
+text-align:center;
+}
+#cstm_{{ section.id }} .tocotrienol-container {
+gap: 30px;
+}
+#cstm_{{ section.id }} .tocotrienol-left h2 {
+margin-bottom: 20px;
+color: #374650;
+text-align: center;
+font-family: Nunito;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 1.2;
+letter-spacing: 0.68px;
+text-transform: capitalize;
+}
+#cstm_{{ section.id }} .tocotrienol-left p  {
+color: #3C3C3C;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 1.4; /* 22.4px */
+letter-spacing: 0.32px; 
+}
+  
+#cstm_{{ section.id }} .tocotrienol-right p {
+margin: 0;
+color: #222;
+font-family: Nunito;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 25.2px;
+letter-spacing: 0.18px;
+    line-height: 1.2;
+}
+  
+
+}
+@media (max-width: 768px) {
+#cstm_{{ section.id }} .tocotrienol-container {
+flex-direction: column;
+}
+
+#cstm_{{ section.id }} .tocotrienol-left,
+.tocotrienol-right {
+flex: 1 1 100%;
+padding: 0px 2px;
+}
+  #cstm_{{ section.id }} .tocotrienol-right .tocotrienol-point{
+  padding: 10px 0px;
+}
+  #cstm_{{ section.id }} .tocotrienol-container {
+gap: 20px;
+}
+  #cstm_{{ section.id }} .tocotrienol-point p {
+margin: 0;
+font-size: 16px;
+color: #2d3748;
+    line-height: 1.2;
+}
+#cstm_{{ section.id }} .tocotrienol-point img {
+width: 45px;
+height: auto;
+}
+  #cstm_{{ section.id }} {
+    padding: 25px 0px;
+  }
+}
+@media(max-width: 550px){
+  #cstm_{{ section.id }} .tocotrienol-left p  {
+        text-align: left;
+    line-height:1.4;
+}
+ #cstm_{{ section.id }} .tocotrienol-right p {
+  font-size: 16.734px;
+            font-style: normal;
+            font-weight: 400;
+}
+}
+</style>
+ {% endif %}
+{% schema %}
+    {
+  "name": "Product Content ThirdO",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Product Content ThirdO"
+    }
+  ]
+}
+{% endschema %}
