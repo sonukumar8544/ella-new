@@ -102,8 +102,8 @@
 }
 
     </style>
-    <!-- <script>
-   $(document).ready(function () {
+<script>
+$(document).ready(function () {
   $('#shipping_details').slick({
     dots: false,
     infinite: true,
@@ -141,56 +141,4 @@
   });
 });
 
-    </script> -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-
-    <script>
-  window.addEventListener('load', function(){
-    new Glider(document.querySelector('#shipping_details'), {
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      draggable: true,
-      scrollLock: true,
-      dots: false,
-      arrows: false,
-      autoplay: 3000,
-      responsive: [
-        {
-          // <= 1200
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1
-          }
-        },
-        {
-          // <= 800
-          breakpoint: 800,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1
-          }
-        },
-        {
-          // <= 600
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          // <= 350
-          breakpoint: 350,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
-
+    </script>
