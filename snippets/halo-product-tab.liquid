@@ -249,7 +249,7 @@
 {%- endif -%}
 
 {% if template.suffix contains 'Product-page-3.O'%}
-<script>
+<!-- <script>
 function toggleContent(event) {
   event.preventDefault();
 
@@ -265,5 +265,31 @@ function toggleContent(event) {
     showLink.style.display = "inline";
   }
 }
+</script> -->
+<script>
+function toggleContent(event) {
+  event.preventDefault();
+
+  const wrapper = event.target.closest(".testimonial-wrapper");
+  const hiddenContent = wrapper.querySelector(".testimonial-hidden-content");
+  const showLink = wrapper.querySelector(".toggle-show");
+
+  if (hiddenContent.classList.contains("hidden")) {
+    // Content is hidden → Show it
+    hiddenContent.classList.remove("hidden");
+    showLink.style.display = "none";
+  } else {
+    // Content is visible → Hide it and scroll
+    hiddenContent.classList.add("hidden");
+    showLink.style.display = "inline";
+
+    // Scroll to #product-thirdO-tabd smoothly
+    const targetElement = document.getElementById("product-thirdO-tabd");
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}
 </script>
+
 {% endif %}
