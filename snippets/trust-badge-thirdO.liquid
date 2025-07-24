@@ -142,15 +142,32 @@ $(document).ready(function(){
         speed: 700,
         autoplay: true,
         autoplaySpeed: 3000,
-        responsive: [
-          {
-            breakpoint: 400,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            }
-          }
-        ]
+         responsive: [
+    {
+    breakpoint: 1200,
+    settings: {
+    slidesToShow: 4,
+    }
+    },
+    {
+    breakpoint: 800,
+    settings: {
+    slidesToShow: 4
+    }
+    },
+    {
+    breakpoint: 600,
+    settings: {
+    slidesToShow: 3
+    }
+    },
+    {
+       breakpoint: 340,
+    settings: {
+    slidesToShow: 2
+    }
+    }
+    ]
       });
       
   
