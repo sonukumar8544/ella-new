@@ -58,11 +58,33 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_MqHTqP": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Iron-01_1.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Iron",
+            "description_color": "#ffffff",
+            "description": "Boosts oxygen supply to baby & prevents maternal anemia. Pair with Vitamin C for better absorption.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_BKdieG",
-        "story_page_9KzmKj"
+        "story_page_9KzmKj",
+        "story_page_MqHTqP"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
