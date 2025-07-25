@@ -150,44 +150,7 @@
 							</div>
 							<div class="tab-popup-content">
 						{%- endif -%}
-							{% assign content_meta = title | escape | handleize %} 
-                            
-							{% if content_meta == 'description' %}
-							{% if product.metafields.Custom.product_3_0_product_description.value != blank %}
-							{{ product.metafields.Custom.product_3_0_product_description.value }}
-							{% endif %}
-
-							{% elsif content_meta == 'nutritional-info' %}
-							{% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
-							{{ product.metafields.Custom.product_3_0_product_nutritional_info }}
-							
-							{% endif %}
-
-							{% elsif content_meta == 'health-benefits' %}
-							{% if product.metafields.Custom.product_3_0_product_health_benefits != blank %}
-							{{ product.metafields.Custom.product_3_0_product_health_benefits }}
-							
-							{% endif %}
-
-							{% elsif content_meta == 'how-to-use' %}
-							{% if product.metafields.Custom.product_3_0_product_how_to_use != blank %}
-							{{ product.metafields.Custom.product_3_0_product_how_to_use }}
-							
-							{% endif %}
-
-							{% elsif content_meta == 'who-is-it-for' %}
-							{% if product.metafields.Custom.product_3_0_who_is_it_for != blank %}
-							{{ product.metafields.Custom.product_3_0_who_is_it_for }}
-							{% endif %}
-
-							{%  else %}
-							{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
-							{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
-							{% else %}
-							{{ product.metafields.Custom.we_shipping_and_returns }}
-							{% endif %}
-
-							{% endif %}
+							{{ content }}
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
 								<div class="tab-showMore is-show" data-letter="{{ letter }}" data-des-max="{{ block.settings.maximum_des_to_show }}">
