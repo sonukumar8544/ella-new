@@ -174,10 +174,9 @@
 								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
 							</div>
 							<div class="tab-popup-content">
-								-----
+								
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
-						{{ content_meta }}
 							{% if content_meta == 'description' %}
 							{% if product.metafields.Custom.product_3_0_product_description != blank %}
 							{{ product.metafields.Custom.product_3_0_product_description }}
@@ -290,6 +289,30 @@ function toggleContent(event) {
   }
 }
 </script>
+{% if product.handle == 'bovine-colostrum-powder-lactoferrin-supplement-150g' %}
+	<script>
+$(document).ready(function () {
+  // Open first tab by default
+  $('.tab-title').removeClass('is-open').first().addClass('is-open');
+  $('.tab-content').removeClass('is-active').first().addClass('is-active');
 
+  // On tab click
+  $('.tab-title').on('click', function (e) {
+    e.preventDefault();
+
+    const targetID = $(this).attr('href');
+
+    // Remove active/open classes from all
+    $('.tab-title').removeClass('is-open');
+    $('.tab-content').removeClass('is-active');
+
+    // Add classes to clicked tab and related content
+    $(this).addClass('is-open');
+    $(targetID).addClass('is-active');
+  });
+});
+</script>
+
+{% endif %}
 
 {% endif %}
