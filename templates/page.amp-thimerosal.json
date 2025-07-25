@@ -142,6 +142,27 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_TaJrwq": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Ready_to_Detox_Smart-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Go Clean with Confidence",
+            "description_color": "#ffffff",
+            "description": "Shop our science-backed, thimerosal-free health supplements today.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
@@ -150,7 +171,8 @@
         "story_page_bXjYcH",
         "story_page_CCP8QV",
         "story_page_kUwQV9",
-        "story_page_HxUTim"
+        "story_page_HxUTim",
+        "story_page_TaJrwq"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
