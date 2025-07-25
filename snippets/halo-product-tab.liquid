@@ -151,28 +151,24 @@
 							<div class="tab-popup-content">
 						{%- endif -%}
 							
-						{% assign content_meta = title | escape | handleize %} 
-						{{ content_meta }}
+							{% assign content_meta = title | escape | handleize %}
+
 							{% if content_meta == 'description' %}
-							
 							{{ product.metafields.Custom.product_3_0_product_description.value }}
-							
+
 							{% elsif content_meta == 'nutritional-info' %}
 							{% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
 							{{ product.metafields.Custom.product_3_0_product_nutritional_info }}
-							
 							{% endif %}
 
 							{% elsif content_meta == 'health-benefits' %}
 							{% if product.metafields.Custom.product_3_0_product_health_benefits != blank %}
 							{{ product.metafields.Custom.product_3_0_product_health_benefits }}
-							
 							{% endif %}
 
 							{% elsif content_meta == 'how-to-use' %}
 							{% if product.metafields.Custom.product_3_0_product_how_to_use != blank %}
 							{{ product.metafields.Custom.product_3_0_product_how_to_use }}
-							
 							{% endif %}
 
 							{% elsif content_meta == 'who-is-it-for' %}
@@ -183,10 +179,9 @@
 							{% elsif content_meta == 'shipping-amp-returns' %}
 							{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
 							{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
-							
+							{% endif %}
 							{% endif %}
 
-							{% endif %}
 						
 						{{ forloop.index0 }}-----
 							{%- if block.settings.enable_btn_show_more -%}
