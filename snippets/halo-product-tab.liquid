@@ -140,6 +140,7 @@
 		                    {% endif %}
 		                </a>
 		            </div>
+					
 		            <div class="toggle-content{% if block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.settings.enable_btn_show_more %} toggle-content--height{% endif %}" id="tab-{{ title | escape | handleize }}-mobile"{% if block.settings.enable_btn_show_more %} style="--maximum-des-to-show: {{ block.settings.maximum_des_to_show | append: 'px'}}"{% endif %}{% if block.type == 'description' %} product-description-tab data-product-description-{{ product.id }}{% endif %}  {{ content_meta }}>
 						{%- if tab_layout == 'vertical_sidebar' or style_mobile == 'sidebar-mobile' or style_mobile == 'popup-mobile' -%}
 							<div class="tab-popup-header">
@@ -462,7 +463,7 @@
 						<a class="pdViewTab-close" href="javascript:void(0)">x</a>
 					{%- endif -%}
 				</div>
-				
+				  </div>
 			{%- endif -%}
 		{%- endfor -%}
 	</div>
