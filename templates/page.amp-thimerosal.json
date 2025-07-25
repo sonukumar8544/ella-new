@@ -79,12 +79,34 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_CCP8QV": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/mercury-01-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Not All Mercury Is Equal",
+            "description_color": "#ffffff",
+            "description": "Thimerosal breaks down quickly & is less harmful than mercury in fish or pollution.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_Ftnj3H",
         "story_page_MrF8yn",
-        "story_page_bXjYcH"
+        "story_page_bXjYcH",
+        "story_page_CCP8QV"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
