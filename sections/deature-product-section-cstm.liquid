@@ -1,0 +1,281 @@
+{% schema %}
+  {
+    "name": "cstm pdp section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "cstm pdp section"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .cstm-pdp-section-container {
+    background: linear-gradient(to right, #ffffff, #f5f5f5);
+  }
+
+  .cstm-pdp-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 65px 5%;
+    align-items: center;
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .cstm-pdp-left-container {
+    display: flex;
+    flex: 1 1 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cstm-pdp-left-img {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .cstm-pdp-left-img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cstm-pdp-trusted-label {
+    position: absolute;
+    bottom: 41px;
+    left: 45px;
+    color: white;
+    font-size: 25px;
+    line-height: 1.4;
+    border-left: 4px solid white;
+    font-weight: 300;
+    padding-left: 15px;
+    display: none;
+  }
+
+  .cstm-pdp-trusted-label strong {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .cstm-pdp-right {
+    flex: 1 1 45%;
+    max-width: 500px;
+  }
+
+  .cstm-pdp-right h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .cstm-pdp-right h2 span {
+    font-style: italic;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+  }
+
+  .cstm-pdp-right em {
+    font-weight: bold;
+  }
+
+  .cstm-pdp-right p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .cstm-pdp-right strong {
+    font-weight: bold;
+  }
+
+  .cstm-pdp-shop-btn {
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cstm-pdp-shop-btn button {
+    padding: 12px 25px;
+    border: 1px solid #086b92;
+    border-radius: 12px;
+    color: white;
+    background-color: #086b92;
+    font-size: 15px;
+  }
+
+  .cstm-pdp-shop-btn button:hover {
+    background-color: white !important;
+    color: #086b92 !important;
+    border: 1px solid #086b92 !important;
+  }
+
+  .cstm-pdp-note-box {
+    background: #F6F4EDCC;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .cstm-pdp-note-box span {
+    color: #086b92;
+    font-weight: bold;
+  }
+
+  .cstm-pdp-note-box strong {
+    display: block;
+    color: #086b92;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .cstm-pdp-shop-now-button {
+    max-width: 190px;
+  }
+
+  @media screen and (max-width: 1150px) {
+    .cstm-pdp-section {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .cstm-pdp-left-container {
+      flex-direction: column;
+    }
+
+    .cstm-pdp-left-img {
+      width: 100%;
+    }
+
+    .cstm-pdp-right h2 {
+      font-size: 22px;
+    }
+
+    .cstm-pdp-right {
+      max-width: 100%;
+    }
+  }
+</style> 
+
+
+
+
+{% comment %} frotehr product {% endcomment %}
+
+{% comment %} <section class="cstm-pdp-section-container">
+  <div class="cstm-pdp-section">
+    <div class="cstm-pdp-left-container">
+      <div class="cstm-pdp-left-img">
+        <img
+          src="https://wellnessextract.com/cdn/shop/files/Build_your_custom_stack-1_1_720x.png?v=1744188220"
+          alt="Vitamin Bottle" />
+        <div class="cstm-pdp-trusted-label">
+          Trusted by150k+<br><strong>Customers</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="cstm-pdp-right">
+      <h2>
+        <span>The Best Frother for Bovine Colostrum</span>
+      </h2>
+      <p>
+        More than just a coffee whisk—this frother is made to mix <strong>bovine colostrum powder</strong> to perfection. It protects delicate nutrients, prevents clumping, and delivers a <strong>silky-smooth blend in under 10 seconds. 
+Add Wellness Extract Bovine Colostrum to your cart and get this frother at 50% OFF instantly. </strong>
+      </p>
+      <div class="cstm-pdp-shop-btn">
+        <button
+          class="quiz_bundle_prodct product-form__submit button button--primary cstm-pdp-shop-now-button"
+          data-variant-ids="49856468877608"
+          data-qtys="1">
+          {{ 'SHOP NOW →' }}
+        </button>
+      </div>
+      <div class="cstm-pdp-note-box">
+        <strong>"Ultra-Smooth. Nutrient-Safe. Travel-Ready."</strong>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+
+
+
+
+
+{% if product.metafields.custom.product_feature_section_new != blank %}
+<section class="cstm-pdp-section-container">
+   {{ product.metafields.custom.product_feature_section_new }}
+</section>
+{% endif %} 
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} Bovine colostrome {% endcomment %}
+
+{% comment %} 
+ <div class="cstm-pdp-section">
+    <div class="cstm-pdp-left-container">
+      <div class="cstm-pdp-left-img">
+        <img
+          src="https://wellnessextract.com/cdn/shop/files/Build_your_custom_stack-1_1_720x.png?v=1744188220"
+          alt="Vitamin Bottle" />
+        <div class="cstm-pdp-trusted-label">
+          Trusted by150k+<br><strong>Customers</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="cstm-pdp-right">
+      <h2>
+        <span>The #1 Frother for Bovine Colostrum</span>
+      </h2>
+      <p>Now 50% OFF – Limited Time </p>
+      <p>
+         Get the <strong> smoothest, clump-free colostrum blends</strong> every time—without damaging sensitive nutrients.  
+         Add the <strong>Wellness Extract Electric Frother</strong> to your Bovine Colostrum order today and get it at <strong>50% OFF</strong> instantly. 
+      </p> 
+      <div class="cstm-pdp-shop-btn">
+        <button
+          class="quiz_bundle_prodct product-form__submit button button--primary cstm-pdp-shop-now-button"
+          data-variant-ids="50433892188456"
+          data-qtys="1">
+          SHOP NOW →
+        </button>
+      </div>
+      <div class="cstm-pdp-note-box">
+        <strong>"Rechargeable. BPA-Free. Ultra-Smooth Blending"</strong>
+      </div>
+    </div>
+  </div>
+
+
+ {% endcomment %}
+
+
+
+
+  {% comment %} <button
+          class="quiz_bundle_prodct product-form__submit button button--primary shop-now-button"
+          data-variant-ids="44847119171880"
+          data-qtys="1">
+          {{ 'SHOP NOW →' }}
+        </button> {% endcomment %}
