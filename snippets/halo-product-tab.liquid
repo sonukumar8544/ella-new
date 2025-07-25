@@ -148,14 +148,11 @@
 								</h5>
 								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
 							</div>
-							{% assign content_meta = title | escape | handleize %} 
 							<div class="tab-popup-content">
 						{%- endif -%}
 							
-{% comment %}  {% endcomment %}
-
-
-                            
+						{% assign content_meta = title | escape | handleize %} 
+						{{ content_meta }}
 							{% if content_meta == 'description' %}
 							{% if product.metafields.Custom.product_3_0_product_description != blank %}
 							{{ product.metafields.Custom.product_3_0_product_description.value }}
@@ -184,14 +181,15 @@
 							{{ product.metafields.Custom.product_3_0_who_is_it_for }}
 							{% endif %}
 
-							{%  else %}
+							{% elsif content_meta == 'who-is-it-for' %}
 							{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
 							{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
-							{% else %}
-							{{ product.metafields.Custom.we_shipping_and_returns }}
+							
 							{% endif %}
-{% endif %}
-{% comment %}  {% endcomment %}
+
+							{% endif %}
+						
+						{{ forloop.index0 }}-----
 							{%- if block.settings.enable_btn_show_more -%}
 								{% assign letter = content | size %}
 								<div class="tab-showMore is-show" data-letter="{{ letter }}" data-des-max="{{ block.settings.maximum_des_to_show }}">
