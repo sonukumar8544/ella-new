@@ -161,8 +161,8 @@
 							{% endif %}
 
 							{% elsif content_meta == 'nutritional-info' %}
-							{% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
-							{{ product.metafields.Custom.product_3_0_product_nutritional_info }}
+							{% if product.metafields.Custom.product_3_0_product_nutritional_info.value != blank %}
+							{{ product.metafields.Custom.product_3_0_product_nutritional_info.value }}
 							{% else %}
 							{{ product.metafields.Custom.we_nutritional_info }}
 							{% endif %}
