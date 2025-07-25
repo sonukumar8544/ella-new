@@ -434,9 +434,9 @@
 							{% else %}
 							{{ product.metafields.Custom.we_how_to_use }}
 							{% endif %}
-
+{{ content_meta }}
 							{% elsif content_meta == 'who-is-it-for' %}
-								{{ content_meta }}
+								
 							{% if product.metafields.Custom.product_3_0_who_is_it_for != blank %}
 							{{ product.metafields.Custom.product_3_0_who_is_it_for }}
 							{% endif %}
