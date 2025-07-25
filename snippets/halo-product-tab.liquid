@@ -148,10 +148,11 @@
 								</h5>
 								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
 							</div>
+							{% assign content_meta = title | escape | handleize %}
 							<div class="tab-popup-content">
 						{%- endif -%}
 							
-							{% assign content_meta = title | escape | handleize %}
+							
 
 							{% if content_meta == 'description' %}
 							{{ product.metafields.Custom.product_3_0_product_description.value }}
