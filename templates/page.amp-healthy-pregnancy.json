@@ -121,6 +121,27 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_nHjWp6": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Omega-3-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Omega-3 (DHA & EPA)",
+            "description_color": "#ffffff",
+            "description": "Vital for baby’s brain & eye development. Choose pregnancy-safe DHA sources.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
@@ -128,7 +149,8 @@
         "story_page_9KzmKj",
         "story_page_MqHTqP",
         "story_page_3hAYHA",
-        "story_page_LEtPRj"
+        "story_page_LEtPRj",
+        "story_page_nHjWp6"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
