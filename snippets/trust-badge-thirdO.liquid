@@ -1,0 +1,138 @@
+ <!--trust-badge-thirdO -->
+   <style>
+  .container.free-shipping-container {
+    background: #f4f5f5;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width: 100%;
+  }
+ 
+  .shipping-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  .shipping-item {
+    display: flex !important;
+    align-items: center;
+    flex-direction: column !important;
+    justify-content: center;
+    text-align: left;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 0 5px;
+    height: 100%;
+  }
+ 
+  .shipping-item img {
+    max-width: 50px;
+  }
+ 
+  .shipping-item p {
+    font-size: 14px;
+    color: #36454F;
+    margin: 0;
+    text-align:center;
+  }
+ 
+  /* Mobile layout */
+  @media (max-width: 767px) {
+    .shipping-item {
+      flex-direction: column;
+      text-align: center;
+    }
+   
+    .shipping-item p {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+   
+    /* Hide dots on mobile */
+    .slick-dots {
+      display: none !important;
+    }
+  }
+ 
+  /* Hide arrows on all devices */
+  .slick-arrow {
+    display: none !important;
+  }
+</style>
+ 
+<div class="container free-shipping-container">
+  <div class="shipping-slider container">
+     <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Rooted_in_Care_Tradition_80x.svg?v=1752210466" alt="Shipping">
+      <p>Rooted in Care<br>& Tradition</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/winning_4677758_1.svg?v=1752210466" alt="Shipping">
+      <p>Award Winning <br> Extraction Process</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004387.svg?v=1752210466" alt="Shipping">
+      <p>Premium Patented <br> Ingredients</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873224.svg?v=1752210466" alt="Shipping">
+      <p>Expert<br> Formulated</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/background.svg?v=1752210466" alt="Shipping">
+      <p>Science-Backed <br> Formulations</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Exclude.svg?v=1752210466" alt="Shipping">
+      <p>Health Canada <br> Registered GMP Facility</p>
+    </div>
+    <div class="shipping-item">
+      <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/AHAHAHA.png?v=1753348055" alt="Shipping">
+      <p>Approved (Generally<br> Recognized As Safe)</p>
+    </div>
+  </div>
+</div>
+ 
+<script>
+  $(document).ready(function () {
+    $('.shipping-slider').slick({
+      dots: false,
+      infinite: true,
+      arrows: false, // Removed arrows for all devices
+      speed: 300,
+      autoplay: true, // Auto-slide enabled
+      autoplaySpeed: 2000, // 3 seconds between slides
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3,
+            dots: false // Hide dots on mobile
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2,
+            dots: false // Hide dots on mobile
+          }
+        }
+      ]
+    });
+  });
+</script>

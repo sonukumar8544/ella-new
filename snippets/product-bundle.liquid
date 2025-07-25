@@ -1,4 +1,4 @@
-<!-- product-bundle.liquid -->
+<!-- product-bundle -->
 {%- if section.settings.show_product_bundle -%}
   {% if product.metafields.c_f.grouped_sub_product %}
     {%- assign handle_metafields = product.metafields.c_f.grouped_sub_product | split: ',' -%}
@@ -102,7 +102,6 @@
                 add_all_item: `{{ 'products.product.bundle_block.add_all_to_cart' | t }}`
             }
     </script>
-    {% comment %}  product bundle  {% endcomment %}
     <product-bundle
       class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
       data-product-bundle
@@ -131,18 +130,14 @@
                     data-dots="{{ block_dots }}"
                     data-arrows="{{ block_arrows }}"
                   >
-                    {%- render 'product-bundle-item',
-                      product: product,
-                      product_style: product_style,
-                      image_ratio: image_ratio,
-                      portrait_aspect_ratio: portrait_aspect_ratio,
-                      first: true
-                    -%}
+                    
                     {%- for handle in handle_metafields limit: 10 -%}
                       {%- liquid
                         assign handle_bundle = handle | strip
                         assign product = all_products[handle_bundle]
+                         
                       -%}
+                       
                       {%- render 'product-bundle-item',
                         product: product,
                         product_style: product_style,
@@ -179,7 +174,17 @@
                       </span>
                     </div>
                     <div class="bundle-product-action">
-                      <input
+                     {% if template contains 'Product-page-3.0' %}
+                       <input
+                        data-bundle-addToCart
+                        type="submit"
+                        name="add"
+                        data-form-id="{{ product_form_bundle_id | prepend : '#' }}"
+                        class="button button--primary button-bundle style-{{ total_btn_style }}"
+                        value="{{ 'Add all to cart' }}"
+                      >
+                      {% else %} 
+                       <input
                         data-bundle-addToCart
                         type="submit"
                         name="add"
@@ -187,6 +192,8 @@
                         class="button button--primary button-bundle style-{{ total_btn_style }}"
                         value="{{ 'products.product.bundle_block.add_all_to_cart' | t }}"
                       >
+                       {% endif %}
+                     
                     </div>
                     {%- if bundle_discount_rate > 0 -%}
                       <div class="bundle-product-text">

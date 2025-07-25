@@ -40,6 +40,7 @@
 .price--on-sale .price__sale {
   display: flex !important;
   align-items: baseline;
+  flex-direction: row-reverse;
 }
 
 .price-style-2.price--on-sale .price__sale {
@@ -211,6 +212,6 @@
 
 @media (max-width: 600px) {
   .price--on-sale .price__sale {
-    align-items: end;
+    align-items: center;
   }
 }

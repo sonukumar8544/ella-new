@@ -1,193 +1,222 @@
-{% comment %} 
-    FAQ Section - Product Page 
-{% endcomment %}
-
-{% comment %} {% for block in product.metafields.custom.we_product_scientifically_backed.value %}
+<!--product-page-faq-section -->
+  
+  {% comment %} {% for block in product.metafields.custom.we_product_scientifically_backed.value %}
   {% assign parts = block | split: '|' %}
   <div class="faq-slide">
-    <p>{{ parts[0] | strip }}</p>
-      <a href="{{ parts[1] | strip }}">Read More</a>
+  <p>{{ parts[0] | strip }}</p>
+  <a href="{{ parts[1] | strip }}">Read More</a>
   </div>
-{% endfor %} {% endcomment %}
-
-<div class="faq-container">
+  {% endfor %} {% endcomment %}
+  <section class="faqs_{{ template.suffix }}_page">
+  <div class="faq-container">
   <div class="faq-header">
-    <h2>{{ section.settings.heading }}</h2>
-    <p>{{ section.settings.subheading }}</p>
+  <h2>{{ section.settings.heading }}</h2>
+  {% comment %} <p class="faqsubheading">{{ section.settings.subheading }}</p> {% endcomment %}
   </div>
-
+  
   {% for block in product.metafields.custom.we_product_page_faqs.value %}
-    {% assign parts = block | split: '|' %}
-    <details {% if forloop.first %} open{% endif %}>
-      <summary>
-        {{ parts[0] | strip }}
-        <svg
-          class="icon"
-          aria-hidden="true"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 512 512"
-          xmlns="http://www.w3.org/2000/svg">
-          <polygon points="150.46 478 129.86 456.5 339.11 256 129.86 55.49 150.46 34 382.14 256 150.46 478" />
-        </svg>
-      </summary>
-      <div class="faq-content">
-        {{ parts[1] | strip }}
-      </div>
-    </details>
+  {% assign parts = block | split: '|' %}
+  <details {% if forloop.first %} open{% endif %}>
+  <summary>
+  {{ parts[0] | strip }}
+  <svg
+  class="icon"
+  aria-hidden="true"
+  focusable="false"
+  role="presentation"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg">
+  <polygon points="150.46 478 129.86 456.5 339.11 256 129.86 55.49 150.46 34 382.14 256 150.46 478" />
+  </svg>
+  </summary>
+  <div class="faq-content">
+  {{ parts[1] | strip }}
+  </div>
+  </details>
   {% endfor %}
-</div>
-
-<style>
+  </div>
+  </section>
+    
+  <style>
   .faq-container {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1rem;
   }
-
+  
   .faq-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-family: 'Nunito', sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
   }
-
+  
   .faq-header h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #374650;
-    line-height: 1.3;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #374650;
+  line-height: 1.3;
   }
-
+  
   .faq-header p {
-    font-size: 16px;
-    color: #36454F;
-    font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #36454F;
+  font-family: 'Lato', sans-serif;
   }
-
+  
   details {
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
+  border-top: 1px solid #707070;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 92%;      
   }
-
-  details[open] {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-
+    
+  
+  /* details[open] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  } */
+  
   summary {
-    padding: 1.25rem 1.5rem;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    color: #374650;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.3;
-    color: #086b92;
+  padding: 1.7rem 0rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  color: #000;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.3;
+  
   }
-
+  details[open] summary{
+  padding: 1.7rem 0rem 0.9rem 0rem;
+  }
+  
   summary::-webkit-details-marker {
-    display: none;
+  display: none;
   }
-
+  
   .icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
   }
-
+  
   details[open] .icon {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
   }
-
+  
   .faq-content {
-    padding: 0 1.5rem 1.25rem;
-    font-size: 16px;
-    color: #36454F;
-    animation: fadeIn 0.3s ease-in-out;
-    font-family: 'Lato', sans-serif;
-    line-height: 1.3;
-    word-spacing: 2px;
-    font-weight: 500;
+  padding: 0px 0px 1.5rem 0rem;
+  font-size: 16px;
+  color: #36454F;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.3;
+  word-spacing: 2px;
+  font-weight: 500;
+    width: 89%;
   }
-
+  
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+  opacity: 0;
+  transform: translateY(-4px);
   }
-
-  @media (max-width: 768px) {
-    .faq-header h2 {
-      font-size: 22px;
+  to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  }
+   @media (max-width: 1050px) {
+   .faq-container {
+    max-width: 100%;
+   }
+   }
+  @media (max-width: 769px) {
+    .faq-container {
+    max-width: 100%;
+    margin: 2rem auto
     }
-
-    .faq-header p {
-      font-size: 16px;
-    }
-
+  .faq-header h2 {
+  font-size: 22px;
+          
+  }
+  
+  .faq-header p {
+ color: #333;
+            text-align: center;
+            font-family: Lato;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px;
+  }
+  
     summary {
-      font-size: 18px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1.4rem 0rem;
     }
-
+    details,
+    .faq-content{
+    width: 100%;
+    }
     .faq-content {
       font-size: 16px;
+      font-weight: 400;
+      text-transform: math-auto;
+      line-height: 1.4;
+    }
+   .dynamic-Product-page-3\.O-template .wrapper-body {
+        padding-bottom: 0px;
     }
   }
-</style>
-
-{% schema %}
+  </style>
+  
+  {% schema %}
   {
-    "name": "Product Page FAQ",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "Frequently Asked Questions"
-      }, {
-        "type": "text",
-        "id": "subheading",
-        "label": "Subheading",
-        "default": "Everything you need to know about the product and billing."
-      }
-    ],
-    "blocks": [
-      {
-        "type": "faq_item",
-        "name": "FAQ Item",
-        "settings": [
-          {
-            "type": "text",
-            "id": "question",
-            "label": "Question",
-            "default": "Collapsible Row"
-          }, {
-            "type": "textarea",
-            "id": "answer",
-            "label": "Answer",
-            "default": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitud felis."
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Product Page FAQ"
-      }
-    ]
+  "name": "Product Page FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+  {
+  "type": "text",
+  "id": "heading",
+  "label": "Heading",
+  "default": "Frequently Asked Questions"
+  }, {
+  "type": "text",
+  "id": "subheading",
+  "label": "Subheading",
+  "default": "Everything you need to know about the product and billing."
   }
-{% endschema %}
+  ],
+  "blocks": [
+  {
+  "type": "faq_item",
+  "name": "FAQ Item",
+  "settings": [
+  {
+  "type": "text",
+  "id": "question",
+  "label": "Question",
+  "default": "Collapsible Row"
+  }, {
+  "type": "textarea",
+  "id": "answer",
+  "label": "Answer",
+  "default": "Nam tempus turpis at metus scelerisque placerat nulla deumantos sollicitud felis."
+  }
+  ]
+  }
+  ],
+  "presets": [
+  {
+  "name": "Product Page FAQ"
+  }
+  ]
+  }
+  {% endschema %}

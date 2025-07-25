@@ -1,0 +1,94 @@
+<!-- clinician_banner_third0 -->
+{% comment %}{% if product.metafields.custom.product_3_0_clinical_content.value  != blank %}{
+  {{ product.metafields.custom.product_3_0_clinical_content.value }}
+  {% endif %}
+{% endcomment %}
+<div class="shipping-benefits">
+  <div class="shipping-benefit clinicalSlider">
+    <p>10+ Clinically Studied Ingredients</p>
+    <p>Fast & Free Shipping</p>
+    <p>3rd-Party Tested</p>
+  </div>
+</div>
+
+<style>
+   @media(min-width:600px){
+      .shipping-benefits {
+      gap: 12px 0px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 1px 5px;
+      border-radius: 12px;
+      border: 1px solid #c1c1c13d;
+      }
+      
+      .shipping-benefit {
+      display: flex;
+      justify-content: space-between;
+      }
+      .shipping-benefit p{
+      font-family: 'Nunito';
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000a8;
+      line-height: 1.5;
+      padding-left: 5px;
+      }
+  }
+  @media(max-width:1024px){
+    .shipping-benefits {
+    text-align: center;
+    gap: 0px 0px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0px 5px;
+    border-radius: 12px;
+    border: 1px solid #c1c1c13d;
+    }
+    .shipping-benefit {
+    gap: 12px 0px;
+    padding: 0px 5px;
+    border-radius: 12px;
+    font-size: 12px;
+    width: 100%;
+    }
+ .shipping-benefit p{
+  text-align: center;
+}
+  }
+
+  </style>
+
+<script>
+$(document).ready(function () {
+  let sliderInitialized = false;
+
+  function handleSlider() {
+    if ($(window).width() <= 1024) {
+      if (!sliderInitialized) {
+        $('.clinicalSlider').slick({
+              slidesToShow: 1,
+              dots: false,
+              infinite: true,
+              arrows: false,
+              speed: 700,
+              autoplay: true,
+              autoplaySpeed: 3000,
+              });
+              sliderInitialized = true;
+              }
+              } else {
+              if (sliderInitialized) {
+              $('.clinicalSlider').slick('unslick');
+              sliderInitialized = false;
+              }
+    }
+  }
+
+  // Initial check
+  handleSlider();
+
+  // Recheck on window resize
+  $(window).on('resize', handleSlider);
+});
+</script>
