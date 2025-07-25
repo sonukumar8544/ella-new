@@ -121,6 +121,27 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_HxUTim": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/The_Natural_Wellness_Shift-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Clean, Conscious Supplements",
+            "description_color": "#ffffff",
+            "description": "Consumers are choosing thimerosal-free supplements for a cleaner health journey.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
@@ -128,7 +149,8 @@
         "story_page_MrF8yn",
         "story_page_bXjYcH",
         "story_page_CCP8QV",
-        "story_page_kUwQV9"
+        "story_page_kUwQV9",
+        "story_page_HxUTim"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
