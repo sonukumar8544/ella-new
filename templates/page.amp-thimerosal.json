@@ -37,10 +37,32 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_MrF8yn": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Thimerosal-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "A Mercury-Based Preservative",
+            "description_color": "#ffffff",
+            "description": "Used in vaccines & eye drops to prevent contamination—contains ethylmercury.",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
-        "story_page_Ftnj3H"
+        "story_page_Ftnj3H",
+        "story_page_MrF8yn"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
