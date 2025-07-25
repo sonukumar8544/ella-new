@@ -176,7 +176,7 @@
 							<div class="tab-popup-content">
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
-						 {{ content_meta }}
+						
                             {% if content_meta == 'description' %}
                               {% if product.metafields.Custom.product_3_0_product_description != blank %}
                                 {{ product.metafields.Custom.product_3_0_product_description }}
@@ -203,9 +203,9 @@
                               {% else %}
 								{{ product.metafields.Custom.we_how_to_use }}
                                   {% endif %}
-								{% elsif content_meta == 'how-to-use' %}
-									{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
-									{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
+								{% elsif content_meta == 'how-is-it-for' %}
+									{% if product.metafields.Custom.product_3_0_who_is_it_for != blank %}
+									{{ product.metafields.Custom.product_3_0_who_is_it_for }}
 									{% endif %}
 							{%  else %}
                                {% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
