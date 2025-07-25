@@ -153,7 +153,7 @@
 							{% assign content_meta = title | escape | handleize %} 
                             
 							{% if content_meta == 'description' %}
-							{% if product.metafields.Custom.product_3_0_product_description != blank %}
+							{% if product.metafields.Custom.product_3_0_product_description.value != blank %}
 							{{ product.metafields.Custom.product_3_0_product_description.value }}
 							{% endif %}
 
