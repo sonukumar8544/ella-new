@@ -151,6 +151,7 @@
 							{% assign content_meta = title | escape | handleize %}
 							<div class="tab-popup-content">
 						{%- endif -%}
+						{% assign content_meta = title | escape | handleize %}
 							{{ content_meta }}
 							{% if content_meta == 'description' %}
 							{{ product.metafields.Custom.product_3_0_product_description.value }}
