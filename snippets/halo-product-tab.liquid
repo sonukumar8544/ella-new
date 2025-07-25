@@ -142,70 +142,7 @@
 		                </a>
 		            </div>
 		            <div class="toggle-content{% if block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.settings.enable_btn_show_more %} toggle-content--height{% endif %}" id="tab-{{ title | escape | handleize }}-mobile"{% if block.settings.enable_btn_show_more %} style="--maximum-des-to-show: {{ block.settings.maximum_des_to_show | append: 'px'}}"{% endif %}{% if block.type == 'description' %} product-description-tab data-product-description-{{ product.id }}{% endif %}>
-						{%- if tab_layout == 'vertical_sidebar' or style_mobile == 'sidebar-mobile' or style_mobile == 'popup-mobile' -%}
-							<div class="tab-popup-header">
-								<h5>
-									<span class="text">{{ title | escape }}</span>
-								</h5>
-								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
-							</div>
-							<div class="tab-popup-content">
-						{%- endif -%}
-                          {% assign content_meta = title | escape | handleize %} 
-						
-							{% if content_meta == 'description' %}
-							{% if product.metafields.Custom.product_3_0_product_description != blank %}
-							{{ product.metafields.Custom.product_3_0_product_description }}
-							{% else %}
-							{{ product.metafields.Custom.we_product_description }}
-							{% endif %}
 
-							{% elsif content_meta == 'nutritional-info' %}
-							{% if product.metafields.Custom.product_3_0_product_nutritional_info.value != blank %}
-							{{ product.metafields.Custom.product_3_0_product_nutritional_info.value }}
-							{% else %}
-							{{ product.metafields.Custom.we_nutritional_info }}
-							{% endif %}
-
-							{% elsif content_meta == 'health-benefits' %}
-							{% if product.metafields.Custom.product_3_0_product_health_benefits != blank %}
-							{{ product.metafields.Custom.product_3_0_product_health_benefits }}
-							{% else %}
-							{{ product.metafields.Custom.we_health_benifits }}
-							{% endif %}
-
-							{% elsif content_meta == 'how-to-use' %}
-							{% if product.metafields.Custom.product_3_0_product_how_to_use != blank %}
-							{{ product.metafields.Custom.product_3_0_product_how_to_use }}
-							{% else %}
-							{{ product.metafields.Custom.we_how_to_use }}
-							{% endif %}
-
-							{% elsif content_meta == 'who-is-it-for' %}
-							{% if product.metafields.Custom.product_3_0_who_is_it_for != blank %}
-							{{ product.metafields.Custom.product_3_0_who_is_it_for }}
-							{% endif %}
-
-							{%  else %}
-							{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
-							{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
-							{% else %}
-							{{ product.metafields.Custom.we_shipping_and_returns }}
-							{% endif %}
-
-							{% endif %}
-							{%- if block.settings.enable_btn_show_more -%}
-								{% assign letter = content | size %}
-								<div class="tab-showMore is-show" data-letter="{{ letter }}" data-des-max="{{ block.settings.maximum_des_to_show }}">
-									<a class="button button--secondary" href="#tab-{{ title | escape | handleize }}-mobile" data-show-more-text="{{ 'products.product.read_more' | t }}" data-show-less-text="{{ 'products.product.read_less' | t }}" data-show-more-toogle> 
-										{{ 'products.product.read_more' | t }}
-									</a>
-								</div>
-							{%- endif -%}
-						{%- if tab_layout == 'vertical_sidebar' or style_mobile == 'sidebar-mobile' or style_mobile == 'popup-mobile' -%}
-							</div>
-						{%- endif -%}
-		            </div>
 					{%- if tab_layout == 'popup' -%}
 						<a class="pdViewTab-close" href="javascript:void(0)">x</a>
 					{%- endif -%}
