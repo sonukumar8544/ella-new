@@ -179,7 +179,7 @@
 							{% elsif content_meta == 'shipping-amp-returns' %}
 							{% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
 							{{ product.metafields.Custom.product_3_0_product_shipping_returns }}
-							</div>
+							{% comment %} </div> {% endcomment %}
 							{% endif %}
 					
 							{% endif %}
