@@ -154,7 +154,7 @@
                             
 							{% if content_meta == 'description' %}
 							{% if product.metafields.Custom.product_3_0_product_description != blank %}
-							{{ product.metafields.Custom.product_3_0_product_description }}
+							{{ product.metafields.Custom.product_3_0_product_description.value }}
 							{% endif %}
 
 							{% elsif content_meta == 'nutritional-info' %}
