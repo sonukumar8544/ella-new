@@ -16,6 +16,32 @@
     },
     "amp_webstory_GrmTgz": {
       "type": "amp-webstory",
+      "blocks": {
+        "story_page_Ftnj3H": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/hook-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Thimerosal: A Hidden Risk in Medicine?",
+            "description_color": "#ffffff",
+            "description": "This mercury-based preservative has sparked debate. Should you be concerned?",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "story_page_Ftnj3H"
+      ],
       "name": "AMP Webstory 2.0",
       "settings": {
         "fontsize_title": 20,
