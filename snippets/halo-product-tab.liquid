@@ -174,9 +174,10 @@
 								<a class="pdViewTab-close pdViewTab-close-mobile" role="link" aria-disabled="true">x</a>
 							</div>
 							<div class="tab-popup-content">
+								-----
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
-						
+						{{ content_meta }}
 							{% if content_meta == 'description' %}
 							{% if product.metafields.Custom.product_3_0_product_description != blank %}
 							{{ product.metafields.Custom.product_3_0_product_description }}
