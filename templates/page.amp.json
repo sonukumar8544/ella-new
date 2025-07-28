@@ -16,10 +16,42 @@
     },
     "amp_webstory_GrmTgz": {
       "type": "amp-webstory",
+      "blocks": {
+        "story_page_GFmnyr": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/image_e083fc4b-129d-4f24-8902-9a18c58a7e6c.jpg",
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": false,
+            "bgapplyenable": false,
+            "bgapply": "#ffffff5c",
+            "heading_bg": "",
+            "heading_color": "#ffffff",
+            "heading": "Test",
+            "description_color": "#ffffff",
+            "description": "Test",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "story_page_GFmnyr"
+      ],
       "name": "AMP Webstory 2.0",
       "settings": {
         "fontsize_title": 20,
-        "fontsize_description": 16
+        "fontsize_description": 16,
+        "story_title": "",
+        "story_description": "",
+        "author_name": "",
+        "publisher_name": "WellnessExtract",
+        "date_published": "",
+        "date_modified": ""
       }
     }
   },
