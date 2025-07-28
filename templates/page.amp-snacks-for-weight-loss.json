@@ -58,11 +58,33 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_AXNBqb": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/almonds-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#d6fb25",
+            "heading_color": "#000000",
+            "heading": "Almonds & Walnuts",
+            "description_color": "#ffffff",
+            "description": "Healthy fats = longer satiety. A perfect mid-day hunger fix!",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_JnpCnx",
-        "story_page_P9Tw7V"
+        "story_page_P9Tw7V",
+        "story_page_AXNBqb"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
