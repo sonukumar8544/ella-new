@@ -128,8 +128,8 @@
     "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
   },
   "headline": "{{ section.settings.story_title | escape }}",
-  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
-  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
+  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%d" }}",
+  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%d" }}",
   "author": {
     "@type": "Person",
     "name": "{{ section.settings.author_name | escape }}"
