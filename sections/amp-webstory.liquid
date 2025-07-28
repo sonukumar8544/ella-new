@@ -127,7 +127,7 @@
     "@type": "WebPage",
     "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
   },
-  "headline": "{{ section.settings.story_title | escape }}",
+  "headline": "{% if section.settings.story_title != blank %}{{ section.settings.story_title | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}",
   {% for block in section.blocks %}
     {% if forloop.first %}
   "image": {
@@ -146,7 +146,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "{{ section.settings.publisher_name | escape }}",
+    "name": "{% if section.settings.publisher_name != blank %}{{ section.settings.publisher_name | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/LogoEllatheme.svg?v=1743774400' }}",
