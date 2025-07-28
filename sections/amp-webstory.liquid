@@ -142,7 +142,7 @@
       "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin  }}"
     }
   },
-  "image": "https://wellnessextract.com/cdn/shop/files/LogoEllatheme_180x.svg?v=1743774400",
+  "image": "{{ section.blocks[0].settings.image | img_url: 'master' | prepend: request.origin }}",
   "description": "{{ section.settings.story_description | escape }}"
 }
 </script>
@@ -196,6 +196,11 @@
       "label": "Publisher Name",
       "default": "WellnessExtract"
     },
+    {
+      "type": "image_picker",
+      "id": "publisher_logo",
+      "label": "Publisher Logo",
+       },
     {
       "type": "text",
       "id": "date_published",
