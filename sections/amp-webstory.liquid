@@ -135,9 +135,7 @@
     "url": "{{ block.settings.image | img_url: 'master' }}",
     "height": {{ block.settings.image.height }},
     "width": {{ block.settings.image.width }}
-  },
-    {% endif %}
-  {% endfor %}
+  }, {% endif %}  {% endfor %}
   "datePublished": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "dateModified": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "author": {
