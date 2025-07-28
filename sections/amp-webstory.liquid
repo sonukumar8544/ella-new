@@ -138,8 +138,8 @@
   },
     {% endif %}
   {% endfor %}
-  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%z" }}",
-  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  "datePublished": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+"dateModified": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}"
   "author": {
     "@type": "Person",
     "name": "{% if section.settings.author_name != blank %}{{ section.settings.author_name | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}"
@@ -206,21 +206,14 @@
       "default": "WellnessExtract"
     },
     {
-      "type": "image_picker",
-      "id": "publisher_logo",
-      "label": "Webstory First Image Upload",
-       },
-    {
       "type": "text",
       "id": "date_published",
       "label": "Date Published (ISO 8601)",
-      "default": "2025-07-28T09:00:00+00:00"
     },
     {
       "type": "text",
       "id": "date_modified",
       "label": "Date Modified (ISO 8601)",
-      "default": "2025-07-28T09:00:00+00:00"
     },
   ],
   "blocks": [
