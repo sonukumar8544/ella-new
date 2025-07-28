@@ -142,7 +142,7 @@
   "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "author": {
     "@type": "Person",
-    "name": "{{ section.settings.author_name | escape }}"
+    "name": "{% if section.settings.author_name != blank %}{{ section.settings.author_name | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}"
   },
   "publisher": {
     "@type": "Organization",
@@ -188,19 +188,16 @@
       "type": "text",
       "id": "story_title",
       "label": "Story Title",
-      "default": "Your Web Story Title"
     },
     {
       "type": "textarea",
       "id": "story_description",
       "label": "Story Description",
-      "default": "This is a short description of the story."
     },
     {
       "type": "text",
       "id": "author_name",
-      "label": "Author Name",
-      "default": "Author"
+      "label": "Author Name"
     },
     {
       "type": "text",
