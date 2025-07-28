@@ -134,8 +134,8 @@
     "height": 1600,
     "width": 900
   },
-  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
-  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
+  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%d T%H:%M:z" }}",
+  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%d T%H:%M:z" }}",
   "author": {
     "@type": "Person",
     "name": "{{ section.settings.author_name | escape }}"
@@ -206,7 +206,7 @@
     {
       "type": "image_picker",
       "id": "publisher_logo",
-      "label": "Publisher Logo",
+      "label": "Webstory First Image Upload",
        },
     {
       "type": "text",
