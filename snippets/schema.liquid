@@ -38,11 +38,12 @@
     "priceCurrency": "{{ shop.currency }}",
     "price": "{% for price in original_price1 %}
   {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
-    {{ '$' }}{{ price }} {{ 'USD' }}
+    {{ price }}
   {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
-    {{ '$' }}{{ price }} {{ 'CAD' }}
+    {{ price }}
   {% endif %}
 {% endfor %}",
+    "priceValidUntil": "2025-12-31",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "url": "{{ shop.url }}{{ product.url }}",
     "itemCondition": "https://schema.org/NewCondition",
