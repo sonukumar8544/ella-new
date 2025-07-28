@@ -130,7 +130,8 @@
   "headline": "{{ section.settings.story_title | escape }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ section.blocks[0].settings.image | img_url: 'master' | prepend: request.origin }}",
+    "url": "{% for block in section.blocks %}
+      {% if forloop.index0 == '0' %}{{ block.settings.image | img_url: 'master' | prepend: request.origin }}{% endif %}{% endfor %}",
     "height": 1600,
     "width": 900
   },
