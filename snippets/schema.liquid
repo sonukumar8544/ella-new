@@ -10,92 +10,76 @@
     -%}
   
 {% assign original_price1 = product.metafields.custom.price_schema.value %}
-{% assign okendo_data = product.metafields.okendo.ProductReviews.value %}
-{% assign okendo_reviews = okendo_data.reviews | default: null %}
-{% assign featured_image = product.featured_image.src | img_url: 'master' | default: 'https://via.placeholder.com/500' %}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "{{ product.title | strip_html | escape | default: 'Product Name' }}",
-  "description": "{{ product.description | strip_html | escape | default: 'Product description' }}",
-  "image": "https:{{ featured_image }}",
-  "url": "{{ shop.url }}{{ product.url | default: '/' }}",
+  "name": "{{ product.title | strip_html | escape }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
+  "url": "{{ shop.url }}{{ product.url }}",
   {%- if product.variants.first.barcode.size == 12 -%}
     "gtin12": {{ product.variants.first.barcode }},
-  {%- elsif product.variants.first.barcode.size == 13 -%}
+  {%- endif -%}
+  {%- if product.variants.first.barcode.size == 13 -%}
     "gtin13": {{ product.variants.first.barcode }},
-  {%- elsif product.variants.first.barcode.size == 14 -%}
+  {%- endif -%}
+  {%- if product.variants.first.barcode.size == 14 -%}
     "gtin14": {{ product.variants.first.barcode }},
   {%- endif -%}
-  "sku": "{{ product.variants.first.sku | default: 'SKU-0000' }}",
-  "productID": "{{ product.id | default: '0000' }}",
+  {% if product.variants.first.sku != blank %}
+    "sku": "{{ product.variants.first.sku }}",
+  {% endif %}
+  "productID": "{{ product.id }}",
   "brand": {
     "@type": "Thing",
-    "name": "{{ product.vendor | escape | default: shop.name }}"
+    "name": "{{ product.vendor | escape }}"
   },
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
     "price": "{% for price in original_price1 %}
-      {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
-        {{ price | default: '0.00' }}
-      {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
-        {{ price | default: '0.00' }}
-      {% endif %}
-    {% endfor %}",
+  {% if localization.country.currency.iso_code == 'USD' and forloop.index0 == 0 %}
+    {{ price }}
+  {% elsif localization.country.currency.iso_code == 'CAD' and forloop.index0 == 1 %}
+    {{ price }}
+  {% endif %}
+{% endfor %}",
     "priceValidUntil": "2025-12-31",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
     "itemCondition": "https://schema.org/NewCondition",
-    "url": "{{ shop.url }}{{ product.url | default: '/' }}",
+    "url": "{{ shop.url }}{{ product.url }}",
     "seller": {
       "@type": "Organization",
-      "name": "{{ shop.name | escape }}"
+      "name": "{{ shop.name }}"
     }
   }
-  {% if okendo_data and okendo_data.reviewCount > 0 %},
+  {% if product.metafields.reviews.rating.value != blank %},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ okendo_data.averageRating | default: 4.8 | round: 1 }}",
-    "ratingCount": "{{ okendo_data.reviewCount | default: 1 }}"
+    "ratingValue": "{{ product.metafields.reviews.rating.value.rating }}",
+    "ratingCount": "{{ product.metafields.reviews.rating_count }}"
   }
   {% endif %}
-  {% if okendo_reviews and okendo_reviews.size > 0 %},
+  {% if product.metafields.reviews.rating.value != blank and product.metafields.reviews.product_reviews != blank %},
   "review": [
-    {% for review in okendo_reviews limit: 3 %}
+    {% for review in product.metafields.reviews.product_reviews.value limit: 3 %}
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "{{ review.reviewer.name | default: 'Verified Buyer' | escape }}"
+        "name": "{{ review.author | default: 'Verified Buyer' | escape }}"
       },
-      "datePublished": "{{ review.createdAt | date: '%Y-%m-%d' | default: '2024-01-01' }}",
-      "reviewBody": "{{ review.body | strip_html | escape | default: 'Great product!' }}",
+      "datePublished": "{{ review.created_at | date: '%Y-%m-%d' }}",
+      "reviewBody": "{{ review.content | strip_html | escape }}",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "{{ review.rating | default: 5 }}",
+        "ratingValue": "{{ review.rating }}",
         "bestRating": "5"
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
-  ]
-  {% elsif okendo_data and okendo_data.reviewCount > 0 %},
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Verified Buyer"
-      },
-      "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
-      "reviewBody": "This product meets expectations",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "{{ okendo_data.averageRating | default: 5 | round: 1 }}",
-        "bestRating": "5"
-      }
-    }
   ]
   {% endif %}
 }
