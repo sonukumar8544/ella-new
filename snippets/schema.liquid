@@ -10,6 +10,7 @@
     -%}
   
 {% assign original_price1 = product.metafields.custom.price_schema.value %}
+{% assign okendo_reviews = product.metafields.okendo.ProductReviews.value.reviews %}
 
 <script type="application/ld+json">
 {
@@ -55,29 +56,31 @@
       "name": "{{ shop.name }}"
     }
   }
-  {% if product.metafields.reviews.rating.value != blank %},
+  {% if product.metafields.okendo.ProductReviews.value.reviewCount > 0 %},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ 4.8 }}",
-    "ratingCount": "{{ product.metafields.reviews.rating_count.value }}"
+    "ratingValue": "{{ product.metafields.okendo.ProductReviews.value.averageRating }}",
+    "ratingCount": "{{ product.metafields.okendo.ProductReviews.value.reviewCount }}"
   }
   {% endif %}
-  {% if product.metafields.reviews.rating.value != blank %},
+  {% if okendo_reviews and okendo_reviews.size > 0 %},
   "review": [
+    {% for review in okendo_reviews limit: 3 %}
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "Verified Buyer"
+        "name": "{{ review.reviewer.name | default: 'Verified Buyer' | escape }}"
       },
-      "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
-      "reviewBody": "This product works great!",
+      "datePublished": "{{ review.createdAt | date: '%Y-%m-%d' }}",
+      "reviewBody": "{{ review.body | strip_html | escape }}",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "5",
+        "ratingValue": "{{ review.rating }}",
         "bestRating": "5"
       }
-    }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
   ]
   {% endif %}
 }
