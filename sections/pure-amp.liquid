@@ -248,7 +248,6 @@
 </html>
 
 
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -258,8 +257,11 @@
     "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
   },
   "headline": "{{ section.settings.story_title | escape }}",
-  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
-  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
+  "image": [
+    "{{ section.blocks[0].settings.image | img_url: 'master' | prepend: request.origin }}"
+  ],
+  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%SZ" }}",
+  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%SZ" }}",
   "author": {
     "@type": "Person",
     "name": "{{ section.settings.author_name | escape }}"
@@ -269,10 +271,11 @@
     "name": "{{ section.settings.publisher_name | escape }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin }}"
+      "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin }}",
+      "width": 600,
+      "height": 60
     }
   },
-  "image": "{{ section.blocks[0].settings.image | img_url: 'master' | prepend: request.origin }}",
   "description": "{{ section.settings.story_description | escape }}"
 }
 </script>
