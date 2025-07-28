@@ -117,6 +117,37 @@
 </div>
 
 <script async custom-element="amp-story" src="{{ 'amp-webstory.js' | asset_url }}"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
+  },
+  "headline": "{{ section.settings.story_title | escape }}",
+  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
+  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%:z" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ section.settings.author_name | escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ section.settings.publisher_name | escape }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin }}"
+    }
+  },
+  "image": "{{ section.blocks[0].settings.image | img_url: 'master' | prepend: request.origin }}",
+  "description": "{{ section.settings.story_description | escape }}"
+}
+</script>
+
+
 {% schema %}
 {
   "name": "AMP Webstory 2.0",
@@ -140,6 +171,47 @@
         "max": 26,
         "step": 1,
         "default": 16
+    },
+    {
+      "type": "text",
+      "id": "story_title",
+      "label": "Story Title",
+      "default": "Your Web Story Title"
+    },
+    {
+      "type": "textarea",
+      "id": "story_description",
+      "label": "Story Description",
+      "default": "This is a short description of the story."
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Author"
+    },
+    {
+      "type": "text",
+      "id": "publisher_name",
+      "label": "Publisher Name",
+      "default": "WellnessExtract"
+    },
+    {
+      "type": "image_picker",
+      "id": "publisher_logo",
+      "label": "Publisher Logo"
+    },
+    {
+      "type": "text",
+      "id": "date_published",
+      "label": "Date Published (ISO 8601)",
+      "default": "2025-07-28T09:00:00+00:00"
+    },
+    {
+      "type": "text",
+      "id": "date_modified",
+      "label": "Date Modified (ISO 8601)",
+      "default": "2025-07-28T09:00:00+00:00"
     },
   ],
   "blocks": [
