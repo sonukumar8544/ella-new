@@ -128,15 +128,18 @@
     "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
   },
   "headline": "{{ section.settings.story_title | escape }}",
+  {% for block in section.blocks %}
+    {% if forloop.first %}
   "image": {
     "@type": "ImageObject",
-    "url": "{% for block in section.blocks %}
-      {% if forloop.index0 == '0' %}{{ block.settings.image | img_url: 'master' | prepend: request.origin }}{% endif %}{% endfor %}",
-    "height": 1600,
-    "width": 900
+    "url": "{{ block.settings.image | img_url: 'master' | prepend: request.origin }}",
+    "height": {{ block.settings.image.height }},
+    "width": {{ block.settings.image.width }}
   },
-  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%d T%H:%M:z" }}",
-  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%d T%H:%M:z" }}",
+    {% endif %}
+  {% endfor %}
+  "datePublished": "{{ section.settings.date_published | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  "dateModified": "{{ section.settings.date_modified | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "author": {
     "@type": "Person",
     "name": "{{ section.settings.author_name | escape }}"
@@ -154,6 +157,7 @@
   "description": "{{ section.settings.story_description | strip_newlines | escape }}"
 }
 </script>
+
 
 
 {% schema %}
