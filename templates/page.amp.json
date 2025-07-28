@@ -14,42 +14,84 @@
       "disabled": true,
       "settings": {}
     },
-    "amp_webstory_GrmTgz": {
+    "pure_amp_zU88nE": {
       "type": "pure-amp",
       "blocks": {
-        "story_page_GFmnyr": {
+        "story_page_BbhQzp": {
           "type": "story_page",
           "settings": {
             "webstory_slide": 7,
-            "image": "shopify://shop_images/image_e083fc4b-129d-4f24-8902-9a18c58a7e6c.jpg",
             "content-position": "0",
             "content-align": "left",
             "bgcover": false,
             "bgapplyenable": false,
             "bgapply": "#ffffff5c",
             "heading_bg": "",
-            "heading_color": "#ffffff",
-            "heading": "Test",
-            "description_color": "#ffffff",
-            "description": "Test",
+            "heading_color": "#fff",
+            "heading": "Welcome to the Story",
+            "description_color": "#fff",
+            "description": "",
             "button_text": "View More",
             "btn_link": "",
-            "btn_color": "#ffffff",
-            "btn_bg": "#000000"
+            "btn_color": "#fff",
+            "btn_bg": "#000"
+          }
+        },
+        "story_page_VK7rwM": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": false,
+            "bgapplyenable": false,
+            "bgapply": "#ffffff5c",
+            "heading_bg": "",
+            "heading_color": "#fff",
+            "heading": "Welcome to the Story",
+            "description_color": "#fff",
+            "description": "",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#fff",
+            "btn_bg": "#000"
+          }
+        },
+        "story_page_C3cDrP": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "content-position": "0",
+            "content-align": "left",
+            "bgcover": false,
+            "bgapplyenable": false,
+            "bgapply": "#ffffff5c",
+            "heading_bg": "",
+            "heading_color": "#fff",
+            "heading": "Welcome to the Story",
+            "description_color": "#fff",
+            "description": "",
+            "button_text": "View More",
+            "btn_link": "",
+            "btn_color": "#fff",
+            "btn_bg": "#000"
           }
         }
       },
       "block_order": [
-        "story_page_GFmnyr"
+        "story_page_BbhQzp",
+        "story_page_VK7rwM",
+        "story_page_C3cDrP"
       ],
-      "name": "AMP Webstory 2.0",
+      "name": "AMP Pure Webstory 2.0",
       "settings": {
         "fontsize_title": 20,
         "fontsize_description": 16,
-        "story_title": "",
-        "story_description": "",
-        "author_name": "",
+        "story_title": "Your Web Story Title",
+        "story_description": "This is a short description of the story.",
+        "author_name": "Author",
         "publisher_name": "WellnessExtract",
+        "publisher_logo": "shopify://shop_images/LogoEllatheme.svg",
         "date_published": "",
         "date_modified": ""
       }
@@ -57,6 +99,6 @@
   },
   "order": [
     "main",
-    "amp_webstory_GrmTgz"
+    "pure_amp_zU88nE"
   ]
 }
