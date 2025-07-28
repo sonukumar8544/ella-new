@@ -149,9 +149,9 @@
     "name": "{{ section.settings.publisher_name | escape }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin }}",
-      "width": 600,
-      "height": 60
+      "url": "{{ settings.logo | img_url: 'master' | prepend: request.origin  }}",
+      "width": {{ settings.logo.width}},
+      "height": {{ settings.logo.height}}
     }
   },
   "description": "{{ section.settings.story_description | strip_newlines | escape }}"
