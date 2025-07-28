@@ -79,12 +79,34 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_FDeHnt": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Chia_Pudding-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#d6fb25",
+            "heading_color": "#000000",
+            "heading": "Chia Pudding",
+            "description_color": "#ffffff",
+            "description": "High fiber & omega-3s. Keeps digestion smooth & appetite under control.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_JnpCnx",
         "story_page_P9Tw7V",
-        "story_page_AXNBqb"
+        "story_page_AXNBqb",
+        "story_page_FDeHnt"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {
