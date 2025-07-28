@@ -51,7 +51,7 @@
             "heading_bg": "#d1ff21",
             "heading_color": "#232323",
             "heading": "Hydration is Key",
-            "description_color": "#FFFFFF",
+            "description_color": "#ffffff",
             "description": "Hydrogen water isn’t just a trend — it fights free radicals and promotes youthful, hydrated skin.",
             "button_text": "",
             "btn_link": "",
@@ -133,7 +133,14 @@
       "name": "AMP Webstory 2.0",
       "settings": {
         "fontsize_title": 20,
-        "fontsize_description": 16
+        "fontsize_description": 16,
+        "story_title": "Your Web Story Title",
+        "story_description": "This is a short description of the story.",
+        "author_name": "Harita",
+        "publisher_name": "WellnessExtract",
+        "publisher_logo": "shopify://shop_images/LogoEllatheme.svg",
+        "date_published": "2025-07-28T09:00:00+00:00",
+        "date_modified": "2025-07-28T09:00:00+00:00"
       }
     }
   },
