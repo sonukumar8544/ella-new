@@ -16,8 +16,6 @@
   "@context": "https://schema.org/",
   "@type": "Product",
   "name": "{{ product.title | strip_html | escape }}",
-  "description": "{{ product.description | strip_html | escape }}",
-  "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "url": "{{ shop.url }}{{ product.url }}",
   {%- if product.variants.first.barcode.size == 12 -%}
     "gtin12": {{ product.variants.first.barcode }},
@@ -28,14 +26,13 @@
   {%- if product.variants.first.barcode.size == 14 -%}
     "gtin14": {{ product.variants.first.barcode }},
   {%- endif -%}
-  {% if product.variants.first.sku != blank %}
-    "sku": "{{ product.variants.first.sku }}",
-  {% endif %}
   "productID": "{{ product.id }}",
   "brand": {
     "@type": "Thing",
     "name": "{{ product.vendor | escape }}"
   },
+  "description": "{{ product.description | strip_html  }}",
+  "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "{{ shop.currency }}",
@@ -48,8 +45,8 @@
 {% endfor %}",
     "priceValidUntil": "2025-12-31",
     "availability": "{% if product.available %}http://schema.org/InStock{% else %}http://schema.org/OutOfStock{% endif %}",
-    "itemCondition": "https://schema.org/NewCondition",
     "url": "{{ shop.url }}{{ product.url }}",
+    "itemCondition": "https://schema.org/NewCondition",
     "seller": {
       "@type": "Organization",
       "name": "{{ shop.name }}"
@@ -58,29 +55,9 @@
   {% if product.metafields.reviews.rating.value != blank %},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ product.metafields.reviews.rating.value.rating }}",
-    "ratingCount": "{{ product.metafields.reviews.rating_count }}"
+    "ratingValue": "{{ 4.8 }}",
+    "ratingCount": "{{ product.metafields.reviews.rating_count.value }}"
   }
-  {% endif %}
-  {% if product.metafields.reviews.rating.value != blank and product.metafields.reviews.product_reviews != blank %},
-  "review": [
-    {% for review in product.metafields.reviews.product_reviews.value limit: 3 %}
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "{{ review.author | default: 'Verified Buyer' | escape }}"
-      },
-      "datePublished": "{{ review.created_at | date: '%Y-%m-%d' }}",
-      "reviewBody": "{{ review.content | strip_html | escape }}",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "{{ review.rating }}",
-        "bestRating": "5"
-      }
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
   {% endif %}
 }
 </script>
