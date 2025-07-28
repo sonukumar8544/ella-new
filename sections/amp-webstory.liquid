@@ -127,29 +127,29 @@
     "@type": "WebPage",
     "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
   },
-  "headline": "{% if section.settings.story_title != blank %}{{ section.settings.story_title | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}",
+  "headline": "{% if section.settings.story_title != blank %}{{ section.settings.story_title | escape }}{% else %}Wellnessextract{% endif %}",
   {% for block in section.blocks %}
-    {% if forloop.first %}
+    {% if forloop.first and block.settings.image %}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ block.settings.image | img_url: 'master' | prepend: request.origin }}",
+    "url": "{{ block.settings.image | img_url: 'master' }}",
     "height": {{ block.settings.image.height }},
     "width": {{ block.settings.image.width }}
   },
     {% endif %}
   {% endfor %}
   "datePublished": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
-"dateModified": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}"
+  "dateModified": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
   "author": {
     "@type": "Person",
-    "name": "{% if section.settings.author_name != blank %}{{ section.settings.author_name | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}"
+    "name": "{% if section.settings.author_name != blank %}{{ section.settings.author_name | escape }}{% else %}Wellnessextract{% endif %}"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "{% if section.settings.publisher_name != blank %}{{ section.settings.publisher_name | escape }}{% else %}{{ 'Wellnessextract' }}{% endif %}",
+    "name": "{% if section.settings.publisher_name != blank %}{{ section.settings.publisher_name | escape }}{% else %}Wellnessextract{% endif %}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ section.settings.publisher_logo | img_url: 'master' | prepend: request.origin }}",
+      "url": "{{ section.settings.publisher_logo | img_url: 'master' }}",
       "width": 600,
       "height": 400
     }
