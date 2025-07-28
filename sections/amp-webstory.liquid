@@ -149,9 +149,9 @@
     "name": "{{ section.settings.publisher_name | escape }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ settings.logo | img_url: 'master' | prepend: request.origin  }}",
-      "width": {{ settings.logo.width}},
-      "height": {{ settings.logo.height}}
+      "url": "{{ 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/LogoEllatheme.svg?v=1743774400' }}",
+      "width": 600,
+      "height": 400
     }
   },
   "description": "{{ section.settings.story_description | strip_newlines | escape }}"
