@@ -47,77 +47,6 @@
   }
 {% endstyle %}
 
-{% comment %}<div class="web-story-wrapper" id="section-block-{{section.id}}">
-  <amp-story
-    standalone
-    title=""
-    publisher=""
-    publisher-logo-src=""
-    poster-portrait-src=""
-  >
-    {% for block in section.blocks %}
-      <amp-story-page id="page{{ forloop.index }}" auto-advance-after="{{ block.settings.webstory_slide }}s">
-        <amp-story-grid-layer template="fill">
-          {% if block.settings.image != blank %}
-            <amp-img
-              src="{{ block.settings.image | img_url: 'master'}}"
-              layout="responsive"
-            >
-            </amp-img>
-          {% else %}
-            <amp-img
-              src="{{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}"
-              layout="responsive"
-            >
-            </amp-img>
-          {% endif %}
-        </amp-story-grid-layer>
-        <amp-story-grid-layer
-          template="vertical"
-          id="cstm__content"
-          style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
-        >
-          <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
-         {% if block.settings.bgcover == true  %} 
-            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:rgba(0,0,0,0){% endif %}
-    padding: 10px;
-    border-radius: 12px;{% endif %}
-    padding: 20px;">
-          {% if block.settings.heading != blank %}
-            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;margin-bottom: 10px;">
-              {{ block.settings.heading }}
-            </h3>
-          {% endif %}
-          {% if block.settings.description != blank %}
-            <p style="color:{{ block.settings.description_color }};line-height: normal;" margin-bottom: 20px;>{{ block.settings.description }}</p>
-          {% endif %}
-          {% if block.settings.button_text != blank %}
-            <div class="btn_story">
-              <a
-                class="brand-btn {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %}no_hover {% else %}link_hover{% endif %}"
-                style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}!important; border: 1px solid {{ block.settings.btn_bg }} !important; {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %} cursor: none;{% endif %}"
-                {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %}
-                  cursor: none; role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ block.settings.btn_link  }}"
-                {% endif %}
-              >
-                {{ block.settings.button_text }}
-              </a>
-            </div>
-            
-          {% endif %}
-            </div>
-        </amp-story-grid-layer>
-      </amp-story-page>
-    {% endfor %}
-
-    <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
-  </amp-story>
-</div>
-
-<script async custom-element="amp-story" src="{{ 'amp-webstory.js' | asset_url }}"></script>
-{% endcomment %}
 <!doctype html>
 <html ⚡ lang="en">
   <head>
@@ -198,7 +127,7 @@
 
   </body>
 </html>
-{%comment %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -230,7 +159,7 @@
   "description": "{{ section.settings.story_description | escape }}"
 }
 </script>
-{% endcomment %}
+
 
 {% schema %}
 {
@@ -453,3 +382,78 @@
   ]
 }
 {% endschema %}
+
+
+
+
+{% comment %}<div class="web-story-wrapper" id="section-block-{{section.id}}">
+  <amp-story
+    standalone
+    title=""
+    publisher=""
+    publisher-logo-src=""
+    poster-portrait-src=""
+  >
+    {% for block in section.blocks %}
+      <amp-story-page id="page{{ forloop.index }}" auto-advance-after="{{ block.settings.webstory_slide }}s">
+        <amp-story-grid-layer template="fill">
+          {% if block.settings.image != blank %}
+            <amp-img
+              src="{{ block.settings.image | img_url: 'master'}}"
+              layout="responsive"
+            >
+            </amp-img>
+          {% else %}
+            <amp-img
+              src="{{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}"
+              layout="responsive"
+            >
+            </amp-img>
+          {% endif %}
+        </amp-story-grid-layer>
+        <amp-story-grid-layer
+          template="vertical"
+          id="cstm__content"
+          style="top: {{block.settings.content-position}}% !important; text-align:{{ block.settings.content-align }};"
+        >
+          <div class="cstm_color_box {% if block.settings.bgcover == true  %}cstm_bg_init{% endif %}" style="
+         {% if block.settings.bgcover == true  %} 
+            {% if block.settings.bgapplyenable == true %} background:{{ block.settings.bgapply }};{% else %}background:rgba(0,0,0,0){% endif %}
+    padding: 10px;
+    border-radius: 12px;{% endif %}
+    padding: 20px;">
+          {% if block.settings.heading != blank %}
+            <h3 style="{% if block.settings.heading_bg != blank %}background-color:{{ block.settings.heading_bg }}; padding: 3px 10px;width: auto; margin: auto;border-radius: 3px;{% endif %}color:{{ block.settings.heading_color }};line-height: 1.1;margin-bottom: 10px;">
+              {{ block.settings.heading }}
+            </h3>
+          {% endif %}
+          {% if block.settings.description != blank %}
+            <p style="color:{{ block.settings.description_color }};line-height: normal;" margin-bottom: 20px;>{{ block.settings.description }}</p>
+          {% endif %}
+          {% if block.settings.button_text != blank %}
+            <div class="btn_story">
+              <a
+                class="brand-btn {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %}no_hover {% else %}link_hover{% endif %}"
+                style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}!important; border: 1px solid {{ block.settings.btn_bg }} !important; {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %} cursor: none;{% endif %}"
+                {% if block.settings.btn_link == blank or block.settings.btn_link == '#' %}
+                  cursor: none; role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ block.settings.btn_link  }}"
+                {% endif %}
+              >
+                {{ block.settings.button_text }}
+              </a>
+            </div>
+            
+          {% endif %}
+            </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    {% endfor %}
+
+    <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
+  </amp-story>
+</div>
+
+<script async custom-element="amp-story" src="{{ 'amp-webstory.js' | asset_url }}"></script>
+{% endcomment %}
