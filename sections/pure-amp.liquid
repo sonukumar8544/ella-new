@@ -54,78 +54,124 @@
     <title>{{ page.title }}</title>
     <link rel="canonical" href="{{ page.url | prepend: shop.url }}">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    
-    <!-- Required AMP Scripts -->
+
+    <!-- Required AMP scripts -->
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
 
- <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- AMP boilerplate styles -->
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1,end) 0s 1 normal both
+      }
+      @-webkit-keyframes -amp-start {
+        from {visibility:hidden} to {visibility:visible}
+      }
+      @-moz-keyframes -amp-start {
+        from {visibility:hidden} to {visibility:visible}
+      }
+      @-ms-keyframes -amp-start {
+        from {visibility:hidden} to {visibility:visible}
+      }
+      @-o-keyframes -amp-start {
+        from {visibility:hidden} to {visibility:visible}
+      }
+      @keyframes -amp-start {
+        from {visibility:hidden} to {visibility:visible}
+      }
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation:none;
+          -moz-animation:none;
+          -ms-animation:none;
+          animation:none
+        }
+      </style>
+    </noscript>
 
+    <!-- AMP Custom Styles: Move all inline styles here -->
+    <style amp-custom>
+      .cstm_color_box {
+        padding: 20px;
+      }
+      .btn_story {
+        margin-top: 10px;
+      }
+      .brand-btn {
+        padding: 10px 20px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+    </style>
   </head>
 
   <body>
-
     <amp-story
-  standalone
-  title="Your AMP Story"
-  publisher="Wellness Extract"
-  publisher-logo-src="https://cdn.shopify.com/s/files/1/0000/0000/files/logo.png"
-  poster-portrait-src="https://cdn.shopify.com/s/files/1/0000/0000/files/poster.jpg"
->
-  {% for block in section.blocks %}
-    <amp-story-page id="page{{ forloop.index }}" auto-advance-after="{{ block.settings.webstory_slide }}s">
-      <amp-story-grid-layer template="fill">
-        {% if block.settings.image != blank %}
-          <amp-img
-            src="{{ block.settings.image | img_url: 'master' }}"
-            layout="responsive"
-            width="720"
-            height="1280"
-          ></amp-img>
-            
-        {% endif %}
-      </amp-story-grid-layer>
+      standalone
+      title="Your AMP Story"
+      publisher="Wellness Extract"
+      publisher-logo-src="https://cdn.shopify.com/s/files/1/0000/0000/files/logo.png"
+      poster-portrait-src="https://cdn.shopify.com/s/files/1/0000/0000/files/poster.jpg"
+    >
+      {% for block in section.blocks %}
+        <amp-story-page id="page{{ forloop.index }}" auto-advance-after="{{ block.settings.webstory_slide }}s">
+          <amp-story-grid-layer template="fill">
+            {% if block.settings.image != blank %}
+              <amp-img
+                src="{{ block.settings.image | img_url: 'master' }}"
+                layout="responsive"
+                width="720"
+                height="1280"
+              ></amp-img>
+            {% endif %}
+          </amp-story-grid-layer>
 
-      <amp-story-grid-layer template="vertical" >
-        <div class="cstm_color_box">
-          
-          {% if block.settings.heading != blank %}
-            <h3>
-              {{ block.settings.heading }}
-            </h3>
-          {% endif %}
+          <amp-story-grid-layer template="vertical">
+            <div class="cstm_color_box">
+              {% if block.settings.heading != blank %}
+                <h3>{{ block.settings.heading }}</h3>
+              {% endif %}
 
-          {% if block.settings.description != blank %}
-           
-              {{ block.settings.description }}
-          
-          {% endif %}
+              {% if block.settings.description != blank %}
+                <p style="color: {{ block.settings.description_color }};">
+                  {{ block.settings.description }}
+                </p>
+              {% endif %}
 
-          {% if block.settings.button_text != blank %}
-            <div class="btn_story">
-              {% if block.settings.btn_link != blank and block.settings.btn_link != '#' %}
-                <a class="brand-btn" href="{{ block.settings.btn_link }}"
-                   >
-                  {{ block.settings.button_text }}
-                </a>
-              {% else %}
-                <span class="brand-btn">
-                  {{ block.settings.button_text }}
-                </span>
+              {% if block.settings.button_text != blank %}
+                <div class="btn_story">
+                  {% if block.settings.btn_link != blank and block.settings.btn_link != '#' %}
+                    <a class="brand-btn"
+                      href="{{ block.settings.btn_link }}"
+                      style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}; border-color: {{ block.settings.btn_bg }};">
+                      {{ block.settings.button_text }}
+                    </a>
+                  {% else %}
+                    <span class="brand-btn"
+                      style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}; border-color: {{ block.settings.btn_bg }};">
+                      {{ block.settings.button_text }}
+                    </span>
+                  {% endif %}
+                </div>
               {% endif %}
             </div>
-          {% endif %}
-        </div>
-      </amp-story-grid-layer>
-    </amp-story-page>
-  {% endfor %}
+          </amp-story-grid-layer>
+        </amp-story-page>
+      {% endfor %}
 
-  <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
-</amp-story>
-
-
+      <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
+    </amp-story>
   </body>
 </html>
+
 
 <script type="application/ld+json">
 {
