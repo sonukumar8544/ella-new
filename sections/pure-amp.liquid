@@ -86,7 +86,7 @@
         {% endif %}
       </amp-story-grid-layer>
 
-      <amp-story-grid-layer template="vertical" style="top: {{ block.settings.content-position }}%; text-align: {{ block.settings.content-align }};">
+      <amp-story-grid-layer template="vertical" >
         <div class="cstm_color_box">
           
           {% if block.settings.heading != blank %}
@@ -96,7 +96,7 @@
           {% endif %}
 
           {% if block.settings.description != blank %}
-            <p style="color: {{ block.settings.description_color }}; margin-bottom: 20px;">
+            <p>
               {{ block.settings.description }}
             </p>
           {% endif %}
@@ -105,12 +105,11 @@
             <div class="btn_story">
               {% if block.settings.btn_link != blank and block.settings.btn_link != '#' %}
                 <a class="brand-btn" href="{{ block.settings.btn_link }}"
-                   style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}; border: 1px solid {{ block.settings.btn_bg }};">
+                   >
                   {{ block.settings.button_text }}
                 </a>
               {% else %}
-                <span class="brand-btn"
-                   style="background: {{ block.settings.btn_bg }}; color: {{ block.settings.btn_color }}; border: 1px solid {{ block.settings.btn_bg }};">
+                <span class="brand-btn">
                   {{ block.settings.button_text }}
                 </span>
               {% endif %}
