@@ -60,7 +60,7 @@
               {{ price | money_with_currency }}
             </span>
           -->
-          <span class="price-item price-item--regular sale_price_amount1">{{ product.selected_or_first_available_variant.price | money_with_currency}} </span>
+          <span class="price-item price-item--regular sale_price_amount1">{{ product.selected_or_first_available_variant.price | money_with_currency}} ---</span>
         </dd>
       </div>
 
@@ -68,9 +68,9 @@
         <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
           <span class="price-item price-item--sale sale_price_amount1">
             {{ product.selected_or_first_available_variant.price | money_with_currency }}
-          </span>
+          </span>====
         </dd>
-
+{% comment %}
             <!--commented by amar
             <dd class="price__compare" data-compare="{{compare_at_price}}">
             <b class="price-item price-item--regular">
@@ -89,7 +89,7 @@
           <dt>
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
           </dt>
-        -->
+        -->{% endcomment %}
 
         {%- if settings.show_saved_price
           and price != null
