@@ -85,7 +85,7 @@
   <div class="ingrediant-img-two-column-new">
     <div class="ingrediant-img-image">
       {% if section.settings.image %}
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Annatto Seeds">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
       {% else %}
         <img src="https://via.placeholder.com/200" alt="Placeholder Image">
       {% endif %}

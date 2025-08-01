@@ -67,7 +67,7 @@
   <div class="about-about-product-ing-img-two-column-new">
     <div class="about-about-product-product-ing-img-image">
       {% if section.settings.image %}
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Annatto Seeds">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt | escape }}">
       {% else %}
         <img src="https://via.placeholder.com/200" alt="Placeholder Image">
       {% endif %}
@@ -93,7 +93,7 @@
   {% if section.settings.image_two %}
     <div class="about-about-product-ing-img-two-column-new second-ingrediant-block">
       <div class="about-about-product-product-ing-img-image">
-        <img src="{{ section.settings.image_two | img_url: 'master' }}" alt="Annatto Seeds">
+        <img src="{{ section.settings.image_two | img_url: 'master' }}" alt="{{ section.settings.image_two.alt | escape }}">
       </div>
       <div class="about-about-product-ing-iimg-text">
         {% if section.settings.title_two %}
