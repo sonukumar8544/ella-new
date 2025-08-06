@@ -116,6 +116,7 @@
 
   assign selected_category = query_value | default: 'wellness'
 -%}
+<!--badge_thirdO-->
 <div class="halo-blog-content halo-grid-content">
   {% comment %} {%- if show_sidebar and section.blocks.size > 0 -%} {% endcomment %}
     {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
