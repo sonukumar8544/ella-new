@@ -108,7 +108,8 @@
                              or blogauthor == 'Pragya Soni'
                               or blogauthor == "Pooja Rawat" 
                               or blogauthor == "Nurah Ekhlaque" 
-                              or blogauthor == "Aditi bakshi" 
+                              or blogauthor == "Aditi bakshi"
+                              or  blogauthor == "Surangama Lehri" 
                             %}
                           <a {% if blogauthor == "Surangama Lehri" %}href="https://wellnessextract.com/pages/dr-{{ article.author | replace: ' ', '-' | downcase }}" {%else%}href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}"{% endif %}>
                        {% if author == 'Aditi bakshi' or blogauthor == "Surangama Lehri" %}
