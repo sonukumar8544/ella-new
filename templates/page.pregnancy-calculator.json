@@ -16,17 +16,24 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "pragnancy_calculator_cstm_AYCXXE": {
+      "type": "pragnancy-calculator-cstm",
+      "name": "pragnancy cstm Calculator",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "pragnancy_calculator_cstm_AYCXXE"
   ]
 }
