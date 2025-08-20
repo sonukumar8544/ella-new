@@ -88,6 +88,18 @@
             "color_des": "#3c3c3c",
             "link": "shopify://pages/dr-laura-pipher"
           }
+        },
+        "image_TxgG6A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dr._Laura_Pipher_500x500_1.jpg",
+            "title": "Dr. Naji Abou Ali",
+            "color_text": "#000000",
+            "color_text_hover": "#3e8cc4",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/dr-naji-abou-ali"
+          }
         }
       },
       "block_order": [
@@ -96,7 +108,8 @@
         "image_X7ii94",
         "image_Mk7eLi",
         "image_cBWb9P",
-        "image_Gzee7k"
+        "image_Gzee7k",
+        "image_TxgG6A"
       ],
       "custom_css": [
         "@media (max-width: 551px) {.halo-row.halo-slider.sm-column-2:not(.slick-slider) .halo-item {width: 40%; }}",
