@@ -8901,3 +8901,7 @@ div#custom_proce_manage {
  .bundle-product .sealsubs-target-element {
   display: none !important;
 }
+
+.productView-options .product-form__input .form__label [data-header-option]{
+  text-transform: lowercase;
+}
