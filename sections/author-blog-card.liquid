@@ -1,13 +1,12 @@
-<div class="container-blog"> 
+<div class="container-blog" id="blog-list-vlog-writer"> 
   {% assign author_filter = section.settings.blog_author_name %}
   {% for article in blogs['wellness'].articles %}
     {% if article.author == author_filter %}
-      <div class="card">
+      <div class="card blog-item-vlog-writer">
         <div class="card-header">
           <img src="{{ article.image | img_url: 'medium' }}" alt="" />
         </div>
         <div class="card-body">
-          {% comment %} <span class="tag tag-teal">Technology</span> {% endcomment %}
           <a href={{ article.url }}>
             <h4 class="blog-title-author-page">{{ article.title }}</h4>
           </a>
@@ -18,11 +17,10 @@
               </small>
               <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
                 {% if article.author == 'Aditi bakshi' %}
-                 <h5>Author: Dr. {{ article.author }}</h5>
-               {% else %}
-                 <h5>Author: {{ article.author }}</h5>
-               {% endif %}
-
+                  <h5>Author: Dr. {{ article.author }}</h5>
+                {% else %}
+                  <h5>Author: {{ article.author }}</h5>
+                {% endif %}
               </a>
             </div>
           </div>
@@ -31,6 +29,9 @@
     {% endif %}
   {% endfor %}
 </div>
+
+<!-- Pagination Controls -->
+<div id="pagination-vlog-writer" class="pagination-vlog-writer"></div>
 
 <style>
   .container-blog {
@@ -112,6 +113,28 @@
     gap: 12px;
   }
 
+  /* Pagination Styles */
+  .pagination-vlog-writer {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .pagination-vlog-writer button {
+    background: #086b92;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .pagination-vlog-writer button.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  .pagination-vlog-writer button.active {
+    background: #05445e;
+  }
+
   @media (max-width: 768px) {
     .container-blog {
       padding: 10px;
@@ -139,6 +162,78 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemsPerPage = 6; // Number of blogs per page
+    const items = document.querySelectorAll(".blog-item-vlog-writer");
+    const pagination = document.getElementById("pagination-vlog-writer");
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    let currentPage = 1;
+
+    function showPage(page) {
+      items.forEach((item, index) => {
+        item.style.display =
+          index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+            ? "block"
+            : "none";
+      });
+
+      // update pagination buttons
+      const buttons = pagination.querySelectorAll("button.page-btn-vlog-writer");
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      if (buttons[page - 1]) {
+        buttons[page - 1].classList.add("active");
+      }
+    }
+
+    function setupPagination() {
+      pagination.innerHTML = "";
+
+      // Prev button
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "Prev";
+      prevBtn.classList.add("prev-btn-vlog-writer");
+      prevBtn.onclick = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      };
+      pagination.appendChild(prevBtn);
+
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = i;
+        btn.classList.add("page-btn-vlog-writer");
+        if (i === currentPage) btn.classList.add("active");
+        btn.onclick = () => {
+          currentPage = i;
+          showPage(currentPage);
+        };
+        pagination.appendChild(btn);
+      }
+
+      // Next button
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "Next";
+      nextBtn.classList.add("next-btn-vlog-writer");
+      nextBtn.onclick = () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      };
+      pagination.appendChild(nextBtn);
+    }
+
+    if (items.length > 0) {
+      setupPagination();
+      showPage(currentPage);
+    }
+  });
+</script>
 
 {% schema %}
   {
