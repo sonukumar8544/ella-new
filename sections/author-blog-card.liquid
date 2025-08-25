@@ -1,5 +1,6 @@
 <div class="container-blog" id="blog-list-vlog-writer"> 
   {% assign author_filter = section.settings.blog_author_name %}
+   {% paginate blogs['wellness'].articles by 500 %}
   {% for article in blogs['wellness'].articles %}
     {% if article.author == author_filter %}
       <div class="card blog-item-vlog-writer">
@@ -28,7 +29,10 @@
       </div>
     {% endif %}
   {% endfor %}
+   {% endpaginate %}
 </div>
+
+
 
 <!-- Pagination Controls -->
 <div id="pagination-vlog-writer" class="pagination-vlog-writer"></div>
@@ -163,9 +167,10 @@
   }
 </style>
 
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const itemsPerPage = 6; // Number of blogs per page
+    const itemsPerPage = 12; // Number of blogs per page
     const items = document.querySelectorAll(".blog-item-vlog-writer");
     const pagination = document.getElementById("pagination-vlog-writer");
     const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -179,20 +184,16 @@
             : "none";
       });
 
-      // update pagination buttons
-      const buttons = pagination.querySelectorAll("button.page-btn-vlog-writer");
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      if (buttons[page - 1]) {
-        buttons[page - 1].classList.add("active");
-      }
+      renderPagination();
     }
 
-    function setupPagination() {
+    function renderPagination() {
       pagination.innerHTML = "";
 
       // Prev button
       const prevBtn = document.createElement("button");
       prevBtn.innerText = "Prev";
+      prevBtn.disabled = currentPage === 1;
       prevBtn.classList.add("prev-btn-vlog-writer");
       prevBtn.onclick = () => {
         if (currentPage > 1) {
@@ -202,22 +203,49 @@
       };
       pagination.appendChild(prevBtn);
 
-      // Page numbers
-      for (let i = 1; i <= totalPages; i++) {
+      // Page numbers with ellipsis
+      const pageButtons = [];
+
+      function addPage(num) {
         const btn = document.createElement("button");
-        btn.innerText = i;
+        btn.innerText = num;
         btn.classList.add("page-btn-vlog-writer");
-        if (i === currentPage) btn.classList.add("active");
+        if (num === currentPage) btn.classList.add("active");
         btn.onclick = () => {
-          currentPage = i;
+          currentPage = num;
           showPage(currentPage);
         };
         pagination.appendChild(btn);
       }
 
+      function addDots() {
+        const span = document.createElement("span");
+        span.innerText = "...";
+        span.style.margin = "0 5px";
+        pagination.appendChild(span);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        if (
+          i === 1 || // first
+          i === 2 || // second
+          i === totalPages || // last
+          i === totalPages - 1 || // second last
+          (i >= currentPage - 1 && i <= currentPage + 1) // around current
+        ) {
+          addPage(i);
+        } else if (
+          i === 3 && currentPage > 4 || // gap after 2
+          i === totalPages - 2 && currentPage < totalPages - 3 // gap before last-1
+        ) {
+          addDots();
+        }
+      }
+
       // Next button
       const nextBtn = document.createElement("button");
       nextBtn.innerText = "Next";
+      nextBtn.disabled = currentPage === totalPages;
       nextBtn.classList.add("next-btn-vlog-writer");
       nextBtn.onclick = () => {
         if (currentPage < totalPages) {
@@ -229,11 +257,11 @@
     }
 
     if (items.length > 0) {
-      setupPagination();
       showPage(currentPage);
     }
   });
 </script>
+
 
 {% schema %}
   {

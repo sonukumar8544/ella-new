@@ -3,6 +3,7 @@
   {% assign dr_name = section.settings.blog_dr_name %}
   {% assign dr_page_url = section.settings.review_dr_page %}
 
+  {% paginate blogs['wellness'].articles by 500 %}
   {% for article in blogs['wellness'].articles %}
     {% if article.tags contains tag_filter %}
       <div class="card blog-item">
@@ -39,6 +40,7 @@
       </div>
     {% endif %}
   {% endfor %}
+   {% endpaginate %}
 </div>
 
 <!-- Custom Pagination -->
@@ -219,27 +221,56 @@
             : "none";
       });
 
-      // Render pagination buttons
+      renderPagination();
+    }
+
+    function renderPagination() {
       pagination.innerHTML = "";
 
+      // Prev button
       const prevBtn = document.createElement("button");
       prevBtn.textContent = "« Prev";
-      prevBtn.disabled = page === 1;
-      prevBtn.onclick = () => goToPage(page - 1);
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => goToPage(currentPage - 1);
       pagination.appendChild(prevBtn);
 
-      for (let i = 1; i <= totalPages; i++) {
+      // Helper to add a page button
+      function addPage(num) {
         const btn = document.createElement("button");
-        btn.textContent = i;
-        if (i === page) btn.classList.add("active");
-        btn.onclick = () => goToPage(i);
+        btn.textContent = num;
+        if (num === currentPage) btn.classList.add("active");
+        btn.onclick = () => goToPage(num);
         pagination.appendChild(btn);
       }
 
+      // Helper to add dots
+      function addDots() {
+        const span = document.createElement("span");
+        span.textContent = "...";
+        span.style.margin = "0 5px";
+        pagination.appendChild(span);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        if (
+          i === 1 || i === 2 || // first two
+          i === totalPages || i === totalPages - 1 || // last two
+          (i >= currentPage - 1 && i <= currentPage + 1) // around current
+        ) {
+          addPage(i);
+        } else if (
+          i === 3 && currentPage > 4 || // dots after 2
+          i === totalPages - 2 && currentPage < totalPages - 3 // dots before last-1
+        ) {
+          addDots();
+        }
+      }
+
+      // Next button
       const nextBtn = document.createElement("button");
       nextBtn.textContent = "Next »";
-      nextBtn.disabled = page === totalPages;
-      nextBtn.onclick = () => goToPage(page + 1);
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.onclick = () => goToPage(currentPage + 1);
       pagination.appendChild(nextBtn);
     }
 
@@ -251,9 +282,12 @@
     }
 
     // Initialize
-    showPage(currentPage);
+    if (items.length > 0) {
+      showPage(currentPage);
+    }
   });
 </script>
+
 
 {% schema %}
 {
