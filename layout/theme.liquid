@@ -278,6 +278,21 @@
 }
                   {% endif %}
     {% endstyle %}
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.href.includes("collections")) {
+      var style = document.createElement("style");
+      style.innerHTML = `
+        .sealsubs-target-element.sealsubs-full[data-seal-ac],
+        .sealsubs-target-element.sealsubs-full[data-seal-in] {
+          display: none !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  });
+</script>  
                 
   </body>
 </html>
