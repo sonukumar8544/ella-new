@@ -195,14 +195,26 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // Show sidebar when clicking on .filter-blog-popups
-    document.querySelector(".filter-blog-popups").addEventListener("click", function () {
-      document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar").style.display = "block";
-    });
+    const filterBlogPopups = document.querySelector(".filter-blog-popups");
+    if (filterBlogPopups) {
+      filterBlogPopups.addEventListener("click", function () {
+        const sidebar = document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar");
+        if (sidebar) {
+          sidebar.style.display = "block";
+        }
+      });
+    }
 
     // Hide sidebar when clicking on .blog-filter-btn-popup
-    document.querySelector(".blog-filter-btn-popup").addEventListener("click", function () {
-      document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar").style.display = "none";
-    });
+    const blogFilterBtn = document.querySelector(".blog-filter-btn-popup");
+    if (blogFilterBtn) {
+      blogFilterBtn.addEventListener("click", function () {
+        const sidebar = document.querySelector(".halo-blog-content.halo-grid-content .page-sidebar");
+        if (sidebar) {
+          sidebar.style.display = "none";
+        }
+      });
+    }
   });
 </script>
 
