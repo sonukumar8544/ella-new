@@ -3,7 +3,7 @@
   style="background-image: url({{ section.settings.background_image | img_url: 'master' }}); background-size: cover; background-position: center;">
   <div class="story-founder-content container">
     <div class="story-founder-text-section">
-      <h1>{{ section.settings.founder_title | newline_to_br }}</h1>
+      <h1 id="founder-title">{{ section.settings.founder_title | newline_to_br }}</h1>
 
       {% for block in section.blocks %}
         {% if block.type == 'paragraph' %}
@@ -121,6 +121,24 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if this is a direct page load
+    if (performance.navigation.type === 1 || window.location.hash === '') {
+      setTimeout(function() {
+        const founderTitle = document.getElementById('founder-title');
+        if (founderTitle) {
+          founderTitle.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  });
+</script>
+
 
 {% schema %}
 {
