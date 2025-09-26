@@ -8905,3 +8905,11 @@ div#custom_proce_manage {
 .productView-options .product-form__input .form__label [data-header-option]{
   text-transform: lowercase;
 }
+
+.product-page-new-third .slick-arrow{
+  display: block !important;
+}
+/* 
+.product-page-new-third> .slick-dots{
+  display: none !important;
+} */

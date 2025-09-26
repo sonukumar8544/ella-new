@@ -201,7 +201,7 @@
   }
   
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-prev{
-  left: 19%;
+  left: 16%;
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-next {
   right: 1%;
@@ -305,8 +305,8 @@
   
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
   border: none;
-  background: #006a91ad;
-  border-color: #006a91ad;
+  background: gray;
+  border-color: gray;
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
   color: #ffffff !important;
@@ -1080,7 +1080,7 @@
   transform: translate(0%, -80%);
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-  background: #006a9175;
+  background: gray;
   border-radius: 50%;
   opacity: .5;
   }
