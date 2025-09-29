@@ -1,0 +1,257 @@
+<div class="pr-media-container">
+  <div class="pr-media-content container">
+    <div class="pr-media-header">
+      <h2>{{ section.settings.section_title | default: "Everything the Media Needs" }}</h2>
+    </div>
+    
+    <div class="pr-media-cards">
+      {% for block in section.blocks %}
+        <div class="pr-media-card" {{ block.shopify_attributes }}>
+          {% if block.settings.card_image != blank %}
+            <div class="pr-media-card-image">
+              <img src="{{ block.settings.card_image | img_url: '400x300' }}" alt="{{ block.settings.card_image.alt | default: block.settings.card_title }}" />
+            </div>
+          {% endif %}
+          
+          <div class="pr-media-card-content">
+            <h3 class="pr-media-card-title">{{ block.settings.card_title }}</h3>
+            <p class="pr-media-card-description">{{ block.settings.card_description }}</p>
+            
+            {% if block.settings.card_link != blank %}
+              <a href="{{ block.settings.card_link }}" class="pr-media-card-link" target="_blank">
+                {{ block.settings.link_text | default: "Learn More" }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .pr-media-container {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 80px 0;
+    box-sizing: border-box;
+  }
+
+  .pr-media-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .pr-media-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .pr-media-header h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .pr-media-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+
+  .pr-media-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .pr-media-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .pr-media-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pr-media-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .pr-media-card:hover .pr-media-card-image img {
+    transform: scale(1.05);
+  }
+
+  .pr-media-card-content {
+    padding: 30px;
+  }
+
+  .pr-media-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+  }
+
+  .pr-media-card-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+
+  .pr-media-card-link {
+    display: inline-block;
+    color: #086b92;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .pr-media-card-link:hover {
+    color: #064a6b;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .pr-media-container {
+      padding: 60px 0;
+    }
+
+    .pr-media-header h2 {
+      font-size: 28px;
+    }
+
+    .pr-media-cards {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .pr-media-card {
+      max-width: 100%;
+    }
+
+    .pr-media-card-content {
+      padding: 25px;
+    }
+
+    .pr-media-card-title {
+      font-size: 18px;
+    }
+
+    .pr-media-card-description {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pr-media-container {
+      padding: 40px 0;
+    }
+
+    .pr-media-header h2 {
+      font-size: 24px;
+    }
+
+    .pr-media-card-content {
+      padding: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PR Media Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Everything the Media Needs"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media_card",
+      "name": "Media Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Card description goes here"
+        },
+        {
+          "type": "url",
+          "id": "card_link",
+          "label": "Card Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Learn More"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PR Media Section",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "media_card",
+          "settings": {
+            "card_title": "Press Kit",
+            "card_description": "Overview of Wellness Extract's story, product factsheets, and FDA/Health Canada-compliant language ready for media use."
+          }
+        },
+        {
+          "type": "media_card",
+          "settings": {
+            "card_title": "High-Res Images",
+            "card_description": "Download professional product shots, lifestyle photography, and festive gift-set visuals."
+          }
+        },
+        {
+          "type": "media_card",
+          "settings": {
+            "card_title": "Logos & Packing",
+            "card_description": "Brand logos in PNG + vector formats, along with current product packaging shots."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
