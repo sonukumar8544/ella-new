@@ -1,13 +1,9 @@
 <div class="pr-banner-section">
   <a href="mailto:aura@publicityforgood.com" class="pr-banner-link">
-    <!-- Desktop Banner Image -->
     <picture class="pr-banner-image">
       <source media="(max-width: 768px)" srcset="{{ section.settings.mobile_banner_image | image_url }}">
-      <img src="{{ section.settings.desktop_banner_image | image_url }}" alt="{{ section.settings.banner_alt_text | default: 'Science-Backed Wellness Gifts Banner' }}" class="desktop-banner">
+      <img src="{{ section.settings.desktop_banner_image | image_url }}" alt="{{ section.settings.banner_alt_text | default: 'Science-Backed Wellness Gifts Banner' }}">
     </picture>
-    
-    <!-- Mobile Banner Image (fallback for older browsers) -->
-    <img src="{{ section.settings.mobile_banner_image | image_url }}" alt="{{ section.settings.banner_alt_text | default: 'Science-Backed Wellness Gifts Banner' }}" class="mobile-banner" style="display: none;">
   </a>
 </div>
 
@@ -30,24 +26,6 @@
     height: auto;
     display: block;
     max-width: 100%;
-  }
-  
-  .desktop-banner {
-    display: block;
-  }
-  
-  .mobile-banner {
-    display: none;
-  }
-  
-  @media (max-width: 768px) {
-    .desktop-banner {
-      display: none;
-    }
-    
-    .mobile-banner {
-      display: block !important;
-    }
   }
   
   /* Hover effect */
