@@ -3,7 +3,7 @@
   <div class="collapsible-content-main {{ section.settings.custom_class }}">
     {% for block in section.blocks %}
       {% assign blocks = block.settings %}
-      {% if block.type == 'block_left' %}
+      {% comment %} {% if block.type == 'block_left' %}
         <div class="collapsible-grid__item_main">
           <div class="inner-block-left">
             <h2>{{ blocks.block_heading }}</h2>
@@ -15,7 +15,7 @@
             </a>
           </div>
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
     {% endfor %}
     {% for block in section.blocks %}
       {% assign blocks = block.settings %}

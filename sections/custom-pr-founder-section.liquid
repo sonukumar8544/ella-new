@@ -46,6 +46,18 @@
     <div class="pr-founder-mobile-image-section">
       <img src="{{ section.settings.founder_mobile_image | img_url: 'master' }}" alt="{{ section.settings.founder_mobile_image.alt }}" class="pr-founder-mobile-image" />
     </div>
+
+    <!-- Mobile Founder Info Section - Shows between image and description on mobile -->
+    <div class="pr-founder-mobile-info-section">
+      {% if section.settings.founder_name != blank %}
+        <div class="pr-founder-info pr-founder-info-mobile">
+          <h3 class="pr-founder-name">{{ section.settings.founder_name }}</h3>
+          {% if section.settings.founder_tagline != blank %}
+            <p class="pr-founder-tagline">{{ section.settings.founder_tagline }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -58,6 +70,12 @@
     justify-content: center;
     align-items: center;
   }
+ @media (max-width: 1024px) {
+  .pr-founder-container> .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+ }
 
   @media (max-width: 768px) {
     .pr-founder-container {
@@ -208,6 +226,11 @@
     border-radius: 12px;
   }
 
+  /* Mobile Founder Info Section - Hidden on Desktop */
+  .pr-founder-mobile-info-section {
+    display: none;
+  }
+
   /* Responsive styles */
   @media (max-width: 768px) {
     .pr-founder-container {
@@ -261,18 +284,32 @@
       border-radius: 12px;
     }
 
+    /* Show mobile founder info section */
+    .pr-founder-mobile-info-section {
+      display: block;
+      order: 3;
+      width: 100%;
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+
     /* Hide title in text section on mobile */
     .pr-founder-text-section h1 {
       display: none;
     }
 
-    /* Mobile order: Title first, then image, then description */
+    /* Mobile order: Title first, then image, then founder info, then description */
     .pr-founder-text-section {
-      order: 3;
+      order: 4;
       width: 100%;
       flex: none;
       text-align: center;
       padding: 0 15px;
+    }
+
+    /* Hide founder info inside text section on mobile (we show it separately above) */
+    .pr-founder-text-section .pr-founder-info {
+      display: none;
     }
 
     .pr-founder-text-section p {
