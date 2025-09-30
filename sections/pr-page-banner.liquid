@@ -1,0 +1,90 @@
+<div class="pr-banner-section">
+  <a href="mailto:aura@publicityforgood.com" class="pr-banner-link">
+    <!-- Desktop Banner Image -->
+    <picture class="pr-banner-image">
+      <source media="(max-width: 768px)" srcset="{{ section.settings.mobile_banner_image | image_url }}">
+      <img src="{{ section.settings.desktop_banner_image | image_url }}" alt="{{ section.settings.banner_alt_text | default: 'Science-Backed Wellness Gifts Banner' }}" class="desktop-banner">
+    </picture>
+    
+    <!-- Mobile Banner Image (fallback for older browsers) -->
+    <img src="{{ section.settings.mobile_banner_image | image_url }}" alt="{{ section.settings.banner_alt_text | default: 'Science-Backed Wellness Gifts Banner' }}" class="mobile-banner" style="display: none;">
+  </a>
+</div>
+
+<style>
+  .pr-banner-section {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .pr-banner-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+  }
+  
+  .pr-banner-image,
+  .pr-banner-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+  }
+  
+  .desktop-banner {
+    display: block;
+  }
+  
+  .mobile-banner {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-banner {
+      display: none;
+    }
+    
+    .mobile-banner {
+      display: block !important;
+    }
+  }
+  
+  /* Hover effect */
+  .pr-banner-link:hover {
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "PR page banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_banner_image",
+      "label": "Desktop Banner Image",
+      "info": "Recommended size: 1920x600px"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_banner_image", 
+      "label": "Mobile Banner Image",
+      "info": "Recommended size: 768x600px"
+    },
+    {
+      "type": "text",
+      "id": "banner_alt_text",
+      "label": "Banner Alt Text",
+      "default": "Science-Backed Wellness Gifts Banner",
+      "info": "Alternative text for accessibility"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PR page banner"
+    }
+  ]
+}
+{% endschema %}

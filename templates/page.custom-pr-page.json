@@ -24,6 +24,15 @@
       "disabled": true,
       "settings": {}
     },
+    "pr_page_banner_UaqYNb": {
+      "type": "pr-page-banner",
+      "name": "PR page banner",
+      "settings": {
+        "desktop_banner_image": "shopify://shop_images/Option2.png",
+        "mobile_banner_image": "shopify://shop_images/Section_1.png",
+        "banner_alt_text": "Science-Backed Wellness Gifts Banner"
+      }
+    },
     "16321237356a896dad": {
       "type": "slide-show",
       "blocks": {
@@ -335,6 +344,7 @@
         "image_rzpH6y",
         "image_76ahNf"
       ],
+      "disabled": true,
       "custom_css": [
         ".slide-button {border-radius: 6px !important;}"
       ],
@@ -421,11 +431,11 @@
         "background_color": "#f5f5f5",
         "button_color": "#2c5f5f",
         "layout_direction": "left-right",
-        "background_image": "shopify://shop_images/Section_08_2.png",
+        "background_image": "shopify://shop_images/Section_08_3.png",
         "background_size": "cover",
         "background_position": "center",
         "background_repeat": false,
-        "mobile_background_image": "shopify://shop_images/Frame_1618873368.png",
+        "mobile_background_image": "shopify://shop_images/Mobile_4.png",
         "mobile_background_size": "cover",
         "mobile_background_position": "center"
       }
@@ -444,11 +454,11 @@
         "background_color": "#f5f5f5",
         "button_color": "#2c5f5f",
         "layout_direction": "right-left",
-        "background_image": "shopify://shop_images/Section_12.png",
+        "background_image": "shopify://shop_images/Section_12_1.png",
         "background_size": "cover",
         "background_position": "center",
         "background_repeat": false,
-        "mobile_background_image": "shopify://shop_images/Mobile_2.png",
+        "mobile_background_image": "shopify://shop_images/Done.png",
         "mobile_background_size": "cover",
         "mobile_background_position": "center"
       }
@@ -467,11 +477,11 @@
         "background_color": "#f5f5f5",
         "button_color": "#2c5f5f",
         "layout_direction": "left-right",
-        "background_image": "shopify://shop_images/Section_14.png",
+        "background_image": "shopify://shop_images/done_1.png",
         "background_size": "cover",
         "background_position": "center",
         "background_repeat": false,
-        "mobile_background_image": "shopify://shop_images/Option2_2.png",
+        "mobile_background_image": "shopify://shop_images/Done_2.png",
         "mobile_background_size": "cover",
         "mobile_background_position": "center"
       }
@@ -490,11 +500,11 @@
         "background_color": "#f5f5f5",
         "button_color": "#2c5f5f",
         "layout_direction": "right-left",
-        "background_image": "shopify://shop_images/Section_13.png",
+        "background_image": "shopify://shop_images/Section_13_2.png",
         "background_size": "cover",
         "background_position": "center",
         "background_repeat": false,
-        "mobile_background_image": "shopify://shop_images/Option2_3.png",
+        "mobile_background_image": "shopify://shop_images/Option2_5.png",
         "mobile_background_size": "cover",
         "mobile_background_position": "center"
       }
@@ -513,11 +523,11 @@
         "background_color": "#f5f5f5",
         "button_color": "#2c5f5f",
         "layout_direction": "left-right",
-        "background_image": "shopify://shop_images/Section_15.png",
+        "background_image": "shopify://shop_images/Section_15_1.png",
         "background_size": "cover",
         "background_position": "center",
         "background_repeat": false,
-        "mobile_background_image": "shopify://shop_images/Option2_4.png",
+        "mobile_background_image": "shopify://shop_images/Done_3.png",
         "mobile_background_size": "cover",
         "mobile_background_position": "center"
       }
@@ -633,6 +643,7 @@
     "shogun-helper",
     "main",
     "shogun-optimizer",
+    "pr_page_banner_UaqYNb",
     "16321237356a896dad",
     "custon_pr_two_coloumn_LxB8tb",
     "custon_pr_two_coloumn_FQrehF",
