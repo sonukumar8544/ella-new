@@ -33,7 +33,7 @@
             </ul>
             
             {% if section.settings.button_text != blank %}
-            <a href="{{ section.settings.button_url | default: '#' }}" class="pr-landing-cta-button">
+            <a href="{{ section.settings.button_url | default: 'mailto:aura@publicityforgood.com' }}" class="pr-landing-cta-button">
               {{ section.settings.button_text }}
               <span class="pr-landing-arrow">→</span>
             </a>
