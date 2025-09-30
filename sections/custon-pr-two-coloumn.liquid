@@ -7,11 +7,11 @@
     <!-- Desktop Layout -->
     <div class="pr-landing-desktop-layout pr-landing-layout-{{ section.settings.layout_direction | default: 'left-right' }}">
       <!-- Layout Toggle Button (for testing) -->
-      <div class="pr-landing-layout-toggle">
+      {% comment %} <div class="pr-landing-layout-toggle">
         <button class="pr-landing-toggle-btn" onclick="toggleLayout('{{ section.id }}')">
           Switch Layout
         </button>
-      </div>
+      </div> {% endcomment %}
       
       <div class="pr-landing-content-wrapper">
         <!-- Desktop: Information Panel -->
