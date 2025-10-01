@@ -1,0 +1,274 @@
+<style>
+  .color-deviation-banner {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .color-deviation-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .color-deviation-banner__content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding: 60px 20px;
+    width: 100%;
+  }
+
+  .color-deviation-banner__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    color: #ffffff;
+  }
+
+  .color-deviation-banner__badge svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .color-deviation-banner__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+
+  .color-deviation-banner__subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+    font-weight: 300;
+    color: #ffffff;
+  }
+
+  .color-deviation-banner__inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    .color-deviation-banner {
+      min-height: 500px;
+    }
+
+    .color-deviation-banner__content {
+      padding: 40px 15px;
+    }
+
+    .color-deviation-banner__title {
+      font-size: 28px;
+    }
+
+    .color-deviation-banner__subtitle {
+      font-size: 16px;
+    }
+
+    .color-deviation-banner__badge {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .color-deviation-banner {
+      min-height: 500px;
+    }
+
+    .color-deviation-banner__content {
+      padding: 80px 40px;
+    }
+
+    /* .color-deviation-banner__title{
+        margin-bottom: 0px !important;
+    } */
+  }
+</style>
+
+<div 
+  class="color-deviation-banner" 
+  style="
+    {% if section.settings.desktop_image != blank %}
+      background-image: url('{{ section.settings.desktop_image | img_url: '2000x' }}');
+    {% endif %}
+    min-height: {{ section.settings.banner_height_desktop }}px;
+    color: {{ section.settings.text_color }};
+  "
+>
+  {% if section.settings.show_overlay %}
+    <div class="color-deviation-banner__overlay" style="background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+  {% endif %}
+
+  <div class="color-deviation-banner__inner">
+    <div class="color-deviation-banner__content" style="text-align: {{ section.settings.text_alignment }};">
+      {% if section.settings.title != blank %}
+        <h1 class="color-deviation-banner__title">{{ section.settings.title }}</h1>
+      {% endif %}
+
+      {% if section.settings.badge_text != blank %}
+        <div class="color-deviation-banner__badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          {{ section.settings.badge_text }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="color-deviation-banner__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .color-deviation-banner {
+      {% if section.settings.mobile_image != blank %}
+        background-image: url('{{ section.settings.mobile_image | img_url: '800x' }}') !important;
+      {% endif %}
+      min-height: {{ section.settings.banner_height_mobile }}px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Color Deviation Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "range",
+      "id": "banner_height_desktop",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Desktop Banner Height",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "banner_height_mobile",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Mobile Banner Height",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "Overlay Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show Dark Overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Quality Assurance Guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Some Tocotrienol Softgels Look A Little Different — And Why That's Okay"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "If you've noticed some softgels looking a little lighter or darker — don't worry. It's just nature showing its colors."
+    },
+    {
+      "type": "header",
+      "content": "Text Styling"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Deviation Banner"
+    }
+  ]
+}
+{% endschema %}

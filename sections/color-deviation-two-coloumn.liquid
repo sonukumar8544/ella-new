@@ -1,0 +1,263 @@
+<style>
+  .color-deviation-two-column {
+    padding: 80px 20px;
+    background: #ffffff;
+  }
+
+  .color-deviation-two-column__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .color-deviation-two-column__inner--reverse {
+    direction: rtl;
+  }
+
+  .color-deviation-two-column__inner--reverse > * {
+    direction: ltr;
+  }
+
+  .color-deviation-two-column__image-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 40px;
+  }
+
+  .color-deviation-two-column__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .color-deviation-two-column__content {
+    padding: 0 20px;
+    max-width: 540px;
+  }
+
+  .color-deviation-two-column__title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2d3e50;
+    margin: 0 0 25px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .color-deviation-two-column__description {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #374650;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .color-deviation-two-column__inner {
+      gap: 60px;
+    }
+
+    .color-deviation-two-column__title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .color-deviation-two-column__description {
+      font-size: 16px;
+    }
+
+    .color-deviation-two-column__image-wrapper {
+      padding: 35px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .color-deviation-two-column {
+      padding: 60px 20px;
+    }
+
+    .color-deviation-two-column__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      direction: ltr !important;
+    }
+
+    .color-deviation-two-column__title {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .color-deviation-two-column__description {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .color-deviation-two-column__content {
+      padding: 0;
+    }
+
+    .color-deviation-two-column__image-wrapper {
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .color-deviation-two-column {
+      padding: 50px 15px;
+    }
+
+    .color-deviation-two-column__title {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .color-deviation-two-column__description {
+      font-size: 15px;
+    }
+
+    .color-deviation-two-column__image-wrapper {
+      padding: 0px;
+    }
+  }
+</style>
+
+<div class="color-deviation-two-column">
+  <div class="color-deviation-two-column__inner {% if section.settings.content_position == 'right' %}color-deviation-two-column__inner--reverse{% endif %}">
+    <div class="color-deviation-two-column__image-wrapper">
+      {% if section.settings.image != blank %}
+        <img 
+          class="color-deviation-two-column__image" 
+          src="{{ section.settings.image | img_url: '800x' }}" 
+          alt="{{ section.settings.title }}"
+          loading="lazy"
+        >
+      {% else %}
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="400" fill="#f0f0f0" rx="8"/>
+          <circle cx="200" cy="200" r="120" fill="#e0e0e0"/>
+          <circle cx="200" cy="200" r="80" fill="#d0d0d0"/>
+          <text x="200" y="210" text-anchor="middle" font-size="16" fill="#999">Image Placeholder</text>
+        </svg>
+      {% endif %}
+    </div>
+
+    <div class="color-deviation-two-column__content">
+      {% if section.settings.title != blank %}
+        <h2 class="color-deviation-two-column__title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="color-deviation-two-column__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Two Column section",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image Left - Content Right"
+        },
+        {
+          "value": "right",
+          "label": "Image Right - Content Left"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Why It Happens — Nature at Work"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Tocotrienols come from the annatto plant, and like all plants, they're shaped by the world around them. Just as no two tomatoes ripen to the exact same shade, annatto seeds can produce oil that looks slightly different — from golden to deep red.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Deviation Two Column"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  {% if section.settings.padding_top %}
+    #shopify-section-{{ section.id }} .color-deviation-two-column {
+      padding-top: {{ section.settings.padding_top }}px;
+    }
+  {% endif %}
+  {% if section.settings.padding_bottom %}
+    #shopify-section-{{ section.id }} .color-deviation-two-column {
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  {% endif %}
+</style>
+
+

@@ -1,0 +1,418 @@
+<style>
+  .color-secondary-banner {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .color-secondary-banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .color-secondary-banner__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 80px 40px;
+  }
+
+  .color-secondary-banner__content {
+    max-width: 450px;
+  }
+
+  .color-secondary-banner__title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #2d3e50;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .color-secondary-banner__description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374650;
+    margin: 0 0 30px;
+    font-weight: 400;
+  }
+
+  .color-secondary-banner__buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .color-secondary-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+  }
+
+  .color-secondary-banner__button--primary {
+    background: #0b7a9e;
+    color: #ffffff;
+    border-color: #0b7a9e;
+  }
+
+  .color-secondary-banner__button--primary:hover {
+    background: white;
+    border-color: #095d7a;
+    color: #095d7a;
+  }
+
+  .color-secondary-banner__button--primary svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+
+  .color-secondary-banner__button--secondary {
+    background: transparent;
+    color: #0b7a9e;
+    border-color: #0b7a9e;
+  }
+
+  .color-secondary-banner__button--secondary:hover {
+    background: #0b7a9e;
+    color: #ffffff;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .color-secondary-banner {
+      min-height: 380px;
+    }
+
+    .color-secondary-banner__inner {
+      padding: 70px 35px;
+    }
+
+    .color-secondary-banner__content {
+      max-width: 500px;
+    }
+
+    .color-secondary-banner__title {
+      font-size: 38px;
+    }
+
+    .color-secondary-banner__description {
+      font-size: 16px;
+    }
+
+    .color-secondary-banner__button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .color-secondary-banner {
+      min-height: 450px;
+      align-items: flex-end;
+    }
+
+    .color-secondary-banner__inner {
+      padding: 0 25px 25px 25px !important;
+    }
+
+    .color-secondary-banner__content {
+      max-width: 100%;
+    }
+
+    .color-secondary-banner__title {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .color-secondary-banner__description {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .color-secondary-banner__buttons {
+      gap: 12px;
+    }
+
+    .color-secondary-banner__button {
+      padding: 12px 22px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .color-secondary-banner {
+      min-height: 400px;
+      align-items: flex-end;
+    }
+
+    .color-secondary-banner__inner {
+      padding: 0 20px 20px 20px;
+    }
+
+    .color-secondary-banner__title {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .color-secondary-banner__description {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .color-secondary-banner__buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .color-secondary-banner__button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+<div 
+  class="color-secondary-banner" 
+  id="color-secondary-banner-{{ section.id }}"
+  style="
+    {% if section.settings.desktop_image != blank %}
+      background-image: url('{{ section.settings.desktop_image | img_url: '2000x' }}');
+    {% endif %}
+    min-height: {{ section.settings.banner_height_desktop }}px;
+  "
+>
+  {% if section.settings.show_overlay %}
+    <div class="color-secondary-banner__overlay" style="background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+  {% endif %}
+
+  <div class="color-secondary-banner__inner">
+    <div class="color-secondary-banner__content">
+      {% if section.settings.title != blank %}
+        <h2 class="color-secondary-banner__title">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="color-secondary-banner__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      <div class="color-secondary-banner__buttons">
+        {% if section.settings.button_1_text != blank %}
+          <a 
+            href="{{ section.settings.button_1_link | default: '#' }}" 
+            class="color-secondary-banner__button color-secondary-banner__button--primary"
+          >
+            {% if section.settings.button_1_show_icon %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            {% endif %}
+            {{ section.settings.button_1_text }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.button_2_text != blank %}
+          <a 
+            href="{{ section.settings.button_2_link | default: '#' }}" 
+            class="color-secondary-banner__button color-secondary-banner__button--secondary"
+          >
+            {{ section.settings.button_2_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    #color-secondary-banner-{{ section.id }} {
+      {% if section.settings.mobile_image != blank %}
+        background-image: url('{{ section.settings.mobile_image | img_url: '800x' }}') !important;
+      {% endif %}
+      min-height: {{ section.settings.banner_height_mobile }}px !important;
+    }
+  }
+</style>
+
+{% schema %}
+    {
+  "name": "Secondary Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "range",
+      "id": "banner_height_desktop",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Desktop Banner Height",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "banner_height_mobile",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Mobile Banner Height",
+      "default": 450
+    },
+    {
+      "type": "header",
+      "content": "Overlay Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show Dark Overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Trust in Natural Purity"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Your Vitamin E tocotrienols are working exactly as nature intended. Color variation is proof of our commitment to purity and quality."
+    },
+    {
+      "type": "header",
+      "content": "Button 1 (Primary)"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text",
+      "default": "Shop Real Vitamin E"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_1_show_icon",
+      "label": "Show Shopping Cart Icon",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Button 2 (Secondary)"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text",
+      "default": "Contact Support"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Content Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Content Bottom Padding",
+      "default": 80
+    }
+  ],
+      "presets": [
+        {
+      "name": "Secondary Banner"
+        }
+      ]
+    }
+{% endschema %}
+
+<style>
+  #color-secondary-banner-{{ section.id }} .color-secondary-banner__inner {
+    {% if section.settings.padding_top %}
+      padding-top: {{ section.settings.padding_top }}px;
+    {% endif %}
+    {% if section.settings.padding_bottom %}
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    {% endif %}
+  }
+</style>
