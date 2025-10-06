@@ -399,6 +399,64 @@
         "mg_bottom_tablet1": 0,
         "mg_bottom_mobile1": 0
       }
+    },
+    "color_driven_faq_section_LGqPXx": {
+      "type": "color-driven-faq-section",
+      "blocks": {
+        "faq_item_6dGYEX": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does a darker softgel mean it's stronger?",
+            "answer": "No. The color comes from natural plant pigments, not potency. Every softgel contains the same standardized strength, tested for consistency.",
+            "open_by_default": true
+          }
+        },
+        "faq_item_6nJKM8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why do the top softgels sometimes look darker?",
+            "answer": "Softgels at the top of the bottle may be exposed to more air and light, which can slightly deepen their color over time. This is completely normal and doesn't affect quality.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_8hccPN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why don't synthetic vitamins vary in color?",
+            "answer": "Synthetic vitamins are made in labs with artificial dyes to ensure color consistency. Natural vitamins reflect the variations found in nature.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_m4jMF7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to take if the color looks different?",
+            "answer": "Absolutely. Color variation is a natural characteristic of plant-based ingredients. Every batch is rigorously tested for safety, purity, and potency.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_fVJAJa": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you test every batch?",
+            "answer": "Yes. Every single batch undergoes comprehensive third-party testing to verify potency, purity, and safety before it reaches you.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_6dGYEX",
+        "faq_item_6nJKM8",
+        "faq_item_8hccPN",
+        "faq_item_m4jMF7",
+        "faq_item_fVJAJa"
+      ],
+      "name": "Color Driven FAQ Section",
+      "settings": {
+        "section_title": "Frequently asked questions",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -410,6 +468,7 @@
     "compare_two_col_sections_P7kA8Q",
     "four_grid_block_VPbHWd",
     "barry_tan_journey_EkxjnC",
-    "1643015886f75782fe"
+    "1643015886f75782fe",
+    "color_driven_faq_section_LGqPXx"
   ]
 }
