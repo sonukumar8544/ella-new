@@ -31,6 +31,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
+    will-change: transform;
   }
 
   .color-faq-section__item:hover {
@@ -87,6 +88,7 @@
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0 25px;
+    transform: translateZ(0);
   }
 
   .color-faq-section__item.active .color-faq-section__answer {
@@ -224,16 +226,20 @@
       
       if (!question || !answer) return;
 
-      question.addEventListener('click', function() {
+      question.addEventListener('click', function(e) {
+        e.preventDefault();
         const isActive = item.classList.contains('active');
-        
-        // Close all other items (optional - remove these 3 lines if you want multiple items open at once)
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) otherItem.classList.remove('active');
-        });
         
         // Toggle current item
         item.classList.toggle('active');
+        
+        // Prevent page jump by maintaining scroll position
+        setTimeout(() => {
+          window.scrollTo({
+            top: window.scrollY,
+            behavior: 'instant'
+          });
+        }, 0);
       });
     });
   })();
