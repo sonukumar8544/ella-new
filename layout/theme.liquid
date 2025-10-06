@@ -106,6 +106,21 @@
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     </script>
 
+    <script>
+  window.addEventListener('load', function() {
+    const priceElement = document.querySelector('.money.conversion-bear-money.seal-money.ht-money');
+    if (!priceElement) return; // safety check
+
+    const priceText = priceElement.textContent.trim();
+    const priceValue = parseFloat(priceText.replace(/[^0-9.]/g, ''));
+
+    const discountedPrice = (priceValue * 0.9).toFixed(2);
+
+    // Replace original content with old + new price
+    priceElement.innerHTML = `<s>${priceText}</s> <span style="color:green;">CAD ${discountedPrice}</span>`;
+  });
+</script>
+
     {%- liquid
       if settings.layout_body == 'full'
         assign layout_body = 'body-full-width'
