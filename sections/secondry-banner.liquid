@@ -229,6 +229,14 @@
           <a 
             href="{{ section.settings.button_1_link | default: '#' }}" 
             class="color-secondary-banner__button color-secondary-banner__button--primary"
+            style="
+              background-color: {{ section.settings.button_1_background_color | default: '#0b7a9e' }};
+              border-color: {{ section.settings.button_1_border_color | default: '#0b7a9e' }};
+              color: {{ section.settings.button_1_text_color | default: '#ffffff' }};
+            "
+            data-hover-bg="{{ section.settings.button_1_hover_background | default: '#ffffff' }}"
+            data-hover-border="{{ section.settings.button_1_hover_border | default: '#095d7a' }}"
+            data-hover-text="{{ section.settings.button_1_hover_text | default: '#095d7a' }}"
           >
             {% if section.settings.button_1_show_icon %}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -243,6 +251,14 @@
           <a 
             href="{{ section.settings.button_2_link | default: '#' }}" 
             class="color-secondary-banner__button color-secondary-banner__button--secondary"
+            style="
+              background-color: {{ section.settings.button_2_background_color | default: 'transparent' }};
+              border-color: {{ section.settings.button_2_border_color | default: '#0b7a9e' }};
+              color: {{ section.settings.button_2_text_color | default: '#0b7a9e' }};
+            "
+            data-hover-bg="{{ section.settings.button_2_hover_background | default: '#0b7a9e' }}"
+            data-hover-border="{{ section.settings.button_2_hover_border | default: '#0b7a9e' }}"
+            data-hover-text="{{ section.settings.button_2_hover_text | default: '#ffffff' }}"
           >
             {{ section.settings.button_2_text }}
           </a>
@@ -359,6 +375,42 @@
       "default": true
     },
     {
+      "type": "color",
+      "id": "button_1_background_color",
+      "label": "Button 1 Background Color",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_1_border_color",
+      "label": "Button 1 Border Color",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_1_text_color",
+      "label": "Button 1 Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_1_hover_background",
+      "label": "Button 1 Hover Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_1_hover_border",
+      "label": "Button 1 Hover Border",
+      "default": "#095d7a"
+    },
+    {
+      "type": "color",
+      "id": "button_1_hover_text",
+      "label": "Button 1 Hover Text",
+      "default": "#095d7a"
+    },
+    {
       "type": "header",
       "content": "Button 2 (Secondary)"
     },
@@ -372,6 +424,42 @@
       "type": "url",
       "id": "button_2_link",
       "label": "Button 2 Link"
+    },
+    {
+      "type": "color",
+      "id": "button_2_background_color",
+      "label": "Button 2 Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "button_2_border_color",
+      "label": "Button 2 Border Color",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_2_text_color",
+      "label": "Button 2 Text Color",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_2_hover_background",
+      "label": "Button 2 Hover Background",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_2_hover_border",
+      "label": "Button 2 Hover Border",
+      "default": "#0b7a9e"
+    },
+    {
+      "type": "color",
+      "id": "button_2_hover_text",
+      "label": "Button 2 Hover Text",
+      "default": "#ffffff"
     },
     {
       "type": "header",
@@ -416,3 +504,43 @@
     {% endif %}
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('color-secondary-banner-{{ section.id }}');
+    if (banner) {
+      const buttons = banner.querySelectorAll('.color-secondary-banner__button[data-hover-bg]');
+      
+      buttons.forEach(function(button) {
+        const hoverBg = button.getAttribute('data-hover-bg');
+        const hoverBorder = button.getAttribute('data-hover-border');
+        const hoverText = button.getAttribute('data-hover-text');
+        
+        if (hoverBg && hoverBorder && hoverText) {
+          button.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = hoverBg;
+            this.style.borderColor = hoverBorder;
+            this.style.color = hoverText;
+          });
+          
+          button.addEventListener('mouseleave', function() {
+            // Reset to original colors
+            const originalBg = this.getAttribute('data-original-bg') || '{{ section.settings.button_1_background_color | default: "#0b7a9e" }}';
+            const originalBorder = this.getAttribute('data-original-border') || '{{ section.settings.button_1_border_color | default: "#0b7a9e" }}';
+            const originalText = this.getAttribute('data-original-text') || '{{ section.settings.button_1_text_color | default: "#ffffff" }}';
+            
+            if (this.classList.contains('color-secondary-banner__button--primary')) {
+              this.style.backgroundColor = '{{ section.settings.button_1_background_color | default: "#0b7a9e" }}';
+              this.style.borderColor = '{{ section.settings.button_1_border_color | default: "#0b7a9e" }}';
+              this.style.color = '{{ section.settings.button_1_text_color | default: "#ffffff" }}';
+            } else if (this.classList.contains('color-secondary-banner__button--secondary')) {
+              this.style.backgroundColor = '{{ section.settings.button_2_background_color | default: "transparent" }}';
+              this.style.borderColor = '{{ section.settings.button_2_border_color | default: "#0b7a9e" }}';
+              this.style.color = '{{ section.settings.button_2_text_color | default: "#0b7a9e" }}';
+            }
+          });
+        }
+      });
+    }
+  });
+</script>
