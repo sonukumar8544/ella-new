@@ -1,0 +1,285 @@
+
+<div class="amazon-vitemin-barry-tan-timeline">
+  <div class="amazon-vitemin-timeline-container">
+    <!-- Timeline Line -->
+    <div class="amazon-vitemin-timeline-connector"></div>
+    
+    <div class="amazon-vitemin-timeline-item" data-year="1">
+      <div class="amazon-vitemin-timeline-dot"></div>
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_1 | default: "1989" }}</div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_1 | default: "Discovery" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_1 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_1 != blank %}
+          <a href="{{ section.settings.link_1 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_1 | default: "Learn More About Vitamin E Types" }}</a>
+        {% endif %}
+      </div>
+    </div>
+    
+    <div class="amazon-vitemin-timeline-item" data-year="2">
+      <div class="amazon-vitemin-timeline-dot"></div>
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_2 | default: "2002 - 2010" }}</div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_2 | default: "Clinical Studies" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_2 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_2 != blank %}
+          <a href="{{ section.settings.link_2 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_2 | default: "View Research Studies" }}</a>
+        {% endif %}
+      </div>
+    </div>
+    
+    <div class="amazon-vitemin-timeline-item" data-year="3">
+      <div class="amazon-vitemin-timeline-dot"></div>
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_3 | default: "2015" }}</div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_3 | default: "Health Canada Approval" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_3 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_3 != blank %}
+          <a href="{{ section.settings.link_3 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_3 | default: "Read Approval Details" }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.amazon-vitemin-barry-tan-timeline {
+  padding: 60px 20px;
+  background: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.amazon-vitemin-timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding: 20px 0;
+}
+
+.amazon-vitemin-timeline-connector {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+  transform: translateY(-50%);
+}
+
+.amazon-vitemin-timeline-item {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  text-align: left;
+  z-index: 2;
+  padding: 0 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.amazon-vitemin-timeline-item:last-child {
+  border-right: none;
+}
+
+.amazon-vitemin-timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: #000000;
+  border-radius: 50%;
+  margin: 0 0 20px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.amazon-vitemin-timeline-content {
+  background: transparent;
+  padding: 0;
+  text-align: left;
+}
+
+.amazon-vitemin-timeline-year {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #374650;
+  margin-bottom: 8px;
+}
+
+.amazon-vitemin-timeline-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #374650;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.amazon-vitemin-timeline-description {
+  color: #374650;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.amazon-vitemin-timeline-link {
+  display: inline-block;
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: 400;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.amazon-vitemin-timeline-link:hover {
+  color: #004499;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .amazon-vitemin-timeline-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .amazon-vitemin-timeline-connector {
+    display: none;
+  }
+  
+  .amazon-vitemin-timeline-item {
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 0 20px 0;
+  }
+  
+  .amazon-vitemin-timeline-item:last-child {
+    border-bottom: none;
+  }
+  
+  .amazon-vitemin-timeline-title {
+    font-size: 1.0em;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .amazon-vitemin-barry-tan-timeline {
+    padding: 40px 15px;
+  }
+  
+}
+</style>
+
+{% schema %}
+{
+  "name": "Barry Tan Journey",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Timeline Item 1"
+    },
+    {
+      "type": "text",
+      "id": "year_1",
+      "label": "Year 1",
+      "default": "1989"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title 1",
+      "default": "Discovery"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Description 1",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link 1 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_1",
+      "label": "Link Text 1",
+      "default": "Learn More About Vitamin E Types"
+    },
+    {
+      "type": "header",
+      "content": "Timeline Item 2"
+    },
+    {
+      "type": "text",
+      "id": "year_2",
+      "label": "Year 2",
+      "default": "2002 - 2010"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title 2",
+      "default": "Clinical Studies"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Description 2",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link 2 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_2",
+      "label": "Link Text 2",
+      "default": "View Research Studies"
+    },
+    {
+      "type": "header",
+      "content": "Timeline Item 3"
+    },
+    {
+      "type": "text",
+      "id": "year_3",
+      "label": "Year 3",
+      "default": "2015"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title 3",
+      "default": "Health Canada Approval"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Description 3",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link 3 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_3",
+      "label": "Link Text 3",
+      "default": "Read Approval Details"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barry Tan Journey"
+    }
+  ]
+}
+{% endschema %}
