@@ -221,6 +221,7 @@
         "heading_yEY4hy",
         "text_Yrx3pa"
       ],
+      "disabled": true,
       "settings": {
         "id": "",
         "container": "fullwidth",
@@ -240,6 +241,13 @@
         "mg_bottom_desktop": 30,
         "mg_bottom_tablet": 30,
         "mg_bottom_mobile": 20
+      }
+    },
+    "custom_liquid_UEqNV9": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"we-care-custom-heading-section\">\n  <div class=\"we-care-container\">\n    <div class=\"we-care-heading-content\">\n      <h1 class=\"we-care-main-heading\">Every Life Deserves Care & Support</h1>\n      <p class=\"we-care-description\">We understand the challenges of living with chronic conditions. Together with Santosh Foundation, we're here to support your journey towards better health and wellbeing.</p>\n    </div>\n  </div>\n</div>\n\n<style>\n  .we-care-custom-heading-section {\n    background-color: #ffffff;\n    padding: 30px 20px;\n    text-align: center;\n  }\n  \n  .we-care-container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n  \n  .we-care-heading-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n  }\n  \n  .we-care-main-heading {\n    font-size: 32px;\n    font-weight: 600;\n    color: #34495E;\n    margin: 0 0 20px 0;\n    line-height: 1.2;\n  }\n  \n  .we-care-description {\n    font-size: 16px;\n    color: #36454f;\n    margin: 0;\n    line-height: 1.6;\n    max-width: 600px;\n  }\n  \n  @media (max-width: 768px) {\n    .we-care-main-heading {\n      font-size: 22px;\n    }\n    \n    .we-care-description {\n      font-size: 16px;\n    }\n    \n    .we-care-custom-heading-section {\n      padding: 40px 15px;\n    }\n  }\n</style>"
       }
     },
     "rich_text_qepA8a": {
@@ -544,6 +552,7 @@
     "main",
     "slide_show_GCwhYW",
     "rich_text_aMTTK7",
+    "custom_liquid_UEqNV9",
     "rich_text_qepA8a",
     "custom_service_block_FqaKrB",
     "marketing_community_banner_zzt3ge"
