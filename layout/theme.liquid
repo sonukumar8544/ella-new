@@ -318,11 +318,11 @@
     transform: scale(1.1);
   }
 
-  #ai-chat-button img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    border-radius: 20px;
+  #ai-chat-button svg {
+    filter: brightness(0) invert(1);
+    stroke: none;
+    width: 30px;
+    height: 30px;
   }
 
   /* Chat Window */
@@ -352,11 +352,11 @@
     position: absolute;
     top: 8px;
     right: 12px;
-    font-size: 22px;
+    font-size: 20px;
     color: red;
     cursor: pointer;
     z-index: 10000;
-    background: white;
+    background: transparent;
     border-radius: 8px;
     padding: 6px 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -380,12 +380,12 @@
 
 <!-- Floating Chat Icon -->
 <div id="ai-chat-button" title="Chat with us">
-  <!-- AI logo icon -->
-  <img src="https://static.vecteezy.com/system/resources/previews/010/518/719/non_2x/artificial-intelligence-ai-processor-chip-icon-symbol-for-graphic-design-logo-website-social-media-mobile-app-ui-illustration-vector.jpg" alt="AI Assistant" />
+  <svg width="32" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><g clip-path="url(#messages__clip0_14307_15730)"><path fill-opacity="0.01" d="M0 0h24v24H0z"></path><mask id="messages__b" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><g clip-path="url(#messages__clip1_14307_15730)"><g clip-path="url(#messages__clip2_14307_15730)"><mask id="messages__a" maskUnits="userSpaceOnUse" x="1" y="0" width="23" height="23" style="mask-type: alpha;"><path d="M2.571 22.286h-.008.008z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M17.143 4.286c1.414 0 2.571 1.157 2.571 2.571v8.572c0 1.414-1.157 2.571-2.571 2.571H7.209l-4.037 4.037c-.162.162-.384.247-.606.248-.11 0-.219-.017-.32-.068-.317-.128-.532-.445-.532-.788V6.857c0-1.414 1.157-2.571 2.572-2.571h12.857zM4.286 6c-.472 0-.857.386-.857.857v12.506l2.82-2.82c.162-.163.377-.249.608-.249h10.286c.471 0 .857-.385.857-.857V6.866c0-.472-.386-.857-.857-.857H4.286V6z"></path><path d="M20.571.857c1.415 0 2.572 1.158 2.572 2.572V12c0 .472-.386.857-.857.857-.472 0-.857-.385-.857-.857V3.43c0-.472-.386-.857-.858-.857H7.714c-.471 0-.857-.386-.857-.857 0-.472.386-.858.857-.858h12.857z"></path></mask><g mask="url(#messages__a)"><path d="M-1.714-1.714h27.429v27.429H-1.714z"></path></g></g></g></mask><g mask="url(#messages__b)"><path d="M0 0h24v24H0V0z"></path></g></g><defs><clipPath id="messages__clip0_14307_15730"><path d="M0 0h24v24H0z"></path></clipPath><clipPath id="messages__clip1_14307_15730"><path d="M0 0h24v24H0z"></path></clipPath><clipPath id="messages__clip2_14307_15730"><path transform="translate(-1.714 -1.714)" d="M0 0h27.429v27.429H0z"></path></clipPath></defs></svg>
 </div>
 
 <!-- Chat Window -->
 <div id="ai-chat-window">
+  <div id="ai-chat-close" title="Close chat">✕</div>
   <iframe src="https://6d7a9955ca41.ngrok-free.app/api/chat" title="AI Assistant"></iframe>
 </div>
 
