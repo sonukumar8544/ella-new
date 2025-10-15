@@ -47,6 +47,7 @@
   }
 {% endstyle %}
 
+	<!-- <link rel="canonical" href="https://wellnessextract.com/pages/measles"> -->
 <div class="web-story-wrapper" id="section-block-{{section.id}}">
   <amp-story
     standalone
@@ -117,6 +118,47 @@
 </div>
 
 <script async custom-element="amp-story" src="{{ 'amp-webstory.js' | asset_url }}"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ canonical_url | default: request.origin | append: request.path }}"
+  },
+  "headline": "{% if section.settings.story_title != blank %}{{ section.settings.story_title | escape }}{% else %}Wellnessextract{% endif %}",
+  {% for block in section.blocks %}
+    {% if forloop.first and block.settings.image %}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ block.settings.image | img_url: 'master' }}",
+    "height": {{ block.settings.image.height }},
+    "width": {{ block.settings.image.width }}
+  }, {% endif %}  {% endfor %}
+  "datePublished": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  "dateModified": "{{ 'now' | date: "%Y-%m-%dT%H:%M:%S%z" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{% if section.settings.author_name != blank %}{{ section.settings.author_name | escape }}{% else %}Wellnessextract{% endif %}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{% if section.settings.publisher_name != blank %}{{ section.settings.publisher_name | escape }}{% else %}Wellnessextract{% endif %}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ section.settings.publisher_logo | img_url: 'master' }}",
+      "width": 600,
+      "height": 400
+    }
+  },
+  "description": "{{ section.settings.story_description | strip_newlines | escape }}"
+}
+</script>
+
+
+
 {% schema %}
 {
   "name": "AMP Webstory 2.0",
@@ -140,6 +182,42 @@
         "max": 26,
         "step": 1,
         "default": 16
+    },
+    {
+      "type": "text",
+      "id": "story_title",
+      "label": "Story Title",
+    },
+    {
+      "type": "textarea",
+      "id": "story_description",
+      "label": "Story Description",
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name"
+    },
+    {
+      "type": "text",
+      "id": "publisher_name",
+      "label": "Publisher Name",
+      "default": "WellnessExtract"
+    },
+     {
+      "type": "image_picker",
+      "id": "publisher_logo",
+      "label": "Website logo"
+    },
+    {
+      "type": "text",
+      "id": "date_published",
+      "label": "Date Published (ISO 8601)",
+    },
+    {
+      "type": "text",
+      "id": "date_modified",
+      "label": "Date Modified (ISO 8601)",
     },
   ],
   "blocks": [

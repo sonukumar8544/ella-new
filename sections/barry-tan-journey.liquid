@@ -1,0 +1,157 @@
+<style>
+  .amazon-barry-tan-journey {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: white;
+  }
+
+  .amazon-journey-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  .amazon-desktop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .amazon-mobile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+  }
+
+
+
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .amazon-journey-header {
+      height: 80vh;
+      min-height: 500px;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .amazon-journey-header {
+      height: 70vh;
+      min-height: 400px;
+    }
+
+    .amazon-desktop-image {
+      display: none !important;
+    }
+
+    .amazon-mobile-image {
+      display: block !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .amazon-journey-header {
+      height: 60vh;
+      min-height: 350px;
+    }
+  }
+</style>
+
+<div 
+  class="amazon-barry-tan-journey" 
+  id="amazon-barry-tan-journey-{{ section.id }}"
+  style="
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    padding-top: {{ section.settings.section_padding_top | default: 80 }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom | default: 80 }}px;
+  "
+>
+  <!-- Full-Width Image Section -->
+  <div class="amazon-journey-header">
+    {% if section.settings.desktop_image != blank %}
+      <img 
+        src="{{ section.settings.desktop_image | image_url: width: 1920 }}" 
+        alt="{{ section.settings.desktop_image.alt | default: 'Dr. Barrie Tan Research Journey' }}"
+        class="amazon-desktop-image"
+        width="1920"
+        height="1080"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {% if section.settings.mobile_image != blank %}
+      <img 
+        src="{{ section.settings.mobile_image | image_url: width: 800 }}" 
+        alt="{{ section.settings.mobile_image.alt | default: 'Dr. Barrie Tan Research Journey' }}"
+        class="amazon-mobile-image"
+        width="800"
+        height="1000"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {% if section.settings.desktop_image == blank and section.settings.mobile_image == blank %}
+      <div style="
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-size: 18px;
+      ">
+        Upload Desktop and Mobile Images
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+
+{% schema %}
+    {
+      "name": "Barry Tan Journey",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Full-Width Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image",
+      "info": "Recommended size: 1920x1080px or larger. Will be shown on screens above 768px."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "info": "Recommended size: 800x1000px or larger. Will be shown on screens 768px and below."
+    },
+    {
+      "type": "header",
+      "content": "Colors & Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+      "presets": [
+        {
+          "name": "Barry Tan Journey"
+        }
+      ]
+    }
+{% endschema %}

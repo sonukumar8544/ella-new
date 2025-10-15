@@ -513,14 +513,24 @@ class HeaderDrawer extends MenuDrawer {
     openMenuDrawer(summaryElement) {
         this.header = this.header || document.getElementById('shopify-section-header');
         this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
-        document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
+        
+        // Add null check to prevent "null is not an object" errors
+        if (this.header) {
+            document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
+        }
 
         setTimeout(() => {
-            this.mainDetailsToggle.classList.add('menu-opening');
+            if (this.mainDetailsToggle) {
+                this.mainDetailsToggle.classList.add('menu-opening');
+            }
         });
 
-        summaryElement.setAttribute('aria-expanded', true);
-        trapFocus(this.mainDetailsToggle, summaryElement);
+        if (summaryElement) {
+            summaryElement.setAttribute('aria-expanded', true);
+        }
+        if (this.mainDetailsToggle) {
+            trapFocus(this.mainDetailsToggle, summaryElement);
+        }
         document.body.classList.add('overflow-hidden-mobile');
     }
 }

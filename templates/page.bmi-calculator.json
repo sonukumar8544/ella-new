@@ -28,12 +28,20 @@
       "type": "bmi-calculator",
       "name": "BMI Calculator",
       "settings": {}
+    },
+    "onlien_tools_pages_bmi_BHb8gg": {
+      "type": "onlien-tools-pages-bmi",
+      "name": "online tools bmi",
+      "settings": {
+        "blog_author_name": ""
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "bmi_calculator_yAFmk3"
+    "bmi_calculator_yAFmk3",
+    "onlien_tools_pages_bmi_BHb8gg"
   ]
 }

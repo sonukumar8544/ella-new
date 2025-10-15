@@ -1,0 +1,262 @@
+{% comment %}
+  Media Mentions Grid Section
+  Displays media mentions in a clean card layout
+{% endcomment %}
+
+{{ 'custom-grid-media-mention.css' | asset_url | stylesheet_tag }}
+
+<div class="media-mentions-section">
+  <div class="container">
+    <h2 class="media-mentions-title">{{ section.settings.title | default: 'Media Mentions' }}</h2>
+    
+    <div class="media-mentions-grid">
+      {% for block in section.blocks %}
+        <div class="media-mention-card" {{ block.shopify_attributes }}>
+          {% if block.settings.link != blank %}
+             <a href="{{ block.settings.link }}" target="_blank" class="media-mention-link">
+               <div class="external-link-icon">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                   <g clip-path="url(#clip0_2067_164)">
+                     <path d="M1.66699 1.48096H25.667H1.66699ZM25.667 1.48096V25.481V1.48096ZM25.667 1.48096L1.66699 25.481L25.667 1.48096Z" fill="black"/>
+                     <path d="M1.66699 1.48096H25.667M25.667 1.48096V25.481M25.667 1.48096L1.66699 25.481" stroke="black" stroke-opacity="0.3" stroke-width="2"/>
+                   </g>
+                   <defs>
+                     <clipPath id="clip0_2067_164">
+                       <rect width="26" height="26" fill="white" transform="translate(0.666992 0.480957)"/>
+                     </clipPath>
+                   </defs>
+                 </svg>
+               </div>
+             </a>
+          {% endif %}
+          
+          <div class="media-mention-content">
+            <h3 class="media-mention-title">{{ block.settings.title }}</h3>
+            {% if block.settings.description != blank %}
+              <p class="media-mention-description">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Media Mentions Grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Media Mentions"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#333333"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media_mention",
+      "name": "Media Mention",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Media Mention Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media Mentions Grid",
+      "blocks": [
+        {
+          "type": "media_mention",
+          "settings": {
+            "title": "5 Things You Need To Know To Run A Very Successful Amazon Business",
+            "link": "https://example.com/amazon-business"
+          }
+        },
+        {
+          "type": "media_mention",
+          "settings": {
+            "title": "Wellness Reimagined: Improving the Health & Wellness Industry",
+            "link": "https://example.com/wellness-reimagined"
+          }
+        },
+        {
+          "type": "media_mention",
+          "settings": {
+            "title": "Amazon's #1 Vitamin E Brand in the Tocotrienol category.",
+            "link": "https://example.com/vitamin-e-brand"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.media-mentions-section {
+  background-color: {{ section.settings.background_color | default: '#f1fafe' }};
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.media-mentions-title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  color: {{ section.settings.title_color | default: '#374650' }};
+  margin-bottom: 50px;
+}
+
+.media-mentions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.media-mention-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.media-mention-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.media-mention-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.media-mention-link:hover {
+  background: #e9ecef;
+  color: #333;
+  transform: scale(1.05);
+}
+
+.external-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.external-link-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.media-mention-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 60px;
+}
+
+.media-mention-icon-section {
+  display: none;
+}
+
+.media-mention-title {
+  font-weight: 400;
+  color: #374650;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.media-mention-description {
+  font-size: 0.9rem;
+  color: #374650;
+  line-height: 1.5;
+  margin: 10px 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .media-mentions-title {
+    margin-bottom: 30px;
+  }
+  
+  .media-mentions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .media-mention-card {
+    padding: 20px;
+    min-height: 100px;
+  }
+  
+  .media-mention-content {
+    padding-right: 50px;
+  }
+  
+  .media-mention-link {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .external-link-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+</style>

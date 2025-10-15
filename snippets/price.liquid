@@ -6,9 +6,11 @@
     assign target = product
   endif
 
+
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign available = target.available | default: false
+
 
   if settings.currency_format_enable
     assign money_price = price | money_with_currency
@@ -16,10 +18,12 @@
     assign money_price = price | money
   endif
 
+
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
 -%}
+
 
 <div
   class="
@@ -47,7 +51,7 @@
       <dd class="price__last" id="custom_proce_manage">
         <span class="sale_price_amount1">
           {% assign original_price1 = product.selected_or_first_available_variant.price %}
-          {% assign discount1 = original_price1 | times: 0.15 %}
+          {% assign discount1 = original_price1 | times: 0.10 %}
           {% assign new_saleprice1 = original_price1 | minus: discount1 %}
           {{ new_saleprice1 | money_with_currency }}
         </span>
@@ -57,11 +61,12 @@
       </dd>
     </div>
 
+
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
               <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
           <span class="price-item price-item--sale sale_price_amount1">
             {% assign original_price = product.selected_or_first_available_variant.price %}
-            {% assign discount = original_price | times: 0.15 %}
+            {% assign discount = original_price | times: 0.10 %}
             {% assign new_saleprice = original_price | minus: discount %}
             {{ new_saleprice | money_with_currency }}
           </span>
@@ -99,6 +104,7 @@
           </span>
         </div>
       {%- endif -%}
+
 
       {%- if settings.show_price_percent -%}
         <dd class="price__label_sale price__label_percent">
@@ -143,18 +149,23 @@
 {%- comment -%}
   Renders a list of product's price (regular, sale)
 
+
   Accepts:
   - product: {Object} Product Liquid object (optional)
   - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
 
+
   Usage:
   {% render 'price', product: product %}
 {%- endcomment -%}
 
+
 {% comment %}
     Default theme code without 15%
+
+
 
 
   {%- liquid
@@ -164,9 +175,11 @@
       assign target = product
     endif
 
+
     assign compare_at_price = target.compare_at_price
     assign price = target.price | default: 1999
     assign available = target.available | default: false
+
 
     if settings.currency_format_enable
       assign money_price = price | money_with_currency
@@ -174,10 +187,12 @@
       assign money_price = price | money
     endif
 
+
     if target == product and product.price_varies
       assign money_price = 'products.product.price.from_price_html' | t: price: money_price
     endif
   -%}
+
 
   <div
     class="
@@ -190,6 +205,7 @@
     "
   >
     <dl>
+
 
       <div class="price__regular">
     <!--
@@ -207,12 +223,14 @@
         </dd>
       </div>
 
+
       <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
         <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
           <span class="price-item price-item--sale sale_price_amount1">
             {{ price | money_with_currency }}
           </span>
         </dd>
+
 
             <!--commented by amar
             <dd class="price__compare" data-compare="{{compare_at_price}}">
@@ -225,14 +243,17 @@
             </b>
           </dd>
 
+
             <dt class="price__compare">
             <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
             </dt>
+
 
           <dt>
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
           </dt>
         -->
+
 
         {%- if settings.show_saved_price
           and price != null
@@ -248,7 +269,9 @@
               </span>
             </div> -->
 
+
         {%- endif -%}
+
 
         {%- if settings.show_price_percent -%}
           <dd class="price__label_sale price__label_percent">
@@ -292,3 +315,6 @@
     }
   </style>
 {% endcomment %}
+
+
+

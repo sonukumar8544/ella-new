@@ -16,6 +16,164 @@
     },
     "amp_webstory_GrmTgz": {
       "type": "amp-webstory",
+      "blocks": {
+        "story_page_Ftnj3H": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/hook-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Thimerosal: A Hidden Risk in Medicine?",
+            "description_color": "#ffffff",
+            "description": "This mercury-based preservative has sparked debate. Should you be concerned?",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_MrF8yn": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Thimerosal-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "A Mercury-Based Preservative",
+            "description_color": "#ffffff",
+            "description": "Used in vaccines & eye drops to prevent contamination—contains ethylmercury.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_bXjYcH": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Why_It_s_Controversial-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Is It Really Safe?",
+            "description_color": "#ffffff",
+            "description": "Though approved by health agencies, thimerosal is often avoided due to mercury concerns.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_CCP8QV": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/mercury-01-01-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Not All Mercury Is Equal",
+            "description_color": "#ffffff",
+            "description": "Thimerosal breaks down quickly & is less harmful than mercury in fish or pollution.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_kUwQV9": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Who_Should_Avoid_It-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Who Should Avoid It?",
+            "description_color": "#ffffff",
+            "description": "Infants, pregnant women, and those detoxing often prefer mercury-free products.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_HxUTim": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/The_Natural_Wellness_Shift-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Clean, Conscious Supplements",
+            "description_color": "#ffffff",
+            "description": "Consumers are choosing thimerosal-free supplements for a cleaner health journey.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_TaJrwq": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Ready_to_Detox_Smart-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Go Clean with Confidence",
+            "description_color": "#ffffff",
+            "description": "Shop our science-backed, thimerosal-free health supplements today.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "story_page_Ftnj3H",
+        "story_page_MrF8yn",
+        "story_page_bXjYcH",
+        "story_page_CCP8QV",
+        "story_page_kUwQV9",
+        "story_page_HxUTim",
+        "story_page_TaJrwq"
+      ],
       "name": "AMP Webstory 2.0",
       "settings": {
         "fontsize_title": 20,

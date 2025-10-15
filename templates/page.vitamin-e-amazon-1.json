@@ -1,0 +1,474 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "disabled": true,
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "disabled": true,
+      "settings": {}
+    },
+    "secondry_banner_HpmCRB": {
+      "type": "secondry-banner",
+      "custom_css": [
+        ".color-secondary-banner__content {max-width: 500px;}"
+      ],
+      "name": "Secondary Banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/30cd25ebe5e3ac9abce0b3eba51a064e8c9b049d.png",
+        "mobile_image": "shopify://shop_images/Mobile_banner.png",
+        "banner_height_desktop": 600,
+        "banner_height_mobile": 550,
+        "show_overlay": true,
+        "overlay_opacity": 10,
+        "title": "Not All Vitamin E Is Created Equal Meet the Superior Tocotrienols.",
+        "description": "Most Vitamin E supplements use tocopherols — the weaker form. Tocotrienols deliver the real benefits your cells need.",
+        "button_1_text": "See Why Tocotrienol Matters",
+        "button_1_link": "",
+        "button_1_show_icon": false,
+        "button_1_background_color": "#0b7a9e",
+        "button_1_border_color": "#0b7a9e",
+        "button_1_text_color": "#ffffff",
+        "button_1_hover_background": "#ffffff",
+        "button_1_hover_border": "#ffffff",
+        "button_1_hover_text": "#095d7a",
+        "button_2_text": "Shop Tocotrienol",
+        "button_2_link": "",
+        "button_2_background_color": "#ffffff",
+        "button_2_border_color": "#ffffff",
+        "button_2_text_color": "#0b7a9e",
+        "button_2_hover_background": "#0b7a9e",
+        "button_2_hover_border": "#0b7a9e",
+        "button_2_hover_text": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "marquee_3jLVfQ": {
+      "type": "marquee",
+      "blocks": {
+        "marquee_bCpDnF": {
+          "type": "marquee",
+          "settings": {
+            "text": "<ul><li>Backed by 30+ Years of Research</li></ul>",
+            "color": "#374650",
+            "color_mb": "#374650",
+            "bg_color": "",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_9fqJ3M": {
+          "type": "marquee",
+          "settings": {
+            "text": "<ul><li>Third-Party Tested & GMP-Certified</li></ul>",
+            "color": "#374650",
+            "color_mb": "#374650",
+            "bg_color": "",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_GY6yqd": {
+          "type": "marquee",
+          "settings": {
+            "text": "<ul><li>NPN Certified Therapeutic Dose</li></ul>",
+            "color": "#374650",
+            "color_mb": "#374650",
+            "bg_color": "",
+            "enable_border_bottom": false
+          }
+        },
+        "marquee_apXY7w": {
+          "type": "marquee",
+          "settings": {
+            "text": "<ul><li>Amazon’s Choice With 4.8/5 Ratings</li></ul>",
+            "color": "#374650",
+            "color_mb": "#374650",
+            "bg_color": "",
+            "enable_border_bottom": false
+          }
+        }
+      },
+      "block_order": [
+        "marquee_bCpDnF",
+        "marquee_9fqJ3M",
+        "marquee_GY6yqd",
+        "marquee_apXY7w"
+      ],
+      "custom_css": [
+        ".marquee__item li {font-weight: 700;}"
+      ],
+      "name": "t:sections.marquee.presets.name",
+      "settings": {
+        "minus_spacing_top": 0,
+        "mq_background": "#f6f6f6",
+        "mq_gradient": "",
+        "border": "none",
+        "border_color": "#000000",
+        "type_tab_font": "font_1",
+        "text_size": 15,
+        "text_line_height": 29,
+        "text_font_weight": "400",
+        "text_letter_spacing": "",
+        "gap_blocks": 51,
+        "icon": "none",
+        "icon_color": "#000000",
+        "text_size_mb": 16,
+        "text_line_height_mb": 16,
+        "border_color_mb": "#000000",
+        "icon_color_mb": "#000000",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "compare_two_col_sections_P7kA8Q": {
+      "type": "compare-two-col-sections",
+      "name": "Tocotrienols Comparison",
+      "settings": {
+        "title": "How Tocotrienols Outperform Regular Vitamin E — Every Time.",
+        "subtitle": "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results",
+        "learn_more_text": "Learn More About Vitamin E Types",
+        "learn_more_link": "shopify://products/bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+        "desktop_image": "shopify://shop_images/Frame_1618873453.png",
+        "mobile_image": "shopify://shop_images/types.png"
+      }
+    },
+    "four_grid_block_VPbHWd": {
+      "type": "four-grid-block",
+      "name": "Four Grid Block",
+      "settings": {
+        "title": "Tocotrienols Reach Where Others Can't",
+        "subtitle": "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest.",
+        "background_color": "#ffffff",
+        "title_color": "#374650",
+        "subtitle_color": "#374650",
+        "item_title_color": "#374650",
+        "item_description_color": "#6c757d",
+        "icon_background_color": "rgba(0,0,0,0)",
+        "icon_color": "#1976d2",
+        "border_color": "#e0e0e0",
+        "hover_background_color": "#f8f9fa",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "header_margin_bottom": 60,
+        "item_padding": 40,
+        "icon_size": 80,
+        "title_font_size": 42,
+        "subtitle_font_size": 18,
+        "item_title_font_size": 24,
+        "item_description_font_size": 16,
+        "show_hover_effects": true,
+        "show_borders": true,
+        "item_1_image": "shopify://shop_images/organ-donation_17977056_1.svg",
+        "item_1_title": "Heart",
+        "item_1_description": "Supports healthy cholesterol and arterial function",
+        "item_2_image": "shopify://shop_images/Frame_1618873436.svg",
+        "item_2_title": "Liver",
+        "item_2_description": "Promotes natural detox and liver balance",
+        "item_3_image": "shopify://shop_images/human-brain_18554063_1.svg",
+        "item_3_title": "Brain",
+        "item_3_description": "Helps defend neurons from oxidative stress",
+        "item_4_image": "shopify://shop_images/liquid_14831916_1.svg",
+        "item_4_title": "Skin",
+        "item_4_description": "Encourages collagen for a youthful glow"
+      }
+    },
+    "barry_tan_journey_EkxjnC": {
+      "type": "barry-tan-journey",
+      "disabled": true,
+      "name": "Barry Tan Journey",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Main.png",
+        "mobile_image": "shopify://shop_images/Main_1.png",
+        "background_color": "#ffffff"
+      }
+    },
+    "1643015886f75782fe": {
+      "type": "custom-service-block",
+      "blocks": {
+        "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/Image_h-_261pxshow.png",
+            "icon": "",
+            "width_icon": 0,
+            "height_icon": 0,
+            "mg_bottom_icon": 0,
+            "color_icon": "#374650",
+            "text": "",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 10,
+            "fontsize_title_block_mb": 10,
+            "title_block_font_weight": "700",
+            "mg_bottom_title": 0,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#3c3c3c",
+            "description": "",
+            "custom_liquid": false,
+            "text1": "",
+            "content1": "",
+            "text2": "",
+            "content2": "",
+            "text3": "",
+            "content3": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 15,
+            "lineheight_des_block": 10,
+            "mg_bottom_des": 0,
+            "color_des_block": "#505050",
+            "button": "",
+            "link": "#",
+            "button_style": "style2",
+            "fontsize_button": 10,
+            "button_width": 100,
+            "fontweight_button": "700",
+            "enable_underline_button": false,
+            "color_button": "#086b92",
+            "button_border": "#086b92",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ffffff",
+            "button_border_hover": "",
+            "button_background_hover": "#086b92",
+            "button_background_gradient_hover": ""
+          }
+        },
+        "text_8PpA4k": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "text",
+            "icon": "",
+            "width_icon": 0,
+            "height_icon": 0,
+            "mg_bottom_icon": 0,
+            "color_icon": "#3c3c3c",
+            "text": "",
+            "type_tab_font": "font_2",
+            "fontsize_title_block": 32,
+            "fontsize_title_block_mb": 24,
+            "title_block_font_weight": "800",
+            "mg_bottom_title": 35,
+            "mg_bottom_title_mb": 25,
+            "color_block": "#086b92",
+            "description": "<style>\n        .amazon-two-list {\n            margin: 0;\n            padding: 0;\n            list-style-type: none;\n        }\n        .amazon-two-list li {\n            padding: 10px 0;\n            color: #333;\n        }\n        .amazon-two-list li:before {\n            content: \"✓ \";\n            color: black;\n        }\n   \n    </style>\n\n <ul class=\"amazon-two-list\">\n        <li>100% Annatto Purity – Richest natural source of delta & gamma tocotrienols</li>\n        <li>Clinical Dosage – 300mg NPN-approved therapeutic level</li>\n        <li>Third-Party Lab Tested – Verified for purity & potency</li>\n        <li>GMP-Certified Manufacturing – Produced in FDA-registered facilities</li>\n        <li>Amazon’s Choice – Rated 4.8/5 stars by verified buyers</li>\n<a href=\"#\" style=\"color:#086B92; font-style:italic; border-bottom:1px solid #086B92; text-decoration:none; display:inline-block; max-width:160px; overflow:hidden; white-space:nowrap;\">See the Difference</a>\n    </ul>",
+            "custom_liquid": false,
+            "text1": "",
+            "content1": "",
+            "text2": "",
+            "content2": "",
+            "text3": "",
+            "content3": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 16,
+            "lineheight_des_block": 10,
+            "mg_bottom_des": 0,
+            "color_des_block": "#36454f",
+            "button": "",
+            "link": "",
+            "button_style": "style2",
+            "fontsize_button": 16,
+            "button_width": 200,
+            "fontweight_button": "700",
+            "enable_underline_button": false,
+            "color_button": "#086b92",
+            "button_border": "#086b92",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ffffff",
+            "button_border_hover": "",
+            "button_background_hover": "#086b92",
+            "button_background_gradient_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c",
+        "text_8PpA4k"
+      ],
+      "custom_css": [
+        ".image-zoom:hover img {transform: none;}",
+        ".custom-service-block .halo-row {flex-direction: row-reverse;}",
+        ".section-block-template--25310576509224__1643015886f75782fe .halo-item + .halo-item {margin: auto;}"
+      ],
+      "settings": {
+        "custom_liquid1": false,
+        "id_section": "grid_text_imgs",
+        "container": "container",
+        "padding_full_width": 0,
+        "display_border_top": false,
+        "display_border_bottom": false,
+        "border_color": "rgba(0,0,0,0)",
+        "service_block_swipe_on_mobile": "list",
+        "color_icon_slider": "#212121",
+        "service_block_style": "style_1",
+        "policies_bg": "#fefaec",
+        "policies_bg_gradient": "",
+        "service_block_title": "",
+        "enable_border_title": false,
+        "color_title": "#000000",
+        "fontsize_title": 10,
+        "fontsize_title_mb": 10,
+        "mg_bottom_title_service_block": 0,
+        "mg_bottom_title_service_block_mb": 6,
+        "service_block_des": "",
+        "service_block_des_pos": "bottom",
+        "color_des": "#000000",
+        "fontsize_des": 10,
+        "mg_top_service_block_des": 0,
+        "mg_bottom_service_block_des": 0,
+        "view_all": "",
+        "view_all_align": "left",
+        "font_weight_view_all": "400",
+        "mg_top_view": 0,
+        "mg_bottom_view": 0,
+        "enable_border_view_all": false,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "title_align": "left",
+        "item_width": "full_width",
+        "border_item": "none",
+        "enable_item_distance": true,
+        "enable_hover_box_shadow": false,
+        "enable_hover_effects_top": false,
+        "item_padding_top": 0,
+        "item_padding_bottom": 0,
+        "item_padding_left_right": 17,
+        "item_radius": 0,
+        "grid_gap": 5,
+        "item_align": "left",
+        "enable_block_bottom": false,
+        "bg_block_bottom": "#000000",
+        "btn_text_block_bottom": "Shop Now",
+        "button_link_block_bottom": "",
+        "button_1_width_block_bottom": 100,
+        "button_color_block_bottom": "#ffffff",
+        "button_border_block_bottom": "#232323",
+        "button_background_block_bottom": "#232323",
+        "button_background_gradient_block_bottom": "",
+        "button_color_hover_block_bottom": "#ffffff",
+        "button_border_hover_block_bottom": "#232323",
+        "button_background_hover_block_bottom": "#232323",
+        "button_background_gradient_hover_block_bottom": "",
+        "btn_2_text_block_bottom": "Shop Now",
+        "button_link_2_block_bottom": "",
+        "button_2_width_block_bottom": 100,
+        "button_2_color_block_bottom": "#ffffff",
+        "button_2_border_block_bottom": "#232323",
+        "button_2_background_block_bottom": "#232323",
+        "button_2_background_gradient_block_bottom": "",
+        "button_2_color_hover_block_bottom": "#ffffff",
+        "button_2_border_hover_block_bottom": "#232323",
+        "button_2_background_hover_block_bottom": "#232323",
+        "button_2_background_gradient_hover_block_bottom": "",
+        "mg_top_desktop": 15,
+        "mg_top_tablet": 15,
+        "mg_top_mobile": 10,
+        "mg_bottom_desktop": 40,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 50,
+        "mg_top_desktop1": 0,
+        "mg_top_tablet1": 0,
+        "mg_top_mobile1": 0,
+        "mg_bottom_desktop1": 0,
+        "mg_bottom_tablet1": 0,
+        "mg_bottom_mobile1": 0
+      }
+    },
+    "color_driven_faq_section_LGqPXx": {
+      "type": "color-driven-faq-section",
+      "blocks": {
+        "faq_item_6dGYEX": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does a darker softgel mean it's stronger?",
+            "answer": "No. The color comes from natural plant pigments, not potency. Every softgel contains the same standardized strength, tested for consistency.",
+            "open_by_default": true
+          }
+        },
+        "faq_item_6nJKM8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why do the top softgels sometimes look darker?",
+            "answer": "Softgels at the top of the bottle may be exposed to more air and light, which can slightly deepen their color over time. This is completely normal and doesn't affect quality.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_8hccPN": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why don't synthetic vitamins vary in color?",
+            "answer": "Synthetic vitamins are made in labs with artificial dyes to ensure color consistency. Natural vitamins reflect the variations found in nature.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_m4jMF7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to take if the color looks different?",
+            "answer": "Absolutely. Color variation is a natural characteristic of plant-based ingredients. Every batch is rigorously tested for safety, purity, and potency.",
+            "open_by_default": false
+          }
+        },
+        "faq_item_fVJAJa": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you test every batch?",
+            "answer": "Yes. Every single batch undergoes comprehensive third-party testing to verify potency, purity, and safety before it reaches you.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_6dGYEX",
+        "faq_item_6nJKM8",
+        "faq_item_8hccPN",
+        "faq_item_m4jMF7",
+        "faq_item_fVJAJa"
+      ],
+      "name": "Color Driven FAQ Section",
+      "settings": {
+        "section_title": "Frequently asked questions",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "main",
+    "shogun-optimizer",
+    "secondry_banner_HpmCRB",
+    "marquee_3jLVfQ",
+    "compare_two_col_sections_P7kA8Q",
+    "four_grid_block_VPbHWd",
+    "barry_tan_journey_EkxjnC",
+    "1643015886f75782fe",
+    "color_driven_faq_section_LGqPXx"
+  ]
+}

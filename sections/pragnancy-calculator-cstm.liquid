@@ -1,0 +1,586 @@
+{% schema %}
+{
+  "name": "pragnancy cstm Calculator",
+  "settings": [],
+  "presets": [
+    {
+      "name": "pragnancy cstm Calculator"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  @media (min-width: 768px) {
+    .pregnancy-cstm-body {
+      min-height: 100vh;
+    }
+  }
+  .pregnancy-cstm-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    flex-direction: column;
+  }
+
+  .pregnancy-cstm-calculator-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .pregnancy-cstm-calculator-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    font-size: 24px;
+  }
+
+  .pregnancy-cstm-input-group {
+    margin-bottom: 20px;
+  }
+
+  .pregnancy-cstm-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .pregnancy-cstm-input-group select,
+  .pregnancy-cstm-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .pregnancy-cstm-button {
+    background-color: #086b92;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+
+  .pregnancy-cstm-button:hover {
+    background-color: #086b92;
+  }
+
+  .pregnancy-cstm-result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+  }
+
+  .pregnancy-cstm-result-container h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .pregnancy-cstm-result-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .pregnancy-cstm-result-category {
+    font-size: 24px;
+    font-weight: bold;
+    color: #086b92;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .pregnancy-cstm-suggestion {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #086b92;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pregnancy-cstm-comparison {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .pregnancy-cstm-comparison-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .pregnancy-cstm-comparison-value {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  @media (max-width: 760px) {
+    .pregnancy-cstm-calculator-container {
+      padding: 15px;
+    }
+
+    .pregnancy-cstm-calculator-container h1 {
+      font-size: 22px;
+    }
+
+    .pregnancy-cstm-result-value {
+      font-size: 28px;
+    }
+
+    .pregnancy-cstm-result-category {
+      font-size: 20px;
+    }
+  }
+
+  /* Popup styles */
+  .pregnancy-cstm-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .pregnancy-cstm-popup-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .pregnancy-cstm-popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .pregnancy-cstm-popup-overlay.active .pregnancy-cstm-popup {
+    transform: translateY(0);
+  }
+
+  .pregnancy-cstm-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .pregnancy-cstm-popup-close:hover {
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  .pregnancy-cstm-popup-content {
+    margin-top: 20px;
+  }
+
+  /* Klaviyo form styles */
+  .pregnancy-cstm-klaviyo-form {
+    margin: 20px 0;
+    padding-bottom: 20px;
+  }
+
+  /* Klaviyo submit button styles */
+  .klaviyo-submit-button {
+    background: rgb(218, 217, 217) !important;
+    border-radius: 6px !important;
+    border-style: solid !important;
+    border-color: rgb(194, 194, 194) !important;
+    border-width: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    font-family: Nunito-Sans-Klaviyo-Hosted, Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    line-height: 1 !important;
+    font-style: normal !important;
+    white-space: normal !important;
+    padding: 0 10px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    align-self: flex-end !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    height: 40px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .pregnancy-cstm-popup-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+<section class="pregnancy-cstm-body">
+  <div class="pregnancy-cstm-calculator-container">
+    <h1>Pregnancy Due Date Calculator</h1>
+
+    <div class="pregnancy-cstm-input-group">
+      <label for="pregnancy-cstm-calculation-method">Calculation Method</label>
+      <select id="pregnancy-cstm-calculation-method">
+        <option value="lmp">Last Menstrual Period (LMP)</option>
+        <option value="conception">Conception Date</option>
+        <option value="ultrasound">Ultrasound Date</option>
+      </select>
+    </div>
+
+    <div class="pregnancy-cstm-input-group" id="pregnancy-cstm-lmp-group">
+      <label for="pregnancy-cstm-lmp-date">First Day of Last Period</label>
+      <input type="date" id="pregnancy-cstm-lmp-date">
+    </div>
+
+    <div class="pregnancy-cstm-input-group" id="pregnancy-cstm-conception-group" style="display: none;">
+      <label for="pregnancy-cstm-conception-date">Conception Date</label>
+      <input type="date" id="pregnancy-cstm-conception-date">
+    </div>
+
+    <div class="pregnancy-cstm-input-group" id="pregnancy-cstm-ultrasound-group" style="display: none;">
+      <label for="pregnancy-cstm-ultrasound-date">Ultrasound Date</label>
+      <input type="date" id="pregnancy-cstm-ultrasound-date">
+      <label for="pregnancy-cstm-ultrasound-weeks" style="margin-top: 10px;">Weeks at Ultrasound</label>
+      <input type="number" id="pregnancy-cstm-ultrasound-weeks" min="1" max="42" placeholder="Weeks">
+      <label for="pregnancy-cstm-ultrasound-days" style="margin-top: 10px;">Days</label>
+      <input type="number" id="pregnancy-cstm-ultrasound-days" min="0" max="6" placeholder="Days">
+    </div>
+
+    <button id="pregnancy-cstm-calculate-btn" class="pregnancy-cstm-button">Calculate Due Date</button>
+  </div>
+
+  <div class="pregnancy-cstm-result-container" id="pregnancy-cstm-result">
+    <h2>Your Pregnancy Results</h2>
+    <div class="pregnancy-cstm-result-value" id="pregnancy-cstm-result-value">No date calculated</div>
+    <div class="pregnancy-cstm-result-category" id="pregnancy-cstm-result-category">Estimated Due Date</div>
+
+    <div class="pregnancy-cstm-comparison">
+      <div class="pregnancy-cstm-comparison-item">
+        <div>Current Week</div>
+        <div class="pregnancy-cstm-comparison-value" id="pregnancy-cstm-current-week">0</div>
+      </div>
+      <div class="pregnancy-cstm-comparison-item">
+        <div>Trimester</div>
+        <div class="pregnancy-cstm-comparison-value" id="pregnancy-cstm-trimester">1st</div>
+      </div>
+      <div class="pregnancy-cstm-comparison-item">
+        <div>Days Left</div>
+        <div class="pregnancy-cstm-comparison-value" id="pregnancy-cstm-days-left">280</div>
+      </div>
+    </div>
+
+    <div class="pregnancy-cstm-suggestion">
+      <h3>About Your Pregnancy</h3>
+      <p id="pregnancy-cstm-gestation-text">
+        A typical pregnancy lasts about 40 weeks from the first day of your last menstrual period.
+      </p>
+      <p id="pregnancy-cstm-milestone-note"></p>
+      <p>Remember that only about 5% of women deliver on their exact due date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Popup HTML -->
+<div class="pregnancy-cstm-popup-overlay" id="pregnancy-cstm-popup">
+  <div class="pregnancy-cstm-popup">
+    <button class="pregnancy-cstm-popup-close" id="pregnancy-cstm-popup-close">&times;</button>
+    <h2 class="pregnancy-cstm-popup-title">Get Your Personalized Pregnancy Guide</h2>
+    <div class="pregnancy-cstm-popup-content">
+      <!-- Klaviyo form -->
+      <div class="pregnancy-cstm-klaviyo-form">
+        <div class="klaviyo-form-RrDsq5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const calculateBtn = document.getElementById('pregnancy-cstm-calculate-btn');
+    const resultContainer = document.getElementById('pregnancy-cstm-result');
+    const resultValue = document.getElementById('pregnancy-cstm-result-value');
+    const resultCategory = document.getElementById('pregnancy-cstm-result-category');
+    const currentWeek = document.getElementById('pregnancy-cstm-current-week');
+    const trimester = document.getElementById('pregnancy-cstm-trimester');
+    const daysLeft = document.getElementById('pregnancy-cstm-days-left');
+    const gestationText = document.getElementById('pregnancy-cstm-gestation-text');
+    const milestoneNote = document.getElementById('pregnancy-cstm-milestone-note');
+    const methodSelect = document.getElementById('pregnancy-cstm-calculation-method');
+    
+    // Group elements
+    const lmpGroup = document.getElementById('pregnancy-cstm-lmp-group');
+    const conceptionGroup = document.getElementById('pregnancy-cstm-conception-group');
+    const ultrasoundGroup = document.getElementById('pregnancy-cstm-ultrasound-group');
+
+    // Popup elements
+    const popup = document.getElementById('pregnancy-cstm-popup');
+    const popupClose = document.getElementById('pregnancy-cstm-popup-close');
+
+    // Store calculated values
+    let calculatedDueDate = null;
+    let currentGestation = 0;
+
+    // Toggle input groups based on method
+    methodSelect.addEventListener('change', function () {
+      lmpGroup.style.display = 'none';
+      conceptionGroup.style.display = 'none';
+      ultrasoundGroup.style.display = 'none';
+      
+      if (this.value === 'lmp') {
+        lmpGroup.style.display = 'block';
+      } else if (this.value === 'conception') {
+        conceptionGroup.style.display = 'block';
+      } else if (this.value === 'ultrasound') {
+        ultrasoundGroup.style.display = 'block';
+      }
+    });
+
+    calculateBtn.addEventListener('click', function () {
+      // First calculate the due date
+      const calculationSuccessful = calculateDueDate();
+
+      // Only show popup if calculation was successful
+      if (calculationSuccessful) {
+        popup.classList.add('active');
+        // Hide the regular result container initially
+        resultContainer.style.display = 'none';
+      }
+    });
+
+    // Close popup when clicking the close button
+    popupClose.addEventListener('click', function () {
+      popup.classList.remove('active');
+      displayResult(calculatedDueDate, currentGestation);
+    });
+
+    // Close popup when clicking outside of it
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+        displayResult(calculatedDueDate, currentGestation);
+      }
+    });
+
+    // Function to handle Klaviyo button clicks
+    function handleKlaviyoButtonClick(e) {
+      const klaviyoButton = e.target.closest('.go3265039304');
+      if (klaviyoButton && popup.classList.contains('active')) {
+        popup.classList.remove('active');
+        displayResult(calculatedDueDate, currentGestation);
+      }
+    }
+
+    // Set up event listener for Klaviyo button
+    document.addEventListener('click', handleKlaviyoButtonClick);
+
+    // Listen for Klaviyo form submission as a fallback
+    document.addEventListener('klaviyoForms', function (e) {
+      if (e.detail.type === 'submit' && e.detail.formId === 'T6BNnH') {
+        popup.classList.remove('active');
+        displayResult(calculatedDueDate, currentGestation);
+      }
+    });
+
+    function calculateDueDate() {
+      const method = methodSelect.value;
+      let dueDate = new Date();
+      let gestationDays = 0;
+      
+      // Clear previous errors
+      const existingError = document.querySelector('.pregnancy-cstm-error');
+      if (existingError) {
+        existingError.remove();
+      }
+
+      try {
+        if (method === 'lmp') {
+          const lmpDate = new Date(document.getElementById('pregnancy-cstm-lmp-date').value);
+          if (isNaN(lmpDate.getTime())) {
+            showError('Please enter a valid last menstrual period date');
+            return false;
+          }
+          
+          // Naegele's rule: LMP + 1 year - 3 months + 7 days
+          dueDate = new Date(lmpDate);
+          dueDate.setFullYear(dueDate.getFullYear() + 1);
+          dueDate.setMonth(dueDate.getMonth() - 3);
+          dueDate.setDate(dueDate.getDate() + 7);
+          
+          // Calculate current gestation (in days)
+          const today = new Date();
+          gestationDays = Math.floor((today - lmpDate) / (1000 * 60 * 60 * 24));
+        } 
+        else if (method === 'conception') {
+          const conceptionDate = new Date(document.getElementById('pregnancy-cstm-conception-date').value);
+          if (isNaN(conceptionDate.getTime())) {
+            showError('Please enter a valid conception date');
+            return false;
+          }
+          
+          // Conception date + 266 days
+          dueDate = new Date(conceptionDate);
+          dueDate.setDate(dueDate.getDate() + 266);
+          
+          // Calculate current gestation
+          const today = new Date();
+          gestationDays = Math.floor((today - conceptionDate) / (1000 * 60 * 60 * 24)) + 14;
+        } 
+        else if (method === 'ultrasound') {
+          const ultrasoundDate = new Date(document.getElementById('pregnancy-cstm-ultrasound-date').value);
+          const weeks = parseInt(document.getElementById('pregnancy-cstm-ultrasound-weeks').value) || 0;
+          const days = parseInt(document.getElementById('pregnancy-cstm-ultrasound-days').value) || 0;
+          
+          if (isNaN(ultrasoundDate.getTime()) || weeks <= 0 || days < 0 || days > 6) {
+            showError('Please enter valid ultrasound information');
+            return false;
+          }
+          
+          const totalDays = (weeks * 7) + days;
+          const gestationAtUltrasound = totalDays;
+          
+          // Calculate due date: ultrasound date + (280 - gestationAtUltrasound) days
+          dueDate = new Date(ultrasoundDate);
+          dueDate.setDate(dueDate.getDate() + (280 - gestationAtUltrasound));
+          
+          // Calculate current gestation
+          const today = new Date();
+          gestationDays = gestationAtUltrasound + Math.floor((today - ultrasoundDate) / (1000 * 60 * 60 * 24));
+        }
+
+        // Validate gestation period
+        if (gestationDays < 0) {
+          showError('The date you entered is in the future');
+          return false;
+        }
+        if (gestationDays > 294) { // 42 weeks
+          showError('The date you entered suggests the pregnancy is already past 42 weeks');
+          return false;
+        }
+
+        // Store calculated values
+        calculatedDueDate = dueDate;
+        currentGestation = gestationDays;
+        
+        return true;
+      } catch (e) {
+        showError('An error occurred during calculation');
+        return false;
+      }
+    }
+
+    function displayResult(dueDate, gestationDays) {
+      if (!dueDate) return;
+      
+      // Format due date
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dueDateString = dueDate.toLocaleDateString('en-US', options);
+      
+      // Calculate weeks and days
+      const gestationWeeks = Math.floor(gestationDays / 7);
+      const remainingDays = gestationDays % 7;
+      
+      // Update result display
+      resultValue.textContent = dueDateString;
+      resultCategory.textContent = 'Estimated Due Date';
+      currentWeek.textContent = `${gestationWeeks} weeks ${remainingDays} days`;
+      
+      // Determine trimester
+      let trimesterText = '1st';
+      if (gestationWeeks >= 27) trimesterText = '3rd';
+      else if (gestationWeeks >= 14) trimesterText = '2nd';
+      trimester.textContent = trimesterText;
+      
+      // Calculate days left
+      const today = new Date();
+      const daysLeftCount = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+      daysLeft.textContent = daysLeftCount > 0 ? daysLeftCount : 'Past due!';
+      
+      // Update informational text
+      gestationText.textContent = `You are currently ${gestationWeeks} weeks and ${remainingDays} days pregnant.`;
+      
+      // Add milestone note
+      if (gestationWeeks < 12) {
+        milestoneNote.textContent = 'You are in your first trimester. This is when most women experience morning sickness.';
+      } else if (gestationWeeks < 28) {
+        milestoneNote.textContent = 'You are in your second trimester. Many women find this the most comfortable period.';
+      } else {
+        milestoneNote.textContent = 'You are in your third trimester. Get ready for your baby\'s arrival!';
+      }
+      
+      // Show the result container
+      resultContainer.style.display = 'block';
+      resultContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showError(message) {
+      const errorElement = document.createElement('div');
+      errorElement.className = 'pregnancy-cstm-error';
+      errorElement.style.color = 'red';
+      errorElement.style.margin = '10px 0';
+      errorElement.style.textAlign = 'center';
+      errorElement.textContent = message;
+
+      document
+        .querySelector('.pregnancy-cstm-body')
+        .insertBefore(errorElement, document.querySelector('.pregnancy-cstm-result-container'));
+    }
+    
+    // Set default date to today for LMP (most common method)
+    document.getElementById('pregnancy-cstm-lmp-date').valueAsDate = new Date();
+  });
+</script>

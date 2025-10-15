@@ -66,7 +66,7 @@
     padding: 0 10px;
     font-size: var(--font-body-size);
     font-weight: var(--font-weight-normal);
-    text-transform: capitalize;
+    text-transform: lowercase;
     color: #36454F;
     background-color: var(--variant-bg);
     border: 1px solid #374650;

@@ -8884,9 +8884,9 @@ div#custom_proce_manage {
 
  .consent-text-footer {
   color: white;
-  max-width: 1000px;
+  max-width: 938px;
   margin: auto;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   display: block;
   font-family: 'lato';
@@ -8894,4 +8894,26 @@ div#custom_proce_manage {
 }
 
 
- 
+.pagination-wrapper{
+  display: none !important;
+}
+
+ .bundle-product .sealsubs-target-element {
+  display: none !important;
+}
+
+.productView-options .product-form__input .form__label [data-header-option]{
+  text-transform: lowercase;
+}
+
+.product-page-new-third .slick-arrow{
+  display: block !important;
+}
+/* 
+.product-page-new-third> .slick-dots{
+  display: none !important;
+} */
+
+.shopify-pc__banner__dialog{
+  display: none !important;
+}

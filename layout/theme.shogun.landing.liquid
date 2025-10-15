@@ -11,6 +11,8 @@ This file can be re-written at any time.
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
 
+    <script type="text/javascript"> (function(funnel) {var deferredEvents = [];window.funnelytics = {events: {trigger: function (name, attributes, callback, opts) {deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});}}};var insert = document.getElementsByTagName('script')[0],script = document.createElement('script');script.addEventListener('load', function() {window.funnelytics.init(funnel, false, deferredEvents, {"anonymiseUsers":false});});script.src = 'https://cdn.funnelytics.io/track-v3.js';script.type = 'text/javascript';script.async = true;insert.parentNode.insertBefore(script, insert);})('0cc5c89e-292b-43be-a6cb-42d74b1602ac'); </script>
+
     <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
     {%- if settings.favicon != blank -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
@@ -163,6 +165,7 @@ This file can be re-written at any time.
     ></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PG7B620QJE"></script>
+    <script type="text/javascript"> (function(funnel) {var deferredEvents = [];window.funnelytics = {events: {trigger: function (name, attributes, callback, opts) {deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});}}};var insert = document.getElementsByTagName('script')[0],script = document.createElement('script');script.addEventListener('load', function() {window.funnelytics.init(funnel, true, deferredEvents, {});});script.src = 'https://cdn.funnelytics.io/track-v3.js';script.type = 'text/javascript';script.async = true;insert.parentNode.insertBefore(script, insert);})('0cc5c89e-292b-43be-a6cb-42d74b1602ac'); </script>
   </head>
   <body>
     {% include 'shogun-content-handler' %}
@@ -171,7 +174,20 @@ This file can be re-written at any time.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     {{ content_for_layout }}
     {{ 'custom.js' | asset_url | script_tag }}
-    
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.href.includes("collections")) {
+      var style = document.createElement("style");
+      style.innerHTML = `
+        .sealsubs-target-element.sealsubs-full[data-seal-ac],
+        .sealsubs-target-element.sealsubs-full[data-seal-in] {
+          display: none !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  });
+</script>
     <style type="text/css">
       body, html {
         width: 100% !important;

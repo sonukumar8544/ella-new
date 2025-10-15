@@ -60,7 +60,8 @@
               
 				{%- if has_tab and title != blank -%}
                   <!-- tab__slide -->
-					<li class="tab">
+				  {% assign fruther = block.settings.title | escape  | handle %}
+					<li class="tab"  {% if product.handle == 'electric-frother' %}{% if fruther == "who-is-it-for" %} style=" display:none"{% endif %}{% endif %} >
 			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
 			                 {% if product.handle == 'electric-frother' %}  
                     {% assign h2only = block.settings.title | escape  | handle %}
@@ -202,6 +203,10 @@
                               {% else %}
 								{{ product.metafields.Custom.we_how_to_use }}
                                   {% endif %}
+								  {% elsif content_meta == 'who-is-it-for' %}
+							{% if product.metafields.Custom.product_3_0_who_is_it_for != blank %}
+							{{ product.metafields.Custom.product_3_0_who_is_it_for }}
+							{% endif %}
 							{%  else %}
                                {% if product.metafields.Custom.product_3_0_product_shipping_returns != blank %}
                               {{ product.metafields.Custom.product_3_0_product_shipping_returns }}

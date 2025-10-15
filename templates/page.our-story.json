@@ -200,6 +200,25 @@
         "mg_bottom_mobile": 0
       }
     },
+    "about_us_founder_section_dR6LVp": {
+      "type": "about-us-founder-section",
+      "blocks": {
+        "paragraph_HDWLW8": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Virender Dass, the visionary Founder and Director of Wellness Extract, turned a personal mission into a global wellness movement helping people live healthier & happier lives.</p><p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. \nWhen his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to Dr. Barrie Tan, world’s foremost expert on tocotrienols, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p><p>This experience ignited Virender's passion for health., prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a global movement, as he dedicated himself to providing high-quality natural supplements.</p><p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a trusted name in natural health, committed to helping people lead healthier lives.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_HDWLW8"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/The_man_with_a_Vision_and_Mission_BG_1.png",
+        "founder_title": "The Man with a Vision and Mission",
+        "founder_image": "shopify://shop_images/Rectangle_41_1.png"
+      }
+    },
     "about_us_two_col_section_VbJpRp": {
       "type": "about-us-two-col-section",
       "settings": {
@@ -648,25 +667,6 @@
         "bio_4": "<p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a <strong>trusted name in natural health</strong>, committed to helping people lead <strong>healthier lives</strong>.</p>"
       }
     },
-    "about_us_founder_section_dR6LVp": {
-      "type": "about-us-founder-section",
-      "blocks": {
-        "paragraph_HDWLW8": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Virender Dass, the visionary Founder and Director of Wellness Extract, turned a personal mission into a global wellness movement helping people live healthier & happier lives.</p><p>His journey into the world of natural health began in 2015, not by choice but by a twist of fate. \nWhen his mother was diagnosed with cancer, he was determined to seek natural supplements to support her treatment. This quest led him to Dr. Barrie Tan, world’s foremost expert on tocotrienols, whose guidance helped incorporate Deltagold Tocotrienols into her regimen. The results were nothing short of miraculous—her health saw significant improvements alongside her conventional treatments.</p><p>This experience ignited Virender's passion for health., prompting him to shift from VFX artist to founder of Wellness Extract. What began as a personal mission transformed into a global movement, as he dedicated himself to providing high-quality natural supplements.</p><p>Today, under his leadership and Dr. Tan's continued guidance, Wellness Extract is a trusted name in natural health, committed to helping people lead healthier lives.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "paragraph_HDWLW8"
-      ],
-      "settings": {
-        "background_image": "shopify://shop_images/The_man_with_a_Vision_and_Mission_BG_1.png",
-        "founder_title": "The Man with a Vision and Mission",
-        "founder_image": "shopify://shop_images/Rectangle_41_1.png"
-      }
-    },
     "image_banner_PgKjda": {
       "type": "image-banner",
       "blocks": {
@@ -826,6 +826,7 @@
         },
         "image_yhnmeK": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Arvind_410x410_ef7cc858-0b82-4fbd-821f-279a81113f66.png",
             "title": "Arvind Madakan",
@@ -998,6 +999,7 @@
     "main",
     "image_banner_iJcKje",
     "rich_text_3pWCBF",
+    "about_us_founder_section_dR6LVp",
     "about_us_two_col_section_VbJpRp",
     "collapsible_content_7qC8iH",
     "collapsible_content_wicXQc",
@@ -1008,7 +1010,6 @@
     "collapsible_content_wLcb8C",
     "collapsible_content_7wpXk8",
     "founder_section_mezyQY",
-    "about_us_founder_section_dR6LVp",
     "image_banner_PgKjda",
     "brand_slider_tRACcq",
     "rich_text_CtJHjE"

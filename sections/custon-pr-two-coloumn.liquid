@@ -1,0 +1,872 @@
+{% comment %} 
+      Custom PR Page Two Col section
+{% endcomment %}
+
+<div class="pr-landing-section" id="pr-landing-section-{{ section.id }}">
+  <div class="pr-landing-container">
+    <!-- Desktop Layout -->
+    <div class="pr-landing-desktop-layout pr-landing-layout-{{ section.settings.layout_direction | default: 'left-right' }}">
+      <!-- Layout Toggle Button (for testing) -->
+      {% comment %} <div class="pr-landing-layout-toggle">
+        <button class="pr-landing-toggle-btn" onclick="toggleLayout('{{ section.id }}')">
+          Switch Layout
+        </button>
+      </div> {% endcomment %}
+      
+      <div class="pr-landing-content-wrapper">
+        <!-- Desktop: Information Panel -->
+        <div class="pr-landing-info-panel">
+          <div class="pr-landing-info-content">
+            <h1 class="pr-landing-main-title">{{ section.settings.main_title }}</h1>
+            <h2 class="pr-landing-subtitle">{{ section.settings.subtitle }}</h2>
+            
+            <ul class="pr-landing-benefits-list">
+              {% if section.settings.benefit_1 != blank %}
+              <li>{{ section.settings.benefit_1 }}</li>
+              {% endif %}
+              {% if section.settings.benefit_2 != blank %}
+              <li>{{ section.settings.benefit_2 }}</li>
+              {% endif %}
+              {% if section.settings.benefit_3 != blank %}
+              <li class="pr-landing-benefit-3">{{ section.settings.benefit_3 }}</li>
+              {% endif %}
+            </ul>
+            
+            {% if section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_url | default: 'mailto:aura@publicityforgood.com' }}" class="pr-landing-cta-button">
+              {{ section.settings.button_text }}
+              <span class="pr-landing-arrow">→</span>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        
+        <!-- Desktop: Product Display -->
+        <div class="pr-landing-product-display">
+          <div class="pr-landing-bottles-container">
+            <div class="pr-landing-bottle pr-landing-bottle-1"></div>
+            <div class="pr-landing-bottle pr-landing-bottle-2"></div>
+            <div class="pr-landing-bottle pr-landing-bottle-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Layout -->
+    <div class="pr-landing-mobile-layout">
+      {% if section.settings.mobile_background_image %}
+      <div class="pr-landing-mobile-hero">
+        <!-- Mobile Image -->
+        <div class="pr-landing-mobile-image-container">
+          <img src="{{ section.settings.mobile_background_image | img_url: '768x1024' }}" alt="Mobile Hero" class="pr-landing-mobile-hero-image" />
+        </div>
+        
+        <!-- Content Box -->
+        <div class="pr-landing-mobile-content">
+          <div class="pr-landing-mobile-info-box">
+            <h1 class="pr-landing-mobile-title">{{ section.settings.main_title }}</h1>
+            <h2 class="pr-landing-mobile-subtitle">{{ section.settings.subtitle }}</h2>
+            
+            <ul class="pr-landing-mobile-benefits-list">
+              {% if section.settings.benefit_1 != blank %}
+              <li>{{ section.settings.benefit_1 }}</li>
+              {% endif %}
+              {% if section.settings.benefit_2 != blank %}
+              <li>{{ section.settings.benefit_2 }}</li>
+              {% endif %}
+              {% if section.settings.benefit_3 != blank %}
+              <li class="pr-landing-mobile-benefit-3">{{ section.settings.benefit_3 }}</li>
+              {% endif %}
+            </ul>
+            
+            {% if section.settings.button_text != blank %}
+            <div class="pr-landing-mobile-cta">
+              <a href="{{ section.settings.button_url | default: '#' }}" class="pr-landing-mobile-button">
+                <span>{{ section.settings.button_text }}</span>
+                <div class="pr-landing-mobile-button-icon">→</div>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+#pr-landing-section-{{ section.id }}.pr-landing-section {
+  background-color: {{ section.settings.background_color | default: '#f5f5f5' }};
+  {% if section.settings.background_image %}
+  background-image: url('{{ section.settings.background_image | img_url: '1920x1080' }}');
+  background-size: {{ section.settings.background_size | default: 'cover' }};
+  background-position: {{ section.settings.background_position | default: 'center' }};
+  {% if section.settings.background_repeat %}
+  background-repeat: repeat;
+  {% else %}
+  background-repeat: no-repeat;
+  {% endif %}
+  {% endif %}
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.pr-landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+.pr-landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.pr-landing-section{
+    padding: 60px 0;
+}
+}
+
+@media (max-width: 768px) {
+  #pr-landing-section-{{ section.id }}.pr-landing-section {
+    background-image: none !important;
+    background-color: transparent;
+    min-height: auto;
+    padding: 0;
+  }
+  
+  .pr-landing-container {
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+
+.pr-landing-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 400px;
+}
+
+.pr-landing-info-panel {
+  flex: 1;
+  max-width: 45%;
+}
+
+.pr-landing-info-content {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pr-landing-main-title {
+  font-size: 35px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+}
+
+.pr-landing-benefit-3{
+    font-weight: bold;
+}
+
+.pr-landing-subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374650;
+  margin: 0 0 30px 0;
+}
+
+.pr-landing-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.pr-landing-benefits-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374650;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pr-landing-benefits-list li:before {
+  content: "•";
+  color: #374650;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pr-landing-cta-button {
+  background: #086b92;
+  color: white;
+  border: 1px solid #086b92;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.pr-landing-cta-button:hover {
+  background: white;
+  color: #086b92;
+  border: 1px solid #086b92;
+}
+
+.pr-landing-arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pr-landing-product-display {
+  flex: 1;
+  max-width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pr-landing-bottles-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.pr-landing-bottle {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0f0f0;
+}
+
+.pr-landing-bottle:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 8px;
+  background: white;
+  border-radius: 4px;
+  border: 2px solid #f0f0f0;
+}
+
+.pr-landing-bottle-1 {
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+.pr-landing-bottle-2 {
+  left: 110px;
+  top: 10px;
+  z-index: 3;
+  transform: scale(1.1);
+}
+
+.pr-landing-bottle-3 {
+  left: 200px;
+  top: 20px;
+  z-index: 1;
+}
+
+/* Layout Control */
+.pr-landing-desktop-layout {
+  display: block;
+}
+
+.pr-landing-mobile-layout {
+  display: none;
+}
+
+/* Dynamic Layout Direction */
+#pr-landing-section-{{ section.id }} .pr-landing-layout-left-right .pr-landing-content-wrapper {
+  flex-direction: row;
+}
+
+#pr-landing-section-{{ section.id }} .pr-landing-layout-right-left .pr-landing-content-wrapper {
+  flex-direction: row-reverse;
+}
+
+#pr-landing-section-{{ section.id }} .pr-landing-layout-right-left .pr-landing-info-panel {
+  max-width: 45%;
+}
+
+#pr-landing-section-{{ section.id }} .pr-landing-layout-right-left .pr-landing-product-display {
+  max-width: 55%;
+}
+
+/* Layout Toggle Button */
+#pr-landing-section-{{ section.id }} .pr-landing-layout-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+#pr-landing-section-{{ section.id }} .pr-landing-toggle-btn {
+  background: #086b92;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(8, 107, 146, 0.3);
+}
+
+#pr-landing-section-{{ section.id }} .pr-landing-toggle-btn:hover {
+  background: #0a7ba8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 107, 146, 0.4);
+}
+
+/* Mobile Layout Styles */
+.pr-landing-mobile-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pr-landing-mobile-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pr-landing-mobile-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.pr-landing-mobile-content {
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.pr-landing-mobile-info-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px 20px 0 0;
+  padding: 30px 25px;
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15),
+              0 -4px 20px rgba(0, 0, 0, 0.1),
+              0 2px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+/* Small Screen Specific Styles */
+@media (max-width: 768px) {
+  .pr-landing-mobile-hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pr-landing-mobile-image-container {
+    height: 55vh;
+    min-height: 350px;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pr-landing-mobile-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.mobile_background_size | default: 'cover' }};
+    object-position: {{ section.settings.mobile_background_position | default: 'center' }};
+  }
+  
+  .pr-landing-mobile-content {
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3));
+  }
+  
+  .pr-landing-mobile-info-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 25px 40px 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .pr-landing-mobile-info-box:hover {
+    transform: none;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.15),
+                0 -4px 20px rgba(0, 0, 0, 0.1),
+                0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Desktop hover effect only */
+@media (min-width: 769px) {
+  .pr-landing-mobile-info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.pr-landing-mobile-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.pr-landing-mobile-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.pr-landing-mobile-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 25px 0;
+}
+
+.pr-landing-mobile-benefits-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.pr-landing-mobile-benefits-list li:before {
+  content: "•";
+  color: #4a5568;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+}
+
+.pr-landing-mobile-benefit-3 {
+  font-weight: bold;
+}
+
+.pr-landing-mobile-cta {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.pr-landing-mobile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #0077a8;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 119, 168, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+}
+
+.pr-landing-mobile-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.pr-landing-mobile-button:hover:before {
+  left: 100%;
+}
+
+.pr-landing-mobile-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 119, 168, 0.35);
+  background: #006394;
+}
+
+.pr-landing-mobile-button-icon {
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-left: 4px;
+}
+
+.pr-landing-mobile-button:hover .pr-landing-mobile-button-icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pr-landing-content-wrapper {
+    gap: 30px;
+  }
+  
+  .pr-landing-main-title {
+    font-size: 30px;
+  }
+  
+  .pr-landing-subtitle {
+    font-size: 20px;
+  }
+  
+  .pr-landing-info-content {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Switch to mobile layout */
+  .pr-landing-desktop-layout {
+    display: none;
+  }
+  
+  .pr-landing-mobile-layout {
+    display: block;
+  }
+  
+  .pr-landing-main-title {
+    font-size: 25px;
+  }
+  
+  .pr-landing-subtitle {
+    font-size: 18px;
+  }
+  
+  .pr-landing-info-content {
+    padding: 30px 25px;
+  }
+  
+  .pr-landing-bottles-container {
+    width: 250px;
+    height: 150px;
+  }
+  
+  .pr-landing-bottle {
+    width: 60px;
+    height: 90px;
+  }
+  
+  .pr-landing-bottle-1 {
+    left: 15px;
+    top: 15px;
+  }
+  
+  .pr-landing-bottle-2 {
+    left: 85px;
+    top: 5px;
+  }
+  
+  .pr-landing-bottle-3 {
+    left: 155px;
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pr-landing-mobile-image-container {
+    height: 50vh;
+    min-height: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pr-landing-mobile-info-box {
+    padding: 30px 20px 35px 20px;
+  }
+  
+  .pr-landing-mobile-title {
+    font-size: 22px;
+  }
+  
+  .pr-landing-mobile-subtitle {
+    font-size: 22px;
+    margin: 0 0 18px 0;
+  }
+  
+  .pr-landing-mobile-benefits-list {
+    margin: 18px 0 22px 0;
+  }
+  
+  .pr-landing-mobile-benefits-list li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .pr-landing-mobile-cta {
+    margin-top: 25px;
+  }
+  
+  .pr-landing-mobile-button {
+    padding: 13px 24px;
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+</style>
+
+<script>
+function toggleLayout(sectionId) {
+  const section = document.getElementById('pr-landing-section-' + sectionId);
+  const desktopLayout = section.querySelector('.pr-landing-desktop-layout');
+  
+  if (desktopLayout.classList.contains('pr-landing-layout-left-right')) {
+    desktopLayout.classList.remove('pr-landing-layout-left-right');
+    desktopLayout.classList.add('pr-landing-layout-right-left');
+  } else {
+    desktopLayout.classList.remove('pr-landing-layout-right-left');
+    desktopLayout.classList.add('pr-landing-layout-left-right');
+  }
+}
+</script>
+
+{% schema %}
+  {
+  "name": "custom pr page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "GG Essential®"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Cellular Energy & Vitality"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_1",
+      "label": "Benefit 1",
+      "default": "Plant-based support for energy and healthy aging."
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_2",
+      "label": "Benefit 2",
+      "default": "Formulated with pure Geranylgeraniol (GG), this essential nutrient helps maintain natural CoQ10 levels, supports mitochondrial function, and promotes muscle strength and vitality. Ideal for staying active and energized through the holiday season."
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_3",
+      "label": "Benefit 3",
+      "default": "\"The plant-based spark that keeps your cells energized.\""
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Request Media Samples"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#2c5f5f"
+    },
+    {
+      "type": "radio",
+      "id": "layout_direction",
+      "label": "Desktop Layout Direction",
+      "options": [
+        {
+          "value": "left-right",
+          "label": "Content Left, Product Right"
+        },
+        {
+          "value": "right-left",
+          "label": "Product Left, Content Right"
+        }
+      ],
+      "default": "left-right"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "background_repeat",
+      "label": "Background Repeat",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "select",
+      "id": "mobile_background_size",
+      "label": "Mobile Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "mobile_background_position",
+      "label": "Mobile Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+    "presets": [
+      {
+      "name": "custom pr page"
+      }
+    ]
+  }
+{% endschema %}

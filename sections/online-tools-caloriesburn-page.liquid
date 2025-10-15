@@ -1,0 +1,422 @@
+{% schema %}
+  {
+    "name": "online calories burn",
+    "settings": [
+      {
+        "type": "text",
+        "id": "blog_author_name",
+        "label": "Author Name"
+      }
+    ],
+    "presets": [
+      {
+        "name": "online calories burn"   
+      }
+    ]
+  }
+{% endschema %}
+ 
+<style>
+.online-tools-calc-caloriesburn {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.online-tools-calc-caloriesburn a{
+    color: #086b92;
+}
+
+@media (max-width: 800px){
+    
+.online-tools-calc-caloriesburn {
+    margin: 0px 10px;
+}
+
+.online-tools-calc-caloriesburn h1 {
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+}
+.online-tools-calc-caloriesburn ul, .online-tools-calc-caloriesburn ol {
+    margin-left: 0px !important;
+    margin-bottom: 0;
+}
+}
+
+@media only screen and (min-width: 750px) {
+    h2, .h2 {
+        font-size: 2.4rem; 
+    }
+}
+.online-tools-calc-caloriesburn h2 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #086b92;;
+}
+.online-tools-calc-caloriesburn h1 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: #086b92;
+    margin-bottom: 15px;
+}
+
+.online-tools-calc-caloriesburn h1+p, .online-tools-calc-caloriesburn h2+p, .online-tools-calc-caloriesburn h3+p, .online-tools-calc-caloriesburn h4+p, .online-tools-calc-caloriesburn h5+p, .online-tools-calc-caloriesburn h6+p {
+    padding-top: 0;
+}
+
+.online-tools-calc-caloriesburn p {
+    margin-bottom: 11px;
+    margin-top: 1px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.online-tools-calc-caloriesburn p+p {
+    margin-top: 17px;
+}
+
+.online-tools-calc-caloriesburn p {
+    margin-bottom: 11px;
+    margin-top: 1px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+/* 
+.online-tools-calc-caloriesburn h1, .online-tools-calc-caloriesburn h2, .online-tools-calc-caloriesburn h3, .online-tools-calc-caloriesburn h4, .online-tools-calc-caloriesburn h5, .online-tools-calc-caloriesburn h6 {
+    margin-top: 0;
+    margin-bottom: -3px;
+} */
+
+.online-tools-calc-caloriesburn ul, .online-tools-calc-caloriesburn ol {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.online-tools-calc-caloriesburn p+ul, .online-tools-calc-caloriesburn p+ol {
+    margin-top: 18px;
+}
+
+.online-tools-calc-caloriesburn ul { 
+    padding-top: 0!important;
+    margin-top: 0!important;
+}
+
+ .online-tools-calc-caloriesburn h3 {
+    margin-bottom: 7px;
+    margin-top: 31px;
+}
+
+.online-tools-calc-caloriesburn h5, .online-tools-calc-caloriesburn h6 {
+    margin-top: 25px;
+    color: #086b92;
+}
+
+.online-tools-calc-caloriesburn h4{
+        margin-top: 25px;
+        margin-bottom: 6px;
+    color: #086b92;
+}
+
+.online-tools-calc-caloriesburn h3{
+     margin-top: 31px;
+    color: #086b92;
+}
+
+.online-tools-calc-caloriesburn table {
+    margin: 21px 0;
+}
+
+.online-tools-calc-caloriesburn table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: auto;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #36454f;
+}
+
+.online-tools-calc-caloriesburn table tr:nth-child(1) {
+    background-color: #086b92;
+}
+
+.online-tools-calc-caloriesburn table tr {
+    background: transparent;
+}
+
+.online-tools-calc-caloriesburn table tr:nth-child(1) td:first-child {
+    border-top-left-radius: 10px;
+}
+
+.online-tools-calc-caloriesburn table td {
+    border: 1px solid black;
+}
+
+.online-tools-calc-caloriesburn table td {
+    padding: 11px 13px 8px;
+    text-align: left;
+}
+
+.online-tools-calc-caloriesburn table tr:nth-child(1) p {
+    color: #fff;
+    font-weight: 700;
+}
+
+table.Table.Ltr.Table p, .online-tools-calc-caloriesburn table p {
+    font-size: 14px!important;
+}
+
+.online-tools-calc-caloriesburn p {
+    margin-bottom: 11px;
+    margin-top: 1px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.online-tools-calc-caloriesburn table tr:nth-child(1) p {
+    color: #fff;
+    font-weight: 700;
+}
+
+.online-tools-calc-caloriesburn table tr {
+    background: transparent;
+}
+
+table.Table.Ltr.Table p, .online-tools-calc-caloriesburn table p {
+    font-size: 14px!important;
+}
+</style>
+
+
+
+
+<section class="online-tools-calc-caloriesburn">
+<h1 dir="ltr"><span>Calories Burned Calculator&nbsp;</span></h1>
+<p dir="ltr"><span>Whether you are at the gym, dancing around your room, or just grabbing coffee between work, your body is constantly burning calories. But how do you </span><span>actually</span><span> know how much? That’s where a </span><span>Calories Burned Calculator</span><span> steps in.&nbsp;</span></p>
+<p dir="ltr"><span>Calories calculator helps you decode the efforts behind your everyday movements like doing reps, steps, and stretches into numbers. In a world full of fitness and food guilt, getting clear on your calorie burns is more empowering than ever.</span></p>
+<p dir="ltr"><span>Let’s break down how it works, what affects your calorie burn rate, and how to get the most accurate data from your workouts.&nbsp;</span></p>
+<h2 dir="ltr"><span>What is a Calories Burner Calculator?&nbsp;</span></h2>
+<p dir="ltr"><span>A </span><a href="https://wellnessextract.com/pages/calories-burned-calculator?" target="_blank"><span>Calories Burned Calculator</span></a><span> is a tool that estimates how many calories your body burns during a specific activity, based on factors like your weight, time duration, and type of activity. Whether it’s an intense workout, a walk in the park, or even sleeping, your body exhausts energy, and this calculator turns it into a number depending on how many calories you burn.</span></p>
+<p dir="ltr"><span>These calculators use the MET (Metabolic Equivalent of Task) value of an activity. MET is a unit that measures the energy your body uses during physical activity compared to resting.&nbsp;</span></p>
+<p dir="ltr"><strong>1 MET</strong><span> equals the energy you burn at rest; higher MET values refer to intense activities.</span></p>
+<p dir="ltr"><span>Furthermore, it is combined with your body weight and the time spent giving you an accurate estimate. Some advanced calculators also include factors like age, gender, and heart rate data for more accurate readings.</span></p>
+<h2 dir="ltr"><span>Factors That Affect How Many Calories You Burn&nbsp;</span></h2>
+<p dir="ltr"><span>Everyone has a unique body, and they don’t burn calories the same way, even during the exact same activity. There are several key factors that influence how much energy you use:</span></p>
+<ol>
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Body Weight&nbsp;</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>The heavier you are, the more energy your body requires to move. Let’s say that a person weighing 180 lbs will burn more calories doing the same activity as someone weighing 130 lbs would. That’s because your body is pushing, pulling, or carrying more weight during movement.</span></p>
+<ol start="2">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Muscle Mass</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>Muscles are active tissues that require more energy (calories) to maintain than fat. In fact, each pound of muscle burns roughly 6–7 calories a day at rest, compared to just 2–3 calories burned by a pound of fat.</span></p>
+<p dir="ltr"><span>So, </span><a href="https://wellnessextract.com/blogs/wellness/maximizing-muscle-health-the-role-of-geranylgeraniol-for-muscle-function?" target="_blank"><span>more muscles result</span></a><span> in a higher resting metabolic rate (RMR). It is the number of calories your body naturally burns while you're doing nothing (like binge-watching shows).&nbsp;</span></p>
+<ol start="3">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Activity Type &amp; Intensity&nbsp;</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>Walking and sprinting may both be “cardio,” but differ in calorie demand. High-intensity activities like running or cycling can increase your heart rate and oxygen usage, so they demand more calories. Whereas low-intensity activities like yoga or slow walking still burn calories, but at a slower pace.&nbsp;</span><b></b></p>
+<ol start="4">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Duration of Activity&nbsp;</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>The longer you move, the more calories you burn. It is simple. Whether it’s a 20-minute jog or a 60-minute hike, time adds up for the calories burned. Even small movements throughout the day (like taking the stairs or a 10-minute walk) contribute to your daily life. That’s why it is included as a major factor while using calories running calculator.&nbsp;</span></p>
+<ol start="5">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Age &amp; Gender&nbsp;</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>As you age, your metabolism tends to slow down due to a natural loss in muscle mass and hormonal changes. In simple terms, you may burn fewer </span><a href="https://wellnessextract.com/blogs/wellness/unlocking-weight-loss-what-is-a-calorie-deficit-diet?" target="_blank"><span>calories</span></a><span> doing the same activities you used to.&nbsp;</span></p>
+<p dir="ltr"><span>Similarly, men usually burn more calories than women because they tend to have more lean muscle mass and larger body frames.&nbsp;</span><b></b></p>
+<h2 dir="ltr"><span>How to Use a Calories Burned Calculator?</span></h2>
+<p dir="ltr"><span>A Calories Burned Calculator only works perfectly when you provide it with accurate inputs. Here’s what you need to do:</span></p>
+<ol>
+<li aria-level="1" dir="ltr">
+<p role="presentation" dir="ltr"><span><strong>Enter Your Weight:</strong> </span><span>Your body weight determines how much energy you use on an everyday basis. Just input your current weight, instead of your goal weight.</span></p>
+</li>
+<li aria-level="1" dir="ltr">
+<p role="presentation" dir="ltr"><span><strong>Select the Activity:</strong> </span><span>Choose the exact activity you’re performing, like running, yoga, cycling, or cleaning. Each of these activities will have its own MET (Metabolic Equivalent of Task) value.</span></p>
+</li>
+<li aria-level="1" dir="ltr">
+<p role="presentation" dir="ltr"><span><strong>Add Time Duration:</strong> </span><span>Enter how long you performed that activity, even if it’s a 10-minute session. It does make a difference.</span></p>
+</li>
+<li aria-level="1" dir="ltr">
+<p role="presentation" dir="ltr"><strong>Include Intensity (optional):</strong><span> Some calculators allow you to choose intensity levels (light, moderate, high). In simple terms, higher intensity equals more calories to burn.</span></p>
+</li>
+<li aria-level="1" dir="ltr">
+<p role="presentation" dir="ltr"><strong>Advanced Data (optional):</strong><span> If available, add your </span><span>age, gender, and heart rate</span><span> for more precise results.</span></p>
+</li>
+</ol>
+<p dir="ltr"><strong>Pro Tip:</strong><span> You can keep track of multiple activities throughout the day rather than just one workout. This would give you a full picture of your total daily calorie expenditure (TDEE).</span></p>
+<h2 dir="ltr"><span>Calories Burned by Different Activities</span></h2>
+<p dir="ltr"><span>Not all types of movements burn calories equally. Some exercises exhaust your energy quickly, while others keep the burn slower.&nbsp;</span></p>
+<p dir="ltr"><span>Here is an approximate calorie expenditure calculator chart for a person weighing </span><strong>70 kg (154 lbs):</strong></p>
+<div align="left" dir="ltr">
+<table><colgroup><col width="208"><col width="208"><col width="208"></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><strong>Activity</strong></p>
+</td>
+<td>
+<p dir="ltr"><strong>Duration (30 min)</strong></p>
+</td>
+<td>
+<p dir="ltr"><strong>Calories Burned</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Running (6 mph)</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>370</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cycling&nbsp;</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>260</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Swimming&nbsp;</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>300</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Walking (3 mph)</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>150</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Yoga</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>120</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Jump Rope</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>350</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>Cleaning/Housework</span></p>
+</td>
+<td>
+<p dir="ltr"><span>30 min</span></p>
+</td>
+<td>
+<p dir="ltr"><span>100</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p dir="ltr"><span>These numbers vary depending on your weight, age, and effort level.</span></p>
+<p dir="ltr"><span>In simple terms, high-intensity activities not only burn more calories during the workout, but they may continue to burn even after you stop, known as the afterburn effect.</span></p>
+<h2 dir="ltr"><span>Tips to Burn More Calories Every Day</span></h2>
+<p dir="ltr"><span>If your calorie burn ratio is not up to mark, you don’t need to worry. There are simple lifestyle changes that can make a real difference:</span></p>
+<ol>
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Move More, Even in Small Ways</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>You can move to a nearby store instead of driving, walk while brushing your teeth, or park your vehicle further away, so you can take extra steps.&nbsp;</span></p>
+<ol start="2">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Add Strength Training</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>Start doing bodyweight exercises like squats or push-ups while watching TV or keep resistance bands at your desk for quick sets during breaks.</span></p>
+<ol start="3">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Stay Active Throughout the Day</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>&nbsp;To stay active, you can have an hourly reminder to do stretching or walking for two minutes when working at a desk.</span></p>
+<ol start="4">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Drink Cold Water</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>Make sure to keep a chilled water bottle handy and refill it several times a day instead of grabbing soda or juice.</span></p>
+<ol start="5">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Increase Your NEAT (Non-Exercise Activity Thermogenesis)</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>&nbsp;Do light chores like folding laundry while standing, walking while talking on the phone, or taking the stairs instead of the escalator. They will gradually improve your activity.&nbsp;</span></p>
+<ol start="6">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Prioritize Protein</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>&nbsp;Start choosing </span><a href="https://wellnessextract.com/blogs/wellness/top-foods-high-in-fiber-and-protein-get-fit" target="_blank"><span>protein-rich diet</span></a><span> like eggs or Greek yogurt for breakfast instead of sugary cereals. You can add beans or chicken to your salad.</span></p>
+<ol start="7">
+<li aria-level="1" dir="ltr">
+<h3 role="presentation" dir="ltr"><span>Get Enough Sleep</span></h3>
+</li>
+</ol>
+<p dir="ltr"><span>Create a wind-down routine by dim lights, avoid screens an hour before bed, and make a consistent bedtime routine to improve sleep quality.</span></p>
+<h2 dir="ltr"><span>Final Takeaway&nbsp;</span></h2>
+<p dir="ltr"><span>Burning more calories isn’t just about intense workouts; it is actually about how small but consistent movements matter. Mix higher-burn activities like running or jump rope with daily actions like walking, stretching, and chores. As time passes by, these simple choices will lead to better energy use and long-term results.</span></p>
+<p dir="ltr"><em><strong>Disclaimer</strong><strong>: </strong>This blog is intended for informative purposes only and should not be considered medical advice. The content does not make any claims regarding the prevention, cure, diagnosis, or treatment of any health condition. Always consult your healthcare provider before adding anything to your healthcare routine.&nbsp;</em><b></b></p>
+<h2 dir="ltr"><span>FAQs</span></h2>
+<h4 dir="ltr"><span>Q1. How accurate are calories burned calculators?</span></h4>
+<p dir="ltr"><span>While they are not 100% accurate, these calculators give an estimate depending on how detailed your input is (e.g., weight, activity, duration).&nbsp;</span></p>
+<h4 dir="ltr"><span>Q2. Which activities burn the most calories?</span></h4>
+<p dir="ltr"><span>&nbsp;High-intensity workouts like running, jump rope, swimming, and cycling generally burn the most calories. They trigger the "afterburn effect," where your body burn calories even post-exercise.</span></p>
+<h4 dir="ltr"><span>Q3. Why do men and women burn calories at different rates?</span></h4>
+<p dir="ltr"><span>&nbsp;Men often have more lean muscle mass and larger body frames, which burn more calories. Hormonal and metabolic differences also contribute to difference in burn rates.</span></p>
+<h4 dir="ltr"><span>Q4. How can I burn more calories during the day without going to the gym?</span></h4>
+<p dir="ltr"><span>&nbsp;Simple changes like walking, doing housework, using stairs, and standing while working can increase your NEAT (Non-Exercise Activity Thermogenesis) without intense workouts.</span></p>
+<h4 dir="ltr"><span>Q5. Does drinking water help burn calories?</span></h4>
+<p dir="ltr"><span>&nbsp;Yes. Your body uses energy to warm it up, which slightly boosts metabolism. Drinking cold water and staying hydrated also supports overall energy.&nbsp;</span><b></b></p>
+<h2 dir="ltr"><span>References</span></h2>
+<p dir="ltr"><span>1. Wikipedia (2025)&nbsp;Metabolic equivalent of task (MET). Available at: </span><a href="https://en.wikipedia.org/wiki/Metabolic_equivalent_of_task" target="_blank"><span>https://en.wikipedia.org/wiki/Metabolic_equivalent_of_task</span></a></p>
+<p dir="ltr"><span>2. Signos blog (2022)&nbsp;Using METs to Track Physical Activity. Available at: </span><a href="https://www.signos.com/blog/using-mets-to-track-physical-activity" target="_blank"><span>https://www.signos.com/blog/using-mets-to-track-physical-activity</span></a></p>
+<p dir="ltr"><span>3. Calculator.net (2025) Calories Burned Calculator – MET formula explained. Available at: </span><a href="https://www.calculator.net/calories-burned-calculator.html" target="_blank"><span>https://www.calculator.net/calories-burned-calculator.html</span></a></p>
+<p dir="ltr"><span>4. PubMed / Journal of Personalized Medicine (2017)&nbsp;Accuracy in Wrist‑Worn, Sensor‑Based Measurements of Heart Rate and Energy Expenditure in a Diverse Cohort. Available at: </span><a href="https://pubmed.ncbi.nlm.nih.gov/28538708/" target="_blank" rel="noopener"><span>https://pubmed.ncbi.nlm.nih.gov/28538708/</span></a></p>
+<p dir="ltr"><span>5. Stanford University News (2021)&nbsp;Engineers design accurate wearable calorie-burn counter. Available at: </span><a href="https://news.stanford.edu/stories/2021/07/accurate-wearable-calorie-burn-counter" target="_blank" rel="noopener"><span>https://news.stanford.edu/stories/2021/07/accurate-wearable-calorie-burn-counter</span></a><b id="docs-internal-guid-d7c64e68-7fff-e617-53c1-17edf3f01187"></b></p>
+</section>

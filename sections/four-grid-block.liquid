@@ -1,0 +1,819 @@
+<style>
+  .amazon-four-grid {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: white;
+  }
+
+  .amazon-grid-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .amazon-grid-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .amazon-grid-subtitle {
+    font-size: 18px;
+    font-style: italic;
+    color: #374650;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .amazon-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .amazon-grid-item {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  .amazon-grid-item:last-child {
+    border-right: none;
+  }
+
+  .amazon-grid-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .amazon-grid-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .amazon-grid-icon svg {
+    width: 50px;
+    height: 50px;
+    color: #1976d2;
+  }
+
+  .amazon-grid-item-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .amazon-grid-item-description {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .amazon-four-grid {
+      padding: 60px 20px;
+    }
+
+    .amazon-grid-title {
+      font-size: 28px !important;
+    }
+
+    .amazon-grid-subtitle {
+      font-size: 16px !important;
+    }
+
+    .amazon-grid-item {
+      padding: 35px 15px;
+    }
+
+    .amazon-grid-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 18px;
+    }
+
+    .amazon-grid-icon svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .amazon-grid-item-title {
+      font-size: 22px;
+    }
+
+    .amazon-grid-item-description {
+      font-size: 15px;
+      max-width: 180px;
+    }
+  }
+
+  /* Mobile Styles - 2x2 Grid */
+  @media (max-width: 768px) {
+    .amazon-four-grid {
+      padding: 40px 15px;
+    }
+
+    .amazon-grid-header {
+      margin-bottom: 40px;
+    }
+
+    .amazon-grid-title {
+      font-size: 28px;
+    }
+
+    .amazon-grid-subtitle {
+      font-size: 16px;
+    }
+
+    .amazon-grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .amazon-grid-item {
+      padding: 30px 15px;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .amazon-grid-item:nth-child(2),
+    .amazon-grid-item:nth-child(4) {
+      border-left: 1px solid #e0e0e0;
+    }
+
+    .amazon-grid-item:nth-child(3),
+    .amazon-grid-item:nth-child(4) {
+      border-bottom: none;
+    }
+
+    .amazon-grid-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .amazon-grid-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .amazon-grid-item-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .amazon-grid-item-description {
+      font-size: 14px;
+      max-width: 160px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .amazon-four-grid {
+      padding: 30px 10px;
+    }
+
+    .amazon-grid-title {
+      font-size: 24px;
+    }
+
+    .amazon-grid-subtitle {
+      font-size: 14px;
+    }
+
+    .amazon-grid-item {
+      padding: 25px 10px;
+    }
+
+    .amazon-grid-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 12px;
+    }
+
+    .amazon-grid-icon svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    .amazon-grid-item-title {
+      font-size: 18px;
+    }
+
+    .amazon-grid-item-description {
+      font-size: 13px;
+      max-width: 140px;
+    }
+  }
+</style>
+
+<div 
+  class="amazon-four-grid" 
+  id="amazon-four-grid-{{ section.id }}"
+  style="
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    padding-top: {{ section.settings.section_padding_top | default: 80 }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom | default: 80 }}px;
+  "
+>
+  <div 
+    class="amazon-grid-header"
+    style="margin-bottom: {{ section.settings.header_margin_bottom | default: 60 }}px;"
+  >
+    <h2 
+      class="amazon-grid-title"
+      style="
+        color: {{ section.settings.title_color | default: '#374650' }};
+        font-size: {{ section.settings.title_font_size | default: 42 }}px;
+      "
+    >{{ section.settings.title | default: "Tocotrienols Reach Where Others Can't" }}</h2>
+    <p 
+      class="amazon-grid-subtitle"
+      style="
+        color: {{ section.settings.subtitle_color | default: '#374650' }};
+        font-size: {{ section.settings.subtitle_font_size | default: 18 }}px;
+      "
+    >{{ section.settings.subtitle | default: "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest." }}</p>
+  </div>
+
+  <div 
+    class="amazon-grid-container"
+    style="
+      {% if section.settings.show_borders == false %}
+        border: none;
+      {% else %}
+        border-color: {{ section.settings.border_color | default: '#e0e0e0' }};
+      {% endif %}
+    "
+  >
+    <!-- Heart Block -->
+    <div 
+      class="amazon-grid-item"
+      style="
+        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
+        {% if section.settings.show_borders == false %}
+          border-right: none;
+        {% else %}
+          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
+        {% endif %}
+        {% if section.settings.show_hover_effects == false %}
+          transition: none;
+        {% endif %}
+      "
+      {% if section.settings.show_hover_effects %}
+        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
+      {% endif %}
+    >
+      <div 
+        class="amazon-grid-icon"
+        style="
+          width: {{ section.settings.icon_size | default: 80 }}px;
+          height: {{ section.settings.icon_size | default: 80 }}px;
+          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
+        "
+      >
+        {% if section.settings.item_1_image != blank %}
+          <img 
+            src="{{ section.settings.item_1_image | image_url: width: 100 }}" 
+            alt="{{ section.settings.item_1_image.alt | default: section.settings.item_1_title }}"
+            width="50"
+            height="50"
+            style="
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+            "
+          >
+        {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        {% endif %}
+      </div>
+      <h3 
+        class="amazon-grid-item-title"
+        style="
+          color: {{ section.settings.item_title_color | default: '#374650' }};
+          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
+        "
+      >{{ section.settings.item_1_title | default: "Heart" }}</h3>
+      <p 
+        class="amazon-grid-item-description"
+        style="
+          color: {{ section.settings.item_description_color | default: '#6c757d' }};
+          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
+        "
+      >{{ section.settings.item_1_description | default: "Supports healthy cholesterol and arterial function" }}</p>
+    </div>
+
+    <!-- Liver Block -->
+    <div 
+      class="amazon-grid-item"
+      style="
+        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
+        {% if section.settings.show_borders == false %}
+          border-right: none;
+        {% else %}
+          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
+        {% endif %}
+        {% if section.settings.show_hover_effects == false %}
+          transition: none;
+        {% endif %}
+      "
+      {% if section.settings.show_hover_effects %}
+        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
+      {% endif %}
+    >
+      <div 
+        class="amazon-grid-icon"
+        style="
+          width: {{ section.settings.icon_size | default: 80 }}px;
+          height: {{ section.settings.icon_size | default: 80 }}px;
+          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
+        "
+      >
+        {% if section.settings.item_2_image != blank %}
+          <img 
+            src="{{ section.settings.item_2_image | image_url: width: 100 }}" 
+            alt="{{ section.settings.item_2_image.alt | default: section.settings.item_2_title }}"
+            width="50"
+            height="50"
+            style="
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+            "
+          >
+        {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        {% endif %}
+      </div>
+      <h3 
+        class="amazon-grid-item-title"
+        style="
+          color: {{ section.settings.item_title_color | default: '#374650' }};
+          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
+        "
+      >{{ section.settings.item_2_title | default: "Liver" }}</h3>
+      <p 
+        class="amazon-grid-item-description"
+        style="
+          color: {{ section.settings.item_description_color | default: '#6c757d' }};
+          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
+        "
+      >{{ section.settings.item_2_description | default: "Promotes natural detox and liver balance" }}</p>
+    </div>
+
+    <!-- Brain Block -->
+    <div 
+      class="amazon-grid-item"
+      style="
+        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
+        {% if section.settings.show_borders == false %}
+          border-right: none;
+        {% else %}
+          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
+        {% endif %}
+        {% if section.settings.show_hover_effects == false %}
+          transition: none;
+        {% endif %}
+      "
+      {% if section.settings.show_hover_effects %}
+        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
+      {% endif %}
+    >
+      <div 
+        class="amazon-grid-icon"
+        style="
+          width: {{ section.settings.icon_size | default: 80 }}px;
+          height: {{ section.settings.icon_size | default: 80 }}px;
+          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
+        "
+      >
+        {% if section.settings.item_3_image != blank %}
+          <img 
+            src="{{ section.settings.item_3_image | image_url: width: 100 }}" 
+            alt="{{ section.settings.item_3_image.alt | default: section.settings.item_3_title }}"
+            width="50"
+            height="50"
+            style="
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+            "
+          >
+        {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        {% endif %}
+      </div>
+      <h3 
+        class="amazon-grid-item-title"
+        style="
+          color: {{ section.settings.item_title_color | default: '#374650' }};
+          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
+        "
+      >{{ section.settings.item_3_title | default: "Brain" }}</h3>
+      <p 
+        class="amazon-grid-item-description"
+        style="
+          color: {{ section.settings.item_description_color | default: '#6c757d' }};
+          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
+        "
+      >{{ section.settings.item_3_description | default: "Helps defend neurons from oxidative stress" }}</p>
+    </div>
+
+    <!-- Skin Block -->
+    <div 
+      class="amazon-grid-item"
+      style="
+        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
+        {% if section.settings.show_borders == false %}
+          border-right: none;
+        {% else %}
+          border-right: none;
+        {% endif %}
+        {% if section.settings.show_hover_effects == false %}
+          transition: none;
+        {% endif %}
+      "
+      {% if section.settings.show_hover_effects %}
+        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
+      {% endif %}
+    >
+      <div 
+        class="amazon-grid-icon"
+        style="
+          width: {{ section.settings.icon_size | default: 80 }}px;
+          height: {{ section.settings.icon_size | default: 80 }}px;
+          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
+        "
+      >
+        {% if section.settings.item_4_image != blank %}
+          <img 
+            src="{{ section.settings.item_4_image | image_url: width: 100 }}" 
+            alt="{{ section.settings.item_4_image.alt | default: section.settings.item_4_title }}"
+            width="50"
+            height="50"
+            style="
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+            "
+          >
+        {% else %}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        {% endif %}
+      </div>
+      <h3 
+        class="amazon-grid-item-title"
+        style="
+          color: {{ section.settings.item_title_color | default: '#374650' }};
+          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
+        "
+      >{{ section.settings.item_4_title | default: "Skin" }}</h3>
+      <p 
+        class="amazon-grid-item-description"
+        style="
+          color: {{ section.settings.item_description_color | default: '#6c757d' }};
+          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
+        "
+      >{{ section.settings.item_4_description | default: "Encourages collagen for a youthful glow" }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Four Grid Block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Tocotrienols Reach Where Others Can't"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest."
+    },
+    {
+      "type": "header",
+      "content": "Colors & Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item Title Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "item_description_color",
+      "label": "Item Description Color",
+      "default": "#6c757d"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon Background Color",
+      "default": "#e3f2fd"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#1976d2"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "hover_background_color",
+      "label": "Hover Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "header",
+      "content": "Spacing & Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Bottom Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Header Bottom Margin",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid Item Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "item_title_font_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Item Title Font Size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "item_description_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Item Description Font Size",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hover_effects",
+      "label": "Show Hover Effects",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_borders",
+      "label": "Show Grid Borders",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Grid Item 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_1_image",
+      "label": "Item 1 Icon Image",
+      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Item 1 Title",
+      "default": "Heart"
+    },
+    {
+      "type": "text",
+      "id": "item_1_description",
+      "label": "Item 1 Description",
+      "default": "Supports healthy cholesterol and arterial function"
+    },
+    {
+      "type": "header",
+      "content": "Grid Item 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_2_image",
+      "label": "Item 2 Icon Image",
+      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Item 2 Title",
+      "default": "Liver"
+    },
+    {
+      "type": "text",
+      "id": "item_2_description",
+      "label": "Item 2 Description",
+      "default": "Promotes natural detox and liver balance"
+    },
+    {
+      "type": "header",
+      "content": "Grid Item 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_3_image",
+      "label": "Item 3 Icon Image",
+      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Item 3 Title",
+      "default": "Brain"
+    },
+    {
+      "type": "text",
+      "id": "item_3_description",
+      "label": "Item 3 Description",
+      "default": "Helps defend neurons from oxidative stress"
+    },
+    {
+      "type": "header",
+      "content": "Grid Item 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "item_4_image",
+      "label": "Item 4 Icon Image",
+      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
+    },
+    {
+      "type": "text",
+      "id": "item_4_title",
+      "label": "Item 4 Title",
+      "default": "Skin"
+    },
+    {
+      "type": "text",
+      "id": "item_4_description",
+      "label": "Item 4 Description",
+      "default": "Encourages collagen for a youthful glow"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Four Grid Block"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const gridItems = document.querySelectorAll('#amazon-four-grid-{{ section.id }} .amazon-grid-item[data-hover-color]');
+    
+    gridItems.forEach(function(item) {
+      const hoverColor = item.getAttribute('data-hover-color');
+      
+      if (hoverColor) {
+        item.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = hoverColor;
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.backgroundColor = 'white';
+        });
+      }
+    });
+  });
+</script>

@@ -116,8 +116,8 @@
         "image_rzpH6y": {
           "type": "image",
           "settings": {
-            "image_slide": "shopify://shop_images/Summer_s_Hottest_Deal_on_Supplements.png",
-            "image_slide_mb": "shopify://shop_images/Summer_s_Hottest_Deal_on_Supplements_1.png",
+            "image_slide": "shopify://shop_images/Thanks_Giving.png",
+            "image_slide_mb": "shopify://shop_images/Thanks_Giving_1.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "13.2",
@@ -185,7 +185,7 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "",
-            "link": "shopify://collections/all-products",
+            "link": "shopify://products/vitamin-e-tocotrienols-supplement",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "#",
@@ -567,7 +567,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\n     Bestsellers You’ll Love\n    </h2>\n     </div>\n</section>\n\n<style> .healthgoal-support-section {\n  padding: 80px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n</style>"
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\nTop Selling Supplements    </h2>\n     </div>\n</section>\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n</style>"
       }
     },
     "16409351508cd2f3e1": {
@@ -1765,7 +1765,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify://pages/tocotrienols-scam",
+            "link": "shopify://pages/tocotrienols-supplements-scam",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1819,7 +1819,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify://pages/hormone-health",
+            "link": "shopify://pages/womes-hormone-health",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -2315,6 +2315,148 @@
         "liquid_css": ""
       }
     },
+    "testimonial_video_iqLUje": {
+      "type": "Testimonial-video",
+      "blocks": {
+        "product_card_jmkhrW": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/testimonail_Poster.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1e966a5716b4176aeeda93859e871c1.mp4",
+            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+            "product1": ""
+          }
+        },
+        "product_card_8P9xpY": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/buiquinol-for-high-energy.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/1461debb69624a7eb7d7cc88953d11f8.mp4",
+            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+            "product1": ""
+          }
+        },
+        "product_card_48Ljjj": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster3.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1109fe412304e3cbad683c513b09120.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
+            "product1": ""
+          }
+        },
+        "product_card_GqzXGf": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster5.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f284d2989d4048329ff25b17b85e5fbb.mp4",
+            "product": "cell-dtox-dietary-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_KWymqB": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster4.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/a6b45dd7efd0488eb26f4dca35e3de40.mp4",
+            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
+            "product1": ""
+          }
+        },
+        "product_card_VemeLb": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster6.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/9e793d68038548e2a447c654a919f2e4.mp4",
+            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+            "product1": ""
+          }
+        },
+        "product_card_rbHAY6": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster7.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/27bdea2f1403479883f974d08e6b355a.mp4",
+            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
+            "product1": ""
+          }
+        },
+        "product_card_trGFC8": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster8.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/3b129a8ddbb7410cad7ea9593e13ec84.mp4",
+            "product": "vitamin-e-tocotrienols-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_EqhNhK": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster9.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/540bf5aae7ed434096c185d9bde2c05f.mp4",
+            "product": "h2-molecular-hydrogen",
+            "product1": ""
+          }
+        },
+        "product_card_TKCnHb": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster10.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/5d922865f41142ba825cc8478e1347a1.mp4",
+            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+            "product1": ""
+          }
+        },
+        "product_card_x43L7Q": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster11.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/35d1b535ca6644fd879c5537f7aacc4d.mp4",
+            "product": "cell-dtox-dietary-supplement",
+            "product1": ""
+          }
+        },
+        "product_card_Tk4Xjj": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster12.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f1f924c5d14244ee920fa64b019b99a2.mp4",
+            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
+            "product1": ""
+          }
+        },
+        "product_card_twb6fB": {
+          "type": "product_card",
+          "settings": {
+            "video_poster": "shopify://shop_images/poster13.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/af6eb4d2f04f46618f2ce01db416c247.mp4",
+            "product": "annatto-150-vitamin-e-tocotrienols-with-geranylgeraniol",
+            "product1": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_jmkhrW",
+        "product_card_8P9xpY",
+        "product_card_48Ljjj",
+        "product_card_GqzXGf",
+        "product_card_KWymqB",
+        "product_card_VemeLb",
+        "product_card_rbHAY6",
+        "product_card_trGFC8",
+        "product_card_EqhNhK",
+        "product_card_TKCnHb",
+        "product_card_x43L7Q",
+        "product_card_Tk4Xjj",
+        "product_card_twb6fB"
+      ],
+      "name": "Testimonial Video | App",
+      "settings": {
+        "title": "Voices of Satisfaction",
+        "description": ""
+      }
+    },
     "1643015886f75782fe": {
       "type": "custom-service-block",
       "blocks": {
@@ -2706,148 +2848,6 @@
         "mg_bottom_desktop1": 60,
         "mg_bottom_tablet1": 55,
         "mg_bottom_mobile1": 25
-      }
-    },
-    "testimonial_video_iqLUje": {
-      "type": "Testimonial-video",
-      "blocks": {
-        "product_card_jmkhrW": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/testimonail_Poster.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/b1e966a5716b4176aeeda93859e871c1.mp4",
-            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
-            "product1": ""
-          }
-        },
-        "product_card_8P9xpY": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/buiquinol-for-high-energy.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/1461debb69624a7eb7d7cc88953d11f8.mp4",
-            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
-            "product1": ""
-          }
-        },
-        "product_card_48Ljjj": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster3.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/b1109fe412304e3cbad683c513b09120.mp4",
-            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
-            "product1": ""
-          }
-        },
-        "product_card_GqzXGf": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster5.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/f284d2989d4048329ff25b17b85e5fbb.mp4",
-            "product": "cell-dtox-dietary-supplement",
-            "product1": ""
-          }
-        },
-        "product_card_KWymqB": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster4.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/a6b45dd7efd0488eb26f4dca35e3de40.mp4",
-            "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
-            "product1": ""
-          }
-        },
-        "product_card_VemeLb": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster6.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/9e793d68038548e2a447c654a919f2e4.mp4",
-            "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
-            "product1": ""
-          }
-        },
-        "product_card_rbHAY6": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster7.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/27bdea2f1403479883f974d08e6b355a.mp4",
-            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
-            "product1": ""
-          }
-        },
-        "product_card_trGFC8": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster8.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/3b129a8ddbb7410cad7ea9593e13ec84.mp4",
-            "product": "vitamin-e-tocotrienols-supplement",
-            "product1": ""
-          }
-        },
-        "product_card_EqhNhK": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster9.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/540bf5aae7ed434096c185d9bde2c05f.mp4",
-            "product": "h2-molecular-hydrogen",
-            "product1": ""
-          }
-        },
-        "product_card_TKCnHb": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster10.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/5d922865f41142ba825cc8478e1347a1.mp4",
-            "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
-            "product1": ""
-          }
-        },
-        "product_card_x43L7Q": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster11.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/35d1b535ca6644fd879c5537f7aacc4d.mp4",
-            "product": "cell-dtox-dietary-supplement",
-            "product1": ""
-          }
-        },
-        "product_card_Tk4Xjj": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster12.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/f1f924c5d14244ee920fa64b019b99a2.mp4",
-            "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
-            "product1": ""
-          }
-        },
-        "product_card_twb6fB": {
-          "type": "product_card",
-          "settings": {
-            "video_poster": "shopify://shop_images/poster13.png",
-            "video": "https://cdn.shopify.com/videos/c/o/v/af6eb4d2f04f46618f2ce01db416c247.mp4",
-            "product": "annatto-150-vitamin-e-tocotrienols-with-geranylgeraniol",
-            "product1": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_card_jmkhrW",
-        "product_card_8P9xpY",
-        "product_card_48Ljjj",
-        "product_card_GqzXGf",
-        "product_card_KWymqB",
-        "product_card_VemeLb",
-        "product_card_rbHAY6",
-        "product_card_trGFC8",
-        "product_card_EqhNhK",
-        "product_card_TKCnHb",
-        "product_card_x43L7Q",
-        "product_card_Tk4Xjj",
-        "product_card_twb6fB"
-      ],
-      "name": "Testimonial Video | App",
-      "settings": {
-        "title": "Voices of Satisfaction",
-        "description": ""
       }
     },
     "rich_text_MT6wG9": {
@@ -3602,9 +3602,9 @@
     "spotlight_block_cx6rBp",
     "brand_slider_PC48YQ",
     "image_banner_94cYaR",
+    "testimonial_video_iqLUje",
     "1643015886f75782fe",
     "custom_service_block_YFzzCY",
-    "testimonial_video_iqLUje",
     "rich_text_MT6wG9",
     "1743670996c8046cda",
     "brand_slider_7QWUjR",

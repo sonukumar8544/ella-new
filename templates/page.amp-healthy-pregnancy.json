@@ -58,11 +58,143 @@
             "btn_color": "#ffffff",
             "btn_bg": "#000000"
           }
+        },
+        "story_page_MqHTqP": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Iron-01_1.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Iron",
+            "description_color": "#ffffff",
+            "description": "Boosts oxygen supply to baby & prevents maternal anemia. Pair with Vitamin C for better absorption.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_3hAYHA": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Calcium-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0e0c0c5c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Calcium",
+            "description_color": "#ffffff",
+            "description": "Builds strong bones & teeth for baby, and supports mom’s heart and nerve function.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_LEtPRj": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Vitamin_D-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0e0c0c5c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Vitamin D",
+            "description_color": "#ffffff",
+            "description": "Strengthens immune system & helps calcium absorption. Low levels may increase pregnancy complications.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_nHjWp6": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Omega-3-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Omega-3 (DHA & EPA)",
+            "description_color": "#ffffff",
+            "description": "Vital for baby’s brain & eye development. Choose pregnancy-safe DHA sources.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_pDniGG": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Magnesium-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Magnesium",
+            "description_color": "#ffffff",
+            "description": "Eases cramps, supports sleep, and balances blood sugar during pregnancy. A gentle stress-reliever too.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
+        },
+        "story_page_QXkmrJ": {
+          "type": "story_page",
+          "settings": {
+            "webstory_slide": 7,
+            "image": "shopify://shop_images/Colostrum-01-01-01.png",
+            "content-position": "60",
+            "content-align": "center",
+            "bgcover": true,
+            "bgapplyenable": true,
+            "bgapply": "#0000005c",
+            "heading_bg": "#e3ff31",
+            "heading_color": "#000000",
+            "heading": "Bovine Colostrum",
+            "description_color": "#ffffff",
+            "description": "Rich in natural antibodies & growth factors. May support mom’s gut and immune health.",
+            "button_text": "",
+            "btn_link": "",
+            "btn_color": "#ffffff",
+            "btn_bg": "#000000"
+          }
         }
       },
       "block_order": [
         "story_page_BKdieG",
-        "story_page_9KzmKj"
+        "story_page_9KzmKj",
+        "story_page_MqHTqP",
+        "story_page_3hAYHA",
+        "story_page_LEtPRj",
+        "story_page_nHjWp6",
+        "story_page_pDniGG",
+        "story_page_QXkmrJ"
       ],
       "name": "AMP Webstory 2.0",
       "settings": {

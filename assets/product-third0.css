@@ -201,7 +201,7 @@
   }
   
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-prev{
-  left: 19%;
+  left: 16%;
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-next {
   right: 1%;
@@ -305,8 +305,8 @@
   
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
   border: none;
-  background: #006a91ad;
-  border-color: #006a91ad;
+  background: gray;
+  border-color: gray;
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button svg{
   color: #ffffff !important;
@@ -334,7 +334,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1;
-  border-bottom: 2px solid #000;
+  /* border-bottom: 2px solid #000; */
   }
   .dynamic-Product-page-3\.O-template .okeReviews .oke-sr-count .oke-sr-label-text{
   display: none !important;
@@ -355,7 +355,7 @@
   .dynamic-Product-page-3\.O-template  div.okeReviews :after,
   .dynamic-Product-page-3\.O-template  div.okeReviews :before{
   margin-bottom: 0px !important;
-  height: 21px !important;
+  height: 17px !important;
   }
   .dynamic-Product-page-3\.O-template span.oke-sr-count-number::before {
   content: "(";
@@ -412,7 +412,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 18px;
   }
   .dynamic-Product-page-3\.O-template .productView-moreItem{
   padding-bottom:0px;
@@ -757,9 +757,9 @@
   max-width:100% !important;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO .benefit-item{
-  font-size: 13px;
-  width: 44%;
-  gap: 4px;
+  font-size: 14px;
+  width: 48%;
+  gap: 6px;
   }
   .dynamic-Product-page-3\.O-template .product-form__buttons{
   border-radius: 10px;
@@ -829,7 +829,8 @@
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO{
   margin: 10px auto 20px;    
-  gap: 8px;
+  gap: 11px;
+  margin-left: 5px;
   }
   .dynamic-Product-page-3\.O-template .health-benefits_thirdO span.content_benifits{
   font-size: 14px;
@@ -1079,7 +1080,7 @@
   transform: translate(0%, -80%);
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button {
-  background: #006a9175;
+  background: gray;
   border-radius: 50%;
   opacity: .5;
   }

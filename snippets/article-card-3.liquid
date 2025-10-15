@@ -90,19 +90,29 @@
                             {% elsif blogauthor == "Divya Katyal" %}
                              <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Divya.jpg?v=1737525344" width="40px" alt="divya">
                              {% elsif blogauthor == "Pragya Soni" %}
-                             <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pragya.jpg?v=1738648479" width="40px" alt="divya">
+                             <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pragya.jpg?v=1738648479" width="40px" alt="Pragya">
                              {% elsif blogauthor == "Pooja Rawat" %}
-                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pooja-2.jpg?v=1739511048" width="40px" alt="divya">
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Pooja-2.jpg?v=1739511048" width="40px" alt="Pooja">
                              {% elsif blogauthor == "Nurah Ekhlaque" %}
-                                <img src="https://wellnessextract.com/cdn/shop/files/nurah.jpg?v=1745843377" width="40px" alt="divya">
+                                <img src="https://wellnessextract.com/cdn/shop/files/nurah.jpg?v=1745843377" width="40px" alt="nurah">
                                {% elsif blogauthor == "Aditi bakshi" %}
-                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Dr._Aditi_Bakshi_Msc-Nutrition_50x50_1.jpg?v=1748929087" width="40px" alt="divya">
-                                {% else %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Dr._Aditi_Bakshi_Msc-Nutrition_50x50_1.jpg?v=1748929087" width="40px" alt="dr aditi">
+                             {% elsif blogauthor == "Surangama Lehri" %}
+                                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri_50x50_1.jpg?v=1748929120" width="40px" alt="dr lehri">
+                               
+                            {% else %}
                              <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_5_7935c512-a1c4-45fd-baaa-b6063fd0ed2c.png?v=1738731314" width="40px" alt="divya">
                             {% endif %}
-                        {% if blogauthor == 'Sarika Jassal' or blogauthor == 'Divya Katyal' or blogauthor == 'Pragya Soni' or blogauthor == "Pooja Rawat" or blogauthor == "Nurah Ekhlaque" or blogauthor == "Aditi bakshi" %}
-                          <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
-                       {% if author == 'Aditi bakshi' %}
+                        {% if blogauthor == 'Sarika Jassal'
+                             or blogauthor == 'Divya Katyal' 
+                             or blogauthor == 'Pragya Soni'
+                              or blogauthor == "Pooja Rawat" 
+                              or blogauthor == "Nurah Ekhlaque" 
+                              or blogauthor == "Aditi bakshi"
+                              or  blogauthor == "Surangama Lehri" 
+                            %}
+                          <a {% if blogauthor == "Surangama Lehri" %}href="https://wellnessextract.com/pages/dr-{{ article.author | replace: ' ', '-' | downcase }}" {%else%}href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}"{% endif %}>
+                       {% if author == 'Aditi bakshi' or blogauthor == "Surangama Lehri" %}
                           <span class="blog-author">
                           {{ 'blogs.article.by' | t }} <span>Dr. {{ author }}</span>
                               </span>

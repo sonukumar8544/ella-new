@@ -229,6 +229,9 @@
             
             const elementToAnimate = document.querySelector('.announcement-bar');
             function toggleActiveClass() {
+              // Add null check to prevent "Can't find variable" errors
+              if (!elementToAnimate) return;
+              
               const viewportHeight = window.innerHeight;
               const elementRect = elementToAnimate.getBoundingClientRect();
 
@@ -239,8 +242,11 @@
               }
             }
 
-            window.addEventListener('scroll', toggleActiveClass);
-            toggleActiveClass();
+            // Only add event listener if element exists
+            if (elementToAnimate) {
+              window.addEventListener('scroll', toggleActiveClass);
+              toggleActiveClass();
+            }
 
             var announcementBar = AnnouncementBar;
         }

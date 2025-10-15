@@ -1,13 +1,13 @@
-<div class="container-blog"> 
+<div class="container-blog" id="blog-list-vlog-writer"> 
   {% assign author_filter = section.settings.blog_author_name %}
+   {% paginate blogs['wellness'].articles by 500 %}
   {% for article in blogs['wellness'].articles %}
     {% if article.author == author_filter %}
-      <div class="card">
+      <div class="card blog-item-vlog-writer">
         <div class="card-header">
           <img src="{{ article.image | img_url: 'medium' }}" alt="" />
         </div>
         <div class="card-body">
-          {% comment %} <span class="tag tag-teal">Technology</span> {% endcomment %}
           <a href={{ article.url }}>
             <h4 class="blog-title-author-page">{{ article.title }}</h4>
           </a>
@@ -18,11 +18,10 @@
               </small>
               <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
                 {% if article.author == 'Aditi bakshi' %}
-                 <h5>Author: Dr. {{ article.author }}</h5>
-               {% else %}
-                 <h5>Author: {{ article.author }}</h5>
-               {% endif %}
-
+                  <h5>Author: Dr. {{ article.author }}</h5>
+                {% else %}
+                  <h5>Author: {{ article.author }}</h5>
+                {% endif %}
               </a>
             </div>
           </div>
@@ -30,7 +29,13 @@
       </div>
     {% endif %}
   {% endfor %}
+   {% endpaginate %}
 </div>
+
+
+
+<!-- Pagination Controls -->
+<div id="pagination-vlog-writer" class="pagination-vlog-writer"></div>
 
 <style>
   .container-blog {
@@ -112,6 +117,28 @@
     gap: 12px;
   }
 
+  /* Pagination Styles */
+  .pagination-vlog-writer {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .pagination-vlog-writer button {
+    background: #086b92;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .pagination-vlog-writer button.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  .pagination-vlog-writer button.active {
+    background: #05445e;
+  }
+
   @media (max-width: 768px) {
     .container-blog {
       padding: 10px;
@@ -139,6 +166,102 @@
     }
   }
 </style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemsPerPage = 12; // Number of blogs per page
+    const items = document.querySelectorAll(".blog-item-vlog-writer");
+    const pagination = document.getElementById("pagination-vlog-writer");
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    let currentPage = 1;
+
+    function showPage(page) {
+      items.forEach((item, index) => {
+        item.style.display =
+          index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+            ? "block"
+            : "none";
+      });
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      pagination.innerHTML = "";
+
+      // Prev button
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "Prev";
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.classList.add("prev-btn-vlog-writer");
+      prevBtn.onclick = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      };
+      pagination.appendChild(prevBtn);
+
+      // Page numbers with ellipsis
+      const pageButtons = [];
+
+      function addPage(num) {
+        const btn = document.createElement("button");
+        btn.innerText = num;
+        btn.classList.add("page-btn-vlog-writer");
+        if (num === currentPage) btn.classList.add("active");
+        btn.onclick = () => {
+          currentPage = num;
+          showPage(currentPage);
+        };
+        pagination.appendChild(btn);
+      }
+
+      function addDots() {
+        const span = document.createElement("span");
+        span.innerText = "...";
+        span.style.margin = "0 5px";
+        pagination.appendChild(span);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        if (
+          i === 1 || // first
+          i === 2 || // second
+          i === totalPages || // last
+          i === totalPages - 1 || // second last
+          (i >= currentPage - 1 && i <= currentPage + 1) // around current
+        ) {
+          addPage(i);
+        } else if (
+          i === 3 && currentPage > 4 || // gap after 2
+          i === totalPages - 2 && currentPage < totalPages - 3 // gap before last-1
+        ) {
+          addDots();
+        }
+      }
+
+      // Next button
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "Next";
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.classList.add("next-btn-vlog-writer");
+      nextBtn.onclick = () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      };
+      pagination.appendChild(nextBtn);
+    }
+
+    if (items.length > 0) {
+      showPage(currentPage);
+    }
+  });
+</script>
+
 
 {% schema %}
   {

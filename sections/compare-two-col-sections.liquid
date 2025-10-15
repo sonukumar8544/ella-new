@@ -1,0 +1,187 @@
+<style>
+  .amazon-tocotrienols-comparison {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .amazon-comparison-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .amazon-comparison-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .amazon-comparison-subtitle {
+    font-size: 18px;
+    font-style: italic;
+    color: #374650;
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  .amazon-comparison-link {
+    color: #0b7a9e;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .amazon-comparison-link:hover {
+    color: #095d7a;
+  }
+
+  .amazon-comparison-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* .amazon-comparison-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  } */
+
+  /* Default: Desktop image visible, mobile image hidden */
+  .amazon-desktop-image {
+    display: block !important;
+  }
+
+  .amazon-mobile-image {
+    display: none !important;
+  }
+
+  /* Small screens (768px and below) - Show mobile image */
+  @media (max-width: 768px) {
+    .amazon-tocotrienols-comparison {
+      padding: 40px 15px;
+    }
+
+    .amazon-comparison-header {
+      margin-bottom: 40px;
+    }
+
+    .amazon-comparison-title {
+      font-size: 28px;
+    }
+
+    .amazon-comparison-subtitle {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* Switch to mobile image on small screens */
+    .amazon-desktop-image {
+      display: none !important;
+    }
+
+    .amazon-mobile-image {
+      display: block !important;
+    }
+  }
+</style>
+
+<div class="amazon-tocotrienols-comparison">
+  <div class="amazon-comparison-header">
+    <h2 class="amazon-comparison-title">{{ section.settings.title | default: "How Tocotrienols Outperform Regular Vitamin E — Every Time." }}</h2>
+    <p class="amazon-comparison-subtitle">{{ section.settings.subtitle | default: "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results" }}</p>
+    {% if section.settings.learn_more_link != blank %}
+      <a href="{{ section.settings.learn_more_link }}" class="amazon-comparison-link">{{ section.settings.learn_more_text | default: "Learn More About Vitamin E Types" }}</a>
+    {% endif %}
+  </div>
+
+  {% if section.settings.desktop_image != blank %}
+    <img 
+      src="{{ section.settings.desktop_image | image_url: width: 1200 }}" 
+      alt="{{ section.settings.desktop_image.alt | default: 'Tocotrienols Comparison' }}"
+      class="amazon-comparison-image amazon-desktop-image"
+      width="1200"
+      height="600"
+      loading="lazy"
+    >
+  {% endif %}
+
+  {% if section.settings.mobile_image != blank %}
+    <img 
+      src="{{ section.settings.mobile_image | image_url: width: 800 }}" 
+      alt="{{ section.settings.mobile_image.alt | default: 'Tocotrienols Comparison' }}"
+      class="amazon-comparison-image amazon-mobile-image"
+      width="800"
+      height="1000"
+      loading="lazy"
+    >
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Tocotrienols Comparison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "How Tocotrienols Outperform Regular Vitamin E — Every Time."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results"
+    },
+    {
+      "type": "text",
+      "id": "learn_more_text",
+      "label": "Learn More Link Text",
+      "default": "Learn More About Vitamin E Types"
+    },
+    {
+      "type": "url",
+      "id": "learn_more_link",
+      "label": "Learn More Link"
+    },
+    {
+      "type": "header",
+      "content": "Comparison Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Comparison Image",
+      "info": "Recommended size: 1200x600px or larger"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Comparison Image",
+      "info": "Recommended size: 800x1000px or larger"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tocotrienols Comparison"
+    }
+  ]
+}
+{% endschema %}

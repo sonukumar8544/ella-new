@@ -14,6 +14,13 @@
       "disabled": true,
       "settings": {}
     },
+    "custom_liquid_C97QAN": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<h2 class=\"section-heading-authors\">Our Editors</h2>\n<style>\n.section-heading-authors {\n  margin-bottom: 20px;\n  color: #374650;\n  font-family: 'Nunito', sans-serif;\n  font-size: 32px;\n  font-style: normal;\n  font-weight: 700;\n  line-height: 1.2;\n  letter-spacing: 0.68px;\n  text-transform: capitalize;\n  text-align: center; /* makes it look better on small devices */\n  padding: 0 10px; /* adds breathing space on mobile */\n}\n\n/* Tablet screens (≤1024px) */\n@media (max-width: 1024px) {\n  .section-heading-authors {\n    font-size: 28px;\n  }\n}\n\n/* Mobile screens (≤768px) */\n@media (max-width: 768px) {\n  .section-heading-authors {\n    font-size: 24px;\n    line-height: 1.3;\n  }\n}\n\n/* Extra small screens (≤480px) */\n@media (max-width: 480px) {\n  .section-heading-authors {\n    font-size: 20px;\n    letter-spacing: 0.4px;\n  }\n}\n\n</style>"
+      }
+    },
     "1642989489e5f98f1a": {
       "type": "brand-slider",
       "blocks": {
@@ -88,6 +95,18 @@
             "color_des": "#3c3c3c",
             "link": "shopify://pages/dr-laura-pipher"
           }
+        },
+        "image_TxgG6A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Naji_Abou_Ali_2.png",
+            "title": "Dr. Naji Abou Ali",
+            "color_text": "#000000",
+            "color_text_hover": "#3e8cc4",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/dr-naji-abou-ali"
+          }
         }
       },
       "block_order": [
@@ -96,11 +115,13 @@
         "image_X7ii94",
         "image_Mk7eLi",
         "image_cBWb9P",
-        "image_Gzee7k"
+        "image_Gzee7k",
+        "image_TxgG6A"
       ],
       "custom_css": [
         "@media (max-width: 551px) {.halo-row.halo-slider.sm-column-2:not(.slick-slider) .halo-item {width: 40%; }}",
-        "@media (min-width: 1024px) {.halo-row.column-4 .halo-item {width: 22%; }}"
+        "@media (min-width: 1024px) {.halo-row.column-4 .halo-item {width: 22%; }}",
+        ".section-block-template--25203481870632__1642989489e5f98f1a {background: rgba(0, 0, 0, 0); border-top: none!important;}"
       ],
       "settings": {
         "id": "our_all_authors",
@@ -114,7 +135,7 @@
         "brand_bg": "rgba(0,0,0,0)",
         "brand_bg_gradient": "",
         "title_align": "center",
-        "brand_title": "Our Editors",
+        "brand_title": "",
         "color_title": "#374650",
         "fontsize_title": 40,
         "fontsize_title_mb": 28,
@@ -368,6 +389,7 @@
   },
   "order": [
     "main",
+    "custom_liquid_C97QAN",
     "1642989489e5f98f1a",
     "brand_slider_JXqMt6"
   ]

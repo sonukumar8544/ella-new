@@ -3,7 +3,7 @@
   <div class="collapsible-content-main {{ section.settings.custom_class }}">
     {% for block in section.blocks %}
       {% assign blocks = block.settings %}
-      {% if block.type == 'block_left' %}
+      {% comment %} {% if block.type == 'block_left' %}
         <div class="collapsible-grid__item_main">
           <div class="inner-block-left">
             <h2>{{ blocks.block_heading }}</h2>
@@ -15,14 +15,14 @@
             </a>
           </div>
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
     {% endfor %}
     {% for block in section.blocks %}
       {% assign blocks = block.settings %}
       {% if block.type == 'block_right' %}
         <div class="collapsible-image-main">
           <div class="inner-block-right">
-            <h2>{{ blocks.block_heading_right }}</h2>
+            <h1>{{ blocks.block_heading_right }}</h1>
             <p>{{ blocks.block_richtext_right }}</p>
             <input type="hidden" value="{{page.handle}}">
  {% comment %} 
@@ -126,7 +126,7 @@
     padding-bottom: 100px;
   }
 
-  .collapsible-content-main h2 {
+  .collapsible-content-main h1 {
     font-size:2.5rem;
     color: #086b92;
     margin-bottom: 0 !important;

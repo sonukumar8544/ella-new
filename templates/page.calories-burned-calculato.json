@@ -28,12 +28,20 @@
       "type": "calories-burn-outcalculator",
       "name": "Calories Burned Calc",
       "settings": {}
+    },
+    "online_tools_caloriesburn_page_X84zPb": {
+      "type": "online-tools-caloriesburn-page",
+      "name": "online calories burn",
+      "settings": {
+        "blog_author_name": ""
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "calories_burn_outcalculator_qQNfRh"
+    "calories_burn_outcalculator_qQNfRh",
+    "online_tools_caloriesburn_page_X84zPb"
   ]
 }

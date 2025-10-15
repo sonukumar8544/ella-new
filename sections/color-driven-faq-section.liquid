@@ -1,0 +1,364 @@
+<style>
+  .color-faq-section {
+    padding: 80px 20px;
+    background: #ffffff;
+  }
+
+  .color-faq-section__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .color-faq-section__title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #2d3e50;
+    margin: 0 0 50px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .color-faq-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .color-faq-section__item {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  .color-faq-section__item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .color-faq-section__question {
+    width: 100%;
+    padding: 20px 60px 20px 25px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3e50;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+  }
+
+  .color-faq-section__question:hover {
+    color: #0b7a9e;
+  }
+
+  .color-faq-section__icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 300;
+    color: #2d3e50;
+    transition: all 0.3s ease;
+  }
+
+  .color-faq-section__icon::before {
+    content: '+';
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+  }
+
+  .color-faq-section__item.active .color-faq-section__icon::before {
+    content: '−';
+  }
+
+  .color-faq-section__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 25px;
+    transform: translateZ(0);
+  }
+
+  .color-faq-section__item.active .color-faq-section__answer {
+    max-height: 500px;
+    padding: 0 25px 25px 25px;
+  }
+
+  .color-faq-section__answer-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374650;
+    margin: 0;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    .color-faq-section__title {
+      font-size: 38px;
+      margin-bottom: 45px;
+    }
+
+    .color-faq-section__question {
+      font-size: 17px;
+      padding: 18px 55px 18px 22px;
+    }
+
+    .color-faq-section__icon {
+      font-size: 23px;
+    }
+
+    .color-faq-section__answer-content {
+      font-size: 15px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .color-faq-section {
+      padding: 60px 20px;
+    }
+
+    .color-faq-section__title {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .color-faq-section__list {
+      gap: 12px;
+    }
+
+    .color-faq-section__question {
+      font-size: 16px;
+      padding: 16px 50px 16px 20px;
+    }
+
+    .color-faq-section__icon {
+      right: 20px;
+      font-size: 22px;
+    }
+
+    .color-faq-section__answer-content {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .color-faq-section__item.active .color-faq-section__answer {
+      padding: 0 20px 20px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .color-faq-section {
+      padding: 50px 15px;
+    }
+
+    .color-faq-section__title {
+      font-size: 28px;
+      margin-bottom: 35px;
+    }
+
+    .color-faq-section__question {
+      font-size: 15px;
+      padding: 15px 45px 15px 18px;
+    }
+
+    .color-faq-section__icon {
+      right: 18px;
+      font-size: 20px;
+    }
+
+    .color-faq-section__answer-content {
+      font-size: 13px;
+    }
+
+    .color-faq-section__item.active .color-faq-section__answer {
+      padding: 0 18px 18px 18px;
+    }
+  }
+</style>
+
+<div class="color-faq-section" id="color-faq-{{ section.id }}">
+  <div class="color-faq-section__inner">
+    {% if section.settings.section_title != blank %}
+      <h2 class="color-faq-section__title">{{ section.settings.section_title }}</h2>
+    {% endif %}
+
+    <div class="color-faq-section__list">
+      {% for block in section.blocks %}
+        <div class="color-faq-section__item {% if block.settings.open_by_default %}active{% endif %}" {{ block.shopify_attributes }} data-faq-item>
+          <button class="color-faq-section__question" type="button" data-faq-question>
+            {{ block.settings.question }}
+            <span class="color-faq-section__icon"></span>
+          </button>
+          <div class="color-faq-section__answer" data-faq-answer>
+            <div class="color-faq-section__answer-content">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const faqSection = document.getElementById('color-faq-{{ section.id }}');
+    if (!faqSection) return;
+
+    const faqItems = faqSection.querySelectorAll('[data-faq-item]');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('[data-faq-question]');
+      const answer = item.querySelector('[data-faq-answer]');
+      
+      if (!question || !answer) return;
+
+      question.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isActive = item.classList.contains('active');
+        
+        // Toggle current item
+        item.classList.toggle('active');
+        
+        // Prevent page jump by maintaining scroll position
+        setTimeout(() => {
+          window.scrollTo({
+            top: window.scrollY,
+            behavior: 'instant'
+          });
+        }, 0);
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Color Driven FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question goes here?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Answer goes here. Add your detailed response to the question."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Color Driven FAQ Section",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does a darker softgel mean it's stronger?",
+            "answer": "No. The color comes from natural plant pigments, not potency. Every softgel contains the same standardized strength, tested for consistency.",
+            "open_by_default": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why do the top softgels sometimes look darker?",
+            "answer": "Softgels at the top of the bottle may be exposed to more air and light, which can slightly deepen their color over time. This is completely normal and doesn't affect quality."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why don't synthetic vitamins vary in color?",
+            "answer": "Synthetic vitamins are made in labs with artificial dyes to ensure color consistency. Natural vitamins reflect the variations found in nature."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe to take if the color looks different?",
+            "answer": "Absolutely. Color variation is a natural characteristic of plant-based ingredients. Every batch is rigorously tested for safety, purity, and potency."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you test every batch?",
+            "answer": "Yes. Every single batch undergoes comprehensive third-party testing to verify potency, purity, and safety before it reaches you."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  #color-faq-{{ section.id }} {
+    {% if section.settings.padding_top %}
+      padding-top: {{ section.settings.padding_top }}px !important;
+    {% endif %}
+    {% if section.settings.padding_bottom %}
+      padding-bottom: {{ section.settings.padding_bottom }}px !important;
+    {% endif %}
+  }
+</style>

@@ -103,7 +103,7 @@
             }
     </script>
     
-    <product-bundle
+    {% comment %} <product-bundle
       class="halo-block halo-product-bundle frequently-bought-together-block{% if settings.banner_animation == 'effect_fade_up' %}
         scroll-trigger animate--slide-in{% endif %} cstm-{{ template.suffix }}-third"
       data-product-bundle
@@ -206,7 +206,7 @@
           </div>
         </div>
       </div>
-    </product-bundle>
+    </product-bundle> {% endcomment %}
     <script src="{{ 'product-bundle.js' | asset_url }}" defer></script>
   {% endif %}
 {% endif %}

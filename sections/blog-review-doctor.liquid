@@ -1,48 +1,50 @@
-<div class="container-blog">
+<div class="container-blog" id="blogContainer">
   {% assign tag_filter = section.settings.blog_author_name %}
   {% assign dr_name = section.settings.blog_dr_name %}
   {% assign dr_page_url = section.settings.review_dr_page %}
 
+  {% paginate blogs['wellness'].articles by 500 %}
   {% for article in blogs['wellness'].articles %}
-    {% for tag in article.tags %}
-      {% if tag == tag_filter %}
-        <div class="card">
-          <div class="card-header">
-            <img src="{{ article.image | img_url: 'medium' }}" alt="" />
-          </div>
-          <div class="card-body">
-            <a href="{{ article.url }}">
-              <h4 class="blog-title-author-page">{{ article.title }}</h4>
-            </a>
-            <div class="user">
-              <div class="user-infoo">
-                <div class="blog-review-dr">
-                  <small>
-                    <span class="blog-date">{{ article.published_at | time_tag: '%b %d, %Y' }}</span>
-                  </small>
-                  {% assign blogauthorname = article.author %}
-                  {% if blogauthorname == "Content Admin" %}
-                    <h5>Author: {{ article.author }}</h5>
-                  {% else %}
+    {% if article.tags contains tag_filter %}
+      <div class="card blog-item">
+        <div class="card-header">
+          <img src="{{ article.image | img_url: 'medium' }}" alt="" />
+        </div>
+        <div class="card-body">
+          <a href="{{ article.url }}">
+            <h4 class="blog-title-author-page">{{ article.title }}</h4>
+          </a>
+          <div class="user">
+            <div class="user-infoo">
+              <div class="blog-review-dr">
+                <small>
+                  <span class="blog-date">{{ article.published_at | time_tag: '%b %d, %Y' }}</span>
+                </small>
+                {% assign blogauthorname = article.author %}
+                {% if blogauthorname == "Content Admin" %}
+                  <h5>Author: {{ article.author }}</h5>
+                {% else %}
                   <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
                     <h5>Author: {{ article.author }}</h5>
                   </a>
-                  {% endif %}
-                </div>
-                <div class="blog-review-dr-url">
-                  <a href="https://wellnessextract.com/pages/{{ dr_page_url | replace: ' ', '-' | downcase }}">
-                    <h5>Reviewed By: {{ dr_name }}
-                    </h5>
-                  </a>
-                </div>
+                {% endif %}
+              </div>
+              <div class="blog-review-dr-url">
+                <a href="https://wellnessextract.com/pages/{{ dr_page_url | replace: ' ', '-' | downcase }}">
+                  <h5>Reviewed By: {{ dr_name }}</h5>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      {% endif %}
-    {% endfor %}
+      </div>
+    {% endif %}
   {% endfor %}
+   {% endpaginate %}
 </div>
+
+<!-- Custom Pagination -->
+<div id="pagination" class="pagination-author"></div>
 
 <style>
   .blog-review-dr {
@@ -147,6 +149,34 @@
     gap: 12px;
   }
 
+  /* Pagination */
+  .pagination-author {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .pagination-author button {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    color: #086b92;
+    font-size: 14px;
+  }
+  .pagination-author button.active {
+    background-color: #086b92;
+    color: #fff;
+    border-color: #086b92;
+  }
+  .pagination-author button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   @media (max-width: 768px) {
     .container-blog {
       padding: 10px;
@@ -175,28 +205,114 @@
   }
 </style>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemsPerPage = 9;
+    const items = document.querySelectorAll(".blog-item");
+    const pagination = document.getElementById("pagination");
+    let currentPage = 1;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+
+    function showPage(page) {
+      items.forEach((item, index) => {
+        item.style.display =
+          index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
+            ? "block"
+            : "none";
+      });
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      pagination.innerHTML = "";
+
+      // Prev button
+      const prevBtn = document.createElement("button");
+      prevBtn.textContent = "« Prev";
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => goToPage(currentPage - 1);
+      pagination.appendChild(prevBtn);
+
+      // Helper to add a page button
+      function addPage(num) {
+        const btn = document.createElement("button");
+        btn.textContent = num;
+        if (num === currentPage) btn.classList.add("active");
+        btn.onclick = () => goToPage(num);
+        pagination.appendChild(btn);
+      }
+
+      // Helper to add dots
+      function addDots() {
+        const span = document.createElement("span");
+        span.textContent = "...";
+        span.style.margin = "0 5px";
+        pagination.appendChild(span);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        if (
+          i === 1 || i === 2 || // first two
+          i === totalPages || i === totalPages - 1 || // last two
+          (i >= currentPage - 1 && i <= currentPage + 1) // around current
+        ) {
+          addPage(i);
+        } else if (
+          i === 3 && currentPage > 4 || // dots after 2
+          i === totalPages - 2 && currentPage < totalPages - 3 // dots before last-1
+        ) {
+          addDots();
+        }
+      }
+
+      // Next button
+      const nextBtn = document.createElement("button");
+      nextBtn.textContent = "Next »";
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.onclick = () => goToPage(currentPage + 1);
+      pagination.appendChild(nextBtn);
+    }
+
+    function goToPage(page) {
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        showPage(currentPage);
+      }
+    }
+
+    // Initialize
+    if (items.length > 0) {
+      showPage(currentPage);
+    }
+  });
+</script>
+
+
 {% schema %}
-  {
-    "name": "Blog Review Doctor Card",
-    "settings": [
-      {
-        "type": "text",
-        "id": "blog_author_name",
-        "label": "Author Name"
-      }, {
-        "type": "text",
-        "id": "blog_dr_name",
-        "label": "Dr Name"
-      }, {
-        "type": "text",
-        "id": "review_dr_page",
-        "label": "Dr Page URL"
-      }
-    ],
-    "presets": [
-      {
-        "name": "blog-card-review-doctor"
-      }
-    ]
-  }
+{
+  "name": "Blog Review Doctor Card",
+  "settings": [
+    {
+      "type": "text",
+      "id": "blog_author_name",
+      "label": "Author Name"
+    },
+    {
+      "type": "text",
+      "id": "blog_dr_name",
+      "label": "Dr Name"
+    },
+    {
+      "type": "text",
+      "id": "review_dr_page",
+      "label": "Dr Page URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "blog-card-review-doctor"
+    }
+  ]
+}
 {% endschema %}
