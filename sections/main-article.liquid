@@ -301,49 +301,6 @@
               loading="lazy"
             >
           </div>
-        </div>
-
-        <style>
-          .we-blog-image img{
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-          object-position: center;
-          border-radius: 10px;
-          margin-bottom: 20px;
-
-          }
-
-          .we-blog-title h1{
-          font-size: 32px;
-          font-weight: 700;
-          color: #006a91;
-          margin-bottom: 10px;
-          line-height: 1.2;
-          font-weight: 800;
-          }
-          .we-blog-title{
-          max-width: 950px;
-          padding-bottom: 10px;
-          }
-
-          div#we-blog-banner {
-          margin-bottom: 25px;
-          max-width: 950px;
-          }
-
-          @media (max-width: 768px) {
-          .we-blog-title h1{
-          font-size: 20px;
-          margin-bottom: 10px;
-          }
-          div#we-blog-banner {
-          margin-top: 15px;
-          }
-          }
-        </style>
-        <!--main-article-->
-        <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
           <div class="article-header">
             <div class="author-top">
               {% assign blogauthor = article.author %}
@@ -460,7 +417,7 @@
                       class="lazyload"
                       data-src="https://wellnessextract.com/cdn/shop/files/Felicia_300x300.jpg?v=1737439340"
                       width="40px"
-                      alt="sarika jassal"
+                      alt="Author: Dr. Felicia"
                       height="40px"
                       title=""
                       loading="lazy"
@@ -506,7 +463,7 @@
                       class="lazyload"
                       data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri.jpg?v=1741159628"
                       width="40px"
-                      alt="sarika jassal"
+                      alt="Author: Dr. Surangama Lehri"
                       height="40px"
                       title=""
                       loading="lazy"
@@ -529,7 +486,7 @@
                       class="lazyload"
                       data-src="https://wellnessextract.com/cdn/shop/files/Dr._Jenna_Priestap_500x500_3fc74ad3-1104-467b-ba2f-6ab7dfc724a2_300x300.webp?v=1748940514"
                       width="40px"
-                      alt="Dr. Jenny Priestap"
+                      alt="Reviewed By: Dr. Jenna Priestap"
                       height="40px"
                       title=""
                       loading="lazy"
@@ -598,6 +555,50 @@
               </div>
             {%- endif -%}
           </div>
+        </div>
+
+        <style>
+          .we-blog-image img{
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px;
+          margin-bottom: 20px;
+
+          }
+
+          .we-blog-title h1{
+          font-size: 32px;
+          font-weight: 700;
+          color: #006a91;
+          margin-bottom: 10px;
+          line-height: 1.2;
+          font-weight: 800;
+          }
+          .we-blog-title{
+          max-width: 950px;
+          padding-bottom: 10px;
+          }
+
+          div#we-blog-banner {
+          margin-bottom: 25px;
+          max-width: 950px;
+          }
+
+          @media (max-width: 768px) {
+          .we-blog-title h1{
+          font-size: 20px;
+          margin-bottom: 10px;
+          }
+          div#we-blog-banner {
+          margin-top: 15px;
+          }
+          }
+        </style>
+        <!--main-article-->
+        <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+          
           <div class="article-body">
             <div class="article-content halo-text-format{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
               {% comment %} <div id="table-of-contents"></div> {% endcomment %}
@@ -3980,6 +3981,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
+  margin-top: 20px;
   }
   .author-top img {
   order: -1;
