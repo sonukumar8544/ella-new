@@ -1,0 +1,318 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <!-- AMP Scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  
+  <title>Summer Collection 2024 - Example Web Story</title>
+  <meta name="description" content="Discover our latest summer fashion collection with vibrant colors and comfortable styles.">
+  <link rel="canonical" href="https://yourstore.myshopify.com/pages/summer-collection-story">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Summer Collection 2024">
+  <meta property="og:description" content="Discover our latest summer fashion collection">
+  <meta property="og:url" content="https://yourstore.myshopify.com/pages/summer-collection-story">
+  <meta property="og:image" content="https://yourstore.myshopify.com/files/summer-cover.jpg">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://yourstore.myshopify.com/pages/summer-collection-story"
+    },
+    "headline": "Summer Collection 2024",
+    "description": "Discover our latest summer fashion collection with vibrant colors and comfortable styles.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://yourstore.myshopify.com/files/summer-cover.jpg",
+      "width": 1200,
+      "height": 1600
+    },
+    "datePublished": "2024-06-01T08:00:00+00:00",
+    "dateModified": "2024-06-01T08:00:00+00:00",
+    "author": {
+      "@type": "Organization",
+      "name": "Your Store"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Your Store",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yourstore.myshopify.com/files/logo.png"
+      }
+    }
+  }
+  </script>
+  
+  <!-- AMP Boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+  <!-- Custom Styles -->
+  <style amp-custom>
+    amp-story {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    
+    amp-story-page {
+      background-color: #000;
+    }
+    
+    .text-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 30px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+    
+    .story-title {
+      color: #fff;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 12px 0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .story-subtitle {
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 0;
+      opacity: 0.9;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .story-body {
+      color: #fff;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .story-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .story-cta {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+    
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .product-price {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 12px 0;
+    }
+    
+    .badge {
+      background: #ff4757;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <amp-story 
+    standalone
+    title="Summer Collection 2024"
+    publisher="Your Store"
+    publisher-logo-src="https://yourstore.myshopify.com/files/logo-96x96.png"
+    poster-portrait-src="https://yourstore.myshopify.com/files/summer-poster-720x1280.jpg"
+  >
+    
+    <!-- Page 1: Cover -->
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1523359346063-d879354c0ea5?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Summer fashion collection cover"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="text-container">
+          <span class="story-tag">NEW ARRIVALS</span>
+          <h1 class="story-title">Summer Collection 2024</h1>
+          <p class="story-subtitle">Vibrant styles for sunny days</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 2: Featured Product -->
+    <amp-story-page id="product-1">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Floral summer dress"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="text-container">
+          <h2 class="story-title">Floral Dream Dress</h2>
+          <p class="product-price">$89.00</p>
+          <p class="story-body">Light, breezy, and perfect for any summer occasion</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 3: Product Detail -->
+    <amp-story-page id="product-2">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Summer accessories"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="text-container">
+          <h2 class="story-title">Complete Your Look</h2>
+          <p class="story-body">Handcrafted accessories to complement your summer style</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 4: Collection Highlight -->
+    <amp-story-page id="highlight">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Multiple summer outfits"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="text-container">
+          <span class="badge">LIMITED TIME</span>
+          <h2 class="story-title">20% Off Entire Collection</h2>
+          <p class="story-body">Use code: SUMMER20 at checkout</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 5: Features -->
+    <amp-story-page id="features">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Sustainable fashion"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="center-content">
+        <div>
+          <h2 class="story-title">Sustainably Made</h2>
+          <p class="story-body">✓ Organic materials<br>
+          ✓ Ethical production<br>
+          ✓ Carbon neutral shipping</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 6: Social Proof -->
+    <amp-story-page id="testimonial">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Happy customer"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="text-container">
+          <p class="story-body">"Best summer wardrobe investment I've ever made. Quality is amazing!"</p>
+          <p class="story-subtitle">⭐⭐⭐⭐⭐ - Sarah M.</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    <!-- Page 7: CTA -->
+    <amp-story-page id="cta">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=720&h=1280&fit=crop" 
+          layout="responsive" 
+          width="720" 
+          height="1280"
+          alt="Shop now call to action"
+        ></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="center-content">
+        <div>
+          <h2 class="story-title">Ready for Summer?</h2>
+          <p class="story-body">Shop the full collection now</p>
+          <a href="https://yourstore.myshopify.com/collections/summer-2024" class="story-cta">
+            Shop Collection
+          </a>
+        </div>
+      </amp-story-grid-layer>
+      
+      <!-- Attachment for CTA -->
+      <amp-story-cta-layer>
+        <a href="https://yourstore.myshopify.com/collections/summer-2024" class="story-cta">
+          Shop Now
+        </a>
+      </amp-story-cta-layer>
+    </amp-story-page>
+
+  </amp-story>
+</body>
+</html>
+

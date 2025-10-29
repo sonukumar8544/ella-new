@@ -1,0 +1,283 @@
+<!doctype html>
+<html ⚡ lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  {%- comment -%} AMP Required Scripts {%- endcomment -%}
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  
+  {%- comment -%} SEO Meta Tags {%- endcomment -%}
+  <title>{{ page.title }} - {{ shop.name }}</title>
+  <meta name="description" content="{{ page.content | strip_html | truncate: 160 }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  {%- comment -%} Open Graph {%- endcomment -%}
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.content | strip_html | truncate: 160 }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {% if page.image %}
+    <meta property="og:image" content="{{ page.image | image_url: width: 1200 }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  {% endif %}
+  
+  {%- comment -%} Twitter Card {%- endcomment -%}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.content | strip_html | truncate: 160 }}">
+  {% if page.image %}
+    <meta name="twitter:image" content="{{ page.image | image_url: width: 1200 }}">
+  {% endif %}
+  
+  {%- comment -%} Web Story Specific Meta {%- endcomment -%}
+  <meta name="web-story-type" content="web-story">
+  <meta name="robots" content="index, follow">
+  
+  {%- comment -%} JSON-LD Structured Data {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ canonical_url }}"
+    },
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.content | strip_html | truncate: 160 | escape }}",
+    {% if page.image %}
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ page.image | image_url: width: 1200 }}",
+      "width": 1200,
+      "height": 1600
+    },
+    {% endif %}
+    "datePublished": "{{ page.created_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "dateModified": "{{ page.updated_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ shop.brand.logo | default: shop.logo | image_url }}"
+      }
+    }
+  }
+  </script>
+  
+  {%- comment -%} AMP Boilerplate {%- endcomment -%}
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+  {%- comment -%} Custom Styles {%- endcomment -%}
+  <style amp-custom>
+    amp-story {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+    
+    amp-story-page {
+      background-color: #000;
+    }
+    
+    .story-text {
+      color: #fff;
+      font-size: 24px;
+      line-height: 1.4;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
+    
+    .story-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .story-body {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    .story-cta {
+      background: #fff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  {%- comment -%}
+    INSTRUCTIONS FOR CUSTOMIZATION:
+    
+    1. Replace the example amp-story-page blocks below with your actual story pages
+    2. Each amp-story-page represents one slide/page in your story
+    3. Use amp-story-grid-layer for different layout templates
+    4. Supported layouts: fill, vertical, horizontal, thirds
+    5. Add images, videos, and text as needed
+    6. Recommended image size: 720x1280px (9:16 ratio)
+    7. Keep story concise: 5-20 pages recommended
+    
+    EXAMPLE STRUCTURE:
+    <amp-story-page id="unique-id">
+      <amp-story-grid-layer template="fill">
+        <amp-img src="image.jpg" layout="responsive" width="720" height="1280"></amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical">
+        <h1>Your Title</h1>
+        <p>Your text content</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  {%- endcomment -%}
+  
+  <amp-story 
+    standalone
+    title="{{ page.title }}" 
+    publisher="{{ shop.name }}"
+    publisher-logo-src="{{ shop.brand.logo | default: shop.logo | image_url }}"
+    poster-portrait-src="{{ page.image | image_url: width: 720, height: 1280 }}"
+  >
+    {%- comment -%} Cover Page {%- endcomment -%}
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="fill">
+        {% if page.image %}
+          <amp-img 
+            src="{{ page.image | image_url: width: 720, height: 1280 }}" 
+            layout="responsive" 
+            width="720" 
+            height="1280"
+            alt="{{ page.title }}"
+          ></amp-img>
+        {% endif %}
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="bottom">
+        <div class="story-text">
+          <h1 class="story-title">{{ page.title }}</h1>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+
+    {%- comment -%}
+      EXAMPLE PAGES - Replace with your actual content
+      Each metafield can contain HTML content for a story page
+    {%- endcomment -%}
+    
+    {% if page.metafields.custom.story_page_1 != blank %}
+      <amp-story-page id="page-1">
+        {{ page.metafields.custom.story_page_1 }}
+      </amp-story-page>
+    {% endif %}
+    
+    {% if page.metafields.custom.story_page_2 != blank %}
+      <amp-story-page id="page-2">
+        {{ page.metafields.custom.story_page_2 }}
+      </amp-story-page>
+    {% endif %}
+    
+    {% if page.metafields.custom.story_page_3 != blank %}
+      <amp-story-page id="page-3">
+        {{ page.metafields.custom.story_page_3 }}
+      </amp-story-page>
+    {% endif %}
+    
+    {% if page.metafields.custom.story_page_4 != blank %}
+      <amp-story-page id="page-4">
+        {{ page.metafields.custom.story_page_4 }}
+      </amp-story-page>
+    {% endif %}
+    
+    {% if page.metafields.custom.story_page_5 != blank %}
+      <amp-story-page id="page-5">
+        {{ page.metafields.custom.story_page_5 }}
+      </amp-story-page>
+    {% endif %}
+
+    {%- comment -%} CTA/Final Page {%- endcomment -%}
+    {% if page.metafields.custom.story_cta_url != blank %}
+      <amp-story-page id="cta-page">
+        <amp-story-grid-layer template="fill">
+          <amp-img 
+            src="{{ page.metafields.custom.story_cta_image | image_url: width: 720, height: 1280 }}" 
+            layout="responsive" 
+            width="720" 
+            height="1280"
+            alt="Call to action"
+          ></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="center-content">
+          <div class="story-text">
+            <h2 class="story-title">{{ page.metafields.custom.story_cta_title | default: 'Visit Our Store' }}</h2>
+            <p class="story-body">{{ page.metafields.custom.story_cta_text | default: 'Discover more products' }}</p>
+            <a href="{{ page.metafields.custom.story_cta_url }}" class="story-cta">
+              {{ page.metafields.custom.story_cta_button | default: 'Shop Now' }}
+            </a>
+          </div>
+        </amp-story-grid-layer>
+        <amp-story-cta-layer>
+          <a href="{{ page.metafields.custom.story_cta_url }}" class="story-cta">
+            {{ page.metafields.custom.story_cta_button | default: 'Shop Now' }}
+          </a>
+        </amp-story-cta-layer>
+      </amp-story-page>
+    {% endif %}
+    
+    {%- comment -%} Analytics Configuration {%- endcomment -%}
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars": {
+          "gtag_id": "YOUR-GA4-MEASUREMENT-ID",
+          "config": {
+            "YOUR-GA4-MEASUREMENT-ID": {
+              "groups": "default"
+            }
+          }
+        },
+        "triggers": {
+          "storyProgress": {
+            "on": "story-page-visible",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_progress",
+              "event_category": "web_stories",
+              "event_label": "{{ page.title }}",
+              "page_id": "${storyPageId}",
+              "page_index": "${storyPageIndex}"
+            }
+          },
+          "storyEnd": {
+            "on": "story-last-page-visible",
+            "request": "event",
+            "vars": {
+              "event_name": "custom",
+              "event_action": "story_complete",
+              "event_category": "web_stories",
+              "event_label": "{{ page.title }}"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+  </amp-story>
+  
+  {%- comment -%} Bookend Configuration (optional) {%- endcomment -%}
+  <amp-story-bookend 
+    src="{{ shop.url }}/apps/web-stories/bookend.json" 
+    layout="nodisplay"
+  ></amp-story-bookend>
+</body>
+</html>
+

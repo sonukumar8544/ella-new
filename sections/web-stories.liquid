@@ -1,0 +1,1144 @@
+{% comment %}
+  Web Stories Section
+  Dynamic AMP-based Web Stories for Shopify
+  Supports Google Discover & Search Console integration
+{% endcomment %}
+
+{%- liquid
+  assign section_id = section.id
+  assign stories_count = section.blocks.size
+  assign layout_style = section.settings.layout_style
+  assign columns_desktop = section.settings.columns_desktop
+  assign columns_mobile = section.settings.columns_mobile
+  assign enable_carousel = section.settings.enable_carousel
+  assign show_navigation = section.settings.show_navigation
+  assign autoplay = section.settings.autoplay
+  assign autoplay_speed = section.settings.autoplay_speed
+  assign enable_analytics = section.settings.enable_analytics
+-%}
+
+{% if stories_count > 0 %}
+  <div class="web-stories-section" id="web-stories-{{ section_id }}" data-section-id="{{ section_id }}">
+    <div class="page-width">
+      {% if section.settings.heading != blank %}
+        <div class="web-stories-header">
+          <h2 class="web-stories-heading">{{ section.settings.heading }}</h2>
+          {% if section.settings.subheading != blank %}
+            <p class="web-stories-subheading">{{ section.settings.subheading }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div 
+        class="web-stories-container web-stories-{{ layout_style }}"
+        data-layout="{{ layout_style }}"
+        data-carousel="{{ enable_carousel }}"
+        data-columns-desktop="{{ columns_desktop }}"
+        data-columns-mobile="{{ columns_mobile }}"
+        data-autoplay="{{ autoplay }}"
+        data-autoplay-speed="{{ autoplay_speed }}"
+        data-enable-analytics="{{ enable_analytics }}"
+      >
+        <div class="web-stories-wrapper{% if enable_carousel %} swiper-wrapper{% endif %}">
+          {% for block in section.blocks %}
+            {%- liquid
+              assign story_title = block.settings.story_title
+              assign story_image = block.settings.story_image
+              assign story_amp_url = block.settings.story_amp_url
+              assign story_description = block.settings.story_description
+              assign cta_text = block.settings.cta_text
+              assign enable_cta = block.settings.enable_cta
+              assign story_duration = block.settings.story_duration
+              assign story_author = block.settings.story_author
+            -%}
+
+            <article 
+              class="web-story-item{% if enable_carousel %} swiper-slide{% endif %}"
+              data-block-id="{{ block.id }}"
+              itemscope
+              itemtype="https://schema.org/Article"
+            >
+              <a 
+                href="{{ story_amp_url }}" 
+                class="web-story-link"
+                {% if section.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                data-story-url="{{ story_amp_url }}"
+                data-story-title="{{ story_title | escape }}"
+                onclick="trackStoryClick(this)"
+              >
+                <div class="web-story-card">
+                  <div class="web-story-thumbnail">
+                    {% if story_image != blank %}
+                      <img
+                        data-src="{{ story_image | image_url: width: 600 }}"
+                        data-srcset="
+                          {{ story_image | image_url: width: 300 }} 300w,
+                          {{ story_image | image_url: width: 600 }} 600w,
+                          {{ story_image | image_url: width: 900 }} 900w
+                        "
+                        sizes="(min-width: 990px) {{ 990 | divided_by: columns_desktop }}px, {{ 750 | divided_by: columns_mobile }}px"
+                        alt="{{ story_title | escape }}"
+                        class="web-story-image lazy-load"
+                        width="600"
+                        height="800"
+                        loading="lazy"
+                        itemprop="image"
+                      />
+                      <noscript>
+                        <img 
+                          src="{{ story_image | image_url: width: 600 }}" 
+                          alt="{{ story_title | escape }}"
+                          class="web-story-image"
+                          itemprop="image"
+                        />
+                      </noscript>
+                    {% else %}
+                      <div class="web-story-placeholder">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="100" height="100" fill="#f3f3f3"/>
+                          <path d="M30 40L50 60L70 40" stroke="#999" stroke-width="2"/>
+                        </svg>
+                      </div>
+                    {% endif %}
+
+                    {% if story_duration != blank %}
+                      <div class="web-story-duration">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <circle cx="6" cy="6" r="5" stroke="white" stroke-width="1.5"/>
+                          <path d="M6 3V6L8 8" stroke="white" stroke-width="1.5"/>
+                        </svg>
+                        <span>{{ story_duration }}</span>
+                      </div>
+                    {% endif %}
+
+                    <div class="web-story-overlay"></div>
+                  </div>
+
+                  <div class="web-story-content">
+                    <h3 class="web-story-title" itemprop="headline">{{ story_title }}</h3>
+                    
+                    {% if story_author != blank %}
+                      <p class="web-story-author" itemprop="author">{{ story_author }}</p>
+                    {% endif %}
+
+                    {% if story_description != blank %}
+                      <p class="web-story-description" itemprop="description">{{ story_description }}</p>
+                    {% endif %}
+
+                    {% if enable_cta and cta_text != blank %}
+                      <span class="web-story-cta">{{ cta_text }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+
+              {%- comment -%} Hidden meta data for structured data {%- endcomment -%}
+              <meta itemprop="url" content="{{ story_amp_url }}">
+              <meta itemprop="mainEntityOfPage" content="{{ story_amp_url }}">
+            </article>
+          {% endfor %}
+        </div>
+
+        {% if enable_carousel and show_navigation and stories_count > columns_desktop %}
+          <div class="web-stories-navigation">
+            <button class="web-stories-nav web-stories-prev" aria-label="Previous story">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="web-stories-nav web-stories-next" aria-label="Next story">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          {% if section.settings.show_pagination %}
+            <div class="web-stories-pagination"></div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% if section.settings.view_all_text != blank and section.settings.view_all_link != blank %}
+        <div class="web-stories-footer">
+          <a href="{{ section.settings.view_all_link }}" class="web-stories-view-all">
+            {{ section.settings.view_all_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {%- comment -%} JSON-LD Structured Data for Web Stories {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "{{ section.settings.heading | default: 'Web Stories' | escape }}",
+    "itemListElement": [
+      {% for block in section.blocks %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "item": {
+            "@type": "Article",
+            "@id": "{{ block.settings.story_amp_url }}",
+            "headline": "{{ block.settings.story_title | escape }}",
+            "url": "{{ block.settings.story_amp_url }}",
+            {% if block.settings.story_image != blank %}
+            "image": {
+              "@type": "ImageObject",
+              "url": "{{ block.settings.story_image | image_url: width: 1200 }}",
+              "width": 1200,
+              "height": 1600
+            },
+            {% endif %}
+            {% if block.settings.story_description != blank %}
+            "description": "{{ block.settings.story_description | escape }}",
+            {% endif %}
+            {% if block.settings.story_author != blank %}
+            "author": {
+              "@type": "Person",
+              "name": "{{ block.settings.story_author | escape }}"
+            },
+            {% endif %}
+            "publisher": {
+              "@type": "Organization",
+              "name": "{{ shop.name }}",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "{{ shop.brand.logo | default: shop.logo | image_url }}"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "{{ block.settings.story_amp_url }}"
+            }
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+  </script>
+
+  {%- comment -%} CSS Styles {%- endcomment -%}
+  <style>
+    .web-stories-section {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.background_color }};
+    }
+
+    .web-stories-header {
+      text-align: {{ section.settings.heading_alignment }};
+      margin-bottom: 40px;
+    }
+
+    .web-stories-heading {
+      font-size: {{ section.settings.heading_size }}px;
+      font-weight: 700;
+      color: {{ section.settings.heading_color }};
+      margin: 0 0 8px;
+    }
+
+    .web-stories-subheading {
+      font-size: 16px;
+      color: {{ section.settings.subheading_color }};
+      margin: 0;
+    }
+
+    .web-stories-container {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .web-stories-wrapper {
+      display: grid;
+      gap: {{ section.settings.gap }}px;
+      grid-template-columns: repeat({{ columns_mobile }}, 1fr);
+    }
+
+    @media (min-width: 750px) {
+      .web-stories-wrapper {
+        grid-template-columns: repeat({{ columns_desktop }}, 1fr);
+      }
+    }
+
+    .web-stories-container[data-carousel="true"] .web-stories-wrapper {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+
+    .web-stories-container[data-carousel="true"] .web-stories-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .web-story-item {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .web-stories-container[data-carousel="true"] .web-story-item {
+      width: calc((100% - ({{ columns_mobile }} - 1) * {{ section.settings.gap }}px) / {{ columns_mobile }});
+      margin-right: {{ section.settings.gap }}px;
+    }
+
+    @media (min-width: 750px) {
+      .web-stories-container[data-carousel="true"] .web-story-item {
+        width: calc((100% - ({{ columns_desktop }} - 1) * {{ section.settings.gap }}px) / {{ columns_desktop }});
+      }
+    }
+
+    .web-story-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .web-story-card {
+      position: relative;
+      border-radius: {{ section.settings.card_border_radius }}px;
+      overflow: hidden;
+      background: {{ section.settings.card_background }};
+      box-shadow: {{ section.settings.card_shadow }};
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .web-story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .web-story-thumbnail {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+    .web-story-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .web-story-image.loaded {
+      opacity: 1;
+    }
+
+    .web-story-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f3f3f3;
+    }
+
+    .web-story-duration {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .web-story-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      opacity: {{ section.settings.overlay_opacity }}%;
+      transition: opacity 0.3s ease;
+    }
+
+    .web-story-card:hover .web-story-overlay {
+      opacity: {{ section.settings.overlay_opacity | plus: 20 }}%;
+    }
+
+    .web-story-content {
+      padding: 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .web-story-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: {{ section.settings.title_color }};
+      margin: 0 0 8px;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .web-story-author {
+      font-size: 13px;
+      color: {{ section.settings.author_color }};
+      margin: 0 0 8px;
+      font-weight: 500;
+    }
+
+    .web-story-description {
+      font-size: 14px;
+      color: {{ section.settings.description_color }};
+      margin: 0 0 12px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .web-story-cta {
+      display: inline-block;
+      padding: 8px 16px;
+      background: {{ section.settings.cta_background }};
+      color: {{ section.settings.cta_color }};
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .web-story-card:hover .web-story-cta {
+      background: {{ section.settings.cta_hover_background }};
+    }
+
+    .web-stories-navigation {
+      position: absolute;
+      top: 50%;
+      left: -12px;
+      right: -12px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .web-stories-nav {
+      pointer-events: all;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      transition: all 0.2s ease;
+    }
+
+    .web-stories-nav:hover {
+      background: #f5f5f5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .web-stories-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .web-stories-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .web-stories-footer {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .web-stories-view-all {
+      display: inline-block;
+      padding: 12px 24px;
+      background: {{ section.settings.view_all_background }};
+      color: {{ section.settings.view_all_color }};
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .web-stories-view-all:hover {
+      background: {{ section.settings.view_all_hover_background }};
+    }
+
+    @media (max-width: 749px) {
+      .web-stories-heading {
+        font-size: {{ section.settings.heading_size | times: 0.75 }}px;
+      }
+
+      .web-stories-navigation {
+        display: none;
+      }
+
+      .web-story-content {
+        padding: 12px;
+      }
+
+      .web-story-title {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  {%- comment -%} JavaScript for functionality {%- endcomment -%}
+  <script>
+    (function() {
+      'use strict';
+
+      const sectionId = '{{ section_id }}';
+      const section = document.getElementById('web-stories-' + sectionId);
+      const container = section.querySelector('.web-stories-container');
+      const wrapper = section.querySelector('.web-stories-wrapper');
+      const stories = section.querySelectorAll('.web-story-item');
+      const enableCarousel = container.dataset.carousel === 'true';
+      const autoplay = container.dataset.autoplay === 'true';
+      const autoplaySpeed = parseInt(container.dataset.autoplaySpeed) || 3000;
+      const enableAnalytics = container.dataset.enableAnalytics === 'true';
+
+      // Lazy Loading Implementation
+      function initLazyLoading() {
+        const images = section.querySelectorAll('.lazy-load');
+        
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+                const srcset = img.getAttribute('data-srcset');
+                
+                if (src) {
+                  img.src = src;
+                }
+                if (srcset) {
+                  img.srcset = srcset;
+                }
+                
+                img.addEventListener('load', () => {
+                  img.classList.add('loaded');
+                });
+                
+                observer.unobserve(img);
+              }
+            });
+          }, {
+            rootMargin: '50px'
+          });
+
+          images.forEach(img => imageObserver.observe(img));
+        } else {
+          // Fallback for browsers without IntersectionObserver
+          images.forEach(img => {
+            img.src = img.getAttribute('data-src');
+            if (img.getAttribute('data-srcset')) {
+              img.srcset = img.getAttribute('data-srcset');
+            }
+            img.classList.add('loaded');
+          });
+        }
+      }
+
+      // Carousel Navigation
+      if (enableCarousel) {
+        const prevBtn = section.querySelector('.web-stories-prev');
+        const nextBtn = section.querySelector('.web-stories-next');
+        let currentIndex = 0;
+        let autoplayInterval;
+
+        function updateCarousel() {
+          const itemWidth = stories[0].offsetWidth + parseInt(container.dataset.gap || 16);
+          wrapper.scrollTo({
+            left: currentIndex * itemWidth,
+            behavior: 'smooth'
+          });
+          updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+          if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= stories.length - parseInt(container.dataset.columnsDesktop || 3);
+          }
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateCarousel();
+              if (autoplay) stopAutoplay();
+            }
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            const maxIndex = stories.length - parseInt(container.dataset.columnsDesktop || 3);
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+              updateCarousel();
+              if (autoplay) stopAutoplay();
+            }
+          });
+        }
+
+        // Autoplay functionality
+        function startAutoplay() {
+          if (autoplay) {
+            autoplayInterval = setInterval(() => {
+              const maxIndex = stories.length - parseInt(container.dataset.columnsDesktop || 3);
+              if (currentIndex < maxIndex) {
+                currentIndex++;
+              } else {
+                currentIndex = 0;
+              }
+              updateCarousel();
+            }, autoplaySpeed);
+          }
+        }
+
+        function stopAutoplay() {
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+          }
+        }
+
+        // Touch/Mouse drag support
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        wrapper.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - wrapper.offsetLeft;
+          scrollLeft = wrapper.scrollLeft;
+          wrapper.style.cursor = 'grabbing';
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          isDown = false;
+          wrapper.style.cursor = 'grab';
+        });
+
+        wrapper.addEventListener('mouseup', () => {
+          isDown = false;
+          wrapper.style.cursor = 'grab';
+        });
+
+        wrapper.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - wrapper.offsetLeft;
+          const walk = (x - startX) * 2;
+          wrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        // Pause autoplay on hover
+        container.addEventListener('mouseenter', stopAutoplay);
+        container.addEventListener('mouseleave', startAutoplay);
+
+        updateNavigationButtons();
+        if (autoplay) startAutoplay();
+      }
+
+      // Analytics tracking
+      window.trackStoryClick = function(element) {
+        if (!enableAnalytics) return;
+
+        const storyUrl = element.dataset.storyUrl;
+        const storyTitle = element.dataset.storyTitle;
+
+        // Google Analytics 4
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'web_story_click', {
+            'story_url': storyUrl,
+            'story_title': storyTitle,
+            'section_id': sectionId
+          });
+        }
+
+        // Facebook Pixel
+        if (typeof fbq !== 'undefined') {
+          fbq('trackCustom', 'WebStoryClick', {
+            story_url: storyUrl,
+            story_title: storyTitle
+          });
+        }
+
+        // Custom analytics endpoint (optional)
+        if (window.customAnalytics) {
+          window.customAnalytics.track('web_story_click', {
+            url: storyUrl,
+            title: storyTitle,
+            timestamp: new Date().toISOString()
+          });
+        }
+
+        console.log('Story clicked:', storyTitle, storyUrl);
+      };
+
+      // Initialize
+      initLazyLoading();
+
+      // Reinitialize on window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          if (enableCarousel) {
+            const prevBtn = section.querySelector('.web-stories-prev');
+            const nextBtn = section.querySelector('.web-stories-next');
+            if (prevBtn && nextBtn) {
+              prevBtn.disabled = false;
+              nextBtn.disabled = false;
+            }
+          }
+        }, 250);
+      });
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Web Stories",
+  "tag": "section",
+  "class": "section-web-stories",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Stories"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Discover amazing stories"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Stories per row (Desktop)",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Stories per row (Mobile)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between stories",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_carousel",
+      "label": "Enable Carousel",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show Pagination Dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 2000,
+      "max": 10000,
+      "step": 1000,
+      "unit": "ms",
+      "label": "Autoplay Speed",
+      "default": 5000
+    },
+    {
+      "type": "header",
+      "content": "Card Styling"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "card_shadow",
+      "label": "Card Shadow",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "0 2px 4px rgba(0,0,0,0.1)",
+          "label": "Small"
+        },
+        {
+          "value": "0 4px 8px rgba(0,0,0,0.12)",
+          "label": "Medium"
+        },
+        {
+          "value": "0 8px 16px rgba(0,0,0,0.15)",
+          "label": "Large"
+        }
+      ],
+      "default": "0 4px 8px rgba(0,0,0,0.12)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Image Overlay Opacity",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Story Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "label": "Author Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "cta_background",
+      "label": "CTA Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "CTA Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_background",
+      "label": "CTA Hover Background",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Additional Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "Open stories in new tab",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All Button Text",
+      "default": "View All Stories"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Button Link"
+    },
+    {
+      "type": "color",
+      "id": "view_all_background",
+      "label": "View All Button Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "view_all_color",
+      "label": "View All Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "view_all_hover_background",
+      "label": "View All Button Hover Background",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Analytics"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_analytics",
+      "label": "Enable Analytics Tracking",
+      "default": true,
+      "info": "Tracks story clicks with Google Analytics, Facebook Pixel, and custom analytics"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Story",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Story Details"
+        },
+        {
+          "type": "text",
+          "id": "story_title",
+          "label": "Story Title",
+          "default": "Amazing Story"
+        },
+        {
+          "type": "image_picker",
+          "id": "story_image",
+          "label": "Story Cover Image",
+          "info": "Recommended size: 720x1280px (9:16 ratio)"
+        },
+        {
+          "type": "url",
+          "id": "story_amp_url",
+          "label": "Story AMP URL",
+          "info": "Full URL to your AMP Web Story"
+        },
+        {
+          "type": "textarea",
+          "id": "story_description",
+          "label": "Story Description",
+          "default": "A captivating story that will engage your audience"
+        },
+        {
+          "type": "text",
+          "id": "story_author",
+          "label": "Story Author"
+        },
+        {
+          "type": "text",
+          "id": "story_duration",
+          "label": "Story Duration",
+          "default": "2 min",
+          "info": "e.g., '2 min', '30 sec'"
+        },
+        {
+          "type": "header",
+          "content": "Call to Action"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_cta",
+          "label": "Enable CTA Button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Button Text",
+          "default": "Read Story"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Web Stories",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "story"
+        },
+        {
+          "type": "story"
+        },
+        {
+          "type": "story"
+        },
+        {
+          "type": "story"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

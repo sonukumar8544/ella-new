@@ -1,0 +1,67 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "facebook",
+    "twitter",
+    "pinterest",
+    "email",
+    "system"
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "More from Our Store"
+    },
+    {
+      "type": "small",
+      "title": "Explore Our Collections",
+      "url": "https://yourstore.myshopify.com/collections",
+      "image": "https://yourstore.myshopify.com/files/collection-thumb.jpg"
+    },
+    {
+      "type": "small",
+      "title": "New Arrivals",
+      "url": "https://yourstore.myshopify.com/collections/new-arrivals",
+      "image": "https://yourstore.myshopify.com/files/new-arrivals-thumb.jpg"
+    },
+    {
+      "type": "small",
+      "title": "Best Sellers",
+      "url": "https://yourstore.myshopify.com/collections/best-sellers",
+      "image": "https://yourstore.myshopify.com/files/bestsellers-thumb.jpg"
+    },
+    {
+      "type": "heading",
+      "text": "Follow Us"
+    },
+    {
+      "type": "social",
+      "url": "https://www.instagram.com/yourstore",
+      "provider": "instagram"
+    },
+    {
+      "type": "social",
+      "url": "https://www.facebook.com/yourstore",
+      "provider": "facebook"
+    },
+    {
+      "type": "social",
+      "url": "https://twitter.com/yourstore",
+      "provider": "twitter"
+    },
+    {
+      "type": "cta-link",
+      "links": [
+        {
+          "text": "Shop Now",
+          "url": "https://yourstore.myshopify.com"
+        },
+        {
+          "text": "Subscribe to Newsletter",
+          "url": "https://yourstore.myshopify.com/pages/newsletter"
+        }
+      ]
+    }
+  ]
+}
+
