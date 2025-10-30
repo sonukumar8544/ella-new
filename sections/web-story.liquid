@@ -1,0 +1,1256 @@
+{% comment %}
+  Web Story Section - AMP Compatible
+  Allows creation of multiple web stories with up to 5 slides each
+{% endcomment %}
+
+{%- style -%}
+  .web-story-section {
+    width: 100%;
+    padding: 40px 0;
+    background: {{ section.settings.background_color }};
+  }
+
+  .web-story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .web-story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .web-story-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #000;
+    aspect-ratio: 9/16;
+  }
+
+  .web-story-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .web-story-preview {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .web-story-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .web-story-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    padding: 24px;
+    color: white;
+  }
+
+  .web-story-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: white;
+  }
+
+  .web-story-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .web-story-modal.active {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .web-story-viewer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    max-height: 888px;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .web-story-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .web-story-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .web-story-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .web-story-slide-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .web-story-slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    z-index: 5;
+  }
+
+  .web-story-slide-text h3 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .web-story-slide-text p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .web-story-cta {
+    display: inline-flex;
+    padding: 12px 24px;
+    background: white;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: flex-start;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  .web-story-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+
+  .web-story-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex !important;
+    gap: 4px;
+    z-index: 100;
+    pointer-events: none;
+    padding: 12px 16px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    min-height: 40px;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .web-story-progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    min-width: 20px;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .web-story-progress-fill {
+    height: 100%;
+    background: #FFFFFF;
+    width: 0%;
+    transition: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    will-change: width;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Active slide - RED animated progress */
+  .web-story-progress-bar.active .web-story-progress-fill {
+    background: white !important;
+    animation: progressFillAnimation var(--duration, 5000ms) linear forwards !important;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+  }
+
+  @keyframes progressFillAnimation {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* Completed slides - WHITE full bars */
+  .web-story-progress-bar.completed .web-story-progress-fill {
+    width: 100% !important;
+    background: #FFFFFF !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Paused state */
+  .web-story-progress-bar.paused .web-story-progress-fill {
+    animation-play-state: paused !important;
+  }
+
+  .web-story-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 110;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    pointer-events: auto;
+  }
+
+  .web-story-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .web-story-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    cursor: pointer;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .web-story-nav-prev {
+    left: 0;
+  }
+
+  .web-story-nav-next {
+    right: 0;
+  }
+
+  .web-story-section-title {
+    text-align: {{ section.settings.title_alignment }};
+    font-size: {{ section.settings.title_size }}px;
+    color: {{ section.settings.title_color }};
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .web-story-pause-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 120;
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .web-story-pause-indicator.visible {
+    display: flex !important;
+    opacity: 1;
+    animation: pausePulse 0.3s ease;
+  }
+
+  @keyframes pausePulse {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+
+  .web-story-pause-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .web-story-pause-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  @media (max-width: 768px) {
+    .web-story-viewer {
+      max-width: 100%;
+      height: 100vh;
+      max-height: 100vh;
+      border-radius: 0;
+    }
+
+    .web-story-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .web-story-slide-text h3 {
+      font-size: 24px;
+    }
+
+    .web-story-slide-text p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .web-story-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="web-story-section">
+  <div class="web-story-container">
+    {% if section.settings.section_title != blank %}
+      <h2 class="web-story-section-title">{{ section.settings.section_title }}</h2>
+    {% endif %}
+
+    <div class="web-story-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'story' %}
+          {% assign story_id = block.id %}
+          {% assign slide_1_image = block.settings.slide_1_image %}
+          {% assign slide_1_title = block.settings.slide_1_title %}
+          
+          <div class="web-story-item" data-story-id="{{ story_id }}" {{ block.shopify_attributes }}>
+            <div class="web-story-preview">
+              {% if slide_1_image != blank %}
+                <img 
+                  src="{{ slide_1_image | image_url: width: 300 }}"
+                  srcset="{{ slide_1_image | image_url: width: 300 }} 300w,
+                          {{ slide_1_image | image_url: width: 600 }} 600w"
+                  sizes="(max-width: 768px) 250px, 300px"
+                  alt="{{ slide_1_title | escape }}"
+                  loading="lazy"
+                  width="300"
+                  height="533"
+                >
+              {% else %}
+                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+              {% endif %}
+              <div class="web-story-overlay">
+                <h3 class="web-story-title">{{ slide_1_title | default: 'Web Story' }}</h3>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Story Modal Viewer -->
+<div class="web-story-modal" id="webStoryModal">
+  <button class="web-story-close" aria-label="Close story">&times;</button>
+  <div class="web-story-viewer">
+    <div class="web-story-progress" id="storyProgress"></div>
+    <div class="web-story-slides" id="storySlides"></div>
+    <div class="web-story-pause-indicator" id="pauseIndicator">
+      <div class="web-story-pause-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="4" width="4" height="16" rx="1"/>
+          <rect x="14" y="4" width="4" height="16" rx="1"/>
+        </svg>
+      </div>
+    </div>
+    <div class="web-story-nav web-story-nav-prev" data-nav="prev"></div>
+    <div class="web-story-nav web-story-nav-next" data-nav="next"></div>
+  </div>
+</div>
+
+<!-- JSON-LD Structured Data for Google Web Stories -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {% for block in section.blocks %}
+      {% if block.type == 'story' %} 
+      {
+        "@type": "Article",
+        "@id": "{{ shop.url }}{{ page.url }}#story-{{ block.id }}",
+        "headline": "{{ block.settings.slide_1_title | escape }}",
+        "image": [
+          {% if block.settings.slide_1_image != blank %}
+          "{{ block.settings.slide_1_image | image_url: width: 1200 }}"{% if block.settings.slide_2_image != blank %},{% endif %}
+          {% endif %}
+          {% if block.settings.slide_2_image != blank %}
+          "{{ block.settings.slide_2_image | image_url: width: 1200 }}"{% if block.settings.slide_3_image != blank %},{% endif %}
+          {% endif %}
+          {% if block.settings.slide_3_image != blank %}
+          "{{ block.settings.slide_3_image | image_url: width: 1200 }}"{% if block.settings.slide_4_image != blank %},{% endif %}
+          {% endif %}
+          {% if block.settings.slide_4_image != blank %}
+          "{{ block.settings.slide_4_image | image_url: width: 1200 }}"{% if block.settings.slide_5_image != blank %},{% endif %}
+          {% endif %}
+          {% if block.settings.slide_5_image != blank %}
+          "{{ block.settings.slide_5_image | image_url: width: 1200 }}"
+          {% endif %}
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "{{ shop.name }}"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "{{ shop.name }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ shop.brand.logo | image_url: width: 600 }}"
+          }
+        },
+        "datePublished": "{{ block.created_at | default: 'now' | date: '%Y-%m-%d' }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<script>
+  // Web Story JavaScript
+  const storyData = {
+    {% for block in section.blocks %}
+      {% if block.type == 'story' %}
+      "{{ block.id }}": {
+        slides: [
+          {% for i in (1..5) %}
+            {% assign slide_num = 'slide_' | append: i %}
+            {% assign image_key = slide_num | append: '_image' %}
+            {% assign title_key = slide_num | append: '_title' %}
+            {% assign desc_key = slide_num | append: '_description' %}
+            {% assign btn_text_key = slide_num | append: '_button_text' %}
+            {% assign btn_url_key = slide_num | append: '_button_url' %}
+            {% assign bg_color_key = slide_num | append: '_bg_color' %}
+            
+            {% if block.settings[image_key] != blank %}
+            {
+              image: "{{ block.settings[image_key] | image_url: width: 1080 }}",
+              title: {{ block.settings[title_key] | json }},
+              description: {{ block.settings[desc_key] | json }},
+              buttonText: {{ block.settings[btn_text_key] | json }},
+              buttonUrl: {{ block.settings[btn_url_key] | json }},
+              bgColor: {{ block.settings[bg_color_key] | json }}
+            }{% unless forloop.last %},{% endunless %}
+            {% endif %}
+          {% endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  };
+
+  class WebStoryViewer {
+    constructor() {
+      this.modal = document.getElementById('webStoryModal');
+      this.slidesContainer = document.getElementById('storySlides');
+      this.progressContainer = document.getElementById('storyProgress');
+      this.pauseIndicator = document.getElementById('pauseIndicator');
+      this.closeBtn = this.modal.querySelector('.web-story-close');
+      this.currentStoryId = null;
+      this.currentSlideIndex = 0;
+      this.autoPlayTimer = null;
+      this.autoPlayDuration = 5000; // 5 seconds per slide
+      this.isPaused = false;
+      this.pauseStartTime = 0;
+      this.currentProgressBar = null;
+      
+      this.init();
+    }
+
+    init() {
+      // Open story on click
+      document.querySelectorAll('.web-story-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          const storyId = e.currentTarget.dataset.storyId;
+          this.openStory(storyId);
+        });
+      });
+
+      // Close button
+      this.closeBtn.addEventListener('click', () => this.closeStory());
+
+      // Close on outside click
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) this.closeStory();
+      });
+
+      // Navigation with tap and hold for pause
+      this.pressTimer = null;
+      this.isLongPress = false;
+      const viewer = this.modal.querySelector('.web-story-viewer');
+
+      // Mouse events on viewer
+      viewer.addEventListener('mousedown', (e) => {
+        // Ignore if clicking close button
+        if (e.target.classList.contains('web-story-close') || e.target.closest('.web-story-close')) {
+          return;
+        }
+        
+        this.isLongPress = false;
+        this.pressTimer = setTimeout(() => {
+          this.isLongPress = true;
+          this.togglePause();
+        }, 300); // 300ms for long press
+      });
+
+      viewer.addEventListener('mouseup', (e) => {
+        // Ignore if clicking close button
+        if (e.target.classList.contains('web-story-close') || e.target.closest('.web-story-close')) {
+          clearTimeout(this.pressTimer);
+          return;
+        }
+        
+        clearTimeout(this.pressTimer);
+        
+        if (!this.isLongPress) {
+          if (this.isPaused) {
+            // Resume on tap while paused
+            this.togglePause();
+          } else {
+            // Quick tap - navigate based on position
+            const rect = viewer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const halfWidth = rect.width / 2;
+            
+            if (clickX < halfWidth) {
+              this.prevSlide();
+            } else {
+              this.nextSlide();
+            }
+          }
+        }
+      });
+
+      viewer.addEventListener('mouseleave', () => {
+        clearTimeout(this.pressTimer);
+      });
+
+      // Touch events on viewer
+      viewer.addEventListener('touchstart', (e) => {
+        // Ignore if touching close button
+        if (e.target.classList.contains('web-story-close') || e.target.closest('.web-story-close')) {
+          return;
+        }
+        
+        e.preventDefault();
+        this.isLongPress = false;
+        this.pressTimer = setTimeout(() => {
+          this.isLongPress = true;
+          this.togglePause();
+        }, 300);
+      }, { passive: false });
+
+      viewer.addEventListener('touchend', (e) => {
+        // Ignore if touching close button
+        if (e.target.classList.contains('web-story-close') || e.target.closest('.web-story-close')) {
+          clearTimeout(this.pressTimer);
+          return;
+        }
+        
+        clearTimeout(this.pressTimer);
+        
+        if (!this.isLongPress) {
+          if (this.isPaused) {
+            // Resume on tap while paused
+            this.togglePause();
+          } else {
+            // Quick tap - navigate based on position
+            const touch = e.changedTouches[0];
+            const rect = viewer.getBoundingClientRect();
+            const touchX = touch.clientX - rect.left;
+            const halfWidth = rect.width / 2;
+            
+            if (touchX < halfWidth) {
+              this.prevSlide();
+            } else {
+              this.nextSlide();
+            }
+          }
+        }
+      });
+
+      viewer.addEventListener('touchcancel', () => {
+        clearTimeout(this.pressTimer);
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (this.modal.classList.contains('active')) {
+          if (e.key === 'ArrowLeft') this.prevSlide();
+          if (e.key === 'ArrowRight' || e.key === ' ') {
+            e.preventDefault();
+            this.nextSlide();
+          }
+          if (e.key === 'Escape') this.closeStory();
+        }
+      });
+    }
+
+    openStory(storyId) {
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('🎪 OPENING STORY:', storyId);
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      
+      this.currentStoryId = storyId;
+      this.currentSlideIndex = 0;
+      const story = storyData[storyId];
+
+      console.log('📖 Story data:', story);
+
+      if (!story || !story.slides || story.slides.length === 0) {
+        console.error('❌ No story data or slides found');
+        return;
+      }
+
+      console.log('📸 Total slides in story:', story.slides.length);
+
+      // Build slides
+      this.buildSlides(story.slides);
+      console.log('✅ Slides built');
+      
+      // Build progress bars
+      this.buildProgress(story.slides.length);
+      console.log('✅ Progress bars built');
+
+      // Show modal
+      this.modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      console.log('✅ Modal opened');
+
+      // Show first slide (animation will auto-advance)
+      this.showSlide(0);
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    }
+
+    closeStory() {
+      console.log('🚪 Closing story');
+      this.modal.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Clear press timer
+      if (this.pressTimer) {
+        clearTimeout(this.pressTimer);
+        this.pressTimer = null;
+      }
+      
+      // Reset all progress bars
+      const progressBars = this.progressContainer.querySelectorAll('.web-story-progress-bar');
+      progressBars.forEach((bar, i) => {
+        bar.classList.remove('active', 'completed', 'paused');
+        const fill = bar.querySelector('.web-story-progress-fill');
+        if (fill) {
+          fill.style.width = '0%';
+          fill.style.removeProperty('animation');
+        }
+        console.log('🔄 Reset progress bar', i);
+      });
+      
+      this.isPaused = false;
+      this.isLongPress = false;
+      this.pauseIndicator.classList.remove('visible');
+      this.pauseIndicator.style.opacity = '';
+      this.currentProgressBar = null;
+      this.currentStoryId = null;
+      this.currentSlideIndex = 0;
+      
+      console.log('✅ Story closed and reset');
+    }
+
+    buildSlides(slides) {
+      this.slidesContainer.innerHTML = slides.map((slide, index) => `
+        <div class="web-story-slide" data-slide-index="${index}" style="background-color: ${slide.bgColor || '#000000'};">
+          <img 
+            src="${slide.image}" 
+            alt="${slide.title || ''}" 
+            class="web-story-slide-bg"
+            loading="${index === 0 ? 'eager' : 'lazy'}"
+          >
+          <div class="web-story-slide-content">
+            <div class="web-story-slide-text">
+              ${slide.title ? `<h3>${slide.title}</h3>` : ''}
+              ${slide.description ? `<p>${slide.description}</p>` : ''}
+              ${slide.buttonText && slide.buttonUrl ? 
+                `<a href="${slide.buttonUrl}" class="web-story-cta">${slide.buttonText}</a>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    buildProgress(slideCount) {
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('🔧 Building progress for', slideCount, 'slides');
+      
+      if (!this.progressContainer) {
+        console.error('❌ Progress container not found!');
+        return;
+      }
+      
+      console.log('📦 Progress container element:', this.progressContainer);
+      console.log('📦 Progress container parent:', this.progressContainer.parentElement);
+      
+      const progressHTML = Array(slideCount)
+        .fill(0)
+        .map((_, i) => `<div class="web-story-progress-bar" data-progress-index="${i}" style="display: block; visibility: visible;">
+          <div class="web-story-progress-fill" style="display: block; visibility: visible;"></div>
+        </div>`)
+        .join('');
+      
+      this.progressContainer.innerHTML = progressHTML;
+      
+      // Force visibility on container
+      this.progressContainer.style.display = 'flex';
+      this.progressContainer.style.visibility = 'visible';
+      this.progressContainer.style.opacity = '1';
+      
+      console.log('✅ Progress bars HTML injected');
+      console.log('✅ Container display:', this.progressContainer.style.display);
+      console.log('✅ Container visibility:', this.progressContainer.style.visibility);
+      
+      // Verify progress bars are in DOM
+      const progressBars = this.progressContainer.querySelectorAll('.web-story-progress-bar');
+      console.log('✅ Progress bars in DOM:', progressBars.length);
+      progressBars.forEach((bar, i) => {
+        console.log(`   - Bar ${i}: visible=${bar.offsetHeight > 0 ? 'YES' : 'NO'}, height=${bar.offsetHeight}px`);
+      });
+      
+      // Attach animationend listeners to all progress fills
+      const progressFills = this.progressContainer.querySelectorAll('.web-story-progress-fill');
+      console.log('🔧 Found', progressFills.length, 'progress fills to attach listeners');
+      
+      progressFills.forEach((fill, index) => {
+        fill.addEventListener('animationend', (e) => {
+          console.log('🎬 Animation ended for progress bar', index);
+          // Only advance if this is the active bar
+          if (index === this.currentSlideIndex && !this.isPaused) {
+            console.log('➡️ Auto-advancing to next slide');
+            this.nextSlide();
+          }
+        });
+        console.log('✅ Listener attached to fill', index);
+      });
+      
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    }
+
+    showSlide(index) {
+      const slides = this.slidesContainer.querySelectorAll('.web-story-slide');
+      const progressBars = this.progressContainer.querySelectorAll('.web-story-progress-bar');
+
+      console.log('🎬 Showing slide:', index, 'of', slides.length);
+      console.log('📊 Progress bars found:', progressBars.length);
+
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Show current slide
+      if (slides[index]) {
+        slides[index].classList.add('active');
+        console.log('✅ Slide', index, 'is now active');
+      }
+
+      // Update progress bars for all slides
+      progressBars.forEach((bar, i) => {
+        // Remove all state classes first
+        bar.classList.remove('active', 'completed', 'paused');
+        const fill = bar.querySelector('.web-story-progress-fill');
+        
+        if (!fill) {
+          console.warn('⚠️ Progress fill not found for bar', i);
+          return;
+        }
+        
+        if (i < index) {
+          // Completed bars - show full white
+          bar.classList.add('completed');
+          fill.style.removeProperty('animation');
+          fill.style.width = '100%';
+          console.log('✅ Bar', i, 'marked as COMPLETED (100% white)');
+        } else if (i === index) {
+          // Active bar - RED animated progress
+          this.currentProgressBar = bar;
+          
+          // Set duration as CSS variable
+          bar.style.setProperty('--duration', this.autoPlayDuration + 'ms');
+          
+          // Force visibility
+          bar.style.display = 'block';
+          bar.style.visibility = 'visible';
+          fill.style.display = 'block';
+          fill.style.visibility = 'visible';
+          
+          // Reset width and remove animation
+          fill.style.width = '0%';
+          fill.style.removeProperty('animation');
+          
+          // Force reflow to restart animation properly
+          void fill.offsetWidth;
+          
+          // Add active class to trigger RED animation
+          bar.classList.add('active');
+          
+          console.log('🔴🔴🔴 Bar', i, 'ACTIVATED 🔴🔴🔴');
+          console.log('   → Animation duration:', this.autoPlayDuration + 'ms');
+          console.log('   → Bar classes:', bar.className);
+          console.log('   → Bar display:', bar.style.display);
+          console.log('   → Bar visibility:', bar.style.visibility);
+          console.log('   → Fill width:', fill.style.width);
+          console.log('   → Fill display:', fill.style.display);
+          console.log('   → Fill visibility:', fill.style.visibility);
+          console.log('   → Bar element:', bar);
+          console.log('   → Fill element:', fill);
+          
+          // Check if the bar is actually visible in viewport
+          const barRect = bar.getBoundingClientRect();
+          console.log('   → Bar position:', {
+            top: barRect.top,
+            left: barRect.left,
+            width: barRect.width,
+            height: barRect.height,
+            visible: barRect.height > 0 && barRect.width > 0
+          });
+        } else {
+          // Future bars - stay at 0% with grey background
+          bar.classList.remove('active', 'completed');
+          fill.style.removeProperty('animation');
+          fill.style.width = '0%';
+          console.log('⏳ Bar', i, 'waiting (0% grey)');
+        }
+      });
+
+      this.currentSlideIndex = index;
+      this.isPaused = false;
+      
+      console.log('✨ Current slide index updated to:', this.currentSlideIndex);
+      
+      // Extra check: verify progress container is visible
+      const containerRect = this.progressContainer.getBoundingClientRect();
+      console.log('📐 Progress container position:', {
+        top: containerRect.top,
+        left: containerRect.left,
+        width: containerRect.width,
+        height: containerRect.height,
+        visible: containerRect.height > 0 && containerRect.width > 0
+      });
+      console.log('📐 Progress container styles:', {
+        display: window.getComputedStyle(this.progressContainer).display,
+        visibility: window.getComputedStyle(this.progressContainer).visibility,
+        opacity: window.getComputedStyle(this.progressContainer).opacity,
+        zIndex: window.getComputedStyle(this.progressContainer).zIndex
+      });
+    }
+
+    nextSlide() {
+      const story = storyData[this.currentStoryId];
+      if (!story) return;
+
+      const nextIndex = this.currentSlideIndex + 1;
+
+      if (nextIndex >= story.slides.length) {
+        console.log('📖 Story finished, closing');
+        this.closeStory();
+      } else {
+        console.log('➡️ Moving to slide', nextIndex);
+        this.showSlide(nextIndex);
+      }
+    }
+
+    prevSlide() {
+      if (this.currentSlideIndex > 0) {
+        console.log('⬅️ Moving to slide', this.currentSlideIndex - 1);
+        this.showSlide(this.currentSlideIndex - 1);
+      }
+    }
+
+    startAutoPlay() {
+      this.stopAutoPlay();
+      this.autoPlayTimer = setTimeout(() => {
+        this.nextSlide();
+      }, this.autoPlayDuration);
+    }
+
+    stopAutoPlay() {
+      if (this.autoPlayTimer) {
+        clearTimeout(this.autoPlayTimer);
+        this.autoPlayTimer = null;
+      }
+    }
+
+    togglePause() {
+      if (this.isPaused) {
+        // Resume
+        console.log('▶️ Resuming story');
+        this.isPaused = false;
+        this.pauseIndicator.classList.remove('visible');
+        this.pauseIndicator.style.opacity = '';
+        
+        // Resume progress bar animation
+        if (this.currentProgressBar) {
+          this.currentProgressBar.classList.remove('paused');
+          console.log('▶️ Progress bar animation resumed');
+        }
+      } else {
+        // Pause
+        console.log('⏸️ Pausing story');
+        this.isPaused = true;
+        
+        // Show pause indicator
+        this.pauseIndicator.classList.add('visible');
+        
+        // Fade pause indicator after 800ms
+        setTimeout(() => {
+          if (this.isPaused) {
+            this.pauseIndicator.style.opacity = '0.5';
+          }
+        }, 800);
+        
+        // Pause progress bar animation
+        if (this.currentProgressBar) {
+          this.currentProgressBar.classList.add('paused');
+          console.log('⏸️ Progress bar animation paused');
+        }
+      }
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      new WebStoryViewer();
+    });
+  } else {
+    new WebStoryViewer();
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Web Story",
+  "tag": "section",
+  "class": "section-web-story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Our Stories"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Web Story",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slide 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_1_image",
+          "label": "Slide 1 Image",
+          "info": "Recommended: 1080x1920px (9:16 ratio)"
+        },
+        {
+          "type": "text",
+          "id": "slide_1_title",
+          "label": "Slide 1 Title",
+          "default": "Slide 1"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_1_description",
+          "label": "Slide 1 Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_1_button_text",
+          "label": "Slide 1 Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_1_button_url",
+          "label": "Slide 1 Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slide_1_bg_color",
+          "label": "Slide 1 Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "Slide 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_2_image",
+          "label": "Slide 2 Image",
+          "info": "Recommended: 1080x1920px (9:16 ratio)"
+        },
+        {
+          "type": "text",
+          "id": "slide_2_title",
+          "label": "Slide 2 Title"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_2_description",
+          "label": "Slide 2 Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_2_button_text",
+          "label": "Slide 2 Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_2_button_url",
+          "label": "Slide 2 Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slide_2_bg_color",
+          "label": "Slide 2 Background Color",
+          "default": "#1a1a1a"
+        },
+        {
+          "type": "header",
+          "content": "Slide 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_3_image",
+          "label": "Slide 3 Image",
+          "info": "Recommended: 1080x1920px (9:16 ratio)"
+        },
+        {
+          "type": "text",
+          "id": "slide_3_title",
+          "label": "Slide 3 Title"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_3_description",
+          "label": "Slide 3 Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_3_button_text",
+          "label": "Slide 3 Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_3_button_url",
+          "label": "Slide 3 Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slide_3_bg_color",
+          "label": "Slide 3 Background Color",
+          "default": "#2d2d2d"
+        },
+        {
+          "type": "header",
+          "content": "Slide 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_4_image",
+          "label": "Slide 4 Image",
+          "info": "Recommended: 1080x1920px (9:16 ratio)"
+        },
+        {
+          "type": "text",
+          "id": "slide_4_title",
+          "label": "Slide 4 Title"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_4_description",
+          "label": "Slide 4 Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_4_button_text",
+          "label": "Slide 4 Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_4_button_url",
+          "label": "Slide 4 Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slide_4_bg_color",
+          "label": "Slide 4 Background Color",
+          "default": "#404040"
+        },
+        {
+          "type": "header",
+          "content": "Slide 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_5_image",
+          "label": "Slide 5 Image",
+          "info": "Recommended: 1080x1920px (9:16 ratio)"
+        },
+        {
+          "type": "text",
+          "id": "slide_5_title",
+          "label": "Slide 5 Title"
+        },
+        {
+          "type": "textarea",
+          "id": "slide_5_description",
+          "label": "Slide 5 Description"
+        },
+        {
+          "type": "text",
+          "id": "slide_5_button_text",
+          "label": "Slide 5 Button Text"
+        },
+        {
+          "type": "url",
+          "id": "slide_5_button_url",
+          "label": "Slide 5 Button URL"
+        },
+        {
+          "type": "color",
+          "id": "slide_5_bg_color",
+          "label": "Slide 5 Background Color",
+          "default": "#525252"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Web Story cstm",
+      "blocks": [
+        {
+          "type": "story"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

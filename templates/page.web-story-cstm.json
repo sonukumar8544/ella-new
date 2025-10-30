@@ -22,11 +22,84 @@
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "web_story_8aTjwP": {
+      "type": "web-story",
+      "blocks": {
+        "story_XpdJUM": {
+          "type": "story",
+          "settings": {
+            "slide_1_image": "shopify://shop_images/holding_Emima_kit_in_her_hands.png",
+            "slide_1_title": "Slide 1",
+            "slide_1_description": "I agree to receive promotional and marketing communications (including emails and SMS/text messages) from Wellness Extract (UV International Traders Inc.) at any time. I understand I can opt out at any time by replying “STOP” or contacting customer support.",
+            "slide_1_button_text": "Shop Now",
+            "slide_1_button_url": "shopify://products/healthy-aging-bundle",
+            "slide_2_image": "shopify://shop_images/Untitled_design_1_ea78b154-6dcd-4e1f-b0d9-b3e87a00bd11.jpg",
+            "slide_2_title": "Slide 2",
+            "slide_2_description": "I agree to receive promotional and marketing communications (including emails and SMS/text messages) from Wellness Extract (UV International Traders Inc.) at any time. I understand I can opt out at any time by replying “STOP” or contacting customer support.",
+            "slide_2_button_text": "Shop Now",
+            "slide_2_button_url": "shopify://pages/about-us",
+            "slide_3_image": "shopify://shop_images/knee_surgery.webp",
+            "slide_3_title": "Slide 3",
+            "slide_3_description": "I agree to receive promotional and marketing communications (including emails and SMS/text messages) from Wellness Extract (UV International Traders Inc.) at any time. I understand I can opt out at any time by replying “STOP” or contacting customer support.",
+            "slide_3_button_text": "",
+            "slide_3_button_url": "",
+            "slide_4_title": "",
+            "slide_4_description": "",
+            "slide_4_button_text": "",
+            "slide_4_button_url": "",
+            "slide_5_title": "",
+            "slide_5_description": "",
+            "slide_5_button_text": "",
+            "slide_5_button_url": ""
+          }
+        },
+        "story_rAzR8k": {
+          "type": "story",
+          "settings": {
+            "slide_1_image": "shopify://shop_images/testosterone.webp",
+            "slide_1_title": "Slide 1",
+            "slide_1_description": "I agree to receive promotional and marketing communications (including emails and SMS/text messages) from Wellness Extract (UV International Traders Inc.) at any time. I understand I can opt out at any time by replying “STOP” or contacting customer support.",
+            "slide_1_button_text": "Shop Now",
+            "slide_1_button_url": "shopify://products/gut-health-trio-bundle",
+            "slide_2_image": "shopify://shop_images/coq10_and_fertility_final.webp",
+            "slide_2_title": "Hello",
+            "slide_2_description": "I agree to receive promotional and marketing communications (including emails and SMS/text messages) from Wellness Extract (UV International Traders Inc.) at any time. I understand I can opt out at any time by replying “STOP” or contacting customer support.",
+            "slide_2_button_text": "",
+            "slide_2_button_url": "",
+            "slide_3_title": "",
+            "slide_3_description": "",
+            "slide_3_button_text": "",
+            "slide_3_button_url": "",
+            "slide_4_title": "",
+            "slide_4_description": "",
+            "slide_4_button_text": "",
+            "slide_4_button_url": "",
+            "slide_5_title": "",
+            "slide_5_description": "",
+            "slide_5_button_text": "",
+            "slide_5_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "story_XpdJUM",
+        "story_rAzR8k"
+      ],
+      "name": "Web Story cstm",
+      "settings": {
+        "section_title": "Our Stories",
+        "title_size": 34,
+        "title_alignment": "center",
+        "title_color": "#232323",
+        "background_color": "#ffffff"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "web_story_8aTjwP"
   ]
 }
