@@ -1,0 +1,237 @@
+<!doctype html>
+<html amp lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  {%- comment -%}
+    AMP Web Story Page Template
+    This template creates a fully AMP-compliant web story
+    Compatible with Google Web Stories and AMP validation
+  {%- endcomment -%}
+  
+  <title>{{ page.title | escape }} - {{ shop.name | escape }}</title>
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  {%- comment -%} Required AMP Scripts {%- endcomment -%}
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  
+  {%- comment -%} AMP Boilerplate {%- endcomment -%}
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+  <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+  {%- comment -%} Custom Styles for AMP Story {%- endcomment -%}
+  <style amp-custom>
+    amp-story {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    amp-story-page {
+      background-color: #000;
+    }
+    
+    .story-text-layer {
+      padding: 32px;
+    }
+    
+    .story-title {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0 0 16px 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    
+    .story-description {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .story-cta {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+    }
+    
+    .gradient-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    }
+  </style>
+  
+  {%- comment -%} JSON-LD Structured Data {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ canonical_url }}"
+    },
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.content | strip_html | truncate: 160 | escape }}",
+    "image": "{{ page.image | image_url: width: 1200 }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ shop.name | escape }}",
+      "url": "{{ shop.url }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ shop.name | escape }}",
+      "url": "{{ shop.url }}"
+      {% if shop.brand.logo != blank %},
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ shop.brand.logo | image_url: width: 600 }}",
+        "width": 600,
+        "height": 60
+      }
+      {% endif %}
+    },
+    "datePublished": "{{ page.published_at | default: 'now' | date: '%Y-%m-%d' }}",
+    "dateModified": "{{ page.updated_at | default: 'now' | date: '%Y-%m-%d' }}"
+  }
+  </script>
+</head>
+<body>
+  
+  {%- comment -%}
+    AMP Story Structure
+    Replace the example content below with dynamic content from Shopify metafields
+    or create custom templates for each story
+  {%- endcomment -%}
+  
+  <amp-story 
+    standalone
+    title="{{ page.title | escape }}"
+    publisher="{{ shop.name | escape }}"
+    publisher-logo-src="{{ shop.brand.logo | image_url: width: 96, height: 96 }}"
+    poster-portrait-src="{{ page.image | image_url: width: 720, height: 1280 }}"
+    poster-square-src="{{ page.image | image_url: width: 720, height: 720 }}"
+    poster-landscape-src="{{ page.image | image_url: width: 1280, height: 720 }}"
+  >
+    
+    {%- comment -%}
+      Example Slide 1 - Cover Slide
+      Replace with actual content from page metafields or section settings
+    {%- endcomment -%}
+    <amp-story-page id="cover">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="{{ page.image | image_url: width: 1080, height: 1920 }}"
+          width="720" 
+          height="1280"
+          layout="responsive"
+          alt="{{ page.title | escape }}"
+        >
+        </amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="gradient-overlay">
+        <div class="story-text-layer">
+          <h1 class="story-title">{{ page.title }}</h1>
+          {% if page.content != blank %}
+            <p class="story-description">{{ page.content | strip_html | truncate: 120 }}</p>
+          {% endif %}
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    
+    {%- comment -%}
+      Example Slide 2 - Content Slide
+      Add more amp-story-page elements for additional slides
+    {%- endcomment -%}
+    <amp-story-page id="page-2">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://via.placeholder.com/1080x1920/667eea/ffffff?text=Slide+2"
+          width="720" 
+          height="1280"
+          layout="responsive"
+          alt="Slide 2"
+        >
+        </amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="gradient-overlay">
+        <div class="story-text-layer">
+          <h2 class="story-title">Your Story Continues</h2>
+          <p class="story-description">Add compelling content that engages your audience.</p>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    
+    {%- comment -%}
+      Example Slide 3 - CTA Slide
+    {%- endcomment -%}
+    <amp-story-page id="page-3">
+      <amp-story-grid-layer template="fill">
+        <amp-img 
+          src="https://via.placeholder.com/1080x1920/764ba2/ffffff?text=Slide+3"
+          width="720" 
+          height="1280"
+          layout="responsive"
+          alt="Slide 3"
+        >
+        </amp-img>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="gradient-overlay">
+        <div class="story-text-layer">
+          <h2 class="story-title">Take Action</h2>
+          <p class="story-description">Ready to explore more?</p>
+          <a href="{{ shop.url }}" class="story-cta">Shop Now</a>
+        </div>
+      </amp-story-grid-layer>
+    </amp-story-page>
+    
+    {%- comment -%}
+      Add more amp-story-page elements as needed
+      Each story can have 1-30 pages
+    {%- endcomment -%}
+    
+    {%- comment -%}
+      AMP Story Bookend (Optional)
+      Shows related content when story completes
+    {%- endcomment -%}
+    <amp-story-bookend 
+      src="data:application/json,{
+        'bookendVersion': 'v1.0',
+        'shareProviders': [
+          'facebook',
+          'twitter',
+          'email',
+          'whatsapp',
+          'linkedin'
+        ],
+        'components': [
+          {
+            'type': 'heading',
+            'text': 'More from {{ shop.name | escape }}'
+          },
+          {
+            'type': 'small',
+            'title': 'Visit Our Store',
+            'url': '{{ shop.url }}',
+            'image': '{{ shop.brand.logo | image_url: width: 300 }}'
+          }
+        ]
+      }"
+      layout="nodisplay"
+    >
+    </amp-story-bookend>
+    
+  </amp-story>
+  
+</body>
+</html>
+

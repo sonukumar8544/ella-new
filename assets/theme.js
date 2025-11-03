@@ -2025,9 +2025,18 @@
                 var targetId = event.target.getAttribute('data-target');
 
                 if(event.target.checked){
-                    $(targetId).attr('disabled', false);
+                    $(targetId).attr('disabled', false).removeClass('disabled').attr('data-disabled', 'false');
                 } else{
-                    $(targetId).attr('disabled', true);
+                    $(targetId).attr('disabled', true).addClass('disabled').attr('data-disabled', 'true');
+                }
+            });
+
+            // Prevent checkout link clicks when disabled
+            $doc.on('click', '#cart-sidebar-checkout', (event) => {
+                if($(event.currentTarget).attr('data-disabled') === 'true' || $(event.currentTarget).hasClass('disabled')) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
                 }
             });
 
