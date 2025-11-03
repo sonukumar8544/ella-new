@@ -7432,6 +7432,7 @@ $(document).ready(function () {
     } else {
       return response.json().then(data => {
         // alert('Error adding to cart: ' + (data.description || 'Unknown error'));
+        console.log('Error adding to cart: ' + (data.description || 'Unknown error'));
       });
     }
   })
