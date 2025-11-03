@@ -3543,6 +3543,14 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "custom_liquid_3NjHre": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script src=\"https://cdn.visualquizbuilder.com/quiz/production/script_tag.js\"></script>"
+      }
     }
   },
   "order": [
@@ -3569,6 +3577,7 @@
     "brand_slider_7QWUjR",
     "spotlight_block_qnYcNH",
     "instagram_9EfqFH",
-    "featured_blog_LT6gNw"
+    "featured_blog_LT6gNw",
+    "custom_liquid_3NjHre"
   ]
 }
