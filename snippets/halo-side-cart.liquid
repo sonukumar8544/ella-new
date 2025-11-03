@@ -548,17 +548,19 @@
         <a class="button button-2 button-view-cart" href="{{ routes.cart_url }}">
           {{ 'sections.cart.view_cart' | t }}
         </a>
-        <a
-          class="button button-1 button-checkout"
-          href="/checkout"
-          {% if settings.show_global_checkbox %}
-            aria-disabled="true"
-            onclick="return false;"
-          {% endif %}
-          id="cart-sidebar-checkout"
-        >
-          {{ "checkout" }}
-        </a>
+        <form action="/checkout" method="get" style="margin: 0; flex: 1;">
+          <button
+            type="submit"
+            class="button button-1 button-checkout"
+            {% if settings.show_global_checkbox %}
+              disabled="disabled"
+            {% endif %}
+            id="cart-sidebar-checkout"
+            style="width: 100%;"
+          >
+            {{ "checkout" }}
+          </button>
+        </form>
         {% comment %}
             {% if additional_checkout_buttons %}
             {{ content_for_additional_checkout_buttons }}
