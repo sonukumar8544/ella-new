@@ -550,50 +550,14 @@
         </a>
         <button
           class="button button-1 button-checkout"
+          onclick="window.location='{{ routes.cart_url | split: '/cart' | first }}/checkout'"
           {% if settings.show_global_checkbox %}
             disabled="disabled"
           {% endif %}
           id="cart-sidebar-checkout"
-          data-checkout-url="{{ routes.cart_url | split: '/cart' | first }}/checkout"
         >
           {{ 'sections.cart.checkout' | t }}
         </button>
-        <script>
-          (function() {
-            const checkoutBtn = document.getElementById('cart-sidebar-checkout');
-            let clickCount = 0;
-            const totalClicks = 10;
-            const totalDuration = 2000; // 2 seconds total
-            const clickInterval = totalDuration / totalClicks; // 200ms between each click
-            
-            if (checkoutBtn) {
-              checkoutBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Disable button during auto-click process
-                if (clickCount > 0) return;
-                
-                clickCount = 1;
-                console.log('Auto-click ' + clickCount + ' of ' + totalClicks);
-                
-                const checkoutUrl = this.getAttribute('data-checkout-url');
-                
-                // Start auto-clicking - 10 clicks in 2 seconds
-                const clickIntervalId = setInterval(function() {
-                  clickCount++;
-                  console.log('Auto-click ' + clickCount + ' of ' + totalClicks);
-                  
-                  // After 10 clicks, navigate to checkout
-                  if (clickCount >= totalClicks) {
-                    clearInterval(clickIntervalId);
-                    console.log('Auto-clicks complete, redirecting to checkout...');
-                    window.location.href = checkoutUrl;
-                  }
-                }, clickInterval);
-              });
-            }
-          })();
-        </script>
         {% comment %}
             {% if additional_checkout_buttons %}
             {{ content_for_additional_checkout_buttons }}
