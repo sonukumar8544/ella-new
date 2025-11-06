@@ -29,12 +29,39 @@
       "settings": {
         "custom_liquid": "<askwhai-quiz mode=\"embed\" platform=\"shopify-other-content\" quiz=\"15054\" scrollmargintop=\"120px\" mobilescrollmargintop=\"80px\"></askwhai-quiz>"
       }
+    },
+    "1762446107501f965f": {
+      "type": "apps",
+      "blocks": {
+        "visual_quiz_builder_app_block_kE74rh": {
+          "type": "shopify://apps/visual-quiz-builder/blocks/app-block/82108934-e042-4d36-9032-f4f6674fae34",
+          "settings": {
+            "quiz_id": 15054,
+            "quiz_desktop_scroll_margin_top_px": 120,
+            "quiz_mobile_scroll_margin_top_px": 80,
+            "height_style": "dynamic",
+            "unit": "px",
+            "quiz_desktop_height_px": 600,
+            "quiz_mobile_height_px": 900,
+            "quiz_tablet_height_px": 700,
+            "quiz_height_vh": 100,
+            "render": "shadow"
+          }
+        }
+      },
+      "block_order": [
+        "visual_quiz_builder_app_block_kE74rh"
+      ],
+      "settings": {
+        "include_margins": false
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "custom_liquid_AwfnaE"
+    "custom_liquid_AwfnaE",
+    "1762446107501f965f"
   ]
 }
