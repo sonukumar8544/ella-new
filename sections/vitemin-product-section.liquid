@@ -1,0 +1,576 @@
+
+<div class="vitemin-amazon-tocotrienol-formula-section">
+  <div class="vitemin-amazon-container">
+    <!-- Header Section -->
+    <div class="vitemin-amazon-section-header">
+      <h2 class="vitemin-amazon-main-title">{{ section.settings.main_title }}</h2>
+      <p class="vitemin-amazon-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- Product Cards Grid -->
+    <div class="vitemin-amazon-product-cards-grid">
+      <!-- Card 1: First Product -->
+      <div class="vitemin-amazon-product-card">
+        <div class="vitemin-amazon-product-image">
+          <img src="{{ section.settings.product1_image | img_url: '300x300' }}" alt="{{ section.settings.product1_title }}" class="vitemin-amazon-bottle-image">
+        </div>
+        <div class="vitemin-amazon-product-info">
+          <h3 class="vitemin-amazon-product-title">{{ section.settings.product1_title }}</h3>
+          <p class="vitemin-amazon-product-subtitle">{{ section.settings.product1_subtitle }}</p>
+          <ul class="vitemin-amazon-product-features">
+            {% if section.settings.product1_feature1 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product1_feature1 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product1_feature2 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product1_feature2 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product1_feature3 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product1_feature3 }}</span>
+            </li>
+            {% endif %}
+          </ul>
+          <div class="vitemin-amazon-pricing">
+            {% if section.settings.product1_button_url != blank %}
+              <a href="{{ section.settings.product1_button_url }}" class="vitemin-amazon-price-button">{{ section.settings.product1_price }}</a>
+            {% else %}
+              <button class="vitemin-amazon-price-button">{{ section.settings.product1_price }}</button>
+            {% endif %}
+            <p class="vitemin-amazon-bottle-info">{{ section.settings.product1_bottle_info }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Second Product -->
+      <div class="vitemin-amazon-product-card">
+        <div class="vitemin-amazon-product-image">
+          <img src="{{ section.settings.product2_image | img_url: '300x300' }}" alt="{{ section.settings.product2_title }}" class="vitemin-amazon-bottle-image">
+        </div>
+        <div class="vitemin-amazon-product-info">
+          <h3 class="vitemin-amazon-product-title">{{ section.settings.product2_title }}</h3>
+          <p class="vitemin-amazon-product-subtitle">{{ section.settings.product2_subtitle }}</p>
+          <ul class="vitemin-amazon-product-features">
+            {% if section.settings.product2_feature1 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product2_feature1 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product2_feature2 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product2_feature2 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product2_feature3 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product2_feature3 }}</span>
+            </li>
+            {% endif %}
+          </ul>
+          <div class="vitemin-amazon-pricing">
+            {% if section.settings.product2_button_url != blank %}
+              <a href="{{ section.settings.product2_button_url }}" class="vitemin-amazon-price-button">{{ section.settings.product2_price }}</a>
+            {% else %}
+              <button class="vitemin-amazon-price-button">{{ section.settings.product2_price }}</button>
+            {% endif %}
+            <p class="vitemin-amazon-bottle-info">{{ section.settings.product2_bottle_info }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Third Product -->
+      <div class="vitemin-amazon-product-card">
+        <div class="vitemin-amazon-product-image">
+          <img src="{{ section.settings.product3_image | img_url: '300x300' }}" alt="{{ section.settings.product3_title }}" class="vitemin-amazon-bottle-image">
+        </div>
+        <div class="vitemin-amazon-product-info">
+          <h3 class="vitemin-amazon-product-title">{{ section.settings.product3_title }}</h3>
+          <p class="vitemin-amazon-product-subtitle">{{ section.settings.product3_subtitle }}</p>
+          <ul class="vitemin-amazon-product-features">
+            {% if section.settings.product3_feature1 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product3_feature1 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product3_feature2 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product3_feature2 }}</span>
+            </li>
+            {% endif %}
+            {% if section.settings.product3_feature3 != blank %}
+            <li class="vitemin-amazon-feature-item">
+              <svg class="vitemin-amazon-checkmark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="#22c55e"/>
+              </svg>
+              <span>{{ section.settings.product3_feature3 }}</span>
+            </li>
+            {% endif %}
+          </ul>
+          <div class="vitemin-amazon-pricing">
+            {% if section.settings.product3_button_url != blank %}
+              <a href="{{ section.settings.product3_button_url }}" class="vitemin-amazon-price-button">{{ section.settings.product3_price }}</a>
+            {% else %}
+              <button class="vitemin-amazon-price-button">{{ section.settings.product3_price }}</button>
+            {% endif %}
+            <p class="vitemin-amazon-bottle-info">{{ section.settings.product3_bottle_info }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="vitemin-amazon-cta-section">
+      <button class="vitemin-amazon-shop-now-button">{{ section.settings.cta_button_text }}</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.vitemin-amazon-tocotrienol-formula-section {
+  background-color: #FAFAFA;
+  padding: 60px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.vitemin-amazon-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vitemin-amazon-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.vitemin-amazon-main-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #374650;
+  margin: 0 0 15px 0;
+  line-height: 1.2;
+}
+
+.vitemin-amazon-subtitle {
+  font-size: 22px;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+}
+
+.vitemin-amazon-product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.vitemin-amazon-product-card {
+  background-color: #ffffff;
+  border: 1px solid #C5D6DC;
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.vitemin-amazon-product-card:nth-child(2) {
+  background-color: #f0f9ff;
+  border-color: #086b92;
+}
+
+.vitemin-amazon-product-card:nth-child(3) {
+  background-color: #f6fbff;
+}
+
+.vitemin-amazon-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: #086b92;
+}
+
+.vitemin-amazon-product-image {
+  margin-bottom: 25px;
+}
+
+.vitemin-amazon-bottle-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.vitemin-amazon-product-info {
+  text-align: center;
+}
+
+.vitemin-amazon-product-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.vitemin-amazon-product-subtitle {
+  color: #374650;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.vitemin-amazon-product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.vitemin-amazon-feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #374650;
+}
+
+.vitemin-amazon-checkmark {
+    margin-right: 10px;
+    flex-shrink: 0;
+    background: #e5f0f5;
+    border-radius: 12px;
+}
+
+.vitemin-amazon-pricing {
+  text-align: center;
+}
+
+.vitemin-amazon-price-button {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #e5e7eb;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.vitemin-amazon-price-button:hover {
+  background-color: #f8f9fa;
+  border-color: #d1d5db;
+}
+
+.vitemin-amazon-bottle-info {
+  font-size: 15px;
+  color: ##374650;
+  margin: 0;
+  font-weight: 400;
+  margin-top: 20px;
+
+}
+
+.vitemin-amazon-cta-section {
+  text-align: center;
+}
+
+.vitemin-amazon-shop-now-button {
+  background-color: #086b92;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 18px 40px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(8, 107, 146, 0.3);
+}
+
+.vitemin-amazon-shop-now-button:hover {
+  background-color: #065a7a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 107, 146, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vitemin-amazon-main-title {
+    font-size: 24px;
+    color: #374650;
+  }
+
+  .vitemin-amazon-product-features{
+    margin-left: 70px !important;
+  }
+  
+  .vitemin-amazon-subtitle {
+    font-size: 18px;
+  }
+  
+  .vitemin-amazon-product-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .vitemin-amazon-product-card {
+    padding: 25px 20px;
+  }
+  
+  .vitemin-amazon-shop-now-button {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vitemin-amazon-container {
+    padding: 0 15px;
+  }
+  
+  .vitemin-amazon-main-title {
+    font-size: 28px;
+  }
+  
+  .vitemin-amazon-subtitle {
+    font-size: 16px;
+  }
+  
+  .vitemin-amazon-product-card {
+    padding: 20px 15px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "vitamin product block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Choose Your Tocotrienol Formula"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "All products include free shipping and our 90-day satisfaction guarantee."
+    },
+    {
+      "type": "header",
+      "content": "Product 1 Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "product1_image",
+      "label": "Product 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "product1_title",
+      "label": "Product 1 Title",
+      "default": "125mg"
+    },
+    {
+      "type": "text",
+      "id": "product1_subtitle",
+      "label": "Product 1 Subtitle",
+      "default": "Daily Formula"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature1",
+      "label": "Product 1 Feature 1",
+      "default": "Daily wellness"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature2",
+      "label": "Product 1 Feature 2",
+      "default": "Gentle support"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature3",
+      "label": "Product 1 Feature 3"
+    },
+    {
+      "type": "text",
+      "id": "product1_price",
+      "label": "Product 1 Price",
+      "default": "$1.13/day"
+    },
+    {
+      "type": "text",
+      "id": "product1_bottle_info",
+      "label": "Product 1 Bottle Info",
+      "default": "(30-count bottle)"
+    },
+    {
+      "type": "url",
+      "id": "product1_button_url",
+      "label": "Product 1 Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product 2 Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2_image",
+      "label": "Product 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "product2_title",
+      "label": "Product 2 Title",
+      "default": "300 mg"
+    },
+    {
+      "type": "text",
+      "id": "product2_subtitle",
+      "label": "Product 2 Subtitle",
+      "default": "Advanced Formula"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature1",
+      "label": "Product 2 Feature 1",
+      "default": "Clinically strong"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature2",
+      "label": "Product 2 Feature 2",
+      "default": "Targeted support"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature3",
+      "label": "Product 2 Feature 3",
+      "default": "Max protection"
+    },
+    {
+      "type": "text",
+      "id": "product2_price",
+      "label": "Product 2 Price",
+      "default": "$1.40/day"
+    },
+    {
+      "type": "text",
+      "id": "product2_bottle_info",
+      "label": "Product 2 Bottle Info",
+      "default": "(30-count bottle)"
+    },
+    {
+      "type": "url",
+      "id": "product2_button_url",
+      "label": "Product 2 Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Product 3 Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3_image",
+      "label": "Product 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "product3_title",
+      "label": "Product 3 Title",
+      "default": "Subscription Plan"
+    },
+    {
+      "type": "text",
+      "id": "product3_subtitle",
+      "label": "Product 3 Subtitle",
+      "default": "Daily Formula"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature1",
+      "label": "Product 3 Feature 1",
+      "default": "Best value"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature2",
+      "label": "Product 3 Feature 2",
+      "default": "Never run out"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature3",
+      "label": "Product 3 Feature 3",
+      "default": "Auto-delivery discount"
+    },
+    {
+      "type": "text",
+      "id": "product3_price",
+      "label": "Product 3 Price",
+      "default": "$0.95/day"
+    },
+    {
+      "type": "text",
+      "id": "product3_bottle_info",
+      "label": "Product 3 Bottle Info",
+      "default": "As low as"
+    },
+    {
+      "type": "url",
+      "id": "product3_button_url",
+      "label": "Product 3 Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Shop Tocotrienol Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "vitamin product block"
+    }
+  ]
+}
+{% endschema %}
