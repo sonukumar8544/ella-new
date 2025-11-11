@@ -1,323 +1,423 @@
-<div class="annatto-amazon-comparison-section">
-  <div class="annatto-amazon-comparison-container">
-    <!-- Title -->
-    <h2 class="annatto-amazon-comparison-title">{{ section.settings.title | default: "Tocotrienols Reach Where Others Can't" }}</h2>
-    
-    <!-- Comparison Table -->
-    <div class="annatto-amazon-comparison-table">
-      <!-- Table Header -->
-      <div class="annatto-amazon-table-header">
-        <div class="annatto-amazon-feature-header">Feature</div>
-        <div class="annatto-amazon-column-header">{{ section.settings.column1_title | default: "Cheap Tocopherols" }}</div>
-        <div class="annatto-amazon-column-header">{{ section.settings.column2_title | default: "Generic Blends" }}</div>
-        <div class="annatto-amazon-column-header annatto-amazon-our-column">{{ section.settings.column3_title | default: "Our Tocotrienol" }}</div>
-      </div>
-      
-      <!-- Table Rows -->
-      <div class="annatto-amazon-table-row">
-        <div class="annatto-amazon-feature-cell">Source</div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column1_source | default: "Soy / synthetic" }}
-        </div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column2_source | default: "Cheap mass labels" }}
-        </div>
-        <div class="annatto-amazon-data-cell annatto-amazon-our-data">
-          <span class="annatto-amazon-check-icon">✓</span>
-          {{ section.settings.column3_source | default: "100% Annatto" }}
-        </div>
-      </div>
-      
-      <div class="annatto-amazon-table-row">
-        <div class="annatto-amazon-feature-cell">Purity</div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column1_purity | default: "Low, filler-heavy" }}
-        </div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column2_purity | default: "Contaminated with tocopherols" }}
-        </div>
-        <div class="annatto-amazon-data-cell annatto-amazon-our-data">
-          <span class="annatto-amazon-check-icon">✓</span>
-          {{ section.settings.column3_purity | default: "Tocopherol-free" }}
-        </div>
-      </div>
-      
-      <div class="annatto-amazon-table-row">
-        <div class="annatto-amazon-feature-cell">Testing</div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column1_testing | default: "Rarely verified" }}
-        </div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column2_testing | default: "Inconsistent" }}
-        </div>
-        <div class="annatto-amazon-data-cell annatto-amazon-our-data">
-          <span class="annatto-amazon-check-icon">✓</span>
-          {{ section.settings.column3_testing | default: "Third-party tested" }}
-        </div>
-      </div>
-      
-      <div class="annatto-amazon-table-row">
-        <div class="annatto-amazon-feature-cell">Trust</div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column1_trust | default: "Cheap mass labels" }}
-        </div>
-        <div class="annatto-amazon-data-cell">
-          <span class="annatto-amazon-x-icon">x</span>
-          {{ section.settings.column2_trust | default: "Marketing hype" }}
-        </div>
-        <div class="annatto-amazon-data-cell annatto-amazon-our-data">
-          <span class="annatto-amazon-check-icon">✓</span>
-          {{ section.settings.column3_trust | default: "Amazon's Choice, GMP-certified" }}
-        </div>
-      </div>
+<div class="tocotrienol-comparison-section">
+  <div class="tocotrienol-comparison-container">
+    <h2 class="tocotrienol-comparison-title">{{ section.settings.title | default: "Why Our Tocotrienol Outperforms Other Vitamin E" }}</h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="tocotrienol-comparison-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="tocotrienol-table-wrapper">
+      <table class="tocotrienol-table" role="table">
+        <thead>
+          <tr>
+            <th scope="col" class="tocotrienol-feature-head">Feature</th>
+            <th scope="col">{{ section.settings.column1_title | default: "Cheap Tocopherols" }}</th>
+            <th scope="col">{{ section.settings.column2_title | default: "Generic Blends" }}</th>
+            <th scope="col" class="tocotrienol-our-head">{{ section.settings.column3_title | default: "Our Tocotrienol" }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Source</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column1_source | default: "Soy / synthetic" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column2_source | default: "Cheap mass labels" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-positive" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M9.17 16.17 4.7 11.7l1.41-1.41 3.06 3.06 8.24-8.24 1.41 1.41-9.65 9.65a1 1 0 0 1-1.41 0Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column3_source | default: "100% Annatto" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Purity</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column1_purity | default: "Low, filler-heavy" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column2_purity | default: "Contaminated with tocopherols" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-positive" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M9.17 16.17 4.7 11.7l1.41-1.41 3.06 3.06 8.24-8.24 1.41 1.41-9.65 9.65a1 1 0 0 1-1.41 0Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column3_purity | default: "Tocopherol-free" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Testing</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column1_testing | default: "Rarely verified" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column2_testing | default: "Inconsistent" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-positive" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M9.17 16.17 4.7 11.7l1.41-1.41 3.06 3.06 8.24-8.24 1.41 1.41-9.65 9.65a1 1 0 0 1-1.41 0Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column3_testing | default: "Third-party tested" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Trust</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column1_trust | default: "Cheap mass labels" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-negative" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.05 7.05a1 1 0 0 1 1.41 0L12 10.59l3.54-3.54a1 1 0 1 1 1.41 1.41L13.41 12l3.54 3.54a1 1 0 0 1-1.41 1.41L12 13.41l-3.54 3.54a1 1 0 0 1-1.41-1.41L10.59 12 7.05 8.46a1 1 0 0 1 0-1.41Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column2_trust | default: "Marketing hype" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-indicator is-positive" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M9.17 16.17 4.7 11.7l1.41-1.41 3.06 3.06 8.24-8.24 1.41 1.41-9.65 9.65a1 1 0 0 1-1.41 0Z"></path>
+                  </svg>
+                </span>
+                <span>{{ section.settings.column3_trust | default: "Amazon's Choice, GMP-certified" }}</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    
-    <!-- Call to Action Button -->
+
     {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
-      <div class="annatto-amazon-cta-container">
-        <a href="{{ section.settings.cta_url }}" class="annatto-amazon-cta-button">{{ section.settings.cta_text }}</a>
+      <div class="tocotrienol-cta-container">
+        <a href="{{ section.settings.cta_url }}" class="tocotrienol-cta-button">{{ section.settings.cta_text }}</a>
       </div>
     {% endif %}
   </div>
 </div>
 
 <style>
-.annatto-amazon-comparison-section {
-  background-color: #ffffff;
-  padding: 60px 0;
-}
-
-.annatto-amazon-comparison-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.annatto-amazon-comparison-title {
-  font-size: 38px;
-  font-weight: 700;
-  color: #2d3e50;
-  text-align: center;
-  margin: 0 0 50px 0;
-  line-height: 1.2;
-}
-
-.annatto-amazon-comparison-table {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.annatto-amazon-table-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.annatto-amazon-feature-header {
-  padding: 20px;
-  font-weight: 600;
-  color: #2d3e50;
-  border-right: 1px solid #e0e0e0;
-  background-color: #f1f3f4;
-}
-
-.annatto-amazon-column-header {
-  padding: 20px;
-  font-weight: 600;
-  color: #2d3e50;
-  border-right: 1px solid #e0e0e0;
-  background-color: #ffffff;
-}
-
-.annatto-amazon-our-column {
-  background-color: #e3f2fd;
-  color: #1976d2;
-}
-
-.annatto-amazon-table-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.annatto-amazon-table-row:last-child {
-  border-bottom: none;
-}
-
-.annatto-amazon-feature-cell {
-  padding: 20px;
-  font-weight: 700;
-  color: #2d3e50;
-  background-color: #f1f3f4;
-  border-right: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-}
-
-.annatto-amazon-data-cell {
-  padding: 20px;
-  color: #374650;
-  border-right: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #ffffff;
-}
-
-.annatto-amazon-our-data {
-  background-color: #f3f8ff;
-}
-
-.annatto-amazon-x-icon {
-  color: #ffffff;
-  background-color: #dc3545;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-.annatto-amazon-check-icon {
-  color: #ffffff;
-  background-color: #28a745;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-.annatto-amazon-cta-container {
-  text-align: center;
-}
-
-.annatto-amazon-cta-button {
-  display: inline-block;
-  background-color: #086b92;
-  color: #ffffff;
-  padding: 15px 40px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.annatto-amazon-cta-button:hover {
-  background-color: #ffffff;
-  color: #086b92;
-  box-shadow: 0 4px 12px rgba(8, 107, 146, 0.3);
-}
-
-/* Tablet Responsive */
-@media (max-width: 768px) {
-  .annatto-amazon-comparison-section {
-    padding: 40px 0;
+  .tocotrienol-comparison-section {
+    background-color: #f7fbff;
+    padding: 72px 0;
   }
-  
-  .annatto-amazon-comparison-title {
-    font-size: 28px;
-    margin-bottom: 30px;
+
+  .tocotrienol-comparison-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
-  
-  .annatto-amazon-table-header,
-  .annatto-amazon-table-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+
+  .tocotrienol-comparison-title {
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #1f2a36;
+    text-align: center;
+    margin: 0 0 36px;
   }
-  
-  .annatto-amazon-feature-header,
-  .annatto-amazon-column-header,
-  .annatto-amazon-feature-cell,
-  .annatto-amazon-data-cell {
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
+
+  .tocotrienol-comparison-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a5a68;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+
+  .tocotrienol-table-wrapper {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff);
+    border-radius: 18px;
+    box-shadow: 0 26px 60px rgba(30, 50, 107, 0.08);
+    overflow: hidden;
+    border: 1px solid #e1ebf5;
+  }
+
+  .tocotrienol-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .tocotrienol-table thead th {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 22px 28px;
     text-align: left;
+    color: #304255;
+    background-color: #f0f5fa;
+    border-bottom: 1px solid #dbe6f1;
   }
-  
-  .annatto-amazon-column-header {
-    background-color: #f8f9fa;
-    font-weight: 600;
-    color: #2d3e50;
-  }
-  
-  .annatto-amazon-our-column {
-    background-color: #e3f2fd;
-    color: #1976d2;
-  }
-  
-  .annatto-amazon-feature-cell {
-    background-color: #f1f3f4;
-    font-weight: 600;
-  }
-  
-  .annatto-amazon-our-data {
-    background-color: #f3f8ff;
-  }
-}
 
-/* Mobile Responsive */
-@media (max-width: 480px) {
-  .annatto-amazon-comparison-container {
-    padding: 0 15px;
+  .tocotrienol-feature-head {
+    background-color: #e8f1fa;
+    color: #39556e;
   }
-  
-  .annatto-amazon-comparison-section {
-    padding: 30px 0;
+
+  .tocotrienol-table thead th:nth-child(2),
+  .tocotrienol-table thead th:nth-child(3) {
+    background-color: #f6fbff;
   }
-  
-  .annatto-amazon-comparison-title {
-    font-size: 24px;
-    margin-bottom: 25px;
+
+  .tocotrienol-our-head {
+    background-color: #dff1ff;
+    color: #115c8b;
   }
-  
-  .annatto-amazon-feature-header,
-  .annatto-amazon-column-header,
-  .annatto-amazon-feature-cell,
-  .annatto-amazon-data-cell {
-    padding: 15px;
-    font-size: 14px;
+
+  .tocotrienol-table tbody th {
+    font-size: 16px;
+    font-weight: 600;
+    color: #304255;
+    padding: 24px 28px;
+    background-color: #f4f8fc;
+    border-right: 1px solid #e1ebf5;
+    border-bottom: 1px solid #e6edf6;
+    white-space: nowrap;
   }
-  
-  .annatto-amazon-cta-button {
-    padding: 12px 25px;
-    font-size: 14px;
+
+  .tocotrienol-table tbody td {
+    font-size: 16px;
+    color: #3e4f60;
+    padding: 24px 28px;
+    border-bottom: 1px solid #e6edf6;
+    border-right: 1px solid #e6edf6;
+    background-color: #ffffff;
   }
-}
+
+  .tocotrienol-table tbody tr:last-child td,
+  .tocotrienol-table tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  .tocotrienol-table tbody td:last-child,
+  .tocotrienol-table thead th:last-child {
+    border-right: none;
+  }
+
+  .tocotrienol-our-cell {
+    background-color: #f1f8ff;
+    font-weight: 600;
+    color: #164c75;
+  }
+
+  .tocotrienol-cell {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .tocotrienol-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e4ebf3;
+    color: #607089;
+  }
+
+  .tocotrienol-indicator svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+
+  .tocotrienol-indicator.is-positive {
+    background-color: #0f7bdc;
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(15, 123, 220, 0.28);
+  }
+
+  .tocotrienol-indicator.is-negative {
+    background-color: #f1f4f8;
+    color: #a3b1c4;
+  }
+
+  .tocotrienol-cta-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .tocotrienol-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 46px;
+    border-radius: 999px;
+    background-color: #0c74d4;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .tocotrienol-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(12, 116, 212, 0.25);
+  }
+
+  .tocotrienol-cta-button:focus-visible {
+    outline: 3px solid rgba(12, 116, 212, 0.45);
+    outline-offset: 2px;
+  }
+
+  .tocotrienol-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .tocotrienol-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(123, 148, 176, 0.35);
+    border-radius: 999px;
+  }
+
+  .tocotrienol-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  @media (max-width: 1024px) {
+    .tocotrienol-comparison-title {
+      font-size: 34px;
+    }
+
+    .tocotrienol-table tbody th,
+    .tocotrienol-table tbody td,
+    .tocotrienol-table thead th {
+      padding: 20px 22px;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tocotrienol-comparison-section {
+      padding: 56px 0;
+    }
+
+    .tocotrienol-comparison-title {
+      font-size: 30px;
+      margin-bottom: 24px;
+    }
+
+    .tocotrienol-comparison-subtitle {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .tocotrienol-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .tocotrienol-table {
+      min-width: 640px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .tocotrienol-comparison-section {
+      padding: 44px 0;
+    }
+
+    .tocotrienol-comparison-title {
+      font-size: 26px;
+    }
+
+    .tocotrienol-table tbody th,
+    .tocotrienol-table tbody td,
+    .tocotrienol-table thead th {
+      padding: 18px 16px;
+      font-size: 14px;
+    }
+
+    .tocotrienol-cta-button {
+      width: 100%;
+      max-width: 320px;
+      font-size: 16px;
+    }
+  }
 </style>
 
 {% schema %}
 {
-  "name": "Comparison Table eto",
+  "name": "Tocotrienol Table",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Table Title",
-      "default": "Tocotrienols Reach Where Others Can't"
+      "default": "Why Our Tocotrienol Outperforms Other Vitamin E"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Optional supporting copy displayed under the title."
     },
     {
       "type": "text",
@@ -423,7 +523,7 @@
   ],
   "presets": [
     {
-      "name": "Comparison Table eto"
+      "name": "Tocotrienol Table"
     }
   ]
 }
