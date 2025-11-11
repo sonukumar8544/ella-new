@@ -1,5 +1,3 @@
-
-
 <div class="eto-amazon-trust-banner">
   <div class="eto-amazon-trust-banner__container">
     <div class="eto-amazon-trust-banner__content">
@@ -39,7 +37,7 @@
 
 <style>
   .eto-amazon-trust-banner {
-    background-color: {{ section.settings.background_color | default: '#f5f5f0' }};
+    background-color: {{ section.settings.background_color | default: '#fff9e6' }};
     padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px;
     margin: {{ section.settings.margin_top }}px 0 {{ section.settings.margin_bottom }}px;
   }
@@ -53,18 +51,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 32px;
   }
   
   .eto-amazon-trust-banner__heading {
     font-family: 'Nunito', {{ section.settings.heading_font_family | default: 'sans-serif' }};
-    font-size: 22px;
+    font-size: {{ section.settings.heading_font_size | default: 2.4 }}rem;
     font-weight: 600;
-    color: {{ section.settings.heading_color | default: '#333333' }};
+    color: {{ section.settings.heading_color | default: '#314154' }};
     line-height: 1.2;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
   }
   
   .eto-amazon-trust-banner__heading-line-1,
@@ -75,70 +72,91 @@
   .eto-amazon-trust-banner__actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 20px;
   }
   
   .eto-amazon-trust-banner__primary-button {
-    background-color: {{ section.settings.primary_button_bg_color | default: '#ffa500' }};
-    color: {{ section.settings.primary_button_text_color | default: '#333333' }};
-    padding: {{ section.settings.primary_button_padding_vertical | default: '12' }}px {{ section.settings.primary_button_padding_horizontal | default: '24' }}px;
-    border-radius: {{ section.settings.primary_button_border_radius | default: '8' }}px;
+    background-color: {{ section.settings.primary_button_bg_color | default: '#f6c356' }};
+    color: {{ section.settings.primary_button_text_color | default: '#2d3e50' }};
+    padding: 14px 14px;
+    border-radius: 999px;
     text-decoration: none;
     font-family: 'Lato', {{ section.settings.primary_button_font_family | default: 'sans-serif' }};
-    font-size: {{ section.settings.primary_button_font_size | default: '1' }}rem;
-    font-weight: {{ section.settings.primary_button_font_weight | default: '500' }};
+    font-size: 16px;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(246, 195, 86, 0.3);
   }
   
   .eto-amazon-trust-banner__primary-button:hover {
-    background-color: {{ section.settings.primary_button_hover_bg_color | default: '#e69500' }};
     transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(246, 195, 86, 0.35);
   }
   
   .eto-amazon-trust-banner__secondary-link {
-    color: {{ section.settings.secondary_link_color | default: '#333333' }};
-    text-decoration: underline;
+    color: {{ section.settings.secondary_link_color | default: '#314154' }};
+    text-decoration: none;
     font-family: 'Lato', {{ section.settings.secondary_link_font_family | default: 'sans-serif' }};
-    font-size: 15px;
-    font-weight: {{ section.settings.secondary_link_font_weight | default: '400' }};
-    transition: color 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 4px;
+    transition: color 0.25s ease, border-color 0.25s ease;
   }
   
   .eto-amazon-trust-banner__secondary-link:hover {
-    color: {{ section.settings.secondary_link_hover_color | default: '#666666' }};
+    color: {{ section.settings.secondary_link_hover_color | default: '#1e2b3a' }};
+    border-color: currentColor;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .eto-amazon-trust-banner__content {
       flex-direction: column;
       text-align: center;
-      gap: 1.5rem;
+      gap: 28px;
     }
     
     .eto-amazon-trust-banner__heading {
-      font-size: 22px;
+      font-size: {{ section.settings.heading_font_size_mobile | default: 2.1 }}rem;
     }
     
     .eto-amazon-trust-banner__actions {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .eto-amazon-trust-banner__primary-button {
+      justify-content: center;
       width: 100%;
-      max-width: 300px;
+      gap: 16px;
     }
   }
   
-  /* @media (max-width: 480px) {
-    .eto-amazon-trust-banner__heading {
-      font-size: {{ section.settings.heading_font_size_small_mobile | default: '1.5' }}rem;
+  @media (max-width: 480px) {
+    .eto-amazon-trust-banner {
+      padding: 32px 20px;
     }
-  } */
+    
+    .eto-amazon-trust-banner__actions {
+      flex-direction: row;
+      gap: 14px;
+    }
+    
+    .eto-amazon-trust-banner__primary-button {
+      /* width: 100%; */
+      max-width: 320px;
+    }
+    
+    .eto-amazon-trust-banner__secondary-link {
+      border-bottom-width: 1px;
+    }
+    
+    .eto-amazon-trust-banner__heading {
+      font-size: 24px !important;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
 </style>
 
 {% schema %}
@@ -271,7 +289,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background Color",
-      "default": "#f5f5f0"
+      "default": "#fff9e6"
     },
     {
       "type": "header",
@@ -290,7 +308,7 @@
       "min": 1,
       "max": 4,
       "step": 0.1,
-      "default": 2.5
+      "default": 2.4
     },
     {
       "type": "range",
@@ -308,7 +326,7 @@
       "min": 1,
       "max": 2.5,
       "step": 0.1,
-      "default": 1.5
+      "default": 1.8
     },
     {
       "type": "select",
@@ -321,13 +339,13 @@
         {"value": "600", "label": "Semi Bold"},
         {"value": "700", "label": "Bold"}
       ],
-      "default": "400"
+      "default": "600"
     },
     {
       "type": "color",
       "id": "heading_color",
       "label": "Heading Color",
-      "default": "#333333"
+      "default": "#314154"
     },
     {
       "type": "header",
@@ -358,25 +376,25 @@
         {"value": "600", "label": "Semi Bold"},
         {"value": "700", "label": "Bold"}
       ],
-      "default": "500"
+      "default": "600"
     },
     {
       "type": "color",
       "id": "primary_button_bg_color",
       "label": "Primary Button Background Color",
-      "default": "#ffa500"
+      "default": "#f6c356"
     },
     {
       "type": "color",
       "id": "primary_button_text_color",
       "label": "Primary Button Text Color",
-      "default": "#333333"
+      "default": "#2d3e50"
     },
     {
       "type": "color",
       "id": "primary_button_hover_bg_color",
       "label": "Primary Button Hover Background Color",
-      "default": "#e69500"
+      "default": "#dea840"
     },
     {
       "type": "range",
@@ -434,19 +452,19 @@
         {"value": "500", "label": "Medium"},
         {"value": "600", "label": "Semi Bold"}
       ],
-      "default": "400"
+      "default": "500"
     },
     {
       "type": "color",
       "id": "secondary_link_color",
       "label": "Secondary Link Color",
-      "default": "#333333"
+      "default": "#314154"
     },
     {
       "type": "color",
       "id": "secondary_link_hover_color",
       "label": "Secondary Link Hover Color",
-      "default": "#666666"
+      "default": "#25303d"
     }
       ],
       "presets": [

@@ -10,188 +10,341 @@
 
     <div class="tocotrienol-card-grid">
       {% assign card1_classes = 'tocotrienol-card' %}
+      {% assign card1_has_media = false %}
+      {% if section.settings.product1_image != blank or section.settings.product1_hover_image != blank %}
+        {% assign card1_has_media = true %}
+      {% endif %}
       {% if section.settings.product1_hover_image != blank %}
         {% assign card1_classes = card1_classes | append: ' tocotrienol-card--has-hover' %}
       {% endif %}
+      {% unless card1_has_media %}
+        {% assign card1_classes = card1_classes | append: ' tocotrienol-card--no-media' %}
+      {% endunless %}
       <div class="{{ card1_classes }}">
-        <div class="tocotrienol-card-media">
-          <div class="tocotrienol-card-media-inner">
-          {% if section.settings.product1_image != blank %}
-            {% assign product1_image = section.settings.product1_image %}
-            <img
-              src="{{ product1_image | image_url: width: 720 }}"
-              alt="{{ product1_image.alt | default: section.settings.product1_badge_title | default: 'Tocotrienol product' }}"
-              loading="lazy"
-              width="{{ product1_image.width }}"
-              height="{{ product1_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--default"
-            >
-          {% endif %}
-            {% if section.settings.product1_hover_image != blank %}
-              {% assign product1_hover_image = section.settings.product1_hover_image %}
+        {% if card1_has_media %}
+          <div class="tocotrienol-card-media">
+            <div class="tocotrienol-card-media-inner">
+            {% if section.settings.product1_image != blank %}
+              {% assign product1_image = section.settings.product1_image %}
               <img
-                src="{{ product1_hover_image | image_url: width: 720 }}"
-                alt="{{ product1_hover_image.alt | default: product1_image.alt | default: section.settings.product1_badge_title | default: 'Tocotrienol product' }}"
+                src="{{ product1_image | image_url: width: 720 }}"
+                alt="{{ product1_image.alt | default: section.settings.product1_headline | default: 'Tocotrienol product' }}"
                 loading="lazy"
-                width="{{ product1_hover_image.width }}"
-                height="{{ product1_hover_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--hover"
+                width="{{ product1_image.width }}"
+                height="{{ product1_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--default"
               >
             {% endif %}
+              {% if section.settings.product1_hover_image != blank %}
+                {% assign product1_hover_image = section.settings.product1_hover_image %}
+                <img
+                  src="{{ product1_hover_image | image_url: width: 720 }}"
+                  alt="{{ product1_hover_image.alt | default: product1_image.alt | default: section.settings.product1_headline | default: 'Tocotrienol product' }}"
+                  loading="lazy"
+                  width="{{ product1_hover_image.width }}"
+                  height="{{ product1_hover_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--hover"
+                >
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="tocotrienol-card-body">
-          {% if section.settings.product1_price != blank %}
-            <p class="tocotrienol-card-price">{{ section.settings.product1_price }}</p>
-          {% endif %}
-          {% if section.settings.product1_bottle_info != blank %}
-            <p class="tocotrienol-card-note">{{ section.settings.product1_bottle_info }}</p>
-          {% endif %}
-          {% if section.settings.product1_button_label != blank %}
-            {% if section.settings.product1_button_url != blank %}
-              <a href="{{ section.settings.product1_button_url }}" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product1_button_label }}
-              </a>
-            {% else %}
-              <button type="button" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product1_button_label }}
-              </button>
+        {% endif %}
+        <div class="tocotrienol-card-overlay">
+          <div class="tocotrienol-card-body">
+            {% if section.settings.product1_headline != blank %}
+              <h3 class="tocotrienol-card-headline">{{ section.settings.product1_headline }}</h3>
             {% endif %}
-          {% endif %}
+            {% assign product1_feature_1 = section.settings.product1_feature_1 %}
+            {% assign product1_feature_2 = section.settings.product1_feature_2 %}
+            {% assign product1_feature_3 = section.settings.product1_feature_3 %}
+            {% if product1_feature_1 != blank or product1_feature_2 != blank or product1_feature_3 != blank %}
+              <ul class="tocotrienol-card-features" role="list">
+                {% if product1_feature_1 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product1_feature_1 }}</span>
+                  </li>
+                {% endif %}
+                {% if product1_feature_2 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product1_feature_2 }}</span>
+                  </li>
+                {% endif %}
+                {% if product1_feature_3 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product1_feature_3 }}</span>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+            {% if section.settings.product1_price != blank %}
+              <p class="tocotrienol-card-price">{{ section.settings.product1_price }}</p>
+            {% endif %}
+            {% if section.settings.product1_bottle_info != blank %}
+              <p class="tocotrienol-card-note">{{ section.settings.product1_bottle_info }}</p>
+            {% endif %}
+            {% if section.settings.product1_button_label != blank %}
+              {% if section.settings.product1_button_url != blank %}
+                <a href="{{ section.settings.product1_button_url }}" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product1_button_label }}
+                </a>
+              {% else %}
+                <button type="button" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product1_button_label }}
+                </button>
+              {% endif %}
+            {% endif %}
+          </div>
         </div>
       </div>
 
       {% assign card2_classes = 'tocotrienol-card tocotrienol-card--featured' %}
+      {% assign card2_has_media = false %}
+      {% if section.settings.product2_image != blank or section.settings.product2_hover_image != blank %}
+        {% assign card2_has_media = true %}
+      {% endif %}
       {% if section.settings.product2_hover_image != blank %}
         {% assign card2_classes = card2_classes | append: ' tocotrienol-card--has-hover' %}
       {% endif %}
+      {% unless card2_has_media %}
+        {% assign card2_classes = card2_classes | append: ' tocotrienol-card--no-media' %}
+      {% endunless %}
       <div class="{{ card2_classes }}">
-        <div class="tocotrienol-card-media">
-          <div class="tocotrienol-card-media-inner">
-          {% if section.settings.product2_image != blank %}
-            {% assign product2_image = section.settings.product2_image %}
-            <img
-              src="{{ product2_image | image_url: width: 720 }}"
-              alt="{{ product2_image.alt | default: section.settings.product2_badge_title | default: 'Tocotrienol product' }}"
-              loading="lazy"
-              width="{{ product2_image.width }}"
-              height="{{ product2_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--default"
-            >
-          {% endif %}
-            {% if section.settings.product2_hover_image != blank %}
-              {% assign product2_hover_image = section.settings.product2_hover_image %}
+        {% if card2_has_media %}
+          <div class="tocotrienol-card-media">
+            <div class="tocotrienol-card-media-inner">
+            {% if section.settings.product2_image != blank %}
+              {% assign product2_image = section.settings.product2_image %}
               <img
-                src="{{ product2_hover_image | image_url: width: 720 }}"
-                alt="{{ product2_hover_image.alt | default: product2_image.alt | default: section.settings.product2_badge_title | default: 'Tocotrienol product' }}"
+                src="{{ product2_image | image_url: width: 720 }}"
+                alt="{{ product2_image.alt | default: section.settings.product2_headline | default: 'Tocotrienol product' }}"
                 loading="lazy"
-                width="{{ product2_hover_image.width }}"
-                height="{{ product2_hover_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--hover"
+                width="{{ product2_image.width }}"
+                height="{{ product2_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--default"
               >
             {% endif %}
+              {% if section.settings.product2_hover_image != blank %}
+                {% assign product2_hover_image = section.settings.product2_hover_image %}
+                <img
+                  src="{{ product2_hover_image | image_url: width: 720 }}"
+                  alt="{{ product2_hover_image.alt | default: product2_image.alt | default: section.settings.product2_headline | default: 'Tocotrienol product' }}"
+                  loading="lazy"
+                  width="{{ product2_hover_image.width }}"
+                  height="{{ product2_hover_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--hover"
+                >
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="tocotrienol-card-body">
-          {% if section.settings.product2_price != blank %}
-            <p class="tocotrienol-card-price">{{ section.settings.product2_price }}</p>
-          {% endif %}
-          {% if section.settings.product2_bottle_info != blank %}
-            <p class="tocotrienol-card-note">{{ section.settings.product2_bottle_info }}</p>
-          {% endif %}
-          {% if section.settings.product2_button_label != blank %}
-            {% if section.settings.product2_button_url != blank %}
-              <a href="{{ section.settings.product2_button_url }}" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product2_button_label }}
-              </a>
-            {% else %}
-              <button type="button" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product2_button_label }}
-              </button>
+        {% endif %}
+        <div class="tocotrienol-card-overlay">
+          <div class="tocotrienol-card-body">
+            {% if section.settings.product2_headline != blank %}
+              <h3 class="tocotrienol-card-headline">{{ section.settings.product2_headline }}</h3>
             {% endif %}
-          {% endif %}
+            {% assign product2_feature_1 = section.settings.product2_feature_1 %}
+            {% assign product2_feature_2 = section.settings.product2_feature_2 %}
+            {% assign product2_feature_3 = section.settings.product2_feature_3 %}
+            {% if product2_feature_1 != blank or product2_feature_2 != blank or product2_feature_3 != blank %}
+              <ul class="tocotrienol-card-features" role="list">
+                {% if product2_feature_1 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product2_feature_1 }}</span>
+                  </li>
+                {% endif %}
+                {% if product2_feature_2 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product2_feature_2 }}</span>
+                  </li>
+                {% endif %}
+                {% if product2_feature_3 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product2_feature_3 }}</span>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+            {% if section.settings.product2_price != blank %}
+              <p class="tocotrienol-card-price">{{ section.settings.product2_price }}</p>
+            {% endif %}
+            {% if section.settings.product2_bottle_info != blank %}
+              <p class="tocotrienol-card-note">{{ section.settings.product2_bottle_info }}</p>
+            {% endif %}
+            {% if section.settings.product2_button_label != blank %}
+              {% if section.settings.product2_button_url != blank %}
+                <a href="{{ section.settings.product2_button_url }}" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product2_button_label }}
+                </a>
+              {% else %}
+                <button type="button" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product2_button_label }}
+                </button>
+              {% endif %}
+            {% endif %}
+          </div>
         </div>
       </div>
 
       {% assign card3_classes = 'tocotrienol-card' %}
+      {% assign card3_has_media = false %}
+      {% if section.settings.product3_image != blank or section.settings.product3_hover_image != blank %}
+        {% assign card3_has_media = true %}
+      {% endif %}
       {% if section.settings.product3_hover_image != blank %}
         {% assign card3_classes = card3_classes | append: ' tocotrienol-card--has-hover' %}
       {% endif %}
+      {% unless card3_has_media %}
+        {% assign card3_classes = card3_classes | append: ' tocotrienol-card--no-media' %}
+      {% endunless %}
       <div class="{{ card3_classes }}">
-        <div class="tocotrienol-card-media">
-          <div class="tocotrienol-card-media-inner">
-          {% if section.settings.product3_image != blank %}
-            {% assign product3_image = section.settings.product3_image %}
-            <img
-              src="{{ product3_image | image_url: width: 720 }}"
-              alt="{{ product3_image.alt | default: section.settings.product3_badge_title | default: 'Tocotrienol product' }}"
-              loading="lazy"
-              width="{{ product3_image.width }}"
-              height="{{ product3_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--default"
-            >
-          {% endif %}
-            {% if section.settings.product3_hover_image != blank %}
-              {% assign product3_hover_image = section.settings.product3_hover_image %}
+        {% if card3_has_media %}
+          <div class="tocotrienol-card-media">
+            <div class="tocotrienol-card-media-inner">
+            {% if section.settings.product3_image != blank %}
+              {% assign product3_image = section.settings.product3_image %}
               <img
-                src="{{ product3_hover_image | image_url: width: 720 }}"
-                alt="{{ product3_hover_image.alt | default: product3_image.alt | default: section.settings.product3_badge_title | default: 'Tocotrienol product' }}"
+                src="{{ product3_image | image_url: width: 720 }}"
+                alt="{{ product3_image.alt | default: section.settings.product3_headline | default: 'Tocotrienol product' }}"
                 loading="lazy"
-                width="{{ product3_hover_image.width }}"
-                height="{{ product3_hover_image.height }}"
-                class="tocotrienol-card-image tocotrienol-card-image--hover"
+                width="{{ product3_image.width }}"
+                height="{{ product3_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--default"
               >
             {% endif %}
+              {% if section.settings.product3_hover_image != blank %}
+                {% assign product3_hover_image = section.settings.product3_hover_image %}
+                <img
+                  src="{{ product3_hover_image | image_url: width: 720 }}"
+                  alt="{{ product3_hover_image.alt | default: product3_image.alt | default: section.settings.product3_headline | default: 'Tocotrienol product' }}"
+                  loading="lazy"
+                  width="{{ product3_hover_image.width }}"
+                  height="{{ product3_hover_image.height }}"
+                  class="tocotrienol-card-image tocotrienol-card-image--hover"
+                >
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="tocotrienol-card-body">
-          {% if section.settings.product3_price != blank %}
-            <p class="tocotrienol-card-price">{{ section.settings.product3_price }}</p>
-          {% endif %}
-          {% if section.settings.product3_bottle_info != blank %}
-            <p class="tocotrienol-card-note">{{ section.settings.product3_bottle_info }}</p>
-          {% endif %}
-          {% if section.settings.product3_button_label != blank %}
-            {% if section.settings.product3_button_url != blank %}
-              <a href="{{ section.settings.product3_button_url }}" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product3_button_label }}
-              </a>
-            {% else %}
-              <button type="button" class="tocotrienol-card-button">
-                <span class="tocotrienol-card-button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
-                  </svg>
-                </span>
-                {{ section.settings.product3_button_label }}
-              </button>
+        {% endif %}
+        <div class="tocotrienol-card-overlay">
+          <div class="tocotrienol-card-body">
+            {% if section.settings.product3_headline != blank %}
+              <h3 class="tocotrienol-card-headline">{{ section.settings.product3_headline }}</h3>
             {% endif %}
-          {% endif %}
+            {% assign product3_feature_1 = section.settings.product3_feature_1 %}
+            {% assign product3_feature_2 = section.settings.product3_feature_2 %}
+            {% assign product3_feature_3 = section.settings.product3_feature_3 %}
+            {% if product3_feature_1 != blank or product3_feature_2 != blank or product3_feature_3 != blank %}
+              <ul class="tocotrienol-card-features" role="list">
+                {% if product3_feature_1 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product3_feature_1 }}</span>
+                  </li>
+                {% endif %}
+                {% if product3_feature_2 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product3_feature_2 }}</span>
+                  </li>
+                {% endif %}
+                {% if product3_feature_3 != blank %}
+                  <li>
+                    <span class="tocotrienol-card-feature-icon" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M6.5 11.5 3 8l1.06-1.06L6.5 9.38l5.44-5.44L13 5 6.5 11.5Z"></path>
+                      </svg>
+                    </span>
+                    <span>{{ product3_feature_3 }}</span>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+            {% if section.settings.product3_price != blank %}
+              <p class="tocotrienol-card-price">{{ section.settings.product3_price }}</p>
+            {% endif %}
+            {% if section.settings.product3_bottle_info != blank %}
+              <p class="tocotrienol-card-note">{{ section.settings.product3_bottle_info }}</p>
+            {% endif %}
+            {% if section.settings.product3_button_label != blank %}
+              {% if section.settings.product3_button_url != blank %}
+                <a href="{{ section.settings.product3_button_url }}" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product3_button_label }}
+                </a>
+              {% else %}
+                <button type="button" class="tocotrienol-card-button">
+                  <span class="tocotrienol-card-button-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2Zm-9.83-4h9.9c.85 0 1.6-.54 1.87-1.35l2.7-8.05a.75.75 0 0 0-.71-.98H6.21L5.27 2H2v2h2l3.6 7.59-1.35 3.16c-.37.87.25 1.85 1.19 1.85h12v-2H7.42l.75-1.8Z"></path>
+                    </svg>
+                  </span>
+                  {{ section.settings.product3_button_label }}
+                </button>
+              {% endif %}
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
@@ -253,16 +406,28 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    border: 2px solid transparent;
   }
 
   .tocotrienol-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 26px 58px rgba(35, 64, 116, 0.16);
+    border-color: #7d6ff5;
+  }
+
+  .tocotrienol-card:focus-within {
+    border-color: #7d6ff5;
+    box-shadow: 0 26px 58px rgba(35, 64, 116, 0.16);
+  }
+
+  .tocotrienol-card--no-media {
+    border-color: #e2e8ff;
   }
 
   .tocotrienol-card-media {
     position: relative;
-    padding: 15px 15px 0;
+    /* padding: 15px 15px 0; */
   }
 
   .tocotrienol-card-media-inner {
@@ -300,13 +465,86 @@
     transform: scale(1.04);
   }
 
+  .tocotrienol-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(250, 252, 255, 0.98), #ffffff 78%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 32px 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .tocotrienol-card:hover .tocotrienol-card-overlay,
+  .tocotrienol-card:focus-within .tocotrienol-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .tocotrienol-card--no-media .tocotrienol-card-overlay {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    background: linear-gradient(180deg, rgba(248, 251, 255, 0.96), #ffffff 88%);
+  }
+
   .tocotrienol-card-body {
-    padding: 32px 32px 36px;
+    padding: 28px 32px 32px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+  }
+
+  .tocotrienol-card-headline {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #203145;
+  }
+
+  .tocotrienol-card-features {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #425569;
+    font-size: 16px;
+  }
+
+  .tocotrienol-card-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .tocotrienol-card-feature-icon {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: #d6ecfd;
+    align-items: center;
+    justify-content: center;
+    color: #0d5a96;
+  }
+
+  .tocotrienol-card-feature-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    display: block;
   }
 
   .tocotrienol-card-price {
@@ -467,6 +705,29 @@
     },
     {
       "type": "text",
+      "id": "product1_headline",
+      "label": "Card 1 Headline",
+      "default": "125mg Daily Formula"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature_1",
+      "label": "Card 1 Feature 1",
+      "default": "Daily wellness"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature_2",
+      "label": "Card 1 Feature 2",
+      "default": "Gentle support"
+    },
+    {
+      "type": "text",
+      "id": "product1_feature_3",
+      "label": "Card 1 Feature 3"
+    },
+    {
+      "type": "text",
       "id": "product1_badge_title",
       "label": "Card 1 Badge Title",
       "default": "125mg"
@@ -519,6 +780,29 @@
       "id": "product2_hover_image",
       "label": "Card 2 Hover Image",
       "info": "Optional image that fades in when shoppers hover the card."
+    },
+    {
+      "type": "text",
+      "id": "product2_headline",
+      "label": "Card 2 Headline",
+      "default": "300mg Advanced Formula"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature_1",
+      "label": "Card 2 Feature 1",
+      "default": "High absorption"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature_2",
+      "label": "Card 2 Feature 2",
+      "default": "Clinically dosed"
+    },
+    {
+      "type": "text",
+      "id": "product2_feature_3",
+      "label": "Card 2 Feature 3"
     },
     {
       "type": "text",
@@ -575,6 +859,29 @@
       "id": "product3_hover_image",
       "label": "Card 3 Hover Image",
       "info": "Optional image that fades in when shoppers hover the card."
+    },
+    {
+      "type": "text",
+      "id": "product3_headline",
+      "label": "Card 3 Headline",
+      "default": "150+ Subscription Plan"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature_1",
+      "label": "Card 3 Feature 1",
+      "default": "Best value"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature_2",
+      "label": "Card 3 Feature 2",
+      "default": "Auto-delivery"
+    },
+    {
+      "type": "text",
+      "id": "product3_feature_3",
+      "label": "Card 3 Feature 3"
     },
     {
       "type": "text",
