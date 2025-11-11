@@ -140,8 +140,85 @@
         "mg_bottom_mobile": 0
       }
     },
+    "product_comprsion_section_vit_rmmBY7": {
+      "type": "product-comprsion-section-vit",
+      "blocks": {
+        "left_item_ggREAD": {
+          "type": "left_item",
+          "settings": {
+            "text": "Limited antioxidant power"
+          }
+        },
+        "left_item_DX7JMW": {
+          "type": "left_item",
+          "settings": {
+            "text": "Minimal organ support"
+          }
+        },
+        "left_item_UNf6KC": {
+          "type": "left_item",
+          "settings": {
+            "text": "Poor cellular penetration"
+          }
+        },
+        "left_item_n8dVpe": {
+          "type": "left_item",
+          "settings": {
+            "text": "Limited research backing"
+          }
+        },
+        "right_item_VrUVFq": {
+          "type": "right_item",
+          "settings": {
+            "text": "Up to 50× stronger antioxidant capacity"
+          }
+        },
+        "right_item_brDtmn": {
+          "type": "right_item",
+          "settings": {
+            "text": "Supports heart, brain, liver & skin health"
+          }
+        },
+        "right_item_LxRFMG": {
+          "type": "right_item",
+          "settings": {
+            "text": "Backed by 30+ years of peer-reviewed research"
+          }
+        },
+        "right_item_rrjDzm": {
+          "type": "right_item",
+          "settings": {
+            "text": "Superior penetration into cells and tissues"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_ggREAD",
+        "left_item_DX7JMW",
+        "left_item_UNf6KC",
+        "left_item_n8dVpe",
+        "right_item_VrUVFq",
+        "right_item_brDtmn",
+        "right_item_LxRFMG",
+        "right_item_rrjDzm"
+      ],
+      "name": "product comprision v1",
+      "settings": {
+        "title": "How Tocotrienols Outperform Regular Vitamin E — Every Time.",
+        "subtitle": "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results",
+        "left_eyebrow": "",
+        "left_title": "Tocopherols",
+        "left_subtitle": "(Regular Vitamin E)",
+        "right_eyebrow": "",
+        "right_title": "Tocotrienols",
+        "right_subtitle": "(Advanced Vitamin E)",
+        "cta_text": "Shop Tocotrienol",
+        "cta_link": "shopify://products/vitamin-e-tocotrienols-supplement"
+      }
+    },
     "compare_two_col_sections_P7kA8Q": {
       "type": "compare-two-col-sections",
+      "disabled": true,
       "name": "Tocotrienols Comparison",
       "settings": {
         "title": "How Tocotrienols Outperform Regular Vitamin E — Every Time.",
@@ -586,6 +663,7 @@
     "shogun-optimizer",
     "secondry_banner_HpmCRB",
     "marquee_3jLVfQ",
+    "product_comprsion_section_vit_rmmBY7",
     "compare_two_col_sections_P7kA8Q",
     "four_grid_block_VPbHWd",
     "barry_tan_journey_9J3GWL",

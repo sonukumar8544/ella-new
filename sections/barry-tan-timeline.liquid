@@ -1,13 +1,12 @@
 
 <div class="amazon-vitemin-barry-tan-timeline">
   <div class="amazon-vitemin-timeline-container">
-    <!-- Timeline Line -->
-    <div class="amazon-vitemin-timeline-connector"></div>
-    
     <div class="amazon-vitemin-timeline-item" data-year="1">
-      <div class="amazon-vitemin-timeline-dot"></div>
       <div class="amazon-vitemin-timeline-content">
-        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_1 | default: "1989" }}</div>
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_1 | default: "1989" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
         <div class="amazon-vitemin-timeline-title">{{ section.settings.title_1 | default: "Discovery" }}</div>
         <div class="amazon-vitemin-timeline-description">{{ section.settings.description_1 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
         {% if section.settings.link_1 != blank %}
@@ -17,9 +16,11 @@
     </div>
     
     <div class="amazon-vitemin-timeline-item" data-year="2">
-      <div class="amazon-vitemin-timeline-dot"></div>
       <div class="amazon-vitemin-timeline-content">
-        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_2 | default: "2002 - 2010" }}</div>
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_2 | default: "2002 - 2010" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
         <div class="amazon-vitemin-timeline-title">{{ section.settings.title_2 | default: "Clinical Studies" }}</div>
         <div class="amazon-vitemin-timeline-description">{{ section.settings.description_2 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
         {% if section.settings.link_2 != blank %}
@@ -29,9 +30,11 @@
     </div>
     
     <div class="amazon-vitemin-timeline-item" data-year="3">
-      <div class="amazon-vitemin-timeline-dot"></div>
       <div class="amazon-vitemin-timeline-content">
-        <div class="amazon-vitemin-timeline-year">{{ section.settings.year_3 | default: "2015" }}</div>
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_3 | default: "2015" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
         <div class="amazon-vitemin-timeline-title">{{ section.settings.title_3 | default: "Health Canada Approval" }}</div>
         <div class="amazon-vitemin-timeline-description">{{ section.settings.description_3 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
         {% if section.settings.link_3 != blank %}
@@ -44,131 +47,134 @@
 
 <style>
 .amazon-vitemin-barry-tan-timeline {
-  padding: 60px 20px;
+  padding: clamp(48px, 8vw, 80px) 20px;
   background: #ffffff;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  position: relative;
 }
 
 .amazon-vitemin-timeline-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  gap: clamp(24px, 4vw, 48px);
   position: relative;
-  padding: 20px 0;
-}
-
-.amazon-vitemin-timeline-connector {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #e0e0e0;
-  transform: translateY(-50%);
+  flex-wrap: nowrap;
 }
 
 .amazon-vitemin-timeline-item {
-  position: relative;
-  flex: 1;
-  max-width: 370px;
+  flex: 1 1 0;
+  min-width: 0;
   text-align: left;
-  z-index: 2;
-  padding: 0 20px;
-  border-right: 1px solid #e0e0e0;
-}
-
-.amazon-vitemin-timeline-item:last-child {
-  border-right: none;
-}
-
-.amazon-vitemin-timeline-dot {
-  width: 12px;
-  height: 12px;
-  background: #000000;
-  border-radius: 50%;
-  margin: 0 0 20px 0;
   position: relative;
-  z-index: 3;
 }
 
 .amazon-vitemin-timeline-content {
-  background: transparent;
-  padding: 0;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.amazon-vitemin-timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
 }
 
 .amazon-vitemin-timeline-year {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
-  color: #374650;
-  margin-bottom: 8px;
+  color: #1f3b4b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.amazon-vitemin-timeline-divider {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(8, 107, 146, 0.6) 0%, rgba(8, 107, 146, 0.08) 100%);
+  position: relative;
+  display: block;
+}
+
+.amazon-vitemin-timeline-divider::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #086b92;
+  box-shadow: 0 0 0 4px rgba(8, 107, 146, 0.1);
 }
 
 .amazon-vitemin-timeline-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #374650;
-  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f3b4b;
+  margin: 0;
   line-height: 1.3;
 }
 
 .amazon-vitemin-timeline-description {
-  color: #374650;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  color: #3b4f5a;
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0;
 }
 
 .amazon-vitemin-timeline-link {
   display: inline-block;
-  color: #086B92;
+  color: #086b92;
   text-decoration: underline;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 500;
+  font-size: 15px;
   transition: color 0.3s ease;
 }
 
 .amazon-vitemin-timeline-link:hover {
-  color: #086B92;
+  color: #064f6a;
 }
 
-/* Responsive Design */
+@media (max-width: 1024px) {
+  .amazon-vitemin-timeline-container {
+    gap: clamp(20px, 4vw, 32px);
+  }
+
+  .amazon-vitemin-timeline-title {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .amazon-vitemin-timeline-container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+    gap: 32px;
   }
-  
-  .amazon-vitemin-timeline-connector {
+
+  .amazon-vitemin-timeline-divider {
     display: none;
   }
-  
-  .amazon-vitemin-timeline-item {
-    max-width: 100%;
-    width: 100%;
-    text-align: left;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0 0 20px 0;
+
+  .amazon-vitemin-timeline-header {
+    gap: 10px;
   }
-  
-  .amazon-vitemin-timeline-item:last-child {
-    border-bottom: none;
+
+  .amazon-vitemin-timeline-year {
+    font-size: 18px;
   }
-  
-  .amazon-vitemin-timeline-title {
-    font-size: 1.0em;
-  }
-  
 }
 
 @media (max-width: 480px) {
   .amazon-vitemin-barry-tan-timeline {
-    padding: 40px 15px;
+    padding: clamp(36px, 10vw, 48px) 16px;
   }
-  
+
+  .amazon-vitemin-timeline-title {
+    font-size: 19px;
+  }
 }
 </style>
 
