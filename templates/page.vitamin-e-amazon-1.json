@@ -152,15 +152,6 @@
         "mobile_image": "shopify://shop_images/types_1.png"
       }
     },
-    "barry_tan_journey_9J3GWL": {
-      "type": "barry-tan-journey",
-      "name": "Barry Tan images",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Barrie_Tan3_1.png",
-        "mobile_image": "shopify://shop_images/Main_2.png",
-        "background_color": "#ffffff"
-      }
-    },
     "four_grid_block_VPbHWd": {
       "type": "four-grid-block",
       "name": "Four Grid Block",
@@ -209,6 +200,15 @@
         "item_4_content_heading": "Helps preserve a radiant, youthful glow",
         "item_4_content_body": "Because tocotrienols integrate directly into cell membranes, they help protect collagen-rich tissues from oxidative damage and environmental stress.\n\nEarly clinical research points to improvements in skin elasticity and hydration when tocotrienols are part of a comprehensive wellness routine.\n\nFrom daily UV exposure to lifestyle stress, tocotrienols add a layer of defense that helps skin stay bright, supple, and resilient.",
         "item_4_description": "Encourages collagen for a youthful glow"
+      }
+    },
+    "barry_tan_journey_9J3GWL": {
+      "type": "barry-tan-journey",
+      "name": "Barry Tan images",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Barrie_Tan3_1.png",
+        "mobile_image": "shopify://shop_images/Main_2.png",
+        "background_color": "#ffffff"
       }
     },
     "barry_tan_timeline_4jVxHK": {
@@ -363,7 +363,7 @@
         "scroll_time": "30",
         "enable_border_instagram": false,
         "instagram_border_color": "rgba(0,0,0,0)",
-        "instagram_bg": "#f3f7f8",
+        "instagram_bg": "#f5fbff",
         "instagram_bg_gradient": "",
         "style_block_header": "style1",
         "mg_bottom_header": 15,
@@ -428,41 +428,6 @@
         "mg_bottom_mobile": 40
       }
     },
-    "vitemin_product_section_c4zDR9": {
-      "type": "vitemin-product-section",
-      "name": "vitamin product block",
-      "settings": {
-        "main_title": "Choose Your Tocotrienol Formula",
-        "subtitle": "All products include free shipping and our 90-day satisfaction guarantee.",
-        "product1_image": "shopify://shop_images/Frame_1618873642.png",
-        "product1_hover_image": "shopify://shop_images/DSC05334.png",
-        "product1_badge_title": "125mg",
-        "product1_badge_subtitle": "Daily Formula",
-        "product1_badge_caption": "",
-        "product1_price": "$1.13/day",
-        "product1_bottle_info": "(30-count bottle)",
-        "product1_button_label": "Order Now",
-        "product1_button_url": "shopify://products/bovine-colostrum-powder-lactoferrin-supplement-150g",
-        "product2_image": "shopify://shop_images/Frame_1618873546.png",
-        "product2_badge_title": "300mg",
-        "product2_badge_subtitle": "Advanced Formula",
-        "product2_badge_caption": "Clinically dosed",
-        "product2_price": "$1.40/day",
-        "product2_bottle_info": "(30-count bottle)",
-        "product2_button_label": "Order Now",
-        "product2_button_url": "shopify://products/astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
-        "product3_image": "shopify://shop_images/Frame_1618873547.png",
-        "product3_badge_title": "150+",
-        "product3_badge_subtitle": "Daily Formula",
-        "product3_badge_caption": "Subscription",
-        "product3_price": "$0.95/day",
-        "product3_bottle_info": "As low as",
-        "product3_button_label": "Order Now",
-        "product3_button_url": "shopify://products/body-detox-bundle",
-        "cta_button_text": "Shop Tocotrienol Now",
-        "cta_button_url": ""
-      }
-    },
     "color_driven_faq_section_LGqPXx": {
       "type": "color-driven-faq-section",
       "blocks": {
@@ -520,6 +485,41 @@
         "section_subtitle": "Everything you need to know about tocotrienols",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "vitemin_product_section_c4zDR9": {
+      "type": "vitemin-product-section",
+      "name": "vitamin product block",
+      "settings": {
+        "main_title": "Choose Your Tocotrienol Formula",
+        "subtitle": "All products include free shipping and our 90-day satisfaction guarantee.",
+        "product1_image": "shopify://shop_images/Frame_1618873642.png",
+        "product1_hover_image": "shopify://shop_images/DSC05334.png",
+        "product1_badge_title": "125mg",
+        "product1_badge_subtitle": "Daily Formula",
+        "product1_badge_caption": "",
+        "product1_price": "$1.13/day",
+        "product1_bottle_info": "(30-count bottle)",
+        "product1_button_label": "Order Now",
+        "product1_button_url": "shopify://products/bovine-colostrum-powder-lactoferrin-supplement-150g",
+        "product2_image": "shopify://shop_images/Frame_1618873546.png",
+        "product2_badge_title": "300mg",
+        "product2_badge_subtitle": "Advanced Formula",
+        "product2_badge_caption": "Clinically dosed",
+        "product2_price": "$1.40/day",
+        "product2_bottle_info": "(30-count bottle)",
+        "product2_button_label": "Order Now",
+        "product2_button_url": "shopify://products/astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+        "product3_image": "shopify://shop_images/Frame_1618873547.png",
+        "product3_badge_title": "150+",
+        "product3_badge_subtitle": "Daily Formula",
+        "product3_badge_caption": "Subscription",
+        "product3_price": "$0.95/day",
+        "product3_bottle_info": "As low as",
+        "product3_button_label": "Order Now",
+        "product3_button_url": "shopify://products/body-detox-bundle",
+        "cta_button_text": "Shop Tocotrienol Now",
+        "cta_button_url": ""
       }
     },
     "eto_trust_section_AEXya3": {
