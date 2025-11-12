@@ -1,0 +1,355 @@
+
+
+
+{%- liquid
+  assign section_class = section.id | prepend: 'section-' 
+-%}
+
+<section
+  class="vitamin-fullbanner {{ section_class }}"
+  {% if section.settings.background_image %}
+    style="background-image: url({{ section.settings.background_image | image_url: width: 2880 }});"
+  {% endif %}
+>
+  <div class="vitamin-fullbanner__overlay"></div>
+  <div class="vitamin-fullbanner__inner page-width">
+    {% if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subheading != blank %}
+      <div class="vitamin-fullbanner__header">
+        {% if section.settings.eyebrow != blank %}
+          <p class="vitamin-fullbanner__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="vitamin-fullbanner__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <div class="vitamin-fullbanner__subheading">
+            {{ section.settings.subheading }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="vitamin-fullbanner__body">
+      <div class="vitamin-fullbanner__content">
+        {% if section.blocks.size > 0 %}
+          <ul class="vitamin-fullbanner__points" role="list">
+            {% for block in section.blocks %}
+              <li class="vitamin-fullbanner__point" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank %}
+                  {%- assign icon_alt = block.settings.heading | default: '' | escape -%}
+                  <div class="vitamin-fullbanner__icon">
+                    {{ block.settings.icon | image_url: width: 80 | image_tag: alt: icon_alt }}
+                  </div>
+                {% else %}
+                  <div class="vitamin-fullbanner__icon vitamin-fullbanner__icon--placeholder">
+                    <span></span>
+                  </div>
+                {% endif %}
+
+                <div class="vitamin-fullbanner__text">
+                  {% if block.settings.heading != blank %}
+                    <h3 class="vitamin-fullbanner__point-title">{{ block.settings.heading }}</h3>
+                  {% endif %}
+
+                  {% if block.settings.description != blank %}
+                    <p class="vitamin-fullbanner__point-description">{{ block.settings.description }}</p>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      {% if section.settings.side_image != blank %}
+        {%- assign side_image_alt = section.settings.side_image_alt | default: section.settings.heading | escape -%}
+        <div class="vitamin-fullbanner__media">
+          {{ section.settings.side_image | image_url: width: 1200 | image_tag: alt: side_image_alt }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .vitamin-fullbanner {
+    position: relative;
+    width: 100%;
+    padding: 72px 0;
+    background-color: #f5f2f6;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .vitamin-fullbanner .page-width {
+    position: relative;
+    z-index: 2;
+  }
+
+  .vitamin-fullbanner__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.15) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .vitamin-fullbanner__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .vitamin-fullbanner__header {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .vitamin-fullbanner__body {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .vitamin-fullbanner__content {
+    grid-column: span 6;
+    max-width: 540px;
+  }
+
+  .vitamin-fullbanner__eyebrow {
+    margin: 0 0 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #bf8568;
+    font-weight: 600;
+  }
+
+  .vitamin-fullbanner__heading {
+    margin: 0 auto 16px;
+    font-size: 38px;
+    line-height: 1.15;
+    color: #374650;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .vitamin-fullbanner__subheading {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #4f4f5a;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .vitamin-fullbanner__subheading p{
+    font-size: 18px;
+    color: #374650;
+  }
+
+  .vitamin-fullbanner__points {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 20px;
+  }
+
+  .vitamin-fullbanner__point {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .vitamin-fullbanner__icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .vitamin-fullbanner__icon img {
+    max-width: 45px;
+    max-height: 45px;
+    object-fit: contain;
+  }
+
+  .vitamin-fullbanner__icon--placeholder span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #bf8568;
+    display: block;
+  }
+
+  .vitamin-fullbanner__text {
+    flex: 1 1 auto;
+  }
+
+  .vitamin-fullbanner__point-title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #374650;
+    font-weight: 700;
+  }
+
+  .vitamin-fullbanner__point-description {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374650;
+    font-weight: 300;
+  }
+
+  .vitamin-fullbanner__media {
+    grid-column: span 6;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .vitamin-fullbanner__media img {
+    max-width: min(480px, 100%);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 36px rgba(32, 37, 56, 0.18));
+  }
+
+  @media (max-width: 991px) {
+    .vitamin-fullbanner {
+      padding: 56px 0;
+    }
+
+    .vitamin-fullbanner__header {
+      margin-bottom: 24px;
+    }
+
+    .vitamin-fullbanner__body {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .vitamin-fullbanner__content,
+    .vitamin-fullbanner__media {
+      grid-column: span 1;
+      text-align: center;
+      justify-content: center;
+      max-width: 100%;
+    }
+
+    .vitamin-fullbanner__point {
+      justify-content: center;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .vitamin-fullbanner {
+      padding: 48px 0;
+    }
+
+    .vitamin-fullbanner__points {
+      gap: 16px;
+    }
+
+    .vitamin-fullbanner__heading {
+      font-size: clamp(26px, 5vw, 32px);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Vitamin full banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Why Annatto Is the Best Source"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Annatto Is the Best Source"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "side_image",
+      "label": "Right side image"
+    },
+    {
+      "type": "text",
+      "id": "side_image_alt",
+      "label": "Right side image alt text",
+      "default": "Annatto Tocotrienols Bottles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Title",
+          "default": "Palm Source"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Palm-derived tocotrienols always come mixed with significant amounts of tocopherols, which interfere with tocotrienol absorption and function."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vitamin full banner",
+      "blocks": [
+        {
+          "type": "point"
+        },
+        {
+          "type": "point"
+        },
+        {
+          "type": "point"
+        }
+      ]
+    }
+  ]
+}
+    {% endschema %}
