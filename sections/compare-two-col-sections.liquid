@@ -36,10 +36,10 @@
     text-decoration: underline;
     font-size: 16px;
     font-weight: 500;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  padding-bottom: 70px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 70px;
   }
 
   .amazon-comparison-link:hover {
@@ -74,7 +74,7 @@
   /* Small screens (768px and below) - Show mobile image */
   @media (max-width: 768px) {
     .amazon-tocotrienols-comparison {
-      padding: 40px 15px;
+      padding: 40px 0px;
     }
 
     .amazon-comparison-header {
@@ -106,7 +106,7 @@
 </style>
 
 <div class="parent-vitemin-class-section">
-<div class="amazon-tocotrienols-comparison">
+  <div class="amazon-tocotrienols-comparison">
   {% comment %} <div class="amazon-comparison-header">
     <h2 class="amazon-comparison-title">{{ section.settings.title | default: "How Tocotrienols Outperform Regular Vitamin E — Every Time." }}</h2>
     <p class="amazon-comparison-subtitle">{{ section.settings.subtitle | default: "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results" }}</p>
@@ -126,22 +126,23 @@
     >
   {% endif %}
 
-  {% if section.settings.mobile_image != blank %}
-    <img 
-      src="{{ section.settings.mobile_image | image_url: width: 800 }}" 
-      alt="{{ section.settings.mobile_image.alt | default: 'Tocotrienols Comparison' }}"
-      class="amazon-comparison-image amazon-mobile-image"
-      width="800"
-      height="1000"
-      loading="lazy"
-    >
+    {% if section.settings.mobile_image != blank %}
+      <img 
+        src="{{ section.settings.mobile_image | image_url: width: 800 }}" 
+        alt="{{ section.settings.mobile_image.alt | default: 'Tocotrienols Comparison' }}"
+        class="amazon-comparison-image amazon-mobile-image"
+        width="800"
+        height="1000"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+  {% if section.settings.learn_more_link != blank %}
+    <a href="{{ section.settings.learn_more_link }}" class="amazon-comparison-link">
+      {{ section.settings.learn_more_text | default: "Learn More About Vitamin E Types" }}
+    </a>
   {% endif %}
 </div>
-{% if section.settings.learn_more_link != blank %}
-<a href="{{ section.settings.learn_more_link }}" class="amazon-comparison-link">
-  {{ section.settings.learn_more_text | default: "Learn More About Vitamin E Types" }}
-</a>
-{% endif %}
 
 {% schema %}
 {
