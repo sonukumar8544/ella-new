@@ -28,14 +28,14 @@
       "type": "secondry-banner",
       "custom_css": [
         ".color-secondary-banner__content {max-width: 500px;}",
-        "@media (max-width: 769px) {.color-secondary-banner__title {font-size: 34px; margin-bottom: 15px; }.color-secondary-banner__description {font-size: 22px; margin-bottom: 20px;}}"
+        "@media (max-width: 769px) {.color-secondary-banner__title {font-size: 34px; margin-bottom: 15px; } .color-secondary-banner__description {font-size: 22px; margin-bottom: 20px; }}"
       ],
       "name": "Secondary Banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Frame_1618873645.png",
         "mobile_image": "shopify://shop_images/Frame_1618873647.png",
         "banner_height_desktop": 600,
-        "banner_height_mobile": 550,
+        "banner_height_mobile": 600,
         "show_overlay": true,
         "overlay_opacity": 10,
         "title": "Not All Vitamin E Is Created Equal",
