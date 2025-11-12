@@ -1,266 +1,317 @@
-<section id="section-{{ section.id }}" class="vitamin-zigzag">
-  <div class="vitamin-zigzag__wrapper">
-    <div class="vitamin-zigzag__inner">
-      {% if section.settings.heading != blank %}
-        <h2 class="vitamin-zigzag__heading">
-          {{ section.settings.heading }}
-        </h2>
-      {% endif %}
+<section id="section-{{ section.id }}" class="vitamin-highlight">
+  <div class="vitamin-highlight__wrapper">
+    {% if section.settings.heading != blank %}
+      <h2 class="vitamin-highlight__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
 
-      {% if section.settings.subheading != blank %}
-        <p class="vitamin-zigzag__subheading">
-          {{ section.settings.subheading }}
-        </p>
-      {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="vitamin-highlight__subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
 
-      {% if section.blocks.size > 0 %}
-        <div class="vitamin-zigzag__list" role="list">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'feature' %}
-                {% assign alignment = block.settings.alignment %}
-                <div class="vitamin-zigzag__item vitamin-zigzag__item--{{ alignment | default: 'left' }}" role="listitem" {{ block.shopify_attributes }}>
-                  {% if block.settings.image != blank %}
-                    <div class="vitamin-zigzag__media">
-                      <div class="vitamin-zigzag__avatar">
-                        {{ block.settings.image | image_url: width: 120 | image_tag:
-                          widths: '120,180,240',
-                          class: 'vitamin-zigzag__image',
-                          loading: 'lazy',
-                          alt: block.settings.image_alt | default: block.settings.title }}
-                      </div>
+    {% if section.settings.description != blank %}
+      <p class="vitamin-highlight__description">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="vitamin-highlight__list" role="list">
+        {% for block in section.blocks %}
+          {% assign is_even = forloop.index0 | modulo: 2 %}
+          <div
+            class="vitamin-highlight__item vitamin-highlight__item--{% if is_even == 0 %}left{% else %}right{% endif %}{% if block.type == 'rating' %} vitamin-highlight__item--rating{% endif %}"
+            role="listitem"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.type == 'feature' %}
+              {% if block.settings.icon_image != blank or block.settings.icon_text != blank %}
+                <div class="vitamin-highlight__media">
+                  {% if block.settings.icon_image != blank %}
+                    {{ block.settings.icon_image | image_url: width: 160 | image_tag:
+                      widths: '80,120,160',
+                      class: 'vitamin-highlight__image',
+                      loading: 'lazy',
+                      alt: block.settings.icon_alt | default: block.settings.title }}
+                  {% else %}
+                    <div class="vitamin-highlight__badge">
+                      {{ block.settings.icon_text }}
                     </div>
                   {% endif %}
-                  <div class="vitamin-zigzag__content">
-                    {% if block.settings.title != blank %}
-                      <p class="vitamin-zigzag__item-title">
-                        {{ block.settings.title }}
-                      </p>
-                    {% endif %}
-                    {% if block.settings.description != blank %}
-                      <p class="vitamin-zigzag__item-text">
-                        {{ block.settings.description }}
-                      </p>
-                    {% endif %}
-                  </div>
                 </div>
-              {% when 'rating' %}
-                <div class="vitamin-zigzag__item vitamin-zigzag__item--rating" role="listitem" {{ block.shopify_attributes }}>
-                  <div class="vitamin-zigzag__content">
-                    {% if block.settings.title != blank %}
-                      <p class="vitamin-zigzag__item-title">
-                        {{ block.settings.title }}
-                      </p>
-                    {% endif %}
-                    {% if block.settings.description != blank %}
-                      <p class="vitamin-zigzag__item-text">
-                        {{ block.settings.description }}
-                      </p>
-                    {% endif %}
-                    {% if block.settings.star_image != blank %}
-                      <div class="vitamin-zigzag__rating-stars">
-                        {{ block.settings.star_image | image_url: width: 200 | image_tag:
-                          widths: '120,200,280',
-                          loading: 'lazy',
-                          alt: block.settings.star_image.alt | default: block.settings.title }}
-                      </div>
-                    {% endif %}
-                  </div>
-                </div>
-            {% endcase %}
-          {% endfor %}
-        </div>
-      {% endif %}
+              {% endif %}
+            {% endif %}
 
-      {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
-        <div class="vitamin-zigzag__cta">
-          <a class="vitamin-zigzag__cta-link" href="{{ section.settings.cta_link }}">
-            {{ section.settings.cta_text }}
-          </a>
-        </div>
-      {% endif %}
-    </div>
+            <div class="vitamin-highlight__content">
+              {% if block.settings.title != blank or block.settings.description != blank %}
+                <p class="vitamin-highlight__text">
+                  {% if block.settings.title != blank %}
+                    <span class="vitamin-highlight__item-title">
+                      {{ block.settings.title }}
+                    </span>
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                    <span class="vitamin-highlight__item-description">
+                      {{ block.settings.description }}
+                    </span>
+                  {% endif %}
+                </p>
+              {% endif %}
+
+              {% if block.type == 'rating' and block.settings.show_stars %}
+                <div class="vitamin-highlight__rating">
+                  {% if block.settings.star_image != blank %}
+                    {{ block.settings.star_image | image_url: width: 220 | image_tag:
+                      widths: '140,180,220',
+                      loading: 'lazy',
+                      alt: block.settings.star_alt | default: block.settings.title }}
+                  {% else %}
+                    <span>★ ★ ★ ★ ★</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
+      <div class="vitamin-highlight__cta">
+        <a class="vitamin-highlight__cta-link" href="{{ section.settings.cta_link }}">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
   </div>
 </section>
 
 <style>
-  #section-{{ section.id }}.vitamin-zigzag {
-    padding: clamp(48px, 8vw, 96px) 20px;
-    background: #ffffff;
+  #section-{{ section.id }}.vitamin-highlight {
+    padding: clamp(58px, 10vw, 110px) 20px;
+    background: #dceffd;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__wrapper {
-    max-width: 920px;
+  #section-{{ section.id }} .vitamin-highlight__wrapper {
+    max-width: 760px;
     margin: 0 auto;
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #243a45;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1a3244;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__heading {
-    font-size: clamp(28px, 5vw, 36px);
+  #section-{{ section.id }} .vitamin-highlight__heading {
+    font-size: clamp(32px, 5.8vw, 40px);
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.35;
     margin: 0;
+    color: #173042;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__heading em {
+  #section-{{ section.id }} .vitamin-highlight__heading em {
     font-style: italic;
     font-weight: 600;
-    color: #3b4046;
+    color: #315a70;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__subheading {
-    margin: 20px auto clamp(32px, 5vw, 48px);
+  #section-{{ section.id }} .vitamin-highlight__subheading {
+    margin: 18px 0 6px;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    color: #173042;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__description {
+    margin: 0 auto clamp(42px, 6vw, 62px);
     max-width: 540px;
     font-size: 16px;
-    line-height: 1.6;
-    color: #4a5a64;
+    line-height: 1.75;
+    color: #365263;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__list {
+  #section-{{ section.id }} .vitamin-highlight__list {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 4vw, 28px);
+    gap: clamp(18px, 3.5vw, 26px);
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item {
-    display: grid;
+  #section-{{ section.id }} .vitamin-highlight__item {
+    display: flex;
     align-items: center;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(16px, 3vw, 24px);
-    padding: clamp(14px, 3vw, 18px) clamp(18px, 4vw, 24px);
-    border-radius: 999px;
-    border: 1px solid rgba(15, 74, 104, 0.15);
-    background: linear-gradient(90deg, rgba(239, 248, 252, 0.55) 0%, rgba(255, 255, 255, 0.55) 50%, rgba(239, 248, 252, 0.55) 100%);
-    box-shadow: 0 6px 20px rgba(17, 77, 108, 0.08);
+    gap: clamp(16px, 3.2vw, 28px);
+    padding: clamp(18px, 3.5vw, 26px) clamp(22px, 4.4vw, 44px);
+    text-align: left;
+    position: relative;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item--rating {
-    grid-template-columns: 1fr;
-    text-align: center;
+  #section-{{ section.id }} .vitamin-highlight__item::after {
+    content: "";
+    position: absolute;
+    left: clamp(22px, 4.4vw, 44px);
+    right: clamp(22px, 4.4vw, 44px);
+    bottom: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.8);
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item--left {
-    grid-template-areas: "media content .";
+  #section-{{ section.id }} .vitamin-highlight__item:last-child::after {
+    display: none;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item--right {
-    grid-template-areas: ". content media";
+  #section-{{ section.id }} .vitamin-highlight__item--right {
+    flex-direction: row-reverse;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item--rating {
-    grid-template-areas: "content";
-  }
-
-  #section-{{ section.id }} .vitamin-zigzag__media {
-    grid-area: media;
+  #section-{{ section.id }} .vitamin-highlight__media {
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__avatar {
-    width: clamp(52px, 8vw, 70px);
-    height: clamp(52px, 8vw, 70px);
+  #section-{{ section.id }} .vitamin-highlight__image {
+    width: clamp(60px, 8vw, 82px);
+    height: clamp(60px, 8vw, 82px);
     border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid rgba(8, 107, 146, 0.18);
-    box-shadow: 0 8px 20px rgba(8, 107, 146, 0.18);
-  }
-
-  #section-{{ section.id }} .vitamin-zigzag__image {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    box-shadow: 0 10px 24px rgba(40, 104, 134, 0.25);
+    border: 5px solid rgba(40, 104, 134, 0.12);
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__content {
-    grid-area: content;
+  #section-{{ section.id }} .vitamin-highlight__badge {
+    width: clamp(60px, 8vw, 82px);
+    height: clamp(60px, 8vw, 82px);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #ffffff;
+    border: 2px solid #b3cedc;
+    font-weight: 700;
+    font-size: 16px;
+    color: #26272c;
+    box-shadow: 0 8px 22px rgba(46, 106, 133, 0.25);
+    text-transform: uppercase;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__content {
+    flex: 1 1 auto;
     text-align: left;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item-title {
-    font-size: 17px;
-    font-style: italic;
-    font-weight: 600;
-    margin: 0 0 4px;
-    color: #2a3d47;
+  #section-{{ section.id }} .vitamin-highlight__item--right .vitamin-highlight__content {
+    text-align: right;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__item-text {
+  #section-{{ section.id }} .vitamin-highlight__text {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
     margin: 0;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__item-title {
+    font-size: 19px;
+    font-style: italic;
+    color: #163549;
+    display: inline-flex;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__item-description {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #315363;
+    display: inline-flex;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__item--rating {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__item--rating .vitamin-highlight__content {
+    text-align: center;
+    max-width: 380px;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__rating {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #fbbb31;
+    letter-spacing: 6px;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__rating img {
+    max-width: 170px;
+    width: 100%;
+    height: auto;
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__cta {
+    margin-top: clamp(38px, 6vw, 58px);
+  }
+
+  #section-{{ section.id }} .vitamin-highlight__cta-link {
     font-size: 15px;
-    line-height: 1.6;
-    color: #455660;
-  }
-
-  #section-{{ section.id }} .vitamin-zigzag__rating-stars {
-    margin-top: 14px;
-  }
-
-  #section-{{ section.id }} .vitamin-zigzag__cta {
-    margin-top: clamp(32px, 5vw, 48px);
-  }
-
-  #section-{{ section.id }} .vitamin-zigzag__cta-link {
-    font-size: 15px;
-    font-weight: 500;
-    color: #0b7ba3;
+    font-weight: 600;
+    color: #155c7b;
     text-decoration: underline;
+    text-underline-offset: 4px;
     transition: color 0.2s ease;
   }
 
-  #section-{{ section.id }} .vitamin-zigzag__cta-link:hover {
-    color: #085c7a;
+  #section-{{ section.id }} .vitamin-highlight__cta-link:hover {
+    color: #0f4359;
   }
 
   @media (max-width: 840px) {
-    #section-{{ section.id }} .vitamin-zigzag__item {
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-areas:
-        "media"
-        "content";
+    #section-{{ section.id }} .vitamin-highlight__item {
+      flex-direction: column;
       text-align: center;
-      border-radius: 24px;
-      padding: clamp(16px, 4vw, 22px);
+      border-radius: 36px;
+      padding: clamp(20px, 6vw, 32px);
     }
 
-    #section-{{ section.id }} .vitamin-zigzag__content {
-      text-align: center;
+    #section-{{ section.id }} .vitamin-highlight__item--right {
+      flex-direction: column;
     }
 
-    #section-{{ section.id }} .vitamin-zigzag__item-title {
-      font-size: 16px;
+    #section-{{ section.id }} .vitamin-highlight__content,
+    #section-{{ section.id }} .vitamin-highlight__item--right .vitamin-highlight__content {
+      text-align: center;
     }
   }
 
   @media (max-width: 480px) {
-    #section-{{ section.id }} .vitamin-zigzag__heading {
-      font-size: clamp(26px, 8vw, 30px);
-    }
-
-    #section-{{ section.id }} .vitamin-zigzag__avatar {
-      width: 52px;
-      height: 52px;
-      border-width: 3px;
+    #section-{{ section.id }} .vitamin-highlight__heading {
+      font-size: clamp(28px, 8vw, 34px);
     }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Vitamin Feature ZigZag",
+  "name": "Vitamin Feature Highlight",
   "settings": [
     {
       "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "default": "Not all <em>Tocotrienols</em> are <br> <em>equal either</em>"
+      "default": "Not all <em>Tocotrienols</em> are"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtitle",
+      "default": "equal either"
     },
     {
       "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading",
+      "id": "description",
+      "label": "Description",
       "default": "Our formula is designed for maximum purity, potency and safety — so you get the result science promised."
     },
     {
@@ -282,35 +333,31 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
-          "label": "Feature image"
+          "id": "icon_image",
+          "label": "Icon image"
         },
         {
           "type": "text",
-          "id": "image_alt",
-          "label": "Image alt text"
+          "id": "icon_alt",
+          "label": "Icon alt text"
         },
         {
-          "type": "select",
-          "id": "alignment",
-          "label": "Image alignment",
-          "options": [
-            { "value": "left", "label": "Image left" },
-            { "value": "right", "label": "Image right" }
-          ],
-          "default": "left"
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icon text (used if no image)",
+          "info": "Displays inside a circular badge when no image is selected."
         },
         {
-          "type": "textarea",
+          "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "100% Annatto Purity"
+          "default": "Feature title"
         },
         {
           "type": "textarea",
           "id": "description",
           "label": "Description",
-          "default": "Richest natural source of delta and gamma tocotrienols"
+          "default": "Feature description"
         }
       ]
     },
@@ -319,7 +366,7 @@
       "name": "Rating highlight",
       "settings": [
         {
-          "type": "textarea",
+          "type": "text",
           "id": "title",
           "label": "Title",
           "default": "Amazon’s Choice"
@@ -331,22 +378,31 @@
           "default": "Rated 4.8/5 stars by verified buyers"
         },
         {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Show star rating",
+          "default": true
+        },
+        {
           "type": "image_picker",
           "id": "star_image",
-          "label": "Stars image"
+          "label": "Star image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "star_alt",
+          "label": "Star image alt text"
         }
       ]
     }
   ],
-  "max_blocks": 8,
   "presets": [
     {
-      "name": "Vitamin Feature ZigZag",
+      "name": "Vitamin Feature Highlight",
       "blocks": [
         {
           "type": "feature",
           "settings": {
-            "alignment": "left",
             "title": "100% Annatto Purity",
             "description": "Richest natural source of delta and gamma tocotrienols"
           }
@@ -354,7 +410,6 @@
         {
           "type": "feature",
           "settings": {
-            "alignment": "right",
             "title": "Clinically Dosage",
             "description": "300mg NPN-approved therapeutic level"
           }
@@ -362,24 +417,24 @@
         {
           "type": "feature",
           "settings": {
-            "alignment": "left",
             "title": "Third-Party Lab Tested",
             "description": "Verified for purity & potency"
           }
         },
         {
           "type": "feature",
-            "settings": {
-              "alignment": "right",
-              "title": "GMP-Certified Manufacturing",
-              "description": "Produced in FDA-registered facilities"
-            }
+          "settings": {
+            "icon_text": "GMP",
+            "title": "GMP-Certified Manufacturing",
+            "description": "Produced in FDA-registered facilities"
+          }
         },
         {
           "type": "rating",
           "settings": {
             "title": "Amazon’s Choice",
-            "description": "Rated 4.8/5 stars by verified buyers"
+            "description": "Rated 4.8/5 stars by verified buyers",
+            "show_stars": true
           }
         }
       ]

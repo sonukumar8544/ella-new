@@ -31,8 +31,8 @@
       ],
       "name": "Secondary Banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/30cd25ebe5e3ac9abce0b3eba51a064e8c9b049d.png",
-        "mobile_image": "shopify://shop_images/Frame_1618873640.png",
+        "desktop_image": "shopify://shop_images/Frame_1618873645.png",
+        "mobile_image": "shopify://shop_images/Frame_1618873647.png",
         "banner_height_desktop": 600,
         "banner_height_mobile": 550,
         "show_overlay": true,
@@ -216,6 +216,36 @@
         "cta_link": "shopify://products/vitamin-e-tocotrienols-supplement"
       }
     },
+    "barry_tan_journey_9J3GWL": {
+      "type": "barry-tan-journey",
+      "name": "Barry Tan images",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Barrie_Tan3_1.png",
+        "mobile_image": "shopify://shop_images/Main_2.png",
+        "background_color": "#ffffff"
+      }
+    },
+    "barry_tan_timeline_4jVxHK": {
+      "type": "barry-tan-timeline",
+      "name": "Barry Tan Journey",
+      "settings": {
+        "year_1": "1989",
+        "title_1": "Discovery",
+        "description_1": "The groundbreaking discovery of natural vitamin E extraction methods that revolutionized nutritional supplements.",
+        "link_1": "shopify://products/astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
+        "link_text_1": "Learn More About Vitamin E Types",
+        "year_2": "2002 - 2010",
+        "title_2": "Clinical Studies",
+        "description_2": "Extensive clinical research and trials demonstrating the efficacy and safety of our vitamin E formulations.",
+        "link_2": "",
+        "link_text_2": "View Research Studies",
+        "year_3": "2015",
+        "title_3": "Health Canada Approval",
+        "description_3": "Official regulatory approval from Health Canada, marking a milestone in our commitment to quality and safety.",
+        "link_3": "",
+        "link_text_3": "Read Approval Details"
+      }
+    },
     "compare_two_col_sections_P7kA8Q": {
       "type": "compare-two-col-sections",
       "disabled": true,
@@ -279,78 +309,69 @@
         "item_4_description": "Encourages collagen for a youthful glow"
       }
     },
-    "barry_tan_journey_9J3GWL": {
-      "type": "barry-tan-journey",
-      "name": "Barry Tan images",
+    "product_zig_zag_zj7cpx": {
+      "type": "product-zig-zag",
+      "blocks": {
+        "feature_jmRqPR": {
+          "type": "feature",
+          "settings": {
+            "icon_alt": "",
+            "icon_text": "",
+            "title": "100% Annatto Purity",
+            "description": "Richest natural source of delta and gamma tocotrienols"
+          }
+        },
+        "feature_ameC4G": {
+          "type": "feature",
+          "settings": {
+            "icon_alt": "",
+            "icon_text": "",
+            "title": "Clinically Dosage",
+            "description": "300mg NPN-approved therapeutic level"
+          }
+        },
+        "feature_HFVH8H": {
+          "type": "feature",
+          "settings": {
+            "icon_alt": "",
+            "icon_text": "",
+            "title": "Third-Party Lab Tested",
+            "description": "Verified for purity & potency"
+          }
+        },
+        "feature_C6xhg6": {
+          "type": "feature",
+          "settings": {
+            "icon_alt": "",
+            "icon_text": "GMP",
+            "title": "GMP-Certified Manufacturing",
+            "description": "Produced in FDA-registered facilities"
+          }
+        },
+        "rating_7DPbpA": {
+          "type": "rating",
+          "settings": {
+            "title": "Amazon’s Choice",
+            "description": "Rated 4.8/5 stars by verified buyers",
+            "show_stars": true,
+            "star_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_jmRqPR",
+        "feature_ameC4G",
+        "feature_HFVH8H",
+        "feature_C6xhg6",
+        "rating_7DPbpA"
+      ],
+      "name": "Vitamin Feature Highlight",
       "settings": {
-        "desktop_image": "shopify://shop_images/Barrie_Tan3_1.png",
-        "mobile_image": "shopify://shop_images/Main_2.png",
-        "background_color": "#ffffff"
-      }
-    },
-    "barry_tan_timeline_4jVxHK": {
-      "type": "barry-tan-timeline",
-      "name": "Barry Tan Journey",
-      "settings": {
-        "year_1": "1989",
-        "title_1": "Discovery",
-        "description_1": "The groundbreaking discovery of natural vitamin E extraction methods that revolutionized nutritional supplements.",
-        "link_1": "shopify://products/astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
-        "link_text_1": "Learn More About Vitamin E Types",
-        "year_2": "2002 - 2010",
-        "title_2": "Clinical Studies",
-        "description_2": "Extensive clinical research and trials demonstrating the efficacy and safety of our vitamin E formulations.",
-        "link_2": "",
-        "link_text_2": "View Research Studies",
-        "year_3": "2015",
-        "title_3": "Health Canada Approval",
-        "description_3": "Official regulatory approval from Health Canada, marking a milestone in our commitment to quality and safety.",
-        "link_3": "",
-        "link_text_3": "Read Approval Details"
-      }
-    },
-    "ennatto_two_col_sections_L4MGnX": {
-      "type": "ennatto-two-col-sections",
-      "name": "amazon two col",
-      "settings": {
-        "title": "Not All Tocotrienols Are Equal Either",
-        "subtitle": "Our formula is designed for maximum purity, potency, and safety — so you get the results science promised.",
-        "feature_1": "100% Annatto Purity — Richest natural source of delta & gamma tocotrienols",
-        "feature_2": "Clinical Dosage — 300mg NPN-approved therapeutic level",
-        "feature_3": "Third-Party Lab Tested — Verified for purity & potency",
-        "feature_4": "GMP-Certified Manufacturing — Produced in FDA-registered facilities",
-        "feature_5": "Amazon's Choice — Rated 4.8/5 stars by verified buyers",
+        "heading": "Not all <em>Tocotrienols</em> are",
+        "subheading": "equal either",
+        "description": "Our formula is designed for maximum purity, potency and safety — so you get the result science promised.",
         "cta_text": "Learn More About Vitamin E Types",
-        "cta_url": "shopify://products/heart-health-bundle",
-        "product_image": "shopify://shop_images/Image_h-_261pxshow_1.png",
-        "product_alt": "Annatto Tocotrienols Product"
-      }
-    },
-    "vitemin_page_table_JDhrUU": {
-      "type": "vitemin-page-table",
-      "name": "Comparison Table eto",
-      "settings": {
-        "title": "Tocotrienols Reach Where Others Can't",
-        "subtitle": "",
-        "column1_title": "Cheap Tocopherols",
-        "column2_title": "Generic Blends",
-        "column3_title": "Our Tocotrienol",
-        "column1_source": "Soy / synthetic",
-        "column2_source": "Cheap mass labels",
-        "column3_source": "100% Annatto",
-        "column1_purity": "Low, filler-heavy",
-        "column2_purity": "Contaminated with tocopherols",
-        "column3_purity": "Tocopherol-free",
-        "column1_testing": "Rarely verified",
-        "column2_testing": "Inconsistent",
-        "column3_testing": "Third-party tested",
-        "column1_trust": "Cheap mass labels",
-        "column2_trust": "Marketing hype",
-        "column3_trust": "Amazon's Choice, GMP-certified",
-        "column3_icon": "",
-        "column3_icon_alt": "Premium tocotrienol icon",
-        "cta_text": "Choose the Proven Tocotrienol",
-        "cta_url": "shopify://collections/bone-health"
+        "cta_link": ""
       }
     },
     "vitemin_page_fullbanner_section_qCtiR6": {
@@ -393,6 +414,51 @@
         "heading": "Why Annatto Is the Best Source",
         "subheading": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>",
         "side_image_alt": "Annatto Tocotrienols Bottles"
+      }
+    },
+    "vitemin_page_table_JDhrUU": {
+      "type": "vitemin-page-table",
+      "name": "Comparison Table eto",
+      "settings": {
+        "title": "Tocotrienols Reach Where Others Can't",
+        "subtitle": "",
+        "column1_title": "Cheap Tocopherols",
+        "column2_title": "Generic Blends",
+        "column3_title": "Our Tocotrienol",
+        "column1_source": "Soy / synthetic",
+        "column2_source": "Cheap mass labels",
+        "column3_source": "100% Annatto",
+        "column1_purity": "Low, filler-heavy",
+        "column2_purity": "Contaminated with tocopherols",
+        "column3_purity": "Tocopherol-free",
+        "column1_testing": "Rarely verified",
+        "column2_testing": "Inconsistent",
+        "column3_testing": "Third-party tested",
+        "column1_trust": "Cheap mass labels",
+        "column2_trust": "Marketing hype",
+        "column3_trust": "Amazon's Choice, GMP-certified",
+        "column3_icon": "",
+        "column3_icon_alt": "Premium tocotrienol icon",
+        "cta_text": "Choose the Proven Tocotrienol",
+        "cta_url": "shopify://collections/bone-health"
+      }
+    },
+    "ennatto_two_col_sections_L4MGnX": {
+      "type": "ennatto-two-col-sections",
+      "disabled": true,
+      "name": "amazon two col",
+      "settings": {
+        "title": "Not All Tocotrienols Are Equal Either",
+        "subtitle": "Our formula is designed for maximum purity, potency, and safety — so you get the results science promised.",
+        "feature_1": "100% Annatto Purity — Richest natural source of delta & gamma tocotrienols",
+        "feature_2": "Clinical Dosage — 300mg NPN-approved therapeutic level",
+        "feature_3": "Third-Party Lab Tested — Verified for purity & potency",
+        "feature_4": "GMP-Certified Manufacturing — Produced in FDA-registered facilities",
+        "feature_5": "Amazon's Choice — Rated 4.8/5 stars by verified buyers",
+        "cta_text": "Learn More About Vitamin E Types",
+        "cta_url": "shopify://products/heart-health-bundle",
+        "product_image": "shopify://shop_images/Image_h-_261pxshow_1.png",
+        "product_alt": "Annatto Tocotrienols Product"
       }
     },
     "instagram_9EfqFH": {
@@ -706,13 +772,14 @@
     "secondry_banner_HpmCRB",
     "marquee_3jLVfQ",
     "product_comprsion_section_vit_rmmBY7",
-    "compare_two_col_sections_P7kA8Q",
-    "four_grid_block_VPbHWd",
     "barry_tan_journey_9J3GWL",
     "barry_tan_timeline_4jVxHK",
-    "ennatto_two_col_sections_L4MGnX",
-    "vitemin_page_table_JDhrUU",
+    "compare_two_col_sections_P7kA8Q",
+    "four_grid_block_VPbHWd",
+    "product_zig_zag_zj7cpx",
     "vitemin_page_fullbanner_section_qCtiR6",
+    "vitemin_page_table_JDhrUU",
+    "ennatto_two_col_sections_L4MGnX",
     "instagram_9EfqFH",
     "color_driven_faq_section_LGqPXx",
     "vitemin_product_section_c4zDR9",
