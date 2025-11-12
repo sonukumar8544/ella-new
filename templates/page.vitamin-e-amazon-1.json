@@ -353,6 +353,48 @@
         "cta_url": "shopify://collections/bone-health"
       }
     },
+    "vitemin_page_fullbanner_section_qCtiR6": {
+      "type": "vitemin-page-fullbanner-section",
+      "blocks": {
+        "point_qte9zk": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683.svg",
+            "heading": "Palm Source",
+            "description": "Palm-derived tocotrienols always come mixed with significant amounts of tocopherols, which interfere with tocotrienol absorption and function."
+          }
+        },
+        "point_3jTeb4": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683_1.svg",
+            "heading": "Palm Source",
+            "description": "Palm-derived tocotrienols always come mixed with significant amounts of tocopherols, which interfere with tocotrienol absorption and function."
+          }
+        },
+        "point_8xLYQc": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683_2.svg",
+            "heading": "Palm Source",
+            "description": "Palm-derived tocotrienols always come mixed with significant amounts of tocopherols, which interfere with tocotrienol absorption and function."
+          }
+        }
+      },
+      "block_order": [
+        "point_qte9zk",
+        "point_3jTeb4",
+        "point_8xLYQc"
+      ],
+      "name": "Vitamin full banner",
+      "settings": {
+        "background_image": "shopify://shop_images/1910dbc39f80eb86b78a21f3a30ffc650a660252.png",
+        "eyebrow": "",
+        "heading": "Why Annatto Is the Best Source",
+        "subheading": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>",
+        "side_image_alt": "Annatto Tocotrienols Bottles"
+      }
+    },
     "instagram_9EfqFH": {
       "type": "instagram",
       "blocks": {
@@ -670,6 +712,7 @@
     "barry_tan_timeline_4jVxHK",
     "ennatto_two_col_sections_L4MGnX",
     "vitemin_page_table_JDhrUU",
+    "vitemin_page_fullbanner_section_qCtiR6",
     "instagram_9EfqFH",
     "color_driven_faq_section_LGqPXx",
     "vitemin_product_section_c4zDR9",
