@@ -873,6 +873,7 @@
     },
     "custom_liquid_jBtUJn": {
       "type": "custom-liquid",
+      "custom_css": [],
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div class=\"tocotrienol-cta\">\n        \n          <a href=\"https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&amp;ref_=aa_maas&amp;tag=maas&amp;th=1\" class=\"tocotrienol-cta-button\">Get the Free Buyer’s Guide</a>\n        \n      </div>\n\n\n<style>\n\n.tocotrienol-cta {\n    margin-top: 48px;\n    text-align: center;\n}\n\n.tocotrienol-cta-button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    padding: 16px 40px;\n    border-radius: 999px;\n    background: #086b92;\n    color: #ffffff;\n    font-weight: 600;\n    font-size: 16px;\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n\n</style>"
