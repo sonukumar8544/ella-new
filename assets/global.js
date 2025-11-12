@@ -7,6 +7,13 @@
     );
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.adaptive_height img').forEach(img => {
+    img.style.removeProperty('object-position');
+  });
+});
+
+
 const trapFocusHandlers = {};
 const warningTime = 3000
 

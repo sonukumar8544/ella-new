@@ -16,7 +16,7 @@
 
   .amazon-grid-title {
     flex: 1 1 280px;
-    font-size: {{ section.settings.title_font_size | default: 44 }}px;
+    font-size: 38px;
     font-weight: 700;
     color: {{ section.settings.title_color | default: '#1f2a36' }};
     margin: 0;
@@ -51,16 +51,20 @@
     position: relative;
     border-radius: 20px;
     padding: 28px 30px;
-    background: #ffffff;
     border: 1px solid rgba(31, 42, 54, 0.08);
     box-shadow: 0 18px 45px rgba(30, 50, 107, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     min-height: 180px;
+    background: #ffffff;
   }
 
   .amazon-card.is-highlighted {
     background: linear-gradient(132deg, #fde8c0 0%, #fff5e4 55%, #ffffff 100%);
     border-color: rgba(243, 179, 66, 0.35);
+  }
+
+  .amazon-card.is-first {
+    background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 2%, #ffffff 36%);
   }
 
   .amazon-card:hover,
@@ -193,7 +197,7 @@
     border-radius: 50%;
     border: none;
     background: rgba(36, 52, 67, 0.1);
-    color: #243443;
+    color: red;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -401,7 +405,7 @@
           data-modal-target="amazon-modal-{{ block.id }}"
           {{ block.shopify_attributes }}
         >
-          <div class="amazon-card{% if block.settings.highlight_card %} is-highlighted{% endif %}">
+          <div class="amazon-card{% if forloop.first %} is-first{% endif %}{% if block.settings.highlight_card %} is-highlighted{% endif %}">
             <div class="amazon-card-content">
               <span class="amazon-card-icon">
                 {% if block.settings.icon != blank %}
@@ -921,7 +925,8 @@
 
       modals.forEach(function(modal) {
         modal.addEventListener('click', function(event) {
-          if (event.target.matches('[data-modal-close]') || event.target === modal) {
+          var closeTrigger = event.target.closest('[data-modal-close]');
+          if (closeTrigger || event.target === modal) {
             closeModal(modal);
           }
         });

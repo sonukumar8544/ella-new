@@ -1,9 +1,9 @@
 <style>
   .amazon-tocotrienols-comparison {
     /* padding: 80px 20px; */
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
   }
 
   .amazon-comparison-header {
@@ -137,11 +137,11 @@
       >
     {% endif %}
   </div>
-  {% if section.settings.learn_more_link != blank %}
+  {% comment %} {% if section.settings.learn_more_link != blank %}
     <a href="{{ section.settings.learn_more_link }}" class="amazon-comparison-link">
       {{ section.settings.learn_more_text | default: "Learn More About Vitamin E Types" }}
     </a>
-  {% endif %}
+  {% endif %} {% endcomment %}
 </div>
 
 {% schema %}

@@ -17,7 +17,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Source</th>
+            <th scope="row" class="tocotrienol-highlight-primary">Source</th>
             <td>
               <div class="tocotrienol-cell">
                 <span>{{ section.settings.column1_source | default: "Soy / synthetic" }}</span>
@@ -127,7 +127,7 @@
     font-size: 38px;
     line-height: 1.25;
     font-weight: 400;
-    color: #1f2a36;
+    color: #374650;
     text-align: center;
     margin: 0 0 36px;
   }
@@ -161,23 +161,16 @@
     padding: 22px 28px;
     text-align: left;
     color: #2e4052;
-    background-color: #f3f8fc;
+    background-color: #d8ecff;
     border-bottom: 1px solid #d6e3f0;
   }
 
-  .tocotrienol-feature-head {
-    background-color: #e7f0f9;
-    color: #365069;
-  }
-
+  .tocotrienol-feature-head,
   .tocotrienol-table thead th:nth-child(2),
-  .tocotrienol-table thead th:nth-child(3) {
-    background-color: #f8fbff;
-  }
-
+  .tocotrienol-table thead th:nth-child(3),
   .tocotrienol-our-head {
     background-color: #d8ecff;
-    color: #0f5c8d;
+    color: #374650;
   }
 
   .tocotrienol-table tbody th {
@@ -215,20 +208,22 @@
     color: #0f4f7a;
   }
 
-  .tocotrienol-table thead th.tocotrienol-highlight-primary,
   .tocotrienol-table tbody th.tocotrienol-highlight-primary {
     background-color: #F3F7F8;
   }
 
-  .tocotrienol-table thead th.tocotrienol-highlight-secondary,
   .tocotrienol-table tbody td.tocotrienol-highlight-secondary {
     background-color: #E1F4FD;
   }
 
-  .tocotrienol-table thead th.tocotrienol-highlight-tertiary,
   .tocotrienol-table tbody td.tocotrienol-highlight-tertiary,
   .tocotrienol-our-cell.tocotrienol-highlight-tertiary {
     background-color: #d8ecff;
+  }
+
+  .tocotrienol-table thead th {
+    background-color: #d8ecff;
+    color: #374650;
   }
 
   .tocotrienol-cell {
