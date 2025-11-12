@@ -236,7 +236,7 @@
     margin: 38px 0 40px;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 18px 26px;
   }
 
@@ -258,7 +258,7 @@
   }
 
   .amazon-modal-research-chip {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 8px 20px;
@@ -270,12 +270,14 @@
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 0.6px;
+    width: fit-content;
   }
 
   .amazon-modal-research-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
   }
 
   .amazon-modal-research-card {
@@ -287,6 +289,8 @@
     flex-direction: column;
     gap: 12px;
     min-height: 220px;
+    flex: 1 1 320px;
+    max-width: 420px;
   }
 
   .amazon-modal-research-title {
@@ -304,15 +308,51 @@
     margin: 0;
   }
 
+  .amazon-modal-research-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .amazon-modal-research-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #2f3f50;
+    line-height: 1.5;
+  }
+
+  .amazon-modal-research-points svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #0b9e62;
+    margin-top: 2px;
+  }
+
   .amazon-modal-research-link {
     margin-top: auto;
     font-size: 14px;
     font-weight: 600;
-    color: #0b7a9e;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #0b7a9e 0%, #0d8bb3 100%);
+    color: #ffffff;
+    align-self: center;
+    box-shadow: 0 12px 24px rgba(11, 122, 158, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .amazon-modal-research-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(11, 122, 158, 0.35);
   }
 
   .amazon-modal-research-link svg {
@@ -330,7 +370,7 @@
     }
 
     .amazon-modal-research-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-content: center;
     }
   }
 
@@ -368,11 +408,88 @@
     }
 
     .amazon-modal-research-grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .amazon-modal-research-card {
+      flex: 1 1 100%;
+      max-width: 100%;
     }
 
     .amazon-modal-title {
       font-size: 28px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .amazon-grid-title{
+      flex: 0 !important;
+    }
+    .amazon-grid-subtitle{
+      flex: 0 !important;
+    }
+    .amazon-four-grid {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 48px !important;
+      padding-bottom: 60px !important;
+    }
+
+    .amazon-grid-header {
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .amazon-grid-title {
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 1.2;
+    }
+
+    .amazon-grid-subtitle {
+      font-size: 16px;
+    }
+
+    .amazon-card-grid {
+      gap: 16px;
+    }
+
+    .amazon-card {
+      padding: 22px 20px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(30, 50, 107, 0.08);
+    }
+
+    .amazon-card-content {
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+    }
+
+    .amazon-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+    }
+
+    .amazon-card-icon img,
+    .amazon-card-icon svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .amazon-card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .amazon-card-description {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .amazon-card-link {
+      font-size: 13px;
+      padding-bottom: 6px;
     }
   }
 </style>
@@ -479,27 +596,43 @@
           {% endif %}
         </header>
 
-        {% assign benefit_lines = block.settings.modal_benefits | split: '\n' %}
-        {% assign has_benefits = false %}
-        {% for benefit in benefit_lines %}
-          {% assign benefit_check = benefit | strip %}
-          {% if benefit_check != blank %}
-            {% assign has_benefits = true %}
+        {% assign benefit_fields = 'modal_benefit_1,modal_benefit_2,modal_benefit_3,modal_benefit_4,modal_benefit_5' | split: ',' %}
+        {% assign benefit_items_string = '' %}
+        {% for benefit_field in benefit_fields %}
+          {% assign benefit_value = block.settings[benefit_field] | strip %}
+          {% if benefit_value != blank %}
+            {% if benefit_items_string == '' %}
+              {% assign benefit_items_string = benefit_value %}
+            {% else %}
+              {% assign benefit_items_string = benefit_items_string | append: '||' | append: benefit_value %}
+            {% endif %}
           {% endif %}
         {% endfor %}
 
-        {% if has_benefits %}
-          <ul class="amazon-modal-benefits">
-            {% for benefit in benefit_lines %}
-              {% assign benefit_text = benefit | strip %}
-              {% if benefit_text != blank %}
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.543-6.543a1 1 0 011.414 0z"/>
-                  </svg>
-                  <span>{{ benefit_text }}</span>
-                </li>
+        {% if benefit_items_string == '' %}
+          {% assign legacy_benefit_lines = block.settings.modal_benefits | split: '\n' %}
+          {% for benefit in legacy_benefit_lines %}
+            {% assign legacy_text = benefit | strip %}
+            {% if legacy_text != blank %}
+              {% if benefit_items_string == '' %}
+                {% assign benefit_items_string = legacy_text %}
+              {% else %}
+                {% assign benefit_items_string = benefit_items_string | append: '||' | append: legacy_text %}
               {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% if benefit_items_string != '' %}
+          {% assign benefit_items = benefit_items_string | split: '||' %}
+          <ul class="amazon-modal-benefits">
+            {% for benefit_text in benefit_items %}
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.543-6.543a1 1 0 011.414 0z"/>
+                </svg>
+                <span>{{ benefit_text }}</span>
+              </li>
             {% endfor %}
           </ul>
         {% endif %}
@@ -509,65 +642,87 @@
         {% endif %}
 
         <div class="amazon-modal-research-grid">
-          {% if block.settings.research_1_title != blank or block.settings.research_1_body != blank %}
-            <article class="amazon-modal-research-card">
-              {% if block.settings.research_1_title != blank %}
-                <h4 class="amazon-modal-research-title">{{ block.settings.research_1_title }}</h4>
-              {% endif %}
-              {% if block.settings.research_1_body != blank %}
-                <p class="amazon-modal-research-body">{{ block.settings.research_1_body }}</p>
-              {% endif %}
-              {% if block.settings.research_1_link_url != blank and block.settings.research_1_link_label != blank %}
-                <a class="amazon-modal-research-link" href="{{ block.settings.research_1_link_url }}" target="_blank" rel="noopener">
-                  {{ block.settings.research_1_link_label }}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L14 5.414 6.707 12.707a1 1 0 11-1.414-1.414L12.586 4l-2.293-2.293a1 1 0 011.414-1.414l2.586 2.586z"/>
-                    <path d="M5 4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3v-3a1 1 0 10-2 0v3a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 100-2H5z"/>
-                  </svg>
-                </a>
-              {% endif %}
-            </article>
-          {% endif %}
+          {% for index in (1..4) %}
+            {% assign title_key = 'research_' | append: index | append: '_title' %}
+            {% assign body_key = 'research_' | append: index | append: '_body' %}
+            {% assign link_label_key = 'research_' | append: index | append: '_link_label' %}
+            {% assign link_url_key = 'research_' | append: index | append: '_link_url' %}
+            {% assign title = block.settings[title_key] | strip %}
+            {% assign summary_text = block.settings[body_key] | strip %}
+            {% assign link_label = block.settings[link_label_key] | strip %}
+            {% assign link_url = block.settings[link_url_key] | strip %}
+            {% assign points_string = '' %}
 
-          {% if block.settings.research_2_title != blank or block.settings.research_2_body != blank %}
-            <article class="amazon-modal-research-card">
-              {% if block.settings.research_2_title != blank %}
-                <h4 class="amazon-modal-research-title">{{ block.settings.research_2_title }}</h4>
+            {% for point_index in (1..4) %}
+              {% assign point_key = 'research_' | append: index | append: '_point_' | append: point_index %}
+              {% assign point_value = block.settings[point_key] | strip %}
+              {% if point_value != blank %}
+                {% if points_string == '' %}
+                  {% assign points_string = point_value %}
+                {% else %}
+                  {% assign points_string = points_string | append: '||' | append: point_value %}
+                {% endif %}
               {% endif %}
-              {% if block.settings.research_2_body != blank %}
-                <p class="amazon-modal-research-body">{{ block.settings.research_2_body }}</p>
-              {% endif %}
-              {% if block.settings.research_2_link_url != blank and block.settings.research_2_link_label != blank %}
-                <a class="amazon-modal-research-link" href="{{ block.settings.research_2_link_url }}" target="_blank" rel="noopener">
-                  {{ block.settings.research_2_link_label }}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L14 5.414 6.707 12.707a1 1 0 11-1.414-1.414L12.586 4l-2.293-2.293a1 1 0 011.414-1.414l2.586 2.586z"/>
-                    <path d="M5 4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3v-3a1 1 0 10-2 0v3a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 100-2H5z"/>
-                  </svg>
-                </a>
-              {% endif %}
-            </article>
-          {% endif %}
+            {% endfor %}
 
-          {% if block.settings.research_3_title != blank or block.settings.research_3_body != blank %}
-            <article class="amazon-modal-research-card">
-              {% if block.settings.research_3_title != blank %}
-                <h4 class="amazon-modal-research-title">{{ block.settings.research_3_title }}</h4>
-              {% endif %}
-              {% if block.settings.research_3_body != blank %}
-                <p class="amazon-modal-research-body">{{ block.settings.research_3_body }}</p>
-              {% endif %}
-              {% if block.settings.research_3_link_url != blank and block.settings.research_3_link_label != blank %}
-                <a class="amazon-modal-research-link" href="{{ block.settings.research_3_link_url }}" target="_blank" rel="noopener">
-                  {{ block.settings.research_3_link_label }}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L14 5.414 6.707 12.707a1 1 0 11-1.414-1.414L12.586 4l-2.293-2.293a1 1 0 011.414-1.414l2.586 2.586z"/>
-                    <path d="M5 4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3v-3a1 1 0 10-2 0v3a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 100-2H5z"/>
-                  </svg>
-                </a>
-              {% endif %}
-            </article>
-          {% endif %}
+            {% if points_string == '' and summary_text != '' %}
+              {% assign summary_lines = summary_text | split: '\n' %}
+              {% assign summary_points = '' %}
+              {% for summary_line in summary_lines %}
+                {% assign summary_line_text = summary_line | strip %}
+                {% if summary_line_text != blank %}
+                  {% if summary_points == '' %}
+                    {% assign summary_points = summary_line_text %}
+                  {% else %}
+                    {% assign summary_points = summary_points | append: '||' | append: summary_line_text %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              {% assign points_string = summary_points %}
+              {% assign summary_text = '' %}
+            {% endif %}
+
+            {% assign has_link = false %}
+            {% if link_url != '' and link_label != '' %}
+              {% assign has_link = true %}
+            {% endif %}
+
+            {% if title != '' or summary_text != '' or points_string != '' or has_link %}
+              <article class="amazon-modal-research-card">
+                {% if title != '' %}
+                  <h4 class="amazon-modal-research-title">{{ title }}</h4>
+                {% endif %}
+
+                {% if summary_text != '' %}
+                  <p class="amazon-modal-research-body">{{ summary_text }}</p>
+                {% endif %}
+
+                {% if points_string != '' %}
+                  {% assign points = points_string | split: '||' %}
+                  <ul class="amazon-modal-research-points">
+                    {% for point in points %}
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.543-6.543a1 1 0 011.414 0z"/>
+                        </svg>
+                        <span>{{ point }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+
+                {% if has_link %}
+                  <a class="amazon-modal-research-link" href="{{ link_url }}" target="_blank" rel="noopener">
+                    {{ link_label }}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M12.293 2.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L14 5.414 6.707 12.707a1 1 0 11-1.414-1.414L12.586 4l-2.293-2.293a1 1 0 011.414-1.414l2.586 2.586z"/>
+                      <path d="M5 4a3 3 0 00-3 3v8a3 3 0 003 3h8a3 3 0 003-3v-3a1 1 0 10-2 0v3a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 100-2H5z"/>
+                    </svg>
+                  </a>
+                {% endif %}
+              </article>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -738,10 +893,45 @@
           "default": "Keep your heart strong every day with targeted antioxidant defense and healthy circulation support."
         },
         {
+          "type": "header",
+          "content": "Modal Benefit Items"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_1",
+          "label": "Benefit Item 1",
+          "default": "Keep your heart strong every day"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_2",
+          "label": "Benefit Item 2",
+          "default": "Help maintain healthy cholesterol levels naturally"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_3",
+          "label": "Benefit Item 3",
+          "default": "Support flexible, healthy arteries and smooth blood flow"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_4",
+          "label": "Benefit Item 4",
+          "default": "Encourage long-term heart wellness through diet, movement, and lifestyle habits"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_5",
+          "label": "Benefit Item 5",
+          "default": "Protect from oxidative stress and inflammation"
+        },
+        {
           "type": "textarea",
           "id": "modal_benefits",
-          "label": "Benefit List (one per line)",
-          "default": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation"
+          "label": "Benefit List (legacy fallback)",
+          "info": "Optional legacy field. Used only if Benefit Items 1-5 are left blank.",
+          "default": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation\nSupports overall cardiovascular resilience"
         },
         {
           "type": "text",
@@ -763,7 +953,25 @@
           "type": "textarea",
           "id": "research_1_body",
           "label": "Summary",
-          "default": "In a six-week human trial, 300mg/day of annatto-derived δ- and γ-tocotrienols maintained healthy total cholesterol, LDL and triglycerides while supporting HDL status."
+          "default": "Annatto-derived tocotrienols support healthy cholesterol profiles in adults."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_1",
+          "label": "Bullet Point 1",
+          "default": "250 mg/day of annatto-derived δ- and γ-tocotrienols lowered total cholesterol (~15%) and LDL (~18%) in adults."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_2",
+          "label": "Bullet Point 2",
+          "default": "Supported triglyceride reduction (~14%) while maintaining healthy HDL levels."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_3",
+          "label": "Bullet Point 3",
+          "default": "Highlights long-term maintenance of healthy lipid balance."
         },
         {
           "type": "text",
@@ -790,7 +998,25 @@
           "type": "textarea",
           "id": "research_2_body",
           "label": "Summary",
-          "default": "Tocotrienol (150 mg) paired with CoQ10 supported healthy arterial elasticity in adults managing cardiovascular wellness goals."
+          "default": "Tocotrienol paired with additional antioxidants supports vascular flexibility and metabolic markers."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_1",
+          "label": "Bullet Point 1",
+          "default": "δ-Tocotrienol (500 mg/day) plus resveratrol improved triglycerides, HDL, waist circumference, and blood pressure."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_2",
+          "label": "Bullet Point 2",
+          "default": "Suggests support for arterial flexibility and overall vascular health."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_3",
+          "label": "Bullet Point 3",
+          "default": "Supports lifestyle-focused cardiovascular objectives."
         },
         {
           "type": "text",
@@ -817,7 +1043,25 @@
           "type": "textarea",
           "id": "research_3_body",
           "label": "Summary",
-          "default": "Summarized evidence that tocotrienols help maintain normal CRP, TNF-α, and hs-CRP values in adults seeking cardiovascular support."
+          "default": "Published reviews highlight antioxidant and anti-inflammatory benefits for cardiovascular wellness."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_1",
+          "label": "Bullet Point 1",
+          "default": "δ- and γ-tocotrienols reduced oxidative stress and inflammatory markers such as CRP, TNF-α, and IL-6."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_2",
+          "label": "Bullet Point 2",
+          "default": "Supports cardiovascular wellness via antioxidant and anti-inflammatory pathways."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_3",
+          "label": "Bullet Point 3",
+          "default": "Encourages resilience against day-to-day oxidative stress."
         },
         {
           "type": "text",
@@ -828,6 +1072,51 @@
         {
           "type": "url",
           "id": "research_3_link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "header",
+          "content": "Research Item 4"
+        },
+        {
+          "type": "text",
+          "id": "research_4_title",
+          "label": "Title",
+          "default": "Mechanistic Insights – What It Means for Heart Health"
+        },
+        {
+          "type": "textarea",
+          "id": "research_4_body",
+          "label": "Summary",
+          "default": "Mechanistic research outlines how tocotrienols help maintain balanced lipid metabolism and heart health."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_1",
+          "label": "Bullet Point 1",
+          "default": "Tocotrienols modulate HMG-CoA reductase to support balanced cholesterol synthesis."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_2",
+          "label": "Bullet Point 2",
+          "default": "Helps maintain healthy lipid levels and arterial flexibility as part of daily heart habits."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_3",
+          "label": "Bullet Point 3",
+          "default": "Strengthens daily heart wellness routines with nutrient support."
+        },
+        {
+          "type": "text",
+          "id": "research_4_link_label",
+          "label": "Link Label",
+          "default": "Read more →"
+        },
+        {
+          "type": "url",
+          "id": "research_4_link_url",
           "label": "Link URL"
         }
       ]
