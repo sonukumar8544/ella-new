@@ -576,6 +576,9 @@
         "point_3jTeb4",
         "point_8xLYQc"
       ],
+      "custom_css": [
+        "@media (max-width: 768px) {.vitamin-fullbanner {display: none; }}"
+      ],
       "name": "Vitamin full banner",
       "settings": {
         "background_image": "shopify://shop_images/1910dbc39f80eb86b78a21f3a30ffc650a660252.png",
@@ -583,6 +586,22 @@
         "heading": "Why Annatto Is the Best Source",
         "subheading": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>",
         "side_image_alt": "Annatto Tocotrienols Bottles"
+      }
+    },
+    "content_image_section_artwRU": {
+      "type": "content-image-section",
+      "name": "Content Image Section",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Div_section_7.png",
+        "image_mobile": "shopify://shop_images/Div_section_6.png",
+        "image_alt": "Section image",
+        "max_width": 1200,
+        "padding_vertical": 64,
+        "padding_horizontal": 20,
+        "border_radius": 0,
+        "hide_section": false,
+        "hide_on_desktop": true,
+        "hide_on_mobile": false
       }
     },
     "vitemin_page_table_JDhrUU": {
@@ -965,6 +984,7 @@
     "compare_two_col_sections_P7kA8Q",
     "product_zig_zag_zj7cpx",
     "vitemin_page_fullbanner_section_qCtiR6",
+    "content_image_section_artwRU",
     "vitemin_page_table_JDhrUU",
     "ennatto_two_col_sections_L4MGnX",
     "instagram_9EfqFH",
