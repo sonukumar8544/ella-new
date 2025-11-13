@@ -183,31 +183,47 @@
     overflow-y: auto;
     background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 5%, #ffffff 8%);
     border-radius: 28px;
-    padding: 48px 56px;
+    padding: 56px 64px 48px;
     box-shadow: 0 36px 80px rgba(18, 39, 54, 0.25);
     z-index: 1;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+  }
+
+  .amazon-modal-dialog::-webkit-scrollbar {
+    display: none;
   }
 
   .amazon-modal-close {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 44px;
-    height: 44px;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: none;
-    background: rgba(36, 52, 67, 0.1);
-    color: red;
+    border: 1px solid rgba(31, 42, 54, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2a36;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 12px 24px rgba(23, 38, 51, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
 
-  .amazon-modal-close:hover {
-    background: rgba(36, 52, 67, 0.18);
-    transform: rotate(90deg);
+  .amazon-modal-close:hover,
+  .amazon-modal-close:focus-visible {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(23, 38, 51, 0.22);
+  }
+
+  .amazon-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    color: red;
   }
 
   .amazon-modal-heading {
@@ -277,10 +293,13 @@
   }
 
   .amazon-modal-research-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 22px;
-    justify-content: center;
+  }
+
+  .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+    grid-column: 1 / -1;
   }
 
   .amazon-modal-research-card {
@@ -291,9 +310,9 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-height: 220px;
+    /* min-height: 220px; */
     flex: 1 1 320px;
-    max-width: 420px;
+    /* max-width: 420px; */
   }
 
   .amazon-modal-research-title {
@@ -366,11 +385,16 @@
     }
 
     .amazon-modal-dialog {
-      padding: 40px 32px;
+      padding: 48px 36px 40px;
     }
 
+    .amazon-modal-close {
+    top: 6px;
+    right: 6px;
+}
+
     .amazon-modal-research-grid {
-      justify-content: center;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
     }
   }
 
@@ -398,7 +422,7 @@
     }
 
     .amazon-modal-dialog {
-      padding: 32px 24px;
+      padding: 15px;
       border-radius: 22px;
     }
 
@@ -408,12 +432,14 @@
     }
 
     .amazon-modal-research-grid {
-      flex-direction: column;
-      align-items: stretch;
+      grid-template-columns: 1fr;
+    }
+
+    .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+      grid-column: auto;
     }
 
     .amazon-modal-research-card {
-      flex: 1 1 100%;
       max-width: 100%;
     }
 

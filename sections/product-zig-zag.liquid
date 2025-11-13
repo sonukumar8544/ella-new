@@ -1,445 +1,136 @@
-<section id="section-{{ section.id }}" class="vitamin-highlight">
-  <div class="vitamin-highlight__wrapper">
-    {% if section.settings.heading != blank %}
-      <h2 class="vitamin-highlight__heading">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
 
-    {% if section.settings.subheading != blank %}
-      <p class="vitamin-highlight__subheading">
-        {{ section.settings.subheading }}
-      </p>
-    {% endif %}
-
-    {% if section.settings.description != blank %}
-      <p class="vitamin-highlight__description">
-        {{ section.settings.description }}
-      </p>
-    {% endif %}
-
-    {% if section.blocks.size > 0 %}
-      <div class="vitamin-highlight__list" role="list">
-        {% for block in section.blocks %}
-          {% assign is_even = forloop.index0 | modulo: 2 %}
-          <div
-            class="vitamin-highlight__item vitamin-highlight__item--{% if is_even == 0 %}left{% else %}right{% endif %}{% if block.type == 'rating' %} vitamin-highlight__item--rating{% endif %}"
-            role="listitem"
-            {{ block.shopify_attributes }}
-          >
-            {% if block.type == 'feature' %}
-              {% if block.settings.icon_image != blank or block.settings.icon_text != blank %}
-                <div class="vitamin-highlight__media">
-                  {% if block.settings.icon_image != blank %}
-                    {{ block.settings.icon_image | image_url: width: 160 | image_tag:
-                      widths: '80,120,160',
-                      class: 'vitamin-highlight__image',
-                      loading: 'lazy',
-                      alt: block.settings.icon_alt | default: block.settings.title }}
-                  {% else %}
-                    <div class="vitamin-highlight__badge">
-                      {{ block.settings.icon_text }}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endif %}
-            {% endif %}
-
-            <div class="vitamin-highlight__content">
-              {% if block.settings.title != blank or block.settings.description != blank %}
-                <p class="vitamin-highlight__text">
-                  {% if block.settings.title != blank %}
-                    <span class="vitamin-highlight__item-title">
-                      {{ block.settings.title }}
-                    </span>
-                  {% endif %}
-                  {% if block.settings.description != blank %}
-                    <span class="vitamin-highlight__item-description">
-                      {{ block.settings.description }}
-                    </span>
-                  {% endif %}
-                </p>
-              {% endif %}
-
-              {% if block.type == 'rating' and block.settings.show_stars %}
-                <div class="vitamin-highlight__rating">
-                  {% if block.settings.star_image != blank %}
-                    {{ block.settings.star_image | image_url: width: 220 | image_tag:
-                      widths: '140,180,220',
-                      loading: 'lazy',
-                      alt: block.settings.star_alt | default: block.settings.title }}
-                  {% else %}
-                    <span>★ ★ ★ ★ ★</span>
-                  {% endif %}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
-      <div class="vitamin-highlight__cta">
-        <a class="vitamin-highlight__cta-link" href="{{ section.settings.cta_link }}">
-          {{ section.settings.cta_text }}
-        </a>
-      </div>
-    {% endif %}
+<section class="amazon-page-dev-sec-container-main">
+<div class="amazon-page-dev-sec-container">
+  <div class="amazon-page-dev-sec-heading">
+    Not all <strong>Tocotrienols</strong> are<br> <strong>equal either</strong>
   </div>
+  <div class="amazon-page-dev-sec-description">
+    Our formula is designed for maximum purity, potency and safety -
+    so you get the result science promised.
+  </div>
+  <ul class="amazon-page-dev-sec-features">
+    <li class="amazon-page-dev-sec-feature">
+      <strong>100% Annatto Purity</strong> - Richest natural source of delta and gamma tocotrienols
+    </li>
+    <li class="amazon-page-dev-sec-feature">
+      <strong>Clinically Dosage</strong> - 300mg NPN-approved therapeutic level
+    </li>
+    <li class="amazon-page-dev-sec-feature">
+      <strong>Third-Party Lab Tested</strong> – Verified for purity & potency
+    </li>
+    <li class="amazon-page-dev-sec-feature">
+      <strong>GMP-Certified Manufacturing</strong> – Produced in FDA-registered facilities
+    </li>
+    <li class="amazon-page-dev-sec-feature border-none-boottomms">
+      <strong>Amazon's Choice</strong> – Rated 4.8/5 stars<br> by verified buyers
+    </li>
+  </ul>
+  <div class="amazon-page-dev-sec-rating">
+    <div class="amazon-page-dev-sec-stars">★★★★☆</div>
+  </div>
+</div>
 </section>
-
 <style>
-  #section-{{ section.id }}.vitamin-highlight {
-    padding: clamp(58px, 10vw, 110px) 20px;
-    background: #dceffd;
-  }
 
-  #section-{{ section.id }} .vitamin-highlight__wrapper {
-    max-width: 760px;
-    margin: 0 auto;
+  .amazon-page-dev-sec-container-main{
+    background-color: #F1FAFE;
+  }
+.amazon-page-dev-sec-container {
+    max-width: 720px;
+    padding: 70px 0px;
     text-align: center;
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #1a3244;
-  }
+    margin: auto;
+    
+}
 
-  #section-{{ section.id }} .vitamin-highlight__heading {
-    font-size: clamp(32px, 5.8vw, 40px);
+.border-none-boottomms{
+  border-bottom: none !important;
+  padding-bottom: 0px !important;
+}
+
+  .amazon-page-dev-sec-heading {
     font-weight: 400;
-    line-height: 1.35;
-    margin: 0;
-    color: #173042;
+    font-size: 35px;
+    color: #374650;
+    margin-bottom: 12px;
+    line-height: 1.2;
   }
 
-  #section-{{ section.id }} .vitamin-highlight__heading em {
+  .amazon-page-dev-sec-heading strong {
     font-style: italic;
     font-weight: 600;
-    color: #315a70;
   }
 
-  #section-{{ section.id }} .vitamin-highlight__subheading {
-    margin: 18px 0 6px;
-    font-size: 24px;
+  .amazon-page-dev-equal {
+    display: block;
+    font-size: 1.5rem;
     font-style: italic;
-    font-weight: 700;
-    color: #173042;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__description {
-    margin: 0 auto clamp(42px, 6vw, 62px);
-    max-width: 540px;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #365263;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__list {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(18px, 3.5vw, 26px);
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item {
-    display: flex;
-    align-items: center;
-    gap: clamp(16px, 3.2vw, 28px);
-    padding: clamp(18px, 3.5vw, 26px) clamp(22px, 4.4vw, 44px);
-    text-align: left;
-    position: relative;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item::after {
-    content: "";
-    position: absolute;
-    left: clamp(22px, 4.4vw, 44px);
-    right: clamp(22px, 4.4vw, 44px);
-    bottom: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.8);
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item:last-child::after {
-    display: none;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item--right {
-    flex-direction: row-reverse;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__media {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__image {
-    width: clamp(60px, 8vw, 82px);
-    height: clamp(60px, 8vw, 82px);
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 10px 24px rgba(40, 104, 134, 0.25);
-    border: 5px solid rgba(40, 104, 134, 0.12);
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__badge {
-    width: clamp(60px, 8vw, 82px);
-    height: clamp(60px, 8vw, 82px);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: #ffffff;
-    border: 2px solid #b3cedc;
-    font-weight: 700;
-    font-size: 16px;
-    color: #26272c;
-    box-shadow: 0 8px 22px rgba(46, 106, 133, 0.25);
-    text-transform: uppercase;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__content {
-    flex: 1 1 auto;
-    text-align: left;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item--right .vitamin-highlight__content {
-    text-align: right;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__text {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 10px;
-    margin: 0;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item-title {
-    font-size: 19px;
-    font-style: italic;
-    color: #163549;
-    display: inline-flex;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item-description {
-    font-size: 16px;
-    line-height: 1.65;
-    color: #315363;
-    display: inline-flex;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item--rating {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__item--rating .vitamin-highlight__content {
-    text-align: center;
-    max-width: 380px;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__rating {
-    margin-top: 10px;
-    font-size: 24px;
-    color: #fbbb31;
-    letter-spacing: 6px;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__rating img {
-    max-width: 170px;
-    width: 100%;
-    height: auto;
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__cta {
-    margin-top: clamp(38px, 6vw, 58px);
-  }
-
-  #section-{{ section.id }} .vitamin-highlight__cta-link {
-    font-size: 15px;
     font-weight: 600;
-    color: #155c7b;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    transition: color 0.2s ease;
+    margin-top: 2px;
   }
 
-  #section-{{ section.id }} .vitamin-highlight__cta-link:hover {
-    color: #0f4359;
+  .amazon-page-dev-sec-description {
+    font-size: 17px;
+    color: #373737;
+    margin-bottom: 20px;
+    max-width: 510px;
+    margin: auto;
+}
+
+
+
+  .amazon-page-dev-sec-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px 0;
   }
 
-  @media (max-width: 840px) {
-    #section-{{ section.id }} .vitamin-highlight__item {
-      flex-direction: column;
-      text-align: center;
-      border-radius: 36px;
-      padding: clamp(20px, 6vw, 32px);
-    }
-
-    #section-{{ section.id }} .vitamin-highlight__item--right {
-      flex-direction: column;
-    }
-
-    #section-{{ section.id }} .vitamin-highlight__content,
-    #section-{{ section.id }} .vitamin-highlight__item--right .vitamin-highlight__content {
-      text-align: center;
-    }
+  .amazon-page-dev-sec-feature {
+    margin-bottom: 12px;
+    color: #373737;
+    line-height: 1.6;
+    font-size: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(214, 214, 214, 1);
+    padding: 0 20px 20px;
+    border-image: linear-gradient(
+      to right,
+      rgba(214, 214, 214, 0.2),
+      rgba(214, 214, 214, 1),
+      rgba(214, 214, 214, 0.2)
+    ) 1;
   }
 
-  @media (max-width: 480px) {
-    #section-{{ section.id }} .vitamin-highlight__heading {
-      font-size: clamp(28px, 8vw, 34px);
-    }
+  .amazon-page-dev-sec-feature strong {
+    font-weight: 400;
+    font-style: italic;
+    color: #373737;
+  }
+
+  .amazon-page-dev-sec-rating {
+    margin-top: 20px;
+    font-size: 1.06rem;
+    color: #434343;
+  }
+
+  .amazon-page-dev-sec-stars {
+    color: #ffc107;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin: 7px 0 0 0;
   }
 </style>
 
-{% schema %}
-{
-  "name": "Vitamin Feature Highlight",
-  "settings": [
-    {
-      "type": "textarea",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Not all <em>Tocotrienols</em> are"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subtitle",
-      "default": "equal either"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Our formula is designed for maximum purity, potency and safety — so you get the result science promised."
-    },
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "Link text",
-      "default": "Learn More About Vitamin E Types"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "Link URL"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_image",
-          "label": "Icon image"
-        },
-        {
-          "type": "text",
-          "id": "icon_alt",
-          "label": "Icon alt text"
-        },
-        {
-          "type": "text",
-          "id": "icon_text",
-          "label": "Icon text (used if no image)",
-          "info": "Displays inside a circular badge when no image is selected."
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Feature title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Feature description"
-        }
-      ]
-    },
-    {
-      "type": "rating",
-      "name": "Rating highlight",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Amazon’s Choice"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Rated 4.8/5 stars by verified buyers"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_stars",
-          "label": "Show star rating",
-          "default": true
-        },
-        {
-          "type": "image_picker",
-          "id": "star_image",
-          "label": "Star image (optional)"
-        },
-        {
-          "type": "text",
-          "id": "star_alt",
-          "label": "Star image alt text"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Vitamin Feature Highlight",
-      "blocks": [
-        {
-          "type": "feature",
-          "settings": {
-            "title": "100% Annatto Purity",
-            "description": "Richest natural source of delta and gamma tocotrienols"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "title": "Clinically Dosage",
-            "description": "300mg NPN-approved therapeutic level"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "title": "Third-Party Lab Tested",
-            "description": "Verified for purity & potency"
-          }
-        },
-        {
-          "type": "feature",
-          "settings": {
-            "icon_text": "GMP",
-            "title": "GMP-Certified Manufacturing",
-            "description": "Produced in FDA-registered facilities"
-          }
-        },
-        {
-          "type": "rating",
-          "settings": {
-            "title": "Amazon’s Choice",
-            "description": "Rated 4.8/5 stars by verified buyers",
-            "show_stars": true
-          }
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
 
+{% schema %}
+  {
+    "name": "zig zag feature",
+    "settings": [
+    ],
+    "presets": [
+      {
+        "name": "zig zag feature"
+      }
+    ]
+  }
+  {% endschema %}

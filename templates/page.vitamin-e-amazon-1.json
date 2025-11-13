@@ -171,7 +171,7 @@
         "right_item_VrUVFq": {
           "type": "right_item",
           "settings": {
-            "text": "Up to 50× stronger antioxidant capacity"
+            "text": "Up to <strong>50× stronger</strong> antioxidant capacity"
           }
         },
         "right_item_brDtmn": {
@@ -183,7 +183,7 @@
         "right_item_LxRFMG": {
           "type": "right_item",
           "settings": {
-            "text": "Backed by 30+ years of peer-reviewed research"
+            "text": "Backed by <strong>30+ years of peer-reviewed research</strong>"
           }
         },
         "right_item_rrjDzm": {
@@ -467,6 +467,7 @@
     },
     "compare_two_col_sections_P7kA8Q": {
       "type": "compare-two-col-sections",
+      "disabled": true,
       "name": "Tocotrienols Comparison",
       "settings": {
         "title": "",
@@ -479,69 +480,14 @@
     },
     "product_zig_zag_zj7cpx": {
       "type": "product-zig-zag",
-      "blocks": {
-        "feature_jmRqPR": {
-          "type": "feature",
-          "settings": {
-            "icon_alt": "",
-            "icon_text": "",
-            "title": "100% Annatto Purity",
-            "description": "Richest natural source of delta and gamma tocotrienols"
-          }
-        },
-        "feature_ameC4G": {
-          "type": "feature",
-          "settings": {
-            "icon_alt": "",
-            "icon_text": "",
-            "title": "Clinically Dosage",
-            "description": "300mg NPN-approved therapeutic level"
-          }
-        },
-        "feature_HFVH8H": {
-          "type": "feature",
-          "settings": {
-            "icon_alt": "",
-            "icon_text": "",
-            "title": "Third-Party Lab Tested",
-            "description": "Verified for purity & potency"
-          }
-        },
-        "feature_C6xhg6": {
-          "type": "feature",
-          "settings": {
-            "icon_alt": "",
-            "icon_text": "GMP",
-            "title": "GMP-Certified Manufacturing",
-            "description": "Produced in FDA-registered facilities"
-          }
-        },
-        "rating_7DPbpA": {
-          "type": "rating",
-          "settings": {
-            "title": "Amazon’s Choice",
-            "description": "Rated 4.8/5 stars by verified buyers",
-            "show_stars": true,
-            "star_alt": ""
-          }
-        }
-      },
-      "block_order": [
-        "feature_jmRqPR",
-        "feature_ameC4G",
-        "feature_HFVH8H",
-        "feature_C6xhg6",
-        "rating_7DPbpA"
-      ],
       "disabled": true,
       "name": "Vitamin Feature Highlight",
-      "settings": {
-        "heading": "Not all <em>Tocotrienols</em> are",
-        "subheading": "equal either",
-        "description": "Our formula is designed for maximum purity, potency and safety — so you get the result science promised.",
-        "cta_text": "Learn More About Vitamin E Types",
-        "cta_link": ""
-      }
+      "settings": {}
+    },
+    "product_zig_zag_DKrkCn": {
+      "type": "product-zig-zag",
+      "name": "zig zag feature",
+      "settings": {}
     },
     "vitemin_page_fullbanner_section_qCtiR6": {
       "type": "vitemin-page-fullbanner-section",
@@ -911,21 +857,126 @@
         "product2_bottle_info": "(30-count bottle)",
         "product2_button_label": "Order Now",
         "product2_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
-        "product3_image": "shopify://shop_images/Frame_1618873547.png",
+        "product3_image": "shopify://shop_images/Frame_1618873546.png",
         "product3_hover_image": "shopify://shop_images/Group_1000004422_281a4fdb-a47c-46df-a262-ca5b3138d980.png",
-        "product3_headline": "150+ Subscription Plan",
-        "product3_feature_1": "Best value",
-        "product3_feature_2": "Auto-delivery",
+        "product3_headline": "300mg Advanced Formula",
+        "product3_feature_1": "High absorption",
+        "product3_feature_2": "Clinically dosed",
         "product3_feature_3": "",
         "product3_badge_title": "150+",
         "product3_badge_subtitle": "Daily Formula",
         "product3_badge_caption": "Subscription",
-        "product3_price": "$0.95/day",
-        "product3_bottle_info": "As low as",
+        "product3_price": "$1.27/day",
+        "product3_bottle_info": "(60-count bottle)",
         "product3_button_label": "Order Now",
         "product3_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
         "cta_button_text": "Shop Tocotrienol Now",
         "cta_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
+      }
+    },
+    "custom_liquid_8DztYg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\nRelated Products   </h2>\n     </div>\n</section>\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n</style>"
+      }
+    },
+    "16409351508cd2f3e1": {
+      "type": "product-tab-block",
+      "blocks": {
+        "product_tabs_x6FH6N": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "All Product",
+            "collection": "vitemin-collection-page"
+          }
+        }
+      },
+      "block_order": [
+        "product_tabs_x6FH6N"
+      ],
+      "custom_css": [
+        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}",
+        ".product-tab-block .list-product-tabs {display: none;}",
+        ".slider-progress-bar {display: none !important;}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "product_bg": "#f2f3f9",
+        "product_bg_gradient": "",
+        "product_block_layout": "slider",
+        "product_block_limit": 20,
+        "product_block_title": "",
+        "fontsize_title": 20,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 0,
+        "enable_border_title": true,
+        "border_color_title": "#e0e0e0",
+        "enable_border_title2": true,
+        "border_color_title2": "#1d5dd9",
+        "color_title": "#36454f",
+        "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 12,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "image_behavior": "none",
+        "product_block_per_row": "4",
+        "product_block_infinite_scroll": true,
+        "min_width_button": "",
+        "product_block_dots": false,
+        "product_block_dots_mb": false,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": true,
+        "product_block_arrows_custom_position": true,
+        "product_block_progress_bar": true,
+        "enable_infinite": true,
+        "product_block_show": "4",
+        "product_block_per_view": "1",
+        "show_half": true,
+        "scroll_height": 5,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#086b92",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 25,
+        "tab_title_style": "style_1",
+        "layout_mobile": "grid",
+        "mg_bottom_title_tab": 30,
+        "type_tab_font": "font_2",
+        "separation": false,
+        "style_separation": "style2",
+        "color_separation": "#bebebe",
+        "enable_scroll_title": true,
+        "fontsize_tab": 16,
+        "fontsize_tab_mb": 15,
+        "font_weight_tab": "600",
+        "font_weight_active_tab": "600",
+        "spacing_between_title": 0,
+        "line_height_tab": 30,
+        "line_height_tab_mobile": 24,
+        "border_tab_radius": 6,
+        "min_width_tab": 60,
+        "border_width_tab": 1,
+        "tab_align": "center",
+        "color_tab": "#086b92",
+        "border_color_tab": "#086b92",
+        "bg_color_tab": "rgba(0,0,0,0)",
+        "bg_color_gradient_tab": "",
+        "color_tab_active": "#ffffff",
+        "border_color_tab_active": "",
+        "bg_color_tab_active": "#086b92",
+        "bg_color_gradient_tab_active": "",
+        "mg_top_desktop": 45,
+        "mg_top_tablet": 45,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 25
       }
     },
     "eto_trust_section_AEXya3": {
@@ -982,6 +1033,7 @@
     "four_grid_block_VPbHWd",
     "compare_two_col_sections_P7kA8Q",
     "product_zig_zag_zj7cpx",
+    "product_zig_zag_DKrkCn",
     "vitemin_page_fullbanner_section_qCtiR6",
     "content_image_section_artwRU",
     "vitemin_page_table_JDhrUU",
@@ -990,6 +1042,8 @@
     "color_driven_faq_section_LGqPXx",
     "custom_liquid_jBtUJn",
     "vitemin_product_section_c4zDR9",
+    "custom_liquid_8DztYg",
+    "16409351508cd2f3e1",
     "eto_trust_section_AEXya3"
   ]
 }
