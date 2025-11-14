@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "shogun-helper": {
       "type": "shogun-helper",
@@ -16,17 +16,42 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "dr_barry_tan_banner_Am8eEm": {
+      "type": "dr-barry-tan-banner",
+      "name": "dr-barry-tan-banner",
+      "settings": {
+        "heading": "30+ Years of Tocotrienols by Dr. Barrie Tan",
+        "subheading": "The turning points that took it from SEED to SCIENCE.",
+        "button_label": "Shop Tocotrienols",
+        "button_link": "shopify://pages/alex",
+        "button_open_new_tab": false,
+        "image": "shopify://shop_images/Image_wHPEsYa9YHcGTTHOJvS0mO9XY_jpg.png",
+        "image_alt": "Portrait of Dr. Barrie Tan",
+        "background_color": "#0b6c8d",
+        "card_background": "#0a6c8d",
+        "subheading_color": "#d8ecf5",
+        "button_text_color": "#0b6c8d",
+        "button_icon_background": "#0b6c8d",
+        "button_icon_color": "#ffffff",
+        "section_padding": 48,
+        "border_radius": 28,
+        "image_border_radius": 20,
+        "max_width": 1100
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "dr_barry_tan_banner_Am8eEm"
   ]
 }
