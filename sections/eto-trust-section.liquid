@@ -1,3 +1,21 @@
+{% comment %} add here new div for 90 day satisfection garanty {% endcomment %}
+
+<div class="amazon-patti-sec">
+  <div class="amazon-patti-sec__container">
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">90-DAY SATISFACTION GUARANTEE</span>
+    </div>
+    <div class="amazon-patti-sec__divider" aria-hidden="true"></div>
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">SUPPORT 24/7</span>
+    </div>
+    <div class="amazon-patti-sec__divider" aria-hidden="true"></div>
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">FREE SHIPPING</span>
+    </div>
+  </div>
+</div>
+
 <div class="eto-amazon-trust-banner">
   <div class="eto-amazon-trust-banner__container">
     <div class="eto-amazon-trust-banner__content">
@@ -36,6 +54,68 @@
 </div>
 
 <style>
+  .amazon-patti-sec {
+    background-color: #08698f;
+    padding: 20px 16px;
+  }
+
+  .amazon-patti-sec__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .amazon-patti-sec__item {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .amazon-patti-sec__text {
+    color: #F1FAFE;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .amazon-patti-sec__divider {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .amazon-patti-sec {
+      padding: 14px 0;
+    }
+
+    .amazon-patti-sec__container {
+      max-width: none;
+      padding: 0 16px;
+      gap: 32px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .amazon-patti-sec__container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .amazon-patti-sec__item {
+      flex: 0 0 auto;
+    }
+
+    .amazon-patti-sec__text {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+  }
+
   .eto-amazon-trust-banner {
     background-color: {{ section.settings.background_color | default: '#fff9e6' }};
     padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px;
@@ -56,8 +136,8 @@
   
   .eto-amazon-trust-banner__heading {
     font-family: 'Nunito', {{ section.settings.heading_font_family | default: 'sans-serif' }};
-    font-size: {{ section.settings.heading_font_size | default: 2.4 }}rem;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
     color: {{ section.settings.heading_color | default: '#314154' }};
     line-height: 1.2;
     margin: 0;

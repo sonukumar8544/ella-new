@@ -1,0 +1,357 @@
+
+
+
+
+<section class="vitamin-feature" aria-label="{{ section.settings.heading | strip_html }}">
+  <div class="vitamin-feature__inner">
+    <div class="vitamin-feature__media">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 900 | image_tag:
+          loading: 'lazy',
+          class: 'vitamin-feature__image',
+          sizes: '(min-width: 1000px) 480px, (min-width: 768px) 50vw, 100vw'
+        }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'vitamin-feature__placeholder' }}
+      {% endif %}
+    </div>
+    <div class="vitamin-feature__content">
+      {% if section.settings.heading != blank %}
+        <h2 class="vitamin-feature__heading">
+          {{ section.settings.heading | newline_to_br }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="vitamin-feature__description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="vitamin-feature__cards">
+          {% for block in section.blocks %}
+            <div class="vitamin-feature__card" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <h3 class="vitamin-feature__card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.points != blank %}
+                <ul class="vitamin-feature__card-list">
+                  {% assign points = block.settings.points | newline_to_br | split: '<br />' %}
+                  {% for point in points %}
+                    {% assign trimmed_point = point | strip %}
+                    {% if trimmed_point != blank %}
+                      <li class="vitamin-feature__card-item">{{ trimmed_point }}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a
+          class="vitamin-feature__button"
+          href="{{ section.settings.button_link | default: '#' }}"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #shopify-section-{{ section.id }} .vitamin-feature {
+    background-color: #f8fbfd;
+    padding: 80px 20px;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__media {
+    flex: 0 0 45%;
+    max-width: 45%;
+    display: flex;
+    justify-content: left;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__image {
+    width: 100%;
+    height: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__placeholder {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    background: #e3eef6;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__content {
+    flex: 0 0 55%;
+    max-width: 55%;
+    color: #086B92;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__heading {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0 0 24px;
+    color: #086B92;
+    font-weight: 500;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__description {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 32px;
+    color: #086B92;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__card {
+    background-color: #ffffff;
+    border: 1px solid rgba(15, 79, 122, 0.2);
+    border-radius: 14px;
+    padding: 15px 8px 14px 15px;
+    box-shadow: 0 10px 24px rgba(15, 79, 122, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__card-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 0 16px;
+    color: #086B92;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__card-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__card-item {
+    position: relative;
+    padding-left: 14px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #086B92;
+    margin-bottom: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__card-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #086B92;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: #086B92;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__button::after {
+    content: '›';
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(25, 136, 182, 0.3);
+  }
+
+  #shopify-section-{{ section.id }} .vitamin-feature__button:focus {
+    outline: 2px solid rgba(25, 136, 182, 0.6);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 1300px){
+    #shopify-section-{{ section.id }} .vitamin-feature__inner {
+    gap: 40px !important;
+  }
+  }
+
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .vitamin-feature__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__heading {
+    font-weight: 700;
+  }
+    
+    #shopify-section-{{ section.id }} .vitamin-feature__image {
+   max-width: 1000px !important;
+  }
+
+
+
+
+    #shopify-section-{{ section.id }} .vitamin-feature__content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__media {
+      flex: 1 1 100%;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .vitamin-feature {
+      padding: 60px 16px;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__heading {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__description {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__cards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      text-align: left;
+    }
+
+    #shopify-section-{{ section.id }} .vitamin-feature__button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Vitamin image columns",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Not all Tocotrienols\nare equal either"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We’re the only 100% pure, hermetically sealed Tocotrienols — no additives, no fillers, no fake color. Just nature’s true oil, color shifts and all."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_card",
+      "name": "Info card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "points",
+          "label": "Bullet points",
+          "default": "100% annatto-derived\nHermetically sealed; no additives, no fillers\nNo artificial colors — natural oil, natural color shifts"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vitamin image with columns",
+      "blocks": [
+        {
+          "type": "info_card",
+          "settings": {
+            "title": "Purity",
+            "points": "100% annatto-derived\nHermetically sealed; no additives, no fillers\nNo artificial colors — natural oil, natural color shifts"
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "title": "Potency",
+            "points": "Clinically backed 300 mg therapeutic strength"
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "title": "Safety",
+            "points": "Third-party tested for purity & potency\nMade in FDA-registered, GMP-certified facilities\n4.8/5+ trusted by real users"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
