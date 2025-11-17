@@ -54,11 +54,13 @@
         "author_linkedin": "https://www.linkedin.com/in/dr-laura-pipher-495573122/"
       }
     },
-    "author_blog_card_fNQAGx": {
-      "type": "author-blog-card",
-      "name": "author-blog-card",
+    "blog_review_doctor_eTpAWV": {
+      "type": "blog-review-doctor",
+      "name": "blog-card-review-doctor",
       "settings": {
-        "blog_author_name": "Dr. Laura Pipher"
+        "blog_author_name": "dr-laura-pipher",
+        "blog_dr_name": "Dr. Laura Pipher",
+        "review_dr_page": "dr-laura-pipher"
       }
     }
   },
@@ -67,6 +69,6 @@
     "main",
     "shogun-optimizer",
     "author_section_JHVgc8",
-    "author_blog_card_fNQAGx"
+    "blog_review_doctor_eTpAWV"
   ]
 }
