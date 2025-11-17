@@ -63,12 +63,20 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/naji-abou-ali-47986812b/"
       }
+    },
+    "author_blog_card_UmE4k9": {
+      "type": "author-blog-card",
+      "name": "author-blog-card",
+      "settings": {
+        "blog_author_name": ""
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_rNCBWd"
+    "author_section_rNCBWd",
+    "author_blog_card_UmE4k9"
   ]
 }
