@@ -1,0 +1,167 @@
+<section class="barry-tan-quote-section" id="barry-tan-quote-{{ section.id }}">
+  <div class="barry-tan-quote-container">
+    {% if section.settings.quote != blank %}
+      <blockquote class="barry-tan-quote">
+        {{ section.settings.quote }}
+      </blockquote>
+    {% endif %}
+    
+    {% if section.settings.attribution != blank %}
+      <p class="barry-tan-attribution">
+        {{ section.settings.attribution }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #barry-tan-quote-{{ section.id }} {
+    background-color: #006A91;
+    padding: {{ section.settings.section_padding_top | default: 100 }}px 20px {{ section.settings.section_padding_bottom | default: 100 }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #barry-tan-quote-{{ section.id }} .barry-tan-quote-container {
+    max-width: {{ section.settings.max_width | default: 900 }}px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+
+  #barry-tan-quote-{{ section.id }} .barry-tan-quote {
+    font-size: 25px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-style: normal;
+    white-space: pre-line;
+  }
+
+  #barry-tan-quote-{{ section.id }} .barry-tan-attribution {
+    font-weight: 400;
+    color: #ffffff;
+    margin: 32px 0 0;
+    line-height: 1.4;
+  }
+
+  #barry-tan-quote-{{ section.id }} .barry-tan-attribution::before {
+    content: "— ";
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    #barry-tan-quote-{{ section.id }} {
+      padding: 80px 20px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    #barry-tan-quote-{{ section.id }} {
+      padding: 60px 20px;
+    }
+
+    #barry-tan-quote-{{ section.id }} .barry-tan-quote {
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    #barry-tan-quote-{{ section.id }} .barry-tan-attribution {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #barry-tan-quote-{{ section.id }} {
+      padding: 50px 16px;
+    }
+
+    #barry-tan-quote-{{ section.id }} .barry-tan-quote {
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    #barry-tan-quote-{{ section.id }} .barry-tan-attribution {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Barry Tan Quote Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "Nature provides the perfect blueprint.\nOur role as scientists is to identify these\ncompounds and preserve their integrity."
+    },
+    {
+      "type": "text",
+      "id": "attribution",
+      "label": "Attribution",
+      "default": "Dr. Barrie Tan, Ph.D"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Top Padding",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Bottom Padding",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Minimum Height",
+      "min": 200,
+      "max": 600,
+      "step": 50,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content Max Width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barry Tan Quote Section"
+    }
+  ]
+}
+{% endschema %}
+

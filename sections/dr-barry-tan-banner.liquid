@@ -4,9 +4,13 @@
 >
   <div class="dr-barry-banner__wrapper page-width">
     <div class="dr-barry-banner__card">
+      {% if section.settings.heading != blank %}
+        <h2 class="dr-barry-banner__heading dr-barry-banner__heading--mobile-first">{{ section.settings.heading }}</h2>
+      {% endif %}
+
       <div class="dr-barry-banner__content">
         {% if section.settings.heading != blank %}
-          <h2 class="dr-barry-banner__heading">{{ section.settings.heading }}</h2>
+          <h2 class="dr-barry-banner__heading dr-barry-banner__heading--desktop">{{ section.settings.heading }}</h2>
         {% endif %}
 
         {% if section.settings.subheading != blank %}
@@ -55,14 +59,14 @@
   }
 
   .dr-barry-banner__card {
-    background: {{ section.settings.card_background | default: '#086B92' }};
+    background: {{ section.settings.card_background | default: '#086B92' }}; 
     border-radius: {{ section.settings.border_radius | default: 28 }}px;
     padding: 20px 20px 20px 60px;
     display: flex;
     align-items: center;
     /* gap: clamp(28px, 6vw, 64px); */
-    overflow: hidden;
-    box-shadow: 0 28px 60px rgba(11, 56, 86, 0.22);
+    /* overflow: hidden;
+    box-shadow: 0 28px 60px rgba(11, 56, 86, 0.22); */
   }
 
   .dr-barry-banner__content {
@@ -79,6 +83,14 @@
     color: #ffffff;
   }
 
+  .dr-barry-banner__heading--mobile-first {
+    display: none;
+  }
+
+  .dr-barry-banner__heading--desktop {
+    display: block;
+  }
+
   .dr-barry-banner__subheading {
     margin: 0 0 30px;
     font-size: clamp(16px, 2vw, 18px);
@@ -91,7 +103,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 22px;
+    padding: 5px 10px 5px 22px;
     border-radius: 999px;
     background: #ffffff;
     color: {{ section.settings.button_text_color | default: '#0b6c8d' }};
@@ -112,16 +124,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     border-radius: 999px;
     background: {{ section.settings.button_icon_background | default: '#0b6c8d' }};
     color: {{ section.settings.button_icon_color | default: '#ffffff' }};
   }
 
   .dr-barry-banner__button-icon svg {
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
   }
 
   .dr-barry-banner__media {
@@ -145,22 +157,38 @@
       flex-direction: column;
       text-align: center;
       padding: clamp(32px, 8vw, 44px);
+      gap: 0;
+    }
+
+    .dr-barry-banner__heading--mobile-first {
+      display: block;
+      order: 1;
+      margin: 0 0 28px;
+      width: 100%;
     }
 
     .dr-barry-banner__content {
       flex: 1 1 auto;
       max-width: 100%;
+      order: 3;
+    }
+
+    .dr-barry-banner__heading--desktop {
+      display: none;
     }
 
     .dr-barry-banner__subheading {
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 24px;
     }
 
     .dr-barry-banner__media {
       justify-content: center;
       flex: 1 1 auto;
       max-width: 100%;
+      order: 2;
+      margin: 0 0 28px;
     }
   }
 
@@ -171,17 +199,46 @@
 
     .dr-barry-banner__card {
       border-radius: 22px;
-      gap: 24px;
+      padding: clamp(28px, 6vw, 36px);
+      gap: 0;
+    }
+
+    .dr-barry-banner__heading--mobile-first {
+      font-size: 28px;
+      /* margin-bottom: 24px; */
+      line-height: 1.2;
+    }
+
+    .dr-barry-banner__media {
+      margin-bottom: 24px;
+    }
+
+    .dr-barry-banner__media img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 32px rgba(8, 41, 55, 0.25);
+    }
+
+    .dr-barry-banner__subheading {
+      font-size: 16px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      max-width: 100%;
     }
 
     .dr-barry-banner__button {
       font-size: 14px;
-      padding: 10px 20px;
+      padding: 12px 24px;
+      max-width: 213px;
+      justify-content: center;
+      box-shadow: 0 12px 24px rgba(10, 108, 141, 0.3);
     }
 
-    .dr-barry-banner__media img {
-      max-width: 260px;
-      border-radius: 18px;
+    .dr-barry-banner__button:hover,
+    .dr-barry-banner__button:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(10, 108, 141, 0.35);
     }
   }
 </style>
