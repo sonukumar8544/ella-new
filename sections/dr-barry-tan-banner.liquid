@@ -55,12 +55,12 @@
   }
 
   .dr-barry-banner__card {
-    background: {{ section.settings.card_background | default: '#0a6c8d' }};
+    background: {{ section.settings.card_background | default: '#086B92' }};
     border-radius: {{ section.settings.border_radius | default: 28 }}px;
-    padding: clamp(28px, 5vw, 48px);
+    padding: 20px 20px 20px 60px;
     display: flex;
     align-items: center;
-    gap: clamp(28px, 6vw, 64px);
+    /* gap: clamp(28px, 6vw, 64px); */
     overflow: hidden;
     box-shadow: 0 28px 60px rgba(11, 56, 86, 0.22);
   }
@@ -75,7 +75,8 @@
     margin: 0 0 18px;
     font-size: clamp(28px, 4vw, 42px);
     line-height: 1.15;
-    font-weight: 700;
+    font-weight: 600;
+    color: #ffffff;
   }
 
   .dr-barry-banner__subheading {
