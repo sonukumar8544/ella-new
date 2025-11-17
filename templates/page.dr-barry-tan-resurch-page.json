@@ -144,7 +144,8 @@
       "type": "video-block",
       "custom_css": [
         ".halo-block-header .title .text {width: 100%; font-weight: 500; line-height: 1.2; font-style: normal;}",
-        ".deferred-media__poster img {object-fit: contain;}"
+        ".deferred-media__poster img {object-fit: contain;}",
+        ".deferred-media__poster-button {display: none; }"
       ],
       "name": "t:sections.video.presets.name",
       "settings": {
