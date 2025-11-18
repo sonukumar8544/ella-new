@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("product-add-to-cart");
+    if (btn) {
+      // Replace everything after "Add to cart"
+      btn.textContent = "Add to cart";
+    }
+  });
+
 const trapFocusHandlers = {};
 const warningTime = 3000
 
