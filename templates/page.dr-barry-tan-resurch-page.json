@@ -47,6 +47,92 @@
         "max_width": 1100
       }
     },
+    "dr_barrytan_timeline_section_AyfJpW": {
+      "type": "dr-barrytan-timeline-section",
+      "blocks": {
+        "timeline_item_tF8FYg": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "1992",
+            "title": "The Journey Begins ",
+            "subtitle": "Dr. Tan's First Tocotrienol Success ",
+            "description": "<p>Dr. Barrie Tan and his colleagues cracked the code on extracting tocotrienols from palm oil at commercial scale. Finally, people could access this superior form of Vitamin E! But there was a catch. Palm contained 25% alpha-tocopherol—and that was a problem. <strong>Alpha-tocopherol literally blocks tocotrienols from doing their job. </strong><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_6RUWjH": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "1998",
+            "title": "The Hunt Continued ",
+            "subtitle": "Rice Bran Improves the Formula ",
+            "description": "<p>Rice bran showed promise—70% tocotrienols, 30% tocopherols. Clinical results improved, but that 30% was still getting in the way. For most scientists, this would've been \"good enough.\" <br/><strong>But Dr. Tan knew he needed something completely free of tocopherols, a 100% pure, natural source. </strong><br/><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_XkXjUE": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2002",
+            "title": "The \"Aha!\" Moment in Peru",
+            "subtitle": "100% Pure Annatto Tocotrienols Found ",
+            "description": "<p>While searching for marigolds in Peru, Dr. Tan's eye caught a vibrant red plant—annatto. He bought samples and brought them back to his Massachusetts lab. The results were perfect: 100% pure tocotrienols and ZERO tocopherols. <strong>After a decade of searching, he'd found it. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_WdcTBz": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2002-2003",
+            "title": "The Making of GOLD Standard ",
+            "subtitle": "Development of DeltaGold® Supplement ",
+            "description": "<p>Finding the perfect source was only half the battle. Dr. Tan spent years perfecting a chemical-free extraction method that preserved the delicate tocotrienol molecules. The result? <strong>DeltaGold®—the world's first and only 100% pure, tocopherol-free tocotrienol supplement. </strong><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_MEULE4": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2003-2013",
+            "title": "The Evidence Builds ",
+            "subtitle": "Clinical Research & Breakthrough Studies ",
+            "description": "<p>For ten years, Dr. Tan collaborated with leading researchers—Sen, Rink, Khanna—putting DeltaGold® through over 100 clinical and pre-clinical studies. The research revealed breakthrough benefits for neurological health, cardiovascular support, and cellular protection. <strong>No shortcuts. Just science. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_FAKgXQ": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2014",
+            "title": "The FDA Stamp of Approval ",
+            "subtitle": "GRAS Status Granted ",
+            "description": "<p>The FDA granted DeltaGold® \"Generally Recognized as Safe\" (GRAS) status—a milestone most supplements never achieve. You're not just taking another vitamin based on marketing hype. <strong>You're taking something with FDA-level safety validation. </strong><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_whjFNi": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2015-Present ",
+            "title": "The World Takes Notice ",
+            "subtitle": "Tocotrienol Market Surge ",
+            "description": "<p>The global tocotrienol market reached $386 million, projected to hit $702 million by 2034. Recent research in Frontiers in Nutrition continues validating Dr. Tan's decades of work. <strong>After 30+ years of dedication, Dr. Tan's \"perfect\" Vitamin E is finally getting the recognition it deserves. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_item_tF8FYg",
+        "timeline_item_6RUWjH",
+        "timeline_item_XkXjUE",
+        "timeline_item_WdcTBz",
+        "timeline_item_MEULE4",
+        "timeline_item_FAKgXQ",
+        "timeline_item_whjFNi"
+      ],
+      "name": "barry tan timeline new",
+      "settings": {}
+    },
     "video_block_pYwUCc": {
       "type": "video-block",
       "custom_css": [
@@ -318,6 +404,7 @@
     "main",
     "shogun-optimizer",
     "dr_barry_tan_banner_Am8eEm",
+    "dr_barrytan_timeline_section_AyfJpW",
     "video_block_pYwUCc",
     "barry_tan_green_patti_mGcVFw",
     "barry_tan_gridview_UnaQaW",
