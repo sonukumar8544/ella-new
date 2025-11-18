@@ -1,0 +1,443 @@
+<section class="barry-tan-gridview-section" id="barry-tan-gridview-{{ section.id }}">
+  <div class="barry-tan-gridview-container">
+    <div class="barry-tan-gridview-wrapper">
+      <div class="barry-tan-gridview-left">
+        <div class="barry-tan-gridview-intro">
+          {% if section.settings.heading != blank %}
+            <h2 class="barry-tan-gridview-heading">{{ section.settings.heading }}</h2>
+          {% endif %}
+          
+          {% if section.settings.intro_text != blank %}
+            <p class="barry-tan-gridview-intro-text">{{ section.settings.intro_text }}</p>
+          {% endif %}
+        </div>
+
+        <div class="barry-tan-gridview-cta">
+          {% if section.settings.cta_heading != blank %}
+            <h3 class="barry-tan-gridview-cta-heading">{{ section.settings.cta_heading }}</h3>
+          {% endif %}
+          
+          {% if section.settings.cta_text != blank %}
+            <p class="barry-tan-gridview-cta-text">{{ section.settings.cta_text }}</p>
+          {% endif %}
+          
+          {% if section.settings.cta_link != blank and section.settings.cta_label != blank %}
+            <a href="{{ section.settings.cta_link }}" class="barry-tan-gridview-cta-link">
+              {{ section.settings.cta_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="barry-tan-gridview-right">
+        {% if section.settings.research_text != blank %}
+          <p class="barry-tan-gridview-research-text">{{ section.settings.research_text }}</p>
+        {% endif %}
+
+        {% if section.settings.book_image != blank %}
+          <div class="barry-tan-gridview-books">
+            {% assign alt_text = section.settings.book_image_alt | default: "The Truth About Vitamin E book" %}
+            <div class="barry-tan-gridview-book book-1">
+              {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
+            </div>
+            {% if section.settings.show_second_book %}
+              <div class="barry-tan-gridview-book book-2">
+                {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #barry-tan-gridview-{{ section.id }} {
+    padding: {{ section.settings.section_padding_top | default: 80 }}px 20px {{ section.settings.section_padding_bottom | default: 80 }}px;
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-container {
+    max-width: {{ section.settings.max_width | default: 1200 }}px;
+    margin: 0 auto;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-heading {
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 700;
+    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro-text {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 400;
+    font-style: italic;
+    color: {{ section.settings.text_color | default: '#374650' }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+    background-color: {{ section.settings.cta_background | default: '#f5f5f5' }};
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-heading {
+    font-size: clamp(24px, 3vw, 28px);
+    font-weight: 700;
+    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-text {
+    font-size: clamp(15px, 1.8vw, 17px);
+    font-weight: 400;
+    color: {{ section.settings.text_color | default: '#374650' }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-link {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 600;
+    color: {{ section.settings.cta_link_color | default: '#086B92' }};
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-link:hover {
+    color: {{ section.settings.cta_link_hover | default: '#0a5d7a' }};
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-research-text {
+    font-size: clamp(15px, 1.8vw, 17px);
+    font-weight: 400;
+    color: {{ section.settings.text_color | default: '#374650' }};
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-1 {
+    transform: rotate(-8deg);
+    z-index: 2;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    transform: rotate(8deg);
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    #barry-tan-gridview-{{ section.id }} {
+      padding: 60px 20px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
+      gap: 50px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+      padding: 28px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
+      max-width: 450px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    #barry-tan-gridview-{{ section.id }} {
+      padding: 50px 16px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-left {
+      gap: 32px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro {
+      gap: 16px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+      padding: 24px;
+      gap: 14px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-right {
+      gap: 32px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
+      max-width: 100%;
+      margin: 20px auto 0;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
+      top: 15px;
+      left: 25px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #barry-tan-gridview-{{ section.id }} {
+      padding: 40px 12px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
+      gap: 32px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-heading {
+      font-size: 28px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro-text {
+      font-size: 16px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+      padding: 20px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-heading {
+      font-size: 22px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
+      max-width: 280px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-1 {
+      transform: rotate(-6deg);
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
+      transform: rotate(6deg);
+      top: 12px;
+      left: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Barry Tan Gridview",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Makes Dr. Tan's Research Revolutionary?"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "It's not just a victory of a scientist and his passion, but a testament that humankind will cherish for eternity."
+    },
+    {
+      "type": "header",
+      "content": "Call to Action Box"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Want The Complete Story?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Download Dr. Tan's groundbreaking book 'The Truth About Vitamin E'. Discover the fascinating science, clinical trials, and personal stories behind this revolutionary breakthrough."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Link Label",
+      "default": "Get the ebook"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "Right Column Content"
+    },
+    {
+      "type": "textarea",
+      "id": "research_text",
+      "label": "Research Text",
+      "default": "For decades, the world believed alpha-tocopherol was the only form of Vitamin E that mattered. Dr. Barrie Tan's relentless curiosity led him to discover and commercialize 100% pure tocotrienols from annatto—a far more potent form of Vitamin E with remarkable health benefits that traditional supplements were missing."
+    },
+    {
+      "type": "image_picker",
+      "id": "book_image",
+      "label": "Book Image"
+    },
+    {
+      "type": "text",
+      "id": "book_image_alt",
+      "label": "Book Image Alt Text",
+      "default": "The Truth About Vitamin E book cover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_second_book",
+      "label": "Show Second Book (Overlapping)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "cta_background",
+      "label": "CTA Box Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "cta_link_color",
+      "label": "CTA Link Color",
+      "default": "#086B92"
+    },
+    {
+      "type": "color",
+      "id": "cta_link_hover",
+      "label": "CTA Link Hover Color",
+      "default": "#0a5d7a"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Top Padding",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Bottom Padding",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content Max Width",
+      "min": 1000,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barry Tan Gridview"
+    }
+  ]
+}
+{% endschema %}
+

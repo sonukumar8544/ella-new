@@ -1,0 +1,281 @@
+<section class="barry-tan-footer-shop" id="barry-tan-footer-shop-{{ section.id }}">
+  <div class="barry-tan-footer-shop-container">
+    <div class="barry-tan-footer-shop-banner">
+      {% if section.settings.text != blank %}
+        <p class="barry-tan-footer-shop-text">{{ section.settings.text }}</p>
+      {% endif %}
+      
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="barry-tan-footer-shop-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #barry-tan-footer-shop-{{ section.id }} {
+    padding: {{ section.settings.section_padding_top | default: 60 }}px 20px {{ section.settings.section_padding_bottom | default: 60 }}px;
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+  }
+
+  #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-container {
+    max-width: {{ section.settings.max_width | default: 1200 }}px;
+    margin: 0 auto;
+  }
+
+  #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-banner {
+    background-color: {{ section.settings.banner_background | default: '#f5d89f' }};
+    border-radius: {{ section.settings.border_radius | default: 16 }}px;
+    padding: {{ section.settings.banner_padding_top | default: 40 }}px {{ section.settings.banner_padding_horizontal | default: 40 }}px {{ section.settings.banner_padding_bottom | default: 40 }}px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-text {
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 400;
+    color: {{ section.settings.text_color | default: '#374650' }};
+    margin: 0;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ section.settings.button_background | default: '#374650' }};
+    color: {{ section.settings.button_text_color | default: '#ffffff' }};
+    font-size: clamp(15px, 2vw, 17px);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: {{ section.settings.button_border_radius | default: 8 }}px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-button:hover {
+    background-color: {{ section.settings.button_hover_background | default: '#2a3439' }};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Tablet styles */
+  @media (max-width: 1024px) {
+    #barry-tan-footer-shop-{{ section.id }} {
+      padding: 50px 20px;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-banner {
+      padding: 36px 32px;
+      gap: 20px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    #barry-tan-footer-shop-{{ section.id }} {
+      padding: 40px 16px;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-banner {
+      padding: 32px 24px;
+      gap: 20px;
+      border-radius: 12px;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-text {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-button {
+      padding: 12px 28px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #barry-tan-footer-shop-{{ section.id }} {
+      padding: 32px 12px;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-banner {
+      padding: 28px 20px;
+      gap: 18px;
+      border-radius: 10px;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-text {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-button {
+      padding: 12px 24px;
+      font-size: 15px;
+      width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Footer Shop Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "50+ peer-reviewed publications and multiple patents in tocotrienol extraction and application"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Tocotrienol"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "banner_background",
+      "label": "Banner Background Color",
+      "default": "#f5d89f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background Color",
+      "default": "#374650"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button Hover Background",
+      "default": "#2a3439"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Banner Border Radius",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button Border Radius",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "banner_padding_top",
+      "label": "Banner Top Padding",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "banner_padding_bottom",
+      "label": "Banner Bottom Padding",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "banner_padding_horizontal",
+      "label": "Banner Horizontal Padding",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section Top Padding",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Bottom Padding",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Content Max Width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Shop Banner"
+    }
+  ]
+}
+{% endschema %}
+
