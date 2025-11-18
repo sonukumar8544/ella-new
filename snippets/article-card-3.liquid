@@ -58,6 +58,39 @@
                             </span>
                             </a>
                         </div>
+                        {% elsif tag == "jenny" %}
+                            <div class="blog-editor-card">
+                            <div class="editor-image-card">
+                            <img src="https://wellnessextract.com/cdn/shop/files/Dr._Jenna_Priestap_500x500_3fc74ad3-1104-467b-ba2f-6ab7dfc724a2_300x300.webp?v=1748940514" width="40px" alt="Dr. Surangama Lehri">
+                            </div>
+                            <a href="https://wellnessextract.com/pages/dr-jenna-priestap">
+                            <span class="blog-author blog-editor-card-page">
+                                <span>Reviewed by: Dr. Jenna Priestap</span>
+                            </span>
+                            </a>
+                        </div>
+                        {% elsif tag == "dr-laura-pipher" %}
+                            <div class="blog-editor-card">
+                            <div class="editor-image-card">
+                            <img src="https://wellnessextract.com/cdn/shop/files/Screenshot_2025-05-29_205333_300x300.png?v=1748532288" width="40px" alt="Dr. Surangama Lehri">
+                            </div>
+                            <a href="https://wellnessextract.com/pages/dr-laura-pipher">
+                            <span class="blog-author blog-editor-card-page">
+                                <span>Reviewed by: Dr. Laura Pipher</span>
+                            </span>
+                            </a>
+                        </div>
+                        {% elsif tag == "dr-naji-ali" %}
+                            <div class="blog-editor-card">
+                            <div class="editor-image-card">
+                            <img src="https://wellnessextract.com/cdn/shop/files/Naji_Abou_Ali_2_300x300.png?v=1755671781" width="40px" alt="Dr. Surangama Lehri">
+                            </div>
+                            <a href="https://wellnessextract.com/pages/dr-naji-abou-ali">
+                            <span class="blog-author blog-editor-card-page">
+                                <span>Reviewed by: Dr. Laura Pipher</span>
+                            </span>
+                            </a>
+                        </div>
                        {% elsif tag == "drcook" %}
                             <div class="blog-editor-card">
                             <div class="editor-image-card">
@@ -99,8 +132,10 @@
                                 <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Dr._Aditi_Bakshi_Msc-Nutrition_50x50_1.jpg?v=1748929087" width="40px" alt="dr aditi">
                              {% elsif blogauthor == "Surangama Lehri" %}
                                 <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri_50x50_1.jpg?v=1748929120" width="40px" alt="dr lehri">
-                               
-                            {% else %}
+                             {% elsif blogauthor == "Kritika Jain" %}
+                                <img src="https://wellnessextract.com/cdn/shop/files/Kritika_Jain_300x300.jpg?v=1751601849" width="40px" alt="dr lehri">    
+                            
+                                {% else %}
                              <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/image_5_7935c512-a1c4-45fd-baaa-b6063fd0ed2c.png?v=1738731314" width="40px" alt="divya">
                             {% endif %}
                         {% if blogauthor == 'Sarika Jassal'
@@ -110,6 +145,7 @@
                               or blogauthor == "Nurah Ekhlaque" 
                               or blogauthor == "Aditi bakshi"
                               or  blogauthor == "Surangama Lehri" 
+                              or blogauthor == "Kritika Jain"
                             %}
                           <a {% if blogauthor == "Surangama Lehri" %}href="https://wellnessextract.com/pages/dr-{{ article.author | replace: ' ', '-' | downcase }}" {%else%}href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}"{% endif %}>
                        {% if author == 'Aditi bakshi' or blogauthor == "Surangama Lehri" %}

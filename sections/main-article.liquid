@@ -311,6 +311,7 @@
                   or blogauthor == 'Pooja Rawat'
                   or blogauthor == 'Aditi bakshi'
                   or blogauthor == 'Nurah Ekhlaque'
+                  or blogauthor == 'Kritika Jain'
                 %}
                   <h3>
                     <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
@@ -337,6 +338,16 @@
                       height="40px"
                       title=""
                       alt="sarika jassal"
+                      loading="lazy"
+                    >
+                  {% elsif blogauthor == 'Kritika Jain' %}
+                    <img
+                      class="lazyload"
+                      data-src="https://wellnessextract.com/cdn/shop/files/Kritika_Jain_300x300.jpg?v=1751601849"
+                      width="40px"
+                      height="40px"
+                      title=""
+                      alt="kritika jain"
                       loading="lazy"
                     >
                   {% elsif blogauthor == 'Divya Katyal' %}
@@ -456,6 +467,52 @@
                       </div>
                       {% endif %}
                       {% endfor %}
+                      {% for tag in article.tags %}
+                        {% if tag == 'dr-laura-pipher' %}
+                          <div class="blog-editor">
+                            <img
+                              class="lazyload"
+                              data-src="https://wellnessextract.com/cdn/shop/files/Screenshot_2025-05-29_205333_300x300.png?v=1748532288"
+                              width="40px"
+                              alt="Dr. Laura Pipher"
+                              height="40px"
+                              title=""
+                              loading="lazy"
+                            >
+                            <h3>
+                              <a href="https://wellnessextract.com/pages/dr-laura-pipher">
+                                <span class="blog-author">
+                                  <span><i>Reviewed By: </i> Dr. Laura Pipher</span>
+                                  {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                </span>
+                              </a>
+                            </h3>
+                          </div>
+                          {% endif %}
+                          {% endfor %}
+                          {% for tag in article.tags %}
+                            {% if tag == 'dr-naji-ali' %}
+                              <div class="blog-editor">
+                                <img
+                                  class="lazyload"
+                                  data-src="https://wellnessextract.com/cdn/shop/files/Naji_Abou_Ali_2_300x300.png?v=1755671781"
+                                  width="40px"
+                                  alt="Dr. Naji Abou Ali"
+                                  height="40px"
+                                  title=""
+                                  loading="lazy"
+                                >
+                                <h3>
+                                  <a href="https://wellnessextract.com/pages/dr-naji-abou-ali">
+                                    <span class="blog-author">
+                                      <span><i>Reviewed By: </i> Dr. Naji Abou Ali</span>
+                                      {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                                    </span>
+                                  </a>
+                                </h3>
+                              </div>
+                              {% endif %}
+                              {% endfor %}
                    {% for tag in article.tags %}
                 {% if tag == 'lehri' %}
                   <div class="blog-editor">
@@ -479,6 +536,29 @@
                   </div>
                   {% endif %}
                   {% endfor %}
+                  {% for tag in article.tags %}
+                    {% if tag == 'dr-lehri' %}
+                      <div class="blog-editor">
+                        <img
+                          class="lazyload"
+                          data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Lehri.jpg?v=1741159628"
+                          width="40px"
+                          alt="Author: Dr. Surangama Lehri"
+                          height="40px"
+                          title=""
+                          loading="lazy"
+                        >
+                        <h3>
+                          <a href="https://wellnessextract.com/pages/dr-surangama-lehri">
+                            <span class="blog-author">
+                              <span><i>Reviewed By: </i> Dr. Surangama Lehri</span>
+                              {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                            </span>
+                          </a>
+                        </h3>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
                    {% for tag in article.tags %}
                   {% if tag == 'jenny' %}
                   <div class="blog-editor">

@@ -1,516 +1,755 @@
 <style>
   .amazon-four-grid {
-    padding: 80px 20px;
-    max-width: 1200px;
+    max-width: 1160px;
     margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: white;
+    padding: 80px 20px;
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
   }
 
   .amazon-grid-header {
-    text-align: center;
-    margin-bottom: 60px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    margin: 0 0 {{ section.settings.header_margin_bottom | default: 48 }}px;
   }
 
   .amazon-grid-title {
-    font-size: 42px;
+    flex: 1 1 280px;
+    font-size: 38px;
     font-weight: 700;
-    color: #374650;
-    margin: 0 0 20px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    color: {{ section.settings.title_color | default: '#1f2a36' }};
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
   }
 
   .amazon-grid-subtitle {
-    font-size: 18px;
-    font-style: italic;
-    color: #374650;
+    flex: 1 1 280px;
+    font-size: {{ section.settings.subtitle_font_size | default: 18 }}px;
+    color: {{ section.settings.subtitle_color | default: '#415364' }};
     margin: 0;
     line-height: 1.6;
   }
 
-  .amazon-grid-container {
+  .amazon-card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
-  .amazon-grid-item {
-    background: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-right: 1px solid #e0e0e0;
+  .amazon-card-trigger {
+    display: block;
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .amazon-card {
     position: relative;
-    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    padding: 28px 30px;
+    border: 1px solid rgba(31, 42, 54, 0.08);
+    box-shadow: 0 18px 45px rgba(30, 50, 107, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 180px;
+    background: #ffffff;
   }
 
-  .amazon-grid-item:last-child {
-    border-right: none;
+  .amazon-card.is-highlighted {
+    background: linear-gradient(132deg, #fde8c0 0%, #fff5e4 55%, #ffffff 100%);
+    border-color: rgba(243, 179, 66, 0.35);
   }
 
-  .amazon-grid-item:hover {
-    background-color: #f8f9fa;
+  .amazon-card.is-first {
+    background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 2%, #ffffff 36%);
   }
 
-  .amazon-grid-icon {
+  .amazon-card:hover,
+  .amazon-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 56px rgba(30, 50, 107, 0.12);
+  }
+
+  .amazon-card-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .amazon-card-icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto 20px;
+    border-radius: 22px;
+    /* background: rgba(8, 107, 146, 0.08); */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e3f2fd;
-    border-radius: 50%;
-    position: relative;
   }
 
-  .amazon-grid-icon svg {
-    width: 50px;
-    height: 50px;
-    color: #1976d2;
+  .amazon-card-icon img,
+  .amazon-card-icon svg {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    color: #086b92;
   }
 
-  .amazon-grid-item-title {
-    font-size: 24px;
+  .amazon-card-title {
+    font-size: 22px;
     font-weight: 700;
+    color: #243443;
+    margin: 0 0 10px;
+  }
+
+  .amazon-card-description {
+    margin: 0 0 16px;
+    color: #465a68;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .amazon-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400;
+    font-size: 14px;
     color: #374650;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+  }
+
+  .amazon-card-link svg {
+    width: 16px;
+    height: 16px;
+    display: none;
+  }
+
+  .amazon-grid-cta {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .amazon-grid-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #0b7a9e;
+    color: #ffffff;
+    padding: 14px 34px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 26px rgba(11, 122, 158, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .amazon-grid-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(11, 122, 158, 0.45);
+  }
+
+  .amazon-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 90;
+  }
+
+  .amazon-modal.is-active {
+    display: flex;
+  }
+
+  .amazon-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 38, 51, 0.55);
+    backdrop-filter: blur(4px);
+  }
+
+  .amazon-modal-dialog {
+    position: relative;
+    width: min(1024px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 5%, #ffffff 8%);
+    border-radius: 28px;
+    padding: 56px 64px 48px;
+    box-shadow: 0 36px 80px rgba(18, 39, 54, 0.25);
+    z-index: 1;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+  }
+
+  .amazon-modal-dialog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .amazon-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 42, 54, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2a36;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 24px rgba(23, 38, 51, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .amazon-modal-close:hover,
+  .amazon-modal-close:focus-visible {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(23, 38, 51, 0.22);
+  }
+
+  .amazon-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    color: red;
+  }
+
+  .amazon-modal-heading {
+    margin-bottom: 30px;
+  }
+
+  .amazon-modal-title {
     margin: 0 0 12px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1f2a36;
+    text-align: center;
+    max-width: 461px;
+    margin: auto;
     line-height: 1.2;
   }
 
-  .amazon-grid-item-description {
-    font-size: 16px;
-    color: #6c757d;
-    margin: 0;
-    line-height: 1.5;
-    max-width: 200px;
+  .amazon-modal-subtitle {
     margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    color: #405062;
+    max-width: 620px;
+    line-height: 1.6;
   }
 
-  /* Tablet Styles */
+  .amazon-modal-benefits {
+    list-style: none;
+    margin: 38px 0 40px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 18px 26px;
+  }
+
+  .amazon-modal-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #2f3f50;
+    line-height: 1.5;
+  }
+
+  .amazon-modal-benefits svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: #0b9e62;
+    margin-top: 2px;
+  }
+
+  .amazon-modal-research-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #f7ad3f 0%, #fcd27e 100%);
+    color: #1f2530;
+    font-weight: 600;
+    margin: 0 auto 28px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    width: fit-content;
+  }
+
+  .amazon-modal-research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  .amazon-modal-research-card {
+    background: linear-gradient(180deg, rgba(241, 250, 254) 0%, #ffffff 25%);
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 1px solid rgba(244, 196, 104, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* min-height: 220px; */
+    flex: 1 1 320px;
+    /* max-width: 420px; */
+  }
+
+  .amazon-modal-research-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #086B92;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .amazon-modal-research-body {
+    font-size: 15px;
+    color: #405062;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .amazon-modal-research-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .amazon-modal-research-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #2f3f50;
+    line-height: 1.5;
+  }
+
+  .amazon-modal-research-points svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #0b9e62;
+    margin-top: 2px;
+  }
+
+  .amazon-modal-research-link {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: #086B92;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* .amazon-modal-research-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(11, 122, 158, 0.35);
+  } */
+
+  .amazon-modal-research-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
   @media (max-width: 1024px) {
-    .amazon-four-grid {
-      padding: 60px 20px;
+    .amazon-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .amazon-grid-title {
-      font-size: 28px !important;
+    .amazon-modal-dialog {
+      padding: 48px 36px 40px;
     }
 
-    .amazon-grid-subtitle {
-      font-size: 16px !important;
-    }
+    .amazon-modal-close {
+    top: 6px;
+    right: 6px;
+}
 
-    .amazon-grid-item {
-      padding: 35px 15px;
-    }
-
-    .amazon-grid-icon {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 18px;
-    }
-
-    .amazon-grid-icon svg {
-      width: 45px;
-      height: 45px;
-    }
-
-    .amazon-grid-item-title {
-      font-size: 22px;
-    }
-
-    .amazon-grid-item-description {
-      font-size: 15px;
-      max-width: 180px;
+    .amazon-modal-research-grid {
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
     }
   }
 
-  /* Mobile Styles - 2x2 Grid */
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
+    .amazon-grid-header {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .amazon-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .amazon-card-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .amazon-card-icon img,
+    .amazon-card-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .amazon-modal-dialog {
+      padding: 15px;
+      border-radius: 22px;
+    }
+
+    .amazon-modal-benefits {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .amazon-modal-research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+      grid-column: auto;
+    }
+
+    .amazon-modal-research-card {
+      max-width: 100%;
+    }
+
+    .amazon-modal-title {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .amazon-grid-title{
+      flex: 0 !important;
+    }
+    .amazon-grid-subtitle{
+      flex: 0 !important;
+    }
     .amazon-four-grid {
-      padding: 40px 15px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 48px !important;
+      padding-bottom: 60px !important;
     }
 
     .amazon-grid-header {
-      margin-bottom: 40px;
+      gap: 12px;
+      margin-bottom: 28px;
     }
 
     .amazon-grid-title {
-      font-size: 28px;
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 1.2;
     }
 
     .amazon-grid-subtitle {
       font-size: 16px;
     }
 
-    .amazon-grid-container {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+    .amazon-card-grid {
+      gap: 16px;
     }
 
-    .amazon-grid-item {
-      padding: 30px 15px;
-      border-right: none;
-      border-bottom: 1px solid #e0e0e0;
+    .amazon-card {
+      padding: 22px 20px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(30, 50, 107, 0.08);
     }
 
-    .amazon-grid-item:nth-child(2),
-    .amazon-grid-item:nth-child(4) {
-      border-left: 1px solid #e0e0e0;
+    .amazon-card-content {
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
     }
 
-    .amazon-grid-item:nth-child(3),
-    .amazon-grid-item:nth-child(4) {
-      border-bottom: none;
+    .amazon-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
     }
 
-    .amazon-grid-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
+    .amazon-card-icon img,
+    .amazon-card-icon svg {
+      width: 34px;
+      height: 34px;
     }
 
-    .amazon-grid-icon svg {
-      width: 40px;
-      height: 40px;
-    }
-
-    .amazon-grid-item-title {
+    .amazon-card-title {
       font-size: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    .amazon-grid-item-description {
-      font-size: 14px;
-      max-width: 160px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .amazon-four-grid {
-      padding: 30px 10px;
-    }
-
-    .amazon-grid-title {
-      font-size: 24px;
-    }
-
-    .amazon-grid-subtitle {
-      font-size: 14px;
-    }
-
-    .amazon-grid-item {
-      padding: 25px 10px;
-    }
-
-    .amazon-grid-icon {
-      width: 50px;
-      height: 50px;
+    .amazon-card-description {
+      font-size: 15px;
       margin-bottom: 12px;
     }
 
-    .amazon-grid-icon svg {
-      width: 35px;
-      height: 35px;
-    }
-
-    .amazon-grid-item-title {
-      font-size: 18px;
-    }
-
-    .amazon-grid-item-description {
+    .amazon-card-link {
       font-size: 13px;
-      max-width: 140px;
+      padding-bottom: 6px;
     }
   }
 </style>
 
-<div 
-  class="amazon-four-grid" 
+<div
+  class="amazon-four-grid"
   id="amazon-four-grid-{{ section.id }}"
   style="
-    background-color: {{ section.settings.background_color | default: '#ffffff' }};
     padding-top: {{ section.settings.section_padding_top | default: 80 }}px;
     padding-bottom: {{ section.settings.section_padding_bottom | default: 80 }}px;
   "
 >
-  <div 
-    class="amazon-grid-header"
-    style="margin-bottom: {{ section.settings.header_margin_bottom | default: 60 }}px;"
-  >
-    <h2 
-      class="amazon-grid-title"
-      style="
-        color: {{ section.settings.title_color | default: '#374650' }};
-        font-size: {{ section.settings.title_font_size | default: 42 }}px;
-      "
-    >{{ section.settings.title | default: "Tocotrienols Reach Where Others Can't" }}</h2>
-    <p 
-      class="amazon-grid-subtitle"
-      style="
-        color: {{ section.settings.subtitle_color | default: '#374650' }};
-        font-size: {{ section.settings.subtitle_font_size | default: 18 }}px;
-      "
-    >{{ section.settings.subtitle | default: "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest." }}</p>
+  <div class="amazon-grid-header">
+    <h2 class="amazon-grid-title">
+      {{ section.settings.title | default: "Tocotrienols Reach Where Others Can’t" }}
+    </h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="amazon-grid-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
   </div>
 
-  <div 
-    class="amazon-grid-container"
-    style="
-      {% if section.settings.show_borders == false %}
-        border: none;
-      {% else %}
-        border-color: {{ section.settings.border_color | default: '#e0e0e0' }};
-      {% endif %}
-    "
-  >
-    <!-- Heart Block -->
-    <div 
-      class="amazon-grid-item"
-      style="
-        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
-        {% if section.settings.show_borders == false %}
-          border-right: none;
-        {% else %}
-          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
-        {% endif %}
-        {% if section.settings.show_hover_effects == false %}
-          transition: none;
-        {% endif %}
-      "
-      {% if section.settings.show_hover_effects %}
-        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
-      {% endif %}
-    >
-      <div 
-        class="amazon-grid-icon"
-        style="
-          width: {{ section.settings.icon_size | default: 80 }}px;
-          height: {{ section.settings.icon_size | default: 80 }}px;
-          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
-        "
-      >
-        {% if section.settings.item_1_image != blank %}
-          <img 
-            src="{{ section.settings.item_1_image | image_url: width: 100 }}" 
-            alt="{{ section.settings.item_1_image.alt | default: section.settings.item_1_title }}"
-            width="50"
-            height="50"
-            style="
-              width: 50px;
-              height: 50px;
-              object-fit: contain;
-            "
-          >
-        {% else %}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-          </svg>
-        {% endif %}
-      </div>
-      <h3 
-        class="amazon-grid-item-title"
-        style="
-          color: {{ section.settings.item_title_color | default: '#374650' }};
-          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
-        "
-      >{{ section.settings.item_1_title | default: "Heart" }}</h3>
-      <p 
-        class="amazon-grid-item-description"
-        style="
-          color: {{ section.settings.item_description_color | default: '#6c757d' }};
-          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
-        "
-      >{{ section.settings.item_1_description | default: "Supports healthy cholesterol and arterial function" }}</p>
+  {% if section.blocks.size > 0 %}
+    <div class="amazon-card-grid">
+      {% for block in section.blocks %}
+        <button
+          type="button"
+          class="amazon-card-trigger"
+          data-modal-target="amazon-modal-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="amazon-card{% if forloop.first %} is-first{% endif %}{% if block.settings.highlight_card %} is-highlighted{% endif %}">
+            <div class="amazon-card-content">
+              <span class="amazon-card-icon">
+                {% if block.settings.icon != blank %}
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 120 }}"
+                    alt="{{ block.settings.icon_alt | default: block.settings.card_title }}"
+                    loading="lazy"
+                    width="80"
+                    height="80"
+                  >
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                {% endif %}
+              </span>
+              <div>
+                {% if block.settings.card_title != blank %}
+                  <h3 class="amazon-card-title">{{ block.settings.card_title }}</h3>
+                {% endif %}
+                {% if block.settings.card_description != blank %}
+                  <p class="amazon-card-description">{{ block.settings.card_description }}</p>
+                {% endif %}
+                <span class="amazon-card-link">
+                  {{ block.settings.card_link_label | default: 'Read More' }}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      {% endfor %}
     </div>
+  {% endif %}
 
-    <!-- Liver Block -->
-    <div 
-      class="amazon-grid-item"
-      style="
-        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
-        {% if section.settings.show_borders == false %}
-          border-right: none;
-        {% else %}
-          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
-        {% endif %}
-        {% if section.settings.show_hover_effects == false %}
-          transition: none;
-        {% endif %}
-      "
-      {% if section.settings.show_hover_effects %}
-        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
-      {% endif %}
-    >
-      <div 
-        class="amazon-grid-icon"
-        style="
-          width: {{ section.settings.icon_size | default: 80 }}px;
-          height: {{ section.settings.icon_size | default: 80 }}px;
-          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
-        "
-      >
-        {% if section.settings.item_2_image != blank %}
-          <img 
-            src="{{ section.settings.item_2_image | image_url: width: 100 }}" 
-            alt="{{ section.settings.item_2_image.alt | default: section.settings.item_2_title }}"
-            width="50"
-            height="50"
-            style="
-              width: 50px;
-              height: 50px;
-              object-fit: contain;
-            "
-          >
-        {% else %}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-        {% endif %}
-      </div>
-      <h3 
-        class="amazon-grid-item-title"
-        style="
-          color: {{ section.settings.item_title_color | default: '#374650' }};
-          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
-        "
-      >{{ section.settings.item_2_title | default: "Liver" }}</h3>
-      <p 
-        class="amazon-grid-item-description"
-        style="
-          color: {{ section.settings.item_description_color | default: '#6c757d' }};
-          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
-        "
-      >{{ section.settings.item_2_description | default: "Promotes natural detox and liver balance" }}</p>
+  {% if section.settings.cta_link != blank and section.settings.cta_label != blank %}
+    <div class="amazon-grid-cta">
+      <a href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_label }}
+      </a>
     </div>
+  {% endif %}
 
-    <!-- Brain Block -->
-    <div 
-      class="amazon-grid-item"
-      style="
-        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
-        {% if section.settings.show_borders == false %}
-          border-right: none;
-        {% else %}
-          border-right-color: {{ section.settings.border_color | default: '#e0e0e0' }};
-        {% endif %}
-        {% if section.settings.show_hover_effects == false %}
-          transition: none;
-        {% endif %}
-      "
-      {% if section.settings.show_hover_effects %}
-        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
-      {% endif %}
+  {% for block in section.blocks %}
+    <div
+      class="amazon-modal"
+      id="amazon-modal-{{ block.id }}"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="amazon-modal-title-{{ block.id }}"
+      hidden
     >
-      <div 
-        class="amazon-grid-icon"
-        style="
-          width: {{ section.settings.icon_size | default: 80 }}px;
-          height: {{ section.settings.icon_size | default: 80 }}px;
-          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
-        "
-      >
-        {% if section.settings.item_3_image != blank %}
-          <img 
-            src="{{ section.settings.item_3_image | image_url: width: 100 }}" 
-            alt="{{ section.settings.item_3_image.alt | default: section.settings.item_3_title }}"
-            width="50"
-            height="50"
-            style="
-              width: 50px;
-              height: 50px;
-              object-fit: contain;
-            "
-          >
-        {% else %}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+      <div class="amazon-modal-backdrop" data-modal-close></div>
+      <div class="amazon-modal-dialog">
+        <button type="button" class="amazon-modal-close" data-modal-close aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
           </svg>
-        {% endif %}
-      </div>
-      <h3 
-        class="amazon-grid-item-title"
-        style="
-          color: {{ section.settings.item_title_color | default: '#374650' }};
-          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
-        "
-      >{{ section.settings.item_3_title | default: "Brain" }}</h3>
-      <p 
-        class="amazon-grid-item-description"
-        style="
-          color: {{ section.settings.item_description_color | default: '#6c757d' }};
-          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
-        "
-      >{{ section.settings.item_3_description | default: "Helps defend neurons from oxidative stress" }}</p>
-    </div>
+        </button>
 
-    <!-- Skin Block -->
-    <div 
-      class="amazon-grid-item"
-      style="
-        padding: {{ section.settings.item_padding | default: 40 }}px 20px;
-        {% if section.settings.show_borders == false %}
-          border-right: none;
-        {% else %}
-          border-right: none;
+        <header class="amazon-modal-heading">
+          {% if block.settings.modal_title != blank %}
+            <h3 class="amazon-modal-title" id="amazon-modal-title-{{ block.id }}">
+              {{ block.settings.modal_title }}
+            </h3>
+          {% endif %}
+          {% if block.settings.modal_subtitle != blank %}
+            <p class="amazon-modal-subtitle">{{ block.settings.modal_subtitle }}</p>
+          {% endif %}
+        </header>
+
+        {% assign benefit_fields = 'modal_benefit_1,modal_benefit_2,modal_benefit_3,modal_benefit_4,modal_benefit_5' | split: ',' %}
+        {% assign benefit_items_string = '' %}
+        {% for benefit_field in benefit_fields %}
+          {% assign benefit_value = block.settings[benefit_field] | strip %}
+          {% if benefit_value != blank %}
+            {% if benefit_items_string == '' %}
+              {% assign benefit_items_string = benefit_value %}
+            {% else %}
+              {% assign benefit_items_string = benefit_items_string | append: '||' | append: benefit_value %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if benefit_items_string == '' %}
+          {% assign legacy_benefit_lines = block.settings.modal_benefits | split: '\n' %}
+          {% for benefit in legacy_benefit_lines %}
+            {% assign legacy_text = benefit | strip %}
+            {% if legacy_text != blank %}
+              {% if benefit_items_string == '' %}
+                {% assign benefit_items_string = legacy_text %}
+              {% else %}
+                {% assign benefit_items_string = benefit_items_string | append: '||' | append: legacy_text %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
         {% endif %}
-        {% if section.settings.show_hover_effects == false %}
-          transition: none;
+
+        {% if benefit_items_string != '' %}
+          {% assign benefit_items = benefit_items_string | split: '||' %}
+          <ul class="amazon-modal-benefits">
+            {% for benefit_text in benefit_items %}
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.543-6.543a1 1 0 011.414 0z"/>
+                </svg>
+                <span>{{ benefit_text }}</span>
+              </li>
+            {% endfor %}
+          </ul>
         {% endif %}
-      "
-      {% if section.settings.show_hover_effects %}
-        data-hover-color="{{ section.settings.hover_background_color | default: '#f8f9fa' }}"
-      {% endif %}
-    >
-      <div 
-        class="amazon-grid-icon"
-        style="
-          width: {{ section.settings.icon_size | default: 80 }}px;
-          height: {{ section.settings.icon_size | default: 80 }}px;
-          background-color: {{ section.settings.icon_background_color | default: '#e3f2fd' }};
-        "
-      >
-        {% if section.settings.item_4_image != blank %}
-          <img 
-            src="{{ section.settings.item_4_image | image_url: width: 100 }}" 
-            alt="{{ section.settings.item_4_image.alt | default: section.settings.item_4_title }}"
-            width="50"
-            height="50"
-            style="
-              width: 50px;
-              height: 50px;
-              object-fit: contain;
-            "
-          >
-        {% else %}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="color: {{ section.settings.icon_color | default: '#1976d2' }};">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
+
+        {% if block.settings.research_label != blank %}
+          <div class="amazon-modal-research-chip">{{ block.settings.research_label }}</div>
         {% endif %}
+
+        <div class="amazon-modal-research-grid">
+          {% for index in (1..4) %}
+            {% assign title_key = 'research_' | append: index | append: '_title' %}
+            {% assign body_key = 'research_' | append: index | append: '_body' %}
+            {% assign link_label_key = 'research_' | append: index | append: '_link_label' %}
+            {% assign link_url_key = 'research_' | append: index | append: '_link_url' %}
+            {% assign title = block.settings[title_key] | strip %}
+            {% assign summary_text = block.settings[body_key] | strip %}
+            {% assign link_label = block.settings[link_label_key] | strip %}
+            {% assign link_url = block.settings[link_url_key] | strip %}
+            {% assign points_string = '' %}
+
+            {% for point_index in (1..4) %}
+              {% assign point_key = 'research_' | append: index | append: '_point_' | append: point_index %}
+              {% assign point_value = block.settings[point_key] | strip %}
+              {% if point_value != blank %}
+                {% if points_string == '' %}
+                  {% assign points_string = point_value %}
+                {% else %}
+                  {% assign points_string = points_string | append: '||' | append: point_value %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% if points_string == '' and summary_text != '' %}
+              {% assign summary_lines = summary_text | split: '\n' %}
+              {% assign summary_points = '' %}
+              {% for summary_line in summary_lines %}
+                {% assign summary_line_text = summary_line | strip %}
+                {% if summary_line_text != blank %}
+                  {% if summary_points == '' %}
+                    {% assign summary_points = summary_line_text %}
+                  {% else %}
+                    {% assign summary_points = summary_points | append: '||' | append: summary_line_text %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              {% assign points_string = summary_points %}
+              {% assign summary_text = '' %}
+            {% endif %}
+
+            {% assign has_link = false %}
+            {% if link_url != '' and link_label != '' %}
+              {% assign has_link = true %}
+            {% endif %}
+
+            {% if title != '' or summary_text != '' or points_string != '' or has_link %}
+              <article class="amazon-modal-research-card">
+                {% if title != '' %}
+                  <h4 class="amazon-modal-research-title">{{ title }}</h4>
+                {% endif %}
+
+                {% if summary_text != '' %}
+                  <p class="amazon-modal-research-body">{{ summary_text }}</p>
+                {% endif %}
+
+                {% if points_string != '' %}
+                  {% assign points = points_string | split: '||' %}
+                  <ul class="amazon-modal-research-points">
+                    {% for point in points %}
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414l2.793 2.793 6.543-6.543a1 1 0 011.414 0z"/>
+                        </svg>
+                        <span>{{ point }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+
+                {% if has_link %}
+                  <a class="amazon-modal-research-link" href="{{ link_url }}" target="_blank" rel="noopener">
+                    {{ link_label }}
+                  </a>
+                {% endif %}
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-      <h3 
-        class="amazon-grid-item-title"
-        style="
-          color: {{ section.settings.item_title_color | default: '#374650' }};
-          font-size: {{ section.settings.item_title_font_size | default: 24 }}px;
-        "
-      >{{ section.settings.item_4_title | default: "Skin" }}</h3>
-      <p 
-        class="amazon-grid-item-description"
-        style="
-          color: {{ section.settings.item_description_color | default: '#6c757d' }};
-          font-size: {{ section.settings.item_description_font_size | default: 16 }}px;
-        "
-      >{{ section.settings.item_4_description | default: "Encourages collagen for a youthful glow" }}</p>
     </div>
-  </div>
+  {% endfor %}
 </div>
 
 {% schema %}
@@ -519,88 +758,63 @@
   "settings": [
     {
       "type": "header",
-      "content": "Header Content"
+      "content": "Header"
     },
     {
       "type": "text",
       "id": "title",
       "label": "Main Title",
-      "default": "Tocotrienols Reach Where Others Can't"
+      "default": "Tocotrienols Reach Where Others Can’t"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest."
+      "default": "Most antioxidants stop at the surface. Tocotrienols go deeper — their unique molecular structure lets them slip through cell membranes, shielding your cells from oxidative stress where it matters most."
     },
     {
       "type": "header",
-      "content": "Colors & Styling"
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Shop Tocotrienol"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Spacing"
     },
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background Color",
+      "label": "Section Background",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "title_color",
       "label": "Title Color",
-      "default": "#374650"
+      "default": "#1f2a36"
     },
     {
       "type": "color",
       "id": "subtitle_color",
       "label": "Subtitle Color",
-      "default": "#374650"
-    },
-    {
-      "type": "color",
-      "id": "item_title_color",
-      "label": "Item Title Color",
-      "default": "#374650"
-    },
-    {
-      "type": "color",
-      "id": "item_description_color",
-      "label": "Item Description Color",
-      "default": "#6c757d"
-    },
-    {
-      "type": "color",
-      "id": "icon_background_color",
-      "label": "Icon Background Color",
-      "default": "#e3f2fd"
-    },
-    {
-      "type": "color",
-      "id": "icon_color",
-      "label": "Icon Color",
-      "default": "#1976d2"
-    },
-    {
-      "type": "color",
-      "id": "border_color",
-      "label": "Border Color",
-      "default": "#e0e0e0"
-    },
-    {
-      "type": "color",
-      "id": "hover_background_color",
-      "label": "Hover Background Color",
-      "default": "#f8f9fa"
-    },
-    {
-      "type": "header",
-      "content": "Spacing & Layout"
+      "default": "#415364"
     },
     {
       "type": "range",
       "id": "section_padding_top",
       "min": 0,
-      "max": 120,
-      "step": 10,
+      "max": 160,
+      "step": 8,
       "unit": "px",
       "label": "Section Top Padding",
       "default": 80
@@ -609,8 +823,8 @@
       "type": "range",
       "id": "section_padding_bottom",
       "min": 0,
-      "max": 120,
-      "step": 10,
+      "max": 160,
+      "step": 8,
       "unit": "px",
       "label": "Section Bottom Padding",
       "default": 80
@@ -618,46 +832,22 @@
     {
       "type": "range",
       "id": "header_margin_bottom",
-      "min": 20,
-      "max": 100,
-      "step": 10,
+      "min": 24,
+      "max": 96,
+      "step": 4,
       "unit": "px",
-      "label": "Header Bottom Margin",
-      "default": 60
-    },
-    {
-      "type": "range",
-      "id": "item_padding",
-      "min": 20,
-      "max": 80,
-      "step": 5,
-      "unit": "px",
-      "label": "Grid Item Padding",
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "icon_size",
-      "min": 40,
-      "max": 120,
-      "step": 10,
-      "unit": "px",
-      "label": "Icon Size",
-      "default": 80
-    },
-    {
-      "type": "header",
-      "content": "Typography"
+      "label": "Header Bottom Spacing",
+      "default": 48
     },
     {
       "type": "range",
       "id": "title_font_size",
-      "min": 24,
-      "max": 60,
+      "min": 26,
+      "max": 64,
       "step": 2,
       "unit": "px",
       "label": "Title Font Size",
-      "default": 42
+      "default": 44
     },
     {
       "type": "range",
@@ -668,152 +858,410 @@
       "unit": "px",
       "label": "Subtitle Font Size",
       "default": 18
-    },
-    {
-      "type": "range",
-      "id": "item_title_font_size",
-      "min": 16,
-      "max": 32,
-      "step": 2,
-      "unit": "px",
-      "label": "Item Title Font Size",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "item_description_font_size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Item Description Font Size",
-      "default": 16
-    },
-    {
-      "type": "checkbox",
-      "id": "show_hover_effects",
-      "label": "Show Hover Effects",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_borders",
-      "label": "Show Grid Borders",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Grid Item 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "item_1_image",
-      "label": "Item 1 Icon Image",
-      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
-    },
-    {
-      "type": "text",
-      "id": "item_1_title",
-      "label": "Item 1 Title",
-      "default": "Heart"
-    },
-    {
-      "type": "text",
-      "id": "item_1_description",
-      "label": "Item 1 Description",
-      "default": "Supports healthy cholesterol and arterial function"
-    },
-    {
-      "type": "header",
-      "content": "Grid Item 2"
-    },
-    {
-      "type": "image_picker",
-      "id": "item_2_image",
-      "label": "Item 2 Icon Image",
-      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
-    },
-    {
-      "type": "text",
-      "id": "item_2_title",
-      "label": "Item 2 Title",
-      "default": "Liver"
-    },
-    {
-      "type": "text",
-      "id": "item_2_description",
-      "label": "Item 2 Description",
-      "default": "Promotes natural detox and liver balance"
-    },
-    {
-      "type": "header",
-      "content": "Grid Item 3"
-    },
-    {
-      "type": "image_picker",
-      "id": "item_3_image",
-      "label": "Item 3 Icon Image",
-      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
-    },
-    {
-      "type": "text",
-      "id": "item_3_title",
-      "label": "Item 3 Title",
-      "default": "Brain"
-    },
-    {
-      "type": "text",
-      "id": "item_3_description",
-      "label": "Item 3 Description",
-      "default": "Helps defend neurons from oxidative stress"
-    },
-    {
-      "type": "header",
-      "content": "Grid Item 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "item_4_image",
-      "label": "Item 4 Icon Image",
-      "info": "Recommended size: 100x100px. If no image is uploaded, default SVG icon will be used."
-    },
-    {
-      "type": "text",
-      "id": "item_4_title",
-      "label": "Item 4 Title",
-      "default": "Skin"
-    },
-    {
-      "type": "text",
-      "id": "item_4_description",
-      "label": "Item 4 Description",
-      "default": "Encourages collagen for a youthful glow"
     }
   ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_alt",
+          "label": "Icon Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Heart"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Supports healthy cholesterol and arterial function."
+        },
+        {
+          "type": "text",
+          "id": "card_link_label",
+          "label": "Card Link Label",
+          "default": "Read More"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight_card",
+          "label": "Highlight this card",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Modal Content"
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Modal Title",
+          "default": "Heart Health Goals Tocotrienol Supports"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_subtitle",
+          "label": "Modal Subtitle",
+          "default": "Keep your heart strong every day with targeted antioxidant defense and healthy circulation support."
+        },
+        {
+          "type": "header",
+          "content": "Modal Benefit Items"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_1",
+          "label": "Benefit Item 1",
+          "default": "Keep your heart strong every day"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_2",
+          "label": "Benefit Item 2",
+          "default": "Help maintain healthy cholesterol levels naturally"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_3",
+          "label": "Benefit Item 3",
+          "default": "Support flexible, healthy arteries and smooth blood flow"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_4",
+          "label": "Benefit Item 4",
+          "default": "Encourage long-term heart wellness through diet, movement, and lifestyle habits"
+        },
+        {
+          "type": "text",
+          "id": "modal_benefit_5",
+          "label": "Benefit Item 5",
+          "default": "Protect from oxidative stress and inflammation"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_benefits",
+          "label": "Benefit List (legacy fallback)",
+          "info": "Optional legacy field. Used only if Benefit Items 1-5 are left blank.",
+          "default": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation\nSupports overall cardiovascular resilience"
+        },
+        {
+          "type": "text",
+          "id": "research_label",
+          "label": "Research Label",
+          "default": "Research"
+        },
+        {
+          "type": "header",
+          "content": "Research Item 1"
+        },
+        {
+          "type": "text",
+          "id": "research_1_title",
+          "label": "Title",
+          "default": "Qureshi A.A., 2015 – Lipid Support (Nutraceutical Business Review)"
+        },
+        {
+          "type": "textarea",
+          "id": "research_1_body",
+          "label": "Summary",
+          "default": "Annatto-derived tocotrienols support healthy cholesterol profiles in adults."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_1",
+          "label": "Bullet Point 1",
+          "default": "250 mg/day of annatto-derived δ- and γ-tocotrienols lowered total cholesterol (~15%) and LDL (~18%) in adults."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_2",
+          "label": "Bullet Point 2",
+          "default": "Supported triglyceride reduction (~14%) while maintaining healthy HDL levels."
+        },
+        {
+          "type": "text",
+          "id": "research_1_point_3",
+          "label": "Bullet Point 3",
+          "default": "Highlights long-term maintenance of healthy lipid balance."
+        },
+        {
+          "type": "text",
+          "id": "research_1_link_label",
+          "label": "Link Label",
+          "default": "Read more →"
+        },
+        {
+          "type": "url",
+          "id": "research_1_link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "header",
+          "content": "Research Item 2"
+        },
+        {
+          "type": "text",
+          "id": "research_2_title",
+          "label": "Title",
+          "default": "American River Nutrition, 2022 – Arterial & Vascular Function"
+        },
+        {
+          "type": "textarea",
+          "id": "research_2_body",
+          "label": "Summary",
+          "default": "Tocotrienol paired with additional antioxidants supports vascular flexibility and metabolic markers."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_1",
+          "label": "Bullet Point 1",
+          "default": "δ-Tocotrienol (500 mg/day) plus resveratrol improved triglycerides, HDL, waist circumference, and blood pressure."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_2",
+          "label": "Bullet Point 2",
+          "default": "Suggests support for arterial flexibility and overall vascular health."
+        },
+        {
+          "type": "text",
+          "id": "research_2_point_3",
+          "label": "Bullet Point 3",
+          "default": "Supports lifestyle-focused cardiovascular objectives."
+        },
+        {
+          "type": "text",
+          "id": "research_2_link_label",
+          "label": "Link Label",
+          "default": "Read more →"
+        },
+        {
+          "type": "url",
+          "id": "research_2_link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "header",
+          "content": "Research Item 3"
+        },
+        {
+          "type": "text",
+          "id": "research_3_title",
+          "label": "Title",
+          "default": "Prazuki C., 2011 – Antioxidant & Anti-inflammatory Effects (Mini Rev Med Chem.)"
+        },
+        {
+          "type": "textarea",
+          "id": "research_3_body",
+          "label": "Summary",
+          "default": "Published reviews highlight antioxidant and anti-inflammatory benefits for cardiovascular wellness."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_1",
+          "label": "Bullet Point 1",
+          "default": "δ- and γ-tocotrienols reduced oxidative stress and inflammatory markers such as CRP, TNF-α, and IL-6."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_2",
+          "label": "Bullet Point 2",
+          "default": "Supports cardiovascular wellness via antioxidant and anti-inflammatory pathways."
+        },
+        {
+          "type": "text",
+          "id": "research_3_point_3",
+          "label": "Bullet Point 3",
+          "default": "Encourages resilience against day-to-day oxidative stress."
+        },
+        {
+          "type": "text",
+          "id": "research_3_link_label",
+          "label": "Link Label",
+          "default": "Read more →"
+        },
+        {
+          "type": "url",
+          "id": "research_3_link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "header",
+          "content": "Research Item 4"
+        },
+        {
+          "type": "text",
+          "id": "research_4_title",
+          "label": "Title",
+          "default": "Mechanistic Insights – What It Means for Heart Health"
+        },
+        {
+          "type": "textarea",
+          "id": "research_4_body",
+          "label": "Summary",
+          "default": "Mechanistic research outlines how tocotrienols help maintain balanced lipid metabolism and heart health."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_1",
+          "label": "Bullet Point 1",
+          "default": "Tocotrienols modulate HMG-CoA reductase to support balanced cholesterol synthesis."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_2",
+          "label": "Bullet Point 2",
+          "default": "Helps maintain healthy lipid levels and arterial flexibility as part of daily heart habits."
+        },
+        {
+          "type": "text",
+          "id": "research_4_point_3",
+          "label": "Bullet Point 3",
+          "default": "Strengthens daily heart wellness routines with nutrient support."
+        },
+        {
+          "type": "text",
+          "id": "research_4_link_label",
+          "label": "Link Label",
+          "default": "Read more →"
+        },
+        {
+          "type": "url",
+          "id": "research_4_link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
   "presets": [
     {
-      "name": "Four Grid Block"
+      "name": "Four Grid Block",
+      "blocks": [
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        }
+      ]
     }
   ]
 }
 {% endschema %}
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const gridItems = document.querySelectorAll('#amazon-four-grid-{{ section.id }} .amazon-grid-item[data-hover-color]');
-    
-    gridItems.forEach(function(item) {
-      const hoverColor = item.getAttribute('data-hover-color');
-      
-      if (hoverColor) {
-        item.addEventListener('mouseenter', function() {
-          this.style.backgroundColor = hoverColor;
+  (function() {
+    function initAmazonPopups() {
+      var section = document.getElementById('amazon-four-grid-{{ section.id }}');
+      if (!section || section.dataset.modalInitialized === 'true') {
+        return;
+      }
+
+      var triggers = section.querySelectorAll('[data-modal-target]');
+      var modals = section.querySelectorAll('.amazon-modal');
+      if (!triggers.length || !modals.length) {
+        section.dataset.modalInitialized = 'true';
+        return;
+      }
+
+      var lastFocusedElement = null;
+
+      function lockScroll(lock) {
+        if (lock) {
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        }
+      }
+
+      function openModal(modal) {
+        if (!modal) return;
+
+        modal.hidden = false;
+        modal.classList.add('is-active');
+        lockScroll(true);
+
+        var focusable = modal.querySelector('.amazon-modal-close');
+        if (focusable) {
+          focusable.focus();
+        }
+
+        modal.dataset.active = 'true';
+      }
+
+      function closeModal(modal) {
+        if (!modal) return;
+
+        modal.classList.remove('is-active');
+        modal.hidden = true;
+        modal.dataset.active = 'false';
+
+        lockScroll(false);
+
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+          lastFocusedElement = null;
+        }
+      }
+
+      triggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          var targetId = trigger.getAttribute('data-modal-target');
+          if (!targetId) return;
+          var modal = section.querySelector('#' + targetId);
+          lastFocusedElement = trigger;
+          openModal(modal);
         });
-        
-        item.addEventListener('mouseleave', function() {
-          this.style.backgroundColor = 'white';
+      });
+
+      modals.forEach(function(modal) {
+        modal.addEventListener('click', function(event) {
+          var closeTrigger = event.target.closest('[data-modal-close]');
+          if (closeTrigger || event.target === modal) {
+            closeModal(modal);
+          }
         });
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          modals.forEach(function(modal) {
+            if (modal.dataset.active === 'true') {
+              closeModal(modal);
+            }
+          });
+        }
+      });
+
+      section.dataset.modalInitialized = 'true';
+    }
+
+    document.addEventListener('DOMContentLoaded', initAmazonPopups);
+    document.addEventListener('shopify:section:load', function(event) {
+      if (event.detail && event.detail.sectionId === '{{ section.id }}') {
+        initAmazonPopups();
       }
     });
-  });
+  })();
 </script>

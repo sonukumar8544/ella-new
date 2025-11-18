@@ -1,0 +1,486 @@
+<style>
+  #section-{{ section.id }} .tocotrienols-comparison__wrapper {
+    padding: clamp(56px, 8vw, 110px) 20px;
+    background: linear-gradient(180deg, #f5fbff 0%, #ffffff 60%, #ffffff 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto clamp(40px, 6vw, 64px);
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #1f3b4b;
+    margin: 0 0 18px;
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__subtitle {
+    font-size: clamp(17px, 2.4vw, 19px);
+    font-style: italic;
+    color: #4f6876;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__card {
+    display: flex;
+    gap: clamp(24px, 4vw, 48px);
+    position: relative;
+    background: linear-gradient(118deg, #ffffff 12%, #f3f9fe 50%, #ffffff 88%);
+    border-radius: 30px;
+    padding: 14px;
+    /* box-shadow: 0 28px 70px rgba(16, 66, 92, 0.16); */
+    border: 1.5px solid rgba(19, 136, 183, 0.18);
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__column--left {
+    /* background: #ffffff; */
+    border-radius: 24px;
+    padding: clamp(26px, 3.2vw, 36px);
+    /* box-shadow: 0 28px 58px rgba(217, 72, 72, 0.12);
+    border: 1px solid rgba(217, 72, 72, 0.08); */
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__column--right {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: clamp(26px, 3.2vw, 36px);
+    box-shadow: 0 28px 58px rgba(8, 107, 146, 0.16);
+    border: 1px solid rgba(8, 107, 146, 0.08);
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: #6a8293;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__column-title {
+    font-size: clamp(23px, 3.1vw, 29px);
+    font-weight: 700;
+    color: #243c4b;
+    margin: 2px 0 0;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__column-subtitle {
+    font-size: 15px;
+    color: #6b8090;
+    margin: 0;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #354955;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__item-icon {
+    position: relative;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__item-icon::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+  }
+
+  /* #section-{{ section.id }} .tocotrienols-comparison__item--negative .tocotrienols-comparison__item-icon {
+    background: #ffe8e7;
+    color: #d94848;
+    box-shadow: 0 6px 18px rgba(217, 72, 72, 0.18);
+  } */
+
+  #section-{{ section.id }} .tocotrienols-comparison__item--negative .tocotrienols-comparison__item-icon::before {
+    background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Vector_5.svg?v=1762881299');
+  }
+
+  /* #section-{{ section.id }} .tocotrienols-comparison__item--positive .tocotrienols-comparison__item-icon {
+    background: #e1f6fb;
+    color: #0b8ca4;
+    box-shadow: 0 6px 18px rgba(11, 140, 164, 0.18);
+  } */
+
+  #section-{{ section.id }} .tocotrienols-comparison__item--positive .tocotrienols-comparison__item-icon::before {
+    background-image: url('https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Vector_4.svg?v=1762881299');
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__cta-wrap {
+    margin-top: clamp(40px, 5.5vw, 56px);
+    text-align: center;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 34px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0f94c6 0%, #056d95 100%);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 18px 38px rgba(5, 105, 134, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 46px rgba(5, 105, 134, 0.36);
+  }
+
+  #section-{{ section.id }} .tocotrienols-comparison__cta:focus-visible {
+    outline: 3px solid rgba(15, 158, 194, 0.6);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 1024px) {
+    #section-{{ section.id }} .tocotrienols-comparison__card {
+      flex-direction: column;
+      padding: clamp(32px, 6vw, 44px);
+      gap: clamp(22px, 6vw, 36px);
+    }
+
+    #section-{{ section.id }} .tocotrienols-comparison__title {
+      font-size: 22px !important;
+    }
+
+    #section-{{ section.id }} .tocotrienols-comparison__card {
+      padding: 0px !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #section-{{ section.id }} .tocotrienols-comparison__wrapper {
+      padding: clamp(40px, 12vw, 56px) 18px;
+    }
+
+    #section-{{ section.id }} .tocotrienols-comparison__card {
+      padding: clamp(26px, 9vw, 34px);
+      border-radius: 24px;
+    }
+
+    #section-{{ section.id }} .tocotrienols-comparison__item {
+      font-size: 15px;
+      gap: 14px;
+    }
+  }
+</style>
+
+<section id="section-{{ section.id }}" class="tocotrienols-comparison">
+  <div class="tocotrienols-comparison__wrapper">
+    <div class="tocotrienols-comparison__container">
+      <header class="tocotrienols-comparison__header">
+        {% if section.settings.title != blank %}
+          <h2 class="tocotrienols-comparison__title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="tocotrienols-comparison__subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+      </header>
+
+      <div class="tocotrienols-comparison__card">
+        <div class="tocotrienols-comparison__column tocotrienols-comparison__column--left">
+          {% if section.settings.left_eyebrow != blank %}
+            <span class="tocotrienols-comparison__eyebrow">{{ section.settings.left_eyebrow }}</span>
+          {% endif %}
+          {% if section.settings.left_title != blank %}
+            <h3 class="tocotrienols-comparison__column-title">{{ section.settings.left_title }}</h3>
+          {% endif %}
+          {% if section.settings.left_subtitle != blank %}
+            <p class="tocotrienols-comparison__column-subtitle">{{ section.settings.left_subtitle }}</p>
+          {% endif %}
+          <ul class="tocotrienols-comparison__list" role="list">
+            {% assign has_left_blocks = false %}
+            {% for block in section.blocks %}
+              {% if block.type == 'left_item' %}
+                {% assign has_left_blocks = true %}
+                <li class="tocotrienols-comparison__item tocotrienols-comparison__item--negative" {{ block.shopify_attributes }}>
+                  <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {% endif %}
+            {% endfor %}
+            {% unless has_left_blocks %}
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--negative">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Limited antioxidant power</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--negative">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Minimal organ support</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--negative">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Poor cellular penetration</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--negative">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Limited research backing</span>
+              </li>
+            {% endunless %}
+          </ul>
+        </div>
+
+        <div class="tocotrienols-comparison__column tocotrienols-comparison__column--right">
+          {% if section.settings.right_eyebrow != blank %}
+            <span class="tocotrienols-comparison__eyebrow">{{ section.settings.right_eyebrow }}</span>
+          {% endif %}
+          {% if section.settings.right_title != blank %}
+            <h3 class="tocotrienols-comparison__column-title">{{ section.settings.right_title }}</h3>
+          {% endif %}
+          {% if section.settings.right_subtitle != blank %}
+            <p class="tocotrienols-comparison__column-subtitle">{{ section.settings.right_subtitle }}</p>
+          {% endif %}
+          <ul class="tocotrienols-comparison__list" role="list">
+            {% assign has_right_blocks = false %}
+            {% for block in section.blocks %}
+              {% if block.type == 'right_item' %}
+                {% assign has_right_blocks = true %}
+                <li class="tocotrienols-comparison__item tocotrienols-comparison__item--positive" {{ block.shopify_attributes }}>
+                  <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                  <span>{{ block.settings.text }}</span>
+                </li>
+              {% endif %}
+            {% endfor %}
+            {% unless has_right_blocks %}
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--positive">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Up to 50× stronger antioxidant capacity</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--positive">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Supports heart, brain, liver &amp; skin health</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--positive">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Backed by 30+ years of peer-reviewed research</span>
+              </li>
+              <li class="tocotrienols-comparison__item tocotrienols-comparison__item--positive">
+                <span class="tocotrienols-comparison__item-icon" aria-hidden="true"></span>
+                <span>Superior penetration into cells and tissues</span>
+              </li>
+            {% endunless %}
+          </ul>
+        </div>
+      </div>
+
+      {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+        <div class="tocotrienols-comparison__cta-wrap">
+          <a class="tocotrienols-comparison__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_text }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "product comprision v1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "How Tocotrienols Outperform Regular Vitamin E — Every Time."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results"
+    },
+    {
+      "type": "text",
+      "id": "left_eyebrow",
+      "label": "Left Eyebrow",
+      "default": "Tocopherols"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left Column Title",
+      "default": "Regular Vitamin E"
+    },
+    {
+      "type": "header",
+      "content": "Left Column"
+    },
+    {
+      "type": "textarea",
+      "id": "left_subtitle",
+      "label": "Left Column Subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Right Column"
+    },
+    {
+      "type": "text",
+      "id": "right_eyebrow",
+      "label": "Right Eyebrow",
+      "default": "Tocotrienols"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right Column Title",
+      "default": "Advanced Vitamin E"
+    },
+    {
+      "type": "textarea",
+      "id": "right_subtitle",
+      "label": "Right Column Subtitle"
+    },
+    {
+      "type": "header",
+      "content": "Call To Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Label",
+      "default": "Shop Tocotrienol"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_item",
+      "name": "Left Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item text",
+          "default": "Limited antioxidant power"
+        }
+      ]
+    },
+    {
+      "type": "right_item",
+      "name": "Right Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Item text",
+          "default": "Up to 50× stronger antioxidant capacity"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "product comprision v1",
+      "blocks": [
+        {
+          "type": "left_item",
+          "settings": {
+            "text": "Limited antioxidant power"
+          }
+        },
+        {
+          "type": "left_item",
+          "settings": {
+            "text": "Minimal organ support"
+          }
+        },
+        {
+          "type": "left_item",
+          "settings": {
+            "text": "Poor cellular penetration"
+          }
+        },
+        {
+          "type": "left_item",
+          "settings": {
+            "text": "Limited research backing"
+          }
+        },
+        {
+          "type": "right_item",
+          "settings": {
+            "text": "Up to 50× stronger antioxidant capacity"
+          }
+        },
+        {
+          "type": "right_item",
+          "settings": {
+            "text": "Supports heart, brain, liver & skin health"
+          }
+        },
+        {
+          "type": "right_item",
+          "settings": {
+            "text": "Backed by 30+ years of peer-reviewed research"
+          }
+        },
+        {
+          "type": "right_item",
+          "settings": {
+            "text": "Superior penetration into cells and tissues"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

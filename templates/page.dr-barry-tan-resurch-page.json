@@ -16,17 +16,400 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "dr_barry_tan_banner_Am8eEm": {
+      "type": "dr-barry-tan-banner",
+      "name": "dr-barry-tan-banner",
+      "settings": {
+        "heading": "30+ Years of Tocotrienols by Dr. Barrie Tan",
+        "subheading": "The turning points that took it from SEED to SCIENCE.",
+        "button_label": "Shop Tocotrienols",
+        "button_link": "shopify://pages/alex",
+        "button_open_new_tab": false,
+        "image": "shopify://shop_images/Image_wHPEsYa9YHcGTTHOJvS0mO9XY_jpg.png",
+        "image_alt": "Portrait of Dr. Barrie Tan",
+        "background_color": "#086b92",
+        "card_background": "#086b92",
+        "subheading_color": "#d8ecf5",
+        "button_text_color": "#086b92",
+        "button_icon_background": "#086b92",
+        "button_icon_color": "#ffffff",
+        "section_padding": 48,
+        "border_radius": 28,
+        "image_border_radius": 20,
+        "max_width": 1100
+      }
+    },
+    "dr_barrytan_timeline_section_AyfJpW": {
+      "type": "dr-barrytan-timeline-section",
+      "blocks": {
+        "timeline_item_tF8FYg": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "1992",
+            "title": "The Journey Begins ",
+            "subtitle": "Dr. Tan's First Tocotrienol Success ",
+            "description": "<p>Dr. Barrie Tan and his colleagues cracked the code on extracting tocotrienols from palm oil at commercial scale. Finally, people could access this superior form of Vitamin E! But there was a catch. Palm contained 25% alpha-tocopherol—and that was a problem. <strong>Alpha-tocopherol literally blocks tocotrienols from doing their job. </strong><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_6RUWjH": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "1998",
+            "title": "The Hunt Continued ",
+            "subtitle": "Rice Bran Improves the Formula ",
+            "description": "<p>Rice bran showed promise—70% tocotrienols, 30% tocopherols. Clinical results improved, but that 30% was still getting in the way. For most scientists, this would've been \"good enough.\" <br/><strong>But Dr. Tan knew he needed something completely free of tocopherols, a 100% pure, natural source. </strong><br/><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_XkXjUE": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2002",
+            "title": "The \"Aha!\" Moment in Peru",
+            "subtitle": "100% Pure Annatto Tocotrienols Found ",
+            "description": "<p>While searching for marigolds in Peru, Dr. Tan's eye caught a vibrant red plant—annatto. He bought samples and brought them back to his Massachusetts lab. The results were perfect: 100% pure tocotrienols and ZERO tocopherols. <strong>After a decade of searching, he'd found it. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_WdcTBz": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2002-2003",
+            "title": "The Making of GOLD Standard ",
+            "subtitle": "Development of DeltaGold® Supplement ",
+            "description": "<p>Finding the perfect source was only half the battle. Dr. Tan spent years perfecting a chemical-free extraction method that preserved the delicate tocotrienol molecules. The result? <strong>DeltaGold®—the world's first and only 100% pure, tocopherol-free tocotrienol supplement. </strong><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_MEULE4": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2003-2013",
+            "title": "The Evidence Builds ",
+            "subtitle": "Clinical Research & Breakthrough Studies ",
+            "description": "<p>For ten years, Dr. Tan collaborated with leading researchers—Sen, Rink, Khanna—putting DeltaGold® through over 100 clinical and pre-clinical studies. The research revealed breakthrough benefits for neurological health, cardiovascular support, and cellular protection. <strong>No shortcuts. Just science. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        },
+        "timeline_item_FAKgXQ": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2014",
+            "title": "The FDA Stamp of Approval ",
+            "subtitle": "GRAS Status Granted ",
+            "description": "<p>The FDA granted DeltaGold® \"Generally Recognized as Safe\" (GRAS) status—a milestone most supplements never achieve. You're not just taking another vitamin based on marketing hype. <strong>You're taking something with FDA-level safety validation. </strong><br/><br/></p>",
+            "alignment": "left"
+          }
+        },
+        "timeline_item_whjFNi": {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2015-Present ",
+            "title": "The World Takes Notice ",
+            "subtitle": "Tocotrienol Market Surge ",
+            "description": "<p>The global tocotrienol market reached $386 million, projected to hit $702 million by 2034. Recent research in Frontiers in Nutrition continues validating Dr. Tan's decades of work. <strong>After 30+ years of dedication, Dr. Tan's \"perfect\" Vitamin E is finally getting the recognition it deserves. </strong><br/><br/></p>",
+            "alignment": "right"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_item_tF8FYg",
+        "timeline_item_6RUWjH",
+        "timeline_item_XkXjUE",
+        "timeline_item_WdcTBz",
+        "timeline_item_MEULE4",
+        "timeline_item_FAKgXQ",
+        "timeline_item_whjFNi"
+      ],
+      "name": "barry tan timeline new",
+      "settings": {}
+    },
+    "video_block_pYwUCc": {
+      "type": "video-block",
+      "custom_css": [
+        ".halo-block-header .title .text {width: 100%; font-weight: 500; line-height: 1.2; font-style: normal;}",
+        ".deferred-media__poster img {object-fit: contain;}",
+        ".deferred-media__poster-button {display: none;}"
+      ],
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "container": "container",
+        "spotlight_bg": "#ffffff",
+        "spotlight_bg_gradient": "",
+        "video_block_title": "Hear It From \"The Tocotrienol King\" Himself ",
+        "color_title": "#374650",
+        "fontsize_title": 35,
+        "fontsize_title_mb": 22,
+        "margin_bottom_title": 24,
+        "video_block_des": "",
+        "color_des": "#374650",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "cover_image": "shopify://shop_images/szkdohQGTPgWwgIdMiTwLZACi4_jpg.png",
+        "autoplay": false,
+        "video_sound": true,
+        "video_height": "54",
+        "video_height_mb": "100",
+        "style_video": "youtube",
+        "video_url": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s",
+        "video_url_mb": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "url_mp4": "",
+        "url_mp4_mb": "",
+        "description": "",
+        "full_width": false,
+        "position_icon": "center",
+        "heading": "",
+        "font_size_heading": 27,
+        "font_size_heading_mb": 24,
+        "margin_bottom_heading": 20,
+        "color_heading": "#232323",
+        "text": "",
+        "font_size_des": 12,
+        "font_size_des_mb": 12,
+        "margin_bottom_des": 35,
+        "color_des_content": "#232323",
+        "content_width": 475,
+        "align": "center",
+        "position": "left",
+        "btn_text": "",
+        "link": "",
+        "button_width": 235,
+        "button_color": "#ffffff",
+        "button_border": "#232323",
+        "button_background": "#232323",
+        "button_background_gradient": "",
+        "button_color_hover": "#ffffff",
+        "button_border_hover": "#232323",
+        "button_background_hover": "#232323",
+        "button_background_gradient_hover": "",
+        "mg_top_desktop": 30,
+        "mg_top_tablet": 30,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 30,
+        "mg_bottom_tablet": 30,
+        "mg_bottom_mobile": 30
+      }
+    },
+    "barry_tan_green_patti_mGcVFw": {
+      "type": "barry-tan-green-patti",
+      "name": "Barry Tan Quote Section",
+      "settings": {
+        "quote": "Nature provides the perfect blueprint.\nOur role as scientists is to identify these\ncompounds and preserve their integrity.",
+        "attribution": "Dr. Barrie Tan, Ph.D",
+        "section_padding_top": 40,
+        "section_padding_bottom": 40,
+        "min_height": 400,
+        "max_width": 900
+      }
+    },
+    "barry_tan_gridview_UnaQaW": {
+      "type": "barry-tan-gridview",
+      "name": "Barry Tan Gridview",
+      "settings": {
+        "heading": "What Makes Dr. Tan's Research Revolutionary?",
+        "intro_text": "It's not just a victory of a scientist and his passion, but a testament that humankind will cherish for eternity.",
+        "cta_heading": "Want The Complete Story?",
+        "cta_text": "Download Dr. Tan's groundbreaking book 'The Truth About Vitamin E'. Discover the fascinating science, clinical trials, and personal stories behind this revolutionary breakthrough.",
+        "cta_label": "Get the ebook",
+        "cta_link": "",
+        "research_text": "For decades, the world believed alpha-tocopherol was the only form of Vitamin E that mattered. Dr. Barrie Tan's relentless curiosity led him to discover and commercialize 100% pure tocotrienols from annatto—a far more potent form of Vitamin E with remarkable health benefits that traditional supplements were missing.",
+        "book_image": "shopify://shop_images/Thumbnail_Image_7OnZStnrhKOXg1FGB06qyIH2leM_jpg.png",
+        "book_image_alt": "The Truth About Vitamin E book cover",
+        "show_second_book": false,
+        "background_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "text_color": "#374650",
+        "cta_background": "#f5f5f5",
+        "cta_link_color": "#086b92",
+        "cta_link_hover": "#0a5d7a",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "max_width": 1200
+      }
+    },
+    "barrytan_lab_details_HnWiXx": {
+      "type": "barrytan-lab-details",
+      "blocks": {
+        "lab_detail_item_nbzhmB": {
+          "type": "lab_detail_item",
+          "settings": {
+            "number": "01",
+            "heading": "Published Research & Scientific Recognition",
+            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
+            "subheading_link": "",
+            "description": "Dr. Tan didn't just discover tocotrienols; he spent 20+ years proving their extraordinary health benefits through rigorous clinical research. Here's what the science shows."
+          }
+        },
+        "lab_detail_item_pCf6C9": {
+          "type": "lab_detail_item",
+          "settings": {
+            "number": "02",
+            "heading": "Tocotrienols: Vitamin E Beyond Tocopherols",
+            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
+            "subheading_link": "",
+            "description": "Evidence for cardiometabolic support, oncology adjunct insights, and emerging areas such as bone, skin, and healthy aging, as well as how excess tocopherol can counteract the actions of tocotrienol."
+          }
+        },
+        "lab_detail_item_rK7q6K": {
+          "type": "lab_detail_item",
+          "settings": {
+            "number": "03",
+            "heading": "Barrie Tan, PhD: Using Tocotrienols to Address Lifestyle and Metabolic Disease",
+            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
+            "subheading_link": "",
+            "description": "Discusses evidence and clinical interest in tocotrienols across cardiometabolic health, fatty liver disease, cancer support, radiation exposure, and bone health, and traces their sourcing evolution from palm oil."
+          }
+        },
+        "lab_detail_item_QQQpVF": {
+          "type": "lab_detail_item",
+          "settings": {
+            "number": "04",
+            "heading": "Barrie Tan, PhD: Using Tocotrienols to Address Lifestyle and Metabolic Disease",
+            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
+            "subheading_link": "",
+            "description": "Discusses evidence and clinical interest in tocotrienols across cardiometabolic health, fatty liver disease, cancer support, radiation exposure, and bone health, and traces their sourcing evolution from palm oil."
+          }
+        }
+      },
+      "block_order": [
+        "lab_detail_item_nbzhmB",
+        "lab_detail_item_pCf6C9",
+        "lab_detail_item_rK7q6K",
+        "lab_detail_item_QQQpVF"
+      ],
+      "name": "Lab Details Section",
+      "settings": {
+        "title": "From Lab to Life",
+        "background_color": "#ffffff",
+        "title_color": "#1a1a1a",
+        "heading_color": "#1a1a1a",
+        "subheading_color": "#086b92",
+        "subheading_hover": "#0a5d7a",
+        "description_color": "#666666",
+        "number_color": "#d0d0d0",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "max_width": 1000
+      }
+    },
+    "barry_tanfooter_shop_JEfy76": {
+      "type": "barry-tanfooter-shop",
+      "name": "Footer Shop Banner",
+      "settings": {
+        "text": "50+ peer-reviewed publications and multiple patents in tocotrienol extraction and application",
+        "button_label": "Shop Tocotrienol",
+        "button_link": "shopify://collections/all",
+        "background_color": "#ffffff",
+        "banner_background": "#f5d89f",
+        "text_color": "#374650",
+        "button_background": "#374650",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#2a3439",
+        "border_radius": 16,
+        "button_border_radius": 8,
+        "banner_padding_top": 40,
+        "banner_padding_bottom": 40,
+        "banner_padding_horizontal": 40,
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "max_width": 1200
+      }
+    },
+    "barrytan_grid_video_Vx8jyw": {
+      "type": "barrytan-grid-video",
+      "blocks": {
+        "video_item_Dby3tU": {
+          "type": "video_item",
+          "settings": {
+            "video_image": "shopify://shop_images/Video.png",
+            "video_image_alt": "",
+            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
+            "video_title_overlay": "",
+            "video_link": "",
+            "show_branding": false,
+            "branding_text": "",
+            "show_guest_banner": false,
+            "guest_text": ""
+          }
+        },
+        "video_item_4t7PmE": {
+          "type": "video_item",
+          "settings": {
+            "video_image_alt": "",
+            "video_title": "\"Vitamin E & Tocotrienols Impact on Bone Health\" with Dr. Barrie Tan",
+            "video_title_overlay": "Dispelling Myths of Vitamin E",
+            "video_link": "",
+            "show_branding": false,
+            "branding_text": "Wellness by designs PODCAST",
+            "show_guest_banner": false,
+            "guest_text": "With Dr Barrie Tan PhD"
+          }
+        },
+        "video_item_TeKE8k": {
+          "type": "video_item",
+          "settings": {
+            "video_image_alt": "",
+            "video_title": "Vitamin E Unveiled: Dispelling Myths and Maximizing Benefits of Tocotrienols with Dr. Barrie Tan",
+            "video_title_overlay": "Tocotrienols - new vitamin E",
+            "video_link": "",
+            "show_branding": true,
+            "branding_text": "Wellness by designs PODCAST",
+            "show_guest_banner": true,
+            "guest_text": "With Dr Barrie Tan PhD"
+          }
+        },
+        "video_item_hjUbaH": {
+          "type": "video_item",
+          "settings": {
+            "video_image_alt": "",
+            "video_title": "The Health Benefits of Tocotrienols, the New Vitamin E | Barrie Tan, PhD",
+            "video_title_overlay": "Tocotrienols - new vitamin E",
+            "video_link": "",
+            "show_branding": true,
+            "branding_text": "Wellness by designs PODCAST",
+            "show_guest_banner": true,
+            "guest_text": "With Dr Barrie Tan PhD"
+          }
+        }
+      },
+      "block_order": [
+        "video_item_Dby3tU",
+        "video_item_4t7PmE",
+        "video_item_TeKE8k",
+        "video_item_hjUbaH"
+      ],
+      "name": "Video Grid Section",
+      "settings": {
+        "title": "Watch Dr. Barrie Tan explain his years of breakthrough research",
+        "background_color": "#ffffff",
+        "title_color": "#1a1a1a",
+        "text_color": "#374650",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "max_width": 1200
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "dr_barry_tan_banner_Am8eEm",
+    "dr_barrytan_timeline_section_AyfJpW",
+    "video_block_pYwUCc",
+    "barry_tan_green_patti_mGcVFw",
+    "barry_tan_gridview_UnaQaW",
+    "barrytan_lab_details_HnWiXx",
+    "barry_tanfooter_shop_JEfy76",
+    "barrytan_grid_video_Vx8jyw"
   ]
 }

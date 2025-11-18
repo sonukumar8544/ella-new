@@ -1,0 +1,562 @@
+{% comment %} add here new div for 90 day satisfection garanty {% endcomment %}
+
+<div class="amazon-patti-sec">
+  <div class="amazon-patti-sec__container">
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">90-DAY SATISFACTION GUARANTEE</span>
+    </div>
+    <div class="amazon-patti-sec__divider" aria-hidden="true"></div>
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">SUPPORT 24/7</span>
+    </div>
+    <div class="amazon-patti-sec__divider" aria-hidden="true"></div>
+    <div class="amazon-patti-sec__item">
+      <span class="amazon-patti-sec__text">FREE SHIPPING</span>
+    </div>
+  </div>
+</div>
+
+<div class="eto-amazon-trust-banner">
+  <div class="eto-amazon-trust-banner__container">
+    <div class="eto-amazon-trust-banner__content">
+      <div class="eto-amazon-trust-banner__text-section">
+        {% if section.settings.heading_line_1 != blank or section.settings.heading_line_2 != blank %}
+          <h2 class="eto-amazon-trust-banner__heading">
+            {% if section.settings.heading_line_1 != blank %}
+              <span class="eto-amazon-trust-banner__heading-line-1">{{ section.settings.heading_line_1 }}</span>
+            {% endif %}
+            {% if section.settings.heading_line_2 != blank %}
+              <span class="eto-amazon-trust-banner__heading-line-2">{{ section.settings.heading_line_2 }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+      </div>
+      
+      <div class="eto-amazon-trust-banner__actions">
+        {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
+          <a href="{{ section.settings.primary_button_url }}" 
+             class="eto-amazon-trust-banner__primary-button"
+             {% if section.settings.primary_button_new_tab %}target="_blank"{% endif %}>
+            {{ section.settings.primary_button_text }}
+          </a>
+        {% endif %}
+        
+        {% if section.settings.secondary_link_text != blank and section.settings.secondary_link_url != blank %}
+          <a href="{{ section.settings.secondary_link_url }}" 
+             class="eto-amazon-trust-banner__secondary-link"
+             {% if section.settings.secondary_link_new_tab %}target="_blank"{% endif %}>
+            {{ section.settings.secondary_link_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .amazon-patti-sec {
+    background-color: #08698f;
+    padding: 20px 16px;
+  }
+
+  .amazon-patti-sec__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .amazon-patti-sec__item {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .amazon-patti-sec__text {
+    color: #F1FAFE;
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .amazon-patti-sec__divider {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .amazon-patti-sec {
+      padding: 14px 0;
+    }
+
+    .amazon-patti-sec__container {
+      max-width: none;
+      padding: 0 16px;
+      gap: 32px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .amazon-patti-sec__container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .amazon-patti-sec__item {
+      flex: 0 0 auto;
+    }
+
+    .amazon-patti-sec__text {
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+  }
+
+  .eto-amazon-trust-banner {
+    background-color: {{ section.settings.background_color | default: '#fff9e6' }};
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px;
+    margin: {{ section.settings.margin_top }}px 0 {{ section.settings.margin_bottom }}px;
+  }
+  
+  .eto-amazon-trust-banner__container {
+    max-width: {{ section.settings.container_width | default: '1200' }}px;
+    margin: 0 auto;
+  }
+  
+  .eto-amazon-trust-banner__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  
+  .eto-amazon-trust-banner__heading {
+    font-family: 'Nunito', {{ section.settings.heading_font_family | default: 'sans-serif' }};
+    font-size: 28px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color | default: '#314154' }};
+    line-height: 1.2;
+    margin: 0;
+    display: inline-block;
+  }
+  
+  .eto-amazon-trust-banner__heading-line-1,
+  .eto-amazon-trust-banner__heading-line-2 {
+    display: block;
+  }
+  
+  .eto-amazon-trust-banner__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .eto-amazon-trust-banner__primary-button {
+    background-color: {{ section.settings.primary_button_bg_color | default: '#f6c356' }};
+    color: {{ section.settings.primary_button_text_color | default: '#2d3e50' }};
+    padding: 14px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: 'Lato', {{ section.settings.primary_button_font_family | default: 'sans-serif' }};
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(246, 195, 86, 0.3);
+  }
+  
+  .eto-amazon-trust-banner__primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(246, 195, 86, 0.35);
+  }
+  
+  .eto-amazon-trust-banner__secondary-link {
+    color: {{ section.settings.secondary_link_color | default: '#314154' }};
+    text-decoration: none;
+    font-family: 'Lato', {{ section.settings.secondary_link_font_family | default: 'sans-serif' }};
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 4px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  
+  .eto-amazon-trust-banner__secondary-link:hover {
+    color: {{ section.settings.secondary_link_hover_color | default: '#1e2b3a' }};
+    border-color: currentColor;
+  }
+  
+  @media (max-width: 768px) {
+    .eto-amazon-trust-banner__content {
+      flex-direction: column;
+      text-align: center;
+      gap: 28px;
+    }
+    
+    .eto-amazon-trust-banner__heading {
+      font-size: {{ section.settings.heading_font_size_mobile | default: 2.1 }}rem;
+    }
+    
+    .eto-amazon-trust-banner__actions {
+      justify-content: center;
+      width: 100%;
+      gap: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .eto-amazon-trust-banner {
+      padding: 32px 20px;
+    }
+    
+    .eto-amazon-trust-banner__actions {
+      flex-direction: row;
+      gap: 14px;
+    }
+    
+    .eto-amazon-trust-banner__primary-button {
+      /* width: 100%; */
+      max-width: 320px;
+    }
+    
+    .eto-amazon-trust-banner__secondary-link {
+      border-bottom-width: 1px;
+    }
+    
+    .eto-amazon-trust-banner__heading {
+      font-size: 24px !important;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
+</style>
+
+{% schema %}
+    {
+  "name": "ETO Amazon Trust Banner",
+      "tag": "section",
+  "class": "eto-amazon-spaced-section",
+      "settings": [
+        {
+      "type": "header",
+      "content": "Banner Content"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading Line 1",
+      "default": "Now you know the truth"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading Line 2",
+      "default": "about Vitamin E."
+    },
+    {
+      "type": "header",
+      "content": "Primary Button"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary Button Text",
+      "default": "Buy Tocotrienol Now"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_url",
+      "label": "Primary Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "primary_button_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Secondary Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_link_text",
+      "label": "Secondary Link Text",
+      "default": "Keep Learning"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link_url",
+      "label": "Secondary Link URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "secondary_link_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container Max Width (px)",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Padding Horizontal (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff9e6"
+    },
+    {
+      "type": "header",
+      "content": "Heading Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font_family",
+      "label": "Heading Font Family",
+      "default": "nunito_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (rem)",
+      "min": 1,
+      "max": 4,
+      "step": 0.1,
+      "default": 2.4
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading Font Size Mobile (rem)",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_small_mobile",
+      "label": "Heading Font Size Small Mobile (rem)",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.1,
+      "default": 1.8
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading Font Weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semi Bold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#314154"
+    },
+    {
+      "type": "header",
+      "content": "Primary Button Styling"
+    },
+    {
+      "type": "font_picker",
+      "id": "primary_button_font_family",
+      "label": "Primary Button Font Family",
+      "default": "lato_n4"
+    },
+    {
+      "type": "range",
+      "id": "primary_button_font_size",
+      "label": "Primary Button Font Size (rem)",
+      "min": 0.8,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "primary_button_font_weight",
+      "label": "Primary Button Font Weight",
+      "options": [
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semi Bold"},
+        {"value": "700", "label": "Bold"}
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg_color",
+      "label": "Primary Button Background Color",
+      "default": "#f6c356"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text_color",
+      "label": "Primary Button Text Color",
+      "default": "#2d3e50"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_bg_color",
+      "label": "Primary Button Hover Background Color",
+      "default": "#dea840"
+    },
+    {
+      "type": "range",
+      "id": "primary_button_padding_vertical",
+      "label": "Primary Button Padding Vertical (px)",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "primary_button_padding_horizontal",
+      "label": "Primary Button Padding Horizontal (px)",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "primary_button_border_radius",
+      "label": "Primary Button Border Radius (px)",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Secondary Link Styling"
+    },
+    {
+      "type": "font_picker",
+      "id": "secondary_link_font_family",
+      "label": "Secondary Link Font Family",
+      "default": "lato_n4"
+    },
+    {
+      "type": "range",
+      "id": "secondary_link_font_size",
+      "label": "Secondary Link Font Size (rem)",
+      "min": 0.8,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "secondary_link_font_weight",
+      "label": "Secondary Link Font Weight",
+      "options": [
+        {"value": "300", "label": "Light"},
+        {"value": "400", "label": "Normal"},
+        {"value": "500", "label": "Medium"},
+        {"value": "600", "label": "Semi Bold"}
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "secondary_link_color",
+      "label": "Secondary Link Color",
+      "default": "#314154"
+    },
+    {
+      "type": "color",
+      "id": "secondary_link_hover_color",
+      "label": "Secondary Link Hover Color",
+      "default": "#25303d"
+    }
+      ],
+      "presets": [
+        {
+      "name": "ETO Amazon Trust Banner",
+      "settings": {
+        "heading_line_1": "Now you know the truth",
+        "heading_line_2": "about Vitamin E.",
+        "primary_button_text": "Buy Tocotrienol Now",
+        "secondary_link_text": "Keep Learning"
+      }
+        }
+      ]
+    }
+    {% endschema %}

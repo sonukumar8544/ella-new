@@ -27,20 +27,21 @@
     "secondry_banner_HpmCRB": {
       "type": "secondry-banner",
       "custom_css": [
-        ".color-secondary-banner__content {max-width: 500px;}"
+        ".color-secondary-banner__content {max-width: 500px;}",
+        "@media (max-width: 769px) {.color-secondary-banner__title {font-size: 34px; margin-bottom: 15px; } .color-secondary-banner__description {font-size: 22px; margin-bottom: 20px; }}"
       ],
       "name": "Secondary Banner",
       "settings": {
-        "desktop_image": "shopify://shop_images/30cd25ebe5e3ac9abce0b3eba51a064e8c9b049d.png",
-        "mobile_image": "shopify://shop_images/Mobile_banner.png",
+        "desktop_image": "shopify://shop_images/Frame_1618873645.png",
+        "mobile_image": "shopify://shop_images/Frame_1618873647_b33465b2-55b7-46f4-947a-a41e76af1e77.png",
         "banner_height_desktop": 600,
         "banner_height_mobile": 550,
         "show_overlay": true,
         "overlay_opacity": 10,
-        "title": "Not All Vitamin E Is Created Equal Meet the Superior Tocotrienols.",
-        "description": "Most Vitamin E supplements use tocopherols — the weaker form. Tocotrienols deliver the real benefits your cells need.",
-        "button_1_text": "See Why Tocotrienol Matters",
-        "button_1_link": "",
+        "title": "Not All Vitamin E Is Created Equal",
+        "description": "Meet Tocotrienols — \nThe Advanced Vitamin E",
+        "button_1_text": "Shop Tocotrienol",
+        "button_1_link": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
         "button_1_show_icon": false,
         "button_1_background_color": "#0b7a9e",
         "button_1_border_color": "#0b7a9e",
@@ -48,7 +49,7 @@
         "button_1_hover_background": "#ffffff",
         "button_1_hover_border": "#ffffff",
         "button_1_hover_text": "#095d7a",
-        "button_2_text": "Shop Tocotrienol",
+        "button_2_text": "",
         "button_2_link": "",
         "button_2_background_color": "#ffffff",
         "button_2_border_color": "#ffffff",
@@ -140,264 +141,670 @@
         "mg_bottom_mobile": 0
       }
     },
-    "compare_two_col_sections_P7kA8Q": {
-      "type": "compare-two-col-sections",
-      "name": "Tocotrienols Comparison",
-      "settings": {
-        "title": "How Tocotrienols Outperform Regular Vitamin E — Every Time.",
-        "subtitle": "There are 8 forms of Vitamin E, but only tocotrienols stand out for real cellular protection and results",
-        "learn_more_text": "Learn More About Vitamin E Types",
-        "learn_more_link": "shopify://products/bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
-        "desktop_image": "shopify://shop_images/Frame_1618873453.png",
-        "mobile_image": "shopify://shop_images/types.png"
-      }
-    },
-    "four_grid_block_VPbHWd": {
-      "type": "four-grid-block",
-      "name": "Four Grid Block",
-      "settings": {
-        "title": "Tocotrienols Reach Where Others Can't",
-        "subtitle": "Most antioxidants stop at the surface. Tocotrienols dive deep into your cells, protecting where stress hits hardest.",
-        "background_color": "#ffffff",
-        "title_color": "#374650",
-        "subtitle_color": "#374650",
-        "item_title_color": "#374650",
-        "item_description_color": "#6c757d",
-        "icon_background_color": "rgba(0,0,0,0)",
-        "icon_color": "#1976d2",
-        "border_color": "#e0e0e0",
-        "hover_background_color": "#f8f9fa",
-        "section_padding_top": 80,
-        "section_padding_bottom": 80,
-        "header_margin_bottom": 60,
-        "item_padding": 40,
-        "icon_size": 80,
-        "title_font_size": 42,
-        "subtitle_font_size": 18,
-        "item_title_font_size": 24,
-        "item_description_font_size": 16,
-        "show_hover_effects": true,
-        "show_borders": true,
-        "item_1_image": "shopify://shop_images/organ-donation_17977056_1.svg",
-        "item_1_title": "Heart",
-        "item_1_description": "Supports healthy cholesterol and arterial function",
-        "item_2_image": "shopify://shop_images/Frame_1618873436.svg",
-        "item_2_title": "Liver",
-        "item_2_description": "Promotes natural detox and liver balance",
-        "item_3_image": "shopify://shop_images/human-brain_18554063_1.svg",
-        "item_3_title": "Brain",
-        "item_3_description": "Helps defend neurons from oxidative stress",
-        "item_4_image": "shopify://shop_images/liquid_14831916_1.svg",
-        "item_4_title": "Skin",
-        "item_4_description": "Encourages collagen for a youthful glow"
-      }
-    },
-    "barry_tan_journey_EkxjnC": {
-      "type": "barry-tan-journey",
-      "disabled": true,
-      "name": "Barry Tan Journey",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Main.png",
-        "mobile_image": "shopify://shop_images/Main_1.png",
-        "background_color": "#ffffff"
-      }
-    },
-    "1643015886f75782fe": {
-      "type": "custom-service-block",
+    "product_comprsion_section_vit_rmmBY7": {
+      "type": "product-comprsion-section-vit",
       "blocks": {
-        "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c": {
-          "type": "Text",
+        "left_item_ggREAD": {
+          "type": "left_item",
           "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/Image_h-_261pxshow.png",
-            "icon": "",
-            "width_icon": 0,
-            "height_icon": 0,
-            "mg_bottom_icon": 0,
-            "color_icon": "#374650",
-            "text": "",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 10,
-            "fontsize_title_block_mb": 10,
-            "title_block_font_weight": "700",
-            "mg_bottom_title": 0,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#3c3c3c",
-            "description": "",
-            "custom_liquid": false,
-            "text1": "",
-            "content1": "",
-            "text2": "",
-            "content2": "",
-            "text3": "",
-            "content3": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 15,
-            "lineheight_des_block": 10,
-            "mg_bottom_des": 0,
-            "color_des_block": "#505050",
-            "button": "",
-            "link": "#",
-            "button_style": "style2",
-            "fontsize_button": 10,
-            "button_width": 100,
-            "fontweight_button": "700",
-            "enable_underline_button": false,
-            "color_button": "#086b92",
-            "button_border": "#086b92",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ffffff",
-            "button_border_hover": "",
-            "button_background_hover": "#086b92",
-            "button_background_gradient_hover": ""
+            "text": "Limited antioxidant power"
           }
         },
-        "text_8PpA4k": {
-          "type": "Text",
+        "left_item_DX7JMW": {
+          "type": "left_item",
           "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "text",
-            "icon": "",
-            "width_icon": 0,
-            "height_icon": 0,
-            "mg_bottom_icon": 0,
-            "color_icon": "#3c3c3c",
-            "text": "",
-            "type_tab_font": "font_2",
-            "fontsize_title_block": 32,
-            "fontsize_title_block_mb": 24,
-            "title_block_font_weight": "800",
-            "mg_bottom_title": 35,
-            "mg_bottom_title_mb": 25,
-            "color_block": "#086b92",
-            "description": "<style>\n        .amazon-two-list {\n            margin: 0;\n            padding: 0;\n            list-style-type: none;\n        }\n        .amazon-two-list li {\n            padding: 10px 0;\n            color: #333;\n        }\n        .amazon-two-list li:before {\n            content: \"✓ \";\n            color: black;\n        }\n   \n    </style>\n\n <ul class=\"amazon-two-list\">\n        <li>100% Annatto Purity – Richest natural source of delta & gamma tocotrienols</li>\n        <li>Clinical Dosage – 300mg NPN-approved therapeutic level</li>\n        <li>Third-Party Lab Tested – Verified for purity & potency</li>\n        <li>GMP-Certified Manufacturing – Produced in FDA-registered facilities</li>\n        <li>Amazon’s Choice – Rated 4.8/5 stars by verified buyers</li>\n<a href=\"#\" style=\"color:#086B92; font-style:italic; border-bottom:1px solid #086B92; text-decoration:none; display:inline-block; max-width:160px; overflow:hidden; white-space:nowrap;\">See the Difference</a>\n    </ul>",
-            "custom_liquid": false,
-            "text1": "",
-            "content1": "",
-            "text2": "",
-            "content2": "",
-            "text3": "",
-            "content3": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 16,
-            "lineheight_des_block": 10,
-            "mg_bottom_des": 0,
-            "color_des_block": "#36454f",
-            "button": "",
-            "link": "",
-            "button_style": "style2",
-            "fontsize_button": 16,
-            "button_width": 200,
-            "fontweight_button": "700",
-            "enable_underline_button": false,
-            "color_button": "#086b92",
-            "button_border": "#086b92",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ffffff",
-            "button_border_hover": "",
-            "button_background_hover": "#086b92",
-            "button_background_gradient_hover": ""
+            "text": "Minimal organ support"
+          }
+        },
+        "left_item_UNf6KC": {
+          "type": "left_item",
+          "settings": {
+            "text": "Poor cellular penetration"
+          }
+        },
+        "left_item_n8dVpe": {
+          "type": "left_item",
+          "settings": {
+            "text": "Limited research backing"
+          }
+        },
+        "right_item_VrUVFq": {
+          "type": "right_item",
+          "settings": {
+            "text": "Up to <strong>50× stronger</strong> antioxidant capacity"
+          }
+        },
+        "right_item_brDtmn": {
+          "type": "right_item",
+          "settings": {
+            "text": "Supports heart, brain, liver & skin health"
+          }
+        },
+        "right_item_LxRFMG": {
+          "type": "right_item",
+          "settings": {
+            "text": "Superior penetration into cells and tissues"
+          }
+        },
+        "right_item_rrjDzm": {
+          "type": "right_item",
+          "settings": {
+            "text": "Backed by <strong>30+ years of peer-reviewed research</strong>"
           }
         }
       },
       "block_order": [
-        "4b9eb83d-98f6-47c7-a4f5-d5f83b84590c",
-        "text_8PpA4k"
+        "left_item_ggREAD",
+        "left_item_DX7JMW",
+        "left_item_UNf6KC",
+        "left_item_n8dVpe",
+        "right_item_VrUVFq",
+        "right_item_brDtmn",
+        "right_item_LxRFMG",
+        "right_item_rrjDzm"
+      ],
+      "name": "product comprision v1",
+      "settings": {
+        "title": "How Tocotrienols Outperform Regular Vitamin E — Every Time.",
+        "subtitle": "Its shorter, unsaturated tail moves more freely within cell membranes and \ngives better absorption",
+        "left_eyebrow": "",
+        "left_title": "Tocopherols",
+        "left_subtitle": "(Regular Vitamin E)",
+        "right_eyebrow": "",
+        "right_title": "Tocotrienols",
+        "right_subtitle": "(Advanced Vitamin E)",
+        "cta_text": "Shop Tocotrienol",
+        "cta_link": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
+      }
+    },
+    "barry_tan_journey_9J3GWL": {
+      "type": "barry-tan-journey",
+      "name": "Barry Tan images",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Barrie_Tan3_1.png",
+        "mobile_image": "shopify://shop_images/Main_2.png",
+        "background_color": "#ffffff"
+      }
+    },
+    "barry_tan_timeline_4jVxHK": {
+      "type": "barry-tan-timeline",
+      "name": "Barry Tan Journey",
+      "settings": {
+        "year_1": "1989",
+        "title_1": "Discovery",
+        "description_1": "First isolation of tocotrienols from annatto",
+        "link_1": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "link_text_1": "Explore the Research Journey",
+        "year_2": "2002 - 2010",
+        "title_2": "Clinical Studies",
+        "description_2": "Multiple human trials confirming benefits",
+        "link_2": "",
+        "link_text_2": "View Research Studies",
+        "year_3": "2015",
+        "title_3": "Health Canada Approval",
+        "description_3": "Official recognition of therapeutic use",
+        "link_3": "",
+        "link_text_3": "Read Approval Details"
+      }
+    },
+    "four_grid_block_VPbHWd": {
+      "type": "four-grid-block",
+      "blocks": {
+        "benefit_8aXRLn": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Thumbnail_6zb1naFFwsIXJ95BTMeqWofQRw_jpg.svg",
+            "icon_alt": "",
+            "card_title": "Heart",
+            "card_description": "Supports healthy cholesterol and arterial function",
+            "card_link_label": "Read More",
+            "highlight_card": false,
+            "modal_title": "Heart Health Goals Tocotrienol Supports",
+            "modal_subtitle": "",
+            "modal_benefit_1": "Keep your heart strong every day ",
+            "modal_benefit_2": "Support flexible, healthy arteries and smooth blood flow ",
+            "modal_benefit_3": "Help maintain healthy cholesterol levels naturally ",
+            "modal_benefit_4": "Encourage long-term heart wellness through diet, movement, and lifestyle habits  ",
+            "modal_benefit_5": "",
+            "modal_benefits": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation",
+            "research_label": "Research",
+            "research_1_title": "Qureshi A.A., 2015 – Lipid Support (Nutraceutical Business Review)",
+            "research_1_body": "",
+            "research_1_point_1": "In a 4-week human trial, 250 mg/day of annatto-derived δ‑ and γ‑tocotrienols alongside a heart-healthy diet lowered total cholesterol (~15%), LDL (~18%) and triglycerides (~14%). ",
+            "research_1_point_2": "Highlights potential to support healthy cholesterol in adults. ",
+            "research_1_point_3": "",
+            "research_1_link_label": "Read more →",
+            "research_1_link_url": "https://www.nutraceuticalbusinessreview.com/clinical-study-confirms-cardiovascular-benefits-of-annatto-tocotrienols--104638",
+            "research_2_title": "American River Nutrition, 2022 - Arterial & Vascular Function ",
+            "research_2_body": "",
+            "research_2_point_1": "δ-Tocotrienol (500 mg/day) plus resveratrol improved triglycerides, HDL, waist circumference, and blood pressure in adults with metabolic syndrome.",
+            "research_2_point_2": " Suggests possible support for arterial flexibility and vascular health. ",
+            "research_2_point_3": "",
+            "research_2_link_label": "Read more →",
+            "research_2_link_url": "https://americanrivernutrition.com/annatto-tocotrienol-plus-resveratrol-may-improve-cardiometabolic-risk-in-mets-rct/",
+            "research_3_title": "Prasad K., 2011 - Antioxidant & Anti-inflammatory Effects (Mini Rev Med Chem.) ",
+            "research_3_body": "",
+            "research_3_point_1": "δ- and γ-tocotrienols reduced oxidative stress and inflammatory markers such as CRP, TNF-α, and IL-6 in human and animal studies. ",
+            "research_3_point_2": "Supports cardiovascular wellness through antioxidant and anti-inflammatory pathways. ",
+            "research_3_point_3": "Encourages resilience against day-to-day oxidative stress.",
+            "research_3_link_label": "Read more →",
+            "research_3_link_url": "https://pubmed.ncbi.nlm.nih.gov/21774782/",
+            "research_4_title": "Mechanistic Insights - What It Means for Heart Health ",
+            "research_4_body": "",
+            "research_4_point_1": "Tocotrienols may modulate HMG-CoA reductase (same enzyme targeted by statins) via a natural nutritional mechanism. ",
+            "research_4_point_2": "Helps maintain healthy lipid levels and supports arterial function as part of daily heart-healthy habits. ",
+            "research_4_point_3": "",
+            "research_4_link_label": "Read more →",
+            "research_4_link_url": "https://nutritionandmetabolism.biomedcentral.com/articles/10.1186/s12986-018-0244-4"
+          }
+        },
+        "benefit_xWiRf8": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Thumbnail_6zb1naFFwsIXJ95BTMeqWofQRw.jpg_2.svg",
+            "icon_alt": "",
+            "card_title": "Liver",
+            "card_description": "Promotes natural detox and liver balance",
+            "card_link_label": "Read More",
+            "highlight_card": false,
+            "modal_title": "Health Goals Tocotrienols Support for Your Liver ",
+            "modal_subtitle": "",
+            "modal_benefit_1": "Keep your liver functioning smoothly every day",
+            "modal_benefit_2": "Protect liver cells from oxidative stress and inflammation ",
+            "modal_benefit_3": "Help maintain healthy liver enzymes (ALT, AST) naturally ",
+            "modal_benefit_4": "Support long-term liver wellness with diet, movement, and lifestyle habits ",
+            "modal_benefit_5": "",
+            "modal_benefits": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation",
+            "research_label": "Research",
+            "research_1_title": "Umar et al., 2018 - Liver Enzyme & Fatty Liver Index Support (PubMed) ",
+            "research_1_body": "",
+            "research_1_point_1": "A 12-week randomized, double-blind, placebo-controlled trial found that δ‑tocotrienol (300 mg twice daily) helped maintain healthy liver enzyme levels and reduced oxidative stress and inflammation in adults with nonalcoholic fatty liver disease (NAFLD). ",
+            "research_1_point_2": "",
+            "research_1_point_3": "",
+            "research_1_link_label": "Read more →",
+            "research_1_link_url": "https://pubmed.ncbi.nlm.nih.gov/29749323/",
+            "research_2_title": "Umar et al., 2020 - Hepatocellular Injury & Steatosis Improvement (PubMed)",
+            "research_2_body": "",
+            "research_2_point_1": "In a 24-week randomized trial, δ‑tocotrienol (300 mg twice daily) supported healthy liver enzyme levels, reduced markers of inflammation (hs‑CRP) and oxidative stress (MDA), and improved liver fat markers (FLI) in adults with NAFLD versus placebo.",
+            "research_2_point_2": "",
+            "research_2_point_3": "",
+            "research_2_link_label": "Read more →",
+            "research_2_link_url": "https://pubmed.ncbi.nlm.nih.gov/32951743/",
+            "research_3_title": "Qureshi et al., 2023 - Systematic Review of Tocotrienols for Liver Health (MDPI) ",
+            "research_3_body": "",
+            "research_3_point_1": "A systematic review of human trials found that annatto-derived δ- and γ-tocotrienols support liver function, maintain healthy liver enzymes, and reduce oxidative stress and inflammation in adults with NAFLD. ",
+            "research_3_point_2": "",
+            "research_3_point_3": "",
+            "research_3_link_label": "Read more →",
+            "research_3_link_url": "https://www.mdpi.com/2072-6643/15/4/834",
+            "research_4_title": "",
+            "research_4_body": "",
+            "research_4_point_1": "",
+            "research_4_point_2": "",
+            "research_4_point_3": "",
+            "research_4_link_label": "",
+            "research_4_link_url": ""
+          }
+        },
+        "benefit_Vzd3HC": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Thumbnail_6zb1naFFwsIXJ95BTMeqWofQRw.jpg_3.svg",
+            "icon_alt": "",
+            "card_title": "Skin",
+            "card_description": "Encourages collagen for a youthful glow",
+            "card_link_label": "Read More",
+            "highlight_card": false,
+            "modal_title": "Nourish and Protect Your Skin from Within ",
+            "modal_subtitle": "",
+            "modal_benefit_1": "Keep your skin protected from daily stress and environmental damage ",
+            "modal_benefit_2": "Help maintain smooth, youthful-looking skin ",
+            "modal_benefit_3": "Support strong collagen and a healthy skin barrier ",
+            "modal_benefit_4": "",
+            "modal_benefit_5": "",
+            "modal_benefits": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation",
+            "research_label": "Research",
+            "research_1_title": "Ghazali N.I. et al., 2022 — Effects of Tocotrienols on Aging Skin: A Systematic Review (Frontiers in Pharmacology)  ",
+            "research_1_body": "",
+            "research_1_point_1": "A systematic review found that tocotrienols may help protect the skin from UV-induced oxidative stress, support collagen maintenance, and reduce visible signs of aging such as dryness and fine lines. ",
+            "research_1_point_2": "",
+            "research_1_point_3": "",
+            "research_1_link_label": "Read more →",
+            "research_1_link_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9588953/",
+            "research_2_title": "Ranasinghe R., Mathai M., Zulli A., 2022 - Revisiting the Therapeutic Potential of Tocotrienols (BioFactors) ",
+            "research_2_body": "",
+            "research_2_point_1": "Mechanistic evidence highlights tocotrienols’ strong antioxidant and anti-inflammatory activity, showing they may help maintain skin barrier function and defend against environmental damage. ",
+            "research_2_point_2": "",
+            "research_2_point_3": "",
+            "research_2_link_label": "Read more →",
+            "research_2_link_url": "https://iubmb.onlinelibrary.wiley.com/doi/10.1002/biof.1873",
+            "research_3_title": "Comprehensive Overview, Annatto Tocotrienols and Skin Health (Endocare White Paper, 2021) ",
+            "research_3_body": "",
+            "research_3_point_1": "Summarizes preclinical and emerging human findings showing that pure annatto tocotrienols may help defend skin from UV-induced aging, improve elasticity, and support overall dermal wellness through potent antioxidant and anti-inflammatory actions. ",
+            "research_3_point_2": "",
+            "research_3_point_3": "",
+            "research_3_link_label": "Read more →",
+            "research_3_link_url": "https://endocare.co.za/wp-content/uploads/2021/02/Annatto-Tocotrienols-An-Extensive-Overview.pdf",
+            "research_4_title": "",
+            "research_4_body": "",
+            "research_4_point_1": "",
+            "research_4_point_2": "",
+            "research_4_point_3": "",
+            "research_4_link_label": "",
+            "research_4_link_url": ""
+          }
+        },
+        "benefit_cA7CJh": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Thumbnail_6zb1naFFwsIXJ95BTMeqWofQRw.jpg_1.svg",
+            "icon_alt": "",
+            "card_title": "Brain",
+            "card_description": "Helps defend neurons from oxidative stress",
+            "card_link_label": "Read More",
+            "highlight_card": false,
+            "modal_title": "Supports Everyday Cognitive Wellness ",
+            "modal_subtitle": "",
+            "modal_benefit_1": "Stay sharp and focused in your daily activities ",
+            "modal_benefit_2": "Help maintain smooth, youthful-looking skin ",
+            "modal_benefit_3": "Support memory, learning, and mental clarity",
+            "modal_benefit_4": "Protect neurons from oxidative stress and inflammation ",
+            "modal_benefit_5": "Promote long-term brain wellness alongside good sleep, movement, and learning habits ",
+            "modal_benefits": "Supports flexible, healthy arteries and smooth blood flow\nHelps maintain healthy cholesterol levels naturally\nEncourages long-term heart wellness through diet and movement\nProtects from oxidative stress and inflammation",
+            "research_label": "Research",
+            "research_1_title": "Buckner T. et al., 2017 - Inflammation Pathways (Nutrients) ",
+            "research_1_body": "",
+            "research_1_point_1": "Annatto-derived δ-tocotrienol (tocopherol-free) reduced oxidative stress and blocked the NLRP3 inflammasome, a key trigger of inflammation. This supports the role of δ-tocotrienol in helping maintain a healthy inflammatory balance in the brain. ",
+            "research_1_point_2": "",
+            "research_1_point_3": "",
+            "research_1_link_label": "Read more →",
+            "research_1_link_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4411513/",
+            "research_2_title": "Schloesser A. et al., 2015 - Mitochondrial Function in Aged Mice (Oxidative Medicine & Cellular Longevity) ",
+            "research_2_body": "",
+            "research_2_point_1": "δ- and γ-tocotrienols improved mitochondrial activity and antioxidant status in the brains of aged mice, highlighting possible support for neuronal energy and resilience. ",
+            "research_2_point_2": "",
+            "research_2_point_3": "",
+            "research_2_link_label": "Read more →",
+            "research_2_link_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4411513/",
+            "research_3_title": "Shifting Perspectives on Vitamin E Forms, 2024 - Brain Structure Review (Scoping Review) ",
+            "research_3_body": "",
+            "research_3_point_1": "Recent evidence shows tocotrienols may reach white-matter regions of the brain and protect against oxidative stress, suggesting potential long-term support for brain structure and function. ",
+            "research_3_point_2": "",
+            "research_3_point_3": "",
+            "research_3_link_label": "Read more →",
+            "research_3_link_url": "https://pubmed.ncbi.nlm.nih.gov/40650110/",
+            "research_4_title": "",
+            "research_4_body": "",
+            "research_4_point_1": "",
+            "research_4_point_2": "",
+            "research_4_point_3": "",
+            "research_4_link_label": "",
+            "research_4_link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "benefit_8aXRLn",
+        "benefit_xWiRf8",
+        "benefit_Vzd3HC",
+        "benefit_cA7CJh"
+      ],
+      "name": "Four Grid Block",
+      "settings": {
+        "title": "Tocotrienols Reach Where Others Can’t",
+        "subtitle": "Most antioxidants stop at the surface. Tocotrienols go deeper — their unique molecular structure lets them slip through cell membranes, shielding your cells from oxidative stress where it matters most.",
+        "cta_label": "Shop Tocotrienol",
+        "cta_link": "",
+        "background_color": "#ffffff",
+        "title_color": "#374650",
+        "subtitle_color": "#374650",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "header_margin_bottom": 60,
+        "title_font_size": 42,
+        "subtitle_font_size": 18
+      }
+    },
+    "compare_two_col_sections_P7kA8Q": {
+      "type": "compare-two-col-sections",
+      "disabled": true,
+      "name": "Tocotrienols Comparison",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "learn_more_text": "",
+        "learn_more_link": "shopify://products/healthy-aging-bundle",
+        "desktop_image": "shopify://shop_images/Frame_1000004396.png",
+        "mobile_image": "shopify://shop_images/Div_section_5.png"
+      }
+    },
+    "product_zig_zag_zj7cpx": {
+      "type": "product-zig-zag",
+      "disabled": true,
+      "name": "Vitamin Feature Highlight",
+      "settings": {}
+    },
+    "product_zig_zag_DKrkCn": {
+      "type": "product-zig-zag",
+      "disabled": true,
+      "name": "zig zag feature",
+      "settings": {}
+    },
+    "vitemin_page_image_with_col_9LXznG": {
+      "type": "vitemin-page-image-with-col",
+      "blocks": {
+        "info_card_V8ngJM": {
+          "type": "info_card",
+          "settings": {
+            "title": "Purity",
+            "points": "100% annatto-derived\nHermetically sealed; no additives, no fillers\nNo artificial colors — natural oil, natural color shifts"
+          }
+        },
+        "info_card_r7YiDi": {
+          "type": "info_card",
+          "settings": {
+            "title": "Potency",
+            "points": "Clinically backed 300 mg therapeutic strength"
+          }
+        },
+        "info_card_FmfCdw": {
+          "type": "info_card",
+          "settings": {
+            "title": "Safety",
+            "points": "Third-party tested for purity & potency\nMade in FDA-registered, GMP-certified facilities\n4.8/5+ trusted by real users"
+          }
+        }
+      },
+      "block_order": [
+        "info_card_V8ngJM",
+        "info_card_r7YiDi",
+        "info_card_FmfCdw"
+      ],
+      "name": "Vitamin image with columns",
+      "settings": {
+        "image": "shopify://shop_images/image_20.png",
+        "heading": "Not all Tocotrienols\nare equal either",
+        "description": "We’re the only 100% pure, hermetically sealed Tocotrienols — no additives, no fillers, no fake color. Just nature’s true oil, color shifts and all.",
+        "button_label": "Shop now",
+        "button_link": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
+      }
+    },
+    "vitemin_page_fullbanner_section_qCtiR6": {
+      "type": "vitemin-page-fullbanner-section",
+      "blocks": {
+        "point_qte9zk": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683.svg",
+            "heading": "Palm Source",
+            "description": "Palm-derived tocotrienols always come mixed with significant amounts of tocopherols, which interfere with tocotrienol absorption and function."
+          }
+        },
+        "point_3jTeb4": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683_1.svg",
+            "heading": "Rice Source",
+            "description": "Rice bran oil contains partial tocotrienols mixed with tocopherols. The ratio is inconsistent and the tocopherol content reduces effectiveness."
+          }
+        },
+        "point_8xLYQc": {
+          "type": "point",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1618873683_2.svg",
+            "heading": "Annatto Source",
+            "description": "Annatto contains 100% tocotrienols, naturally balanced with δ and γ forms, and completely free of tocopherols that interfere with benefits."
+          }
+        }
+      },
+      "block_order": [
+        "point_qte9zk",
+        "point_3jTeb4",
+        "point_8xLYQc"
       ],
       "custom_css": [
-        ".image-zoom:hover img {transform: none;}",
-        ".custom-service-block .halo-row {flex-direction: row-reverse;}",
-        ".section-block-template--25310576509224__1643015886f75782fe .halo-item + .halo-item {margin: auto;}"
+        "@media (max-width: 768px) {.vitamin-fullbanner {display: none; }}"
+      ],
+      "name": "Vitamin full banner",
+      "settings": {
+        "background_image": "shopify://shop_images/1910dbc39f80eb86b78a21f3a30ffc650a660252.png",
+        "eyebrow": "",
+        "heading": "Why Annatto Is the Best Source",
+        "subheading": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>",
+        "side_image_alt": "Annatto Tocotrienols Bottles"
+      }
+    },
+    "content_image_section_artwRU": {
+      "type": "content-image-section",
+      "name": "Content Image Section",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Div_section_7.png",
+        "image_mobile": "shopify://shop_images/Div_section_6.png",
+        "image_alt": "Section image",
+        "max_width": 1200,
+        "padding_vertical": 64,
+        "padding_horizontal": 20,
+        "border_radius": 0,
+        "hide_section": false,
+        "hide_on_desktop": true,
+        "hide_on_mobile": false
+      }
+    },
+    "vitemin_page_table_JDhrUU": {
+      "type": "vitemin-page-table",
+      "name": "Comparison Table eto",
+      "settings": {
+        "title": "Why Our Tocotrienol Outperforms Other Vitamin E",
+        "subtitle": "",
+        "column1_title": "Cheap Tocopherols",
+        "column2_title": "Generic Blends",
+        "column3_title": "Our Tocotrienol",
+        "column1_source": "Soy / synthetic",
+        "column2_source": "Cheap mass labels",
+        "column3_source": "100% Annatto",
+        "column1_purity": "Low, filler-heavy",
+        "column2_purity": "Contaminated with tocopherols",
+        "column3_purity": "Tocopherol-free",
+        "column1_testing": "Rarely verified",
+        "column2_testing": "Inconsistent",
+        "column3_testing": "Third-party tested",
+        "column1_trust": "Cheap mass labels",
+        "column2_trust": "Marketing hype",
+        "column3_trust": "Amazon's Choice, GMP-certified",
+        "column3_icon": "",
+        "column3_icon_alt": "Premium tocotrienol icon",
+        "cta_text": "Choose the Proven Tocotrienol",
+        "cta_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
+      }
+    },
+    "ennatto_two_col_sections_L4MGnX": {
+      "type": "ennatto-two-col-sections",
+      "disabled": true,
+      "name": "amazon two col",
+      "settings": {
+        "title": "Not All Tocotrienols Are Equal Either",
+        "subtitle": "Our formula is designed for maximum purity, potency, and safety — so you get the results science promised.",
+        "feature_1": "100% Annatto Purity — Richest natural source of delta & gamma tocotrienols",
+        "feature_2": "Clinical Dosage — 300mg NPN-approved therapeutic level",
+        "feature_3": "Third-Party Lab Tested — Verified for purity & potency",
+        "feature_4": "GMP-Certified Manufacturing — Produced in FDA-registered facilities",
+        "feature_5": "Amazon's Choice — Rated 4.8/5 stars by verified buyers",
+        "cta_text": "Learn More About Vitamin E Types",
+        "cta_url": "shopify://products/heart-health-bundle",
+        "product_image": "shopify://shop_images/Image_h-_261pxshow_1.png",
+        "product_alt": "Annatto Tocotrienols Product"
+      }
+    },
+    "instagram_9EfqFH": {
+      "type": "instagram",
+      "blocks": {
+        "instagram_bnYXdt": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873695_1.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_mxwpfX": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873698_1.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_DJPjFi": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873698_2.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_pc3EtR": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873697_1.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        },
+        "instagram_AnKhhJ": {
+          "type": "instagram",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1618873695_1.png",
+            "title": "",
+            "fontsize_title": 26,
+            "fontsize_title_mb": 20,
+            "color_title": "#ffffff",
+            "description": "",
+            "fontsize_des": 12,
+            "color_des": "#ffffff",
+            "button_text": "",
+            "color_button": "#ffffff",
+            "color_button_hover": "#ffffff",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_bnYXdt",
+        "instagram_mxwpfX",
+        "instagram_DJPjFi",
+        "instagram_pc3EtR",
+        "instagram_AnKhhJ"
       ],
       "settings": {
-        "custom_liquid1": false,
-        "id_section": "grid_text_imgs",
+        "id": "cstm__instagram_view",
         "container": "container",
         "padding_full_width": 0,
-        "display_border_top": false,
-        "display_border_bottom": false,
-        "border_color": "rgba(0,0,0,0)",
-        "service_block_swipe_on_mobile": "list",
-        "color_icon_slider": "#212121",
-        "service_block_style": "style_1",
-        "policies_bg": "#fefaec",
-        "policies_bg_gradient": "",
-        "service_block_title": "",
+        "disable_padding_content": false,
+        "type_instagram": "default",
+        "block_layout": "slider",
+        "scroll_from": "ltr",
+        "scroll_time": "30",
+        "enable_border_instagram": false,
+        "instagram_border_color": "rgba(0,0,0,0)",
+        "instagram_bg": "#f2f3f9",
+        "instagram_bg_gradient": "",
+        "style_block_header": "style1",
+        "mg_bottom_header": 15,
+        "instagram_title": "Testimonials",
+        "font_weight_instagram_title": "700",
         "enable_border_title": false,
-        "color_title": "#000000",
-        "fontsize_title": 10,
-        "fontsize_title_mb": 10,
-        "mg_bottom_title_service_block": 0,
-        "mg_bottom_title_service_block_mb": 6,
-        "service_block_des": "",
-        "service_block_des_pos": "bottom",
-        "color_des": "#000000",
-        "fontsize_des": 10,
-        "mg_top_service_block_des": 0,
-        "mg_bottom_service_block_des": 0,
+        "border_color_title": "#232323",
+        "color_title": "#374650",
+        "mg_bottom_title": 18,
+        "fontsize_title": 32,
+        "fontsize_title_mb": 25,
+        "instagram_des": "",
+        "color_des": "#3c3c3c",
+        "fontsize_des": 16,
+        "margin_bottom_des": 0,
+        "content_width": 0,
+        "title_align": "center",
         "view_all": "",
-        "view_all_align": "left",
+        "icon_for_viewall": "",
+        "view_all_fs": 14,
+        "view_all_align": "center",
+        "view_all_vert_align": "top",
         "font_weight_view_all": "400",
-        "mg_top_view": 0,
-        "mg_bottom_view": 0,
-        "enable_border_view_all": false,
-        "link_view_all": "",
+        "mg_bottom_view": 30,
+        "enable_border_view_all": true,
+        "link_view_all": "shopify://pages/reviews",
         "color_view_all": "#3c3c3c",
-        "icon_view_all": "",
-        "color_view_all_icon": "#eb492f",
-        "title_align": "left",
-        "item_width": "full_width",
-        "border_item": "none",
-        "enable_item_distance": true,
-        "enable_hover_box_shadow": false,
-        "enable_hover_effects_top": false,
-        "item_padding_top": 0,
-        "item_padding_bottom": 0,
-        "item_padding_left_right": 17,
-        "item_radius": 0,
-        "grid_gap": 5,
-        "item_align": "left",
-        "enable_block_bottom": false,
-        "bg_block_bottom": "#000000",
-        "btn_text_block_bottom": "Shop Now",
-        "button_link_block_bottom": "",
-        "button_1_width_block_bottom": 100,
-        "button_color_block_bottom": "#ffffff",
-        "button_border_block_bottom": "#232323",
-        "button_background_block_bottom": "#232323",
-        "button_background_gradient_block_bottom": "",
-        "button_color_hover_block_bottom": "#ffffff",
-        "button_border_hover_block_bottom": "#232323",
-        "button_background_hover_block_bottom": "#232323",
-        "button_background_gradient_hover_block_bottom": "",
-        "btn_2_text_block_bottom": "Shop Now",
-        "button_link_2_block_bottom": "",
-        "button_2_width_block_bottom": 100,
-        "button_2_color_block_bottom": "#ffffff",
-        "button_2_border_block_bottom": "#232323",
-        "button_2_background_block_bottom": "#232323",
-        "button_2_background_gradient_block_bottom": "",
-        "button_2_color_hover_block_bottom": "#ffffff",
-        "button_2_border_hover_block_bottom": "#232323",
-        "button_2_background_hover_block_bottom": "#232323",
-        "button_2_background_gradient_hover_block_bottom": "",
-        "mg_top_desktop": 15,
-        "mg_top_tablet": 15,
-        "mg_top_mobile": 10,
-        "mg_bottom_desktop": 40,
-        "mg_bottom_tablet": 45,
-        "mg_bottom_mobile": 50,
-        "mg_top_desktop1": 0,
-        "mg_top_tablet1": 0,
-        "mg_top_mobile1": 0,
-        "mg_bottom_desktop1": 0,
-        "mg_bottom_tablet1": 0,
-        "mg_bottom_mobile1": 0
+        "display_instagram_button": true,
+        "type_button_more": "link",
+        "instagram_button_text": "",
+        "instagram_button_link": "#",
+        "enable_underline_button": true,
+        "color_button": "#ffffff",
+        "border_color_button": "#232323",
+        "bg_color_button": "#232323",
+        "bg_color_gradient_button": "",
+        "color_button_hover": "#232323",
+        "border_color_button_hover": "#232323",
+        "bg_color_button_hover": "#ffffff",
+        "bg_color_gradient_button_hover": "",
+        "maxwidth_button": 230,
+        "mg_top_button": 30,
+        "embed_code": "",
+        "type_instagram_by_gallery": "link",
+        "images_per_row": "4",
+        "instagram_item_limit": 4,
+        "grid_gap": 30,
+        "slide_ins": "default_ins",
+        "enable_hide_portion": false,
+        "display_arrow": true,
+        "enable_hover_arrow": true,
+        "display_dots": false,
+        "icon_for_image": "",
+        "icon_style": "style_1",
+        "effects_bg": "",
+        "effects_opacity": 0,
+        "mg_top_desktop": 70,
+        "mg_top_tablet": 60,
+        "mg_top_mobile": 40,
+        "mg_bottom_desktop": 70,
+        "mg_bottom_tablet": 60,
+        "mg_bottom_mobile": 40
       }
     },
     "color_driven_faq_section_LGqPXx": {
@@ -406,40 +813,32 @@
         "faq_item_6dGYEX": {
           "type": "faq_item",
           "settings": {
-            "question": "Does a darker softgel mean it's stronger?",
-            "answer": "No. The color comes from natural plant pigments, not potency. Every softgel contains the same standardized strength, tested for consistency.",
+            "question": "Why haven't I heard of tocotrienols?",
+            "answer": "Most vitamin E research and marketing has focused on alpha-tocopherol, which was discovered first. Tocotrienols were only isolated in the late 1980s and their superior benefits have been overshadowed by the more common form. The supplement industry has been slow to adopt this advanced form due to higher sourcing costs.",
             "open_by_default": true
           }
         },
         "faq_item_6nJKM8": {
           "type": "faq_item",
           "settings": {
-            "question": "Why do the top softgels sometimes look darker?",
-            "answer": "Softgels at the top of the bottle may be exposed to more air and light, which can slightly deepen their color over time. This is completely normal and doesn't affect quality.",
+            "question": "Are tocotrienols safe?",
+            "answer": "Yes, tocotrienols have an excellent safety profile. They are naturally occurring nutrients found in certain foods. Clinical studies have shown no adverse effects at doses up to 400mg daily. Our 300mg dose is approved by Health Canada for safety and efficacy.",
             "open_by_default": false
           }
         },
         "faq_item_8hccPN": {
           "type": "faq_item",
           "settings": {
-            "question": "Why don't synthetic vitamins vary in color?",
-            "answer": "Synthetic vitamins are made in labs with artificial dyes to ensure color consistency. Natural vitamins reflect the variations found in nature.",
+            "question": "Why are tocotrienols costlier than tocopherols?",
+            "answer": "Tocotrienols are much rarer in nature than tocopherols. While tocopherols can be cheaply synthesized, high-quality tocotrienols must be carefully extracted from specific plant sources like annatto. The extraction and purification process is more complex and expensive, but delivers a significantly more potent form of vitamin E.",
             "open_by_default": false
           }
         },
         "faq_item_m4jMF7": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe to take if the color looks different?",
-            "answer": "Absolutely. Color variation is a natural characteristic of plant-based ingredients. Every batch is rigorously tested for safety, purity, and potency.",
-            "open_by_default": false
-          }
-        },
-        "faq_item_fVJAJa": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Do you test every batch?",
-            "answer": "Yes. Every single batch undergoes comprehensive third-party testing to verify potency, purity, and safety before it reaches you.",
+            "question": "How soon will I notice benefits?",
+            "answer": "Most users report noticeable improvements in skin appearance and energy levels within 2-4 weeks. Cardiovascular and metabolic benefits typically become measurable after 8-12 weeks of consistent use. For optimal results, we recommend taking tocotrienols daily with a meal containing some healthy fats to enhance absorption.",
             "open_by_default": false
           }
         }
@@ -448,14 +847,217 @@
         "faq_item_6dGYEX",
         "faq_item_6nJKM8",
         "faq_item_8hccPN",
-        "faq_item_m4jMF7",
-        "faq_item_fVJAJa"
+        "faq_item_m4jMF7"
       ],
       "name": "Color Driven FAQ Section",
       "settings": {
-        "section_title": "Frequently asked questions",
+        "section_title": "Still have questions?",
+        "section_subtitle": "Everything you need to know about tocotrienols",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 10
+      }
+    },
+    "custom_liquid_jBtUJn": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"tocotrienol-cta\">\n        \n          <a href=\"https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&amp;ref_=aa_maas&amp;tag=maas&amp;th=1\" class=\"tocotrienol-cta-button\">Get the Free Buyer’s Guide</a>\n        \n      </div>\n\n\n<style>\n\n.tocotrienol-cta {\n    margin-top: 48px;\n    text-align: center;\n}\n\n.tocotrienol-cta-button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    padding: 16px 40px;\n    border-radius: 999px;\n    background: #086b92;\n    color: #ffffff;\n    font-weight: 600;\n    font-size: 16px;\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n\n</style>"
+      }
+    },
+    "vitemin_product_section_c4zDR9": {
+      "type": "vitemin-product-section",
+      "name": "vitamin product block",
+      "settings": {
+        "main_title": "Choose Your Tocotrienol Formula",
+        "subtitle": "All products include free shipping and our <strong>90-day satisfaction guarantee.</strong>",
+        "product1_image": "shopify://shop_images/Frame_1618873642.png",
+        "product1_hover_image": "shopify://shop_images/DSC05334.png",
+        "product1_headline": "125mg Daily Formula",
+        "product1_feature_1": "Daily wellness",
+        "product1_feature_2": "Gentle support",
+        "product1_feature_3": "",
+        "product1_badge_title": "125mg",
+        "product1_badge_subtitle": "Daily Formula",
+        "product1_badge_caption": "",
+        "product1_price": "$1.13/day",
+        "product1_bottle_info": "(30-count bottle)",
+        "product1_button_label": "Order Now",
+        "product1_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "product2_image": "shopify://shop_images/Frame_1618873546.png",
+        "product2_hover_image": "shopify://shop_images/DSC05334.png",
+        "product2_headline": "300mg Advanced Formula",
+        "product2_feature_1": "High absorption",
+        "product2_feature_2": "Clinically dosed",
+        "product2_feature_3": "",
+        "product2_badge_title": "300mg",
+        "product2_badge_subtitle": "Advanced Formula",
+        "product2_badge_caption": "Clinically dosed",
+        "product2_price": "$1.40/day",
+        "product2_bottle_info": "(30-count bottle)",
+        "product2_button_label": "Order Now",
+        "product2_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "product3_image": "shopify://shop_images/Frame_1618873546.png",
+        "product3_hover_image": "shopify://shop_images/Group_1000004422_281a4fdb-a47c-46df-a262-ca5b3138d980.png",
+        "product3_headline": "300mg Advanced Formula",
+        "product3_feature_1": "High absorption",
+        "product3_feature_2": "Clinically dosed",
+        "product3_feature_3": "",
+        "product3_badge_title": "150+",
+        "product3_badge_subtitle": "Daily Formula",
+        "product3_badge_caption": "Subscription",
+        "product3_price": "$1.27/day",
+        "product3_bottle_info": "(60-count bottle)",
+        "product3_button_label": "Order Now",
+        "product3_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "cta_button_text": "Shop Tocotrienol Now",
+        "cta_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
+      }
+    },
+    "custom_liquid_8DztYg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\nMore Breakthroughs Powered by Tocotrienols  </h2>\n     </div>\n</section>\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 468px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 25px;\n  }\n}\n</style>"
+      }
+    },
+    "16409351508cd2f3e1": {
+      "type": "product-tab-block",
+      "blocks": {
+        "product_tabs_x6FH6N": {
+          "type": "ProductTabs",
+          "settings": {
+            "title": "All Product",
+            "collection": "vitemin-collection-page"
+          }
+        }
+      },
+      "block_order": [
+        "product_tabs_x6FH6N"
+      ],
+      "custom_css": [
+        "span.price-item.price-item--regular span,span.price-item.price-item--sale span,dd.price__label_sale.price__label_percent,.card .price__saved {display: block;}",
+        "@media (min-width: 552px) {.product-card-layout-02 .halo-productBadges--left {left: 1px !important; }}",
+        ".product-tab-block .list-product-tabs {display: none;}",
+        ".slider-progress-bar {display: none !important;}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "product_bg": "#f2f3f9",
+        "product_bg_gradient": "",
+        "product_block_layout": "slider",
+        "product_block_limit": 20,
+        "product_block_title": "",
+        "fontsize_title": 20,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 0,
+        "enable_border_title": true,
+        "border_color_title": "#e0e0e0",
+        "enable_border_title2": true,
+        "border_color_title2": "#1d5dd9",
+        "color_title": "#36454f",
+        "title_align": "center",
+        "view_all_style": "style_1",
+        "view_all": "",
+        "font_weight_view_all": "400",
+        "mg_bottom_view": 12,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "image_behavior": "none",
+        "product_block_per_row": "4",
+        "product_block_infinite_scroll": true,
+        "min_width_button": "",
+        "product_block_dots": false,
+        "product_block_dots_mb": false,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": true,
+        "product_block_arrows_custom_position": true,
+        "product_block_progress_bar": true,
+        "enable_infinite": true,
+        "product_block_show": "4",
+        "product_block_per_view": "1",
+        "show_half": true,
+        "scroll_height": 5,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#086b92",
+        "scroll_thumb_hover_color": "#444444",
+        "position": "left",
+        "width_banner": 25,
+        "tab_title_style": "style_1",
+        "layout_mobile": "grid",
+        "mg_bottom_title_tab": 30,
+        "type_tab_font": "font_2",
+        "separation": false,
+        "style_separation": "style2",
+        "color_separation": "#bebebe",
+        "enable_scroll_title": true,
+        "fontsize_tab": 16,
+        "fontsize_tab_mb": 15,
+        "font_weight_tab": "600",
+        "font_weight_active_tab": "600",
+        "spacing_between_title": 0,
+        "line_height_tab": 30,
+        "line_height_tab_mobile": 24,
+        "border_tab_radius": 6,
+        "min_width_tab": 60,
+        "border_width_tab": 1,
+        "tab_align": "center",
+        "color_tab": "#086b92",
+        "border_color_tab": "#086b92",
+        "bg_color_tab": "rgba(0,0,0,0)",
+        "bg_color_gradient_tab": "",
+        "color_tab_active": "#ffffff",
+        "border_color_tab_active": "",
+        "bg_color_tab_active": "#086b92",
+        "bg_color_gradient_tab_active": "",
+        "mg_top_desktop": 45,
+        "mg_top_tablet": 45,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 45,
+        "mg_bottom_tablet": 45,
+        "mg_bottom_mobile": 25
+      }
+    },
+    "eto_trust_section_AEXya3": {
+      "type": "eto-trust-section",
+      "name": "ETO Amazon Trust Banner",
+      "settings": {
+        "heading_line_1": "Now you know the truth",
+        "heading_line_2": "about Vitamin E.",
+        "primary_button_text": "Buy Tocotrienol Now",
+        "primary_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "primary_button_new_tab": false,
+        "secondary_link_text": "Keep Learning",
+        "secondary_link_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "secondary_link_new_tab": false,
+        "container_width": 1050,
+        "padding_top": 55,
+        "padding_bottom": 55,
+        "padding_horizontal": 20,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#fefaec",
+        "heading_font_family": "assistant_n4",
+        "heading_font_size": 2.5,
+        "heading_font_size_mobile": 2,
+        "heading_font_size_small_mobile": 1.5,
+        "heading_font_weight": "400",
+        "heading_color": "#374650",
+        "primary_button_font_family": "assistant_n4",
+        "primary_button_font_size": 1.5,
+        "primary_button_font_weight": "600",
+        "primary_button_bg_color": "#f8ce63",
+        "primary_button_text_color": "#374650",
+        "primary_button_hover_bg_color": "#f8ce63",
+        "primary_button_padding_vertical": 12,
+        "primary_button_padding_horizontal": 24,
+        "primary_button_border_radius": 20,
+        "secondary_link_font_family": "assistant_n4",
+        "secondary_link_font_size": 1.4,
+        "secondary_link_font_weight": "400",
+        "secondary_link_color": "#374650",
+        "secondary_link_hover_color": "#666666"
       }
     }
   },
@@ -465,10 +1067,24 @@
     "shogun-optimizer",
     "secondry_banner_HpmCRB",
     "marquee_3jLVfQ",
-    "compare_two_col_sections_P7kA8Q",
+    "product_comprsion_section_vit_rmmBY7",
+    "barry_tan_journey_9J3GWL",
+    "barry_tan_timeline_4jVxHK",
     "four_grid_block_VPbHWd",
-    "barry_tan_journey_EkxjnC",
-    "1643015886f75782fe",
-    "color_driven_faq_section_LGqPXx"
+    "compare_two_col_sections_P7kA8Q",
+    "product_zig_zag_zj7cpx",
+    "product_zig_zag_DKrkCn",
+    "vitemin_page_image_with_col_9LXznG",
+    "vitemin_page_fullbanner_section_qCtiR6",
+    "content_image_section_artwRU",
+    "vitemin_page_table_JDhrUU",
+    "ennatto_two_col_sections_L4MGnX",
+    "instagram_9EfqFH",
+    "color_driven_faq_section_LGqPXx",
+    "custom_liquid_jBtUJn",
+    "vitemin_product_section_c4zDR9",
+    "custom_liquid_8DztYg",
+    "16409351508cd2f3e1",
+    "eto_trust_section_AEXya3"
   ]
 }

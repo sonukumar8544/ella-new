@@ -63,12 +63,22 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/naji-abou-ali-47986812b/"
       }
+    },
+    "blog_review_doctor_gY8aRg": {
+      "type": "blog-review-doctor",
+      "name": "blog-card-review-doctor",
+      "settings": {
+        "blog_author_name": "dr-naji-ali",
+        "blog_dr_name": "Dr. Naji Abou Ali",
+        "review_dr_page": "dr-naji-abou-ali"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_rNCBWd"
+    "author_section_rNCBWd",
+    "blog_review_doctor_gY8aRg"
   ]
 }

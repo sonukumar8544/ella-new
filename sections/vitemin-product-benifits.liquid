@@ -1,0 +1,472 @@
+<style>
+  #vitamin-benefits-{{ section.id }} {
+    background: {{ section.settings.section_background | default: '#eef5f7' }};
+    padding: {{ section.settings.section_padding_top | default: 96 }}px {{ section.settings.section_padding_sides | default: 32 }}px {{ section.settings.section_padding_bottom | default: 96 }}px;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__wrapper {
+    max-width: {{ section.settings.container_max_width | default: 1100 }}px;
+    margin: 0 auto;
+    background: {{ section.settings.card_background | default: '#ffffff' }};
+    border-radius: 40px;
+    padding: {{ section.settings.card_padding_vertical | default: 72 }}px {{ section.settings.card_padding_horizontal | default: 50 }}px;
+    box-shadow: 0 30px 80px rgba(26, 48, 66, 0.08);
+    border: 1px solid rgba(26, 48, 66, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__title {
+    margin: 0 0 16px;
+    font-size: clamp(32px, 5vw, 42px);
+    font-weight: 700;
+    color: {{ section.settings.title_color | default: '#1f2a36' }};
+    letter-spacing: -0.4px;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__subtitle {
+    margin: 0;
+    font-size: clamp(16px, 3.2vw, 20px);
+    line-height: 1.6;
+    color: {{ section.settings.subtitle_color | default: '#44505f' }};
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 22px;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 0;
+    position: relative;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -11px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(26, 48, 66, 0.08) 0%, rgba(26, 48, 66, 0) 15%, rgba(26, 48, 66, 0) 85%, rgba(26, 48, 66, 0.08) 100%);
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__item:last-child::after {
+    display: none;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__item-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: {{ section.settings.item_title_color | default: '#1f2a36' }};
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__item-description {
+    margin: 0;
+    font-size: 18px;
+    color: {{ section.settings.item_description_color | default: '#4a5665' }};
+    line-height: 1.55;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__footer {
+    margin-top: 42px;
+    text-align: center;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__footer-text {
+    margin: 0 0 18px;
+    font-size: 20px;
+    font-weight: 600;
+    color: {{ section.settings.footer_text_color | default: '#1f2a36' }};
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__footer-subtext {
+    margin: 0 0 18px;
+    font-size: 17px;
+    color: {{ section.settings.footer_subtext_color | default: '#4a5665' }};
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__stars {
+    display: inline-flex;
+    gap: 6px;
+  }
+
+  #vitamin-benefits-{{ section.id }} .vitamin-benefits__stars svg {
+    width: 26px;
+    height: 26px;
+    color: {{ section.settings.stars_color | default: '#f6b23a' }};
+  }
+
+  @media (max-width: 900px) {
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__wrapper {
+      border-radius: 28px;
+      padding: 56px 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #vitamin-benefits-{{ section.id }} {
+      padding: {{ section.settings.section_padding_top_mobile | default: 72 }}px {{ section.settings.section_padding_sides_mobile | default: 16 }}px {{ section.settings.section_padding_bottom_mobile | default: 72 }}px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__wrapper {
+      padding: 52px 24px;
+      box-shadow: 0 20px 60px rgba(26, 48, 66, 0.08);
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__title {
+      font-size: clamp(28px, 9vw, 34px);
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__subtitle {
+      font-size: 16px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__item-title {
+      font-size: 18px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__item-description {
+      font-size: 16px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__footer-text {
+      font-size: 18px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__footer-subtext {
+      font-size: 15px;
+    }
+
+    #vitamin-benefits-{{ section.id }} .vitamin-benefits__stars svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+</style>
+
+<section id="vitamin-benefits-{{ section.id }}" class="vitamin-benefits">
+  <div class="vitamin-benefits__wrapper">
+    <header class="vitamin-benefits__heading">
+      {% if section.settings.title != blank %}
+        <h2 class="vitamin-benefits__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="vitamin-benefits__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </header>
+
+    {% if section.blocks.size > 0 %}
+      <ul class="vitamin-benefits__list">
+        {% for block in section.blocks %}
+          {% if block.type == 'benefit' %}
+            <li class="vitamin-benefits__item" {{ block.shopify_attributes }}>
+              {% if block.settings.benefit_title != blank %}
+                <h3 class="vitamin-benefits__item-title">{{ block.settings.benefit_title }}</h3>
+              {% endif %}
+              {% if block.settings.benefit_description != blank %}
+                <p class="vitamin-benefits__item-description">{{ block.settings.benefit_description }}</p>
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if section.settings.footer_title != blank or section.settings.footer_subtitle != blank or section.settings.show_stars %}
+      <footer class="vitamin-benefits__footer">
+        {% if section.settings.footer_title != blank %}
+          <p class="vitamin-benefits__footer-text">{{ section.settings.footer_title }}</p>
+        {% endif %}
+        {% if section.settings.footer_subtitle != blank %}
+          <p class="vitamin-benefits__footer-subtext">{{ section.settings.footer_subtitle }}</p>
+        {% endif %}
+        {% if section.settings.show_stars %}
+          <span class="vitamin-benefits__stars" aria-hidden="true">
+            {% for star_index in (1..section.settings.star_count) %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.48 3.5a.75.75 0 011.04 0l2.63 2.63c.21.21.48.35.78.4l3.7.54a.75.75 0 01.41 1.28l-2.68 2.62a1.25 1.25 0 00-.36 1.11l.63 3.68a.75.75 0 01-1.09.79l-3.3-1.74a1.25 1.25 0 00-1.16 0l-3.3 1.74a.75.75 0 01-1.09-.79l.63-3.68a1.25 1.25 0 00-.36-1.11l-2.68-2.62a.75.75 0 01.41-1.28l3.7-.54c.3-.05.57-.19.78-.4L11.48 3.5z"/>
+              </svg>
+            {% endfor %}
+          </span>
+          {% if section.settings.star_label != blank %}
+            <span class="sr-only">{{ section.settings.star_label }}</span>
+          {% endif %}
+        {% endif %}
+      </footer>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitamin Product Benefits",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Not all Tocotrienols are equal either"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Our formula is designed for maximum purity, potency and safety — so you get the result science promised."
+    },
+    {
+      "type": "header",
+      "content": "Footer" 
+    },
+    {
+      "type": "text",
+      "id": "footer_title",
+      "label": "Footer title",
+      "default": "Amazon’s Choice — Rated 4.8/5 stars by verified buyers"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_subtitle",
+      "label": "Footer subtitle",
+      "default": "Join thousands of happy customers seeing real results every day."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stars",
+      "label": "Show star rating",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "star_count",
+      "label": "Number of stars",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "star_label",
+      "label": "Star rating label (for screen readers)",
+      "default": "4.8 out of 5 stars"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#eef5f7"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1f2a36"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#44505f"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item title color",
+      "default": "#1f2a36"
+    },
+    {
+      "type": "color",
+      "id": "item_description_color",
+      "label": "Item description color",
+      "default": "#4a5665"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Footer title color",
+      "default": "#1f2a36"
+    },
+    {
+      "type": "color",
+      "id": "footer_subtext_color",
+      "label": "Footer subtitle color",
+      "default": "#4a5665"
+    },
+    {
+      "type": "color",
+      "id": "stars_color",
+      "label": "Stars color",
+      "default": "#f6b23a"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Card max width",
+      "min": 600,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 1100
+    },
+    {
+      "type": "range",
+      "id": "card_padding_vertical",
+      "label": "Card vertical padding",
+      "min": 40,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "card_padding_horizontal",
+      "label": "Card horizontal padding",
+      "min": 24,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section top padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "section_padding_sides",
+      "label": "Section horizontal padding",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Mobile top padding",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Mobile bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "section_padding_sides_mobile",
+      "label": "Mobile horizontal padding",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "benefit_title",
+          "label": "Benefit title",
+          "default": "100% Annatto Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "benefit_description",
+          "label": "Benefit description",
+          "default": "Richest natural source of delta and gamma tocotrienols"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vitamin Product Benefits",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

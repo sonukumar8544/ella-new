@@ -1,0 +1,325 @@
+
+<div class="annatto-amazon-section">
+  <div class="annatto-amazon-container">
+    <!-- Header Section -->
+    <div class="annatto-amazon-header">
+      <h2 class="annatto-amazon-title">{{ section.settings.title | default: "Not All Tocotrienols Are Equal Either" }}</h2>
+      <p class="annatto-amazon-subtitle">{{ section.settings.subtitle | default: "Our formula is designed for maximum purity, potency, and safety — so you get the results science promised." }}</p>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="annatto-amazon-content">
+      <!-- Left Column - Features -->
+      <div class="annatto-amazon-features">
+        <ul class="annatto-amazon-feature-list">
+          {% for i in (1..5) %}
+            {% assign feature_key = 'feature_' | append: i %}
+            {% assign feature_text = section.settings[feature_key] %}
+            {% if feature_text != blank %}
+              <li class="annatto-amazon-feature-item">
+                <span class="annatto-amazon-checkmark">✓</span>
+                <span class="annatto-amazon-feature-text">{{ feature_text }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        
+        {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+          <a href="{{ section.settings.cta_url }}" class="annatto-amazon-cta">{{ section.settings.cta_text }}</a>
+        {% endif %}
+      </div>
+
+      <!-- Right Column - Product Image -->
+      <div class="annatto-amazon-image">
+        {% if section.settings.product_image != blank %}
+          <img src="{{ section.settings.product_image | img_url: '600x600' }}" 
+               alt="{{ section.settings.product_alt | default: 'Annatto Tocotrienols Product' }}"
+               class="annatto-amazon-product-image">
+        {% else %}
+          <div class="annatto-amazon-placeholder-image">
+            <p>Product Image</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.annatto-amazon-section {
+  background-color: #FEFAEC;
+  padding: 60px 0;
+}
+
+.annatto-amazon-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.annatto-amazon-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.annatto-amazon-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #2d3e50;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.annatto-amazon-subtitle {
+  font-size: 22px;
+  color: #374650;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.annatto-amazon-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.annatto-amazon-features {
+  padding-right: 20px;
+}
+
+.annatto-amazon-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.annatto-amazon-feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.annatto-amazon-checkmark {
+  color: #2d3e50;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.annatto-amazon-feature-text {
+  color: #374650;
+  flex: 1;
+}
+
+.annatto-amazon-cta {
+  color: #086B92;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-style: italic;
+}
+
+.annatto-amazon-cta:hover {
+  color: #086B92;
+}
+
+.annatto-amazon-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.annatto-amazon-product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.annatto-amazon-placeholder-image {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Tablet Responsive */
+@media (max-width: 768px) {
+  .annatto-amazon-section {
+    padding: 40px 0;
+  }
+  
+  .annatto-amazon-title {
+    font-size: 28px;
+  }
+  
+  .annatto-amazon-subtitle {
+    font-size: 20px;
+  }
+  
+  .annatto-amazon-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .annatto-amazon-features {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .annatto-amazon-image {
+    order: 1;
+  }
+  
+  .annatto-amazon-feature-item {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .annatto-amazon-container {
+    padding: 0 15px;
+  }
+  
+  .annatto-amazon-section {
+    padding: 30px 0;
+  }
+  
+  .annatto-amazon-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .annatto-amazon-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .annatto-amazon-content {
+    gap: 30px;
+  }
+  
+  .annatto-amazon-feature-item {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .annatto-amazon-checkmark {
+    margin-right: 10px;
+  }
+  
+  .annatto-amazon-placeholder-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Large Desktop */
+/* @media (min-width: 1400px) {
+  .annatto-amazon-container {
+    max-width: 1400px;
+  }
+  
+  .annatto-amazon-title {
+    font-size: 3rem;
+  }
+  
+  .annatto-amazon-subtitle {
+    font-size: 22px;
+  }
+  
+  .annatto-amazon-feature-item {
+    font-size: 16px;
+  }
+} */
+</style>
+
+{% schema %}
+{
+  "name": "amazon two col",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Not All Tocotrienols Are Equal Either"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Our formula is designed for maximum purity, potency, and safety — so you get the results science promised."
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "100% Annatto Purity — Richest natural source of delta & gamma tocotrienols"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Clinical Dosage — 300mg NPN-approved therapeutic level"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "Third-Party Lab Tested — Verified for purity & potency"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "Feature 4",
+      "default": "GMP-Certified Manufacturing — Produced in FDA-registered facilities"
+    },
+    {
+      "type": "text",
+      "id": "feature_5",
+      "label": "Feature 5",
+      "default": "Amazon's Choice — Rated 4.8/5 stars by verified buyers"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call to Action Text",
+      "default": "See the Difference"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call to Action URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_alt",
+      "label": "Product Image Alt Text",
+      "default": "Annatto Tocotrienols Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "amazon two col"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,291 @@
+
+<div class="amazon-vitemin-barry-tan-timeline">
+  <div class="amazon-vitemin-timeline-container">
+    <div class="amazon-vitemin-timeline-item" data-year="1">
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_1 | default: "1989" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_1 | default: "Discovery" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_1 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_1 != blank %}
+          <a href="{{ section.settings.link_1 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_1 | default: "Learn More About Vitamin E Types" }}</a>
+        {% endif %}
+      </div>
+    </div>
+    
+    <div class="amazon-vitemin-timeline-item" data-year="2">
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_2 | default: "2002 - 2010" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_2 | default: "Clinical Studies" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_2 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_2 != blank %}
+          <a href="{{ section.settings.link_2 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_2 | default: "View Research Studies" }}</a>
+        {% endif %}
+      </div>
+    </div>
+    
+    <div class="amazon-vitemin-timeline-item" data-year="3">
+      <div class="amazon-vitemin-timeline-content">
+        <div class="amazon-vitemin-timeline-header">
+          <span class="amazon-vitemin-timeline-year">{{ section.settings.year_3 | default: "2015" }}</span>
+          <span class="amazon-vitemin-timeline-divider" aria-hidden="true"></span>
+        </div>
+        <div class="amazon-vitemin-timeline-title">{{ section.settings.title_3 | default: "Health Canada Approval" }}</div>
+        <div class="amazon-vitemin-timeline-description">{{ section.settings.description_3 | default: "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?" }}</div>
+        {% if section.settings.link_3 != blank %}
+          <a href="{{ section.settings.link_3 }}" class="amazon-vitemin-timeline-link">{{ section.settings.link_text_3 | default: "Read Approval Details" }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.amazon-vitemin-barry-tan-timeline {
+  padding: clamp(48px, 8vw, 80px) 20px;
+  background: #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.amazon-vitemin-timeline-container {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 48px);
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.amazon-vitemin-timeline-item {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: left;
+  position: relative;
+}
+
+.amazon-vitemin-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.amazon-vitemin-timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.amazon-vitemin-timeline-year {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f3b4b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.amazon-vitemin-timeline-divider {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(8, 107, 146, 0.6) 0%, rgba(8, 107, 146, 0.08) 100%);
+  position: relative;
+  display: block;
+}
+
+.amazon-vitemin-timeline-divider::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #086b92;
+  box-shadow: 0 0 0 4px rgba(8, 107, 146, 0.1);
+}
+
+.amazon-vitemin-timeline-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f3b4b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.amazon-vitemin-timeline-description {
+  color: #3b4f5a;
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0;
+}
+
+.amazon-vitemin-timeline-link {
+  display: inline-block;
+  color: #086b92;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.amazon-vitemin-timeline-link:hover {
+  color: #064f6a;
+}
+
+@media (max-width: 1024px) {
+  .amazon-vitemin-timeline-container {
+    gap: clamp(20px, 4vw, 32px);
+  }
+
+  .amazon-vitemin-timeline-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .amazon-vitemin-timeline-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .amazon-vitemin-timeline-divider {
+    display: none;
+  }
+
+  .amazon-vitemin-timeline-header {
+    gap: 10px;
+  }
+
+  .amazon-vitemin-timeline-year {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amazon-vitemin-barry-tan-timeline {
+    padding: clamp(36px, 10vw, 48px) 16px;
+  }
+
+  .amazon-vitemin-timeline-title {
+    font-size: 19px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Barry Tan Journey",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Timeline Item 1"
+    },
+    {
+      "type": "text",
+      "id": "year_1",
+      "label": "Year 1",
+      "default": "1989"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title 1",
+      "default": "Discovery"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1",
+      "label": "Description 1",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link 1 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_1",
+      "label": "Link Text 1",
+      "default": "Learn More About Vitamin E Types"
+    },
+    {
+      "type": "header",
+      "content": "Timeline Item 2"
+    },
+    {
+      "type": "text",
+      "id": "year_2",
+      "label": "Year 2",
+      "default": "2002 - 2010"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title 2",
+      "default": "Clinical Studies"
+    },
+    {
+      "type": "textarea",
+      "id": "description_2",
+      "label": "Description 2",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link 2 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_2",
+      "label": "Link Text 2",
+      "default": "View Research Studies"
+    },
+    {
+      "type": "header",
+      "content": "Timeline Item 3"
+    },
+    {
+      "type": "text",
+      "id": "year_3",
+      "label": "Year 3",
+      "default": "2015"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title 3",
+      "default": "Health Canada Approval"
+    },
+    {
+      "type": "textarea",
+      "id": "description_3",
+      "label": "Description 3",
+      "default": "We start with your vision: What do you want to build? How can we accelerate your company's growth to outpace the competition?"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link 3 (optional)"
+    },
+    {
+      "type": "text",
+      "id": "link_text_3",
+      "label": "Link Text 3",
+      "default": "Read Approval Details"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barry Tan Journey"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,503 @@
+<div class="tocotrienol-comparison-section">
+  <div class="tocotrienol-comparison-container">
+    <h2 class="tocotrienol-comparison-title">{{ section.settings.title | default: "Why Our Tocotrienol Outperforms Other Vitamin E" }}</h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="tocotrienol-comparison-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="tocotrienol-table-wrapper">
+      <table class="tocotrienol-table" role="table">
+        <thead>
+          <tr>
+            <th scope="col" class="tocotrienol-feature-head tocotrienol-highlight-primary">Feature</th>
+            <th scope="col">{{ section.settings.column1_title | default: "Cheap Tocopherols" }}</th>
+            <th scope="col" class="tocotrienol-highlight-secondary">{{ section.settings.column2_title | default: "Generic Blends" }}</th>
+            <th scope="col" class="tocotrienol-our-head tocotrienol-highlight-tertiary">{{ section.settings.column3_title | default: "Our Tocotrienol" }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="tocotrienol-highlight-primary">Source</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column1_source | default: "Soy / synthetic" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column2_source | default: "Cheap mass labels" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1618873618.svg?v=1762779131" alt="{{ section.settings.column3_icon_alt | default: 'Premium tocotrienol icon' | escape }}" loading="lazy" width="22" height="22">
+                </span>
+                <span>{{ section.settings.column3_source | default: "100% Annatto" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="tocotrienol-highlight-primary">Purity</th>
+            <td class="tocotrienol-highlight-secondary">
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column1_purity | default: "Low, filler-heavy" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-highlight-secondary">
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column2_purity | default: "Contaminated with tocopherols" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell tocotrienol-highlight-tertiary">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/preservative-free_14617590_1.svg?v=1762858416" alt="{{ section.settings.column3_icon_alt | default: 'Premium tocotrienol icon' | escape }}" loading="lazy" width="22" height="22">
+                </span>
+                <span>{{ section.settings.column3_purity | default: "Tocopherol-free" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Testing</th>
+            <td>
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column1_testing | default: "Rarely verified" }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column2_testing | default: "Inconsistent" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/g495.svg?v=1762858416" alt="{{ section.settings.column3_icon_alt | default: 'Premium tocotrienol icon' | escape }}" loading="lazy" width="22" height="22">
+                </span>
+                <span>{{ section.settings.column3_testing | default: "Third-party tested" }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="tocotrienol-highlight-primary">Trust</th>
+            <td class="tocotrienol-highlight-secondary">
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column1_trust | default: "Cheap mass labels" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-highlight-secondary">
+              <div class="tocotrienol-cell">
+                <span>{{ section.settings.column2_trust | default: "Marketing hype" }}</span>
+              </div>
+            </td>
+            <td class="tocotrienol-our-cell tocotrienol-highlight-tertiary">
+              <div class="tocotrienol-cell">
+                <span class="tocotrienol-icon">
+                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Group_1000004414.svg?v=1762858416" alt="{{ section.settings.column3_icon_alt | default: 'Premium tocotrienol icon' | escape }}" loading="lazy" width="22" height="22">
+                </span>
+                <span>{{ section.settings.column3_trust | default: "Amazon's Choice, GMP-certified" }}</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+      <div class="tocotrienol-cta-container">
+        <a href="{{ section.settings.cta_url }}" class="tocotrienol-cta-button">{{ section.settings.cta_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .tocotrienol-comparison-section {
+    padding: 72px 0;
+  }
+
+  .tocotrienol-comparison-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .tocotrienol-comparison-title {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #374650;
+    text-align: center;
+    margin: 0 0 36px;
+    max-width: 568px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .tocotrienol-comparison-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4a5a68;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+
+  .tocotrienol-table-wrapper {
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #ffffff); */
+    /* border-radius: 18px; */
+    box-shadow: 0 26px 60px rgba(30, 50, 107, 0.08);
+    overflow: hidden;
+    border: 1px solid #e1ebf5;
+  }
+
+  .tocotrienol-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .tocotrienol-table thead th {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 22px 28px;
+    text-align: left;
+    color: #2e4052;
+    background-color: #d8ecff;
+    border-bottom: 1px solid #d6e3f0;
+  }
+
+  .tocotrienol-feature-head,
+  .tocotrienol-table thead th:nth-child(2),
+  .tocotrienol-table thead th:nth-child(3),
+  .tocotrienol-our-head {
+    background-color: #d8ecff;
+    color: #374650;
+  }
+
+  .tocotrienol-table tbody th {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2f4155;
+    padding: 24px 28px;
+    background-color: #F3F7F8;
+    border-bottom: 1px solid #e6edf6;
+    white-space: nowrap;
+  }
+
+  .tocotrienol-table tbody td {
+    font-size: 17px;
+    color: #374650;
+    padding: 24px 28px;
+    border-bottom: 1px solid #e6edf6;
+    /* border-right: 1px solid #e6edf6; */
+    background-color: #fbfdff;
+  }
+
+  .tocotrienol-table tbody tr:last-child td,
+  .tocotrienol-table tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  .tocotrienol-table tbody td:last-child,
+  .tocotrienol-table thead th:last-child {
+    border-right: none;
+  }
+
+  .tocotrienol-our-cell {
+    background-color: #e9f4ff;
+    font-weight: 600;
+    color: #0f4f7a;
+  }
+
+  .tocotrienol-table tbody th.tocotrienol-highlight-primary {
+    background-color: #F3F7F8;
+  }
+
+  .tocotrienol-table tbody td.tocotrienol-highlight-secondary {
+    background-color: #E1F4FD;
+  }
+
+  .tocotrienol-table tbody td.tocotrienol-highlight-tertiary,
+  .tocotrienol-our-cell.tocotrienol-highlight-tertiary {
+    background-color: #d8ecff;
+  }
+
+  .tocotrienol-table thead th {
+    background-color: #d8ecff;
+    color: #374650;
+  }
+
+  .tocotrienol-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tocotrienol-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    flex-shrink: 0;
+  }
+
+  .tocotrienol-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .tocotrienol-icon-fallback {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  .tocotrienol-cta-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .tocotrienol-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 46px;
+    /* border-radius: 999px; */
+    background-color: #0c74d4;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .tocotrienol-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 30px rgba(12, 116, 212, 0.25);
+    color: #ffffff;
+  }
+
+  .tocotrienol-cta-button:focus-visible {
+    outline: 3px solid rgba(12, 116, 212, 0.45);
+    outline-offset: 2px;
+  }
+
+  .tocotrienol-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  /* .tocotrienol-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(123, 148, 176, 0.35);
+    border-radius: 999px;
+  } */
+
+  .tocotrienol-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  @media (max-width: 1024px) {
+    .tocotrienol-comparison-title {
+      font-size: 34px;
+    }
+
+    .tocotrienol-table tbody th,
+    .tocotrienol-table tbody td,
+    .tocotrienol-table thead th {
+      padding: 20px 22px;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tocotrienol-comparison-section {
+      padding: 56px 0;
+    }
+
+    .tocotrienol-comparison-title {
+      font-size: 30px;
+      margin-bottom: 24px;
+    }
+
+    .tocotrienol-comparison-subtitle {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .tocotrienol-table-wrapper {
+      overflow-x: auto;
+    }
+
+    .tocotrienol-table {
+      min-width: 640px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .tocotrienol-comparison-section {
+      padding: 44px 0;
+    }
+
+    .tocotrienol-comparison-title {
+      font-size: 26px;
+    }
+
+    .tocotrienol-table tbody th,
+    .tocotrienol-table tbody td,
+    .tocotrienol-table thead th {
+      padding: 18px 16px;
+      font-size: 14px;
+    }
+
+    .tocotrienol-cta-button {
+      width: 100%;
+      max-width: 320px;
+      font-size: 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Tocotrienol Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Table Title",
+      "default": "Why Our Tocotrienol Outperforms Other Vitamin E"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Optional supporting copy displayed under the title."
+    },
+    {
+      "type": "text",
+      "id": "column1_title",
+      "label": "Column 1 Title",
+      "default": "Cheap Tocopherols"
+    },
+    {
+      "type": "text",
+      "id": "column2_title",
+      "label": "Column 2 Title",
+      "default": "Generic Blends"
+    },
+    {
+      "type": "text",
+      "id": "column3_title",
+      "label": "Column 3 Title",
+      "default": "Our Tocotrienol"
+    },
+    {
+      "type": "text",
+      "id": "column1_source",
+      "label": "Column 1 - Source",
+      "default": "Soy / synthetic"
+    },
+    {
+      "type": "text",
+      "id": "column2_source",
+      "label": "Column 2 - Source",
+      "default": "Cheap mass labels"
+    },
+    {
+      "type": "text",
+      "id": "column3_source",
+      "label": "Column 3 - Source",
+      "default": "100% Annatto"
+    },
+    {
+      "type": "text",
+      "id": "column1_purity",
+      "label": "Column 1 - Purity",
+      "default": "Low, filler-heavy"
+    },
+    {
+      "type": "text",
+      "id": "column2_purity",
+      "label": "Column 2 - Purity",
+      "default": "Contaminated with tocopherols"
+    },
+    {
+      "type": "text",
+      "id": "column3_purity",
+      "label": "Column 3 - Purity",
+      "default": "Tocopherol-free"
+    },
+    {
+      "type": "text",
+      "id": "column1_testing",
+      "label": "Column 1 - Testing",
+      "default": "Rarely verified"
+    },
+    {
+      "type": "text",
+      "id": "column2_testing",
+      "label": "Column 2 - Testing",
+      "default": "Inconsistent"
+    },
+    {
+      "type": "text",
+      "id": "column3_testing",
+      "label": "Column 3 - Testing",
+      "default": "Third-party tested"
+    },
+    {
+      "type": "text",
+      "id": "column1_trust",
+      "label": "Column 1 - Trust",
+      "default": "Cheap mass labels"
+    },
+    {
+      "type": "text",
+      "id": "column2_trust",
+      "label": "Column 2 - Trust",
+      "default": "Marketing hype"
+    },
+    {
+      "type": "text",
+      "id": "column3_trust",
+      "label": "Column 3 - Trust",
+      "default": "Amazon's Choice, GMP-certified"
+    },
+    {
+      "type": "url",
+      "id": "column3_icon",
+      "label": "Column 3 Icon URL",
+      "info": "Upload an SVG to the Files area and paste its URL to display it next to each Our Tocotrienol value."
+    },
+    {
+      "type": "text",
+      "id": "column3_icon_alt",
+      "label": "Column 3 Icon Alt Text",
+      "default": "Premium tocotrienol icon"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call to Action Text",
+      "default": "Choose the Proven Tocotrienol"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call to Action URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tocotrienol Table"
+    }
+  ]
+}
+{% endschema %}

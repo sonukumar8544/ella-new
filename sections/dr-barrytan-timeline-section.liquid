@@ -1,0 +1,459 @@
+<div class="dr-tan-timeline-wrapper">
+  {% if section.settings.main_title != blank or section.settings.main_subtitle != blank %}
+    <div class="dr-tan-timeline-header">
+      {% if section.settings.main_title != blank %}
+        <h2 class="dr-tan-timeline-main-title">{{ section.settings.main_title }}</h2>
+      {% endif %}
+      {% if section.settings.main_subtitle != blank %}
+        <p class="dr-tan-timeline-main-subtitle">{{ section.settings.main_subtitle }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    <div class="dr-tan-timeline-item dr-tan-timeline-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+      <div class="dr-tan-timeline-line"></div>
+      {% if block.settings.year != blank %}
+        <div class="dr-tan-timeline-year-badge">{{ block.settings.year }}</div>
+      {% endif %}
+      <div class="dr-tan-timeline-content">
+        {% if block.settings.title != blank %}
+          <h3 class="dr-tan-timeline-title">{{ block.settings.title }}</h3>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <h4 class="dr-tan-timeline-subtitle">{{ block.settings.subtitle }}</h4>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <div class="dr-tan-timeline-description">{{ block.settings.description }}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
+
+<style>
+  .dr-tan-timeline-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  .dr-tan-timeline-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dr-tan-timeline-main-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #374650;
+    font-style: normal;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+
+  .dr-tan-timeline-main-subtitle {
+    font-size: 18px;
+    color: #374650;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .dr-tan-timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .dr-tan-timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .dr-tan-timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    bottom: 0;
+    width: 2px;
+    background: #dce6ed;
+    transform: translateX(-50%);
+    display: block !important;
+  }
+
+  .dr-tan-timeline-year-badge {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: #0f80aa;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .dr-tan-timeline-content {
+    width: calc(50% - 30px);
+    padding-top: 5px;
+  }
+
+  .dr-tan-timeline-item.dr-tan-timeline-right .dr-tan-timeline-content {
+    margin-left: auto;
+    padding-left: 30px;
+  }
+
+  .dr-tan-timeline-item.dr-tan-timeline-left .dr-tan-timeline-content {
+    margin-right: auto;
+    padding-right: 30px;
+  }
+
+  .dr-tan-timeline-title {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .dr-tan-timeline-subtitle {
+    margin: 0 0 12px;
+    color: #0f80aa;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .dr-tan-timeline-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+
+  .dr-tan-timeline-description p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Desktop */
+  @media (min-width: 1025px) {
+    /* .dr-tan-timeline-wrapper {
+      padding: 40px 200px;
+    } */
+
+    .dr-tan-timeline-main-title {
+      font-size: 36px;
+    }
+
+    .dr-tan-timeline-main-subtitle {
+      font-size: 20px;
+    }
+
+    .dr-tan-timeline-content {
+      width: calc(50% - 40px);
+      max-width: 500px;
+    }
+
+    .dr-tan-timeline-item.dr-tan-timeline-right .dr-tan-timeline-content {
+      padding-left: 40px;
+    }
+
+    .dr-tan-timeline-item.dr-tan-timeline-left .dr-tan-timeline-content {
+      padding-right: 40px;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    /* .dr-tan-timeline-wrapper {
+      padding: 30px 100px;
+    } */
+
+    .dr-tan-timeline-content {
+      width: calc(50% - 25px);
+      max-width: 400px;
+    }
+
+    .dr-tan-timeline-item.dr-tan-timeline-right .dr-tan-timeline-content {
+      padding-left: 25px;
+    }
+
+    .dr-tan-timeline-item.dr-tan-timeline-left .dr-tan-timeline-content {
+      padding-right: 25px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .dr-tan-timeline-wrapper {
+      padding: 0;
+    }
+
+    .dr-tan-timeline-header {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .dr-tan-timeline-main-title {
+      font-size: 24px;
+    }
+
+    .dr-tan-timeline-main-subtitle {
+      font-size: 16px;
+    }
+
+    .dr-tan-timeline-item {
+      margin-bottom: 20px;
+      padding-left: 50px;
+      display: block;
+    }
+
+    .dr-tan-timeline-line {
+      left: 20px;
+      transform: none;
+      top: 40px;
+      display: block !important;
+    }
+
+    .dr-tan-timeline-year-badge {
+      left: 20px;
+      transform: translateX(-50%);
+      font-size: 13px;
+      padding: 6px 16px;
+    }
+
+    .dr-tan-timeline-content {
+      max-width: 100%;
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .dr-tan-timeline-title {
+      font-size: 18px;
+    }
+
+    .dr-tan-timeline-subtitle {
+      font-size: 14px;
+    }
+
+    .dr-tan-timeline-description {
+      font-size: 14px;
+    }
+
+    .dr-tan-timeline-description p {
+      font-size: 14px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .dr-tan-timeline-header {
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+
+    .dr-tan-timeline-main-title {
+      font-size: 20px;
+    }
+
+    .dr-tan-timeline-main-subtitle {
+      font-size: 14px;
+    }
+
+    .dr-tan-timeline-item {
+      padding-left: 45px;
+      margin-bottom: 10px;
+    }
+
+    .dr-tan-timeline-line {
+      left: 18px;
+      display: block !important;
+    }
+
+    .dr-tan-timeline-year-badge {
+      left: 18px;
+      font-size: 12px;
+      padding: 5px 14px;
+    }
+
+    .dr-tan-timeline-title {
+      font-size: 16px;
+    }
+
+    .dr-tan-timeline-subtitle {
+      font-size: 13px;
+    }
+
+    .dr-tan-timeline-description {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .dr-tan-timeline-description p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "barry tan timeline new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Main Title",
+        "default": "The 'Accidental' Discovery That Changed Vitamin E Forever"
+      },
+      {
+        "type": "text",
+        "id": "main_subtitle",
+        "label": "Main Subtitle",
+        "default": "A story of obsession, persistence, and the search for perfection"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "timeline_item",
+        "name": "Timeline Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "year",
+            "label": "Year",
+            "default": "1992"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "The Journey Begins"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Dr. Tan's First Tocotrienol Success"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Dr. Barrie Tan and his colleagues cracked the code on extracting tocotrienols from palm oil at commercial scale. Finally, people could access this superior form of Vitamin E! But there was a catch. Palm contained 25% alpha-tocopherol—and that was a problem. <strong>Alpha-tocopherol literally blocks tocotrienols from doing their job.</strong></p>"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "right"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "barry tan timeline new",
+        "blocks": [
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "1992",
+              "title": "The Journey Begins",
+              "subtitle": "Dr. Tan's First Tocotrienol Success",
+              "description": "<p>Dr. Barrie Tan and his colleagues cracked the code on extracting tocotrienols from palm oil at commercial scale. Finally, people could access this superior form of Vitamin E! But there was a catch. Palm contained 25% alpha-tocopherol—and that was a problem. <strong>Alpha-tocopherol literally blocks tocotrienols from doing their job.</strong></p>",
+              "alignment": "right"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "1996",
+              "title": "The Hunt Continued",
+              "subtitle": "Rice Bran Improves the Formula",
+              "description": "<p>Rice bran showed promise—70% tocotrienols, 30% tocopherols. Clinical results improved, but that 30% was still getting in the way. For most scientists, this would've been \"good enough.\" But Dr. Tan knew he needed something completely free of tocopherols—100% pure, natural source.</p>",
+              "alignment": "left"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "2002",
+              "title": "The 'Aha!' Moment in Peru",
+              "subtitle": "100% Pure Annatto Discovered",
+              "description": "<p>After a decade of searching, Dr. Tan discovered annatto in Peru—the only natural source that yielded 100% pure tocotrienols with zero tocopherols. This was the breakthrough he'd been waiting for.</p>",
+              "alignment": "right"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "2002–2003",
+              "title": "The Making of GOLD Standard",
+              "subtitle": "Development of DeltaGold®",
+              "description": "<p>Dr. Tan perfected a chemical-free extraction method for DeltaGold®, creating the world's first 100% pure, tocopherol-free tocotrienol supplement.</p>",
+              "alignment": "left"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "2003–2013",
+              "title": "The Evidence Builds",
+              "subtitle": "Clinical Research Expands",
+              "description": "<p>Ten years of collaboration with global researchers led to over 100 clinical and pre-clinical studies showing benefits for neurological, cardiovascular, and cellular health.</p>",
+              "alignment": "right"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "2014",
+              "title": "The FDA Stamp of Approval",
+              "subtitle": "GRAS Status Granted",
+              "description": "<p>The FDA granted DeltaGold® \"Generally Recognized as Safe\" (GRAS) status, validating its safety and quality at the highest regulatory level.</p>",
+              "alignment": "left"
+            }
+          },
+          {
+            "type": "timeline_item",
+            "settings": {
+              "year": "2015–Present",
+              "title": "The World Takes Notice",
+              "subtitle": "Tocotrienol Market Surges",
+              "description": "<p>The tocotrienol market has grown to $386 million and is projected to reach $702 million by 2034—supporting Dr. Tan's 30+ years of pioneering research.</p>",
+              "alignment": "right"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

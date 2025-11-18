@@ -54,12 +54,20 @@
         "author_email": "example@example.com",
         "author_linkedin": "https://www.linkedin.com/in/kritika-jain-097904187/"
       }
+    },
+    "author_blog_card_AUA4tn": {
+      "type": "author-blog-card",
+      "name": "author-blog-card",
+      "settings": {
+        "blog_author_name": "Kritika Jain"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "author_section_EjLw7W"
+    "author_section_EjLw7W",
+    "author_blog_card_AUA4tn"
   ]
 }
