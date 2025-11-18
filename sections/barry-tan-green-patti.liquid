@@ -2,7 +2,7 @@
   <div class="barry-tan-quote-container">
     {% if section.settings.quote != blank %}
       <blockquote class="barry-tan-quote">
-        {{ section.settings.quote }}
+        "Nature provides the perfect blueprint. Our role as scientists is to identify these compounds and preserve their integrity." 
       </blockquote>
     {% endif %}
     
@@ -33,6 +33,7 @@
   #barry-tan-quote-{{ section.id }} .barry-tan-quote {
     font-size: 25px;
     font-weight: 400;
+    max-width: 463px !important;
     color: #ffffff;
     margin: 0 auto;
     line-height: 1.5;

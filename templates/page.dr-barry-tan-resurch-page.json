@@ -66,7 +66,7 @@
             "year": "1998",
             "title": "The Hunt Continued ",
             "subtitle": "Rice Bran Improves the Formula ",
-            "description": "<p>Rice bran showed promise—70% tocotrienols, 30% tocopherols. Clinical results improved, but that 30% was still getting in the way. For most scientists, this would've been \"good enough.\" <br/><strong>But Dr. Tan knew he needed something completely free of tocopherols, a 100% pure, natural source. </strong><br/><br/><br/></p>",
+            "description": "<p>Rice bran showed promise—70% tocotrienols, 30% tocopherols. Clinical results improved, but that 30% was still getting in the way. For most scientists, this would've been \"good enough.\" <br/><strong>But Dr. Tan knew he needed something completely free of tocopherols, a 100% pure, natural source. </strong></p>",
             "alignment": "left"
           }
         },
@@ -131,14 +131,18 @@
         "timeline_item_whjFNi"
       ],
       "name": "barry tan timeline new",
-      "settings": {}
+      "settings": {
+        "main_title": "The 'Accidental' Discovery That Changed Vitamin E Forever ",
+        "main_subtitle": "This is not just a story of scientific discovery. It's a story of obsession, persistence, and refusing to accept \"good enough\" when lives are at stake. "
+      }
     },
     "video_block_pYwUCc": {
       "type": "video-block",
       "custom_css": [
         ".halo-block-header .title .text {width: 100%; font-weight: 500; line-height: 1.2; font-style: normal;}",
         ".deferred-media__poster img {object-fit: contain;}",
-        ".deferred-media__poster-button {display: none;}"
+        ".deferred-media__poster-button {display: none;}",
+        "@media (max-width: 1025px) {.halo-block-header .title {font-size: 24px; }}"
       ],
       "name": "t:sections.video.presets.name",
       "settings": {
@@ -206,7 +210,7 @@
         "quote": "Nature provides the perfect blueprint.\nOur role as scientists is to identify these\ncompounds and preserve their integrity.",
         "attribution": "Dr. Barrie Tan, Ph.D",
         "section_padding_top": 40,
-        "section_padding_bottom": 40,
+        "section_padding_bottom": 60,
         "min_height": 400,
         "max_width": 900
       }
@@ -220,7 +224,7 @@
         "cta_heading": "Want The Complete Story?",
         "cta_text": "Download Dr. Tan's groundbreaking book 'The Truth About Vitamin E'. Discover the fascinating science, clinical trials, and personal stories behind this revolutionary breakthrough.",
         "cta_label": "Get the ebook",
-        "cta_link": "",
+        "cta_link": "shopify://products/vitamin-e-tocotrienols-supplement",
         "research_text": "For decades, the world believed alpha-tocopherol was the only form of Vitamin E that mattered. Dr. Barrie Tan's relentless curiosity led him to discover and commercialize 100% pure tocotrienols from annatto—a far more potent form of Vitamin E with remarkable health benefits that traditional supplements were missing.",
         "book_image": "shopify://shop_images/Thumbnail_Image_7OnZStnrhKOXg1FGB06qyIH2leM_jpg.png",
         "book_image_alt": "The Truth About Vitamin E book cover",
@@ -273,10 +277,20 @@
           "type": "lab_detail_item",
           "settings": {
             "number": "04",
-            "heading": "Barrie Tan, PhD: Using Tocotrienols to Address Lifestyle and Metabolic Disease",
+            "heading": "Emerging Cancer Research in Vitamin E Tocotrienol ",
             "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
             "subheading_link": "",
-            "description": "Discusses evidence and clinical interest in tocotrienols across cardiometabolic health, fatty liver disease, cancer support, radiation exposure, and bone health, and traces their sourcing evolution from palm oil."
+            "description": "Highlights tocotrienols as a distinct Vitamin E family with mechanistic relevance to cellular resilience and healthy aging, positioned for adjunct use alongside standard care and lifestyle foundations. "
+          }
+        },
+        "lab_detail_item_KBFCCX": {
+          "type": "lab_detail_item",
+          "settings": {
+            "number": "05",
+            "heading": "Vitamin E Component Dramatically More Effective at Supporting Heart Health ",
+            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols ",
+            "subheading_link": "",
+            "description": "Early human and preclinical data show how tocotrienols may help lower lipids, reduce inflammation (e.g., CRP), and protect vessels via antioxidant actions. "
           }
         }
       },
@@ -284,7 +298,8 @@
         "lab_detail_item_nbzhmB",
         "lab_detail_item_pCf6C9",
         "lab_detail_item_rK7q6K",
-        "lab_detail_item_QQQpVF"
+        "lab_detail_item_QQQpVF",
+        "lab_detail_item_KBFCCX"
       ],
       "name": "Lab Details Section",
       "settings": {

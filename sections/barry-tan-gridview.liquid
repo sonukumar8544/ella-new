@@ -1,52 +1,62 @@
 <section class="barry-tan-gridview-section" id="barry-tan-gridview-{{ section.id }}">
   <div class="barry-tan-gridview-container">
     <div class="barry-tan-gridview-wrapper">
-      <div class="barry-tan-gridview-left">
-        <div class="barry-tan-gridview-intro">
-          {% if section.settings.heading != blank %}
-            <h2 class="barry-tan-gridview-heading">{{ section.settings.heading }}</h2>
-          {% endif %}
-          
-          {% if section.settings.intro_text != blank %}
-            <p class="barry-tan-gridview-intro-text">{{ section.settings.intro_text }}</p>
-          {% endif %}
+      <!-- Row 1 -->
+      <div class="barry-tan-gridview-row row-1">
+        <div class="barry-tan-gridview-col col-1">
+          <div class="barry-tan-gridview-intro">
+            {% if section.settings.heading != blank %}
+              <h2 class="barry-tan-gridview-heading">{{ section.settings.heading }}</h2>
+            {% endif %}
+            
+            {% if section.settings.intro_text != blank %}
+              <p class="barry-tan-gridview-intro-text">{{ section.settings.intro_text }}</p>
+            {% endif %}
+          </div>
         </div>
 
-        <div class="barry-tan-gridview-cta">
-          {% if section.settings.cta_heading != blank %}
-            <h3 class="barry-tan-gridview-cta-heading">{{ section.settings.cta_heading }}</h3>
-          {% endif %}
-          
-          {% if section.settings.cta_text != blank %}
-            <p class="barry-tan-gridview-cta-text">{{ section.settings.cta_text }}</p>
-          {% endif %}
-          
-          {% if section.settings.cta_link != blank and section.settings.cta_label != blank %}
-            <a href="{{ section.settings.cta_link }}" class="barry-tan-gridview-cta-link">
-              {{ section.settings.cta_label }}
-            </a>
+        <div class="barry-tan-gridview-col col-2">
+          {% if section.settings.research_text != blank %}
+            <p class="barry-tan-gridview-research-text">{{ section.settings.research_text }}</p>
           {% endif %}
         </div>
       </div>
 
-      <div class="barry-tan-gridview-right">
-        {% if section.settings.research_text != blank %}
-          <p class="barry-tan-gridview-research-text">{{ section.settings.research_text }}</p>
-        {% endif %}
-
-        {% if section.settings.book_image != blank %}
-          <div class="barry-tan-gridview-books">
-            {% assign alt_text = section.settings.book_image_alt | default: "The Truth About Vitamin E book" %}
-            <div class="barry-tan-gridview-book book-1">
-              {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
-            </div>
-            {% if section.settings.show_second_book %}
-              <div class="barry-tan-gridview-book book-2">
-                {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
-              </div>
+      <!-- Row 2 -->
+      <div class="barry-tan-gridview-row row-2">
+        <div class="barry-tan-gridview-col col-1">
+          <div class="barry-tan-gridview-cta">
+            {% if section.settings.cta_heading != blank %}
+              <h3 class="barry-tan-gridview-cta-heading">{{ section.settings.cta_heading }}</h3>
+            {% endif %}
+            
+            {% if section.settings.cta_text != blank %}
+              <p class="barry-tan-gridview-cta-text">{{ section.settings.cta_text }}</p>
+            {% endif %}
+            
+            {% if section.settings.cta_link != blank and section.settings.cta_label != blank %}
+              <a href="{{ section.settings.cta_link }}" class="barry-tan-gridview-cta-link">
+                {{ section.settings.cta_label }}
+              </a>
             {% endif %}
           </div>
-        {% endif %}
+        </div>
+
+        <div class="barry-tan-gridview-col col-2">
+          {% if section.settings.book_image != blank %}
+            <div class="barry-tan-gridview-books">
+              {% assign alt_text = section.settings.book_image_alt | default: "The Truth About Vitamin E book" %}
+              <div class="barry-tan-gridview-book book-1">
+                {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
+              </div>
+              {% if section.settings.show_second_book %}
+                <div class="barry-tan-gridview-book book-2">
+                  {{ section.settings.book_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy' }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -59,21 +69,33 @@
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-container {
-    max-width: {{ section.settings.max_width | default: 1200 }}px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-left {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 55px;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-col {
+    flex: 1;
+    width: 50%;
+    margin: auto;
+  }
+
+  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row.row-2 {
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); */
+    border-radius: 12px;
+    /* padding: 32px; */
+    background-color: {{ section.settings.cta_background | default: '#f5f5f5' }};
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro {
@@ -83,9 +105,9 @@
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-heading {
-    font-size: clamp(32px, 4vw, 42px);
-    font-weight: 700;
-    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    font-size: 35px;
+    font-weight: 600;
+    color: #374650;
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -101,18 +123,16 @@
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
-    background-color: {{ section.settings.cta_background | default: '#f5f5f5' }};
-    border-radius: 12px;
-    padding: 32px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding-left: 45px;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-heading {
     font-size: clamp(24px, 3vw, 28px);
     font-weight: 700;
-    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    color: #374650;
     margin: 0;
     line-height: 1.3;
   }
@@ -126,23 +146,19 @@
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-link {
-    font-size: clamp(16px, 2vw, 18px);
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     color: {{ section.settings.cta_link_color | default: '#086B92' }};
     text-decoration: underline;
     display: inline-block;
-    margin-top: 4px;
+    margin-top: 8px;
     transition: color 0.3s ease;
+    cursor: pointer;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-link:hover {
     color: {{ section.settings.cta_link_hover | default: '#0a5d7a' }};
-  }
-
-  #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-right {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    text-decoration: underline;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-research-text {
@@ -156,15 +172,13 @@
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-top: 20px;
+    /* max-width: 500px; */
+    /* margin: 20px auto 0; */
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book {
     position: relative;
     width: 100%;
-    transform-style: preserve-3d;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book img {
@@ -176,15 +190,13 @@
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-1 {
-    transform: rotate(-8deg);
     z-index: 2;
   }
 
   #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
     position: absolute;
-    top: 20px;
-    left: 30px;
-    transform: rotate(8deg);
+    top: 0;
+    left: 20px;
     z-index: 1;
     opacity: 0.9;
   }
@@ -195,11 +207,19 @@
       padding: 60px 20px;
     }
 
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+    padding-left: 0px;
+  }
+
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
+      gap: 40px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row {
       gap: 50px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row.row-2 {
       padding: 28px;
     }
 
@@ -215,25 +235,29 @@
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
-      grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 32px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-left {
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row {
+      flex-direction: column;
       gap: 32px;
+      /* margin: auto; */
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-col {
+      width: 100%;
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-intro {
       gap: 16px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row.row-2 {
       padding: 24px;
-      gap: 14px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-right {
-      gap: 32px;
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
+      gap: 22px;
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
@@ -242,8 +266,8 @@
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
-      top: 15px;
-      left: 25px;
+      top: 0;
+      left: 20px;
     }
   }
 
@@ -253,7 +277,15 @@
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-wrapper {
-      gap: 32px;
+      gap: 28px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row {
+      gap: 28px;
+    }
+
+    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-row.row-2 {
+      padding: 10px;
     }
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-heading {
@@ -264,26 +296,17 @@
       font-size: 16px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta {
-      padding: 20px;
-    }
-
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-cta-heading {
       font-size: 22px;
     }
 
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
+    /* #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-books {
       max-width: 280px;
-    }
-
-    #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-1 {
-      transform: rotate(-6deg);
-    }
+    } */
 
     #barry-tan-gridview-{{ section.id }} .barry-tan-gridview-book.book-2 {
-      transform: rotate(6deg);
-      top: 12px;
-      left: 20px;
+      top: 0;
+      left: 15px;
     }
   }
 </style>

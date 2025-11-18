@@ -208,9 +208,9 @@
 }
 
 @media screen and (max-width: 551px) {
-  .video-section__media.deferred-media {
+  /* .video-section__media.deferred-media {
     padding-bottom: var(--video_height_mb) !important;
-  }
+  } */
 
   .video-section .deferred-media__poster-button.enable_content.icon-position-right {
     left: 50%;
