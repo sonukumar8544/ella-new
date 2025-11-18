@@ -47,99 +47,6 @@
         "max_width": 1100
       }
     },
-    "dr_barrytan_timeline_section_XCKC9B": {
-      "type": "dr-barrytan-timeline-section",
-      "blocks": {
-        "timeline_item_zbDanB": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "1992",
-            "position": "right",
-            "heading": "The Journey Begins ",
-            "subheading": "",
-            "description": "Dr. Barrie Tan and colleagues extracted tocotrienols from palm oil. A catch was that palm contained 25% alpha-tocopherol, which blocks tocotrienols."
-          }
-        },
-        "timeline_item_8rQH7c": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "1998",
-            "position": "left",
-            "heading": "The Hunt Continued ",
-            "subheading": "",
-            "description": "Rice bran showed promise with 70% tocotrienols and 30% tocopherols. Clinical results improved, but Dr. Tan sought a 100% pure, tocopherol-free source."
-          }
-        },
-        "timeline_item_eFCdRa": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "2002",
-            "position": "right",
-            "heading": "100% Pure Annatto Tocotrienols Found",
-            "subheading": "",
-            "description": "While searching for marigolds in Peru, Dr. Tan discovered annatto, a vibrant red plant. Samples brought back to his lab showed perfect results: 100% pure tocotrienols and ZERO tocopherols."
-          }
-        },
-        "timeline_item_LUmTQM": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "2002-2003",
-            "position": "left",
-            "heading": "Development of DeltaGold® Supplement",
-            "subheading": "",
-            "description": "Dr. Tan spent years perfecting a chemical-free extraction method to preserve delicate tocotrienol molecules, resulting in DeltaGold®, the world's first and only 100% pure, tocopherol-free tocotrienol supplement."
-          }
-        },
-        "timeline_item_WgFReK": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "2003-2013",
-            "position": "right",
-            "heading": "Clinical Research & Breakthrough Studies",
-            "subheading": "",
-            "description": "For ten years, Dr. Tan collaborated with leading researchers (Sen, Rink, Khanna), conducting over 100 clinical and pre-clinical studies. Research revealed breakthrough benefits for neurological health, cardiovascular support, and cellular protection."
-          }
-        },
-        "timeline_item_Hkh9Kh": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "2014",
-            "position": "left",
-            "heading": "GRAS Status Granted",
-            "subheading": "",
-            "description": "The FDA granted DeltaGold® \"Generally Recognized as Safe\" (GRAS) status, a significant milestone for supplements."
-          }
-        },
-        "timeline_item_YXFBYq": {
-          "type": "timeline_item",
-          "settings": {
-            "year": "2015-Present",
-            "position": "right",
-            "heading": "Tocotrienol Market Surge",
-            "subheading": "",
-            "description": "The global tocotrienol market reached $386 million and is projected to hit $702 million by 2034. Recent research continues to validate Dr. Tan's decades of work, and his \"perfect\" Vitamin E is finally gaining recognition."
-          }
-        }
-      },
-      "block_order": [
-        "timeline_item_zbDanB",
-        "timeline_item_8rQH7c",
-        "timeline_item_eFCdRa",
-        "timeline_item_LUmTQM",
-        "timeline_item_WgFReK",
-        "timeline_item_Hkh9Kh",
-        "timeline_item_YXFBYq"
-      ],
-      "name": "Timeline Section",
-      "settings": {
-        "title": "The 'Accidental' Discovery That Changed Vitamin E Forever",
-        "subtitle": "This is not just a story of scientific discovery. It's a story of obsession, persistence, and refusing to accept 'good enough' when lives are at stake.",
-        "background_color": "#ffffff",
-        "section_padding_top": 80,
-        "section_padding_bottom": 80,
-        "max_width": 1200
-      }
-    },
     "video_block_pYwUCc": {
       "type": "video-block",
       "custom_css": [
@@ -236,7 +143,7 @@
         "heading_color": "#1a1a1a",
         "text_color": "#374650",
         "cta_background": "#f5f5f5",
-        "cta_link_color": "#086B92",
+        "cta_link_color": "#086b92",
         "cta_link_hover": "#0a5d7a",
         "section_padding_top": 80,
         "section_padding_bottom": 80,
@@ -299,7 +206,7 @@
         "background_color": "#ffffff",
         "title_color": "#1a1a1a",
         "heading_color": "#1a1a1a",
-        "subheading_color": "#086B92",
+        "subheading_color": "#086b92",
         "subheading_hover": "#0a5d7a",
         "description_color": "#666666",
         "number_color": "#d0d0d0",
@@ -411,7 +318,6 @@
     "main",
     "shogun-optimizer",
     "dr_barry_tan_banner_Am8eEm",
-    "dr_barrytan_timeline_section_XCKC9B",
     "video_block_pYwUCc",
     "barry_tan_green_patti_mGcVFw",
     "barry_tan_gridview_UnaQaW",
