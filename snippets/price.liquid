@@ -73,7 +73,7 @@
         </dd>
      
       <dd class="price__compare" data-compare="{{compare_at_price}}">
-        <b class="price-item price-item--regular">
+        <b class="price-item price-item--regular" style="font-size:12px !important; letter-spacing:0; color:#29353c !important; text-decoration: line-through !important;">
           {% if settings.currency_format_enable %}
             {{ compare_at_price | money_with_currency }}
           {% else %}
