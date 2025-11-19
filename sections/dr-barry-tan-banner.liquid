@@ -61,7 +61,7 @@
   .dr-barry-banner__card {
     background: {{ section.settings.card_background | default: '#086B92' }}; 
     border-radius: {{ section.settings.border_radius | default: 28 }}px;
-    padding: 20px 20px 20px 60px;
+    padding: 8px;
     display: flex;
     align-items: center;
     /* gap: clamp(28px, 6vw, 64px); */
@@ -73,6 +73,12 @@
     flex: 0 0 60%;
     max-width: 60%;
     color: #ffffff;
+  }
+
+  @media (min-width: 1025px) {
+    .dr-barry-banner__content{
+      padding-left: 50px !important;
+    }
   }
 
   .dr-barry-banner__heading {
@@ -156,7 +162,8 @@
     .dr-barry-banner__card {
       flex-direction: column;
       text-align: center;
-      padding: clamp(32px, 8vw, 44px);
+      padding: 8px;
+      padding-top: 40px !important;
       gap: 0;
     }
 
@@ -170,7 +177,7 @@
     .dr-barry-banner__content {
       flex: 1 1 auto;
       max-width: 100%;
-      order: 3;
+      order: 2;
     }
 
     .dr-barry-banner__heading--desktop {
@@ -187,8 +194,8 @@
       justify-content: center;
       flex: 1 1 auto;
       max-width: 100%;
-      order: 2;
-      margin: 0 0 28px;
+      order: 3;
+      margin: 28px 0 0;
     }
   }
 
@@ -199,7 +206,7 @@
 
     .dr-barry-banner__card {
       border-radius: 22px;
-      padding: clamp(28px, 6vw, 36px);
+      padding: 8px;
       gap: 0;
     }
 
@@ -210,7 +217,8 @@
     }
 
     .dr-barry-banner__media {
-      margin-bottom: 24px;
+      margin-top: 24px;
+      margin-bottom: 0;
     }
 
     .dr-barry-banner__media img {
@@ -224,12 +232,13 @@
       font-size: 16px;
       line-height: 1.65;
       margin-bottom: 20px;
-      max-width: 100%;
+      max-width: 90%;
     }
 
     .dr-barry-banner__button {
       font-size: 14px;
-      padding: 12px 24px;
+      padding: 5px;
+      padding-left: 10px;
       max-width: 213px;
       justify-content: center;
       box-shadow: 0 12px 24px rgba(10, 108, 141, 0.3);
