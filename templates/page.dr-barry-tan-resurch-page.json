@@ -142,7 +142,8 @@
         ".halo-block-header .title .text {width: 100%; font-weight: 500; line-height: 1.2; font-style: normal;}",
         ".deferred-media__poster img {object-fit: contain;}",
         ".deferred-media__poster-button {display: none;}",
-        "@media (max-width: 1025px) {.halo-block-header .title {font-size: 24px; }}"
+        "@media (max-width: 1025px) {.halo-block-header .title {font-size: 24px; }}",
+        ".deferred-media__poster img {margin: auto;}"
       ],
       "name": "t:sections.video.presets.name",
       "settings": {
