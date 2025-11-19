@@ -6,47 +6,43 @@
 
     <div class="barry-tan-grid-video-grid">
       {% for block in section.blocks %}
-        <div class="barry-tan-grid-video-item" {{ block.shopify_attributes }}>
-          <a href="{{ block.settings.video_link | default: '#' }}" class="barry-tan-grid-video-link">
-            <div class="barry-tan-grid-video-thumbnail">
-              {% if block.settings.video_image != blank %}
-                {% assign alt_text = block.settings.video_image_alt | default: block.settings.video_title %}
-                {{ block.settings.video_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy', class: 'barry-tan-grid-video-image' }}
-              {% else %}
-                <div class="barry-tan-grid-video-placeholder"></div>
-              {% endif %}
-              
-              <div class="barry-tan-grid-video-play-overlay">
-                <div class="barry-tan-grid-video-play-button">
-                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="30" fill="#DC2626" opacity="0.9"/>
-                    <path d="M24 18L42 30L24 42V18Z" fill="white"/>
-                  </svg>
-                </div>
-                {% if block.settings.video_title_overlay != blank %}
-                  <div class="barry-tan-grid-video-overlay-text">{{ block.settings.video_title_overlay }}</div>
+        {% if block.settings.video_link != blank %}
+          <div class="barry-tan-grid-video-item" {{ block.shopify_attributes }}>
+            <button 
+              type="button"
+              class="barry-tan-grid-video-link" 
+              data-video-id="{{ block.settings.video_link.id }}" 
+              data-video-type="{{ block.settings.video_link.type }}"
+              data-block-id="{{ block.id }}"
+              aria-label="Play video: {{ block.settings.video_title | escape }}"
+            >
+              <div class="barry-tan-grid-video-thumbnail">
+                {% if block.settings.video_image != blank %}
+                  {% assign alt_text = block.settings.video_image_alt | default: block.settings.video_title %}
+                  {{ block.settings.video_image | image_url: width: 600 | image_tag: alt: alt_text, loading: 'lazy', class: 'barry-tan-grid-video-image' }}
+                {% else %}
+                  <div class="barry-tan-grid-video-placeholder"></div>
                 {% endif %}
               </div>
-
-              {% if block.settings.show_branding %}
-                <div class="barry-tan-grid-video-branding">
-                  {{ block.settings.branding_text | default: "Wellness by designs PODCAST" }}
-                </div>
+              
+              {% if block.settings.video_title != blank %}
+                <h3 class="barry-tan-grid-video-item-title">{{ block.settings.video_title }}</h3>
               {% endif %}
-
-              {% if block.settings.show_guest_banner %}
-                <div class="barry-tan-grid-video-guest-banner">
-                  {{ block.settings.guest_text | default: "With Dr Barrie Tan PhD" }}
-                </div>
-              {% endif %}
-            </div>
-            
-            {% if block.settings.video_title != blank %}
-              <h3 class="barry-tan-grid-video-item-title">{{ block.settings.video_title }}</h3>
-            {% endif %}
-          </a>
-        </div>
+            </button>
+          </div>
+        {% endif %}
       {% endfor %}
+    </div>
+
+    <!-- Video Modal -->
+    <div class="barry-tan-video-modal" id="barry-tan-video-modal-{{ section.id }}">
+      <div class="barry-tan-video-modal-overlay"></div>
+      <div class="barry-tan-video-modal-content">
+        <button class="barry-tan-video-modal-close" aria-label="Close video">&times;</button>
+        <div class="barry-tan-video-modal-iframe-container">
+          <iframe class="barry-tan-video-modal-iframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -63,19 +59,22 @@
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-title {
-    font-size: clamp(28px, 4vw, 36px);
-    font-weight: 700;
-    color: {{ section.settings.title_color | default: '#1a1a1a' }};
+    font-size: 35px;
+    font-weight: 500;
+    color: #374650;
     text-align: center;
     margin: 0 0 50px;
     line-height: 1.3;
     letter-spacing: -0.02em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 100px;
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-item {
@@ -88,11 +87,12 @@
     color: inherit;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-link:hover {
-    transform: translateY(-4px);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-thumbnail {
@@ -103,6 +103,7 @@
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-image {
@@ -110,6 +111,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-placeholder {
@@ -118,87 +120,13 @@
     background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
   }
 
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-link:hover .barry-tan-grid-video-play-overlay {
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-play-button svg {
-    width: 60px;
-    height: 60px;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-overlay-text {
-    position: absolute;
-    bottom: 60px;
-    right: 20px;
-    background: rgba(220, 38, 38, 0.9);
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 3;
-    max-width: 200px;
-    text-align: center;
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-branding {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #1a1a1a;
-    z-index: 3;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-guest-banner {
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-    right: 0;
-    background: rgba(8, 107, 146, 0.9);
-    color: #ffffff;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    z-index: 3;
-  }
-
   #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-item-title {
-    font-size: clamp(15px, 1.8vw, 17px);
-    font-weight: 400;
-    color: {{ section.settings.text_color | default: '#374650' }};
+    font-size: 22px;
+    font-weight: 500;
+    color: #374650;
     margin: 0;
     line-height: 1.5;
+    padding-right: 50px;
   }
 
   /* Tablet styles */
@@ -214,6 +142,10 @@
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-title {
       margin-bottom: 40px;
     }
+
+    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-item-title {
+      font-size: 14px;
+    }
   }
 
   /* Mobile styles */
@@ -222,44 +154,22 @@
       padding: 50px 16px;
     }
 
+    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-item-title {
+      padding-right: 0px;
+    }
+
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-title {
-      font-size: 24px;
+      font-size: 24px !important;
       margin-bottom: 32px;
     }
 
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-thumbnail {
       margin-bottom: 12px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-play-button svg {
-      width: 50px;
-      height: 50px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-overlay-text {
-      bottom: 50px;
-      right: 16px;
-      font-size: 13px;
-      padding: 6px 12px;  
-      max-width: 180px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-branding {
-      top: 10px;
-      left: 10px;
-      font-size: 10px;
-      padding: 5px 10px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-guest-banner {
-      bottom: 10px;
-      padding: 8px 12px;
-      font-size: 13px;
     }
   }
 
@@ -269,32 +179,228 @@
     }
 
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-title {
-      font-size: 22px;
+      font-size: 34px;
       margin-bottom: 28px;
     }
 
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-grid {
-      gap: 28px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-play-button svg {
-      width: 45px;
-      height: 45px;
-    }
-
-    #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-overlay-text {
-      bottom: 45px;
-      right: 12px;
-      font-size: 12px;
-      padding: 5px 10px;
-      max-width: 150px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     #barry-tan-grid-video-{{ section.id }} .barry-tan-grid-video-item-title {
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+  }
+
+  /* Video Modal Styles */
+  #barry-tan-video-modal-{{ section.id }} {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #barry-tan-video-modal-{{ section.id }}.active {
+    display: flex;
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    z-index: 2;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); */
+    animation: modalFadeIn 0.3s ease-out;
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    border-radius: 50%;
+    color: black;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-close:hover {
+    /* background: rgba(0, 0, 0, 0.9); */
+    /* border-color: rgba(255, 255, 255, 0.6); */
+    transform: rotate(90deg);
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-iframe-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    #barry-tan-video-modal-{{ section.id }} {
+      padding: 15px;
+    }
+
+    #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-content {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-close {
+      top: 10px;
+      right: 10px;
+      width: 38px;
+      height: 38px;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #barry-tan-video-modal-{{ section.id }} {
+      padding: 10px;
+    }
+
+    #barry-tan-video-modal-{{ section.id }} .barry-tan-video-modal-close {
+      top: 8px;
+      right: 8px;
+      width: 34px;
+      height: 34px;
+      font-size: 20px;
     }
   }
 </style>
+
+<script>
+  (function() {
+    const sectionId = '{{ section.id }}';
+    const modal = document.getElementById('barry-tan-video-modal-' + sectionId);
+    if (!modal) return;
+    
+    const modalOverlay = modal.querySelector('.barry-tan-video-modal-overlay');
+    const modalClose = modal.querySelector('.barry-tan-video-modal-close');
+    const modalIframe = modal.querySelector('.barry-tan-video-modal-iframe');
+    const videoLinks = document.querySelectorAll('#barry-tan-grid-video-' + sectionId + ' .barry-tan-grid-video-link');
+
+    function openVideo(videoId, videoType) {
+      if (!videoId) return;
+      
+      let embedUrl = '';
+      if (videoType === 'youtube') {
+        embedUrl = 'https://www.youtube.com/embed/' + videoId + '?enablejsapi=1&modestbranding=1&autohide=1&showinfo=0&controls=1&autoplay=1&rel=0';
+      } else if (videoType === 'vimeo') {
+        embedUrl = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&title=0&byline=0&portrait=0';
+      }
+      
+      if (embedUrl) {
+        modalIframe.src = embedUrl;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeVideo() {
+      modal.classList.remove('active');
+      modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    videoLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const videoId = this.getAttribute('data-video-id');
+        const videoType = this.getAttribute('data-video-type');
+        if (videoId && videoType) {
+          openVideo(videoId, videoType);
+        }
+      });
+    });
+
+    if (modalClose) {
+      modalClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeVideo();
+      });
+    }
+    
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+          closeVideo();
+        }
+      });
+    }
+
+    // Prevent closing when clicking inside the video content
+    const modalContent = modal.querySelector('.barry-tan-video-modal-content');
+    if (modalContent) {
+      modalContent.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeVideo();
+      }
+    });
+  })();
+</script>
 
 {% schema %}
 {
@@ -319,18 +425,6 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#374650"
     },
     {
       "type": "range",
@@ -385,39 +479,15 @@
           "default": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan"
         },
         {
-          "type": "text",
-          "id": "video_title_overlay",
-          "label": "Video Title Overlay (on thumbnail)",
-          "default": "Tocotrienols - new vitamin E"
-        },
-        {
-          "type": "url",
+          "type": "video_url",
           "id": "video_link",
-          "label": "Video Link"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_branding",
-          "label": "Show Branding Logo",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "branding_text",
-          "label": "Branding Text",
-          "default": "Wellness by designs PODCAST"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_guest_banner",
-          "label": "Show Guest Banner",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "guest_text",
-          "label": "Guest Text",
-          "default": "With Dr Barrie Tan PhD"
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "Video Link",
+          "info": "Paste a YouTube or Vimeo URL"
         }
       ]
     }
@@ -429,37 +499,25 @@
         {
           "type": "video_item",
           "settings": {
-            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
-            "video_title_overlay": "Tocotrienols - new vitamin E",
-            "show_branding": true,
-            "show_guest_banner": true
+            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan"
           }
         },
         {
           "type": "video_item",
           "settings": {
-            "video_title": "\"Vitamin E & Tocotrienols Impact on Bone Health\" with Dr. Barrie Tan",
-            "video_title_overlay": "Dispelling Myths of Vitamin E",
-            "show_branding": false,
-            "show_guest_banner": false
+            "video_title": "\"Vitamin E & Tocotrienols Impact on Bone Health\" with Dr. Barrie Tan"
           }
         },
         {
           "type": "video_item",
           "settings": {
-            "video_title": "Vitamin E Unveiled: Dispelling Myths and Maximizing Benefits of Tocotrienols with Dr. Barrie Tan",
-            "video_title_overlay": "Tocotrienols - new vitamin E",
-            "show_branding": true,
-            "show_guest_banner": true
+            "video_title": "Vitamin E Unveiled: Dispelling Myths and Maximizing Benefits of Tocotrienols with Dr. Barrie Tan"
           }
         },
         {
           "type": "video_item",
           "settings": {
-            "video_title": "The Health Benefits of Tocotrienols, the New Vitamin E | Barrie Tan, PhD",
-            "video_title_overlay": "Tocotrienols - new vitamin E",
-            "show_branding": true,
-            "show_guest_banner": true
+            "video_title": "The Health Benefits of Tocotrienols, the New Vitamin E | Barrie Tan, PhD"
           }
         }
       ]

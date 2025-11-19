@@ -21,13 +21,13 @@
   }
 
   #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-container {
-    max-width: {{ section.settings.max_width | default: 1200 }}px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
   #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-banner {
-    background-color: {{ section.settings.banner_background | default: '#f5d89f' }};
-    border-radius: {{ section.settings.border_radius | default: 16 }}px;
+    background-color: #F8CE63;
+    border-radius: 12px;
     padding: {{ section.settings.banner_padding_top | default: 40 }}px {{ section.settings.banner_padding_horizontal | default: 40 }}px {{ section.settings.banner_padding_bottom | default: 40 }}px;
     text-align: center;
     display: flex;
@@ -37,12 +37,12 @@
   }
 
   #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-text {
-    font-size: clamp(18px, 2.5vw, 22px);
+    font-size: clamp(18px, 2.5vw, 21px);
     font-weight: 400;
     color: {{ section.settings.text_color | default: '#374650' }};
     margin: 0;
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 730px;
   }
 
   #barry-tan-footer-shop-{{ section.id }} .barry-tan-footer-shop-button {
@@ -53,7 +53,7 @@
     font-size: clamp(15px, 2vw, 17px);
     font-weight: 600;
     text-decoration: none;
-    border-radius: {{ section.settings.button_border_radius | default: 8 }}px;
+    border-radius: 30px;
     transition: all 0.3s ease;
     white-space: nowrap;
   }

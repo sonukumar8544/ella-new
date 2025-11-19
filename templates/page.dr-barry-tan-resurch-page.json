@@ -345,69 +345,50 @@
         "video_item_Dby3tU": {
           "type": "video_item",
           "settings": {
-            "video_image": "shopify://shop_images/Video.png",
+            "video_image": "shopify://shop_images/video_text.png",
             "video_image_alt": "",
             "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
-            "video_title_overlay": "",
-            "video_link": "",
-            "show_branding": false,
-            "branding_text": "",
-            "show_guest_banner": false,
-            "guest_text": ""
+            "video_link": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s"
           }
         },
-        "video_item_4t7PmE": {
+        "video_item_rM7xJn": {
           "type": "video_item",
           "settings": {
+            "video_image": "shopify://shop_images/Video_1.png",
             "video_image_alt": "",
-            "video_title": "\"Vitamin E & Tocotrienols Impact on Bone Health\" with Dr. Barrie Tan",
-            "video_title_overlay": "Dispelling Myths of Vitamin E",
-            "video_link": "",
-            "show_branding": false,
-            "branding_text": "Wellness by designs PODCAST",
-            "show_guest_banner": false,
-            "guest_text": "With Dr Barrie Tan PhD"
+            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
+            "video_link": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s"
           }
         },
-        "video_item_TeKE8k": {
+        "video_item_VAGjcd": {
           "type": "video_item",
           "settings": {
+            "video_image": "shopify://shop_images/video_text.png",
             "video_image_alt": "",
-            "video_title": "Vitamin E Unveiled: Dispelling Myths and Maximizing Benefits of Tocotrienols with Dr. Barrie Tan",
-            "video_title_overlay": "Tocotrienols - new vitamin E",
-            "video_link": "",
-            "show_branding": true,
-            "branding_text": "Wellness by designs PODCAST",
-            "show_guest_banner": true,
-            "guest_text": "With Dr Barrie Tan PhD"
+            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
+            "video_link": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s"
           }
         },
-        "video_item_hjUbaH": {
+        "video_item_Hn6Xqw": {
           "type": "video_item",
           "settings": {
+            "video_image": "shopify://shop_images/Video_1.png",
             "video_image_alt": "",
-            "video_title": "The Health Benefits of Tocotrienols, the New Vitamin E | Barrie Tan, PhD",
-            "video_title_overlay": "Tocotrienols - new vitamin E",
-            "video_link": "",
-            "show_branding": true,
-            "branding_text": "Wellness by designs PODCAST",
-            "show_guest_banner": true,
-            "guest_text": "With Dr Barrie Tan PhD"
+            "video_title": "Wellness Extract - Unraveling the Secrets to Healthy Cells and Aging - Webinar with Dr. Barrie Tan",
+            "video_link": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s"
           }
         }
       },
       "block_order": [
         "video_item_Dby3tU",
-        "video_item_4t7PmE",
-        "video_item_TeKE8k",
-        "video_item_hjUbaH"
+        "video_item_rM7xJn",
+        "video_item_VAGjcd",
+        "video_item_Hn6Xqw"
       ],
       "name": "Video Grid Section",
       "settings": {
         "title": "Watch Dr. Barrie Tan explain his years of breakthrough research",
         "background_color": "#ffffff",
-        "title_color": "#1a1a1a",
-        "text_color": "#374650",
         "section_padding_top": 80,
         "section_padding_bottom": 80,
         "max_width": 1200
