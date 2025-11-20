@@ -34,17 +34,65 @@
         "description_line1": "Annatto is the world’s only plant source that delivers",
         "description_line2": "tocotrienols in their purest, most potent form",
         "description_line3": "and it is 100% tocopherol free.",
-        "highlight_text": "",
-        "highlight_color_bottom": "#ef9111",
         "top_background_color": "#086b92",
         "highlight_color_top": "#f8ce63"
       }
+    },
+    "best_tocotrienole_slidertab_iaXtVn": {
+      "type": "best-tocotrienole-slidertab",
+      "blocks": {
+        "feature_zkwhQG": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/100_Pure_Annatto-Derived.svg",
+            "title": "100% Annatto<br> Purity"
+          }
+        },
+        "feature_Nk79Q9": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/100_Pure_Annatto-Derived.svg",
+            "title": "Clinically <br>Researched"
+          }
+        },
+        "feature_wPxk4J": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/100_Pure_Annatto-Derived.svg",
+            "title": "No Tocopherol <br>Interference"
+          }
+        },
+        "feature_Yx6Yeq": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/100_Pure_Annatto-Derived.svg",
+            "title": "Max Absorption & <br>Bioavailability"
+          }
+        },
+        "feature_TbKNk4": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/100_Pure_Annatto-Derived.svg",
+            "title": "Eco-Friendly & <br>Sustainable"
+          }
+        }
+      },
+      "block_order": [
+        "feature_zkwhQG",
+        "feature_Nk79Q9",
+        "feature_wPxk4J",
+        "feature_Yx6Yeq",
+        "feature_TbKNk4"
+      ],
+      "name": "Tocotrienole Slider Tab",
+      "settings": {}
     }
   },
   "order": [
     "shogun-helper",
     "main",
     "shogun-optimizer",
-    "best_annatto_page_banner_r6898f"
+    "best_annatto_page_banner_r6898f",
+    "best_tocotrienole_slidertab_iaXtVn"
   ]
 }
