@@ -1,0 +1,330 @@
+<style>
+  #tocotrienole-slider-{{ section.id }} {
+    background-color: #2c2c2c;
+    padding: 40px;
+    width: 100%;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(20px, 3vw, 20px);
+    align-items: start;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__grid .tocotrienole-slider__item {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    color: #ffffff;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__icon-wrapper {
+    position: relative;
+    width: clamp(80px, 10vw, 80px);
+    height: clamp(80px, 10vw, 80px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__icon-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__text {
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-weight: 500;
+    line-height: 1.4;
+    color: #ffffff;
+    flex: 1;
+  }
+
+  /* Mobile Slider Styles */
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__mobile {
+    display: none;
+    overflow: hidden;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__slider {
+    overflow: hidden;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .slick-arrow:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  #tocotrienole-slider-{{ section.id }} .slick-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .slick-prev {
+    left: 10px;
+  }
+
+  #tocotrienole-slider-{{ section.id }} .slick-next {
+    right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__grid {
+      display: none;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__mobile {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__slider {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__mobile .tocotrienole-slider__item {
+      padding: 0 20px;
+      max-width: 100%;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__slider .slick-slide {
+      padding: 0;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__slider .slick-list {
+      margin: 0 -10px;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__slider .slick-slide > div {
+      padding: 0 10px;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__icon-wrapper {
+      width: 80px;
+      height: 80px;
+    }
+
+    #tocotrienole-slider-{{ section.id }} .slick-arrow {
+      display: none !important;
+    }
+  }
+
+  /* Tablet Styles */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    #tocotrienole-slider-{{ section.id }} .tocotrienole-slider__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  }
+</style>
+
+<section id="tocotrienole-slider-{{ section.id }}">
+  <div class="tocotrienole-slider__container">
+    <!-- Desktop Grid View -->
+    <div class="tocotrienole-slider__grid">
+      {% for block in section.blocks %}
+        <div class="tocotrienole-slider__item" {{ block.shopify_attributes }}>
+          <div class="tocotrienole-slider__icon-wrapper">
+            <div class="tocotrienole-slider__icon-image">
+              {% if block.settings.icon_image != blank %}
+                {{ block.settings.icon_image | image_url: width: 200 | image_tag: alt: block.settings.title, loading: 'lazy' }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="tocotrienole-slider__text">
+            {{ block.settings.title }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Mobile Slider View -->
+    <div class="tocotrienole-slider__mobile">
+      <div class="tocotrienole-slider__slider" data-tocotrienole-slider>
+        {% for block in section.blocks %}
+          <div class="tocotrienole-slider__item" {{ block.shopify_attributes }}>
+            <div class="tocotrienole-slider__icon-wrapper">
+              <div class="tocotrienole-slider__icon-image">
+                {% if block.settings.icon_image != blank %}
+                  {{ block.settings.icon_image | image_url: width: 200 | image_tag: alt: block.settings.title, loading: 'lazy' }}
+                {% endif %}
+              </div>
+            </div>
+            <div class="tocotrienole-slider__text">
+              {{ block.settings.title }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    function initSlider() {
+      var slider = document.querySelector('#tocotrienole-slider-{{ section.id }} [data-tocotrienole-slider]');
+      if (!slider || !window.jQuery || !window.jQuery.fn.slick) return;
+
+      if (window.innerWidth <= 768) {
+        if (!jQuery(slider).hasClass('slick-initialized')) {
+          jQuery(slider).slick({
+            dots: false,
+            infinite: true,
+            arrows: false,
+            speed: 300,
+            autoplay: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: false,
+            centerPadding: '0px',
+            draggable: true,
+            swipe: true,
+            touchMove: true,
+            touchThreshold: 5,
+            swipeToSlide: true,
+            variableWidth: false,
+            responsive: [
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  centerPadding: '0px',
+                  infinite: true
+                }
+              }
+            ]
+          });
+        }
+      } else {
+        if (jQuery(slider).hasClass('slick-initialized')) {
+          jQuery(slider).slick('unslick');
+        }
+      }
+    }
+
+    // Initialize on load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSlider);
+    } else {
+      initSlider();
+    }
+
+    // Reinitialize on resize
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(initSlider, 250);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Tocotrienole Slider Tab",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100% Annatto Purity"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tocotrienole Slider Tab",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "100% Annatto Purity"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Clinically Researched"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "No Tocopherol Interference"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Max Absorption & Bioavailability"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Eco-Friendly & Sustainable"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -16,17 +16,35 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "best_annatto_page_banner_r6898f": {
+      "type": "best-annatto-page-banner",
+      "name": "Best Annatto Page Banner",
+      "settings": {
+        "heading": "Meet Annatto — The World's Only Source of Purest Tocotrienols",
+        "annatto_image": "shopify://shop_images/bg_dashboard.png",
+        "image_alt": "Annatto fruits",
+        "description_line1": "Annatto is the world’s only plant source that delivers",
+        "description_line2": "tocotrienols in their purest, most potent form",
+        "description_line3": "and it is 100% tocopherol free.",
+        "highlight_text": "",
+        "highlight_color_bottom": "#ef9111",
+        "top_background_color": "#086b92",
+        "highlight_color_top": "#f8ce63"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "best_annatto_page_banner_r6898f"
   ]
 }
