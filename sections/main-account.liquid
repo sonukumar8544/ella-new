@@ -158,6 +158,15 @@
                             {%- endif -%}
                         </div>
                     </div>
+                    {%- if customer -%}
+                    <div class="account-item">
+                        <div class="account-action">
+                            <a href="{{ routes.account_logout_url }}" class="button button--primary cstm__btn logout-btn" style="background: #dc3545 !important; border-color: #dc3545 !important; color: #fff !important; border-radius: 5px !important; box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3) !important; transition: all 0.3s ease;">
+                                <span class="text">Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                    {%- endif -%}
                 </div>
             </div>
         </div>
