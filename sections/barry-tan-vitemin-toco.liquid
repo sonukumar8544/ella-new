@@ -1,0 +1,445 @@
+<div id="shopify-section-{{ section.id }}">
+  <!-- Header Section -->
+  {% if section.settings.header_title != blank %}
+    <div class="annatto-header">
+      <h1 class="annatto-header-title">{{ section.settings.header_title }}</h1>
+    </div>
+  {% endif %}
+
+  <!-- Content Blocks -->
+  {% for block in section.blocks %}
+    <div class="annatto-content-section" {{ block.shopify_attributes }}>
+      <div class="annatto-content-wrapper {% if block.settings.image_position == 'right' %}annatto-image-right{% else %}annatto-image-left{% endif %}">
+        {% if block.settings.image_position == 'left' %}
+          <div class="annatto-image-column">
+            {% if block.settings.block_image != blank %}
+              <img
+                src="{{ block.settings.block_image | image_url: width: 800 }}"
+                alt="{{ block.settings.block_image.alt | escape }}"
+                class="annatto-content-image"
+                width="800"
+                height="600"
+                loading="lazy" />
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="annatto-text-column">
+          {% if block.settings.block_title != blank %}
+            <h2 class="annatto-content-title">{{ block.settings.block_title }}</h2>
+          {% endif %}
+          {% if block.settings.block_paragraph != blank %}
+            <p class="annatto-content-paragraph">{{ block.settings.block_paragraph }}</p>
+          {% endif %}
+          {% if block.settings.bullet_1 != blank or block.settings.bullet_2 != blank or block.settings.bullet_3 != blank or block.settings.bullet_4 != blank %}
+            <ul class="annatto-bullet-list">
+              {% if block.settings.bullet_1 != blank %}
+                <li>{{ block.settings.bullet_1 }}</li>
+              {% endif %}
+              {% if block.settings.bullet_2 != blank %}
+                <li>{{ block.settings.bullet_2 }}</li>
+              {% endif %}
+              {% if block.settings.bullet_3 != blank %}
+                <li>{{ block.settings.bullet_3 }}</li>
+              {% endif %}
+              {% if block.settings.bullet_4 != blank %}
+                <li>{{ block.settings.bullet_4 }}</li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+        {% if block.settings.image_position == 'right' %}
+          <div class="annatto-image-column">
+            {% if block.settings.block_image != blank %}
+              <img
+                src="{{ block.settings.block_image | image_url: width: 800 }}"
+                alt="{{ block.settings.block_image.alt | escape }}"
+                class="annatto-content-image"
+                width="800"
+                height="600"
+                loading="lazy" />
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  /* Full Section Gradient Background */
+  #shopify-section-{{ section.id }} {
+  {% if section.settings.apply_background_gradient %}
+  background: linear-gradient(
+    180deg,
+    #ffd56b 0%,      /* Deep Yellow at Top */
+    #fcebbe 30%,     /* Medium Yellow at Center */
+    #FFFFFF 100%     /* White at Bottom */
+  );
+  {% else %}
+  background: #ffffff;
+  {% endif %}
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: {{ section.settings.desktop_padding_top }}px;
+  padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+
+  /* Header Section */
+  #shopify-section-{{ section.id }} .annatto-header {
+    background-color: transparent;
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-header-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 auto;
+    line-height: 1.2;
+    max-width: 720px;
+  }
+
+  /* Content Sections */
+  #shopify-section-{{ section.id }} .annatto-content-section {
+    background-color: transparent;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-content-title {
+    font-size: 32px;
+    color: #374650;
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-content-paragraph {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #374650;
+    margin: 0 0 25px;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-bullet-list {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-bullet-list li {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 600;
+    color: #374650;
+    margin-bottom: 12px;
+    list-style-position: inside;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .annatto-content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  /* Image position classes */
+  #shopify-section-{{ section.id }} .annatto-image-right .annatto-image-column {
+    order: 2;
+  }
+  #shopify-section-{{ section.id }} .annatto-image-right .annatto-text-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .annatto-image-left .annatto-image-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .annatto-image-left .annatto-text-column {
+    order: 2;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .annatto-header-title {
+      font-size: 35px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-wrapper {
+      gap: 40px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-title {
+      font-size: 28px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-paragraph {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .annatto-content-wrapper {
+    padding: 0px !important;
+  }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .annatto-header {
+      padding: 40px 20px;
+      padding-bottom: 0px;
+    }
+    #shopify-section-{{ section.id }} .annatto-header-title {
+      font-size: 28px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-section {
+      padding: 40px 20px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    /* Reset order on mobile - image always comes first */
+    #shopify-section-{{ section.id }} .annatto-image-column {
+      order: 1 !important;
+    }
+    #shopify-section-{{ section.id }} .annatto-text-column {
+      order: 2 !important;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-paragraph {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    #shopify-section-{{ section.id }} .annatto-bullet-list {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    #shopify-section-{{ section.id }} .annatto-bullet-list li {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .annatto-header-title {
+      font-size: 24px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-title {
+      font-size: 22px;
+    }
+    #shopify-section-{{ section.id }} .annatto-content-paragraph {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .annatto-bullet-list {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    #shopify-section-{{ section.id }} .annatto-bullet-list li {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+      padding-left: 0;
+      list-style-position: outside;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Two col section barry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Why Annatto is the Best Source: Know The Science"
+    },
+    {
+      "type": "checkbox",
+      "id": "apply_background_gradient",
+      "label": "Apply Background Gradient",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "default": "100% Tocotrienol Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "block_paragraph",
+          "label": "Block Paragraph",
+          "default": "Annatto (Bixa orellana) is the only known plant that naturally provides tocotrienols with virtually no alpha-tocopherol. This unique composition means:"
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Bullet Point 1",
+          "default": "No tocopherol interference"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Bullet Point 2",
+          "default": "Maximum bioavailability"
+        },
+        {
+          "type": "text",
+          "id": "bullet_3",
+          "label": "Bullet Point 3",
+          "default": "Enhanced therapeutic effects"
+        },
+        {
+          "type": "text",
+          "id": "bullet_4",
+          "label": "Bullet Point 4",
+          "default": "Optimal cellular absorption"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two col section barry",
+      "blocks": [
+        {
+          "type": "content_block",
+          "settings": {
+            "block_title": "100% Tocotrienol Purity",
+            "block_paragraph": "Annatto (Bixa orellana) is the only known plant that naturally provides tocotrienols with virtually no alpha-tocopherol. This unique composition means:",
+            "bullet_1": "No tocopherol interference",
+            "bullet_2": "Maximum bioavailability",
+            "bullet_3": "Enhanced therapeutic effects",
+            "bullet_4": "Optimal cellular absorption",
+            "image_position": "right"
+          }
+        },
+        {
+          "type": "content_block",
+          "settings": {
+            "block_title": "The Perfect Ratio: 90% Delta + 10% Gamma",
+            "block_paragraph": "This natural combination delivers:",
+            "bullet_1": "Delta-tocotrienol (90%): The most potent antioxidant and anti-inflammatory form",
+            "bullet_2": "Gamma-tocotrienol (10%): Synergistic support for comprehensive benefits",
+            "image_position": "left"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
