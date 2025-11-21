@@ -5,12 +5,21 @@
     overflow: hidden;
   }
 
-  #annatto-banner-{{ section.id }} .annatto-banner__top-section {
-    padding: 80px 20px 0;
+  #annatto-banner-{{ section.id }} .annatto-banner__background-section {
+    width: 100%;
+    padding: 80px 20px;
+    padding-bottom: 0px;
+        margin-bottom: 100px;
+        position: relative;
+  }
+
+  #annatto-banner-{{ section.id }} .annatto-banner__content-wrapper {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
     position: relative;
-    z-index: 1;
-    padding-bottom: 20vw;
+    bottom: -200px;
   }
 
   #annatto-banner-{{ section.id }} .annatto-banner__heading {
@@ -28,176 +37,133 @@
     /* Color set via inline style */
   }
 
-  #annatto-banner-{{ section.id }} .annatto-banner__image-wrapper {
-    position: relative;
-    z-index: 2;
-    margin: -20vw auto 0;
-    max-width: 800px;
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    #annatto-banner-{{ section.id }} .annatto-banner__image-wrapper {
-      bottom: -140px;
-      padding: 0px !important;
-    }
-  }
-
   #annatto-banner-{{ section.id }} .annatto-banner__image {
     width: 100%;
     max-width: 900px;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
-  }
-
-  #annatto-banner-{{ section.id }} .annatto-banner__bottom-section {
-    background-color: #ffffff;
-    padding: 0 20px 80px;
-    padding-top: 20vw;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  #annatto-banner-{{ section.id }} .annatto-banner__description {
     margin: 0 auto;
-    max-width: 900px;
+    display: block;
   }
 
-  #annatto-banner-{{ section.id }} .annatto-banner__description p {
+  #annatto-banner-{{ section.id }} .annatto-banner__mobile-image {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  #annatto-banner-{{ section.id }}  p {
     font-size: 22px;
     line-height: 1.6;
     margin: 0;
-    color: #374650;
     font-weight: 600;
     letter-spacing: 1.1px;
   }
 
+  #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section p.text-line--dark {
+    color: #374650;
+  }
+
+  #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section p.text-line--orange {
+    color: #ef9111;
+  }
+
+
   /* Desktop Styles */
   @media (min-width: 769px) {
-    #annatto-banner-{{ section.id }} .annatto-banner__top-section {
-      padding: 100px 40px 0;
-      padding-bottom: 25vw;
+    #annatto-banner-{{ section.id }} .annatto-banner__background-section {
+      padding: 100px 40px;
+      padding-top: 0px;
+      margin-top: -110px;
     }
 
     #annatto-banner-{{ section.id }} .annatto-banner__heading {
-      font-size: 52px;
+      font-size: 47px;
       padding-bottom: 50px;
     }
 
-    #annatto-banner-{{ section.id }} .annatto-banner__image-wrapper {
-      margin: -35vw auto 0;
-      max-width: 900px;
+    #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section {
+      padding: 80px 40px;
+      padding-top: 40px;
     }
 
-    #annatto-banner-{{ section.id }} .annatto-banner__image {
-      max-width: 900px;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__bottom-section {
-      padding: 0 40px 80px;
-      padding-top: 12vw;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__description {
+    #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section p {
       font-size: 24px;
     }
   }
 
-  /* Tablet Styles */
-  @media (min-width: 481px) and (max-width: 768px) {
-    #annatto-banner-{{ section.id }} .annatto-banner__top-section {
-      padding: 60px 30px 0;
-      padding-bottom: 30vw;
+  /* Small Screen Styles (max-width: 768px) - Hide everything, show only mobile image */
+  @media (max-width: 768px) {
+    #annatto-banner-{{ section.id }} .annatto-banner__background-section {
+      display: none;
     }
 
-    #annatto-banner-{{ section.id }} .annatto-banner__heading {
-      font-size: 38px;
-      padding-bottom: 40px;
+    #annatto-banner-{{ section.id }} .annatto-banner__content-wrapper {
+      display: none;
     }
 
-    #annatto-banner-{{ section.id }} .annatto-banner__image-wrapper {
-      margin: -30vw auto 0;
-      max-width: 600px;
+    #annatto-banner-{{ section.id }} .annatto-banner__paragraphs-section {
+      display: none;
     }
 
-    #annatto-banner-{{ section.id }} .annatto-banner__bottom-section {
-      padding: 0 30px 60px;
-      padding-top: 30vw;
-    }
-  }
-
-  /* Mobile Styles */
-  @media (max-width: 480px) {
-    #annatto-banner-{{ section.id }} .annatto-banner__top-section {
-      padding: 40px 20px 0;
-      padding-bottom: 8vw;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__heading {
-      font-size: 28px;
-      line-height: 1.3;
-      padding-bottom: 30px;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__image-wrapper {
-      margin: -8vw auto 0;
-      padding: 0 15px;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__image {
-      max-width: 100%;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__bottom-section {
-      padding: 0 20px 40px;
-      padding-top: 10vw;
-    }
-
-    #annatto-banner-{{ section.id }} .annatto-banner__description {
-      font-size: 16px;
-      line-height: 1.5;
+    #annatto-banner-{{ section.id }} .annatto-banner__mobile-image {
+      display: block;
     }
   }
 </style>
 
 <section class="annatto-banner" id="annatto-banner-{{ section.id }}">
-  <div class="annatto-banner__top-section" style="background-color: {{ section.settings.top_background_color | default: '#0a5d6f' }};">
-    <h1 class="annatto-banner__heading">
-      {% if section.settings.heading != blank %}
-        {% assign highlight_color_top = section.settings.highlight_color_top | default: '#ffd700' %}
-        {% assign replacement = '<span class="annatto-banner__heading-highlight" style="color: ' | append: highlight_color_top | append: ';">Purest Tocotrienols</span>' %}
-        {{ section.settings.heading | replace: 'Purest Tocotrienols', replacement }}
+  <!-- Desktop/Tablet Content - Hidden on small screens -->
+  <div class="annatto-banner__background-section" style="background-color: {{ section.settings.background_color | default: '#0a5d6f' }};">
+    <!-- Second Child: Content Wrapper (Title and Image) -->
+    <div class="annatto-banner__content-wrapper">
+      <!-- Title -->
+      <h1 class="annatto-banner__heading">
+        {% if section.settings.heading != blank %}
+          {% assign highlight_color = section.settings.highlight_color | default: '#ffd700' %}
+          {% assign replacement = '<span class="annatto-banner__heading-highlight" style="color: ' | append: highlight_color | append: ';">Purest Tocotrienols</span>' %}
+          {{ section.settings.heading | replace: 'Purest Tocotrienols', replacement }}
+        {% else %}
+          Meet Annatto —<br>
+          The World's Only<br>
+          Source of <span class="annatto-banner__heading-highlight" style="color: {{ section.settings.highlight_color | default: '#ffd700' }};">Purest Tocotrienols</span>
+        {% endif %}
+      </h1>
+
+      <!-- Image -->
+      {% if section.settings.annatto_image != blank %}
+        {% assign alt_text = section.settings.image_alt | default: "Annatto fruits" %}
+        {{ section.settings.annatto_image | image_url: width: 1200 | image_tag: alt: alt_text, class: 'annatto-banner__image', loading: 'lazy' }}
       {% else %}
-        Meet Annatto —<br>
-        The World's Only<br>
-        Source of <span class="annatto-banner__heading-highlight" style="color: {{ section.settings.highlight_color_top | default: '#ffd700' }};">Purest Tocotrienols</span>
+        <div class="annatto-banner__image" style="background: #f5f5f5; min-height: 400px; display: flex; align-items: center; justify-content: center; color: #999;">
+          <p>Annatto Image Placeholder</p>
+        </div>
       {% endif %}
-    </h1>
-  </div>
-
-  <div class="annatto-banner__image-wrapper">
-    {% if section.settings.annatto_image != blank %}
-      {% assign alt_text = section.settings.image_alt | default: "Annatto fruits" %}
-      {{ section.settings.annatto_image | image_url: width: 1200 | image_tag: alt: alt_text, class: 'annatto-banner__image', loading: 'lazy' }}
-    {% else %}
-      <div class="annatto-banner__image" style="background: #f5f5f5; min-height: 400px; display: flex; align-items: center; justify-content: center; color: #999;">
-        <p>Annatto Image Placeholder</p>
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="annatto-banner__bottom-section">
-    <div class="annatto-banner__description">
-      <p>{{ section.settings.description_line1 | default: "Annatto is the world's only" }}</p>
-      <p style="color: #ef9111;">{{ section.settings.description_line2 | default: "plant source that delivers" }}</p>
-      <p>{{ section.settings.description_line3 | default: "tocotrienols in their purest, most potent form and it is 100% tocopherol free." }}</p>
     </div>
+  </div>
+
+  <!-- Mobile Image - Only visible on small screens (max-width: 768px) -->
+  {% if section.settings.mobile_image != blank %}
+    {% assign mobile_alt = section.settings.mobile_image_alt | default: "Annatto banner" %}
+    {{ section.settings.mobile_image | image_url: width: 768 | image_tag: alt: mobile_alt, class: 'annatto-banner__mobile-image', loading: 'lazy' }}
+  {% endif %}
+
+
+  <!-- Paragraphs Section - Desktop Only -->
+  <div class="annatto-banner__paragraphs-section">
+    <p class="text-line--dark">{{ section.settings.text_line1 | default: "Annatto is the world's only plant source that delivers" }}</p>
+    <p class="text-line--orange">{{ section.settings.text_line2 | default: "tocotrienols in their purest, most potent form" }}</p>
+    <p class="text-line--dark">{{ section.settings.text_line3 | default: "and it is 100% tocopherol free." }}</p>
   </div>
 </section>
 
@@ -206,11 +172,31 @@
   "name": "Best Annatto Page Banner",
   "settings": [
     {
+      "type": "header",
+      "content": "Title Section"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "Meet Annatto — The World's Only Source of Purest Tocotrienols",
       "info": "Use 'Purest Tocotrienols' to automatically highlight in gold"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#0a5d6f"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color",
+      "default": "#ffd700"
+    },
+    {
+      "type": "header",
+      "content": "Image Section"
     },
     {
       "type": "image_picker",
@@ -225,41 +211,41 @@
     },
     {
       "type": "header",
-      "content": "Description Settings"
+      "content": "Mobile Image (Small Screens)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image (max-width: 768px)",
+      "info": "This image will be shown only on screens 768px and below. All other content will be hidden."
     },
     {
       "type": "text",
-      "id": "description_line1",
-      "label": "Description Line 1",
-      "default": "Annatto is the world's only"
-    },
-    {
-      "type": "text",
-      "id": "description_line2",
-      "label": "Description Line 2",
-      "default": "plant source that delivers"
-    },
-    {
-      "type": "text",
-      "id": "description_line3",
-      "label": "Description Line 3",
-      "default": "tocotrienols in their purest, most potent form and it is 100% tocopherol free."
+      "id": "mobile_image_alt",
+      "label": "Mobile Image Alt Text",
+      "default": "Annatto banner"
     },
     {
       "type": "header",
-      "content": "Color Settings"
+      "content": "Paragraphs Section (Desktop Only)"
     },
     {
-      "type": "color",
-      "id": "top_background_color",
-      "label": "Top Section Background Color",
-      "default": "#0a5d6f"
+      "type": "text",
+      "id": "text_line1",
+      "label": "Text Line 1",
+      "default": "Annatto is the world's only plant source that delivers"
     },
     {
-      "type": "color",
-      "id": "highlight_color_top",
-      "label": "Top Section Highlight Color",
-      "default": "#ffd700"
+      "type": "text",
+      "id": "text_line2",
+      "label": "Text Line 2",
+      "default": "tocotrienols in their purest, most potent form"
+    },
+    {
+      "type": "text",
+      "id": "text_line3",
+      "label": "Text Line 3",
+      "default": "and it is 100% tocopherol free."
     }
   ],
   "presets": [

@@ -1,0 +1,490 @@
+<div id="shopify-section-{{ section.id }}" class="sustainability-comparison-section">
+  <div class="sustainability-comparison-container">
+    <h2 class="sustainability-comparison-title">{{ section.settings.title | default: "Annatto Wins on Sustainability" }}</h2>
+    {% if section.settings.subtitle != blank %}
+      <p class="sustainability-comparison-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <div class="sustainability-table-wrapper">
+      <table class="sustainability-table" role="table">
+        {% comment %} <thead>
+          <tr>
+            <th scope="col" class="sustainability-feature-head"></th>
+            <th scope="col">{{ section.settings.column1_title | default: "Annatto" }}</th>
+            <th scope="col">{{ section.settings.column2_title | default: "High (large plantations)" }}</th>
+            <th scope="col">{{ section.settings.column3_title | default: "High" }}</th>
+          </tr>
+        </thead> {% endcomment %}
+        <tbody>
+          <tr>
+            <th scope="row" class="sustainability-criteria">Land Use</th>
+            <td>{{ section.settings.column1_land_use | default: "Low" }}</td>
+            <td>{{ section.settings.column2_land_use | default: "High (large plantations)" }}</td>
+            <td>{{ section.settings.column3_land_use | default: "High" }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="sustainability-criteria">Water Requirement</th>
+            <td>{{ section.settings.column1_water | default: "Low" }}</td>
+            <td>{{ section.settings.column2_water | default: "Medium" }}</td>
+            <td>{{ section.settings.column3_water | default: "None/Trace" }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="sustainability-criteria">Deforestation Impact</th>
+            <td>{{ section.settings.column1_deforestation | default: "None" }}</td>
+            <td>{{ section.settings.column2_deforestation | default: "Major contributor" }}</td>
+            <td>{{ section.settings.column3_deforestation | default: "Low-medium" }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="sustainability-criteria">Habitat Protection</th>
+            <td>{{ section.settings.column1_habitat | default: "No disruption" }}</td>
+            <td>{{ section.settings.column2_habitat | default: "species at risk" }}</td>
+            <td>{{ section.settings.column3_habitat | default: "Neutral" }}</td>
+          </tr>
+          <tr class="sustainability-carbon-row">
+            <th scope="row" class="sustainability-criteria">Carbon Footprint</th>
+            <td>{{ section.settings.column1_carbon | default: "Low" }}</td>
+            <td>{{ section.settings.column2_carbon | default: "High" }}</td>
+            <td>{{ section.settings.column3_carbon | default: "Medium-high" }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="sustainability-criteria">Sustainability Score</th>
+            <td>{{ section.settings.column1_score | default: "Excellent" }}</td>
+            <td>{{ section.settings.column2_score | default: "Poor" }}</td>
+            <td>{{ section.settings.column3_score | default: "Moderate" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}.sustainability-comparison-section {
+    padding: 72px 0;
+    background-color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-comparison-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-comparison-title {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #374650;
+    text-align: center;
+    margin: 0 0 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-comparison-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #374650;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    font-weight: 400;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table-wrapper {
+    position: relative;
+    overflow-x: auto;
+    border: 1px solid #e1e8ed;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* White opacity fade at start of table */
+  #shopify-section-{{ section.id }} .sustainability-table-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* White opacity fade at end of table */
+  #shopify-section-{{ section.id }} .sustainability-table-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    background-color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table thead th {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 24px;
+    text-align: left;
+    color: #374650;
+    background-color: #f5f7f9;
+    border-bottom: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table thead th:last-child {
+    border-right: none;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-feature-head {
+    background-color: #f5f7f9;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table tbody th {
+    font-size: 18px;
+    font-weight: 500;
+    color: #374650;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e1e8ed;
+    border-right: none;
+    border-left: none;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  /* White opacity fade on first column right side */
+  #shopify-section-{{ section.id }} .sustainability-table tbody th::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 1));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table tbody td {
+    font-size: 18px;
+    color: #374650;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Remove left border from first data column */
+  #shopify-section-{{ section.id }} .sustainability-table tbody td:first-of-type {
+    border-left: none;
+  }
+
+  /* White opacity fade on second column left side */
+  #shopify-section-{{ section.id }} .sustainability-table tbody td:first-of-type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 1));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Odd rows - light gray background */
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:nth-child(odd) th,
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:nth-child(odd) td {
+    background-color: #f3f3f3;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table tbody td:last-child {
+    border-right: none;
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:last-child td,
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  /* Remove top border from first row */
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:first-child th,
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr:first-child td {
+    border-top: none;
+  }
+
+  /* Carbon row - darker gray background (overrides odd row) */
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr.sustainability-carbon-row th,
+  #shopify-section-{{ section.id }} .sustainability-table tbody tr.sustainability-carbon-row td {
+  }
+
+  #shopify-section-{{ section.id }} .sustainability-criteria {
+    font-weight: 600;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .sustainability-comparison-title {
+      font-size: 34px;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-comparison-container {
+    padding: 0px !important;
+  }
+
+    #shopify-section-{{ section.id }} .sustainability-table tbody th,
+    #shopify-section-{{ section.id }} .sustainability-table tbody td,
+    #shopify-section-{{ section.id }} .sustainability-table thead th {
+      padding: 18px 20px;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.sustainability-comparison-section {
+      padding: 56px 0;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-comparison-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-comparison-subtitle {
+      font-size: 16px;
+      margin-bottom: 36px;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Remove fade effects on small screens */
+    #shopify-section-{{ section.id }} .sustainability-table-wrapper::before,
+    #shopify-section-{{ section.id }} .sustainability-table-wrapper::after {
+      background: none;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-table {
+      min-width: 640px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }}.sustainability-comparison-section {
+      padding: 44px 0;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-comparison-title {
+      font-size: 26px;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-comparison-subtitle {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .sustainability-table tbody th,
+    #shopify-section-{{ section.id }} .sustainability-table tbody td,
+    #shopify-section-{{ section.id }} .sustainability-table thead th {
+      padding: 16px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Sustainability Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Annatto Wins on Sustainability"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Cleaner farming, lower resource use, and no deforestation makes it the eco-smart, planet-friendly tocotrienol choice."
+    },
+    {
+      "type": "header",
+      "content": "Column Headers"
+    },
+    {
+      "type": "text",
+      "id": "column1_title",
+      "label": "Column 1 Title",
+      "default": "Annatto"
+    },
+    {
+      "type": "text",
+      "id": "column2_title",
+      "label": "Column 2 Title",
+      "default": "High (large plantations)"
+    },
+    {
+      "type": "text",
+      "id": "column3_title",
+      "label": "Column 3 Title",
+      "default": "High"
+    },
+    {
+      "type": "header",
+      "content": "Land Use Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_land_use",
+      "label": "Column 1 - Land Use",
+      "default": "Low"
+    },
+    {
+      "type": "text",
+      "id": "column2_land_use",
+      "label": "Column 2 - Land Use",
+      "default": "High (large plantations)"
+    },
+    {
+      "type": "text",
+      "id": "column3_land_use",
+      "label": "Column 3 - Land Use",
+      "default": "High"
+    },
+    {
+      "type": "header",
+      "content": "Water Requirement Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_water",
+      "label": "Column 1 - Water Requirement",
+      "default": "Low"
+    },
+    {
+      "type": "text",
+      "id": "column2_water",
+      "label": "Column 2 - Water Requirement",
+      "default": "Medium"
+    },
+    {
+      "type": "text",
+      "id": "column3_water",
+      "label": "Column 3 - Water Requirement",
+      "default": "None/Trace"
+    },
+    {
+      "type": "header",
+      "content": "Deforestation Impact Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_deforestation",
+      "label": "Column 1 - Deforestation Impact",
+      "default": "None"
+    },
+    {
+      "type": "text",
+      "id": "column2_deforestation",
+      "label": "Column 2 - Deforestation Impact",
+      "default": "Major contributor"
+    },
+    {
+      "type": "text",
+      "id": "column3_deforestation",
+      "label": "Column 3 - Deforestation Impact",
+      "default": "Low-medium"
+    },
+    {
+      "type": "header",
+      "content": "Habitat Protection Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_habitat",
+      "label": "Column 1 - Habitat Protection",
+      "default": "No disruption"
+    },
+    {
+      "type": "text",
+      "id": "column2_habitat",
+      "label": "Column 2 - Habitat Protection",
+      "default": "species at risk"
+    },
+    {
+      "type": "text",
+      "id": "column3_habitat",
+      "label": "Column 3 - Habitat Protection",
+      "default": "Neutral"
+    },
+    {
+      "type": "header",
+      "content": "Carbon Footprint Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_carbon",
+      "label": "Column 1 - Carbon Footprint",
+      "default": "Low"
+    },
+    {
+      "type": "text",
+      "id": "column2_carbon",
+      "label": "Column 2 - Carbon Footprint",
+      "default": "High"
+    },
+    {
+      "type": "text",
+      "id": "column3_carbon",
+      "label": "Column 3 - Carbon Footprint",
+      "default": "Medium-high"
+    },
+    {
+      "type": "header",
+      "content": "Sustainability Score Row"
+    },
+    {
+      "type": "text",
+      "id": "column1_score",
+      "label": "Column 1 - Sustainability Score",
+      "default": "Excellent"
+    },
+    {
+      "type": "text",
+      "id": "column2_score",
+      "label": "Column 2 - Sustainability Score",
+      "default": "Poor"
+    },
+    {
+      "type": "text",
+      "id": "column3_score",
+      "label": "Column 3 - Sustainability Score",
+      "default": "Moderate"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sustainability Comparison Table"
+    }
+  ]
+}
+{% endschema %}
+

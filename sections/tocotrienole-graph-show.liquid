@@ -1,381 +1,331 @@
-<style>
-  #tocotrienole-graph-{{ section.id }} {
-    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
-    background-color: #ffffff;
-    width: 100%;
-  }
+<div id="shopify-section-{{ section.id }}" class="toco-section-{{ section.id }}">
+  <div class="toco-pagebarry-wrapper">
+    <div class="toco-pagebarry-inner">
+      <h1 class="toco-pagebarry-title">
+        The Problem with Other Sources?
+        <span class="accent">Alpha-Tocopherol!!</span>
+      </h1>
 
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+      <p class="toco-pagebarry-sub">
+        Most vitamin E sources contain alpha-tocopherol.
+        However, research shows that
+        <span class="hl">alpha-tocopherol interferes with tocotrienol absorption</span>
+        and blocks their health-promoting effects.
+      </p>
+    </div>
+  </div>
 
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__title {
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0 0 20px;
-    color: #333333;
-    text-align: center;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__title-highlight {
-    color: #e74c3c;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__description {
-    font-size: clamp(16px, 2vw, 18px);
-    line-height: 1.6;
-    color: #333333;
-    margin: 0 auto 40px;
-    max-width: 900px;
-    text-align: center;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__description-highlight {
-    background-color: #ffeb3b;
-    padding: 2px 4px;
-    font-weight: 600;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__bioavailability-title {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0 0 40px;
-    color: #333333;
-    text-align: center;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__charts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 4vw, 40px);
-    margin-bottom: 40px;
-    align-items: start;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__chart-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__chart-label {
-    font-size: clamp(18px, 2.5vw, 24px);
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: 15px;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__chart-image {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 15px;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__chart-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__chart-bioavailability {
-    font-size: clamp(14px, 1.8vw, 16px);
-    font-weight: 500;
-    color: #333333;
-    margin-top: 10px;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__legend {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(20px, 3vw, 30px);
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__legend-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
-
-  #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__legend-text {
-    font-size: clamp(14px, 1.8vw, 16px);
-    color: #333333;
-  }
-
-  /* Tablet Styles */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__charts {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-  }
-
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__charts {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    #tocotrienole-graph-{{ section.id }} .tocotrienole-graph__legend {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-    }
-  }
-</style>
-
-<section id="tocotrienole-graph-{{ section.id }}">
-  <div class="tocotrienole-graph__container">
-    <!-- Title Section -->
-    {% if section.settings.title != blank %}
-      <h2 class="tocotrienole-graph__title">
-        {% assign title_parts = section.settings.title | split: section.settings.highlight_text %}
-        {% if title_parts.size > 1 %}
-          {{ title_parts[0] }}<span class="tocotrienole-graph__title-highlight">{{ section.settings.highlight_text }}</span>{{ title_parts[1] }}
-        {% else %}
-          {{ section.settings.title }}
-        {% endif %}
-      </h2>
-    {% else %}
-      <h2 class="tocotrienole-graph__title">
-        The Problem with Other Sources? <span class="tocotrienole-graph__title-highlight">Alpha-Tocopherol!!</span>
-      </h2>
+  <div class="toco-blocks-wrapper">
+    {% if section.settings.bottom_title != blank %}
+      <h2 class="toco-bottom-title">{{ section.settings.bottom_title }}</h2>
     {% endif %}
-
-    <!-- Description Section -->
-    {% if section.settings.description != blank %}
-      <div class="tocotrienole-graph__description">
-        {% assign desc = section.settings.description %}
-        {% assign highlight1 = "alpha-tocopherol interferes with" %}
-        {% assign highlight2 = "tocotrienol absorption" %}
-        {% if desc contains highlight1 %}
-          {% assign parts1 = desc | split: highlight1 %}
-          {% if parts1.size > 1 %}
-            {% assign before_highlight1 = parts1[0] %}
-            {% assign after_highlight1 = parts1[1] %}
-            {% if after_highlight1 contains highlight2 %}
-              {% assign parts2 = after_highlight1 | split: highlight2 %}
-              {{ before_highlight1 }}<span class="tocotrienole-graph__description-highlight">{{ highlight1 }}</span><span class="tocotrienole-graph__description-highlight">{{ highlight2 }}</span>{{ parts2[1] }}
-            {% else %}
-              {{ before_highlight1 }}<span class="tocotrienole-graph__description-highlight">{{ highlight1 }}</span>{{ after_highlight1 }}
-            {% endif %}
-          {% else %}
-            {{ desc }}
-          {% endif %}
-        {% else %}
-          {{ desc }}
-        {% endif %}
-      </div>
-    {% else %}
-      <div class="tocotrienole-graph__description">
-        Most vitamin E sources contain alpha-tocopherol. However, research shows that <span class="tocotrienole-graph__description-highlight">alpha-tocopherol interferes with</span> <span class="tocotrienole-graph__description-highlight">tocotrienol absorption</span> and blocks their health-promoting effects.
-      </div>
-    {% endif %}
-
-    <!-- Bioavailability Section -->
-    <h3 class="tocotrienole-graph__bioavailability-title">
-      {{ section.settings.bioavailability_title | default: "The Bioavailability Issue:" }}
-    </h3>
-
-    <!-- Charts Grid -->
-    <div class="tocotrienole-graph__charts">
+    
+    <div class="toco-blocks-container">
       {% for block in section.blocks %}
-        <div class="tocotrienole-graph__chart-item" {{ block.shopify_attributes }}>
-          {% if block.settings.chart_label != blank %}
-            <div class="tocotrienole-graph__chart-label">{{ block.settings.chart_label }}</div>
+        <div class="toco-block" {{ block.shopify_attributes }}>
+          {% if block.settings.block_title != blank %}
+            <h3 class="toco-block-title">{{ block.settings.block_title }}</h3>
           {% endif %}
-          
-          {% if block.settings.chart_image != blank %}
-            <div class="tocotrienole-graph__chart-image">
-              {{ block.settings.chart_image | image_url: width: 500 | image_tag: alt: block.settings.chart_label, loading: 'lazy' }}
+          {% if block.settings.block_image != blank %}
+            <div class="toco-block-image-wrapper">
+              <img src="{{ block.settings.block_image | image_url: width: 200 }}" 
+                   alt="{{ block.settings.block_title | escape }}"
+                   class="toco-block-image"
+                   width="200"
+                   height="200"
+                   loading="lazy" />
             </div>
           {% endif %}
-          
-          {% if block.settings.bioavailability_text != blank %}
-            <div class="tocotrienole-graph__chart-bioavailability">{{ block.settings.bioavailability_text }}</div>
+          {% if block.settings.block_text != blank %}
+            <p class="toco-block-text">{{ block.settings.block_text }}</p>
           {% endif %}
         </div>
       {% endfor %}
     </div>
-
-    <!-- Legend Section -->
-    {% if section.settings.show_legend %}
-      <div class="tocotrienole-graph__legend">
-        {% if section.settings.legend_item1_text != blank %}
-          <div class="tocotrienole-graph__legend-item">
-            <div class="tocotrienole-graph__legend-color" style="background-color: {{ section.settings.legend_item1_color | default: '#4caf50' }};"></div>
-            <span class="tocotrienole-graph__legend-text">{{ section.settings.legend_item1_text }}</span>
-          </div>
-        {% endif %}
-        
-        {% if section.settings.legend_item2_text != blank %}
-          <div class="tocotrienole-graph__legend-item">
-            <div class="tocotrienole-graph__legend-color" style="background-color: {{ section.settings.legend_item2_color | default: '#87ceeb' }};"></div>
-            <span class="tocotrienole-graph__legend-text">{{ section.settings.legend_item2_text }}</span>
-          </div>
-        {% endif %}
-        
-        {% if section.settings.legend_item3_text != blank %}
-          <div class="tocotrienole-graph__legend-item">
-            <div class="tocotrienole-graph__legend-color" style="background-color: {{ section.settings.legend_item3_color | default: '#555555' }};"></div>
-            <span class="tocotrienole-graph__legend-text">{{ section.settings.legend_item3_text }}</span>
-          </div>
-        {% endif %}
+    
+    <div class="toco-legend">
+      <div class="toco-legend-item">
+        <span class="toco-legend-color" style="background-color: #a8e063;"></span>
+        <span class="toco-legend-text">Delta & Gamma Tocotrienol</span>
       </div>
-    {% endif %}
+      <div class="toco-legend-item">
+        <span class="toco-legend-color" style="background-color: #87ceeb;"></span>
+        <span class="toco-legend-text">Alpha & Beta Tocotrienol</span>
+      </div>
+      <div class="toco-legend-item">
+        <span class="toco-legend-color" style="background-color: #6b7480;"></span>
+        <span class="toco-legend-text">Tocopherol</span>
+      </div>
+    </div>
   </div>
-</section>
+</div>
+
+
+<style>
+  #shopify-section-{{ section.id }} .toco-pagebarry-wrapper {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+  background: #ffffff;
+  padding-top: 80px;
+}
+
+#shopify-section-{{ section.id }} .toco-pagebarry-inner {
+  max-width: 700px;
+  text-align: center;
+}
+
+#shopify-section-{{ section.id }} .toco-pagebarry-title {
+  font-weight: 800;
+  color: #374650;
+  font-size: 45px;
+  line-height: 1.2;
+  margin: 0 0 18px;
+  letter-spacing: -0.2px;
+}
+
+#shopify-section-{{ section.id }} .toco-pagebarry-title .accent {
+  color: #d82b1b;
+  font-weight: 900;
+  margin-left: 6px;
+}
+
+#shopify-section-{{ section.id }} .toco-pagebarry-sub {
+    max-width: 640px;
+    margin: 10px auto;
+    color: #374650;
+    font-size: 17px;
+    line-height: 1.65;
+    padding-top: 20px;
+}
+
+#shopify-section-{{ section.id }} .toco-pagebarry-sub .hl {
+  background: #f6d67a;
+  padding: 6px 8px;
+  /* border-radius: 4px; */
+  font-weight: 600;
+  color: #2c2c2c;
+  display: inline-block;
+  box-decoration-break: clone;
+}
+
+@media (max-width: 640px) {
+  #shopify-section-{{ section.id }} .toco-pagebarry-title {
+    font-size: 26px;
+  }
+
+  #shopify-section-{{ section.id }} .toco-pagebarry-sub {
+    font-size: 16px;
+  }
+
+  
+  .toco-pagebarry-wrapper {
+  padding-top: 50px !important;
+}
+}
+
+#shopify-section-{{ section.id }} .toco-blocks-wrapper {
+  padding: 0px 20px 60px 20px;
+  max-width: 800px;
+    margin: auto;
+}
+
+#shopify-section-{{ section.id }} .toco-blocks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+#shopify-section-{{ section.id }} .toco-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} .toco-block-title {
+  font-size: 24px;
+  font-weight: 700 !important;
+  color: #374650;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+#shopify-section-{{ section.id }} .toco-block-image-wrapper {
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} .toco-block-image {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+#shopify-section-{{ section.id }} .toco-block-text {
+  font-size: 16px;
+  color: #374650;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+  font-weight: 500;
+}
+
+#shopify-section-{{ section.id }} .toco-bottom-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #374650;
+  margin: 0 auto 40px;
+  max-width: 800px;
+  line-height: 1.3;
+}
+
+@media (max-width: 968px) {
+  #shopify-section-{{ section.id }} .toco-blocks-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  #shopify-section-{{ section.id }} .toco-blocks-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  #shopify-section-{{ section.id }} .toco-block-title {
+    font-size: 18px;
+  }
+  
+  #shopify-section-{{ section.id }} .toco-block-text {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  
+  #shopify-section-{{ section.id }} .toco-bottom-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+#shopify-section-{{ section.id }} .toco-legend {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+#shopify-section-{{ section.id }} .toco-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#shopify-section-{{ section.id }} .toco-legend-color {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+#shopify-section-{{ section.id }} .toco-legend-text {
+  font-size: 15px;
+  color: #6b7480;
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  #shopify-section-{{ section.id }} .toco-legend {
+    gap: 5px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  #shopify-section-{{ section.id }} .toco-legend-text {
+    font-size: 14px;
+  }
+}
+
+</style>
+
 
 {% schema %}
-{
-  "name": "Tocotrienole Graph Show",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "The Problem with Other Sources? Alpha-Tocopherol!!"
-    },
-    {
-      "type": "text",
-      "id": "highlight_text",
-      "label": "Title Highlight Text",
-      "default": "Alpha-Tocopherol!!",
-      "info": "This text will be highlighted in red"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Most vitamin E sources contain alpha-tocopherol. However, research shows that alpha-tocopherol interferes with tocotrienol absorption and blocks their health-promoting effects."
-    },
-    {
-      "type": "text",
-      "id": "description_highlight",
-      "label": "Description Highlight Text",
-      "default": "alpha-tocopherol interferes with tocotrienol absorption",
-      "info": "This text will be highlighted in yellow"
-    },
-    {
-      "type": "text",
-      "id": "bioavailability_title",
-      "label": "Bioavailability Section Title",
-      "default": "The Bioavailability Issue:"
-    },
-    {
-      "type": "header",
-      "content": "Legend Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_legend",
-      "label": "Show Legend",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "legend_item1_text",
-      "label": "Legend Item 1 Text",
-      "default": "Delta & Gamma Tocotrienol"
-    },
-    {
-      "type": "color",
-      "id": "legend_item1_color",
-      "label": "Legend Item 1 Color",
-      "default": "#4caf50"
-    },
-    {
-      "type": "text",
-      "id": "legend_item2_text",
-      "label": "Legend Item 2 Text",
-      "default": "Alpha & Beta Tocotrienol"
-    },
-    {
-      "type": "color",
-      "id": "legend_item2_color",
-      "label": "Legend Item 2 Color",
-      "default": "#87ceeb"
-    },
-    {
-      "type": "text",
-      "id": "legend_item3_text",
-      "label": "Legend Item 3 Text",
-      "default": "Tocopherol"
-    },
-    {
-      "type": "color",
-      "id": "legend_item3_color",
-      "label": "Legend Item 3 Color",
-      "default": "#555555"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "chart",
-      "name": "Chart Block",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "chart_image",
-          "label": "Chart Image"
-        },
-        {
-          "type": "text",
-          "id": "chart_label",
-          "label": "Chart Label",
-          "default": "Annatto"
-        },
-        {
-          "type": "text",
-          "id": "bioavailability_text",
-          "label": "Bioavailability Text",
-          "default": "Highest Bioavailability"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Tocotrienole Graph Show",
-      "blocks": [
-        {
-          "type": "chart",
-          "settings": {
-            "chart_label": "Annatto",
-            "bioavailability_text": "Highest Bioavailability"
+  {
+    "name": "tocotrienole graph show",
+    "settings": [
+      {
+        "type": "text",
+        "id": "bottom_title",
+        "label": "Bottom Title",
+        "default": "Bottom Title Here"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_title",
+            "label": "Block Title",
+            "default": "Block Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "block_image",
+            "label": "Block Image"
+          },
+          {
+            "type": "textarea",
+            "id": "block_text",
+            "label": "Block Text",
+            "default": "Block description text here"
           }
-        },
-        {
-          "type": "chart",
-          "settings": {
-            "chart_label": "Palm",
-            "bioavailability_text": "Moderate Bioavailability"
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "tocotrienole graph show",
+        "blocks": [
+          {
+            "type": "block",
+            "settings": {
+              "block_title": "Block 1",
+              "block_text": "Description for block 1"
+            }
+          },
+          {
+            "type": "block",
+            "settings": {
+              "block_title": "Block 2",
+              "block_text": "Description for block 2"
+            }
+          },
+          {
+            "type": "block",
+            "settings": {
+              "block_title": "Block 3",
+              "block_text": "Description for block 3"
+            }
           }
-        },
-        {
-          "type": "chart",
-          "settings": {
-            "chart_label": "Rice",
-            "bioavailability_text": "Lowest Bioavailability"
-          }
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+        ]
+      }
+    ]
+  }
+  {% endschema %}
