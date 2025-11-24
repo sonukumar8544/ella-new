@@ -517,6 +517,41 @@
         "title": "More Than Just Antioxidants",
         "subtitle": "Tocotrienols go beyond free radical defense. Their unique structure supports multiple systems in the body:"
       }
+    },
+    "barry_tan_two_col_withicons_d3GTp3": {
+      "type": "barry-tan-two-col-withicons",
+      "blocks": {
+        "content_block_kGFmym": {
+          "type": "content_block",
+          "settings": {
+            "block_title": "Why Annatto Is the Purest Source",
+            "block_paragraph": "Not all tocotrienol sources are created equal:",
+            "bullet_1": "<strong>Palm & Rice:</strong> Always mixed with tocopherols. These tocopherols compete for absorption and transport, limiting tocotrienol effectiveness.",
+            "bullet_1_icon": "cross",
+            "bullet_2": "<strong>Annatto:</strong> The only natural source that's 100% tocopherol-free. With annatto, tocotrienols can work without interference, delivering their full potential for your health.",
+            "bullet_2_icon": "tick",
+            "bullet_3": "",
+            "bullet_3_icon": "tick",
+            "bullet_4": "",
+            "bullet_4_icon": "tick",
+            "conclusion_text": "This is why annatto-derived tocotrienols are the gold standard — pure, potent, and clinically backed.",
+            "block_image": "shopify://shop_images/Image_h-_261pxshow_1_6ce923d8-27eb-40fc-8a03-4aea07cfab5f.png",
+            "image_position": "left"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_kGFmym"
+      ],
+      "name": "Two col section icons",
+      "settings": {
+        "header_title": "",
+        "background_color": "#f5f5f5",
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -525,6 +560,7 @@
     "shogun-optimizer",
     "16321237356a896dad",
     "howt_tocotrienole_works_teo_col_WktRag",
-    "how_tocotrienole_grid_icons_jqR7YX"
+    "how_tocotrienole_grid_icons_jqR7YX",
+    "barry_tan_two_col_withicons_d3GTp3"
   ]
 }
