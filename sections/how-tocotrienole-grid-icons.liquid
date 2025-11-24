@@ -1,0 +1,310 @@
+{% schema %}
+  {
+    "name": "Tocotrienols Grid Icons",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "More Than Just Antioxidants"
+      },
+      {
+        "type": "textarea",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Tocotrienols go beyond free radical defense. Their unique structure supports multiple systems in the body:"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefit_card",
+        "name": "Benefit Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Card Title",
+            "default": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Description text here"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tocotrienols Grid Icons",
+        "blocks": [
+          {
+            "type": "benefit_card",
+            "settings": {
+              "title": "Heart",
+              "description": "Supports healthy cholesterol by regulating the HMG-CoA reductase pathway — naturally, without pharmaceutical side effects."
+            }
+          },
+          {
+            "type": "benefit_card",
+            "settings": {
+              "title": "Liver",
+              "description": "Clinical studies show improved ALT/AST liver enzymes at 300 mg daily, supporting detox and liver balance."
+            }
+          },
+          {
+            "type": "benefit_card",
+            "settings": {
+              "title": "Brain",
+              "description": "Slows white matter lesion progression, helping protect memory and cognitive function as we age."
+            }
+          },
+          {
+            "type": "benefit_card",
+            "settings": {
+              "title": "Skin",
+              "description": "Reduces oxidative and UV stress, boosting elasticity and collagen for healthier-looking skin."
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<section id="tocotrienols-grid-{{ section.id }}" class="section">
+  <div class="container">
+    <h2 class="heading">{{ section.settings.title }}</h2>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+    
+    <div class="grid">
+      {% for block in section.blocks %}
+        <div class="card" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="icon-wrapper">
+              <img 
+                class="icon" 
+                src="{{ block.settings.icon | image_url: width: 200 }}"
+                alt="{{ block.settings.title }}"
+                width="70"
+                height="auto"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+          <h3 class="card-title">{{ block.settings.title }}</h3>
+          <p class="card-description">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #tocotrienols-grid-{{ section.id }} {
+    padding: 60px 20px;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .heading {
+    font-size: 38px;
+    color: #2d3748;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .subtitle {
+    font-size: 18px;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    max-width: 530px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .card {
+    background-color: #fff;
+    padding: 32px 14px;
+    padding-top: 40px;
+    text-align: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    height: 100%;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #tocotrienols-grid-{{ section.id }} .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .icon {
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #374650;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  #tocotrienols-grid-{{ section.id }} .card-description {
+    font-size: 16px;
+    color: #374650;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 1024px) {
+    #tocotrienols-grid-{{ section.id }} .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .heading {
+      font-size: 36px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .subtitle {
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #tocotrienols-grid-{{ section.id }} {
+      padding: 40px 16px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .heading {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .subtitle {
+      font-size: 16px;
+      margin-bottom: 32px;
+      padding: 0 8px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card {
+      padding: 28px 20px;
+      padding-top: 35px;
+      max-width: 100%;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .icon-wrapper {
+      width: 70px;
+      height: 70px;
+      top: -35px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .icon {
+      width: 60px;
+      height: auto;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card-title {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card-description {
+      font-size: 15px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #tocotrienols-grid-{{ section.id }} {
+      padding: 32px 12px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .heading {
+      font-size: 24px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .subtitle {
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card {
+      padding: 24px 16px;
+      padding-top: 30px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .icon-wrapper {
+      width: 60px;
+      height: 60px;
+      top: -30px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .icon {
+      width: 50px;
+      height: auto;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card-title {
+      font-size: 20px;
+    }
+
+    #tocotrienols-grid-{{ section.id }} .card-description {
+      font-size: 14px;
+    }
+  }
+</style>
