@@ -255,50 +255,36 @@
           "type": "lab_detail_item",
           "settings": {
             "number": "01",
-            "heading": "Published Research & Scientific Recognition ",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading_link": "https://www.figma.com/design/T9HTz8WekDtNBwkjXicCFS/LANDING-PAGES---New?node-id=3576-734&t=ZYxFAU8aADDJ5IH7-0",
-            "description": "Dr. Tan didn't just discover tocotrienols; he spent 20+ years proving their extraordinary health benefits through rigorous clinical research. Here's what the science shows."
+            "heading": "Tocotrienols: Vitamin E Beyond Tocopherols ",
+            "heading_link": "https://books.google.com/books?hl=en&lr=&id=QtcKLOiPcqcC&oi=fnd&pg=PP1&dq=tocotrienols+barrie+tan&ots=3z1Dm5eoqI&sig=8zIBYO6FFEsFB5dNOqv79HPf78w",
+            "description": "Evidence for cardiometabolic support, oncology adjunct insights, and emerging areas such as bone, skin, and healthy aging, as well as how excess tocopherol can counteract the actions of tocotrienol."
           }
         },
         "lab_detail_item_pCf6C9": {
           "type": "lab_detail_item",
           "settings": {
             "number": "02",
-            "heading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading_link": "",
-            "description": "Evidence for cardiometabolic support, oncology adjunct insights, and emerging areas such as bone, skin, and healthy aging, as well as how excess tocopherol can counteract the actions of tocotrienol."
+            "heading": "Barrie Tan, PhD: Using Tocotrienols to Address Lifestyle and Metabolic Disease ",
+            "heading_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6601449/",
+            "description": "Discusses evidence and clinical interest in tocotrienols across cardiometabolic health, fatty liver disease, cancer support, radiation exposure, and bone health, and traces their sourcing evolution from palm oil."
           }
         },
         "lab_detail_item_rK7q6K": {
           "type": "lab_detail_item",
           "settings": {
             "number": "03",
-            "heading": "Barrie Tan, PhD: Using Tocotrienols to Address Lifestyle and Metabolic Disease",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading_link": "",
-            "description": "Discusses evidence and clinical interest in tocotrienols across cardiometabolic health, fatty liver disease, cancer support, radiation exposure, and bone health, and traces their sourcing evolution from palm oil."
+            "heading": "Emerging Cancer Research in Vitamin E Tocotrienol ",
+            "heading_link": "https://books.google.com/books?hl=en&lr=&id=JEg9BAAAQBAJ&oi=fnd&pg=PT216&dq=tocotrienols+barrie+tan&ots=WdMoTEMve1&sig=7HR84KfMdmvzBlWKlKYK_6DCBGo",
+            "description": "Highlights tocotrienols as a distinct Vitamin E family with mechanistic relevance to cellular resilience and healthy aging, positioned for adjunct use alongside standard care and lifestyle foundations."
           }
         },
         "lab_detail_item_QQQpVF": {
           "type": "lab_detail_item",
           "settings": {
             "number": "04",
-            "heading": "Emerging Cancer Research in Vitamin E Tocotrienol ",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading_link": "",
-            "description": "Highlights tocotrienols as a distinct Vitamin E family with mechanistic relevance to cellular resilience and healthy aging, positioned for adjunct use alongside standard care and lifestyle foundations. "
-          }
-        },
-        "lab_detail_item_KBFCCX": {
-          "type": "lab_detail_item",
-          "settings": {
-            "number": "05",
             "heading": "Vitamin E Component Dramatically More Effective at Supporting Heart Health ",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols ",
-            "subheading_link": "",
-            "description": "Early human and preclinical data show how tocotrienols may help lower lipids, reduce inflammation (e.g., CRP), and protect vessels via antioxidant actions. "
+            "heading_link": "https://www.realrawfood.com/wp-content/uploads/2025/08/Vitamin-E-Component-Dramatically-More-Effective-at-Supporting-Heart-Health.pdf",
+            "description": "Early human and preclinical data show how tocotrienols may help lower lipids, reduce inflammation (e.g., CRP), and protect vessels via antioxidant actions."
           }
         }
       },
@@ -306,17 +292,20 @@
         "lab_detail_item_nbzhmB",
         "lab_detail_item_pCf6C9",
         "lab_detail_item_rK7q6K",
-        "lab_detail_item_QQQpVF",
-        "lab_detail_item_KBFCCX"
+        "lab_detail_item_QQQpVF"
       ],
       "name": "Lab Details Section",
       "settings": {
-        "title": "From Lab to Life",
+        "top_title": "From Lab to Life ",
+        "subtitle": "Published Research & Scientific Recognition ",
+        "top_paragraph": "Dr. Tan didn't just discover tocotrienols; he spent 20+ years proving their extraordinary health benefits through rigorous clinical research. Here's what the science shows.",
+        "title": "",
         "background_color": "#ffffff",
+        "top_title_color": "#0a3347",
+        "subtitle_color": "#0a3347",
+        "top_paragraph_color": "#0a3347",
         "title_color": "#1a1a1a",
         "heading_color": "#1a1a1a",
-        "subheading_color": "#086b92",
-        "subheading_hover": "#0a5d7a",
         "description_color": "#666666",
         "number_color": "#d0d0d0",
         "section_padding_top": 80,

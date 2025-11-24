@@ -1,0 +1,609 @@
+<div id="shopify-section-{{ section.id }}" class="tocotrienols-hero-section">
+  {% if section.settings.background_image != blank %}
+    <div class="tocotrienols-hero-background">
+      <img
+        src="{{ section.settings.background_image | image_url: width: 1920 }}"
+        alt="{{ section.settings.background_image.alt | escape }}"
+        class="tocotrienols-hero-bg-image"
+        width="1920"
+        height="1080"
+        loading="eager" />
+    </div>
+  {% endif %}
+  
+  <div class="tocotrienols-hero-container">
+    <div class="tocotrienols-hero-content-wrapper">
+      <!-- Left Content Column -->
+      <div class="tocotrienols-hero-content">
+        {% if section.settings.main_title != blank %}
+          <h1 class="tocotrienols-hero-main-title">{{ section.settings.main_title }}</h1>
+        {% endif %}
+        
+        {% if section.settings.subheading != blank %}
+          <h2 class="tocotrienols-hero-subheading">{{ section.settings.subheading }}</h2>
+        {% endif %}
+        
+        {% if section.settings.point_1 != blank or section.settings.point_2 != blank or section.settings.point_3 != blank or section.settings.point_4 != blank %}
+          <ul class="tocotrienols-hero-points">
+            {% if section.settings.point_1 != blank %}
+              <li class="tocotrienols-hero-point-item">
+                <span class="tocotrienols-hero-point-icon">
+                  {% render 'icon-checkmark', class: 'tocotrienols-checkmark-icon' %}
+                </span>
+                <span class="tocotrienols-hero-point-text">{{ section.settings.point_1 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.point_2 != blank %}
+              <li class="tocotrienols-hero-point-item">
+                <span class="tocotrienols-hero-point-icon">
+                  {% render 'icon-checkmark', class: 'tocotrienols-checkmark-icon' %}
+                </span>
+                <span class="tocotrienols-hero-point-text">{{ section.settings.point_2 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.point_3 != blank %}
+              <li class="tocotrienols-hero-point-item">
+                <span class="tocotrienols-hero-point-icon">
+                  {% render 'icon-checkmark', class: 'tocotrienols-checkmark-icon' %}
+                </span>
+                <span class="tocotrienols-hero-point-text">{{ section.settings.point_3 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.point_4 != blank %}
+              <li class="tocotrienols-hero-point-item">
+                <span class="tocotrienols-hero-point-icon">
+                  {% render 'icon-checkmark', class: 'tocotrienols-checkmark-icon' %}
+                </span>
+                <span class="tocotrienols-hero-point-text">{{ section.settings.point_4 }}</span>
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
+        
+        <div class="tocotrienols-hero-buttons">
+          {% if section.settings.button_1_text != blank %}
+            <a href="{{ section.settings.button_1_link }}" class="tocotrienols-hero-button tocotrienols-hero-button-primary">
+              {{ section.settings.button_1_text }}
+            </a>
+          {% endif %}
+          {% if section.settings.button_2_text != blank %}
+            <a href="{{ section.settings.button_2_link }}" class="tocotrienols-hero-button tocotrienols-hero-button-secondary">
+              {{ section.settings.button_2_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Right Image Column -->
+      <div class="tocotrienols-hero-image-column">
+        {% if section.settings.product_image != blank %}
+          <img
+            src="{{ section.settings.product_image | image_url: width: 800 }}"
+            alt="{{ section.settings.product_image.alt | escape }}"
+            class="tocotrienols-hero-product-image"
+            width="800"
+            height="800"
+            loading="lazy" />
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Full Section with Background */
+  #shopify-section-{{ section.id }}.tocotrienols-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    padding-top: {{ section.settings.desktop_padding_top }}px;
+    padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+  }
+
+  /* Background Image */
+  .tocotrienols-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .tocotrienols-hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Container */
+  .tocotrienols-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  /* Content Wrapper */
+  .tocotrienols-hero-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 600px;
+  }
+
+  /* Left Content Column */
+  .tocotrienols-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Main Title */
+  .tocotrienols-hero-main-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 30px 0;
+    line-height: 1.3;
+}
+
+  /* Subheading */
+  .tocotrienols-hero-subheading {
+    font-size: 26px;
+    font-weight: 600;
+    color: #374650;
+    margin: 0 0 25px 0;
+    line-height: 1.3;
+  }
+
+  /* Points List */
+  .tocotrienols-hero-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+
+  .tocotrienols-hero-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+  }
+
+  .tocotrienols-hero-point-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+
+  .tocotrienols-checkmark-icon {
+    width: 24px;
+    height: 24px;
+    color: #22c55e;
+  }
+
+  .tocotrienols-checkmark-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tocotrienols-checkmark-icon svg path {
+    fill: #22c55e;
+  }
+
+  .tocotrienols-hero-point-text {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 600;
+    color: #374650;
+    flex: 1;
+}
+
+  /* Buttons */
+  .tocotrienols-hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .tocotrienols-hero-button {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    box-sizing: border-box;
+  }
+
+  .tocotrienols-hero-button-primary {
+    background-color: #086B92;
+    color: #ffffff;
+    border: 1px solid #086B92;
+    border-radius: 30px;
+  }
+
+  .tocotrienols-hero-button-primary:hover {
+    background-color: #ffffff;
+    border-color: #086B92;
+    color: #086B92;
+  }
+
+  .tocotrienols-hero-button-secondary {
+    background-color: #ffffff;
+    color: #086B92;
+    border: 1px solid #086B92;
+    border-radius: 30px;
+  }
+
+  .tocotrienols-hero-button-secondary:hover {
+    background-color: #086B92;
+    color: #ffffff;
+    border-color: #086B92;
+  }
+
+  /* Right Image Column */
+  .tocotrienols-hero-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  @media (min-width: 769px) {
+    .tocotrienols-hero-image-column {
+      display: none;
+    }
+  }
+
+  .tocotrienols-hero-product-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    .tocotrienols-hero-content-wrapper {
+      gap: 40px;
+    }
+
+    .tocotrienols-hero-main-title {
+      font-size: 36px;
+      margin-bottom: 25px;
+    }
+
+    .tocotrienols-hero-subheading {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .tocotrienols-hero-point-text {
+      font-size: 17px;
+    }
+
+    .tocotrienols-hero-buttons {
+      gap: 15px;
+    }
+
+    .tocotrienols-hero-button {
+      min-width: 160px;
+      padding: 12px 28px;
+      font-size: 15px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    /* Hide background image on mobile */
+    .tocotrienols-hero-background {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }}.tocotrienols-hero-section {
+      {% if section.settings.background_color != blank %}
+        background-color: {{ section.settings.background_color }};
+      {% else %}
+        background-color: #f5f5f5;
+      {% endif %}
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      min-height: auto;
+    }
+
+    .tocotrienols-hero-container {
+      padding: 0 15px;
+    }
+
+    .tocotrienols-hero-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      min-height: auto;
+    }
+
+    /* Image appears first (top) on mobile */
+    .tocotrienols-hero-image-column {
+      order: 1;
+      width: 100%;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tocotrienols-hero-product-image {
+      max-width: 100%;
+      height: auto;
+      width: auto;
+    }
+
+    /* All content appears below image on mobile */
+    .tocotrienols-hero-content {
+      order: 2;
+      width: 100%;
+    }
+
+    .tocotrienols-hero-main-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .tocotrienols-hero-subheading {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .tocotrienols-hero-points {
+      margin-bottom: 30px;
+    }
+
+    .tocotrienols-hero-point-item {
+      margin-bottom: 15px;
+      gap: 12px;
+    }
+
+    .tocotrienols-hero-point-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tocotrienols-checkmark-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .tocotrienols-hero-point-text {
+      font-size: 16px;
+    }
+
+    .tocotrienols-hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .tocotrienols-hero-button {
+      width: 100%;
+      min-width: 100%;
+      padding: 14px 24px;
+      font-size: 15px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .tocotrienols-hero-container {
+      padding: 0 12px;
+    }
+
+    .tocotrienols-hero-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    /* Ensure image stays on top */
+    .tocotrienols-hero-image-column {
+      order: 1 !important;
+      width: 100%;
+    }
+
+    /* Ensure all content stays below */
+    .tocotrienols-hero-content {
+      order: 2 !important;
+      width: 100%;
+    }
+
+    .tocotrienols-hero-main-title {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .tocotrienols-hero-subheading {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .tocotrienols-hero-points {
+      margin-bottom: 25px;
+    }
+
+    .tocotrienols-hero-point-item {
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .tocotrienols-hero-point-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tocotrienols-checkmark-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tocotrienols-hero-point-text {
+      font-size: 15px;
+    }
+
+    .tocotrienols-hero-button {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Tocotrienols Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Full background image for the section"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f5f5",
+      "info": "Fallback color if no background image is set"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Support Your Health with Tocotrienols That Work at the Cellular Level"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The Pure Advantage:"
+    },
+    {
+      "type": "text",
+      "id": "point_1",
+      "label": "Point 1",
+      "default": "100% Annatto-derived tocotrienols"
+    },
+    {
+      "type": "text",
+      "id": "point_2",
+      "label": "Point 2",
+      "default": "Clinical therapeutic dosage"
+    },
+    {
+      "type": "text",
+      "id": "point_3",
+      "label": "Point 3",
+      "default": "3rd-party tested for purity & potency"
+    },
+    {
+      "type": "text",
+      "id": "point_4",
+      "label": "Point 4",
+      "default": "Non-GMO and gluten-free"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "Button 1 Text",
+      "default": "Buy 125 mg Formula"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Button 2 Text",
+      "default": "Buy 300 mg Formula"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image",
+      "info": "Product image displayed on the right side"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tocotrienols Hero Banner"
+    }
+  ]
+}
+{% endschema %}
+

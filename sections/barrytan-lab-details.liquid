@@ -1,8 +1,20 @@
 <section class="barry-tan-lab-details" id="barry-tan-lab-details-{{ section.id }}">
   <div class="barry-tan-lab-details-container">
-    {% if section.settings.title != blank %}
-      <h2 class="barry-tan-lab-details-title">{{ section.settings.title }}</h2>
+    {% if section.settings.top_title != blank %}
+      <h1 class="barry-tan-lab-details-top-title">{{ section.settings.top_title }}</h1>
     {% endif %}
+    
+    {% if section.settings.subtitle != blank %}
+      <h2 class="barry-tan-lab-details-subtitle">{{ section.settings.subtitle }}</h2>
+    {% endif %}
+    
+    {% if section.settings.top_paragraph != blank %}
+      <p class="barry-tan-lab-details-top-paragraph">{{ section.settings.top_paragraph }}</p>
+    {% endif %}
+    
+    {% comment %} {% if section.settings.title != blank %}
+      <h2 class="barry-tan-lab-details-title">{{ section.settings.title }}</h2>
+    {% endif %} {% endcomment %}
 
     <div class="barry-tan-lab-details-list">
       {% for block in section.blocks %}
@@ -19,13 +31,13 @@
             
             <div class="barry-tan-lab-details-content-left">
               {% if block.settings.heading != blank %}
-                <h3 class="barry-tan-lab-details-heading">{{ block.settings.heading }}</h3>
-              {% endif %}
-              
-              {% if block.settings.subheading != blank %}
-                <a href="{{ block.settings.subheading_link | default: '#' }}" class="barry-tan-lab-details-subheading">
-                  {{ block.settings.subheading }}
-                </a>
+                {% if block.settings.heading_link != blank %}
+                  <a href="{{ block.settings.heading_link }}" class="barry-tan-lab-details-heading-link">
+                    <h3 class="barry-tan-lab-details-heading">{{ block.settings.heading }}</h3>
+                  </a>
+                {% else %}
+                  <h3 class="barry-tan-lab-details-heading">{{ block.settings.heading }}</h3>
+                {% endif %}
               {% endif %}
             </div>
           </div>
@@ -50,6 +62,36 @@
   #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-container {
     max-width: {{ section.settings.max_width | default: 1000 }}px;
     margin: 0 auto;
+  }
+
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: {{ section.settings.top_title_color | default: '#0A3347' }};
+    text-align: center;
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    color: {{ section.settings.subtitle_color | default: '#0A3347' }};
+    text-align: center;
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-paragraph {
+    font-size: 18px;
+    font-weight: 400;
+    color: {{ section.settings.top_paragraph_color | default: '#0A3347' }};
+    text-align: center;
+    margin: 0 0 40px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-title {
@@ -118,20 +160,25 @@
     line-height: 1.3;
   }
 
-  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subheading {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    color: {{ section.settings.subheading_color | default: '#086B92' }};
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-heading-link {
     text-decoration: none;
-    line-height: 1.4;
-    transition: color 0.3s ease;
     display: inline-block;
+    transition: all 0.3s ease;
   }
 
-  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subheading:hover {
-    color: #086B92;
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-heading-link .barry-tan-lab-details-heading {
+    margin: 0;
+    color: {{ section.settings.heading_link_color | default: '#086B92' }};
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-heading-link:hover .barry-tan-lab-details-heading {
+    color: {{ section.settings.heading_link_hover_color | default: '#0a5d7a' }};
     text-decoration: underline;
+    text-decoration-color: {{ section.settings.heading_link_hover_color | default: '#0a5d7a' }};
+    text-underline-offset: 3px;
   }
 
   #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-description {
@@ -157,6 +204,21 @@
   @media (max-width: 768px) {
     #barry-tan-lab-details-{{ section.id }} {
       padding: 50px 16px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-title {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subtitle {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-paragraph {
+      font-size: 16px;
+      margin-bottom: 0px;
     }
 
     #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-title {
@@ -186,10 +248,6 @@
       font-size: 22px;
     }
 
-    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subheading {
-      font-size: 16px;
-    }
-
     #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-description {
       font-size: 15px;
     }
@@ -198,6 +256,21 @@
   @media (max-width: 480px) {
     #barry-tan-lab-details-{{ section.id }} {
       padding: 40px 12px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-title {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subtitle {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-top-paragraph {
+      font-size: 15px;
+      margin-bottom: 0px;
     }
 
     #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-title {
@@ -227,10 +300,6 @@
       font-size: 18px;
     }
 
-    #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-subheading {
-      font-size: 15px;
-    }
-
     #barry-tan-lab-details-{{ section.id }} .barry-tan-lab-details-description {
       font-size: 16px;
       line-height: 1.65;
@@ -245,6 +314,21 @@
     {
       "type": "header",
       "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "top_title",
+      "label": "Top Title (H1)"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (H2)"
+    },
+    {
+      "type": "textarea",
+      "id": "top_paragraph",
+      "label": "Top Paragraph"
     },
     {
       "type": "text",
@@ -264,6 +348,24 @@
     },
     {
       "type": "color",
+      "id": "top_title_color",
+      "label": "Top Title Color",
+      "default": "#0A3347"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#0A3347"
+    },
+    {
+      "type": "color",
+      "id": "top_paragraph_color",
+      "label": "Top Paragraph Color",
+      "default": "#0A3347"
+    },
+    {
+      "type": "color",
       "id": "title_color",
       "label": "Title Color",
       "default": "#1a1a1a"
@@ -276,14 +378,14 @@
     },
     {
       "type": "color",
-      "id": "subheading_color",
-      "label": "Subheading Color",
+      "id": "heading_link_color",
+      "label": "Heading Link Color",
       "default": "#086B92"
     },
     {
       "type": "color",
-      "id": "subheading_hover",
-      "label": "Subheading Hover Color",
+      "id": "heading_link_hover_color",
+      "label": "Heading Link Hover Color",
       "default": "#0a5d7a"
     },
     {
@@ -347,15 +449,9 @@
           "default": "Published Research & Scientific Recognition"
         },
         {
-          "type": "text",
-          "id": "subheading",
-          "label": "Subheading",
-          "default": "Tocotrienols: Vitamin E Beyond Tocopherols"
-        },
-        {
           "type": "url",
-          "id": "subheading_link",
-          "label": "Subheading Link"
+          "id": "heading_link",
+          "label": "Heading Link"
         },
         {
           "type": "textarea",
@@ -375,7 +471,6 @@
           "settings": {
             "number": "01",
             "heading": "Published Research & Scientific Recognition",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
             "description": "Dr. Tan didn't just discover tocotrienols; he spent 20+ years proving their extraordinary health benefits through rigorous clinical research. Here's what the science shows."
           }
         },
@@ -384,7 +479,6 @@
           "settings": {
             "number": "02",
             "heading": "Tocotrienols: Vitamin E Beyond Tocopherols",
-            "subheading": "Tocotrienols: Vitamin E Beyond Tocopherols",
             "description": "Evidence for cardiometabolic support, oncology adjunct insights, and emerging areas such as bone, skin, and healthy aging, as well as how excess tocopherol can counteract the actions of tocotrienol."
           }
         }
