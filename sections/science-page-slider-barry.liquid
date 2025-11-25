@@ -119,7 +119,7 @@
     -ms-overflow-style: none;
     padding-bottom: 20px;
     scroll-snap-type: x mandatory;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   #shopify-section-{{ section.id }} .science-slider-carousel-{{ section.id }}::-webkit-scrollbar {
@@ -128,8 +128,9 @@
 
   /* Card */
   #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
-    flex: 0 0 calc(33.333% - 20px);
-    min-width: calc(33.333% - 20px);
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: calc((100% - 60px) / 3);
+    max-width: calc((100% - 60px) / 3);
     background-color: #ffffff;
     border-radius: 16px;
     border: 1px solid #e5e7eb;
@@ -243,8 +244,9 @@
     }
 
     #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
-      flex: 0 0 calc(50% - 15px);
-      min-width: calc(50% - 15px);
+      flex: 0 0 calc((100% - 30px) / 2);
+      min-width: calc((100% - 30px) / 2);
+      max-width: calc((100% - 30px) / 2);
     }
   }
 
@@ -273,8 +275,9 @@
     }
 
     #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
-      flex: 0 0 calc(100% - 20px);
-      min-width: calc(100% - 20px);
+      flex: 0 0 100%;
+      min-width: 100%;
+      max-width: 100%;
       padding: 30px 25px;
     }
 
@@ -333,33 +336,35 @@
         return;
       }
 
-      const firstCard = carousel.querySelector('.science-slider-card-' + sectionId);
-      if (!firstCard) {
+      const cards = carousel.querySelectorAll('.science-slider-card-' + sectionId);
+      if (cards.length === 0) {
         console.warn('No cards found in carousel');
         return;
       }
 
+      const firstCard = cards[0];
       const cardWidth = firstCard.offsetWidth;
       const gap = 30;
-      const containerWidth = carousel.clientWidth;
-      
-      // Calculate how many cards are visible
-      let cardsVisible = Math.floor(containerWidth / (cardWidth + gap));
-      if (cardsVisible < 1) cardsVisible = 1;
-      
-      // Scroll by one card width + gap (smoother scrolling)
       const scrollAmount = cardWidth + gap;
       
       const currentScroll = carousel.scrollLeft;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      const containerWidth = carousel.clientWidth;
+      const maxScroll = carousel.scrollWidth - containerWidth;
+      
+      // Calculate how many cards are visible
+      const cardsVisible = Math.floor(containerWidth / scrollAmount) || 1;
       
       let scrollPosition;
       if (direction > 0) {
-        // Scroll right/next
-        scrollPosition = Math.min(currentScroll + scrollAmount, maxScroll);
+        // Scroll right/next - scroll by one card width
+        scrollPosition = currentScroll + scrollAmount;
+        // Ensure we don't scroll past the end
+        scrollPosition = Math.min(scrollPosition, maxScroll);
       } else {
-        // Scroll left/prev
-        scrollPosition = Math.max(currentScroll - scrollAmount, 0);
+        // Scroll left/prev - scroll by one card width
+        scrollPosition = currentScroll - scrollAmount;
+        // Ensure we don't scroll before the start
+        scrollPosition = Math.max(scrollPosition, 0);
       }
       
       carousel.scrollTo({
@@ -429,23 +434,51 @@
 
       // Update button states
       const updateButtons = () => {
-        if (!prevButton || !nextButton) return;
+        if (!prevButton || !nextButton || !carousel) return;
         
-        const isAtStart = carousel.scrollLeft <= 5;
+        const cards = carousel.querySelectorAll('.science-slider-card-' + sectionId);
+        if (cards.length === 0) return;
+        
+        const firstCard = cards[0];
+        const cardWidth = firstCard.offsetWidth;
+        const gap = 30;
+        const scrollAmount = cardWidth + gap;
+        
+        const currentScroll = carousel.scrollLeft;
         const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-        const isAtEnd = carousel.scrollLeft >= maxScroll - 5;
         
-        prevButton.style.opacity = isAtStart ? '0.5' : '1';
-        prevButton.style.pointerEvents = isAtStart ? 'none' : 'auto';
-        prevButton.disabled = isAtStart;
+        // Check if we can scroll more
+        const isAtStart = currentScroll <= 10;
+        const isAtEnd = currentScroll >= maxScroll - 10;
         
-        nextButton.style.opacity = isAtEnd ? '0.5' : '1';
-        nextButton.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-        nextButton.disabled = isAtEnd;
+        // Hide buttons if all cards are visible
+        const containerWidth = carousel.clientWidth;
+        const totalCardsWidth = (cards.length * cardWidth) + ((cards.length - 1) * gap);
+        const allCardsVisible = totalCardsWidth <= containerWidth;
+        
+        if (allCardsVisible) {
+          prevButton.style.display = 'none';
+          nextButton.style.display = 'none';
+        } else {
+          prevButton.style.display = 'flex';
+          nextButton.style.display = 'flex';
+          
+          prevButton.style.opacity = isAtStart ? '0.5' : '1';
+          prevButton.style.pointerEvents = isAtStart ? 'none' : 'auto';
+          prevButton.disabled = isAtStart;
+          
+          nextButton.style.opacity = isAtEnd ? '0.5' : '1';
+          nextButton.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+          nextButton.disabled = isAtEnd;
+        }
       };
 
-      // Update on scroll
-      carousel.addEventListener('scroll', updateButtons);
+      // Update on scroll with debounce
+      let scrollTimer;
+      carousel.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateButtons, 50);
+      });
       
       // Update on resize
       let resizeTimer;
@@ -465,6 +498,33 @@
         equalizeCardHeights();
         updateButtons();
       }, 100);
+      
+      // Also update after images load
+      const images = carousel.querySelectorAll('img');
+      let imagesLoaded = 0;
+      if (images.length > 0) {
+        images.forEach(function(img) {
+          if (img.complete) {
+            imagesLoaded++;
+          } else {
+            img.addEventListener('load', function() {
+              imagesLoaded++;
+              if (imagesLoaded === images.length) {
+                setTimeout(function() {
+                  equalizeCardHeights();
+                  updateButtons();
+                }, 100);
+              }
+            });
+          }
+        });
+        if (imagesLoaded === images.length) {
+          setTimeout(function() {
+            equalizeCardHeights();
+            updateButtons();
+          }, 100);
+        }
+      }
     }
 
     // Initialize when DOM is ready
