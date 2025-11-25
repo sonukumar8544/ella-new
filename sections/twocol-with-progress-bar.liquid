@@ -1,0 +1,478 @@
+<div id="shopify-section-{{ section.id }}">
+  <!-- Header Section -->
+  {% if section.settings.header_title != blank %}
+    <div class="two-col-with-icons-header">
+      <h1 class="two-col-with-icons-header-title">{{ section.settings.header_title }}</h1>
+      {% if section.settings.header_subtitle != blank %}
+        <div class="two-col-with-icons-subtitle-wrapper">
+          <span class="two-col-with-icons-subtitle">{{ section.settings.header_subtitle }}</span>
+          →
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <!-- Content Section -->
+  <div class="two-col-with-icons-content-section">
+    <div class="two-col-with-icons-content-wrapper {% if section.settings.image_position == 'right' %}two-col-with-icons-image-right{% else %}two-col-with-icons-image-left{% endif %}">
+      {% if section.settings.image_position == 'left' %}
+        <!-- Left Column: Trophy/Icon Image -->
+        <div class="two-col-with-icons-image-column">
+          {% if section.settings.left_image != blank %}
+            <img
+              src="{{ section.settings.left_image | image_url: width: 500 }}"
+              alt="{{ section.settings.left_image.alt | escape }}"
+              class="two-col-with-icons-main-image"
+              width="500"
+              height="600"
+              loading="lazy" />
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <!-- Timeline Entries Column -->
+      <div class="two-col-with-icons-timeline-column">
+        {% for block in section.blocks %}
+          {% if block.type == 'timeline_entry' %}
+            <div 
+              class="two-col-with-icons-timeline-entry" 
+              {{ block.shopify_attributes }}
+              style="border-bottom-color: {{ block.settings.timeline_border_color | default: section.settings.timeline_border_color | default: '#d1d5db' }};"
+            >
+              {% if block.settings.timeline_date != blank %}
+                <h3 class="two-col-with-icons-timeline-date">{{ block.settings.timeline_date }}</h3>
+              {% endif %}
+              {% if block.settings.timeline_title != blank %}
+                <h4 class="two-col-with-icons-timeline-title">{{ block.settings.timeline_title }}</h4>
+              {% endif %}
+              {% if block.settings.timeline_description != blank %}
+                <p class="two-col-with-icons-timeline-description">{{ block.settings.timeline_description }}</p>
+              {% endif %}
+              <div class="two-col-with-icons-progress-bar"></div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if section.settings.image_position == 'right' %}
+        <!-- Right Column: Trophy/Icon Image -->
+        <div class="two-col-with-icons-image-column">
+          {% if section.settings.left_image != blank %}
+            <img
+              src="{{ section.settings.left_image | image_url: width: 500 }}"
+              alt="{{ section.settings.left_image.alt | escape }}"
+              class="two-col-with-icons-main-image"
+              width="500"
+              height="600"
+              loading="lazy" />
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Full Section Background */
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    margin: 0 auto;
+    padding-top: {{ section.settings.desktop_padding_top }}px;
+    padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+
+  /* Header Section */
+  #shopify-section-{{ section.id }} .two-col-with-icons-header {
+    background-color: transparent;
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 auto 20px auto;
+    line-height: 1.2;
+    max-width: 420px;
+  }
+
+  /* Subtitle Section */
+  #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d1d5db;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #374650;
+    line-height: 1.4;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow svg path {
+    fill: #374650;
+  }
+
+  /* Content Sections */
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-section {
+    background-color: transparent;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Image Column */
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-main-image {
+    width: 100%;
+    /* max-width: 400px; */
+    height: auto;
+    display: block;
+  }
+
+  /* Image position classes */
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-right .two-col-with-icons-image-column {
+    order: 2;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-right .two-col-with-icons-timeline-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-left .two-col-with-icons-image-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-left .two-col-with-icons-timeline-column {
+    order: 2;
+  }
+
+  /* Timeline Column */
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-entry {
+    margin-bottom: 0;
+    border-bottom: 10px solid;
+    /* padding-bottom: 30px; */
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-entry:last-child {
+    padding-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-date {
+    font-size: 24px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-timeline-description {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #466474;
+    font-style: italic;
+    margin: 0 0 15px 0;
+  }
+
+  /* Progress Bars */
+  #shopify-section-{{ section.id }} .two-col-with-icons-progress-bar {
+    width: 66.67%;
+    height: 1px;
+    background-color: #d1d5db;
+    margin-bottom: 0;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 35px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle {
+      font-size: 20px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow {
+      width: 18px;
+      height: 18px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+      gap: 40px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-header {
+      padding: 40px 20px 20px 20px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-wrapper {
+      padding-bottom: 12px;
+      gap: 6px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle {
+      font-size: 18px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow {
+      width: 16px;
+      height: 16px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-section {
+      padding: 40px 20px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    /* Reset order on mobile - image always comes first */
+    #shopify-section-{{ section.id }} .two-col-with-icons-image-column {
+      order: 1 !important;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-column {
+      order: 2 !important;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-date,
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-title {
+      font-size: 16px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-description {
+      font-size: 15px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-wrapper {
+      padding-bottom: 10px;
+      gap: 5px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle {
+      font-size: 16px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-subtitle-arrow {
+      width: 15px;
+      height: 15px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-date,
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-title {
+      font-size: 15px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-timeline-description {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Two col progress bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "30+ Years of Scientific Progress"
+    },
+    {
+      "type": "text",
+      "id": "header_subtitle",
+      "label": "Subtitle",
+      "default": "Shop Tocotrienols Backed by Research"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Image (Trophy/Icon)"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "timeline_border_color",
+      "label": "Timeline Entry Border Color",
+      "default": "#d1d5db"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline_entry",
+      "name": "Timeline Entry",
+      "settings": [
+        {
+          "type": "text",
+          "id": "timeline_date",
+          "label": "Date",
+          "default": "2010-2018"
+        },
+        {
+          "type": "text",
+          "id": "timeline_title",
+          "label": "Title",
+          "default": "Clinical Trials"
+        },
+        {
+          "type": "textarea",
+          "id": "timeline_description",
+          "label": "Description",
+          "default": "Human studies confirm safety and benefits in key health areas."
+        },
+        {
+          "type": "color",
+          "id": "timeline_border_color",
+          "label": "Border Color",
+          "default": "#d1d5db"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two col progress bar",
+      "blocks": [
+        {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "2010-2018",
+            "timeline_title": "Clinical Trials",
+            "timeline_description": "Human studies confirm safety and benefits in key health areas."
+          }
+        },
+        {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "2020",
+            "timeline_title": "Global Recognition:",
+            "timeline_description": "International awards and ongoing research."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
