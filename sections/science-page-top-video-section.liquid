@@ -1,0 +1,487 @@
+<div id="shopify-section-{{ section.id }}">
+  <div class="video-section-container">
+    <!-- Text Content Section -->
+    <div class="video-section-text-content">
+      <!-- Dotted Arrow Icon -->
+      <div class="video-section-arrow">
+        <img 
+          src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/65a986b9f0245d412a0bbad9_dotted-arrow_svg.png?v=1764053666" 
+          alt="Dotted Arrow" 
+          class="dotted-arrow-icon"
+          width="24" 
+          height="60"
+          loading="lazy" />
+      </div>
+
+      <!-- Title -->
+      {% if section.settings.title != blank %}
+        <h1 class="video-section-title">{{ section.settings.title }}</h1>
+      {% endif %}
+
+      <!-- Description -->
+      {% if section.settings.description != blank %}
+        <p class="video-section-description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Video Container -->
+    {% if section.settings.video_url != blank %}
+      <div class="video-section-video-wrapper">
+        {% if section.settings.video_type == 'youtube' %}
+          {% assign video_id = section.settings.video_url | split: 'v=' | last | split: '&' | first %}
+          <div class="video-section-video">
+            <iframe 
+              src="https://www.youtube.com/embed/{{ video_id }}{% if section.settings.autoplay %}?autoplay=1{% endif %}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        {% elsif section.settings.video_type == 'vimeo' %}
+          {% assign video_id = section.settings.video_url | split: '/' | last | split: '?' | first %}
+          <div class="video-section-video">
+            <iframe 
+              src="https://player.vimeo.com/video/{{ video_id }}{% if section.settings.autoplay %}?autoplay=1{% endif %}" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        {% elsif section.settings.video_type == 'mp4' and section.settings.video_mp4_url != blank %}
+          <div class="video-section-video">
+            <video 
+              controls
+              {% if section.settings.autoplay %}autoplay{% endif %}
+              {% if section.settings.loop %}loop{% endif %}
+              {% if section.settings.muted %}muted{% endif %}
+              {% if section.settings.poster_image != blank %}poster="{{ section.settings.poster_image | image_url: width: 1200 }}"{% endif %}
+              class="video-section-video-element">
+              <source src="{{ section.settings.video_mp4_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endif %}
+        <!-- Floating Text Overlay -->
+        <div class="video-section-floating-text">
+          <p class="floating-text-content">Watch Dr. Tan Explain How the Science of Tocotrienols Began</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  /* Full Section Background */
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    margin: 0 auto;
+    padding-top: {{ section.settings.desktop_padding_top }}px;
+    padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+
+  /* Container */
+  #shopify-section-{{ section.id }} .video-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* Text Content Wrapper */
+  #shopify-section-{{ section.id }} .video-section-text-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Dotted Arrow Icon */
+  #shopify-section-{{ section.id }} .video-section-arrow {
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .dotted-arrow-icon {
+    width: 50px;
+    height: 88px;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Title Styling */
+  #shopify-section-{{ section.id }} .video-section-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    line-height: 1.3;
+    margin: 0 0 30px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Description Styling */
+  #shopify-section-{{ section.id }} .video-section-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: {{ section.settings.description_color | default: '#2E2E2E' }};
+    margin: 0 0 50px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Video Wrapper */
+  #shopify-section-{{ section.id }} .video-section-video-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Video Container */
+  #shopify-section-{{ section.id }} .video-section-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: {{ section.settings.video_border_radius }}px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #shopify-section-{{ section.id }} .video-section-video iframe,
+  #shopify-section-{{ section.id }} .video-section-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: {{ section.settings.video_border_radius }}px;
+  }
+
+  #shopify-section-{{ section.id }} .video-section-video-element {
+    object-fit: cover;
+  }
+
+  /* Floating Text Overlay */
+  #shopify-section-{{ section.id }} .video-section-floating-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    z-index: 10;
+    width: 100%;
+    max-width: 575px;
+    padding: 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .floating-text-content {
+    background-color: #F8CE63;
+    color: #374650;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    padding: 15px 25px;
+    margin: 0;
+    border-radius: 30px;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .video-section-container {
+      padding: 0 30px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-text-content {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-arrow {
+      margin-bottom: 35px;
+    }
+
+    #shopify-section-{{ section.id }} .dotted-arrow-icon {
+      width: 22px;
+      height: 55px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-title {
+      font-size: 36px;
+      margin-bottom: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-description {
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .floating-text-content {
+      font-size: 16px;
+      padding: 15px 25px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-container {
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-text-content {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-arrow {
+      margin-bottom: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .dotted-arrow-icon {
+      width: 20px;
+      height: 50px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-description {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-floating-text {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    #shopify-section-{{ section.id }} .floating-text-content {
+      font-size: 16px;
+      padding: 15px 25px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .video-section-container {
+      padding: 0 15px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-text-content {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-arrow {
+      margin-bottom: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .dotted-arrow-icon {
+      width: 18px;
+      height: 45px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-title {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-description {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .video-section-floating-text {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    #shopify-section-{{ section.id }} .floating-text-content {
+      font-size: 8px;
+      padding: 15px 25px;
+      line-height: 1.4;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Science Page Top Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Watch Dr. Tan Explain How the Science of Tocotrienols Began"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2E2E2E"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "For over three decades, Dr. Barrie Tan has devoted his life to uncovering the truth about Vitamin E. In this short video, he shares the story behind his discovery of tocotrienols in palm, rice, and annatto—and how this breakthrough changed the way the world understands Vitamin E."
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#2E2E2E"
+    },
+    {
+      "type": "select",
+      "id": "video_type",
+      "label": "Video Type",
+      "options": [
+        {
+          "value": "youtube",
+          "label": "YouTube"
+        },
+        {
+          "value": "vimeo",
+          "label": "Vimeo"
+        },
+        {
+          "value": "mp4",
+          "label": "MP4 Video"
+        }
+      ],
+      "default": "youtube"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (YouTube or Vimeo)",
+      "info": "Enter YouTube or Vimeo video URL"
+    },
+    {
+      "type": "url",
+      "id": "video_mp4_url",
+      "label": "MP4 Video URL",
+      "info": "Required if Video Type is MP4"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Video Poster Image",
+      "info": "Optional: Image shown before video plays (for MP4 videos)"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay Video",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop Video",
+      "default": false,
+      "info": "Only for MP4 videos"
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Muted (for autoplay)",
+      "default": false,
+      "info": "Only for MP4 videos"
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "label": "Video Border Radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science Top Video Section",
+      "settings": {
+        "title": "Watch Dr. Tan Explain How the Science of Tocotrienols Began",
+        "description": "For over three decades, Dr. Barrie Tan has devoted his life to uncovering the truth about Vitamin E. In this short video, he shares the story behind his discovery of tocotrienols in palm, rice, and annatto—and how this breakthrough changed the way the world understands Vitamin E.",
+        "video_type": "youtube",
+        "video_url": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s"
+      }
+    }
+  ]
+}
+{% endschema %}
+

@@ -132,7 +132,7 @@
           "type": "image",
           "settings": {
             "image_slide": "shopify://shop_images/5_b2473626-27b5-4818-982c-b0980690a89e.png",
-            "image_slide_mb": "shopify://shop_images/mobile_5.png",
+            "image_slide_mb": "shopify://shop_images/Frame_6_b6200524-ce37-49ab-98ca-3e8a9c4edf43.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "13.2",
@@ -200,7 +200,7 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "",
-            "link": "shopify://products/vitamin-e-tocotrienols-supplement",
+            "link": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "#",
@@ -409,15 +409,19 @@
     },
     "barry_tan_gridview_UnaQaW": {
       "type": "barry-tan-gridview",
+      "custom_css": [
+        "#barry-tan-gridview-template--25659565375784__barry_tan_gridview_UnaQaW .barry-tan-gridview-intro-text {font-size: clamp(16px, 2vw, 16px);}",
+        "@media (min-width: 1024px) {#barry-tan-gridview-template--25659565375784__barry_tan_gridview_UnaQaW .barry-tan-gridview-heading {font-size: 50px; }}"
+      ],
       "name": "Barry Tan Gridview",
       "settings": {
-        "heading": "Research Led by<br> Dr. Barrie Tan",
-        "intro_text": "Dr. Barrie Tan, Ph.D., is one of the world’s foremost experts on Vitamin E. After discovering tocotrienols in three major natural sources (palm, rice, and annatto), Dr. Tan dedicated his life to researching their health benefits. <br>His groundbreaking work identifying annatto as the only tocopherol-free source of tocotrienols revolutionized our understanding of Vitamin E’s therapeutic potential.",
+        "heading": "Research Led by Dr. Barrie Tan",
+        "intro_text": "Dr. Barrie Tan, Ph.D., is one of the world’s foremost experts on Vitamin E. After discovering tocotrienols in three major natural sources (palm, rice, and annatto), Dr. Tan dedicated his life to researching their health benefits. <br><br>His groundbreaking work identifying annatto as the only tocopherol-free source of tocotrienols revolutionized our understanding of Vitamin E’s therapeutic potential.",
         "cta_heading": "",
         "cta_text": "",
         "cta_label": "",
         "cta_link": "",
-        "research_text": "His groundbreaking work identifying annatto as the only tocopherol-free source of tocotrienols revolutionized our understanding of Vitamin E’s therapeutic potential.<br><div style=\"background: #f0f0f0; padding: 25px 15px;\">\n  With over 50 scientific publications and multiple patents, Dr. Tan’s research has been instrumental in establishing tocotrienols as powerful bioactive compounds with unique benefits for cardiovascular health, metabolism, and cellular protection that far exceed those of conventional Vitamin E.\n</div>",
+        "research_text": "His groundbreaking work identifying annatto as the only tocopherol-free source of tocotrienols revolutionized our understanding of Vitamin E’s therapeutic potential.<br><div style=\"background: #F5F5F5; padding: 15px 20px; margin-top: 30px; border-radius: 8px;\">\n  <p>\n    With over 50 scientific publications and multiple patents, Dr. Tan’s research has been instrumental in establishing tocotrienols as powerful bioactive compounds with unique benefits for cardiovascular health, metabolism, and cellular protection that far exceed those of conventional Vitamin E.\n  </p>\n</div>",
         "book_image_alt": "",
         "show_second_book": false,
         "background_color": "#ffffff",
@@ -430,6 +434,547 @@
         "section_padding_bottom": 80,
         "max_width": 1200
       }
+    },
+    "science_page_acadmic_calander_U6F9hL": {
+      "type": "science-page-acadmic-calander",
+      "blocks": {
+        "left_panel_item_Yr9EPD": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Ph.D. in Chemistry, University of Otago, New Zealand"
+          }
+        },
+        "left_panel_item_xiED4G": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Post-doctoral research in Auburn, Alabama"
+          }
+        },
+        "left_panel_item_kNLkKt": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Former faculty member in Chemistry & Food Science/ Nutrition, University of Massachusetts Amherst (10 years)"
+          }
+        },
+        "left_panel_item_WMeMe9": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Founder & Chief Scientist, American River Nutrition (U.S.)"
+          }
+        },
+        "left_panel_item_CmPe3c": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Fellow, American Oil Chemists' Society (AOCS)"
+          }
+        },
+        "left_panel_item_rTQCxE": {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Senior editor for major tocotrienol scientific publications"
+          }
+        },
+        "right_panel_item_ptj46c": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Recipient of the 2010 SupplySide West Scientific Excellence Award"
+          }
+        },
+        "right_panel_item_XVdQPN": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Frequent speaker at scientific conferences worldwide (including ISSFAL, AOCS, SupplySide West)"
+          }
+        },
+        "right_panel_item_C8EjpD": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Cited in over 50 peer-reviewed publications"
+          }
+        },
+        "right_panel_item_pKHeVF": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Featured in global media and scientific journals"
+          }
+        },
+        "right_panel_item_eheEg7": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Holds prestigious honors in nutrition, vitamin research, and public health"
+          }
+        },
+        "right_panel_item_kFdgqM": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Member of notable industry and scientific societies (American Oil Chemists' Society, International Vitamin Conferences)"
+          }
+        },
+        "right_panel_item_yHci4d": {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Regular keynote speaker at international science and health events"
+          }
+        }
+      },
+      "block_order": [
+        "left_panel_item_Yr9EPD",
+        "left_panel_item_xiED4G",
+        "left_panel_item_kNLkKt",
+        "left_panel_item_WMeMe9",
+        "left_panel_item_CmPe3c",
+        "left_panel_item_rTQCxE",
+        "right_panel_item_ptj46c",
+        "right_panel_item_XVdQPN",
+        "right_panel_item_C8EjpD",
+        "right_panel_item_pKHeVF",
+        "right_panel_item_eheEg7",
+        "right_panel_item_kFdgqM",
+        "right_panel_item_yHci4d"
+      ],
+      "name": "Science Academic Calendar",
+      "settings": {
+        "left_panel_title": "ACADEMIC & PROFESSIONAL BACKGROUND",
+        "right_panel_title": "AWARDS AND RECOGNITIONS",
+        "background_color": "#f5f5f5",
+        "desktop_padding_top": 40,
+        "desktop_padding_bottom": 40,
+        "mobile_padding_top": 10,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "science_page_top_video_section_n9Qpbw": {
+      "type": "science-page-top-video-section",
+      "name": "Science Top Video Section",
+      "settings": {
+        "title": "Watch Dr. Tan Explain How the Science of Tocotrienols Began",
+        "title_color": "#2e2e2e",
+        "description": "For over three decades, Dr. Barrie Tan has devoted his life to uncovering the truth about Vitamin E. In this short video, he shares the story behind his discovery of tocotrienols in palm, rice, and annatto—and how this breakthrough changed the way the world understands Vitamin E.",
+        "description_color": "#2e2e2e",
+        "video_type": "youtube",
+        "video_url": "https://www.youtube.com/watch?v=beSQk95uWs8&t=1s",
+        "video_mp4_url": "",
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "video_border_radius": 0,
+        "background_color": "#ffffff",
+        "desktop_padding_top": 30,
+        "desktop_padding_bottom": 30,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 30
+      }
+    },
+    "twocol_with_progress_bar_eJDdYc": {
+      "type": "twocol-with-progress-bar",
+      "blocks": {
+        "timeline_entry_JwYfpz": {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "1998 – Discovery:",
+            "timeline_title": "",
+            "timeline_description": "Identification of annatto as a tocopherol-free tocotrienol source.",
+            "timeline_border_color": "#000000"
+          }
+        },
+        "timeline_entry_pc4pya": {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "2002–2008",
+            "timeline_title": "Landmark Publications:",
+            "timeline_description": "Identification of annatto as a tocopherol-free tocotrienol source.",
+            "timeline_border_color": "#d1d5db"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_entry_JwYfpz",
+        "timeline_entry_pc4pya"
+      ],
+      "name": "Two col progress bar",
+      "settings": {
+        "header_title": "30+ Years of Scientific Progress",
+        "header_subtitle": "Shop Tocotrienols Backed by Research",
+        "left_image": "shopify://shop_images/Frame_1618873564.png",
+        "image_position": "right",
+        "background_color": "#f9fafb",
+        "timeline_border_color": "#d1d5db",
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "twocol_with_progress_bar_rpRfGp": {
+      "type": "twocol-with-progress-bar",
+      "blocks": {
+        "timeline_entry_CQdLUb": {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "2010–2018",
+            "timeline_title": "Clinical Trials",
+            "timeline_description": "Human studies confirm safety and benefits in key health areas.",
+            "timeline_border_color": "#d1d5db"
+          }
+        },
+        "timeline_entry_UEbPEk": {
+          "type": "timeline_entry",
+          "settings": {
+            "timeline_date": "2020",
+            "timeline_title": "Global Recognition:",
+            "timeline_description": "International awards and ongoing research.",
+            "timeline_border_color": "#d1d5db"
+          }
+        }
+      },
+      "block_order": [
+        "timeline_entry_CQdLUb",
+        "timeline_entry_UEbPEk"
+      ],
+      "name": "Two col progress bar",
+      "settings": {
+        "header_title": "",
+        "header_subtitle": "",
+        "left_image": "shopify://shop_images/Frame_1618873535.png",
+        "image_position": "left",
+        "background_color": "#ffffff",
+        "timeline_border_color": "#d1d5db",
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "science_page_slider_barry_Qqfybf": {
+      "type": "science-page-slider-barry",
+      "blocks": {
+        "card_HjgRF7": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/organ-donation_17977056_1_68e2fc80-7abc-4620-972a-ee46bba8606b.svg",
+            "card_title": "Cardiovascular Health",
+            "card_description": "Human trials show tocotrienols lower LDL cholesterol, improve arterial flexibility, and support circulation by regulating the HMG-CoA reductase pathway — protecting long-term heart health."
+          }
+        },
+        "card_hD4PWW": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/brain_109827_1.svg",
+            "card_title": "Brain Health",
+            "card_description": "Long-term MRI studies found tocotrienols slow white matter lesion growth, protecting neurons and supporting memory, focus, and cognitive performance as we age."
+          }
+        },
+        "card_DT3fKe": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/liver_17372422_1_1.svg",
+            "card_title": "Liver Health",
+            "card_description": "At 300 mg/day, tocotrienols normalize liver enzyme levels and reduce inflammation, supporting detox, liver balance, and metabolic health."
+          }
+        },
+        "card_BF8ypC": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/accessibility_18573275_1.svg",
+            "card_title": "Metabolic Health",
+            "card_description": "Research demonstrates tocotrienols enhance lipid metabolism and reduce oxidative stress, helping maintain healthy blood sugar, weight control, and efficient energy production."
+          }
+        },
+        "card_f9eceJ": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/accessibility_18573275_1.svg",
+            "card_title": "Menopause Health (Women)",
+            "card_description": "Studies show tocotrienols ease oxidative stress during menopause, supporting bone density, cardiovascular protection, and hormonal balance for women’s long-term well-being."
+          }
+        },
+        "card_Qbrt6N": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/healthcare_16712016_1.svg",
+            "card_title": "Skin Health",
+            "card_description": "Clinical research shows tocotrienols improve skin elasticity and hydration while protecting against UV and oxidative damage — promoting firmer, smoother, youthful-looking skin."
+          }
+        },
+        "card_kbDixe": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/liver_17372422_1_1.svg",
+            "card_title": "Joint & Bone Health",
+            "card_description": "Clinical research shows tocotrienols improve skin elasticity and hydration while protecting against UV and oxidative damage — promoting firmer, smoother, youthful-looking skin."
+          }
+        },
+        "card_zijzNU": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/liver_17372422_1_1.svg",
+            "card_title": "Cellular Energy",
+            "card_description": "Tocotrienols boost mitochondrial efficiency — the cell’s energy powerhouse — improving stamina, vitality, and resilience by reducing oxidative burden inside the cells."
+          }
+        }
+      },
+      "block_order": [
+        "card_HjgRF7",
+        "card_hD4PWW",
+        "card_DT3fKe",
+        "card_BF8ypC",
+        "card_f9eceJ",
+        "card_Qbrt6N",
+        "card_kbDixe",
+        "card_zijzNU"
+      ],
+      "name": "Science Page Slider barry",
+      "settings": {
+        "title": "Clinical Evidence Across Key Health Areas",
+        "description": "Tocotrienols have been studied in dozens of human trials and published research worldwide. Here's what the science shows across eight major areas of health and wellness:",
+        "background_color": "#f0f7ff",
+        "desktop_padding_top": 80,
+        "desktop_padding_bottom": 80,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "slide_show_4BfPk9": {
+      "type": "slide-show",
+      "blocks": {
+        "image_nbqWKa": {
+          "type": "image",
+          "settings": {
+            "image_slide": "shopify://shop_images/Section_4.png",
+            "image_slide_mb": "shopify://shop_images/Section_5.png",
+            "alignment": "right",
+            "enable_custom_position": false,
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "enable_position_outside_image": false,
+            "enable_border_line": false,
+            "padding_vertical": 30,
+            "content_width": 475,
+            "text_alignment": "center",
+            "text_alignment_mb": "center",
+            "enable_content_fullwidth": false,
+            "border_color_content": "",
+            "bg_color_content": "",
+            "profile_spacing_bottom": 50,
+            "profile_name": "",
+            "profile_name_color": "",
+            "profile_name_fs": 20,
+            "profile_name_fs_mb": 20,
+            "profile_name_fw": "normal",
+            "profile_title": "",
+            "profile_title_color": "",
+            "profile_title_fs": 20,
+            "profile_title_fs_mb": 20,
+            "profile_title_fw": "normal",
+            "sub_heading": "",
+            "letter_spacing_sub_title": "",
+            "font_size_sub_heading": 30,
+            "sub_heading_spacing_bottom": 20,
+            "sub_heading_font": "font_2",
+            "font_weight_sub_heading": "400",
+            "border_sub_heading": "none",
+            "sub_title_position": "sub_title_above",
+            "color_sub_heading": "#ffffff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_border_heading": false,
+            "font_style_heading": "normal",
+            "font_size_heading": 40,
+            "line_height_heading": 40,
+            "heading_spacing_bottom": 8,
+            "color_heading": "#232323",
+            "slide-des": "",
+            "font_size_des": 12,
+            "line_height_des": 22,
+            "des_spacing_bottom": 35,
+            "color_des": "#232323",
+            "sub_heading_mb": "",
+            "font_size_sub_heading_mb": 20,
+            "sub_heading_spacing_bottom_mb": 20,
+            "font_weight_sub_heading_mb": "400",
+            "border_sub_heading_mb": "none",
+            "color_sub_heading_mb": "#ffffff",
+            "heading_mb": "",
+            "font_style_heading_mb": "normal",
+            "font_size_heading_mb": 24,
+            "line_height_heading_mb": 24,
+            "heading_spacing_bottom_mb": 8,
+            "color_heading_mb": "#ffffff",
+            "slide-des-mb": "",
+            "font_size_des_mb": 12,
+            "des_spacing_bottom_mb": 35,
+            "color_des_mb": "#ffffff",
+            "enable_icon_button": false,
+            "enable_button_link": false,
+            "enable_underline": true,
+            "font_size_link": 36,
+            "button_slide": "",
+            "link": "",
+            "button_style": "button_1",
+            "button_slide_2": "",
+            "link_2": "",
+            "min_width_banner_button": 270,
+            "color_button": "#ffffff",
+            "border_button": "#232323",
+            "bg_button": "#232323",
+            "bg_button_gradient": "",
+            "color_button_hover": "#ffffff",
+            "border_button_hover": "#232323",
+            "bg_button_hover": "#232323",
+            "bg_button_gradient_hover": "",
+            "use_contrasting_colors": false,
+            "lb_product_1": "",
+            "horizontal_pos_1": 0,
+            "vertical_pos_1": 0,
+            "lookbook_pos_1": "right",
+            "lb_product_2": "",
+            "horizontal_pos_2": 0,
+            "vertical_pos_2": 0,
+            "lookbook_pos_2": "right",
+            "lb_product_3": "",
+            "horizontal_pos_3": 0,
+            "vertical_pos_3": 0,
+            "lookbook_pos_3": "right"
+          }
+        }
+      },
+      "block_order": [
+        "image_nbqWKa"
+      ],
+      "name": "t:sections.slide-show.presets.name",
+      "settings": {
+        "id": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "slideshow_background": "",
+        "slideshow_background_gradient": "",
+        "autoplay": true,
+        "slideshow_speed": "5000",
+        "slideshow_transition": "true",
+        "dots": "shape",
+        "dots_color": "#707979",
+        "dots_border_color": "#707979",
+        "dots_active_color": "rgba(0,0,0,0)",
+        "dots_active_border_color": "#505656",
+        "dots_direction": "left",
+        "dots_shape": "disc",
+        "position_slick_dots": "34px",
+        "dots_opacity": false,
+        "dot_with_image": false,
+        "dot_width": 66,
+        "dot_width_active": 130,
+        "dot_width_mb": 38,
+        "dot_width_active_mb": 65,
+        "arrow_active": true,
+        "enable_custom_arrow": false,
+        "arrow_width": 35,
+        "arrow_height": 35,
+        "arrow_size_icon": 17,
+        "arrow_color": "#666d6d",
+        "arrow_border_color": "#666d6d",
+        "arrow_bg_color": "#ffffff",
+        "arrow_color_hover": "",
+        "arrow_border_color_hover": "",
+        "arrow_bg_color_hover": "",
+        "position_slick_arrow": "10%",
+        "position_vertical_slick_arrow": "50%",
+        "image_behavior": "none",
+        "video_height": "41.7%",
+        "video_height_mb": "41.7%",
+        "auto_playvideo": true,
+        "enable_categories": false,
+        "text_categories": "Shop by categories",
+        "title_color": "#ffffff",
+        "bg_title": "#fd6506",
+        "text_icon_color": "#202020",
+        "menu_category": "",
+        "enable_banner": false,
+        "lookbook_style": "1",
+        "enable_lookbook_width": false,
+        "lookbook_width": 250,
+        "dot_desktop_size": 24,
+        "dot_mobile_size": 16,
+        "dot_inner_color": "#000000",
+        "dot_shadow_color": "#ffffff80",
+        "dot_outer_color": "#ffffff",
+        "show_dot_number": false,
+        "show_dot_number_mobile": false,
+        "show_plus_icon": false,
+        "number_desktop_size": 24,
+        "number_mobile_size": 16,
+        "lookbook_truncate": "1",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "howt_tocotrienole_works_teo_col_pJLeR4": {
+      "type": "howt-tocotrienole-works-teo-col",
+      "blocks": {
+        "content_block_hz88Xz": {
+          "type": "content_block",
+          "settings": {
+            "block_title": "Why Most “Vitamin E” Studies Got It Wrong",
+            "paragraph_1": "Most “Vitamin E” clinical trials tested only α-tocopherol, leading to inconsistent and disappointing results. This has created confusion in both the scientific community and among consumers.\n<p style=\"padding: 0px; margin: 0px;\">\n  It’s crucial to understand tocopherols and tocotrienols are fundamentally different in structure and function. While both are Vitamin E, they act very differently in the body.\n</p>",
+            "paragraph_1_italic": false,
+            "paragraph_2": "Research shows <strong>α-tocopherol can block tocotrienol absorption by up to 60%</strong>, reducing their effectiveness.",
+            "paragraph_2_italic": true,
+            "paragraph_2_bg_enable": true,
+            "paragraph_3": "Annatto’s clean δ/γ tocotrienol profile avoids this issue entirely — ensuring maximum bioavailability and therapeutic effect.",
+            "paragraph_3_italic": false,
+            "paragraph_3_bg_enable": false,
+            "paragraph_4": "",
+            "paragraph_4_italic": false,
+            "block_image": "shopify://shop_images/Frame_1618873501.png",
+            "image_position": "right",
+            "block_background_color": "#fefaec",
+            "paragraph_bg_color": "#f5f5f5",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "content_block_DfG3xq": {
+          "type": "content_block",
+          "settings": {
+            "block_title": "Annatto Tocotrienols: The Purest Form Backed by Science",
+            "paragraph_1": "<p style=\"font-weight: 600;\">Annatto is the only source that provides 100% δ/γ tocotrienols with no interfering tocopherols. This makes it the preferred source for modern clinical research.\n</p>",
+            "paragraph_1_italic": false,
+            "paragraph_2": "Palm & Rice Sources: Contain mixed tocopherols, diluting effectiveness and blocking absorption.",
+            "paragraph_2_italic": false,
+            "paragraph_2_bg_enable": false,
+            "paragraph_3": "Annatto Source: Pure δ/γ tocotrienols, the same profile used in the most successful clinical trials.",
+            "paragraph_3_italic": false,
+            "paragraph_3_bg_enable": false,
+            "paragraph_4": "",
+            "paragraph_4_italic": false,
+            "block_image": "shopify://shop_images/Image_h-_261pxshow_2.png",
+            "image_position": "left",
+            "block_background_color": "",
+            "paragraph_bg_color": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_block_hz88Xz",
+        "content_block_DfG3xq"
+      ],
+      "custom_css": [
+        ".annatto-content-paragraph {font-size: 16px;}"
+      ],
+      "name": "Two col bow toco",
+      "settings": {
+        "apply_background_gradient": false,
+        "section_background_color": "#ffffff",
+        "desktop_padding_top": 0,
+        "desktop_padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -437,6 +982,13 @@
     "main",
     "shogun-optimizer",
     "16321237356a896dad",
-    "barry_tan_gridview_UnaQaW"
+    "barry_tan_gridview_UnaQaW",
+    "science_page_acadmic_calander_U6F9hL",
+    "science_page_top_video_section_n9Qpbw",
+    "twocol_with_progress_bar_eJDdYc",
+    "twocol_with_progress_bar_rpRfGp",
+    "science_page_slider_barry_Qqfybf",
+    "slide_show_4BfPk9",
+    "howt_tocotrienole_works_teo_col_pJLeR4"
   ]
 }

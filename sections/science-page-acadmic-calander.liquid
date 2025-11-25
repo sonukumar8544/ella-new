@@ -1,0 +1,428 @@
+<div id="shopify-section-{{ section.id }}">
+  <div class="academic-calendar-container">
+    <div class="academic-calendar-wrapper">
+      <!-- Left Panel: Academic & Professional Background -->
+      <div class="academic-panel">
+        <div class="academic-panel-icon">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/65aaa494b6c64dd9f4dad797_icon.svg_fill.svg?v=1764051950" 
+            alt="Star Icon" 
+            class="star-icon"
+            width="24" 
+            height="24"
+            loading="lazy" />
+        </div>
+        <h2 class="academic-panel-title">{{ section.settings.left_panel_title | default: "ACADEMIC & PROFESSIONAL BACKGROUND" }}</h2>
+        <ul class="academic-panel-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'left_panel_item' %}
+              <li class="academic-panel-item" {{ block.shopify_attributes }}>{{ block.settings.item_text }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Right Panel: Awards and Recognitions -->
+      <div class="academic-panel">
+        <div class="academic-panel-icon">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/65aaa494b6c64dd9f4dad797_icon.svg_fill.svg?v=1764051950" 
+            alt="Star Icon" 
+            class="star-icon"
+            width="24" 
+            height="24"
+            loading="lazy" />
+        </div>
+        <h2 class="academic-panel-title">{{ section.settings.right_panel_title | default: "AWARDS AND RECOGNITIONS" }}</h2>
+        <ul class="academic-panel-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'right_panel_item' %}
+              <li class="academic-panel-item" {{ block.shopify_attributes }}>{{ block.settings.item_text }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Full Section Background */
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color | default: '#f5f5f5' }};
+    margin: 0 auto;
+    padding-top: {{ section.settings.desktop_padding_top }}px;
+    padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+
+  /* Container */
+  #shopify-section-{{ section.id }} .academic-calendar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Wrapper - Two Column Grid */
+  #shopify-section-{{ section.id }} .academic-calendar-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  /* Panel Styling */
+  #shopify-section-{{ section.id }} .academic-panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Icon Container */
+  #shopify-section-{{ section.id }} .academic-panel-icon {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .star-icon {
+    width: 35px;
+    height: 35px;
+    display: block;
+  }
+
+  /* Title Styling */
+  #shopify-section-{{ section.id }} .academic-panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2E2E2E;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 auto 25px auto;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2E2E2E;
+    line-height: 1.4;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* List Styling */
+  #shopify-section-{{ section.id }} .academic-panel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .academic-panel-item {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2E2E2E;
+    text-align: center;
+    position: relative;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .academic-panel-item::before {
+    content: "- ";
+    color: #2E2E2E;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .academic-calendar-wrapper {
+      gap: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel {
+      padding: 35px 30px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-title {
+      font-size: 17px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-item {
+      font-size: 16px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-calendar-container {
+      padding: 0 15px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-calendar-wrapper {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel {
+      padding: 30px 25px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-icon {
+      margin-bottom: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .star-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-title {
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-item {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .academic-calendar-container {
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-calendar-wrapper {
+      gap: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel {
+      padding: 25px 20px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-icon {
+      margin-bottom: 15px;
+    }
+
+    #shopify-section-{{ section.id }} .star-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-title {
+      font-size: 18px;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-item {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    #shopify-section-{{ section.id }} .academic-panel-list {
+      gap: 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Science Academic Calendar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "left_panel_title",
+      "label": "Left Panel Title",
+      "default": "ACADEMIC & PROFESSIONAL BACKGROUND"
+    },
+    {
+      "type": "text",
+      "id": "right_panel_title",
+      "label": "Right Panel Title",
+      "default": "AWARDS AND RECOGNITIONS"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "left_panel_item",
+      "name": "Left Panel Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "item_text",
+          "label": "Item Text",
+          "default": "Ph.D. in Chemistry, University of Otago, New Zealand"
+        }
+      ]
+    },
+    {
+      "type": "right_panel_item",
+      "name": "Right Panel Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "item_text",
+          "label": "Item Text",
+          "default": "Recipient of the 2010 SupplySide West Scientific Excellence Award"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science Academic Calendar",
+      "blocks": [
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Ph.D. in Chemistry, University of Otago, New Zealand"
+          }
+        },
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Post-doctoral research in Auburn, Alabama"
+          }
+        },
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Former faculty member in Chemistry & Food Science/ Nutrition, University of Massachusetts Amherst (10 years)"
+          }
+        },
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Founder & Chief Scientist, American River Nutrition (U.S.)"
+          }
+        },
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Fellow, American Oil Chemists' Society (AOCS)"
+          }
+        },
+        {
+          "type": "left_panel_item",
+          "settings": {
+            "item_text": "Senior editor for major tocotrienol scientific publications"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Recipient of the 2010 SupplySide West Scientific Excellence Award"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Frequent speaker at scientific conferences worldwide (including ISSFAL, AOCS, SupplySide West)"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Cited in over 50 peer-reviewed publications"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Featured in global media and scientific journals"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Holds prestigious honors in nutrition, vitamin research, and public health"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Member of notable industry and scientific societies (American Oil Chemists' Society, International Vitamin Conferences)"
+          }
+        },
+        {
+          "type": "right_panel_item",
+          "settings": {
+            "item_text": "Regular keynote speaker at international science and health events"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
