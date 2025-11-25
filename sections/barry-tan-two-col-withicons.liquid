@@ -1,0 +1,634 @@
+<div id="shopify-section-{{ section.id }}">
+  <!-- Header Section -->
+  {% if section.settings.header_title != blank %}
+    <div class="two-col-with-icons-header">
+      <h1 class="two-col-with-icons-header-title">{{ section.settings.header_title }}</h1>
+    </div>
+  {% endif %}
+
+  <!-- Content Blocks -->
+  {% for block in section.blocks %}
+    <div class="two-col-with-icons-content-section" {{ block.shopify_attributes }}>
+      <div class="two-col-with-icons-content-wrapper {% if block.settings.image_position == 'right' %}two-col-with-icons-image-right{% else %}two-col-with-icons-image-left{% endif %}">
+        {% if block.settings.image_position == 'left' %}
+          <div class="two-col-with-icons-image-column">
+            {% if block.settings.block_image != blank %}
+              <img
+                src="{{ block.settings.block_image | image_url: width: 800 }}"
+                alt="{{ block.settings.block_image.alt | escape }}"
+                class="two-col-with-icons-content-image"
+                width="800"
+                height="600"
+                loading="lazy" />
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="two-col-with-icons-text-column">
+          {% if block.settings.block_title != blank %}
+            <h2 class="two-col-with-icons-content-title">{{ block.settings.block_title }}</h2>
+          {% endif %}
+          {% if block.settings.block_paragraph != blank %}
+            <p class="two-col-with-icons-content-paragraph">{{ block.settings.block_paragraph }}</p>
+          {% endif %}
+          {% if block.settings.bullet_1 != blank or block.settings.bullet_2 != blank or block.settings.bullet_3 != blank or block.settings.bullet_4 != blank %}
+            <ul class="two-col-with-icons-bullet-list">
+              {% if block.settings.bullet_1 != blank %}
+                <li class="two-col-with-icons-bullet-item {% if block.settings.bullet_1_icon == 'cross' %}two-col-with-icons-bullet-cross{% else %}two-col-with-icons-bullet-tick{% endif %}">
+                  <span class="two-col-with-icons-bullet-icon">
+                    {% if block.settings.bullet_1_icon == 'cross' %}
+                      {% render 'icon-close', class: 'two-col-with-icons-icon-close' %}
+                    {% else %}
+                      {% render 'icon-checkmark', class: 'two-col-with-icons-icon-checkmark' %}
+                    {% endif %}
+                  </span>
+                  <span class="two-col-with-icons-bullet-text">{{ block.settings.bullet_1 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.bullet_2 != blank %}
+                <li class="two-col-with-icons-bullet-item {% if block.settings.bullet_2_icon == 'cross' %}two-col-with-icons-bullet-cross{% else %}two-col-with-icons-bullet-tick{% endif %}">
+                  <span class="two-col-with-icons-bullet-icon">
+                    {% if block.settings.bullet_2_icon == 'cross' %}
+                      {% render 'icon-close', class: 'two-col-with-icons-icon-close' %}
+                    {% else %}
+                      {% render 'icon-checkmark', class: 'two-col-with-icons-icon-checkmark' %}
+                    {% endif %}
+                  </span>
+                  <span class="two-col-with-icons-bullet-text">{{ block.settings.bullet_2 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.bullet_3 != blank %}
+                <li class="two-col-with-icons-bullet-item {% if block.settings.bullet_3_icon == 'cross' %}two-col-with-icons-bullet-cross{% else %}two-col-with-icons-bullet-tick{% endif %}">
+                  <span class="two-col-with-icons-bullet-icon">
+                    {% if block.settings.bullet_3_icon == 'cross' %}
+                      {% render 'icon-close', class: 'two-col-with-icons-icon-close' %}
+                    {% else %}
+                      {% render 'icon-checkmark', class: 'two-col-with-icons-icon-checkmark' %}
+                    {% endif %}
+                  </span>
+                  <span class="two-col-with-icons-bullet-text">{{ block.settings.bullet_3 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.bullet_4 != blank %}
+                <li class="two-col-with-icons-bullet-item {% if block.settings.bullet_4_icon == 'cross' %}two-col-with-icons-bullet-cross{% else %}two-col-with-icons-bullet-tick{% endif %}">
+                  <span class="two-col-with-icons-bullet-icon">
+                    {% if block.settings.bullet_4_icon == 'cross' %}
+                      {% render 'icon-close', class: 'two-col-with-icons-icon-close' %}
+                    {% else %}
+                      {% render 'icon-checkmark', class: 'two-col-with-icons-icon-checkmark' %}
+                    {% endif %}
+                  </span>
+                  <span class="two-col-with-icons-bullet-text">{{ block.settings.bullet_4 }}</span>
+                </li>
+              {% endif %}
+            </ul>
+          {% endif %}
+          {% if block.settings.conclusion_text != blank %}
+            <div class="two-col-with-icons-conclusion-box">
+              <p class="two-col-with-icons-conclusion-text">{{ block.settings.conclusion_text }}</p>
+            </div>
+          {% endif %}
+        </div>
+        {% if block.settings.image_position == 'right' %}
+          <div class="two-col-with-icons-image-column">
+            {% if block.settings.block_image != blank %}
+              <img
+                src="{{ block.settings.block_image | image_url: width: 800 }}"
+                alt="{{ block.settings.block_image.alt | escape }}"
+                class="two-col-with-icons-content-image"
+                width="800"
+                height="600"
+                loading="lazy" />
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  /* Full Section Background */
+  #shopify-section-{{ section.id }} {
+  background-color: {{ section.settings.background_color | default: '#f5f5f5' }};
+  margin: 0 auto;
+  padding-top: {{ section.settings.desktop_padding_top }}px;
+  padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+
+  /* Header Section */
+  #shopify-section-{{ section.id }} .two-col-with-icons-header {
+    background-color: transparent;
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 auto;
+    line-height: 1.2;
+    max-width: 720px;
+  }
+
+  /* Content Sections */
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-section {
+    background-color: transparent;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-title {
+    font-size: 32px;
+    color: #374650;
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-paragraph {
+    font-size: 22px;
+    line-height: 1.7;
+    color: #374650;
+    margin: 0 0 25px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-bullet-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #374650;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-bullet-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    padding: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-checkmark {
+    width: 24px;
+    height: 24px;
+    color: #22c55e;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-checkmark svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-checkmark svg path {
+    fill: #22c55e;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-close {
+    width: 20px;
+    height: 20px;
+    color: #374650;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-close svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-icon-close svg path {
+    fill: #6b7280;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-bullet-text {
+    flex: 1;
+  }
+
+  /* Conclusion Box */
+  #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-box {
+    background-color: #e0f2fe;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374650;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .two-col-with-icons-content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  /* Image position classes */
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-right .two-col-with-icons-image-column {
+    order: 2;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-right .two-col-with-icons-text-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-left .two-col-with-icons-image-column {
+    order: 1;
+  }
+  #shopify-section-{{ section.id }} .two-col-with-icons-image-left .two-col-with-icons-text-column {
+    order: 2;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 35px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+      gap: 40px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-title {
+      font-size: 28px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-paragraph {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+    padding: 0px !important;
+  }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-header {
+      padding: 40px 20px;
+      padding-bottom: 0px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 28px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-section {
+      padding: 40px 20px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    /* Reset order on mobile - image always comes first */
+    #shopify-section-{{ section.id }} .two-col-with-icons-image-column {
+      order: 1 !important;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-text-column {
+      order: 2 !important;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-paragraph {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-list {
+      margin: 0 0 20px 0;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-item {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-icon-checkmark,
+    #shopify-section-{{ section.id }} .two-col-with-icons-icon-close {
+      width: 20px;
+      height: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-box {
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-text {
+      font-size: 15px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .two-col-with-icons-header-title {
+      font-size: 24px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-title {
+      font-size: 22px;
+    }
+    #shopify-section-{{ section.id }} .two-col-with-icons-content-paragraph {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-list {
+      margin: 0 0 18px 0;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-item {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-bullet-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-icon-checkmark,
+    #shopify-section-{{ section.id }} .two-col-with-icons-icon-close {
+      width: 20px;
+      height: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-box {
+      padding: 14px;
+      margin-top: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .two-col-with-icons-conclusion-text {
+      font-size: 14px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Two col section icons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title",
+      "default": "Why Annatto is the Best Source: Know The Science"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block Title",
+          "default": "100% Tocotrienol Purity"
+        },
+        {
+          "type": "textarea",
+          "id": "block_paragraph",
+          "label": "Block Paragraph",
+          "default": "Annatto (Bixa orellana) is the only known plant that naturally provides tocotrienols with virtually no alpha-tocopherol. This unique composition means:"
+        },
+        {
+          "type": "text",
+          "id": "bullet_1",
+          "label": "Bullet Point 1",
+          "default": "No tocopherol interference"
+        },
+        {
+          "type": "select",
+          "id": "bullet_1_icon",
+          "label": "Bullet Point 1 Icon",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick (Checkmark)"
+            },
+            {
+              "value": "cross",
+              "label": "Cross (X)"
+            }
+          ],
+          "default": "tick"
+        },
+        {
+          "type": "text",
+          "id": "bullet_2",
+          "label": "Bullet Point 2",
+          "default": "Maximum bioavailability"
+        },
+        {
+          "type": "select",
+          "id": "bullet_2_icon",
+          "label": "Bullet Point 2 Icon",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick (Checkmark)"
+            },
+            {
+              "value": "cross",
+              "label": "Cross (X)"
+            }
+          ],
+          "default": "tick"
+        },
+        {
+          "type": "text",
+          "id": "bullet_3",
+          "label": "Bullet Point 3",
+          "default": "Enhanced therapeutic effects"
+        },
+        {
+          "type": "select",
+          "id": "bullet_3_icon",
+          "label": "Bullet Point 3 Icon",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick (Checkmark)"
+            },
+            {
+              "value": "cross",
+              "label": "Cross (X)"
+            }
+          ],
+          "default": "tick"
+        },
+        {
+          "type": "text",
+          "id": "bullet_4",
+          "label": "Bullet Point 4",
+          "default": "Optimal cellular absorption"
+        },
+        {
+          "type": "select",
+          "id": "bullet_4_icon",
+          "label": "Bullet Point 4 Icon",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick (Checkmark)"
+            },
+            {
+              "value": "cross",
+              "label": "Cross (X)"
+            }
+          ],
+          "default": "tick"
+        },
+        {
+          "type": "textarea",
+          "id": "conclusion_text",
+          "label": "Conclusion Text",
+          "default": "This is why annatto-derived tocotrienols are the gold standard — pure, potent, and clinically backed."
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Block Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two col section icons",
+      "blocks": [
+        {
+          "type": "content_block",
+          "settings": {
+            "block_title": "Why Annatto Is the Purest Source",
+            "block_paragraph": "Not all tocotrienol sources are created equal:",
+            "bullet_1": "Palm & Rice: Always mixed with tocopherols. These tocopherols compete for absorption and transport, limiting tocotrienol effectiveness.",
+            "bullet_1_icon": "cross",
+            "bullet_2": "Annatto: The only natural source that's 100% tocopherol-free. With annatto, tocotrienols can work without interference, delivering their full potential for your health.",
+            "bullet_2_icon": "tick",
+            "conclusion_text": "This is why annatto-derived tocotrienols are the gold standard — pure, potent, and clinically backed.",
+            "image_position": "left"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

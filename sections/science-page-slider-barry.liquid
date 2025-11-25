@@ -1,0 +1,605 @@
+<div id="shopify-section-{{ section.id }}" class="science-slider-section-{{ section.id }}">
+  <div class="science-slider-container-{{ section.id }}">
+    <!-- Header Section -->
+    <div class="science-slider-header-{{ section.id }}">
+      {% if section.settings.title != blank %}
+        <h2 class="science-slider-title-{{ section.id }}">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="science-slider-description-{{ section.id }}">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="science-slider-wrapper-{{ section.id }}">
+      <div class="science-slider-carousel-{{ section.id }}" id="science-carousel-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="science-slider-card-{{ section.id }}" {{ block.shopify_attributes }}>
+            {% if block.settings.card_image != blank %}
+              <div class="science-slider-card-image-{{ section.id }}">
+                <img
+                  src="{{ block.settings.card_image | image_url: width: 400 }}"
+                  alt="{{ block.settings.card_image.alt | escape }}"
+                  width="400"
+                  height="300"
+                  loading="lazy" />
+              </div>
+            {% endif %}
+            {% if block.settings.card_title != blank %}
+              <h3 class="science-slider-card-title-{{ section.id }}">{{ block.settings.card_title }}</h3>
+            {% endif %}
+            {% if block.settings.card_description != blank %}
+              <p class="science-slider-card-description-{{ section.id }}">{{ block.settings.card_description }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="science-slider-navigation-{{ section.id }}">
+        <button 
+          type="button"
+          class="science-slider-button-{{ section.id }} science-slider-button-prev-{{ section.id }}" 
+          aria-label="Previous"
+          data-direction="-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button 
+          type="button"
+          class="science-slider-button-{{ section.id }} science-slider-button-next-{{ section.id }}" 
+          aria-label="Next"
+          data-direction="1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Section Background */
+  #shopify-section-{{ section.id }}.science-slider-section-{{ section.id }} {
+    background-color: {{ section.settings.background_color | default: '#f0f7ff' }};
+    padding-top: {{ section.settings.desktop_padding_top }}px;
+    padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+  }
+
+  /* Container */
+  #shopify-section-{{ section.id }} .science-slider-container-{{ section.id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header Section */
+  #shopify-section-{{ section.id }} .science-slider-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-title-{{ section.id }} {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 auto 20px auto;
+    line-height: 1.2;
+    text-align: center;
+    max-width: 475px;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-description-{{ section.id }} {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  /* Carousel Wrapper */
+  #shopify-section-{{ section.id }} .science-slider-wrapper-{{ section.id }} {
+    position: relative;
+  }
+
+  /* Carousel */
+  #shopify-section-{{ section.id }} .science-slider-carousel-{{ section.id }} {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-carousel-{{ section.id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Card */
+  #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: calc(33.333% - 20px);
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: auto;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }}:hover {
+    background-color: #FADF8D;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Card Image */
+  #shopify-section-{{ section.id }} .science-slider-card-image-{{ section.id }} {
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-card-image-{{ section.id }} img {
+    max-width: 70px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Card Title */
+  #shopify-section-{{ section.id }} .science-slider-card-title-{{ section.id }} {
+    font-size: 24px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 18px 0;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* Card Description */
+  #shopify-section-{{ section.id }} .science-slider-card-description-{{ section.id }} {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #374650;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Navigation */
+  #shopify-section-{{ section.id }} .science-slider-navigation-{{ section.id }} {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }} {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e5e7eb;
+    color: #374650;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }}:hover:not(:disabled) {
+    background-color: #374650;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }}:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }}:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }} svg {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 968px) {
+    #shopify-section-{{ section.id }} .science-slider-title-{{ section.id }} {
+      font-size: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-description-{{ section.id }} {
+      font-size: 17px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
+      flex: 0 0 calc(50% - 15px);
+      min-width: calc(50% - 15px);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.science-slider-section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-container-{{ section.id }} {
+      padding: 0 15px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-header-{{ section.id }} {
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-title-{{ section.id }} {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-description-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
+      flex: 0 0 calc(100% - 20px);
+      min-width: calc(100% - 20px);
+      padding: 30px 25px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-title-{{ section.id }} {
+      font-size: 22px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-description-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-navigation-{{ section.id }} {
+      margin-top: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-button-{{ section.id }} {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .science-slider-title-{{ section.id }} {
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-description-{{ section.id }} {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-{{ section.id }} {
+      padding: 25px 20px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-title-{{ section.id }} {
+      font-size: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .science-slider-card-description-{{ section.id }} {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const sectionId = '{{ section.id }}';
+    const carouselId = 'science-carousel-' + sectionId;
+    
+    // Scroll carousel function
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById(carouselId);
+      if (!carousel) {
+        console.warn('Carousel not found:', carouselId);
+        return;
+      }
+
+      const firstCard = carousel.querySelector('.science-slider-card-' + sectionId);
+      if (!firstCard) {
+        console.warn('No cards found in carousel');
+        return;
+      }
+
+      const cardWidth = firstCard.offsetWidth;
+      const gap = 30;
+      const containerWidth = carousel.clientWidth;
+      
+      // Calculate how many cards are visible
+      let cardsVisible = Math.floor(containerWidth / (cardWidth + gap));
+      if (cardsVisible < 1) cardsVisible = 1;
+      
+      // Scroll by one card width + gap (smoother scrolling)
+      const scrollAmount = cardWidth + gap;
+      
+      const currentScroll = carousel.scrollLeft;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      
+      let scrollPosition;
+      if (direction > 0) {
+        // Scroll right/next
+        scrollPosition = Math.min(currentScroll + scrollAmount, maxScroll);
+      } else {
+        // Scroll left/prev
+        scrollPosition = Math.max(currentScroll - scrollAmount, 0);
+      }
+      
+      carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    // Equalize card heights
+    function equalizeCardHeights() {
+      const carousel = document.getElementById(carouselId);
+      if (!carousel) return;
+
+      const cards = carousel.querySelectorAll('.science-slider-card-' + sectionId);
+      if (cards.length === 0) return;
+
+      // Reset heights to auto to get natural height
+      cards.forEach(card => {
+        card.style.height = 'auto';
+      });
+
+      // Find the maximum height
+      let maxHeight = 0;
+      cards.forEach(card => {
+        const height = card.offsetHeight;
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+
+      // Apply max height to all cards
+      cards.forEach(card => {
+        card.style.height = maxHeight + 'px';
+      });
+    }
+
+    // Initialize carousel
+    function initCarousel() {
+      const carousel = document.getElementById(carouselId);
+      if (!carousel) {
+        // Retry if carousel not ready yet
+        setTimeout(initCarousel, 100);
+        return;
+      }
+
+      // Get buttons
+      const prevButton = carousel.closest('.science-slider-wrapper-' + sectionId)?.querySelector('.science-slider-button-prev-' + sectionId);
+      const nextButton = carousel.closest('.science-slider-wrapper-' + sectionId)?.querySelector('.science-slider-button-next-' + sectionId);
+      
+      // Add click event listeners to buttons
+      if (prevButton) {
+        prevButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          scrollCarousel(-1);
+        });
+      }
+      
+      if (nextButton) {
+        nextButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          scrollCarousel(1);
+        });
+      }
+
+      // Equalize card heights
+      equalizeCardHeights();
+
+      // Update button states
+      const updateButtons = () => {
+        if (!prevButton || !nextButton) return;
+        
+        const isAtStart = carousel.scrollLeft <= 5;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        const isAtEnd = carousel.scrollLeft >= maxScroll - 5;
+        
+        prevButton.style.opacity = isAtStart ? '0.5' : '1';
+        prevButton.style.pointerEvents = isAtStart ? 'none' : 'auto';
+        prevButton.disabled = isAtStart;
+        
+        nextButton.style.opacity = isAtEnd ? '0.5' : '1';
+        nextButton.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+        nextButton.disabled = isAtEnd;
+      };
+
+      // Update on scroll
+      carousel.addEventListener('scroll', updateButtons);
+      
+      // Update on resize
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          equalizeCardHeights();
+          updateButtons();
+        }, 250);
+      });
+      
+      // Initial update
+      updateButtons();
+      
+      // Update after a short delay to ensure layout is complete
+      setTimeout(function() {
+        equalizeCardHeights();
+        updateButtons();
+      }, 100);
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCarousel);
+    } else {
+      initCarousel();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Science Page Slider barry",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Clinical Evidence Across Key Health Areas"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Tocotrienols have been studied in dozens of human trials and published research worldwide. Here's what the science shows across eight major areas of health and wellness:"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f0f7ff"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "label": "Desktop Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "label": "Desktop Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Card description text goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science Page Slider barry",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Cardiovascular Health",
+            "card_description": "Human trials show tocotrienols lower LDL cholesterol, improve arterial flexibility, and support circulation by regulating the HMG-CoA reductase pathway – protecting long-term heart health."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Brain Health",
+            "card_description": "Long-term MRI studies found tocotrienols slow white matter lesion growth, protecting neurons and supporting memory, focus, and cognitive performance as we age."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_title": "Liver Health",
+            "card_description": "At 300 mg/day, tocotrienols normalize liver enzyme levels and reduce inflammation, supporting detox, liver balance, and metabolic health."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
