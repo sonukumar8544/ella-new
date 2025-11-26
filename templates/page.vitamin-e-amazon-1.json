@@ -469,7 +469,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class=\"tocotrienol-cta-new\">\n    <a href=\"https://wellnessextract.com/pages/how-tocotrienol-works\" class=\"tocotrienol-cta-new-button\">\n        See How Tocotrienols Work Inside Your Body\n    </a>\n</div>\n\n<style>\n.tocotrienol-cta-new {\n    margin-top: 0px !important;\n    text-align: center;\n}\n\n.tocotrienol-cta-new-button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    color: #086b92;\n    font-weight: 600;\n    font-size: 16px;\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    border-bottom: 2px solid #086b92;\n    padding-bottom: 2px;\n}\n\n.tocotrienol-cta-new-button:hover {\n    border-bottom-color: #054c68;\n}\n</style>"
+        "custom_liquid": "<div class=\"tocotrienol-cta-new\">\n    <a href=\"https://wellnessextract.com/pages/how-tocotrienol-works\" class=\"tocotrienol-cta-new-button\">\n        See How Tocotrienols Work Inside Your Body\n    </a>\n</div>\n\n<style>\n.tocotrienol-cta-new {\n    margin-top: 0px !important;\n    text-align: center;\n}\n\n.tocotrienol-cta-new-button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    color: #086b92;\n    font-weight: 600;\n    font-size: 16px;\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    border-bottom: 1px solid #086b92;\n    padding-bottom: 2px;\n}\n\n.tocotrienol-cta-new-button:hover {\n    border-bottom-color: #054c68;\n}\n</style>"
       }
     },
     "compare_two_col_sections_P7kA8Q": {
