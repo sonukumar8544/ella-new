@@ -485,18 +485,6 @@
         "mobile_image": "shopify://shop_images/Div_section_5.png"
       }
     },
-    "product_zig_zag_zj7cpx": {
-      "type": "product-zig-zag",
-      "disabled": true,
-      "name": "Vitamin Feature Highlight",
-      "settings": {}
-    },
-    "product_zig_zag_DKrkCn": {
-      "type": "product-zig-zag",
-      "disabled": true,
-      "name": "zig zag feature",
-      "settings": {}
-    },
     "vitemin_page_image_with_col_9LXznG": {
       "type": "vitemin-page-image-with-col",
       "blocks": {
@@ -579,6 +567,13 @@
         "heading": "Why Annatto Is the Best Source",
         "subheading": "<p>Annatto is the only natural source that gives you <strong>100% tocotrienols</strong> with zero tocopherols — the purest form for real results.</p>",
         "side_image_alt": "Annatto Tocotrienols Bottles"
+      }
+    },
+    "custom_liquid_bLHQcA": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"tocotrienol-cta-new\">\n    <a href=\"https://wellnessextract.com/pages/annatto-purest-tocotrienol-source\" class=\"tocotrienol-cta-new-button\">\n        Your Quick Annatto Guide\n    </a>\n</div>\n\n<style>\n.tocotrienol-cta-new {\n    margin-top: 0px !important;\n    text-align: center;\n}\n\n.tocotrienol-cta-new-button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    color: #086b92;\n    font-weight: 600;\n    font-size: 16px;\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    border-bottom: 1px solid #086b92;\n    padding-bottom: 2px;\n    margin-bottom: 10px; /* added */\n}\n\n.tocotrienol-cta-new-button:hover {\n    border-bottom-color: #054c68;\n}\n</style>"
       }
     },
     "content_image_section_artwRU": {
@@ -921,6 +916,49 @@
         "cta_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1"
       }
     },
+    "eto_trust_section_AEXya3": {
+      "type": "eto-trust-section",
+      "name": "ETO Amazon Trust Banner",
+      "settings": {
+        "hide_satisfaction_banner": false,
+        "hide_trust_banner": true,
+        "heading_line_1": "Now you know the truth",
+        "heading_line_2": "about Vitamin E.",
+        "primary_button_text": "Buy Tocotrienol Now",
+        "primary_button_url": "https://www.amazon.com/dp/B07PY8RF69?maas=maas_adg_4A0CBF518970A9627D94B68605BBA442_afap_abs&ref_=aa_maas&tag=maas&th=1",
+        "primary_button_new_tab": false,
+        "secondary_link_text": "Keep Learning",
+        "secondary_link_url": "https://wellnessextract.com/pages/tocotrienol-research-journey",
+        "secondary_link_new_tab": false,
+        "container_width": 1050,
+        "padding_top": 55,
+        "padding_bottom": 55,
+        "padding_horizontal": 20,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#fefaec",
+        "heading_font_family": "assistant_n4",
+        "heading_font_size": 2.5,
+        "heading_font_size_mobile": 2,
+        "heading_font_size_small_mobile": 1.5,
+        "heading_font_weight": "400",
+        "heading_color": "#374650",
+        "primary_button_font_family": "assistant_n4",
+        "primary_button_font_size": 1.5,
+        "primary_button_font_weight": "600",
+        "primary_button_bg_color": "#f8ce63",
+        "primary_button_text_color": "#374650",
+        "primary_button_hover_bg_color": "#f8ce63",
+        "primary_button_padding_vertical": 12,
+        "primary_button_padding_horizontal": 24,
+        "primary_button_border_radius": 20,
+        "secondary_link_font_family": "assistant_n4",
+        "secondary_link_font_size": 1.4,
+        "secondary_link_font_weight": "400",
+        "secondary_link_color": "#374650",
+        "secondary_link_hover_color": "#666666"
+      }
+    },
     "custom_liquid_8DztYg": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -1026,10 +1064,12 @@
         "mg_bottom_mobile": 25
       }
     },
-    "eto_trust_section_AEXya3": {
+    "eto_trust_section_U4FXtL": {
       "type": "eto-trust-section",
       "name": "ETO Amazon Trust Banner",
       "settings": {
+        "hide_satisfaction_banner": true,
+        "hide_trust_banner": false,
         "heading_line_1": "Now you know the truth",
         "heading_line_2": "about Vitamin E.",
         "primary_button_text": "Buy Tocotrienol Now",
@@ -1080,10 +1120,9 @@
     "four_grid_block_VPbHWd",
     "custom_liquid_LpByAc",
     "compare_two_col_sections_P7kA8Q",
-    "product_zig_zag_zj7cpx",
-    "product_zig_zag_DKrkCn",
     "vitemin_page_image_with_col_9LXznG",
     "vitemin_page_fullbanner_section_qCtiR6",
+    "custom_liquid_bLHQcA",
     "content_image_section_artwRU",
     "vitemin_page_table_JDhrUU",
     "ennatto_two_col_sections_L4MGnX",
@@ -1091,8 +1130,9 @@
     "color_driven_faq_section_LGqPXx",
     "custom_liquid_jBtUJn",
     "vitemin_product_section_c4zDR9",
+    "eto_trust_section_AEXya3",
     "custom_liquid_8DztYg",
     "16409351508cd2f3e1",
-    "eto_trust_section_AEXya3"
+    "eto_trust_section_U4FXtL"
   ]
 }
