@@ -573,7 +573,8 @@
         ".career-job-modal ul {margin-top: 5px; margin-bottom: 0px;}",
         ".career-job-modal h4 {margin-bottom: 0px; font-size: 20px; line-height: 30px;}",
         ".career-job-modal p {margin-bottom: 0px;}",
-        ".custom-modal {z-index: 999999;}"
+        ".custom-modal {z-index: 999999;}",
+        ".slick-dots li.slick-active button, .slider-dots li.active button {background: white !important;}"
       ],
       "settings": {
         "main_title": "JOIN THE “WE” TEAM",
@@ -955,7 +956,9 @@
         "text_BJtMkK",
         "text_bFXTy6"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".custom-service-block .policies-content .policies-text.type--font_2,.custom-service-block .policies-content,.custom-service-block .policies-block-wrapper.items-align-left .policies-content {text-align: center;}"
+      ],
       "settings": {
         "custom_liquid1": false,
         "id_section": "",
