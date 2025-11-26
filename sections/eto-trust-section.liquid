@@ -1,5 +1,6 @@
 {% comment %} add here new div for 90 day satisfection garanty {% endcomment %}
 
+{% unless section.settings.hide_satisfaction_banner %}
 <div class="amazon-patti-sec">
   <div class="amazon-patti-sec__container">
     <div class="amazon-patti-sec__item">
@@ -15,7 +16,9 @@
     </div>
   </div>
 </div>
+{% endunless %}
 
+{% unless section.settings.hide_trust_banner %}
 <div class="eto-amazon-trust-banner">
   <div class="eto-amazon-trust-banner__container">
     <div class="eto-amazon-trust-banner__content">
@@ -52,6 +55,7 @@
     </div>
   </div>
 </div>
+{% endunless %}
 
 <style>
   .amazon-patti-sec {
@@ -246,6 +250,24 @@
   "class": "eto-amazon-spaced-section",
       "settings": [
         {
+      "type": "header",
+      "content": "Visibility Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_satisfaction_banner",
+      "label": "Hide Satisfaction Guarantee Banner",
+      "default": false,
+      "info": "Hide the 90-Day Satisfaction Guarantee banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_trust_banner",
+      "label": "Hide Trust Banner",
+      "default": false,
+      "info": "Hide the trust banner with heading and buttons"
+    },
+    {
       "type": "header",
       "content": "Banner Content"
     },
