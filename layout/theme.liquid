@@ -201,6 +201,18 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    {% comment %} Email js {% endcomment %}
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "fv6aNHPjGCO4iW4X9",
+  });
+})();
+</script>
+
     <div class="body-content-wrapper">
       <a class="skip-to-content-link button visually-hidden" href="#MainContent">
         {{- 'accessibility.skip_to_text' | t -}}

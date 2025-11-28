@@ -1,0 +1,447 @@
+<!-- career-page-html -->
+{% assign education_options = section.settings.education_options | newline_to_br | split: '<br />' %}
+{% assign experience_options = section.settings.experience_options | newline_to_br | split: '<br />' %}
+{% assign notice_options = section.settings.notice_options | newline_to_br | split: '<br />' %}
+<style>
+  .career-html {
+    background: linear-gradient(180deg, rgba(6,123,161,0.06) 0%, {{ section.settings.background_color }} 100%);
+    padding: clamp(40px, 6vw, 80px) 0;
+  }
+
+  .career-html__wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .career-html__heading {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .career-html__heading h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    margin: 0 0 10px;
+    color: #1a2a3b;
+    font-weight: 700;
+  }
+
+  .career-html__heading p {
+    color: #5c6670;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .career-html__form {
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #eff3f7;
+    box-shadow: 0 25px 80px rgba(9, 30, 66, 0.08);
+    padding: clamp(24px, 5vw, 56px);
+  }
+
+  .career-html__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 28px;
+  }
+
+  .career-html__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .career-html__field label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2d3c;
+  }
+
+  .career-html__field input,
+  .career-html__field select {
+    border: 1px solid #c8dfee;
+    border-radius: 10px;
+    padding: 15px 16px;
+    font-size: 15px;
+    background-color: #fdfefe;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .career-html__field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230678b1' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px 8px;
+    padding-right: 42px;
+  }
+
+  .career-html__field input:focus,
+  .career-html__field select:focus {
+    outline: none;
+    border-color: #067ba1;
+    box-shadow: 0 0 0 3px rgba(6, 123, 161, 0.15);
+  }
+
+  .career-html__alert {
+    display: none;
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  .career-html__alert--success {
+    background: #e8f9ef;
+    color: #1a7a41;
+  }
+
+  .career-html__alert--error {
+    background: #fdecea;
+    color: #b8322b;
+  }
+
+  .career-html__error {
+    display: none;
+    font-size: 13px;
+    color: #c0392b;
+  }
+
+  .career-html__actions {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .career-html__actions button {
+    border: 2px solid #086b92;
+    color: #fff;
+    background: #086b92;
+    border-radius: 999px;
+    padding: 14px 48px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .career-html__actions button:hover:not(:disabled) {
+    background: #05536e;
+    border-color: #05536e;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .career-html__actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 900px) {
+    .career-html__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
+
+{% render 'ajax-loader' %}
+<section class="career-html" id="career-section-{{ section.id }}">
+  <div class="career-html__wrapper">
+    <div class="career-html__heading">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p>{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <form id="career_application" class="career-html__form" novalidate>
+      {% render 'form_message' %}
+      <input type="hidden" name="mail_title" value="Career Page Application">
+      <input type="hidden" name="reciever_mail" value="career@wellnessextract.com">
+
+      <div class="career-html__grid">
+        <div class="career-html__field">
+          <label for="career_full_name">Full Name *</label>
+          <input id="career_full_name" name="full_name" type="text" required placeholder="Enter Full Name">
+          <small class="career-html__error" data-field-error="full_name"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_email">Email Address *</label>
+          <input id="career_email" name="email" type="email" required placeholder="Enter Email Address">
+          <small class="career-html__error" data-field-error="email"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_phone">Contact Number *</label>
+          <input
+            id="career_phone"
+            name="phone"
+            type="tel"
+            inputmode="numeric"
+            pattern="^[0-9\\s]+$"
+            minlength="7"
+            maxlength="15"
+            required
+            placeholder="81234 56789">
+          <small class="career-html__error" data-field-error="phone"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_linkedin">LinkedIn Public URL</label>
+          <input id="career_linkedin" name="linkedin_url" type="url" placeholder="https://www.linkedin.com/in/username">
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_portfolio">{{ section.settings.portfolio_label }}</label>
+          <input id="career_portfolio" name="portfolio_link" type="url" placeholder="https://www.example.com/portfolio-or-resume">
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_ctc">Mention Your Current CTC? *</label>
+          <input id="career_ctc" name="current_ctc" type="text" required placeholder="Enter Current CTC">
+          <small class="career-html__error" data-field-error="current_ctc"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_education">Mention Your Highest Level Of Education? *</label>
+          <select id="career_education" name="education_level" required>
+            <option value="" disabled selected>Select Option</option>
+            {% for option in education_options %}
+              {% assign trimmed = option | strip %}
+              {% if trimmed != blank %}
+                <option value="{{ trimmed }}">{{ trimmed }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <small class="career-html__error" data-field-error="education_level"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_experience">Mention Your Experience (In Years) *</label>
+          <select id="career_experience" name="experience_years" required>
+            <option value="" disabled selected>Select Option</option>
+            {% for option in experience_options %}
+              {% assign trimmed = option | strip %}
+              {% if trimmed != blank %}
+                <option value="{{ trimmed }}">{{ trimmed }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <small class="career-html__error" data-field-error="experience_years"></small>
+        </div>
+
+        <div class="career-html__field">
+          <label for="career_notice">Mention Your Notice Period *</label>
+          <select id="career_notice" name="notice_period" required>
+            <option value="" disabled selected>Select Option</option>
+            {% for option in notice_options %}
+              {% assign trimmed = option | strip %}
+              {% if trimmed != blank %}
+                <option value="{{ trimmed }}">{{ trimmed }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+          <small class="career-html__error" data-field-error="notice_period"></small>
+        </div>
+      </div>
+
+      <div class="career-html__alert career-html__alert--success" data-career-alert="success"></div>
+      <div class="career-html__alert career-html__alert--error" data-career-alert="error"></div>
+
+      <div class="career-html__actions">
+        <button type="submit">
+          {{ section.settings.submit_label }}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer>
+  (function () {
+    const emailJsConfig = {
+      serviceId: "service_tdt0oon",
+      templateId: "template_4q46ue8",
+      publicKey: "fv6aNHPjGCO4iW4X9",
+      privateKey: "1Ge_Jan3nfk5lsnh7gGmp"
+    };
+
+    const form = document.getElementById("career_application");
+    const submitButton = form ? form.querySelector("button[type='submit']") : null;
+    const successAlert = document.querySelector("[data-career-alert='success']");
+    const errorAlert = document.querySelector("[data-career-alert='error']");
+    const fieldErrors = document.querySelectorAll("[data-field-error]");
+
+    function resetAlerts() {
+      [successAlert, errorAlert].forEach((alert) => {
+        if (alert) {
+          alert.style.display = "none";
+          alert.textContent = "";
+        }
+      });
+    }
+
+    function showAlert(type, message) {
+      resetAlerts();
+      const target = type === "success" ? successAlert : errorAlert;
+      if (target) {
+        target.style.display = "block";
+        target.textContent = message;
+      }
+    }
+
+    function validateFields() {
+      let isValid = true;
+
+      fieldErrors.forEach((errorEl) => {
+        errorEl.textContent = "";
+        errorEl.style.display = "none";
+      });
+
+      const requiredInputs = form.querySelectorAll("[required]");
+      requiredInputs.forEach((input) => {
+        if (!input.checkValidity()) {
+          const errorTarget = form.querySelector(`[data-field-error='${input.name}']`);
+          if (errorTarget) {
+            errorTarget.textContent = input.validationMessage;
+            errorTarget.style.display = "block";
+          }
+          isValid = false;
+        }
+      });
+
+      return isValid;
+    }
+
+    function setLoading(state) {
+      if (!submitButton) return;
+      if (state) {
+        submitButton.dataset.defaultText = submitButton.dataset.defaultText || submitButton.textContent;
+        submitButton.textContent = "Submitting...";
+        submitButton.disabled = true;
+      } else {
+        submitButton.textContent = submitButton.dataset.defaultText || submitButton.textContent;
+        submitButton.disabled = false;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!form) return;
+      if (typeof emailjs === "undefined") {
+        console.error("EmailJS failed to load.");
+        return;
+      }
+
+      emailjs.init({
+        publicKey: emailJsConfig.publicKey,
+        privateKey: emailJsConfig.privateKey
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        resetAlerts();
+
+        const fieldsOk = validateFields();
+        if (!fieldsOk) {
+          showAlert("error", "Please fill out all required fields.");
+          return;
+        }
+
+        setLoading(true);
+
+        emailjs
+          .sendForm(emailJsConfig.serviceId, emailJsConfig.templateId, form)
+          .then(() => {
+            form.reset();
+            showAlert("success", "{{ section.settings.success_message }}");
+          })
+          .catch((error) => {
+            console.error(error);
+            showAlert("error", "{{ section.settings.error_message }}");
+          })
+          .finally(() => setLoading(false));
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Career Page HTML Form",
+  "class": "career-html-form-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join Our Team"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Share your details below and our talent team will be in touch."
+    },
+    {
+      "type": "textarea",
+      "id": "education_options",
+      "label": "Education options (one per line)",
+      "default": "Select Option\nHigh School\nBachelor's Degree\nMaster's Degree\nDoctorate"
+    },
+    {
+      "type": "textarea",
+      "id": "experience_options",
+      "label": "Experience options (one per line)",
+      "default": "Select Option\n0-1 Years\n1-3 Years\n3-5 Years\n5+ Years"
+    },
+    {
+      "type": "textarea",
+      "id": "notice_options",
+      "label": "Notice period options (one per line)",
+      "default": "Select Option\nImmediate\n15 Days\n30 Days\n60+ Days"
+    },
+    {
+      "type": "text",
+      "id": "portfolio_label",
+      "label": "Portfolio/Resume field label",
+      "default": "Add Your Portfolio / Resume Link"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Button label",
+      "default": "Submit Application"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks! Your application has been received."
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Error message",
+      "default": "Something went wrong. Please try again."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f7fb"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career Page HTML Form"
+    }
+  ]
+}
+{% endschema %}
+
+
