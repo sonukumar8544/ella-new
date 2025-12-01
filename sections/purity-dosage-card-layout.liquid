@@ -1,0 +1,743 @@
+<div class="dosage-card-section" style="
+  --section-padding-top: {{ section.settings.section_padding_top }}px;
+  --section-padding-left: {{ section.settings.section_padding_left }}px;
+  --section-padding-right: {{ section.settings.section_padding_right }}px;
+  --section-bg-gradient: {{ section.settings.section_bg_gradient }};
+  --section-height: {{ section.settings.section_height }}px;
+  --left-column-padding: {{ section.settings.left_column_padding }}px;
+  --right-column-padding: {{ section.settings.right_column_padding }}px;
+  --container-gap: {{ section.settings.container_gap }}px;
+  --title-font-size: {{ section.settings.title_font_size }}px;
+  --title-color: {{ section.settings.title_color }};
+  --title-font-weight: {{ section.settings.title_font_weight }};
+  --title-margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  --subtitle-font-size: {{ section.settings.subtitle_font_size }}px;
+  --subtitle-color: {{ section.settings.subtitle_color }};
+  --subtitle-margin-bottom: {{ section.settings.subtitle_margin_bottom }}px;
+  --card-gap: {{ section.settings.card_gap }}px;
+  --card-padding: {{ section.settings.card_padding }}px;
+  --card-border-width: {{ section.settings.card_border_width }}px;
+  --card-header-font-size: {{ section.settings.card_header_font_size }}px;
+  --card-header-color: {{ section.settings.card_header_color }};
+  --card-header-font-weight: {{ section.settings.card_header_font_weight }};
+  --card-header-margin-bottom: {{ section.settings.card_header_margin_bottom }}px;
+  --card-text-font-size: {{ section.settings.card_text_font_size }}px;
+  --card-text-color: {{ section.settings.card_text_color }};
+  --card-text-line-height: {{ section.settings.card_text_line_height }};
+  --caution-bg-color: {{ section.settings.caution_bg_color }};
+  --caution-text-color: {{ section.settings.caution_text_color }};
+  --caution-font-size: {{ section.settings.caution_font_size }}px;
+  --caution-padding: {{ section.settings.caution_padding }}px;
+  --caution-border-radius: {{ section.settings.caution_border_radius }}px;
+  --caution-margin-top: {{ section.settings.caution_margin_top }}px;
+  --image-width: {{ section.settings.image_width }}px;
+  --image-height: {{ section.settings.image_height }}px;
+  --image-object-fit: {{ section.settings.image_object_fit }};
+">
+  <div class="dosage-container">
+    <div class="column-left">
+      {% if section.settings.product_image != blank %}
+        <div class="image-wrapper">
+          <img src="{{ section.settings.product_image | image_url: width: 800 }}" alt="Product" class="product-image">
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="column-right">
+      <div class="header-section">
+        {% if section.settings.title != blank %}
+          <h2 class="section-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.subtitle != blank %}
+          <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+      
+      <div class="cards-grid">
+        {% for block in section.blocks %}
+          <div class="info-card" {{ block.shopify_attributes }}>
+            {% if block.settings.card_header != blank %}
+              <h3 class="card-header">{{ block.settings.card_header }}</h3>
+            {% endif %}
+            {% if block.settings.card_text != blank %}
+              <p class="card-text">{{ block.settings.card_text }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      
+      {% if section.settings.caution_text != blank %}
+        <div class="caution-box">
+          <p class="caution-text">{{ section.settings.caution_text }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+.dosage-card-section {
+  width: 100%;
+  min-height: var(--section-height, 850px);
+  padding-top: var(--section-padding-top);
+  padding-left: var(--section-padding-left);
+  padding-right: var(--section-padding-right);
+  background: var(--section-bg-gradient);
+  box-sizing: border-box;
+}
+
+.header-section {
+  text-align: left;
+  margin-bottom: var(--subtitle-margin-bottom);
+  width: 100%;
+}
+
+.dosage-container {
+  display: flex;
+  align-items: stretch;
+  gap: var(--container-gap);
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.column-left {
+  flex: 1;
+  padding: var(--left-column-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.column-right {
+  flex: 1;
+  padding: var(--right-column-padding);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  width: var(--image-width);
+  height: var(--image-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--image-object-fit);
+  display: block;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--title-font-size);
+  font-weight: var(--title-font-weight);
+  color: var(--title-color);
+  margin: 0 0 var(--title-margin-bottom) 0;
+}
+
+.section-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: var(--subtitle-font-size);
+  font-weight: 400;
+  color: var(--subtitle-color);
+  margin: 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-gap);
+}
+
+.info-card {
+  padding: var(--card-padding);
+  padding-left: calc(var(--card-padding) + var(--card-border-width));
+  position: relative;
+  box-sizing: border-box;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--card-border-width);
+  background: linear-gradient(to bottom, #4ECDC4, #44A08D);
+}
+
+.card-header {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--card-header-font-size);
+  font-weight: var(--card-header-font-weight);
+  color: var(--card-header-color);
+  margin: 0 0 var(--card-header-margin-bottom) 0;
+}
+
+.card-text {
+  font-family: 'Lato', sans-serif;
+  font-size: var(--card-text-font-size);
+  font-weight: 400;
+  color: var(--card-text-color);
+  line-height: var(--card-text-line-height);
+  margin: 0;
+}
+
+.caution-box {
+  background-color: var(--caution-bg-color);
+  padding: var(--caution-padding);
+  border-radius: var(--caution-border-radius);
+  margin-top: var(--caution-margin-top);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.caution-text {
+  font-family: 'Lato', sans-serif;
+  font-size: var(--caution-font-size);
+  font-weight: 400;
+  color: var(--caution-text-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .dosage-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .column-left,
+  .column-right {
+    width: 100%;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: calc(var(--title-font-size) * 0.9);
+  }
+  
+  .section-subtitle {
+    font-size: calc(var(--subtitle-font-size) * 0.9);
+  }
+  
+  .header-section {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dosage-card-section {
+    padding-top: calc(var(--section-padding-top) * 0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: auto;
+  }
+  
+  .dosage-container {
+    gap: 20px;
+  }
+  
+  .column-left {
+    padding: calc(var(--left-column-padding) * 0.7);
+  }
+  
+  .column-right {
+    padding: calc(var(--right-column-padding) * 0.7);
+  }
+  
+  .section-title {
+    font-size: calc(var(--title-font-size) * 0.8);
+  }
+  
+  .section-subtitle {
+    font-size: calc(var(--subtitle-font-size) * 0.85);
+  }
+  
+  .card-header {
+    font-size: calc(var(--card-header-font-size) * 0.9);
+  }
+  
+  .card-text {
+    font-size: calc(var(--card-text-font-size) * 0.9);
+  }
+  
+  .caution-text {
+    font-size: calc(var(--caution-font-size) * 0.9);
+  }
+  
+  .image-wrapper {
+    width: 100%;
+    max-width: var(--image-width);
+    height: auto;
+    max-height: var(--image-height);
+  }
+  
+  .header-section {
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Dosage Card Layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Right Dosage"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Backed by science"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "textarea",
+      "id": "caution_text",
+      "label": "Caution Text",
+      "default": "▲ A Note of Caution: Some fake brands mislead customers with extreme \"high-potency\" claims like 1000 mg doses. Such dosages are not backed by science and can be unsafe."
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "Section Height",
+      "default": 850
+    },
+    {
+      "type": "text",
+      "id": "section_bg_gradient",
+      "label": "Section Background Gradient",
+      "default": "linear-gradient(272.54deg, #FDFEEC 5.63%, #FEFEF0 17.36%, #FDFDFB 33.59%, #FFFFFF 75.16%)",
+      "info": "CSS gradient value"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_left",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Left",
+      "default": 290
+    },
+    {
+      "type": "range",
+      "id": "section_padding_right",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Right",
+      "default": 290
+    },
+    {
+      "type": "header",
+      "content": "Column Settings"
+    },
+    {
+      "type": "range",
+      "id": "left_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Left Column Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "right_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Right Column Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "container_gap",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container Gap",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Title Font Weight",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Margin Bottom",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Settings"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_bottom",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Subtitle Margin Bottom",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Card Gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Card Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Width",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Card Header Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_header_font_size",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Header Font Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "card_header_color",
+      "label": "Card Header Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "card_header_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Card Header Font Weight",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "card_header_margin_bottom",
+      "min": 5,
+      "max": 19,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Header Margin Bottom",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "Card Text Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_text_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Text Font Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Text Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "card_text_line_height",
+      "min": 1.2,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Card Text Line Height",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Caution Box Settings"
+    },
+    {
+      "type": "color",
+      "id": "caution_bg_color",
+      "label": "Caution Background Color",
+      "default": "#E3F2FD"
+    },
+    {
+      "type": "color",
+      "id": "caution_text_color",
+      "label": "Caution Text Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "caution_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Caution Font Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "caution_padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Caution Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "caution_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Caution Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "caution_margin_top",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Caution Margin Top",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Width",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Height",
+      "default": 500
+    },
+    {
+      "type": "select",
+      "id": "image_object_fit",
+      "label": "Image Object Fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "scale-down",
+          "label": "Scale Down"
+        }
+      ],
+      "default": "contain"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_card",
+      "name": "Info Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_header",
+          "label": "Card Header",
+          "default": "125 Mg/day"
+        },
+        {
+          "type": "textarea",
+          "id": "card_text",
+          "label": "Card Text",
+          "default": "Perfect for daily wellness and cellular support."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dosage Card Layout",
+      "blocks": [
+        {
+          "type": "info_card",
+          "settings": {
+            "card_header": "125 Mg/day",
+            "card_text": "Perfect for daily wellness and cellular support."
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "card_header": "300 Mg/day",
+            "card_text": "Clinically validated therapeutic dose for targeted benefits in heart, brain, liver, and metabolic health."
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "card_header": "Consistency matters",
+            "card_text": "Studies show measurable changes within 30-60 days of daily use."
+          }
+        },
+        {
+          "type": "info_card",
+          "settings": {
+            "card_header": "How to take it",
+            "card_text": "For better absorption, take with a meal that includes healthy fats."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

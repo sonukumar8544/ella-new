@@ -1,0 +1,456 @@
+<div class="comparison-table-section" style="
+  --section-padding: {{ section.settings.section_padding }}px;
+  --section-bg-color: {{ section.settings.section_bg_color }};
+  --table-max-width: {{ section.settings.table_max_width }}px;
+  --title-font-size: {{ section.settings.title_font_size }}px;
+  --title-color: {{ section.settings.title_color }};
+  --title-margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  --header-bg-color: {{ section.settings.header_bg_color }};
+  --header-text-color: {{ section.settings.header_text_color }};
+  --header-font-size: {{ section.settings.header_font_size }}px;
+  --header-padding: {{ section.settings.header_padding }}px;
+  --row-bg-color-1: {{ section.settings.row_bg_color_1 }};
+  --row-bg-color-2: {{ section.settings.row_bg_color_2 }};
+  --row-text-color: {{ section.settings.row_text_color }};
+  --row-font-size: {{ section.settings.row_font_size }}px;
+  --row-padding: {{ section.settings.row_padding }}px;
+  --border-color: {{ section.settings.border_color }};
+  --border-width: {{ section.settings.border_width }}px;
+">
+  <div class="table-container">
+    {% if section.settings.title != blank %}
+      <h2 class="table-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          {% if section.settings.column_1_header != blank %}
+            <th>{{ section.settings.column_1_header }}</th>
+          {% endif %}
+          {% if section.settings.column_2_header != blank %}
+            <th>{{ section.settings.column_2_header }}</th>
+          {% endif %}
+          {% if section.settings.column_3_header != blank %}
+            <th>{{ section.settings.column_3_header }}</th>
+          {% endif %}
+          {% if section.settings.column_4_header != blank %}
+            <th>{{ section.settings.column_4_header }}</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for block in section.blocks %}
+          <tr class="table-row">
+            {% assign col1 = block.settings.column_1 %}
+            {% assign col2 = block.settings.column_2 %}
+            {% assign col3 = block.settings.column_3 %}
+            {% assign col4 = block.settings.column_4 %}
+            
+            {% if col1 != blank %}
+              <td>{{ col1 }}</td>
+            {% endif %}
+            {% if col2 != blank %}
+              <td>{{ col2 }}</td>
+            {% endif %}
+            {% if col3 != blank %}
+              <td>{{ col3 }}</td>
+            {% endif %}
+            {% if col4 != blank %}
+              <td>{{ col4 }}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+.comparison-table-section {
+  width: 100%;
+  padding: var(--section-padding);
+  background-color: var(--section-bg-color);
+  box-sizing: border-box;
+}
+
+.table-container {
+  max-width: var(--table-max-width);
+  margin: 0 auto;
+}
+
+.table-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--title-font-size);
+  font-weight: 700;
+  color: var(--title-color);
+  margin: 0 0 var(--title-margin-bottom) 0;
+  text-align: center;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.comparison-table thead tr {
+  background-color: var(--header-bg-color);
+}
+
+.comparison-table thead th {
+  color: var(--header-text-color);
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--header-font-size);
+  font-weight: 700;
+  padding: var(--header-padding);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: var(--row-bg-color-1);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: var(--row-bg-color-2);
+}
+
+.comparison-table tbody td {
+  color: var(--row-text-color);
+  font-family: 'Lato', sans-serif;
+  font-size: var(--row-font-size);
+  font-weight: 400;
+  padding: var(--row-padding);
+  border-bottom: var(--border-width) solid var(--border-color);
+  vertical-align: middle;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .comparison-table-section {
+    padding: calc(var(--section-padding) * 0.6);
+  }
+  
+  .table-title {
+    font-size: calc(var(--title-font-size) * 0.8);
+  }
+  
+  .comparison-table thead th,
+  .comparison-table tbody td {
+    font-size: calc(var(--row-font-size) * 0.9);
+    padding: calc(var(--row-padding) * 0.7);
+  }
+  
+  .comparison-table {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td,
+  .comparison-table th {
+    display: block;
+  }
+  
+  .comparison-table thead {
+    display: none;
+  }
+  
+  .comparison-table tr {
+    margin-bottom: 10px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 4px;
+  }
+  
+  .comparison-table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .comparison-table td:before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Purity Dosage Table",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Table Title",
+      "default": "Tocopherol contamination weakens results."
+    },
+    {
+      "type": "text",
+      "id": "column_1_header",
+      "label": "Column 1 Header",
+      "default": "Source"
+    },
+    {
+      "type": "text",
+      "id": "column_2_header",
+      "label": "Column 2 Header",
+      "default": "Tocopherol-Free?"
+    },
+    {
+      "type": "text",
+      "id": "column_3_header",
+      "label": "Column 3 Header",
+      "default": "δ/γ Ratio"
+    },
+    {
+      "type": "text",
+      "id": "column_4_header",
+      "label": "Column 4 Header",
+      "default": "Verdict"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "table_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Table Max Width",
+      "default": 1000
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Title Margin Bottom",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Header Row Settings"
+    },
+    {
+      "type": "color",
+      "id": "header_bg_color",
+      "label": "Header Background Color",
+      "default": "#34495e"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Header Font Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_padding",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Header Padding",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Row Settings"
+    },
+    {
+      "type": "color",
+      "id": "row_bg_color_1",
+      "label": "Row Background Color (Odd)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "row_bg_color_2",
+      "label": "Row Background Color (Even)",
+      "default": "#f0f8ff"
+    },
+    {
+      "type": "color",
+      "id": "row_text_color",
+      "label": "Row Text Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "row_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Row Font Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "row_padding",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Row Padding",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Border Settings"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Width",
+      "default": 1
+    },
+  ],
+  "blocks": [
+    {
+      "type": "table_row",
+      "name": "Table Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_1",
+          "label": "Column 1 (Source)",
+          "default": "Annatto"
+        },
+        {
+          "type": "text",
+          "id": "column_2",
+          "label": "Column 2",
+          "default": "Yes"
+        },
+        {
+          "type": "text",
+          "id": "column_3",
+          "label": "Column 3 (δ/γ Ratio)",
+          "default": "~90% δ / 10% γ"
+        },
+        {
+          "type": "text",
+          "id": "column_4",
+          "label": "Column 4 (Verdict)",
+          "default": "Best evidence, pure & clinically validated"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purity Dosage Table",
+      "blocks": [
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Annatto",
+            "column_2": "Yes",
+            "column_3": "~90% δ / 10% γ",
+            "column_4": "Best evidence, pure & clinically validated"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Palm",
+            "column_2": "No",
+            "column_3": "Mixed, inconsistent",
+            "column_4": "Diluted effects, not reliable"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Rice Bran",
+            "column_2": "Partial",
+            "column_3": "Variable ratios",
+            "column_4": "Inconsistent, weaker results"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
