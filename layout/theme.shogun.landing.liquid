@@ -174,7 +174,17 @@ This file can be re-written at any time.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     {{ content_for_layout }}
     {{ 'custom.js' | asset_url | script_tag }}
-    <script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "QhL6fQuGnh6NjzmLw",
+    privateKey: "bXymHQnzjIe6t-aHGI3qv"
+  });
+})();
+</script>
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     if (window.location.href.includes("collections")) {
       var style = document.createElement("style");
