@@ -692,6 +692,13 @@
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
       }
+    },
+    "custom_liquid_BgwMAb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-UMrXma\"></div>"
+      }
     }
   },
   "order": [
@@ -706,6 +713,7 @@
     "rich_text_wBQizn",
     "rich_text_64kCM4",
     "rich_text_zeePbP",
-    "16497261635f6f948e"
+    "16497261635f6f948e",
+    "custom_liquid_BgwMAb"
   ]
 }
