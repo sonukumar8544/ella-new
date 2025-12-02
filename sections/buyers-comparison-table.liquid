@@ -1,0 +1,369 @@
+
+<section class="buyers-comparison-table" id="buyers-comparison-table-{{ section.id }}">
+  <div class="buyers-comparison-table__inner">
+    {% if section.settings.section_heading != blank or section.settings.section_subheading != blank %}
+      <header class="buyers-comparison-table__header">
+        {% if section.settings.section_heading != blank %}
+          <h2>{{ section.settings.section_heading }}</h2>
+        {% endif %}
+        {% if section.settings.section_subheading != blank %}
+          <p>{{ section.settings.section_subheading }}</p>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="buyers-comparison-table__table-wrapper" role="region" aria-label="{{ section.settings.section_heading | escape }}">
+      <table>
+        <thead>
+          <tr>
+            {% if section.settings.factor_heading != blank %}
+              <th scope="col">{{ section.settings.factor_heading }}</th>
+            {% endif %}
+            {% if section.settings.column_2_heading != blank %}
+              <th scope="col">{{ section.settings.column_2_heading }}</th>
+            {% endif %}
+            {% if section.settings.column_3_heading != blank %}
+              <th scope="col">{{ section.settings.column_3_heading }}</th>
+            {% endif %}
+            {% if section.settings.column_4_heading != blank %}
+              <th scope="col">{{ section.settings.column_4_heading }}</th>
+            {% endif %}
+            {% if section.settings.column_5_heading != blank %}
+              <th scope="col">{{ section.settings.column_5_heading }}</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for block in section.blocks %}
+            <tr {{ block.shopify_attributes }}>
+              <th scope="row">
+                {{ block.settings.factor_label }}
+              </th>
+              <td>{{ block.settings.column_2_text }}</td>
+              <td>{{ block.settings.column_3_text }}</td>
+              <td>{{ block.settings.column_4_text }}</td>
+              <td>{{ block.settings.column_5_text }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if section.settings.cta_text != blank %}
+      <div class="buyers-comparison-table__cta">
+        <a
+          class="buyers-comparison-table__btn"
+          href="{{ section.settings.cta_url | default: '#' }}"
+        >
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #shopify-section-{{ section.id }} .buyers-comparison-table {
+    padding: 20px 20px 50px 20px;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__header {
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 16px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__header h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #374650;
+    font-weight: 500;
+    padding-bottom: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__header p {
+    margin: 12px auto 0;
+    max-width: 720px;
+    color: #e3edf3;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__table-wrapper {
+    background: #ffffff;
+    border-radius: 0 0 10px 10px;
+    overflow-x: auto;
+    /* box-shadow: 0 12px 28px rgba(10, 51, 71, 0.1); */
+  }
+
+  #shopify-section-{{ section.id }} table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 720px;
+    border-left: 1px solid #d5e0e5;
+    border-right: 1px solid #d5e0e5;
+    border-bottom: 1px solid #d5e0e5;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} thead th {
+    background: #0A3347;
+    color: #ffffff;
+    text-align: left;
+    padding: 16px;
+
+    text-transform: none;
+  }
+
+  #shopify-section-{{ section.id }} tbody th,
+  #shopify-section-{{ section.id }} tbody td {
+    border-top: 1px solid rgba(10, 51, 71, 0.1);
+    padding: 16px;
+    color: #374650;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} tbody th {
+    background: #ffffff;
+    font-weight: 600;
+    min-width: 160px;
+    text-align: left;
+    border-right: 1px solid #d5e0e5;
+  }
+
+  #shopify-section-{{ section.id }} tbody td {
+    background: #f3f7f8;
+  }
+
+  #shopify-section-{{ section.id }} thead th:first-child {
+    border-right: 1px solid #d5e0e5;
+  }
+
+  #shopify-section-{{ section.id }} thead th + th,
+  #shopify-section-{{ section.id }} tbody td + td {
+    border-left: 1px solid #d5e0e5;
+  }
+
+  #shopify-section-{{ section.id }} tbody tr:first-child th,
+  #shopify-section-{{ section.id }} tbody tr:first-child td {
+    border-top: none;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__cta {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__btn {
+    display: inline-block;
+    background: #086b92;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .buyers-comparison-table__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(8, 107, 146, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    #shopify-section-{{ section.id }} .buyers-comparison-table {
+      padding: 32px 16px;
+    }
+
+    #shopify-section-{{ section.id }} .buyers-comparison-table__header {
+      padding: 20px 12px;
+    }
+
+    #shopify-section-{{ section.id }} .buyers-comparison-table__header h2 {
+      font-size: 22px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Buyers Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Buyer’s Comparison Table"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subheading",
+      "label": "Description",
+      "default": "Compare the benefits of each option before you buy."
+    },
+    {
+      "type": "text",
+      "id": "factor_heading",
+      "label": "Factor column heading",
+      "default": "Factor"
+    },
+    {
+      "type": "text",
+      "id": "column_2_heading",
+      "label": "Column 2 heading",
+      "default": "Pure Annatto Tocotrienols"
+    },
+    {
+      "type": "text",
+      "id": "column_3_heading",
+      "label": "Column 3 heading",
+      "default": "Tocopherols"
+    },
+    {
+      "type": "text",
+      "id": "column_4_heading",
+      "label": "Column 4 heading",
+      "default": "Blended Tocotrienols"
+    },
+    {
+      "type": "text",
+      "id": "column_5_heading",
+      "label": "Column 5 heading",
+      "default": "Fake \"1000 mg\" Labels"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA label",
+      "default": "Buy Annatto-Sourced Tocotrienols"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "factor_label",
+          "label": "Factor label",
+          "default": "Source"
+        },
+        {
+          "type": "textarea",
+          "id": "column_2_text",
+          "label": "Column 2 text",
+          "default": "Annatto seed"
+        },
+        {
+          "type": "textarea",
+          "id": "column_3_text",
+          "label": "Column 3 text",
+          "default": "Palm/soy/rice"
+        },
+        {
+          "type": "textarea",
+          "id": "column_4_text",
+          "label": "Column 4 text",
+          "default": "Palm/rice blends"
+        },
+        {
+          "type": "textarea",
+          "id": "column_5_text",
+          "label": "Column 5 text",
+          "default": "Unknown"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buyers Comparison Table",
+      "blocks": [
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Source",
+            "column_2_text": "Annatto seed",
+            "column_3_text": "Palm/soy/rice",
+            "column_4_text": "Palm/rice blends",
+            "column_5_text": "Unknown"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Tocopherol-free",
+            "column_2_text": "Yes",
+            "column_3_text": "No",
+            "column_4_text": "Partial",
+            "column_5_text": "Unknown"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "&delta;/&gamma; ratio",
+            "column_2_text": "90% &delta; / 10% &gamma;",
+            "column_3_text": "N/A",
+            "column_4_text": "Variable",
+            "column_5_text": "Not disclosed"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Dose",
+            "column_2_text": "125 mg &amp; 300 mg NPN-approved",
+            "column_3_text": "50–125 mg",
+            "column_4_text": "100–200 mg",
+            "column_5_text": "Fake 1000 mg"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Capsule",
+            "column_2_text": "Small, hermetically sealed",
+            "column_3_text": "Large",
+            "column_4_text": "Large",
+            "column_5_text": "Large"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Fillers",
+            "column_2_text": "No emulsifiers",
+            "column_3_text": "Often emulsified",
+            "column_4_text": "Often emulsified",
+            "column_5_text": "Unknown"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "factor_label": "Safety",
+            "column_2_text": "Clinically proven safe",
+            "column_3_text": "Weak data",
+            "column_4_text": "Inconsistent",
+            "column_5_text": "Unverified"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
