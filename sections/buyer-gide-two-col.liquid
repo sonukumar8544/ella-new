@@ -1,0 +1,322 @@
+<section class="buyers-guide-two-col buyers-guide-two-col-{{ section.id }}">
+  <div class="buyers-guide-two-col__inner">
+    <div class="buyers-guide-two-col__content">
+      {%- if section.settings.heading != blank -%}
+        <p class="buyers-guide-two-col__eyebrow">
+          {{ section.settings.heading }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="buyers-guide-two-col__title">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="buyers-guide-two-col__subtitle">
+          {{ section.settings.subheading }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="buyers-guide-two-col__list" role="list">
+          {%- for block in section.blocks -%}
+            <li class="buyers-guide-two-col__list-item" {{ block.shopify_attributes }}>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_1_49ff05bf-d8b9-45a8-8fb6-ca6bbe547dea.svg?v=1764657920"
+                alt="Check"
+                width="32"
+                height="32"
+                loading="lazy"
+              >
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="buyers-guide-two-col__buttons">
+        {%- if section.settings.button_one_label != blank -%}
+          <a
+            class="buyers-guide-two-col__button buyers-guide-two-col__button--primary"
+            href="{{ section.settings.button_one_link | default: '#' }}"
+          >
+            {{ section.settings.button_one_label }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.button_two_label != blank -%}
+          <a
+            class="buyers-guide-two-col__button buyers-guide-two-col__button--secondary"
+            href="{{ section.settings.button_two_link | default: '#' }}"
+          >
+            {{ section.settings.button_two_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="buyers-guide-two-col__media">
+      {%- if section.settings.image != blank -%}
+        <div class="buyers-guide-two-col__image-wrapper">
+          <img
+            src="{{ section.settings.image | image_url: width: 900 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            loading="lazy"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% style %}
+.buyers-guide-two-col-{{ section.id }} {
+  padding: 80px 20px;
+  background-color: #f6fbff;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__content {
+  flex: 1 1 50%;
+  text-align: left;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__media {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__image-wrapper {
+  width: 100%;
+  max-width: 445px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 60px rgba(4, 58, 79, 0.15);
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__eyebrow {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #005370;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__title {
+  margin: 0 0 35px;
+  font-size: 32px;
+  line-height: 1.3;
+  color: #374650;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__subtitle {
+  margin: 0 0 16px;
+  font-size: 22px;
+  line-height: 30px;
+  color: #374650;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__list {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-weight: 600;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #374650;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__list-item img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__button--primary {
+  background-color: #086B92;
+  color: #ffffff;
+  border-color: #086B92;
+}
+.buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__button--secondary {
+  background-color: transparent;
+  color: #374650;
+  border-color: #086B92;
+}
+@media (max-width: 1100px) {
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__title {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__subtitle {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 900px) {
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__inner {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__media {
+    width: 100%;
+    justify-content: center;
+  }
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__image-wrapper {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .buyers-guide-two-col-{{ section.id }} {
+    padding: 60px 16px;
+  }
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .buyers-guide-two-col-{{ section.id }} .buyers-guide-two-col__buttons {
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  .buyers-guide-two-col__title {
+        font-size: 25px !important;
+        line-height: 38px !important;
+        font-weight: 600 !important;
+    }
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Buyer's Guide Two Column",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Eyebrow heading",
+      "default": "Our Formula = The Buyer's Smart Choice"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Support Your Health With Tocotrienols That Work At The Cellular Level"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "100% δ/γ annatto tocotrienols — no tocopherols"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right column image"
+    },
+    {
+      "type": "text",
+      "id": "button_one_label",
+      "label": "Primary button label",
+      "default": "Buy 125 mg Formula"
+    },
+    {
+      "type": "url",
+      "id": "button_one_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_two_label",
+      "label": "Secondary button label",
+      "default": "Buy 300 mg Formula"
+    },
+    {
+      "type": "url",
+      "id": "button_two_link",
+      "label": "Secondary button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit text",
+          "default": "Third-party tested & GMP-certified"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buyer's Guide Two Column",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "100% δ/γ annatto tocotrienols — no tocopherols"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Dosages that match clinical research: 125 mg & 300 mg"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Third-party tested & GMP-certified"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Non-GMO, gluten-free, sustainably sourced"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "text": "Backed by 30+ years of Dr. Barrie Tan’s research"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
