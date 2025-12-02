@@ -1,0 +1,377 @@
+<div class="purity-dosage-comparison-table-section" style="
+  --section-bg-color: {{ section.settings.section_bg_color }};
+  --title-color: {{ section.settings.title_color }};
+  --header-bg-color: {{ section.settings.header_bg_color }};
+  --header-text-color: {{ section.settings.header_text_color }};
+  --row-bg-color-1: {{ section.settings.row_bg_color_1 }};
+  --row-bg-color-2: {{ section.settings.row_bg_color_2 }};
+  --row-text-color: {{ section.settings.row_text_color }};
+  --border-color: {{ section.settings.border_color }};
+">
+  <div class="container">
+    <div class="purity-dosage-table-container">
+      {% if section.settings.title != blank %}
+        <h2 class="purity-dosage-table-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      
+      <table class="purity-dosage-comparison-table">
+        <thead>
+          <tr>
+            {% if section.settings.column_1_header != blank %}
+              <th>{{ section.settings.column_1_header }}</th>
+            {% endif %}
+            {% if section.settings.column_2_header != blank %}
+              <th>{{ section.settings.column_2_header }}</th>
+            {% endif %}
+            {% if section.settings.column_3_header != blank %}
+              <th>{{ section.settings.column_3_header }}</th>
+            {% endif %}
+            {% if section.settings.column_4_header != blank %}
+              <th>{{ section.settings.column_4_header }}</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for block in section.blocks %}
+            <tr class="purity-dosage-table-row">
+              {% assign col1 = block.settings.column_1 %}
+              {% assign col2 = block.settings.column_2 %}
+              {% assign col3 = block.settings.column_3 %}
+              {% assign col4 = block.settings.column_4 %}
+              
+              {% if col1 != blank %}
+                <td>{{ col1 }}</td>
+              {% endif %}
+              {% if col2 != blank %}
+                <td>{{ col2 }}</td>
+              {% endif %}
+              {% if col3 != blank %}
+                <td>{{ col3 }}</td>
+              {% endif %}
+              {% if col4 != blank %}
+                <td>{{ col4 }}</td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+.purity-dosage-comparison-table-section {
+  width: 100%;
+  padding: 40px;
+  background-color: var(--section-bg-color);
+  box-sizing: border-box;
+}
+
+.purity-dosage-table-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.purity-dosage-table-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--title-color);
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.purity-dosage-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.purity-dosage-comparison-table thead tr {
+  background-color: var(--header-bg-color);
+}
+
+.purity-dosage-comparison-table thead th {
+  color: var(--header-text-color);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.purity-dosage-comparison-table tbody tr:nth-child(odd) {
+  background-color: var(--row-bg-color-1);
+}
+
+.purity-dosage-comparison-table tbody tr:nth-child(even) {
+  background-color: var(--row-bg-color-2);
+}
+
+.purity-dosage-comparison-table tbody td {
+  color: var(--row-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.purity-dosage-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .purity-dosage-comparison-table-section {
+    padding: 30px;
+  }
+  
+  .purity-dosage-table-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .purity-dosage-comparison-table thead th {
+    font-size: 15px;
+    padding: 14px;
+  }
+  
+  .purity-dosage-comparison-table tbody td {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .purity-dosage-comparison-table-section {
+    padding: 20px;
+  }
+  
+  .purity-dosage-table-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .purity-dosage-comparison-table thead th {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .purity-dosage-comparison-table tbody td {
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .purity-dosage-comparison-table {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .purity-dosage-comparison-table-section {
+    padding: 15px;
+  }
+  
+  .purity-dosage-table-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .purity-dosage-comparison-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .purity-dosage-comparison-table thead,
+  .purity-dosage-comparison-table tbody,
+  .purity-dosage-comparison-table tr,
+  .purity-dosage-comparison-table td,
+  .purity-dosage-comparison-table th {
+    display: block;
+  }
+  
+  .purity-dosage-comparison-table thead {
+    display: none;
+  }
+  
+  .purity-dosage-comparison-table tr {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+  
+  .purity-dosage-comparison-table td {
+    border: none;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .purity-dosage-comparison-table td:before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Purity Dosage Table",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Table Title",
+      "default": "Tocopherol contamination weakens results."
+    },
+    {
+      "type": "text",
+      "id": "column_1_header",
+      "label": "Column 1 Header",
+      "default": "Source"
+    },
+    {
+      "type": "text",
+      "id": "column_2_header",
+      "label": "Column 2 Header",
+      "default": "Tocopherol-Free?"
+    },
+    {
+      "type": "text",
+      "id": "column_3_header",
+      "label": "Column 3 Header",
+      "default": "δ/γ Ratio"
+    },
+    {
+      "type": "text",
+      "id": "column_4_header",
+      "label": "Column 4 Header",
+      "default": "Verdict"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "color",
+      "id": "header_bg_color",
+      "label": "Header Background Color",
+      "default": "#34495e"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "row_bg_color_1",
+      "label": "Row Background Color (Odd)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "row_bg_color_2",
+      "label": "Row Background Color (Even)",
+      "default": "#f0f8ff"
+    },
+    {
+      "type": "color",
+      "id": "row_text_color",
+      "label": "Row Text Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e0e0e0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_row",
+      "name": "Table Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "column_1",
+          "label": "Column 1 (Source)",
+          "default": "Annatto"
+        },
+        {
+          "type": "text",
+          "id": "column_2",
+          "label": "Column 2",
+          "default": "Yes"
+        },
+        {
+          "type": "text",
+          "id": "column_3",
+          "label": "Column 3 (δ/γ Ratio)",
+          "default": "~90% δ / 10% γ"
+        },
+        {
+          "type": "text",
+          "id": "column_4",
+          "label": "Column 4 (Verdict)",
+          "default": "Best evidence, pure & clinically validated"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purity Dosage Table",
+      "blocks": [
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Annatto",
+            "column_2": "Yes",
+            "column_3": "~90% δ / 10% γ",
+            "column_4": "Best evidence, pure & clinically validated"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Palm",
+            "column_2": "No",
+            "column_3": "Mixed, inconsistent",
+            "column_4": "Diluted effects, not reliable"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Rice Bran",
+            "column_2": "Partial",
+            "column_3": "Variable ratios",
+            "column_4": "Inconsistent, weaker results"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

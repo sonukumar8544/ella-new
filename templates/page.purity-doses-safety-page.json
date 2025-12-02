@@ -16,17 +16,559 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "purity_dosage_hero_banner_KCdhLk": {
+      "type": "purity-dosage-hero-banner",
+      "name": "Purity Dosage Hero Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/17192db2183db0d59d732a02bff4f389d4cffc43.jpg",
+        "section_height": 500,
+        "heading": "Purity, Dosage & Safety You Can Trust",
+        "sub_heading": "Clinically validated, third-party tested, and NPN-approved tocotrienols — so you know exactly what you’re getting in every softgel.",
+        "cta_text": "Buy Tocotrienol Now",
+        "cta_link": "shopify://products/healthy-aging-bundle",
+        "card_position": "center",
+        "card_width": 740,
+        "card_min_width": 400,
+        "card_max_width": 1400,
+        "card_padding": 40,
+        "card_gap": 20,
+        "card_min_height": 350,
+        "card_max_height": 800,
+        "heading_font_size": 48,
+        "heading_color": "#2c3e50",
+        "heading_width": 470,
+        "sub_heading_font_size": 20,
+        "sub_heading_color": "#374650",
+        "sub_heading_width": 630,
+        "button_bg_color": "#f8ce63",
+        "button_text_color": "#333333",
+        "button_font_size": 18,
+        "button_width": 240,
+        "button_height": 60,
+        "button_border_radius": 100
+      }
+    },
+    "purity_dosage_two_column_Pbe6Mn": {
+      "type": "purity-dosage-two-column",
+      "name": "Purity Dosage Two Column",
+      "settings": {
+        "heading": "The Only Source That's 100% Pure",
+        "body_text": "Annatto is the only natural source that provides 100% tocotrienols with zero tocopherols. Palm and rice bran sources always come mixed with tocopherols, which block absorption and weaken results.",
+        "right_image": "shopify://shop_images/8e5128499160b79bf45fbacb37980abc751831bf.jpg",
+        "section_bg_color": "#ffffff",
+        "section_padding": 40,
+        "left_column_bg": "#ffffff",
+        "left_column_width": 50,
+        "right_column_width": 50,
+        "left_column_padding": 60,
+        "right_column_padding": 40,
+        "heading_font_size": 42,
+        "heading_color": "#2c3e50",
+        "heading_line_height": 1.3,
+        "heading_margin_bottom": 20,
+        "body_font_size": 16,
+        "body_color": "#374650",
+        "body_line_height": 1.6,
+        "image_width": 620,
+        "image_height": 390,
+        "image_gap": 12,
+        "image_padding": 12,
+        "image_border_radius": 36,
+        "image_border_width": 1,
+        "image_border_color": "#ffffff",
+        "image_opacity": 100
+      }
+    },
+    "purity_dosage_table_MBaRtE": {
+      "type": "purity-dosage-table",
+      "blocks": {
+        "table_row_yjcBYF": {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Annatto",
+            "column_2": "✅  Yes",
+            "column_3": "~90% δ / 10% γ",
+            "column_4": "Best evidence, pure & clinically validated"
+          }
+        },
+        "table_row_7cM4ja": {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Palm",
+            "column_2": "❌  No",
+            "column_3": "Mixed, inconsistent",
+            "column_4": "Diluted effects, not reliable"
+          }
+        },
+        "table_row_eQNKxW": {
+          "type": "table_row",
+          "settings": {
+            "column_1": "Rice Bran",
+            "column_2": "⚠️  Partial",
+            "column_3": "Variable ratios",
+            "column_4": "Inconsistent, weaker results"
+          }
+        }
+      },
+      "block_order": [
+        "table_row_yjcBYF",
+        "table_row_7cM4ja",
+        "table_row_eQNKxW"
+      ],
+      "name": "Purity Dosage Table",
+      "settings": {
+        "title": "Tocopherol contamination weakens results.",
+        "column_1_header": "Source",
+        "column_2_header": "Tocopherol-Free?",
+        "column_3_header": "δ/γ Ratio",
+        "column_4_header": "Verdict",
+        "section_bg_color": "#f9fbfe",
+        "section_padding": 40,
+        "table_max_width": 1000,
+        "title_font_size": 28,
+        "title_color": "#2c3e50",
+        "title_margin_bottom": 30,
+        "header_bg_color": "#34495e",
+        "header_text_color": "#ffffff",
+        "header_font_size": 16,
+        "header_padding": 16,
+        "row_bg_color_1": "#ffffff",
+        "row_bg_color_2": "#f0f8ff",
+        "row_text_color": "#2c3e50",
+        "row_font_size": 14,
+        "row_padding": 16,
+        "border_color": "#e0e0e0",
+        "border_width": 1
+      }
+    },
+    "purity_dosage_slider_zRdt6U": {
+      "type": "purity-dosage-slider",
+      "blocks": {
+        "badge_HGTA4P": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_40b2004b-6729-4605-a40f-f38413bfe252.svg",
+            "badge_text": "Non-GMO",
+            "badge_description": ""
+          }
+        },
+        "badge_Hzr7dJ": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1618873296.svg",
+            "badge_text": "Third-Party Tested",
+            "badge_description": ""
+          }
+        },
+        "badge_KxMmKm": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1_10fad38c-038f-44c7-8bdc-4dd977256d88.svg",
+            "badge_text": "GMP-Certified",
+            "badge_description": ""
+          }
+        },
+        "badge_qKWNLy": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1618873574.svg",
+            "badge_text": "NPL Approved",
+            "badge_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge_HGTA4P",
+        "badge_Hzr7dJ",
+        "badge_KxMmKm",
+        "badge_qKWNLy"
+      ],
+      "name": "Purity Dosage Badges",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "highlight_text": "Wellness Extract tocotrienols",
+        "section_bg_color": "#ffffff",
+        "section_padding": 20,
+        "badge_width": 150,
+        "badge_height": 110,
+        "badge_gap": 100,
+        "badge_item_padding": 0,
+        "container_max_width": 1400,
+        "image_object_fit": "contain",
+        "text_font_size": 16,
+        "text_color": "#666666",
+        "text_font_weight": 400,
+        "text_margin_top": 11,
+        "text_line_height": 1.4,
+        "text_width": 200,
+        "text_height": 30,
+        "text_align": "center",
+        "description_font_size": 14,
+        "description_font_weight": 400,
+        "description_line_height": 1.4,
+        "description_width": 250,
+        "description_height": 40,
+        "heading_font_size": 32,
+        "heading_color": "#2c3e50",
+        "heading_font_weight": 700,
+        "heading_margin_bottom": 20,
+        "subheading_font_size": 18,
+        "subheading_color": "#2c3e50",
+        "subheading_highlight_color": "#4a90e2",
+        "subheading_margin_bottom": 40
+      }
+    },
+    "purity_dosage_barrie_tan_9FBwbY": {
+      "type": "purity-dosage-barrie-tan",
+      "name": "Barrie Tan Statement",
+      "settings": {
+        "title": "Barrie Tan's Statement:",
+        "quote": "If it's not from Annatto, it's not DeltaGold. If it's not tested, it's not real. If the dosage per serving is over 300 mg, it's misleading. Always choose wisely. – Dr. Barrie Tan",
+        "warning_text": "Don't Fall For Fake Tocotrienol..!",
+        "portrait_image": "shopify://shop_images/c337123977dd8576fe768dab9a9b1b3b4152af86.png",
+        "section_bg_color": "#2c3e50",
+        "section_padding": 20,
+        "left_column_width": 60,
+        "right_column_width": 35,
+        "left_column_padding": 40,
+        "right_column_padding": 40,
+        "title_font_size": 28,
+        "title_color": "#ffffff",
+        "title_font_weight": 700,
+        "title_margin_bottom": 20,
+        "quote_font_size": 18,
+        "quote_color": "#ffffff",
+        "quote_font_weight": 400,
+        "quote_line_height": 1.6,
+        "quote_margin_bottom": 20,
+        "warning_font_size": 22,
+        "warning_color": "#ffd700",
+        "warning_font_weight": 700,
+        "image_width": 260,
+        "image_height": 380,
+        "image_object_fit": "cover"
+      }
+    },
+    "purity_dosage_card_layout_6gFwei": {
+      "type": "purity-dosage-card-layout",
+      "blocks": {
+        "info_card_t3BBHK": {
+          "type": "info_card",
+          "settings": {
+            "card_header": "125 Mg/day",
+            "card_text": "Perfect for daily wellness and cellular support."
+          }
+        },
+        "info_card_p36RV9": {
+          "type": "info_card",
+          "settings": {
+            "card_header": "300 Mg/day",
+            "card_text": "Clinically validated therapeutic dose for targeted benefits in heart, brain, liver, and metabolic health."
+          }
+        },
+        "info_card_BKAaF6": {
+          "type": "info_card",
+          "settings": {
+            "card_header": "Consistency matters",
+            "card_text": "Studies show measurable changes within 30-60 days of daily use."
+          }
+        },
+        "info_card_xbHRek": {
+          "type": "info_card",
+          "settings": {
+            "card_header": "How to take it",
+            "card_text": "For better absorption, take with a meal that includes healthy fats."
+          }
+        }
+      },
+      "block_order": [
+        "info_card_t3BBHK",
+        "info_card_p36RV9",
+        "info_card_BKAaF6",
+        "info_card_xbHRek"
+      ],
+      "name": "Dosage Card Layout",
+      "settings": {
+        "title": "The Right Dosage",
+        "subtitle": "Backed by science",
+        "product_image": "shopify://shop_images/57329c90dadcb70365d3a961c740cebe41aa6198.png",
+        "caution_text": "⚠️  A Note of Caution: Some fake brands mislead customers with extreme “high-potency” claims like 1000 mg doses. Such dosages are not backed by science and can be unsafe.",
+        "section_height": 500,
+        "section_bg_gradient": "linear-gradient(272.54deg, #FDFEEC 5.63%, #FEFEF0 17.36%, #FDFDFB 33.59%, #FFFFFF 75.16%);",
+        "section_padding_top": 40,
+        "section_padding_left": 100,
+        "section_padding_right": 100,
+        "left_column_padding": 40,
+        "right_column_padding": 40,
+        "container_gap": 50,
+        "title_font_size": 36,
+        "title_color": "#2c3e50",
+        "title_font_weight": 700,
+        "title_margin_bottom": 10,
+        "subtitle_font_size": 18,
+        "subtitle_color": "#2c3e50",
+        "subtitle_margin_bottom": 30,
+        "card_gap": 15,
+        "card_padding": 15,
+        "card_border_width": 3,
+        "card_header_font_size": 20,
+        "card_header_color": "#2c3e50",
+        "card_header_font_weight": 700,
+        "card_header_margin_bottom": 11,
+        "card_text_font_size": 14,
+        "card_text_color": "#2c3e50",
+        "card_text_line_height": 1.5,
+        "caution_bg_color": "#e3f2fd",
+        "caution_text_color": "#2c3e50",
+        "caution_font_size": 14,
+        "caution_padding": 20,
+        "caution_border_radius": 8,
+        "caution_margin_top": 30,
+        "image_width": 600,
+        "image_height": 300,
+        "image_object_fit": "contain"
+      }
+    },
+    "purity_dosage_grid_layout_GaeCbA": {
+      "type": "purity-dosage-grid-layout",
+      "blocks": {
+        "safety_item_FAb8dr": {
+          "type": "safety_item",
+          "settings": {
+            "text": "Confirmed safe in humans up to <strong>600 mg/day</strong>."
+          }
+        },
+        "safety_item_DAQiCc": {
+          "type": "safety_item",
+          "settings": {
+            "text": "No serious side effects reported in long-term clinical use."
+          }
+        },
+        "safety_item_PPNy4B": {
+          "type": "safety_item",
+          "settings": {
+            "text": "Works naturally with the body, unlike synthetic Vitamin E."
+          }
+        },
+        "safety_item_3CabxP": {
+          "type": "safety_item",
+          "settings": {
+            "text": "Studied in diverse populations worldwide with consistent outcomes."
+          }
+        }
+      },
+      "block_order": [
+        "safety_item_FAb8dr",
+        "safety_item_DAQiCc",
+        "safety_item_PPNy4B",
+        "safety_item_3CabxP"
+      ],
+      "name": "Safety Grid Layout",
+      "settings": {
+        "heading": "Safe, Effective, and Globally Studied",
+        "section_bg_color": "#ffffff",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_left": 100,
+        "section_padding_right": 100,
+        "left_column_width": 40,
+        "right_column_width": 60,
+        "left_column_padding": 35,
+        "right_column_padding": 20,
+        "heading_font_size": 48,
+        "heading_color": "#2c3e50",
+        "heading_font_weight": 700,
+        "heading_line_height": 1.2,
+        "list_item_font_size": 16,
+        "list_item_color": "#2c3e50",
+        "list_item_line_height": 1.6,
+        "list_item_gap": 20,
+        "highlight_color": "#2196f3",
+        "border_top_color": "#e0e0e0",
+        "border_top_width": 1
+      }
+    },
+    "purity_dosage_slider_DfNtdE": {
+      "type": "purity-dosage-slider",
+      "blocks": {
+        "badge_jGcpkT": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1618873296.svg",
+            "badge_text": "Third-party lab tested for potency & purity",
+            "badge_description": ""
+          }
+        },
+        "badge_Dt4cfr": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1_10fad38c-038f-44c7-8bdc-4dd977256d88.svg",
+            "badge_text": "Produced in FDA-registered, GMP-certified facilities",
+            "badge_description": ""
+          }
+        },
+        "badge_PVpTm8": {
+          "type": "badge",
+          "settings": {
+            "badge_image": "shopify://shop_images/Frame_1618873583.png",
+            "badge_text": "CA NPN - Certified in Canada for dosage and health claims",
+            "badge_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge_jGcpkT",
+        "badge_Dt4cfr",
+        "badge_PVpTm8"
+      ],
+      "name": "Purity Dosage Badges",
+      "settings": {
+        "heading": "Testing & Certifications You Can Trust",
+        "subheading": "Every batch of Wellness Extract tocotrienols is:",
+        "highlight_text": "Every batch of Wellness Extract tocotrienols is:",
+        "section_bg_color": "#f3f7f8",
+        "section_padding": 60,
+        "badge_width": 150,
+        "badge_height": 110,
+        "badge_gap": 100,
+        "badge_item_padding": 0,
+        "container_max_width": 1400,
+        "image_object_fit": "contain",
+        "text_font_size": 16,
+        "text_color": "#666666",
+        "text_font_weight": 900,
+        "text_margin_top": 11,
+        "text_line_height": 1.4,
+        "text_width": 200,
+        "text_height": 30,
+        "text_align": "center",
+        "description_font_size": 14,
+        "description_font_weight": 400,
+        "description_line_height": 1.4,
+        "description_width": 250,
+        "description_height": 40,
+        "heading_font_size": 48,
+        "heading_color": "#2c3e50",
+        "heading_font_weight": 700,
+        "heading_margin_bottom": 20,
+        "subheading_font_size": 18,
+        "subheading_color": "#086b92",
+        "subheading_highlight_color": "#4a90e2",
+        "subheading_margin_bottom": 40
+      }
+    },
+    "vitemin_product_section_BkEG3F": {
+      "type": "vitemin-product-section",
+      "name": "Tocotrienol Cards",
+      "settings": {
+        "main_title": "Choose Your Tocotrienol Formula",
+        "subtitle": "All products include free shipping and our 90-day satisfaction guarantee.",
+        "product1_image": "shopify://shop_images/11_5f1da9aa-5c33-4571-bd91-580b91432279.png",
+        "product1_headline": "125mg Daily Formula",
+        "product1_feature_1": "Daily wellness",
+        "product1_feature_2": "Gentle support",
+        "product1_feature_3": "",
+        "product1_badge_title": "125mg",
+        "product1_badge_subtitle": "Daily Formula",
+        "product1_badge_caption": "",
+        "product1_price": "$1.13/day",
+        "product1_bottle_info": "(30-count bottle)",
+        "product1_button_label": "Order Now",
+        "product1_button_url": "",
+        "product2_image": "shopify://shop_images/22.png",
+        "product2_headline": "300mg Advanced Formula",
+        "product2_feature_1": "High absorption",
+        "product2_feature_2": "Clinically dosed",
+        "product2_feature_3": "",
+        "product2_badge_title": "300mg",
+        "product2_badge_subtitle": "Advanced Formula",
+        "product2_badge_caption": "Clinically dosed",
+        "product2_price": "$1.40/day",
+        "product2_bottle_info": "(30-count bottle)",
+        "product2_button_label": "Order Now",
+        "product2_button_url": "",
+        "product3_image": "shopify://shop_images/Frame_1618873547.png",
+        "product3_headline": "150+ Subscription Plan",
+        "product3_feature_1": "Best value",
+        "product3_feature_2": "Auto-delivery",
+        "product3_feature_3": "",
+        "product3_badge_title": "150+",
+        "product3_badge_subtitle": "Daily Formula",
+        "product3_badge_caption": "Subscription",
+        "product3_price": "$0.98/day",
+        "product3_bottle_info": "(60-count bottle)",
+        "product3_button_label": "Order Now",
+        "product3_button_url": "",
+        "cta_button_text": "Know About Dosage & Safety",
+        "cta_button_url": ""
+      }
+    },
+    "eto_trust_section_4JnKQT": {
+      "type": "eto-trust-section",
+      "name": "ETO Amazon Trust Banner",
+      "settings": {
+        "hide_satisfaction_banner": true,
+        "hide_trust_banner": false,
+        "heading_line_1": "Now you know the truth",
+        "heading_line_2": "about Vitamin E.",
+        "primary_button_text": "Buy Tocotrienol Now",
+        "primary_button_url": "shopify://products/bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
+        "primary_button_new_tab": false,
+        "secondary_link_text": "Keep Learning",
+        "secondary_link_url": "shopify://products/bovine-colostrum-for-pets",
+        "secondary_link_new_tab": false,
+        "container_width": 1200,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 20,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "#fff9e6",
+        "heading_font_family": "nunito_n4",
+        "heading_font_size": 2.4,
+        "heading_font_size_mobile": 2,
+        "heading_font_size_small_mobile": 1.8,
+        "heading_font_weight": "600",
+        "heading_color": "#314154",
+        "primary_button_font_family": "lato_n4",
+        "primary_button_font_size": 1,
+        "primary_button_font_weight": "600",
+        "primary_button_bg_color": "#f6c356",
+        "primary_button_text_color": "#2d3e50",
+        "primary_button_hover_bg_color": "#dea840",
+        "primary_button_padding_vertical": 12,
+        "primary_button_padding_horizontal": 24,
+        "primary_button_border_radius": 8,
+        "secondary_link_font_family": "lato_n4",
+        "secondary_link_font_size": 1,
+        "secondary_link_font_weight": "500",
+        "secondary_link_color": "#314154",
+        "secondary_link_hover_color": "#25303d"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "purity_dosage_hero_banner_KCdhLk",
+    "purity_dosage_two_column_Pbe6Mn",
+    "purity_dosage_table_MBaRtE",
+    "purity_dosage_slider_zRdt6U",
+    "purity_dosage_barrie_tan_9FBwbY",
+    "purity_dosage_card_layout_6gFwei",
+    "purity_dosage_grid_layout_GaeCbA",
+    "purity_dosage_slider_DfNtdE",
+    "vitemin_product_section_BkEG3F",
+    "eto_trust_section_4JnKQT"
   ]
 }

@@ -1,0 +1,433 @@
+<div class="safety-section" style="
+  --section-padding-top: {{ section.settings.section_padding_top }}px;
+  --section-padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  --section-padding-left: {{ section.settings.section_padding_left }}px;
+  --section-padding-right: {{ section.settings.section_padding_right }}px;
+  --section-bg-color: {{ section.settings.section_bg_color }};
+  --left-column-width: {{ section.settings.left_column_width }}%;
+  --right-column-width: {{ section.settings.right_column_width }}%;
+  --left-column-padding: {{ section.settings.left_column_padding }}px;
+  --right-column-padding: {{ section.settings.right_column_padding }}px;
+  --heading-font-size: {{ section.settings.heading_font_size }}px;
+  --heading-color: {{ section.settings.heading_color }};
+  --heading-font-weight: {{ section.settings.heading_font_weight }};
+  --heading-line-height: {{ section.settings.heading_line_height }};
+  --list-item-font-size: {{ section.settings.list_item_font_size }}px;
+  --list-item-color: {{ section.settings.list_item_color }};
+  --list-item-line-height: {{ section.settings.list_item_line_height }};
+  --list-item-gap: {{ section.settings.list_item_gap }}px;
+  --highlight-color: {{ section.settings.highlight_color }};
+  --border-top-color: {{ section.settings.border_top_color }};
+  --border-top-width: {{ section.settings.border_top_width }}px;
+">
+  <div class="safety-container">
+    <div class="column-left">
+      {% if section.settings.heading != blank %}
+        <h2 class="safety-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+    
+    <div class="column-right">
+      <ul class="safety-list">
+        {% for block in section.blocks %}
+          <li class="safety-item" {{ block.shopify_attributes }}>
+            {% if block.settings.text != blank %}
+              <span class="safety-text">{{ block.settings.text | raw }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+.safety-section {
+  width: 100%;
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+  padding-left: var(--section-padding-left);
+  padding-right: var(--section-padding-right);
+  background-color: var(--section-bg-color);
+  box-sizing: border-box;
+}
+
+.safety-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.column-left {
+  width: var(--left-column-width);
+  padding: var(--left-column-padding);
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.column-right {
+  width: var(--right-column-width);
+  padding: var(--right-column-padding);
+  box-sizing: border-box;
+}
+
+.safety-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+  color: var(--heading-color);
+  line-height: var(--heading-line-height);
+  margin: 0;
+}
+
+.safety-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--list-item-gap);
+}
+
+.safety-item {
+  font-family: 'Lato', sans-serif;
+  font-size: var(--list-item-font-size);
+  font-weight: 400;
+  color: var(--list-item-color);
+  line-height: var(--list-item-line-height);
+  margin: 0;
+  position: relative;
+  padding-left: 0;
+  padding-top: var(--list-item-gap);
+  border-top: var(--border-top-width) solid var(--border-top-color);
+}
+
+.safety-item:first-child {
+  padding-top: var(--list-item-gap);
+  border-top: var(--border-top-width) solid var(--border-top-color);
+}
+
+.safety-text {
+  display: inline;
+}
+
+.safety-text strong {
+  color: var(--highlight-color);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .safety-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .column-left,
+  .column-right {
+    width: 100%;
+  }
+  
+  .safety-heading {
+    font-size: calc(var(--heading-font-size) * 0.85);
+  }
+  
+  .safety-item {
+    font-size: calc(var(--list-item-font-size) * 0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .safety-section {
+    padding-top: calc(var(--section-padding-top) * 0.6);
+    padding-bottom: calc(var(--section-padding-bottom) * 0.6);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .safety-container {
+    gap: 30px;
+  }
+  
+  .column-left {
+    padding: calc(var(--left-column-padding) * 0.7);
+  }
+  
+  .column-right {
+    padding: calc(var(--right-column-padding) * 0.7);
+  }
+  
+  .safety-heading {
+    font-size: calc(var(--heading-font-size) * 0.7);
+  }
+  
+  .safety-item {
+    font-size: calc(var(--list-item-font-size) * 0.9);
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Safety Grid Layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Safe, Effective, and Globally Studied"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_left",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Left",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "section_padding_right",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Right",
+      "default": 200
+    },
+    {
+      "type": "header",
+      "content": "Column Settings"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "min": 30,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "Left Column Width",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "right_column_width",
+      "min": 50,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "label": "Right Column Width",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "left_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Left Column Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "right_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Right Column Padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Heading Settings"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 32,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Heading Font Weight",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "min": 1.0,
+      "max": 1.5,
+      "step": 0.1,
+      "label": "Heading Line Height",
+      "default": 1.2
+    },
+    {
+      "type": "header",
+      "content": "List Item Settings"
+    },
+    {
+      "type": "range",
+      "id": "list_item_font_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "List Item Font Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "list_item_color",
+      "label": "List Item Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "list_item_line_height",
+      "min": 1.4,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "List Item Line Height",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "list_item_gap",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "List Item Gap",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color (for bold text)",
+      "default": "#2196F3"
+    },
+    {
+      "type": "header",
+      "content": "Border Settings"
+    },
+    {
+      "type": "color",
+      "id": "border_top_color",
+      "label": "Right Column Border Top Color",
+      "default": "#E0E0E0"
+    },
+    {
+      "type": "range",
+      "id": "border_top_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Right Column Border Top Width",
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "type": "safety_item",
+      "name": "Safety Item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Confirmed safe in humans up to <strong>600 mg/day</strong>.",
+          "info": "Use <strong> tags to highlight text in blue"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Safety Grid Layout",
+      "blocks": [
+        {
+          "type": "safety_item",
+          "settings": {
+            "text": "Confirmed safe in humans up to <strong>600 mg/day</strong>."
+          }
+        },
+        {
+          "type": "safety_item",
+          "settings": {
+            "text": "No serious side effects reported in long-term clinical use."
+          }
+        },
+        {
+          "type": "safety_item",
+          "settings": {
+            "text": "Works naturally with the body, unlike synthetic Vitamin E."
+          }
+        },
+        {
+          "type": "safety_item",
+          "settings": {
+            "text": "Studied in diverse populations worldwide with consistent outcomes."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

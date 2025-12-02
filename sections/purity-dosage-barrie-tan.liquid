@@ -1,0 +1,450 @@
+<div class="barrie-tan-section" style="
+  --section-padding: {{ section.settings.section_padding }}px;
+  --section-bg-color: {{ section.settings.section_bg_color }};
+  --left-column-width: {{ section.settings.left_column_width }}%;
+  --right-column-width: {{ section.settings.right_column_width }}%;
+  --left-column-padding: {{ section.settings.left_column_padding }}px;
+  --right-column-padding: {{ section.settings.right_column_padding }}px;
+  --title-font-size: {{ section.settings.title_font_size }}px;
+  --title-color: {{ section.settings.title_color }};
+  --title-font-weight: {{ section.settings.title_font_weight }};
+  --title-margin-bottom: {{ section.settings.title_margin_bottom }}px;
+  --quote-font-size: {{ section.settings.quote_font_size }}px;
+  --quote-color: {{ section.settings.quote_color }};
+  --quote-font-weight: {{ section.settings.quote_font_weight }};
+  --quote-line-height: {{ section.settings.quote_line_height }};
+  --quote-margin-bottom: {{ section.settings.quote_margin_bottom }}px;
+  --warning-font-size: {{ section.settings.warning_font_size }}px;
+  --warning-color: {{ section.settings.warning_color }};
+  --warning-font-weight: {{ section.settings.warning_font_weight }};
+  --image-width: {{ section.settings.image_width }}px;
+  --image-height: {{ section.settings.image_height }}px;
+  --image-object-fit: {{ section.settings.image_object_fit }};
+">
+  <div class="barrie-tan-container">
+    <div class="column-left">
+      {% if section.settings.title != blank %}
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+      {% endif %}
+      
+      {% if section.settings.quote != blank %}
+        <p class="section-quote">{{ section.settings.quote }}</p>
+      {% endif %}
+      
+      {% if section.settings.warning_text != blank %}
+        <p class="section-warning">{{ section.settings.warning_text }}</p>
+      {% endif %}
+    </div>
+    
+    <div class="column-right">
+      {% if section.settings.portrait_image != blank %}
+        <div class="image-wrapper">
+          <img src="{{ section.settings.portrait_image | image_url: width: 800 }}" alt="{{ section.settings.title | escape }}" class="portrait-image">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+.barrie-tan-section {
+  width: 100%;
+  padding: var(--section-padding);
+  background-color: var(--section-bg-color);
+  box-sizing: border-box;
+}
+
+.barrie-tan-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.column-left {
+  width: var(--left-column-width);
+  padding: var(--left-column-padding);
+  box-sizing: border-box;
+}
+
+.column-right {
+  width: var(--right-column-width);
+  padding: var(--right-column-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--title-font-size);
+  font-weight: var(--title-font-weight);
+  color: var(--title-color);
+  margin: 0 0 var(--title-margin-bottom) 0;
+}
+
+.section-quote {
+  font-family: 'Lato', sans-serif;
+  font-size: var(--quote-font-size);
+  font-weight: var(--quote-font-weight);
+  color: var(--quote-color);
+  line-height: var(--quote-line-height);
+  margin: 0 0 var(--quote-margin-bottom) 0;
+}
+
+.section-warning {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--warning-font-size);
+  font-weight: var(--warning-font-weight);
+  color: var(--warning-color);
+  margin: 0;
+}
+
+.image-wrapper {
+  width: var(--image-width);
+  height: var(--image-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--image-object-fit);
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .barrie-tan-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .column-left,
+  .column-right {
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: calc(var(--title-font-size) * 0.9);
+  }
+  
+  .section-quote {
+    font-size: calc(var(--quote-font-size) * 0.9);
+  }
+  
+  .section-warning {
+    font-size: calc(var(--warning-font-size) * 0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .barrie-tan-section {
+    padding: calc(var(--section-padding) * 0.7);
+  }
+  
+  .barrie-tan-container {
+    gap: 20px;
+  }
+  
+  .column-left {
+    padding: calc(var(--left-column-padding) * 0.7);
+  }
+  
+  .column-right {
+    padding: calc(var(--right-column-padding) * 0.7);
+  }
+  
+  .section-title {
+    font-size: calc(var(--title-font-size) * 0.8);
+  }
+  
+  .section-quote {
+    font-size: calc(var(--quote-font-size) * 0.85);
+  }
+  
+  .section-warning {
+    font-size: calc(var(--warning-font-size) * 0.85);
+  }
+  
+  .image-wrapper {
+    width: 100%;
+    max-width: var(--image-width);
+    height: auto;
+    max-height: var(--image-height);
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Barrie Tan Statement",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Barrie Tan's Statement:"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "If it's not from Annatto, it's not DeltaGold. If it's not tested, it's not real. If the dosage per serving is over 300 mg, it's misleading. Always choose wisely. – Dr. Barrie Tan"
+    },
+    {
+      "type": "text",
+      "id": "warning_text",
+      "label": "Warning/CTA Text",
+      "default": "Don't Fall For Fake Tocotrienol..!"
+    },
+    {
+      "type": "image_picker",
+      "id": "portrait_image",
+      "label": "Portrait Image"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#2c3e50"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section Padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Column Settings"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "label": "Left Column Width",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "right_column_width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "label": "Right Column Width",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "left_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Left Column Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "right_column_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Right Column Padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Title Font Weight",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Margin Bottom",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Quote Settings"
+    },
+    {
+      "type": "range",
+      "id": "quote_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "quote_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Quote Font Weight",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "quote_line_height",
+      "min": 1.2,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "Quote Line Height",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "quote_margin_bottom",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Quote Margin Bottom",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Warning/CTA Settings"
+    },
+    {
+      "type": "range",
+      "id": "warning_font_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Warning Font Size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "warning_color",
+      "label": "Warning Color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "range",
+      "id": "warning_font_weight",
+      "min": 400,
+      "max": 900,
+      "step": 100,
+      "label": "Warning Font Weight",
+      "default": 700
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Width",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Image Height",
+      "default": 500
+    },
+    {
+      "type": "select",
+      "id": "image_object_fit",
+      "label": "Image Object Fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "scale-down",
+          "label": "Scale Down"
+        }
+      ],
+      "default": "cover"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barrie Tan Statement"
+    }
+  ]
+}
+{% endschema %}
+
