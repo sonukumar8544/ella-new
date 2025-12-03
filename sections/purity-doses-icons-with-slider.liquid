@@ -1,0 +1,430 @@
+<div id="shopify-section-{{ section.id }}" class="icons-slider-section">
+  <div class="icons-slider-container">
+    {% if section.settings.title != blank %}
+      <h2 class="icons-slider-title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+      <p class="icons-slider-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <!-- Image Slider -->
+    {% if section.blocks.size > 0 %}
+      <div class="icons-slider-wrapper">
+        <div class="icons-slider" id="icons-slider-{{ section.id }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'slider_image' %}
+              <div class="icons-slide" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <div class="icons-slide-image-wrapper">
+                    {% if forloop.index <= 3 %}
+                      <img 
+                        src="{{ block.settings.image | image_url: width: 400 }}"
+                        alt="{{ block.settings.image.alt | default: section.settings.title }}"
+                        width="400"
+                        height="400"
+                        loading="eager"
+                        class="icons-slide-image"
+                      >
+                    {% else %}
+                      <img 
+                        src="{{ block.settings.image | image_url: width: 400 }}"
+                        alt="{{ block.settings.image.alt | default: section.settings.title }}"
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                        class="icons-slide-image"
+                      >
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.image_text != blank %}
+                  <p class="icons-slide-text">{{ block.settings.image_text }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  (function() {
+    function initSlider() {
+      if (typeof jQuery === 'undefined' || typeof jQuery.fn.slick === 'undefined') {
+        // Retry after a short delay if jQuery/Slick not ready
+        setTimeout(initSlider, 100);
+        return;
+      }
+
+      var slider = jQuery('#icons-slider-{{ section.id }}');
+      
+      if (slider.length && slider.children().length > 0) {
+        // Destroy existing slider if it exists
+        if (slider.hasClass('slick-initialized')) {
+          slider.slick('unslick');
+        }
+
+        var totalSlides = slider.children().length;
+        var slidesToShow = Math.min(totalSlides, 5); // Max 5 on desktop
+        
+        slider.slick({
+          dots: false,
+          infinite: true,
+          arrows: false,
+          speed: 300,
+          autoplay: false,
+          draggable: true,
+          swipe: true,
+          touchMove: true,
+          touchThreshold: 5,
+          swipeToSlide: true,
+          variableWidth: false,
+          slidesToShow: slidesToShow,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '20px',
+          lazyLoad: 'ondemand',
+          responsive: [
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: Math.min(totalSlides, 4),
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: '20px',
+                infinite: true,
+                arrows: false
+              }
+            },
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: Math.min(totalSlides, 3),
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: '20px',
+                infinite: true,
+                arrows: false
+              }
+            },
+            {
+              breakpoint: 481,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: '20px',
+                infinite: true,
+                arrows: false
+              }
+            }
+          ]
+        });
+      }
+    }
+
+    // Initialize immediately if DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSlider);
+    } else {
+      initSlider();
+    }
+  })();
+</script>
+
+<style>
+  #shopify-section-{{ section.id }}.icons-slider-section {
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    padding: {{ section.settings.padding_top_desktop | default: 80 }}px 0 {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slider-title {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #374650;
+    text-align: center;
+    margin: 0 0 16px;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slider-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #086B92;
+    text-align: center;
+    margin: 0 0 48px;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slider-wrapper {
+    position: relative;
+    padding: 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slider {
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slide {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slide-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 135px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slide-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .icons-slide-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #374650;
+    margin: 16px 0 0 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .icons-slider-container {
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-title {
+      font-size: 34px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-subtitle {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-wrapper {
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.icons-slider-section {
+      padding: {{ section.settings.padding_top_mobile | default: 60 }}px 0 {{ section.settings.padding_bottom_mobile | default: 60 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-container {
+      padding: 0 16px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-title {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-wrapper {
+      padding: 0 10px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-image-wrapper {
+      max-width: 180px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-text {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }}.icons-slider-section {
+      padding: {{ section.settings.padding_top_mobile | default: 40 }}px 0 {{ section.settings.padding_bottom_mobile | default: 40 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-container {
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-title {
+      font-size: 26px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-subtitle {
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-wrapper {
+      padding: 0 5px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-image-wrapper {
+      max-width: 160px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-text {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .icons-slider-title {
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slider-subtitle {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-image-wrapper {
+      max-width: 140px;
+    }
+
+    #shopify-section-{{ section.id }} .icons-slide-text {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "purity Icons Slider sec",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Section subtitle text"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_image",
+      "name": "Slider Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_text",
+          "label": "Image Text",
+          "default": "Image Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "purity Icons Slider with text",
+      "blocks": [
+        {
+          "type": "slider_image"
+        },
+        {
+          "type": "slider_image"
+        },
+        {
+          "type": "slider_image"
+        },
+        {
+          "type": "slider_image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,346 @@
+{% liquid
+  assign heading = section.settings.heading | default: 'What Good Looks Like'
+  assign subheading = section.settings.subheading | default: 'To ensure you are choosing an effective Vitamin E supplement, look for:'
+  assign visual_image = section.settings.visual_image
+  assign cta_label = section.settings.cta_label | default: 'Buy Pure Annatto Tocotrienols'
+  assign cta_url = section.settings.cta_link | default: '#'
+%}
+
+<section id="buyers-guide-eto-{{ section.id }}" class="buyers-guide-eto">
+  <div class="buyers-guide-eto__container">
+    <div class="buyers-guide-eto__header">
+      <h2>{{ heading }}</h2>
+      {% if subheading != blank %}
+        <p>{{ subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="buyers-guide-eto__grid">
+      <div class="buyers-guide-eto__visual-card">
+        {% if visual_image != blank %}
+          {{ visual_image
+            | image_url: width: 1200
+            | image_tag:
+              class: 'buyers-guide-eto__visual-image',
+              loading: 'lazy',
+              decoding: 'async',
+              sizes: '(min-width: 1200px) 540px, (min-width: 750px) 50vw, 100vw',
+              widths: '360,540,720,900,1200'
+          }}
+        {% else %}
+          <div class="buyers-guide-eto__visual-placeholder" aria-hidden="true"></div>
+        {% endif %}
+      </div>
+
+      <div class="buyers-guide-eto__content-card">
+        {% if section.blocks.size > 0 %}
+          <ul class="buyers-guide-eto__checklist" role="list">
+            {% for block in section.blocks %}
+              <li class="buyers-guide-eto__checklist-item" {{ block.shopify_attributes }}>
+                <span class="buyers-guide-eto__icon" aria-hidden="true">
+                  <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/check-mark_5290108_1.svg?v=1764648425" alt="" loading="lazy" decoding="async" width="20" height="20">
+                </span>
+                <div>
+                  {% if block.settings.feature_title != blank %}
+                    <p class="buyers-guide-eto__item-title">{{ block.settings.feature_title }}</p>
+                  {% endif %}
+                  {% if block.settings.feature_copy != blank %}
+                    <p class="buyers-guide-eto__item-copy">{{ block.settings.feature_copy }}</p>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if cta_label != blank %}
+          <a class="buyers-guide-eto__cta" href="{{ cta_url }}">
+            {{ cta_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+
+#buyers-guide-eto-{{ section.id }} {
+  /* --buyers-guide-eto-bg: #eef3f8; */
+  --buyers-guide-eto-card: #ffffff;
+  --buyers-guide-eto-text: #374650;
+  --buyers-guide-eto-subtext: #5f6b7a;
+  --buyers-guide-eto-accent: #13b38b;
+  --buyers-guide-eto-pill-dark: #050c1f;
+  --buyers-guide-eto-pill-light: #b30019;
+  --buyers-guide-eto-link: #13b38b;
+  background: var(--buyers-guide-eto-bg);
+  color: var(--buyers-guide-eto-text);
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 80px) clamp(24px, 6vw, 48px);
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(40px, 5vw, 56px);
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__header h2 {
+  font-size: clamp(28px, 3vw, 35px);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__header p {
+  font-size: 20px;
+  color: var(--buyers-guide-eto-subtext);
+  line-height: 1.6;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4vw, 10px);
+  align-items: stretch;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-card,
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__content-card {
+  /* background: var(--buyers-guide-eto-card); */
+  border-radius: 32px;
+  /* border: 1px solid rgba(55, 70, 80, 0.08); */
+  /* box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12); */
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-card {
+  padding: 0;
+  overflow: hidden;
+  /* min-height: 520px; */
+  display: flex;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-image,
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-image {
+  object-fit: cover;
+  min-height: 100%;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__visual-placeholder {
+  background: linear-gradient(135deg, var(--buyers-guide-eto-pill-dark), var(--buyers-guide-eto-pill-light));
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__content-card {
+  padding: clamp(24px, 4vw, 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__checklist-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__item-title {
+  font-weight: 500;
+  margin: 0 0 4.8px;
+  line-height: 1.4;
+  font-size: 20px;
+  color: var(--buyers-guide-eto-text);
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__item-copy {
+  margin: 0;
+  color: var(--buyers-guide-eto-subtext);
+  line-height: 1.5;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__cta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #086B92;
+  font-weight: 600;
+  font-size: 16.8px;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+  padding-left: 55px;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__cta:hover,
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__cta:focus-visible {
+  color: #086B92;
+  gap: 9.6px;
+}
+
+@media (max-width: 640px) {
+  #buyers-guide-eto-{{ section.id }} .buyers-guide-eto__content-card {
+    padding: 0px !important;
+  }
+
+  #buyers-guide-eto-{{ section.id }} .buyers-guide-eto__checklist-item {
+    gap: 0px;
+  }
+
+  #buyers-guide-eto-{{ section.id }} .buyers-guide-eto__checklist {
+  gap: 15px;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__item-title {
+  font-size: 19px !important;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__cta {
+  padding-left: 20px !important;
+  font-weight: 500 !important;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__container {
+ padding: 0px 10px 10px 10px !important;
+}
+
+#buyers-guide-eto-{{ section.id }} .buyers-guide-eto__header h2 {
+  font-weight: 500 !important;
+}
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Buyers Guide ETO Tablet",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Good Looks Like"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "To ensure you are choosing an effective Vitamin E supplement, look for:"
+    },
+    {
+      "type": "image_picker",
+      "id": "visual_image",
+      "label": "Visual image",
+      "info": "Full-width image displayed in the left card. Leave empty to show the gradient placeholder."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Buy Pure Annatto Tocotrienols"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_title",
+          "label": "Title",
+          "default": "Pure annatto δ/γ tocotrienols (tocopherol-free)."
+        },
+        {
+          "type": "textarea",
+          "id": "feature_copy",
+          "label": "Supporting copy",
+          "default": "This is the most beneficial form."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buyers Guide ETO Tablet",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Pure annatto δ/γ tocotrienols (tocopherol-free).",
+            "feature_copy": "This is the most beneficial form."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "125 mg and 300 mg clinically relevant dose, Health Canada NPN-approved.",
+            "feature_copy": "Ensures efficacy and safety."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Small, easy-to-swallow hermetically sealed softgels.",
+            "feature_copy": "For ease of ingestion and preservation."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Emulsifier-free, pure formulation.",
+            "feature_copy": "Guarantees purity without unwanted fillers."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_title": "Third-party tested + GMP certified.",
+            "feature_copy": "Offers assurance in quality and manufacturing standards."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

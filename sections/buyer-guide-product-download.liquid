@@ -1,0 +1,351 @@
+
+{% liquid
+  assign background = section.settings.background_color | default: '#374650'
+%}
+
+<section class="buyer-guide-product buyer-guide-product-{{ section.id }}" style="--buyer-guide-bg: {{ background }}; background-color: {{ background }};">
+  <div class="buyer-guide-product__inner page-width">
+    {% if section.blocks.size == 0 %}
+      <p class="buyer-guide-product__empty">Add blocks to populate this section.</p>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      <div class="buyer-guide-product__card buyer-guide-product__card--{{ block.type }}" {{ block.shopify_attributes }}>
+        {% if block.settings.primary_image != blank %}
+          <div class="buyer-guide-product__media">
+            {{ block.settings.primary_image | image_url: width: 900 | image_tag: loading: 'lazy', class: 'buyer-guide-product__image', sizes: '(max-width: 749px) 100vw, 45vw' }}
+          </div>
+        {% endif %}
+
+        <div class="buyer-guide-product__content">
+          {% if block.settings.eyebrow != blank %}
+            <p class="buyer-guide-product__eyebrow">{{ block.settings.eyebrow | escape }}</p>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h2 class="buyer-guide-product__title">{{ block.settings.title | escape }}</h2>
+          {% endif %}
+
+          {% if block.settings.subtitle != blank %}
+            <p class="buyer-guide-product__subtitle">{{ block.settings.subtitle | escape }}</p>
+          {% endif %}
+
+          {% if block.type == 'download_card' and block.settings.tags != blank %}
+            {% assign tag_lines = block.settings.tags | newline_to_br | split: '<br />' %}
+            <div class="buyer-guide-product__tags">
+              {% for tag in tag_lines %}
+                {% assign clean_tag = tag | strip %}
+                {% if clean_tag != blank %}
+                  <span class="buyer-guide-product__tag">{{ clean_tag }}</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if block.settings.body_text != blank %}
+            <p class="buyer-guide-product__body">{{ block.settings.body_text }}</p>
+          {% endif %}
+
+          {% if block.type == 'info_card' and block.settings.bullets != blank %}
+            {% assign bullet_lines = block.settings.bullets | newline_to_br | split: '<br />' %}
+            <ul class="buyer-guide-product__list">
+              {% for bullet in bullet_lines %}
+                {% assign clean_bullet = bullet | strip %}
+                {% if clean_bullet != blank %}
+                  <li>{{ clean_bullet }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if block.settings.button_label != blank %}
+            {% if block.settings.button_link != blank %}
+              <a class="buyer-guide-product__link" href="{{ block.settings.button_link }}" aria-label="{{ block.settings.button_label }}">
+                {{ block.settings.button_label }}
+                <span aria-hidden="true">→</span>
+              </a>
+            {% else %}
+              <span class="buyer-guide-product__link buyer-guide-product__link--disabled">{{ block.settings.button_label }}</span>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .buyer-guide-product {
+    padding: clamp(48px, 6vw, 96px) 1.5rem;
+    background-color: var(--buyer-guide-bg, #374650);
+    color: #ffffff;
+  }
+
+  .buyer-guide-product .page-width {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .buyer-guide-product__inner {
+    display: grid;
+    gap: clamp(60px, 3vw, 40px);
+  }
+
+  @media (min-width: 900px) {
+    .buyer-guide-product__inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .buyer-guide-product__card {
+    /* background: rgba(255, 255, 255, 0.04);
+    border-radius: 28px;
+    padding: clamp(24px, 3vw, 40px); */
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .buyer-guide-product__media {
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .buyer-guide-product__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .buyer-guide-product__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .buyer-guide-product__title {
+    font-size: clamp(24px, 2vw, 2.125rem);
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .buyer-guide-product__subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+  }
+
+  .buyer-guide-product__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+  .buyer-guide-product__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .buyer-guide-product__tag {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 0.35rem 0.85rem;
+    font-size: 14px;
+    color: #fff;
+    background: transparent;
+  }
+
+  .buyer-guide-product__body {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+
+  .buyer-guide-product__list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .buyer-guide-product__list li {
+    line-height: 1.5;
+  }
+
+  .buyer-guide-product__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid currentColor;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .buyer-guide-product__link:hover,
+  .buyer-guide-product__link:focus-visible {
+    color: #ffffff;
+    border-bottom-color: currentColor;
+    opacity: 1;
+  }
+
+  .buyer-guide-product__link span {
+    font-size: 1.1em;
+    line-height: 1;
+  }
+
+  .buyer-guide-product__link--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    align-self: flex-start;
+  }
+
+  .buyer-guide-product__empty {
+    margin: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Buyer Guide Product",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "default": "#374650",
+      "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "download_card",
+      "name": "Download card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "primary_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow label",
+          "default": "Download guide"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Downloadable Buyer’s Guide PDF"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Want this checklist on the go?"
+        },
+        {
+          "type": "textarea",
+          "id": "tags",
+          "label": "Tab labels (one per line)",
+          "default": "Red flags list.\nGood checklist.\nComparison table."
+        },
+        {
+          "type": "textarea",
+          "id": "body_text",
+          "label": "Body copy",
+          "default": "How to read supplement labels (with δ/γ and NPN callouts)."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "Download Buyer’s Guide"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    },
+    {
+      "type": "info_card",
+      "name": "Info card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "primary_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow label",
+          "default": "Product card"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Now You Know What to Look For—And What to Avoid."
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Product card + benefits list"
+        },
+        {
+          "type": "textarea",
+          "id": "body_text",
+          "label": "Lead copy"
+        },
+        {
+          "type": "textarea",
+          "id": "bullets",
+          "label": "Bullet list (one per line)",
+          "default": "Product Card: Tocotrienol 300 mg softgels (Canada variant shows NPN).\nBenefits List: Pure annatto δ/γ, 300 mg dose, small softgel, hermetically sealed, emulsifier-free, GMP tested, COA available, Amazon Choice badge (if relevant)."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "Buy Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Buyer Guide Product Download",
+      "blocks": [
+        {
+          "type": "download_card"
+        },
+        {
+          "type": "info_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
