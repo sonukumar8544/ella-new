@@ -1,0 +1,615 @@
+<div id="shopify-section-{{ section.id }}" class="purity-doses-table-section">
+  <div class="purity-doses-table-container">
+    {% if section.settings.title != blank %}
+      <h2 class="purity-doses-table-title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    {% if section.settings.show_table != false %}
+      <div class="purity-doses-table-wrapper">
+        <table class="purity-doses-table" role="table">
+          <thead>
+            <tr>
+              <th scope="col">{{ section.settings.column1_header | default: "Source" }}</th>
+              <th scope="col">{{ section.settings.column2_header | default: "Tocopherol-Free?" }}</th>
+              <th scope="col">{{ section.settings.column3_header | default: "δ/γ Ratio" }}</th>
+              <th scope="col">{{ section.settings.column4_header | default: "Verdict" }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for block in section.blocks %}
+              {% if block.type == 'table_row' %}
+                <tr {{ block.shopify_attributes }}>
+                  <td class="source-cell">{{ block.settings.source | default: "Source" }}</td>
+                  <td class="tocopherol-cell">{{ block.settings.tocopherol_free | default: "✅ Yes" }}</td>
+                  <td class="ratio-cell">{{ block.settings.ratio | default: "~90% δ / 10% γ" }}</td>
+                  <td class="verdict-cell">{{ block.settings.verdict | default: "Best evidence, pure & clinically validated" }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+
+    <!-- Badge Images Grid -->
+    {% if section.settings.show_badges != false %}
+      {% assign has_badge_blocks = false %}
+      {% for block in section.blocks %}
+        {% if block.type == 'badge_image' %}
+          {% assign has_badge_blocks = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if has_badge_blocks %}
+        <div class="badge-images-grid-wrapper">
+          <div class="badge-images-grid" id="badge-slider-{{ section.id }}">
+            {% for block in section.blocks %}
+              {% if block.type == 'badge_image' %}
+                <div class="badge-item" {{ block.shopify_attributes }}>
+                  {% if block.settings.badge_image != blank %}
+                    <div class="badge-image-container">
+                      <img 
+                        src="{{ block.settings.badge_image | image_url: width: 300 }}"
+                        alt="{{ block.settings.badge_title | default: 'Badge' }}"
+                        width="300"
+                        height="300"
+                        loading="lazy"
+                        class="badge-image"
+                      >
+                    </div>
+                  {% endif %}
+                  {% if block.settings.badge_title != blank %}
+                    <p class="badge-title">{{ block.settings.badge_title }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}.purity-doses-table-section {
+    padding-top: {{ section.settings.padding_top_desktop | default: 72 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop | default: 72 }}px;
+    background-color: {{ section.settings.background_color | default: '#f9fbfe' }};
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table-title {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: #374650;
+    text-align: center;
+    margin: 0 0 48px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table-wrapper {
+    position: relative;
+    overflow-x: auto;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    background-color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background-color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table thead {
+    background-color: #3E5460;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table thead th {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 24px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table tbody td {
+    font-size: 16px;
+    color: #374650;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e1e8ed;
+    background-color: #ffffff;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table tbody tr:nth-child(even) td {
+    background-color: #F1FAFE;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table .source-cell {
+    font-weight: 600;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table .tocopherol-cell {
+    font-weight: 500;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table .ratio-cell {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table .verdict-cell {
+    color: #2d3748;
+  }
+
+  /* Badge Images Grid Styles */
+  #shopify-section-{{ section.id }} .badge-images-grid-wrapper {
+    margin-top: 60px;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .badge-images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .badge-image-container {
+    width: 100%;
+    max-width: 125px;
+    margin: 0 auto 16px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .badge-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  #shopify-section-{{ section.id }} .badge-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #374650;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .purity-doses-table-title {
+      font-size: 34px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-container {
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table thead th,
+    #shopify-section-{{ section.id }} .purity-doses-table tbody td {
+      padding: 18px 20px;
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.purity-doses-table-section {
+      padding-top: {{ section.settings.padding_top_mobile | default: 56 }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile | default: 56 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-title {
+      font-size: 30px;
+      margin-bottom: 36px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-container {
+      padding: 0 16px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 4px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table {
+      min-width: 800px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table thead th,
+    #shopify-section-{{ section.id }} .purity-doses-table tbody td {
+      padding: 16px 18px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }}.purity-doses-table-section {
+      padding-top: {{ section.settings.padding_top_mobile | default: 44 }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile | default: 44 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-title {
+      font-size: 26px;
+      margin-bottom: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-container {
+      padding: 0px !important;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table {
+      min-width: 800px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table thead th,
+    #shopify-section-{{ section.id }} .purity-doses-table tbody td {
+      padding: 14px 16px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .purity-doses-table-title {
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table thead th,
+    #shopify-section-{{ section.id }} .purity-doses-table tbody td {
+      padding: 12px 14px;
+      font-size: 16px;
+    }
+  }
+
+  /* Badge Grid Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .badge-images-grid {
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-image-container {
+      max-width: 180px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .badge-images-grid-wrapper {
+      margin-top: 48px;
+      padding: 0 16px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-images-grid {
+      display: flex;
+      grid-template-columns: none;
+      gap: 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-images-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .badge-item {
+      flex: 0 0 calc(50% - 10px);
+      min-width: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+      scroll-snap-align: start;
+      padding: 0 4px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-image-container {
+      max-width: 100px;
+      margin-bottom: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-title {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }} .badge-images-grid-wrapper {
+      margin-top: 40px;
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-images-grid {
+      gap: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-item {
+      flex: 0 0 calc(50% - 8px);
+      min-width: calc(50% - 8px);
+      max-width: calc(50% - 8px);
+      padding: 0 4px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-image-container {
+      max-width: 90px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-title {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .badge-images-grid-wrapper {
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-images-grid {
+      gap: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-item {
+      flex: 0 0 calc(50% - 6px);
+      min-width: calc(50% - 6px);
+      max-width: calc(50% - 6px);
+      padding: 0 4px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-image-container {
+      max-width: 80px;
+    }
+
+    #shopify-section-{{ section.id }} .badge-title {
+      font-size: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Purity Doses Table",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Table Title",
+      "default": "Tocopherol contamination weakens results."
+    },
+    {
+      "type": "header",
+      "content": "Visibility Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_table",
+      "label": "Show Table",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show Badge Icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9fbfe"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Column Headers"
+    },
+    {
+      "type": "text",
+      "id": "column1_header",
+      "label": "Column 1 Header",
+      "default": "Source"
+    },
+    {
+      "type": "text",
+      "id": "column2_header",
+      "label": "Column 2 Header",
+      "default": "Tocopherol-Free?"
+    },
+    {
+      "type": "text",
+      "id": "column3_header",
+      "label": "Column 3 Header",
+      "default": "δ/γ Ratio"
+    },
+    {
+      "type": "text",
+      "id": "column4_header",
+      "label": "Column 4 Header",
+      "default": "Verdict"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_row",
+      "name": "Table Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Source",
+          "default": "Annatto"
+        },
+        {
+          "type": "text",
+          "id": "tocopherol_free",
+          "label": "Tocopherol-Free?",
+          "default": "Yes"
+        },
+        {
+          "type": "text",
+          "id": "ratio",
+          "label": "δ/γ Ratio",
+          "default": "~90% δ / 10% γ"
+        },
+        {
+          "type": "text",
+          "id": "verdict",
+          "label": "Verdict",
+          "default": "Best evidence, pure & clinically validated"
+        }
+      ]
+    },
+    {
+      "type": "badge_image",
+      "name": "Badge Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "badge_image",
+          "label": "Badge Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_title",
+          "label": "Badge Title",
+          "default": "Non-GMO"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purity Doses Table Section",
+      "blocks": [
+        {
+          "type": "table_row",
+          "settings": {
+            "source": "Annatto",
+            "tocopherol_free": "Yes",
+            "ratio": "~90% δ / 10% γ",
+            "verdict": "Best evidence, pure & clinically validated"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "source": "Palm",
+            "tocopherol_free": "No",
+            "ratio": "Mixed, inconsistent",
+            "verdict": "Diluted effects, not reliable"
+          }
+        },
+        {
+          "type": "table_row",
+          "settings": {
+            "source": "Rice Bran",
+            "tocopherol_free": "Partial",
+            "ratio": "Variable ratios",
+            "verdict": "Inconsistent, weaker results"
+          }
+        },
+        {
+          "type": "badge_image",
+          "settings": {
+            "badge_title": "Non-GMO"
+          }
+        },
+        {
+          "type": "badge_image",
+          "settings": {
+            "badge_title": "Third-Party Tested"
+          }
+        },
+        {
+          "type": "badge_image",
+          "settings": {
+            "badge_title": "GMP-Certified"
+          }
+        },
+        {
+          "type": "badge_image",
+          "settings": {
+            "badge_title": "NPL Approved"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
