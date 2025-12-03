@@ -516,36 +516,36 @@
         "flag_YmAMwK": {
           "type": "flag",
           "settings": {
-            "title": "Labels that only say “mixed tocopherols.”",
+            "title": "Labels that only say “mixed tocopherols.",
             "description": "These are often less effective and not the true form of Vitamin E you want."
           }
         },
         "flag_mjeVXd": {
           "type": "flag",
           "settings": {
-            "title": "Labels that only say “mixed tocopherols.”",
-            "description": "These are often less effective and not the true form of Vitamin E you want."
+            "title": "1000 mg claims",
+            "description": "1,000 mg isn’t supported by clinical evidence or softgel size limits"
           }
         },
         "flag_kzcQ96": {
           "type": "flag",
           "settings": {
-            "title": "Labels that only say “mixed tocopherols.”",
-            "description": "These are often less effective and not the true form of Vitamin E you want."
+            "title": "Large, hard-to-swallow capsules.",
+            "description": "Causes difficulty in ingestion and are often less desirable."
           }
         },
         "flag_NFqiVy": {
           "type": "flag",
           "settings": {
-            "title": "Labels that only say “mixed tocopherols.”",
-            "description": "These are often less effective and not the true form of Vitamin E you want."
+            "title": "Emulsifier-filled softgels instead of pure oil.",
+            "description": "Contains unwanted additives and can reduce absorption"
           }
         },
         "flag_XiQEm8": {
           "type": "flag",
           "settings": {
-            "title": "Labels that only say “mixed tocopherols.”",
-            "description": "These are often less effective and not the true form of Vitamin E you want."
+            "title": "No COA (Certificate of Analysis) or transparency.",
+            "description": "Always ensure that the product offers transparency in its testing and ingredient sourcing."
           }
         },
         "cta_link_JYQtmb": {
@@ -553,7 +553,7 @@
           "settings": {
             "link_label": "See the Tocopherol-Free Option",
             "link_url": "shopify://collections/all-products",
-            "open_in_new_tab": false
+            "open_in_new_tab": true
           }
         }
       },
