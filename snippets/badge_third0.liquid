@@ -7,4 +7,9 @@
   {%- assign discount_percent = discount_amount | times: 100 | divided_by: current_variant.compare_at_price | round -%}
 {%- endif -%}
 
-<div class="discount-percent-thirdO">Save 20%</div>
+{% comment %} <div class="discount-percent-thirdO">Save 20%</div> {% endcomment %}
+{% if product.metafields.custom.isbundle.value == 'true' %}
+  <div class="discount-percent-thirdO">Save 25%</div>
+{% else %}
+  <div class="discount-percent-thirdO">Save 15%</div>
+{% endif %}
