@@ -48,10 +48,32 @@
             <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         </dt>
       {%- endcomment -%}
+      {%- liquid
+        assign is_bundle = false
+        if product.metafields.custom.isbundle.value
+          if product.metafields.custom.isbundle.value == true or product.metafields.custom.isbundle.value == 'true'
+            assign is_bundle = true
+          endif
+        endif
+      -%}
+      {% if is_bundle %}
+        <dd class="price__last" id="custom_proce_manage">
+          <div class="discount-percent-thirdO-bundle">Save 25%</div>
+          <span class="sale_price_amount1">
+            {% assign original_price1 = product.selected_or_first_available_variant.price %}
+            {% assign discount1 = original_price1 | times: 0.25 %}
+            {% assign new_saleprice1 = original_price1 | minus: discount1 %}
+            {{ new_saleprice1 | money_with_currency }}
+          </span>
+          <span id="product-compare-at-price-we" class="price-item price-item--regular orginal_price1">
+            {{- product.selected_or_first_available_variant.price | money_with_currency }}
+          </span>
+        </dd>
+      {% else %}
       <dd class="price__last" id="custom_proce_manage">
         <span class="sale_price_amount1">
           {% assign original_price1 = product.selected_or_first_available_variant.price %}
-          {% assign discount1 = original_price1 | times: 0.20 %}
+          {% assign discount1 = original_price1 | times: 0.15 %}
           {% assign new_saleprice1 = original_price1 | minus: discount1 %}
           {{ new_saleprice1 | money_with_currency }}
         </span>
@@ -59,19 +81,32 @@
           {{- product.selected_or_first_available_variant.price | money_with_currency }}
         </span>
       </dd>
+      {% endif %} 
     </div>
 
 
     <div class="price__sale{% if settings.show_saved_price %} show_saved_price{% endif %}">
-              <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+      {% if is_bundle %}
+        <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+          <div class="discount-percent-thirdO-bundle">Save 25%</div>
           <span class="price-item price-item--sale sale_price_amount1">
             {% assign original_price = product.selected_or_first_available_variant.price %}
-            {% assign discount = original_price | times: 0.20 %}
+            {% assign discount = original_price | times: 0.25 %}
             {% assign new_saleprice = original_price | minus: discount %}
             {{ new_saleprice | money_with_currency }}
           </span>
         </dd>
-     
+      {% else %}
+      <dd class="price__last{% if settings.show_price_percent %} price_percent{% endif %}" data-last="{{price}}">
+        <span class="price-item price-item--sale sale_price_amount1">
+          {% assign original_price = product.selected_or_first_available_variant.price %}
+          {% assign discount = original_price | times: 0.15 %}
+          {% assign new_saleprice = original_price | minus: discount %}
+          {{ new_saleprice | money_with_currency }}
+        </span>
+      </dd>
+      {% endif %} 
+    
       <dd class="price__compare" data-compare="{{compare_at_price}}">
         <b class="price-item price-item--regular" style="font-size:12px !important; letter-spacing:0; color:#29353c !important; text-decoration: line-through !important;">
           {% if settings.currency_format_enable %}
@@ -144,6 +179,24 @@
 <style>
    #custom_proce_manage span.price-item.price-item--regular.orginal_price1 span{
       color: #4d4d4d !important;
+  }
+
+
+  .discount-percent-thirdO-bundle{
+    border-radius: 25px;
+    background: rgba(255, 208, 0, 0.33);
+    color: #374650;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    width: 77px;
+    padding: 1px 7px;
+
+  }
+
+  .card-information .discount-percent-thirdO-bundle{
+    display: none !important;
   }
 </style>
 {%- comment -%}

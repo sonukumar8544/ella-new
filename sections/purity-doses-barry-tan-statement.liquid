@@ -1,0 +1,363 @@
+<div id="shopify-section-{{ section.id }}" class="barry-tan-statement-section">
+  <div class="barry-tan-statement-container">
+    <div class="barry-tan-statement-wrapper">
+      <!-- Left Column - Content (65%) -->
+      <div class="barry-tan-content-column">
+        {% if section.settings.title != blank %}
+          <h2 class="barry-tan-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.quote != blank %}
+          <div class="barry-tan-quote">
+            {{ section.settings.quote }}
+          </div>
+        {% endif %}
+        
+        {% comment %} {% if section.settings.quote_author != blank %}
+          <p class="barry-tan-author">{{ section.settings.quote_author }}</p>
+        {% endif %} {% endcomment %}
+        
+        {% if section.settings.highlight_text != blank %}
+          <p class="barry-tan-highlight">{{ section.settings.highlight_text }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Right Column - Image (35%) -->
+      <div class="barry-tan-image-column">
+        {% if section.settings.image != blank %}
+          <div class="barry-tan-image-wrapper">
+            <img 
+              src="{{ section.settings.image | image_url: width: 600 }}"
+              alt="{{ section.settings.image.alt | default: section.settings.title }}"
+              width="600"
+              height="600"
+              loading="lazy"
+              class="barry-tan-image"
+            >
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}.barry-tan-statement-section {
+    background-color: {{ section.settings.background_color | default: '#323E47' }};
+    padding: {{ section.settings.padding_top_desktop | default: 80 }}px 0 {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-statement-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-statement-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-content-column {
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-image-column {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-quote p {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-author {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    text-align: left;
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-highlight {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFD700;
+    margin: 0;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-image-wrapper {
+    width: 100%;
+    /* background-color: #ffffff; */
+    padding: 20px;
+    /* border-radius: px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .barry-tan-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .barry-tan-statement-container {
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-statement-wrapper {
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-title {
+      font-size: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-quote {
+      font-size: 17px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-highlight {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.barry-tan-statement-section {
+      padding: {{ section.settings.padding_top_mobile | default: 60 }}px 0 {{ section.settings.padding_bottom_mobile | default: 60 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-statement-container {
+      padding: 0 16px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-statement-wrapper {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-content-column {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: 1;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-image-column {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: 2;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-quote p {
+   font-size: 18px;
+  }
+
+    #shopify-section-{{ section.id }} .barry-tan-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-quote {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-author {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-highlight {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-image-wrapper {
+      padding: 16px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }}.barry-tan-statement-section {
+      padding: {{ section.settings.padding_top_mobile | default: 40 }}px 0 {{ section.settings.padding_bottom_mobile | default: 40 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-statement-container {
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-statement-wrapper {
+      gap: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-title {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-quote {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-author {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-highlight {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-image-wrapper {
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .barry-tan-title {
+      font-size: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-quote {
+      font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .barry-tan-highlight {
+      font-size: 15px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Barry Tan Statement",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Barrie Tan's Statement:"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "<p>If it's not from Annatto, it's not DeltaGold. If it's not tested, it's not real. If the dosage per serving is over 300 mg, it's misleading. Always choose wisely.</p>"
+    },
+    {
+      "type": "text",
+      "id": "quote_author",
+      "label": "Quote Author",
+      "default": "– Dr. Barrie Tan"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlight Text (Yellow)",
+      "default": "Don't Fall For Fake Tocotrienol..!"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#323E47"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barry Tan Statement"
+    }
+  ]
+}
+{% endschema %}

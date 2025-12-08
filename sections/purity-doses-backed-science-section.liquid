@@ -1,0 +1,607 @@
+<div id="shopify-section-{{ section.id }}" class="backed-science-section">
+  <div class="backed-science-container">
+    <div class="backed-science-wrapper">
+      <!-- Left Column - Image (40%) -->
+      <div class="backed-science-image-column">
+        {% if section.settings.image != blank %}
+          <div class="backed-science-image-wrapper">
+            <img 
+              src="{{ section.settings.image | image_url: width: 800 }}"
+              alt="{{ section.settings.image.alt | default: section.settings.main_heading }}"
+              width="800"
+              height="800"
+              loading="lazy"
+              class="backed-science-image"
+            >
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Right Column - Content (60%) -->
+      <div class="backed-science-content-column">
+        {% if section.settings.main_heading != blank %}
+          <h2 class="backed-science-main-heading">{{ section.settings.main_heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.sub_heading != blank %}
+          <p class="backed-science-sub-heading">{{ section.settings.sub_heading }}</p>
+        {% endif %}
+
+        <!-- Two Column Information Grid -->
+        <div class="backed-science-info-grid">
+          <!-- First Row -->
+          <div class="backed-science-info-item">
+            {% if section.settings.left_col_1_title != blank %}
+              <h3 class="backed-science-info-title">{{ section.settings.left_col_1_title }}</h3>
+              {% if section.settings.left_col_1_description != blank %}
+                <p class="backed-science-info-description">{{ section.settings.left_col_1_description }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          <div class="backed-science-info-item">
+            {% if section.settings.right_col_1_title != blank %}
+              <h3 class="backed-science-info-title">{{ section.settings.right_col_1_title }}</h3>
+              {% if section.settings.right_col_1_description != blank %}
+                <p class="backed-science-info-description">{{ section.settings.right_col_1_description }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          <!-- Second Row -->
+          <div class="backed-science-info-item">
+            {% if section.settings.left_col_2_title != blank %}
+              <h3 class="backed-science-info-title">{{ section.settings.left_col_2_title }}</h3>
+              {% if section.settings.left_col_2_description != blank %}
+                <p class="backed-science-info-description">{{ section.settings.left_col_2_description }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          <div class="backed-science-info-item">
+            {% if section.settings.right_col_2_title != blank %}
+              <h3 class="backed-science-info-title">{{ section.settings.right_col_2_title }}</h3>
+              {% if section.settings.right_col_2_description != blank %}
+                <p class="backed-science-info-description">{{ section.settings.right_col_2_description }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Warning Box -->
+        {% if section.settings.warning_text != blank %}
+          <div class="backed-science-warning-box">
+            <p class="backed-science-warning-text">{{ section.settings.warning_text }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}.backed-science-section {
+    background: linear-gradient(to left, 
+      {{ section.settings.gradient_color_1 | default: '#FDFEEC' }} {{ section.settings.gradient_position_1 | default: 0 }}%, 
+      {{ section.settings.gradient_color_2 | default: '#FEFEF0' }} {{ section.settings.gradient_position_2 | default: 17 }}%, 
+      {{ section.settings.gradient_color_3 | default: '#FDFDFB' }} {{ section.settings.gradient_position_3 | default: 40 }}%, 
+      {{ section.settings.gradient_color_4 | default: '#FFFFFF' }} {{ section.settings.gradient_position_4 | default: 100 }}%);
+    padding: {{ section.settings.padding_top_desktop | default: 80 }}px 0 {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-image-column {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin: auto;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-content-column {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-image-wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-main-heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-sub-heading {
+    font-size: 25px;
+    color: #374650;
+    margin: 0 0 40px 0;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 60px;
+    margin-bottom: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-info-item {
+    position: relative;
+    padding-left: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-info-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: {{ section.settings.accent_color | default: '#20B2AA' }};
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-info-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #374650;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-info-description {
+    font-size: 17px;
+    color: #374650;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-warning-box {
+    background-color: {{ section.settings.warning_bg_color | default: '#E3F2FD' }};
+    border-radius: 8px;
+    padding: 10px 24px;
+    margin-top: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-warning-box p{
+   font-size: 18px;
+   word-spacing: 3px;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-warning-text {
+    font-size: 15px;
+    color: #374650;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .backed-science-warning-text strong {
+    font-weight: 600;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .backed-science-container {
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-warning-box p{
+   font-size: 16px;
+   word-spacing: 3px;
+  }
+    #shopify-section-{{ section.id }} .backed-science-wrapper {
+      gap: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-main-heading {
+      font-size: 38px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-grid {
+      gap: 32px 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }}.backed-science-section {
+      background: #ffffff;
+      padding: {{ section.settings.padding_top_mobile | default: 60 }}px 0 {{ section.settings.padding_bottom_mobile | default: 60 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-container {
+      padding: 0 16px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-wrapper {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-image-column {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: 1;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-content-column {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: 2;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-main-heading {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-sub-heading {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-title {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-description {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-warning-box {
+      padding: 16px 20px;
+      margin-top: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-warning-text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #shopify-section-{{ section.id }}.backed-science-section {
+      padding: {{ section.settings.padding_top_mobile | default: 40 }}px 0 {{ section.settings.padding_bottom_mobile | default: 40 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-container {
+      padding: 0 12px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-wrapper {
+      gap: 32px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-main-heading {
+      font-size: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-sub-heading {
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-grid {
+      gap: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-item {
+      padding-left: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-item::before {
+      width: 2px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-title {
+      font-size: 17px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-description {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-warning-box {
+      padding: 1px 16px;
+      margin-top: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-warning-text {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #shopify-section-{{ section.id }} .backed-science-main-heading {
+      font-size: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-sub-heading {
+      font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-title {
+      font-size: 16px;
+    }
+
+    #shopify-section-{{ section.id }} .backed-science-info-description {
+      font-size: 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Backed by Science Section",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Left Side Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "The Right Dosage"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Backed by science"
+    },
+    {
+      "type": "header",
+      "content": "Left Column - First Item"
+    },
+    {
+      "type": "text",
+      "id": "left_col_1_title",
+      "label": "Title",
+      "default": "125 Mg/day"
+    },
+    {
+      "type": "textarea",
+      "id": "left_col_1_description",
+      "label": "Description",
+      "default": "Perfect for daily wellness and cellular support."
+    },
+    {
+      "type": "header",
+      "content": "Left Column - Second Item"
+    },
+    {
+      "type": "text",
+      "id": "left_col_2_title",
+      "label": "Title",
+      "default": "Consistency matters"
+    },
+    {
+      "type": "textarea",
+      "id": "left_col_2_description",
+      "label": "Description",
+      "default": "Studies show measurable changes within 30-60 days of daily use."
+    },
+    {
+      "type": "header",
+      "content": "Right Column - First Item"
+    },
+    {
+      "type": "text",
+      "id": "right_col_1_title",
+      "label": "Title",
+      "default": "300 Mg/day"
+    },
+    {
+      "type": "textarea",
+      "id": "right_col_1_description",
+      "label": "Description",
+      "default": "Clinically validated therapeutic dose for targeted benefits in heart, brain, liver, and metabolic health."
+    },
+    {
+      "type": "header",
+      "content": "Right Column - Second Item"
+    },
+    {
+      "type": "text",
+      "id": "right_col_2_title",
+      "label": "Title",
+      "default": "How to take it"
+    },
+    {
+      "type": "richtext",
+      "id": "right_col_2_description",
+      "label": "Description",
+      "default": "<p>For better absorption, take with a meal that includes <strong>healthy fats</strong>.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Warning Box"
+    },
+    {
+      "type": "richtext",
+      "id": "warning_text",
+      "label": "Warning Text",
+      "default": "<p><strong>A Note of Caution</strong>: Some fake brands mislead customers with extreme \"<strong>high-potency</strong>\" claims like 1000 mg doses. Such dosages are not backed by science and can be unsafe.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "header",
+      "content": "Gradient Background (Left to Right)"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Color 1",
+      "default": "#FDFEEC"
+    },
+    {
+      "type": "range",
+      "id": "gradient_position_1",
+      "label": "Color 1 Position (%)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Color 2",
+      "default": "#FEFEF0"
+    },
+    {
+      "type": "range",
+      "id": "gradient_position_2",
+      "label": "Color 2 Position (%)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 17
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_3",
+      "label": "Color 3",
+      "default": "#FDFDFB"
+    },
+    {
+      "type": "range",
+      "id": "gradient_position_3",
+      "label": "Color 3 Position (%)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_4",
+      "label": "Color 4",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "gradient_position_4",
+      "label": "Color 4 Position (%)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color (Vertical Lines)",
+      "default": "#20B2AA"
+    },
+    {
+      "type": "color",
+      "id": "warning_bg_color",
+      "label": "Warning Box Background Color",
+      "default": "#E3F2FD"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Backed by Science Section"
+    }
+  ]
+}
+{% endschema %}
+
