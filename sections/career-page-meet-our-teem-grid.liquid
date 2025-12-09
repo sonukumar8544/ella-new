@@ -1,0 +1,439 @@
+<style>
+  #shopify-section-{{ section.id }} .meet-our-team {
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    padding: {{ section.settings.section_padding_top }}px {{ section.settings.section_padding_horizontal }}px {{ section.settings.section_padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__header {
+    text-align: center;
+    margin-bottom: {{ section.settings.header_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    line-height: 1.2;
+    color: {{ section.settings.title_color | default: '#000000' }};
+    margin: 0 0 {{ section.settings.title_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__subtitle {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.subtitle_color | default: '#666666' }};
+    margin: 0;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    margin-top: {{ section.settings.grid_top_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
+
+  #shopify-section-{{ section.id }} .meet-our-team__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: {{ section.settings.image_border_radius }}px;
+    aspect-ratio: {{ section.settings.image_aspect_ratio }};
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .meet-our-team__grid {
+      grid-template-columns: repeat({{ section.settings.columns_tablet }}, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .meet-our-team {
+      padding: {{ section.settings.section_padding_top_mobile }}px {{ section.settings.section_padding_horizontal_mobile }}px {{ section.settings.section_padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .meet-our-team__title {
+      font-size: {{ section.settings.title_font_size_mobile | default: section.settings.title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .meet-our-team__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile | default: section.settings.subtitle_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .meet-our-team__grid {
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      gap: {{ section.settings.grid_gap_mobile | default: section.settings.grid_gap }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .meet-our-team__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="meet-our-team">
+  <div class="meet-our-team__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="meet-our-team__header">
+        {% if section.settings.title != blank %}
+          <h2 class="meet-our-team__title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="meet-our-team__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="meet-our-team__grid">
+        {% for block in section.blocks %}
+          <div class="meet-our-team__item" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <img 
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                srcset="{{ block.settings.image | image_url: width: 400 }} 400w,
+                        {{ block.settings.image | image_url: width: 600 }} 600w,
+                        {{ block.settings.image | image_url: width: 800 }} 800w,
+                        {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                alt="{{ block.settings.image.alt | default: 'Team member' }}"
+                class="meet-our-team__image"
+                width="{{ block.settings.image.width | default: 800 }}"
+                height="{{ block.settings.image.height | default: 600 }}"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Career Page Our Team",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Padding Horizontal (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "label": "Padding Horizontal Mobile (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Meet Our Team"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (px)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size Mobile (px)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_spacing",
+      "label": "Title Bottom Spacing (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Work alongside passionate professionals who are committed to making a difference in the wellness industry."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size Mobile (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "label": "Subtitle Max Width (px)",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "default": 800,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_spacing",
+      "label": "Header Bottom Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid Gap (px)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "label": "Grid Gap Mobile (px)",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Grid Top Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image Border Radius (px)",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 3", "label": "Standard (4:3)" },
+        { "value": "16 / 9", "label": "Widescreen (16:9)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "auto", "label": "Auto (Original)" }
+      ],
+      "default": "1 / 1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_image",
+      "name": "Team Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career page meet our teem grid",
+      "blocks": [
+        {
+          "type": "team_image"
+        },
+        {
+          "type": "team_image"
+        },
+        {
+          "type": "team_image"
+        },
+        {
+          "type": "team_image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

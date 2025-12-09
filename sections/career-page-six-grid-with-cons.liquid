@@ -1,0 +1,673 @@
+<style>
+  #shopify-section-{{ section.id }} .career-culture {
+    background-color: {{ section.settings.background_color | default: '#f9fafb' }};
+    padding: {{ section.settings.section_padding_top }}px {{ section.settings.section_padding_horizontal }}px {{ section.settings.section_padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__header {
+    text-align: center;
+    margin-bottom: {{ section.settings.header_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    line-height: 1.2;
+    color: {{ section.settings.title_color | default: '#000000' }};
+    margin: 0 0 {{ section.settings.title_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__subtitle {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.subtitle_color | default: '#666666' }};
+    margin: 0;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    margin-top: {{ section.settings.grid_top_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__item {
+    background-color: {{ section.settings.item_background_color | default: '#ffffff' }};
+    border-radius: {{ section.settings.item_border_radius }}px;
+    padding: {{ section.settings.item_padding }}px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__icon-wrapper {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    background-color: {{ section.settings.icon_background_color | default: '#006F8C' }};
+    border-radius: {{ section.settings.icon_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: {{ section.settings.icon_bottom_spacing }}px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__icon {
+    width: {{ section.settings.icon_inner_size }}px;
+    height: {{ section.settings.icon_inner_size }}px;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__item-title {
+    font-size: {{ section.settings.item_title_font_size }}px;
+    font-weight: {{ section.settings.item_title_font_weight }};
+    line-height: 1.3;
+    color: {{ section.settings.item_title_color | default: '#000000' }};
+    margin: 0 0 {{ section.settings.item_title_bottom_spacing }}px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .career-culture__item-description {
+    font-size: {{ section.settings.item_description_font_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.item_description_color | default: '#666666' }};
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .career-culture__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .career-culture {
+      padding: {{ section.settings.section_padding_top_mobile }}px {{ section.settings.section_padding_horizontal_mobile }}px {{ section.settings.section_padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__title {
+      font-size: {{ section.settings.title_font_size_mobile | default: section.settings.title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile | default: section.settings.subtitle_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__icon-wrapper {
+      width: {{ section.settings.icon_size_mobile | default: section.settings.icon_size }}px;
+      height: {{ section.settings.icon_size_mobile | default: section.settings.icon_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__icon {
+      width: {{ section.settings.icon_inner_size_mobile | default: section.settings.icon_inner_size }}px;
+      height: {{ section.settings.icon_inner_size_mobile | default: section.settings.icon_inner_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__item-title {
+      font-size: {{ section.settings.item_title_font_size_mobile | default: section.settings.item_title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__item-description {
+      font-size: {{ section.settings.item_description_font_size_mobile | default: section.settings.item_description_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__grid {
+      gap: {{ section.settings.grid_gap_mobile | default: section.settings.grid_gap }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-culture__item {
+      padding: {{ section.settings.item_padding_mobile | default: section.settings.item_padding }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .career-culture__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="career-culture">
+  <div class="career-culture__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="career-culture__header">
+        {% if section.settings.title != blank %}
+          <h2 class="career-culture__title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="career-culture__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="career-culture__grid">
+        {% for block in section.blocks limit: 10 %}
+          <div class="career-culture__item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="career-culture__icon-wrapper">
+                <img 
+                  src="{{ block.settings.icon | image_url: width: 200 }}"
+                  alt="{{ block.settings.icon.alt | default: block.settings.title }}"
+                  class="career-culture__icon"
+                  width="{{ block.settings.icon.width | default: 100 }}"
+                  height="{{ block.settings.icon.height | default: 100 }}"
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+
+            {% if block.settings.title != blank %}
+              <h3 class="career-culture__item-title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.description != blank %}
+              <p class="career-culture__item-description">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Career page six grid",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Padding Horizontal (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "label": "Padding Horizontal Mobile (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Culture & Values"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (px)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size Mobile (px)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_spacing",
+      "label": "Title Bottom Spacing (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We've built a culture that prioritizes collaboration, innovation, and personal growth while maintaining our commitment to wellness."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size Mobile (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "label": "Subtitle Max Width (px)",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "default": 800,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_spacing",
+      "label": "Header Bottom Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid Gap (px)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "label": "Grid Gap Mobile (px)",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Grid Top Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Settings"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "label": "Item Border Radius (px)",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item Padding (px)",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_padding_mobile",
+      "label": "Item Padding Mobile (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 25,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Icon Settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon Container Size Desktop (px)",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon Container Size Mobile (px)",
+      "min": 40,
+      "max": 120,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size",
+      "label": "Icon Inner Size Desktop (px)",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size_mobile",
+      "label": "Icon Inner Size Mobile (px)",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "default": 25,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon Background Color",
+      "default": "#006F8C"
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius",
+      "label": "Icon Border Radius (px)",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_bottom_spacing",
+      "label": "Icon Bottom Spacing (px)",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_title_font_size",
+      "label": "Item Title Font Size (px)",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_title_font_size_mobile",
+      "label": "Item Title Font Size Mobile (px)",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "item_title_font_weight",
+      "label": "Item Title Font Weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "item_title_bottom_spacing",
+      "label": "Item Title Bottom Spacing (px)",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Description Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_description_font_size",
+      "label": "Item Description Font Size (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_description_font_size_mobile",
+      "label": "Item Description Font Size Mobile (px)",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "item_description_color",
+      "label": "Item Description Color",
+      "default": "#666666"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "culture_item",
+      "name": "Culture Item",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Collaborative & Cross-Functional"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Work across teams and departments to achieve shared goals"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career page six grid with cons",
+      "blocks": [
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Collaborative & Cross-Functional",
+            "description": "Work across teams and departments to achieve shared goals"
+          }
+        },
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Continuous Learning",
+            "description": "Dedicated time and budget for professional development"
+          }
+        },
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Ownership & Autonomy",
+            "description": "Take ownership of your projects with the freedom to innovate"
+          }
+        },
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Wellness First",
+            "description": "Health and wellbeing programs for all team members"
+          }
+        },
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Innovation Driven",
+            "description": "Encourage creative thinking and experimentation"
+          }
+        },
+        {
+          "type": "culture_item",
+          "settings": {
+            "title": "Global Impact",
+            "description": "Make a difference in communities worldwide"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
