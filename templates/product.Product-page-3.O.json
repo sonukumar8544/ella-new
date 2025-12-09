@@ -591,6 +591,26 @@
         "include_margins": false
       }
     },
+    "1749117565c974bd22": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_KmJmDx": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_KmJmDx"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": false
+      }
+    },
     "scientific_slider_third_o_AYBm97": {
       "type": "scientific-slider-thirdO",
       "name": "scientific slider thirdO",
@@ -722,6 +742,7 @@
     "featured_blog_7CQrDa",
     "174547048737bd000a",
     "1749117533ec919232",
+    "1749117565c974bd22",
     "scientific_slider_third_o_AYBm97",
     "transform_section_third_o_CP39Wc",
     "metafield_testimonial_video_VcK34F",
