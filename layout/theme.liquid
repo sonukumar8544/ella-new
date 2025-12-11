@@ -271,6 +271,9 @@
       {%- endif -%}
     </div>
 
+    {% comment %} URL Redirection {% endcomment %}
+  {% comment %} {% render 'url-redirection' %} {% endcomment %}
+
     {% render 'halo-sidebar' %}
 
     {%- if settings.enable_following_cursor -%}
