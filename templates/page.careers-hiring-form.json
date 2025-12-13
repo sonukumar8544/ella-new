@@ -117,6 +117,7 @@
     },
     "career_page_html_94aXky": {
       "type": "career-page-html",
+      "disabled": true,
       "name": "Career Page HTML Form",
       "settings": {
         "heading": "Join Our Team",
@@ -124,16 +125,25 @@
         "education_options": "Select Option\nHigh School\nBachelor's Degree\nMaster's Degree\nDoctorate",
         "experience_options": "Select Option\n0-1 Years\n1-3 Years\n3-5 Years\n5+ Years",
         "notice_options": "Select Option\nImmediate\n15 Days\n30 Days\n60+ Days",
+        "portfolio_label": "Add Your Portfolio / Resume Link",
         "submit_label": "Submit Application",
         "success_message": "Thanks! Your application has been received.",
         "error_message": "Something went wrong. Please try again.",
         "background_color": "#f5f7fb"
+      }
+    },
+    "custom_liquid_PGPWw3": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<iframe\n    src=\"https://email-send-three.vercel.app/\"\n    width=\"100%\"\n    height=\"840px\"\n    style=\"border:1px solid #ccc;\"\n    title=\"Embedded App\"\n  ></iframe>"
       }
     }
   },
   "order": [
     "main",
     "job-application",
-    "career_page_html_94aXky"
+    "career_page_html_94aXky",
+    "custom_liquid_PGPWw3"
   ]
 }
