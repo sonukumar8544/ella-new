@@ -18,7 +18,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<iframe\n    src=\"https://email-send-three.vercel.app/\"\n    title=\"Embedded App\"\n    scrolling=\"no\"\n  ></iframe>\n\n <style>\n    html, body {\n      margin: 0;\n      padding: 0;\n      width: 100%;\n      height: 100%;\n      overflow: hidden; /* remove page scrollbar */\n    }\n\n    iframe {\n      width: 100%;\n      height: 100vh; /* full screen height */\n      border: none;\n      display: block; /* removes small gaps */\n    }\n  </style>"
+        "custom_liquid": "<iframe\n    src=\"https://email-send-three.vercel.app/\"\n    title=\"Embedded App\"\n    scrolling=\"no\"\n  ></iframe>\n\n <style>\n    html, body {\n      margin: 0;\n      padding: 0;\n      width: 100%;\n      height: 100%;\n    }\n\n    iframe {\n      width: 100%;\n      height: 100vh; /* full screen height */\n      border: none;\n      display: block; /* removes small gaps */\n    }\n  </style>"
       }
     },
     "image_banner_Wipaym": {
