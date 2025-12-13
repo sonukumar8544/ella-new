@@ -14,6 +14,13 @@
       "disabled": true,
       "settings": {}
     },
+    "custom_liquid_XTXL3X": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<iframe\n    src=\"https://email-send-three.vercel.app/\"\n    width=\"100%\"\n    title=\"Embedded App\"\n  ></iframe>"
+      }
+    },
     "image_banner_Wipaym": {
       "type": "image-banner",
       "blocks": {
@@ -1109,17 +1116,11 @@
         "cv_Upload_label": "UPLOAD YOUR CV",
         "cv_submit_label": "SUBMIT"
       }
-    },
-    "custom_liquid_XTXL3X": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<iframe\n    src=\"https://email-send-three.vercel.app/\"\n    width=\"100%\"\n    title=\"Embedded App\"\n  ></iframe>"
-      }
     }
   },
   "order": [
     "main",
+    "custom_liquid_XTXL3X",
     "image_banner_Wipaym",
     "brand_slider_tRACcq",
     "image_banner_ggwTzF",
@@ -1128,7 +1129,6 @@
     "image_banner_dxxgeW",
     "custom_service_block_NrwCEM",
     "career_testimonial_section_BnHr9w",
-    "career_resume_form_WmDd3t",
-    "custom_liquid_XTXL3X"
+    "career_resume_form_WmDd3t"
   ]
 }
