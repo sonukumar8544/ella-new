@@ -3,6 +3,9 @@
     {% if section.settings.title != blank %}
       <h2 class="purity-doses-table-title">{{ section.settings.title }}</h2>
     {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="purity-doses-table-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
 
     {% if section.settings.show_table != false %}
       <div class="purity-doses-table-wrapper">
@@ -93,6 +96,15 @@
     margin: 0 0 48px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .purity-doses-table-subtitle {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #086B92;
+    text-align: center;
+    margin: -32px auto 40px;
+    max-width: 760px;
   }
 
   #shopify-section-{{ section.id }} .purity-doses-table-wrapper {
@@ -226,6 +238,11 @@
       margin-bottom: 36px;
     }
 
+    #shopify-section-{{ section.id }} .purity-doses-table-subtitle {
+      font-size: 16px;
+      margin: -24px auto 32px;
+    }
+
     #shopify-section-{{ section.id }} .purity-doses-table-container {
       padding: 0 16px;
     }
@@ -256,6 +273,11 @@
     #shopify-section-{{ section.id }} .purity-doses-table-title {
       font-size: 26px;
       margin-bottom: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .purity-doses-table-subtitle {
+      font-size: 16px;
+      margin: -18px auto 26px;
     }
 
     #shopify-section-{{ section.id }} .purity-doses-table-container {
@@ -400,6 +422,12 @@
       "id": "title",
       "label": "Table Title",
       "default": "Tocopherol contamination weakens results."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Add an optional subtitle here"
     },
     {
       "type": "header",

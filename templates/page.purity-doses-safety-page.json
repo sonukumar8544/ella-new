@@ -309,6 +309,7 @@
       "name": "Purity Doses Table Section",
       "settings": {
         "title": "Tocopherol contamination weakens results.",
+        "subtitle": "Add an optional subtitle here",
         "show_table": true,
         "show_badges": true,
         "background_color": "#f9fbfe",
@@ -360,9 +361,11 @@
         "badge_image_yWPKWT",
         "badge_image_VD7VeL"
       ],
+      "disabled": true,
       "name": "Purity Doses Table Section",
       "settings": {
-        "title": "",
+        "title": "Testing & Certifications You Can Trust",
+        "subtitle": "Add an optional subtitle here",
         "show_table": false,
         "show_badges": true,
         "background_color": "#f8f8f8",
@@ -477,28 +480,36 @@
         "slider_image_KG8tnK": {
           "type": "slider_image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618873296_91697749-8451-4e0b-8b35-df6618fad077.svg",
-            "image_text": "Third-party lab tested for <br>potency & purity"
+            "image": "shopify://shop_images/Frame_40b2004b-6729-4605-a40f-f38413bfe252.svg",
+            "image_text": "Non-GMO"
           }
         },
         "slider_image_T8wBkQ": {
           "type": "slider_image",
           "settings": {
-            "image": "shopify://shop_images/Group_1000004426.svg",
-            "image_text": "Produced in FDA-registered,<br> GMP-certified facilities"
+            "image": "shopify://shop_images/Frame_1618873296_91697749-8451-4e0b-8b35-df6618fad077.svg",
+            "image_text": "Third-Party Tested"
+          }
+        },
+        "slider_image_A9DafX": {
+          "type": "slider_image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1_10fad38c-038f-44c7-8bdc-4dd977256d88.svg",
+            "image_text": "GMP-Certified"
           }
         },
         "slider_image_rwYmWt": {
           "type": "slider_image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1618873583_bd3c4224-e692-4f83-92e4-b5a5d2eeca64.png",
-            "image_text": "CA NPN - Certified in Canada for<br> dosage and health claims"
+            "image": "shopify://shop_images/Frame_1618873574.svg",
+            "image_text": "NPL Approved"
           }
         }
       },
       "block_order": [
         "slider_image_KG8tnK",
         "slider_image_T8wBkQ",
+        "slider_image_A9DafX",
         "slider_image_rwYmWt"
       ],
       "name": "purity Icons Slider with text",

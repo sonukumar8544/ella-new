@@ -68,11 +68,13 @@
         }
 
         var totalSlides = slider.children().length;
-        var slidesToShow = Math.min(totalSlides, 5); // Max 5 on desktop
-        
+        var slidesToShowDesktop = Math.min(totalSlides, 5); // Max 5 on desktop
+        var centerModeDesktop = totalSlides > slidesToShowDesktop;
+        var infiniteDesktop = totalSlides > slidesToShowDesktop;
+
         slider.slick({
           dots: false,
-          infinite: true,
+          infinite: infiniteDesktop,
           arrows: false,
           speed: 300,
           autoplay: false,
@@ -82,44 +84,56 @@
           touchThreshold: 5,
           swipeToSlide: true,
           variableWidth: false,
-          slidesToShow: slidesToShow,
+          slidesToShow: slidesToShowDesktop,
           slidesToScroll: 1,
-          centerMode: true,
+          centerMode: centerModeDesktop,
           centerPadding: '20px',
           lazyLoad: 'ondemand',
           responsive: [
             {
               breakpoint: 1025,
-              settings: {
-                slidesToShow: Math.min(totalSlides, 4),
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: '20px',
-                infinite: true,
-                arrows: false
-              }
+              settings: (function() {
+                var slidesToShow = Math.min(totalSlides, 4);
+                var enableCenter = totalSlides > slidesToShow;
+                return {
+                  slidesToShow: slidesToShow,
+                  slidesToScroll: 1,
+                  centerMode: enableCenter,
+                  centerPadding: '20px',
+                  infinite: enableCenter,
+                  arrows: false
+                };
+              })()
             },
             {
               breakpoint: 769,
-              settings: {
-                slidesToShow: Math.min(totalSlides, 3),
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: '20px',
-                infinite: true,
-                arrows: false
-              }
+              settings: (function() {
+                var slidesToShow = Math.min(totalSlides, 3);
+                var enableCenter = totalSlides > slidesToShow;
+                return {
+                  slidesToShow: slidesToShow,
+                  slidesToScroll: 1,
+                  centerMode: enableCenter,
+                  centerPadding: '20px',
+                  infinite: enableCenter,
+                  arrows: false
+                };
+              })()
             },
             {
               breakpoint: 481,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: '20px',
-                infinite: true,
-                arrows: false
-              }
+              settings: (function() {
+                var slidesToShow = 1;
+                var enableCenter = totalSlides > slidesToShow;
+                return {
+                  slidesToShow: slidesToShow,
+                  slidesToScroll: 1,
+                  centerMode: enableCenter,
+                  centerPadding: '20px',
+                  infinite: enableCenter,
+                  arrows: false
+                };
+              })()
             }
           ]
         });
