@@ -7348,6 +7348,7 @@ $(document)
   .on("click", ".quiz_bundle_prodct", function () {
     const $target = $(this);
     $target.addClass("is-loading");
+    const redirectTo = $target.attr("data-redirect");
 
     const variantIds = $target.attr("data-variant-ids")
       .split(",")
@@ -7369,6 +7370,11 @@ $(document)
             dataType: "json",
             contentType: "application/json",
             success: function () {
+                if (redirectTo) {
+                    window.location.href = redirectTo;
+                    return;
+                }
+
                 $.ajax({
                     type: "GET",
                     url: "/cart.js",

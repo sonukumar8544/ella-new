@@ -16,17 +16,711 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "career_landing_page_banner_i4WTxE": {
+      "type": "career-landing-page-banner",
+      "name": "Career Page Banner",
+      "settings": {
+        "background_color": "#e2edf2",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "content_gap": 40,
+        "content_spacing": 30,
+        "title": "Join Our Wellness Movement",
+        "title_highlight_text": "Wellness",
+        "title_font_size": 48,
+        "title_font_size_mobile": 36,
+        "title_font_weight": "700",
+        "title_color": "#333333",
+        "title_highlight_color": "#086b92",
+        "description": "Where science meets purpose. Build your career while making a meaningful impact on people's health and wellbeing.",
+        "description_font_size": 18,
+        "description_font_size_mobile": 16,
+        "description_color": "#666666",
+        "button_1_text": "View Open Positions",
+        "button_1_url": "https://wellnessextract.com/pages/marketing-lead",
+        "button_1_show_arrow": true,
+        "button_2_text": "Learn About Us",
+        "button_2_url": "https://wellnessextract.com/pages/marketing-lead",
+        "button_font_size": 16,
+        "button_font_weight": "600",
+        "button_padding_vertical": 14,
+        "button_padding_horizontal": 28,
+        "button_border_radius": 8,
+        "button_gap": 16,
+        "button_primary_bg_color": "#086b92",
+        "button_primary_text_color": "#ffffff",
+        "button_primary_hover_bg_color": "#005a73",
+        "button_secondary_text_color": "#086b92",
+        "button_secondary_border_color": "#086b92",
+        "button_secondary_hover_bg_color": "#c2dceb1a",
+        "button_secondary_hover_border_color": "#006f8c",
+        "image": "shopify://shop_images/Frame_1618873517_8ecc91d2-7342-424a-a771-786d10700984.png",
+        "image_border_radius": 12
+      }
+    },
+    "career_page_grid_icons_with_text_fYixHC": {
+      "type": "career-page-grid-icons-with-text",
+      "blocks": {
+        "grid_item_qXDAVB": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div.svg",
+            "title": "Scientific Rigor",
+            "description": "Every product backed by research and third-party testing"
+          }
+        },
+        "grid_item_wmqb3i": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_1.svg",
+            "title": "Integrity & Transparency",
+            "description": "Complete transparency in sourcing and manufacturing"
+          }
+        },
+        "grid_item_W6r6dg": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_2.svg",
+            "title": "Community First",
+            "description": "Putting customer health and community impact above profit"
+          }
+        },
+        "grid_item_XBgXxn": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_3.svg",
+            "title": "Growth & Learning",
+            "description": "Continuous development opportunities and skill building"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_qXDAVB",
+        "grid_item_wmqb3i",
+        "grid_item_W6r6dg",
+        "grid_item_XBgXxn"
+      ],
+      "name": "Career Page Grid Icons with Text",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Why Work With Us",
+        "title_font_size": 38,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#000000",
+        "title_bottom_spacing": 20,
+        "subtitle": "At Wellness Extract, we're driven by a mission to make high-quality, science-backed wellness products accessible to everyone. Our work directly impacts the health and wellbeing of thousands of customers worldwide.",
+        "subtitle_font_size": 16,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 650,
+        "header_bottom_spacing": 60,
+        "columns_desktop": "4",
+        "grid_gap": 0,
+        "grid_gap_mobile": 30,
+        "grid_top_spacing": 40,
+        "item_padding": 20,
+        "item_padding_mobile": 15,
+        "icon_size": 100,
+        "icon_size_mobile": 80,
+        "icon_inner_size": 50,
+        "icon_inner_size_mobile": 40,
+        "icon_background_color": "#e2edf2",
+        "icon_bottom_spacing": 20,
+        "item_title_font_size": 20,
+        "item_title_font_size_mobile": 18,
+        "item_title_font_weight": "700",
+        "item_title_color": "#000000",
+        "item_title_bottom_spacing": 12,
+        "item_description_font_size": 16,
+        "item_description_font_size_mobile": 16,
+        "item_description_color": "#666666"
+      }
+    },
+    "career_page_six_grid_with_cons_8fqJ34": {
+      "type": "career-page-six-grid-with-cons",
+      "blocks": {
+        "culture_item_NVwTcB": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_4.svg",
+            "title": "Collaborative & Cross-Functional",
+            "description": "Work across teams and departments to achieve shared goals"
+          }
+        },
+        "culture_item_RhbaJy": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_5.svg",
+            "title": "Continuous Learning",
+            "description": "Dedicated time and budget for professional development"
+          }
+        },
+        "culture_item_qzjr6A": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_6.svg",
+            "title": "Ownership & Autonomy",
+            "description": "Take ownership of your projects with the freedom to innovate"
+          }
+        },
+        "culture_item_YC8gEE": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_7.svg",
+            "title": "Wellness First",
+            "description": "Health and wellbeing programs for all team members"
+          }
+        },
+        "culture_item_DAUHqL": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_8.svg",
+            "title": "Innovation Driven",
+            "description": "Encourage creative thinking and experimentation"
+          }
+        },
+        "culture_item_X3bt6K": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_9.svg",
+            "title": "Global Impact",
+            "description": "Make a difference in communities worldwide"
+          }
+        }
+      },
+      "block_order": [
+        "culture_item_NVwTcB",
+        "culture_item_RhbaJy",
+        "culture_item_qzjr6A",
+        "culture_item_YC8gEE",
+        "culture_item_DAUHqL",
+        "culture_item_X3bt6K"
+      ],
+      "name": "Career page six grid with cons",
+      "settings": {
+        "background_color": "#f9fafb",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Our Culture & Values",
+        "title_font_size": 40,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#111827",
+        "title_bottom_spacing": 20,
+        "subtitle": "We've built a culture that prioritizes collaboration, innovation, and personal growth while maintaining our commitment to wellness.",
+        "subtitle_font_size": 18,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#4b5563",
+        "subtitle_max_width": 600,
+        "header_bottom_spacing": 60,
+        "grid_gap": 30,
+        "grid_gap_mobile": 20,
+        "grid_top_spacing": 40,
+        "item_background_color": "#ffffff",
+        "item_border_radius": 10,
+        "item_padding": 30,
+        "item_padding_mobile": 25,
+        "icon_size": 45,
+        "icon_size_mobile": 40,
+        "icon_inner_size": 45,
+        "icon_inner_size_mobile": 30,
+        "icon_background_color": "#086b92",
+        "icon_border_radius": 8,
+        "icon_bottom_spacing": 16,
+        "item_title_font_size": 20,
+        "item_title_font_size_mobile": 18,
+        "item_title_font_weight": "700",
+        "item_title_color": "#111827",
+        "item_title_bottom_spacing": 12,
+        "item_description_font_size": 16,
+        "item_description_font_size_mobile": 16,
+        "item_description_color": "#4b5563"
+      }
+    },
+    "career_page_meet_our_teem_grid_WBUnBA": {
+      "type": "career-page-meet-our-teem-grid",
+      "blocks": {
+        "team_image_jLbJfb": {
+          "type": "team_image",
+          "settings": {
+            "image": "shopify://shop_images/img_1.png"
+          }
+        },
+        "team_image_PxMFYd": {
+          "type": "team_image",
+          "settings": {
+            "image": "shopify://shop_images/img_2.png"
+          }
+        },
+        "team_image_rFgiyX": {
+          "type": "team_image",
+          "settings": {
+            "image": "shopify://shop_images/img_3.png"
+          }
+        },
+        "team_image_3UtdNc": {
+          "type": "team_image",
+          "settings": {
+            "image": "shopify://shop_images/img_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "team_image_jLbJfb",
+        "team_image_PxMFYd",
+        "team_image_rFgiyX",
+        "team_image_3UtdNc"
+      ],
+      "name": "Career page meet our teem grid",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_padding_top": 60,
+        "section_padding_bottom": 100,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Meet Our Team",
+        "title_font_size": 40,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#000000",
+        "title_bottom_spacing": 20,
+        "subtitle": "Work alongside passionate professionals who are committed to making a difference in the wellness industry.",
+        "subtitle_font_size": 18,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 550,
+        "header_bottom_spacing": 60,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "grid_gap": 20,
+        "grid_gap_mobile": 15,
+        "grid_top_spacing": 40,
+        "image_border_radius": 8,
+        "image_aspect_ratio": "1 / 1"
+      }
+    },
+    "career_page_six_grid_with_cons_k9Q9pm": {
+      "type": "career-page-six-grid-with-cons",
+      "blocks": {
+        "culture_item_9XcBJx": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i.svg",
+            "title": "Health Insurance",
+            "description": "Comprehensive medical, dental, and vision coverage"
+          }
+        },
+        "culture_item_cjmMPk": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i_1.svg",
+            "title": "Remote & Hybrid",
+            "description": "Flexible work arrangements with home office stipend"
+          }
+        },
+        "culture_item_h4qLrU": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i_2.svg",
+            "title": "Wellness Allowance",
+            "description": "Monthly budget for gym, supplements, and wellness activities"
+          }
+        },
+        "culture_item_dGeQK6": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i_3.svg",
+            "title": "Learning Budget",
+            "description": "Annual allowance for courses, conferences, and certifications"
+          }
+        },
+        "culture_item_caqF9T": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i_4.svg",
+            "title": "Flexible Hours",
+            "description": "Work when you're most productive with core collaboration hours"
+          }
+        },
+        "culture_item_6qnW67": {
+          "type": "culture_item",
+          "settings": {
+            "icon": "shopify://shop_images/i_5.svg",
+            "title": "Parental Leave",
+            "description": "Generous paid leave for new parents and family care"
+          }
+        }
+      },
+      "block_order": [
+        "culture_item_9XcBJx",
+        "culture_item_cjmMPk",
+        "culture_item_h4qLrU",
+        "culture_item_dGeQK6",
+        "culture_item_caqF9T",
+        "culture_item_6qnW67"
+      ],
+      "name": "Career page six grid with cons",
+      "settings": {
+        "background_color": "#e3f7ff",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Benefits & Perks",
+        "title_font_size": 40,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#111827",
+        "title_bottom_spacing": 20,
+        "subtitle": "We believe in taking care of our team members with comprehensive benefits and unique wellness perks.",
+        "subtitle_font_size": 18,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#4b5563",
+        "subtitle_max_width": 600,
+        "header_bottom_spacing": 60,
+        "grid_gap": 30,
+        "grid_gap_mobile": 20,
+        "grid_top_spacing": 40,
+        "item_background_color": "#ffffff",
+        "item_border_radius": 10,
+        "item_padding": 20,
+        "item_padding_mobile": 25,
+        "icon_size": 40,
+        "icon_size_mobile": 40,
+        "icon_inner_size": 30,
+        "icon_inner_size_mobile": 30,
+        "icon_background_color": "rgba(0,0,0,0)",
+        "icon_border_radius": 8,
+        "icon_bottom_spacing": 6,
+        "item_title_font_size": 20,
+        "item_title_font_size_mobile": 18,
+        "item_title_font_weight": "700",
+        "item_title_color": "#111827",
+        "item_title_bottom_spacing": 12,
+        "item_description_font_size": 16,
+        "item_description_font_size_mobile": 16,
+        "item_description_color": "#4b5563"
+      }
+    },
+    "career_page_team_reviews_cJiQmD": {
+      "type": "career-page-team-reviews",
+      "blocks": {
+        "review_A4RGic": {
+          "type": "review",
+          "settings": {
+            "quote": "The growth opportunities here are incredible. I've been able to expand my skills while working on products that genuinely help people improve their health.",
+            "avatar": "shopify://shop_images/img_5_22fba11b-5aa9-4eba-8bc3-327aef35f2e7.png",
+            "name": "Sarah Chen",
+            "job_title": "Product Manager"
+          }
+        },
+        "review_yrJPBW": {
+          "type": "review",
+          "settings": {
+            "quote": "The collaborative culture here is amazing. Everyone is genuinely invested in both the mission and each other's success.",
+            "avatar": "shopify://shop_images/img_6.png",
+            "name": "Marcus Rodriguez",
+            "job_title": "Research Scientist"
+          }
+        },
+        "review_gjAP9A": {
+          "type": "review",
+          "settings": {
+            "quote": "I love that we practice what we preach. The wellness-first approach isn't just for customers - it's how we treat our team too.",
+            "avatar": "shopify://shop_images/img_7.png",
+            "name": "Emily Johnson",
+            "job_title": "Marketing Director"
+          }
+        }
+      },
+      "block_order": [
+        "review_A4RGic",
+        "review_yrJPBW",
+        "review_gjAP9A"
+      ],
+      "name": "Career Page Team Reviews",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "What Our Team Says",
+        "title_font_size": 38,
+        "title_font_size_mobile": 28,
+        "title_font_weight": "700",
+        "title_color": "#000000",
+        "header_bottom_spacing": 60,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "grid_gap": 30,
+        "grid_gap_mobile": 20,
+        "grid_top_spacing": 40,
+        "card_background_color": "#fbfcff",
+        "card_border_radius": 12,
+        "card_padding": 20,
+        "card_padding_mobile": 20,
+        "card_shadow": "0 4px 6px rgba(0, 0, 0, 0.07)",
+        "quote_font_size": 16,
+        "quote_font_size_mobile": 16,
+        "quote_color": "#374151",
+        "quote_bottom_spacing": 10,
+        "avatar_size": 50,
+        "avatar_size_mobile": 50,
+        "avatar_border_color": "#ffffff",
+        "author_gap": 16,
+        "author_top_spacing": 20,
+        "author_name_font_size": 18,
+        "author_name_font_size_mobile": 17,
+        "author_name_font_weight": "700",
+        "author_name_color": "#111827",
+        "author_title_font_size": 16,
+        "author_title_font_size_mobile": 16,
+        "author_title_color": "#6b7280"
+      }
+    },
+    "career_page_grid_icons_with_text_idhmQz": {
+      "type": "career-page-grid-icons-with-text",
+      "blocks": {
+        "grid_item_d4TwzE": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/50.svg",
+            "title": "",
+            "description": "Women in leadership"
+          }
+        },
+        "grid_item_M6Wir7": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/40.svg",
+            "title": "",
+            "description": "Countries represented"
+          }
+        },
+        "grid_item_kzazAK": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/60.svg",
+            "title": "",
+            "description": "Diverse hiring rate"
+          }
+        },
+        "grid_item_G3tm6c": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/100.svg",
+            "title": "",
+            "description": "Inclusive culture commitment"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_d4TwzE",
+        "grid_item_M6Wir7",
+        "grid_item_kzazAK",
+        "grid_item_G3tm6c"
+      ],
+      "name": "Career Page Grid Icons with Text",
+      "settings": {
+        "background_color": "#f4f5f8",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Diversity & Belonging",
+        "title_font_size": 38,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#000000",
+        "title_bottom_spacing": 20,
+        "subtitle": "We believe that diverse perspectives drive innovation. We're committed to creating an inclusive environment where everyone can thrive, regardless of background, identity, or experience.",
+        "subtitle_font_size": 18,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 650,
+        "header_bottom_spacing": 60,
+        "columns_desktop": "4",
+        "grid_gap": 40,
+        "grid_gap_mobile": 30,
+        "grid_top_spacing": 40,
+        "item_padding": 20,
+        "item_padding_mobile": 15,
+        "icon_size": 100,
+        "icon_size_mobile": 80,
+        "icon_inner_size": 60,
+        "icon_inner_size_mobile": 50,
+        "icon_background_color": "#e2edf2",
+        "icon_bottom_spacing": 0,
+        "item_title_font_size": 20,
+        "item_title_font_size_mobile": 18,
+        "item_title_font_weight": "700",
+        "item_title_color": "#000000",
+        "item_title_bottom_spacing": 12,
+        "item_description_font_size": 16,
+        "item_description_font_size_mobile": 16,
+        "item_description_color": "#666666"
+      }
+    },
+    "career_page_grid_icons_with_text_NwPKnM": {
+      "type": "career-page-grid-icons-with-text",
+      "blocks": {
+        "grid_item_BTd8Lz": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_10.svg",
+            "title": "Application",
+            "description": "Submit your resume and cover letter online"
+          }
+        },
+        "grid_item_UU66HH": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_11.svg",
+            "title": "Screening",
+            "description": "Initial review and phone screening with HR"
+          }
+        },
+        "grid_item_RLLCnh": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_12.svg",
+            "title": "Interview",
+            "description": "Video interviews with team members and managers"
+          }
+        },
+        "grid_item_Bfbk6J": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_13.svg",
+            "title": "Offer",
+            "description": "Competitive offer with full benefits package"
+          }
+        },
+        "grid_item_qXETmm": {
+          "type": "grid_item",
+          "settings": {
+            "icon": "shopify://shop_images/div_14.svg",
+            "title": "Onboarding",
+            "description": "Comprehensive orientation and team integration"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_BTd8Lz",
+        "grid_item_UU66HH",
+        "grid_item_RLLCnh",
+        "grid_item_Bfbk6J",
+        "grid_item_qXETmm"
+      ],
+      "name": "Career Page Grid Icons with Text",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80,
+        "section_padding_horizontal": 20,
+        "section_padding_top_mobile": 60,
+        "section_padding_bottom_mobile": 60,
+        "section_padding_horizontal_mobile": 15,
+        "title": "Our Hiring Process",
+        "title_font_size": 38,
+        "title_font_size_mobile": 32,
+        "title_font_weight": "700",
+        "title_color": "#000000",
+        "title_bottom_spacing": 20,
+        "subtitle": "We've designed a transparent, efficient process that helps us find the right fit while respecting your time.",
+        "subtitle_font_size": 18,
+        "subtitle_font_size_mobile": 16,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 650,
+        "header_bottom_spacing": 60,
+        "columns_desktop": "5",
+        "grid_gap": 40,
+        "grid_gap_mobile": 30,
+        "grid_top_spacing": 40,
+        "item_padding": 20,
+        "item_padding_mobile": 15,
+        "icon_size": 100,
+        "icon_size_mobile": 80,
+        "icon_inner_size": 50,
+        "icon_inner_size_mobile": 40,
+        "icon_background_color": "#e2edf2",
+        "icon_bottom_spacing": 20,
+        "item_title_font_size": 20,
+        "item_title_font_size_mobile": 18,
+        "item_title_font_weight": "700",
+        "item_title_color": "#000000",
+        "item_title_bottom_spacing": 12,
+        "item_description_font_size": 16,
+        "item_description_font_size_mobile": 16,
+        "item_description_color": "#666666"
+      }
+    },
+    "career_page_join_our_team_Cgqj8V": {
+      "type": "career-page-join-our-team",
+      "name": "Career Page Join Our Team",
+      "settings": {
+        "heading": "Ready to Join Our Team?",
+        "subheading": "Explore our current openings and take the next step in your wellness career journey.",
+        "primary_label": "View All Openings",
+        "primary_link": "https://wellnessextract.com/pages/career-landing-page-new",
+        "secondary_label": "Contact HR Team",
+        "hr_email": "hr@wellnessextract.com",
+        "secondary_link": "",
+        "background_color": "#086b92",
+        "show_bottom_border": true,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "career_landing_page_banner_i4WTxE",
+    "career_page_grid_icons_with_text_fYixHC",
+    "career_page_six_grid_with_cons_8fqJ34",
+    "career_page_meet_our_teem_grid_WBUnBA",
+    "career_page_six_grid_with_cons_k9Q9pm",
+    "career_page_team_reviews_cJiQmD",
+    "career_page_grid_icons_with_text_idhmQz",
+    "career_page_grid_icons_with_text_NwPKnM",
+    "career_page_join_our_team_Cgqj8V"
   ]
 }

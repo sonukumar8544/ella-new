@@ -1,0 +1,256 @@
+
+
+
+{% assign border_val = 'none' %}
+{% if section.settings.show_bottom_border %}
+  {% assign border_val = '1px solid #fff' %}
+{% endif %}
+
+<section
+  id="career-join-team-{{ section.id }}"
+  class="career-join-team"
+  style="
+    --bg-color: {{ section.settings.background_color | default: '#086B92' }};
+    --pad-top-mobile: {{ section.settings.padding_top_mobile | default: 56 }}px;
+    --pad-bottom-mobile: {{ section.settings.padding_bottom_mobile | default: 56 }}px;
+    --pad-top-desktop: {{ section.settings.padding_top_desktop | default: 96 }}px;
+    --pad-bottom-desktop: {{ section.settings.padding_bottom_desktop | default: 96 }}px;
+    --bottom-border: {{ border_val }};
+  "
+>
+  <div class="career-join-team__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="career-join-team__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+      <p class="career-join-team__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    <div class="career-join-team__actions">
+      {% if section.settings.primary_link != blank %}
+        <a class="career-join-team__btn career-join-team__btn--primary" href="{{ section.settings.primary_link }}">
+          {{ section.settings.primary_label }}
+        </a>
+      {% endif %}
+
+      {% assign hr_mailto = '' %}
+      {% if section.settings.hr_email != blank %}
+        {% assign hr_mailto = 'mailto:' | append: section.settings.hr_email %}
+      {% endif %}
+      {% if section.settings.secondary_link != blank or hr_mailto != '' %}
+        <a class="career-join-team__btn career-join-team__btn--ghost" href="{{ section.settings.secondary_link | default: hr_mailto }}">
+          {{ section.settings.secondary_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #career-join-team-{{ section.id }}.career-join-team {
+    background: var(--bg-color, #086B92);
+    color: #fff;
+    padding: var(--pad-top-mobile, 56px) 16px var(--pad-bottom-mobile, 56px);
+    /* border-bottom: var(--bottom-border, none); */
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__heading {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: #fff;
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__subheading {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    min-width: 160px;
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__btn--primary {
+    background: #fff;
+    color: #086B92;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fff;
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__btn--primary:hover,
+  #career-join-team-{{ section.id }} .career-join-team__btn--primary:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__btn--ghost {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+
+  #career-join-team-{{ section.id }} .career-join-team__btn--ghost:hover,
+  #career-join-team-{{ section.id }} .career-join-team__btn--ghost:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 768px) {
+    #career-join-team-{{ section.id }}.career-join-team {
+      padding: var(--pad-top-desktop, 96px) 24px var(--pad-bottom-desktop, 96px);
+    }
+
+    #career-join-team-{{ section.id }} .career-join-team__heading {
+      font-size: 32px;
+    }
+
+    #career-join-team-{{ section.id }} .career-join-team__subheading {
+      font-size: 17px;
+    }
+
+    #career-join-team-{{ section.id }} .career-join-team__btn {
+      font-size: 15px;
+      padding: 13px 22px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #career-join-team-{{ section.id }}.career-join-team {
+      padding: var(--pad-top-desktop, 96px) 32px var(--pad-bottom-desktop, 96px);
+    }
+
+    #career-join-team-{{ section.id }} .career-join-team__heading {
+      font-size: 38px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Career Page Join Our Team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ready to Join Our Team?"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore our current openings and take the next step in your wellness career journey."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "View All Openings"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "Contact HR Team"
+    },
+    {
+      "type": "text",
+      "id": "hr_email",
+      "label": "HR email (mailto fallback when link empty)"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#086B92"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_border",
+      "label": "Show bottom border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 300,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career Page Join Our Team"
+    }
+  ]
+}
+{% endschema %}

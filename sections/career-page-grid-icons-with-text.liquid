@@ -1,0 +1,643 @@
+<style>
+  #shopify-section-{{ section.id }} .career-grid {
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+    padding: {{ section.settings.section_padding_top }}px {{ section.settings.section_padding_horizontal }}px {{ section.settings.section_padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__header {
+    text-align: center;
+    margin-bottom: {{ section.settings.header_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    line-height: 1.2;
+    color: {{ section.settings.title_color | default: '#000000' }};
+    margin: 0 0 {{ section.settings.title_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__subtitle {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.subtitle_color | default: '#666666' }};
+    margin: 0;
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__items {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    margin-top: {{ section.settings.grid_top_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: {{ section.settings.item_padding }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__icon-wrapper {
+    /* width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    background-color: {{ section.settings.icon_background_color | default: '#e2edf2' }};
+    border-radius: 50%;
+    display: flex; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: {{ section.settings.icon_bottom_spacing }}px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__icon {
+    width: {{ section.settings.icon_inner_size }}px;
+    height: {{ section.settings.icon_inner_size }}px;
+    object-fit: contain;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__item-title {
+    font-size: {{ section.settings.item_title_font_size }}px;
+    font-weight: {{ section.settings.item_title_font_weight }};
+    line-height: 1.3;
+    color: {{ section.settings.item_title_color | default: '#000000' }};
+    margin: 0 0 {{ section.settings.item_title_bottom_spacing }}px;
+  }
+
+  #shopify-section-{{ section.id }} .career-grid__item-description {
+    font-size: {{ section.settings.item_description_font_size }}px;
+    line-height: 1.6;
+    color: {{ section.settings.item_description_color | default: '#666666' }};
+    margin: 0;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    #shopify-section-{{ section.id }} .career-grid__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .career-grid {
+      padding: {{ section.settings.section_padding_top_mobile }}px {{ section.settings.section_padding_horizontal_mobile }}px {{ section.settings.section_padding_bottom_mobile }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__title {
+      font-size: {{ section.settings.title_font_size_mobile | default: section.settings.title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__subtitle {
+      font-size: {{ section.settings.subtitle_font_size_mobile | default: section.settings.subtitle_font_size }}px;
+    }
+
+    /* #shopify-section-{{ section.id }} .career-grid__icon-wrapper {
+      width: {{ section.settings.icon_size_mobile | default: section.settings.icon_size }}px;
+      height: {{ section.settings.icon_size_mobile | default: section.settings.icon_size }}px;
+    } */
+
+    #shopify-section-{{ section.id }} .career-grid__icon {
+      width: {{ section.settings.icon_inner_size_mobile | default: section.settings.icon_inner_size }}px;
+      height: {{ section.settings.icon_inner_size_mobile | default: section.settings.icon_inner_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__item-title {
+      font-size: {{ section.settings.item_title_font_size_mobile | default: section.settings.item_title_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__item-description {
+      font-size: {{ section.settings.item_description_font_size_mobile | default: section.settings.item_description_font_size }}px;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__items {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ section.settings.grid_gap_mobile | default: section.settings.grid_gap }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .career-grid__items {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .career-grid__item {
+      padding: {{ section.settings.item_padding_mobile | default: section.settings.item_padding }}px;
+    }
+  }
+</style>
+
+<section class="career-grid">
+  <div class="career-grid__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="career-grid__header">
+        {% if section.settings.title != blank %}
+          <h2 class="career-grid__title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="career-grid__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="career-grid__items">
+        {% for block in section.blocks %}
+          <div class="career-grid__item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="career-grid__icon-wrapper">
+                <img 
+                  src="{{ block.settings.icon | image_url: width: 200 }}"
+                  alt="{{ block.settings.icon.alt | default: block.settings.title }}"
+                  class="career-grid__icon"
+                  width="{{ block.settings.icon.width | default: 100 }}"
+                  height="{{ block.settings.icon.height | default: 100 }}"
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+
+            {% if block.settings.title != blank %}
+              <h3 class="career-grid__item-title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            {% if block.settings.description != blank %}
+              <p class="career-grid__item-description">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Career Grid Icons",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Padding Horizontal (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "label": "Padding Horizontal Mobile (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Work With Us"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (px)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size Mobile (px)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_spacing",
+      "label": "Title Bottom Spacing (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "At Wellness Extract, we're driven by a mission to make high-quality, science-backed wellness products accessible to everyone. Our work directly impacts the health and wellbeing of thousands of customers worldwide."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle Font Size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size Mobile (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "label": "Subtitle Max Width (px)",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "default": 800,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_spacing",
+      "label": "Header Bottom Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns Desktop",
+      "options": [
+        { "value": "3", "label": "3 columns" },
+        { "value": "4", "label": "4 columns" },
+        { "value": "5", "label": "5 columns" }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid Gap (px)",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "label": "Grid Gap Mobile (px)",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "grid_top_spacing",
+      "label": "Grid Top Spacing (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item Padding (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_padding_mobile",
+      "label": "Item Padding Mobile (px)",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Icon Settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon Container Size Desktop (px)",
+      "min": 40,
+      "max": 200,
+      "step": 5,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon Container Size Mobile (px)",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size",
+      "label": "Icon Inner Size Desktop (px)",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size_mobile",
+      "label": "Icon Inner Size Mobile (px)",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon Background Color",
+      "default": "#e2edf2"
+    },
+    {
+      "type": "range",
+      "id": "icon_bottom_spacing",
+      "label": "Icon Bottom Spacing (px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Title Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_title_font_size",
+      "label": "Item Title Font Size (px)",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_title_font_size_mobile",
+      "label": "Item Title Font Size Mobile (px)",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "item_title_font_weight",
+      "label": "Item Title Font Weight",
+      "options": [
+        { "value": "400", "label": "Normal" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi Bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "item_title_bottom_spacing",
+      "label": "Item Title Bottom Spacing (px)",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Item Description Settings"
+    },
+    {
+      "type": "range",
+      "id": "item_description_font_size",
+      "label": "Item Description Font Size (px)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "item_description_font_size_mobile",
+      "label": "Item Description Font Size Mobile (px)",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 13,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "item_description_color",
+      "label": "Item Description Color",
+      "default": "#666666"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid_item",
+      "name": "Grid Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Scientific Rigor"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Every product backed by research and third-party testing"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career Page Grid Icons with Text",
+      "blocks": [
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "Scientific Rigor",
+            "description": "Every product backed by research and third-party testing"
+          }
+        },
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "Integrity & Transparency",
+            "description": "Complete transparency in sourcing and manufacturing"
+          }
+        },
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "Community First",
+            "description": "Putting customer health and community impact above profit"
+          }
+        },
+        {
+          "type": "grid_item",
+          "settings": {
+            "title": "Growth & Learning",
+            "description": "Continuous development opportunities and skill building"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

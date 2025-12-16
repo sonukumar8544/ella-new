@@ -1,0 +1,1445 @@
+{% comment %}
+  Career Job Listing Page Section
+  Features: Search, Filters, Job Cards, Featured Roles, Pagination
+{% endcomment %}
+
+{% assign all_jobs = section.blocks %}
+{% assign featured_jobs = section.blocks | where: 'settings.featured', true %}
+
+<div id="career-job-listing-{{ section.id }}" class="career-job-listing">
+  {% comment %} Header Section with Search {% endcomment %}
+  <div class="career-job-listing__header" style="background-color: #086B92;">
+    <div class="career-job-listing__header-inner">
+      {% if section.settings.title != blank %}
+        <h1 class="career-job-listing__title">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="career-job-listing__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      
+      <div class="career-job-listing__search-container">
+        <div class="career-job-listing__search-wrapper">
+          <input 
+            type="text" 
+            id="job-search-input-{{ section.id }}" 
+            class="career-job-listing__search-input" 
+            placeholder="Search by job title, keyword..."
+            autocomplete="off"
+          >
+          <button 
+            type="button" 
+            id="job-search-btn-{{ section.id }}" 
+            class="career-job-listing__search-btn"
+          >
+            <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/i_6.svg?v=1765432541" alt="Search" class="career-job-listing__search-icon" width="16" height="20">
+            <span>Search Jobs</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} Filter Bar {% endcomment %}
+  <div class="career-job-listing__filters">
+    <div class="career-job-listing__filters-inner">
+      <select id="filter-department-{{ section.id }}" class="career-job-listing__filter">
+        <option value="">All Departments</option>
+        <option value="Development">Engineering</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Ai Team">Ai Team</option>
+        <option value="Design">Design</option>
+        <option value="Content">Content</option>
+        <option value="Accounts">Accounts</option>
+        <option value="Hr">Hr</option>
+      </select>
+
+      <select id="filter-location-{{ section.id }}" class="career-job-listing__filter">
+        <option value="">All Locations</option>
+        <option value="India">India</option>
+        <option value="Canada">Canada</option>
+      </select>
+
+      <select id="filter-employment-{{ section.id }}" class="career-job-listing__filter">
+        <option value="">Employment Type</option>
+        <option value="Full time">Full time</option>
+        <option value="Part time">Part time</option>
+        <option value="Contract">Contract</option>
+        <option value="Internship">Internship</option>
+      </select>
+
+      <select id="filter-experience-{{ section.id }}" class="career-job-listing__filter">
+        <option value="">Experience Level</option>
+        <option value="0-2 years">0-2 years</option>
+        <option value="2-4 years">2-4 years</option>
+        <option value="4-6 years">4-6 years</option>
+        <option value="6+ years">6+ years</option>
+      </select>
+
+      <select id="filter-sort-{{ section.id }}" class="career-job-listing__filter career-job-listing__filter--sort">
+        <option value="newest">Sort by: Newest</option>
+        <option value="oldest">Sort by: Oldest</option>
+        <option value="title-asc">Sort by: Title A-Z</option>
+        <option value="title-desc">Sort by: Title Z-A</option>
+      </select>
+    </div>
+  </div>
+
+  {% comment %} Main Content Area {% endcomment %}
+  <div class="career-job-listing__main">
+    <div class="career-job-listing__content">
+      {% comment %} Job Listings Section {% endcomment %}
+      <div class="career-job-listing__jobs-section">
+        <div class="career-job-listing__jobs-header">
+          <h2 class="career-job-listing__jobs-count">
+            <span id="jobs-count-{{ section.id }}">{{ all_jobs.size }}</span> Open Positions
+          </h2>
+          <button 
+            type="button" 
+            id="reset-filters-btn-{{ section.id }}" 
+            class="career-job-listing__reset-btn"
+          >
+            Reset Filters
+          </button>
+        </div>
+
+        <div id="jobs-container-{{ section.id }}" class="career-job-listing__jobs-grid">
+          {% for block in all_jobs %}
+            {% if block.type == 'job' %}
+              <div 
+                class="career-job-listing__job-card" 
+                data-job-id="{{ block.id }}"
+                data-department="{{ block.settings.department | escape }}"
+                data-location="{{ block.settings.location | escape }}"
+                data-employment="{{ block.settings.employment_type | escape }}"
+                data-experience="{{ block.settings.experience_level | escape }}"
+                data-title="{{ block.settings.title | downcase | escape }}"
+                data-description="{{ block.settings.description | downcase | escape }}"
+                data-skills="{{ block.settings.skills | downcase | escape }}"
+                data-featured="{{ block.settings.featured }}"
+              >
+                {% if block.settings.featured %}
+                  <span class="career-job-listing__job-featured">Featured</span>
+                {% endif %}
+                
+                <h3 class="career-job-listing__job-title">{{ block.settings.title }}</h3>
+                
+                <div class="career-job-listing__job-meta">
+                  <span class="career-job-listing__job-meta-item">
+                    <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_2.svg?v=1765435642" alt="Search" class="career-job-listing__search-icon" width="16" height="">
+                    {{ block.settings.department }}
+                  </span>
+                  <span class="career-job-listing__job-meta-item">
+                    <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_3.svg?v=1765435644" alt="Search" class="career-job-listing__search-icon" width="16" height="">
+                    {{ block.settings.location }}
+                  </span>
+                  <span class="career-job-listing__job-meta-item employment-type">
+                    {{ block.settings.employment_type }}
+                  </span>
+                </div>
+
+                {% if block.settings.description != blank %}
+                  <p class="career-job-listing__job-description">{{ block.settings.description }}</p>
+                {% endif %}
+
+                {% if block.settings.skills != blank %}
+                  {% assign skill_bg = block.settings.skill_bg_color | default: '#DBEAFE' %}
+                  {% assign skill_text = block.settings.skill_text_color | default: '#1E40AF' %}
+                  <div class="career-job-listing__job-skills">
+                    {% assign skills_array = block.settings.skills | split: ',' %}
+                    {% for skill in skills_array limit: 3 %}
+                      {% assign trimmed_skill = skill | strip %}
+                      <span class="career-job-listing__job-skill" style="background: {{ skill_bg }}; color: {{ skill_text }};">{{ trimmed_skill }}</span>
+                    {% endfor %}
+                    {% if skills_array.size > 3 %}
+                      <span class="career-job-listing__job-skill career-job-listing__job-skill--more" style="background: {{ skill_bg }}; color: {{ skill_text }};">+{{ skills_array.size | minus: 3 }} more</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="career-job-listing__job-link">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div id="no-results-{{ section.id }}" class="career-job-listing__no-results hidden">
+          <h3 class="career-job-listing__no-results-title">No matching roles right now</h3>
+          <p class="career-job-listing__no-results-text">
+            We currently don't have openings that match your search. Share your resume and we'll reach out when something fits.
+          </p>
+          <div class="career-job-listing__no-results-actions">
+            <a href="mailto:hr@wellnessextract.com" class="career-job-listing__cta-btn career-job-listing__cta-btn--primary">Submit Resume</a>
+            <a href="mailto:hr@wellnessextract.com" class="career-job-listing__cta-btn career-job-listing__cta-btn--secondary">Notify Me</a>
+          </div>
+        </div>
+
+        {% comment %} Pagination {% endcomment %}
+        <div id="pagination-{{ section.id }}" class="career-job-listing__pagination"></div>
+      </div>
+
+      {% comment %} Sidebar {% endcomment %}
+      <aside class="career-job-listing__sidebar">
+        {% comment %} Featured Roles {% endcomment %}
+        <div class="career-job-listing__sidebar-section">
+          <h3 class="career-job-listing__sidebar-title">Featured Roles</h3>
+          <div id="featured-roles-{{ section.id }}" class="career-job-listing__featured-roles">
+            {% assign featured_count = 0 %}
+            {% for block in featured_jobs %}
+              {% if block.type == 'job' and featured_count < 3 %}
+                {% assign featured_count = featured_count | plus: 1 %}
+                <a href="{{ block.settings.link | default: '#' }}" class="career-job-listing__featured-role">
+                  <div class="career-job-listing__featured-role-bar"></div>
+                  <div class="career-job-listing__featured-role-content">
+                    <h4 class="career-job-listing__featured-role-title">{{ block.settings.title }}</h4>
+                    <p class="career-job-listing__featured-role-meta">
+                      {{ block.settings.department }} • {{ block.settings.location }}
+                    </p>
+                  </div>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        {% comment %} Can't Find Your Role {% endcomment %}
+        <div class="career-job-listing__sidebar-section can-t-find-your-role">
+          <div class="career-job-listing__sidebar-cta">
+            <h3 class="career-job-listing__sidebar-cta-title">Can't Find Your Role?</h3>
+            <p class="career-job-listing__sidebar-cta-text">
+              Submit your resume and we'll reach out when a suitable position opens up.
+            </p>
+            <a href="mailto:hr@wellnessextract.com" class="career-job-listing__sidebar-cta-btn">
+              Submit Resume
+            </a>
+          </div>
+        </div>
+
+        {% comment %} Need Help {% endcomment %}
+        <div class="career-job-listing__sidebar-section">
+          <h3 class="career-job-listing__sidebar-title">Need Help?</h3>
+          <div class="career-job-listing__help-info">
+            <a href="mailto:hr@wellnessextract.com" class="career-job-listing__help-item">
+                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/i_7.svg?v=1765436877" alt="Search" class="career-job-listing__search-icon" width="16" height="">
+              <span>hr@wellnessextract.com</span>
+            </a>
+            <a href="tel:+15551234567" class="career-job-listing__help-item">
+                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/i_8.svg?v=1765436877" alt="Search" class="career-job-listing__search-icon" width="16" height="">
+              <span>+1 (555) 123-4567</span>
+            </a>
+            <div class="career-job-listing__help-item">
+                <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/i_9.svg?v=1765436877" alt="Search" class="career-job-listing__search-icon" width="16" height="">
+              <span>Mon-Fri, 9AM-6PM PST</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  {% comment %} Talent Pool CTA {% endcomment %}
+  <div class="career-job-listing__cta">
+    <div class="career-job-listing__cta-inner">
+      <h3 class="career-job-listing__cta-title">Don't See the Perfect Role?</h3>
+      <p class="career-job-listing__cta-text">
+        We're always looking for talented individuals to join our team. Submit your resume and we'll keep you in mind for future opportunities.
+      </p>
+      <div class="career-job-listing__cta-actions">
+        <a href="mailto:hr@wellnessextract.com" class="career-job-listing__cta-btn career-job-listing__cta-btn--primary">Join Talent Pool</a>
+        <a href="mailto:hr@wellnessextract.com" class="career-job-listing__cta-btn career-job-listing__cta-btn--secondary">Check Back Soon</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* #career-job-listing-{{ section.id }} {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  } */
+
+  /* Header Styles */
+  #career-job-listing-{{ section.id }} .career-job-listing__header {
+    padding: 100px 16px;
+    color: #fff;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__title {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: #fff;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__subtitle {
+    font-size: 18px;
+    margin: 0 0 40px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(147 175 186 / 15%);
+    border-radius: 12px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-wrapper {
+    display: flex;
+    gap: 10px !important;
+    /* background: rgb(147 175 186 / 15%) !important; */
+    border-radius: 10px !important;
+    overflow: hidden;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-input::placeholder {
+    color: #999;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: #fff;
+    color: #086B92;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.2s;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-btn:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__search-icon {
+    width: 16px;
+    height: 20px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  /* Filter Bar */
+  #career-job-listing-{{ section.id }} .career-job-listing__filters {
+    background: #f5f5f5;
+    padding: 30px 15px;
+    /* border-bottom: 1px solid #e0e0e0; */
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__filters-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__filter {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+    flex: 1;
+    max-width: 168px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__filter:hover {
+    border-color: #086B92;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__filter--sort {
+    margin-left: auto;
+    flex: 0 0 auto;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__reset-btn {
+    padding: 10px 20px;
+    border: 1px solid #086B92;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    color: #086B92;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__reset-btn:hover {
+    background: #086B92;
+    color: #fff;
+  }
+
+  /* Main Content */
+  #career-job-listing-{{ section.id }} .career-job-listing__main {
+    padding: 40px 16px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 32px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__jobs-count {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: black;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-featured {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #FEE2E2;
+    color: #991B1B;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-title {
+    font-size: 20px;
+    margin: 0 0 16px;
+    color: black;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    color: #4B5563;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-meta-item svg {
+    width: 14px;
+    height: 14px;
+    color: #999;
+  }
+  .career-job-listing__sidebar-section.can-t-find-your-role {
+    padding: 0px !important;
+}
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4B5563;
+    margin: 0 0 16px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  #career-job-listing-template--25759162368296__career_page_job_listing_search_filter_DNAHFr .career-job-listing__job-skill {
+    padding: 4px 10px;
+    background: #DBEAFE;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #086B92;
+}
+
+  /* #career-job-listing-{{ section.id }} .career-job-listing__job-skill--more {
+    background: #e0e0e0;
+    color: #666;
+  } */
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #086B92;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-link:hover {
+    background: #f0f0f0;
+  }
+
+  /* Pagination */
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination-btn {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination-btn img {
+    height: 15px !important;
+    width: 15px !important;
+  }
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination-btn:hover:not(:disabled) {
+    border-color: #086B92;
+    /* color: #086B92; */
+  }
+
+  span.career-job-listing__job-meta-item.employment-type {
+    background: #DCFCE7;
+    color: #086B92 !important;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__pagination-btn.active {
+    background: #086B92;
+    color: #fff;
+    border-color: #086B92;
+  }
+
+  /* Sidebar */
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-section {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-title {
+    font-size: 20px;
+    margin: 0 0 16px;
+    color: black;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role:last-child {
+    border-bottom: none;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role:hover {
+    background: #f4f9ff;
+    margin: 0 -12px;
+    padding: 12px;
+    border-radius: 4px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role-bar {
+    width: 4px;
+    height: 40px;
+    background: #086B92;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role:nth-child(2) .career-job-listing__featured-role-bar {
+    background: #e74c3c;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role:nth-child(3) .career-job-listing__featured-role-bar {
+    background: #27ae60;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #333;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__featured-role-meta {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-cta {
+    background: #086B92;
+    color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-cta-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: #fff;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-cta-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    color: #086B92;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s;
+    width: 100%;
+    text-align: center;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__sidebar-cta-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__help-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__help-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #4B5563;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__help-item:hover {
+    color: #086B92;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__help-item svg {
+    width: 18px;
+    height: 18px;
+    color: #999;
+    flex-shrink: 0;
+  }
+
+  /* No results */
+  #career-job-listing-{{ section.id }} .career-job-listing__no-results {
+    text-align: center;
+    padding: 32px 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__no-results-title {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E293B;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__no-results-text {
+    margin: 0 0 18px;
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__no-results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Talent Pool CTA */
+  #career-job-listing-{{ section.id }} .career-job-listing__cta {
+    /* background: #f8fafc; */
+    padding: 60px 16px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-inner {
+    max-width: 582px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-title {
+    margin: 0 0 12px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1E293B;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-text {
+    margin: 0 0 20px;
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    transition: all 0.2s ease;
+    min-width: 140px;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-btn--primary {
+    background: #086B92;
+    color: #fff;
+    border-color: #086B92;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-btn--primary:hover {
+    background: #06597a;
+    border-color: #06597a;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-btn--secondary {
+    background: #fff;
+    color: #0f172a;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__cta-btn--secondary:hover {
+    background: #f1f5f9;
+  }
+
+  /* Hidden class for filtered items */
+  #career-job-listing-{{ section.id }} .career-job-listing__job-card.hidden {
+    display: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    #career-job-listing-{{ section.id }} .career-job-listing__content {
+      grid-template-columns: 1fr;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__sidebar {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #career-job-listing-{{ section.id }} .career-job-listing__header {
+      padding: 40px 16px;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__title {
+      font-size: 24px;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__search-container {
+      padding: 12px;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__search-wrapper {
+      flex-direction: column;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__search-btn {
+      justify-content: center;
+      border-left: none;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__filters-inner {
+      flex-direction: column;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__filter {
+      width: 100%;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__filter--sort {
+      margin-left: 0;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__reset-btn {
+      width: 100%;
+    }
+
+    #career-job-listing-{{ section.id }} .career-job-listing__jobs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  const sectionId = '{{ section.id }}';
+  const jobsPerPage = 6;
+  let currentPage = 1;
+  let allJobCards = [];
+  let filteredJobs = [];
+
+  function init() {
+    const container = document.getElementById('career-job-listing-' + sectionId);
+    if (!container) return;
+
+    allJobCards = Array.from(container.querySelectorAll('.career-job-listing__job-card'));
+    filteredJobs = [...allJobCards];
+
+    // Search functionality
+    const searchInput = document.getElementById('job-search-input-' + sectionId);
+    const searchBtn = document.getElementById('job-search-btn-' + sectionId);
+
+    if (searchInput) {
+      searchInput.addEventListener('input', handleSearch);
+      searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          handleSearch();
+        }
+      });
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', handleSearch);
+    }
+
+    // Filter functionality
+    const filters = {
+      department: document.getElementById('filter-department-' + sectionId),
+      location: document.getElementById('filter-location-' + sectionId),
+      employment: document.getElementById('filter-employment-' + sectionId),
+      experience: document.getElementById('filter-experience-' + sectionId),
+      sort: document.getElementById('filter-sort-' + sectionId)
+    };
+
+    Object.values(filters).forEach(filter => {
+      if (filter) {
+        filter.addEventListener('change', function() {
+          // Get current search term and apply filters
+          const searchInput = document.getElementById('job-search-input-' + sectionId);
+          const searchTerm = (searchInput?.value || '').toLowerCase().trim();
+          applyFilters(searchTerm);
+        });
+      }
+    });
+
+    // Reset filters button
+    const resetBtn = document.getElementById('reset-filters-btn-' + sectionId);
+    if (resetBtn) {
+      resetBtn.addEventListener('click', resetFilters);
+    }
+
+    // Initial render
+    const initialSearchInput = document.getElementById('job-search-input-' + sectionId);
+    const initialSearchTerm = (initialSearchInput?.value || '').toLowerCase().trim();
+    applyFilters(initialSearchTerm);
+  }
+
+  function resetFilters() {
+    // Reset all filter dropdowns
+    const departmentFilter = document.getElementById('filter-department-' + sectionId);
+    const locationFilter = document.getElementById('filter-location-' + sectionId);
+    const employmentFilter = document.getElementById('filter-employment-' + sectionId);
+    const experienceFilter = document.getElementById('filter-experience-' + sectionId);
+    const sortFilter = document.getElementById('filter-sort-' + sectionId);
+    const searchInput = document.getElementById('job-search-input-' + sectionId);
+
+    if (departmentFilter) departmentFilter.value = '';
+    if (locationFilter) locationFilter.value = '';
+    if (employmentFilter) employmentFilter.value = '';
+    if (experienceFilter) experienceFilter.value = '';
+    if (sortFilter) sortFilter.value = 'newest';
+    if (searchInput) searchInput.value = '';
+
+    // Apply filters with empty values
+    applyFilters('');
+  }
+
+  function handleSearch() {
+    const searchInput = document.getElementById('job-search-input-' + sectionId);
+    const searchTerm = (searchInput?.value || '').toLowerCase().trim();
+    
+    applyFilters(searchTerm);
+  }
+
+  function applyFilters(searchTerm = '') {
+    const filters = {
+      department: document.getElementById('filter-department-' + sectionId)?.value || '',
+      location: document.getElementById('filter-location-' + sectionId)?.value || '',
+      employment: document.getElementById('filter-employment-' + sectionId)?.value || '',
+      experience: document.getElementById('filter-experience-' + sectionId)?.value || '',
+      sort: document.getElementById('filter-sort-' + sectionId)?.value || 'newest'
+    };
+
+    filteredJobs = allJobCards.filter(card => {
+      const department = card.dataset.department || '';
+      const location = card.dataset.location || '';
+      const employment = card.dataset.employment || '';
+      const experience = card.dataset.experience || '';
+      const title = card.dataset.title || '';
+      const description = card.dataset.description || '';
+      const skills = card.dataset.skills || '';
+
+      // Filter by department
+      if (filters.department && department.toLowerCase() !== filters.department.toLowerCase()) {
+        return false;
+      }
+
+      // Filter by location
+      if (filters.location && location.toLowerCase() !== filters.location.toLowerCase()) {
+        return false;
+      }
+
+      // Filter by employment type
+      if (filters.employment && employment.toLowerCase() !== filters.employment.toLowerCase()) {
+        return false;
+      }
+
+      // Filter by experience
+      if (filters.experience && experience.toLowerCase() !== filters.experience.toLowerCase()) {
+        return false;
+      }
+
+      // Search filter
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch = 
+          title.includes(searchLower) ||
+          description.includes(searchLower) ||
+          skills.includes(searchLower) ||
+          department.toLowerCase().includes(searchLower) ||
+          location.toLowerCase().includes(searchLower);
+        
+        if (!matchesSearch) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+
+    // Sort jobs
+    sortJobs(filters.sort);
+
+    // Update count
+    updateJobCount();
+
+    // Update featured roles
+    updateFeaturedRoles();
+
+    // Reset to page 1
+    currentPage = 1;
+    renderJobs();
+  }
+
+  function sortJobs(sortType) {
+    filteredJobs.sort((a, b) => {
+      const titleA = (a.querySelector('.career-job-listing__job-title')?.textContent || '').toLowerCase();
+      const titleB = (b.querySelector('.career-job-listing__job-title')?.textContent || '').toLowerCase();
+      const featuredA = a.dataset.featured === 'true';
+      const featuredB = b.dataset.featured === 'true';
+
+      // Featured jobs first
+      if (featuredA && !featuredB) return -1;
+      if (!featuredA && featuredB) return 1;
+
+      switch(sortType) {
+        case 'oldest':
+          return 0; // Keep original order
+        case 'title-asc':
+          return titleA.localeCompare(titleB);
+        case 'title-desc':
+          return titleB.localeCompare(titleA);
+        case 'newest':
+        default:
+          return 0; // Keep original order
+      }
+    });
+  }
+
+  function updateJobCount() {
+    const countElement = document.getElementById('jobs-count-' + sectionId);
+    if (countElement) {
+      countElement.textContent = filteredJobs.length;
+    }
+  }
+
+  function updateFeaturedRoles() {
+    const featuredContainer = document.getElementById('featured-roles-' + sectionId);
+    if (!featuredContainer) return;
+
+    const featuredJobs = filteredJobs
+      .filter(card => card.dataset.featured === 'true')
+      .slice(0, 3);
+
+    if (featuredJobs.length === 0) {
+      featuredContainer.innerHTML = '<p style="color: #999; font-size: 14px;">No featured roles available</p>';
+      return;
+    }
+
+    featuredContainer.innerHTML = featuredJobs.map(card => {
+      const title = card.querySelector('.career-job-listing__job-title')?.textContent || '';
+      const department = card.dataset.department || '';
+      const location = card.dataset.location || '';
+      const link = card.querySelector('.career-job-listing__job-link')?.href || '#';
+      
+      return `
+        <a href="${link}" class="career-job-listing__featured-role">
+          <div class="career-job-listing__featured-role-bar"></div>
+          <div class="career-job-listing__featured-role-content">
+            <h4 class="career-job-listing__featured-role-title">${title}</h4>
+            <p class="career-job-listing__featured-role-meta">${department} • ${location}</p>
+          </div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  function renderJobs() {
+    const jobsContainer = document.getElementById('jobs-container-' + sectionId);
+    const paginationContainer = document.getElementById('pagination-' + sectionId);
+    const noResults = document.getElementById('no-results-' + sectionId);
+
+    // Handle empty state
+    if (filteredJobs.length === 0) {
+      if (jobsContainer) jobsContainer.classList.add('hidden');
+      if (paginationContainer) paginationContainer.innerHTML = '';
+      if (noResults) noResults.classList.remove('hidden');
+      return;
+    } else {
+      if (jobsContainer) jobsContainer.classList.remove('hidden');
+      if (noResults) noResults.classList.add('hidden');
+    }
+
+    // Hide all jobs
+    allJobCards.forEach(card => {
+      card.classList.add('hidden');
+    });
+
+    // Calculate pagination
+    const startIndex = (currentPage - 1) * jobsPerPage;
+    const endIndex = startIndex + jobsPerPage;
+    const jobsToShow = filteredJobs.slice(startIndex, endIndex);
+
+    // Show jobs for current page
+    jobsToShow.forEach(card => {
+      card.classList.remove('hidden');
+    });
+
+    // Render pagination
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const paginationContainer = document.getElementById('pagination-' + sectionId);
+    if (!paginationContainer) return;
+
+    const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+    
+    if (totalPages <= 1) {
+      paginationContainer.innerHTML = '';
+      return;
+    }
+
+    let paginationHTML = '';
+
+    // Previous button
+    paginationHTML += `
+      <button class="career-job-listing__pagination-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/svg_93114ebb-499a-486c-93fe-8f76da1a2473.svg?v=1765442618" alt="Search" class="career-job-listing__search-icon" width="15" height="15">
+      </button>
+    `;
+
+    // Page numbers
+    const maxVisiblePages = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+    if (endPage - startPage < maxVisiblePages - 1) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+
+    if (startPage > 1) {
+      paginationHTML += `<button class="career-job-listing__pagination-btn" data-page="1">1</button>`;
+      if (startPage > 2) {
+        paginationHTML += `<span style="padding: 0 8px;">...</span>`;
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      paginationHTML += `
+        <button class="career-job-listing__pagination-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">
+          ${i}
+        </button>
+      `;
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        paginationHTML += `<span style="padding: 0 8px;">...</span>`;
+      }
+      paginationHTML += `<button class="career-job-listing__pagination-btn" data-page="${totalPages}">${totalPages}</button>`;
+    }
+
+    // Next button
+    paginationHTML += `
+      <button class="career-job-listing__pagination-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">
+        <img src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/svg_1_841c6a1c-460f-4499-9f76-15c9f56e57b7.svg?v=1765442619" alt="Search" class="career-job-listing__search-icon" width="15" height="15">
+      </button>
+    `;
+
+    paginationContainer.innerHTML = paginationHTML;
+
+    // Add event listeners
+    paginationContainer.querySelectorAll('.career-job-listing__pagination-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const page = parseInt(this.dataset.page);
+        if (page && page !== currentPage && page >= 1 && page <= totalPages) {
+          currentPage = page;
+          renderJobs();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+{% schema %}
+    {
+      "name": "Career Job Listing page",
+      "tag": "section",
+      "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Join Our Team"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Explore our current opportunities across departments and find your perfect role"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "job",
+      "name": "Job Listing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Job Title",
+          "default": "Senior Frontend Developer"
+        },
+        {
+          "type": "select",
+          "id": "department",
+          "label": "Department",
+          "options": [
+            {
+              "value": "Development",
+              "label": "Development"
+            },
+            {
+              "value": "Marketing",
+              "label": "Marketing"
+            },
+            {
+              "value": "Design",
+              "label": "Design"
+            },
+            {
+              "value": "Ai Team",
+              "label": "Ai Team"
+            },
+            {
+              "value": "Content",
+              "label": "Content"
+            },
+            {
+              "value": "Accounts",
+              "label": "Accounts"
+            },
+            {
+              "value": "Hr",
+              "label": "Hr"
+            }
+          ],
+          "default": "Development"
+        },
+        {
+          "type": "select",
+          "id": "location",
+          "label": "Location",
+          "options": [
+            {
+              "value": "India",
+              "label": "India"
+            },
+            {
+              "value": "Canada",
+              "label": "Canada"
+            }
+          ],
+          "default": "India"
+        },
+        {
+          "type": "select",
+          "id": "employment_type",
+          "label": "Employment Type",
+          "options": [
+            {
+              "value": "Full time",
+              "label": "Full time"
+            },
+            {
+              "value": "Part time",
+              "label": "Part time"
+            },
+            {
+              "value": "Contract",
+              "label": "Contract"
+            },
+            {
+              "value": "Internship",
+              "label": "Internship"
+            }
+          ],
+          "default": "Full time"
+        },
+        {
+          "type": "select",
+          "id": "experience_level",
+          "label": "Experience Level",
+          "options": [
+            {
+              "value": "0-2 years",
+              "label": "0-2 years"
+            },
+            {
+              "value": "2-4 years",
+              "label": "2-4 years"
+            },
+            {
+              "value": "4-6 years",
+              "label": "4-6 years"
+            },
+            {
+              "value": "6+ years",
+              "label": "6+ years"
+            }
+          ],
+          "default": "2-4 years"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "We are looking for an experienced developer to join our team."
+        },
+        {
+          "type": "text",
+          "id": "skills",
+          "label": "Skills (comma separated)",
+          "default": "React, TypeScript, JavaScript",
+          "info": "Enter skills separated by commas"
+        },
+        {
+          "type": "color",
+          "id": "skill_bg_color",
+          "label": "Skill tag background",
+          "default": "#DBEAFE"
+        },
+        {
+          "type": "color",
+          "id": "skill_text_color",
+          "label": "Skill tag text color",
+          "default": "#1E40AF"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Job Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured Role",
+          "default": false
+        }
+      ]
+    }
+  ],
+      "presets": [
+    {
+      "name": "Career Page Job Listing Search Filter",
+      "blocks": [
+        {
+          "type": "job",
+          "settings": {
+            "title": "Senior Frontend Developer",
+            "department": "Development",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "We are looking for an experienced frontend developer with expertise in React and TypeScript.",
+            "skills": "React, TypeScript, JavaScript, HTML, CSS",
+            "featured": true
+          }
+        },
+        {
+          "type": "job",
+          "settings": {
+            "title": "Product Designer",
+            "department": "Content",
+            "location": "Canada",
+            "employment_type": "Full time",
+            "experience_level": "2-4 years",
+            "description": "Create intuitive product experiences and work with engineering and product teams.",
+            "skills": "Figma, Prototyping, UX Design",
+            "featured": false
+          }
+        },
+        {
+          "type": "job",
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "featured": false
+          }
+        }
+      ]
+        }
+      ]
+    }
+    {% endschema %}

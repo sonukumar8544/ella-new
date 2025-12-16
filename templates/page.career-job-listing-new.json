@@ -16,17 +16,205 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "career_page_job_listing_search_filter_DNAHFr": {
+      "type": "career-page-job-listing-search-filter",
+      "blocks": {
+        "job_8qCiNN": {
+          "type": "job",
+          "settings": {
+            "title": "Senior Frontend Developer",
+            "department": "Development",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "We are looking for an experienced frontend developer with expertise in React and TypeScript.",
+            "skills": "React, TypeScript, JavaScript, HTML, CSS",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_d6U6yd": {
+          "type": "job",
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "Canada",
+            "employment_type": "Part time",
+            "experience_level": "4-6 years",
+            "description": "Create intuitive product experiences and work with engineering and product teams.",
+            "skills": "Figma, Prototyping, UX Design",
+            "skill_bg_color": "#f3e8ff",
+            "skill_text_color": "#6b21a8",
+            "link": "",
+            "featured": false
+          }
+        },
+        "job_zmmBBQ": {
+          "type": "job",
+          "settings": {
+            "title": "DevOps Engineer",
+            "department": "Development",
+            "location": "Canada",
+            "employment_type": "Contract",
+            "experience_level": "2-4 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dcfce7",
+            "skill_text_color": "#086b92",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_kHkzd8": {
+          "type": "job",
+          "settings": {
+            "title": "Sales Representative",
+            "department": "Ai Team",
+            "location": "Canada",
+            "employment_type": "Internship",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#ffedd5",
+            "skill_text_color": "#9a3412",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_LCimdJ": {
+          "type": "job",
+          "settings": {
+            "title": "Data Scientist",
+            "department": "Content",
+            "location": "Canada",
+            "employment_type": "Part time",
+            "experience_level": "0-2 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#fee2e2",
+            "skill_text_color": "#9a3412",
+            "link": "",
+            "featured": false
+          }
+        },
+        "job_wezL7t": {
+          "type": "job",
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_qA9eic": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_hQFwCM": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_JwAx9W": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        },
+        "job_YHxNhG": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Marketing Manager",
+            "department": "Marketing",
+            "location": "India",
+            "employment_type": "Full time",
+            "experience_level": "4-6 years",
+            "description": "Lead marketing campaigns and growth strategies using digital marketing and analytics.",
+            "skills": "Analytics, SEO, Content Marketing, Social Media",
+            "skill_bg_color": "#dbeafe",
+            "skill_text_color": "#1e40af",
+            "link": "",
+            "featured": true
+          }
+        }
+      },
+      "block_order": [
+        "job_8qCiNN",
+        "job_d6U6yd",
+        "job_zmmBBQ",
+        "job_kHkzd8",
+        "job_LCimdJ",
+        "job_wezL7t",
+        "job_qA9eic",
+        "job_hQFwCM",
+        "job_JwAx9W",
+        "job_YHxNhG"
+      ],
+      "name": "Career Page Job Listing Search Filter",
+      "settings": {
+        "title": "Join Our Team",
+        "subtitle": "Explore our current opportunities across departments and find your perfect role"
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "career_page_job_listing_search_filter_DNAHFr"
   ]
 }

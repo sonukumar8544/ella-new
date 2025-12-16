@@ -775,6 +775,7 @@
     },
     "custom_liquid_aCmzdQ": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<section>\n  <div class=\"klaviyo-form-input\" style=\"background: #1e262e; padding: 20px;\">\n    <h3 style=\"color: #fff; font-size: 20px; text-align: center; padding-bottom: 0px; margin-bottom: -15px;\"> Get PDF guide.</h3>\n    <div class=\"klaviyo-form-RFnNYP\"></div>\n  </div>\n</section>\n\n<style>\n  .klaviyo-form-input button{\n  padding: 0px 30px !important;\n  color: #374650 !important;\n}\n\n@media (max-width: 768px){\n.klaviyo-form-input button {\n  padding: 0px 30px !important;\n  color: #374650 !important;\n  max-width: 260px !important;\n}\n\n.klaviyo-form-input .needsclick form.needsclick.klaviyo-form .needsclick {\n  display: block !important;\n  padding: 0px;\n  padding: 4px !important;\n}\n\n\n  .klaviyo-form-input h3 {\n    margin-bottom: 0px !important;\n  }\n}\n</style>"

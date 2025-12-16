@@ -60,7 +60,7 @@
 
           {% if block.settings.button_label != blank %}
             {% if block.settings.button_link != blank %}
-              <a class="buyer-guide-product__link" href="{{ block.settings.button_link }}" aria-label="{{ block.settings.button_label }}">
+              <a class="buyer-guide-product__link {% if block.type == 'download_card' %}buyer-guide-product__link--download{% endif %}" href="{{ block.settings.button_link }}" aria-label="{{ block.settings.button_label }}" {% if block.type == 'download_card' %}data-open-popup="true"{% endif %}>
                 {{ block.settings.button_label }}
                 <span aria-hidden="true">→</span>
               </a>
@@ -73,6 +73,19 @@
     {% endfor %}
   </div>
 </section>
+
+<!-- Klaviyo Form Popup -->
+<div class="klaviyo-form-buyer-guideline-popup" id="buyer-guide-popup" aria-hidden="true">
+  <div class="klaviyo-form-buyer-guideline-popup__overlay"></div>
+  <div class="klaviyo-form-buyer-guideline-popup__content">
+    <button class="klaviyo-form-buyer-guideline-popup__close" aria-label="Close popup">
+      <span aria-hidden="true">×</span>
+    </button>
+    <div class="klaviyo-form-buyer-guideline">
+      <div class="klaviyo-form-RFnNYP"></div>
+    </div>
+  </div>
+</div>
 
 <style>
   .buyer-guide-product {
@@ -215,7 +228,243 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
   }
+
+  /* Popup Styles */
+  .klaviyo-form-buyer-guideline-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .klaviyo-form-buyer-guideline-popup[aria-hidden="false"] {
+    display: flex;
+    opacity: 1;
+  }
+
+  .klaviyo-form-buyer-guideline-popup__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  .klaviyo-form-buyer-guideline-popup__content {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+
+  .klaviyo-form-buyer-guideline-popup[aria-hidden="false"] .klaviyo-form-buyer-guideline-popup__content {
+    transform: scale(1);
+  }
+
+  .klaviyo-form-buyer-guideline-popup__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #333;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    z-index: 2;
+  }
+
+  .klaviyo-form-buyer-guideline-popup__close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .klaviyo-form-buyer-guideline {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .klaviyo-form-buyer-guideline-popup__content {
+      padding: 1.5rem;
+      max-width: 95%;
+    }
+  }
 </style>
+
+<script>
+  (function() {
+    const popup = document.getElementById('buyer-guide-popup');
+    const openButtons = document.querySelectorAll('.buyer-guide-product__link--download[data-open-popup="true"]');
+    const closeButton = document.querySelector('.klaviyo-form-buyer-guideline-popup__close');
+    const overlay = document.querySelector('.klaviyo-form-buyer-guideline-popup__overlay');
+    const pdfUrl = 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Main_ac7c67e8-b5a7-482c-990c-e432470ff20e.pdf?v=1765515856';
+
+    function openPopup(e) {
+      e.preventDefault();
+      if (popup) {
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePopup() {
+      if (popup) {
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openPDF() {
+      // Open PDF in a new tab
+      window.open(pdfUrl, '_blank');
+      
+      // Close popup after a short delay
+      setTimeout(function() {
+        closePopup();
+      }, 500);
+    }
+
+    // Open popup on button click
+    openButtons.forEach(button => {
+      button.addEventListener('click', openPopup);
+    });
+
+    // Close popup on close button click
+    if (closeButton) {
+      closeButton.addEventListener('click', closePopup);
+    }
+
+    // Close popup on overlay click
+    if (overlay) {
+      overlay.addEventListener('click', closePopup);
+    }
+
+    // Close popup on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && popup && popup.getAttribute('aria-hidden') === 'false') {
+        closePopup();
+      }
+    });
+
+    // Listen for Klaviyo form submission
+    let formSubmitted = false;
+    
+    function setupKlaviyoFormListener() {
+      const klaviyoForm = document.querySelector('.klaviyo-form-RFnNYP form');
+      
+      if (klaviyoForm && !formSubmitted) {
+        // Listen for form submit event
+        klaviyoForm.addEventListener('submit', function(e) {
+          formSubmitted = true;
+          // Wait for Klaviyo to process the submission
+          setTimeout(function() {
+            openPDF();
+          }, 800);
+        }, { once: true });
+
+        // Also listen for button click (Klaviyo forms often use button type="button")
+        const submitButton = klaviyoForm.querySelector('button[type="button"]');
+        if (submitButton) {
+          submitButton.addEventListener('click', function(e) {
+            const emailInput = klaviyoForm.querySelector('input[type="email"]');
+            // Only proceed if email has a value
+            if (emailInput && emailInput.value && !formSubmitted) {
+              // Wait for Klaviyo to process the submission, then open PDF
+              setTimeout(function() {
+                if (!formSubmitted) {
+                  formSubmitted = true;
+                  openPDF();
+                }
+              }, 1500);
+            }
+          }, { once: true });
+        }
+
+        // Listen for Klaviyo's custom events if available
+        const klaviyoEventHandler = function(e) {
+          if (e.detail && (e.detail.formId === 'RFnNYP' || e.detail.form === 'RFnNYP')) {
+            if (!formSubmitted) {
+              formSubmitted = true;
+              openPDF();
+            }
+          }
+        };
+        
+        document.addEventListener('klaviyo-form-submit', klaviyoEventHandler);
+        document.addEventListener('klaviyo:form:submit', klaviyoEventHandler);
+      } else if (!klaviyoForm) {
+        // If form hasn't loaded yet, wait and try again
+        setTimeout(setupKlaviyoFormListener, 500);
+      }
+    }
+
+    // Watch for Klaviyo form to be added to DOM
+    const formObserver = new MutationObserver(function(mutations) {
+      const klaviyoForm = document.querySelector('.klaviyo-form-RFnNYP form');
+      if (klaviyoForm) {
+        setupKlaviyoFormListener();
+      }
+    });
+
+    // Start observing when popup opens
+    const popupObserver = new MutationObserver(function(mutations) {
+      if (popup && popup.getAttribute('aria-hidden') === 'false') {
+        // Popup is open, check for form
+        setupKlaviyoFormListener();
+        
+        // Also observe the form container for changes
+        const formContainer = document.querySelector('.klaviyo-form-RFnNYP');
+        if (formContainer) {
+          formObserver.observe(formContainer, {
+            childList: true,
+            subtree: true,
+            attributes: true
+          });
+        }
+      } else {
+        // Reset when popup closes
+        formSubmitted = false;
+        formObserver.disconnect();
+      }
+    });
+
+    // Observe popup visibility changes
+    if (popup) {
+      popupObserver.observe(popup, {
+        attributes: true,
+        attributeFilter: ['aria-hidden']
+      });
+      
+      // Initial check if popup is already open
+      if (popup.getAttribute('aria-hidden') === 'false') {
+        setupKlaviyoFormListener();
+      }
+    }
+  })();
+</script>
 
 {% schema %}
 {

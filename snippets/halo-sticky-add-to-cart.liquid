@@ -504,11 +504,28 @@
                                     quantity_stt: 3
                                     %}
                           
-                                    <button  id="show-sticky-product1" class="button button--primary product-sticky-checkout1" 
+                                    {% comment %} <button  id="show-sticky-product1" class="button button--primary product-sticky-checkout1" 
                                     data-variantId="{{ current_variant.id}}"
                                     data-realqty>
                                     {{ 'Checkout' }}
-                                    </button>
+                                    </button> {% endcomment %}
+
+                                    <button
+                                    class="quiz_bundle_prodct product-form__submit button button--primary"
+                                    data-variant-ids="{{ current_variant.id }}"
+                                    data-qtys="{{ current_variant.quantity }}"
+                                    data-redirect="/checkout"
+                                  >
+                                    {{ 'Checkout' }}
+                                  </button>
+
+                                    {% comment %} <button
+                                    class="quiz_bundle_prodct product-form__submit button button--primary"
+                                    data-variant-ids="{{ current_variant.id }}"
+                                    data-qtys="{{ current_variant.quantity }}"
+                                  >
+                                    {{ 'Add to Cart' }}
+                                  </button> {% endcomment %}
 
                          {% comment %} {% if template.suffix contains 'Product-page-3.O' %}
                                        {%- assign subtotal = subtotal | strip_html -%}
