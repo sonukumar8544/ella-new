@@ -39,10 +39,6 @@ html.no-js .no-js-hidden {
   display: none !important;
 }
 
-/* app css */
-#hubspot-messages-iframe-container.widget-align-right {
-  /* bottom: 17% !important; */
-}
 /* Easy Video Section */
 .easyvideo_gallery h2 {
   margin-bottom: 48px !important;
@@ -8696,9 +8692,9 @@ border: none!important;
 @media screen and (max-width: 1023px) {
 #hubspot-messages-iframe-container.widget-align-right
  {
-    left: 0 !important;
+    right: 0 !important;
     margin-bottom: 110px !important;
-    margin-right: 25px !important;
+    margin-right: 0px !important;
   }
 }
 
