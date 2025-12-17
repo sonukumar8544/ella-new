@@ -16,17 +16,169 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "shogun-optimizer": {
       "type": "shogun-optimizer",
       "disabled": true,
       "settings": {}
+    },
+    "career_job_detailstop_title_zpTMtD": {
+      "type": "career-job-detailstop-title",
+      "name": "Career Job Details Header",
+      "settings": {
+        "back_text": "Back to all jobs",
+        "back_link": "",
+        "title": "Senior Product Manager",
+        "department": "Product & Strategy",
+        "location": "San Francisco, CA / Remote",
+        "employment_type": "Full-time",
+        "apply_label": "Apply Now",
+        "save_label": "Save Job",
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_tablet": 32,
+        "padding_bottom_tablet": 32,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    },
+    "job_details_description_section_blocks_tLJB6z": {
+      "type": "job-details-description-section-blocks",
+      "blocks": {
+        "about_role_TkNTXN": {
+          "type": "about_role",
+          "settings": {
+            "title": "About the Role",
+            "description": "We're looking for a passionate Senior Product Manager to join our growing team and help shapeWe're looking for a passionate Senior Product Manager to join our growing team and help shapeWe're looking for a passionate Senior Product Manager to join our growing team and help shape growing team and help shape",
+            "key_points": "Lead product strategy and roadmap development for our wellness platform\nLead product strategy and roadmap development for our wellness platform\nLead product strategy and roadmap development for our wellness platform\nLead product strategy and roadmap development for our wellness platform"
+          }
+        },
+        "key_responsibilities_MfKAYY": {
+          "type": "key_responsibilities",
+          "settings": {
+            "title": "Key Responsibilities",
+            "subtitle_1": "Product Strategy & Vision",
+            "list_1": "Define and communicate product vision, strategy, and roadmap\nConduct market research and competitive analysis\nIdentify new opportunities and areas for growth",
+            "subtitle_2": "Execution & Delivery",
+            "list_2": "Lead agile development processes and sprint planning\nWrite detailed product requirements and user stories\nManage product backlog and prioritization",
+            "subtitle_3": "Collaboration & Leadership",
+            "list_3": "Partner with engineering, design, and business teams\nPresent product updates to stakeholders and executives\nMentor junior product team members"
+          }
+        },
+        "qualifications_k9KJ8C": {
+          "type": "qualifications",
+          "settings": {
+            "title": "Qualifications",
+            "required_title": "Required",
+            "required_list": "5+ years of product management experience\nExperience with SaaS or health tech products\nStrong analytical and data-driven mindset\nBachelor's degree in relevant field",
+            "preferred_title": "Preferred",
+            "preferred_list": "MBA or advanced degree\nExperience in wellness or healthcare\nTechnical background or CS degree\nStartup experience"
+          }
+        },
+        "what_we_offer_zRBGGe": {
+          "type": "what_we_offer",
+          "settings": {
+            "title": "What We Offer",
+            "card_title_1": "Competitive Salary",
+            "card_desc_1": "$140k - $190k + equity package",
+            "card_icon_1": "",
+            "card_title_2": "Health & Wellness",
+            "card_desc_2": "Premium health, dental, vision coverage",
+            "card_icon_2": "",
+            "card_title_3": "Flexible Time Off",
+            "card_desc_3": "Unlimited PTO + company holidays",
+            "card_icon_3": "",
+            "card_title_4": "Learning Budget",
+            "card_desc_4": "$2000 annual development budget",
+            "card_icon_4": ""
+          }
+        },
+        "job_highlights_p3qMKx": {
+          "type": "job_highlights",
+          "settings": {
+            "title": "Job Highlights",
+            "label_1": "Position Type",
+            "value_1": "Full-time",
+            "label_2": "Location",
+            "value_2": "SF / Remote",
+            "label_3": "Department",
+            "value_3": "Product",
+            "label_4": "Reports To",
+            "value_4": "VP of Product",
+            "label_5": "Posted",
+            "value_5": "2 days ago",
+            "label_6": "Deadline",
+            "value_6": "Nov 15, 2024"
+          }
+        },
+        "ready_to_apply_HbTjBp": {
+          "type": "ready_to_apply",
+          "settings": {
+            "title": "Ready to Apply?",
+            "description": "Join our mission to transform wellness technology and make a meaningful impact.",
+            "apply_button_text": "Apply Now",
+            "save_button_text": "Save for Later",
+            "footer_text": "Questions? Contact our recruiting team at"
+          }
+        },
+        "similar_positions_y8FF4j": {
+          "type": "similar_positions",
+          "settings": {
+            "title": "Similar Positions",
+            "job_title_1": "Product Designer",
+            "job_details_1": "Design • San Francisco",
+            "job_link_1": "",
+            "job_tag_1": "Full-time",
+            "job_title_2": "Engineering Manager",
+            "job_details_2": "Engineering • Remote",
+            "job_link_2": "",
+            "job_tag_2": "Part Time",
+            "job_title_3": "Data Scientist",
+            "job_details_3": "Analytics • San Francisco",
+            "job_link_3": "",
+            "job_tag_3": "Full-time",
+            "job_title_4": "Product Designer",
+            "job_details_4": "Analytics • San Francisco",
+            "job_link_4": "",
+            "job_tag_4": "Full-time",
+            "job_title_5": "Product Designer",
+            "job_details_5": "Product Designer",
+            "job_link_5": "",
+            "job_tag_5": "Full-time",
+            "job_title_6": "Product Designer",
+            "job_details_6": "alytics • San Francisco",
+            "job_link_6": "",
+            "job_tag_6": "Full-time",
+            "view_all_text": "View All Open Positions →",
+            "view_all_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "about_role_TkNTXN",
+        "key_responsibilities_MfKAYY",
+        "qualifications_k9KJ8C",
+        "what_we_offer_zRBGGe",
+        "job_highlights_p3qMKx",
+        "ready_to_apply_HbTjBp",
+        "similar_positions_y8FF4j"
+      ],
+      "name": "JobDetails sidebar Blocks",
+      "settings": {
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 48,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
     }
   },
   "order": [
     "shogun-helper",
     "main",
-    "shogun-optimizer"
+    "shogun-optimizer",
+    "career_job_detailstop_title_zpTMtD",
+    "job_details_description_section_blocks_tLJB6z"
   ]
 }
