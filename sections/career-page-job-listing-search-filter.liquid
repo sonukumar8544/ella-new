@@ -105,18 +105,34 @@
         <div id="jobs-container-{{ section.id }}" class="career-job-listing__jobs-grid">
           {% for block in all_jobs %}
             {% if block.type == 'job' %}
-              <div 
-                class="career-job-listing__job-card" 
-                data-job-id="{{ block.id }}"
-                data-department="{{ block.settings.department | escape }}"
-                data-location="{{ block.settings.location | escape }}"
-                data-employment="{{ block.settings.employment_type | escape }}"
-                data-experience="{{ block.settings.experience_level | escape }}"
-                data-title="{{ block.settings.title | downcase | escape }}"
-                data-description="{{ block.settings.description | downcase | escape }}"
-                data-skills="{{ block.settings.skills | downcase | escape }}"
-                data-featured="{{ block.settings.featured }}"
-              >
+              {% if block.settings.link != blank %}
+                <a 
+                  href="{{ block.settings.link }}" 
+                  class="career-job-listing__job-card career-job-listing__job-card--link" 
+                  data-job-id="{{ block.id }}"
+                  data-department="{{ block.settings.department | escape }}"
+                  data-location="{{ block.settings.location | escape }}"
+                  data-employment="{{ block.settings.employment_type | escape }}"
+                  data-experience="{{ block.settings.experience_level | escape }}"
+                  data-title="{{ block.settings.title | downcase | escape }}"
+                  data-description="{{ block.settings.description | downcase | escape }}"
+                  data-skills="{{ block.settings.skills | downcase | escape }}"
+                  data-featured="{{ block.settings.featured }}"
+                >
+              {% else %}
+                <div 
+                  class="career-job-listing__job-card" 
+                  data-job-id="{{ block.id }}"
+                  data-department="{{ block.settings.department | escape }}"
+                  data-location="{{ block.settings.location | escape }}"
+                  data-employment="{{ block.settings.employment_type | escape }}"
+                  data-experience="{{ block.settings.experience_level | escape }}"
+                  data-title="{{ block.settings.title | downcase | escape }}"
+                  data-description="{{ block.settings.description | downcase | escape }}"
+                  data-skills="{{ block.settings.skills | downcase | escape }}"
+                  data-featured="{{ block.settings.featured }}"
+                >
+              {% endif %}
                 {% if block.settings.featured %}
                   <span class="career-job-listing__job-featured">Featured</span>
                 {% endif %}
@@ -155,15 +171,11 @@
                     {% endif %}
                   </div>
                 {% endif %}
-
-                {% if block.settings.link != blank %}
-                  <a href="{{ block.settings.link }}" class="career-job-listing__job-link">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </a>
-                {% endif %}
-              </div>
+              {% if block.settings.link != blank %}
+                </a>
+              {% else %}
+                </div>
+              {% endif %}
             {% endif %}
           {% endfor %}
         </div>
@@ -444,6 +456,12 @@
     padding: 24px;
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
+    display: block;
+  }
+
+  #career-job-listing-{{ section.id }} .career-job-listing__job-card--link {
+    text-decoration: none;
+    color: inherit;
   }
 
   #career-job-listing-{{ section.id }} .career-job-listing__job-card:hover {
@@ -520,23 +538,6 @@
     color: #666;
   } */
 
-  #career-job-listing-{{ section.id }} .career-job-listing__job-link {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    color: #086B92;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    transition: background 0.2s;
-  }
-
-  #career-job-listing-{{ section.id }} .career-job-listing__job-link:hover {
-    background: #f0f0f0;
-  }
 
   /* Pagination */
   #career-job-listing-{{ section.id }} .career-job-listing__pagination {
@@ -1095,7 +1096,7 @@
       const title = card.querySelector('.career-job-listing__job-title')?.textContent || '';
       const department = card.dataset.department || '';
       const location = card.dataset.location || '';
-      const link = card.querySelector('.career-job-listing__job-link')?.href || '#';
+      const link = card.href || card.querySelector('a')?.href || '#';
       
       return `
         <a href="${link}" class="career-job-listing__featured-role">
