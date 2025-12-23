@@ -1,0 +1,887 @@
+<style>
+  .amazon-four-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+  }
+
+  .amazon-grid-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    margin: 0 0 {{ section.settings.header_margin_bottom | default: 48 }}px;
+  }
+
+  .amazon-grid-title {
+    flex: 1 1 280px;
+    font-size: 38px;
+    font-weight: 700;
+    color: {{ section.settings.title_color | default: '#1f2a36' }};
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+  }
+
+  .amazon-grid-subtitle {
+    flex: 1 1 280px;
+    font-size: {{ section.settings.subtitle_font_size | default: 18 }}px;
+    color: {{ section.settings.subtitle_color | default: '#415364' }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .amazon-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .amazon-card-trigger {
+    display: block;
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .amazon-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 28px 30px;
+    border: 1px solid rgba(31, 42, 54, 0.08);
+    box-shadow: 0 18px 45px rgba(30, 50, 107, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 180px;
+    background: #ffffff;
+  }
+
+  .amazon-card.is-highlighted {
+    background: linear-gradient(132deg, #fde8c0 0%, #fff5e4 55%, #ffffff 100%);
+    border-color: rgba(243, 179, 66, 0.35);
+  }
+
+  .amazon-card.is-first {
+    background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 2%, #ffffff 36%);
+  }
+
+  .amazon-card:hover,
+  .amazon-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 56px rgba(30, 50, 107, 0.12);
+  }
+
+  .amazon-card-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .amazon-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    /* background: rgba(8, 107, 146, 0.08); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .amazon-card-icon img,
+  .amazon-card-icon svg {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    color: #086b92;
+  }
+
+  .amazon-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #243443;
+    margin: 0 0 10px;
+  }
+
+  .amazon-card-description {
+    margin: 0 0 16px;
+    color: #465a68;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .amazon-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #374650;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+  }
+
+  .amazon-card-link svg {
+    width: 16px;
+    height: 16px;
+    display: none;
+  }
+
+  .amazon-grid-cta {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .amazon-grid-cta a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #0b7a9e;
+    color: #ffffff;
+    padding: 14px 34px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 26px rgba(11, 122, 158, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .amazon-grid-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(11, 122, 158, 0.45);
+  }
+
+  .amazon-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 90;
+  }
+
+  .amazon-modal.is-active {
+    display: flex;
+  }
+
+  .amazon-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 38, 51, 0.55);
+    backdrop-filter: blur(4px);
+  }
+
+  .amazon-modal-dialog {
+    position: relative;
+    width: min(560px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #fde8c0 0%, #fff5e4 5%, #ffffff 8%);
+    border-radius: 28px;
+    padding: 56px 64px 48px;
+    box-shadow: 0 36px 80px rgba(18, 39, 54, 0.25);
+    z-index: 1;
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+  }
+
+  .amazon-modal-dialog::-webkit-scrollbar {
+    display: none;
+  }
+
+  .amazon-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 42, 54, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2a36;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 24px rgba(23, 38, 51, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .amazon-modal-close:hover,
+  .amazon-modal-close:focus-visible {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(23, 38, 51, 0.22);
+  }
+
+  .amazon-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+    color: red;
+  }
+
+  .amazon-modal-heading {
+    margin-bottom: 30px;
+  }
+
+  .amazon-modal-title {
+    margin: 0 0 12px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2a36;
+    text-align: center;
+    max-width: 461px;
+    margin: auto;
+    line-height: 1.2;
+    padding-bottom: 20px;
+  }
+
+  .amazon-modal-subtitle {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    color: #405062;
+    max-width: 620px;
+    line-height: 1.6;
+  }
+
+  .amazon-modal-research-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #f7ad3f 0%, #fcd27e 100%);
+    color: #1f2530;
+    font-weight: 600;
+    margin: 0 auto 28px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    width: fit-content;
+  }
+
+  .amazon-modal-research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  .amazon-modal-research-card {
+    background: linear-gradient(180deg, rgba(241, 250, 254) 0%, #ffffff 25%);
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 1px solid rgba(244, 196, 104, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* min-height: 220px; */
+    flex: 1 1 320px;
+    /* max-width: 420px; */
+  }
+
+  .amazon-modal-research-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #086B92;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .amazon-modal-research-body {
+    font-size: 15px;
+    color: #405062;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .amazon-modal-research-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .amazon-modal-research-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: #2f3f50;
+    line-height: 1.5;
+  }
+
+  .amazon-modal-research-points svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #0b9e62;
+    margin-top: 2px;
+  }
+
+  .amazon-modal-research-link {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: #086B92;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* .amazon-modal-research-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(11, 122, 158, 0.35);
+  } */
+
+  .amazon-modal-research-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  @media (max-width: 1024px) {
+    .amazon-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .amazon-modal-dialog {
+      padding: 48px 36px 40px;
+    }
+
+    .amazon-modal-close {
+    top: 6px;
+    right: 6px;
+}
+
+    .amazon-modal-research-grid {
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+    }
+  }
+
+  @media (max-width: 860px) {
+    .amazon-grid-header {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .amazon-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .amazon-card-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    /* .amazon-card-icon img,
+    .amazon-card-icon svg {
+      width: 40px;
+      height: 40px;
+    } */
+
+    .amazon-modal-dialog {
+      padding: 15px;
+      border-radius: 22px;
+    }
+
+    .amazon-modal-research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .amazon-modal-research-grid > .amazon-modal-research-card:nth-child(3):nth-last-child(1) {
+      grid-column: auto;
+    }
+
+    .amazon-modal-research-card {
+      max-width: 100%;
+    }
+
+    .amazon-modal-title {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .amazon-grid-title{
+      flex: 0 !important;
+    }
+    .amazon-grid-subtitle{
+      flex: 0 !important;
+    }
+    .amazon-four-grid {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 48px !important;
+      padding-bottom: 60px !important;
+    }
+
+    .amazon-grid-header {
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .amazon-grid-title {
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 1.2;
+    }
+
+    .amazon-grid-subtitle {
+      font-size: 16px;
+    }
+
+    .amazon-card-grid {
+      gap: 16px;
+    }
+
+    .amazon-card {
+      padding: 22px 20px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(30, 50, 107, 0.08);
+    }
+
+    .amazon-card-content {
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+    }
+
+    .amazon-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+    }
+
+    /* .amazon-card-icon img,
+    .amazon-card-icon svg {
+      width: 34px;
+      height: 34px;
+    } */
+
+    .amazon-card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .amazon-card-description {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .amazon-card-link {
+      font-size: 13px;
+      padding-bottom: 6px;
+    }
+  }
+</style>
+
+<div
+  class="amazon-four-grid"
+  id="amazon-four-grid-{{ section.id }}"
+  style="
+    padding-top: {{ section.settings.section_padding_top | default: 80 }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom | default: 80 }}px;
+  "
+>
+  <div class="amazon-grid-header">
+    {% if section.settings.title != blank %}
+      <h2 class="amazon-grid-title">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="amazon-grid-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="amazon-card-grid">
+      {% for block in section.blocks %}
+        <button
+          type="button"
+          class="amazon-card-trigger"
+          data-modal-target="amazon-modal-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="amazon-card{% if forloop.first %} is-first{% endif %}{% if block.settings.highlight_card %} is-highlighted{% endif %}">
+            <div class="amazon-card-content">
+              <span class="amazon-card-icon">
+                {% if block.settings.icon != blank %}
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 120 }}"
+                    alt="{{ block.settings.icon_alt | default: block.settings.card_title }}"
+                    loading="lazy"
+                    width="80"
+                    height="80"
+                  >
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                {% endif %}
+              </span>
+              <div>
+                {% if block.settings.card_title != blank %}
+                  <h3 class="amazon-card-title">{{ block.settings.card_title }}</h3>
+                {% endif %}
+                {% if block.settings.card_description != blank %}
+                  <p class="amazon-card-description">{{ block.settings.card_description }}</p>
+                {% endif %}
+                <span class="amazon-card-link">
+                  {{ block.settings.card_link_label | default: 'Read More' }}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if section.settings.cta_link != blank and section.settings.cta_label != blank %}
+    <div class="amazon-grid-cta">
+      <a href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_label }}
+      </a>
+    </div>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    <div
+      class="amazon-modal"
+      id="amazon-modal-{{ block.id }}"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="amazon-modal-title-{{ block.id }}"
+      hidden
+    >
+      <div class="amazon-modal-backdrop" data-modal-close></div>
+      <div class="amazon-modal-dialog">
+        <button type="button" class="amazon-modal-close" data-modal-close aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+
+        <header class="amazon-modal-heading">
+          {% if block.settings.modal_title != blank %}
+            <h3 class="amazon-modal-title" id="amazon-modal-title-{{ block.id }}">
+              {{ block.settings.modal_title }}
+            </h3>
+          {% endif %}
+          {% if block.settings.modal_subtitle != blank %}
+            <p class="amazon-modal-subtitle">{{ block.settings.modal_subtitle }}</p>
+          {% endif %}
+        </header>
+
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Four Grid Block how",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title"    
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Most antioxidants stop at the surface. Tocotrienols go deeper — their unique molecular structure lets them slip through cell membranes, shielding your cells from oxidative stress where it matters most."
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "Shop Tocotrienol"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Spacing"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1f2a36"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#415364"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Section Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Section Bottom Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "min": 24,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "Header Bottom Spacing",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 26,
+      "max": 64,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size",
+      "default": 18
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_alt",
+          "label": "Icon Alt Text"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Heart"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Supports healthy cholesterol and arterial function."
+        },
+        {
+          "type": "text",
+          "id": "card_link_label",
+          "label": "Card Link Label",
+          "default": "Read More"
+        },
+        {
+          "type": "checkbox",
+          "id": "highlight_card",
+          "label": "Highlight this card",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Modal Content"
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Modal Title",
+          "default": "Heart Health Goals Tocotrienol Supports"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_subtitle",
+          "label": "Modal Subtitle",
+          "default": "Keep your heart strong every day with targeted antioxidant defense and healthy circulation support."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "How Annatto Works Four Grid",
+      "blocks": [
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        },
+        {
+          "type": "benefit"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  (function() {
+    function initAmazonPopups() {
+      var section = document.getElementById('amazon-four-grid-{{ section.id }}');
+      if (!section || section.dataset.modalInitialized === 'true') {
+        return;
+      }
+
+      var triggers = section.querySelectorAll('[data-modal-target]');
+      var modals = section.querySelectorAll('.amazon-modal');
+      if (!triggers.length || !modals.length) {
+        section.dataset.modalInitialized = 'true';
+        return;
+      }
+
+      var lastFocusedElement = null;
+
+      function lockScroll(lock) {
+        if (lock) {
+          document.documentElement.style.overflow = 'hidden';
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        }
+      }
+
+      function openModal(modal) {
+        if (!modal) return;
+
+        modal.hidden = false;
+        modal.classList.add('is-active');
+        lockScroll(true);
+
+        var focusable = modal.querySelector('.amazon-modal-close');
+        if (focusable) {
+          focusable.focus();
+        }
+
+        modal.dataset.active = 'true';
+      }
+
+      function closeModal(modal) {
+        if (!modal) return;
+
+        modal.classList.remove('is-active');
+        modal.hidden = true;
+        modal.dataset.active = 'false';
+
+        lockScroll(false);
+
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+          lastFocusedElement = null;
+        }
+      }
+
+      triggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          var targetId = trigger.getAttribute('data-modal-target');
+          if (!targetId) return;
+          var modal = section.querySelector('#' + targetId);
+          lastFocusedElement = trigger;
+          openModal(modal);
+        });
+      });
+
+      modals.forEach(function(modal) {
+        modal.addEventListener('click', function(event) {
+          var closeTrigger = event.target.closest('[data-modal-close]');
+          if (closeTrigger || event.target === modal) {
+            closeModal(modal);
+          }
+        });
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          modals.forEach(function(modal) {
+            if (modal.dataset.active === 'true') {
+              closeModal(modal);
+            }
+          });
+        }
+      });
+
+      section.dataset.modalInitialized = 'true';
+    }
+
+    document.addEventListener('DOMContentLoaded', initAmazonPopups);
+    document.addEventListener('shopify:section:load', function(event) {
+      if (event.detail && event.detail.sectionId === '{{ section.id }}') {
+        initAmazonPopups();
+      }
+    });
+  })();
+</script>
