@@ -1,119 +1,124 @@
 
 {% comment %}
-  Popup only for visitors from India (IN) and show only ONCE using localStorage
+  Suggest India store for India visitors on wellnessextract.com without forcing redirect.
 {% endcomment %}
 
+<style>
+  /* Minimal inline styles to avoid external dependencies */
+  #we-india-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #we-india-modal {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px 22px;
+    max-width: 360px;
+    width: calc(100% - 32px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+    font-family: inherit;
+    text-align: left;
+  }
+
+  #we-india-modal h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  #we-india-modal p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  #we-india-modal .we-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  #we-india-modal button {
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  #we-india-modal .we-primary {
+    background: #0f7c3b;
+    color: #fff;
+  }
+
+  #we-india-modal .we-secondary {
+    background: #f2f2f2;
+    color: #333;
+  }
+</style>
+
+<div id="we-india-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="we-india-modal-title">
+  <div id="we-india-modal">
+    <h3 id="we-india-modal-title">Shop our India store?</h3>
+    <p>We noticed you're in India. Switch to the India site for local pricing and faster delivery.</p>
+    <div class="we-actions">
+      <button type="button" class="we-secondary" id="we-india-stay">Stay here</button>
+      <button type="button" class="we-primary" id="we-india-go">Go to India site</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // ⚠️ Stop if popup already handled before
-    if (document.cookie.indexOf("geo_india_handled=yes") !== -1) return;
-  
-    // 🔎 Try getting visitor country from Shopify global object
-    var userCountry = window.Shopify && Shopify.country ? Shopify.country : null;
-  
-    // If no data yet, retry after 1 second (Shopify loads country async)
-    if (!userCountry) {
-      setTimeout(arguments.callee, 1000);
-      return;
+  (function () {
+    var STORAGE_KEY = "we_india_modal_dismissed";
+
+    function showModal(targetUrl) {
+      var overlay = document.getElementById("we-india-modal-overlay");
+      var goBtn = document.getElementById("we-india-go");
+      var stayBtn = document.getElementById("we-india-stay");
+
+      if (!overlay || !goBtn || !stayBtn) return;
+
+      goBtn.onclick = function () {
+        window.location.href = targetUrl;
+      };
+
+      stayBtn.onclick = function () {
+        localStorage.setItem(STORAGE_KEY, "1");
+        overlay.style.display = "none";
+      };
+
+      overlay.style.display = "flex";
     }
-  
-    if (userCountry === "IN") {
-      // Inject popup HTML dynamically (better than liquid condition)
-      document.body.insertAdjacentHTML("beforeend", `
-        <style>
-          .geo-modal-overlay {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            background: rgba(0,0,0,.55);
-            z-index: 99999;
-            padding: 24px 16px 16px;
-          }
-          .geo-modal {
-            background: #ffffff;
-            max-width: 420px;
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-            padding: 24px 24px 20px;
-            text-align: left;
-            font-family: inherit;
-            opacity: 0;
-            transform: translateY(16px) scale(.96);
-            transition: opacity 220ms ease, transform 220ms ease;
-            position: relative;
-          }
-          .geo-modal.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-          .geo-modal__badge {
-            background:#eef6ff; color:#006A91;
-            padding:6px 10px; border-radius:999px;
-            display:inline-flex; gap:6px; font-size:12px;
-            font-weight:600; margin-bottom:10px;
-          }
-          .geo-modal h3 { font-size:20px; margin:0 0 10px; font-weight:700; }
-          .geo-modal p { font-size:15px; margin:0 0 18px; color:#333; line-height:1.6; }
-          .geo-modal__actions { display:flex; gap:10px; }
-          .geo-modal__actions a,
-          .geo-modal__actions button {
-            flex:1; padding:12px 14px; font-size:14px;
-            border-radius:8px; font-weight:700;
-            border:1px solid transparent; cursor:pointer;
-          }
-          .geo-modal__actions a { background:#006A91; color:#fff; border-color:#006A91; text-decoration:none; text-align:center; }
-          .geo-modal__actions a:hover { background:#006A91; border-color:#006A91; }
-          .geo-modal__actions button { background:#f5f5f5; color:#111; border-color:#e0e0e0; }
-          .geo-modal__actions button:hover { background:#e8e8e8; border-color:#d5d5d5; }
-        </style>
-        <div class="geo-modal-overlay" id="geo-india-modal">
-          <div class="geo-modal" id="geo-india-modal-card">
-            <div class="geo-modal__badge">
-              <span>🌐</span> <span>Region detected</span>
-            </div>
-            <h3>Looks like you're visiting from India 🇮🇳</h3>
-            <p>Your local Wellness Extract store is available! Would you like to visit the India store?</p>
-            <div class="geo-modal__actions">
-              <a href="https://wellnessextract.in" id="geo-india-yes">Go to India Store</a>
-              <button id="geo-india-dismiss">No Thanks</button>
-            </div>
-          </div>
-        </div>
-      `);
-  
-      var modal = document.getElementById("geo-india-modal");
-      var modalCard = document.getElementById("geo-india-modal-card");
-      var dismissBtn = document.getElementById("geo-india-dismiss");
-      var yesBtn = document.getElementById("geo-india-yes");
 
-      // Animate in
-      requestAnimationFrame(function(){
-        modalCard.classList.add("is-visible");
-      });
-
-      function setHandledCookie() {
-        // 30 days cookie to avoid showing again
-        document.cookie = "geo_india_handled=yes; path=/; max-age=" + (60 * 60 * 24 * 30);
+    function init() {
+      var userCountry = window.Shopify && Shopify.country ? Shopify.country : null;
+      if (!userCountry) {
+        setTimeout(init, 20);
+        return;
       }
-  
-      dismissBtn.addEventListener("click", function () {
-        modal.remove();
-        setHandledCookie();
-      });
 
-      yesBtn.addEventListener("click", function () {
-        setHandledCookie();
-      });
-  
-      modal.addEventListener("click", function(e){
-        if (e.target === modal){
-          modal.remove();
-          setHandledCookie();
-        }
-      });
+      var isIndia = userCountry === "IN";
+      var onComDomain = /wellnessextract\.com$/i.test(window.location.hostname);
+      var dismissed = localStorage.getItem(STORAGE_KEY) === "1";
+
+      if (isIndia && onComDomain && !dismissed) {
+        var targetUrl =
+          "https://wellnessextract.in" +
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
+        showModal(targetUrl);
+      }
     }
-  });
-  </script>
+
+    document.addEventListener("DOMContentLoaded", init);
+  })();
+</script>
