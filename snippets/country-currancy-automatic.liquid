@@ -1,0 +1,100 @@
+{% comment %}
+  Automatic Currency Selection Based on Country
+  - Netherlands (NL) → EUR
+{% endcomment %}
+
+<script>
+(function() {
+  // Check if currency has already been set to avoid redirect loops
+  if (sessionStorage.getItem('currency_auto_set')) {
+    return;
+  }
+
+  // Get current currency from URL or cart
+  var currentCurrency = '{{ cart.currency.iso_code }}';
+  var urlParams = new URLSearchParams(window.location.search);
+  var urlCurrency = urlParams.get('currency');
+  
+  if (urlCurrency) {
+    currentCurrency = urlCurrency;
+    sessionStorage.setItem('currency_auto_set', 'true');
+    return; // Currency already set via URL
+  }
+
+  // Country to Currency mapping
+  var countryCurrencyMap = {
+    'NL': 'EUR'   // Netherlands
+  };
+
+  // Get enabled currencies from Shopify
+  var enabledCurrencies = [
+    {%- for currency in shop.enabled_currencies -%}
+      '{{ currency.iso_code }}'{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ];
+
+  // Function to set currency
+  function setCurrency(currencyCode) {
+    if (currentCurrency !== currencyCode && enabledCurrencies.includes(currencyCode)) {
+      sessionStorage.setItem('currency_auto_set', 'true');
+      
+      // Build new URL with currency parameter
+      var newUrl = new URL(window.location.href);
+      newUrl.searchParams.set('currency', currencyCode);
+      
+      // Redirect to new URL with currency
+      window.location.href = newUrl.toString();
+    }
+  }
+
+  // Method 1: Try to get country from Shopify localization (server-side) - Most reliable
+  {% if localization.country.iso_code %}
+    var countryCode = '{{ localization.country.iso_code }}';
+    if (countryCurrencyMap[countryCode]) {
+      setCurrency(countryCurrencyMap[countryCode]);
+      return;
+    }
+  {% endif %}
+
+  // Method 2: Use JavaScript to detect country (client-side fallback)
+  function detectCountryAndSetCurrency() {
+    // Try Shopify.country first (if available from content_for_header)
+    if (window.Shopify && window.Shopify.country) {
+      var countryCode = window.Shopify.country;
+      if (countryCurrencyMap[countryCode]) {
+        setCurrency(countryCurrencyMap[countryCode]);
+        return;
+      }
+    }
+
+    // Fallback: Use IP geolocation API
+    fetch('https://ipapi.co/json/')
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        var countryCode = data.country_code;
+        if (countryCurrencyMap[countryCode]) {
+          setCurrency(countryCurrencyMap[countryCode]);
+        }
+      })
+      .catch(function(error) {
+        // Silently fail - don't interrupt user experience
+        console.log('Currency auto-detection: Country detection unavailable');
+      });
+  }
+
+  // Wait for DOM and Shopify to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(detectCountryAndSetCurrency, 20);
+    });
+  } else {
+    setTimeout(detectCountryAndSetCurrency, 20);
+  }
+})();
+</script>
+
