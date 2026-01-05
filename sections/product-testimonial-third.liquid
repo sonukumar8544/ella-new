@@ -1,9 +1,16 @@
 <!--product-testimonial-third -->
 {% assign review_meta = product.metafields.custom.product_3_0_testimonial_slider_review.value %}
 {% if review_meta != blank %}
-<section class="testimonial-section cstm_{{ section.id }}" {% if section.settings.bgcolor != blank %}style="background-color: {{ section.settings.bgcolor }}"{% endif %}>
+<section id="product-review-sections" class="testimonial-section cstm_{{ section.id }}" {% if section.settings.bgcolor != blank %}style="background-color: {{ section.settings.bgcolor }}"{% endif %}>
   <div class="container">
-{% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading" {% if section.settings.titlefaq_color != blank %}style="color: {{ section.settings.titlefaq_color }}"{% endif %}>{{ section.settings.titlefaq }}</h2> {% endif %}
+    <div class="product-review-title-write-review">
+    {% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading" {% if section.settings.titlefaq_color != blank %}style="color: {{ section.settings.titlefaq_color }}"{% endif %}>{{ section.settings.titlefaq }}</h2> {% endif %}
+      {% comment %} <a target="_blank" class="review-btn-psps" href="https://okendo.reviews/?subscriberId=0efb5b0a-53ee-4e10-add4-97de3fa6359a&productId=shopify-{{ product.id }}">
+          <button class="write-review-btn">
+             <i class="fas fa-pen"></i> Write a Review
+          </button>
+      </a> {% endcomment %}
+    </div>
   <div class="testimonial-slider">
     {% for block in review_meta %}
       {% assign parts = block | split: '|' %}
@@ -25,6 +32,12 @@
 
 
 <style>
+
+.product-review-title-write-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .review-card {
   max-width: 350px;
   padding: 50px 20px;

@@ -1,0 +1,79 @@
+<script>
+  // Okendo review scroll functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    function scrollToReviewSection() {
+      const reviewSection = document.getElementById('product-review-sections');
+      if (reviewSection) {
+        // Get sticky header height from CSS variable or calculate it
+        let headerHeight = 0;
+        
+        // First, try to get header height from CSS variable (most accurate)
+        const cssHeaderHeight = getComputedStyle(document.documentElement)
+          .getPropertyValue('--header-height');
+        if (cssHeaderHeight && cssHeaderHeight.trim() !== '') {
+          headerHeight = parseInt(cssHeaderHeight) || 0;
+        } else {
+          // Fallback: get header height directly from element
+          const headerElement = document.querySelector('.section-header-navigation');
+          if (headerElement) {
+            headerHeight = headerElement.offsetHeight || 0;
+          }
+        }
+        
+        // Add extra padding for better spacing (optional, can be adjusted)
+        const extraPadding = 0;
+        headerHeight = headerHeight + extraPadding;
+        
+        // Calculate scroll position with offset
+        const elementPosition = reviewSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        
+        // Smooth scroll with offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    // Function to attach click listeners to Okendo review elements
+    function attachOkendoClickListeners() {
+      // Select all Okendo review elements that should trigger scroll
+      const okendoElements = document.querySelectorAll(
+        '[data-oke-star-rating], .oke-sr-rating, .oke-sr-stars, .oke-sr-count, .oke-stars, .oke-sr'
+      );
+
+      okendoElements.forEach(function(element) {
+        // Remove existing listener to avoid duplicates
+        element.removeEventListener('click', scrollToReviewSection);
+        // Add click listener
+        element.addEventListener('click', function(e) {
+          e.preventDefault();
+          scrollToReviewSection();
+        });
+        
+        // Make cursor pointer to indicate clickable
+        element.style.cursor = 'pointer';
+      });
+    }
+
+    // Initial attachment
+    attachOkendoClickListeners();
+
+    // Re-attach listeners after Okendo content loads (in case it loads dynamically)
+    const observer = new MutationObserver(function(mutations) {
+      attachOkendoClickListeners();
+    });
+
+    // Observe changes in the document body
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Also try after a short delay to catch late-loading content
+    setTimeout(attachOkendoClickListeners, 1000);
+    setTimeout(attachOkendoClickListeners, 3000);
+  });
+</script>
+
