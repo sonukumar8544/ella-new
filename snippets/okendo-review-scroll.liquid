@@ -47,7 +47,63 @@
 
     // Function to add review text child element
     function addReviewTextChild() {
-      const parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
+      // Try multiple methods to find the parent block
+      let parentBlock = null;
+      
+      // Method 1: Try the specific block ID (for backward compatibility)
+      parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
+      
+      // Method 2: Find parent block by looking for Okendo star rating element and traversing up
+      if (!parentBlock) {
+        const okendoRatingElement = document.querySelector('[data-oke-star-rating]');
+        if (okendoRatingElement) {
+          // Traverse up to find the Shopify block container
+          let currentElement = okendoRatingElement.parentElement;
+          while (currentElement && !parentBlock) {
+            // Check if this is a Shopify block (usually has id starting with 'shopify-block-')
+            if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Also check for common Shopify section/block containers
+            if (currentElement.classList.contains('shopify-section') || 
+                currentElement.hasAttribute('data-section-id') ||
+                currentElement.classList.contains('block')) {
+              parentBlock = currentElement;
+              break;
+            }
+            currentElement = currentElement.parentElement;
+          }
+          // If no block found, use the direct parent
+          if (!parentBlock && okendoRatingElement.parentElement) {
+            parentBlock = okendoRatingElement.parentElement;
+          }
+        }
+      }
+      
+      // Method 3: Find by Okendo classes
+      if (!parentBlock) {
+        const okendoElement = document.querySelector('.oke-sr-rating, .oke-sr-stars, .oke-sr-count');
+        if (okendoElement) {
+          let currentElement = okendoElement.parentElement;
+          while (currentElement && !parentBlock) {
+            if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            if (currentElement.classList.contains('shopify-section') || 
+                currentElement.hasAttribute('data-section-id')) {
+              parentBlock = currentElement;
+              break;
+            }
+            currentElement = currentElement.parentElement;
+          }
+          if (!parentBlock && okendoElement.parentElement) {
+            parentBlock = okendoElement.parentElement;
+          }
+        }
+      }
+      
       if (parentBlock) {
         // Set parent to display flex with gap and alignment
         parentBlock.style.display = 'flex';
@@ -122,34 +178,37 @@
       subtree: true
     });
 
-    // Also try after a short delay to catch late-loading content
+    // Also try after delays to catch late-loading content (Okendo can load asynchronously)
     setTimeout(applyOkendoModifications, 1000);
     setTimeout(applyOkendoModifications, 3000);
+    setTimeout(applyOkendoModifications, 5000);
+    setTimeout(applyOkendoModifications, 8000);
   });
 </script>
 
 <style>
   @media (min-width: 1025px) {
     .okendo-review-text-child {
-    padding-left: 40px;
-    padding-bottom: 6px;
-  }
+      padding-left: 40px;
+      padding-bottom: 6px;
+    }
   }
  
-
   span.oke-sr-count-number {
     border-bottom: 1px solid black;
   }
 
-
-
   @media (max-width: 1024px) {
-    #shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn{
+    /* Target any Shopify block containing Okendo elements */
+    #shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn,
+    [id^="shopify-block-"][id*="okendo"],
+    /* Also target parent elements that contain Okendo star rating */
+    :has([data-oke-star-rating]) {
       flex-direction: column;
-    flex-wrap: wrap !important;
-    gap: 0px !important;
-    align-items: flex-start !important;
-  }
+      flex-wrap: wrap !important;
+      gap: 0px !important;
+      align-items: flex-start !important;
+    }
   }
 </style>
 
