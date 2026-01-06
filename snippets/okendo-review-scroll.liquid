@@ -47,20 +47,142 @@
 
     // Function to add review text child element
     function addReviewTextChild() {
-      const parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
+      let parentBlock = null;
+      let okendoRatingElement = null;
+      
+      // Strategy 1: Try the specific block ID (for backward compatibility - local)
+      parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
+      
+      // Strategy 1b: Find any block ID containing 'okendo_star_rating_APJhrn' (works for both local and production)
+      if (!parentBlock) {
+        const allElements = document.querySelectorAll('[id*="okendo_star_rating_APJhrn"]');
+        if (allElements.length > 0) {
+          parentBlock = allElements[0];
+        }
+      }
+      
+      // Strategy 2: Find by data-oke-star-rating attribute and traverse up to shopify-block
+      if (!parentBlock) {
+        okendoRatingElement = document.querySelector('[data-oke-star-rating]');
+        if (okendoRatingElement) {
+          // Traverse up to find the Shopify block container
+          let currentElement = okendoRatingElement.parentElement;
+          while (currentElement && currentElement !== document.body) {
+            // Check for shopify-block ID
+            if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Also check for shopify-block class (backup method)
+            if (currentElement.classList && (
+              currentElement.classList.contains('shopify-block') ||
+              currentElement.classList.contains('shopify-app-block')
+            )) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Also check if it contains okendo in the ID
+            if (currentElement.id && currentElement.id.includes('okendo')) {
+              parentBlock = currentElement;
+              break;
+            }
+            currentElement = currentElement.parentElement;
+          }
+        }
+      }
+      
+      // Strategy 3: Find by Okendo classes (.oke-sr-rating, .oke-sr-stars, etc.)
+      if (!parentBlock) {
+        const okendoClasses = ['.oke-sr-rating', '.oke-sr-stars', '.oke-sr', '.oke-stars', '[class*="oke-sr"]'];
+        for (let i = 0; i < okendoClasses.length; i++) {
+          const element = document.querySelector(okendoClasses[i]);
+          if (element) {
+            okendoRatingElement = element;
+            let currentElement = element.parentElement;
+            while (currentElement && currentElement !== document.body) {
+              // Check for shopify-block ID
+              if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+                parentBlock = currentElement;
+                break;
+              }
+              // Check for shopify-block class
+              if (currentElement.classList && (
+                currentElement.classList.contains('shopify-block') ||
+                currentElement.classList.contains('shopify-app-block')
+              )) {
+                parentBlock = currentElement;
+                break;
+              }
+              if (currentElement.id && currentElement.id.includes('okendo')) {
+                parentBlock = currentElement;
+                break;
+              }
+              currentElement = currentElement.parentElement;
+            }
+            if (parentBlock) break;
+          }
+        }
+      }
+      
+      // Strategy 4: Find any element containing Okendo rating and use its parent
+      if (!parentBlock && okendoRatingElement) {
+        // Use the direct parent or a few levels up
+        let currentElement = okendoRatingElement.parentElement;
+        let depth = 0;
+        while (currentElement && currentElement !== document.body && depth < 5) {
+          // Check if this looks like a container (has children, not just text)
+          if (currentElement.children.length > 0 && currentElement.offsetWidth > 0) {
+            parentBlock = currentElement;
+            break;
+          }
+          currentElement = currentElement.parentElement;
+          depth++;
+        }
+      }
+      
+      // Strategy 5: Find by looking for elements with oke-sr-count-number (the (99) element)
+      if (!parentBlock) {
+        const countElement = document.querySelector('.oke-sr-count-number, span[class*="oke-sr-count"]');
+        if (countElement) {
+          let currentElement = countElement.parentElement;
+          let depth = 0;
+          while (currentElement && currentElement !== document.body && depth < 10) {
+            // Check for shopify-block ID
+            if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Check for shopify-block class
+            if (currentElement.classList && (
+              currentElement.classList.contains('shopify-block') ||
+              currentElement.classList.contains('shopify-app-block')
+            )) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Use a container that has the rating element
+            if (currentElement.querySelector('[data-oke-star-rating], .oke-sr-rating, .oke-sr-stars')) {
+              parentBlock = currentElement;
+              break;
+            }
+            currentElement = currentElement.parentElement;
+            depth++;
+          }
+        }
+      }
+      
       if (parentBlock) {
         // Set parent to display flex with gap and alignment
         parentBlock.style.display = 'flex';
         parentBlock.style.gap = '12px';
         parentBlock.style.alignItems = 'center';
-        // parentBlock.style.flexWrap = 'nowrap';
+        parentBlock.style.flexWrap = 'nowrap';
         
-        // Set first child max-width to 150px
+        // Set first child max-width to 200px
         const firstChild = parentBlock.firstElementChild;
         if (firstChild) {
           firstChild.style.maxWidth = '200px';
           firstChild.style.flexShrink = '0';
-          // firstChild.style.borderBottom = '1px solid #086b92';
         }
         
         // Check if child already exists to avoid duplicates
@@ -71,13 +193,18 @@
           reviewTextChild.textContent = '8500+ Reviews on marketplaces';
           reviewTextChild.style.flexShrink = '0';
           reviewTextChild.style.whiteSpace = 'nowrap';
+          reviewTextChild.style.display = 'block';
           parentBlock.appendChild(reviewTextChild);
+          return true; // Successfully added
         } else {
-          // Update existing child styles
+          // Update existing child styles and ensure it's visible
           existingChild.style.flexShrink = '0';
           existingChild.style.whiteSpace = 'nowrap';
+          existingChild.style.display = 'block';
+          return true; // Already exists
         }
       }
+      return false; // Failed to find parent block
     }
 
     // Function to attach click listeners to Okendo review elements
@@ -112,19 +239,82 @@
     applyOkendoModifications();
 
     // Re-attach listeners after Okendo content loads (in case it loads dynamically)
+    let hasAddedText = false;
     const observer = new MutationObserver(function(mutations) {
-      applyOkendoModifications();
+      // Only run if we haven't successfully added the text yet, or if Okendo elements are being added
+      if (!hasAddedText || mutations.some(function(mutation) {
+        return Array.from(mutation.addedNodes).some(function(node) {
+          return node.nodeType === 1 && (
+            node.querySelector && (
+              node.querySelector('[data-oke-star-rating]') ||
+              node.querySelector('.oke-sr-rating') ||
+              node.querySelector('.oke-sr-stars') ||
+              node.classList.contains('oke-sr-rating') ||
+              node.classList.contains('oke-sr-stars')
+            )
+          );
+        });
+      })) {
+        applyOkendoModifications();
+        // Check if text was successfully added
+        if (document.querySelector('.okendo-review-text-child')) {
+          hasAddedText = true;
+        }
+      }
     });
 
     // Observe changes in the document body
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
+      attributes: false,
+      characterData: false
     });
+    
+    // Periodic check every 2 seconds for the first 20 seconds (in case MutationObserver misses something)
+    let checkCount = 0;
+    const maxChecks = 10;
+    const periodicCheck = setInterval(function() {
+      checkCount++;
+      if (!document.querySelector('.okendo-review-text-child')) {
+        applyOkendoModifications();
+      } else {
+        hasAddedText = true;
+      }
+      if (checkCount >= maxChecks || hasAddedText) {
+        clearInterval(periodicCheck);
+      }
+    }, 2000);
 
-    // Also try after a short delay to catch late-loading content
+    // Also try after delays to catch late-loading content (Okendo loads asynchronously)
+    setTimeout(applyOkendoModifications, 500);
     setTimeout(applyOkendoModifications, 1000);
+    setTimeout(applyOkendoModifications, 2000);
     setTimeout(applyOkendoModifications, 3000);
+    setTimeout(applyOkendoModifications, 5000);
+    setTimeout(applyOkendoModifications, 8000);
+    setTimeout(applyOkendoModifications, 10000);
+    
+    // Also run on window load event (ensures all content is loaded)
+    if (document.readyState === 'complete') {
+      setTimeout(applyOkendoModifications, 100);
+      setTimeout(applyOkendoModifications, 1000);
+      setTimeout(applyOkendoModifications, 3000);
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(applyOkendoModifications, 100);
+        setTimeout(applyOkendoModifications, 1000);
+        setTimeout(applyOkendoModifications, 3000);
+      });
+    }
+    
+    // Also listen for Okendo-specific events if they exist
+    if (typeof window.Okendo !== 'undefined') {
+      window.addEventListener('okendo:ready', function() {
+        setTimeout(applyOkendoModifications, 500);
+        setTimeout(applyOkendoModifications, 2000);
+      });
+    }
   });
 </script>
 
@@ -144,12 +334,13 @@
 
 
   @media (max-width: 1024px) {
-    #shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn{
+    #shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn,
+    [id^="shopify-block-"][id*="okendo"] {
       flex-direction: column;
-    flex-wrap: wrap !important;
-    gap: 0px !important;
-    align-items: flex-start !important;
-  }
+      flex-wrap: wrap !important;
+      gap: 0px !important;
+      align-items: flex-start !important;
+    }
   }
 </style>
 
