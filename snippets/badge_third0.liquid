@@ -8,8 +8,8 @@
 {%- endif -%}
 
 {% comment %} <div class="discount-percent-thirdO">Save 20%</div> {% endcomment %}
-{% if product.metafields.custom.isbundle.value == 'true' %}
+{% comment %} {% if product.metafields.custom.isbundle.value == 'true' %}
   <div class="discount-percent-thirdO">Save 25%</div>
 {% else %}
   <div class="discount-percent-thirdO">Save 15%</div>
-{% endif %}
+{% endif %} {% endcomment %}
