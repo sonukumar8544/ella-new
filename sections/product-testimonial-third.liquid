@@ -5,11 +5,11 @@
   <div class="container">
     <div class="product-review-title-write-review">
     {% if section.settings.titlefaq != blank %} <h2 class="testimonial-heading" {% if section.settings.titlefaq_color != blank %}style="color: {{ section.settings.titlefaq_color }}"{% endif %}>{{ section.settings.titlefaq }}</h2> {% endif %}
-      {% comment %} <a target="_blank" class="review-btn-psps" href="https://okendo.reviews/?subscriberId=0efb5b0a-53ee-4e10-add4-97de3fa6359a&productId=shopify-{{ product.id }}">
+      <a target="_blank" class="review-btn-psps" href="https://okendo.reviews/?subscriberId=0efb5b0a-53ee-4e10-add4-97de3fa6359a&productId=shopify-{{ product.id }}">
           <button class="write-review-btn">
              <i class="fas fa-pen"></i> Write a Review
           </button>
-      </a> {% endcomment %}
+      </a> 
     </div>
   <div class="testimonial-slider">
     {% for block in review_meta %}

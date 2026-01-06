@@ -36,6 +36,50 @@
       }
     }
 
+    // Function to style Okendo review product element
+    function styleOkendoProductElement() {
+      const productElement = document.querySelector('[data-oke-reviews-product-id="shopify-8816697737512"]');
+      if (productElement) {
+        productElement.style.maxWidth = '140px';
+        productElement.style.borderBottom = '2px solid red';
+      }
+    }
+
+    // Function to add review text child element
+    function addReviewTextChild() {
+      const parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
+      if (parentBlock) {
+        // Set parent to display flex with gap and alignment
+        parentBlock.style.display = 'flex';
+        parentBlock.style.gap = '12px';
+        parentBlock.style.alignItems = 'center';
+        // parentBlock.style.flexWrap = 'nowrap';
+        
+        // Set first child max-width to 150px
+        const firstChild = parentBlock.firstElementChild;
+        if (firstChild) {
+          firstChild.style.maxWidth = '200px';
+          firstChild.style.flexShrink = '0';
+          // firstChild.style.borderBottom = '1px solid #086b92';
+        }
+        
+        // Check if child already exists to avoid duplicates
+        const existingChild = parentBlock.querySelector('.okendo-review-text-child');
+        if (!existingChild) {
+          const reviewTextChild = document.createElement('div');
+          reviewTextChild.className = 'okendo-review-text-child';
+          reviewTextChild.textContent = '8500+ Reviews on marketplaces';
+          reviewTextChild.style.flexShrink = '0';
+          reviewTextChild.style.whiteSpace = 'nowrap';
+          parentBlock.appendChild(reviewTextChild);
+        } else {
+          // Update existing child styles
+          existingChild.style.flexShrink = '0';
+          existingChild.style.whiteSpace = 'nowrap';
+        }
+      }
+    }
+
     // Function to attach click listeners to Okendo review elements
     function attachOkendoClickListeners() {
       // Select all Okendo review elements that should trigger scroll
@@ -57,12 +101,19 @@
       });
     }
 
+    // Function to run all Okendo modifications
+    function applyOkendoModifications() {
+      attachOkendoClickListeners();
+      styleOkendoProductElement();
+      addReviewTextChild();
+    }
+
     // Initial attachment
-    attachOkendoClickListeners();
+    applyOkendoModifications();
 
     // Re-attach listeners after Okendo content loads (in case it loads dynamically)
     const observer = new MutationObserver(function(mutations) {
-      attachOkendoClickListeners();
+      applyOkendoModifications();
     });
 
     // Observe changes in the document body
@@ -72,8 +123,33 @@
     });
 
     // Also try after a short delay to catch late-loading content
-    setTimeout(attachOkendoClickListeners, 1000);
-    setTimeout(attachOkendoClickListeners, 3000);
+    setTimeout(applyOkendoModifications, 1000);
+    setTimeout(applyOkendoModifications, 3000);
   });
 </script>
+
+<style>
+  @media (min-width: 1025px) {
+    .okendo-review-text-child {
+    padding-left: 40px;
+    padding-bottom: 6px;
+  }
+  }
+ 
+
+  span.oke-sr-count-number {
+    border-bottom: 1px solid black;
+  }
+
+
+
+  @media (max-width: 1024px) {
+    #shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn{
+      flex-direction: column;
+    flex-wrap: wrap !important;
+    gap: 0px !important;
+    align-items: flex-start !important;
+  }
+  }
+</style>
 
