@@ -50,17 +50,34 @@
       let parentBlock = null;
       let okendoRatingElement = null;
       
-      // Strategy 1: Try the specific block ID (for backward compatibility)
+      // Strategy 1: Try the specific block ID (for backward compatibility - local)
       parentBlock = document.getElementById('shopify-block-AKzR2MmJzOWYyanVMb__okendo_star_rating_APJhrn');
       
-      // Strategy 2: Find by data-oke-star-rating attribute
+      // Strategy 1b: Find any block ID containing 'okendo_star_rating_APJhrn' (works for both local and production)
+      if (!parentBlock) {
+        const allElements = document.querySelectorAll('[id*="okendo_star_rating_APJhrn"]');
+        if (allElements.length > 0) {
+          parentBlock = allElements[0];
+        }
+      }
+      
+      // Strategy 2: Find by data-oke-star-rating attribute and traverse up to shopify-block
       if (!parentBlock) {
         okendoRatingElement = document.querySelector('[data-oke-star-rating]');
         if (okendoRatingElement) {
           // Traverse up to find the Shopify block container
           let currentElement = okendoRatingElement.parentElement;
           while (currentElement && currentElement !== document.body) {
+            // Check for shopify-block ID
             if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Also check for shopify-block class (backup method)
+            if (currentElement.classList && (
+              currentElement.classList.contains('shopify-block') ||
+              currentElement.classList.contains('shopify-app-block')
+            )) {
               parentBlock = currentElement;
               break;
             }
@@ -83,7 +100,16 @@
             okendoRatingElement = element;
             let currentElement = element.parentElement;
             while (currentElement && currentElement !== document.body) {
+              // Check for shopify-block ID
               if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+                parentBlock = currentElement;
+                break;
+              }
+              // Check for shopify-block class
+              if (currentElement.classList && (
+                currentElement.classList.contains('shopify-block') ||
+                currentElement.classList.contains('shopify-app-block')
+              )) {
                 parentBlock = currentElement;
                 break;
               }
@@ -121,7 +147,16 @@
           let currentElement = countElement.parentElement;
           let depth = 0;
           while (currentElement && currentElement !== document.body && depth < 10) {
+            // Check for shopify-block ID
             if (currentElement.id && currentElement.id.startsWith('shopify-block-')) {
+              parentBlock = currentElement;
+              break;
+            }
+            // Check for shopify-block class
+            if (currentElement.classList && (
+              currentElement.classList.contains('shopify-block') ||
+              currentElement.classList.contains('shopify-app-block')
+            )) {
               parentBlock = currentElement;
               break;
             }
