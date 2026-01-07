@@ -1,5 +1,8 @@
 <script>
   // Okendo review scroll functionality
+  // Get review text from product metafield
+  var reviewText = {% if product.metafields.custom.we_product_onne_liner_text != blank %}'{{ product.metafields.custom.product_review_count | escape }}'{% else %}'900+ Reviews on marketplaces'{% endif %};
+  
   document.addEventListener('DOMContentLoaded', function() {
     function scrollToReviewSection() {
       const reviewSection = document.getElementById('product-review-sections');
@@ -190,14 +193,15 @@
         if (!existingChild) {
           const reviewTextChild = document.createElement('div');
           reviewTextChild.className = 'okendo-review-text-child';
-          reviewTextChild.textContent = '8500+ Reviews on marketplaces';
+          reviewTextChild.textContent = reviewText;
           reviewTextChild.style.flexShrink = '0';
           reviewTextChild.style.whiteSpace = 'nowrap';
           reviewTextChild.style.display = 'block';
           parentBlock.appendChild(reviewTextChild);
           return true; // Successfully added
         } else {
-          // Update existing child styles and ensure it's visible
+          // Update existing child text and styles, ensure it's visible
+          existingChild.textContent = reviewText;
           existingChild.style.flexShrink = '0';
           existingChild.style.whiteSpace = 'nowrap';
           existingChild.style.display = 'block';
@@ -323,12 +327,13 @@
     .okendo-review-text-child {
     padding-left: 40px;
     padding-bottom: 6px;
+    color: #29353C;
   }
   }
- 
 
   span.oke-sr-count-number {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #29353C !important;
+    color: #29353C !important;
   }
 
 

@@ -180,7 +180,7 @@
   width: 100%;
   }
   .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img {
-  max-width: 470px !important;
+  /* max-width: 470px !important; */
   margin-right: 0 !important;
   }
   .productView-image.fit-unset .productView-img-container img:not(.zoomImg) {
@@ -201,7 +201,7 @@
   }
   
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-prev{
-  left: 16%;
+  left: 1%;
   }
   .dynamic-Product-page-3\.O-template .productView-image-wrapper button.slick-arrow.slick-next {
   right: 1%;
@@ -433,9 +433,9 @@
   box-shadow: none;
   }
   
-  .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
-  border-radius: 80px !important; 
-  }
+  /* .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
+  border-radius: 20px !important; 
+  } */
   /* price css */
   .dynamic-Product-page-3\.O-template #custom_proce_manage span.price-item.price-item--regular.orginal_price1 span {
   color: #29353C !important;
@@ -902,14 +902,14 @@
   max-width: 22px;
   }
   .dynamic-Product-page-3\.O-template .productView-nav .slick-next{
-  right: 25px !important;
+  right: 0px !important;
   }
   .dynamic-Product-page-3\.O-template .productView-nav .slick-prev{
-  left: 25px !important;
+  left: 0px !important;
   }
-  .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
+  /* .productView-image.fit-unset .productView-img-container img:not(.zoomImg){
   max-width: 94%;
-  }
+  } */
   .dynamic-Product-page-3\.O-template .halo-text-format p {
   margin-bottom: 0;
   font-size: 16px;
@@ -1052,9 +1052,9 @@
   padding-top: 0px !important;
   }
   
-  .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
+  /* .dynamic-Product-page-3\.O-template .productView-images-wrapper .productView-img-container .media img{
   border-radius: 28px !important;
-  }
+  } */
   
   .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header,
   .dynamic-Product-page-3\.O-template .instagram-slide .halo-block-header .title{
