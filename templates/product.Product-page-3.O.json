@@ -737,10 +737,10 @@
         "judge_me_reviews_cards_carousel_EndiqG": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "show_sample_reviews": true,
-            "reviews_selection": "product_reviews",
+            "show_sample_reviews": false,
+            "reviews_selection": "current_product",
             "products": [],
-            "star_rating": "all",
+            "star_rating": "4_to_5_star",
             "show_review_media": true,
             "display_order": "most_recent",
             "no_image_fallback": "review_text_only",
@@ -757,7 +757,7 @@
             "corner_styling": "soft",
             "header_text_color": "#374650",
             "text_color": "#374650",
-            "card_color": "#F9F9F9",
+            "card_color": "#f9f9f9",
             "stars_color": "",
             "arrows_color": "#374650",
             "transition_speed": 5,
