@@ -4865,7 +4865,7 @@
                             {
                                 breakpoint: 767,
                                 settings: {
-                                    slidesToShow: 3,
+                                    slidesToShow: 4,
                                     slidesToScroll: 1,
                                     vertical: false,
                                     verticalSwiping: false,
@@ -4901,7 +4901,7 @@
                             {
                                 breakpoint: 767,
                                 settings: {
-                                    slidesToShow: 3,
+                                    slidesToShow: 4,
                                     slidesToScroll: 1
                                 }
                             }
@@ -4946,7 +4946,7 @@
                         {
                             breakpoint: 767,
                             settings: {
-                                slidesToShow: 2.2,
+                                slidesToShow: 4,
                                 slidesToScroll: 1,
                                 vertical: false,
                                 verticalSwiping: false
