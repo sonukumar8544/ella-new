@@ -860,7 +860,9 @@
 }
 
 .productView-image .productView-img-container .productView-video video{
-    width: 100%!important;
+    /* width: 100%!important; */
+    height: 100%!important;
+    object-fit: cover;
 }
 
 .productView-image .productView-img-container .productView-video iframe{
