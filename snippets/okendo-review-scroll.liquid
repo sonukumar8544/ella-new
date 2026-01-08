@@ -197,6 +197,12 @@
           reviewTextChild.style.flexShrink = '0';
           reviewTextChild.style.whiteSpace = 'nowrap';
           reviewTextChild.style.display = 'block';
+          reviewTextChild.style.cursor = 'pointer';
+          // Add click listener to scroll to review section
+          reviewTextChild.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToReviewSection();
+          });
           parentBlock.appendChild(reviewTextChild);
           return true; // Successfully added
         } else {
@@ -205,6 +211,13 @@
           existingChild.style.flexShrink = '0';
           existingChild.style.whiteSpace = 'nowrap';
           existingChild.style.display = 'block';
+          existingChild.style.cursor = 'pointer';
+          // Remove existing listener to avoid duplicates, then add new one
+          existingChild.removeEventListener('click', scrollToReviewSection);
+          existingChild.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToReviewSection();
+          });
           return true; // Already exists
         }
       }
@@ -215,7 +228,7 @@
     function attachOkendoClickListeners() {
       // Select all Okendo review elements that should trigger scroll
       const okendoElements = document.querySelectorAll(
-        '[data-oke-star-rating], .oke-sr-rating, .oke-sr-stars, .oke-sr-count, .oke-stars, .oke-sr'
+        '[data-oke-star-rating], .oke-sr-rating, .oke-sr-stars, .oke-sr-count, .oke-stars, .oke-sr, .okendo-review-text-child'
       );
 
       okendoElements.forEach(function(element) {
@@ -330,6 +343,7 @@
       font-style: italic;
       font-size: 15px;
       color: #29353C;
+      cursor: pointer;
   }
   }
 
@@ -347,6 +361,10 @@
       flex-wrap: wrap !important;
       gap: 0px !important;
       align-items: flex-start !important;
+    }
+    
+    .okendo-review-text-child {
+      cursor: pointer;
     }
   }
 </style>
