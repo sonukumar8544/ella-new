@@ -1151,3 +1151,12 @@
   justify-content: center;
   }
   }
+
+
+  /* vitemin product page  */
+  .health-benefits_thirdO.productvitemin-page-new {
+    flex-direction: column;
+  }
+  .health-benefits_thirdO.productvitemin-page-new .benefit-item {
+    width: 100% !important;
+  }
