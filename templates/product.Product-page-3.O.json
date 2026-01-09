@@ -646,6 +646,13 @@
         "description": ""
       }
     },
+    "custom_liquid_JFPGfw": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div id=\"product-review-sections\">\n  <h3>Customers are saying</h3>\n</div>\n\n<style>\n  #product-review-sections {\n    text-align: center;\n    padding-bottom: 0px;\n    margin-bottom: 0px;\n  }\n\n  #product-review-sections h3 {\n    font-size: 38px;\n    font-weight: 600;\n    color: #374650;\n    margin-bottom: 0px;\n    padding-bottom: 0px;\n  }\n\n  @media (max-width: 768px) {\n    #product-review-sections h3 {\n      font-size: 24px;\n    }\n  }\n</style>"
+      }
+    },
     "1767782207bec9444d": {
       "type": "apps",
       "blocks": {
@@ -676,7 +683,7 @@
             "stars_color": "",
             "arrows_color": "#374650",
             "transition_speed": 5,
-            "header_text": "Customers are saying",
+            "header_text": "",
             "show_average_rating": true
           }
         }
@@ -802,6 +809,7 @@
     "scientific_slider_third_o_AYBm97",
     "transform_section_third_o_CP39Wc",
     "metafield_testimonial_video_VcK34F",
+    "custom_liquid_JFPGfw",
     "1767782207bec9444d",
     "product_testimonial_third_iMhbTE",
     "meta_instagram_pWYEc3",
