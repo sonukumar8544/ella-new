@@ -392,7 +392,7 @@
                         </ul>
                     </div>
                     <div class="product-tab--block-has__banner has__banner--{{ section.settings.position }}" style="--width-box-banner: {{ section.settings.width_banner | append: '%' }}">
-                        <div class="sonu333 product-block__banner{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
+                        <div class="product-block__banner{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                             <div class="list_banner_item" {% if block_banners.size > 1  %}data-banner-product{% endif %}>
                                 {%- for block in block_banners -%}
                                 {%- assign preview_img = block.settings.image -%}

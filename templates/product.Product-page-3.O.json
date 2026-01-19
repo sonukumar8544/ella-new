@@ -146,6 +146,19 @@
           "type": "custom",
           "settings": {
             "open_tab_mobile": false,
+            "title": "Meet Tocotrienol",
+            "type": "all",
+            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.</p><br><ul>\n  <li><strong>Combats oxidative stress</strong></li>\n  <li><strong>Overall cellular health</strong></li>\n  <li><strong>Promotes skin vitality</strong></li>\n  <li><strong>Bones and muscle strength</strong></li>\n  <li><strong>Supports cardiovascular health</strong></li>\n  <li><strong>Healthy inflammatory response</strong></li>\n  <li><strong>Regulates lipid levels</strong></li>\n  <li><strong>Healthy aging and longevity</strong></li>\n</ul>",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_p44B9h": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
             "title": "Who Is It For",
             "type": "all",
             "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.</p><br><ul>\n  <li><strong>Combats oxidative stress</strong></li>\n  <li><strong>Overall cellular health</strong></li>\n  <li><strong>Promotes skin vitality</strong></li>\n  <li><strong>Bones and muscle strength</strong></li>\n  <li><strong>Supports cardiovascular health</strong></li>\n  <li><strong>Healthy inflammatory response</strong></li>\n  <li><strong>Regulates lipid levels</strong></li>\n  <li><strong>Healthy aging and longevity</strong></li>\n</ul>",
@@ -244,6 +257,7 @@
         "10093fcf-2053-47e9-bedb-841bb0d046fa",
         "bd066b80-c8e3-4f3e-8280-b27fbf6e9423",
         "custom_BU3qYE",
+        "custom_p44B9h",
         "87197f5f-be0e-4b89-9270-62bf6917ebe7",
         "3d9ea84d-5527-4bce-abe6-5debef3ec955",
         "b9d6eb19-10f4-41f8-bfdc-ea10e8b3182a",
@@ -278,8 +292,8 @@
         "main_image_counter_mobile": false,
         "main_image_enable_parallax_mb": false,
         "main_image_show_zoom_icon_mb": false,
-        "show_thumbnail_mobile": false,
-        "thumnail_layout": "4",
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "3",
         "thumbnail_to_show": 6,
         "enable_sticky": true,
         "sidebar_layout": "layout_1",
@@ -632,8 +646,58 @@
         "description": ""
       }
     },
+    "custom_liquid_JFPGfw": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div id=\"product-review-sections\">\n  <h3>Customers are saying</h3>\n</div>\n\n <a target=\"_blank\" class=\"review-btn-pspss\" href=\"https://okendo.reviews/?subscriberId=0efb5b0a-53ee-4e10-add4-97de3fa6359a&productId=shopify-{{ product.id }}\"><button class=\"write-review-btnss\">\n                            <i class=\"fas fa-pen\"></i> Write a Review\n                        </button></a>\n\n<style>\n  #product-review-sections {\n    text-align: center;\n    padding-bottom: 0px;\n    margin-bottom: 0px;\n  }\n\n  #product-review-sections h3 {\n    font-size: 38px;\n    font-weight: 600;\n    color: #374650;\n    margin-bottom: 0px;\n    padding-bottom: 0px;\n  }\n\n  @media (max-width: 768px) {\n    #product-review-sections h3 {\n      font-size: 24px;\n    }\n  }\n\n\na.review-btn-pspss {\n    display: flex;\n    justify-content: center;\n    margin-top: 12px;\n}\n\n.write-review-btnss {\n    color: #086b92;\n    border: none;\n    padding: 12px 20px;\n    font-size: 16px;\n    border-radius: 6px;\n    margin-bottom: 10px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    transition: background-color .3s ease;\n}\n</style>"
+      }
+    },
+    "1767782207bec9444d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_cards_carousel_EndiqG": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": false,
+            "reviews_selection": "current_product",
+            "products": [],
+            "star_rating": "4_to_5_star",
+            "show_review_media": true,
+            "display_order": "most_recent",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 30,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": true,
+            "arrows_position": "sides",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#374650",
+            "text_color": "#374650",
+            "card_color": "#f9f9f9",
+            "stars_color": "",
+            "arrows_color": "#374650",
+            "transition_speed": 5,
+            "header_text": "",
+            "show_average_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_cards_carousel_EndiqG"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
     "product_testimonial_third_iMhbTE": {
       "type": "product-testimonial-third",
+      "disabled": true,
       "name": "Meta FAQ's 3.0",
       "settings": {
         "bgcolor": "#f2f3f9",
@@ -767,6 +831,8 @@
     "scientific_slider_third_o_AYBm97",
     "transform_section_third_o_CP39Wc",
     "metafield_testimonial_video_VcK34F",
+    "custom_liquid_JFPGfw",
+    "1767782207bec9444d",
     "product_testimonial_third_iMhbTE",
     "meta_instagram_pWYEc3",
     "product_page_faq_section_HeHhtA",

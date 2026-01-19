@@ -396,6 +396,14 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                 left: 0px !important;
             }
         {% endif %}
+        /* Ensure 4 thumbnails show on mobile */
+        #ProductSection-{{ section.id }} .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div {
+            width: 25% !important;
+            display: inline-block !important;
+        }
+        #ProductSection-{{ section.id }} .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div:nth-child(n+5) {
+            display: none !important;
+        }
     }
 
     @media (min-width: 1025px) {
@@ -555,7 +563,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                     {%- for media in product.media -%}
                                         {%- case media.media_type -%}
                                             {%- when 'image' -%}
-                                                <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
+                                                <div class="product-pagefour4 productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
                                                     <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"
                                                         {% unless media_fit == 'unset' %}
                                                             {% if product.featured_media %}
@@ -664,7 +672,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                                     data-sizes="auto"
                                                                 >
                                                             </div>
-                                                            <div class="productView-video mp4" data-mp4 data-type="mp4" data-video-url="{{ media | video_tag: controls: true, image_size: 'master' }}">
+                                                            <div class="productView-video mp4" data-mp4 data-type="mp4">
                                                                 {{ media | video_tag: controls: true, image_size: 'master' }}
                                                             </div>
                                                         </div>
@@ -831,7 +839,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                         </div>
                     </div>
                     <div class="halo-productView-right productView-details clearfix">
-                        <div class="sonu9 productView-product clearfix">
+                        <div class="productView-product clearfix">
                             {%- for block in section.blocks -%}
                                 {%- liquid
                                     assign spacing_top = block.settings.spacing_top
@@ -1655,3 +1663,12 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
 {% render 'schema',
     product: product
 %}
+{% comment %} <style>
+
+    @media (max-width: 768px) {
+        .product-pagefour4.productView-image.slick-slide {
+          padding: 0px !important;
+    }
+    }
+   
+</style> {% endcomment %}

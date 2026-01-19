@@ -61,8 +61,15 @@
 				{%- if has_tab and title != blank -%}
                   <!-- tab__slide -->
 				  {% assign fruther = block.settings.title | escape  | handle %}
+				  {% assign should_hide_tab = false %}
+				  {% if product.id == 8200696594728 and fruther == "description" %}
+				    {% assign should_hide_tab = true %}
+				  {% elsif product.id != 8200696594728 and fruther == "meet-tocotrienol" %}
+				    {% assign should_hide_tab = true %}
+				  {% endif %}
+				  {% unless should_hide_tab %}
 					<li class="tab"  {% if product.handle == 'electric-frother' %}{% if fruther == "who-is-it-for" %} style=" display:none"{% endif %}{% endif %} >
-			            <a class="tab-title{% if block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
+			            <a class="tab-title{% if product.id == 8200696594728 %}{% if fruther == "meet-tocotrienol" and tab_layout == 'horizontal' %} is-open{% endif %}{% elsif block.type == 'description' and tab_layout == 'horizontal' %} is-open{% endif %}" href="#tab-{{ block.settings.title | escape | handleize }}" style="--border-color: {{ border_color }}">
 			                 {% if product.handle == 'electric-frother' %}  
                     {% assign h2only = block.settings.title | escape  | handle %}
                      {% if h2only == 'health-benefits' %}
@@ -75,6 +82,7 @@
                     {% endif %}
 			            </a>
 			        </li>
+				  {% endunless %}
 			    {%- endif -%}
 			{%- endfor -%}
 		</ul>
@@ -137,10 +145,18 @@
 			-%}
         
 			{%- if has_tab and title != blank -%}
+			  {% assign content_meta_handle = title | escape | handle %}
+			  {% assign should_hide_content = false %}
+			  {% if product.id == 8200696594728 and content_meta_handle == "description" %}
+			    {% assign should_hide_content = true %}
+			  {% elsif product.id != 8200696594728 and content_meta_handle == "meet-tocotrienol" %}
+			    {% assign should_hide_content = true %}
+			  {% endif %}
+			  {% unless should_hide_content %}
               <!-- mobile -->
-				<div class="tab-content{% if block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}" id="tab-{{ title | escape | handleize }}">
+				<div class="tab-content{% if product.id == 8200696594728 %}{% if content_meta_handle == "meet-tocotrienol" %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% elsif block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}" id="tab-{{ title | escape | handleize }}">
 					<div class="toggle-title{% if settings.product_page_layout == 'full_width_2' or template.suffix == 'template-full-width-2' %} title-content-full{% endif %}">
-		                <a class="toggleLink{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.type == 'description' and tab_layout == 'vertical' %} is-open{% endif %}" data-collapsible href="#tab-{{ title | escape | handleize }}-mobile">
+		                <a class="toggleLink{% if style_mobile %} {{ style_mobile }}{% endif %}{% if product.id == 8200696594728 %}{% if content_meta_handle == "meet-tocotrienol" and tab_layout == 'vertical' %} is-open{% endif %}{% elsif block.type == 'description' and tab_layout == 'vertical' %} is-open{% endif %}" data-collapsible href="#tab-{{ title | escape | handleize }}-mobile">
 		                    <span class="text">
 		                        {% if product.handle == 'electric-frother' %}  
                     {% assign h2only = title | escape  | handle %}
@@ -166,7 +182,7 @@
 		                    {% endif %}
 		                </a>
 		            </div>
-		            <div class="toggle-content{% if block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.settings.enable_btn_show_more %} toggle-content--height{% endif %}" id="tab-{{ title | escape | handleize }}-mobile"{% if block.settings.enable_btn_show_more %} style="--maximum-des-to-show: {{ block.settings.maximum_des_to_show | append: 'px'}}"{% endif %}{% if block.type == 'description' %} product-description-tab data-product-description-{{ product.id }}{% endif %}>
+		            <div class="toggle-content{% if product.id == 8200696594728 %}{% if content_meta_handle == "meet-tocotrienol" %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% elsif block.type == 'description' %}{% if tab_layout == 'vertical' or tab_layout == 'horizontal' %} is-active{% endif %}{% endif %}{% if style_mobile %} {{ style_mobile }}{% endif %}{% if block.settings.enable_btn_show_more %} toggle-content--height{% endif %}" id="tab-{{ title | escape | handleize }}-mobile"{% if block.settings.enable_btn_show_more %} style="--maximum-des-to-show: {{ block.settings.maximum_des_to_show | append: 'px'}}"{% endif %}{% if block.type == 'description' %} product-description-tab data-product-description-{{ product.id }}{% endif %}>
 						{%- if tab_layout == 'vertical_sidebar' or style_mobile == 'sidebar-mobile' or style_mobile == 'popup-mobile' -%}
 							<div class="tab-popup-header">
 								<h5>
@@ -178,12 +194,23 @@
 						{%- endif -%}
                          {% assign content_meta = title | escape | handleize %} 
                             {% if content_meta == 'description' %}
-                              {% if product.metafields.Custom.product_3_0_product_description != blank %}
-                                {{ product.metafields.Custom.product_3_0_product_description }}
+                              {% if product.id != 8200696594728 %}
+                                {% if product.metafields.Custom.product_3_0_product_description != blank %}
+                                  {{ product.metafields.Custom.product_3_0_product_description }}
                                 {% else %}
-								{{ product.metafields.Custom.we_product_description }}
+                                  {{ product.metafields.Custom.we_product_description }}
                                 {% endif %}
-								
+                              {% endif %}
+
+								{% elsif content_meta == 'meet-tocotrienol' %}
+									{% if product.id == 8200696594728 %}
+										{% if product.metafields.Custom.product_3_0_product_description != blank %}
+											{{ product.metafields.Custom.product_3_0_product_description }}
+										{% else %}
+											{{ product.metafields.Custom.we_product_description }}
+										{% endif %}
+									{% endif %}
+
 							{% elsif content_meta == 'nutritional-info' %}
                                {% if product.metafields.Custom.product_3_0_product_nutritional_info != blank %}
                               {{ product.metafields.Custom.product_3_0_product_nutritional_info }}
@@ -230,6 +257,7 @@
 						<a class="pdViewTab-close" href="javascript:void(0)">x</a>
 					{%- endif -%}
 				</div>
+			  {% endunless %}
 			{%- endif -%}
 		{%- endfor -%}
 	</div>
@@ -243,6 +271,37 @@
 	document.querySelector('.tabs-contents-horizontal .tab-content:nth-child(1)').classList.add('is-active');
 	document.querySelector('.tabs-contents-horizontal .tab-content:nth-child(1) .toggleLink').classList.add('is-open');
 	document.querySelector('.tabs-contents-horizontal .tab-content:nth-child(1) .toggle-content').style.display = 'block';
+</script>
+{%- endif -%}
+{%- if product.id == 8200696594728 -%}
+<script defer="defer">
+	(function() {
+		// Activate Meet Tocotrienol tab for product 8200696594728
+		const meetTocotrienolTab = document.querySelector('.tabs-horizontal .tab a[href="#tab-meet-tocotrienol"]');
+		const meetTocotrienolContent = document.getElementById('tab-meet-tocotrienol');
+		
+		if (meetTocotrienolTab && meetTocotrienolContent) {
+			// Remove active state from description tab if it exists
+			const descTab = document.querySelector('.tabs-horizontal .tab a[href="#tab-description"]');
+			const descContent = document.getElementById('tab-description');
+			if (descTab) descTab.classList.remove('is-open');
+			if (descContent) {
+				descContent.classList.remove('is-active');
+				const descToggle = descContent.querySelector('.toggleLink');
+				const descToggleContent = descContent.querySelector('.toggle-content');
+				if (descToggle) descToggle.classList.remove('is-open');
+				if (descToggleContent) descToggleContent.style.display = 'none';
+			}
+			
+			// Activate Meet Tocotrienol tab
+			meetTocotrienolTab.classList.add('is-open');
+			meetTocotrienolContent.classList.add('is-active');
+			const toggleLink = meetTocotrienolContent.querySelector('.toggleLink');
+			const toggleContent = meetTocotrienolContent.querySelector('.toggle-content');
+			if (toggleLink) toggleLink.classList.add('is-open');
+			if (toggleContent) toggleContent.style.display = 'block';
+		}
+	})();
 </script>
 {%- endif -%}
 {%- if tab_layout_mobile == 'vertical' and tab_layout == 'vertical' -%}
