@@ -198,7 +198,21 @@
                         -%}
                         {% render 'product-quantity', current_variant: current_variant, check_hidden: check_hidden, qty_style: qty_style, quantity_stt: 1, product: product %}
                     {%- endif -%}  
-                    {% comment %} Product add to cart button... {% endcomment %}
+                </div>
+                {% comment %} Product note/input field {% endcomment %}
+                <div class="productView-note-field">
+                    <div class="product-form__input clearfix line-item-property__field">
+                        <label for="product-note-{{ product.id }}" class="form-label form__label">Add a Note (Optional)</label>
+                        <textarea 
+                            id="product-note-{{ product.id }}" 
+                            name="properties[Note]" 
+                            class="form__input form-input" 
+                            rows="2" 
+                            placeholder="Add any special instructions or notes for this order..."
+                        ></textarea>
+                    </div>
+                </div>
+                {% comment %} Product add to cart button... {% endcomment %}
                     <div class="productView-groupTop">
                         <div class="productView-action{% unless settings.show_wishlist %} productView-action-2{% endunless %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--atc-color: {{ atc_color }};--atc-bg-color: {% if atc_bg_color_gradient != blank %}{{ atc_bg_color_gradient }}{% else %}{{ atc_bg_color }}{% endif %};--atc-border-color: {{ atc_border_color }};--atc-color-hover: {{ atc_color_hover }};--atc-bg-color-hover: {% if atc_bg_color_gradient_hover != blank %}{{ atc_bg_color_gradient_hover }}{% else %}{{ atc_bg_color_hover }}{% endif %};--atc-border-color-hover: {{ atc_border_color_hover }}">
                             <input type="hidden" name="id" value="{{ current_variant.id }}">
@@ -308,6 +322,27 @@
 }
 .product-form__buttons {
     width: 100%;
+}
+.productView-note-field {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    clear: both;
+}
+.productView-note-field .form__input {
+    width: 100%;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.productView-note-field .form__label {
+    margin-bottom: 8px;
+    display: block;
+}
+.productView-note-field textarea {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 </style>
 <!-- <script>

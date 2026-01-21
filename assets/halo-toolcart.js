@@ -31,12 +31,43 @@ class CartNote extends HTMLElement {
   constructor() {
     super();
     
-    this.querySelector('[data-update-note]').addEventListener('click', (event) => {
-      this.val = this.querySelector('.text-area').value;
-      const body = JSON.stringify({ note: this.val });
-      fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }});
-      document.querySelector('.popup-toolDown.show').classList.remove('show');
-      document.querySelector('.previewCart').classList.remove('active-tool');
+    this.querySelector('[data-update-note]').addEventListener('click', async (event) => {
+      const saveButton = event.target;
+      const originalText = saveButton.textContent.trim();
+      
+      // Disable button and show loading state
+      saveButton.disabled = true;
+      const loadingText = saveButton.getAttribute('data-saving-text') || 'Saving...';
+      saveButton.textContent = loadingText;
+      
+      try {
+        const textarea = this.querySelector('textarea.text-area') || this.querySelector('#Cart-note') || this.querySelector('textarea');
+        this.val = textarea ? textarea.value : '';
+        const body = JSON.stringify({ note: this.val });
+        
+        const response = await fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }});
+        
+        if (response.ok) {
+          // Close popup
+          document.querySelector('.popup-toolDown.show')?.classList.remove('show');
+          document.querySelector('.previewCart')?.classList.remove('active-tool');
+          
+          // Refresh cart drawer to show updated note
+          Shopify.getCart((cart) => {
+            if (window.sharedFunctions?.updateSidebarCart) {
+              window.sharedFunctions.updateSidebarCart(cart);
+            }
+          });
+        } else {
+          console.error('Failed to update cart note');
+          saveButton.textContent = originalText;
+        }
+      } catch (error) {
+        console.error('Error updating cart note:', error);
+        saveButton.textContent = originalText;
+      } finally {
+        saveButton.disabled = false;
+      }
     })
   }
 }

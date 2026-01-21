@@ -701,8 +701,14 @@ body.cart-sidebar-show .halo-cart-sidebar {
   margin: 0 0 10px;
 }
 
+.product-option dd{
+  font-size: 13px;
+  color: gray;
+}
+
 .product-option .definitionList-key {
   float: none;
+  font-size: 13px;
 }
 
 .product-option .definitionList-value {

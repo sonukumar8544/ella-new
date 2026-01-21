@@ -95,27 +95,6 @@
                 </div>
               {%- endunless -%}
             {%- endif -%}
-            <dl class="card-properties definitionList cart-item-properties">
-              {%- if item.properties.size != 0 -%}
-                {%- for property in item.properties -%}
-                  {%- assign property_first_char = property.first | slice: 0 -%}
-                  {%- if property.last != blank and property_first_char != '_' -%}
-                    <div class="product-option">
-                      <dt class="definitionList-key">{{ property.first }}:</dt>
-                      <dd class="definitionList-value">
-                        {%- if property.last contains '/uploads/' -%}
-                          <a href="{{ property.last }}" target="_blank">
-                            {{ property.last | split: '/' | last }}
-                          </a>
-                        {%- else -%}
-                          {{ property.last }}
-                        {%- endif -%}
-                      </dd>
-                    </div>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-            </dl>
             {%- if item.selling_plan_allocation != null -%}
               <p class="cart-item-allocation">{{ item.selling_plan_allocation.selling_plan.name }}</p>
             {%- endif -%}
@@ -280,6 +259,27 @@
                 </quantity-popover>
               {%- endif -%}
             </div>
+            <dl class="card-properties definitionList cart-item-properties">
+              {%- if item.properties.size != 0 -%}
+                {%- for property in item.properties -%}
+                  {%- assign property_first_char = property.first | slice: 0 -%}
+                  {%- if property.last != blank and property_first_char != '_' -%}
+                    <div class="product-option">
+                      <dt class="definitionList-key">{{ property.first }}:</dt>
+                      <dd class="definitionList-value">
+                        {%- if property.last contains '/uploads/' -%}
+                          <a href="{{ property.last }}" target="_blank">
+                            {{ property.last | split: '/' | last }}
+                          </a>
+                        {%- else -%}
+                          {{ property.last }}
+                        {%- endif -%}
+                      </dd>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </dl>
           </div>
           <button
             type="button"
