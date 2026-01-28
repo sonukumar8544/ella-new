@@ -1,0 +1,214 @@
+{% comment %}
+	GEMPAGES BUILDER (https://apps.shopify.com/gempages)
+
+	You SHOULD NOT modify source code in this file because
+	It is automatically generated from GEMPAGES BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+{% include 'shogun-content-handler' %}
+{% unless template contains 'index' or template contains 'collection' or template contains 'product' -%}
+  {%- include 'shogun-content-handler' -%}
+{%- endunless %}
+<!doctype html>
+{%- liquid
+  if settings.list_iso_rtl != blank
+    assign locale_iso_code = request.locale.iso_code
+    assign arr_list_rtl = settings.list_iso_rtl | remove: ' ' | split: ','
+    if arr_list_rtl contains locale_iso_code
+      assign enable_iso_rtl = true
+    else
+      assign enable_iso_rtl = false
+    endif
+  else
+    assign enable_iso_rtl = false
+  endif
+-%}
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  {% if settings.enable_layout_rtl and enable_iso_rtl %}
+    dir="rtl"
+  {% endif %}
+>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    {% comment %} URL Redirection {% endcomment %}
+      {% comment %} {% render 'url-redirection' %} {% endcomment %}
+
+    {% comment %} Product URL Redirect {% endcomment %}
+    <script>
+      (function() {
+        var currentPath = window.location.pathname;
+        if (currentPath === '/products/copy-of-vitamin-e-tocotrienol-the-heart-liver-and-skin-support-you-can-trust-300-60') {
+          window.location.replace('/products/vitamin-e-tocotrienols-supplement' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+
+    <script type="text/javascript"> (function(funnel) {var deferredEvents = [];window.funnelytics = {events: {trigger: function (name, attributes, callback, opts) {deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});}}};var insert = document.getElementsByTagName('script')[0],script = document.createElement('script');script.addEventListener('load', function() {window.funnelytics.init(funnel, false, deferredEvents, {"anonymiseUsers":false});});script.src = 'https://cdn.funnelytics.io/track-v3.js';script.type = 'text/javascript';script.async = true;insert.parentNode.insertBefore(script, insert);})('0cc5c89e-292b-43be-a6cb-42d74b1602ac'); </script>
+
+    <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    <!-- Shogun -->
+    {% render 'shogun-header-script' %}
+    <!-- Shogun -->
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {% comment %} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%} {% endcomment %}
+    </title>
+    {% if request.path contains '/pages/molecular-hydrogen'
+      or request.path contains '/pages/testosterone'
+      or request.path contains 'pages/statin'
+      or request.path contains 'pages/nafld'
+      or request.path contains 'pages/gut-health'
+      or request.path contains '/copy-of-products/vitamin-e-tocotrienol-the-heart-liver-and-skin-support-you-can-trust-300-60'
+    %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {% render 'meta-tags' %}
+    {% render 'seo_script' %}
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-W3L597KW');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script>
+        var navigatortt = navigator.userAgent;
+
+      if (
+        navigatortt.indexOf(
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
+        ) > -2
+      ) {
+        var hsScript = document.createElement('script');
+          hsScript.type = 'text/javascript';
+          hsScript.id = 'hs-script-loader';
+          hsScript.async = true;
+          hsScript.defer = true;
+          hsScript.src = 'https://js.hs-scripts.com/49007533.js';
+          document.head.appendChild(hsScript);
+      }
+    </script>
+    {% render 'okendo-review-scroll' %}
+    {% comment %}
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49007533.js"></script>
+    {% endcomment %}
+    <!-- End of HubSpot Embed Code -->
+
+    {{ content_for_header }}
+    {% unless template contains 'index' or template contains 'collection' %}
+      <link href="{{ 'custom_okendo.css' | asset_url }}" rel="stylesheet" type="text/css">
+    {% endunless %}
+
+    {% render 'variable' %}
+    {% render 'global-style' %}
+    {% render 'global-script' %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+
+    {%- liquid
+      if settings.layout_body == 'full'
+        assign layout_body = 'body-full-width'
+      elsif settings.layout_body == 'boxed'
+        assign layout_body = 'body-boxed'
+      elsif settings.layout_body == 'custom_width'
+        assign layout_body = 'body-custom-width'
+      endif
+
+      if settings.style_dots == '02'
+        assign style_dots = 'style-dots-2'
+      endif
+
+      if settings.style_arrows == '02'
+        assign style_arrows = 'style-arrows-2'
+      elsif settings.style_arrows == '05'
+        assign style_arrows = 'style-arrows-5'
+      elsif settings.style_arrows == '06'
+        assign style_arrows = 'style-arrows-6'
+      elsif settings.style_arrows == '07'
+        assign style_arrows = 'style-arrows-7'
+      elsif settings.style_arrows == '08'
+        assign style_arrows = 'style-arrows-8'
+      elsif settings.style_arrows == '09'
+        assign style_arrows = 'style-arrows-9'
+      elsif settings.style_arrows == '10'
+        assign style_arrows = 'style-arrows-10'
+      endif
+
+      if settings.product_card_layout == '02'
+        if settings.enable_infor_on_image
+          assign product_card_layout = 'product-card-layout-02 enable_infor_on_image'
+        else
+          assign product_card_layout = 'product-card-layout-02'
+        endif
+      elsif settings.product_card_layout == '03'
+        assign product_card_layout = 'product-card-layout-03'
+      elsif settings.product_card_layout == '04'
+        assign product_card_layout = 'product-card-layout-04'
+      elsif settings.product_card_layout == '05'
+        assign product_card_layout = 'product-card-layout-05'
+      elsif settings.product_card_layout == '06'
+        assign product_card_layout = 'product-card-layout-06'
+      elsif settings.product_card_layout == '07'
+        assign product_card_layout = 'product-card-layout-07'
+      elsif settings.product_card_layout == '08'
+        assign product_card_layout = 'product-card-layout-08'
+      else
+        assign product_card_layout = 'product-card-layout-01'
+      endif
+
+      case settings.quick_shop_type
+        when '1'
+          assign quick_shop_type = 'quick_shop_option_1'
+        when '2'
+          assign quick_shop_type = 'quick_shop_option_2'
+        when '3'
+          assign quick_shop_type = 'quick_shop_option_3'
+        when '4'
+          assign quick_shop_type = 'quick_shop_bulk'
+      endcase
+
+      if settings.style_text_size_varriant == '02'
+        assign style_text_size_varriant = 'size_varriant_style_2'
+      endif
+    -%}
+    {% unless template contains 'index' or template contains 'collection' or template contains 'product' %}
+      {% render 'shogun-head' %}
+    {% endunless %}
+    <script
+      async
+      defer
+      type="text/javascript"
+      src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XAqg2H"
+    ></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PG7B620QJE"></script>
+    <script type="text/javascript"> (function(funnel) {var deferredEvents = [];window.funnelytics = {events: {trigger: function (name, attributes, callback, opts) {deferredEvents.push({name: name, attributes: attributes, callback: callback, opts: opts});}}};var insert = document.getElementsByTagName('script')[0],script = document.createElement('script');script.addEventListener('load', function() {window.funnelytics.init(funnel, true, deferredEvents, {});});script.src = 'https://cdn.funnelytics.io/track-v3.js';script.type = 'text/javascript';script.async = true;insert.parentNode.insertBefore(script, insert);})('0cc5c89e-292b-43be-a6cb-42d74b1602ac'); </script>
+  </head>
+
+  <body>
+<div class="gem-container">
+	{{ content_for_layout }}
+</div><!-- end .gem-container --></body>
+</html>
