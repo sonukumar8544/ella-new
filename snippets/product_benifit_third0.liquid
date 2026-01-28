@@ -2,7 +2,9 @@
 {% assign benefitmetaobject = product.metafields.custom.product_3_0_benefits.value %}
 
 {% if benefitmetaobject != blank %}
-  <div class="health-benefits_thirdO{% if product.id == 8200696594728 %} productvitemin-page-new{% endif %}">
+  {% comment %} <div class="health-benefits_thirdO{% if product.id == 8200696594728 %} productvitemin-page-new{% endif %}"> {% endcomment %}
+
+  <div class="health-benefits_thirdO productvitemin-page-new">
     {% for benefit in benefitmetaobject %}
       <div class="benefit-item">
       {% if benefit.benefit_imageurl_1.value != blank %}
