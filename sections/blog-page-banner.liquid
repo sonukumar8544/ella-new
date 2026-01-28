@@ -115,9 +115,23 @@ $(document).ready(function(){
 .blog-img-sec {
     flex: 0 0 30%;
 }
-.blog-des-sec {
+
+@media (max-width: 769px) {
+  .blog-des-sec {
     flex: 0 0 70%;
     padding-left: 40px;
+    max-height: 133px;
+    overflow: hidden;
+}
+}
+
+@media (min-width: 768px) {
+  .blog-des-sec {
+    flex: 0 0 70%;
+    padding-left: 40px;
+    max-height: 230px;
+    overflow: hidden;
+}
 }
 
 .blog-main-slider {
