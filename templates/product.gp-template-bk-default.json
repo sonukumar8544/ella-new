@@ -1218,7 +1218,7 @@
         }
       },
       "custom_css": [
-        "[data-product] .sls-purchase-options-container {border: none; display: flex; flex-direction: column-reverse;}",
+        "[data-product] .sls-purchase-options-container {border: none; display: flex; flex-direction: column;}",
         ".productView-info {display: none;}",
         ".productView-wishlist {display: none;}",
         ".price.price--medium .price-item .money {font-weight: 800; color: #086b92;}",
