@@ -8940,3 +8940,9 @@ div#custom_proce_manage {
 span.oke-sr-count-number {
   display: none !important;
 }
+
+.selling-plan-group-options-name-select > label:first-of-type {
+  color: #006A91 !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
