@@ -5324,23 +5324,59 @@
                 }
 
                 const setImage = (className, input) => {
-                    if (productOption.data('lang') != productOption.data('default-lang') && input.data('value-default-lang')) className = `.filter-${input.data('value-default-lang')}`;
+                    if (productOption.data('lang') != productOption.data('default-lang') && input && input.data('value-default-lang')) className = `.filter-${input.data('value-default-lang')}`;
                     unFilter();
                     if(className !== undefined) {
-                        if (sliderNav.find(className).length || sliderFor.find(className).length || pageLayout == 'full-width') filter(className);
+                        if (sliderNav.find(className).length || sliderFor.find(className).length || pageLayout == 'full-width') {
+                            filter(className);
+                        } else {
+                            unFilter();
+                        }
                     }
                 }
 
-                if(inputChecked.length > 0) {
-                    let className = inputChecked.data('filter');
-                    metafields && metafields.length ? setImageForMetafields(metafields, false) : setImage(className, inputChecked);
+                const filterByVariantId = (variantId) => {
+                    if (!variantId) return;
+                    variantId = String(variantId);
+                    var variantClass = '.filter-' + variantId;
+                    var selector = variantClass + ', .filter-show-all';
+                    unFilter();
+                    if (sliderNav.find(variantClass).length || sliderFor.find(variantClass).length || sliderNav.find('.filter-show-all').length || sliderFor.find('.filter-show-all').length) {
+                        filter(selector);
+                    }
                 }
 
-                $doc.on('change', 'input[data-filter]', (event) => {
-                    let className = $(event.currentTarget).data('filter'),
-                    thisMetafields = $(event.currentTarget).data('metafields-vig');
-                    thisMetafields && thisMetafields.length ? setImageForMetafields(thisMetafields, true) : setImage(className, $(event.currentTarget));
-                });
+                const applyVariantIdFilter = () => {
+                    var variantEl = $scope.find('variant-selects')[0] || $scope.find('variant-radios')[0];
+                    var variantId = variantEl && variantEl.currentVariant && variantEl.currentVariant.id;
+                    if (!variantId) {
+                        var idInput = $scope.find('input[name="id"]');
+                        if (idInput.length) variantId = idInput.val();
+                    }
+                    if (variantId) filterByVariantId(variantId);
+                }
+
+                var useVariantIdFilter = $scope.closest('[data-variant-image-by-id="true"]').length > 0;
+
+                if (useVariantIdFilter) {
+                    setTimeout(function() { applyVariantIdFilter(); }, 0);
+                    $scope.on('change', function(ev) {
+                        if (!$(ev.target).closest('variant-selects').length && !$(ev.target).closest('variant-radios').length) return;
+                        setTimeout(function() { applyVariantIdFilter(); }, 0);
+                    });
+                } else {
+                    if(inputChecked.length > 0) {
+                        let className = inputChecked.data('filter');
+                        metafields && metafields.length ? setImageForMetafields(metafields, false) : setImage(className, inputChecked);
+                    }
+
+                    $doc.on('change', 'input[data-filter]', (event) => {
+                        if ($(event.target).closest($scope).length === 0) return;
+                        let className = $(event.currentTarget).data('filter'),
+                        thisMetafields = $(event.currentTarget).data('metafields-vig');
+                        thisMetafields && thisMetafields.length ? setImageForMetafields(thisMetafields, true) : setImage(className, $(event.currentTarget));
+                    });
+                }
             }
         },
 
