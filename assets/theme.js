@@ -4804,7 +4804,7 @@
                             fade: true,
                             dots: true,
                             arrows: navArrowsDesk,
-                            infinite: true,
+                            infinite: false,
                             slidesToShow: 1,
                             slidesToScroll: 1,
                             asNavFor: checkFor,
