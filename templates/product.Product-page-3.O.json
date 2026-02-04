@@ -658,8 +658,9 @@
       "blocks": {
         "judge_me_reviews_review_widget_nYUR3C": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
-            "review_data": "sample_data",
+            "review_data": "real_data",
             "max_width": 1200,
             "show_shop_reviews": false,
             "empty_state": "empty_widget"
@@ -667,7 +668,6 @@
         },
         "judge_me_reviews_cards_carousel_EndiqG": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
           "settings": {
             "show_sample_reviews": false,
             "reviews_selection": "current_product",
