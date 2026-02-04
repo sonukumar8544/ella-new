@@ -1658,6 +1658,22 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
 {%- endif -%}
 
 <script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+{%- if show_variant_image_group -%}
+<script>
+(function() {
+    var section = document.getElementById('ProductSection-{{ section.id }}');
+    if (!section) return;
+    section.addEventListener('variant:changed', function(ev) {
+        var detail = ev.detail;
+        if (!detail || !detail.variant || !detail.sectionId) return;
+        var mediaId = detail.variant.featured_media && detail.variant.featured_media.id;
+        if (!mediaId) return;
+        var thumb = section.querySelector('[data-media-id="' + detail.sectionId + '-' + mediaId + '"]');
+        if (thumb) setTimeout(function() { thumb.click(); }, 100);
+    });
+})();
+</script>
+{%- endif -%}
 {%- if show_sticky_add_to_cart -%}
     <script src="{{ 'sticky-add-to-cart.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}

@@ -89,24 +89,36 @@ class VariantSelects extends HTMLElement {
 
     updateMedia(time, status) {
         const enableVariantImageGroup = document?.querySelector('.enable_variant_image_group');
+        const section = this.closest('[data-section-id]');
+        const variantImageById = section?.hasAttribute('data-variant-image-by-id');
     
         if (enableVariantImageGroup && status == 'init') return;
 
+        const delayForFilter = (enableVariantImageGroup && variantImageById && status === 'change') ? 350 : time;
+
         setTimeout(() => {
-            if (!this.currentVariant || !this.currentVariant?.featured_media || document.querySelector('.productView-nav')?.matches('.media-filter')) return;
-            
-            const newMedia = document.querySelectorAll(
-                `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_media.id}"]`
-            );
-    
-            if (!newMedia) return;
-            window.setTimeout(() => {
-                $(newMedia).trigger('click');
-            }, time);
-    
+            if (!this.currentVariant) return;
+            const nav = document.querySelector('.productView-nav');
+            if (nav?.matches('.media-filter')) return;
+
+            const featuredMedia = this.currentVariant.featured_media;
+            const mediaId = featuredMedia?.id;
+
+            if (featuredMedia && mediaId) {
+                const newMedia = document.querySelectorAll(
+                    `[data-media-id="${this.dataset.section}-${mediaId}"]`
+                );
+
+                if (newMedia.length) {
+                    window.setTimeout(() => {
+                        const first = newMedia[0];
+                        if (first) first.click();
+                    }, delayForFilter);
+                }
+            }
+
             if (!this.isFullWidth || window.innerWidth < 768 || !this.currentVariant) return;
-            const mediaId = this.currentVariant.featured_media.id;
-            const activeMedia = document?.querySelector(`.product-single__media[data-media-id="${mediaId}"]`);
+            const activeMedia = mediaId ? document?.querySelector(`.product-single__media[data-media-id="${mediaId}"]`) : null;
             const fallbackImageContainer = document?.querySelector('.productView-image[data-index="1"]');
 
             if (activeMedia) {
@@ -114,19 +126,26 @@ class VariantSelects extends HTMLElement {
                     activeMedia.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 20);
             } else {
-                const fallbackImage = fallbackImageContainer?.querySelector('img');
+                const fallbackImage = fallbackImageContainer?.querySelector('img[data-main-image]') || fallbackImageContainer?.querySelector('img');
                 const featuredImage = this.currentVariant?.featured_image;
-                if (!featuredImage || !fallbackImage) return;
+                if (featuredImage && fallbackImage) {
+                    fallbackImage.setAttribute('src', featuredImage.src);
+                    fallbackImage.setAttribute('srcset', featuredImage.src);
+                    fallbackImage.setAttribute('alt', featuredImage.alt || '');
 
-                fallbackImage.setAttribute('src', featuredImage.src);
-                fallbackImage.setAttribute('srcset', featuredImage.src);
-                fallbackImage.setAttribute('alt', featuredImage.alt);
-
-                setTimeout(() => {
-                    fallbackImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 20);
+                    setTimeout(() => {
+                        if (fallbackImageContainer) fallbackImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 20);
+                }
             }
-        }, 1)
+
+            if (status === 'change' && this.currentVariant) {
+                this.dispatchEvent(new CustomEvent('variant:changed', {
+                    bubbles: true,
+                    detail: { variant: this.currentVariant, sectionId: this.dataset.section }
+                }));
+            }
+        }, 1);
     }
 
     scrollToBlock(block) {
