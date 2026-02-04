@@ -5306,9 +5306,13 @@
                             sliderNav
                                 .slick('slickFilter', list)
                                 .slick('refresh')
-                                .addClass('slick-filter');
+                                .addClass('slick-filter')
+                                .slick('slickGoTo', 0);
                     }
-                    if (sliderFor) sliderFor.slick('slickFilter', list).slick('refresh');
+                    if (sliderFor) {
+                        sliderFor.slick('slickFilter', list).slick('refresh');
+                        if (pageLayout === 'default') sliderFor.slick('slickGoTo', 0);
+                    }
                 }
 
                 const setImageForMetafields = (list, unfilter) => {
