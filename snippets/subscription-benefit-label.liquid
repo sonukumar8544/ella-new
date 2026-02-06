@@ -1,0 +1,32 @@
+<script>
+  (function () {
+    function initBenefitLabel() {
+      const wrapper = document.querySelector('.selling-plan-group-options-name-select');
+      if (!wrapper) return false;
+      const select = wrapper.querySelector('select[name="subs_interval"]');
+      const firstLabel = wrapper.querySelector('label:first-child');
+      if (!select || !firstLabel) return false;
+      if (wrapper.dataset.benefitLabelInit) return true;
+      wrapper.dataset.benefitLabelInit = "1";
+      function updateLabelVisibility() {
+        const v = select.value;
+        firstLabel.style.display = (v === "690615353640") ? "block" : "none";
+      }
+      updateLabelVisibility();
+      select.addEventListener("change", updateLabelVisibility);
+      return true;
+    }
+    function run() {
+      if (initBenefitLabel()) return;
+      var attempts = 0;
+      var t = setInterval(function () {
+        if (initBenefitLabel() || ++attempts >= 10) clearInterval(t);
+      }, 200);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", run);
+    } else {
+      run();
+    }
+  })();
+</script>
