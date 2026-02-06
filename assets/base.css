@@ -8952,3 +8952,9 @@ span.oke-sr-count-number {
   font-size: 13px;
   color: #2e7d32;
 }
+
+@media (max-width: 768px){
+  .selling-plan-group-options-name-select label{
+    margin-left:  6px !important;
+  }
+}
