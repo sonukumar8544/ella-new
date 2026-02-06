@@ -648,6 +648,7 @@
     },
     "custom_liquid_JFPGfw": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div id=\"product-review-sections\">\n  <h3>Customers are saying</h3>\n</div>\n\n <a target=\"_blank\" class=\"review-btn-pspss\" href=\"https://okendo.reviews/?subscriberId=0efb5b0a-53ee-4e10-add4-97de3fa6359a&productId=shopify-{{ product.id }}\"><button class=\"write-review-btnss\">\n                            <i class=\"fas fa-pen\"></i> Write a Review\n                        </button></a>\n\n<style>\n  #product-review-sections {\n    text-align: center;\n    padding-bottom: 0px;\n    margin-bottom: 0px;\n  }\n\n  #product-review-sections h3 {\n    font-size: 38px;\n    font-weight: 600;\n    color: #374650;\n    margin-bottom: 0px;\n    padding-bottom: 0px;\n  }\n\n  @media (max-width: 768px) {\n    #product-review-sections h3 {\n      font-size: 24px;\n    }\n  }\n\n\na.review-btn-pspss {\n    display: flex;\n    justify-content: center;\n    margin-top: 12px;\n}\n\n.write-review-btnss {\n    color: #086b92;\n    border: none;\n    padding: 12px 20px;\n    font-size: 16px;\n    border-radius: 6px;\n    margin-bottom: 10px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    transition: background-color .3s ease;\n}\n</style>"
@@ -668,6 +669,7 @@
         },
         "judge_me_reviews_cards_carousel_EndiqG": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "show_sample_reviews": false,
             "reviews_selection": "current_product",

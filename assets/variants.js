@@ -11,6 +11,15 @@ class VariantSelects extends HTMLElement {
     onVariantInit(){
         this.updateOptions();
         this.updateMasterId();
+        // When current variant is unavailable (e.g. from URL), auto-select nearest available variant
+        if (this.currentVariant && !this.currentVariant.available) {
+            const nearest = this.getNearestAvailableVariant();
+            if (nearest) {
+                this.setOptionsFromVariant(nearest);
+                this.updateOptions();
+                this.updateMasterId();
+            }
+        }
         this.updateMedia(1500, 'init');
         // this.updateURL();
         this.renderProductAjaxInfo();
@@ -89,24 +98,36 @@ class VariantSelects extends HTMLElement {
 
     updateMedia(time, status) {
         const enableVariantImageGroup = document?.querySelector('.enable_variant_image_group');
+        const section = this.closest('[data-section-id]');
+        const variantImageById = section?.hasAttribute('data-variant-image-by-id');
     
         if (enableVariantImageGroup && status == 'init') return;
 
+        const delayForFilter = (enableVariantImageGroup && variantImageById && status === 'change') ? 350 : time;
+
         setTimeout(() => {
-            if (!this.currentVariant || !this.currentVariant?.featured_media || document.querySelector('.productView-nav')?.matches('.media-filter')) return;
-            
-            const newMedia = document.querySelectorAll(
-                `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_media.id}"]`
-            );
-    
-            if (!newMedia) return;
-            window.setTimeout(() => {
-                $(newMedia).trigger('click');
-            }, time);
-    
+            if (!this.currentVariant) return;
+            const nav = document.querySelector('.productView-nav');
+            if (nav?.matches('.media-filter')) return;
+
+            const featuredMedia = this.currentVariant.featured_media;
+            const mediaId = featuredMedia?.id;
+
+            if (featuredMedia && mediaId) {
+                const newMedia = document.querySelectorAll(
+                    `[data-media-id="${this.dataset.section}-${mediaId}"]`
+                );
+
+                if (newMedia.length) {
+                    window.setTimeout(() => {
+                        const first = newMedia[0];
+                        if (first) first.click();
+                    }, delayForFilter);
+                }
+            }
+
             if (!this.isFullWidth || window.innerWidth < 768 || !this.currentVariant) return;
-            const mediaId = this.currentVariant.featured_media.id;
-            const activeMedia = document?.querySelector(`.product-single__media[data-media-id="${mediaId}"]`);
+            const activeMedia = mediaId ? document?.querySelector(`.product-single__media[data-media-id="${mediaId}"]`) : null;
             const fallbackImageContainer = document?.querySelector('.productView-image[data-index="1"]');
 
             if (activeMedia) {
@@ -114,19 +135,26 @@ class VariantSelects extends HTMLElement {
                     activeMedia.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 20);
             } else {
-                const fallbackImage = fallbackImageContainer?.querySelector('img');
+                const fallbackImage = fallbackImageContainer?.querySelector('img[data-main-image]') || fallbackImageContainer?.querySelector('img');
                 const featuredImage = this.currentVariant?.featured_image;
-                if (!featuredImage || !fallbackImage) return;
+                if (featuredImage && fallbackImage) {
+                    fallbackImage.setAttribute('src', featuredImage.src);
+                    fallbackImage.setAttribute('srcset', featuredImage.src);
+                    fallbackImage.setAttribute('alt', featuredImage.alt || '');
 
-                fallbackImage.setAttribute('src', featuredImage.src);
-                fallbackImage.setAttribute('srcset', featuredImage.src);
-                fallbackImage.setAttribute('alt', featuredImage.alt);
-
-                setTimeout(() => {
-                    fallbackImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 20);
+                    setTimeout(() => {
+                        if (fallbackImageContainer) fallbackImageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 20);
+                }
             }
-        }, 1)
+
+            if (status === 'change' && this.currentVariant) {
+                this.dispatchEvent(new CustomEvent('variant:changed', {
+                    bubbles: true,
+                    detail: { variant: this.currentVariant, sectionId: this.dataset.section }
+                }));
+            }
+        }, 1);
     }
 
     scrollToBlock(block) {
@@ -577,6 +605,43 @@ class VariantSelects extends HTMLElement {
         return this.variantData;
     }
 
+    /**
+     * Find nearest available variant when current selection is unavailable.
+     * Prefers matching option1 (e.g. keep Dosage), then option2, etc.
+     * e.g. 125mg + 30 softgel (unavailable) -> 125mg + 60 softgel
+     */
+    getNearestAvailableVariant() {
+        if (!this.currentVariant || this.currentVariant.available) return this.currentVariant;
+        const variants = this.getVariantData();
+        const available = variants.filter(v => v.available);
+        if (available.length === 0) return null;
+        const opts = this.currentVariant.options;
+        // Prefer same option1 (e.g. same Dosage), then same option2, etc.
+        for (let n = 1; n <= opts.length; n++) {
+            const match = available.find(v =>
+                opts.slice(0, n).every((opt, i) => v.options[i] === opt)
+            );
+            if (match) return match;
+        }
+        return available[0];
+    }
+
+    /**
+     * Set form inputs (selects or radios) to match the given variant.
+     * Overridden in VariantRadios for radio buttons.
+     */
+    setOptionsFromVariant(variant) {
+        if (!variant) return;
+        const selects = this.querySelectorAll('select');
+        variant.options.forEach((optionValue, index) => {
+            if (selects[index]) {
+                const encoded = this.encodeOption(optionValue);
+                const option = Array.from(selects[index].options).find(o => this.decodeOption(o.value) === optionValue || o.value === optionValue);
+                if (option) selects[index].value = option.value;
+            }
+        });
+    }
+
     checkNeedToConvertCurrency() {
         var currencyItem = $('.dropdown-item[data-currency]');
         if (currencyItem.length) {
@@ -729,22 +794,41 @@ class VariantRadios extends VariantSelects {
         super();
     }
 
+    setOptionsFromVariant(variant) {
+        if (!variant) return;
+        const fieldsets = this.querySelectorAll('fieldset[data-product-attribute="set-rectangle"]');
+        variant.options.forEach((optionValue, index) => {
+            const fieldset = fieldsets[index];
+            if (!fieldset) return;
+            const inputs = fieldset.querySelectorAll('input[type="radio"]');
+            inputs.forEach(radio => {
+                radio.checked = (radio.getAttribute('value') === optionValue);
+            });
+        });
+    }
+
     setInputAvailability(optionInputs, optionInputsValue, availableOptionInputsValue) {
         optionInputs.forEach(input => {
-            if (availableOptionInputsValue.includes(input.getAttribute('value'))) {
+            const value = input.getAttribute('value');
+            if (availableOptionInputsValue.includes(value)) {
                 input.nextSibling.classList.remove('soldout', 'unavailable');
                 input.nextSibling.classList.add('available');
             } else {
                 input.nextSibling.classList.remove('available', 'unavailable');
                 input.nextSibling.classList.add('soldout');
 
-                if (window.variantStrings.hide_variants_unavailable && !optionInputsValue.includes(input.getAttribute('value'))) {
-                    input.nextSibling.classList.add('unavailable')
-                    if (!input.checked) return;
-                    let inputsValue;
-                    availableOptionInputsValue.length > 0 ? inputsValue = availableOptionInputsValue : inputsValue = optionInputsValue;
-                    input.closest('.product-form__input').querySelector(`input[value="${inputsValue[0]}"]`).checked = true;
-                    this.dispatchEvent(new Event('change'))
+                if (window.variantStrings.hide_variants_unavailable && !optionInputsValue.includes(value)) {
+                    input.nextSibling.classList.add('unavailable');
+                }
+                // Auto-select nearest available when current selection is sold out (e.g. 125mg + 30 softgel -> 125mg + 60 softgel)
+                if (input.checked && availableOptionInputsValue.length > 0) {
+                    const firstAvailable = availableOptionInputsValue[0];
+                    const fieldset = input.closest('.product-form__input');
+                    const targetInput = Array.from(fieldset.querySelectorAll('input[type="radio"]')).find(inp => inp.getAttribute('value') === firstAvailable);
+                    if (targetInput) {
+                        targetInput.checked = true;
+                        this.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
                 }
             }
         });
