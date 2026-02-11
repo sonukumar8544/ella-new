@@ -464,7 +464,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
 {%- endif -%}
 <div class="{{tab_layout_mobile}} product-details product-default{% if has_sidebar %} has-sidebar{% endif %}"
   data-section-id="{{ section.id }}" data-section-type="product" id="ProductSection-{{ section.id }}" 
-  data-has-combo="{{ has_product_combo }}" data-image-opo>
+  data-has-combo="{{ has_product_combo }}" data-image-opo{% if show_variant_image_group %} data-variant-image-by-id="true"{% endif %}>
     {% if has_breadcrumb %}
         {%- liquid
             if breadcrumb_gradient != 'rgba(0,0,0,0)' or breadcrumb_bg != 'rgba(0,0,0,0)' or breadcrumb_gradient_mb != 'rgba(0,0,0,0)' or breadcrumb_bg_mb != 'rgba(0,0,0,0)'
@@ -552,7 +552,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                         serial: 1
                                     %}
                                 {%- endif -%}
-                                <div class="product-page-new-third productView-nav style-{{ main_image_layout }} image-fit-{{ media_fit }} ididi" 
+                                <div class="product-page-new-third productView-nav style-{{ main_image_layout }} image-fit-{{ media_fit }}{% if show_variant_image_group %} enable_variant_image_group{% endif %} ididi" 
                                     data-image-gallery-main
                                     data-arrows-desk="{{ main_image_arrows_desktop }}"
                                     data-arrows-mobi="{{ main_image_arrows_mobile }}"
@@ -563,7 +563,26 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                     {%- for media in product.media -%}
                                         {%- case media.media_type -%}
                                             {%- when 'image' -%}
-                                                <div class="product-pagefour4 productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
+                                                {%- if show_variant_image_group -%}
+                                                    {%- assign alt_is_variant_id = false -%}
+                                                    {%- assign main_filter_id = '' -%}
+                                                    {%- if media.alt != blank -%}
+                                                        {%- assign main_alt_variant_part = media.alt | split: '|' | last | strip -%}
+                                                        {%- for v in product.variants -%}
+                                                            {%- assign v_id_str = v.id | append: '' -%}
+                                                            {%- if media.alt == v.id or media.alt == v_id_str -%}
+                                                                {%- assign alt_is_variant_id = true -%}
+                                                                {%- assign main_filter_id = v_id_str -%}
+                                                                {%- break -%}
+                                                            {%- elsif main_alt_variant_part == v.id or main_alt_variant_part == v_id_str -%}
+                                                                {%- assign alt_is_variant_id = true -%}
+                                                                {%- assign main_filter_id = v_id_str -%}
+                                                                {%- break -%}
+                                                            {%- endif -%}
+                                                        {%- endfor -%}
+                                                    {%- endif -%}
+                                                {%- endif -%}
+                                                <div class="product-pagefour4 productView-image productView-image-{{ media_size }}{% if show_variant_image_group %}{% if alt_is_variant_id %} filter-{{ main_filter_id | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% else %} filter-show-all{% endif %}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
                                                     <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"
                                                         {% unless media_fit == 'unset' %}
                                                             {% if product.featured_media %}
@@ -604,7 +623,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                 </div>
                                             {%- when 'external_video' -%}
                                                 {%- if video_layout == 'thumbnail' -%}
-                                                    <div class="productView-image productView-image-{{ media_size }}">
+                                                    <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-show-all{% endif %}">
                                                         <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"
                                                             {% if media_size == 'adapt' %}
                                                                 style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
@@ -650,7 +669,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                 {%- endif -%}
                                             {%- when 'video' -%}
                                                 {%- if video_layout == 'thumbnail' -%}
-                                                    <div class="productView-image productView-image-{{ media_size }}">
+                                                    <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-show-all{% endif %}">
                                                         <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"
                                                             {% if media_size == 'adapt' %}
                                                                 style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
@@ -679,7 +698,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                     </div>
                                                 {%- endif -%}
                                             {%- when 'model' -%}
-                                                <div class="productView-image productView-image-{{ media_size }}">
+                                                <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-show-all{% endif %}">
                                                     <product-model class="deferred-media no-js-hidden productView-img-container product-single__media"
                                                         {% if media_size == 'adapt' %}
                                                             style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
@@ -788,7 +807,26 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                         {%- for media in product.media -%}
                                             {%- case media.media_type -%}
                                                 {%- when 'image' -%}
-                                                    <div class="productView-thumbnail{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                                                    {%- if show_variant_image_group -%}
+                                                        {%- assign thumb_alt_is_variant_id = false -%}
+                                                        {%- assign thumb_filter_id = '' -%}
+                                                        {%- if media.alt != blank -%}
+                                                            {%- assign thumb_alt_variant_part = media.alt | split: '|' | last | strip -%}
+                                                            {%- for v in product.variants -%}
+                                                                {%- assign thumb_v_id_str = v.id | append: '' -%}
+                                                                {%- if media.alt == v.id or media.alt == thumb_v_id_str -%}
+                                                                    {%- assign thumb_alt_is_variant_id = true -%}
+                                                                    {%- assign thumb_filter_id = thumb_v_id_str -%}
+                                                                    {%- break -%}
+                                                                {%- elsif thumb_alt_variant_part == v.id or thumb_alt_variant_part == thumb_v_id_str -%}
+                                                                    {%- assign thumb_alt_is_variant_id = true -%}
+                                                                    {%- assign thumb_filter_id = thumb_v_id_str -%}
+                                                                    {%- break -%}
+                                                                {%- endif -%}
+                                                            {%- endfor -%}
+                                                        {%- endif -%}
+                                                    {%- endif -%}
+                                                    <div class="productView-thumbnail{% if show_variant_image_group %}{% if thumb_alt_is_variant_id %} filter-{{ thumb_filter_id | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% else %} filter-show-all{% endif %}{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                                                         <div class="productView-thumbnail-link" data-image="{{ media | img_url: 'large' }}">
                                                             <img {% if settings.enable_lazyload and forloop.index > 4 %}data-{% endif %}srcset="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'medium' }}{% else %}{{ media | img_url: 'compact' }}{% endif %}" {% unless settings.enable_lazyload and forloop.index > 4 %}src="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'medium' }}{% else %}{{ media | img_url: 'compact' }}{% endif %}"{% endunless %} alt="{{ media.alt | escape }}" {% if settings.enable_lazyload and forloop.index > 4 %}class="lazyload" loading="lazy"{% endif %} />
                                                             {%- if settings.enable_lazyload and forloop.index > 4 -%}<span class="data-lazy-loading"></span>{%- endif -%}
@@ -796,7 +834,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                     </div>
                                                 {%- when 'external_video' -%}
                                                     {%- if video_layout == 'thumbnail' -%}
-                                                        <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
+                                                        <div class="productView-thumbnail{% if show_variant_image_group %} filter-show-all{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                                                             <div class="productView-thumbnail-link animated-loading">
                                                                 <img src="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'large' }}{% else %}{{ media | img_url: 'medium' }}{% endif %}" alt="{{ media.alt | escape }}" loading="lazy" />
                                                             </div>
@@ -807,7 +845,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                     {%- endif -%}
                                                 {%- when 'video' -%}
                                                     {%- if video_layout == 'thumbnail' -%}
-                                                        <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
+                                                        <div class="productView-thumbnail{% if show_variant_image_group %} filter-show-all{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                                                             <div class="productView-thumbnail-link animated-loading">
                                                                 <img src="{{ media | media_tag | split: 'src="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" loading="lazy" />
                                                             </div>
@@ -817,7 +855,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                         </div>
                                                     {%- endif -%}
                                                 {%- when 'model' -%}
-                                                    <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
+                                                    <div class="productView-thumbnail{% if show_variant_image_group %} filter-show-all{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                                                         <div class="productView-thumbnail-link animated-loading">
                                                             <img src="{{ media | media_tag | split: 'poster="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" loading="lazy" />
                                                         </div>
@@ -826,7 +864,7 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
                                                         </div>
                                                     </div>
                                                 {%- else -%}
-                                                    <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
+                                                    <div class="productView-thumbnail{% if show_variant_image_group %} filter-show-all{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                                                         <div class="productView-thumbnail-link animated-loading">
                                                             {{ media | media_tag }}
                                                         </div>
@@ -1640,6 +1678,22 @@ $('#halo-product-bundle .bundle-product').find('.bundle-product-text').append('B
 {%- endif -%}
 
 <script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+{%- if show_variant_image_group -%}
+<script>
+(function() {
+    var section = document.getElementById('ProductSection-{{ section.id }}');
+    if (!section) return;
+    section.addEventListener('variant:changed', function(ev) {
+        var detail = ev.detail;
+        if (!detail || !detail.variant || !detail.sectionId) return;
+        var mediaId = detail.variant.featured_media && detail.variant.featured_media.id;
+        if (!mediaId) return;
+        var thumb = section.querySelector('[data-media-id="' + detail.sectionId + '-' + mediaId + '"]');
+        if (thumb) setTimeout(function() { thumb.click(); }, 100);
+    });
+})();
+</script>
+{%- endif -%}
 {%- if show_sticky_add_to_cart -%}
     <script src="{{ 'sticky-add-to-cart.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
