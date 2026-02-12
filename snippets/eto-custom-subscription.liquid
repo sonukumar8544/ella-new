@@ -1,0 +1,1101 @@
+{%- liquid
+  assign section_id = section_id | default: section.id
+  assign form_id = form_id | default: 'product-form-' | append: product.id
+  assign current_variant = product.selected_or_first_available_variant
+  assign base_price = current_variant.price
+  assign base_compare = current_variant.compare_at_price | default: base_price
+-%}
+
+{%- if product != blank and product.available -%}
+{%- assign subs_price_1 = base_price | times: 0.90 -%}
+<div id="custom-subscribe-ui-v2" class="eto-subscription-wrapper" data-eto-subscription data-product-id="{{ product.id }}" data-form-id="{{ form_id }}" data-section-id="{{ section_id }}" data-base-price="{{ base_price }}">
+  {%- comment -%} 1. Purchase type tabs + Quantity selector (directly below) {%- endcomment -%}
+  <div class="eto-tabs-and-quantity-wrap">
+    <div class="eto-subscription-tabs">
+      <div class="eto-subscription-tab selectors_holder">
+        <label class="eto-tab-block s_selector selected" data-eto-tab="subs">
+          <span class="eto-tab-tag-wrap"><span class="eto-tab-tag">Most popular</span></span>
+          <span class="eto-radio-custom" aria-hidden="true"><span class="eto-radio-dot"></span></span>
+          <input class="selected_mark" type="radio" id="eto-subscribe-{{ section_id }}" name="eto_grp-{{ section_id }}" value="subs" checked>
+          <div class="eto-tab-title selector_desc">
+            <span class="eto-tab-label">Flexible plan:</span>
+            <span class="eto-tab-price-wrap">
+              <span class="eto-subs-price" data-eto-subs-price>{{ subs_price_1 | money }}</span>
+              <span class="eto-per-unit">per pack</span>
+              <br>
+              <span class="eto-subscription-free-text">+ FREE Gifts</span>
+            </span>
+          </div>
+        </label>
+        <label class="eto-tab-block s_selector" data-eto-tab="one_time">
+          <span class="eto-radio-custom" aria-hidden="true"><span class="eto-radio-dot"></span></span>
+          <input class="selected_mark" type="radio" id="eto-one-time-{{ section_id }}" name="eto_grp-{{ section_id }}" value="one_time">
+          <div class="eto-tab-title selector_desc">
+            <span class="eto-tab-label">One-time purchase:</span>
+            <span class="eto-tab-price-wrap">
+              <span class="eto-one-time-price" data-eto-one-time-price>{{ base_price | money }}</span>
+              <span class="eto-per-unit">per pack</span>
+            </span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    {%- comment -%} Quantity selector — directly under tabs {%- endcomment -%}
+    <div class="eto-quantity-section eto-quantity-below-tabs">
+      <div class="eto-quantity-selector quantity_selector" data-eto-qty-selector>
+        <label class="eto-quantity-selector-label" for="eto-qty-input-{{ section_id }}">Quantity:</label>
+        <div class="eto-quantity-selector-container">
+          <button type="button" class="eto-btn-quantity minus" name="minus" data-eto-qty-minus aria-label="Decrease quantity">
+            <span aria-hidden="true">−</span>
+          </button>
+          <input class="eto-quantity-input" type="number" id="eto-qty-input-{{ section_id }}" min="1" max="3" value="1" inputmode="numeric" pattern="[0-9]*" data-eto-qty-num>
+          <button type="button" class="eto-btn-quantity plus" name="plus" data-eto-qty-plus aria-label="Increase quantity">
+            <span aria-hidden="true">+</span>
+          </button>
+        </div>
+      </div>
+      <span class="eto-legend">Choose your offer</span>
+      <div class="eto-quantity-grid">
+        {%- assign quantities = "1,2,3" | split: "," -%}
+        {%- assign discounts = "10,15,20" | split: "," -%}
+        {%- assign labels = "Buy 1 supplement get 10% off,Buy 2 supplements get 15% off,Buy 3 supplement get 20% off" | split: "," -%}
+        {%- for q in quantities -%}
+          {%- assign qty = q | plus: 0 -%}
+          {%- assign discount_pct = discounts[forloop.index0] -%}
+          {%- assign label = labels[forloop.index0] -%}
+          {%- assign one_time_total = base_price | times: qty -%}
+          {%- if qty == 1 -%}
+            {%- assign subs_multiplier = 0.90 -%}
+          {%- elsif qty == 2 -%}
+            {%- assign subs_multiplier = 0.85 -%}
+          {%- else -%}
+            {%- assign subs_multiplier = 0.80 -%}
+          {%- endif -%}
+          {%- assign subs_each = base_price | times: subs_multiplier -%}
+          <label class="eto-quantity-card {% if forloop.index == 2 %}eto-quantity-popular{% endif %} {% if forloop.index == 3 %}eto-quantity-best{% endif %} {% if forloop.first %}selected{% endif %}" data-eto-quantity="{{ qty }}" data-eto-subs-each-formatted="{{ subs_each | money }}" data-eto-one-time-total="{{ one_time_total }}">
+            <input type="radio" name="eto_quantity-{{ section_id }}" value="{{ qty }}" {% if forloop.first %}checked{% endif %} class="eto-quantity-radio" data-eto-qty-input>
+            {%- if forloop.index == 2 -%}<span class="eto-quantity-tag eto-tag-popular">MOST POPULAR</span>{%- endif -%}
+            {%- if forloop.index == 3 -%}<span class="eto-quantity-tag eto-tag-best">BEST VALUE</span>{%- endif -%}
+            <span class="eto-quantity-label">{{ label }}</span>
+            <span class="eto-quantity-price eto-subs">{{ subs_each | money }} / each</span>
+            <span class="eto-quantity-price eto-one-time hidden">{{ one_time_total | money }} total</span>
+            <span class="eto-quantity-badge eto-subs">{{ discount_pct }}% OFF</span>
+            <span class="eto-quantity-badge eto-one-time hidden">–</span>
+          </label>
+        {%- endfor -%}
+      </div>
+      <div class="eto-celebrate-wrap" aria-hidden="true">
+        <div class="eto-confetti-burst" aria-hidden="true">
+          {% for i in (1..16) %}<span class="eto-confetti-dot eto-confetti-dot--{% cycle 1, 2, 3, 4, 5 %}"></span>{% endfor %}
+        </div>
+        <p class="eto-celebrate-message">🎉 Best value! You're saving 20%!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="eto-subscription-content">
+    <div class="eto-onetime-cta eto-cta-box hidden" data-eto-onetime-cta>
+      <div class="eto-save-with-subs-header"><strong>Save up to 20% with our Flexible Plan + FREE Gifts</strong></div>
+      <div class="eto-save-with-subs-content">You selected one-time purchase. Switch to Flexible Plan and save with buy 1 get 10% off, buy 2 supplements get 15% off, or buy 3 supplement get 20% off + FREE gifts.</div>
+    </div>
+
+    {%- comment -%} 2. Flavour (if product has options) {%- endcomment -%}
+    {%- if product.variants.size > 1 and product.has_only_default_variant == false -%}
+      <div class="eto-flavour-section">
+        <span class="eto-legend">Flavour :</span>
+        <div class="eto-flavour-grid">
+          {%- for option in product.options_with_values limit: 1 -%}
+            {%- assign opt_pos = option.position -%}
+            {%- for value in option.values -%}
+              {%- assign variant_for_option = nil -%}
+              {%- for v in product.variants -%}
+                {%- assign v_val = nil -%}
+                {%- if opt_pos == 1 -%}{%- assign v_val = v.option1 -%}
+                {%- elsif opt_pos == 2 -%}{%- assign v_val = v.option2 -%}
+                {%- else -%}{%- assign v_val = v.option3 -%}
+                {%- endif -%}
+                {%- if v_val == value -%}
+                  {%- assign variant_for_option = v -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if variant_for_option == nil -%}
+                {%- assign variant_for_option = product.variants | first -%}
+              {%- endif -%}
+              <label class="eto-flavour-card {% if variant_for_option.id == current_variant.id %}selected{% endif %}">
+                <input type="radio" name="eto_flavour-{{ section_id }}" value="{{ value | escape }}" data-eto-variant-id="{{ variant_for_option.id }}" {% if variant_for_option.id == current_variant.id %}checked{% endif %} data-eto-variant-radio>
+                <span class="eto-flavour-label">{{ value }}</span>
+              </label>
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} 3. Three save blocks: 10% | 15% | 20% — unlock based on selected offer {%- endcomment -%}
+    <div class="eto-free-gifts-section">
+      <div class="eto-free-gifts-banner" data-eto-gifts-banner>
+        <strong class="eto-banner-exclusive eto-banner-exclusive-animate">EXCLUSIVE SALE!</strong> — <span class="eto-banner-deal">Buy 1 get 10% off · Buy 2 get 15% off </span><span class="eto-banner-best-offer">· Buy 3 get 20% off</span>
+      </div>
+      <div class="eto-free-gifts-grid eto-save-blocks-grid">
+        <div class="eto-gift-card eto-gift-locked eto-save-block" data-eto-unlock-at="1">
+          <div class="eto-gift-lock" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 18.6 18.6" fill="currentColor"><path d="M14.6,11c0,0.8,0,1.6,0,2.4c0,0.8-0.3,1.4-0.8,2c-0.8,0.9-1.9,1.4-3.1,1.6c-1.1,0.2-2.3,0.2-3.4-0.1c-0.9-0.3-1.8-0.7-2.5-1.4c-0.6-0.6-1-1.4-0.9-2.3c0-1.5,0-3,0-4.4c0-0.9,0.4-1.5,1.2-1.9c0.1,0,0.1-0.1,0.1-0.2c0-1,0.2-2,0.7-2.9c0.5-0.9,1.1-1.6,2-2c1.2-0.6,2.4-0.4,3.5,0.5c0.8,0.6,1.2,1.4,1.6,2.3c0.3,0.7,0.4,1.4,0.4,2.2c0,0.1,0,0.1,0.1,0.2c0.8,0.4,1.2,1,1.2,1.8C14.6,9.5,14.6,10.3,14.6,11z M9.3,6.7c0.7,0,1.4,0,2,0c0.4,0,0.4,0,0.3-0.4c-0.1-0.8-0.3-1.6-0.8-2.2c-0.5-0.7-1.2-0.9-2-0.8c-0.6,0.1-1,0.5-1.3,1C7.1,5,6.9,5.8,6.9,6.6c0,0.1,0,0.2,0.1,0.2C7.8,6.7,8.5,6.7,9.3,6.7z M9.3,13.8c0.2,0,0.4,0,0.7,0c0.1,0,0.2,0,0.2-0.2c0-0.3,0-0.7,0-1c0-0.1,0-0.2,0.1-0.3c0.9-0.7,0.7-2.2-0.4-2.6c-0.7-0.3-1.5,0-1.9,0.6c-0.4,0.6-0.2,1.5,0.4,1.9c0.1,0.1,0.1,0.1,0.1,0.2c0,0.4,0,0.7,0,1.1c0,0.1,0,0.2,0.1,0.1C8.8,13.8,9,13.8,9.3,13.8z"/></svg>
+          </div>
+          <div class="eto-gift-label eto-save-label">Save 10%</div>
+        </div>
+        <div class="eto-gift-card eto-gift-locked eto-save-block" data-eto-unlock-at="2">
+          <div class="eto-gift-lock" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 18.6 18.6" fill="currentColor"><path d="M14.6,11c0,0.8,0,1.6,0,2.4c0,0.8-0.3,1.4-0.8,2c-0.8,0.9-1.9,1.4-3.1,1.6c-1.1,0.2-2.3,0.2-3.4-0.1c-0.9-0.3-1.8-0.7-2.5-1.4c-0.6-0.6-1-1.4-0.9-2.3c0-1.5,0-3,0-4.4c0-0.9,0.4-1.5,1.2-1.9c0.1,0,0.1-0.1,0.1-0.2c0-1,0.2-2,0.7-2.9c0.5-0.9,1.1-1.6,2-2c1.2-0.6,2.4-0.4,3.5,0.5c0.8,0.6,1.2,1.4,1.6,2.3c0.3,0.7,0.4,1.4,0.4,2.2c0,0.1,0,0.1,0.1,0.2c0.8,0.4,1.2,1,1.2,1.8C14.6,9.5,14.6,10.3,14.6,11z M9.3,6.7c0.7,0,1.4,0,2,0c0.4,0,0.4,0,0.3-0.4c-0.1-0.8-0.3-1.6-0.8-2.2c-0.5-0.7-1.2-0.9-2-0.8c-0.6,0.1-1,0.5-1.3,1C7.1,5,6.9,5.8,6.9,6.6c0,0.1,0,0.2,0.1,0.2C7.8,6.7,8.5,6.7,9.3,6.7z M9.3,13.8c0.2,0,0.4,0,0.7,0c0.1,0,0.2,0,0.2-0.2c0-0.3,0-0.7,0-1c0-0.1,0-0.2,0.1-0.3c0.9-0.7,0.7-2.2-0.4-2.6c-0.7-0.3-1.5,0-1.9,0.6c-0.4,0.6-0.2,1.5,0.4,1.9c0.1,0.1,0.1,0.1,0.1,0.2c0,0.4,0,0.7,0,1.1c0,0.1,0,0.2,0.1,0.1C8.8,13.8,9,13.8,9.3,13.8z"/></svg>
+          </div>
+          <div class="eto-gift-label eto-save-label">Save 15%</div>
+        </div>
+        <div class="eto-gift-card eto-gift-locked eto-save-block" data-eto-unlock-at="3">
+          <div class="eto-gift-lock" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 18.6 18.6" fill="currentColor"><path d="M14.6,11c0,0.8,0,1.6,0,2.4c0,0.8-0.3,1.4-0.8,2c-0.8,0.9-1.9,1.4-3.1,1.6c-1.1,0.2-2.3,0.2-3.4-0.1c-0.9-0.3-1.8-0.7-2.5-1.4c-0.6-0.6-1-1.4-0.9-2.3c0-1.5,0-3,0-4.4c0-0.9,0.4-1.5,1.2-1.9c0.1,0,0.1-0.1,0.1-0.2c0-1,0.2-2,0.7-2.9c0.5-0.9,1.1-1.6,2-2c1.2-0.6,2.4-0.4,3.5,0.5c0.8,0.6,1.2,1.4,1.6,2.3c0.3,0.7,0.4,1.4,0.4,2.2c0,0.1,0,0.1,0.1,0.2c0.8,0.4,1.2,1,1.2,1.8C14.6,9.5,14.6,10.3,14.6,11z M9.3,6.7c0.7,0,1.4,0,2,0c0.4,0,0.4,0,0.3-0.4c-0.1-0.8-0.3-1.6-0.8-2.2c-0.5-0.7-1.2-0.9-2-0.8c-0.6,0.1-1,0.5-1.3,1C7.1,5,6.9,5.8,6.9,6.6c0,0.1,0,0.2,0.1,0.2C7.8,6.7,8.5,6.7,9.3,6.7z M9.3,13.8c0.2,0,0.4,0,0.7,0c0.1,0,0.2,0,0.2-0.2c0-0.3,0-0.7,0-1c0-0.1,0-0.2,0.1-0.3c0.9-0.7,0.7-2.2-0.4-2.6c-0.7-0.3-1.5,0-1.9,0.6c-0.4,0.6-0.2,1.5,0.4,1.9c0.1,0.1,0.1,0.1,0.1,0.2c0,0.4,0,0.7,0,1.1c0,0.1,0,0.2,0.1,0.1C8.8,13.8,9,13.8,9.3,13.8z"/></svg>
+          </div>
+          <div class="eto-gift-label eto-save-label">Save 20%</div>
+        </div>
+      </div>
+        {% comment %}
+          ETO Add to cart: variant by plan; quantity by pack. Show actual + compare price.
+          Flexible plan → variant 51417719603496. One-time → variant 44847119171880.
+        {% endcomment %}
+        {%- assign eto_variant_flexible = '51417719603496' -%}
+        {%- assign eto_variant_onetime = '44847119171880' -%}
+        {%- assign eto_flex_variant = nil -%}
+        {%- assign eto_onetime_variant = nil -%}
+        {%- for v in product.variants -%}
+          {%- if v.id == 51417719603496 -%}{%- assign eto_flex_variant = v -%}{%- endif -%}
+          {%- if v.id == 44847119171880 -%}{%- assign eto_onetime_variant = v -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if eto_flex_variant == nil -%}{%- assign eto_flex_variant = product.variants.first -%}{%- endif -%}
+        {%- if eto_onetime_variant == nil -%}{%- assign eto_onetime_variant = product.variants.first -%}{%- endif -%}
+        {%- comment %} Flexible: Pack 1 = 10% off, Pack 2 = 15% off, Pack 3 = 20% off. Compare = original total, Actual = discounted total. {% endcomment %}
+        {%- assign flex_base = eto_flex_variant.price -%}
+        {%- assign flex_compare_1 = flex_base -%}
+        {%- assign flex_compare_2 = flex_base | times: 2 -%}
+        {%- assign flex_compare_3 = flex_base | times: 3 -%}
+        {%- assign flex_actual_1 = flex_base | times: 0.9 | round -%}
+        {%- assign flex_actual_2 = flex_base | times: 2 | times: 0.85 | round -%}
+        {%- assign flex_actual_3 = flex_base | times: 3 | times: 0.80 | round -%}
+        {%- comment %} One-time: no discount. Actual only (compare = same so we hide). {% endcomment %}
+        {%- assign onetime_base = eto_onetime_variant.price -%}
+        {%- assign onetime_1 = onetime_base -%}
+        {%- assign onetime_2 = onetime_base | times: 2 -%}
+        {%- assign onetime_3 = onetime_base | times: 3 -%}
+        <div class="eto-landing-add-to-cart-wrap"
+          data-eto-price-f-1="{{ flex_actual_1 | money }}"
+          data-eto-price-f-2="{{ flex_actual_2 | money }}"
+          data-eto-price-f-3="{{ flex_actual_3 | money }}"
+          data-eto-compare-f-1="{{ flex_compare_1 | money }}"
+          data-eto-compare-f-2="{{ flex_compare_2 | money }}"
+          data-eto-compare-f-3="{{ flex_compare_3 | money }}"
+          data-eto-price-o-1="{{ onetime_1 | money }}"
+          data-eto-price-o-2="{{ onetime_2 | money }}"
+          data-eto-price-o-3="{{ onetime_3 | money }}"
+          data-eto-compare-o-1="{{ onetime_1 | money }}"
+          data-eto-compare-o-2="{{ onetime_2 | money }}"
+          data-eto-compare-o-3="{{ onetime_3 | money }}"
+        >
+          <button
+            type="button"
+            class="product-form__submit button button--primary eto-atc-btn eto-banner-best-offer"
+            data-variant-ids="{{ eto_variant_flexible }}"
+            data-eto-variant-flexible="{{ eto_variant_flexible }}"
+            data-eto-variant-onetime="{{ eto_variant_onetime }}"
+            data-qtys="1"
+            data-redirect="/checkout"
+          >
+            <span class="eto-atc-btn-text">{{ 'Add to cart' }}</span>
+            <span class="eto-atc-btn-prices">
+              <span class="eto-atc-compare-price" data-eto-atc-compare></span>
+              <span class="eto-atc-actual-price" data-eto-atc-price></span>
+            </span>
+          </button>
+          {% comment %} <a href="{{ routes.cart_url }}" class="eto-view-cart-link">{{ 'cart.general.title' | t | default: 'View cart' }}</a> {% endcomment %}
+        </div>
+    </div>
+
+  </div>
+
+  <input type="hidden" name="quantity" value="1" form="{{ form_id }}" data-eto-quantity-hidden>
+  <input type="hidden" name="id" value="{{ current_variant.id }}" form="{{ form_id }}" data-eto-variant-hidden>
+</div>
+
+<style>
+  .eto-landing-add-to-cart-wrap{
+    margin-top: 40px;
+  }
+  .eto-subscription-wrapper {
+    --eto-sub-accent: #006a91;
+    --eto-sub-accent-light: #e6f4f9;
+    --eto-sub-green: #2d8a5e;
+    --eto-sub-border: #dde1e4;
+    --eto-sub-bg: #f8fafb;
+    --eto-sub-text: #374650;
+    width: 100%;
+    margin: 0 0 24px 0;
+    font-family: inherit;
+    padding-top: 28px;
+    overflow: visible;
+  }
+  .eto-landing-add-to-cart-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .eto-atc-btn {
+    display: inline-flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .eto-atc-btn.eto-banner-best-offer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.5), transparent);
+    transform: translateX(-100%);
+    animation: eto-banner-shine 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .eto-atc-btn .eto-atc-btn-text { display: block; }
+  .eto-atc-btn .eto-atc-btn-prices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .eto-atc-btn .eto-atc-compare-price {
+    text-decoration: line-through;
+    opacity: 0.9;
+  }
+  .eto-atc-btn .eto-atc-actual-price {
+    font-weight: 800;
+    font-size: 1.05em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  .eto-landing-add-to-cart-wrap .eto-view-cart-link {
+    color: var(--eto-sub-accent);
+    text-decoration: underline;
+    font-size: 0.95em;
+  }
+  .eto-landing-add-to-cart-wrap .eto-view-cart-link:hover {
+    color: var(--eto-sub-text);
+  }
+  .eto-tabs-and-quantity-wrap {
+    border: 1px solid var(--eto-sub-border);
+    border-radius: 14px;
+    overflow: visible;
+    margin-bottom: 24px;
+    background: #fff;
+  }
+  .eto-subscription-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow: visible;
+  }
+  .eto-subscription-tab.selectors_holder {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    /* background: var(--eto-sub-border); */
+  }
+  .eto-tabs-and-quantity-wrap .eto-subscription-tab.selectors_holder {
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .eto-tab-tag-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    pointer-events: none;
+  }
+  .eto-tab-tag {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    top: 0;
+    transform: translateY(-50%);
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: var(--eto-sub-accent);
+    color: #fff;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .eto-tab-block {
+    position: relative;
+    padding-top: 22px;
+    flex: 1;
+    min-width: 140px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: none;
+  }
+  .eto-tab-block:active { transform: scale(0.99); }
+  .eto-tab-block:first-child {
+    border-radius: 12px 0 0 0;
+    border-right: none;
+  }
+  .eto-tabs-and-quantity-wrap .eto-tab-block:first-child { border-radius: 14px 0 0 0; }
+  .eto-tab-block:last-child {
+    border-radius: 0 12px 0 0;
+    border-top-left-radius: 20px;
+  }
+  .eto-tabs-and-quantity-wrap .eto-tab-block:last-child { border-radius: 0 16px 0 0; border-top-left-radius: 30px; border-bottom-left-radius: 0; }
+  .eto-tab-block.selected {
+    background: #fff;
+    /* box-shadow: 2px 0 0 #fff; */
+  }
+  .eto-tab-block:not(.selected) {
+    background: #e8f2f6;
+  }
+  .eto-tab-block:not(.selected) .eto-tab-tag { opacity: 0.7; }
+  .eto-tab-block:hover:not(.selected) { background: #dceaf2; }
+  .eto-tab-block {
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+  }
+  .eto-tab-block:focus-within { outline: 2px solid var(--eto-sub-accent); outline-offset: 2px; }
+  /* .eto-tab-block.selected { box-shadow: inset 0 0 0 2px rgba(0,0,0,0.04); } */
+  .eto-tab-block .selected_mark {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  .eto-radio-custom {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border: 2px solid var(--eto-sub-border);
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .eto-radio-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--eto-sub-accent);
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+  .eto-tab-block.selected .eto-radio-custom {
+    border-color: var(--eto-sub-accent);
+    background: #fff;
+    box-shadow: 0 0 0 2px var(--eto-sub-accent-light);
+  }
+  .eto-tab-block.selected .eto-radio-dot { transform: scale(1); }
+  .eto-tab-block:not(.selected) .eto-radio-custom { border-color: #999; }
+  .eto-tab-title {
+    font-size: 17px;
+    flex: 1;
+    min-width: 0;
+  }
+  .eto-tab-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--eto-sub-text);
+    display: block;
+  }
+  .eto-tab-price-wrap {
+    color: #555;
+    margin-top: 6px;
+    display: block;
+    font-size: 16px;
+  }
+  .eto-subs-price,
+  .eto-one-time-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    display: inline;
+  }
+  .eto-tab-block.selected .eto-subs-price,
+  .eto-tab-block.selected .eto-one-time-price {
+    color: var(--eto-sub-accent);
+  }
+  .eto-tab-block:not(.selected) .eto-subs-price,
+  .eto-tab-block:not(.selected) .eto-one-time-price {
+    color: var(--eto-sub-text);
+  }
+  .eto-subscription-free-text {
+    color: var(--eto-sub-green);
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    margin-top: 3px;
+  }
+  .eto-per-unit {
+    font-size: 14px;
+    color: #555;
+  }
+  .eto-tab-block .eto-per-unit { margin-left: 0.15em; }
+  .eto-subscription-content { padding: 0; }
+  .eto-cta-box {
+    background: var(--eto-sub-bg);
+    border: 1px solid var(--eto-sub-border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .eto-save-with-subs-header { font-size: 15px; margin-bottom: 6px; color: var(--eto-sub-text); }
+  .eto-save-with-subs-content { font-size: 14px; color: #555; }
+  .eto-legend { font-weight: 600; display: block; margin-bottom: 10px; color: var(--eto-sub-text); font-size: 16px; }
+  .eto-flavour-section { margin-bottom: 20px; }
+  .eto-flavour-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .eto-flavour-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 12px 16px;
+    border: 2px solid var(--eto-sub-border);
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .eto-flavour-card:hover {
+    border-color: var(--eto-sub-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .eto-flavour-card.selected {
+    border-color: var(--eto-sub-accent);
+    background: var(--eto-sub-accent-light);
+    box-shadow: 0 2px 10px rgba(45, 125, 181, 0.15);
+  }
+  .eto-flavour-card:focus-within { outline: 2px solid var(--eto-sub-accent); outline-offset: 2px; }
+  .eto-flavour-card input { position: absolute; opacity: 0; }
+  .eto-flavour-label { font-weight: 500; font-size: 15px; }
+  .eto-quantity-section { margin-bottom: 20px; }
+  .eto-quantity-section.eto-quantity-below-tabs {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 16px 20px;
+    border-top: 1px solid var(--eto-sub-border);
+    background: var(--eto-sub-bg);
+  }
+  .eto-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .eto-quantity-selector-label {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--eto-sub-text);
+    margin: 0;
+  }
+  .eto-quantity-selector-container {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--eto-sub-border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .eto-quantity-selector-container:focus-within {
+    border-color: var(--eto-sub-accent);
+    box-shadow: 0 0 0 2px var(--eto-sub-accent-light);
+  }
+  .eto-btn-quantity {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--eto-sub-bg);
+    color: var(--eto-sub-text);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  }
+  .eto-btn-quantity:hover {
+    background: var(--eto-sub-accent-light);
+    color: var(--eto-sub-accent);
+  }
+  .eto-btn-quantity:active { transform: scale(0.95); }
+  .eto-quantity-input {
+    width: 48px;
+    height: 40px;
+    border: none;
+    border-left: 1px solid var(--eto-sub-border);
+    border-right: 1px solid var(--eto-sub-border);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--eto-sub-text);
+    -moz-appearance: textfield;
+  }
+  .eto-quantity-input::-webkit-outer-spin-button,
+  .eto-quantity-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .eto-quantity-below-tabs .eto-legend {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .eto-quantity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .eto-celebrate-wrap {
+    position: relative;
+    text-align: center;
+    margin-top: 16px;
+    min-height: 44px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .eto-subscription-wrapper.eto-celebrate .eto-celebrate-wrap {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .eto-confetti-burst {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 60px;
+    pointer-events: none;
+  }
+  .eto-confetti-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 2px;
+    opacity: 0;
+  }
+  .eto-subscription-wrapper.eto-celebrate .eto-confetti-dot {
+    animation: eto-confetti-burst 1.2s ease-out forwards;
+  }
+  .eto-confetti-dot--1 { background: #ffc107; }
+  .eto-confetti-dot--2 { background: #2d8a5e; }
+  .eto-confetti-dot--3 { background: #006a91; }
+  .eto-confetti-dot--4 { background: #e91e63; }
+  .eto-confetti-dot--5 { background: #ff9800; }
+  .eto-confetti-dot:nth-child(1)  { animation-delay: 0s;   --tx: -28px; --ty: -24px; }
+  .eto-confetti-dot:nth-child(2)  { animation-delay: 0.05s; --tx: 30px;  --ty: -20px; }
+  .eto-confetti-dot:nth-child(3)  { animation-delay: 0.1s;  --tx: -10px; --ty: -35px; }
+  .eto-confetti-dot:nth-child(4)  { animation-delay: 0.02s; --tx: 18px;  --ty: 28px; }
+  .eto-confetti-dot:nth-child(5)  { animation-delay: 0.08s; --tx: -32px; --ty: 15px; }
+  .eto-confetti-dot:nth-child(6)  { animation-delay: 0.03s; --tx: 0;    --ty: -40px; }
+  .eto-confetti-dot:nth-child(7)  { animation-delay: 0.06s; --tx: 25px; --ty: 20px; }
+  .eto-confetti-dot:nth-child(8)  { animation-delay: 0.04s; --tx: -22px; --ty: -18px; }
+  .eto-confetti-dot:nth-child(9)  { animation-delay: 0.07s; --tx: -35px; --ty: 25px; }
+  .eto-confetti-dot:nth-child(10) { animation-delay: 0.01s; --tx: 12px; --ty: -30px; }
+  .eto-confetti-dot:nth-child(11) { animation-delay: 0.09s; --tx: 35px; --ty: -12px; }
+  .eto-confetti-dot:nth-child(12) { animation-delay: 0.05s; --tx: -18px; --ty: 32px; }
+  .eto-confetti-dot:nth-child(13) { animation-delay: 0.02s; --tx: 8px;  --ty: 35px; }
+  .eto-confetti-dot:nth-child(14) { animation-delay: 0.06s; --tx: -25px; --ty: -28px; }
+  .eto-confetti-dot:nth-child(15) { animation-delay: 0.04s; --tx: 32px; --ty: -25px; }
+  .eto-confetti-dot:nth-child(16) { animation-delay: 0.08s; --tx: -15px; --ty: 22px; }
+  @keyframes eto-confetti-burst {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+  }
+  .eto-celebrate-message {
+    margin: 8px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--eto-sub-green);
+    animation: eto-celebrate-pop 0.5s ease-out;
+  }
+  .eto-subscription-wrapper.eto-celebrate .eto-celebrate-message {
+    animation: eto-celebrate-pop 0.5s ease-out;
+  }
+  @keyframes eto-celebrate-pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .eto-quantity-card {
+    position: relative;
+    padding: 18px 16px;
+    border: 2px solid var(--eto-sub-border);
+    border-radius: 12px;
+    cursor: pointer;
+    background: #fff;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .eto-quantity-card:hover {
+    border-color: var(--eto-sub-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+  .eto-quantity-card:active { transform: translateY(-1px) scale(0.98); }
+  .eto-quantity-card.selected {
+    border-color: var(--eto-sub-accent);
+    background: var(--eto-sub-accent-light);
+    box-shadow: 0 4px 14px rgba(45, 125, 181, 0.2);
+  }
+  .eto-quantity-card.selected:hover { transform: translateY(-2px); }
+  .eto-quantity-card:focus-within { outline: 2px solid var(--eto-sub-accent); outline-offset: 2px; }
+  .eto-quantity-card .eto-quantity-radio { position: absolute; opacity: 0; }
+  .eto-quantity-tag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+    line-height: 1.2;
+    display: inline-block;
+  }
+  .eto-quantity-card { overflow: visible; }
+  .eto-tag-popular { background: var(--eto-sub-accent-light); color: var(--eto-sub-accent); }
+  .eto-tag-best {
+    background: var(--eto-sub-accent);
+    color: #fff;
+    overflow: hidden;
+  }
+  .eto-tag-best::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: translateX(-100%);
+    animation: eto-banner-shine 4s ease-in-out infinite;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .eto-quantity-label { font-weight: 600; font-size: 17px; color: var(--eto-sub-text); }
+  .eto-quantity-price { font-size: 16px; font-weight: 600; color: var(--eto-sub-text); }
+  .eto-quantity-card.selected .eto-quantity-price { color: var(--eto-sub-accent); }
+  .eto-quantity-badge {
+    margin-top: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    background: #374650;
+    color: #fff;
+    border-radius: 6px;
+    align-self: flex-start;
+    transition: transform 0.15s ease;
+  }
+  .eto-quantity-card:hover .eto-quantity-badge { transform: scale(1.02); }
+  .eto-free-gifts-section {
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+  }
+  .eto-free-gifts-banner {
+    background: var(--eto-sub-green);
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 10px 10px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  .eto-free-gifts-banner .eto-banner-exclusive,
+  .eto-free-gifts-banner .eto-banner-deal,
+  .eto-free-gifts-banner .eto-banner-best-offer {
+    vertical-align: middle;
+  }
+  .eto-free-gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 14px;
+    padding: 16px;
+  }
+  .eto-free-gifts-grid.eto-save-blocks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--eto-sub-border);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+  }
+  .eto-gift-card {
+    position: relative;
+    padding: 14px 12px;
+    border: 2px solid var(--eto-sub-border);
+    border-radius: 10px;
+    background: var(--eto-sub-bg);
+    text-align: center;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: border-color 0.25s ease, background 0.25s ease, opacity 0.25s ease, transform 0.2s ease, filter 0.25s ease, box-shadow 0.2s ease;
+  }
+  .eto-gift-card:hover { transform: translateY(-3px); }
+  .eto-gift-card.eto-gift-active {
+    border-color: var(--eto-sub-accent);
+    background: #fff;
+    opacity: 1;
+    filter: none;
+  }
+  .eto-gift-card.eto-gift-active:hover { box-shadow: 0 6px 16px rgba(45, 125, 181, 0.15); }
+  .eto-gift-card.eto-gift-active .eto-gift-lock { display: none; }
+  .eto-save-block .eto-save-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--eto-sub-text);
+  }
+  .eto-save-block.eto-gift-active .eto-save-label {
+    color: var(--eto-sub-green);
+  }
+  .eto-gift-card.eto-gift-locked {
+    opacity: 0.6;
+    filter: grayscale(0.5);
+    cursor: default;
+  }
+  .eto-gift-card.eto-gift-locked:hover { transform: none; }
+  .eto-gift-value { font-size: 13px; font-weight: 600; color: var(--eto-sub-accent); }
+  .eto-gift-locked .eto-gift-value { color: #999; }
+  .eto-gift-label { font-size: 14px; color: var(--eto-sub-text); }
+  .eto-gift-locked .eto-gift-label { color: #999; }
+  .eto-gift-label strong { color: var(--eto-sub-green); }
+  .eto-gift-locked .eto-gift-label strong { color: #999; }
+  .eto-gift-lock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    pointer-events: none;
+    width: 28px;
+    height: 28px;
+    opacity: 0.9;
+  }
+  .eto-gift-lock svg { width: 100%; height: 100%; }
+  .eto-free-gifts-banner .eto-banner-exclusive { color: #ffc107; }
+  @keyframes eto-banner-exclusive-pulse {
+    0%, 100% { opacity: 1; text-shadow: 0 0 0 rgba(255, 193, 7, 0); }
+    50% { opacity: 1; text-shadow: 0 0 12px rgba(255, 193, 7, 0.6); }
+  }
+  .eto-banner-exclusive.eto-banner-exclusive-animate {
+    animation: eto-banner-exclusive-pulse 2s ease-in-out infinite;
+  }
+  .eto-free-gifts-banner .eto-banner-deal { font-weight: 500; }
+  .eto-free-gifts-banner .eto-banner-best-offer {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  .eto-banner-best-offer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: translateX(-100%);
+    animation: eto-banner-shine 4s ease-in-out infinite;
+  }
+  @keyframes eto-banner-shine {
+    0% { transform: translateX(-100%); }
+    60% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  .eto-subscription-wrapper .hidden { display: none !important; }
+  @media (max-width: 749px) {
+    .eto-quantity-grid { grid-template-columns: 1fr; }
+    .eto-free-gifts-grid { grid-template-columns: repeat(2, 1fr); }
+    .eto-free-gifts-grid.eto-save-blocks-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .eto-free-gifts-banner { white-space: normal; }
+  }
+</style>
+
+<script>
+(function() {
+  var wrap = document.querySelector('[data-eto-subscription]');
+  if (!wrap) return;
+  var formId = wrap.getAttribute('data-form-id');
+  var form = formId ? document.getElementById(formId) : wrap.closest('form');
+  var sectionId = wrap.getAttribute('data-section-id') || '';
+
+  function stripHtml(str) {
+    if (typeof str !== 'string') return str;
+    var div = document.createElement('div');
+    div.innerHTML = str;
+    return (div.textContent || div.innerText || str).trim();
+  }
+
+  function setHidden(name, value) {
+    var input = wrap.querySelector('input[form="' + formId + '"][name="' + name + '"]');
+    if (!input && form) input = form.querySelector('input[name="' + name + '"]');
+    if (!input && form) {
+      input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      form.appendChild(input);
+    }
+    if (input) input.value = value;
+  }
+
+  function updateUI() {
+    var grpName = 'eto_grp-' + sectionId;
+    var isSubs = wrap.querySelector('input[name="' + grpName + '"]:checked') && wrap.querySelector('input[name="' + grpName + '"]:checked').value === 'subs';
+    wrap.querySelectorAll('[data-eto-tab]').forEach(function(t) {
+      var tabVal = t.getAttribute('data-eto-tab');
+      t.classList.toggle('selected', (tabVal === 'subs' && isSubs) || (tabVal === 'one_time' && !isSubs));
+    });
+    wrap.querySelectorAll('.eto-one-time').forEach(function(el) { el.classList.toggle('hidden', isSubs); });
+    wrap.querySelectorAll('.eto-subs').forEach(function(el) { el.classList.toggle('hidden', !isSubs); });
+    var cta = wrap.querySelector('[data-eto-onetime-cta]');
+    if (cta) cta.classList.toggle('hidden', isSubs);
+    wrap.querySelectorAll('[data-eto-subs-only]').forEach(function(el) { el.classList.toggle('hidden', !isSubs); });
+
+    var qtyCard = wrap.querySelector('.eto-quantity-card.selected');
+    var qty = qtyCard ? parseInt(qtyCard.getAttribute('data-eto-quantity'), 10) : 1;
+
+    wrap.classList.toggle('eto-celebrate', isSubs && qty === 3);
+
+    // Save blocks: unlock only the one matching selected offer (Buy 1 = Save 10%, Buy 2 = Save 15%, Buy 3 = Save 20%); lock the rest
+    wrap.querySelectorAll('.eto-gift-card[data-eto-unlock-at]').forEach(function(card) {
+      var unlockAt = parseInt(card.getAttribute('data-eto-unlock-at'), 10);
+      var unlocked = isSubs && qty === unlockAt;
+      card.classList.toggle('eto-gift-active', unlocked);
+      card.classList.toggle('eto-gift-locked', !unlocked);
+    });
+
+    var rawFormatted = qtyCard ? qtyCard.getAttribute('data-eto-subs-each-formatted') : '';
+    var subsFormatted = stripHtml(rawFormatted || '');
+    var subsPriceEl = wrap.querySelector('[data-eto-subs-price]');
+    if (subsPriceEl && subsFormatted) subsPriceEl.textContent = subsFormatted;
+
+    setHidden('quantity', String(qty));
+    var qtyInput = wrap.querySelector('[data-eto-qty-num]');
+    if (qtyInput) { qtyInput.value = String(qty); }
+    var variantRadio = wrap.querySelector('[data-eto-variant-radio]:checked');
+    var variantInput = wrap.querySelector('[data-eto-variant-hidden]');
+    var variantId = variantRadio ? variantRadio.getAttribute('data-eto-variant-id') : (variantInput ? variantInput.value : '');
+    if (variantId) setHidden('id', variantId);
+
+    // ETO Add to cart: variant by plan (Flexible vs One-time), quantity by pack (1, 2, or 3)
+    var etoAtcBtn = wrap.querySelector('.eto-atc-btn');
+    if (etoAtcBtn) {
+      var variantId = isSubs ? etoAtcBtn.getAttribute('data-eto-variant-flexible') : etoAtcBtn.getAttribute('data-eto-variant-onetime');
+      if (variantId) etoAtcBtn.setAttribute('data-variant-ids', variantId);
+      etoAtcBtn.setAttribute('data-qtys', String(qty));
+    }
+    // ETO Add to cart: show actual price (eto-atc-actual-price) and discounted/original (strikethrough). Strip any HTML from theme money filter.
+    function stripMoneyHtml(str) {
+      if (typeof str !== 'string') return '';
+      var div = document.createElement('div');
+      div.innerHTML = str;
+      return (div.textContent || div.innerText || str).trim();
+    }
+    var atcWrap = wrap.querySelector('.eto-landing-add-to-cart-wrap');
+    if (atcWrap) {
+      var prefix = isSubs ? 'f' : 'o';
+      var priceKey = 'data-eto-price-' + prefix + '-' + qty;
+      var compareKey = 'data-eto-compare-' + prefix + '-' + qty;
+      var priceRaw = atcWrap.getAttribute(priceKey) || '';
+      var compareRaw = atcWrap.getAttribute(compareKey) || '';
+      var priceText = stripMoneyHtml(priceRaw);
+      var compareText = stripMoneyHtml(compareRaw);
+      var priceEl = atcWrap.querySelector('.eto-atc-actual-price');
+      var compareEl = atcWrap.querySelector('[data-eto-atc-compare]');
+      if (priceEl) priceEl.textContent = priceText;
+      if (compareEl) {
+        compareEl.textContent = compareText;
+        compareEl.style.display = (isSubs && compareText && compareText !== priceText) ? '' : 'none';
+      }
+    }
+  }
+
+  wrap.querySelectorAll('[data-eto-tab]').forEach(function(block) {
+    block.addEventListener('click', function() {
+      var radio = block.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+      updateUI();
+    });
+  });
+  wrap.querySelectorAll('.eto-quantity-card').forEach(function(label) {
+    label.addEventListener('click', function() {
+      wrap.querySelectorAll('.eto-quantity-card').forEach(function(l) { l.classList.remove('selected'); });
+      label.classList.add('selected');
+      var radio = label.querySelector('.eto-quantity-radio');
+      if (radio) radio.checked = true;
+      updateUI();
+    });
+  });
+  var qtySelector = wrap.querySelector('[data-eto-qty-selector]');
+  if (qtySelector) {
+    var qtyNum = wrap.querySelector('[data-eto-qty-num]');
+    var qtyMinus = wrap.querySelector('[data-eto-qty-minus]');
+    var qtyPlus = wrap.querySelector('[data-eto-qty-plus]');
+    function setQtyFromInput() {
+      var val = parseInt(qtyNum.value, 10) || 1;
+      val = Math.min(3, Math.max(1, val));
+      qtyNum.value = String(val);
+      var card = wrap.querySelector('.eto-quantity-card[data-eto-quantity="' + val + '"]');
+      if (card) {
+        wrap.querySelectorAll('.eto-quantity-card').forEach(function(l) { l.classList.remove('selected'); });
+        card.classList.add('selected');
+        var radio = card.querySelector('.eto-quantity-radio');
+        if (radio) radio.checked = true;
+        updateUI();
+      }
+    }
+    if (qtyMinus) {
+      qtyMinus.addEventListener('click', function() {
+        var val = parseInt(qtyNum.value, 10) || 1;
+        if (val > 1) { qtyNum.value = String(val - 1); setQtyFromInput(); }
+      });
+    }
+    if (qtyPlus) {
+      qtyPlus.addEventListener('click', function() {
+        var val = parseInt(qtyNum.value, 10) || 1;
+        if (val < 3) { qtyNum.value = String(val + 1); setQtyFromInput(); }
+      });
+    }
+    if (qtyNum) {
+      qtyNum.addEventListener('change', setQtyFromInput);
+      qtyNum.addEventListener('input', function() {
+        var v = qtyNum.value.replace(/\D/g, '');
+        if (v !== '') qtyNum.value = v;
+      });
+    }
+  }
+  wrap.querySelectorAll('.eto-flavour-card').forEach(function(label) {
+    label.addEventListener('click', function() {
+      wrap.querySelectorAll('.eto-flavour-card').forEach(function(l) { l.classList.remove('selected'); });
+      label.classList.add('selected');
+      updateUI();
+    });
+  });
+  wrap.querySelectorAll('[data-eto-variant-radio]').forEach(function(radio) {
+    radio.addEventListener('change', function() { updateUI(); });
+  });
+
+  updateUI();
+
+  // ETO Add to cart: one variant per plan, quantity = pack (1, 2, or 3); then redirect to checkout if data-redirect set
+  var etoAtcBtn = wrap.querySelector('.eto-atc-btn');
+  if (etoAtcBtn) {
+    etoAtcBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var btn = e.currentTarget;
+      var variantId = btn.getAttribute('data-variant-ids');
+      var qty = parseInt(btn.getAttribute('data-qtys'), 10) || 1;
+      var redirectUrl = btn.getAttribute('data-redirect');
+      if (!variantId) return;
+
+      var item = { id: parseInt(variantId, 10), quantity: qty };
+      btn.classList.add('is-loading');
+
+      var root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+      var addUrl = (root.replace(/\/$/, '') + '/cart/add.js').replace(/\/\/+/, '/');
+
+      fetch(addUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ items: [item] })
+      })
+      .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+      .then(function(result) {
+        if (result.ok) {
+          if (redirectUrl) {
+            var goTo = (redirectUrl.indexOf('/') === 0) ? (root.replace(/\/$/, '') + redirectUrl).replace(/\/\/+/, '/') : redirectUrl;
+            window.location.href = goTo;
+            return;
+          }
+          setTimeout(function() {
+            var cartUrl = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) ? (String(window.Shopify.routes.root) + 'cart.js') : '/cart.js';
+            fetch(cartUrl).then(function(r) { return r.json(); }).then(function(cart) {
+              if (window.halo && typeof window.halo.updateSidebarCart === 'function') window.halo.updateSidebarCart(cart);
+              document.body.classList.add('cart-sidebar-show');
+            }).catch(function() {
+              if (window.halo && typeof window.halo.updateSidebarCart === 'function') window.halo.updateSidebarCart({ item_count: 1 });
+              document.body.classList.add('cart-sidebar-show');
+            });
+          }, 350);
+        } else {
+          if (result.data && result.data.description) console.error('Cart add:', result.data.description);
+        }
+      })
+      .catch(function(err) { console.error('ETO add to cart:', err); })
+      .finally(function() { setTimeout(function() { btn.classList.remove('is-loading'); }, 600); });
+    });
+  }
+
+  // Ensure all money displays show plain text (no HTML from theme money filter)
+  function sanitizeMoneyDisplays() {
+    wrap.querySelectorAll('[data-eto-subs-price], [data-eto-one-time-price], .eto-quantity-price').forEach(function(el) {
+      if (el.children.length || (el.innerHTML && el.innerHTML.indexOf('<') !== -1)) {
+        el.textContent = el.textContent || el.innerText || '';
+      }
+    });
+  }
+  sanitizeMoneyDisplays();
+})();
+</script>
+{%- endif -%}

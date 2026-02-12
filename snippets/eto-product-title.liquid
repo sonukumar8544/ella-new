@@ -1,0 +1,132 @@
+<!-- eto-product-title -->
+{%- liquid
+  assign fontsize_text = block.settings.fontsize_text | default: 28
+  assign fontsize_text_mb = block.settings.fontsize_text_mb | default: 20
+  assign color_title = block.settings.color_title | default: '#374650'
+-%}
+
+<div class="eto-product-title-wrap" style="--eto-title-color: {{ color_title }}; --eto-title-size: {{ fontsize_text | append: 'px' }}; --eto-title-size-mb: {{ fontsize_text_mb | append: 'px' }};">
+  <h1 class="eto-product-title productView-title">
+    <span class="eto-product-title-text">{{ product.title | escape }}</span>
+  </h1>
+  <span class="eto-product-title-line" aria-hidden="true"></span>
+
+  <div class="eto-product-title-social-proof" role="group" aria-label="Product rating and user count">
+    <span class="eto-product-title-stars" aria-hidden="true">
+      {%- for i in (1..5) -%}
+        <svg class="eto-product-title-star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M9 1l2.09 4.24L16 6.09l-3.41 3.32.8 4.67L9 12.18l-4.39 2.9.8-4.67L2 6.09l4.91-.85L9 1z" fill="currentColor"/>
+        </svg>
+      {%- endfor -%}
+    </span>
+    <span class="eto-product-title-users-text">From 50,000+ Daily Users</span>
+  </div>
+</div>
+
+<style>
+  .eto-product-title-wrap {
+    margin: 0;
+    padding: 0;
+  }
+
+  .eto-product-title {
+    font-size: var(--eto-title-size-mb, 20px);
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--eto-title-color, #374650);
+    margin: 0 0 12px 0;
+    letter-spacing: -0.02em;
+    max-width: 100%;
+  }
+
+  @media (min-width: 750px) {
+    .eto-product-title {
+      font-size: var(--eto-title-size, 28px);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+  }
+
+  .eto-product-title-text {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .eto-product-title-line {
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: #006a91;
+    margin: 0 0 14px 0;
+  }
+
+  .eto-product-title-social-proof {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 8px 14px 8px 12px;
+    background: rgba(0, 106, 145, 0.06);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 106, 145, 0.12);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
+  }
+
+  .eto-product-title-social-proof:hover {
+    background: rgba(0, 106, 145, 0.09);
+    border-color: rgba(0, 106, 145, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .eto-product-title-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .eto-product-title-star {
+    color: #e6b800;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .eto-product-title-social-proof:hover .eto-product-title-star {
+    transform: scale(1.08);
+  }
+
+  .eto-product-title-star:nth-child(1) { transition-delay: 0ms; }
+  .eto-product-title-star:nth-child(2) { transition-delay: 20ms; }
+  .eto-product-title-star:nth-child(3) { transition-delay: 40ms; }
+  .eto-product-title-star:nth-child(4) { transition-delay: 60ms; }
+  .eto-product-title-star:nth-child(5) { transition-delay: 80ms; }
+
+  .eto-product-title-users-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374650;
+    letter-spacing: 0.02em;
+  }
+
+  @media (min-width: 750px) {
+    .eto-product-title-line {
+      margin-bottom: 16px;
+    }
+
+    .eto-product-title-social-proof {
+      padding: 9px 16px 9px 14px;
+      gap: 10px;
+    }
+
+    .eto-product-title-star {
+      width: 20px;
+      height: 20px;
+    }
+
+    .eto-product-title-users-text {
+      font-size: 14px;
+    }
+  }
+</style>

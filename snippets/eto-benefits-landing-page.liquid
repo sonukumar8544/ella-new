@@ -1,0 +1,287 @@
+<div class="eto-lg-page-benefits">
+  <div class="eto-lg-page-testimonial-card">
+    <div class="eto-lg-page-testimonial-inner">
+      <span class="eto-lg-page-testimonial-quote-icon" aria-hidden="true">
+        <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 14V8c0-4 3-7 7-7v3c-2 0-3.5 1.5-3.5 3.5V14M28 14V8c0-4 3-7 7-7v3c-2 0-3.5 1.5-3.5 3.5V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <p class="eto-lg-page-testimonial-text">Didn't expect much at first, but wow! I'm 52 and after a few weeks of drinking this every morning, I just feel much better overall. Plus it tastes amazing - like an actual hot chocolate!</p>
+      <p class="eto-lg-page-testimonial-attribution"><span class="eto-lg-page-testimonial-name">Catherine</span>, United Kingdom</p>
+    </div>
+    <div class="eto-lg-page-testimonial-avatar">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Immune_-01-01_400x_d9740696-27a1-4978-bcef-85a8f4cbeba9.webp?v=1747658614"
+        alt="Catherine, United Kingdom"
+        width="140"
+        height="140"
+        loading="lazy"
+        class="eto-lg-page-testimonial-avatar-img"
+      >
+    </div>
+  </div>
+
+  <div class="eto-lg-page-benefits-list-wrapper">
+    <h3 class="eto-lg-page-benefits-heading">
+      Nourish your <strong class="eto-lg-page-benefits-heading-accent">Body Daily</strong> with Cocoa, Collagen & Essential Nutrients
+    </h3>
+
+    <ul class="eto-lg-page-benefits-list">
+      <li class="eto-lg-page-benefits-item">
+        <span class="eto-lg-page-benefits-icon" aria-hidden="true">
+          <svg class="eto-lg-page-benefits-check" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5.5L5 9.5L13 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="eto-lg-page-benefits-item-text"><strong class="eto-lg-page-benefits-item-title">MULTI-SOURCE COLLAGEN</strong> – 8090mg of marine, chicken & bovine collagen in every scoop</span>
+      </li>
+      <li class="eto-lg-page-benefits-item">
+        <span class="eto-lg-page-benefits-icon" aria-hidden="true">
+          <svg class="eto-lg-page-benefits-check" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5.5L5 9.5L13 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="eto-lg-page-benefits-item-text"><strong class="eto-lg-page-benefits-item-title">REAL COCOA</strong> – Rich, indulgent chocolate taste made with genuine cocoa powder</span>
+      </li>
+      <li class="eto-lg-page-benefits-item">
+        <span class="eto-lg-page-benefits-icon" aria-hidden="true">
+          <svg class="eto-lg-page-benefits-check" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5.5L5 9.5L13 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="eto-lg-page-benefits-item-text"><strong class="eto-lg-page-benefits-item-title">HIGH ABSORPTION FORMULA</strong> – 300mg dose of Liposomal Vitamin C to support Collagen absorption</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% style %}
+  .eto-lg-page-benefits {
+    --eto-lg-page-accent: #006a91;
+    --eto-lg-page-accent-light: #e6f4f9;
+    --eto-lg-page-accent-soft: rgba(0, 106, 145, 0.08);
+    --eto-lg-page-text: #374650;
+    --eto-lg-page-text-muted: #5c6b76;
+    --eto-lg-page-card-bg: #ffffff;
+    --eto-lg-page-card-border: rgba(0, 106, 145, 0.12);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .eto-lg-page-testimonial-card {
+    position: relative;
+    background: var(--eto-lg-page-card-bg);
+    border: 1px solid var(--eto-lg-page-card-border);
+    border-left: 3px solid var(--eto-lg-page-accent);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 106, 145, 0.08);
+    padding: 28px 32px 28px 28px;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+    min-height: 140px;
+  }
+
+  .eto-lg-page-testimonial-inner {
+    grid-column: 1;
+    position: relative;
+    padding-left: 8px;
+  }
+
+  .eto-lg-page-testimonial-quote-icon {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    color: var(--eto-lg-page-accent);
+    opacity: 0.35;
+    line-height: 0;
+  }
+
+  .eto-lg-page-testimonial-quote-icon svg {
+    display: block;
+  }
+
+  .eto-lg-page-testimonial-text {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--eto-lg-page-text);
+    font-weight: 500;
+    margin: 0 0 16px 0;
+    max-width: 92%;
+  }
+
+  .eto-lg-page-testimonial-attribution {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--eto-lg-page-text-muted);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .eto-lg-page-testimonial-name {
+    color: var(--eto-lg-page-accent);
+    font-weight: 600;
+  }
+
+  .eto-lg-page-testimonial-avatar {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: center;
+  }
+
+  .eto-lg-page-testimonial-avatar-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--eto-lg-page-accent-light);
+    box-shadow: 0 6px 24px rgba(0, 106, 145, 0.12);
+    display: block;
+  }
+
+  .eto-lg-page-benefits-list-wrapper {
+    padding: 0;
+  }
+
+  .eto-lg-page-benefits-heading {
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.35;
+    color: var(--eto-lg-page-text);
+    font-weight: 600;
+    margin: 0 0 28px 0;
+    letter-spacing: -0.02em;
+    max-width: 42ch;
+  }
+
+  .eto-lg-page-benefits-heading-accent {
+    color: var(--eto-lg-page-accent);
+    font-weight: 700;
+    position: relative;
+  }
+
+  .eto-lg-page-benefits-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .eto-lg-page-benefits-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--eto-lg-page-text);
+    padding: 18px 20px;
+    margin-bottom: 8px;
+    background: var(--eto-lg-page-accent-soft);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    border-left: 3px solid var(--eto-lg-page-accent);
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .eto-lg-page-benefits-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .eto-lg-page-benefits-item:hover {
+    background: rgba(0, 106, 145, 0.06);
+    border-color: rgba(0, 106, 145, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 106, 145, 0.06);
+  }
+
+  .eto-lg-page-benefits-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--eto-lg-page-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .eto-lg-page-benefits-check {
+    flex-shrink: 0;
+  }
+
+  .eto-lg-page-benefits-item-text {
+    flex: 1;
+    padding-top: 1px;
+  }
+
+  .eto-lg-page-benefits-item-title {
+    color: var(--eto-lg-page-accent);
+    font-weight: 700;
+    font-size: 0.95em;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 749px) {
+    .eto-lg-page-testimonial-card {
+      grid-template-columns: 1fr;
+      padding: 24px 20px 24px 20px;
+      margin-bottom: 32px;
+      gap: 20px;
+    }
+
+    .eto-lg-page-testimonial-inner {
+      order: 1;
+      padding-left: 6px;
+    }
+
+    .eto-lg-page-testimonial-quote-icon {
+      top: -2px;
+    }
+
+    .eto-lg-page-testimonial-quote-icon svg {
+      width: 26px;
+      height: auto;
+    }
+
+    .eto-lg-page-testimonial-text {
+      max-width: 100%;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .eto-lg-page-testimonial-avatar {
+      grid-column: 1;
+      grid-row: auto;
+      order: 2;
+      justify-self: start;
+    }
+
+    .eto-lg-page-testimonial-avatar-img {
+      width: 72px;
+      height: 72px;
+      border-width: 2px;
+    }
+
+    .eto-lg-page-benefits-heading {
+      margin-bottom: 22px;
+      max-width: 100%;
+    }
+
+    .eto-lg-page-benefits-item {
+      font-size: 14px;
+      gap: 14px;
+      padding: 16px 18px;
+      margin-bottom: 6px;
+    }
+
+    .eto-lg-page-benefits-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+{% endstyle %}

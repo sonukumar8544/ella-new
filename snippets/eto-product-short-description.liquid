@@ -1,0 +1,38 @@
+<!-- eto-product-short-description: one-liner benefits -->
+{% if product.metafields.custom.product_3_0_short_description != blank %}
+  <div class="eto-product-short-description">
+    <p class="eto-product-short-description-text">{{ product.metafields.custom.product_3_0_short_description.value }}</p>
+  </div>
+
+  <style>
+    .eto-product-short-description {
+      margin: 0;
+      padding: 14px 18px 14px 18px;
+      background: rgba(0, 106, 145, 0.06);
+      /* border-left: 4px solid #006a91; */
+      border-radius: 10px;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .eto-product-short-description-text {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 500;
+      color: #374650;
+      letter-spacing: 0.01em;
+    }
+
+    @media (min-width: 750px) {
+      .eto-product-short-description {
+        padding: 16px 22px 16px 22px;
+      }
+
+      .eto-product-short-description-text {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+    }
+  </style>
+{% endif %}
