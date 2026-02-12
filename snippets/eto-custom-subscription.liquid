@@ -589,14 +589,19 @@
   .eto-celebrate-wrap {
     position: relative;
     text-align: center;
-    margin-top: 16px;
-    min-height: 44px;
+    margin: 0;
+    max-height: 0;
+    min-height: 0;
+    overflow: hidden;
     pointer-events: none;
     opacity: 0;
     transform: scale(0.9);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.35s ease, margin 0.35s ease;
   }
   .eto-subscription-wrapper.eto-celebrate .eto-celebrate-wrap {
+    margin-top: 16px;
+    max-height: 120px;
+    min-height: 44px;
     opacity: 1;
     transform: scale(1);
   }
