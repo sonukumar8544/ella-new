@@ -3,6 +3,7 @@
   {{ product.metafields.custom.product_3_0_clinical_content.value }}
   {% endif %}
 {% endcomment %}
+{% unless product.handle == 'coffee-enema-kit' %}
 <div class="shipping-benefits">
   <div class="shipping-benefit clinicalSlider">
     <p>Clinically Studied Ingredients</p>
@@ -10,6 +11,7 @@
     <p>3rd-Party Tested</p>
   </div>
 </div>
+{% endunless %}
 
 <style>
    @media(min-width:600px){
