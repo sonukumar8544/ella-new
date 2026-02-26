@@ -16,8 +16,8 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image_slide": "shopify:\/\/shop_images\/Banner-1_15a310d5-07c5-4aac-bb12-af4691ba9cf2.png",
-            "image_slide_mb": "shopify:\/\/shop_images\/Updated_mobile_Banner.png",
+            "image_slide": "shopify://shop_images/Banner-1_15a310d5-07c5-4aac-bb12-af4691ba9cf2.png",
+            "image_slide_mb": "shopify://shop_images/Updated_mobile_Banner.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "10.2",
@@ -85,7 +85,7 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "Limited time only!",
-            "link": "shopify:\/\/collections\/all-products",
+            "link": "shopify://collections/all-products",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "#",
@@ -117,8 +117,8 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image_slide": "shopify:\/\/shop_images\/Desktop_1.png",
-            "image_slide_mb": "shopify:\/\/shop_images\/mobile_5.png",
+            "image_slide": "shopify://shop_images/Desktop_1.png",
+            "image_slide_mb": "shopify://shop_images/mobile_5.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "13.2",
@@ -186,7 +186,7 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "",
-            "link": "shopify:\/\/products\/vitamin-e-tocotrienols-supplement",
+            "link": "shopify://products/vitamin-e-tocotrienols-supplement",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "#",
@@ -217,8 +217,8 @@
         "image_xzMdTV": {
           "type": "image",
           "settings": {
-            "image_slide": "shopify:\/\/shop_images\/01_One_Goal__A_Healthier_You_2_85ab1e6d-e4a4-40b8-928e-58d9f16d88b8.png",
-            "image_slide_mb": "shopify:\/\/shop_images\/confirm_One_Goal__A_Healthier_You_1_c3613369-19a8-49b4-b011-2dffca6797e6.png",
+            "image_slide": "shopify://shop_images/01_One_Goal__A_Healthier_You_2_85ab1e6d-e4a4-40b8-928e-58d9f16d88b8.png",
+            "image_slide_mb": "shopify://shop_images/confirm_One_Goal__A_Healthier_You_1_c3613369-19a8-49b4-b011-2dffca6797e6.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "13.2",
@@ -286,7 +286,7 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "",
-            "link": "shopify:\/\/products\/vitamin-e-tocotrienols-supplement",
+            "link": "shopify://products/vitamin-e-tocotrienols-supplement",
             "button_style": "button_1",
             "button_slide_2": "",
             "link_2": "#",
@@ -318,8 +318,8 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image_slide": "shopify:\/\/shop_images\/Mothersday_banner1.png",
-            "image_slide_mb": "shopify:\/\/shop_images\/mothers_day_mobile_banner.png",
+            "image_slide": "shopify://shop_images/Mothersday_banner1.png",
+            "image_slide_mb": "shopify://shop_images/mothers_day_mobile_banner.png",
             "alignment": "left",
             "enable_custom_position": true,
             "custom_horizontal": "21.2",
@@ -387,10 +387,10 @@
             "enable_underline": false,
             "font_size_link": 28,
             "button_slide": "",
-            "link": "shopify:\/\/collections\/all-products",
+            "link": "shopify://collections/all-products",
             "button_style": "button_1",
             "button_slide_2": "",
-            "link_2": "shopify:\/\/pages\/wellness-quiz",
+            "link_2": "shopify://pages/wellness-quiz",
             "min_width_banner_button": 130,
             "color_button": "#ffffff",
             "border_button": "#086b92",
@@ -511,8 +511,8 @@
             "mg_bottom_text": 0,
             "font_weight_text": "500",
             "font_style_text": "normal",
-            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Shop Top Selling Vitamins→<\/p>",
-            "link": "shopify:\/\/collections\/best-seller-prouct"
+            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Shop Top Selling Vitamins→</p>",
+            "link": "shopify://collections/best-seller-prouct"
           }
         },
         "044503cd-52c1-4af3-8077-be921f131033": {
@@ -529,8 +529,8 @@
             "mg_bottom_text": 0,
             "font_weight_text": "400",
             "font_style_text": "normal",
-            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Find My Wellness→<\/p>",
-            "link": "shopify:\/\/pages\/wellness-quiz"
+            "description": "<p style=\"text-align:center; font-weight: 600; margin:2px;\">Find My Wellness→</p>",
+            "link": "shopify://pages/wellness-quiz"
           }
         },
         "16eb8900-abdc-40a0-bfc5-c69705db1f6b": {
@@ -542,7 +542,7 @@
             "icon_width": 30,
             "icon_height": 30,
             "icon_mg_right": 20,
-            "text": "Know Your ingredients JUST LANDED! <br><b>Shop New Arrivals →<\/b>",
+            "text": "Know Your ingredients JUST LANDED! <br><b>Shop New Arrivals →</b>",
             "font_size_text": 15,
             "font_size_text_mb": 16,
             "mg_bottom_text": 0,
@@ -599,7 +599,7 @@
         "marquee_zDL33H": {
           "type": "marquee",
           "settings": {
-            "text": "<p><em><strong>FDA-GRAS<\/strong><\/em> Approved<\/p>",
+            "text": "<p><em><strong>FDA-GRAS</strong></em> Approved</p>",
             "color": "#ffffff",
             "color_mb": "#ffffff",
             "bg_color": "rgba(0,0,0,0)",
@@ -609,7 +609,7 @@
         "marquee_aQPLj6": {
           "type": "marquee",
           "settings": {
-            "text": "<p>3rd-Party <em><strong>Tested<\/strong><\/em><\/p>",
+            "text": "<p>3rd-Party <em><strong>Tested</strong></em></p>",
             "color": "#ffffff",
             "color_mb": "#ffffff",
             "bg_color": "rgba(0,0,0,0)",
@@ -619,7 +619,7 @@
         "marquee_iDyY9K": {
           "type": "marquee",
           "settings": {
-            "text": "<p>150,000+ <em><strong>Satisfied Customers<\/strong><\/em><\/p>",
+            "text": "<p>150,000+ <em><strong>Satisfied Customers</strong></em></p>",
             "color": "#ffffff",
             "color_mb": "#ffffff",
             "bg_color": "rgba(0,0,0,0)",
@@ -669,7 +669,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\nTop Selling Supplements    <\/h2>\n     <\/div>\n<\/section>\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n\/* Responsive *\/\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n<\/style>"
+        "custom_liquid": "<section class=\"healthgoal-support-section\">\n  <div class=\"healthgoal-support-container\">\n    <h2 class=\"healthgoal-support-heading\">\nTop Selling Supplements    </h2>\n     </div>\n</section>\n<style> .healthgoal-support-section {\n  padding: 40px 20px 1px 40px;\n  text-align: center;\n  background-color: #f2f3f9;\n}\n\n.healthgoal-support-container {\n  max-width: 900px;\n  margin: 0 auto;\n}\n\n.healthgoal-support-heading {\n font-size: 35px;\n    font-weight: 700;\n    color: #374650;\n    line-height: 1.2;\nmax-width: 700px;\nmargin: auto;\nmargin-bottom: 25px;\n}\n\n.healthgoal-support-heading .highlight {\n  font-weight: 800;\n  color: #086b92;\n}\n\n.healthgoal-support-heading .divider {\n  margin: 0 8px;\n  color: #777;\n}\n\n.healthgoal-support-heading .subtext {\n  color: #666;\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .healthgoal-support-heading {\n    font-size: 28px;\n  }\n}\n</style>"
       }
     },
     "16409351508cd2f3e1": {
@@ -776,133 +776,133 @@
         "da6d0acb-9dd4-4650-af97-c64332dbd66c": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/skin_health_57e05d31-6168-4823-ab8c-f5d102f28582.webp",
+            "image": "shopify://shop_images/skin_health_57e05d31-6168-4823-ab8c-f5d102f28582.webp",
             "title": "Glowing Skin",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/skin-health"
+            "link": "shopify://collections/skin-health"
           }
         },
         "436f9f9f-88f0-4c62-b5e2-1af36a3e67c0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gut_health_e26d1e99-bcab-410a-8379-07421a7a43f0.webp",
+            "image": "shopify://shop_images/gut_health_e26d1e99-bcab-410a-8379-07421a7a43f0.webp",
             "title": "A Happy Gut",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/gut-health"
+            "link": "shopify://collections/gut-health"
           }
         },
         "5c3a6277-76fd-42a6-8dcf-55cbd04599df": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bone_health_5480718a-a926-49c4-9009-9479049d615b.webp",
+            "image": "shopify://shop_images/bone_health_5480718a-a926-49c4-9009-9479049d615b.webp",
             "title": "Bone Health",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/bone-health"
+            "link": "shopify://collections/bone-health"
           }
         },
         "bf8d3101-7b0f-473f-9518-37843c89a01d": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Eyes_Health.webp",
+            "image": "shopify://shop_images/Eyes_Health.webp",
             "title": "Clear Vision",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/eye-health"
+            "link": "shopify://collections/eye-health"
           }
         },
         "14647100-8949-4e6d-bdd9-9cbcf385d3b0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Immune_-01-01_400x_d9740696-27a1-4978-bcef-85a8f4cbeba9.webp",
+            "image": "shopify://shop_images/Immune_-01-01_400x_d9740696-27a1-4978-bcef-85a8f4cbeba9.webp",
             "title": "Stronger Immunity",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/immune-health"
+            "link": "shopify://collections/immune-health"
           }
         },
         "968532e7-c107-46a9-8870-68fa9f842f1f": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Muscle_400x_9c758685-c219-41b2-a64d-5e1ba57a6aab.webp",
+            "image": "shopify://shop_images/Muscle_400x_9c758685-c219-41b2-a64d-5e1ba57a6aab.webp",
             "title": "Muscle Strength & More Energy",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/muscle-health"
+            "link": "shopify://collections/muscle-health"
           }
         },
         "image_efb37f": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/BRAINbgremove_400x_d67a9982-5e1e-4028-99e8-b03d2038a042.webp",
+            "image": "shopify://shop_images/BRAINbgremove_400x_d67a9982-5e1e-4028-99e8-b03d2038a042.webp",
             "title": "Mental Clarity",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/brain-health"
+            "link": "shopify://collections/brain-health"
           }
         },
         "image_ktXgfw": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Heart_400x_c33f35a3-cf89-4ead-8201-5c86fe3852d0.webp",
+            "image": "shopify://shop_images/Heart_400x_c33f35a3-cf89-4ead-8201-5c86fe3852d0.webp",
             "title": "Heart Support",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/heart-health"
+            "link": "shopify://collections/heart-health"
           }
         },
         "image_4hpFhD": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/HORMONEbgremove_400x_bd3aaaba-4c6a-41de-a15f-fac32657b108.webp",
+            "image": "shopify://shop_images/HORMONEbgremove_400x_bd3aaaba-4c6a-41de-a15f-fac32657b108.webp",
             "title": "Balanced Hormones",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/hormone-health"
+            "link": "shopify://collections/hormone-health"
           }
         },
         "image_UDdqVg": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/AGINGbgremove_400x_57976ca5-a349-4566-a02e-a81b883bb92f.webp",
+            "image": "shopify://shop_images/AGINGbgremove_400x_57976ca5-a349-4566-a02e-a81b883bb92f.webp",
             "title": "Healthy Aging",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/healthy-aging"
+            "link": "shopify://collections/healthy-aging"
           }
         },
         "image_K8bjTV": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Detox_400x_377c36e5-f0ab-4907-9665-6be0cd72cecb.webp",
+            "image": "shopify://shop_images/Detox_400x_377c36e5-f0ab-4907-9665-6be0cd72cecb.webp",
             "title": "Body Detox",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/ultimate-detoxification-duo"
+            "link": "shopify://collections/ultimate-detoxification-duo"
           }
         }
       },
@@ -956,7 +956,7 @@
         "fontsize_btn": 18,
         "btn_spacing_top": 25,
         "btn_color": "#086b92",
-        "btn_link": "shopify:\/\/collections\/health-goals",
+        "btn_link": "shopify://collections/health-goals",
         "btn_color_border": "#086b92",
         "btn_color_hover": "#3c3c3c",
         "btn_hover_border_color": "#3c3c3c",
@@ -1172,7 +1172,7 @@
           "settings": {
             "button_style": "button_1",
             "button_label": "Discover Eannatto Now",
-            "button_link": "shopify:\/\/pages\/wellness-quiz",
+            "button_link": "shopify://pages/wellness-quiz",
             "margin_top_button": 10,
             "enable_underline_button": false,
             "button_color": "#ffffff",
@@ -1191,7 +1191,7 @@
           "settings": {
             "button_style": "button_1",
             "button_label": "Shop Hydrogen Tabs",
-            "button_link": "shopify:\/\/pages\/wellness-quiz",
+            "button_link": "shopify://pages/wellness-quiz",
             "margin_top_button": 10,
             "enable_underline_button": false,
             "button_color": "#ffffff",
@@ -1238,85 +1238,85 @@
         "image_NiUayJ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Astaxanthin_Ella.png",
+            "image": "shopify://shop_images/Astaxanthin_Ella.png",
             "title": "Astaxanthin",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-astaxanthin"
+            "link": "shopify://pages/ingredients-astaxanthin"
           }
         },
         "image_6rzkkW": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/zeolite_New.png",
+            "image": "shopify://shop_images/zeolite_New.png",
             "title": "Zeolite",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-zeolite"
+            "link": "shopify://pages/ingredients-zeolite"
           }
         },
         "image_BEqWQX": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/humic_acid_Ella.png",
+            "image": "shopify://shop_images/humic_acid_Ella.png",
             "title": "Humic Acid",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-humic-acid"
+            "link": "shopify://pages/ingredients-humic-acid"
           }
         },
         "image_9Q4bEQ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Bovine_Colostrum_Ella.png",
+            "image": "shopify://shop_images/Bovine_Colostrum_Ella.png",
             "title": "Bovine Colostrum",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-bovine-colostrum"
+            "link": "shopify://pages/ingredients-bovine-colostrum"
           }
         },
         "image_cGzxgz": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fulvic_acid_Ella.png",
+            "image": "shopify://shop_images/fulvic_acid_Ella.png",
             "title": "Fulvic Acid",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-fulvic-acid"
+            "link": "shopify://pages/ingredients-fulvic-acid"
           }
         },
         "image_p3UjEF": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Magnesium_Ella.png",
+            "image": "shopify://shop_images/Magnesium_Ella.png",
             "title": "Magnesium",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-magnesium"
+            "link": "shopify://pages/ingredients-magnesium"
           }
         },
         "image_JBhaer": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Geranylgeraniol.png",
+            "image": "shopify://shop_images/Geranylgeraniol.png",
             "title": "Tocotrienols",
             "color_text": "#191c1f",
             "color_text_hover": "#086b92",
             "description": "",
             "color_des": "#086b92",
-            "link": "shopify:\/\/pages\/ingredients-tocotrienols"
+            "link": "shopify://pages/ingredients-tocotrienols"
           }
         }
       },
@@ -1348,7 +1348,7 @@
         "mg_bottom_title": 15,
         "enable_border_title": false,
         "border_color_title": "#051c42",
-        "brand_des": "<p><strong>Pure, Potent, Proven <\/strong><br\/>Backed by science, crafted for impact—because better health starts with better ingredients.<\/p>",
+        "brand_des": "<p><strong>Pure, Potent, Proven </strong><br/>Backed by science, crafted for impact—because better health starts with better ingredients.</p>",
         "color_des": "#374650",
         "fontsize_des": 16,
         "mg_bottom_des": 22,
@@ -1357,7 +1357,7 @@
         "font_weight_view_all": "600",
         "mg_bottom_view": 30,
         "enable_border_view_all": true,
-        "link_view_all": "shopify:\/\/collections",
+        "link_view_all": "shopify://collections",
         "color_view_all": "#ffffff",
         "icon_view_all": "",
         "color_view_all_icon": "rgba(0,0,0,0)",
@@ -1366,7 +1366,7 @@
         "fontsize_btn": 17,
         "btn_spacing_top": 12,
         "btn_color": "#086b92",
-        "btn_link": "shopify:\/\/collections\/all-products",
+        "btn_link": "shopify://collections/all-products",
         "btn_color_border": "#086b92",
         "btn_color_hover": "#828282",
         "btn_hover_border_color": "#828282",
@@ -1460,7 +1460,7 @@
           "settings": {
             "text": "",
             "text_icon": "",
-            "text_description": "<strong>Shipping<\/strong> calculated at checkout.",
+            "text_description": "<strong>Shipping</strong> calculated at checkout.",
             "fontsize_text": 16,
             "content_spacing": 0,
             "custom_block_align": "left",
@@ -1614,7 +1614,7 @@
           "settings": {
             "button_style": "button_1",
             "button_label": "let’s start with the quiz",
-            "button_link": "shopify:\/\/pages\/wellness-quiz",
+            "button_link": "shopify://pages/wellness-quiz",
             "margin_top_button": 30,
             "enable_underline_button": false,
             "button_color": "#086b92",
@@ -1631,7 +1631,7 @@
         "text_BqyXY9": {
           "type": "text",
           "settings": {
-            "text": "<p>Find the perfect supplement for your health concerns in under 2 minutes.<\/p>",
+            "text": "<p>Find the perfect supplement for your health concerns in under 2 minutes.</p>",
             "text_size": 18,
             "text_size_mb": 16,
             "text_font_weight": "400",
@@ -1674,7 +1674,7 @@
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_3.png",
+            "image": "shopify://shop_images/Frame_1618872901_3.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -1686,7 +1686,7 @@
         "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872902.png",
+            "image": "shopify://shop_images/Frame_1618872902.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -1698,7 +1698,7 @@
         "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_1.png",
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -1710,7 +1710,7 @@
         "image_aVixiN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_5.png",
+            "image": "shopify://shop_images/Frame_1618872901_5.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -1722,7 +1722,7 @@
         "image_NyLNnA": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901.png",
+            "image": "shopify://shop_images/Frame_1618872901.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -1780,7 +1780,7 @@
         "fontsize_btn": 16,
         "btn_spacing_top": 16,
         "btn_color": "#086b92",
-        "btn_link": "shopify:\/\/collections\/health-goals",
+        "btn_link": "shopify://collections/health-goals",
         "btn_color_border": "#828282",
         "btn_color_hover": "#828282",
         "btn_hover_border_color": "#828282",
@@ -1836,7 +1836,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Lab_Tested_truth_about_Tocotrienols.png",
+            "image": "shopify://shop_images/Lab_Tested_truth_about_Tocotrienols.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1867,7 +1867,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/tocotrienols-supplements-scam",
+            "link": "shopify://pages/tocotrienols-supplements-scam",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1890,7 +1890,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/HORMONE_health_ella_600x_5351a580-1d32-4aca-adc1-42a341a953b1.webp",
+            "image": "shopify://shop_images/HORMONE_health_ella_600x_5351a580-1d32-4aca-adc1-42a341a953b1.webp",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1921,7 +1921,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/womes-hormone-health",
+            "link": "shopify://pages/hormone-health",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1944,7 +1944,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/You_Might_be_taking_wrong_vitamin_E.png",
+            "image": "shopify://shop_images/You_Might_be_taking_wrong_vitamin_E.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "top",
@@ -1975,7 +1975,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/only-good-stuff",
+            "link": "shopify://pages/only-good-stuff",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1998,7 +1998,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/4_Clinically_Proven_Hormones_fixes_your_doc.._0c69bf85-3da6-46c6-abb9-9a5079281d23.png",
+            "image": "shopify://shop_images/4_Clinically_Proven_Hormones_fixes_your_doc.._0c69bf85-3da6-46c6-abb9-9a5079281d23.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "top",
@@ -2029,7 +2029,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "https:\/\/wellnessextract.com\/pages\/hormone-health-2",
+            "link": "https://wellnessextract.com/pages/hormone-health-2",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -2140,7 +2140,7 @@
         "image_hc9yCz": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/100__Pure_Annatto-Derived.png",
+            "image": "shopify://shop_images/100__Pure_Annatto-Derived.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -2152,7 +2152,7 @@
         "image_mtK3LK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Clinically_Researched.png",
+            "image": "shopify://shop_images/Clinically_Researched.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -2164,7 +2164,7 @@
         "image_GPzVda": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618873004.png",
+            "image": "shopify://shop_images/Frame_1618873004.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -2176,7 +2176,7 @@
         "image_tQEULN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618873006.png",
+            "image": "shopify://shop_images/Frame_1618873006.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -2188,7 +2188,7 @@
         "image_hNEzdU": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618873005.png",
+            "image": "shopify://shop_images/Frame_1618873005.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -2225,7 +2225,7 @@
         "mg_bottom_title": 0,
         "enable_border_title": false,
         "border_color_title": "#051c42",
-        "brand_des": "<p>\"Why Wellness Extract\"<br\/> <\/p>",
+        "brand_des": "<p>\"Why Wellness Extract\"<br/> </p>",
         "color_des": "#3c3c3c",
         "fontsize_des": 22,
         "mg_bottom_des": 0,
@@ -2243,7 +2243,7 @@
         "fontsize_btn": 16,
         "btn_spacing_top": 16,
         "btn_color": "#086b92",
-        "btn_link": "shopify:\/\/collections\/health-goals",
+        "btn_link": "shopify://collections/health-goals",
         "btn_color_border": "#828282",
         "btn_color_hover": "#828282",
         "btn_hover_border_color": "#828282",
@@ -2293,8 +2293,8 @@
         "large_img_DxC7Jw": {
           "type": "largeImg",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1920x600.png",
-            "mobile_image": "shopify:\/\/shop_images\/Revam_banner_mobile.png",
+            "image": "shopify://shop_images/1920x600.png",
+            "mobile_image": "shopify://shop_images/Revam_banner_mobile.png",
             "enable_max_width_image": false,
             "custom_width_image": 1450,
             "enable_scroll_down": false,
@@ -2423,8 +2423,8 @@
         "product_card_jmkhrW": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/testimonail_Poster.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b1e966a5716b4176aeeda93859e871c1.mp4",
+            "video_poster": "shopify://shop_images/testimonail_Poster.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1e966a5716b4176aeeda93859e871c1.mp4",
             "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
             "product1": ""
           }
@@ -2432,8 +2432,8 @@
         "product_card_8P9xpY": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/buiquinol-for-high-energy.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1461debb69624a7eb7d7cc88953d11f8.mp4",
+            "video_poster": "shopify://shop_images/buiquinol-for-high-energy.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/1461debb69624a7eb7d7cc88953d11f8.mp4",
             "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
             "product1": ""
           }
@@ -2441,8 +2441,8 @@
         "product_card_48Ljjj": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster3.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b1109fe412304e3cbad683c513b09120.mp4",
+            "video_poster": "shopify://shop_images/poster3.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/b1109fe412304e3cbad683c513b09120.mp4",
             "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
             "product1": ""
           }
@@ -2450,8 +2450,8 @@
         "product_card_GqzXGf": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster5.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f284d2989d4048329ff25b17b85e5fbb.mp4",
+            "video_poster": "shopify://shop_images/poster5.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f284d2989d4048329ff25b17b85e5fbb.mp4",
             "product": "cell-dtox-dietary-supplement",
             "product1": ""
           }
@@ -2459,8 +2459,8 @@
         "product_card_KWymqB": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster4.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a6b45dd7efd0488eb26f4dca35e3de40.mp4",
+            "video_poster": "shopify://shop_images/poster4.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/a6b45dd7efd0488eb26f4dca35e3de40.mp4",
             "product": "bovine-colostrum-powder-lactoferrin-supplement-150g",
             "product1": ""
           }
@@ -2468,8 +2468,8 @@
         "product_card_VemeLb": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster6.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9e793d68038548e2a447c654a919f2e4.mp4",
+            "video_poster": "shopify://shop_images/poster6.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/9e793d68038548e2a447c654a919f2e4.mp4",
             "product": "astaxanthin-gg-vitamin-e-tocotrienol-supplement-60softgels",
             "product1": ""
           }
@@ -2477,8 +2477,8 @@
         "product_card_rbHAY6": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster7.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/27bdea2f1403479883f974d08e6b355a.mp4",
+            "video_poster": "shopify://shop_images/poster7.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/27bdea2f1403479883f974d08e6b355a.mp4",
             "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
             "product1": ""
           }
@@ -2486,8 +2486,8 @@
         "product_card_trGFC8": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster8.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3b129a8ddbb7410cad7ea9593e13ec84.mp4",
+            "video_poster": "shopify://shop_images/poster8.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/3b129a8ddbb7410cad7ea9593e13ec84.mp4",
             "product": "vitamin-e-tocotrienols-supplement",
             "product1": ""
           }
@@ -2495,8 +2495,8 @@
         "product_card_EqhNhK": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster9.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/540bf5aae7ed434096c185d9bde2c05f.mp4",
+            "video_poster": "shopify://shop_images/poster9.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/540bf5aae7ed434096c185d9bde2c05f.mp4",
             "product": "h2-molecular-hydrogen",
             "product1": ""
           }
@@ -2504,8 +2504,8 @@
         "product_card_TKCnHb": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster10.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5d922865f41142ba825cc8478e1347a1.mp4",
+            "video_poster": "shopify://shop_images/poster10.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/5d922865f41142ba825cc8478e1347a1.mp4",
             "product": "bio-qunol-ubiquinol-coq10-geranylgeraniol-supplement-150mg",
             "product1": ""
           }
@@ -2513,8 +2513,8 @@
         "product_card_x43L7Q": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster11.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/35d1b535ca6644fd879c5537f7aacc4d.mp4",
+            "video_poster": "shopify://shop_images/poster11.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/35d1b535ca6644fd879c5537f7aacc4d.mp4",
             "product": "cell-dtox-dietary-supplement",
             "product1": ""
           }
@@ -2522,8 +2522,8 @@
         "product_card_Tk4Xjj": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster12.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f1f924c5d14244ee920fa64b019b99a2.mp4",
+            "video_poster": "shopify://shop_images/poster12.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/f1f924c5d14244ee920fa64b019b99a2.mp4",
             "product": "gg-essential-geranylgeraniol-supplement-150mg-60-softgels",
             "product1": ""
           }
@@ -2531,8 +2531,8 @@
         "product_card_twb6fB": {
           "type": "product_card",
           "settings": {
-            "video_poster": "shopify:\/\/shop_images\/poster13.png",
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/af6eb4d2f04f46618f2ce01db416c247.mp4",
+            "video_poster": "shopify://shop_images/poster13.png",
+            "video": "https://cdn.shopify.com/videos/c/o/v/af6eb4d2f04f46618f2ce01db416c247.mp4",
             "product": "annatto-150-vitamin-e-tocotrienols-with-geranylgeraniol",
             "product1": ""
           }
@@ -2568,7 +2568,7 @@
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
             "icon_type": "image",
-            "image": "shopify:\/\/shop_images\/Our_Customers_Keep_Coming_Back_x1393_650x_b29dc341-f944-4c42-846d-48a1391ad6cb.webp",
+            "image": "shopify://shop_images/Our_Customers_Keep_Coming_Back_x1393_650x_b29dc341-f944-4c42-846d-48a1391ad6cb.webp",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
@@ -2631,7 +2631,7 @@
             "mg_bottom_title": 35,
             "mg_bottom_title_mb": 25,
             "color_block": "#086b92",
-            "description": "<h2 style=\"color:#374650;\">18,934 Repeat Customers (and Counting!)<\/h2>\n\n<h3 style=\"color:#374650\">✔ Clinically Effective Formulas<\/h3>\n<p style=\"color:#374650\">Science-backed transformations in 8–12 weeks.<\/p>\n\n<h3 style=\"color:#374650\">✔ Unmatched Ingredient Integrity<\/h3>\n<p style=\"color:#374650\">\nUS actives, FDA\/GMP-certified facility.\n<\/p><h3 style=\"color:#374650\">✔ Root-Cause Solutions, Not Quick Fixes<\/h3>\n<p style=\"color:#374650\">Patented formulas for lasting wellness.<\/p>\n\n<h3 style=\"color:#374650\">✔ Partnered Support<\/h3>\n<p style=\"color:#374650;margin-bottom:20px\">Real human support - 85% solved in 1 hr<\/p>\n\n<i style=\"color:#374650; margin-left: 19px !important;\">We are a Supplement Company That Actually Wants You to Get Better<\/i>",
+            "description": "<h2 style=\"color:#374650;\">18,934 Repeat Customers (and Counting!)</h2>\n\n<h3 style=\"color:#374650\">✔ Clinically Effective Formulas</h3>\n<p style=\"color:#374650\">Science-backed transformations in 8–12 weeks.</p>\n\n<h3 style=\"color:#374650\">✔ Unmatched Ingredient Integrity</h3>\n<p style=\"color:#374650\">\nUS actives, FDA/GMP-certified facility.\n</p><h3 style=\"color:#374650\">✔ Root-Cause Solutions, Not Quick Fixes</h3>\n<p style=\"color:#374650\">Patented formulas for lasting wellness.</p>\n\n<h3 style=\"color:#374650\">✔ Partnered Support</h3>\n<p style=\"color:#374650;margin-bottom:20px\">Real human support - 85% solved in 1 hr</p>\n\n<i style=\"color:#374650; margin-left: 19px !important;\">We are a Supplement Company That Actually Wants You to Get Better</i>",
             "custom_liquid": false,
             "text1": "",
             "content1": "",
@@ -2645,7 +2645,7 @@
             "mg_bottom_des": 0,
             "color_des_block": "#36454f",
             "button": "",
-            "link": "shopify:\/\/pages\/wellness-quiz",
+            "link": "shopify://pages/wellness-quiz",
             "button_style": "style2",
             "fontsize_button": 16,
             "button_width": 200,
@@ -2764,7 +2764,7 @@
             "bg_color_block": "rgba(0,0,0,0)",
             "border_block": "rgba(0,0,0,0)",
             "icon_type": "image",
-            "image": "shopify:\/\/shop_images\/Build_your_own_stack_option-2_800x_88f5f9ab-a866-473a-907e-f0048de100be.webp",
+            "image": "shopify://shop_images/Build_your_own_stack_option-2_800x_88f5f9ab-a866-473a-907e-f0048de100be.webp",
             "icon": "",
             "width_icon": 0,
             "height_icon": 0,
@@ -2792,7 +2792,7 @@
             "mg_bottom_des": 0,
             "color_des_block": "#505050",
             "button": "",
-            "link": "\/collections\/all",
+            "link": "/collections/all",
             "button_style": "style2",
             "fontsize_button": 10,
             "button_width": 100,
@@ -2829,13 +2829,13 @@
             "color_block": "#086b92",
             "description": "",
             "custom_liquid": true,
-            "icon1": "shopify:\/\/shop_images\/1_ce6c4697-65bc-40f4-86b2-9a2946efc5dc.png",
+            "icon1": "shopify://shop_images/1_ce6c4697-65bc-40f4-86b2-9a2946efc5dc.png",
             "text1": "Pick 3+ Supplements",
             "content1": "",
-            "icon2": "shopify:\/\/shop_images\/11_2033ed4a-df78-4c72-b47c-4eb6e119a738.png",
+            "icon2": "shopify://shop_images/11_2033ed4a-df78-4c72-b47c-4eb6e119a738.png",
             "text2": "Save 15% Automatically",
             "content2": "",
-            "icon3": "shopify:\/\/shop_images\/111.png",
+            "icon3": "shopify://shop_images/111.png",
             "text3": "Feel The Difference",
             "content3": "",
             "fontsize_des_block": 22,
@@ -2844,7 +2844,7 @@
             "mg_bottom_des": 0,
             "color_des_block": "#36454f",
             "button": "Start Building",
-            "link": "\/collections\/all",
+            "link": "/collections/all",
             "button_style": "style2",
             "fontsize_button": 16,
             "button_width": 200,
@@ -2998,20 +2998,20 @@
         "image_Hc7PcK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Dr._Barrie_Tan_415a0885-7f72-4722-ad0f-03c37c636074.png",
+            "image": "shopify://shop_images/Dr._Barrie_Tan_415a0885-7f72-4722-ad0f-03c37c636074.png",
             "title": "Dr. Barrie Tan",
             "color_text": "#374650",
             "color_text_hover": "#232323",
-            "description": "(Scientist with PhD. in Chemistry\/Biochemistry)",
+            "description": "(Scientist with PhD. in Chemistry/Biochemistry)",
             "color_des": "#374650",
-            "link": "shopify:\/\/pages\/dr-barrie-tan"
+            "link": "shopify://pages/dr-barrie-tan"
           }
         },
         "image_d4tFj3": {
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Dr._Anthony_Kleinsmith_3b575838-aa78-46e3-8e6c-6bbf1d229ca8.png",
+            "image": "shopify://shop_images/Dr._Anthony_Kleinsmith_3b575838-aa78-46e3-8e6c-6bbf1d229ca8.png",
             "title": "Dr. Anthony Kleinsmith",
             "color_text": "#374650",
             "color_text_hover": "#232323",
@@ -3023,13 +3023,13 @@
         "image_w4nMHF": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Alex_da3445a0-c0ff-440c-8101-b3c880ec1d36.png",
+            "image": "shopify://shop_images/Alex_da3445a0-c0ff-440c-8101-b3c880ec1d36.png",
             "title": "Alex  ",
             "color_text": "#374650",
             "color_text_hover": "#232323",
             "description": "(Researcher with Ph.D. and MD in health science)",
             "color_des": "#374650",
-            "link": "shopify:\/\/pages\/dr-alex"
+            "link": "shopify://pages/dr-alex"
           }
         }
       },
@@ -3057,7 +3057,7 @@
         "mg_bottom_title": 10,
         "enable_border_title": false,
         "border_color_title": "#051c42",
-        "brand_des": "<p>Our Ingredients Are Developed by Leading Scientists & Researchers<\/p>",
+        "brand_des": "<p>Our Ingredients Are Developed by Leading Scientists & Researchers</p>",
         "color_des": "#374650",
         "fontsize_des": 32,
         "mg_bottom_des": 22,
@@ -3066,7 +3066,7 @@
         "font_weight_view_all": "600",
         "mg_bottom_view": 30,
         "enable_border_view_all": false,
-        "link_view_all": "shopify:\/\/collections",
+        "link_view_all": "shopify://collections",
         "color_view_all": "#374650",
         "icon_view_all": "",
         "color_view_all_icon": "rgba(0,0,0,0)",
@@ -3075,7 +3075,7 @@
         "fontsize_btn": 17,
         "btn_spacing_top": 12,
         "btn_color": "#086b92",
-        "btn_link": "shopify:\/\/collections\/all-products",
+        "btn_link": "shopify://collections/all-products",
         "btn_color_border": "#828282",
         "btn_color_hover": "#828282",
         "btn_hover_border_color": "#828282",
@@ -3126,7 +3126,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/mothers_day_Banner_2.png",
+            "image": "shopify://shop_images/mothers_day_Banner_2.png",
             "title_align": "right",
             "enable_absolute": true,
             "align_items": "center",
@@ -3157,7 +3157,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Shop Now",
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 0.2,
@@ -3180,7 +3180,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Build_your_custom_stack-1_1.png",
+            "image": "shopify://shop_images/Build_your_custom_stack-1_1.png",
             "title_align": "right",
             "enable_absolute": true,
             "align_items": "center",
@@ -3211,7 +3211,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Let's Begin",
-            "link": "\/collections\/all",
+            "link": "/collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -3322,7 +3322,7 @@
         "instagram_bnYXdt": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_1.png",
+            "image": "shopify://shop_images/TESTIMONIALS_1.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3339,7 +3339,7 @@
         "instagram_mxwpfX": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_2.png",
+            "image": "shopify://shop_images/TESTIMONIALS_2.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3356,7 +3356,7 @@
         "instagram_DJPjFi": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_3.png",
+            "image": "shopify://shop_images/TESTIMONIALS_3.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3373,7 +3373,7 @@
         "instagram_pc3EtR": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_4.png",
+            "image": "shopify://shop_images/TESTIMONIALS_4.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3390,7 +3390,7 @@
         "instagram_AnKhhJ": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_5.png",
+            "image": "shopify://shop_images/TESTIMONIALS_5.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3407,7 +3407,7 @@
         "instagram_nK49Fh": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_6.png",
+            "image": "shopify://shop_images/TESTIMONIALS_6.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3425,7 +3425,7 @@
           "type": "instagram",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_6.png",
+            "image": "shopify://shop_images/TESTIMONIALS_6.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3442,7 +3442,7 @@
         "instagram_phgyJU": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_7.png",
+            "image": "shopify://shop_images/TESTIMONIALS_7.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3459,7 +3459,7 @@
         "instagram_ay9EBc": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_8.png",
+            "image": "shopify://shop_images/TESTIMONIALS_8.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3476,7 +3476,7 @@
         "instagram_MRtdPL": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_9.png",
+            "image": "shopify://shop_images/TESTIMONIALS_9.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3493,7 +3493,7 @@
         "instagram_VtYMTj": {
           "type": "instagram",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TESTIMONIALS_10.png",
+            "image": "shopify://shop_images/TESTIMONIALS_10.png",
             "title": "",
             "fontsize_title": 26,
             "fontsize_title_mb": 20,
@@ -3558,7 +3558,7 @@
         "font_weight_view_all": "400",
         "mg_bottom_view": 30,
         "enable_border_view_all": true,
-        "link_view_all": "shopify:\/\/pages\/reviews",
+        "link_view_all": "shopify://pages/reviews",
         "color_view_all": "#3c3c3c",
         "display_instagram_button": true,
         "type_button_more": "link",

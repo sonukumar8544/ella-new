@@ -55,7 +55,7 @@
           }
         },
         "okendo_star_rating_APJhrn": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/star-rating\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
             "product": "{{product}}"
           }
@@ -194,7 +194,7 @@
             "open_tab_mobile": false,
             "title": "Nutritional Info",
             "type": "all",
-            "content": "<p>Eannatto Tocotrienol supplements are available in 125mg and 300 mg packaging. A single softgel of DeltaGold® Eannatto by Wellness Extract contains 125\/300 mg of pure Vitamin E tocotrienols, (90% delta tocotrienols and 10% gamma tocotrienols) accordingly.<\/p><br>\n<strong>Other Ingredients: Gelatin, Glycerin and purified water<\/strong>",
+            "content": "<p>Eannatto Tocotrienol supplements are available in 125mg and 300 mg packaging. A single softgel of DeltaGold® Eannatto by Wellness Extract contains 125/300 mg of pure Vitamin E tocotrienols, (90% delta tocotrienols and 10% gamma tocotrienols) accordingly.</p><br>\n<strong>Other Ingredients: Gelatin, Glycerin and purified water</strong>",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -207,7 +207,7 @@
             "open_tab_mobile": false,
             "title": "Shipping & Returns",
             "type": "all",
-            "content": "<p>Wellness Extract ships worldwide. Orders are processed and dispatched within one business day, though delivery time varies. If dissatisfied, you can easily return your purchase, stating valid reasons. Wellness Extract's customer support team is available 24\/7 to assist customers with product-related concerns.\n<\/p>",
+            "content": "<p>Wellness Extract ships worldwide. Orders are processed and dispatched within one business day, though delivery time varies. If dissatisfied, you can easily return your purchase, stating valid reasons. Wellness Extract's customer support team is available 24/7 to assist customers with product-related concerns.\n</p>",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -220,7 +220,7 @@
             "open_tab_mobile": false,
             "title": "Health Benefits",
             "type": "all",
-            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.<\/p><br><ul>\n  <li><strong>Combats oxidative stress<\/strong><\/li>\n  <li><strong>Overall cellular health<\/strong><\/li>\n  <li><strong>Promotes skin vitality<\/strong><\/li>\n  <li><strong>Bones and muscle strength<\/strong><\/li>\n  <li><strong>Supports cardiovascular health<\/strong><\/li>\n  <li><strong>Healthy inflammatory response<\/strong><\/li>\n  <li><strong>Regulates lipid levels<\/strong><\/li>\n  <li><strong>Healthy aging and longevity<\/strong><\/li>\n<\/ul>",
+            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.</p><br><ul>\n  <li><strong>Combats oxidative stress</strong></li>\n  <li><strong>Overall cellular health</strong></li>\n  <li><strong>Promotes skin vitality</strong></li>\n  <li><strong>Bones and muscle strength</strong></li>\n  <li><strong>Supports cardiovascular health</strong></li>\n  <li><strong>Healthy inflammatory response</strong></li>\n  <li><strong>Regulates lipid levels</strong></li>\n  <li><strong>Healthy aging and longevity</strong></li>\n</ul>",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -233,7 +233,7 @@
             "open_tab_mobile": false,
             "title": "How To Use",
             "type": "all",
-            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.<\/p><br><ul>\n  <li><strong>Combats oxidative stress<\/strong><\/li>\n  <li><strong>Overall cellular health<\/strong><\/li>\n  <li><strong>Promotes skin vitality<\/strong><\/li>\n  <li><strong>Bones and muscle strength<\/strong><\/li>\n  <li><strong>Supports cardiovascular health<\/strong><\/li>\n  <li><strong>Healthy inflammatory response<\/strong><\/li>\n  <li><strong>Regulates lipid levels<\/strong><\/li>\n  <li><strong>Healthy aging and longevity<\/strong><\/li>\n<\/ul>",
+            "content": "<p>Eannatto contains tocotrienols, the most potent form of vitamin E that acts as a master antioxidant and protects cells from free radical damage. 125 mg tocotrienols softgel is a gentle formula designed to meet the body’s daily requirements. You may add a higher dosage of Eannatto supplements (<300 mg) to support underlying chronic diseases after doctor’s consultation.</p><br><ul>\n  <li><strong>Combats oxidative stress</strong></li>\n  <li><strong>Overall cellular health</strong></li>\n  <li><strong>Promotes skin vitality</strong></li>\n  <li><strong>Bones and muscle strength</strong></li>\n  <li><strong>Supports cardiovascular health</strong></li>\n  <li><strong>Healthy inflammatory response</strong></li>\n  <li><strong>Regulates lipid levels</strong></li>\n  <li><strong>Healthy aging and longevity</strong></li>\n</ul>",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -253,14 +253,14 @@
         "a86220cf-8641-4e06-87d3-b5ffa195501b": {
           "type": "custom_information",
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\"><\/path><\/svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shipping-fast\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M280 192c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240zm352 192h-24V275.9c0-16.8-6.8-33.3-18.8-45.2l-83.9-83.9c-11.8-12-28.3-18.8-45.2-18.8H416V78.6c0-25.7-22.2-46.6-49.4-46.6H113.4C86.2 32 64 52.9 64 78.6V96H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H96V78.6c0-8.1 7.8-14.6 17.4-14.6h253.2c9.6 0 17.4 6.5 17.4 14.6V384H207.6C193 364.7 170 352 144 352c-18.1 0-34.6 6.2-48 16.4V288H64v144c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16h195.2c-1.1 5.2-1.6 10.5-1.6 16 0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H632c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8zm-488 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm272-320h44.1c8.4 0 16.7 3.4 22.6 9.4l83.9 83.9c.8.8 1.1 1.9 1.8 2.8H416V160zm80 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-96h-16.4C545 364.7 522 352 496 352s-49 12.7-63.6 32H416v-96h160v96zM256 248v-16c0-4.4-3.6-8-8-8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8z\"></path></svg>",
             "color_icon": "#232323",
             "text": "Free Shipping",
             "color_title": "#232323",
-            "text_description": "<p>Free standard shipping on orders over $99<\/p>\n<p>Estimated to be delivered on 12\/01\/2022 - 15\/10\/2022.<\/p>",
+            "text_description": "<p>Free standard shipping on orders over $99</p>\n<p>Estimated to be delivered on 12/01/2022 - 15/10/2022.</p>",
             "color_des": "#4d4d4d",
             "fontsize_text": 12,
-            "content_popup": "<div class=\"halo-text-format\">\n<p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.<\/p>\n<p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.<\/p>\n<p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.<\/p>\t\t\t\t\t\t<\/div>",
+            "content_popup": "<div class=\"halo-text-format\">\n<p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.</p>\n<p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.</p>\n<p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>\t\t\t\t\t\t</div>",
             "spacing_top": 0,
             "spacing_bottom": 12
           }
@@ -269,14 +269,14 @@
           "type": "custom_information",
           "disabled": true,
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shield-alt\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 512 512\">\n    <path fill=\"currentColor\" d=\"M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM262.2 478.8c-4 1.6-8.4 1.6-12.3 0C152 440 48 304 48 128c0-6.5 3.9-12.3 9.8-14.8l192-80c3.9-1.6 8.4-1.6 12.3 0l192 80c6 2.5 9.9 8.3 9.8 14.8.1 176-103.9 312-201.7 350.8zM256 411V100l-142.7 59.5c10.1 120.1 77.1 215 142.7 251.5zm-32-66.8c-36.4-39.9-65.8-97.8-76.1-164.5L224 148z\"><\/path>\n<\/svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"shield-alt\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\">\n    <path fill=\"currentColor\" d=\"M466.5 83.7l-192-80a48.15 48.15 0 0 0-36.9 0l-192 80C27.7 91.1 16 108.6 16 128c0 198.5 114.5 335.7 221.5 380.3 11.8 4.9 25.1 4.9 36.9 0C360.1 472.6 496 349.3 496 128c0-19.4-11.7-36.9-29.5-44.3zM262.2 478.8c-4 1.6-8.4 1.6-12.3 0C152 440 48 304 48 128c0-6.5 3.9-12.3 9.8-14.8l192-80c3.9-1.6 8.4-1.6 12.3 0l192 80c6 2.5 9.9 8.3 9.8 14.8.1 176-103.9 312-201.7 350.8zM256 411V100l-142.7 59.5c10.1 120.1 77.1 215 142.7 251.5zm-32-66.8c-36.4-39.9-65.8-97.8-76.1-164.5L224 148z\"></path>\n</svg>",
             "color_icon": "#232323",
             "text": "Free Returns",
             "color_title": "#232323",
             "text_description": "Learn More.",
             "color_des": "#4d4d4d",
             "fontsize_text": 12,
-            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<\/p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<\/p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.<\/p>\n\t\t\t\t\t\t\t<\/div>",
+            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\n<p>You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).</p>\n<p>You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).</p>\n<p>If you need to return an item, simply login to your account, view the order using the \"Complete Orders\" link under the My Account menu and click the Return Item(s) button. We'll notify you via e-mail of your refund once we've received and processed the returned item.</p>\n\t\t\t\t\t\t\t</div>",
             "spacing_top": 0,
             "spacing_bottom": 14
           }
@@ -285,14 +285,14 @@
           "type": "custom_information",
           "disabled": true,
           "settings": {
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"exclamation-triangle\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 576 512\"><path fill=\"currentColor\" d=\"M270.2 160h35.5c3.4 0 6.1 2.8 6 6.2l-7.5 196c-.1 3.2-2.8 5.8-6 5.8h-20.5c-3.2 0-5.9-2.5-6-5.8l-7.5-196c-.1-3.4 2.6-6.2 6-6.2zM288 388c-15.5 0-28 12.5-28 28s12.5 28 28 28 28-12.5 28-28-12.5-28-28-28zm281.5 52L329.6 24c-18.4-32-64.7-32-83.2 0L6.5 440c-18.4 31.9 4.6 72 41.6 72H528c36.8 0 60-40 41.5-72zM528 480H48c-12.3 0-20-13.3-13.9-24l240-416c6.1-10.6 21.6-10.7 27.7 0l240 416c6.2 10.6-1.5 24-13.8 24z\"><\/path><\/svg>",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fal\" data-icon=\"exclamation-triangle\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 576 512\"><path fill=\"currentColor\" d=\"M270.2 160h35.5c3.4 0 6.1 2.8 6 6.2l-7.5 196c-.1 3.2-2.8 5.8-6 5.8h-20.5c-3.2 0-5.9-2.5-6-5.8l-7.5-196c-.1-3.4 2.6-6.2 6-6.2zM288 388c-15.5 0-28 12.5-28 28s12.5 28 28 28 28-12.5 28-28-12.5-28-28-28zm281.5 52L329.6 24c-18.4-32-64.7-32-83.2 0L6.5 440c-18.4 31.9 4.6 72 41.6 72H528c36.8 0 60-40 41.5-72zM528 480H48c-12.3 0-20-13.3-13.9-24l240-416c6.1-10.6 21.6-10.7 27.7 0l240 416c6.2 10.6-1.5 24-13.8 24z\"></path></svg>",
             "color_icon": "#232323",
             "text": "Covid-19 Shipping Delay Notice",
             "color_title": "#232323",
             "text_description": "",
             "color_des": "#999999",
             "fontsize_text": 12,
-            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\n\t\t\t\t\t\t\t<\/div>",
+            "content_popup": "<div class=\"halo-text-format\">\n\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\t\t\t\t\t\t\t</div>",
             "spacing_top": 0,
             "spacing_bottom": 0
           }
@@ -578,7 +578,7 @@
           "type": "content",
           "settings": {
             "heading": "Collapsible Row",
-            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.<\/p>",
+            "content": "<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo pharetras loremos.</p>",
             "page": ""
           }
         }
@@ -629,7 +629,7 @@
           "type": "content",
           "settings": {
             "heading": "Cellular Health",
-            "content": "<p>Protects cells from oxidative stress, promoting long-term wellness and vitality.<\/p><p><\/p>",
+            "content": "<p>Protects cells from oxidative stress, promoting long-term wellness and vitality.</p><p></p>",
             "page": ""
           }
         },
@@ -637,7 +637,7 @@
           "type": "content",
           "settings": {
             "heading": "Skin Radiance",
-            "content": "<p>Improves elasticity and reduces wrinkles for a youthful, glowing appearance.<\/p><p><\/p>",
+            "content": "<p>Improves elasticity and reduces wrinkles for a youthful, glowing appearance.</p><p></p>",
             "page": ""
           }
         },
@@ -645,7 +645,7 @@
           "type": "content",
           "settings": {
             "heading": "Cardiovascular Support",
-            "content": "<p>Helps maintain healthy cholesterol levels and supports heart function.<\/p><p><\/p>",
+            "content": "<p>Helps maintain healthy cholesterol levels and supports heart function.</p><p></p>",
             "page": ""
           }
         },
@@ -653,7 +653,7 @@
           "type": "content",
           "settings": {
             "heading": "Strong Bones",
-            "content": "<p>Encourages bone strength and density for lasting structural health.<\/p><p><\/p>",
+            "content": "<p>Encourages bone strength and density for lasting structural health.</p><p></p>",
             "page": ""
           }
         },
@@ -661,7 +661,7 @@
           "type": "content",
           "settings": {
             "heading": "-Metabolism Boost",
-            "content": "<p>Optimizes energy production by supporting macronutrient metabolism.<\/p><p><\/p>",
+            "content": "<p>Optimizes energy production by supporting macronutrient metabolism.</p><p></p>",
             "page": ""
           }
         },
@@ -669,7 +669,7 @@
           "type": "content",
           "settings": {
             "heading": "Oxidative Defense",
-            "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.<\/p><p><\/p>",
+            "content": "<p>Provides powerful antioxidant protection to combat free radicals and aging effects.</p><p></p>",
             "page": ""
           }
         }
@@ -706,13 +706,13 @@
         "enable_image_right": true,
         "EnableleftImage": false,
         "enable_zoom": false,
-        "image_right": "shopify:\/\/shop_images\/Eannatto_bd872cca-b936-45ef-add9-9db72464dbc7.png",
+        "image_right": "shopify://shop_images/Eannatto_bd872cca-b936-45ef-add9-9db72464dbc7.png",
         "bg_content_color": "#ffffff",
         "content_color": "#374650",
         "title_color": "#086b92",
         "icon_color": "#8b8787",
         "border_color": "#f1f1f1",
-        "special_content": "<p><\/p>",
+        "special_content": "<p></p>",
         "mg_top_desktop": 25,
         "mg_top_tablet": 25,
         "mg_top_mobile": 25,
@@ -822,7 +822,7 @@
       "type": "product-ingrediants-section",
       "settings": {
         "heading": "What's Inside",
-        "image": "shopify:\/\/shop_images\/Annatto_23c773a6-6da8-4ee1-9556-34e2f4987189.png",
+        "image": "shopify://shop_images/Annatto_23c773a6-6da8-4ee1-9556-34e2f4987189.png",
         "title": "Annatto-Derived Tocotrienols",
         "description": "Annatto seeds (Bixa Orellana) are tiny, vibrant red color seeds. They are a unique natural source of 100% tocotrienols, free from tocopherol interference.",
         "button_link": "",
@@ -835,7 +835,7 @@
         "image_fthQXN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_3.png",
+            "image": "shopify://shop_images/Frame_1618872901_3.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -847,7 +847,7 @@
         "image_mFiMEV": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872902.png",
+            "image": "shopify://shop_images/Frame_1618872902.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -859,7 +859,7 @@
         "image_yhnmeK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_1.png",
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
             "title": "",
             "color_text": "#374650",
             "color_text_hover": "#374650",
@@ -871,7 +871,7 @@
         "image_aVixiN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_5.png",
+            "image": "shopify://shop_images/Frame_1618872901_5.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -883,7 +883,7 @@
         "image_NyLNnA": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901.png",
+            "image": "shopify://shop_images/Frame_1618872901.png",
             "title": "",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
@@ -896,13 +896,13 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_1618872901_1.png",
+            "image": "shopify://shop_images/Frame_1618872901_1.png",
             "title": "Third-Party Tested",
             "color_text": "#36454f",
             "color_text_hover": "#36454f",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/collections\/skin-health"
+            "link": "shopify://collections/skin-health"
           }
         }
       },
@@ -1007,7 +1007,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Main-02-02.png",
+            "image": "shopify://shop_images/Main-02-02.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1038,7 +1038,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/tocotrienols-supplements-scam",
+            "link": "shopify://pages/tocotrienols-supplements-scam",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1061,7 +1061,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/HORMONE_health_ella.png",
+            "image": "shopify://shop_images/HORMONE_health_ella.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "top",
@@ -1092,7 +1092,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/womes-hormone-health",
+            "link": "shopify://pages/hormone-health",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1115,7 +1115,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Main-03_6.png",
+            "image": "shopify://shop_images/Main-03_6.png",
             "title_align": "center",
             "enable_absolute": false,
             "align_items": "center",
@@ -1146,7 +1146,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Know More",
-            "link": "shopify:\/\/pages\/only-good-stuff",
+            "link": "shopify://pages/only-good-stuff",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1452,7 +1452,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/mothers_day_Banner_2.png",
+            "image": "shopify://shop_images/mothers_day_Banner_2.png",
             "title_align": "right",
             "enable_absolute": true,
             "align_items": "center",
@@ -1483,7 +1483,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Shop Now",
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 0.2,
@@ -1506,7 +1506,7 @@
           "type": "image",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Build_your_custom_stack-1_1.png",
+            "image": "shopify://shop_images/Build_your_custom_stack-1_1.png",
             "title_align": "right",
             "enable_absolute": true,
             "align_items": "center",
@@ -1537,7 +1537,7 @@
             "enable_des_hover": false,
             "button_style": "button_1",
             "button": "Let's Begin",
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify://collections/all",
             "fontsize_btn": 16,
             "button_width": 190,
             "bg_opacity_button": 1,
@@ -1729,7 +1729,7 @@
       "type": "apps",
       "blocks": {
         "okendo_reviews_widget_ACqWER": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "disabled": true,
           "settings": {
             "product": "{{product}}",
@@ -1748,7 +1748,7 @@
       "type": "apps",
       "blocks": {
         "okendo_reviews_carousel_mi6anP": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "disabled": true,
           "settings": {
             "show_heading": false,
@@ -1769,7 +1769,7 @@
       "type": "apps",
       "blocks": {
         "okendo_reviews_widget_KmJmDx": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "disabled": true,
           "settings": {
             "product": "{{product}}",
