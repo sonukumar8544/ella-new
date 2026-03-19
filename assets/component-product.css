@@ -1557,6 +1557,7 @@
     display: block;
     width: 100%;
     clear: both;
+    margin-bottom: 30px;
 }
 
 .productView-payment .shopify-payment-button [data-testid="Checkout-button"],
@@ -2766,7 +2767,9 @@ quantity-input.disabled {
         top: -37px;
     }
 
-    .productView-form.always-on-mobile .productView-groupBottom ,
+    .productView-form.always-on-mobile .productView-groupBottom{
+        display: block;
+    }
     .productView-form.always-on-mobile .pvGroup-row .productView-wishlist ,
     .productView-form.always-on-mobile .pvGroup-row .productView-action ,
     .productView-form.always-on-mobile .pvGroup-row .quantity__group--1 {
