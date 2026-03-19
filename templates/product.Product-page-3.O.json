@@ -271,7 +271,8 @@
         ".productView-wishlist {display: none;}",
         ".price.price--medium .price-item .money {font-weight: 800; color: #086b92;}",
         ".bundle-product-price {font-size: var(--product-price-font-size); color: #374650 !important;}",
-        "@media (max-width: 500px) {.sls-label-container.seal-col .sls-selling-plan-group-name {max-width: 175px; } .productView {padding-bottom: 0px; }}"
+        "@media (max-width: 500px) {.sls-label-container.seal-col .sls-selling-plan-group-name {max-width: 175px; } .productView {padding-bottom: 0px; }}",
+        "more-payment-options-link {display: none;}"
       ],
       "settings": {
         "container": "default",
