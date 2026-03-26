@@ -1451,7 +1451,36 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const articleLinks = document.querySelectorAll('.halo-article-content a[href]');
+    articleLinks.forEach((link) => {
+      const rawHref = link.getAttribute("href");
+      if (!rawHref || rawHref.startsWith("#") || rawHref.trim().toLowerCase().startsWith("javascript:")) {
+        return;
+      }
+      let url;
+      try {
+        url = new URL(rawHref, window.location.href);
+      } catch (e) {
+        return;
+      }
+      const host = url.hostname.replace(/^www\./, '');
+      const isWellnessExtract = host === "wellnessextract.com";
+      link.setAttribute("target", "_blank");
+      link.setAttribute(
+        "rel",
+        isWellnessExtract ? "noopener noreferrer" : "noopener noreferrer nofollow"
+      );
+    });
+
+    document.querySelectorAll(".halo-article-content .article-content p").forEach(function (p) {
+      var text = (p.textContent || "").trim().toLowerCase();
+      if (text.indexOf("also read") !== -1 || text.indexOf("read more") !== -1) {
+        p.classList.add("blog-read-more");
+      }
+    });
+
     const tocContainer = document.getElementById("table-of-contents");
+    if (!tocContainer) return;
     const includeH3 = tocContainer.dataset.includeH3 === "true";
     const selector = includeH3 ? ".article-content h2, .article-content h3" : ".article-content h2";
     const headings = document.querySelectorAll(selector);
