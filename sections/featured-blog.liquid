@@ -63,6 +63,50 @@
       border-top-left-radius:  6%;
     border-top-right-radius:  6%;
       }
+    /* Normalize blog card sizing (image + content) */
+    .section-block-{{ section.id }} .halo-item { height: 100%; }
+    .section-block-{{ section.id }} .article-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .section-block-{{ section.id }} .article-card__info {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+    .section-block-{{ section.id }} .article-card__footer { margin-top: auto; }
+
+    /* Force consistent thumbnail height across different image ratios */
+    .section-block-{{ section.id }} .article-card__image-wrapper { position: relative; }
+    .section-block-{{ section.id }} .article-card__image-wrapper a.adaptive_height {
+        display: block;
+        position: relative;
+        padding-top: 70% !important; /* consistent ratio */
+        overflow: hidden;
+    }
+    .section-block-{{ section.id }} .article-card__image-wrapper a.adaptive_height img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Keep text blocks consistent (prevents card height jumps) */
+    .section-block-{{ section.id }} .article-card__title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .section-block-{{ section.id }} .article-card__des {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
     #shopify-section-{{section.id}} {padding-top: {{ mg_minus_desktop | times: 0.5 | append: 'px' }}}
     .section-block-{{section.id}} .halo-block-header {margin-top: -{{ mg_minus_desktop | append: 'px' }}}
     {%- if blog_bg_image != blank -%}
