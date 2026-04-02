@@ -96,26 +96,22 @@
             </div>
         {%- endif -%}
         
-        {%- assign selected_category = search.params.view | default: 'wellness' -%}
-
+        {%- comment -%}
+          Blog filters: Shopify /tagged/HANDLE URLs. Tags in admin use compact handles (e.g. bonehealth), not "Bone health".
+          Normalization strips hyphens/underscores + downcases so bone-health, bone_health, bonehealth all match.
+          "All Blogs" = posts tagged wellness.
+        {%- endcomment -%}
         {%- liquid
-  assign query_key = 'view'
-  assign query_value = blank
-  assign page_url = content_for_header | split: '"pageurl":"' | last | split: '"' | first | split: request.host | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&'
-
-  if page_url contains '?'
-    assign query_string = page_url | split: '?' | last
-    assign qry_parts = query_string | split: '&'
-    for part in qry_parts
-      assign key_and_value = part | split: '='
-      if key_and_value[0] == query_key
-        assign query_value = key_and_value[1] | strip | strip_newlines
-      endif
-    endfor
-  endif
-
-  assign selected_category = query_value | default: 'wellness'
--%}
+          assign default_all_tag_norm = 'wellness'
+          assign active_tag_norm = default_all_tag_norm
+          if current_tags != blank
+            assign active_tag_norm = current_tags.first | handleize | replace: '-', '' | replace: '_', '' | downcase
+          elsif request.params.tag != blank
+            assign active_tag_norm = request.params.tag | handleize | replace: '-', '' | replace: '_', '' | downcase
+          elsif request.params.view != blank
+            assign active_tag_norm = request.params.view | handleize | replace: '-', '' | replace: '_', '' | downcase
+          endif
+        -%}
 <!--blog-default-->
 <div class="halo-blog-content halo-grid-content">
   {% comment %} {%- if show_sidebar and section.blocks.size > 0 -%} {% endcomment %}
@@ -125,23 +121,23 @@
       <div class="sidebar-filter-blog">
         <h2>All Categories <span class="blog-filter-btn-popup" style="color: #232323; font-size: 20px;" >X</span></h2>
         <div class="filters-list">
-          <a href="{{ blog.url }}?view=wellness" class="blog-cat-filter filter-btn{% if selected_category == 'wellness' %} active{% endif %}" data-category="wellness">All Blogs</a>
-          <a href="{{ blog.url }}?view=bonehealth" class="blog-cat-filter filter-btn{% if selected_category == 'bonehealth' %} active{% endif %}" data-category="bonehealth">Bone Health</a>
-          <a href="{{ blog.url }}?view=brainhealth" class="blog-cat-filter filter-btn{% if selected_category == 'brainhealth' %} active{% endif %}" data-category="brainhealth">Brain Health</a>
-          <a href="{{ blog.url }}?view=colostrum" class="blog-cat-filter filter-btn{% if selected_category == 'colostrum' %} active{% endif %}" data-category="colostrum">Colostrum</a>
-          <a href="{{ blog.url }}?view=news" class="blog-cat-filter filter-btn{% if selected_category == 'news' %} active{% endif %}" data-category="news">Company News</a>
-          <a href="{{ blog.url }}?view=detox" class="blog-cat-filter filter-btn{% if selected_category == 'detox' %} active{% endif %}" data-category="detox">Detox</a>
-          <a href="{{ blog.url }}?view=eyehealth" class="blog-cat-filter filter-btn{% if selected_category == 'eyehealth' %} active{% endif %}" data-category="eyehealth">Eye Health</a>
-          <a href="{{ blog.url }}?view=guthealth" class="blog-cat-filter filter-btn{% if selected_category == 'guthealth' %} active{% endif %}" data-category="guthealth">Gut Health</a>
-          <a href="{{ blog.url }}?view=healthyaging" class="blog-cat-filter filter-btn{% if selected_category == 'healthyaging' %} active{% endif %}" data-category="healthyaging">Healthy Aging</a>
-          <a href="{{ blog.url }}?view=hearthealth" class="blog-cat-filter filter-btn{% if selected_category == 'hearthealth' %} active{% endif %}" data-category="hearthealth">Heart Health</a>
-          <a href="{{ blog.url }}?view=immunehealth" class="blog-cat-filter filter-btn{% if selected_category == 'immunehealth' %} active{% endif %}" data-category="immunehealth">Immune Health</a>
-          <a href="{{ blog.url }}?view=menshealth" class="blog-cat-filter blog-cat-filter filter-btn{% if selected_category == 'menshealth' %} active{% endif %}" data-category="menshealth">Men’s Health</a>
-          <a href="{{ blog.url }}?view=skinhealth" class="blog-cat-filter filter-btn{% if selected_category == 'skinhealth' %} active{% endif %}" data-category="skinhealth">Skin Health</a>
-          <a href="{{ blog.url }}?view=vitamine" class="blog-cat-filter filter-btn{% if selected_category == 'vitamine' %} active{% endif %}" data-category="vitamine">Vitamin E</a>
-          <a href="{{ blog.url }}?view=weightmanagement" class="blog-cat-filter filter-btn{% if selected_category == 'weightmanagement' %} active{% endif %}" data-category="weightmanagement">Weight Management</a>
-          <a href="{{ blog.url }}?view=womenshealth" class="blog-cat-filter filter-btn{% if selected_category == 'womenshealth' %} active{% endif %}" data-category="womenshealth">Women’s Health</a>
-          <a href="{{ blog.url }}?view=healthcareresearchnews" class="blog-cat-filter filter-btn{% if selected_category == 'healthcareresearchnews' %} active{% endif %}" data-category="healthcareresearchnews" style="text-align: left;">Healthcare Research News</a>
+          <a href="{{ blog.url }}/tagged/wellness" class="blog-cat-filter filter-btn{% if active_tag_norm == 'wellness' %} active{% endif %}" data-tag-handle="wellness">All Blogs</a>
+          <a href="{{ blog.url }}/tagged/bonehealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'bonehealth' %} active{% endif %}" data-tag-handle="bonehealth">Bone Health</a>
+          <a href="{{ blog.url }}/tagged/brainhealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'brainhealth' %} active{% endif %}" data-tag-handle="brainhealth">Brain Health</a>
+          <a href="{{ blog.url }}/tagged/colostrum" class="blog-cat-filter filter-btn{% if active_tag_norm == 'colostrum' %} active{% endif %}" data-tag-handle="colostrum">Colostrum</a>
+          <a href="{{ blog.url }}/tagged/news" class="blog-cat-filter filter-btn{% if active_tag_norm == 'news' %} active{% endif %}" data-tag-handle="news">Company News</a>
+          <a href="{{ blog.url }}/tagged/detox" class="blog-cat-filter filter-btn{% if active_tag_norm == 'detox' %} active{% endif %}" data-tag-handle="detox">Detox</a>
+          <a href="{{ blog.url }}/tagged/eyehealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'eyehealth' %} active{% endif %}" data-tag-handle="eyehealth">Eye Health</a>
+          <a href="{{ blog.url }}/tagged/guthealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'guthealth' %} active{% endif %}" data-tag-handle="guthealth">Gut Health</a>
+          <a href="{{ blog.url }}/tagged/healthyaging" class="blog-cat-filter filter-btn{% if active_tag_norm == 'healthyaging' %} active{% endif %}" data-tag-handle="healthyaging">Healthy Aging</a>
+          <a href="{{ blog.url }}/tagged/hearthealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'hearthealth' %} active{% endif %}" data-tag-handle="hearthealth">Heart Health</a>
+          <a href="{{ blog.url }}/tagged/immunehealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'immunehealth' %} active{% endif %}" data-tag-handle="immunehealth">Immune Health</a>
+          <a href="{{ blog.url }}/tagged/menshealth" class="blog-cat-filter blog-cat-filter filter-btn{% if active_tag_norm == 'menshealth' %} active{% endif %}" data-tag-handle="menshealth">Men’s Health</a>
+          <a href="{{ blog.url }}/tagged/skinhealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'skinhealth' %} active{% endif %}" data-tag-handle="skinhealth">Skin Health</a>
+          <a href="{{ blog.url }}/tagged/vitamine" class="blog-cat-filter filter-btn{% if active_tag_norm == 'vitamine' %} active{% endif %}" data-tag-handle="vitamine">Vitamin E</a>
+          <a href="{{ blog.url }}/tagged/weightmanagement" class="blog-cat-filter filter-btn{% if active_tag_norm == 'weightmanagement' %} active{% endif %}" data-tag-handle="weightmanagement">Weight Management</a>
+          <a href="{{ blog.url }}/tagged/womenshealth" class="blog-cat-filter filter-btn{% if active_tag_norm == 'womenshealth' %} active{% endif %}" data-tag-handle="womenshealth">Women’s Health</a>
+          <a href="{{ blog.url }}/tagged/healthcareresearchnews" class="blog-cat-filter filter-btn{% if active_tag_norm == 'healthcareresearchnews' %} active{% endif %}" data-tag-handle="healthcareresearchnews" style="text-align: left;">Healthcare Research News</a>
         
         </div>
       </div>
@@ -151,13 +147,20 @@
   <div class="five-latest-blog"></div>
   <div id="blog-page-card-wrapper-banner" class="page-content main-blog {% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
   <div id="blog-page-card-wrapper" class="blog-row blog-block-item column-1">
-        {% paginate blog.articles by 500 %}
+        {% paginate blog.articles by 12 %}
           {%- for article in blog.articles -%}
-            {% assign articletags = article.tags | join: ',' | downcase %}
-            {%- if articletags contains selected_category -%}
+            {%- assign matches_category = false -%}
+            {%- for tag in article.tags -%}
+              {%- assign tag_norm = tag | handleize | replace: '-', '' | replace: '_', '' | downcase -%}
+              {%- if tag_norm == active_tag_norm -%}
+                {%- assign matches_category = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if matches_category -%}
                 <div class="item{% if forloop.first == true %} item--first{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" 
                    style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--color-summary-style: {{ text_color }}"
-                   data-page-item>
+                   >
                 {% render 'article-card-3',
                   article: article,
                   media_size: media_size,
@@ -175,22 +178,38 @@
               </div>
             {%- endif -%}
           {%- endfor -%}
+          
+          {%- if paginate.pages > 1 -%}
+            <div class="pagination" role="navigation" aria-label="Pagination">
+              {%- if paginate.previous -%}
+                <a class="pagination__arrow prev" href="{{ paginate.previous.url }}">← Previous</a>
+              {%- else -%}
+                <span class="pagination__arrow prev" aria-disabled="true">← Previous</span>
+              {%- endif -%}
+              
+              <div class="pagination__numbers">
+                {%- for part in paginate.parts -%}
+                  {%- if part.is_link -%}
+                    <a href="{{ part.url }}">{{ part.title }}</a>
+                  {%- else -%}
+                    {%- if part.title == paginate.current_page -%}
+                      <span class="active">{{ part.title }}</span>
+                    {%- else -%}
+                      <span class="ellipsis">{{ part.title }}</span>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+              
+              {%- if paginate.next -%}
+                <a class="pagination__arrow next" href="{{ paginate.next.url }}">Next →</a>
+              {%- else -%}
+                <span class="pagination__arrow next" aria-disabled="true">Next →</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         {% endpaginate %}
       </div>
-    
-      <div class="pagination">
-  <button class="pagination__arrow prev" id="prevPage" disabled>
-    ← Previous
-  </button>
-  
-  <div class="pagination__numbers" id="pageNumbers">
-    <span>1</span>
-  </div>
-  
-  <button class="pagination__arrow next" id="nextPage">
-    Next →
-  </button>
-</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -302,11 +321,18 @@ button.filter-btn-mob {
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
+    width: 100%;
+    text-align: center;
   }
 
   .pagination__numbers {
     display: flex;
     gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pagination__arrow{
+    white-space: nowrap;
   }
   @media (max-width: 1024px){
      .pagination__numbers span,
@@ -347,92 +373,25 @@ button.filter-btn-mob {
     cursor: not-allowed;
   }
 
-  [data-page-item] {
-    display: none;
+  /* Blog listing card images: enforce consistent height */
+  #blog-page-card-wrapper .blog-image a.image{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25% !important; /* 16:9 */
+  }
+  #blog-page-card-wrapper .blog-image a.image > img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>
-
-
-
-
-<script>
-  const itemsPerPage = 12;
-  let currentPage = 1;
-  const allItems = Array.from(document.querySelectorAll('[data-page-item]'));
-  const totalItems = allItems.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  function updatePagination() {
-    // Show/hide items
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    
-    allItems.forEach((item, index) => {
-      item.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
-    });
-
-    // Update page numbers
-    let pagesHTML = '';
-    const maxVisiblePages = 2; // Number of pages to show before/after current
-    
-    // Always show first page
-    pagesHTML += createPageLink(1);
-    
-    // Add ellipsis if needed
-    if(currentPage - maxVisiblePages > 2) {
-      pagesHTML += '<span class="ellipsis">...</span>';
-    }
-
-    // Middle pages
-    for(let i = Math.max(2, currentPage - maxVisiblePages); 
-        i <= Math.min(totalPages - 1, currentPage + maxVisiblePages); 
-        i++) {
-      pagesHTML += createPageLink(i);
-    }
-
-    // Add ellipsis if needed
-    if(currentPage + maxVisiblePages < totalPages - 1) {
-      pagesHTML += '<span class="ellipsis">...</span>';
-    }
-
-    // Always show last page if different from first
-    if(totalPages > 1) {
-      pagesHTML += createPageLink(totalPages);
-    }
-
-    document.getElementById('pageNumbers').innerHTML = pagesHTML;
-
-    // Update button states
-    document.getElementById('prevPage').disabled = currentPage === 1;
-    document.getElementById('nextPage').disabled = currentPage === totalPages;
-  }
-
-  function createPageLink(page) {
-    return page === currentPage 
-      ? `<span class="active">${page}</span>`
-      : `<a onclick="goToPage(${page})">${page}</a>`;
-  }
-
-  function goToPage(page) {
-    currentPage = page;
-    updatePagination();
-  }
-
-  document.getElementById('prevPage').addEventListener('click', () => {
-    if(currentPage > 1) goToPage(currentPage - 1);
-  });
-
-  document.getElementById('nextPage').addEventListener('click', () => {
-    if(currentPage < totalPages) goToPage(currentPage + 1);
-  });
-
-  // Initial load
-  updatePagination();
-</script>  </div>
+</div>
 </div>
     </div>
   </div>
-</div>
 
 <style type="text/css" media="screen">
 .filter-btn {

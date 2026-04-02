@@ -114,9 +114,23 @@ $(document).ready(function(){
 }
 .blog-img-sec {
     flex: 0 0 30%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+.blog-img-sec img.blog-border-radius{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 @media (max-width: 769px) {
+  .blog-img-sec{
+    width: 100%;
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+  }
   .blog-des-sec {
     flex: 0 0 70%;
     padding-left: 40px;
