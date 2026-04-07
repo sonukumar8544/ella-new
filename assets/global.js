@@ -1188,3 +1188,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const articleContent = document.querySelector('.halo-article-content .article-content');
+  if (!articleContent) return;
+
+  articleContent.querySelectorAll('a').forEach((link) => {
+    if (link.dataset.supWrapped === 'true') return;
+    if (link.querySelector('sup')) return;
+
+    const text = (link.textContent || '').trim();
+    if (!/^\d+$/.test(text)) return;
+
+    const n = Number(text);
+    if (!Number.isFinite(n) || n < 1 || n > 10) return;
+
+    link.textContent = '';
+    const sup = document.createElement('sup');
+    sup.textContent = text;
+    link.appendChild(sup);
+    link.dataset.supWrapped = 'true';
+  });
+});
