@@ -1,7 +1,30 @@
 {% schema %}
   {
     "name": "product home page",
-    "settings": [],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop image",
+        "info": "Use a large file (about 1600–2400px wide) so it stays sharp on retina displays."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile image",
+        "info": "Optional. Shown below 768px. If empty, the desktop image is used."
+      },
+      {
+        "type": "text",
+        "id": "image_alt",
+        "label": "Image alt text",
+        "default": "Grass-fed bovine colostrum powder product"
+      }
+    ],
     "presets": [
       {
         "name": "product home page"
@@ -26,7 +49,8 @@
 
   .product-left-section-container {
     display: flex;
-    flex: 1 1 50%;
+    flex: 1 1 clamp(280px, 52%, 700px);
+    min-width: 0;
     gap: 20px;
     flex-wrap: wrap;
     align-items: center;
@@ -36,11 +60,27 @@
     position: relative;
     width: 100%;
     flex-shrink: 0;
+    line-height: 0;
   }
 
-  .vitamin-left img {
-    width: 95%;
+  .home-feature-product__picture {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .home-feature-product__img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
     border-radius: 10px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+    box-shadow: 0 12px 40px rgba(8, 107, 146, 0.1);
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
   }
 
   .trusted-label {
@@ -91,16 +131,20 @@
   }
 
   .vitamin-right-section {
-    flex: 1 1 35%;
-    max-width: 450px;
+    flex: 1 1 clamp(280px, 42%, 520px);
+    max-width: 100%;
+    min-width: 0;
   }
 
   .vitamin-right-section h2 {
-    font-size: 30px;
-    font-weight: 400;
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 700;
     margin-bottom: 15px;
+    margin-top: 0px;
     text-align: left;
-    line-height: 1.2;
+    line-height: 1.25;
+    color: #0a3d5c;
+    transition: color 0.35s ease, transform 0.35s ease;
   }
 
   .vitamin-right-section h2 span {
@@ -110,53 +154,160 @@
     margin-top: 5px;
   }
 
-  .vitamin-right-section h2 {
-    font-weight: bold;
+  .vitamin-right-section h2:hover {
+    color: #086b92;
   }
 
   .vitamin-right-section p {
-    font-size: 16px;
-    color: #333;
+    font-size: clamp(15px, 1.6vw, 16px);
+    color: #334155;
     margin: 10px 0;
     text-align: left;
+    line-height: 1.55;
+    transition: color 0.3s ease;
   }
 
   .vitamin-right-section strong {
     font-weight: bold;
   }
 
+  /* Scroll-in: children start hidden until section is visible */
+  .home-feature-right__reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .vitamin-right-section.is-visible .home-feature-right__reveal--1 {
+    transition-delay: 0.05s;
+  }
+  .vitamin-right-section.is-visible .home-feature-right__reveal--2 {
+    transition-delay: 0.18s;
+  }
+  .vitamin-right-section.is-visible .home-feature-right__reveal--3 {
+    transition-delay: 0.3s;
+  }
+  .vitamin-right-section.is-visible .home-feature-right__reveal--4 {
+    transition-delay: 0.42s;
+  }
+
+  .vitamin-right-section.is-visible .home-feature-right__reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-feature-right__reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .vitamin-right-section h2:hover {
+      transform: none;
+    }
+  }
+
   .shop-btn-home {
-    margin: 30px 0;
+    margin: 24px 0 28px;
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: stretch;
   }
 
   .shop-btn-home button {
-    padding: 12px 25px;
-    border: 1px solid #086b92;
-    border-radius: 25px;
-    color: white;
-    background-color: #086b92;
-    font-size: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 28px;
+    /* border: 2px solid #0d7a8c; */
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, #0d8a9e 0%, #086b92 100%);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease;
+    box-shadow: 0 4px 14px rgba(8, 107, 146, 0.28);
+  }
+
+  .shop-btn-home button .shop-btn-home__arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .shop-btn-home button:hover {
-    background-color: white !important;
-    color: #086b92 !important;
-    border: 1px solid #086b92 !important;
+    background: #fff;
+    color: #086b92;
+    border-color: #086b92;
+    box-shadow: 0 6px 20px rgba(8, 107, 146, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .shop-btn-home button:hover .shop-btn-home__arrow {
+    transform: translateX(5px);
+  }
+
+  .shop-btn-home button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(8, 107, 146, 0.22);
+  }
+
+  .shop-btn-home button:focus {
+    outline: none;
+  }
+
+  .shop-btn-home button:focus-visible {
+    outline: 3px solid rgba(8, 107, 146, 0.45);
+    outline-offset: 3px;
   }
 
   .note-box {
-    background: #f1fafe;
-    padding: 15px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 18px 20px;
+    border-radius: 12px;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     text-align: left;
+    border: 1px solid rgba(8, 107, 146, 0.12);
+    transition:
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s ease,
+      background 0.35s ease;
   }
 
-  .note-box span {
+  .note-box:hover {
+    border-color: rgba(8, 107, 146, 0.22);
+    box-shadow: 0 8px 28px rgba(8, 107, 146, 0.1);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .note-box blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-style: normal;
+  }
+
+  .note-box .note-box__quote {
     color: #086b92;
+    font-size: clamp(15px, 1.5vw, 17px);
+  }
+
+  .note-box .note-box__attrib {
+    display: block;
+    margin-top: 10px;
+    color: #475569;
+    font-size: 14px;
   }
 
   .note-box strong {
@@ -173,16 +324,20 @@
   @media screen and (max-width: 1150px) {
     .vitamin-section-home {
       flex-direction: column;
-    }
-  }
-
-  @media (min-width: 769px) {
-    .home-product-image-mobile {
-      display: none !important;
+      align-items: stretch;
     }
 
-    .shop-btn-home{
-      max-width: 40%;
+    .product-left-section-container {
+      flex: 1 1 auto;
+      max-width: 100%;
+    }
+
+    .vitamin-right-section {
+      flex: 1 1 auto;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
     }
   }
 
@@ -191,54 +346,106 @@
       flex-direction: column;
     }
 
-    .home-product-imagedesktop {
-      display: none !important;
+    .vitamin-section-home {
+      padding: 40px 5% 30px !important;
+      gap: 24px;
     }
 
-    .vitamin-section-home{
-      padding-bottom: 30px !important;
+    .note-box {
+      padding: 16px;
     }
 
-    .note-box{
-      padding-top: 0px !important;
-      padding-left: 0px !important;
-    }
-
-     .shop-btn-home {
-       max-width: 55%;
-    }
     .vitamin-left {
       width: 100%;
     }
+
     .vitamin-center-section {
       width: 100%;
     }
-    .vitamin-right-section h2 {
-      font-size: 22px;
-    }
-    .vitamin-right-section {
-      max-width: 100%;
-    }
+
     .vitamin-center-section .card {
       max-width: 100%;
     }
+
+    .note-box:hover {
+      transform: none;
+    }
   }
 
-  .note-box p{
+  .note-box p {
     margin-top: 12px;
-    padding-left: 8px;
+    padding-left: 0;
   }
-
-  .home-product-imagedesktop
-  .home-product-image-mobile
 </style>
 
-<section class="vitamin-section-home-container">
+<section id="HomeFeatureProduct-{{ section.id }}" class="vitamin-section-home-container">
   <div class="vitamin-section-home">
     <div class="product-left-section-container">
       <div class="vitamin-left">
-        <img class="home-product-imagedesktop" src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/hydrogen_block__Large_a9924ee5-6a33-43d2-95ef-15347d173d18.png?v=1755061869" alt="Molecular Hydrogen Tablets by Wellness Extract " />
-        <img class="home-product-image-mobile" src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/hydrogen_block_mobile.png?v=1755061867" alt="Molecular Hydrogen Tablets by Wellness Extract " />
+        {% liquid
+          assign img_alt = section.settings.image_alt | default: 'Grass-fed bovine colostrum powder product' | strip
+          assign img_desktop = section.settings.image_desktop
+          assign img_mobile = section.settings.image_mobile
+          if img_desktop == blank and img_mobile != blank
+            assign img_desktop = img_mobile
+          elsif img_mobile == blank and img_desktop != blank
+            assign img_mobile = img_desktop
+          endif
+          assign img_fallback_desk = 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Frame_4_2.png?v=1775649405'
+          assign img_fallback_mob = 'https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Instagram_post_-_3_1.png?v=1775649404'
+        %}
+        {% if img_desktop != blank %}
+          <picture class="home-feature-product__picture">
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ img_mobile | image_url: width: 640 }} 640w,
+                {{ img_mobile | image_url: width: 960 }} 960w,
+                {{ img_mobile | image_url: width: 1280 }} 1280w,
+                {{ img_mobile | image_url: width: 1536 }} 1536w,
+                {{ img_mobile | image_url: width: 1920 }} 1920w"
+              sizes="100vw"
+            >
+            <img
+              class="home-feature-product__img"
+              src="{{ img_desktop | image_url: width: 1400 }}"
+              srcset="{{ img_desktop | image_url: width: 700 }} 700w,
+                {{ img_desktop | image_url: width: 1050 }} 1050w,
+                {{ img_desktop | image_url: width: 1400 }} 1400w,
+                {{ img_desktop | image_url: width: 2100 }} 2100w,
+                {{ img_desktop | image_url: width: 2800 }} 2800w"
+              sizes="(max-width: 1150px) min(100vw, 640px), min(52vw, 720px)"
+              width="{{ img_desktop.width }}"
+              height="{{ img_desktop.height }}"
+              alt="{{ img_alt | escape }}"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+        {% else %}
+          <picture class="home-feature-product__picture">
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ img_fallback_mob }}&width=640 640w,
+                {{ img_fallback_mob }}&width=960 960w,
+                {{ img_fallback_mob }}&width=1280 1280w,
+                {{ img_fallback_mob }}&width=1536 1536w"
+              sizes="100vw"
+            >
+            <img
+              class="home-feature-product__img"
+              src="{{ img_fallback_desk }}&width=1400"
+              srcset="{{ img_fallback_desk }}&width=700 700w,
+                {{ img_fallback_desk }}&width=1050 1050w,
+                {{ img_fallback_desk }}&width=1400 1400w,
+                {{ img_fallback_desk }}&width=2100 2100w,
+                {{ img_fallback_desk }}&width=2800 2800w"
+              sizes="(max-width: 1150px) min(100vw, 640px), min(52vw, 720px)"
+              alt="{{ img_alt | escape }}"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+        {% endif %}
         {% comment %} <div class="trusted-label">
           Trusted by150k+<br><strong>Customers</strong>
         </div> {% endcomment %}
@@ -251,22 +458,69 @@
       </div> {% endcomment %}
     </div>
 
-    <div class="vitamin-right-section">
-      <h2>#1 Molecular Hydrogen Tablet — Backed by 26+ Trials</h2>
-      <p>Experience rapid energy, recovery & detox in just 60 seconds. Clinically shown to work at the cellular level</p>
-      <div class="shop-btn-home">
+    <div class="vitamin-right-section" data-home-feature-right>
+      <h2 class="home-feature-right__reveal home-feature-right__reveal--1">
+        100% Grass-Fed Bovine Colostrum — Clinically Backed Formulation
+      </h2>
+      <p class="home-feature-right__reveal home-feature-right__reveal--2">
+        Support immunity, gut integrity &amp; daily resilience with concentrated bioactive nutrition from grass-fed bovine colostrum
+      </p>
+      <div class="shop-btn-home home-feature-right__reveal home-feature-right__reveal--3">
         <button
-    class="quiz_bundle_prodct product-form__submit button button--primary"
-    data-variant-ids="48982148055336"
-    data-qtys="1"
-    data-redirect="/checkout"
-  >
-    {{ 'SHOP NOW →' }}
-  </button>
+          type="button"
+          class="quiz_bundle_prodct product-form__submit button button--primary"
+          data-variant-ids="49856468877608"
+          data-qtys="1"
+          data-redirect="/checkout"
+        >
+          {{- 'SHOP NOW' -}}
+          <span class="shop-btn-home__arrow" aria-hidden="true"> →</span>
+        </button>
       </div>
-      <div class="note-box">
-       <span> “I went from needing 3 coffees a day to feeling naturally energized. My sleep’s better too.”</span> <br> <p>  -  Kara S., Marketing Director</p>
+      <div class="note-box home-feature-right__reveal home-feature-right__reveal--4">
+        <blockquote class="note-box__quote">
+          “My digestion feels better, I get sick less often, and I just feel more like myself again.”
+        </blockquote>
+        <p class="note-box__attrib">— Michael B., Entrepreneur</p>
       </div>
     </div>
   </div>
 </section>
+
+<noscript>
+  <style>
+    #HomeFeatureProduct-{{ section.id }} .home-feature-right__reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+
+<script>
+  (function () {
+    var root = document.getElementById('HomeFeatureProduct-{{ section.id }}');
+    if (!root) return;
+    var right = root.querySelector('[data-home-feature-right]');
+    if (!right) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      right.classList.add('is-visible');
+      return;
+    }
+    if (!('IntersectionObserver' in window)) {
+      right.classList.add('is-visible');
+      return;
+    }
+    var io = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            right.classList.add('is-visible');
+            obs.disconnect();
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -6% 0px', threshold: 0.1 }
+    );
+    io.observe(right);
+  })();
+</script>
