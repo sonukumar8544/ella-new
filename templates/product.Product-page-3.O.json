@@ -22,8 +22,13 @@
             "spacing_bottom": 10
           }
         },
+        "judge_me_reviews_preview_badge_aHCwkK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "okendo_star_rating_APJhrn": {
           "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
             "product": "{{product}}"
           }
@@ -243,6 +248,7 @@
       },
       "block_order": [
         "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
+        "judge_me_reviews_preview_badge_aHCwkK",
         "okendo_star_rating_APJhrn",
         "meta_short_des_npYipd",
         "product_benifits_9NJBiF",
