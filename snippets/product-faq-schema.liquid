@@ -1,90 +1,42 @@
+{%- liquid
+  assign faqs = product.metafields.custom.we_product_page_faqs.value
+  assign valid_faq_count = 0
+  if faqs != blank
+    for block in faqs
+      assign parts = block | split: '|'
+      assign fq = parts[0] | strip
+      assign fa = parts[1] | default: '' | strip
+      if fq != blank and fa != blank
+        assign valid_faq_count = valid_faq_count | plus: 1
+      endif
+    endfor
+  endif
+-%}
+{%- if valid_faq_count > 0 -%}
 <script type="application/ld+json">
-{% raw %}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+{%- assign sep = false -%}
+{%- for block in faqs -%}
+  {%- assign parts = block | split: '|' -%}
+  {%- assign fq = parts[0] | strip -%}
+  {%- assign fa = parts[1] | default: '' | strip -%}
+  {%- if fq != blank and fa != blank -%}
+    {%- if sep -%},{%- endif -%}
     {
       "@type": "Question",
-      "name": "How much tocotrienol should I take daily?",
+      "name": {{ fq | json }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For general wellness, 125–200 mg per day is ideal. For targeted antioxidant support such as heart, liver, or brain health, around 300 mg per day has been used in clinical studies."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the best time to take tocotrienol Vitamin E supplement?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Take your tocotrienol supplement with your largest meal of the day, preferably one rich in healthy fats like olive oil, avocado, or nuts. This improves absorption and bioavailability. Avoid taking it on an empty stomach because tocotrienols are fat-soluble."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are there any foods or supplements to avoid with tocotrienols?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Avoid consuming tocotrienols with high-fiber meals such as raw salads or oatmeal and high-dose iron supplements at the same time. Also, separate high-dose tocopherol (regular Vitamin E) supplements by at least 6 hours as they may compete for absorption."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do tocotrienols interact with blood thinners?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. At doses of 300 mg or higher, tocotrienols may enhance the effects of blood thinners such as warfarin, aspirin, or clopidogrel. Consult a healthcare professional before combining them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do tocotrienols interfere with Vitamin K?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Unlike tocopherols, tocotrienols do not interfere with Vitamin K, making them a safer option for individuals on medications affecting blood clotting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I take EAnnatto tocotrienol with other vitamins or supplements?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, EAnnatto tocotrienol can be taken with most supplements. However, avoid taking it at the same time as high-dose regular Vitamin E (tocopherols). Space them at least 6 hours apart."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I really need tocotrienols if I eat a healthy diet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Even healthy diets typically do not provide enough tocotrienols, as most foods are richer in tocopherols rather than tocotrienols."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need tocotrienols if I follow a keto, vegan, carnivore, or Mediterranean diet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Most diets, including keto, vegan, carnivore, and Mediterranean, lack sufficient tocotrienols. They are mainly found in specific plant oils like annatto or rice bran, which are not commonly consumed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are mixed tocopherols or Vitamin E complexes better?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not necessarily. Many Vitamin E complexes are high in tocopherols, which may reduce tocotrienol absorption. A pure tocotrienol formula without tocopherols is often more effective."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is EAnnatto Tocotrienol vegan or allergen-free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "EAnnatto Tocotrienol is not vegan as it contains gelatin. However, it is free from soy, gluten, dairy, nuts, and preservatives, and is non-GMO and GMP-certified."
+        "text": {{ fa | json }}
       }
     }
+    {%- assign sep = true -%}
+  {%- endif -%}
+{%- endfor -%}
   ]
 }
-{% endraw %}
 </script>
+{%- endif -%}
