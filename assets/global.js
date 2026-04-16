@@ -13,6 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Ensure product URLs always include the first/selected variant id
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    if (!document.body || !document.body.classList.contains('template-product')) return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('variant')) return;
+
+    const variantEl =
+      document.querySelector('main [data-variant-id]') ||
+      document.querySelector('[data-variant-id]');
+    const variantId = variantEl && variantEl.getAttribute('data-variant-id');
+    if (!variantId) return;
+
+    url.searchParams.set('variant', variantId);
+    window.history.replaceState({}, document.title, url.toString());
+  } catch (e) {}
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("product-add-to-cart");
