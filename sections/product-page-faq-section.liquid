@@ -36,54 +36,6 @@
   {% endfor %}
   </div>
   </section>
-
-  {%- liquid
-    assign faq_metafield = product.metafields.custom.we_product_page_faqs.value
-    assign faq_schema_count = 0
-    if faq_metafield != blank
-      for block in faq_metafield
-        assign parts = block | split: '|'
-        assign question_text = parts[0] | default: '' | strip | strip_html
-        assign answer_text = parts[1] | default: '' | strip | strip_html
-        if question_text != blank and answer_text != blank
-          assign faq_schema_count = faq_schema_count | plus: 1
-        endif
-      endfor
-    endif
-  -%}
-  {% if faq_schema_count > 0 %}
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "about": {
-          "@type": "Product",
-          "name": {{ product.title | strip_html | json }},
-          "url": {{ shop.url | append: product.url | json }}
-        },
-        "mainEntity": [
-          {%- assign faq_schema_first = true -%}
-          {%- for block in faq_metafield -%}
-            {%- assign parts = block | split: '|' -%}
-            {%- assign question_text = parts[0] | default: '' | strip | strip_html -%}
-            {%- assign answer_text = parts[1] | default: '' | strip | strip_html -%}
-            {%- if question_text != blank and answer_text != blank -%}
-              {%- unless faq_schema_first -%},{%- endunless -%}
-              {
-                "@type": "Question",
-                "name": {{ question_text | json }},
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": {{ answer_text | json }}
-                }
-              }
-              {%- assign faq_schema_first = false -%}
-            {%- endif -%}
-          {%- endfor -%}
-        ]
-      }
-    </script>
-  {% endif %}
     
   <style>
   .faq-container {

@@ -109,6 +109,55 @@
         {%- endif -%}]
     }
     </script>
+
+    {%- liquid
+      assign faq_metafield = product.metafields.custom.we_product_page_faqs.value
+      assign faq_valid_count = 0
+      if faq_metafield != blank
+        for block in faq_metafield
+          assign faq_parts = block | split: '|'
+          assign faq_q = faq_parts[0] | default: '' | strip | strip_html
+          assign faq_a = faq_parts[1] | default: '' | strip | strip_html
+          if faq_q != blank and faq_a != blank
+            assign faq_valid_count = faq_valid_count | plus: 1
+          endif
+        endfor
+      endif
+    -%}
+    {%- if faq_valid_count > 0 -%}
+      {%- liquid
+        assign faq_script_close = '</scr' | append: 'ipt>'
+        assign faq_script_close_esc = '<\/scr' | append: 'ipt>'
+      -%}
+      {%- capture faq_ld_json -%}
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "url": {{ canonical_url | json }},
+        "mainEntity": [
+          {%- assign faq_needs_comma = false -%}
+          {%- for block in faq_metafield -%}
+            {%- assign faq_parts = block | split: '|' -%}
+            {%- assign faq_q = faq_parts[0] | default: '' | strip | strip_html -%}
+            {%- assign faq_a = faq_parts[1] | default: '' | strip | strip_html -%}
+            {%- if faq_q != blank and faq_a != blank -%}
+              {%- if faq_needs_comma -%},{%- endif -%}
+              {
+                "@type": "Question",
+                "name": {{ faq_q | json }},
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": {{ faq_a | json }}
+                }
+              }
+              {%- assign faq_needs_comma = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+        ]
+      }
+      {%- endcapture -%}
+      <script type="application/ld+json">{{ faq_ld_json | strip | replace: faq_script_close, faq_script_close_esc }}</script>
+    {%- endif -%}
 {%- elsif page_type == 'article' -%}
     <script type="application/ld+json">
         {{ article | structured_data }}
