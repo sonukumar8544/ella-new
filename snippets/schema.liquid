@@ -17,14 +17,17 @@
   "@type": "Product",
   "name": "{{ product.title | strip_html | escape }}",
   "url": "{{ shop.url }}{{ product.url }}",
-  {%- if product.variants.first.barcode.size == 12 -%}
-    "gtin12": {{ product.variants.first.barcode }},
+  {%- liquid
+    assign fa_barcode = fa_current_variant.barcode | default: '' | strip
+  -%}
+  {%- if fa_barcode.size == 12 -%}
+    "gtin12": {{ fa_barcode | json }},
   {%- endif -%}
-  {%- if product.variants.first.barcode.size == 13 -%}
-    "gtin13": {{ product.variants.first.barcode }},
+  {%- if fa_barcode.size == 13 -%}
+    "gtin13": {{ fa_barcode | json }},
   {%- endif -%}
-  {%- if product.variants.first.barcode.size == 14 -%}
-    "gtin14": {{ product.variants.first.barcode }},
+  {%- if fa_barcode.size == 14 -%}
+    "gtin14": {{ fa_barcode | json }},
   {%- endif -%}
   "productID": "{{ product.id }}",
   "brand": {
