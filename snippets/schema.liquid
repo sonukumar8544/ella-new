@@ -187,37 +187,6 @@
     <script type="application/ld+json">
         {{ article | structured_data }}
     </script>
-
-    {%- liquid
-      assign article_faq_schema_mf = article.metafields.custom.article_faqs_schema
-    -%}
-    {%- if article_faq_schema_mf != blank -%}
-      {%- if article_faq_schema_mf.type == 'json' -%}
-        <script type="application/ld+json">
-          {{ article_faq_schema_mf.value | json }}
-        </script>
-      {%- else -%}
-        {%- liquid
-          if article_faq_schema_mf.type == 'rich_text_field'
-            assign article_faq_schema_text = article_faq_schema_mf | metafield_text
-          else
-            assign article_faq_schema_text = article_faq_schema_mf.value | default: article_faq_schema_mf
-          endif
-          assign article_faq_schema_text = article_faq_schema_text | default: '' | append: '' | strip
-          assign article_faq_schema_text = article_faq_schema_text | replace: '<script type="application/ld+json">', ''
-          assign article_faq_schema_text = article_faq_schema_text | replace: "<script type='application/ld+json'>", ''
-          assign article_faq_schema_text = article_faq_schema_text | replace: '<script>', ''
-          assign article_faq_schema_text = article_faq_schema_text | replace: '</script>', ''
-          assign article_faq_schema_text = article_faq_schema_text | strip
-        -%}
-        {%- if article_faq_schema_text != blank -%}
-          <script type="application/ld+json">
-            {{ article_faq_schema_text }}
-          </script>
-        {%- endif -%}
-      {%- endif -%}
-    {%- endif -%}
-
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",
