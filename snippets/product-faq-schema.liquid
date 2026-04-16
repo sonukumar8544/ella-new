@@ -1,28 +1,23 @@
-{%- liquid
-  assign faqs = product.metafields.custom.we_product_page_faqs.value
-  assign valid_faq_count = 0
-  if faqs != blank
-    for block in faqs
-      assign parts = block | split: '|'
-      assign fq = parts[0] | strip
-      assign fa = parts[1] | default: '' | strip
-      if fq != blank and fa != blank
-        assign valid_faq_count = valid_faq_count | plus: 1
-      endif
-    endfor
-  endif
--%}
-{%- if valid_faq_count > 0 -%}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-{%- assign sep = false -%}
+{%- comment -%}
+  Same data as sections/product-page-faq-section.liquid (metafield list, Q|A rows).
+  Parent must pass product: {% render 'product-faq-schema', product: product %}
+{%- endcomment -%}
+{%- assign faqs = product.metafields.custom.we_product_page_faqs.value -%}
+{%- if faqs != blank -%}
+  {%- assign sep = false -%}
+  {%- capture faq_main_entity -%}
 {%- for block in faqs -%}
   {%- assign parts = block | split: '|' -%}
-  {%- assign fq = parts[0] | strip -%}
-  {%- assign fa = parts[1] | default: '' | strip -%}
+  {%- assign fq = parts | first | strip -%}
+  {%- assign fa = '' -%}
+  {%- for p in parts offset: 1 -%}
+    {%- if forloop.first -%}
+      {%- assign fa = p -%}
+    {%- else -%}
+      {%- assign fa = fa | append: '|' | append: p -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign fa = fa | strip -%}
   {%- if fq != blank and fa != blank -%}
     {%- if sep -%},{%- endif -%}
     {
@@ -36,7 +31,16 @@
     {%- assign sep = true -%}
   {%- endif -%}
 {%- endfor -%}
+  {%- endcapture -%}
+  {%- if sep -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{{ faq_main_entity }}
   ]
 }
 </script>
+  {%- endif -%}
 {%- endif -%}
