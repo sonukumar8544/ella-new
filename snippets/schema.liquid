@@ -78,20 +78,57 @@
 
 
 {%- liquid
-  assign faq_metafield = product.metafields.custom.we_product_page_faqs.value
-  assign faq_schema_count = 0
-  if faq_metafield != blank
-    for block in faq_metafield
-      assign parts = block | split: '|'
-      assign question_text = parts[0] | default: '' | strip | strip_html
-      assign answer_text = parts[1] | default: '' | strip | strip_html
-      if question_text != blank and answer_text != blank
-        assign faq_schema_count = faq_schema_count | plus: 1
-      endif
-    endfor
+  # we_product_page_faqs: list.*, json array, or text. Looping a plain string iterates characters (zero valid Q|A).
+  assign faq_mf = product.metafields.custom.we_product_page_faqs
+  if faq_mf != blank
+    if faq_mf.list?
+      assign faq_iter = faq_mf.value
+    elsif faq_mf.type == 'json' and faq_mf.value != blank
+      assign faq_iter = faq_mf.value
+    elsif faq_mf.type == 'multi_line_text_field' or faq_mf.type == 'single_line_text_field'
+      assign faq_blob = faq_mf.value | default: '' | strip | newline_to_br | split: '<br />'
+      assign faq_iter = faq_blob
+    elsif faq_mf.value != blank and faq_mf.type != 'rich_text_field'
+      assign faq_blob = faq_mf.value | strip | newline_to_br | split: '<br />'
+      assign faq_iter = faq_blob
+    endif
   endif
 -%}
-{% if faq_schema_count > 0 %}
+{%- capture faq_ldjson_main_entity -%}
+  {%- assign faq_schema_first = true -%}
+  {%- if faq_iter != blank -%}
+    {%- for block in faq_iter -%}
+      {%- assign row = block | strip -%}
+      {%- if row != blank and row contains '|' -%}
+        {%- assign parts = row | split: '|' -%}
+        {%- assign question_text = parts[0] | default: '' | strip | strip_html -%}
+        {%- assign answer_text = '' -%}
+        {%- for part in parts offset: 1 -%}
+          {%- if forloop.first -%}
+            {%- assign answer_text = part -%}
+          {%- else -%}
+            {%- assign answer_text = answer_text | append: '|' | append: part -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign answer_text = answer_text | strip | strip_html -%}
+        {%- if question_text != blank and answer_text != blank -%}
+          {%- unless faq_schema_first -%},{%- endunless -%}
+          {
+            "@type": "Question",
+            "name": {{ question_text | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ answer_text | json }}
+            }
+          }
+          {%- assign faq_schema_first = false -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+{%- assign faq_ldjson_main_entity = faq_ldjson_main_entity | strip -%}
+{% if faq_ldjson_main_entity != blank %}
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -102,24 +139,7 @@
         "url": {{ shop.url | append: product.url | json }}
       },
       "mainEntity": [
-        {%- assign faq_schema_first = true -%}
-        {%- for block in faq_metafield -%}
-          {%- assign parts = block | split: '|' -%}
-          {%- assign question_text = parts[0] | default: '' | strip | strip_html -%}
-          {%- assign answer_text = parts[1] | default: '' | strip | strip_html -%}
-          {%- if question_text != blank and answer_text != blank -%}
-            {%- unless faq_schema_first -%},{%- endunless -%}
-            {
-              "@type": "Question",
-              "name": {{ question_text | json }},
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": {{ answer_text | json }}
-              }
-            }
-            {%- assign faq_schema_first = false -%}
-          {%- endif -%}
-        {%- endfor -%}
+        {{ faq_ldjson_main_entity }}
       ]
     }
   </script>

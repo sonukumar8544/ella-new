@@ -13,10 +13,38 @@
   <h2>{{ section.settings.heading }}</h2>
   {% comment %} <p class="faqsubheading">{{ section.settings.subheading }}</p> {% endcomment %}
   </div>
-  
-  {% for block in product.metafields.custom.we_product_page_faqs.value %}
-  {% assign parts = block | split: '|' %}
-  <details {% if forloop.first %} open{% endif %}>
+  {%- liquid
+    assign faq_mf = product.metafields.custom.we_product_page_faqs
+    if faq_mf != blank
+      if faq_mf.list?
+        assign faq_iter = faq_mf.value
+      elsif faq_mf.type == 'json' and faq_mf.value != blank
+        assign faq_iter = faq_mf.value
+      elsif faq_mf.type == 'multi_line_text_field' or faq_mf.type == 'single_line_text_field'
+        assign faq_blob = faq_mf.value | default: '' | strip | newline_to_br | split: '<br />'
+        assign faq_iter = faq_blob
+      elsif faq_mf.value != blank and faq_mf.type != 'rich_text_field'
+        assign faq_blob = faq_mf.value | strip | newline_to_br | split: '<br />'
+        assign faq_iter = faq_blob
+      endif
+    endif
+    assign faq_row_index = 0
+  -%}
+  {% if faq_iter != blank %}
+  {% for block in faq_iter %}
+  {% assign row = block | strip %}
+  {% if row != blank and row contains '|' %}
+  {% assign parts = row | split: '|' %}
+  {% assign faq_answer_html = '' %}
+  {% for part in parts offset: 1 %}
+    {% if forloop.first %}
+      {% assign faq_answer_html = part %}
+    {% else %}
+      {% assign faq_answer_html = faq_answer_html | append: '|' | append: part %}
+    {% endif %}
+  {% endfor %}
+  {% assign faq_row_index = faq_row_index | plus: 1 %}
+  <details {% if faq_row_index == 1 %} open{% endif %}>
   <summary>
   {{ parts[0] | strip }}
   <svg
@@ -30,10 +58,12 @@
   </svg>
   </summary>
   <div class="faq-content">
-  {{ parts[1] | strip }}
+  {{ faq_answer_html | strip }}
   </div>
   </details>
+  {% endif %}
   {% endfor %}
+  {% endif %}
   </div>
   </section>
 
