@@ -188,6 +188,10 @@
         {{ article | structured_data }}
     </script>
 
+    {%- comment -%}
+      Article FAQ JSON-LD from: article.metafields.custom.article_faqs_schema (same as {{ article.metafields.custom.article_faqs_schema }} in admin).
+      Use either: (1) one JSON-LD object starting with { and "@type": "FAQPage", or (2) only a mainEntity array starting with [, or (3) lines of Question|Answer.
+    {%- endcomment -%}
     {%- liquid
       assign article_faq_mf = article.metafields.custom.article_faqs_schema
       assign article_faq_body = ''
@@ -195,10 +199,13 @@
         if article_faq_mf.type == 'rich_text_field'
           assign article_faq_body = article_faq_mf | metafield_text
         else
-          assign article_faq_body = article_faq_mf.value | default: '' | append: ''
+          assign article_faq_body = article_faq_mf.value | default: ''
+        endif
+        if article_faq_body == blank
+          assign article_faq_body = article_faq_mf | metafield_text | default: ''
         endif
       endif
-      assign article_faq_body = article_faq_body | strip
+      assign article_faq_body = article_faq_body | strip | remove: '﻿'
     -%}
 
     {%- if article_faq_body != blank -%}
@@ -206,6 +213,10 @@
       {%- if article_faq_first_char == '{' and article_faq_body contains 'FAQPage' -%}
         <script type="application/ld+json">
 {{ article_faq_body }}
+        </script>
+      {%- elsif article_faq_first_char == '[' and article_faq_body contains 'Question' -%}
+        <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":{{ article_faq_body }}}
         </script>
       {%- else -%}
         {%- liquid
