@@ -188,84 +188,10 @@
         {{ article | structured_data }}
     </script>
 
-    {%- comment -%}
-      Article FAQ JSON-LD from: article.metafields.custom.article_faqs_schema (same as {{ article.metafields.custom.article_faqs_schema }} in admin).
-      Use either: (1) one JSON-LD object starting with { and "@type": "FAQPage", or (2) only a mainEntity array starting with [, or (3) lines of Question|Answer.
-    {%- endcomment -%}
-    {%- liquid
-      assign article_faq_mf = article.metafields.custom.article_faqs_schema
-      assign article_faq_body = ''
-      if article_faq_mf != blank
-        if article_faq_mf.type == 'rich_text_field'
-          assign article_faq_body = article_faq_mf | metafield_text
-        else
-          assign article_faq_body = article_faq_mf.value | default: ''
-        endif
-        if article_faq_body == blank
-          assign article_faq_body = article_faq_mf | metafield_text | default: ''
-        endif
-      endif
-      assign article_faq_body = article_faq_body | strip | remove: '﻿'
-    -%}
-
-    {%- if article_faq_body != blank -%}
-      {%- assign article_faq_first_char = article_faq_body | slice: 0, 1 -%}
-      {%- if article_faq_first_char == '{' and article_faq_body contains 'FAQPage' -%}
-        <script type="application/ld+json">
-{{ article_faq_body }}
-        </script>
-      {%- elsif article_faq_first_char == '[' and article_faq_body contains 'Question' -%}
-        <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":{{ article_faq_body }}}
-        </script>
-      {%- else -%}
-        {%- liquid
-          assign article_faq_blob = article_faq_body | newline_to_br | split: '<br />'
-        -%}
-        {%- capture article_faq_ldjson_main_entity -%}
-          {%- assign article_faq_schema_first = true -%}
-          {%- for block in article_faq_blob -%}
-            {%- assign row = block | strip -%}
-            {%- if row != blank and row contains '|' -%}
-              {%- assign parts = row | split: '|' -%}
-              {%- assign question_text = parts[0] | default: '' | strip | strip_html -%}
-              {%- assign answer_text = '' -%}
-              {%- for part in parts offset: 1 -%}
-                {%- if forloop.first -%}
-                  {%- assign answer_text = part -%}
-                {%- else -%}
-                  {%- assign answer_text = answer_text | append: '|' | append: part -%}
-                {%- endif -%}
-              {%- endfor -%}
-              {%- assign answer_text = answer_text | strip | strip_html -%}
-              {%- if question_text != blank and answer_text != blank -%}
-                {%- unless article_faq_schema_first -%},{%- endunless -%}
-                {
-                  "@type": "Question",
-                  "name": {{ question_text | json }},
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": {{ answer_text | json }}
-                  }
-                }
-                {%- assign article_faq_schema_first = false -%}
-              {%- endif -%}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- endcapture -%}
-        {%- assign article_faq_ldjson_main_entity = article_faq_ldjson_main_entity | strip -%}
-        {%- if article_faq_ldjson_main_entity != blank -%}
-          <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {{ article_faq_ldjson_main_entity }}
-              ]
-            }
-          </script>
-        {%- endif -%}
-      {%- endif -%}
+    {%- if article.metafields.custom.article_faqs_schema != blank -%}
+    <script type="application/ld+json">
+{%- if article.metafields.custom.article_faqs_schema.type == 'rich_text_field' -%}{{ article.metafields.custom.article_faqs_schema | metafield_text }}{%- else -%}{{ article.metafields.custom.article_faqs_schema.value }}{%- endif -%}
+    </script>
     {%- endif -%}
 
     <script type="application/ld+json">
