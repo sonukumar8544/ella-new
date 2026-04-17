@@ -186,9 +186,19 @@
 {%- elsif page_type == 'article' -%}
     <script type="application/ld+json">
         {{ article | structured_data }}
-       
     </script>
-    {{ article.metafields.custom.article_faqs_schema }}
+    {%- liquid
+        assign article_read_time_mf = article.metafields.custom.article_faqs_schema
+        assign article_read_time = ''
+        if article_read_time_mf != blank
+          if article_read_time_mf.type == 'rich_text_field'
+            assign article_read_time = article_read_time_mf | metafield_text
+          else
+            assign article_read_time = article_read_time_mf.value | default: article_read_time_mf
+          endif
+        endif
+        assign article_read_time = article_read_time | default: '' | append: '' | strip
+      -%}
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",
