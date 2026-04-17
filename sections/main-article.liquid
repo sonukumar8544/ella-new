@@ -261,6 +261,7 @@
     <div class="we-blog-title">
       <h1>{{ article.title }}</h1>
     </div>
+     {{ article.metafields.custom.article_faqs_schema }}
     <div class="halo-article-block">
       {%- if show_sidebar and section.blocks.size > 0 -%}
         {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
