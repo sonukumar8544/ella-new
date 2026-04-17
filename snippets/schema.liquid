@@ -186,58 +186,8 @@
 {%- elsif page_type == 'article' -%}
     <script type="application/ld+json">
         {{ article | structured_data }}
+        {{ article.metafields.custom.article_faqs_schema }}
     </script>
-
-    {%- unless content_for_header contains 'FAQPage' -%}
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is colostrum better in powder or capsules?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Colostrum powder offers better absorption than capsules. Additionally, in powder form, you can adjust the dose as needed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is colostrum considered vegetarian?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, colostrum is a dairy product, and it has the same status as other dairy products such as milk, butter, and curd."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is better, collagen or colostrum?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The choice between collagen and colostrum depends on your health needs. If you want to strengthen your nails, skin, and hair, go for collagen. However, if your goal is immunity or gut health, colostrum is the better choice."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the health benefits of colostrum?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The key benefits of colostrum include enhanced immune and gut health. Consistent use of colostrum may aid muscle repair and provide high-density nutrition."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to use bovine colostrum powder?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can use bovine colostrum powder in plain water, juices, smoothies, or yogurt. Additionally, you can mix the powder into kids' favorite shakes and desserts."
-            }
-          }
-        ]
-      }
-      </script>
-    {%- endunless -%}
     
     <script type="application/ld+json">
     {
