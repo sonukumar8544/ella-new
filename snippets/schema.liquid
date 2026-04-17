@@ -199,9 +199,6 @@
         endif
         assign article_read_time = article_read_time | default: '' | append: '' | strip
       -%}
-      {%- if article_read_time != blank -%}
-        <p>{{ article_read_time }} minutes to read</p>
-      {%- endif -%}
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",
