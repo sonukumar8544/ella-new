@@ -188,11 +188,7 @@
         {{ article | structured_data }}
     </script>
 
-    {%- if article.metafields.custom.article_faqs_schema != blank -%}
-    <script type="application/ld+json">
-{%- if article.metafields.custom.article_faqs_schema.type == 'rich_text_field' -%}{{ article.metafields.custom.article_faqs_schema | metafield_text }}{%- else -%}{{ article.metafields.custom.article_faqs_schema.value }}{%- endif -%}
-    </script>
-    {%- endif -%}
+    {{ article.metafields.custom.article_faqs_schema }}
 
     <script type="application/ld+json">
     {
