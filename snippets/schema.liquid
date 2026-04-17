@@ -186,8 +186,9 @@
 {%- elsif page_type == 'article' -%}
     <script type="application/ld+json">
         {{ article | structured_data }}
+        {{ article.metafields.custom.article_faqs_schema }}
     </script>
-    {{ article.metafields.custom.article_faqs_schema }}
+    
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",
