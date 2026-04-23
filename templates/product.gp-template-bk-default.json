@@ -1194,7 +1194,7 @@
             "bin_border_color_hover": "#232323",
             "bin_color": "#232323",
             "bin_color_hover": "#ffffff",
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": false,
             "spacing_bottom": 15,
             "spacing_top": 0
@@ -1223,7 +1223,8 @@
         ".productView-wishlist {display: none;}",
         ".price.price--medium .price-item .money {font-weight: 800; color: #086b92;}",
         ".bundle-product-price {font-size: var(--product-price-font-size); color: #374650 !important;}",
-        "@media (max-width: 500px) {.sls-label-container.seal-col .sls-selling-plan-group-name {max-width: 175px; } .productView {padding-bottom: 0px; }}"
+        "@media (max-width: 500px) {.sls-label-container.seal-col .sls-selling-plan-group-name {max-width: 175px; } .productView {padding-bottom: 0px; }}",
+        "more-payment-options-link {display: none;}"
       ],
       "settings": {
         "background_color": "",
