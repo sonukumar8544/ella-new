@@ -312,7 +312,9 @@
                   or blogauthor == 'Aditi bakshi'
                   or blogauthor == 'Nurah Ekhlaque'
                   or blogauthor == 'Kritika Jain'
+                  or blogauthor == 'Suhani Sharma'
                 %}
+                
                   <h3>
                     <a href="https://wellnessextract.com/pages/{{ article.author | replace: ' ', '-' | downcase }}">
                       {% if article.author == 'Aditi bakshi' %}
@@ -348,6 +350,16 @@
                       height="40px"
                       title=""
                       alt="kritika jain"
+                      loading="lazy"
+                    >
+                    {% elsif blogauthor == 'Suhani Sharma' %}
+                    <img
+                      class="lazyload"
+                      data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Screenshot_2026-05-21_202602.png?v=1779375313"
+                      width="40px"
+                      height="40px"
+                      title=""
+                      alt="Suhani sharma"
                       loading="lazy"
                     >
                   {% elsif blogauthor == 'Divya Katyal' %}
@@ -467,6 +479,32 @@
                       </div>
                       {% endif %}
                       {% endfor %}
+
+                      {% for tag in article.tags %}
+                    {% if tag == 'drsuhani' %}
+                      <div class="blog-editor">
+                        <img
+                          class="lazyload"
+                          data-src="https://cdn.shopify.com/s/files/1/0735/8172/3944/files/Screenshot_2026-05-21_202602.png?v=1779375313"
+                          width="40px"
+                          alt="suhani sharma"
+                          height="40px"
+                          title=""
+                          loading="lazy"
+                        >
+                        <h3>
+                          <a href="https://wellnessextract.com/pages/suhani-sharma">
+                            <span class="blog-author">
+                              <span><i>Edit By: </i> Dr. Suhani Sharma</span>
+                              {% comment %} <span class="by-auth">Editor</span>  {% endcomment %}
+                            </span>
+                          </a>
+                        </h3>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+
+
                       {% for tag in article.tags %}
                         {% if tag == 'dr-laura-pipher' %}
                           <div class="blog-editor">
