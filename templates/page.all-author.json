@@ -107,6 +107,18 @@
             "color_des": "#3c3c3c",
             "link": "shopify://pages/dr-naji-abou-ali"
           }
+        },
+        "image_dUaJjN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-21_202602.png",
+            "title": "Sr Medical Editor ",
+            "color_text": "#000000",
+            "color_text_hover": "#3e8cc4",
+            "description": "",
+            "color_des": "#3c3c3c",
+            "link": "shopify://pages/suhani-sharma"
+          }
         }
       },
       "block_order": [
@@ -116,12 +128,13 @@
         "image_Mk7eLi",
         "image_cBWb9P",
         "image_Gzee7k",
-        "image_TxgG6A"
+        "image_TxgG6A",
+        "image_dUaJjN"
       ],
       "custom_css": [
         "@media (max-width: 551px) {.halo-row.halo-slider.sm-column-2:not(.slick-slider) .halo-item {width: 40%; }}",
         "@media (min-width: 1024px) {.halo-row.column-4 .halo-item {width: 22%; }}",
-        ".section-block-template--25203481870632__1642989489e5f98f1a {background: rgba(0, 0, 0, 0); border-top: none!important;}"
+        ".section-block-template--25203481870632__1642989489e5f98f1a {background: rgba(0, 0, 0, 0); border-top: none !important;}"
       ],
       "settings": {
         "id": "our_all_authors",
